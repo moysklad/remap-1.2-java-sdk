@@ -69,7 +69,7 @@ import java.util.StringJoiner;
   CreateBonusTransactionRequest.JSON_PROPERTY_UPDATED_BY
 })
 @JsonTypeName("createBonusTransaction_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-28T12:07:46.391282800Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-28T12:17:47.234536789Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateBonusTransactionRequest {
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable

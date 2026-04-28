@@ -38,7 +38,7 @@ import java.util.StringJoiner;
   Organization.JSON_PROPERTY_ACCOUNT_ID,
   Organization.JSON_PROPERTY_NAME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-28T12:07:46.391282800Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-28T12:17:47.234536789Z[GMT]", comments = "Generator version: 7.14.0")
 public class Organization {
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
