@@ -38,7 +38,7 @@ import java.util.StringJoiner;
   CashInOperationAnyOf1.JSON_PROPERTY_LINKED_SUM
 })
 @JsonTypeName("CashInOperation_anyOf_1")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-28T07:26:57.827194517Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-28T11:37:33.115271248Z[GMT]", comments = "Generator version: 7.14.0")
 public class CashInOperationAnyOf1 {
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable

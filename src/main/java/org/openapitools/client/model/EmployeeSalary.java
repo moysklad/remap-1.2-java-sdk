@@ -33,7 +33,7 @@ import java.util.StringJoiner;
   EmployeeSalary.JSON_PROPERTY_VALUE
 })
 @JsonTypeName("Employee_salary")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-28T07:26:57.827194517Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-28T11:37:33.115271248Z[GMT]", comments = "Generator version: 7.14.0")
 public class EmployeeSalary {
   public static final String JSON_PROPERTY_VALUE = "value";
   @javax.annotation.Nullable

@@ -38,7 +38,7 @@ import java.util.StringJoiner;
   VariantMetadata.JSON_PROPERTY_META,
   VariantMetadata.JSON_PROPERTY_CHARACTERISTICS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-28T07:26:57.827194517Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-28T11:37:33.115271248Z[GMT]", comments = "Generator version: 7.14.0")
 public class VariantMetadata {
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable

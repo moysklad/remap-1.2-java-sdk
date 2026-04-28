@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   GetProductImages200Response.JSON_PROPERTY_ROWS
 })
 @JsonTypeName("getProductImages_200_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-28T07:26:57.827194517Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-28T11:37:33.115271248Z[GMT]", comments = "Generator version: 7.14.0")
 public class GetProductImages200Response {
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable

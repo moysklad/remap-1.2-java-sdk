@@ -56,7 +56,7 @@ import java.util.StringJoiner;
   CreatePurchaseOrderPositionsRequest.JSON_PROPERTY_STOCK
 })
 @JsonTypeName("createPurchaseOrderPositions_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-28T07:26:57.827194517Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-28T11:37:33.115271248Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreatePurchaseOrderPositionsRequest {
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
