@@ -35,7 +35,7 @@ import java.util.StringJoiner;
   AssortmentSettingsBarcodeRules.JSON_PROPERTY_WEIGHT_BARCODE_PREFIX
 })
 @JsonTypeName("AssortmentSettings_barcodeRules")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-28T11:37:33.115271248Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-28T12:36:06.195285643Z[GMT]", comments = "Generator version: 7.14.0")
 public class AssortmentSettingsBarcodeRules {
   public static final String JSON_PROPERTY_FILL_E_A_N13_BARCODE = "fillEAN13Barcode";
   @javax.annotation.Nullable
