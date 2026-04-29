@@ -35,7 +35,7 @@ import java.util.StringJoiner;
   PurchaseOrderRate.JSON_PROPERTY_VALUE
 })
 @JsonTypeName("PurchaseOrder_rate")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-28T12:36:06.195285643Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-29T07:18:49.943763362Z[GMT]", comments = "Generator version: 7.14.0")
 public class PurchaseOrderRate {
   public static final String JSON_PROPERTY_CURRENCY = "currency";
   @javax.annotation.Nullable

@@ -37,7 +37,7 @@ import java.util.StringJoiner;
   EmployeeSecurityGroup.JSON_PROPERTY_NAME
 })
 @JsonTypeName("EmployeeSecurity_group")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-28T12:36:06.195285643Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-29T07:18:49.943763362Z[GMT]", comments = "Generator version: 7.14.0")
 public class EmployeeSecurityGroup {
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable

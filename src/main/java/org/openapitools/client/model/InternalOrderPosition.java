@@ -48,7 +48,7 @@ import java.util.StringJoiner;
   InternalOrderPosition.JSON_PROPERTY_ASSORTMENT,
   InternalOrderPosition.JSON_PROPERTY_PACK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-28T12:36:06.195285643Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-29T07:18:49.943763362Z[GMT]", comments = "Generator version: 7.14.0")
 public class InternalOrderPosition {
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
