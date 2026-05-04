@@ -33,6 +33,7 @@ import org.openapitools.client.model.FileList;
 import org.openapitools.client.model.Group;
 import org.openapitools.client.model.Meta;
 import org.openapitools.client.model.Organization;
+import org.openapitools.client.model.StabEntity;
 import org.openapitools.client.model.State;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -85,7 +86,7 @@ import java.util.StringJoiner;
   FactureOut.JSON_PROPERTY_PAYMENT_NUMBER,
   FactureOut.JSON_PROPERTY_PAYMENT_DATE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-29T07:18:49.943763362Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:35:38.786882520Z[GMT]", comments = "Generator version: 7.14.0")
 public class FactureOut {
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
@@ -109,7 +110,7 @@ public class FactureOut {
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
-  private List<AttributeAbstract> attributes = new ArrayList<>();
+  private JsonNullable<List<AttributeAbstract>> attributes = JsonNullable.<List<AttributeAbstract>>undefined();
 
   public static final String JSON_PROPERTY_CODE = "code";
   @javax.annotation.Nullable
@@ -209,19 +210,19 @@ public class FactureOut {
 
   public static final String JSON_PROPERTY_DEMANDS = "demands";
   @javax.annotation.Nullable
-  private List<Meta> demands = new ArrayList<>();
+  private JsonNullable<List<StabEntity>> demands = JsonNullable.<List<StabEntity>>undefined();
 
   public static final String JSON_PROPERTY_PAYMENTS = "payments";
   @javax.annotation.Nullable
-  private List<Meta> payments = new ArrayList<>();
+  private JsonNullable<List<StabEntity>> payments = JsonNullable.<List<StabEntity>>undefined();
 
   public static final String JSON_PROPERTY_RETURNS = "returns";
   @javax.annotation.Nullable
-  private List<Meta> returns = new ArrayList<>();
+  private JsonNullable<List<StabEntity>> returns = JsonNullable.<List<StabEntity>>undefined();
 
   public static final String JSON_PROPERTY_CONSIGNEE = "consignee";
   @javax.annotation.Nullable
-  private JsonNullable<Meta> consignee = JsonNullable.<Meta>undefined();
+  private StabEntity consignee;
 
   public static final String JSON_PROPERTY_PAYMENT_NUMBER = "paymentNumber";
   @javax.annotation.Nullable
@@ -374,16 +375,20 @@ public class FactureOut {
   }
 
   public FactureOut attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
-    this.attributes = attributes;
     return this;
   }
 
   public FactureOut addAttributesItem(AttributeAbstract attributesItem) {
-    if (this.attributes == null) {
-      this.attributes = new ArrayList<>();
+    if (this.attributes == null || !this.attributes.isPresent()) {
+      this.attributes = JsonNullable.<List<AttributeAbstract>>of(new ArrayList<>());
     }
-    this.attributes.add(attributesItem);
+    try {
+      this.attributes.get().add(attributesItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
     return this;
   }
 
@@ -392,20 +397,29 @@ public class FactureOut {
    * @return attributes
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public List<AttributeAbstract> getAttributes() {
-    return attributes;
+        return attributes.orElse(null);
   }
 
   
 
-
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
+
+  public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
+    return attributes;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
+  public void setAttributes_JsonNullable(JsonNullable<List<AttributeAbstract>> attributes) {
     this.attributes = attributes;
+  }
+
+  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
   public FactureOut code(@javax.annotation.Nullable String code) {
@@ -1024,17 +1038,21 @@ public class FactureOut {
 
 
 
-  public FactureOut demands(@javax.annotation.Nullable List<Meta> demands) {
+  public FactureOut demands(@javax.annotation.Nullable List<StabEntity> demands) {
+    this.demands = JsonNullable.<List<StabEntity>>of(demands);
     
-    this.demands = demands;
     return this;
   }
 
-  public FactureOut addDemandsItem(Meta demandsItem) {
-    if (this.demands == null) {
-      this.demands = new ArrayList<>();
+  public FactureOut addDemandsItem(StabEntity demandsItem) {
+    if (this.demands == null || !this.demands.isPresent()) {
+      this.demands = JsonNullable.<List<StabEntity>>of(new ArrayList<>());
     }
-    this.demands.add(demandsItem);
+    try {
+      this.demands.get().add(demandsItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
     return this;
   }
 
@@ -1043,33 +1061,46 @@ public class FactureOut {
    * @return demands
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DEMANDS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
-  public List<Meta> getDemands() {
-    return demands;
+  public List<StabEntity> getDemands() {
+        return demands.orElse(null);
   }
 
   
 
-
   @JsonProperty(JSON_PROPERTY_DEMANDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDemands(@javax.annotation.Nullable List<Meta> demands) {
+
+
+  public JsonNullable<List<StabEntity>> getDemands_JsonNullable() {
+    return demands;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_DEMANDS, required = false)
+  public void setDemands_JsonNullable(JsonNullable<List<StabEntity>> demands) {
     this.demands = demands;
   }
 
-  public FactureOut payments(@javax.annotation.Nullable List<Meta> payments) {
+  public void setDemands(@javax.annotation.Nullable List<StabEntity> demands) {
+    this.demands = JsonNullable.<List<StabEntity>>of(demands);
+  }
+
+  public FactureOut payments(@javax.annotation.Nullable List<StabEntity> payments) {
+    this.payments = JsonNullable.<List<StabEntity>>of(payments);
     
-    this.payments = payments;
     return this;
   }
 
-  public FactureOut addPaymentsItem(Meta paymentsItem) {
-    if (this.payments == null) {
-      this.payments = new ArrayList<>();
+  public FactureOut addPaymentsItem(StabEntity paymentsItem) {
+    if (this.payments == null || !this.payments.isPresent()) {
+      this.payments = JsonNullable.<List<StabEntity>>of(new ArrayList<>());
     }
-    this.payments.add(paymentsItem);
+    try {
+      this.payments.get().add(paymentsItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
     return this;
   }
 
@@ -1078,33 +1109,46 @@ public class FactureOut {
    * @return payments
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PAYMENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
-  public List<Meta> getPayments() {
-    return payments;
+  public List<StabEntity> getPayments() {
+        return payments.orElse(null);
   }
 
   
 
-
   @JsonProperty(JSON_PROPERTY_PAYMENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPayments(@javax.annotation.Nullable List<Meta> payments) {
+
+
+  public JsonNullable<List<StabEntity>> getPayments_JsonNullable() {
+    return payments;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_PAYMENTS, required = false)
+  public void setPayments_JsonNullable(JsonNullable<List<StabEntity>> payments) {
     this.payments = payments;
   }
 
-  public FactureOut returns(@javax.annotation.Nullable List<Meta> returns) {
+  public void setPayments(@javax.annotation.Nullable List<StabEntity> payments) {
+    this.payments = JsonNullable.<List<StabEntity>>of(payments);
+  }
+
+  public FactureOut returns(@javax.annotation.Nullable List<StabEntity> returns) {
+    this.returns = JsonNullable.<List<StabEntity>>of(returns);
     
-    this.returns = returns;
     return this;
   }
 
-  public FactureOut addReturnsItem(Meta returnsItem) {
-    if (this.returns == null) {
-      this.returns = new ArrayList<>();
+  public FactureOut addReturnsItem(StabEntity returnsItem) {
+    if (this.returns == null || !this.returns.isPresent()) {
+      this.returns = JsonNullable.<List<StabEntity>>of(new ArrayList<>());
     }
-    this.returns.add(returnsItem);
+    try {
+      this.returns.get().add(returnsItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
     return this;
   }
 
@@ -1113,56 +1157,56 @@ public class FactureOut {
    * @return returns
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RETURNS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
-  public List<Meta> getReturns() {
-    return returns;
+  public List<StabEntity> getReturns() {
+        return returns.orElse(null);
   }
 
   
 
-
   @JsonProperty(JSON_PROPERTY_RETURNS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReturns(@javax.annotation.Nullable List<Meta> returns) {
+
+
+  public JsonNullable<List<StabEntity>> getReturns_JsonNullable() {
+    return returns;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_RETURNS, required = false)
+  public void setReturns_JsonNullable(JsonNullable<List<StabEntity>> returns) {
     this.returns = returns;
   }
 
-  public FactureOut consignee(@javax.annotation.Nullable Meta consignee) {
-    this.consignee = JsonNullable.<Meta>of(consignee);
+  public void setReturns(@javax.annotation.Nullable List<StabEntity> returns) {
+    this.returns = JsonNullable.<List<StabEntity>>of(returns);
+  }
+
+  public FactureOut consignee(@javax.annotation.Nullable StabEntity consignee) {
     
+    this.consignee = consignee;
     return this;
   }
 
   /**
-   * Грузополучатель (контрагент или юрлицо)
+   * Get consignee
    * @return consignee
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Meta getConsignee() {
-        return consignee.orElse(null);
-  }
-
-  
-
   @JsonProperty(JSON_PROPERTY_CONSIGNEE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-
-  public JsonNullable<Meta> getConsignee_JsonNullable() {
+  public StabEntity getConsignee() {
     return consignee;
   }
-  
-  @JsonProperty(value = JSON_PROPERTY_CONSIGNEE, required = false)
-  public void setConsignee_JsonNullable(JsonNullable<Meta> consignee) {
-    this.consignee = consignee;
-  }
 
-  public void setConsignee(@javax.annotation.Nullable Meta consignee) {
-    this.consignee = JsonNullable.<Meta>of(consignee);
+  
+
+
+  @JsonProperty(JSON_PROPERTY_CONSIGNEE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setConsignee(@javax.annotation.Nullable StabEntity consignee) {
+    this.consignee = consignee;
   }
 
   public FactureOut paymentNumber(@javax.annotation.Nullable String paymentNumber) {
@@ -1233,7 +1277,7 @@ public class FactureOut {
         Objects.equals(this.accountId, factureOut.accountId) &&
         Objects.equals(this.agent, factureOut.agent) &&
         Objects.equals(this.applicable, factureOut.applicable) &&
-        Objects.equals(this.attributes, factureOut.attributes) &&
+        equalsNullable(this.attributes, factureOut.attributes) &&
         Objects.equals(this.code, factureOut.code) &&
         equalsNullable(this.contract, factureOut.contract) &&
         Objects.equals(this.created, factureOut.created) &&
@@ -1258,10 +1302,10 @@ public class FactureOut {
         Objects.equals(this.advancePaymentVat, factureOut.advancePaymentVat) &&
         Objects.equals(this.paymentPurpose, factureOut.paymentPurpose) &&
         Objects.equals(this.vatSum, factureOut.vatSum) &&
-        Objects.equals(this.demands, factureOut.demands) &&
-        Objects.equals(this.payments, factureOut.payments) &&
-        Objects.equals(this.returns, factureOut.returns) &&
-        equalsNullable(this.consignee, factureOut.consignee) &&
+        equalsNullable(this.demands, factureOut.demands) &&
+        equalsNullable(this.payments, factureOut.payments) &&
+        equalsNullable(this.returns, factureOut.returns) &&
+        Objects.equals(this.consignee, factureOut.consignee) &&
         Objects.equals(this.paymentNumber, factureOut.paymentNumber) &&
         Objects.equals(this.paymentDate, factureOut.paymentDate);
   }
@@ -1272,7 +1316,7 @@ public class FactureOut {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, agent, applicable, attributes, code, hashCodeNullable(contract), created, deleted, hashCodeNullable(description), externalCode, hashCodeNullable(files), group, moment, name, organization, hashCodeNullable(owner), printed, published, rate, shared, hashCodeNullable(state), stateContractId, sum, syncId, updated, advancePaymentVat, paymentPurpose, vatSum, demands, payments, returns, hashCodeNullable(consignee), paymentNumber, paymentDate);
+    return Objects.hash(meta, id, accountId, agent, applicable, hashCodeNullable(attributes), code, hashCodeNullable(contract), created, deleted, hashCodeNullable(description), externalCode, hashCodeNullable(files), group, moment, name, organization, hashCodeNullable(owner), printed, published, rate, shared, hashCodeNullable(state), stateContractId, sum, syncId, updated, advancePaymentVat, paymentPurpose, vatSum, hashCodeNullable(demands), hashCodeNullable(payments), hashCodeNullable(returns), consignee, paymentNumber, paymentDate);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

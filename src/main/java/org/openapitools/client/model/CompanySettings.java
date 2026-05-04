@@ -48,7 +48,7 @@ import java.util.StringJoiner;
   CompanySettings.JSON_PROPERTY_COMPANY_ADDRESS,
   CompanySettings.JSON_PROPERTY_ACCOUNT_COUNTRY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-29T07:18:49.943763362Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:35:38.786882520Z[GMT]", comments = "Generator version: 7.14.0")
 public class CompanySettings {
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
@@ -62,45 +62,9 @@ public class CompanySettings {
   @javax.annotation.Nullable
   private List<PriceType> priceTypes = new ArrayList<>();
 
-  /**
-   * Совместное применение скидок
-   */
-  public enum DiscountStrategyEnum {
-    BY_SUM(String.valueOf("bySum")),
-    
-    BY_PRIORITY(String.valueOf("byPriority"));
-
-    private String value;
-
-    DiscountStrategyEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static DiscountStrategyEnum fromValue(String value) {
-      for (DiscountStrategyEnum b : DiscountStrategyEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
-
   public static final String JSON_PROPERTY_DISCOUNT_STRATEGY = "discountStrategy";
   @javax.annotation.Nullable
-  private DiscountStrategyEnum discountStrategy;
+  private String discountStrategy;
 
   public static final String JSON_PROPERTY_GLOBAL_OPERATION_NUMBERING = "globalOperationNumbering";
   @javax.annotation.Nullable
@@ -232,21 +196,21 @@ public class CompanySettings {
     this.priceTypes = priceTypes;
   }
 
-  public CompanySettings discountStrategy(@javax.annotation.Nullable DiscountStrategyEnum discountStrategy) {
+  public CompanySettings discountStrategy(@javax.annotation.Nullable String discountStrategy) {
     
     this.discountStrategy = discountStrategy;
     return this;
   }
 
   /**
-   * Совместное применение скидок
+   * Совместное применение скидок. Известные значения описаны в DiscountStrategy
    * @return discountStrategy
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DISCOUNT_STRATEGY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public DiscountStrategyEnum getDiscountStrategy() {
+  public String getDiscountStrategy() {
     return discountStrategy;
   }
 
@@ -255,7 +219,7 @@ public class CompanySettings {
 
   @JsonProperty(JSON_PROPERTY_DISCOUNT_STRATEGY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDiscountStrategy(@javax.annotation.Nullable DiscountStrategyEnum discountStrategy) {
+  public void setDiscountStrategy(@javax.annotation.Nullable String discountStrategy) {
     this.discountStrategy = discountStrategy;
   }
 

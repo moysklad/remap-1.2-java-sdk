@@ -44,10 +44,10 @@
 |**files** | [**FileList**](FileList.md) | Метаданные массива Файлов |  [optional] |
 |**barcodes** | [**List&lt;Barcode&gt;**](Barcode.md) | Штрихкоды Комплекта |  [optional] |
 |**packs** | [**List&lt;Pack&gt;**](Pack.md) | Упаковки Комплекта |  [optional] |
-|**trackingType** | **String** | Тип маркируемой продукции |  [optional] |
+|**trackingType** | **String** | Тип маркируемой продукции. Известные значения описаны в TrackingType |  [optional] |
 |**tnved** | **String** | Код ТН ВЭД |  [optional] |
-|**paymentItemType** | [**PaymentItemTypeEnum**](#PaymentItemTypeEnum) | Признак предмета расчета |  [optional] |
-|**taxSystem** | [**TaxSystemEnum**](#TaxSystemEnum) | Код системы налогообложения |  [optional] |
+|**paymentItemType** | **String** | Признак предмета расчета. Известные значения описаны в PaymentItemType |  [optional] |
+|**taxSystem** | **String** | Код системы налогообложения. Известные значения описаны в TaxSystem |  [optional] |
 |**attributes** | [**List&lt;AttributeAbstract&gt;**](AttributeAbstract.md) | Коллекция метаданных доп. полей |  [optional] |
 |**minimumStock** | [**MinimumStockAbstract**](MinimumStockAbstract.md) | Неснижаемый остаток. Не выводится по умолчанию. Для получения передайте параметр &#x60;?fields&#x3D;minimumStock&#x60;.  |  [optional] |
 |**minPrice** | [**MinPrice**](MinPrice.md) |  |  [optional] |
@@ -56,7 +56,7 @@
 |**partialDisposal** | **Boolean** | Управление состоянием частичного выбытия маркированного товара |  [optional] |
 |**things** | **List&lt;String&gt;** | Серийные номера |  [optional] |
 |**syncId** | **UUID** | ID синхронизации |  [optional] |
-|**ppeType** | **String** | Код вида номенклатурной классификации медицинских средств индивидуальной защиты. Допустимые значения перечислены в константах класса |  [optional] |
+|**ppeType** | **String** | Код вида номенклатурной классификации медицинских средств индивидуальной защиты. Известные значения описаны в PpeType |  [optional] |
 |**product** | [**Product**](Product.md) |  |  [optional] |
 |**characteristics** | [**List&lt;VariantCharacteristicValue&gt;**](VariantCharacteristicValue.md) | Характеристики Модификации |  [optional] |
 |**overhead** | [**BundleOverhead**](BundleOverhead.md) |  |  [optional] |
@@ -65,31 +65,6 @@
 |**reserve** | **Double** | Резерв |  [optional] |
 |**inTransit** | **Double** | Ожидание |  [optional] |
 |**quantity** | **Double** | Доступно |  [optional] |
-
-
-
-## Enum: PaymentItemTypeEnum
-
-| Name | Value |
-|---- | -----|
-| GOOD | &quot;GOOD&quot; |
-| EXCISABLE_GOOD | &quot;EXCISABLE_GOOD&quot; |
-| COMPOUND_PAYMENT_ITEM | &quot;COMPOUND_PAYMENT_ITEM&quot; |
-| ANOTHER_PAYMENT_ITEM | &quot;ANOTHER_PAYMENT_ITEM&quot; |
-
-
-
-## Enum: TaxSystemEnum
-
-| Name | Value |
-|---- | -----|
-| GENERAL_TAX_SYSTEM | &quot;GENERAL_TAX_SYSTEM&quot; |
-| SIMPLIFIED_TAX_SYSTEM_INCOME | &quot;SIMPLIFIED_TAX_SYSTEM_INCOME&quot; |
-| SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME | &quot;SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME&quot; |
-| UNIFIED_AGRICULTURAL_TAX | &quot;UNIFIED_AGRICULTURAL_TAX&quot; |
-| PRESUMPTIVE_TAX_SYSTEM | &quot;PRESUMPTIVE_TAX_SYSTEM&quot; |
-| PATENT_BASED | &quot;PATENT_BASED&quot; |
-| TAX_SYSTEM_SAME_AS_GROUP | &quot;TAX_SYSTEM_SAME_AS_GROUP&quot; |
 
 
 

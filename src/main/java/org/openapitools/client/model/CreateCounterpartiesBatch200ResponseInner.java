@@ -105,7 +105,7 @@ import java.util.StringJoiner;
   CreateCounterpartiesBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createCounterpartiesBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-29T07:18:49.943763362Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:35:38.786882520Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateCounterpartiesBatch200ResponseInner {
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
@@ -151,47 +151,9 @@ public class CreateCounterpartiesBatch200ResponseInner {
   @javax.annotation.Nullable
   private String description;
 
-  /**
-   * Тип контрагента
-   */
-  public enum CompanyTypeEnum {
-    LEGAL(String.valueOf("legal")),
-    
-    ENTREPRENEUR(String.valueOf("entrepreneur")),
-    
-    INDIVIDUAL(String.valueOf("individual"));
-
-    private String value;
-
-    CompanyTypeEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static CompanyTypeEnum fromValue(String value) {
-      for (CompanyTypeEnum b : CompanyTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
-
   public static final String JSON_PROPERTY_COMPANY_TYPE = "companyType";
   @javax.annotation.Nullable
-  private CompanyTypeEnum companyType;
+  private String companyType;
 
   public static final String JSON_PROPERTY_EMAIL = "email";
   @javax.annotation.Nullable
@@ -269,49 +231,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
   @javax.annotation.Nullable
   private String birthDate;
 
-  /**
-   * Пол контрагента
-   */
-  public enum SexEnum {
-    MALE(String.valueOf("MALE")),
-    
-    FEMALE(String.valueOf("FEMALE"));
-
-    private String value;
-
-    SexEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static SexEnum fromValue(String value) {
-      for (SexEnum b : SexEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
-
   public static final String JSON_PROPERTY_SEX = "sex";
   @javax.annotation.Nullable
-  private SexEnum sex;
+  private String sex;
 
   public static final String JSON_PROPERTY_DISCOUNT_CARD_NUMBER = "discountCardNumber";
   @javax.annotation.Nullable
-  private String discountCardNumber;
+  private JsonNullable<String> discountCardNumber = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_DISCOUNTS = "discounts";
   @javax.annotation.Nullable
@@ -653,21 +579,21 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.description = description;
   }
 
-  public CreateCounterpartiesBatch200ResponseInner companyType(@javax.annotation.Nullable CompanyTypeEnum companyType) {
+  public CreateCounterpartiesBatch200ResponseInner companyType(@javax.annotation.Nullable String companyType) {
     
     this.companyType = companyType;
     return this;
   }
 
   /**
-   * Тип контрагента
+   * Тип контрагента. Известные значения описаны в CompanyType
    * @return companyType
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_COMPANY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public CompanyTypeEnum getCompanyType() {
+  public String getCompanyType() {
     return companyType;
   }
 
@@ -676,7 +602,7 @@ public class CreateCounterpartiesBatch200ResponseInner {
 
   @JsonProperty(JSON_PROPERTY_COMPANY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCompanyType(@javax.annotation.Nullable CompanyTypeEnum companyType) {
+  public void setCompanyType(@javax.annotation.Nullable String companyType) {
     this.companyType = companyType;
   }
 
@@ -1211,21 +1137,21 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.birthDate = birthDate;
   }
 
-  public CreateCounterpartiesBatch200ResponseInner sex(@javax.annotation.Nullable SexEnum sex) {
+  public CreateCounterpartiesBatch200ResponseInner sex(@javax.annotation.Nullable String sex) {
     
     this.sex = sex;
     return this;
   }
 
   /**
-   * Пол контрагента
+   * Пол контрагента. Известные значения описаны в Sex
    * @return sex
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SEX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SexEnum getSex() {
+  public String getSex() {
     return sex;
   }
 
@@ -1234,13 +1160,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
 
   @JsonProperty(JSON_PROPERTY_SEX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSex(@javax.annotation.Nullable SexEnum sex) {
+  public void setSex(@javax.annotation.Nullable String sex) {
     this.sex = sex;
   }
 
   public CreateCounterpartiesBatch200ResponseInner discountCardNumber(@javax.annotation.Nullable String discountCardNumber) {
+    this.discountCardNumber = JsonNullable.<String>of(discountCardNumber);
     
-    this.discountCardNumber = discountCardNumber;
     return this;
   }
 
@@ -1249,20 +1175,29 @@ public class CreateCounterpartiesBatch200ResponseInner {
    * @return discountCardNumber
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DISCOUNT_CARD_NUMBER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public String getDiscountCardNumber() {
-    return discountCardNumber;
+        return discountCardNumber.orElse(null);
   }
 
   
 
-
   @JsonProperty(JSON_PROPERTY_DISCOUNT_CARD_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDiscountCardNumber(@javax.annotation.Nullable String discountCardNumber) {
+
+
+  public JsonNullable<String> getDiscountCardNumber_JsonNullable() {
+    return discountCardNumber;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_DISCOUNT_CARD_NUMBER, required = false)
+  public void setDiscountCardNumber_JsonNullable(JsonNullable<String> discountCardNumber) {
     this.discountCardNumber = discountCardNumber;
+  }
+
+  public void setDiscountCardNumber(@javax.annotation.Nullable String discountCardNumber) {
+    this.discountCardNumber = JsonNullable.<String>of(discountCardNumber);
   }
 
   public CreateCounterpartiesBatch200ResponseInner discounts(@javax.annotation.Nullable List<AgentDiscount> discounts) {
@@ -1814,7 +1749,7 @@ public class CreateCounterpartiesBatch200ResponseInner {
         Objects.equals(this.legalMiddleName, createCounterpartiesBatch200ResponseInner.legalMiddleName) &&
         Objects.equals(this.birthDate, createCounterpartiesBatch200ResponseInner.birthDate) &&
         Objects.equals(this.sex, createCounterpartiesBatch200ResponseInner.sex) &&
-        Objects.equals(this.discountCardNumber, createCounterpartiesBatch200ResponseInner.discountCardNumber) &&
+        equalsNullable(this.discountCardNumber, createCounterpartiesBatch200ResponseInner.discountCardNumber) &&
         equalsNullable(this.discounts, createCounterpartiesBatch200ResponseInner.discounts) &&
         Objects.equals(this.shared, createCounterpartiesBatch200ResponseInner.shared) &&
         Objects.equals(this.group, createCounterpartiesBatch200ResponseInner.group) &&
@@ -1839,7 +1774,7 @@ public class CreateCounterpartiesBatch200ResponseInner {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, syncId, accountId, name, code, externalCode, archived, created, updated, description, companyType, email, phone, fax, actualAddress, hashCodeNullable(actualAddressFull), legalAddress, hashCodeNullable(legalAddressFull), inn, kpp, ogrn, ogrnip, okpo, certificateNumber, certificateDate, legalTitle, legalFirstName, legalLastName, legalMiddleName, birthDate, sex, discountCardNumber, hashCodeNullable(discounts), shared, group, hashCodeNullable(owner), salesAmount, bonusPoints, hashCodeNullable(bonusProgram), hashCodeNullable(priceType), state, accounts, contactpersons, notes, files, hashCodeNullable(tags), hashCodeNullable(attributes), errors);
+    return Objects.hash(meta, id, syncId, accountId, name, code, externalCode, archived, created, updated, description, companyType, email, phone, fax, actualAddress, hashCodeNullable(actualAddressFull), legalAddress, hashCodeNullable(legalAddressFull), inn, kpp, ogrn, ogrnip, okpo, certificateNumber, certificateDate, legalTitle, legalFirstName, legalLastName, legalMiddleName, birthDate, sex, hashCodeNullable(discountCardNumber), hashCodeNullable(discounts), shared, group, hashCodeNullable(owner), salesAmount, bonusPoints, hashCodeNullable(bonusProgram), hashCodeNullable(priceType), state, accounts, contactpersons, notes, files, hashCodeNullable(tags), hashCodeNullable(attributes), errors);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

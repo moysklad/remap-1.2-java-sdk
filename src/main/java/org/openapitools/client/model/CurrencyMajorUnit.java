@@ -36,47 +36,11 @@ import java.util.StringJoiner;
   CurrencyMajorUnit.JSON_PROPERTY_S5
 })
 @JsonTypeName("Currency_majorUnit")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-29T07:18:49.943763362Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:35:38.786882520Z[GMT]", comments = "Generator version: 7.14.0")
 public class CurrencyMajorUnit {
-  /**
-   * Пол
-   */
-  public enum GenderEnum {
-    MASCULINE(String.valueOf("masculine")),
-    
-    FEMININE(String.valueOf("feminine"));
-
-    private String value;
-
-    GenderEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static GenderEnum fromValue(String value) {
-      for (GenderEnum b : GenderEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
-
   public static final String JSON_PROPERTY_GENDER = "gender";
   @javax.annotation.Nullable
-  private GenderEnum gender;
+  private String gender;
 
   public static final String JSON_PROPERTY_S1 = "s1";
   @javax.annotation.Nullable
@@ -93,21 +57,21 @@ public class CurrencyMajorUnit {
   public CurrencyMajorUnit() {
   }
 
-  public CurrencyMajorUnit gender(@javax.annotation.Nullable GenderEnum gender) {
+  public CurrencyMajorUnit gender(@javax.annotation.Nullable String gender) {
     
     this.gender = gender;
     return this;
   }
 
   /**
-   * Пол
+   * Пол. Известные значения описаны в Gender
    * @return gender
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_GENDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public GenderEnum getGender() {
+  public String getGender() {
     return gender;
   }
 
@@ -116,7 +80,7 @@ public class CurrencyMajorUnit {
 
   @JsonProperty(JSON_PROPERTY_GENDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setGender(@javax.annotation.Nullable GenderEnum gender) {
+  public void setGender(@javax.annotation.Nullable String gender) {
     this.gender = gender;
   }
 

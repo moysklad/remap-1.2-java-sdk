@@ -88,7 +88,7 @@ import java.util.StringJoiner;
   CashOut.JSON_PROPERTY_FACTURE_IN,
   CashOut.JSON_PROPERTY_OPERATIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-29T07:18:49.943763362Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:35:38.786882520Z[GMT]", comments = "Generator version: 7.14.0")
 public class CashOut {
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
@@ -176,7 +176,7 @@ public class CashOut {
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
-  private List<AttributeAbstract> attributes = new ArrayList<>();
+  private JsonNullable<List<AttributeAbstract>> attributes = JsonNullable.<List<AttributeAbstract>>undefined();
 
   public static final String JSON_PROPERTY_CONTRACT = "contract";
   @javax.annotation.Nullable
@@ -224,7 +224,7 @@ public class CashOut {
 
   public static final String JSON_PROPERTY_OPERATIONS = "operations";
   @javax.annotation.Nullable
-  private List<CashOutOperation> operations = new ArrayList<>();
+  private JsonNullable<List<CashOutOperation>> operations = JsonNullable.<List<CashOutOperation>>undefined();
 
   public CashOut() {
   }
@@ -775,16 +775,20 @@ public class CashOut {
   }
 
   public CashOut attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
-    this.attributes = attributes;
     return this;
   }
 
   public CashOut addAttributesItem(AttributeAbstract attributesItem) {
-    if (this.attributes == null) {
-      this.attributes = new ArrayList<>();
+    if (this.attributes == null || !this.attributes.isPresent()) {
+      this.attributes = JsonNullable.<List<AttributeAbstract>>of(new ArrayList<>());
     }
-    this.attributes.add(attributesItem);
+    try {
+      this.attributes.get().add(attributesItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
     return this;
   }
 
@@ -793,20 +797,29 @@ public class CashOut {
    * @return attributes
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public List<AttributeAbstract> getAttributes() {
-    return attributes;
+        return attributes.orElse(null);
   }
 
   
 
-
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
+
+  public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
+    return attributes;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
+  public void setAttributes_JsonNullable(JsonNullable<List<AttributeAbstract>> attributes) {
     this.attributes = attributes;
+  }
+
+  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
   public CashOut contract(@javax.annotation.Nullable Contract contract) {
@@ -1128,16 +1141,20 @@ public class CashOut {
   }
 
   public CashOut operations(@javax.annotation.Nullable List<CashOutOperation> operations) {
+    this.operations = JsonNullable.<List<CashOutOperation>>of(operations);
     
-    this.operations = operations;
     return this;
   }
 
   public CashOut addOperationsItem(CashOutOperation operationsItem) {
-    if (this.operations == null) {
-      this.operations = new ArrayList<>();
+    if (this.operations == null || !this.operations.isPresent()) {
+      this.operations = JsonNullable.<List<CashOutOperation>>of(new ArrayList<>());
     }
-    this.operations.add(operationsItem);
+    try {
+      this.operations.get().add(operationsItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
     return this;
   }
 
@@ -1146,20 +1163,29 @@ public class CashOut {
    * @return operations
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_OPERATIONS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public List<CashOutOperation> getOperations() {
-    return operations;
+        return operations.orElse(null);
   }
 
   
 
-
   @JsonProperty(JSON_PROPERTY_OPERATIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOperations(@javax.annotation.Nullable List<CashOutOperation> operations) {
+
+
+  public JsonNullable<List<CashOutOperation>> getOperations_JsonNullable() {
+    return operations;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_OPERATIONS, required = false)
+  public void setOperations_JsonNullable(JsonNullable<List<CashOutOperation>> operations) {
     this.operations = operations;
+  }
+
+  public void setOperations(@javax.annotation.Nullable List<CashOutOperation> operations) {
+    this.operations = JsonNullable.<List<CashOutOperation>>of(operations);
   }
 
   @Override
@@ -1192,7 +1218,7 @@ public class CashOut {
         Objects.equals(this.organization, cashOut.organization) &&
         Objects.equals(this.agent, cashOut.agent) &&
         equalsNullable(this.expenseItem, cashOut.expenseItem) &&
-        Objects.equals(this.attributes, cashOut.attributes) &&
+        equalsNullable(this.attributes, cashOut.attributes) &&
         equalsNullable(this.contract, cashOut.contract) &&
         equalsNullable(this.files, cashOut.files) &&
         Objects.equals(this.noClosingDocs, cashOut.noClosingDocs) &&
@@ -1204,7 +1230,7 @@ public class CashOut {
         Objects.equals(this.sum, cashOut.sum) &&
         Objects.equals(this.vatSum, cashOut.vatSum) &&
         equalsNullable(this.factureIn, cashOut.factureIn) &&
-        Objects.equals(this.operations, cashOut.operations);
+        equalsNullable(this.operations, cashOut.operations);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -1213,7 +1239,7 @@ public class CashOut {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, name, code, externalCode, syncId, hashCodeNullable(description), created, deleted, updated, moment, hashCodeNullable(owner), group, applicable, printed, published, rate, organization, agent, hashCodeNullable(expenseItem), attributes, hashCodeNullable(contract), hashCodeNullable(files), noClosingDocs, paymentPurpose, hashCodeNullable(project), hashCodeNullable(salesChannel), shared, hashCodeNullable(state), sum, vatSum, hashCodeNullable(factureIn), operations);
+    return Objects.hash(meta, id, accountId, name, code, externalCode, syncId, hashCodeNullable(description), created, deleted, updated, moment, hashCodeNullable(owner), group, applicable, printed, published, rate, organization, agent, hashCodeNullable(expenseItem), hashCodeNullable(attributes), hashCodeNullable(contract), hashCodeNullable(files), noClosingDocs, paymentPurpose, hashCodeNullable(project), hashCodeNullable(salesChannel), shared, hashCodeNullable(state), sum, vatSum, hashCodeNullable(factureIn), hashCodeNullable(operations));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

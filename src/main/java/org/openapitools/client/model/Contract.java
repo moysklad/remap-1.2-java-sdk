@@ -74,7 +74,7 @@ import java.util.StringJoiner;
   Contract.JSON_PROPERTY_RATE,
   Contract.JSON_PROPERTY_ATTRIBUTES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-29T07:18:49.943763362Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:35:38.786882520Z[GMT]", comments = "Generator version: 7.14.0")
 public class Contract {
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
@@ -116,85 +116,13 @@ public class Contract {
   @javax.annotation.Nullable
   private Integer sum;
 
-  /**
-   * Тип Договора
-   */
-  public enum ContractTypeEnum {
-    COMMISSION(String.valueOf("Commission")),
-    
-    SALES(String.valueOf("Sales"));
-
-    private String value;
-
-    ContractTypeEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static ContractTypeEnum fromValue(String value) {
-      for (ContractTypeEnum b : ContractTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
-
   public static final String JSON_PROPERTY_CONTRACT_TYPE = "contractType";
   @javax.annotation.Nullable
-  private ContractTypeEnum contractType;
-
-  /**
-   * Тип Вознаграждения
-   */
-  public enum RewardTypeEnum {
-    PERCENT_OF_SALES(String.valueOf("PercentOfSales")),
-    
-    NONE(String.valueOf("None"));
-
-    private String value;
-
-    RewardTypeEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static RewardTypeEnum fromValue(String value) {
-      for (RewardTypeEnum b : RewardTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
+  private String contractType;
 
   public static final String JSON_PROPERTY_REWARD_TYPE = "rewardType";
   @javax.annotation.Nullable
-  private RewardTypeEnum rewardType;
+  private String rewardType;
 
   public static final String JSON_PROPERTY_REWARD_PERCENT = "rewardPercent";
   @javax.annotation.Nullable
@@ -530,21 +458,21 @@ public class Contract {
     this.sum = sum;
   }
 
-  public Contract contractType(@javax.annotation.Nullable ContractTypeEnum contractType) {
+  public Contract contractType(@javax.annotation.Nullable String contractType) {
     
     this.contractType = contractType;
     return this;
   }
 
   /**
-   * Тип Договора
+   * Тип Договора. Известные значения описаны в ContractType
    * @return contractType
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CONTRACT_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public ContractTypeEnum getContractType() {
+  public String getContractType() {
     return contractType;
   }
 
@@ -553,25 +481,25 @@ public class Contract {
 
   @JsonProperty(JSON_PROPERTY_CONTRACT_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setContractType(@javax.annotation.Nullable ContractTypeEnum contractType) {
+  public void setContractType(@javax.annotation.Nullable String contractType) {
     this.contractType = contractType;
   }
 
-  public Contract rewardType(@javax.annotation.Nullable RewardTypeEnum rewardType) {
+  public Contract rewardType(@javax.annotation.Nullable String rewardType) {
     
     this.rewardType = rewardType;
     return this;
   }
 
   /**
-   * Тип Вознаграждения
+   * Тип Вознаграждения. Известные значения описаны в RewardType
    * @return rewardType
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_REWARD_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public RewardTypeEnum getRewardType() {
+  public String getRewardType() {
     return rewardType;
   }
 
@@ -580,7 +508,7 @@ public class Contract {
 
   @JsonProperty(JSON_PROPERTY_REWARD_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRewardType(@javax.annotation.Nullable RewardTypeEnum rewardType) {
+  public void setRewardType(@javax.annotation.Nullable String rewardType) {
     this.rewardType = rewardType;
   }
 

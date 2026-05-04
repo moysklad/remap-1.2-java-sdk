@@ -26,22 +26,8 @@
 |**owner** | [**Employee**](Employee.md) | Владелец группы товаров. Может быть Meta объектом или полным объектом в зависимости от expand параметра |  [optional] |
 |**updated** | **String** | Момент последнего обновления |  [optional] [readonly] |
 |**productFolder** | [**ProductFolder**](ProductFolder.md) | Родительская группа товаров |  [optional] |
-|**taxSystem** | [**TaxSystemEnum**](#TaxSystemEnum) | Код системы налогообложения |  [optional] |
+|**taxSystem** | **String** | Код системы налогообложения. Известные значения описаны в TaxSystem |  [optional] |
 |**errors** | [**List&lt;ErrorErrorsInner&gt;**](ErrorErrorsInner.md) |  |  |
-
-
-
-## Enum: TaxSystemEnum
-
-| Name | Value |
-|---- | -----|
-| GENERAL_TAX_SYSTEM | &quot;GENERAL_TAX_SYSTEM&quot; |
-| SIMPLIFIED_TAX_SYSTEM_INCOME | &quot;SIMPLIFIED_TAX_SYSTEM_INCOME&quot; |
-| SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME | &quot;SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME&quot; |
-| UNIFIED_AGRICULTURAL_TAX | &quot;UNIFIED_AGRICULTURAL_TAX&quot; |
-| PRESUMPTIVE_TAX_SYSTEM | &quot;PRESUMPTIVE_TAX_SYSTEM&quot; |
-| PATENT_BASED | &quot;PATENT_BASED&quot; |
-| TAX_SYSTEM_SAME_AS_GROUP | &quot;TAX_SYSTEM_SAME_AS_GROUP&quot; |
 
 
 

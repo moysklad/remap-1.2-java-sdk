@@ -18,21 +18,12 @@
 |**rate** | **Float** | Курс валюты |  [optional] |
 |**margin** | **Float** | Наценка при автоматическом обновлении курса |  [optional] |
 |**indirect** | **Boolean** | Признак обратного курса валюты |  [optional] |
-|**rateUpdateType** | [**RateUpdateTypeEnum**](#RateUpdateTypeEnum) | Способ обновления курса валюты |  [optional] |
+|**rateUpdateType** | **String** | Способ обновления курса валюты. Известные значения описаны в RateUpdateType |  [optional] |
 |**archived** | **Boolean** | Добавлена ли валюта в архив |  [optional] |
 |**_default** | **Boolean** | Валюта учета по умолчанию |  [optional] |
 |**majorUnit** | [**CurrencyMajorUnit**](CurrencyMajorUnit.md) |  |  [optional] |
 |**minorUnit** | [**CurrencyMinorUnit**](CurrencyMinorUnit.md) |  |  [optional] |
 |**errors** | [**List&lt;ErrorErrorsInner&gt;**](ErrorErrorsInner.md) |  |  |
-
-
-
-## Enum: RateUpdateTypeEnum
-
-| Name | Value |
-|---- | -----|
-| MANUAL | &quot;manual&quot; |
-| AUTO | &quot;auto&quot; |
 
 
 

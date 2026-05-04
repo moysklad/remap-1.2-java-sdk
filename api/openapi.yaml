@@ -21376,10 +21376,9 @@ components:
           format: int32
           type: integer
         welcomeBonusesMode:
-          description: Условие начисления приветственных баллов
-          enum:
-          - REGISTRATION
-          - FIRST_PURCHASE
+          description: Условие начисления приветственных баллов. Известные значения
+            описаны в WelcomeBonusesMode
+          example: REGISTRATION
           type: string
         maxPaidRatePercents:
           description: Максимальный процент оплаты баллами
@@ -21428,11 +21427,7 @@ components:
         organization:
           $ref: "#/components/schemas/Organization"
         parentDocument:
-          allOf:
-          - $ref: "#/components/schemas/Meta"
-          description: Метаданные связанного документа бонусной операции
-          nullable: true
-          type: object
+          $ref: "#/components/schemas/StabEntity"
         applicable:
           description: Отметка о проведении
           type: boolean
@@ -21443,24 +21438,17 @@ components:
           format: int32
           type: integer
         transactionType:
-          description: Тип бонусной операции
-          enum:
-          - EARNING
-          - SPENDING
+          description: Тип бонусной операции. Известные значения описаны в TransactionType
+          example: EARNING
           type: string
         transactionStatus:
-          description: Статус бонусной операции
-          enum:
-          - WAIT_PROCESSING
-          - COMPLETED
-          - CANCELED
+          description: Статус бонусной операции. Известные значения описаны в TransactionStatus
+          example: WAIT_PROCESSING
           readOnly: true
           type: string
         categoryType:
-          description: Категория бонусной операции
-          enum:
-          - REGULAR
-          - WELCOME
+          description: Категория бонусной операции. Известные значения описаны в CategoryType
+          example: REGULAR
           readOnly: true
           type: string
         code:
@@ -21514,6 +21502,13 @@ components:
             $ref: "#/components/schemas/BonusTransaction"
           type: array
       type: object
+    CategoryType:
+      description: Известные значения категории бонусной операции
+      enum:
+      - REGULAR
+      - WELCOME
+      example: REGULAR
+      type: string
     DeleteInfo:
       description: Результат удаления сущности
       properties:
@@ -21521,6 +21516,21 @@ components:
           description: Информационное сообщение об удалении сущности
           type: string
       type: object
+    CompanyType:
+      description: Известные значения типа контрагента
+      enum:
+      - legal
+      - entrepreneur
+      - individual
+      example: legal
+      type: string
+    ContractType:
+      description: Известные значения типа договора
+      enum:
+      - Commission
+      - Sales
+      example: Commission
+      type: string
     Error:
       properties:
         errors:
@@ -21563,6 +21573,13 @@ components:
           nullable: true
           type: array
       type: object
+    DiscountStrategy:
+      description: Известные значения стратегии совместного применения скидок
+      enum:
+      - bySum
+      - byPriority
+      example: bySum
+      type: string
     BuyPrice:
       description: Закупочная цена
       properties:
@@ -21687,11 +21704,7 @@ components:
           maxLength: 4096
           type: string
         companyType:
-          description: Тип контрагента
-          enum:
-          - legal
-          - entrepreneur
-          - individual
+          description: Тип контрагента. Известные значения описаны в CompanyType
           example: legal
           type: string
         email:
@@ -21775,14 +21788,13 @@ components:
           description: Дата рождения для физлица
           type: string
         sex:
-          description: Пол контрагента
-          enum:
-          - MALE
-          - FEMALE
+          description: Пол контрагента. Известные значения описаны в Sex
+          example: MALE
           type: string
         discountCardNumber:
           description: Номер дисконтной карты контрагента
           maxLength: 255
+          nullable: true
           type: string
         discounts:
           description: Массив скидок контрагента
@@ -21971,10 +21983,8 @@ components:
           example: false
           type: boolean
         rateUpdateType:
-          description: Способ обновления курса валюты
-          enum:
-          - manual
-          - auto
+          description: Способ обновления курса валюты. Известные значения описаны
+            в RateUpdateType
           example: manual
           type: string
         archived:
@@ -22013,6 +22023,13 @@ components:
           format: double
           type: number
       type: object
+    RateUpdateType:
+      description: Известные значения способа обновления курса валюты
+      enum:
+      - manual
+      - auto
+      example: manual
+      type: string
     Employee:
       description: Сотрудник
       properties:
@@ -22278,6 +22295,7 @@ components:
           description: Коллекция метаданных доп. полей
           items:
             $ref: "#/components/schemas/AttributeAbstract"
+          nullable: true
           type: array
         code:
           description: Код Счета-фактуры выданного
@@ -22382,24 +22400,23 @@ components:
         demands:
           description: Связанные отгрузки (метаданные)
           items:
-            $ref: "#/components/schemas/Meta"
+            $ref: "#/components/schemas/StabEntity"
+          nullable: true
           type: array
         payments:
           description: Связанные входящие платежи (метаданные)
           items:
-            $ref: "#/components/schemas/Meta"
+            $ref: "#/components/schemas/StabEntity"
+          nullable: true
           type: array
         returns:
           description: Связанные возвраты поставщикам (метаданные)
           items:
-            $ref: "#/components/schemas/Meta"
+            $ref: "#/components/schemas/StabEntity"
+          nullable: true
           type: array
         consignee:
-          allOf:
-          - $ref: "#/components/schemas/Meta"
-          description: Грузополучатель (контрагент или юрлицо)
-          nullable: true
-          type: object
+          $ref: "#/components/schemas/StabEntity"
         paymentNumber:
           description: Название платежного документа
           maxLength: 255
@@ -22432,6 +22449,7 @@ components:
           description: Коллекция метаданных доп. полей
           items:
             $ref: "#/components/schemas/AttributeAbstract"
+          nullable: true
           type: array
         code:
           description: Код Счета-фактуры полученного
@@ -22495,6 +22513,21 @@ components:
           nullable: true
           type: object
       type: object
+    FiscalType:
+      description: Известные значения фискального режима работы точки продаж
+      enum:
+      - STANDARD
+      - MASTER
+      - CLOUD
+      example: STANDARD
+      type: string
+    Gender:
+      description: Известные значения пола
+      enum:
+      - masculine
+      - feminine
+      example: masculine
+      type: string
     Group:
       description: Группа/отдел
       properties:
@@ -22656,6 +22689,28 @@ components:
           description: Создавать новые документы с общим доступом
           type: boolean
       type: object
+    StabEntity:
+      description: Объект-заглушка для неописанных сущностей
+      properties:
+        meta:
+          $ref: "#/components/schemas/Meta"
+        id:
+          description: ID объекта
+          format: uuid
+          readOnly: true
+          type: string
+        accountId:
+          description: ID учетной записи
+          format: uuid
+          readOnly: true
+          type: string
+      type: object
+    Context:
+      description: "Метаданные о сотруднике, выполнившем запрос"
+      properties:
+        employee:
+          $ref: "#/components/schemas/Employee"
+      type: object
     MinimumStockAbstract:
       discriminator:
         mapping:
@@ -22774,6 +22829,8 @@ components:
     Pack:
       description: Упаковка
       properties:
+        meta:
+          $ref: "#/components/schemas/Meta"
         id:
           description: ID упаковки
           format: uuid
@@ -22793,6 +22850,18 @@ components:
           nullable: true
           type: array
       type: object
+    PaymentItemType:
+      description: Известные значения признака предмета расчета
+      enum:
+      - GOOD
+      - EXCISABLE_GOOD
+      - WORK
+      - SERVICE
+      - COMPOUND_PAYMENT_ITEM
+      - PROVIDING_RID
+      - ANOTHER_PAYMENT_ITEM
+      example: GOOD
+      type: string
     PersonalDiscount:
       allOf:
       - $ref: "#/components/schemas/DiscountBase"
@@ -22811,6 +22880,58 @@ components:
           description: Для всех ли товаров скидка
           type: boolean
       type: object
+    PpeType:
+      description: Известные значения кода вида номенклатурной классификации медицинских
+        средств индивидуальной защиты
+      enum:
+      - "2400001225408"
+      - "2400001225606"
+      - "2400001226108"
+      - "2400001226306"
+      - "2400001226405"
+      - "2400001323807"
+      - "2400001368105"
+      - "2400001393107"
+      - "2400001393503"
+      - "2400001393602"
+      - "2400001565306"
+      - "2400001807703"
+      - "2400001818303"
+      - "2400001857005"
+      - "2400001857203"
+      - "2400001858309"
+      - "2400001858507"
+      - "2400002015909"
+      - "2400002016005"
+      - "2400002016104"
+      - "2400002052805"
+      - "2400002052904"
+      - "2400002186203"
+      - "2400002886707"
+      - "2400002886806"
+      - "2400002984502"
+      - "2400003117107"
+      - "2400003117206"
+      - "2400003161209"
+      - "2400003207907"
+      - "2400003215308"
+      - "2400003227806"
+      - "2400003237409"
+      - "2400003263408"
+      - "2400003297700"
+      - "2400003356704"
+      - "2400003356803"
+      - "2400003356902"
+      - "2400003433108"
+      - "2400003492303"
+      - "2400003495700"
+      - "2400003495809"
+      - "2400003495908"
+      - "2400003496004"
+      - "2400003496103"
+      - "2400003675805"
+      example: "2400001226405"
+      type: string
     PositionStock:
       nullable: true
       properties:
@@ -23018,31 +23139,20 @@ components:
           nullable: true
           type: array
         trackingType:
-          description: Тип маркируемой продукции. Допустимые значения перечислены
-            в константах класса
+          description: Тип маркируемой продукции. Известные значения описаны в TrackingType
+          example: MILK
           type: string
         tnved:
           description: Код ТН ВЭД
           maxLength: 255
           type: string
         paymentItemType:
-          description: Признак предмета расчета
-          enum:
-          - GOOD
-          - EXCISABLE_GOOD
-          - COMPOUND_PAYMENT_ITEM
-          - ANOTHER_PAYMENT_ITEM
+          description: Признак предмета расчета. Известные значения описаны в PaymentItemType
+          example: GOOD
           type: string
         taxSystem:
-          description: Код системы налогообложения
-          enum:
-          - GENERAL_TAX_SYSTEM
-          - SIMPLIFIED_TAX_SYSTEM_INCOME
-          - SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME
-          - UNIFIED_AGRICULTURAL_TAX
-          - PRESUMPTIVE_TAX_SYSTEM
-          - PATENT_BASED
-          - TAX_SYSTEM_SAME_AS_GROUP
+          description: Код системы налогообложения. Известные значения описаны в TaxSystem
+          example: GENERAL_TAX_SYSTEM
           type: string
         attributes:
           description: Дополнительные поля
@@ -23081,10 +23191,10 @@ components:
           type: string
         ppeType:
           description: Код вида номенклатурной классификации медицинских средств индивидуальной
-            защиты. Допустимые значения перечислены в константах класса
+            защиты. Известные значения описаны в PpeType
+          example: "2400001226405"
           type: string
       type: object
-      x-entitytype-product: true
     ProductList:
       description: Список товаров
       properties:
@@ -23190,15 +23300,8 @@ components:
           nullable: true
           type: object
         taxSystem:
-          description: Код системы налогообложения
-          enum:
-          - GENERAL_TAX_SYSTEM
-          - SIMPLIFIED_TAX_SYSTEM_INCOME
-          - SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME
-          - UNIFIED_AGRICULTURAL_TAX
-          - PRESUMPTIVE_TAX_SYSTEM
-          - PATENT_BASED
-          - TAX_SYSTEM_SAME_AS_GROUP
+          description: Код системы налогообложения. Известные значения описаны в TaxSystem
+          example: GENERAL_TAX_SYSTEM
           type: string
       type: object
     ProductFolderList:
@@ -23252,6 +23355,13 @@ components:
           readOnly: true
           type: integer
       type: object
+    RewardType:
+      description: Известные значения типа вознаграждения
+      enum:
+      - PercentOfSales
+      - None
+      example: PercentOfSales
+      type: string
     RetailStore:
       description: Точка продаж
       properties:
@@ -23318,67 +23428,44 @@ components:
         state:
           $ref: "#/components/schemas/RetailStore_state"
         fiscalType:
-          description: Фискальный режим работы Точки продаж
-          enum:
-          - STANDARD
-          - MASTER
-          - CLOUD
+          description: Фискальный режим работы Точки продаж. Известные значения описаны
+            в FiscalType
+          example: STANDARD
           type: string
         defaultTaxSystem:
-          description: Система налогообложения по умолчанию
-          enum:
-          - GENERAL_TAX_SYSTEM
-          - SIMPLIFIED_TAX_SYSTEM_INCOME
-          - SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME
-          - UNIFIED_AGRICULTURAL_TAX
-          - PRESUMPTIVE_TAX_SYSTEM
-          - PATENT_BASED
+          description: Система налогообложения по умолчанию. Известные значения описаны
+            в TaxSystem
+          example: GENERAL_TAX_SYSTEM
           type: string
         orderTaxSystem:
-          description: Система налогообложения заказов
-          enum:
-          - GENERAL_TAX_SYSTEM
-          - SIMPLIFIED_TAX_SYSTEM_INCOME
-          - SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME
-          - UNIFIED_AGRICULTURAL_TAX
-          - PRESUMPTIVE_TAX_SYSTEM
-          - PATENT_BASED
+          description: Система налогообложения заказов. Известные значения описаны
+            в TaxSystem
+          example: GENERAL_TAX_SYSTEM
           type: string
         minionToMasterType:
-          description: Ограничение связи касс-слуг с кассами-мастерами
-          enum:
-          - ANY
-          - SAME_GROUP
-          - CHOSEN
+          description: Ограничение связи касс-слуг с кассами-мастерами. Известные
+            значения описаны в MinionToMasterType
+          example: ANY
           type: string
         tobaccoMrcControlType:
-          description: Режим контроля минимальных розничных цен на табак
-          enum:
-          - USER_PRICE
-          - MRC_PRICE
-          - SAME_PRICE
+          description: Режим контроля минимальных розничных цен на табак. Известные
+            значения описаны в TobaccoMrcControlType
+          example: USER_PRICE
           type: string
         markingSellingMode:
-          description: Режим продажи маркированных товаров
-          enum:
-          - CORRECT_MARKS_ONLY
-          - WITHOUT_ERRORS
-          - ALL
+          description: Режим продажи маркированных товаров. Известные значения описаны
+            в MarkingSellingMode
+          example: CORRECT_MARKS_ONLY
           type: string
         marksCheckMode:
-          description: Режим проверки кодов маркировки
-          enum:
-          - CORRECT_MARKS_ONLY
-          - WITHOUT_ERRORS
-          - ALL
-          - ALL_CHECKED
+          description: Режим проверки кодов маркировки. Известные значения описаны
+            в MarksCheckMode
+          example: CORRECT_MARKS_ONLY
           type: string
         priorityOfdSend:
-          description: Приоритетный способ отправки чека покупателю
-          enum:
-          - phone
-          - email
-          - none
+          description: Приоритетный способ отправки чека покупателю. Известные значения
+            описаны в PriorityOfdSend
+          example: phone
           type: string
         allowCreateProducts:
           description: Признак разрешения создания новых товаров при продаже
@@ -23702,24 +23789,12 @@ components:
           nullable: true
           type: array
         paymentItemType:
-          description: Признак предмета расчета
-          enum:
-          - WORK
-          - SERVICE
-          - COMPOUND_PAYMENT_ITEM
-          - PROVIDING_RID
-          - ANOTHER_PAYMENT_ITEM
+          description: Признак предмета расчета. Известные значения описаны в PaymentItemType
+          example: WORK
           type: string
         taxSystem:
-          description: Код системы налогообложения
-          enum:
-          - GENERAL_TAX_SYSTEM
-          - SIMPLIFIED_TAX_SYSTEM_INCOME
-          - SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME
-          - UNIFIED_AGRICULTURAL_TAX
-          - PRESUMPTIVE_TAX_SYSTEM
-          - PATENT_BASED
-          - TAX_SYSTEM_SAME_AS_GROUP
+          description: Код системы налогообложения. Известные значения описаны в TaxSystem
+          example: GENERAL_TAX_SYSTEM
           type: string
         attributes:
           description: Дополнительные поля
@@ -23780,14 +23855,18 @@ components:
           readOnly: true
           type: string
         stateType:
-          description: Тип Статуса
-          enum:
-          - Regular
-          - Successful
-          - Unsuccessful
+          description: Тип Статуса. Известные значения описаны в StateType
           example: Regular
           type: string
       type: object
+    StateType:
+      description: Известные значения типа статуса
+      enum:
+      - Regular
+      - Successful
+      - Unsuccessful
+      example: Regular
+      type: string
     Store:
       description: Склад
       properties:
@@ -24008,8 +24087,64 @@ components:
           description: Массив элементов списка
           items:
             $ref: "#/components/schemas/StoreBalance_1"
+          nullable: true
           type: array
       type: object
+    TaxSystem:
+      description: Известные значения кода системы налогообложения
+      enum:
+      - GENERAL_TAX_SYSTEM
+      - SIMPLIFIED_TAX_SYSTEM_INCOME
+      - SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME
+      - UNIFIED_AGRICULTURAL_TAX
+      - PRESUMPTIVE_TAX_SYSTEM
+      - PATENT_BASED
+      - TAX_SYSTEM_SAME_AS_GROUP
+      example: GENERAL_TAX_SYSTEM
+      type: string
+    TrackingType:
+      description: Известные значения типа маркируемой продукции
+      enum:
+      - BEER_ALCOHOL
+      - BICYCLE
+      - ELECTRONICS
+      - FOOD_SUPPLEMENT
+      - LP_CLOTHES
+      - LP_LINENS
+      - MEDICAL_DEVICES
+      - MILK
+      - NABEER
+      - NCP
+      - NOT_TRACKED
+      - OTP
+      - PERFUMERY
+      - PET_FOOD
+      - SANITIZER
+      - SEAFOOD
+      - SHOES
+      - SOFT_DRINKS
+      - TIRES
+      - TOBACCO
+      - VEGETABLE_OIL
+      - VETPHARMA
+      - WATER
+      example: MILK
+      type: string
+    TransactionStatus:
+      description: Известные значения статуса бонусной операции
+      enum:
+      - WAIT_PROCESSING
+      - COMPLETED
+      - CANCELED
+      example: WAIT_PROCESSING
+      type: string
+    TransactionType:
+      description: Известные значения типа бонусной операции
+      enum:
+      - EARNING
+      - SPENDING
+      example: EARNING
+      type: string
     Uom:
       description: Единица измерения
       properties:
@@ -24221,26 +24356,16 @@ components:
           readOnly: true
           type: boolean
         paymentItemType:
-          description: Признак предмета расчета
-          enum:
-          - GOOD
-          - EXCISABLE_GOOD
-          - COMPOUND_PAYMENT_ITEM
-          - ANOTHER_PAYMENT_ITEM
+          description: Признак предмета расчета. Известные значения описаны в PaymentItemType
+          example: GOOD
           type: string
         taxSystem:
-          description: Код системы налогообложения
-          enum:
-          - GENERAL_TAX_SYSTEM
-          - SIMPLIFIED_TAX_SYSTEM_INCOME
-          - SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME
-          - UNIFIED_AGRICULTURAL_TAX
-          - PRESUMPTIVE_TAX_SYSTEM
-          - PATENT_BASED
-          - TAX_SYSTEM_SAME_AS_GROUP
+          description: Код системы налогообложения. Известные значения описаны в TaxSystem
+          example: GENERAL_TAX_SYSTEM
           type: string
         trackingType:
-          description: Тип маркируемой продукции
+          description: Тип маркируемой продукции. Известные значения описаны в TrackingType
+          example: TOBACCO
           type: string
         tnved:
           description: Код ТН ВЭД
@@ -24468,6 +24593,7 @@ components:
           allOf:
           - $ref: "#/components/schemas/ImageList"
           description: Массив метаданных Изображений
+          nullable: true
           type: object
         minimumStock:
           allOf:
@@ -24512,9 +24638,8 @@ components:
           maxLength: 255
           type: string
         type:
-          description: Тип значения Характеристики
-          enum:
-          - string
+          description: Тип значения Характеристики. Известные значения описаны в VariantCharacteristicType
+          example: string
           maxLength: 255
           readOnly: true
           type: string
@@ -24523,6 +24648,12 @@ components:
           readOnly: true
           type: boolean
       type: object
+    VariantCharacteristicType:
+      description: Известные значения типа значения характеристики модификации
+      enum:
+      - string
+      example: string
+      type: string
     VariantCharacteristicValue:
       description: Значение характеристики модификаций
       properties:
@@ -24555,7 +24686,6 @@ components:
           description: Штрихкоды упаковки модификации
           items:
             $ref: "#/components/schemas/Barcode"
-          nullable: true
           type: array
         parentpack:
           $ref: "#/components/schemas/Pack"
@@ -24665,6 +24795,7 @@ components:
           description: Массив кассиров
           items:
             $ref: "#/components/schemas/Cashier_1"
+          nullable: true
           type: array
       type: object
     InternalOrder:
@@ -24927,16 +25058,12 @@ components:
           description: Сумма Договора
           type: integer
         contractType:
-          description: Тип Договора
-          enum:
-          - Commission
-          - Sales
+          description: Тип Договора. Известные значения описаны в ContractType
+          example: Commission
           type: string
         rewardType:
-          description: Тип Вознаграждения
-          enum:
-          - PercentOfSales
-          - None
+          description: Тип Вознаграждения. Известные значения описаны в RewardType
+          example: PercentOfSales
           type: string
         rewardPercent:
           description: Вознаграждение в процентах (от 0 до 100)
@@ -25207,14 +25334,8 @@ components:
           nullable: true
           type: object
         taxSystem:
-          description: Код системы налогообложения
-          enum:
-          - GENERAL_TAX_SYSTEM
-          - SIMPLIFIED_TAX_SYSTEM_INCOME
-          - SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME
-          - UNIFIED_AGRICULTURAL_TAX
-          - PRESUMPTIVE_TAX_SYSTEM
-          - PATENT_BASED
+          description: Код системы налогообложения. Известные значения описаны в TaxSystem
+          example: GENERAL_TAX_SYSTEM
           type: string
         rate:
           $ref: "#/components/schemas/CurrencyRate"
@@ -25324,14 +25445,8 @@ components:
           description: Включен ли НДС для позиции
           type: boolean
         taxSystem:
-          description: Код системы налогообложения
-          enum:
-          - GENERAL_TAX_SYSTEM
-          - SIMPLIFIED_TAX_SYSTEM_INCOME
-          - SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME
-          - UNIFIED_AGRICULTURAL_TAX
-          - PRESUMPTIVE_TAX_SYSTEM
-          - PATENT_BASED
+          description: Код системы налогообложения. Известные значения описаны в TaxSystem
+          example: GENERAL_TAX_SYSTEM
           type: string
         assortment:
           $ref: "#/components/schemas/Assortment"
@@ -26083,6 +26198,7 @@ components:
           description: Коллекция метаданных доп. полей
           items:
             $ref: "#/components/schemas/AttributeAbstract"
+          nullable: true
           type: array
         contract:
           allOf:
@@ -26147,6 +26263,7 @@ components:
             salesreturn, supply, invoicein, purchaseorder, commissionreportout. См. `CashOutOperation`.
           items:
             $ref: "#/components/schemas/CashOutOperation"
+          nullable: true
           type: array
       type: object
     CashOutOperation:
@@ -26232,6 +26349,7 @@ components:
           description: Коллекция метаданных доп. полей
           items:
             $ref: "#/components/schemas/AttributeAbstract"
+          nullable: true
           type: array
         contract:
           allOf:
@@ -26315,6 +26433,7 @@ components:
             invoiceout, commissionreportin, retailshift.
           items:
             $ref: "#/components/schemas/CashInOperation"
+          nullable: true
           type: array
       type: object
     CashInOperation:
@@ -26588,12 +26707,6 @@ components:
           description: Дата документа
           type: string
       type: object
-    Context:
-      description: "Метаданные о сотруднике, выполнившем запрос"
-      properties:
-        employee:
-          $ref: "#/components/schemas/Employee"
-      type: object
     CommissionReportIn:
       description: Полученный отчет комиссионера (commissionreportin)
       properties:
@@ -26624,6 +26737,7 @@ components:
           description: Коллекция метаданных доп. полей
           items:
             $ref: "#/components/schemas/AttributeAbstract"
+          nullable: true
           type: array
         code:
           description: Код Полученного отчета комиссионера
@@ -26767,6 +26881,7 @@ components:
           description: Массив ссылок на связанные платежи
           items:
             $ref: "#/components/schemas/CustomerOrder_payments_inner"
+          nullable: true
           type: array
       type: object
     CommissionReportInList:
@@ -26921,10 +27036,9 @@ components:
             $ref: "#/components/schemas/PriceType_1"
           type: array
         discountStrategy:
-          description: Совместное применение скидок
-          enum:
-          - bySum
-          - byPriority
+          description: Совместное применение скидок. Известные значения описаны в
+            DiscountStrategy
+          example: bySum
           type: string
         globalOperationNumbering:
           description: Использовать сквозную нумерацию документов
@@ -26962,6 +27076,31 @@ components:
             $ref: "#/components/schemas/CustomEntityMetadata_1"
           type: array
       type: object
+    MarkingSellingMode:
+      description: Известные значения режима продажи маркированных товаров
+      enum:
+      - CORRECT_MARKS_ONLY
+      - WITHOUT_ERRORS
+      - ALL
+      example: CORRECT_MARKS_ONLY
+      type: string
+    MarksCheckMode:
+      description: Известные значения режима проверки кодов маркировки
+      enum:
+      - CORRECT_MARKS_ONLY
+      - WITHOUT_ERRORS
+      - ALL
+      - ALL_CHECKED
+      example: CORRECT_MARKS_ONLY
+      type: string
+    MinionToMasterType:
+      description: Известные значения ограничения связи касс-слуг с кассами-мастерами
+      enum:
+      - ANY
+      - SAME_GROUP
+      - CHOSEN
+      example: ANY
+      type: string
     Discount:
       allOf:
       - $ref: "#/components/schemas/DiscountBase"
@@ -26974,11 +27113,13 @@ components:
           description: "Массив метаданных товаров, услуг и модификаций"
           items:
             $ref: "#/components/schemas/DiscountAssortmentItem"
+          nullable: true
           type: array
         productFolders:
           description: Массив метаданных Групп товаров
           items:
             $ref: "#/components/schemas/ProductFolder_1"
+          nullable: true
           type: array
       type: object
     DiscountAssortmentItem:
@@ -27005,6 +27146,21 @@ components:
             $ref: "#/components/schemas/DiscountList_rows_inner"
           type: array
       type: object
+    PriorityOfdSend:
+      description: Известные значения приоритетного способа отправки чека покупателю
+      enum:
+      - phone
+      - email
+      - none
+      example: phone
+      type: string
+    Sex:
+      description: Известные значения пола контрагента
+      enum:
+      - MALE
+      - FEMALE
+      example: MALE
+      type: string
     SpecialPriceDiscount:
       allOf:
       - $ref: "#/components/schemas/DiscountBase"
@@ -27043,6 +27199,22 @@ components:
               $ref: "#/components/schemas/PriceType_1"
           type: object
       type: object
+    TobaccoMrcControlType:
+      description: Известные значения режима контроля минимальных розничных цен на
+        табак
+      enum:
+      - USER_PRICE
+      - MRC_PRICE
+      - SAME_PRICE
+      example: USER_PRICE
+      type: string
+    WelcomeBonusesMode:
+      description: Известные значения условия начисления приветственных баллов
+      enum:
+      - REGISTRATION
+      - FIRST_PURCHASE
+      example: REGISTRATION
+      type: string
     CustomEntity:
       description: Пользовательский справочник (customentity)
       properties:
@@ -27610,10 +27782,7 @@ components:
       description: Формы единиц целой части Валюты
       properties:
         gender:
-          description: Пол
-          enum:
-          - masculine
-          - feminine
+          description: Пол. Известные значения описаны в Gender
           example: masculine
           type: string
         s1:
@@ -27633,7 +27802,7 @@ components:
       description: Форма разменной единицы
       properties:
         gender:
-          description: Пол
+          description: Пол. Известные значения описаны в Gender
           example: feminine
           type: string
         s1:

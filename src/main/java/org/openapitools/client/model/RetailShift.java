@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   RetailShift.JSON_PROPERTY_ID,
   RetailShift.JSON_PROPERTY_ACCOUNT_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-29T07:18:49.943763362Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:35:38.786882520Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailShift {
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable

@@ -14,17 +14,7 @@
 |**accountId** | **UUID** | ID учетной записи |  [optional] [readonly] |
 |**color** | **Integer** | Цвет Статуса |  [optional] |
 |**entityType** | **String** | Тип сущности, к которой относится Статус (ключевое слово в рамках JSON API) |  [optional] [readonly] |
-|**stateType** | [**StateTypeEnum**](#StateTypeEnum) | Тип Статуса |  [optional] |
-
-
-
-## Enum: StateTypeEnum
-
-| Name | Value |
-|---- | -----|
-| REGULAR | &quot;Regular&quot; |
-| SUCCESSFUL | &quot;Successful&quot; |
-| UNSUCCESSFUL | &quot;Unsuccessful&quot; |
+|**stateType** | **String** | Тип Статуса. Известные значения описаны в StateType |  [optional] |
 
 
 

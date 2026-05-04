@@ -26,6 +26,10 @@ import java.util.List;
 import org.openapitools.client.model.Cashier;
 import org.openapitools.client.model.Context;
 import org.openapitools.client.model.MetaList;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.io.UnsupportedEncodingException;
@@ -40,7 +44,7 @@ import java.util.StringJoiner;
   CashierList.JSON_PROPERTY_META,
   CashierList.JSON_PROPERTY_ROWS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-29T07:18:49.943763362Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:35:38.786882520Z[GMT]", comments = "Generator version: 7.14.0")
 public class CashierList {
   public static final String JSON_PROPERTY_CONTEXT = "context";
   @javax.annotation.Nullable
@@ -52,7 +56,7 @@ public class CashierList {
 
   public static final String JSON_PROPERTY_ROWS = "rows";
   @javax.annotation.Nullable
-  private List<Cashier> rows = new ArrayList<>();
+  private JsonNullable<List<Cashier>> rows = JsonNullable.<List<Cashier>>undefined();
 
   public CashierList() {
   }
@@ -112,16 +116,20 @@ public class CashierList {
   }
 
   public CashierList rows(@javax.annotation.Nullable List<Cashier> rows) {
+    this.rows = JsonNullable.<List<Cashier>>of(rows);
     
-    this.rows = rows;
     return this;
   }
 
   public CashierList addRowsItem(Cashier rowsItem) {
-    if (this.rows == null) {
-      this.rows = new ArrayList<>();
+    if (this.rows == null || !this.rows.isPresent()) {
+      this.rows = JsonNullable.<List<Cashier>>of(new ArrayList<>());
     }
-    this.rows.add(rowsItem);
+    try {
+      this.rows.get().add(rowsItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
     return this;
   }
 
@@ -130,20 +138,29 @@ public class CashierList {
    * @return rows
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ROWS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public List<Cashier> getRows() {
-    return rows;
+        return rows.orElse(null);
   }
 
   
 
-
   @JsonProperty(JSON_PROPERTY_ROWS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRows(@javax.annotation.Nullable List<Cashier> rows) {
+
+
+  public JsonNullable<List<Cashier>> getRows_JsonNullable() {
+    return rows;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_ROWS, required = false)
+  public void setRows_JsonNullable(JsonNullable<List<Cashier>> rows) {
     this.rows = rows;
+  }
+
+  public void setRows(@javax.annotation.Nullable List<Cashier> rows) {
+    this.rows = JsonNullable.<List<Cashier>>of(rows);
   }
 
   @Override
@@ -157,12 +174,23 @@ public class CashierList {
     CashierList cashierList = (CashierList) o;
     return Objects.equals(this.context, cashierList.context) &&
         Objects.equals(this.meta, cashierList.meta) &&
-        Objects.equals(this.rows, cashierList.rows);
+        equalsNullable(this.rows, cashierList.rows);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(context, meta, rows);
+    return Objects.hash(context, meta, hashCodeNullable(rows));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

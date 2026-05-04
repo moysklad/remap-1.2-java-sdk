@@ -104,7 +104,7 @@ import java.util.StringJoiner;
   CreateCommissionReportInBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createCommissionReportInBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-29T07:18:49.943763362Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:35:38.786882520Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateCommissionReportInBatch200ResponseInner {
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
@@ -132,7 +132,7 @@ public class CreateCommissionReportInBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
-  private List<AttributeAbstract> attributes = new ArrayList<>();
+  private JsonNullable<List<AttributeAbstract>> attributes = JsonNullable.<List<AttributeAbstract>>undefined();
 
   public static final String JSON_PROPERTY_CODE = "code";
   @javax.annotation.Nullable
@@ -276,7 +276,7 @@ public class CreateCommissionReportInBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_PAYMENTS = "payments";
   @javax.annotation.Nullable
-  private List<CustomerOrderPaymentsInner> payments = new ArrayList<>();
+  private JsonNullable<List<CustomerOrderPaymentsInner>> payments = JsonNullable.<List<CustomerOrderPaymentsInner>>undefined();
 
   public static final String JSON_PROPERTY_ERRORS = "errors";
   @javax.annotation.Nonnull
@@ -461,16 +461,20 @@ public class CreateCommissionReportInBatch200ResponseInner {
   }
 
   public CreateCommissionReportInBatch200ResponseInner attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
-    this.attributes = attributes;
     return this;
   }
 
   public CreateCommissionReportInBatch200ResponseInner addAttributesItem(AttributeAbstract attributesItem) {
-    if (this.attributes == null) {
-      this.attributes = new ArrayList<>();
+    if (this.attributes == null || !this.attributes.isPresent()) {
+      this.attributes = JsonNullable.<List<AttributeAbstract>>of(new ArrayList<>());
     }
-    this.attributes.add(attributesItem);
+    try {
+      this.attributes.get().add(attributesItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
     return this;
   }
 
@@ -479,20 +483,29 @@ public class CreateCommissionReportInBatch200ResponseInner {
    * @return attributes
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public List<AttributeAbstract> getAttributes() {
-    return attributes;
+        return attributes.orElse(null);
   }
 
   
 
-
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
+
+  public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
+    return attributes;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
+  public void setAttributes_JsonNullable(JsonNullable<List<AttributeAbstract>> attributes) {
     this.attributes = attributes;
+  }
+
+  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
   public CreateCommissionReportInBatch200ResponseInner code(@javax.annotation.Nullable String code) {
@@ -1436,16 +1449,20 @@ public class CreateCommissionReportInBatch200ResponseInner {
   }
 
   public CreateCommissionReportInBatch200ResponseInner payments(@javax.annotation.Nullable List<CustomerOrderPaymentsInner> payments) {
+    this.payments = JsonNullable.<List<CustomerOrderPaymentsInner>>of(payments);
     
-    this.payments = payments;
     return this;
   }
 
   public CreateCommissionReportInBatch200ResponseInner addPaymentsItem(CustomerOrderPaymentsInner paymentsItem) {
-    if (this.payments == null) {
-      this.payments = new ArrayList<>();
+    if (this.payments == null || !this.payments.isPresent()) {
+      this.payments = JsonNullable.<List<CustomerOrderPaymentsInner>>of(new ArrayList<>());
     }
-    this.payments.add(paymentsItem);
+    try {
+      this.payments.get().add(paymentsItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
     return this;
   }
 
@@ -1454,20 +1471,29 @@ public class CreateCommissionReportInBatch200ResponseInner {
    * @return payments
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PAYMENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public List<CustomerOrderPaymentsInner> getPayments() {
-    return payments;
+        return payments.orElse(null);
   }
 
   
 
-
   @JsonProperty(JSON_PROPERTY_PAYMENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPayments(@javax.annotation.Nullable List<CustomerOrderPaymentsInner> payments) {
+
+
+  public JsonNullable<List<CustomerOrderPaymentsInner>> getPayments_JsonNullable() {
+    return payments;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_PAYMENTS, required = false)
+  public void setPayments_JsonNullable(JsonNullable<List<CustomerOrderPaymentsInner>> payments) {
     this.payments = payments;
+  }
+
+  public void setPayments(@javax.annotation.Nullable List<CustomerOrderPaymentsInner> payments) {
+    this.payments = JsonNullable.<List<CustomerOrderPaymentsInner>>of(payments);
   }
 
   public CreateCommissionReportInBatch200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
@@ -1520,7 +1546,7 @@ public class CreateCommissionReportInBatch200ResponseInner {
         Objects.equals(this.agent, createCommissionReportInBatch200ResponseInner.agent) &&
         equalsNullable(this.agentAccount, createCommissionReportInBatch200ResponseInner.agentAccount) &&
         Objects.equals(this.applicable, createCommissionReportInBatch200ResponseInner.applicable) &&
-        Objects.equals(this.attributes, createCommissionReportInBatch200ResponseInner.attributes) &&
+        equalsNullable(this.attributes, createCommissionReportInBatch200ResponseInner.attributes) &&
         Objects.equals(this.code, createCommissionReportInBatch200ResponseInner.code) &&
         Objects.equals(this.commissionOverhead, createCommissionReportInBatch200ResponseInner.commissionOverhead) &&
         Objects.equals(this.commissionPeriodEnd, createCommissionReportInBatch200ResponseInner.commissionPeriodEnd) &&
@@ -1556,7 +1582,7 @@ public class CreateCommissionReportInBatch200ResponseInner {
         Objects.equals(this.vatEnabled, createCommissionReportInBatch200ResponseInner.vatEnabled) &&
         Objects.equals(this.vatIncluded, createCommissionReportInBatch200ResponseInner.vatIncluded) &&
         Objects.equals(this.vatSum, createCommissionReportInBatch200ResponseInner.vatSum) &&
-        Objects.equals(this.payments, createCommissionReportInBatch200ResponseInner.payments) &&
+        equalsNullable(this.payments, createCommissionReportInBatch200ResponseInner.payments) &&
         Objects.equals(this.errors, createCommissionReportInBatch200ResponseInner.errors);
   }
 
@@ -1566,7 +1592,7 @@ public class CreateCommissionReportInBatch200ResponseInner {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, agent, hashCodeNullable(agentAccount), applicable, attributes, code, commissionOverhead, commissionPeriodEnd, commissionPeriodStart, commitentSum, hashCodeNullable(contract), created, deleted, hashCodeNullable(description), externalCode, hashCodeNullable(files), group, moment, name, organization, hashCodeNullable(organizationAccount), hashCodeNullable(owner), payedSum, positions, printed, hashCodeNullable(project), published, rate, returnToCommissionerPositions, rewardPercent, rewardType, hashCodeNullable(salesChannel), shared, hashCodeNullable(state), sum, syncId, updated, vatEnabled, vatIncluded, vatSum, payments, errors);
+    return Objects.hash(meta, id, accountId, agent, hashCodeNullable(agentAccount), applicable, hashCodeNullable(attributes), code, commissionOverhead, commissionPeriodEnd, commissionPeriodStart, commitentSum, hashCodeNullable(contract), created, deleted, hashCodeNullable(description), externalCode, hashCodeNullable(files), group, moment, name, organization, hashCodeNullable(organizationAccount), hashCodeNullable(owner), payedSum, positions, printed, hashCodeNullable(project), published, rate, returnToCommissionerPositions, rewardPercent, rewardType, hashCodeNullable(salesChannel), shared, hashCodeNullable(state), sum, syncId, updated, vatEnabled, vatIncluded, vatSum, hashCodeNullable(payments), errors);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

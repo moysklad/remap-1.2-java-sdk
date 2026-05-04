@@ -69,7 +69,7 @@ import java.util.StringJoiner;
   Variant.JSON_PROPERTY_MINIMUM_STOCK,
   Variant.JSON_PROPERTY_THINGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-29T07:18:49.943763362Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:35:38.786882520Z[GMT]", comments = "Generator version: 7.14.0")
 public class Variant {
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
@@ -141,7 +141,7 @@ public class Variant {
 
   public static final String JSON_PROPERTY_IMAGES = "images";
   @javax.annotation.Nullable
-  private ImageList images;
+  private JsonNullable<ImageList> images = JsonNullable.<ImageList>undefined();
 
   public static final String JSON_PROPERTY_MINIMUM_STOCK = "minimumStock";
   @javax.annotation.Nullable
@@ -697,8 +697,8 @@ public class Variant {
   }
 
   public Variant images(@javax.annotation.Nullable ImageList images) {
+    this.images = JsonNullable.<ImageList>of(images);
     
-    this.images = images;
     return this;
   }
 
@@ -707,20 +707,29 @@ public class Variant {
    * @return images
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_IMAGES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public ImageList getImages() {
-    return images;
+        return images.orElse(null);
   }
 
   
 
-
   @JsonProperty(JSON_PROPERTY_IMAGES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setImages(@javax.annotation.Nullable ImageList images) {
+
+
+  public JsonNullable<ImageList> getImages_JsonNullable() {
+    return images;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_IMAGES, required = false)
+  public void setImages_JsonNullable(JsonNullable<ImageList> images) {
     this.images = images;
+  }
+
+  public void setImages(@javax.annotation.Nullable ImageList images) {
+    this.images = JsonNullable.<ImageList>of(images);
   }
 
   public Variant minimumStock(@javax.annotation.Nullable MinimumStockAbstract minimumStock) {
@@ -833,7 +842,7 @@ public class Variant {
         Objects.equals(this.minPrice, variant.minPrice) &&
         equalsNullable(this.barcodes, variant.barcodes) &&
         equalsNullable(this.packs, variant.packs) &&
-        Objects.equals(this.images, variant.images) &&
+        equalsNullable(this.images, variant.images) &&
         equalsNullable(this.minimumStock, variant.minimumStock) &&
         equalsNullable(this.things, variant.things);
   }
@@ -844,7 +853,7 @@ public class Variant {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, updated, name, code, externalCode, archived, hashCodeNullable(description), discountProhibited, product, hashCodeNullable(characteristics), hashCodeNullable(salePrices), hashCodeNullable(buyPrice), minPrice, hashCodeNullable(barcodes), hashCodeNullable(packs), images, hashCodeNullable(minimumStock), hashCodeNullable(things));
+    return Objects.hash(meta, id, accountId, updated, name, code, externalCode, archived, hashCodeNullable(description), discountProhibited, product, hashCodeNullable(characteristics), hashCodeNullable(salePrices), hashCodeNullable(buyPrice), minPrice, hashCodeNullable(barcodes), hashCodeNullable(packs), hashCodeNullable(images), hashCodeNullable(minimumStock), hashCodeNullable(things));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

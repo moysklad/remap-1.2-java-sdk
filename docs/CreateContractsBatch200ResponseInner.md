@@ -17,8 +17,8 @@
 |**archived** | **Boolean** | Добавлен ли Договор в архив |  [optional] |
 |**moment** | **String** | Дата Договора |  [optional] |
 |**sum** | **Integer** | Сумма Договора |  [optional] |
-|**contractType** | [**ContractTypeEnum**](#ContractTypeEnum) | Тип Договора |  [optional] |
-|**rewardType** | [**RewardTypeEnum**](#RewardTypeEnum) | Тип Вознаграждения |  [optional] |
+|**contractType** | **String** | Тип Договора. Известные значения описаны в ContractType |  [optional] |
+|**rewardType** | **String** | Тип Вознаграждения. Известные значения описаны в RewardType |  [optional] |
 |**rewardPercent** | **Integer** | Вознаграждение в процентах (от 0 до 100) |  [optional] |
 |**shared** | **Boolean** | Общий доступ |  [optional] |
 |**printed** | **Boolean** | Напечатан ли документ |  [optional] [readonly] |
@@ -34,24 +34,6 @@
 |**rate** | [**CurrencyRate**](CurrencyRate.md) |  |  [optional] |
 |**attributes** | [**List&lt;AttributeAbstract&gt;**](AttributeAbstract.md) | Коллекция доп. полей |  [optional] |
 |**errors** | [**List&lt;ErrorErrorsInner&gt;**](ErrorErrorsInner.md) |  |  |
-
-
-
-## Enum: ContractTypeEnum
-
-| Name | Value |
-|---- | -----|
-| COMMISSION | &quot;Commission&quot; |
-| SALES | &quot;Sales&quot; |
-
-
-
-## Enum: RewardTypeEnum
-
-| Name | Value |
-|---- | -----|
-| PERCENT_OF_SALES | &quot;PercentOfSales&quot; |
-| NONE | &quot;None&quot; |
 
 
 

@@ -38,10 +38,10 @@
 |**advancePaymentVat** | **Integer** | Ставка НДС для авансового платежа (в процентах) |  [optional] |
 |**paymentPurpose** | **String** | Назначение платежа |  [optional] |
 |**vatSum** | **Double** | Сумма включая НДС |  [optional] [readonly] |
-|**demands** | [**List&lt;Meta&gt;**](Meta.md) | Связанные отгрузки (метаданные) |  [optional] |
-|**payments** | [**List&lt;Meta&gt;**](Meta.md) | Связанные входящие платежи (метаданные) |  [optional] |
-|**returns** | [**List&lt;Meta&gt;**](Meta.md) | Связанные возвраты поставщикам (метаданные) |  [optional] |
-|**consignee** | [**Meta**](Meta.md) | Грузополучатель (контрагент или юрлицо) |  [optional] |
+|**demands** | [**List&lt;StabEntity&gt;**](StabEntity.md) | Связанные отгрузки (метаданные) |  [optional] |
+|**payments** | [**List&lt;StabEntity&gt;**](StabEntity.md) | Связанные входящие платежи (метаданные) |  [optional] |
+|**returns** | [**List&lt;StabEntity&gt;**](StabEntity.md) | Связанные возвраты поставщикам (метаданные) |  [optional] |
+|**consignee** | [**StabEntity**](StabEntity.md) |  |  [optional] |
 |**paymentNumber** | **String** | Название платежного документа |  [optional] |
 |**paymentDate** | **String** | Дата платежного документа |  [optional] |
 

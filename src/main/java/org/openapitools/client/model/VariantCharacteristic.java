@@ -38,7 +38,7 @@ import java.util.StringJoiner;
   VariantCharacteristic.JSON_PROPERTY_TYPE,
   VariantCharacteristic.JSON_PROPERTY_REQUIRED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-29T07:18:49.943763362Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:35:38.786882520Z[GMT]", comments = "Generator version: 7.14.0")
 public class VariantCharacteristic {
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
@@ -52,43 +52,9 @@ public class VariantCharacteristic {
   @javax.annotation.Nullable
   private String name;
 
-  /**
-   * Тип значения Характеристики
-   */
-  public enum TypeEnum {
-    STRING(String.valueOf("string"));
-
-    private String value;
-
-    TypeEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static TypeEnum fromValue(String value) {
-      for (TypeEnum b : TypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
-
   public static final String JSON_PROPERTY_TYPE = "type";
   @javax.annotation.Nullable
-  private TypeEnum type;
+  private String type;
 
   public static final String JSON_PROPERTY_REQUIRED = "required";
   @javax.annotation.Nullable
@@ -102,7 +68,7 @@ public class VariantCharacteristic {
   @JsonCreator
   public VariantCharacteristic(
     @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id, 
-    @JsonProperty(value = JSON_PROPERTY_TYPE, required = false) TypeEnum type, 
+    @JsonProperty(value = JSON_PROPERTY_TYPE, required = false) String type, 
     @JsonProperty(value = JSON_PROPERTY_REQUIRED, required = false) Boolean required
   ) {
     this();
@@ -182,14 +148,14 @@ public class VariantCharacteristic {
   }
 
   /**
-   * Тип значения Характеристики
+   * Тип значения Характеристики. Известные значения описаны в VariantCharacteristicType
    * @return type
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public TypeEnum getType() {
+  public String getType() {
     return type;
   }
 

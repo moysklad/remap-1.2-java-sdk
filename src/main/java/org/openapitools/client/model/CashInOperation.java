@@ -128,7 +128,7 @@ import java.util.StringJoiner;
   CashInOperation.JSON_PROPERTY_REWARD_PERCENT,
   CashInOperation.JSON_PROPERTY_REWARD_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-29T07:18:49.943763362Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:35:38.786882520Z[GMT]", comments = "Generator version: 7.14.0")
 public class CashInOperation {
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
@@ -272,59 +272,15 @@ public class CashInOperation {
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
-  private List<AttributeAbstract> attributes = new ArrayList<>();
+  private JsonNullable<List<AttributeAbstract>> attributes = JsonNullable.<List<AttributeAbstract>>undefined();
 
   public static final String JSON_PROPERTY_FILES = "files";
   @javax.annotation.Nullable
   private JsonNullable<FileList> files = JsonNullable.<FileList>undefined();
 
-  /**
-   * Код системы налогообложения
-   */
-  public enum TaxSystemEnum {
-    GENERAL_TAX_SYSTEM(String.valueOf("GENERAL_TAX_SYSTEM")),
-    
-    SIMPLIFIED_TAX_SYSTEM_INCOME(String.valueOf("SIMPLIFIED_TAX_SYSTEM_INCOME")),
-    
-    SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME(String.valueOf("SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME")),
-    
-    UNIFIED_AGRICULTURAL_TAX(String.valueOf("UNIFIED_AGRICULTURAL_TAX")),
-    
-    PRESUMPTIVE_TAX_SYSTEM(String.valueOf("PRESUMPTIVE_TAX_SYSTEM")),
-    
-    PATENT_BASED(String.valueOf("PATENT_BASED"));
-
-    private String value;
-
-    TaxSystemEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static TaxSystemEnum fromValue(String value) {
-      for (TaxSystemEnum b : TaxSystemEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
-
   public static final String JSON_PROPERTY_TAX_SYSTEM = "taxSystem";
   @javax.annotation.Nullable
-  private TaxSystemEnum taxSystem;
+  private String taxSystem;
 
   public static final String JSON_PROPERTY_RATE = "rate";
   @javax.annotation.Nullable
@@ -356,7 +312,7 @@ public class CashInOperation {
 
   public static final String JSON_PROPERTY_PAYMENTS = "payments";
   @javax.annotation.Nullable
-  private List<CustomerOrderPaymentsInner> payments = new ArrayList<>();
+  private JsonNullable<List<CustomerOrderPaymentsInner>> payments = JsonNullable.<List<CustomerOrderPaymentsInner>>undefined();
 
   public static final String JSON_PROPERTY_PREPAYMENTS = "prepayments";
   @javax.annotation.Nullable
@@ -1338,16 +1294,20 @@ public class CashInOperation {
   }
 
   public CashInOperation attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
-    this.attributes = attributes;
     return this;
   }
 
   public CashInOperation addAttributesItem(AttributeAbstract attributesItem) {
-    if (this.attributes == null) {
-      this.attributes = new ArrayList<>();
+    if (this.attributes == null || !this.attributes.isPresent()) {
+      this.attributes = JsonNullable.<List<AttributeAbstract>>of(new ArrayList<>());
     }
-    this.attributes.add(attributesItem);
+    try {
+      this.attributes.get().add(attributesItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
     return this;
   }
 
@@ -1356,20 +1316,29 @@ public class CashInOperation {
    * @return attributes
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public List<AttributeAbstract> getAttributes() {
-    return attributes;
+        return attributes.orElse(null);
   }
 
   
 
-
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
+
+  public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
+    return attributes;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
+  public void setAttributes_JsonNullable(JsonNullable<List<AttributeAbstract>> attributes) {
     this.attributes = attributes;
+  }
+
+  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
   public CashInOperation files(@javax.annotation.Nullable FileList files) {
@@ -1408,21 +1377,21 @@ public class CashInOperation {
     this.files = JsonNullable.<FileList>of(files);
   }
 
-  public CashInOperation taxSystem(@javax.annotation.Nullable TaxSystemEnum taxSystem) {
+  public CashInOperation taxSystem(@javax.annotation.Nullable String taxSystem) {
     
     this.taxSystem = taxSystem;
     return this;
   }
 
   /**
-   * Код системы налогообложения
+   * Код системы налогообложения. Известные значения описаны в TaxSystem
    * @return taxSystem
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TAX_SYSTEM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public TaxSystemEnum getTaxSystem() {
+  public String getTaxSystem() {
     return taxSystem;
   }
 
@@ -1431,7 +1400,7 @@ public class CashInOperation {
 
   @JsonProperty(JSON_PROPERTY_TAX_SYSTEM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTaxSystem(@javax.annotation.Nullable TaxSystemEnum taxSystem) {
+  public void setTaxSystem(@javax.annotation.Nullable String taxSystem) {
     this.taxSystem = taxSystem;
   }
 
@@ -1694,16 +1663,20 @@ public class CashInOperation {
   }
 
   public CashInOperation payments(@javax.annotation.Nullable List<CustomerOrderPaymentsInner> payments) {
+    this.payments = JsonNullable.<List<CustomerOrderPaymentsInner>>of(payments);
     
-    this.payments = payments;
     return this;
   }
 
   public CashInOperation addPaymentsItem(CustomerOrderPaymentsInner paymentsItem) {
-    if (this.payments == null) {
-      this.payments = new ArrayList<>();
+    if (this.payments == null || !this.payments.isPresent()) {
+      this.payments = JsonNullable.<List<CustomerOrderPaymentsInner>>of(new ArrayList<>());
     }
-    this.payments.add(paymentsItem);
+    try {
+      this.payments.get().add(paymentsItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
     return this;
   }
 
@@ -1712,20 +1685,29 @@ public class CashInOperation {
    * @return payments
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PAYMENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public List<CustomerOrderPaymentsInner> getPayments() {
-    return payments;
+        return payments.orElse(null);
   }
 
   
 
-
   @JsonProperty(JSON_PROPERTY_PAYMENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPayments(@javax.annotation.Nullable List<CustomerOrderPaymentsInner> payments) {
+
+
+  public JsonNullable<List<CustomerOrderPaymentsInner>> getPayments_JsonNullable() {
+    return payments;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_PAYMENTS, required = false)
+  public void setPayments_JsonNullable(JsonNullable<List<CustomerOrderPaymentsInner>> payments) {
     this.payments = payments;
+  }
+
+  public void setPayments(@javax.annotation.Nullable List<CustomerOrderPaymentsInner> payments) {
+    this.payments = JsonNullable.<List<CustomerOrderPaymentsInner>>of(payments);
   }
 
   public CashInOperation prepayments(@javax.annotation.Nullable List<Prepayment> prepayments) {
@@ -2169,7 +2151,7 @@ public class CashInOperation {
         equalsNullable(this.project, cashInOperation.project) &&
         equalsNullable(this.owner, cashInOperation.owner) &&
         Objects.equals(this.group, cashInOperation.group) &&
-        Objects.equals(this.attributes, cashInOperation.attributes) &&
+        equalsNullable(this.attributes, cashInOperation.attributes) &&
         equalsNullable(this.files, cashInOperation.files) &&
         Objects.equals(this.taxSystem, cashInOperation.taxSystem) &&
         Objects.equals(this.rate, cashInOperation.rate) &&
@@ -2179,7 +2161,7 @@ public class CashInOperation {
         equalsNullable(this.shipmentAddressFull, cashInOperation.shipmentAddressFull) &&
         equalsNullable(this.invoicesOut, cashInOperation.invoicesOut) &&
         equalsNullable(this.demands, cashInOperation.demands) &&
-        Objects.equals(this.payments, cashInOperation.payments) &&
+        equalsNullable(this.payments, cashInOperation.payments) &&
         equalsNullable(this.prepayments, cashInOperation.prepayments) &&
         equalsNullable(this.purchaseOrders, cashInOperation.purchaseOrders) &&
         equalsNullable(this.moves, cashInOperation.moves) &&
@@ -2200,7 +2182,7 @@ public class CashInOperation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, name, code, externalCode, syncId, hashCodeNullable(description), created, deleted, updated, moment, deliveryPlannedMoment, applicable, printed, published, shared, vatEnabled, vatIncluded, vatSum, sum, payedSum, shippedSum, reservedSum, invoicedSum, organization, hashCodeNullable(organizationAccount), agent, hashCodeNullable(agentAccount), hashCodeNullable(store), hashCodeNullable(state), hashCodeNullable(contract), hashCodeNullable(project), hashCodeNullable(owner), group, attributes, hashCodeNullable(files), taxSystem, rate, positions, hashCodeNullable(salesChannel), hashCodeNullable(shipmentAddress), hashCodeNullable(shipmentAddressFull), hashCodeNullable(invoicesOut), hashCodeNullable(demands), payments, hashCodeNullable(prepayments), hashCodeNullable(purchaseOrders), hashCodeNullable(moves), hashCodeNullable(productionTasks), linkedSum, commissionOverhead, commissionPeriodEnd, commissionPeriodStart, commitentSum, returnToCommissionerPositions, rewardPercent, rewardType);
+    return Objects.hash(meta, id, accountId, name, code, externalCode, syncId, hashCodeNullable(description), created, deleted, updated, moment, deliveryPlannedMoment, applicable, printed, published, shared, vatEnabled, vatIncluded, vatSum, sum, payedSum, shippedSum, reservedSum, invoicedSum, organization, hashCodeNullable(organizationAccount), agent, hashCodeNullable(agentAccount), hashCodeNullable(store), hashCodeNullable(state), hashCodeNullable(contract), hashCodeNullable(project), hashCodeNullable(owner), group, hashCodeNullable(attributes), hashCodeNullable(files), taxSystem, rate, positions, hashCodeNullable(salesChannel), hashCodeNullable(shipmentAddress), hashCodeNullable(shipmentAddressFull), hashCodeNullable(invoicesOut), hashCodeNullable(demands), hashCodeNullable(payments), hashCodeNullable(prepayments), hashCodeNullable(purchaseOrders), hashCodeNullable(moves), hashCodeNullable(productionTasks), linkedSum, commissionOverhead, commissionPeriodEnd, commissionPeriodStart, commitentSum, returnToCommissionerPositions, rewardPercent, rewardType);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

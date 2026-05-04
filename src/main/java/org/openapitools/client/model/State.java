@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   State.JSON_PROPERTY_ENTITY_TYPE,
   State.JSON_PROPERTY_STATE_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-29T07:18:49.943763362Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:35:38.786882520Z[GMT]", comments = "Generator version: 7.14.0")
 public class State {
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
@@ -66,47 +66,9 @@ public class State {
   @javax.annotation.Nullable
   private String entityType;
 
-  /**
-   * Тип Статуса
-   */
-  public enum StateTypeEnum {
-    REGULAR(String.valueOf("Regular")),
-    
-    SUCCESSFUL(String.valueOf("Successful")),
-    
-    UNSUCCESSFUL(String.valueOf("Unsuccessful"));
-
-    private String value;
-
-    StateTypeEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static StateTypeEnum fromValue(String value) {
-      for (StateTypeEnum b : StateTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
-
   public static final String JSON_PROPERTY_STATE_TYPE = "stateType";
   @javax.annotation.Nullable
-  private StateTypeEnum stateType;
+  private String stateType;
 
   public State() {
   }
@@ -254,21 +216,21 @@ public class State {
 
 
 
-  public State stateType(@javax.annotation.Nullable StateTypeEnum stateType) {
+  public State stateType(@javax.annotation.Nullable String stateType) {
     
     this.stateType = stateType;
     return this;
   }
 
   /**
-   * Тип Статуса
+   * Тип Статуса. Известные значения описаны в StateType
    * @return stateType
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STATE_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public StateTypeEnum getStateType() {
+  public String getStateType() {
     return stateType;
   }
 
@@ -277,7 +239,7 @@ public class State {
 
   @JsonProperty(JSON_PROPERTY_STATE_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStateType(@javax.annotation.Nullable StateTypeEnum stateType) {
+  public void setStateType(@javax.annotation.Nullable String stateType) {
     this.stateType = stateType;
   }
 

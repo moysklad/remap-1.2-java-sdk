@@ -25,6 +25,10 @@ import java.util.Arrays;
 import java.util.List;
 import org.openapitools.client.model.MetaList;
 import org.openapitools.client.model.StoreBalance;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.io.UnsupportedEncodingException;
@@ -38,7 +42,7 @@ import java.util.StringJoiner;
   StoreBalanceList.JSON_PROPERTY_META,
   StoreBalanceList.JSON_PROPERTY_ROWS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-29T07:18:49.943763362Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:35:38.786882520Z[GMT]", comments = "Generator version: 7.14.0")
 public class StoreBalanceList {
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
@@ -46,7 +50,7 @@ public class StoreBalanceList {
 
   public static final String JSON_PROPERTY_ROWS = "rows";
   @javax.annotation.Nullable
-  private List<StoreBalance> rows = new ArrayList<>();
+  private JsonNullable<List<StoreBalance>> rows = JsonNullable.<List<StoreBalance>>undefined();
 
   public StoreBalanceList() {
   }
@@ -79,16 +83,20 @@ public class StoreBalanceList {
   }
 
   public StoreBalanceList rows(@javax.annotation.Nullable List<StoreBalance> rows) {
+    this.rows = JsonNullable.<List<StoreBalance>>of(rows);
     
-    this.rows = rows;
     return this;
   }
 
   public StoreBalanceList addRowsItem(StoreBalance rowsItem) {
-    if (this.rows == null) {
-      this.rows = new ArrayList<>();
+    if (this.rows == null || !this.rows.isPresent()) {
+      this.rows = JsonNullable.<List<StoreBalance>>of(new ArrayList<>());
     }
-    this.rows.add(rowsItem);
+    try {
+      this.rows.get().add(rowsItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
     return this;
   }
 
@@ -97,20 +105,29 @@ public class StoreBalanceList {
    * @return rows
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ROWS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public List<StoreBalance> getRows() {
-    return rows;
+        return rows.orElse(null);
   }
 
   
 
-
   @JsonProperty(JSON_PROPERTY_ROWS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRows(@javax.annotation.Nullable List<StoreBalance> rows) {
+
+
+  public JsonNullable<List<StoreBalance>> getRows_JsonNullable() {
+    return rows;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_ROWS, required = false)
+  public void setRows_JsonNullable(JsonNullable<List<StoreBalance>> rows) {
     this.rows = rows;
+  }
+
+  public void setRows(@javax.annotation.Nullable List<StoreBalance> rows) {
+    this.rows = JsonNullable.<List<StoreBalance>>of(rows);
   }
 
   @Override
@@ -123,12 +140,23 @@ public class StoreBalanceList {
     }
     StoreBalanceList storeBalanceList = (StoreBalanceList) o;
     return Objects.equals(this.meta, storeBalanceList.meta) &&
-        Objects.equals(this.rows, storeBalanceList.rows);
+        equalsNullable(this.rows, storeBalanceList.rows);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, rows);
+    return Objects.hash(meta, hashCodeNullable(rows));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

@@ -80,7 +80,7 @@ import java.util.StringJoiner;
   Service.JSON_PROPERTY_MIN_PRICE,
   Service.JSON_PROPERTY_SYNC_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-29T07:18:49.943763362Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:35:38.786882520Z[GMT]", comments = "Generator version: 7.14.0")
 public class Service {
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
@@ -182,101 +182,13 @@ public class Service {
   @javax.annotation.Nullable
   private JsonNullable<List<Barcode>> barcodes = JsonNullable.<List<Barcode>>undefined();
 
-  /**
-   * Признак предмета расчета
-   */
-  public enum PaymentItemTypeEnum {
-    WORK(String.valueOf("WORK")),
-    
-    SERVICE(String.valueOf("SERVICE")),
-    
-    COMPOUND_PAYMENT_ITEM(String.valueOf("COMPOUND_PAYMENT_ITEM")),
-    
-    PROVIDING_RID(String.valueOf("PROVIDING_RID")),
-    
-    ANOTHER_PAYMENT_ITEM(String.valueOf("ANOTHER_PAYMENT_ITEM"));
-
-    private String value;
-
-    PaymentItemTypeEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static PaymentItemTypeEnum fromValue(String value) {
-      for (PaymentItemTypeEnum b : PaymentItemTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
-
   public static final String JSON_PROPERTY_PAYMENT_ITEM_TYPE = "paymentItemType";
   @javax.annotation.Nullable
-  private PaymentItemTypeEnum paymentItemType;
-
-  /**
-   * Код системы налогообложения
-   */
-  public enum TaxSystemEnum {
-    GENERAL_TAX_SYSTEM(String.valueOf("GENERAL_TAX_SYSTEM")),
-    
-    SIMPLIFIED_TAX_SYSTEM_INCOME(String.valueOf("SIMPLIFIED_TAX_SYSTEM_INCOME")),
-    
-    SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME(String.valueOf("SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME")),
-    
-    UNIFIED_AGRICULTURAL_TAX(String.valueOf("UNIFIED_AGRICULTURAL_TAX")),
-    
-    PRESUMPTIVE_TAX_SYSTEM(String.valueOf("PRESUMPTIVE_TAX_SYSTEM")),
-    
-    PATENT_BASED(String.valueOf("PATENT_BASED")),
-    
-    TAX_SYSTEM_SAME_AS_GROUP(String.valueOf("TAX_SYSTEM_SAME_AS_GROUP"));
-
-    private String value;
-
-    TaxSystemEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static TaxSystemEnum fromValue(String value) {
-      for (TaxSystemEnum b : TaxSystemEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
+  private String paymentItemType;
 
   public static final String JSON_PROPERTY_TAX_SYSTEM = "taxSystem";
   @javax.annotation.Nullable
-  private TaxSystemEnum taxSystem;
+  private String taxSystem;
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
@@ -1011,21 +923,21 @@ public class Service {
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
   }
 
-  public Service paymentItemType(@javax.annotation.Nullable PaymentItemTypeEnum paymentItemType) {
+  public Service paymentItemType(@javax.annotation.Nullable String paymentItemType) {
     
     this.paymentItemType = paymentItemType;
     return this;
   }
 
   /**
-   * Признак предмета расчета
+   * Признак предмета расчета. Известные значения описаны в PaymentItemType
    * @return paymentItemType
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PAYMENT_ITEM_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public PaymentItemTypeEnum getPaymentItemType() {
+  public String getPaymentItemType() {
     return paymentItemType;
   }
 
@@ -1034,25 +946,25 @@ public class Service {
 
   @JsonProperty(JSON_PROPERTY_PAYMENT_ITEM_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPaymentItemType(@javax.annotation.Nullable PaymentItemTypeEnum paymentItemType) {
+  public void setPaymentItemType(@javax.annotation.Nullable String paymentItemType) {
     this.paymentItemType = paymentItemType;
   }
 
-  public Service taxSystem(@javax.annotation.Nullable TaxSystemEnum taxSystem) {
+  public Service taxSystem(@javax.annotation.Nullable String taxSystem) {
     
     this.taxSystem = taxSystem;
     return this;
   }
 
   /**
-   * Код системы налогообложения
+   * Код системы налогообложения. Известные значения описаны в TaxSystem
    * @return taxSystem
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TAX_SYSTEM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public TaxSystemEnum getTaxSystem() {
+  public String getTaxSystem() {
     return taxSystem;
   }
 
@@ -1061,7 +973,7 @@ public class Service {
 
   @JsonProperty(JSON_PROPERTY_TAX_SYSTEM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTaxSystem(@javax.annotation.Nullable TaxSystemEnum taxSystem) {
+  public void setTaxSystem(@javax.annotation.Nullable String taxSystem) {
     this.taxSystem = taxSystem;
   }
 

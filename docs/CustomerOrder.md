@@ -45,7 +45,7 @@
 |**group** | [**Group**](Group.md) |  |  [optional] |
 |**attributes** | [**List&lt;AttributeAbstract&gt;**](AttributeAbstract.md) | Коллекция метаданных доп. полей |  [optional] |
 |**files** | [**FileList**](FileList.md) | Метаданные массива Файлов |  [optional] |
-|**taxSystem** | [**TaxSystemEnum**](#TaxSystemEnum) | Код системы налогообложения |  [optional] |
+|**taxSystem** | **String** | Код системы налогообложения. Известные значения описаны в TaxSystem |  [optional] |
 |**rate** | [**CurrencyRate**](CurrencyRate.md) |  |  [optional] |
 |**positions** | **CustomerOrderPositionList** | Позиций Заказа покупателя |  [optional] |
 |**salesChannel** | [**SalesChannel**](SalesChannel.md) | Метаданные канала продаж |  [optional] |
@@ -58,19 +58,6 @@
 |**purchaseOrders** | [**List&lt;PurchaseOrder&gt;**](PurchaseOrder.md) | Массив ссылок на связанные заказы поставщикам |  [optional] |
 |**moves** | [**List&lt;Move&gt;**](Move.md) | Массив ссылок на связанные перемещения |  [optional] |
 |**productionTasks** | [**List&lt;ProductionTask&gt;**](ProductionTask.md) | Массив ссылок на связанные производственные задания |  [optional] |
-
-
-
-## Enum: TaxSystemEnum
-
-| Name | Value |
-|---- | -----|
-| GENERAL_TAX_SYSTEM | &quot;GENERAL_TAX_SYSTEM&quot; |
-| SIMPLIFIED_TAX_SYSTEM_INCOME | &quot;SIMPLIFIED_TAX_SYSTEM_INCOME&quot; |
-| SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME | &quot;SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME&quot; |
-| UNIFIED_AGRICULTURAL_TAX | &quot;UNIFIED_AGRICULTURAL_TAX&quot; |
-| PRESUMPTIVE_TAX_SYSTEM | &quot;PRESUMPTIVE_TAX_SYSTEM&quot; |
-| PATENT_BASED | &quot;PATENT_BASED&quot; |
 
 
 

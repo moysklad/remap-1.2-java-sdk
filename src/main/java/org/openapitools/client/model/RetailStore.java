@@ -129,7 +129,7 @@ import java.util.StringJoiner;
   RetailStore.JSON_PROPERTY_CASHIERS,
   RetailStore.JSON_PROPERTY_QR_ACQUIRE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-29T07:18:49.943763362Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:35:38.786882520Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStore {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable
@@ -207,355 +207,37 @@ public class RetailStore {
   @javax.annotation.Nullable
   private RetailStoreState state;
 
-  /**
-   * Фискальный режим работы Точки продаж
-   */
-  public enum FiscalTypeEnum {
-    STANDARD(String.valueOf("STANDARD")),
-    
-    MASTER(String.valueOf("MASTER")),
-    
-    CLOUD(String.valueOf("CLOUD"));
-
-    private String value;
-
-    FiscalTypeEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static FiscalTypeEnum fromValue(String value) {
-      for (FiscalTypeEnum b : FiscalTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
-
   public static final String JSON_PROPERTY_FISCAL_TYPE = "fiscalType";
   @javax.annotation.Nullable
-  private FiscalTypeEnum fiscalType;
-
-  /**
-   * Система налогообложения по умолчанию
-   */
-  public enum DefaultTaxSystemEnum {
-    GENERAL_TAX_SYSTEM(String.valueOf("GENERAL_TAX_SYSTEM")),
-    
-    SIMPLIFIED_TAX_SYSTEM_INCOME(String.valueOf("SIMPLIFIED_TAX_SYSTEM_INCOME")),
-    
-    SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME(String.valueOf("SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME")),
-    
-    UNIFIED_AGRICULTURAL_TAX(String.valueOf("UNIFIED_AGRICULTURAL_TAX")),
-    
-    PRESUMPTIVE_TAX_SYSTEM(String.valueOf("PRESUMPTIVE_TAX_SYSTEM")),
-    
-    PATENT_BASED(String.valueOf("PATENT_BASED"));
-
-    private String value;
-
-    DefaultTaxSystemEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static DefaultTaxSystemEnum fromValue(String value) {
-      for (DefaultTaxSystemEnum b : DefaultTaxSystemEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
+  private String fiscalType;
 
   public static final String JSON_PROPERTY_DEFAULT_TAX_SYSTEM = "defaultTaxSystem";
   @javax.annotation.Nullable
-  private DefaultTaxSystemEnum defaultTaxSystem;
-
-  /**
-   * Система налогообложения заказов
-   */
-  public enum OrderTaxSystemEnum {
-    GENERAL_TAX_SYSTEM(String.valueOf("GENERAL_TAX_SYSTEM")),
-    
-    SIMPLIFIED_TAX_SYSTEM_INCOME(String.valueOf("SIMPLIFIED_TAX_SYSTEM_INCOME")),
-    
-    SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME(String.valueOf("SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME")),
-    
-    UNIFIED_AGRICULTURAL_TAX(String.valueOf("UNIFIED_AGRICULTURAL_TAX")),
-    
-    PRESUMPTIVE_TAX_SYSTEM(String.valueOf("PRESUMPTIVE_TAX_SYSTEM")),
-    
-    PATENT_BASED(String.valueOf("PATENT_BASED"));
-
-    private String value;
-
-    OrderTaxSystemEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static OrderTaxSystemEnum fromValue(String value) {
-      for (OrderTaxSystemEnum b : OrderTaxSystemEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
+  private String defaultTaxSystem;
 
   public static final String JSON_PROPERTY_ORDER_TAX_SYSTEM = "orderTaxSystem";
   @javax.annotation.Nullable
-  private OrderTaxSystemEnum orderTaxSystem;
-
-  /**
-   * Ограничение связи касс-слуг с кассами-мастерами
-   */
-  public enum MinionToMasterTypeEnum {
-    ANY(String.valueOf("ANY")),
-    
-    SAME_GROUP(String.valueOf("SAME_GROUP")),
-    
-    CHOSEN(String.valueOf("CHOSEN"));
-
-    private String value;
-
-    MinionToMasterTypeEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static MinionToMasterTypeEnum fromValue(String value) {
-      for (MinionToMasterTypeEnum b : MinionToMasterTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
+  private String orderTaxSystem;
 
   public static final String JSON_PROPERTY_MINION_TO_MASTER_TYPE = "minionToMasterType";
   @javax.annotation.Nullable
-  private MinionToMasterTypeEnum minionToMasterType;
-
-  /**
-   * Режим контроля минимальных розничных цен на табак
-   */
-  public enum TobaccoMrcControlTypeEnum {
-    USER_PRICE(String.valueOf("USER_PRICE")),
-    
-    MRC_PRICE(String.valueOf("MRC_PRICE")),
-    
-    SAME_PRICE(String.valueOf("SAME_PRICE"));
-
-    private String value;
-
-    TobaccoMrcControlTypeEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static TobaccoMrcControlTypeEnum fromValue(String value) {
-      for (TobaccoMrcControlTypeEnum b : TobaccoMrcControlTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
+  private String minionToMasterType;
 
   public static final String JSON_PROPERTY_TOBACCO_MRC_CONTROL_TYPE = "tobaccoMrcControlType";
   @javax.annotation.Nullable
-  private TobaccoMrcControlTypeEnum tobaccoMrcControlType;
-
-  /**
-   * Режим продажи маркированных товаров
-   */
-  public enum MarkingSellingModeEnum {
-    CORRECT_MARKS_ONLY(String.valueOf("CORRECT_MARKS_ONLY")),
-    
-    WITHOUT_ERRORS(String.valueOf("WITHOUT_ERRORS")),
-    
-    ALL(String.valueOf("ALL"));
-
-    private String value;
-
-    MarkingSellingModeEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static MarkingSellingModeEnum fromValue(String value) {
-      for (MarkingSellingModeEnum b : MarkingSellingModeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
+  private String tobaccoMrcControlType;
 
   public static final String JSON_PROPERTY_MARKING_SELLING_MODE = "markingSellingMode";
   @javax.annotation.Nullable
-  private MarkingSellingModeEnum markingSellingMode;
-
-  /**
-   * Режим проверки кодов маркировки
-   */
-  public enum MarksCheckModeEnum {
-    CORRECT_MARKS_ONLY(String.valueOf("CORRECT_MARKS_ONLY")),
-    
-    WITHOUT_ERRORS(String.valueOf("WITHOUT_ERRORS")),
-    
-    ALL(String.valueOf("ALL")),
-    
-    ALL_CHECKED(String.valueOf("ALL_CHECKED"));
-
-    private String value;
-
-    MarksCheckModeEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static MarksCheckModeEnum fromValue(String value) {
-      for (MarksCheckModeEnum b : MarksCheckModeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
+  private String markingSellingMode;
 
   public static final String JSON_PROPERTY_MARKS_CHECK_MODE = "marksCheckMode";
   @javax.annotation.Nullable
-  private MarksCheckModeEnum marksCheckMode;
-
-  /**
-   * Приоритетный способ отправки чека покупателю
-   */
-  public enum PriorityOfdSendEnum {
-    PHONE(String.valueOf("phone")),
-    
-    EMAIL(String.valueOf("email")),
-    
-    NONE(String.valueOf("none"));
-
-    private String value;
-
-    PriorityOfdSendEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static PriorityOfdSendEnum fromValue(String value) {
-      for (PriorityOfdSendEnum b : PriorityOfdSendEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
+  private String marksCheckMode;
 
   public static final String JSON_PROPERTY_PRIORITY_OFD_SEND = "priorityOfdSend";
   @javax.annotation.Nullable
-  private PriorityOfdSendEnum priorityOfdSend;
+  private String priorityOfdSend;
 
   public static final String JSON_PROPERTY_ALLOW_CREATE_PRODUCTS = "allowCreateProducts";
   @javax.annotation.Nullable
@@ -1248,21 +930,21 @@ public class RetailStore {
     this.state = state;
   }
 
-  public RetailStore fiscalType(@javax.annotation.Nullable FiscalTypeEnum fiscalType) {
+  public RetailStore fiscalType(@javax.annotation.Nullable String fiscalType) {
     
     this.fiscalType = fiscalType;
     return this;
   }
 
   /**
-   * Фискальный режим работы Точки продаж
+   * Фискальный режим работы Точки продаж. Известные значения описаны в FiscalType
    * @return fiscalType
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FISCAL_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public FiscalTypeEnum getFiscalType() {
+  public String getFiscalType() {
     return fiscalType;
   }
 
@@ -1271,25 +953,25 @@ public class RetailStore {
 
   @JsonProperty(JSON_PROPERTY_FISCAL_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFiscalType(@javax.annotation.Nullable FiscalTypeEnum fiscalType) {
+  public void setFiscalType(@javax.annotation.Nullable String fiscalType) {
     this.fiscalType = fiscalType;
   }
 
-  public RetailStore defaultTaxSystem(@javax.annotation.Nullable DefaultTaxSystemEnum defaultTaxSystem) {
+  public RetailStore defaultTaxSystem(@javax.annotation.Nullable String defaultTaxSystem) {
     
     this.defaultTaxSystem = defaultTaxSystem;
     return this;
   }
 
   /**
-   * Система налогообложения по умолчанию
+   * Система налогообложения по умолчанию. Известные значения описаны в TaxSystem
    * @return defaultTaxSystem
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DEFAULT_TAX_SYSTEM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public DefaultTaxSystemEnum getDefaultTaxSystem() {
+  public String getDefaultTaxSystem() {
     return defaultTaxSystem;
   }
 
@@ -1298,25 +980,25 @@ public class RetailStore {
 
   @JsonProperty(JSON_PROPERTY_DEFAULT_TAX_SYSTEM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDefaultTaxSystem(@javax.annotation.Nullable DefaultTaxSystemEnum defaultTaxSystem) {
+  public void setDefaultTaxSystem(@javax.annotation.Nullable String defaultTaxSystem) {
     this.defaultTaxSystem = defaultTaxSystem;
   }
 
-  public RetailStore orderTaxSystem(@javax.annotation.Nullable OrderTaxSystemEnum orderTaxSystem) {
+  public RetailStore orderTaxSystem(@javax.annotation.Nullable String orderTaxSystem) {
     
     this.orderTaxSystem = orderTaxSystem;
     return this;
   }
 
   /**
-   * Система налогообложения заказов
+   * Система налогообложения заказов. Известные значения описаны в TaxSystem
    * @return orderTaxSystem
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ORDER_TAX_SYSTEM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public OrderTaxSystemEnum getOrderTaxSystem() {
+  public String getOrderTaxSystem() {
     return orderTaxSystem;
   }
 
@@ -1325,25 +1007,25 @@ public class RetailStore {
 
   @JsonProperty(JSON_PROPERTY_ORDER_TAX_SYSTEM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOrderTaxSystem(@javax.annotation.Nullable OrderTaxSystemEnum orderTaxSystem) {
+  public void setOrderTaxSystem(@javax.annotation.Nullable String orderTaxSystem) {
     this.orderTaxSystem = orderTaxSystem;
   }
 
-  public RetailStore minionToMasterType(@javax.annotation.Nullable MinionToMasterTypeEnum minionToMasterType) {
+  public RetailStore minionToMasterType(@javax.annotation.Nullable String minionToMasterType) {
     
     this.minionToMasterType = minionToMasterType;
     return this;
   }
 
   /**
-   * Ограничение связи касс-слуг с кассами-мастерами
+   * Ограничение связи касс-слуг с кассами-мастерами. Известные значения описаны в MinionToMasterType
    * @return minionToMasterType
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_MINION_TO_MASTER_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public MinionToMasterTypeEnum getMinionToMasterType() {
+  public String getMinionToMasterType() {
     return minionToMasterType;
   }
 
@@ -1352,25 +1034,25 @@ public class RetailStore {
 
   @JsonProperty(JSON_PROPERTY_MINION_TO_MASTER_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMinionToMasterType(@javax.annotation.Nullable MinionToMasterTypeEnum minionToMasterType) {
+  public void setMinionToMasterType(@javax.annotation.Nullable String minionToMasterType) {
     this.minionToMasterType = minionToMasterType;
   }
 
-  public RetailStore tobaccoMrcControlType(@javax.annotation.Nullable TobaccoMrcControlTypeEnum tobaccoMrcControlType) {
+  public RetailStore tobaccoMrcControlType(@javax.annotation.Nullable String tobaccoMrcControlType) {
     
     this.tobaccoMrcControlType = tobaccoMrcControlType;
     return this;
   }
 
   /**
-   * Режим контроля минимальных розничных цен на табак
+   * Режим контроля минимальных розничных цен на табак. Известные значения описаны в TobaccoMrcControlType
    * @return tobaccoMrcControlType
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TOBACCO_MRC_CONTROL_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public TobaccoMrcControlTypeEnum getTobaccoMrcControlType() {
+  public String getTobaccoMrcControlType() {
     return tobaccoMrcControlType;
   }
 
@@ -1379,25 +1061,25 @@ public class RetailStore {
 
   @JsonProperty(JSON_PROPERTY_TOBACCO_MRC_CONTROL_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTobaccoMrcControlType(@javax.annotation.Nullable TobaccoMrcControlTypeEnum tobaccoMrcControlType) {
+  public void setTobaccoMrcControlType(@javax.annotation.Nullable String tobaccoMrcControlType) {
     this.tobaccoMrcControlType = tobaccoMrcControlType;
   }
 
-  public RetailStore markingSellingMode(@javax.annotation.Nullable MarkingSellingModeEnum markingSellingMode) {
+  public RetailStore markingSellingMode(@javax.annotation.Nullable String markingSellingMode) {
     
     this.markingSellingMode = markingSellingMode;
     return this;
   }
 
   /**
-   * Режим продажи маркированных товаров
+   * Режим продажи маркированных товаров. Известные значения описаны в MarkingSellingMode
    * @return markingSellingMode
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_MARKING_SELLING_MODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public MarkingSellingModeEnum getMarkingSellingMode() {
+  public String getMarkingSellingMode() {
     return markingSellingMode;
   }
 
@@ -1406,25 +1088,25 @@ public class RetailStore {
 
   @JsonProperty(JSON_PROPERTY_MARKING_SELLING_MODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMarkingSellingMode(@javax.annotation.Nullable MarkingSellingModeEnum markingSellingMode) {
+  public void setMarkingSellingMode(@javax.annotation.Nullable String markingSellingMode) {
     this.markingSellingMode = markingSellingMode;
   }
 
-  public RetailStore marksCheckMode(@javax.annotation.Nullable MarksCheckModeEnum marksCheckMode) {
+  public RetailStore marksCheckMode(@javax.annotation.Nullable String marksCheckMode) {
     
     this.marksCheckMode = marksCheckMode;
     return this;
   }
 
   /**
-   * Режим проверки кодов маркировки
+   * Режим проверки кодов маркировки. Известные значения описаны в MarksCheckMode
    * @return marksCheckMode
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_MARKS_CHECK_MODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public MarksCheckModeEnum getMarksCheckMode() {
+  public String getMarksCheckMode() {
     return marksCheckMode;
   }
 
@@ -1433,25 +1115,25 @@ public class RetailStore {
 
   @JsonProperty(JSON_PROPERTY_MARKS_CHECK_MODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMarksCheckMode(@javax.annotation.Nullable MarksCheckModeEnum marksCheckMode) {
+  public void setMarksCheckMode(@javax.annotation.Nullable String marksCheckMode) {
     this.marksCheckMode = marksCheckMode;
   }
 
-  public RetailStore priorityOfdSend(@javax.annotation.Nullable PriorityOfdSendEnum priorityOfdSend) {
+  public RetailStore priorityOfdSend(@javax.annotation.Nullable String priorityOfdSend) {
     
     this.priorityOfdSend = priorityOfdSend;
     return this;
   }
 
   /**
-   * Приоритетный способ отправки чека покупателю
+   * Приоритетный способ отправки чека покупателю. Известные значения описаны в PriorityOfdSend
    * @return priorityOfdSend
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PRIORITY_OFD_SEND)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public PriorityOfdSendEnum getPriorityOfdSend() {
+  public String getPriorityOfdSend() {
     return priorityOfdSend;
   }
 
@@ -1460,7 +1142,7 @@ public class RetailStore {
 
   @JsonProperty(JSON_PROPERTY_PRIORITY_OFD_SEND)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPriorityOfdSend(@javax.annotation.Nullable PriorityOfdSendEnum priorityOfdSend) {
+  public void setPriorityOfdSend(@javax.annotation.Nullable String priorityOfdSend) {
     this.priorityOfdSend = priorityOfdSend;
   }
 

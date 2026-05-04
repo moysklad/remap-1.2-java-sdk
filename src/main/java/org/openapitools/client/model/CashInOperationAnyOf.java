@@ -114,7 +114,7 @@ import java.util.StringJoiner;
   CashInOperationAnyOf.JSON_PROPERTY_LINKED_SUM
 })
 @JsonTypeName("CashInOperation_anyOf")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-29T07:18:49.943763362Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:35:38.786882520Z[GMT]", comments = "Generator version: 7.14.0")
 public class CashInOperationAnyOf {
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
@@ -264,53 +264,9 @@ public class CashInOperationAnyOf {
   @javax.annotation.Nullable
   private JsonNullable<FileList> files = JsonNullable.<FileList>undefined();
 
-  /**
-   * Код системы налогообложения
-   */
-  public enum TaxSystemEnum {
-    GENERAL_TAX_SYSTEM(String.valueOf("GENERAL_TAX_SYSTEM")),
-    
-    SIMPLIFIED_TAX_SYSTEM_INCOME(String.valueOf("SIMPLIFIED_TAX_SYSTEM_INCOME")),
-    
-    SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME(String.valueOf("SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME")),
-    
-    UNIFIED_AGRICULTURAL_TAX(String.valueOf("UNIFIED_AGRICULTURAL_TAX")),
-    
-    PRESUMPTIVE_TAX_SYSTEM(String.valueOf("PRESUMPTIVE_TAX_SYSTEM")),
-    
-    PATENT_BASED(String.valueOf("PATENT_BASED"));
-
-    private String value;
-
-    TaxSystemEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static TaxSystemEnum fromValue(String value) {
-      for (TaxSystemEnum b : TaxSystemEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
-
   public static final String JSON_PROPERTY_TAX_SYSTEM = "taxSystem";
   @javax.annotation.Nullable
-  private TaxSystemEnum taxSystem;
+  private String taxSystem;
 
   public static final String JSON_PROPERTY_RATE = "rate";
   @javax.annotation.Nullable
@@ -1359,21 +1315,21 @@ public class CashInOperationAnyOf {
     this.files = JsonNullable.<FileList>of(files);
   }
 
-  public CashInOperationAnyOf taxSystem(@javax.annotation.Nullable TaxSystemEnum taxSystem) {
+  public CashInOperationAnyOf taxSystem(@javax.annotation.Nullable String taxSystem) {
     
     this.taxSystem = taxSystem;
     return this;
   }
 
   /**
-   * Код системы налогообложения
+   * Код системы налогообложения. Известные значения описаны в TaxSystem
    * @return taxSystem
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TAX_SYSTEM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public TaxSystemEnum getTaxSystem() {
+  public String getTaxSystem() {
     return taxSystem;
   }
 
@@ -1382,7 +1338,7 @@ public class CashInOperationAnyOf {
 
   @JsonProperty(JSON_PROPERTY_TAX_SYSTEM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTaxSystem(@javax.annotation.Nullable TaxSystemEnum taxSystem) {
+  public void setTaxSystem(@javax.annotation.Nullable String taxSystem) {
     this.taxSystem = taxSystem;
   }
 

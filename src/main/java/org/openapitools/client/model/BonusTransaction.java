@@ -27,10 +27,7 @@ import org.openapitools.client.model.Employee;
 import org.openapitools.client.model.Group;
 import org.openapitools.client.model.Meta;
 import org.openapitools.client.model.Organization;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
+import org.openapitools.client.model.StabEntity;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.io.UnsupportedEncodingException;
@@ -66,7 +63,7 @@ import java.util.StringJoiner;
   BonusTransaction.JSON_PROPERTY_SHARED,
   BonusTransaction.JSON_PROPERTY_UPDATED_BY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-29T07:18:49.943763362Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:35:38.786882520Z[GMT]", comments = "Generator version: 7.14.0")
 public class BonusTransaction {
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
@@ -98,7 +95,7 @@ public class BonusTransaction {
 
   public static final String JSON_PROPERTY_PARENT_DOCUMENT = "parentDocument";
   @javax.annotation.Nullable
-  private JsonNullable<Meta> parentDocument = JsonNullable.<Meta>undefined();
+  private StabEntity parentDocument;
 
   public static final String JSON_PROPERTY_APPLICABLE = "applicable";
   @javax.annotation.Nullable
@@ -112,127 +109,17 @@ public class BonusTransaction {
   @javax.annotation.Nullable
   private Integer bonusValue;
 
-  /**
-   * Тип бонусной операции
-   */
-  public enum TransactionTypeEnum {
-    EARNING(String.valueOf("EARNING")),
-    
-    SPENDING(String.valueOf("SPENDING"));
-
-    private String value;
-
-    TransactionTypeEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static TransactionTypeEnum fromValue(String value) {
-      for (TransactionTypeEnum b : TransactionTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
-
   public static final String JSON_PROPERTY_TRANSACTION_TYPE = "transactionType";
   @javax.annotation.Nullable
-  private TransactionTypeEnum transactionType;
-
-  /**
-   * Статус бонусной операции
-   */
-  public enum TransactionStatusEnum {
-    WAIT_PROCESSING(String.valueOf("WAIT_PROCESSING")),
-    
-    COMPLETED(String.valueOf("COMPLETED")),
-    
-    CANCELED(String.valueOf("CANCELED"));
-
-    private String value;
-
-    TransactionStatusEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static TransactionStatusEnum fromValue(String value) {
-      for (TransactionStatusEnum b : TransactionStatusEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
+  private String transactionType;
 
   public static final String JSON_PROPERTY_TRANSACTION_STATUS = "transactionStatus";
   @javax.annotation.Nullable
-  private TransactionStatusEnum transactionStatus;
-
-  /**
-   * Категория бонусной операции
-   */
-  public enum CategoryTypeEnum {
-    REGULAR(String.valueOf("REGULAR")),
-    
-    WELCOME(String.valueOf("WELCOME"));
-
-    private String value;
-
-    CategoryTypeEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static CategoryTypeEnum fromValue(String value) {
-      for (CategoryTypeEnum b : CategoryTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
+  private String transactionStatus;
 
   public static final String JSON_PROPERTY_CATEGORY_TYPE = "categoryType";
   @javax.annotation.Nullable
-  private CategoryTypeEnum categoryType;
+  private String categoryType;
 
   public static final String JSON_PROPERTY_CODE = "code";
   @javax.annotation.Nullable
@@ -283,8 +170,8 @@ public class BonusTransaction {
   public BonusTransaction(
     @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id, 
     @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId, 
-    @JsonProperty(value = JSON_PROPERTY_TRANSACTION_STATUS, required = false) TransactionStatusEnum transactionStatus, 
-    @JsonProperty(value = JSON_PROPERTY_CATEGORY_TYPE, required = false) CategoryTypeEnum categoryType, 
+    @JsonProperty(value = JSON_PROPERTY_TRANSACTION_STATUS, required = false) String transactionStatus, 
+    @JsonProperty(value = JSON_PROPERTY_CATEGORY_TYPE, required = false) String categoryType, 
     @JsonProperty(value = JSON_PROPERTY_CREATED, required = false) String created, 
     @JsonProperty(value = JSON_PROPERTY_UPDATED, required = false) String updated
   ) {
@@ -464,40 +351,31 @@ public class BonusTransaction {
     this.organization = organization;
   }
 
-  public BonusTransaction parentDocument(@javax.annotation.Nullable Meta parentDocument) {
-    this.parentDocument = JsonNullable.<Meta>of(parentDocument);
+  public BonusTransaction parentDocument(@javax.annotation.Nullable StabEntity parentDocument) {
     
+    this.parentDocument = parentDocument;
     return this;
   }
 
   /**
-   * Метаданные связанного документа бонусной операции
+   * Get parentDocument
    * @return parentDocument
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Meta getParentDocument() {
-        return parentDocument.orElse(null);
-  }
-
-  
-
   @JsonProperty(JSON_PROPERTY_PARENT_DOCUMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-
-  public JsonNullable<Meta> getParentDocument_JsonNullable() {
+  public StabEntity getParentDocument() {
     return parentDocument;
   }
-  
-  @JsonProperty(value = JSON_PROPERTY_PARENT_DOCUMENT, required = false)
-  public void setParentDocument_JsonNullable(JsonNullable<Meta> parentDocument) {
-    this.parentDocument = parentDocument;
-  }
 
-  public void setParentDocument(@javax.annotation.Nullable Meta parentDocument) {
-    this.parentDocument = JsonNullable.<Meta>of(parentDocument);
+  
+
+
+  @JsonProperty(JSON_PROPERTY_PARENT_DOCUMENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setParentDocument(@javax.annotation.Nullable StabEntity parentDocument) {
+    this.parentDocument = parentDocument;
   }
 
   public BonusTransaction applicable(@javax.annotation.Nullable Boolean applicable) {
@@ -581,21 +459,21 @@ public class BonusTransaction {
     this.bonusValue = bonusValue;
   }
 
-  public BonusTransaction transactionType(@javax.annotation.Nullable TransactionTypeEnum transactionType) {
+  public BonusTransaction transactionType(@javax.annotation.Nullable String transactionType) {
     
     this.transactionType = transactionType;
     return this;
   }
 
   /**
-   * Тип бонусной операции
+   * Тип бонусной операции. Известные значения описаны в TransactionType
    * @return transactionType
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TRANSACTION_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public TransactionTypeEnum getTransactionType() {
+  public String getTransactionType() {
     return transactionType;
   }
 
@@ -604,19 +482,19 @@ public class BonusTransaction {
 
   @JsonProperty(JSON_PROPERTY_TRANSACTION_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTransactionType(@javax.annotation.Nullable TransactionTypeEnum transactionType) {
+  public void setTransactionType(@javax.annotation.Nullable String transactionType) {
     this.transactionType = transactionType;
   }
 
   /**
-   * Статус бонусной операции
+   * Статус бонусной операции. Известные значения описаны в TransactionStatus
    * @return transactionStatus
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TRANSACTION_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public TransactionStatusEnum getTransactionStatus() {
+  public String getTransactionStatus() {
     return transactionStatus;
   }
 
@@ -625,14 +503,14 @@ public class BonusTransaction {
 
 
   /**
-   * Категория бонусной операции
+   * Категория бонусной операции. Известные значения описаны в CategoryType
    * @return categoryType
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CATEGORY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public CategoryTypeEnum getCategoryType() {
+  public String getCategoryType() {
     return categoryType;
   }
 
@@ -904,7 +782,7 @@ public class BonusTransaction {
         Objects.equals(this.agent, bonusTransaction.agent) &&
         Objects.equals(this.group, bonusTransaction.group) &&
         Objects.equals(this.organization, bonusTransaction.organization) &&
-        equalsNullable(this.parentDocument, bonusTransaction.parentDocument) &&
+        Objects.equals(this.parentDocument, bonusTransaction.parentDocument) &&
         Objects.equals(this.applicable, bonusTransaction.applicable) &&
         Objects.equals(this.bonusProgram, bonusTransaction.bonusProgram) &&
         Objects.equals(this.bonusValue, bonusTransaction.bonusValue) &&
@@ -923,20 +801,9 @@ public class BonusTransaction {
         Objects.equals(this.updatedBy, bonusTransaction.updatedBy);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, owner, agent, group, organization, hashCodeNullable(parentDocument), applicable, bonusProgram, bonusValue, transactionType, transactionStatus, categoryType, code, name, externalCode, description, moment, created, updated, executionDate, shared, updatedBy);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(meta, id, accountId, owner, agent, group, organization, parentDocument, applicable, bonusProgram, bonusValue, transactionType, transactionStatus, categoryType, code, name, externalCode, description, moment, created, updated, executionDate, shared, updatedBy);
   }
 
   @Override

@@ -18,7 +18,7 @@
 |**created** | **String** | Момент создания |  [optional] [readonly] |
 |**updated** | **String** | Момент последнего обновления |  [optional] [readonly] |
 |**description** | **String** | Комментарий к контрагенту |  [optional] |
-|**companyType** | [**CompanyTypeEnum**](#CompanyTypeEnum) | Тип контрагента |  [optional] |
+|**companyType** | **String** | Тип контрагента. Известные значения описаны в CompanyType |  [optional] |
 |**email** | **String** | Адрес электронной почты |  [optional] |
 |**phone** | **String** | Номер телефона |  [optional] |
 |**fax** | **String** | Номер факса |  [optional] |
@@ -38,7 +38,7 @@
 |**legalLastName** | **String** | Фамилия для ИП и физлица |  [optional] |
 |**legalMiddleName** | **String** | Отчество для ИП и физлица |  [optional] |
 |**birthDate** | **String** | Дата рождения для физлица |  [optional] |
-|**sex** | [**SexEnum**](#SexEnum) | Пол контрагента |  [optional] |
+|**sex** | **String** | Пол контрагента. Известные значения описаны в Sex |  [optional] |
 |**discountCardNumber** | **String** | Номер дисконтной карты контрагента |  [optional] |
 |**discounts** | [**List&lt;AgentDiscount&gt;**](AgentDiscount.md) | Массив скидок контрагента |  [optional] |
 |**shared** | **Boolean** | Общий доступ |  [optional] |
@@ -56,25 +56,6 @@
 |**tags** | **List&lt;String&gt;** | Группы контрагента |  [optional] |
 |**attributes** | [**List&lt;AttributeAbstract&gt;**](AttributeAbstract.md) | Дополнительные поля |  [optional] |
 |**errors** | [**List&lt;ErrorErrorsInner&gt;**](ErrorErrorsInner.md) |  |  |
-
-
-
-## Enum: CompanyTypeEnum
-
-| Name | Value |
-|---- | -----|
-| LEGAL | &quot;legal&quot; |
-| ENTREPRENEUR | &quot;entrepreneur&quot; |
-| INDIVIDUAL | &quot;individual&quot; |
-
-
-
-## Enum: SexEnum
-
-| Name | Value |
-|---- | -----|
-| MALE | &quot;MALE&quot; |
-| FEMALE | &quot;FEMALE&quot; |
 
 
 

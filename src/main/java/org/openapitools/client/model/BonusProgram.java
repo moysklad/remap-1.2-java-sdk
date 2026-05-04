@@ -56,7 +56,7 @@ import java.util.StringJoiner;
   BonusProgram.JSON_PROPERTY_ALL_AGENTS,
   BonusProgram.JSON_PROPERTY_AGENT_TAGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-29T07:18:49.943763362Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:35:38.786882520Z[GMT]", comments = "Generator version: 7.14.0")
 public class BonusProgram {
   public static final String JSON_PROPERTY_EARN_RATE_ROUBLES_TO_POINT = "earnRateRoublesToPoint";
   @javax.annotation.Nullable
@@ -82,45 +82,9 @@ public class BonusProgram {
   @javax.annotation.Nullable
   private Integer welcomeBonusesValue;
 
-  /**
-   * Условие начисления приветственных баллов
-   */
-  public enum WelcomeBonusesModeEnum {
-    REGISTRATION(String.valueOf("REGISTRATION")),
-    
-    FIRST_PURCHASE(String.valueOf("FIRST_PURCHASE"));
-
-    private String value;
-
-    WelcomeBonusesModeEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static WelcomeBonusesModeEnum fromValue(String value) {
-      for (WelcomeBonusesModeEnum b : WelcomeBonusesModeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
-
   public static final String JSON_PROPERTY_WELCOME_BONUSES_MODE = "welcomeBonusesMode";
   @javax.annotation.Nullable
-  private WelcomeBonusesModeEnum welcomeBonusesMode;
+  private String welcomeBonusesMode;
 
   public static final String JSON_PROPERTY_MAX_PAID_RATE_PERCENTS = "maxPaidRatePercents";
   @javax.annotation.Nullable
@@ -335,21 +299,21 @@ public class BonusProgram {
     this.welcomeBonusesValue = welcomeBonusesValue;
   }
 
-  public BonusProgram welcomeBonusesMode(@javax.annotation.Nullable WelcomeBonusesModeEnum welcomeBonusesMode) {
+  public BonusProgram welcomeBonusesMode(@javax.annotation.Nullable String welcomeBonusesMode) {
     
     this.welcomeBonusesMode = welcomeBonusesMode;
     return this;
   }
 
   /**
-   * Условие начисления приветственных баллов
+   * Условие начисления приветственных баллов. Известные значения описаны в WelcomeBonusesMode
    * @return welcomeBonusesMode
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_WELCOME_BONUSES_MODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public WelcomeBonusesModeEnum getWelcomeBonusesMode() {
+  public String getWelcomeBonusesMode() {
     return welcomeBonusesMode;
   }
 
@@ -358,7 +322,7 @@ public class BonusProgram {
 
   @JsonProperty(JSON_PROPERTY_WELCOME_BONUSES_MODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setWelcomeBonusesMode(@javax.annotation.Nullable WelcomeBonusesModeEnum welcomeBonusesMode) {
+  public void setWelcomeBonusesMode(@javax.annotation.Nullable String welcomeBonusesMode) {
     this.welcomeBonusesMode = welcomeBonusesMode;
   }
 

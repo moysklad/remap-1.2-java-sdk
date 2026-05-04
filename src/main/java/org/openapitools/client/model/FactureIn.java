@@ -68,7 +68,7 @@ import java.util.StringJoiner;
   FactureIn.JSON_PROPERTY_SHARED,
   FactureIn.JSON_PROPERTY_STATE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-29T07:18:49.943763362Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:35:38.786882520Z[GMT]", comments = "Generator version: 7.14.0")
 public class FactureIn {
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
@@ -92,7 +92,7 @@ public class FactureIn {
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
-  private List<AttributeAbstract> attributes = new ArrayList<>();
+  private JsonNullable<List<AttributeAbstract>> attributes = JsonNullable.<List<AttributeAbstract>>undefined();
 
   public static final String JSON_PROPERTY_CODE = "code";
   @javax.annotation.Nullable
@@ -291,16 +291,20 @@ public class FactureIn {
   }
 
   public FactureIn attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
-    this.attributes = attributes;
     return this;
   }
 
   public FactureIn addAttributesItem(AttributeAbstract attributesItem) {
-    if (this.attributes == null) {
-      this.attributes = new ArrayList<>();
+    if (this.attributes == null || !this.attributes.isPresent()) {
+      this.attributes = JsonNullable.<List<AttributeAbstract>>of(new ArrayList<>());
     }
-    this.attributes.add(attributesItem);
+    try {
+      this.attributes.get().add(attributesItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
     return this;
   }
 
@@ -309,20 +313,29 @@ public class FactureIn {
    * @return attributes
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public List<AttributeAbstract> getAttributes() {
-    return attributes;
+        return attributes.orElse(null);
   }
 
   
 
-
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
+
+  public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
+    return attributes;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
+  public void setAttributes_JsonNullable(JsonNullable<List<AttributeAbstract>> attributes) {
     this.attributes = attributes;
+  }
+
+  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
   public FactureIn code(@javax.annotation.Nullable String code) {
@@ -736,7 +749,7 @@ public class FactureIn {
         Objects.equals(this.accountId, factureIn.accountId) &&
         Objects.equals(this.agent, factureIn.agent) &&
         Objects.equals(this.applicable, factureIn.applicable) &&
-        Objects.equals(this.attributes, factureIn.attributes) &&
+        equalsNullable(this.attributes, factureIn.attributes) &&
         Objects.equals(this.code, factureIn.code) &&
         Objects.equals(this.created, factureIn.created) &&
         Objects.equals(this.deleted, factureIn.deleted) &&
@@ -760,7 +773,7 @@ public class FactureIn {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, agent, applicable, attributes, code, created, deleted, hashCodeNullable(description), externalCode, hashCodeNullable(files), group, moment, name, hashCodeNullable(owner), printed, published, rate, shared, hashCodeNullable(state));
+    return Objects.hash(meta, id, accountId, agent, applicable, hashCodeNullable(attributes), code, created, deleted, hashCodeNullable(description), externalCode, hashCodeNullable(files), group, moment, name, hashCodeNullable(owner), printed, published, rate, shared, hashCodeNullable(state));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

@@ -59,7 +59,7 @@ import java.util.StringJoiner;
   CreateCurrenciesBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createCurrenciesBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-29T07:18:49.943763362Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:35:38.786882520Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateCurrenciesBatch200ResponseInner {
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
@@ -105,45 +105,9 @@ public class CreateCurrenciesBatch200ResponseInner {
   @javax.annotation.Nullable
   private Boolean indirect;
 
-  /**
-   * Способ обновления курса валюты
-   */
-  public enum RateUpdateTypeEnum {
-    MANUAL(String.valueOf("manual")),
-    
-    AUTO(String.valueOf("auto"));
-
-    private String value;
-
-    RateUpdateTypeEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static RateUpdateTypeEnum fromValue(String value) {
-      for (RateUpdateTypeEnum b : RateUpdateTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
-
   public static final String JSON_PROPERTY_RATE_UPDATE_TYPE = "rateUpdateType";
   @javax.annotation.Nullable
-  private RateUpdateTypeEnum rateUpdateType;
+  private String rateUpdateType;
 
   public static final String JSON_PROPERTY_ARCHIVED = "archived";
   @javax.annotation.Nullable
@@ -455,21 +419,21 @@ public class CreateCurrenciesBatch200ResponseInner {
     this.indirect = indirect;
   }
 
-  public CreateCurrenciesBatch200ResponseInner rateUpdateType(@javax.annotation.Nullable RateUpdateTypeEnum rateUpdateType) {
+  public CreateCurrenciesBatch200ResponseInner rateUpdateType(@javax.annotation.Nullable String rateUpdateType) {
     
     this.rateUpdateType = rateUpdateType;
     return this;
   }
 
   /**
-   * Способ обновления курса валюты
+   * Способ обновления курса валюты. Известные значения описаны в RateUpdateType
    * @return rateUpdateType
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RATE_UPDATE_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public RateUpdateTypeEnum getRateUpdateType() {
+  public String getRateUpdateType() {
     return rateUpdateType;
   }
 
@@ -478,7 +442,7 @@ public class CreateCurrenciesBatch200ResponseInner {
 
   @JsonProperty(JSON_PROPERTY_RATE_UPDATE_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRateUpdateType(@javax.annotation.Nullable RateUpdateTypeEnum rateUpdateType) {
+  public void setRateUpdateType(@javax.annotation.Nullable String rateUpdateType) {
     this.rateUpdateType = rateUpdateType;
   }
 

@@ -26,14 +26,14 @@
 |**priceType** | [**PriceType**](PriceType.md) |  |  [optional] |
 |**environment** | [**RetailStoreEnvironment**](RetailStoreEnvironment.md) |  |  [optional] |
 |**state** | [**RetailStoreState**](RetailStoreState.md) |  |  [optional] |
-|**fiscalType** | [**FiscalTypeEnum**](#FiscalTypeEnum) | Фискальный режим работы Точки продаж |  [optional] |
-|**defaultTaxSystem** | [**DefaultTaxSystemEnum**](#DefaultTaxSystemEnum) | Система налогообложения по умолчанию |  [optional] |
-|**orderTaxSystem** | [**OrderTaxSystemEnum**](#OrderTaxSystemEnum) | Система налогообложения заказов |  [optional] |
-|**minionToMasterType** | [**MinionToMasterTypeEnum**](#MinionToMasterTypeEnum) | Ограничение связи касс-слуг с кассами-мастерами |  [optional] |
-|**tobaccoMrcControlType** | [**TobaccoMrcControlTypeEnum**](#TobaccoMrcControlTypeEnum) | Режим контроля минимальных розничных цен на табак |  [optional] |
-|**markingSellingMode** | [**MarkingSellingModeEnum**](#MarkingSellingModeEnum) | Режим продажи маркированных товаров |  [optional] |
-|**marksCheckMode** | [**MarksCheckModeEnum**](#MarksCheckModeEnum) | Режим проверки кодов маркировки |  [optional] |
-|**priorityOfdSend** | [**PriorityOfdSendEnum**](#PriorityOfdSendEnum) | Приоритетный способ отправки чека покупателю |  [optional] |
+|**fiscalType** | **String** | Фискальный режим работы Точки продаж. Известные значения описаны в FiscalType |  [optional] |
+|**defaultTaxSystem** | **String** | Система налогообложения по умолчанию. Известные значения описаны в TaxSystem |  [optional] |
+|**orderTaxSystem** | **String** | Система налогообложения заказов. Известные значения описаны в TaxSystem |  [optional] |
+|**minionToMasterType** | **String** | Ограничение связи касс-слуг с кассами-мастерами. Известные значения описаны в MinionToMasterType |  [optional] |
+|**tobaccoMrcControlType** | **String** | Режим контроля минимальных розничных цен на табак. Известные значения описаны в TobaccoMrcControlType |  [optional] |
+|**markingSellingMode** | **String** | Режим продажи маркированных товаров. Известные значения описаны в MarkingSellingMode |  [optional] |
+|**marksCheckMode** | **String** | Режим проверки кодов маркировки. Известные значения описаны в MarksCheckMode |  [optional] |
+|**priorityOfdSend** | **String** | Приоритетный способ отправки чека покупателю. Известные значения описаны в PriorityOfdSend |  [optional] |
 |**allowCreateProducts** | **Boolean** | Признак разрешения создания новых товаров при продаже |  [optional] |
 |**allowCustomPrice** | **Boolean** | Признак разрешения устанавливать произвольные цены |  [optional] [readonly] |
 |**allowDeleteReceiptPositions** | **Boolean** | Признак разрешения удалять позиции из чека |  [optional] |
@@ -82,93 +82,6 @@
 |**cashiers** | [**CashierList**](CashierList.md) | Кассиры, работающие на точке продаж |  [optional] |
 |**qrAcquire** | [**Counterparty**](Counterparty.md) | Эквайер для QR-платежей |  [optional] |
 |**errors** | [**List&lt;ErrorErrorsInner&gt;**](ErrorErrorsInner.md) |  |  |
-
-
-
-## Enum: FiscalTypeEnum
-
-| Name | Value |
-|---- | -----|
-| STANDARD | &quot;STANDARD&quot; |
-| MASTER | &quot;MASTER&quot; |
-| CLOUD | &quot;CLOUD&quot; |
-
-
-
-## Enum: DefaultTaxSystemEnum
-
-| Name | Value |
-|---- | -----|
-| GENERAL_TAX_SYSTEM | &quot;GENERAL_TAX_SYSTEM&quot; |
-| SIMPLIFIED_TAX_SYSTEM_INCOME | &quot;SIMPLIFIED_TAX_SYSTEM_INCOME&quot; |
-| SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME | &quot;SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME&quot; |
-| UNIFIED_AGRICULTURAL_TAX | &quot;UNIFIED_AGRICULTURAL_TAX&quot; |
-| PRESUMPTIVE_TAX_SYSTEM | &quot;PRESUMPTIVE_TAX_SYSTEM&quot; |
-| PATENT_BASED | &quot;PATENT_BASED&quot; |
-
-
-
-## Enum: OrderTaxSystemEnum
-
-| Name | Value |
-|---- | -----|
-| GENERAL_TAX_SYSTEM | &quot;GENERAL_TAX_SYSTEM&quot; |
-| SIMPLIFIED_TAX_SYSTEM_INCOME | &quot;SIMPLIFIED_TAX_SYSTEM_INCOME&quot; |
-| SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME | &quot;SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME&quot; |
-| UNIFIED_AGRICULTURAL_TAX | &quot;UNIFIED_AGRICULTURAL_TAX&quot; |
-| PRESUMPTIVE_TAX_SYSTEM | &quot;PRESUMPTIVE_TAX_SYSTEM&quot; |
-| PATENT_BASED | &quot;PATENT_BASED&quot; |
-
-
-
-## Enum: MinionToMasterTypeEnum
-
-| Name | Value |
-|---- | -----|
-| ANY | &quot;ANY&quot; |
-| SAME_GROUP | &quot;SAME_GROUP&quot; |
-| CHOSEN | &quot;CHOSEN&quot; |
-
-
-
-## Enum: TobaccoMrcControlTypeEnum
-
-| Name | Value |
-|---- | -----|
-| USER_PRICE | &quot;USER_PRICE&quot; |
-| MRC_PRICE | &quot;MRC_PRICE&quot; |
-| SAME_PRICE | &quot;SAME_PRICE&quot; |
-
-
-
-## Enum: MarkingSellingModeEnum
-
-| Name | Value |
-|---- | -----|
-| CORRECT_MARKS_ONLY | &quot;CORRECT_MARKS_ONLY&quot; |
-| WITHOUT_ERRORS | &quot;WITHOUT_ERRORS&quot; |
-| ALL | &quot;ALL&quot; |
-
-
-
-## Enum: MarksCheckModeEnum
-
-| Name | Value |
-|---- | -----|
-| CORRECT_MARKS_ONLY | &quot;CORRECT_MARKS_ONLY&quot; |
-| WITHOUT_ERRORS | &quot;WITHOUT_ERRORS&quot; |
-| ALL | &quot;ALL&quot; |
-| ALL_CHECKED | &quot;ALL_CHECKED&quot; |
-
-
-
-## Enum: PriorityOfdSendEnum
-
-| Name | Value |
-|---- | -----|
-| PHONE | &quot;phone&quot; |
-| EMAIL | &quot;email&quot; |
-| NONE | &quot;none&quot; |
 
 
 

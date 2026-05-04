@@ -52,7 +52,7 @@ import java.util.StringJoiner;
   Discount.JSON_PROPERTY_ALL_AGENTS,
   Discount.JSON_PROPERTY_AGENT_TAGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-29T07:18:49.943763362Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:35:38.786882520Z[GMT]", comments = "Generator version: 7.14.0")
 public class Discount {
   public static final String JSON_PROPERTY_ALL_PRODUCTS = "allProducts";
   @javax.annotation.Nullable
@@ -60,11 +60,11 @@ public class Discount {
 
   public static final String JSON_PROPERTY_ASSORTMENT = "assortment";
   @javax.annotation.Nullable
-  private List<DiscountAssortmentItem> assortment = new ArrayList<>();
+  private JsonNullable<List<DiscountAssortmentItem>> assortment = JsonNullable.<List<DiscountAssortmentItem>>undefined();
 
   public static final String JSON_PROPERTY_PRODUCT_FOLDERS = "productFolders";
   @javax.annotation.Nullable
-  private List<ProductFolder> productFolders = new ArrayList<>();
+  private JsonNullable<List<ProductFolder>> productFolders = JsonNullable.<List<ProductFolder>>undefined();
 
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable
@@ -137,16 +137,20 @@ public class Discount {
   }
 
   public Discount assortment(@javax.annotation.Nullable List<DiscountAssortmentItem> assortment) {
+    this.assortment = JsonNullable.<List<DiscountAssortmentItem>>of(assortment);
     
-    this.assortment = assortment;
     return this;
   }
 
   public Discount addAssortmentItem(DiscountAssortmentItem assortmentItem) {
-    if (this.assortment == null) {
-      this.assortment = new ArrayList<>();
+    if (this.assortment == null || !this.assortment.isPresent()) {
+      this.assortment = JsonNullable.<List<DiscountAssortmentItem>>of(new ArrayList<>());
     }
-    this.assortment.add(assortmentItem);
+    try {
+      this.assortment.get().add(assortmentItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
     return this;
   }
 
@@ -155,33 +159,46 @@ public class Discount {
    * @return assortment
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ASSORTMENT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public List<DiscountAssortmentItem> getAssortment() {
-    return assortment;
+        return assortment.orElse(null);
   }
 
   
 
-
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAssortment(@javax.annotation.Nullable List<DiscountAssortmentItem> assortment) {
+
+
+  public JsonNullable<List<DiscountAssortmentItem>> getAssortment_JsonNullable() {
+    return assortment;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_ASSORTMENT, required = false)
+  public void setAssortment_JsonNullable(JsonNullable<List<DiscountAssortmentItem>> assortment) {
     this.assortment = assortment;
   }
 
+  public void setAssortment(@javax.annotation.Nullable List<DiscountAssortmentItem> assortment) {
+    this.assortment = JsonNullable.<List<DiscountAssortmentItem>>of(assortment);
+  }
+
   public Discount productFolders(@javax.annotation.Nullable List<ProductFolder> productFolders) {
+    this.productFolders = JsonNullable.<List<ProductFolder>>of(productFolders);
     
-    this.productFolders = productFolders;
     return this;
   }
 
   public Discount addProductFoldersItem(ProductFolder productFoldersItem) {
-    if (this.productFolders == null) {
-      this.productFolders = new ArrayList<>();
+    if (this.productFolders == null || !this.productFolders.isPresent()) {
+      this.productFolders = JsonNullable.<List<ProductFolder>>of(new ArrayList<>());
     }
-    this.productFolders.add(productFoldersItem);
+    try {
+      this.productFolders.get().add(productFoldersItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
     return this;
   }
 
@@ -190,20 +207,29 @@ public class Discount {
    * @return productFolders
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PRODUCT_FOLDERS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public List<ProductFolder> getProductFolders() {
-    return productFolders;
+        return productFolders.orElse(null);
   }
 
   
 
-
   @JsonProperty(JSON_PROPERTY_PRODUCT_FOLDERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setProductFolders(@javax.annotation.Nullable List<ProductFolder> productFolders) {
+
+
+  public JsonNullable<List<ProductFolder>> getProductFolders_JsonNullable() {
+    return productFolders;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_PRODUCT_FOLDERS, required = false)
+  public void setProductFolders_JsonNullable(JsonNullable<List<ProductFolder>> productFolders) {
     this.productFolders = productFolders;
+  }
+
+  public void setProductFolders(@javax.annotation.Nullable List<ProductFolder> productFolders) {
+    this.productFolders = JsonNullable.<List<ProductFolder>>of(productFolders);
   }
 
   /**
@@ -404,8 +430,8 @@ public class Discount {
     }
     Discount discount = (Discount) o;
     return Objects.equals(this.allProducts, discount.allProducts) &&
-        Objects.equals(this.assortment, discount.assortment) &&
-        Objects.equals(this.productFolders, discount.productFolders) &&
+        equalsNullable(this.assortment, discount.assortment) &&
+        equalsNullable(this.productFolders, discount.productFolders) &&
         Objects.equals(this.id, discount.id) &&
         Objects.equals(this.meta, discount.meta) &&
         Objects.equals(this.accountId, discount.accountId) &&
@@ -421,7 +447,7 @@ public class Discount {
 
   @Override
   public int hashCode() {
-    return Objects.hash(allProducts, assortment, productFolders, id, meta, accountId, name, active, allAgents, hashCodeNullable(agentTags));
+    return Objects.hash(allProducts, hashCodeNullable(assortment), hashCodeNullable(productFolders), id, meta, accountId, name, active, allAgents, hashCodeNullable(agentTags));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

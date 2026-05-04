@@ -65,7 +65,7 @@ import java.util.StringJoiner;
   Store.JSON_PROPERTY_ZONES,
   Store.JSON_PROPERTY_SLOTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-29T07:18:49.943763362Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:35:38.786882520Z[GMT]", comments = "Generator version: 7.14.0")
 public class Store {
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable

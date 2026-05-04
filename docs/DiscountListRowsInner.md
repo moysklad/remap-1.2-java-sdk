@@ -28,17 +28,8 @@
 |**spendRatePointsToRouble** | **Integer** | Курс списания |  [optional] |
 |**welcomeBonusesEnabled** | **Boolean** | Возможность начисления приветственных баллов |  [optional] |
 |**welcomeBonusesValue** | **Integer** | Количество приветственных баллов, начисляемых участникам бонусной программы |  [optional] |
-|**welcomeBonusesMode** | [**WelcomeBonusesModeEnum**](#WelcomeBonusesModeEnum) | Условие начисления приветственных баллов |  [optional] |
+|**welcomeBonusesMode** | **String** | Условие начисления приветственных баллов. Известные значения описаны в WelcomeBonusesMode |  [optional] |
 |**maxPaidRatePercents** | **Integer** | Максимальный процент оплаты баллами |  [optional] |
-
-
-
-## Enum: WelcomeBonusesModeEnum
-
-| Name | Value |
-|---- | -----|
-| REGISTRATION | &quot;REGISTRATION&quot; |
-| FIRST_PURCHASE | &quot;FIRST_PURCHASE&quot; |
 
 
 

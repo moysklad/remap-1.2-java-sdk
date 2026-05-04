@@ -26,10 +26,6 @@ import java.util.List;
 import java.util.UUID;
 import org.openapitools.client.model.Barcode;
 import org.openapitools.client.model.Pack;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.io.UnsupportedEncodingException;
@@ -44,7 +40,7 @@ import java.util.StringJoiner;
   VariantPack.JSON_PROPERTY_BARCODES,
   VariantPack.JSON_PROPERTY_PARENTPACK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-29T07:18:49.943763362Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:35:38.786882520Z[GMT]", comments = "Generator version: 7.14.0")
 public class VariantPack {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable
@@ -52,7 +48,7 @@ public class VariantPack {
 
   public static final String JSON_PROPERTY_BARCODES = "barcodes";
   @javax.annotation.Nullable
-  private JsonNullable<List<Barcode>> barcodes = JsonNullable.<List<Barcode>>undefined();
+  private List<Barcode> barcodes = new ArrayList<>();
 
   public static final String JSON_PROPERTY_PARENTPACK = "parentpack";
   @javax.annotation.Nullable
@@ -88,20 +84,16 @@ public class VariantPack {
 
 
   public VariantPack barcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
-    this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
     
+    this.barcodes = barcodes;
     return this;
   }
 
   public VariantPack addBarcodesItem(Barcode barcodesItem) {
-    if (this.barcodes == null || !this.barcodes.isPresent()) {
-      this.barcodes = JsonNullable.<List<Barcode>>of(new ArrayList<>());
+    if (this.barcodes == null) {
+      this.barcodes = new ArrayList<>();
     }
-    try {
-      this.barcodes.get().add(barcodesItem);
-    } catch (java.util.NoSuchElementException e) {
-      // this can never happen, as we make sure above that the value is present
-    }
+    this.barcodes.add(barcodesItem);
     return this;
   }
 
@@ -110,29 +102,20 @@ public class VariantPack {
    * @return barcodes
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public List<Barcode> getBarcodes() {
-        return barcodes.orElse(null);
-  }
-
-  
-
   @JsonProperty(JSON_PROPERTY_BARCODES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-
-  public JsonNullable<List<Barcode>> getBarcodes_JsonNullable() {
+  public List<Barcode> getBarcodes() {
     return barcodes;
   }
-  
-  @JsonProperty(value = JSON_PROPERTY_BARCODES, required = false)
-  public void setBarcodes_JsonNullable(JsonNullable<List<Barcode>> barcodes) {
-    this.barcodes = barcodes;
-  }
 
+  
+
+
+  @JsonProperty(JSON_PROPERTY_BARCODES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBarcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
-    this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
+    this.barcodes = barcodes;
   }
 
   public VariantPack parentpack(@javax.annotation.Nullable Pack parentpack) {
@@ -172,24 +155,13 @@ public class VariantPack {
     }
     VariantPack variantPack = (VariantPack) o;
     return Objects.equals(this.id, variantPack.id) &&
-        equalsNullable(this.barcodes, variantPack.barcodes) &&
+        Objects.equals(this.barcodes, variantPack.barcodes) &&
         Objects.equals(this.parentpack, variantPack.parentpack);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, hashCodeNullable(barcodes), parentpack);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, barcodes, parentpack);
   }
 
   @Override

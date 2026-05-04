@@ -25,6 +25,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import org.openapitools.client.model.Barcode;
+import org.openapitools.client.model.Meta;
 import org.openapitools.client.model.Uom;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -40,13 +41,18 @@ import java.util.StringJoiner;
  * Упаковка
  */
 @JsonPropertyOrder({
+  Pack.JSON_PROPERTY_META,
   Pack.JSON_PROPERTY_ID,
   Pack.JSON_PROPERTY_UOM,
   Pack.JSON_PROPERTY_QUANTITY,
   Pack.JSON_PROPERTY_BARCODES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-29T07:18:49.943763362Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:35:38.786882520Z[GMT]", comments = "Generator version: 7.14.0")
 public class Pack {
+  public static final String JSON_PROPERTY_META = "meta";
+  @javax.annotation.Nullable
+  private Meta meta;
+
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable
   private UUID id;
@@ -74,6 +80,33 @@ public class Pack {
   ) {
     this();
     this.id = id;
+  }
+
+  public Pack meta(@javax.annotation.Nullable Meta meta) {
+    
+    this.meta = meta;
+    return this;
+  }
+
+  /**
+   * Get meta
+   * @return meta
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_META)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Meta getMeta() {
+    return meta;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_META)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMeta(@javax.annotation.Nullable Meta meta) {
+    this.meta = meta;
   }
 
   /**
@@ -204,7 +237,8 @@ public class Pack {
       return false;
     }
     Pack pack = (Pack) o;
-    return Objects.equals(this.id, pack.id) &&
+    return Objects.equals(this.meta, pack.meta) &&
+        Objects.equals(this.id, pack.id) &&
         Objects.equals(this.uom, pack.uom) &&
         Objects.equals(this.quantity, pack.quantity) &&
         equalsNullable(this.barcodes, pack.barcodes);
@@ -216,7 +250,7 @@ public class Pack {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, uom, quantity, hashCodeNullable(barcodes));
+    return Objects.hash(meta, id, uom, quantity, hashCodeNullable(barcodes));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -230,6 +264,7 @@ public class Pack {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Pack {\n");
+    sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    uom: ").append(toIndentedString(uom)).append("\n");
     sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
@@ -280,6 +315,11 @@ public class Pack {
     }
 
     StringJoiner joiner = new StringJoiner("&");
+
+    // add `meta` to the URL query string
+    if (getMeta() != null) {
+      joiner.add(getMeta().toUrlQueryString(prefix + "meta" + suffix));
+    }
 
     // add `id` to the URL query string
     if (getId() != null) {
