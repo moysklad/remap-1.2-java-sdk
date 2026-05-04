@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   Image.JSON_PROPERTY_TINY,
   Image.JSON_PROPERTY_MINIATURE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:35:38.786882520Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:50:35.572898963Z[GMT]", comments = "Generator version: 7.14.0")
 public class Image {
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable

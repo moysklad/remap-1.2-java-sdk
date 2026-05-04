@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   StoreBalance.JSON_PROPERTY_STORE,
   StoreBalance.JSON_PROPERTY_QUANTITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:35:38.786882520Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:50:35.572898963Z[GMT]", comments = "Generator version: 7.14.0")
 public class StoreBalance {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable
