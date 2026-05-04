@@ -34,7 +34,7 @@ import java.util.StringJoiner;
   BuyPrice.JSON_PROPERTY_VALUE,
   BuyPrice.JSON_PROPERTY_CURRENCY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:50:35.572898963Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T12:39:21.974814993Z[GMT]", comments = "Generator version: 7.14.0")
 public class BuyPrice {
   public static final String JSON_PROPERTY_VALUE = "value";
   @javax.annotation.Nullable

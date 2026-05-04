@@ -33,7 +33,7 @@ import java.util.StringJoiner;
   FileUpload.JSON_PROPERTY_FILENAME,
   FileUpload.JSON_PROPERTY_CONTENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T11:50:35.572898963Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-04T12:39:21.974814993Z[GMT]", comments = "Generator version: 7.14.0")
 public class FileUpload {
   public static final String JSON_PROPERTY_FILENAME = "filename";
   @javax.annotation.Nonnull
