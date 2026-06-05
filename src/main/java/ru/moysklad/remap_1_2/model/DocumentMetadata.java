@@ -41,7 +41,7 @@ import java.util.StringJoiner;
   DocumentMetadata.JSON_PROPERTY_CREATE_SHARED,
   DocumentMetadata.JSON_PROPERTY_STATES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class DocumentMetadata {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -69,6 +69,7 @@ public class DocumentMetadata {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -90,11 +91,13 @@ public class DocumentMetadata {
     this.meta = meta;
   }
 
+
   public DocumentMetadata attributes(@javax.annotation.Nullable AttributeMetaInfoList attributes) {
     
     this.attributes = attributes;
     return this;
   }
+
 
   /**
    * Get attributes
@@ -117,11 +120,13 @@ public class DocumentMetadata {
     this.attributes = attributes;
   }
 
+
   public DocumentMetadata createShared(@javax.annotation.Nullable Boolean createShared) {
     
     this.createShared = createShared;
     return this;
   }
+
 
   /**
    * Создавать новые документы с общим доступом
@@ -144,11 +149,13 @@ public class DocumentMetadata {
     this.createShared = createShared;
   }
 
+
   public DocumentMetadata states(@javax.annotation.Nullable List<State> states) {
     
     this.states = states;
     return this;
   }
+
 
   public DocumentMetadata addStatesItem(State statesItem) {
     if (this.states == null) {
@@ -178,6 +185,7 @@ public class DocumentMetadata {
   public void setStates(@javax.annotation.Nullable List<State> states) {
     this.states = states;
   }
+
 
   @Override
   public boolean equals(Object o) {

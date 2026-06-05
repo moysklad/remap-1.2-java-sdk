@@ -129,7 +129,7 @@ import java.util.StringJoiner;
   RetailStore.JSON_PROPERTY_CASHIERS,
   RetailStore.JSON_PROPERTY_QR_ACQUIRE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStore {
   public static RetailStore createWithMeta(UUID id) {
     RetailStore o = new RetailStore();
@@ -505,6 +505,7 @@ public class RetailStore {
     return this;
   }
 
+
   /**
    * Наименование Точки продаж
    * @return name
@@ -526,11 +527,13 @@ public class RetailStore {
     this.name = name;
   }
 
+
   public RetailStore description(@javax.annotation.Nullable String description) {
     
     this.description = description;
     return this;
   }
+
 
   /**
    * Комментарий к Точке продаж
@@ -553,11 +556,13 @@ public class RetailStore {
     this.description = description;
   }
 
+
   public RetailStore active(@javax.annotation.Nullable Boolean active) {
     
     this.active = active;
     return this;
   }
+
 
   /**
    * Признак активности Точки продаж
@@ -580,11 +585,13 @@ public class RetailStore {
     this.active = active;
   }
 
+
   public RetailStore archived(@javax.annotation.Nullable Boolean archived) {
     
     this.archived = archived;
     return this;
   }
+
 
   /**
    * Признак архивности Точки продаж
@@ -607,11 +614,13 @@ public class RetailStore {
     this.archived = archived;
   }
 
+
   public RetailStore shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ к Точке продаж
@@ -634,11 +643,13 @@ public class RetailStore {
     this.shared = shared;
   }
 
+
   public RetailStore address(@javax.annotation.Nullable String address) {
     
     this.address = address;
     return this;
   }
+
 
   /**
    * Адрес Точки продаж одной строкой
@@ -661,11 +672,13 @@ public class RetailStore {
     this.address = address;
   }
 
+
   public RetailStore addressFull(@javax.annotation.Nullable Address addressFull) {
     
     this.addressFull = addressFull;
     return this;
   }
+
 
   /**
    * Get addressFull
@@ -687,6 +700,7 @@ public class RetailStore {
   public void setAddressFull(@javax.annotation.Nullable Address addressFull) {
     this.addressFull = addressFull;
   }
+
 
   /**
    * Внешний код Точки продаж
@@ -726,6 +740,7 @@ public class RetailStore {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -747,11 +762,13 @@ public class RetailStore {
     this.meta = meta;
   }
 
+
   public RetailStore organization(@javax.annotation.Nullable Organization organization) {
     
     this.organization = organization;
     return this;
   }
+
 
   /**
    * Get organization
@@ -774,11 +791,13 @@ public class RetailStore {
     this.organization = organization;
   }
 
+
   public RetailStore store(@javax.annotation.Nullable Store store) {
     
     this.store = store;
     return this;
   }
+
 
   /**
    * Get store
@@ -801,11 +820,13 @@ public class RetailStore {
     this.store = store;
   }
 
+
   public RetailStore group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -828,11 +849,13 @@ public class RetailStore {
     this.group = group;
   }
 
+
   public RetailStore owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Метаданные владельца (сотрудника)
@@ -864,11 +887,13 @@ public class RetailStore {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public RetailStore priceType(@javax.annotation.Nullable PriceType priceType) {
     
     this.priceType = priceType;
     return this;
   }
+
 
   /**
    * Get priceType
@@ -891,11 +916,13 @@ public class RetailStore {
     this.priceType = priceType;
   }
 
+
   public RetailStore environment(@javax.annotation.Nullable RetailStoreEnvironment environment) {
     
     this.environment = environment;
     return this;
   }
+
 
   /**
    * Get environment
@@ -918,11 +945,13 @@ public class RetailStore {
     this.environment = environment;
   }
 
+
   public RetailStore state(@javax.annotation.Nullable RetailStoreState state) {
     
     this.state = state;
     return this;
   }
+
 
   /**
    * Get state
@@ -945,11 +974,13 @@ public class RetailStore {
     this.state = state;
   }
 
+
   public RetailStore fiscalType(@javax.annotation.Nullable String fiscalType) {
     
     this.fiscalType = fiscalType;
     return this;
   }
+
 
   /**
    * Фискальный режим работы Точки продаж. Известные значения описаны в FiscalType
@@ -972,11 +1003,13 @@ public class RetailStore {
     this.fiscalType = fiscalType;
   }
 
+
   public RetailStore defaultTaxSystem(@javax.annotation.Nullable String defaultTaxSystem) {
     
     this.defaultTaxSystem = defaultTaxSystem;
     return this;
   }
+
 
   /**
    * Система налогообложения по умолчанию. Известные значения описаны в TaxSystem
@@ -999,11 +1032,13 @@ public class RetailStore {
     this.defaultTaxSystem = defaultTaxSystem;
   }
 
+
   public RetailStore orderTaxSystem(@javax.annotation.Nullable String orderTaxSystem) {
     
     this.orderTaxSystem = orderTaxSystem;
     return this;
   }
+
 
   /**
    * Система налогообложения заказов. Известные значения описаны в TaxSystem
@@ -1026,11 +1061,13 @@ public class RetailStore {
     this.orderTaxSystem = orderTaxSystem;
   }
 
+
   public RetailStore minionToMasterType(@javax.annotation.Nullable String minionToMasterType) {
     
     this.minionToMasterType = minionToMasterType;
     return this;
   }
+
 
   /**
    * Ограничение связи касс-слуг с кассами-мастерами. Известные значения описаны в MinionToMasterType
@@ -1053,11 +1090,13 @@ public class RetailStore {
     this.minionToMasterType = minionToMasterType;
   }
 
+
   public RetailStore tobaccoMrcControlType(@javax.annotation.Nullable String tobaccoMrcControlType) {
     
     this.tobaccoMrcControlType = tobaccoMrcControlType;
     return this;
   }
+
 
   /**
    * Режим контроля минимальных розничных цен на табак. Известные значения описаны в TobaccoMrcControlType
@@ -1080,11 +1119,13 @@ public class RetailStore {
     this.tobaccoMrcControlType = tobaccoMrcControlType;
   }
 
+
   public RetailStore markingSellingMode(@javax.annotation.Nullable String markingSellingMode) {
     
     this.markingSellingMode = markingSellingMode;
     return this;
   }
+
 
   /**
    * Режим продажи маркированных товаров. Известные значения описаны в MarkingSellingMode
@@ -1107,11 +1148,13 @@ public class RetailStore {
     this.markingSellingMode = markingSellingMode;
   }
 
+
   public RetailStore marksCheckMode(@javax.annotation.Nullable String marksCheckMode) {
     
     this.marksCheckMode = marksCheckMode;
     return this;
   }
+
 
   /**
    * Режим проверки кодов маркировки. Известные значения описаны в MarksCheckMode
@@ -1134,11 +1177,13 @@ public class RetailStore {
     this.marksCheckMode = marksCheckMode;
   }
 
+
   public RetailStore priorityOfdSend(@javax.annotation.Nullable String priorityOfdSend) {
     
     this.priorityOfdSend = priorityOfdSend;
     return this;
   }
+
 
   /**
    * Приоритетный способ отправки чека покупателю. Известные значения описаны в PriorityOfdSend
@@ -1161,11 +1206,13 @@ public class RetailStore {
     this.priorityOfdSend = priorityOfdSend;
   }
 
+
   public RetailStore allowCreateProducts(@javax.annotation.Nullable Boolean allowCreateProducts) {
     
     this.allowCreateProducts = allowCreateProducts;
     return this;
   }
+
 
   /**
    * Признак разрешения создания новых товаров при продаже
@@ -1187,6 +1234,7 @@ public class RetailStore {
   public void setAllowCreateProducts(@javax.annotation.Nullable Boolean allowCreateProducts) {
     this.allowCreateProducts = allowCreateProducts;
   }
+
 
   /**
    * Признак разрешения устанавливать произвольные цены
@@ -1210,6 +1258,7 @@ public class RetailStore {
     return this;
   }
 
+
   /**
    * Признак разрешения удалять позиции из чека
    * @return allowDeleteReceiptPositions
@@ -1231,11 +1280,13 @@ public class RetailStore {
     this.allowDeleteReceiptPositions = allowDeleteReceiptPositions;
   }
 
+
   public RetailStore allowSellTobaccoWithoutMRC(@javax.annotation.Nullable Boolean allowSellTobaccoWithoutMRC) {
     
     this.allowSellTobaccoWithoutMRC = allowSellTobaccoWithoutMRC;
     return this;
   }
+
 
   /**
    * Признак разрешения продажи табачной продукции без проверки МРЦ
@@ -1257,6 +1308,7 @@ public class RetailStore {
   public void setAllowSellTobaccoWithoutMRC(@javax.annotation.Nullable Boolean allowSellTobaccoWithoutMRC) {
     this.allowSellTobaccoWithoutMRC = allowSellTobaccoWithoutMRC;
   }
+
 
   /**
    * Признак подключения авторизационного токена
@@ -1280,6 +1332,7 @@ public class RetailStore {
     return this;
   }
 
+
   /**
    * Признак контроля выбора кассира
    * @return controlCashierChoice
@@ -1301,11 +1354,13 @@ public class RetailStore {
     this.controlCashierChoice = controlCashierChoice;
   }
 
+
   public RetailStore controlShippingStock(@javax.annotation.Nullable Boolean controlShippingStock) {
     
     this.controlShippingStock = controlShippingStock;
     return this;
   }
+
 
   /**
    * Признак контроля отгрузки только из наличия
@@ -1328,11 +1383,13 @@ public class RetailStore {
     this.controlShippingStock = controlShippingStock;
   }
 
+
   public RetailStore createCashInOnRetailShiftClosing(@javax.annotation.Nullable Boolean createCashInOnRetailShiftClosing) {
     
     this.createCashInOnRetailShiftClosing = createCashInOnRetailShiftClosing;
     return this;
   }
+
 
   /**
    * Признак создания операции внесения при закрытии смены
@@ -1355,11 +1412,13 @@ public class RetailStore {
     this.createCashInOnRetailShiftClosing = createCashInOnRetailShiftClosing;
   }
 
+
   public RetailStore createPaymentInOnRetailShiftClosing(@javax.annotation.Nullable Boolean createPaymentInOnRetailShiftClosing) {
     
     this.createPaymentInOnRetailShiftClosing = createPaymentInOnRetailShiftClosing;
     return this;
   }
+
 
   /**
    * Признак создания операции прихода денег при закрытии смены
@@ -1382,11 +1441,13 @@ public class RetailStore {
     this.createPaymentInOnRetailShiftClosing = createPaymentInOnRetailShiftClosing;
   }
 
+
   public RetailStore createAgentsTags(@javax.annotation.Nullable List<String> createAgentsTags) {
     this.createAgentsTags = JsonNullable.<List<String>>of(createAgentsTags);
     
     return this;
   }
+
 
   public RetailStore addCreateAgentsTagsItem(String createAgentsTagsItem) {
     if (this.createAgentsTags == null || !this.createAgentsTags.isPresent()) {
@@ -1430,11 +1491,13 @@ public class RetailStore {
     this.createAgentsTags = JsonNullable.<List<String>>of(createAgentsTags);
   }
 
+
   public RetailStore filterAgentsTags(@javax.annotation.Nullable List<String> filterAgentsTags) {
     this.filterAgentsTags = JsonNullable.<List<String>>of(filterAgentsTags);
     
     return this;
   }
+
 
   public RetailStore addFilterAgentsTagsItem(String filterAgentsTagsItem) {
     if (this.filterAgentsTags == null || !this.filterAgentsTags.isPresent()) {
@@ -1478,11 +1541,13 @@ public class RetailStore {
     this.filterAgentsTags = JsonNullable.<List<String>>of(filterAgentsTags);
   }
 
+
   public RetailStore createOrderWithState(@javax.annotation.Nullable State createOrderWithState) {
     this.createOrderWithState = JsonNullable.<State>of(createOrderWithState);
     
     return this;
   }
+
 
   /**
    * Статус, в котором создаются заказы покупателей
@@ -1514,11 +1579,13 @@ public class RetailStore {
     this.createOrderWithState = JsonNullable.<State>of(createOrderWithState);
   }
 
+
   public RetailStore customerOrderStates(@javax.annotation.Nullable List<State> customerOrderStates) {
     this.customerOrderStates = JsonNullable.<List<State>>of(customerOrderStates);
     
     return this;
   }
+
 
   public RetailStore addCustomerOrderStatesItem(State customerOrderStatesItem) {
     if (this.customerOrderStates == null || !this.customerOrderStates.isPresent()) {
@@ -1562,11 +1629,13 @@ public class RetailStore {
     this.customerOrderStates = JsonNullable.<List<State>>of(customerOrderStates);
   }
 
+
   public RetailStore discountEnable(@javax.annotation.Nullable Boolean discountEnable) {
     
     this.discountEnable = discountEnable;
     return this;
   }
+
 
   /**
    * Признак включения скидок
@@ -1589,11 +1658,13 @@ public class RetailStore {
     this.discountEnable = discountEnable;
   }
 
+
   public RetailStore discountMaxPercent(@javax.annotation.Nullable Integer discountMaxPercent) {
     
     this.discountMaxPercent = discountMaxPercent;
     return this;
   }
+
 
   /**
    * Максимально допустимый процент скидки
@@ -1616,11 +1687,13 @@ public class RetailStore {
     this.discountMaxPercent = discountMaxPercent;
   }
 
+
   public RetailStore enableReturnsWithNoReason(@javax.annotation.Nullable Boolean enableReturnsWithNoReason) {
     
     this.enableReturnsWithNoReason = enableReturnsWithNoReason;
     return this;
   }
+
 
   /**
    * Признак разрешения возвратов без причины
@@ -1643,11 +1716,13 @@ public class RetailStore {
     this.enableReturnsWithNoReason = enableReturnsWithNoReason;
   }
 
+
   public RetailStore issueOrders(@javax.annotation.Nullable Boolean issueOrders) {
     
     this.issueOrders = issueOrders;
     return this;
   }
+
 
   /**
    * Признак оформления заказов покупателей
@@ -1670,11 +1745,13 @@ public class RetailStore {
     this.issueOrders = issueOrders;
   }
 
+
   public RetailStore lastOperationNames(@javax.annotation.Nullable List<RetailStoreLastOperationNamesInner> lastOperationNames) {
     this.lastOperationNames = JsonNullable.<List<RetailStoreLastOperationNamesInner>>of(lastOperationNames);
     
     return this;
   }
+
 
   public RetailStore addLastOperationNamesItem(RetailStoreLastOperationNamesInner lastOperationNamesItem) {
     if (this.lastOperationNames == null || !this.lastOperationNames.isPresent()) {
@@ -1718,11 +1795,13 @@ public class RetailStore {
     this.lastOperationNames = JsonNullable.<List<RetailStoreLastOperationNamesInner>>of(lastOperationNames);
   }
 
+
   public RetailStore masterRetailStores(@javax.annotation.Nullable RetailStoreList masterRetailStores) {
     this.masterRetailStores = JsonNullable.<RetailStoreList>of(masterRetailStores);
     
     return this;
   }
+
 
   /**
    * Список касс-мастеров
@@ -1754,6 +1833,7 @@ public class RetailStore {
     this.masterRetailStores = JsonNullable.<RetailStoreList>of(masterRetailStores);
   }
 
+
   /**
    * Признак использования ОФД
    * @return ofdEnabled
@@ -1776,6 +1856,7 @@ public class RetailStore {
     return this;
   }
 
+
   /**
    * Признак продажи только из наличия
    * @return onlyInStock
@@ -1797,11 +1878,13 @@ public class RetailStore {
     this.onlyInStock = onlyInStock;
   }
 
+
   public RetailStore orderToState(@javax.annotation.Nullable State orderToState) {
     this.orderToState = JsonNullable.<State>of(orderToState);
     
     return this;
   }
+
 
   /**
    * Метаданные статуса заказа покупателя
@@ -1833,11 +1916,13 @@ public class RetailStore {
     this.orderToState = JsonNullable.<State>of(orderToState);
   }
 
+
   public RetailStore printAlways(@javax.annotation.Nullable Boolean printAlways) {
     
     this.printAlways = printAlways;
     return this;
   }
+
 
   /**
    * Признак обязательной печати чеков
@@ -1860,11 +1945,13 @@ public class RetailStore {
     this.printAlways = printAlways;
   }
 
+
   public RetailStore productFolders(@javax.annotation.Nullable ProductFolderList productFolders) {
     this.productFolders = JsonNullable.<ProductFolderList>of(productFolders);
     
     return this;
   }
+
 
   /**
    * Список групп товаров
@@ -1896,11 +1983,13 @@ public class RetailStore {
     this.productFolders = JsonNullable.<ProductFolderList>of(productFolders);
   }
 
+
   public RetailStore receiptTemplate(@javax.annotation.Nullable RetailStoreReceiptTemplate receiptTemplate) {
     
     this.receiptTemplate = receiptTemplate;
     return this;
   }
+
 
   /**
    * Get receiptTemplate
@@ -1923,11 +2012,13 @@ public class RetailStore {
     this.receiptTemplate = receiptTemplate;
   }
 
+
   public RetailStore requiredFio(@javax.annotation.Nullable Boolean requiredFio) {
     
     this.requiredFio = requiredFio;
     return this;
   }
+
 
   /**
    * Признак обязательности ФИО покупателя
@@ -1950,11 +2041,13 @@ public class RetailStore {
     this.requiredFio = requiredFio;
   }
 
+
   public RetailStore requiredPhone(@javax.annotation.Nullable Boolean requiredPhone) {
     
     this.requiredPhone = requiredPhone;
     return this;
   }
+
 
   /**
    * Признак обязательности телефона покупателя
@@ -1977,11 +2070,13 @@ public class RetailStore {
     this.requiredPhone = requiredPhone;
   }
 
+
   public RetailStore requiredEmail(@javax.annotation.Nullable Boolean requiredEmail) {
     
     this.requiredEmail = requiredEmail;
     return this;
   }
+
 
   /**
    * Признак обязательности email покупателя
@@ -2004,11 +2099,13 @@ public class RetailStore {
     this.requiredEmail = requiredEmail;
   }
 
+
   public RetailStore requiredBirthdate(@javax.annotation.Nullable Boolean requiredBirthdate) {
     
     this.requiredBirthdate = requiredBirthdate;
     return this;
   }
+
 
   /**
    * Признак обязательности даты рождения покупателя
@@ -2031,11 +2128,13 @@ public class RetailStore {
     this.requiredBirthdate = requiredBirthdate;
   }
 
+
   public RetailStore requiredSex(@javax.annotation.Nullable Boolean requiredSex) {
     
     this.requiredSex = requiredSex;
     return this;
   }
+
 
   /**
    * Признак обязательности пола покупателя
@@ -2058,11 +2157,13 @@ public class RetailStore {
     this.requiredSex = requiredSex;
   }
 
+
   public RetailStore requiredDiscountCardNumber(@javax.annotation.Nullable Boolean requiredDiscountCardNumber) {
     
     this.requiredDiscountCardNumber = requiredDiscountCardNumber;
     return this;
   }
+
 
   /**
    * Признак обязательности номера дисконтной карты покупателя
@@ -2085,11 +2186,13 @@ public class RetailStore {
     this.requiredDiscountCardNumber = requiredDiscountCardNumber;
   }
 
+
   public RetailStore reservePrepaidGoods(@javax.annotation.Nullable Boolean reservePrepaidGoods) {
     
     this.reservePrepaidGoods = reservePrepaidGoods;
     return this;
   }
+
 
   /**
    * Признак резервирования предоплаченных товаров
@@ -2112,11 +2215,13 @@ public class RetailStore {
     this.reservePrepaidGoods = reservePrepaidGoods;
   }
 
+
   public RetailStore returnFromClosedShiftEnabled(@javax.annotation.Nullable Boolean returnFromClosedShiftEnabled) {
     
     this.returnFromClosedShiftEnabled = returnFromClosedShiftEnabled;
     return this;
   }
+
 
   /**
    * Признак разрешения возвратов из закрытой смены
@@ -2139,11 +2244,13 @@ public class RetailStore {
     this.returnFromClosedShiftEnabled = returnFromClosedShiftEnabled;
   }
 
+
   public RetailStore sellReserves(@javax.annotation.Nullable Boolean sellReserves) {
     
     this.sellReserves = sellReserves;
     return this;
   }
+
 
   /**
    * Признак разрешения продажи резервов
@@ -2166,11 +2273,13 @@ public class RetailStore {
     this.sellReserves = sellReserves;
   }
 
+
   public RetailStore sendMarksForCheck(@javax.annotation.Nullable Boolean sendMarksForCheck) {
     
     this.sendMarksForCheck = sendMarksForCheck;
     return this;
   }
+
 
   /**
    * Признак отправки кодов маркировки на проверку
@@ -2193,11 +2302,13 @@ public class RetailStore {
     this.sendMarksForCheck = sendMarksForCheck;
   }
 
+
   public RetailStore sendMarksToChestnyZnakOnCloud(@javax.annotation.Nullable Boolean sendMarksToChestnyZnakOnCloud) {
     
     this.sendMarksToChestnyZnakOnCloud = sendMarksToChestnyZnakOnCloud;
     return this;
   }
+
 
   /**
    * Признак отправки кодов маркировки в Честный ЗНАК в облаке
@@ -2220,11 +2331,13 @@ public class RetailStore {
     this.sendMarksToChestnyZnakOnCloud = sendMarksToChestnyZnakOnCloud;
   }
 
+
   public RetailStore syncAgents(@javax.annotation.Nullable Boolean syncAgents) {
     
     this.syncAgents = syncAgents;
     return this;
   }
+
 
   /**
    * Признак синхронизации агентов
@@ -2247,11 +2360,13 @@ public class RetailStore {
     this.syncAgents = syncAgents;
   }
 
+
   public RetailStore showBeerOnTap(@javax.annotation.Nullable Boolean showBeerOnTap) {
     
     this.showBeerOnTap = showBeerOnTap;
     return this;
   }
+
 
   /**
    * Признак отображения разливного пива
@@ -2274,11 +2389,13 @@ public class RetailStore {
     this.showBeerOnTap = showBeerOnTap;
   }
 
+
   public RetailStore qrPayEnabled(@javax.annotation.Nullable Boolean qrPayEnabled) {
     
     this.qrPayEnabled = qrPayEnabled;
     return this;
   }
+
 
   /**
    * Признак включения оплаты через QR
@@ -2301,11 +2418,13 @@ public class RetailStore {
     this.qrPayEnabled = qrPayEnabled;
   }
 
+
   public RetailStore bankPercent(@javax.annotation.Nullable Double bankPercent) {
     
     this.bankPercent = bankPercent;
     return this;
   }
+
 
   /**
    * Банковский процент
@@ -2328,11 +2447,13 @@ public class RetailStore {
     this.bankPercent = bankPercent;
   }
 
+
   public RetailStore qrBankPercent(@javax.annotation.Nullable Double qrBankPercent) {
     
     this.qrBankPercent = qrBankPercent;
     return this;
   }
+
 
   /**
    * Банковский процент при оплате по QR
@@ -2355,11 +2476,13 @@ public class RetailStore {
     this.qrBankPercent = qrBankPercent;
   }
 
+
   public RetailStore demandPrefix(@javax.annotation.Nullable String demandPrefix) {
     
     this.demandPrefix = demandPrefix;
     return this;
   }
+
 
   /**
    * Префикс номера заказа
@@ -2382,11 +2505,13 @@ public class RetailStore {
     this.demandPrefix = demandPrefix;
   }
 
+
   public RetailStore qrTerminalId(@javax.annotation.Nullable String qrTerminalId) {
     
     this.qrTerminalId = qrTerminalId;
     return this;
   }
+
 
   /**
    * Идентификатор QR-терминала
@@ -2409,11 +2534,13 @@ public class RetailStore {
     this.qrTerminalId = qrTerminalId;
   }
 
+
   public RetailStore idQR(@javax.annotation.Nullable String idQR) {
     
     this.idQR = idQR;
     return this;
   }
+
 
   /**
    * Идентификатор QR
@@ -2436,11 +2563,13 @@ public class RetailStore {
     this.idQR = idQR;
   }
 
+
   public RetailStore acquire(@javax.annotation.Nullable Counterparty acquire) {
     
     this.acquire = acquire;
     return this;
   }
+
 
   /**
    * Get acquire
@@ -2463,11 +2592,13 @@ public class RetailStore {
     this.acquire = acquire;
   }
 
+
   public RetailStore cashiers(@javax.annotation.Nullable CashierList cashiers) {
     this.cashiers = JsonNullable.<CashierList>of(cashiers);
     
     return this;
   }
+
 
   /**
    * Кассиры, работающие на точке продаж
@@ -2499,11 +2630,13 @@ public class RetailStore {
     this.cashiers = JsonNullable.<CashierList>of(cashiers);
   }
 
+
   public RetailStore qrAcquire(@javax.annotation.Nullable Counterparty qrAcquire) {
     this.qrAcquire = JsonNullable.<Counterparty>of(qrAcquire);
     
     return this;
   }
+
 
   /**
    * Эквайер для QR-платежей
@@ -2534,6 +2667,7 @@ public class RetailStore {
   public void setQrAcquire(@javax.annotation.Nullable Counterparty qrAcquire) {
     this.qrAcquire = JsonNullable.<Counterparty>of(qrAcquire);
   }
+
 
   @Override
   public boolean equals(Object o) {

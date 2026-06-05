@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   Barcode.JSON_PROPERTY_GTIN,
   Barcode.JSON_PROPERTY_UPC
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Barcode {
 
   public static final String JSON_PROPERTY_EAN13 = "ean13";
@@ -68,6 +68,7 @@ public class Barcode {
     return this;
   }
 
+
   /**
    * Штрихкод в формате EAN13
    * @return ean13
@@ -89,11 +90,13 @@ public class Barcode {
     this.ean13 = ean13;
   }
 
+
   public Barcode ean8(@javax.annotation.Nullable String ean8) {
     
     this.ean8 = ean8;
     return this;
   }
+
 
   /**
    * Штрихкод в формате EAN8
@@ -116,11 +119,13 @@ public class Barcode {
     this.ean8 = ean8;
   }
 
+
   public Barcode code128(@javax.annotation.Nullable String code128) {
     
     this.code128 = code128;
     return this;
   }
+
 
   /**
    * Штрихкод в формате Code128
@@ -143,11 +148,13 @@ public class Barcode {
     this.code128 = code128;
   }
 
+
   public Barcode gtin(@javax.annotation.Nullable String gtin) {
     
     this.gtin = gtin;
     return this;
   }
+
 
   /**
    * Штрихкод в формате GTIN
@@ -170,11 +177,13 @@ public class Barcode {
     this.gtin = gtin;
   }
 
+
   public Barcode upc(@javax.annotation.Nullable String upc) {
     
     this.upc = upc;
     return this;
   }
+
 
   /**
    * Штрихкод в формате UPC
@@ -196,6 +205,7 @@ public class Barcode {
   public void setUpc(@javax.annotation.Nullable String upc) {
     this.upc = upc;
   }
+
 
   @Override
   public boolean equals(Object o) {

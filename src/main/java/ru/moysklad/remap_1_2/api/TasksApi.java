@@ -42,7 +42,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class TasksApi extends BaseApi {
 
@@ -67,6 +67,25 @@ public class TasksApi extends BaseApi {
    */
   public Task createTask(@javax.annotation.Nonnull Task task, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createTask(task, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать задачу
+   * Создание новой задачи
+   
+   * @param task  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Task
+   * @throws ApiException if fails to make API call
+   */
+  public Task createTask(@javax.annotation.Nonnull Task task, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createTask(task, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -430,6 +449,25 @@ if (contentType != null)
    */
   public List<CreateTasksBatch200ResponseInner> createTasksBatch(@javax.annotation.Nonnull List<Task> task, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createTasksBatch(task, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать или изменить задачи
+   * Создание или изменение нескольких задач.
+   
+   * @param task  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreateTasksBatch200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateTasksBatch200ResponseInner> createTasksBatch(@javax.annotation.Nonnull List<Task> task, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createTasksBatch(task, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -949,6 +987,24 @@ if (contentType != null)
     return this.getTaskById(id, expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить задачу по ID
+   * Запрос задачи с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Task
+   * @throws ApiException if fails to make API call
+   */
+  public Task getTaskById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getTaskById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить задачу по ID
@@ -1205,6 +1261,28 @@ if (acceptEncoding != null)
     return this.getTaskNotes(id, limit, offset, updatedBy, updatedFrom, updatedTo, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить комментарии Задачи
+   * Запрос на получение списка всех комментариев данной Задачи
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return TaskNoteList
+   * @throws ApiException if fails to make API call
+   */
+  public TaskNoteList getTaskNotes(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getTaskNotes(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("updatedBy"), (String) effectiveOptions.get("updatedFrom"), (String) effectiveOptions.get("updatedTo"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить комментарии Задачи
@@ -1302,6 +1380,25 @@ if (acceptEncoding != null)
     return this.getTasks(limit, offset, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить список задач
+   * Запрос всех задач на данной учетной записи
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return TaskList
+   * @throws ApiException if fails to make API call
+   */
+  public TaskList getTasks(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getTasks((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить список задач
@@ -1389,6 +1486,28 @@ if (acceptEncoding != null)
    */
   public Task updateTask(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Task task, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateTask(id, task, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Обновить задачу
+   * Обновление задачи с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param task  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Task
+   * @throws ApiException if fails to make API call
+   */
+  public Task updateTask(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Task task, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateTask(id, task, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 

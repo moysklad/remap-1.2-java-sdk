@@ -22,9 +22,9 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
+import ru.moysklad.remap_1_2.model.Agent;
 import ru.moysklad.remap_1_2.model.BonusProgram;
 import ru.moysklad.remap_1_2.model.BonusTransactionParentDocument;
-import ru.moysklad.remap_1_2.model.Counterparty;
 import ru.moysklad.remap_1_2.model.Employee;
 import ru.moysklad.remap_1_2.model.Group;
 import ru.moysklad.remap_1_2.model.Meta;
@@ -67,7 +67,7 @@ import java.util.StringJoiner;
   BonusTransaction.JSON_PROPERTY_SHARED,
   BonusTransaction.JSON_PROPERTY_UPDATED_BY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class BonusTransaction {
   public static BonusTransaction createWithMeta(UUID id) {
     BonusTransaction o = new BonusTransaction();
@@ -102,7 +102,7 @@ public class BonusTransaction {
 
   public static final String JSON_PROPERTY_AGENT = "agent";
   @javax.annotation.Nullable
-  private Counterparty agent;
+  private Agent agent;
 
   public static final String JSON_PROPERTY_GROUP = "group";
   @javax.annotation.Nullable
@@ -209,6 +209,7 @@ public class BonusTransaction {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -229,6 +230,7 @@ public class BonusTransaction {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID бонусной операции
@@ -268,6 +270,7 @@ public class BonusTransaction {
     return this;
   }
 
+
   /**
    * Get owner
    * @return owner
@@ -289,21 +292,23 @@ public class BonusTransaction {
     this.owner = owner;
   }
 
-  public BonusTransaction agent(@javax.annotation.Nullable Counterparty agent) {
+
+  public BonusTransaction agent(@javax.annotation.Nullable Agent agent) {
     
     this.agent = agent;
     return this;
   }
 
+
   /**
-   * Get agent
+   * Метаданные контрагента или юрлица, связанного с бонусной операцией
    * @return agent
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Counterparty getAgent() {
+  public Agent getAgent() {
     return agent;
   }
 
@@ -312,15 +317,17 @@ public class BonusTransaction {
 
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAgent(@javax.annotation.Nullable Counterparty agent) {
+  public void setAgent(@javax.annotation.Nullable Agent agent) {
     this.agent = agent;
   }
+
 
   public BonusTransaction group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -343,11 +350,13 @@ public class BonusTransaction {
     this.group = group;
   }
 
+
   public BonusTransaction organization(@javax.annotation.Nullable Organization organization) {
     
     this.organization = organization;
     return this;
   }
+
 
   /**
    * Get organization
@@ -370,11 +379,13 @@ public class BonusTransaction {
     this.organization = organization;
   }
 
+
   public BonusTransaction parentDocument(@javax.annotation.Nullable BonusTransactionParentDocument parentDocument) {
     this.parentDocument = JsonNullable.<BonusTransactionParentDocument>of(parentDocument);
     
     return this;
   }
+
 
   /**
    * Get parentDocument
@@ -406,11 +417,13 @@ public class BonusTransaction {
     this.parentDocument = JsonNullable.<BonusTransactionParentDocument>of(parentDocument);
   }
 
+
   public BonusTransaction applicable(@javax.annotation.Nullable Boolean applicable) {
     
     this.applicable = applicable;
     return this;
   }
+
 
   /**
    * Отметка о проведении
@@ -433,11 +446,13 @@ public class BonusTransaction {
     this.applicable = applicable;
   }
 
+
   public BonusTransaction bonusProgram(@javax.annotation.Nullable BonusProgram bonusProgram) {
     
     this.bonusProgram = bonusProgram;
     return this;
   }
+
 
   /**
    * Get bonusProgram
@@ -460,11 +475,13 @@ public class BonusTransaction {
     this.bonusProgram = bonusProgram;
   }
 
+
   public BonusTransaction bonusValue(@javax.annotation.Nullable Integer bonusValue) {
     
     this.bonusValue = bonusValue;
     return this;
   }
+
 
   /**
    * Количество бонусных баллов
@@ -487,11 +504,13 @@ public class BonusTransaction {
     this.bonusValue = bonusValue;
   }
 
+
   public BonusTransaction transactionType(@javax.annotation.Nullable String transactionType) {
     
     this.transactionType = transactionType;
     return this;
   }
+
 
   /**
    * Тип бонусной операции. Известные значения описаны в TransactionType
@@ -513,6 +532,7 @@ public class BonusTransaction {
   public void setTransactionType(@javax.annotation.Nullable String transactionType) {
     this.transactionType = transactionType;
   }
+
 
   /**
    * Статус бонусной операции. Известные значения описаны в TransactionStatus
@@ -552,6 +572,7 @@ public class BonusTransaction {
     return this;
   }
 
+
   /**
    * Код бонусной операции
    * @return code
@@ -573,11 +594,13 @@ public class BonusTransaction {
     this.code = code;
   }
 
+
   public BonusTransaction name(@javax.annotation.Nullable String name) {
     
     this.name = name;
     return this;
   }
+
 
   /**
    * Наименование бонусной операции
@@ -600,11 +623,13 @@ public class BonusTransaction {
     this.name = name;
   }
 
+
   public BonusTransaction externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код бонусной операции
@@ -627,11 +652,13 @@ public class BonusTransaction {
     this.externalCode = externalCode;
   }
 
+
   public BonusTransaction description(@javax.annotation.Nullable String description) {
     
     this.description = description;
     return this;
   }
+
 
   /**
    * Комментарий к бонусной операции
@@ -654,11 +681,13 @@ public class BonusTransaction {
     this.description = description;
   }
 
+
   public BonusTransaction moment(@javax.annotation.Nullable String moment) {
     
     this.moment = moment;
     return this;
   }
+
 
   /**
    * Время проведения бонусной операции
@@ -680,6 +709,7 @@ public class BonusTransaction {
   public void setMoment(@javax.annotation.Nullable String moment) {
     this.moment = moment;
   }
+
 
   /**
    * Момент создания бонусной операции
@@ -719,6 +749,7 @@ public class BonusTransaction {
     return this;
   }
 
+
   /**
    * Дата начисления бонусной операции
    * @return executionDate
@@ -740,11 +771,13 @@ public class BonusTransaction {
     this.executionDate = executionDate;
   }
 
+
   public BonusTransaction shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -767,11 +800,13 @@ public class BonusTransaction {
     this.shared = shared;
   }
 
+
   public BonusTransaction updatedBy(@javax.annotation.Nullable String updatedBy) {
     
     this.updatedBy = updatedBy;
     return this;
   }
+
 
   /**
    * Автор последнего обновления (uid, используется для фильтрации)
@@ -793,6 +828,7 @@ public class BonusTransaction {
   public void setUpdatedBy(@javax.annotation.Nullable String updatedBy) {
     this.updatedBy = updatedBy;
   }
+
 
   @Override
   public boolean equals(Object o) {

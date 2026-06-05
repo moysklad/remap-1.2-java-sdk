@@ -56,7 +56,7 @@ import java.util.StringJoiner;
   Project.JSON_PROPERTY_SHARED,
   Project.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Project {
   public static Project createWithMeta(UUID id) {
     Project o = new Project();
@@ -148,6 +148,7 @@ public class Project {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -168,6 +169,7 @@ public class Project {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID проекта
@@ -207,6 +209,7 @@ public class Project {
     return this;
   }
 
+
   /**
    * Добавлен ли Проект в архив
    * @return archived
@@ -228,11 +231,13 @@ public class Project {
     this.archived = archived;
   }
 
+
   public Project attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public Project addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -276,11 +281,13 @@ public class Project {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   public Project code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код Проекта
@@ -303,11 +310,13 @@ public class Project {
     this.code = code;
   }
 
+
   public Project description(@javax.annotation.Nullable String description) {
     
     this.description = description;
     return this;
   }
+
 
   /**
    * Описание Проекта
@@ -330,11 +339,13 @@ public class Project {
     this.description = description;
   }
 
+
   public Project externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Проекта
@@ -357,11 +368,13 @@ public class Project {
     this.externalCode = externalCode;
   }
 
+
   public Project group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -384,11 +397,13 @@ public class Project {
     this.group = group;
   }
 
+
   public Project name(@javax.annotation.Nullable String name) {
     
     this.name = name;
     return this;
   }
+
 
   /**
    * Наименование Проекта
@@ -411,11 +426,13 @@ public class Project {
     this.name = name;
   }
 
+
   public Project owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Метаданные владельца (Сотрудника)
@@ -447,11 +464,13 @@ public class Project {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public Project shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -473,6 +492,7 @@ public class Project {
   public void setShared(@javax.annotation.Nullable Boolean shared) {
     this.shared = shared;
   }
+
 
   /**
    * Момент последнего обновления сущности

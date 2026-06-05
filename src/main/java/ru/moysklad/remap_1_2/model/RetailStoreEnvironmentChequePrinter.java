@@ -41,7 +41,7 @@ import java.util.StringJoiner;
   RetailStoreEnvironmentChequePrinter.JSON_PROPERTY_VENDOR
 })
 @JsonTypeName("RetailStore_environment_chequePrinter")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStoreEnvironmentChequePrinter {
 
   public static final String JSON_PROPERTY_DRIVER = "driver";
@@ -81,6 +81,7 @@ public class RetailStoreEnvironmentChequePrinter {
     return this;
   }
 
+
   /**
    * Get driver
    * @return driver
@@ -102,11 +103,13 @@ public class RetailStoreEnvironmentChequePrinter {
     this.driver = driver;
   }
 
+
   public RetailStoreEnvironmentChequePrinter firmwareVersion(@javax.annotation.Nullable String firmwareVersion) {
     
     this.firmwareVersion = firmwareVersion;
     return this;
   }
+
 
   /**
    * Версия прошивки
@@ -129,11 +132,13 @@ public class RetailStoreEnvironmentChequePrinter {
     this.firmwareVersion = firmwareVersion;
   }
 
+
   public RetailStoreEnvironmentChequePrinter fiscalDataVersion(@javax.annotation.Nullable String fiscalDataVersion) {
     
     this.fiscalDataVersion = fiscalDataVersion;
     return this;
   }
+
 
   /**
    * Версия фискальных данных
@@ -156,11 +161,13 @@ public class RetailStoreEnvironmentChequePrinter {
     this.fiscalDataVersion = fiscalDataVersion;
   }
 
+
   public RetailStoreEnvironmentChequePrinter fiscalMemory(@javax.annotation.Nullable RetailStoreEnvironmentChequePrinterFiscalMemory fiscalMemory) {
     
     this.fiscalMemory = fiscalMemory;
     return this;
   }
+
 
   /**
    * Get fiscalMemory
@@ -183,11 +190,13 @@ public class RetailStoreEnvironmentChequePrinter {
     this.fiscalMemory = fiscalMemory;
   }
 
+
   public RetailStoreEnvironmentChequePrinter name(@javax.annotation.Nullable String name) {
     
     this.name = name;
     return this;
   }
+
 
   /**
    * Наименование чекового принтера
@@ -210,11 +219,13 @@ public class RetailStoreEnvironmentChequePrinter {
     this.name = name;
   }
 
+
   public RetailStoreEnvironmentChequePrinter serial(@javax.annotation.Nullable String serial) {
     
     this.serial = serial;
     return this;
   }
+
 
   /**
    * Серийный номер чекового принтера
@@ -237,11 +248,13 @@ public class RetailStoreEnvironmentChequePrinter {
     this.serial = serial;
   }
 
+
   public RetailStoreEnvironmentChequePrinter vendor(@javax.annotation.Nullable String vendor) {
     
     this.vendor = vendor;
     return this;
   }
+
 
   /**
    * Производитель чекового принтера
@@ -263,6 +276,7 @@ public class RetailStoreEnvironmentChequePrinter {
   public void setVendor(@javax.annotation.Nullable String vendor) {
     this.vendor = vendor;
   }
+
 
   @Override
   public boolean equals(Object o) {

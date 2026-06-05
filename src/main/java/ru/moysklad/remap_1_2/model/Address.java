@@ -42,7 +42,7 @@ import java.util.StringJoiner;
   Address.JSON_PROPERTY_REGION,
   Address.JSON_PROPERTY_STREET
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Address {
 
   public static final String JSON_PROPERTY_ADD_INFO = "addInfo";
@@ -90,6 +90,7 @@ public class Address {
     return this;
   }
 
+
   /**
    * Другое
    * @return addInfo
@@ -111,11 +112,13 @@ public class Address {
     this.addInfo = addInfo;
   }
 
+
   public Address apartment(@javax.annotation.Nullable String apartment) {
     
     this.apartment = apartment;
     return this;
   }
+
 
   /**
    * Квартира
@@ -138,11 +141,13 @@ public class Address {
     this.apartment = apartment;
   }
 
+
   public Address city(@javax.annotation.Nullable String city) {
     
     this.city = city;
     return this;
   }
+
 
   /**
    * Город
@@ -165,11 +170,13 @@ public class Address {
     this.city = city;
   }
 
+
   public Address comment(@javax.annotation.Nullable String comment) {
     
     this.comment = comment;
     return this;
   }
+
 
   /**
    * Комментарий
@@ -192,11 +199,13 @@ public class Address {
     this.comment = comment;
   }
 
+
   public Address country(@javax.annotation.Nullable Country country) {
     
     this.country = country;
     return this;
   }
+
 
   /**
    * Get country
@@ -219,11 +228,13 @@ public class Address {
     this.country = country;
   }
 
+
   public Address house(@javax.annotation.Nullable String house) {
     
     this.house = house;
     return this;
   }
+
 
   /**
    * Дом
@@ -246,11 +257,13 @@ public class Address {
     this.house = house;
   }
 
+
   public Address postalCode(@javax.annotation.Nullable String postalCode) {
     
     this.postalCode = postalCode;
     return this;
   }
+
 
   /**
    * Почтовый индекс
@@ -273,11 +286,13 @@ public class Address {
     this.postalCode = postalCode;
   }
 
+
   public Address region(@javax.annotation.Nullable Region region) {
     
     this.region = region;
     return this;
   }
+
 
   /**
    * Get region
@@ -300,11 +315,13 @@ public class Address {
     this.region = region;
   }
 
+
   public Address street(@javax.annotation.Nullable String street) {
     
     this.street = street;
     return this;
   }
+
 
   /**
    * Улица
@@ -326,6 +343,7 @@ public class Address {
   public void setStreet(@javax.annotation.Nullable String street) {
     this.street = street;
   }
+
 
   @Override
   public boolean equals(Object o) {

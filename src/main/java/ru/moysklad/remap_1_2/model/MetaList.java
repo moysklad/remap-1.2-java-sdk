@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   MetaList.JSON_PROPERTY_NEXT_HREF,
   MetaList.JSON_PROPERTY_PREVIOUS_HREF
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class MetaList {
 
   public static final String JSON_PROPERTY_HREF = "href";
@@ -84,6 +84,7 @@ public class MetaList {
     return this;
   }
 
+
   /**
    * Ссылка на объект
    * @return href
@@ -105,11 +106,13 @@ public class MetaList {
     this.href = href;
   }
 
+
   public MetaList type(@javax.annotation.Nonnull String type) {
     
     this.type = type;
     return this;
   }
+
 
   /**
    * Тип объекта
@@ -132,11 +135,13 @@ public class MetaList {
     this.type = type;
   }
 
+
   public MetaList mediaType(@javax.annotation.Nonnull String mediaType) {
     
     this.mediaType = mediaType;
     return this;
   }
+
 
   /**
    * Тип данных
@@ -159,11 +164,13 @@ public class MetaList {
     this.mediaType = mediaType;
   }
 
+
   public MetaList size(@javax.annotation.Nullable Integer size) {
     
     this.size = size;
     return this;
   }
+
 
   /**
    * Размер выданного списка
@@ -186,11 +193,13 @@ public class MetaList {
     this.size = size;
   }
 
+
   public MetaList limit(@javax.annotation.Nullable Integer limit) {
     
     this.limit = limit;
     return this;
   }
+
 
   /**
    * Максимальное количество элементов в выданном списке
@@ -213,11 +222,13 @@ public class MetaList {
     this.limit = limit;
   }
 
+
   public MetaList offset(@javax.annotation.Nullable Integer offset) {
     
     this.offset = offset;
     return this;
   }
+
 
   /**
    * Отступ в выданном списке
@@ -240,11 +251,13 @@ public class MetaList {
     this.offset = offset;
   }
 
+
   public MetaList nextHref(@javax.annotation.Nullable URI nextHref) {
     
     this.nextHref = nextHref;
     return this;
   }
+
 
   /**
    * Ссылка на следующую страницу
@@ -267,11 +280,13 @@ public class MetaList {
     this.nextHref = nextHref;
   }
 
+
   public MetaList previousHref(@javax.annotation.Nullable URI previousHref) {
     
     this.previousHref = previousHref;
     return this;
   }
+
 
   /**
    * Ссылка на предыдущую страницу
@@ -293,6 +308,7 @@ public class MetaList {
   public void setPreviousHref(@javax.annotation.Nullable URI previousHref) {
     this.previousHref = previousHref;
   }
+
 
   @Override
   public boolean equals(Object o) {

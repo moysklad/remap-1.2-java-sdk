@@ -33,7 +33,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class CashiersApi extends BaseApi {
 
@@ -58,6 +58,27 @@ public class CashiersApi extends BaseApi {
    */
   public Cashier getCashierById(@javax.annotation.Nonnull UUID retailStoreId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
     return this.getCashierById(retailStoreId, id, expand, accept, acceptEncoding, Collections.emptyMap());
+  }
+
+  /**
+   * Получить Кассира
+   * 
+   
+   * @param retailStoreId  (required)
+   
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Cashier
+   * @throws ApiException if fails to make API call
+   */
+  public Cashier getCashierById(@javax.annotation.Nonnull UUID retailStoreId, @javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getCashierById(retailStoreId, id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -156,6 +177,29 @@ if (acceptEncoding != null)
    */
   public CashierList getCashiers(@javax.annotation.Nonnull UUID retailStoreId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
     return this.getCashiers(retailStoreId, limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  }
+
+  /**
+   * Получить Кассиров
+   * 
+   
+   * @param retailStoreId  (required)
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return CashierList
+   * @throws ApiException if fails to make API call
+   */
+  public CashierList getCashiers(@javax.annotation.Nonnull UUID retailStoreId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getCashiers(retailStoreId, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 

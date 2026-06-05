@@ -26,12 +26,12 @@ import java.util.List;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import ru.moysklad.remap_1_2.model.Account;
+import ru.moysklad.remap_1_2.model.Agent;
 import ru.moysklad.remap_1_2.model.AttributeAbstract;
 import ru.moysklad.remap_1_2.model.CommissionReportInCommissionOverhead;
 import ru.moysklad.remap_1_2.model.CommissionReportInPositionList;
 import ru.moysklad.remap_1_2.model.CommissionReportInReturnedPositionList;
 import ru.moysklad.remap_1_2.model.Contract;
-import ru.moysklad.remap_1_2.model.Counterparty;
 import ru.moysklad.remap_1_2.model.CurrencyRate;
 import ru.moysklad.remap_1_2.model.CustomerOrderPaymentsInner;
 import ru.moysklad.remap_1_2.model.Employee;
@@ -101,7 +101,7 @@ import java.util.StringJoiner;
   CashInOperationAnyOf4.JSON_PROPERTY_LINKED_SUM
 })
 @JsonTypeName("CashInOperation_anyOf_4")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CashInOperationAnyOf4 {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -118,7 +118,7 @@ public class CashInOperationAnyOf4 {
 
   public static final String JSON_PROPERTY_AGENT = "agent";
   @javax.annotation.Nullable
-  private Counterparty agent;
+  private Agent agent;
 
   public static final String JSON_PROPERTY_AGENT_ACCOUNT = "agentAccount";
   @javax.annotation.Nullable
@@ -315,6 +315,7 @@ public class CashInOperationAnyOf4 {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -335,6 +336,7 @@ public class CashInOperationAnyOf4 {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Полученного отчета комиссионера
@@ -368,21 +370,22 @@ public class CashInOperationAnyOf4 {
 
 
 
-  public CashInOperationAnyOf4 agent(@javax.annotation.Nullable Counterparty agent) {
+  public CashInOperationAnyOf4 agent(@javax.annotation.Nullable Agent agent) {
     
     this.agent = agent;
     return this;
   }
 
+
   /**
-   * Get agent
+   * Метаданные контрагента или юрлица
    * @return agent
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Counterparty getAgent() {
+  public Agent getAgent() {
     return agent;
   }
 
@@ -391,15 +394,17 @@ public class CashInOperationAnyOf4 {
 
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAgent(@javax.annotation.Nullable Counterparty agent) {
+  public void setAgent(@javax.annotation.Nullable Agent agent) {
     this.agent = agent;
   }
+
 
   public CashInOperationAnyOf4 agentAccount(@javax.annotation.Nullable Account agentAccount) {
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
     
     return this;
   }
+
 
   /**
    * Метаданные счета контрагента
@@ -431,11 +436,13 @@ public class CashInOperationAnyOf4 {
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
   }
 
+
   public CashInOperationAnyOf4 applicable(@javax.annotation.Nullable Boolean applicable) {
     
     this.applicable = applicable;
     return this;
   }
+
 
   /**
    * Отметка о проведении
@@ -458,11 +465,13 @@ public class CashInOperationAnyOf4 {
     this.applicable = applicable;
   }
 
+
   public CashInOperationAnyOf4 attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public CashInOperationAnyOf4 addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -506,11 +515,13 @@ public class CashInOperationAnyOf4 {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   public CashInOperationAnyOf4 code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код Полученного отчета комиссионера
@@ -533,11 +544,13 @@ public class CashInOperationAnyOf4 {
     this.code = code;
   }
 
+
   public CashInOperationAnyOf4 commissionOverhead(@javax.annotation.Nullable CommissionReportInCommissionOverhead commissionOverhead) {
     
     this.commissionOverhead = commissionOverhead;
     return this;
   }
+
 
   /**
    * Get commissionOverhead
@@ -560,11 +573,13 @@ public class CashInOperationAnyOf4 {
     this.commissionOverhead = commissionOverhead;
   }
 
+
   public CashInOperationAnyOf4 commissionPeriodEnd(@javax.annotation.Nullable String commissionPeriodEnd) {
     
     this.commissionPeriodEnd = commissionPeriodEnd;
     return this;
   }
+
 
   /**
    * Конец периода
@@ -587,11 +602,13 @@ public class CashInOperationAnyOf4 {
     this.commissionPeriodEnd = commissionPeriodEnd;
   }
 
+
   public CashInOperationAnyOf4 commissionPeriodStart(@javax.annotation.Nullable String commissionPeriodStart) {
     
     this.commissionPeriodStart = commissionPeriodStart;
     return this;
   }
+
 
   /**
    * Начало периода
@@ -614,6 +631,7 @@ public class CashInOperationAnyOf4 {
     this.commissionPeriodStart = commissionPeriodStart;
   }
 
+
   /**
    * Сумма коммитента в установленной валюте
    * @return commitentSum
@@ -635,6 +653,7 @@ public class CashInOperationAnyOf4 {
     
     return this;
   }
+
 
   /**
    * Метаданные договора
@@ -665,6 +684,7 @@ public class CashInOperationAnyOf4 {
   public void setContract(@javax.annotation.Nullable Contract contract) {
     this.contract = JsonNullable.<Contract>of(contract);
   }
+
 
   /**
    * Дата создания
@@ -704,6 +724,7 @@ public class CashInOperationAnyOf4 {
     return this;
   }
 
+
   /**
    * Комментарий Полученного отчета комиссионера
    * @return description
@@ -734,11 +755,13 @@ public class CashInOperationAnyOf4 {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public CashInOperationAnyOf4 externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Полученного отчета комиссионера
@@ -761,11 +784,13 @@ public class CashInOperationAnyOf4 {
     this.externalCode = externalCode;
   }
 
+
   public CashInOperationAnyOf4 files(@javax.annotation.Nullable FileList files) {
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
   }
+
 
   /**
    * Метаданные массива файлов
@@ -797,11 +822,13 @@ public class CashInOperationAnyOf4 {
     this.files = JsonNullable.<FileList>of(files);
   }
 
+
   public CashInOperationAnyOf4 group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -824,11 +851,13 @@ public class CashInOperationAnyOf4 {
     this.group = group;
   }
 
+
   public CashInOperationAnyOf4 moment(@javax.annotation.Nullable String moment) {
     
     this.moment = moment;
     return this;
   }
+
 
   /**
    * Дата документа
@@ -851,11 +880,13 @@ public class CashInOperationAnyOf4 {
     this.moment = moment;
   }
 
+
   public CashInOperationAnyOf4 name(@javax.annotation.Nullable String name) {
     
     this.name = name;
     return this;
   }
+
 
   /**
    * Наименование Полученного отчета комиссионера
@@ -878,11 +909,13 @@ public class CashInOperationAnyOf4 {
     this.name = name;
   }
 
+
   public CashInOperationAnyOf4 organization(@javax.annotation.Nullable Organization organization) {
     
     this.organization = organization;
     return this;
   }
+
 
   /**
    * Get organization
@@ -905,11 +938,13 @@ public class CashInOperationAnyOf4 {
     this.organization = organization;
   }
 
+
   public CashInOperationAnyOf4 organizationAccount(@javax.annotation.Nullable Account organizationAccount) {
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
     
     return this;
   }
+
 
   /**
    * Метаданные счета юрлица
@@ -941,11 +976,13 @@ public class CashInOperationAnyOf4 {
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
   }
 
+
   public CashInOperationAnyOf4 owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Владелец (Сотрудник)
@@ -977,6 +1014,7 @@ public class CashInOperationAnyOf4 {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   /**
    * Оплаченная сумма
    * @return payedSum
@@ -999,6 +1037,7 @@ public class CashInOperationAnyOf4 {
     return this;
   }
 
+
   /**
    * Get positions
    * @return positions
@@ -1019,6 +1058,7 @@ public class CashInOperationAnyOf4 {
   public void setPositions(@javax.annotation.Nullable CommissionReportInPositionList positions) {
     this.positions = positions;
   }
+
 
   /**
    * Напечатан ли документ
@@ -1041,6 +1081,7 @@ public class CashInOperationAnyOf4 {
     
     return this;
   }
+
 
   /**
    * Метаданные проекта
@@ -1072,6 +1113,7 @@ public class CashInOperationAnyOf4 {
     this.project = JsonNullable.<Project>of(project);
   }
 
+
   /**
    * Опубликован ли документ
    * @return published
@@ -1094,6 +1136,7 @@ public class CashInOperationAnyOf4 {
     return this;
   }
 
+
   /**
    * Get rate
    * @return rate
@@ -1115,11 +1158,13 @@ public class CashInOperationAnyOf4 {
     this.rate = rate;
   }
 
+
   public CashInOperationAnyOf4 returnToCommissionerPositions(@javax.annotation.Nullable CommissionReportInReturnedPositionList returnToCommissionerPositions) {
     
     this.returnToCommissionerPositions = returnToCommissionerPositions;
     return this;
   }
+
 
   /**
    * Get returnToCommissionerPositions
@@ -1142,14 +1187,18 @@ public class CashInOperationAnyOf4 {
     this.returnToCommissionerPositions = returnToCommissionerPositions;
   }
 
+
   public CashInOperationAnyOf4 rewardPercent(@javax.annotation.Nullable Integer rewardPercent) {
     
     this.rewardPercent = rewardPercent;
     return this;
   }
 
+
   /**
    * Процент вознаграждения
+   * minimum: 0
+   * maximum: 100
    * @return rewardPercent
    */
   @javax.annotation.Nullable
@@ -1169,14 +1218,16 @@ public class CashInOperationAnyOf4 {
     this.rewardPercent = rewardPercent;
   }
 
+
   public CashInOperationAnyOf4 rewardType(@javax.annotation.Nullable String rewardType) {
     
     this.rewardType = rewardType;
     return this;
   }
 
+
   /**
-   * Тип вознаграждения
+   * Тип Вознаграждения. Известные значения описаны в RewardType
    * @return rewardType
    */
   @javax.annotation.Nullable
@@ -1196,11 +1247,13 @@ public class CashInOperationAnyOf4 {
     this.rewardType = rewardType;
   }
 
+
   public CashInOperationAnyOf4 salesChannel(@javax.annotation.Nullable SalesChannel salesChannel) {
     this.salesChannel = JsonNullable.<SalesChannel>of(salesChannel);
     
     return this;
   }
+
 
   /**
    * Метаданные канала продаж
@@ -1232,11 +1285,13 @@ public class CashInOperationAnyOf4 {
     this.salesChannel = JsonNullable.<SalesChannel>of(salesChannel);
   }
 
+
   public CashInOperationAnyOf4 shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -1259,11 +1314,13 @@ public class CashInOperationAnyOf4 {
     this.shared = shared;
   }
 
+
   public CashInOperationAnyOf4 state(@javax.annotation.Nullable State state) {
     this.state = JsonNullable.<State>of(state);
     
     return this;
   }
+
 
   /**
    * Метаданные статуса Полученного отчета комиссионера
@@ -1295,11 +1352,13 @@ public class CashInOperationAnyOf4 {
     this.state = JsonNullable.<State>of(state);
   }
 
+
   public CashInOperationAnyOf4 sum(@javax.annotation.Nullable Double sum) {
     
     this.sum = sum;
     return this;
   }
+
 
   /**
    * Сумма Полученного отчета комиссионера в копейках
@@ -1322,11 +1381,13 @@ public class CashInOperationAnyOf4 {
     this.sum = sum;
   }
 
+
   public CashInOperationAnyOf4 syncId(@javax.annotation.Nullable UUID syncId) {
     
     this.syncId = syncId;
     return this;
   }
+
 
   /**
    * ID синхронизации
@@ -1348,6 +1409,7 @@ public class CashInOperationAnyOf4 {
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
     this.syncId = syncId;
   }
+
 
   /**
    * Момент последнего обновления Полученного отчета комиссионера
@@ -1371,6 +1433,7 @@ public class CashInOperationAnyOf4 {
     return this;
   }
 
+
   /**
    * Учитывается ли НДС
    * @return vatEnabled
@@ -1392,11 +1455,13 @@ public class CashInOperationAnyOf4 {
     this.vatEnabled = vatEnabled;
   }
 
+
   public CashInOperationAnyOf4 vatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
     
     this.vatIncluded = vatIncluded;
     return this;
   }
+
 
   /**
    * Включен ли НДС в цену
@@ -1419,11 +1484,13 @@ public class CashInOperationAnyOf4 {
     this.vatIncluded = vatIncluded;
   }
 
+
   public CashInOperationAnyOf4 vatSum(@javax.annotation.Nullable Double vatSum) {
     
     this.vatSum = vatSum;
     return this;
   }
+
 
   /**
    * Сумма НДС
@@ -1446,11 +1513,13 @@ public class CashInOperationAnyOf4 {
     this.vatSum = vatSum;
   }
 
+
   public CashInOperationAnyOf4 payments(@javax.annotation.Nullable List<CustomerOrderPaymentsInner> payments) {
     this.payments = JsonNullable.<List<CustomerOrderPaymentsInner>>of(payments);
     
     return this;
   }
+
 
   public CashInOperationAnyOf4 addPaymentsItem(CustomerOrderPaymentsInner paymentsItem) {
     if (this.payments == null || !this.payments.isPresent()) {
@@ -1494,11 +1563,13 @@ public class CashInOperationAnyOf4 {
     this.payments = JsonNullable.<List<CustomerOrderPaymentsInner>>of(payments);
   }
 
+
   public CashInOperationAnyOf4 linkedSum(@javax.annotation.Nonnull Double linkedSum) {
     
     this.linkedSum = linkedSum;
     return this;
   }
+
 
   /**
    * Сумма, оплаченная по данному документу
@@ -1520,6 +1591,7 @@ public class CashInOperationAnyOf4 {
   public void setLinkedSum(@javax.annotation.Nonnull Double linkedSum) {
     this.linkedSum = linkedSum;
   }
+
 
   @Override
   public boolean equals(Object o) {

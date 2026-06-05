@@ -56,7 +56,7 @@ import java.util.StringJoiner;
   CreateInternalOrderPositions200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createInternalOrderPositions_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateInternalOrderPositions200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -120,6 +120,7 @@ public class CreateInternalOrderPositions200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -140,6 +141,7 @@ public class CreateInternalOrderPositions200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID позиции
@@ -179,6 +181,7 @@ public class CreateInternalOrderPositions200ResponseInner {
     return this;
   }
 
+
   /**
    * Количество товаров данного вида в позиции
    * @return quantity
@@ -200,11 +203,13 @@ public class CreateInternalOrderPositions200ResponseInner {
     this.quantity = quantity;
   }
 
+
   public CreateInternalOrderPositions200ResponseInner price(@javax.annotation.Nullable Double price) {
     
     this.price = price;
     return this;
   }
+
 
   /**
    * Цена товара/услуги в копейках
@@ -227,14 +232,18 @@ public class CreateInternalOrderPositions200ResponseInner {
     this.price = price;
   }
 
+
   public CreateInternalOrderPositions200ResponseInner vat(@javax.annotation.Nullable Integer vat) {
     
     this.vat = vat;
     return this;
   }
 
+
   /**
    * НДС, которым облагается текущая позиция
+   * minimum: 0
+   * maximum: 100
    * @return vat
    */
   @javax.annotation.Nullable
@@ -254,11 +263,13 @@ public class CreateInternalOrderPositions200ResponseInner {
     this.vat = vat;
   }
 
+
   public CreateInternalOrderPositions200ResponseInner vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
     
     this.vatEnabled = vatEnabled;
     return this;
   }
+
 
   /**
    * Включен ли НДС для позиции
@@ -281,11 +292,13 @@ public class CreateInternalOrderPositions200ResponseInner {
     this.vatEnabled = vatEnabled;
   }
 
+
   public CreateInternalOrderPositions200ResponseInner assortment(@javax.annotation.Nullable Assortment assortment) {
     
     this.assortment = assortment;
     return this;
   }
+
 
   /**
    * Get assortment
@@ -310,11 +323,13 @@ public class CreateInternalOrderPositions200ResponseInner {
     this.assortment = assortment;
   }
 
+
   public CreateInternalOrderPositions200ResponseInner pack(@javax.annotation.Nullable Pack pack) {
     this.pack = JsonNullable.<Pack>of(pack);
     
     return this;
   }
+
 
   /**
    * Упаковка Товара
@@ -346,11 +361,13 @@ public class CreateInternalOrderPositions200ResponseInner {
     this.pack = JsonNullable.<Pack>of(pack);
   }
 
+
   public CreateInternalOrderPositions200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
+
 
   public CreateInternalOrderPositions200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -380,6 +397,7 @@ public class CreateInternalOrderPositions200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

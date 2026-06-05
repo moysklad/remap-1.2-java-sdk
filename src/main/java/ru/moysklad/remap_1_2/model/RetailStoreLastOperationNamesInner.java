@@ -34,7 +34,7 @@ import java.util.StringJoiner;
   RetailStoreLastOperationNamesInner.JSON_PROPERTY_NAME
 })
 @JsonTypeName("RetailStore_lastOperationNames_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStoreLastOperationNamesInner {
 
   public static final String JSON_PROPERTY_ENTITY = "entity";
@@ -53,6 +53,7 @@ public class RetailStoreLastOperationNamesInner {
     this.entity = entity;
     return this;
   }
+
 
   /**
    * Ключевое слово, обозначающее тип последней операции
@@ -75,11 +76,13 @@ public class RetailStoreLastOperationNamesInner {
     this.entity = entity;
   }
 
+
   public RetailStoreLastOperationNamesInner name(@javax.annotation.Nullable String name) {
     
     this.name = name;
     return this;
   }
+
 
   /**
    * Наименование (номер) последней операции
@@ -101,6 +104,7 @@ public class RetailStoreLastOperationNamesInner {
   public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
+
 
   @Override
   public boolean equals(Object o) {

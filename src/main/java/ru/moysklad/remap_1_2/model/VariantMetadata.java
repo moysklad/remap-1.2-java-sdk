@@ -38,7 +38,7 @@ import java.util.StringJoiner;
   VariantMetadata.JSON_PROPERTY_META,
   VariantMetadata.JSON_PROPERTY_CHARACTERISTICS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class VariantMetadata {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -57,6 +57,7 @@ public class VariantMetadata {
     this.meta = meta;
     return this;
   }
+
 
   /**
    * Get meta
@@ -79,11 +80,13 @@ public class VariantMetadata {
     this.meta = meta;
   }
 
+
   public VariantMetadata characteristics(@javax.annotation.Nullable List<VariantCharacteristic> characteristics) {
     
     this.characteristics = characteristics;
     return this;
   }
+
 
   public VariantMetadata addCharacteristicsItem(VariantCharacteristic characteristicsItem) {
     if (this.characteristics == null) {
@@ -113,6 +116,7 @@ public class VariantMetadata {
   public void setCharacteristics(@javax.annotation.Nullable List<VariantCharacteristic> characteristics) {
     this.characteristics = characteristics;
   }
+
 
   @Override
   public boolean equals(Object o) {

@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   Cashier.JSON_PROPERTY_EMPLOYEE,
   Cashier.JSON_PROPERTY_RETAIL_STORE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Cashier {
   public static Cashier createWithMeta(UUID parentId, UUID id) {
     Cashier o = new Cashier();
@@ -98,6 +98,7 @@ public class Cashier {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -118,6 +119,7 @@ public class Cashier {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Кассира
@@ -157,6 +159,7 @@ public class Cashier {
     return this;
   }
 
+
   /**
    * Get employee
    * @return employee
@@ -178,11 +181,13 @@ public class Cashier {
     this.employee = employee;
   }
 
+
   public Cashier retailStore(@javax.annotation.Nullable RetailStore retailStore) {
     
     this.retailStore = retailStore;
     return this;
   }
+
 
   /**
    * Get retailStore
@@ -204,6 +209,7 @@ public class Cashier {
   public void setRetailStore(@javax.annotation.Nullable RetailStore retailStore) {
     this.retailStore = retailStore;
   }
+
 
   @Override
   public boolean equals(Object o) {

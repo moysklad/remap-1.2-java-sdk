@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   RetailStoreReceiptTemplate.JSON_PROPERTY_FOOTER
 })
 @JsonTypeName("RetailStore_receiptTemplate")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStoreReceiptTemplate {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -60,6 +60,7 @@ public class RetailStoreReceiptTemplate {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -81,11 +82,13 @@ public class RetailStoreReceiptTemplate {
     this.meta = meta;
   }
 
+
   public RetailStoreReceiptTemplate header(@javax.annotation.Nullable String header) {
     
     this.header = header;
     return this;
   }
+
 
   /**
    * Get header
@@ -108,11 +111,13 @@ public class RetailStoreReceiptTemplate {
     this.header = header;
   }
 
+
   public RetailStoreReceiptTemplate footer(@javax.annotation.Nullable String footer) {
     
     this.footer = footer;
     return this;
   }
+
 
   /**
    * Get footer
@@ -134,6 +139,7 @@ public class RetailStoreReceiptTemplate {
   public void setFooter(@javax.annotation.Nullable String footer) {
     this.footer = footer;
   }
+
 
   @Override
   public boolean equals(Object o) {

@@ -44,7 +44,7 @@ import java.util.StringJoiner;
   RetailStoreList.JSON_PROPERTY_META,
   RetailStoreList.JSON_PROPERTY_ROWS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStoreList {
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
@@ -68,6 +68,7 @@ public class RetailStoreList {
     return this;
   }
 
+
   /**
    * Get context
    * @return context
@@ -89,11 +90,13 @@ public class RetailStoreList {
     this.context = context;
   }
 
+
   public RetailStoreList meta(@javax.annotation.Nullable MetaList meta) {
     
     this.meta = meta;
     return this;
   }
+
 
   /**
    * Get meta
@@ -116,11 +119,13 @@ public class RetailStoreList {
     this.meta = meta;
   }
 
+
   public RetailStoreList rows(@javax.annotation.Nullable List<RetailStore> rows) {
     this.rows = JsonNullable.<List<RetailStore>>of(rows);
     
     return this;
   }
+
 
   public RetailStoreList addRowsItem(RetailStore rowsItem) {
     if (this.rows == null || !this.rows.isPresent()) {
@@ -163,6 +168,7 @@ public class RetailStoreList {
   public void setRows(@javax.annotation.Nullable List<RetailStore> rows) {
     this.rows = JsonNullable.<List<RetailStore>>of(rows);
   }
+
 
   @Override
   public boolean equals(Object o) {

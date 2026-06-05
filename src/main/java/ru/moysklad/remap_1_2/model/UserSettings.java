@@ -48,7 +48,7 @@ import java.util.StringJoiner;
   UserSettings.JSON_PROPERTY_MAIL_FOOTER,
   UserSettings.JSON_PROPERTY_PRINT_FORMAT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class UserSettings {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -108,6 +108,7 @@ public class UserSettings {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -129,11 +130,13 @@ public class UserSettings {
     this.meta = meta;
   }
 
+
   public UserSettings autoShowReports(@javax.annotation.Nullable Boolean autoShowReports) {
     
     this.autoShowReports = autoShowReports;
     return this;
   }
+
 
   /**
    * Строить ли отчеты автоматически при переходе на вкладку с отчетом
@@ -156,11 +159,13 @@ public class UserSettings {
     this.autoShowReports = autoShowReports;
   }
 
+
   public UserSettings defaultCompany(@javax.annotation.Nullable Organization defaultCompany) {
     
     this.defaultCompany = defaultCompany;
     return this;
   }
+
 
   /**
    * Get defaultCompany
@@ -183,11 +188,13 @@ public class UserSettings {
     this.defaultCompany = defaultCompany;
   }
 
+
   public UserSettings defaultCustomerCounterparty(@javax.annotation.Nullable Counterparty defaultCustomerCounterparty) {
     
     this.defaultCustomerCounterparty = defaultCustomerCounterparty;
     return this;
   }
+
 
   /**
    * Get defaultCustomerCounterparty
@@ -210,11 +217,13 @@ public class UserSettings {
     this.defaultCustomerCounterparty = defaultCustomerCounterparty;
   }
 
+
   public UserSettings defaultPlace(@javax.annotation.Nullable Store defaultPlace) {
     
     this.defaultPlace = defaultPlace;
     return this;
   }
+
 
   /**
    * Get defaultPlace
@@ -237,11 +246,13 @@ public class UserSettings {
     this.defaultPlace = defaultPlace;
   }
 
+
   public UserSettings defaultProject(@javax.annotation.Nullable Project defaultProject) {
     
     this.defaultProject = defaultProject;
     return this;
   }
+
 
   /**
    * Get defaultProject
@@ -264,11 +275,13 @@ public class UserSettings {
     this.defaultProject = defaultProject;
   }
 
+
   public UserSettings defaultPurchaseCounterparty(@javax.annotation.Nullable Counterparty defaultPurchaseCounterparty) {
     
     this.defaultPurchaseCounterparty = defaultPurchaseCounterparty;
     return this;
   }
+
 
   /**
    * Get defaultPurchaseCounterparty
@@ -291,11 +304,13 @@ public class UserSettings {
     this.defaultPurchaseCounterparty = defaultPurchaseCounterparty;
   }
 
+
   public UserSettings defaultScreen(@javax.annotation.Nullable String defaultScreen) {
     
     this.defaultScreen = defaultScreen;
     return this;
   }
+
 
   /**
    * Стартовый экран пользователя. Известные значения описаны в DefaultScreen
@@ -318,11 +333,13 @@ public class UserSettings {
     this.defaultScreen = defaultScreen;
   }
 
+
   public UserSettings fieldsPerRow(@javax.annotation.Nullable Integer fieldsPerRow) {
     
     this.fieldsPerRow = fieldsPerRow;
     return this;
   }
+
 
   /**
    * Количество столбцов, в которых будут располагаться дополнительные поля в документах
@@ -345,11 +362,13 @@ public class UserSettings {
     this.fieldsPerRow = fieldsPerRow;
   }
 
+
   public UserSettings locale(@javax.annotation.Nullable String locale) {
     
     this.locale = locale;
     return this;
   }
+
 
   /**
    * Язык системы. Известные значения описаны в Locale
@@ -372,11 +391,13 @@ public class UserSettings {
     this.locale = locale;
   }
 
+
   public UserSettings mailFooter(@javax.annotation.Nullable String mailFooter) {
     
     this.mailFooter = mailFooter;
     return this;
   }
+
 
   /**
    * Подставляется в подпись в письмах, отправляемых из МС
@@ -399,11 +420,13 @@ public class UserSettings {
     this.mailFooter = mailFooter;
   }
 
+
   public UserSettings printFormat(@javax.annotation.Nullable String printFormat) {
     
     this.printFormat = printFormat;
     return this;
   }
+
 
   /**
    * Правила печати документов. Известные значения описаны в PrintFormat
@@ -425,6 +448,7 @@ public class UserSettings {
   public void setPrintFormat(@javax.annotation.Nullable String printFormat) {
     this.printFormat = printFormat;
   }
+
 
   @Override
   public boolean equals(Object o) {

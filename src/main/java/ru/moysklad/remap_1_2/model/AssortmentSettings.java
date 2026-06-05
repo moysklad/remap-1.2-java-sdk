@@ -38,7 +38,7 @@ import java.util.StringJoiner;
   AssortmentSettings.JSON_PROPERTY_UNIQUE_CODE_RULES,
   AssortmentSettings.JSON_PROPERTY_CREATED_SHARED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class AssortmentSettings {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -66,6 +66,7 @@ public class AssortmentSettings {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -87,11 +88,13 @@ public class AssortmentSettings {
     this.meta = meta;
   }
 
+
   public AssortmentSettings barcodeRules(@javax.annotation.Nullable AssortmentSettingsBarcodeRules barcodeRules) {
     
     this.barcodeRules = barcodeRules;
     return this;
   }
+
 
   /**
    * Get barcodeRules
@@ -114,11 +117,13 @@ public class AssortmentSettings {
     this.barcodeRules = barcodeRules;
   }
 
+
   public AssortmentSettings uniqueCodeRules(@javax.annotation.Nullable AssortmentSettingsUniqueCodeRules uniqueCodeRules) {
     
     this.uniqueCodeRules = uniqueCodeRules;
     return this;
   }
+
 
   /**
    * Get uniqueCodeRules
@@ -141,11 +146,13 @@ public class AssortmentSettings {
     this.uniqueCodeRules = uniqueCodeRules;
   }
 
+
   public AssortmentSettings createdShared(@javax.annotation.Nullable Boolean createdShared) {
     
     this.createdShared = createdShared;
     return this;
   }
+
 
   /**
    * Создавать новые элементы с меткой \&quot;Общий\&quot;
@@ -167,6 +174,7 @@ public class AssortmentSettings {
   public void setCreatedShared(@javax.annotation.Nullable Boolean createdShared) {
     this.createdShared = createdShared;
   }
+
 
   @Override
   public boolean equals(Object o) {

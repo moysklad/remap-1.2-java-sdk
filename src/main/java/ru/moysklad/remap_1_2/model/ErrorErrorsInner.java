@@ -45,7 +45,7 @@ import java.util.StringJoiner;
   ErrorErrorsInner.JSON_PROPERTY_META
 })
 @JsonTypeName("Error_errors_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class ErrorErrorsInner {
 
   public static final String JSON_PROPERTY_ERROR = "error";
@@ -93,6 +93,7 @@ public class ErrorErrorsInner {
     return this;
   }
 
+
   /**
    * Заголовок ошибки
    * @return error
@@ -114,11 +115,13 @@ public class ErrorErrorsInner {
     this.error = error;
   }
 
+
   public ErrorErrorsInner parameter(@javax.annotation.Nullable String parameter) {
     
     this.parameter = parameter;
     return this;
   }
+
 
   /**
    * Параметр, на котором произошла ошибка
@@ -141,11 +144,13 @@ public class ErrorErrorsInner {
     this.parameter = parameter;
   }
 
+
   public ErrorErrorsInner code(@javax.annotation.Nullable Integer code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код ошибки
@@ -168,11 +173,13 @@ public class ErrorErrorsInner {
     this.code = code;
   }
 
+
   public ErrorErrorsInner errorMessage(@javax.annotation.Nullable String errorMessage) {
     
     this.errorMessage = errorMessage;
     return this;
   }
+
 
   /**
    * Сообщение, прилагаемое к ошибке
@@ -195,11 +202,13 @@ public class ErrorErrorsInner {
     this.errorMessage = errorMessage;
   }
 
+
   public ErrorErrorsInner moreInfo(@javax.annotation.Nullable String moreInfo) {
     
     this.moreInfo = moreInfo;
     return this;
   }
+
 
   /**
    * Ссылка на документацию с описанием ошибки
@@ -222,11 +231,13 @@ public class ErrorErrorsInner {
     this.moreInfo = moreInfo;
   }
 
+
   public ErrorErrorsInner line(@javax.annotation.Nullable Integer line) {
     
     this.line = line;
     return this;
   }
+
 
   /**
    * Строка JSON, на которой произошла ошибка
@@ -249,11 +260,13 @@ public class ErrorErrorsInner {
     this.line = line;
   }
 
+
   public ErrorErrorsInner column(@javax.annotation.Nullable Integer column) {
     
     this.column = column;
     return this;
   }
+
 
   /**
    * Координата элемента в строке, на котором произошла ошибка
@@ -276,11 +289,13 @@ public class ErrorErrorsInner {
     this.column = column;
   }
 
+
   public ErrorErrorsInner dependencies(@javax.annotation.Nullable List<Meta> dependencies) {
     
     this.dependencies = dependencies;
     return this;
   }
+
 
   public ErrorErrorsInner addDependenciesItem(Meta dependenciesItem) {
     if (this.dependencies == null) {
@@ -311,11 +326,13 @@ public class ErrorErrorsInner {
     this.dependencies = dependencies;
   }
 
+
   public ErrorErrorsInner meta(@javax.annotation.Nullable Meta meta) {
     
     this.meta = meta;
     return this;
   }
+
 
   /**
    * Get meta
@@ -337,6 +354,7 @@ public class ErrorErrorsInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   @Override
   public boolean equals(Object o) {

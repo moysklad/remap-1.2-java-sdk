@@ -25,11 +25,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
+import ru.moysklad.remap_1_2.model.Agent;
 import ru.moysklad.remap_1_2.model.AttributeAbstract;
 import ru.moysklad.remap_1_2.model.CashOut;
 import ru.moysklad.remap_1_2.model.CashOutOperation;
 import ru.moysklad.remap_1_2.model.Contract;
-import ru.moysklad.remap_1_2.model.Counterparty;
 import ru.moysklad.remap_1_2.model.CurrencyRate;
 import ru.moysklad.remap_1_2.model.Employee;
 import ru.moysklad.remap_1_2.model.Error;
@@ -93,7 +93,7 @@ import java.util.StringJoiner;
   CreateCashOutBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createCashOutBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateCashOutBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -174,7 +174,7 @@ public class CreateCashOutBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_AGENT = "agent";
   @javax.annotation.Nullable
-  private Counterparty agent;
+  private Agent agent;
 
   public static final String JSON_PROPERTY_EXPENSE_ITEM = "expenseItem";
   @javax.annotation.Nullable
@@ -273,6 +273,7 @@ public class CreateCashOutBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -293,6 +294,7 @@ public class CreateCashOutBatch200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Расходного ордера
@@ -332,6 +334,7 @@ public class CreateCashOutBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Наименование Расходного ордера
    * @return name
@@ -353,11 +356,13 @@ public class CreateCashOutBatch200ResponseInner {
     this.name = name;
   }
 
+
   public CreateCashOutBatch200ResponseInner code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код Расходного ордера
@@ -380,11 +385,13 @@ public class CreateCashOutBatch200ResponseInner {
     this.code = code;
   }
 
+
   public CreateCashOutBatch200ResponseInner externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Расходного ордера
@@ -407,11 +414,13 @@ public class CreateCashOutBatch200ResponseInner {
     this.externalCode = externalCode;
   }
 
+
   public CreateCashOutBatch200ResponseInner syncId(@javax.annotation.Nullable UUID syncId) {
     
     this.syncId = syncId;
     return this;
   }
+
 
   /**
    * ID синхронизации
@@ -434,11 +443,13 @@ public class CreateCashOutBatch200ResponseInner {
     this.syncId = syncId;
   }
 
+
   public CreateCashOutBatch200ResponseInner description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Комментарий Расходного ордера
@@ -469,6 +480,7 @@ public class CreateCashOutBatch200ResponseInner {
   public void setDescription(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
   }
+
 
   /**
    * Дата создания
@@ -524,6 +536,7 @@ public class CreateCashOutBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Дата документа
    * @return moment
@@ -545,11 +558,13 @@ public class CreateCashOutBatch200ResponseInner {
     this.moment = moment;
   }
 
+
   public CreateCashOutBatch200ResponseInner owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Владелец (Сотрудник)
@@ -581,11 +596,13 @@ public class CreateCashOutBatch200ResponseInner {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public CreateCashOutBatch200ResponseInner group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -608,11 +625,13 @@ public class CreateCashOutBatch200ResponseInner {
     this.group = group;
   }
 
+
   public CreateCashOutBatch200ResponseInner applicable(@javax.annotation.Nullable Boolean applicable) {
     
     this.applicable = applicable;
     return this;
   }
+
 
   /**
    * Отметка о проведении
@@ -634,6 +653,7 @@ public class CreateCashOutBatch200ResponseInner {
   public void setApplicable(@javax.annotation.Nullable Boolean applicable) {
     this.applicable = applicable;
   }
+
 
   /**
    * Напечатан ли документ
@@ -673,6 +693,7 @@ public class CreateCashOutBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get rate
    * @return rate
@@ -694,11 +715,13 @@ public class CreateCashOutBatch200ResponseInner {
     this.rate = rate;
   }
 
+
   public CreateCashOutBatch200ResponseInner organization(@javax.annotation.Nullable Organization organization) {
     
     this.organization = organization;
     return this;
   }
+
 
   /**
    * Get organization
@@ -721,21 +744,23 @@ public class CreateCashOutBatch200ResponseInner {
     this.organization = organization;
   }
 
-  public CreateCashOutBatch200ResponseInner agent(@javax.annotation.Nullable Counterparty agent) {
+
+  public CreateCashOutBatch200ResponseInner agent(@javax.annotation.Nullable Agent agent) {
     
     this.agent = agent;
     return this;
   }
 
+
   /**
-   * Get agent
+   * Метаданные контрагента или юрлица
    * @return agent
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Counterparty getAgent() {
+  public Agent getAgent() {
     return agent;
   }
 
@@ -744,15 +769,17 @@ public class CreateCashOutBatch200ResponseInner {
 
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAgent(@javax.annotation.Nullable Counterparty agent) {
+  public void setAgent(@javax.annotation.Nullable Agent agent) {
     this.agent = agent;
   }
+
 
   public CreateCashOutBatch200ResponseInner expenseItem(@javax.annotation.Nullable ExpenseItem expenseItem) {
     this.expenseItem = JsonNullable.<ExpenseItem>of(expenseItem);
     
     return this;
   }
+
 
   /**
    * Метаданные статьи расхода
@@ -784,11 +811,13 @@ public class CreateCashOutBatch200ResponseInner {
     this.expenseItem = JsonNullable.<ExpenseItem>of(expenseItem);
   }
 
+
   public CreateCashOutBatch200ResponseInner attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public CreateCashOutBatch200ResponseInner addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -832,11 +861,13 @@ public class CreateCashOutBatch200ResponseInner {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   public CreateCashOutBatch200ResponseInner contract(@javax.annotation.Nullable Contract contract) {
     this.contract = JsonNullable.<Contract>of(contract);
     
     return this;
   }
+
 
   /**
    * Метаданные договора
@@ -868,11 +899,13 @@ public class CreateCashOutBatch200ResponseInner {
     this.contract = JsonNullable.<Contract>of(contract);
   }
 
+
   public CreateCashOutBatch200ResponseInner files(@javax.annotation.Nullable FileList files) {
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
   }
+
 
   /**
    * Метаданные массива файлов
@@ -904,11 +937,13 @@ public class CreateCashOutBatch200ResponseInner {
     this.files = JsonNullable.<FileList>of(files);
   }
 
+
   public CreateCashOutBatch200ResponseInner noClosingDocs(@javax.annotation.Nullable Boolean noClosingDocs) {
     
     this.noClosingDocs = noClosingDocs;
     return this;
   }
+
 
   /**
    * Признак \&quot;Без закрывающих документов\&quot;
@@ -931,11 +966,13 @@ public class CreateCashOutBatch200ResponseInner {
     this.noClosingDocs = noClosingDocs;
   }
 
+
   public CreateCashOutBatch200ResponseInner paymentPurpose(@javax.annotation.Nullable String paymentPurpose) {
     
     this.paymentPurpose = paymentPurpose;
     return this;
   }
+
 
   /**
    * Основание
@@ -958,11 +995,13 @@ public class CreateCashOutBatch200ResponseInner {
     this.paymentPurpose = paymentPurpose;
   }
 
+
   public CreateCashOutBatch200ResponseInner project(@javax.annotation.Nullable Project project) {
     this.project = JsonNullable.<Project>of(project);
     
     return this;
   }
+
 
   /**
    * Метаданные проекта
@@ -994,11 +1033,13 @@ public class CreateCashOutBatch200ResponseInner {
     this.project = JsonNullable.<Project>of(project);
   }
 
+
   public CreateCashOutBatch200ResponseInner salesChannel(@javax.annotation.Nullable SalesChannel salesChannel) {
     this.salesChannel = JsonNullable.<SalesChannel>of(salesChannel);
     
     return this;
   }
+
 
   /**
    * Метаданные канала продаж
@@ -1030,6 +1071,7 @@ public class CreateCashOutBatch200ResponseInner {
     this.salesChannel = JsonNullable.<SalesChannel>of(salesChannel);
   }
 
+
   /**
    * Общий доступ
    * @return shared
@@ -1051,6 +1093,7 @@ public class CreateCashOutBatch200ResponseInner {
     
     return this;
   }
+
 
   /**
    * Метаданные статуса Расходного ордера
@@ -1081,6 +1124,7 @@ public class CreateCashOutBatch200ResponseInner {
   public void setState(@javax.annotation.Nullable State state) {
     this.state = JsonNullable.<State>of(state);
   }
+
 
   /**
    * Сумма расходного ордера в установленной валюте
@@ -1120,6 +1164,7 @@ public class CreateCashOutBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Счет-фактура полученный, с которым связан этот платеж
    * @return factureIn
@@ -1150,11 +1195,13 @@ public class CreateCashOutBatch200ResponseInner {
     this.factureIn = JsonNullable.<FactureIn>of(factureIn);
   }
 
+
   public CreateCashOutBatch200ResponseInner operations(@javax.annotation.Nullable List<CashOutOperation> operations) {
     this.operations = JsonNullable.<List<CashOutOperation>>of(operations);
     
     return this;
   }
+
 
   public CreateCashOutBatch200ResponseInner addOperationsItem(CashOutOperation operationsItem) {
     if (this.operations == null || !this.operations.isPresent()) {
@@ -1198,11 +1245,13 @@ public class CreateCashOutBatch200ResponseInner {
     this.operations = JsonNullable.<List<CashOutOperation>>of(operations);
   }
 
+
   public CreateCashOutBatch200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
+
 
   public CreateCashOutBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -1232,6 +1281,7 @@ public class CreateCashOutBatch200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

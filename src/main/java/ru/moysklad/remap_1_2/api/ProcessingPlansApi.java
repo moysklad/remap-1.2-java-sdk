@@ -44,7 +44,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ProcessingPlansApi extends BaseApi {
 
@@ -69,6 +69,25 @@ public class ProcessingPlansApi extends BaseApi {
    */
   public ProcessingPlan createProcessingPlan(@javax.annotation.Nonnull ProcessingPlan processingPlan, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createProcessingPlan(processingPlan, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать Техкарту
+   * Создание новой Техкарты
+   
+   * @param processingPlan  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ProcessingPlan
+   * @throws ApiException if fails to make API call
+   */
+  public ProcessingPlan createProcessingPlan(@javax.annotation.Nonnull ProcessingPlan processingPlan, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createProcessingPlan(processingPlan, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -160,6 +179,25 @@ if (contentType != null)
     return this.createProcessingPlanBatch(processingPlan, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
+  /**
+   * Создать или изменить Техкарты
+   * Создать или изменить Техкарты.
+   
+   * @param processingPlan  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreateProcessingPlanBatch200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateProcessingPlanBatch200ResponseInner> createProcessingPlanBatch(@javax.annotation.Nonnull List<ProcessingPlan> processingPlan, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createProcessingPlanBatch(processingPlan, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Создать или изменить Техкарты
@@ -248,6 +286,28 @@ if (contentType != null)
    */
   public ProcessingPlanMaterial createProcessingPlanMaterials(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingPlanMaterial processingPlanMaterial, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createProcessingPlanMaterials(id, processingPlanMaterial, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать материал Техкарты
+   * Запрос на создание нового материала в Техкарте
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param processingPlanMaterial  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ProcessingPlanMaterial
+   * @throws ApiException if fails to make API call
+   */
+  public ProcessingPlanMaterial createProcessingPlanMaterials(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingPlanMaterial processingPlanMaterial, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createProcessingPlanMaterials(id, processingPlanMaterial, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -431,6 +491,28 @@ if (contentType != null)
    */
   public ProcessingPlanProduct createProcessingPlanProducts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingPlanProduct processingPlanProduct, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createProcessingPlanProducts(id, processingPlanProduct, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать продукт Техкарты
+   * Запрос на создание нового продукта в Техкарте
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param processingPlanProduct  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ProcessingPlanProduct
+   * @throws ApiException if fails to make API call
+   */
+  public ProcessingPlanProduct createProcessingPlanProducts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingPlanProduct processingPlanProduct, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createProcessingPlanProducts(id, processingPlanProduct, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1147,6 +1229,25 @@ if (contentType != null)
     return this.getProcessingPlanById(id, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
+  /**
+   * Получить Техкарту
+   * Запрос на получение отдельной Техкарты с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ProcessingPlan
+   * @throws ApiException if fails to make API call
+   */
+  public ProcessingPlan getProcessingPlanById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getProcessingPlanById(id, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить Техкарту
@@ -1235,6 +1336,27 @@ if (contentType != null)
    */
   public ProcessingPlanMaterial getProcessingPlanMaterialById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
     return this.getProcessingPlanMaterialById(id, positionId, expand, accept, acceptEncoding, Collections.emptyMap());
+  }
+
+  /**
+   * Получить материал Техкарты
+   * Запрос на получение отдельного материала Техкарты с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param positionId ID позиции (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ProcessingPlanMaterial
+   * @throws ApiException if fails to make API call
+   */
+  public ProcessingPlanMaterial getProcessingPlanMaterialById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getProcessingPlanMaterialById(id, positionId, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1332,6 +1454,26 @@ if (acceptEncoding != null)
     return this.getProcessingPlanMaterials(id, limit, offset, expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить материалы Техкарты
+   * Запрос на получение списка всех материалов данной Техкарты
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ProcessingPlanMaterialList
+   * @throws ApiException if fails to make API call
+   */
+  public ProcessingPlanMaterialList getProcessingPlanMaterials(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getProcessingPlanMaterials(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить материалы Техкарты
@@ -1421,6 +1563,21 @@ if (acceptEncoding != null)
     return this.getProcessingPlanMetadata(expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Метаданные Складов
+   * 
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Metadata
+   * @throws ApiException if fails to make API call
+   */
+  public Metadata getProcessingPlanMetadata(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getProcessingPlanMetadata((String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Метаданные Складов
@@ -1499,6 +1656,23 @@ if (acceptEncoding != null)
    */
   public AttributeMetaInfoList getProcessingPlanMetadataAttribute(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.getProcessingPlanMetadataAttribute(offset, limit, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Доп. поля ProcessingPlan
+   * 
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfoList
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfoList getProcessingPlanMetadataAttribute(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getProcessingPlanMetadataAttribute((Integer) effectiveOptions.get("offset"), (Integer) effectiveOptions.get("limit"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1669,6 +1843,27 @@ if (acceptEncoding != null)
     return this.getProcessingPlanProductById(id, positionId, expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить продукт Техкарты
+   * Запрос на получение отдельного продукта Техкарты с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param positionId ID позиции (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;ProcessingPlanProduct&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<ProcessingPlanProduct> getProcessingPlanProductById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getProcessingPlanProductById(id, positionId, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить продукт Техкарты
@@ -1764,6 +1959,26 @@ if (acceptEncoding != null)
     return this.getProcessingPlanProducts(id, limit, offset, expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить продукты Техкарты
+   * Запрос на получение списка всех продуктов данной Техкарты
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ProcessingPlanProductList
+   * @throws ApiException if fails to make API call
+   */
+  public ProcessingPlanProductList getProcessingPlanProducts(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getProcessingPlanProducts(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить продукты Техкарты
@@ -1853,6 +2068,27 @@ if (acceptEncoding != null)
    */
   public ProcessingPlanStage getProcessingPlanStageById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
     return this.getProcessingPlanStageById(id, positionId, expand, accept, acceptEncoding, Collections.emptyMap());
+  }
+
+  /**
+   * Получить отдельный этап Техкарты
+   * Запрос на получение отдельного этапа Техкарты с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param positionId ID позиции (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ProcessingPlanStage
+   * @throws ApiException if fails to make API call
+   */
+  public ProcessingPlanStage getProcessingPlanStageById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getProcessingPlanStageById(id, positionId, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1950,6 +2186,26 @@ if (acceptEncoding != null)
     return this.getProcessingPlanStages(id, limit, offset, expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить этапы Техкарты
+   * Запрос на получение списка всех этапов данной Техкарты
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ProcessingPlanStageList
+   * @throws ApiException if fails to make API call
+   */
+  public ProcessingPlanStageList getProcessingPlanStages(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getProcessingPlanStages(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить этапы Техкарты
@@ -2045,6 +2301,27 @@ if (acceptEncoding != null)
     return this.getProcessingPlans(limit, offset, search, filter, expand, order, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
+  /**
+   * Получить список Техкарт
+   * Запрос всех Техкарт на данной учетной записи
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ProcessingPlanList
+   * @throws ApiException if fails to make API call
+   */
+  public ProcessingPlanList getProcessingPlans(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getProcessingPlans((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить список Техкарт
@@ -2137,6 +2414,28 @@ if (contentType != null)
    */
   public ProcessingPlan updateProcessingPlan(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingPlan processingPlan, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateProcessingPlan(id, processingPlan, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Изменить Техкарту
+   * Запрос на обновление Техкарты с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param processingPlan  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ProcessingPlan
+   * @throws ApiException if fails to make API call
+   */
+  public ProcessingPlan updateProcessingPlan(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingPlan processingPlan, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateProcessingPlan(id, processingPlan, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -2235,6 +2534,31 @@ if (contentType != null)
    */
   public List<ProcessingPlanMaterial> updateProcessingPlanMaterial(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull ProcessingPlanMaterial processingPlanMaterial, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateProcessingPlanMaterial(id, positionId, processingPlanMaterial, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Изменить материал Техкарты
+   * Запрос на обновление отдельного материала Техкарты
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param positionId ID позиции (required)
+   
+   
+   * @param processingPlanMaterial  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;ProcessingPlanMaterial&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<ProcessingPlanMaterial> updateProcessingPlanMaterial(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull ProcessingPlanMaterial processingPlanMaterial, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateProcessingPlanMaterial(id, positionId, processingPlanMaterial, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -2436,6 +2760,31 @@ if (contentType != null)
     return this.updateProcessingPlanProduct(id, positionId, processingPlanProduct, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
+  /**
+   * Изменить продукт Техкарты
+   * Запрос на обновление отдельного продукта Техкарты
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param positionId ID позиции (required)
+   
+   
+   * @param processingPlanProduct  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;ProcessingPlanProduct&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<ProcessingPlanProduct> updateProcessingPlanProduct(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull ProcessingPlanProduct processingPlanProduct, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateProcessingPlanProduct(id, positionId, processingPlanProduct, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Изменить продукт Техкарты
@@ -2539,6 +2888,31 @@ if (contentType != null)
    */
   public ProcessingPlanStage updateProcessingPlanStage(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull ProcessingPlanStage processingPlanStage, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateProcessingPlanStage(id, positionId, processingPlanStage, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Изменить отдельный этап Техкарты
+   * Запрос на обновление отдельного этапа Техкарты
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param positionId ID позиции (required)
+   
+   
+   * @param processingPlanStage  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ProcessingPlanStage
+   * @throws ApiException if fails to make API call
+   */
+  public ProcessingPlanStage updateProcessingPlanStage(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull ProcessingPlanStage processingPlanStage, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateProcessingPlanStage(id, positionId, processingPlanStage, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 

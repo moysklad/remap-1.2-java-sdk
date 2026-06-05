@@ -85,7 +85,7 @@ import java.util.StringJoiner;
   CreateServicesBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createServicesBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateServicesBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -241,6 +241,7 @@ public class CreateServicesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -261,6 +262,7 @@ public class CreateServicesBatch200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID услуги
@@ -300,6 +302,7 @@ public class CreateServicesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Добавлена ли услуга в архив
    * @return archived
@@ -321,11 +324,13 @@ public class CreateServicesBatch200ResponseInner {
     this.archived = archived;
   }
 
+
   public CreateServicesBatch200ResponseInner name(@javax.annotation.Nullable String name) {
     
     this.name = name;
     return this;
   }
+
 
   /**
    * Наименование услуги
@@ -348,11 +353,13 @@ public class CreateServicesBatch200ResponseInner {
     this.name = name;
   }
 
+
   public CreateServicesBatch200ResponseInner code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код услуги
@@ -375,11 +382,13 @@ public class CreateServicesBatch200ResponseInner {
     this.code = code;
   }
 
+
   public CreateServicesBatch200ResponseInner externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код услуги
@@ -402,6 +411,7 @@ public class CreateServicesBatch200ResponseInner {
     this.externalCode = externalCode;
   }
 
+
   /**
    * Наименование группы, в которую входит услуга
    * @return pathName
@@ -423,6 +433,7 @@ public class CreateServicesBatch200ResponseInner {
     
     return this;
   }
+
 
   /**
    * Описание услуги
@@ -454,11 +465,13 @@ public class CreateServicesBatch200ResponseInner {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public CreateServicesBatch200ResponseInner vat(@javax.annotation.Nullable Integer vat) {
     
     this.vat = vat;
     return this;
   }
+
 
   /**
    * НДС %
@@ -483,11 +496,13 @@ public class CreateServicesBatch200ResponseInner {
     this.vat = vat;
   }
 
+
   public CreateServicesBatch200ResponseInner vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
     
     this.vatEnabled = vatEnabled;
     return this;
   }
+
 
   /**
    * Включен ли НДС для услуги
@@ -510,11 +525,13 @@ public class CreateServicesBatch200ResponseInner {
     this.vatEnabled = vatEnabled;
   }
 
+
   public CreateServicesBatch200ResponseInner useParentVat(@javax.annotation.Nullable Boolean useParentVat) {
     
     this.useParentVat = useParentVat;
     return this;
   }
+
 
   /**
    * Используется ли ставка НДС родительской группы
@@ -536,6 +553,7 @@ public class CreateServicesBatch200ResponseInner {
   public void setUseParentVat(@javax.annotation.Nullable Boolean useParentVat) {
     this.useParentVat = useParentVat;
   }
+
 
   /**
    * Реальный НДС %
@@ -575,6 +593,7 @@ public class CreateServicesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Признак запрета скидок
    * @return discountProhibited
@@ -596,11 +615,13 @@ public class CreateServicesBatch200ResponseInner {
     this.discountProhibited = discountProhibited;
   }
 
+
   public CreateServicesBatch200ResponseInner shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -623,11 +644,13 @@ public class CreateServicesBatch200ResponseInner {
     this.shared = shared;
   }
 
+
   public CreateServicesBatch200ResponseInner group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -650,11 +673,13 @@ public class CreateServicesBatch200ResponseInner {
     this.group = group;
   }
 
+
   public CreateServicesBatch200ResponseInner owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Метаданные владельца (Сотрудника)
@@ -686,6 +711,7 @@ public class CreateServicesBatch200ResponseInner {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   /**
    * Момент последнего обновления сущности
    * @return updated
@@ -708,6 +734,7 @@ public class CreateServicesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get buyPrice
    * @return buyPrice
@@ -729,11 +756,13 @@ public class CreateServicesBatch200ResponseInner {
     this.buyPrice = buyPrice;
   }
 
+
   public CreateServicesBatch200ResponseInner salePrices(@javax.annotation.Nullable List<SalePrice> salePrices) {
     this.salePrices = JsonNullable.<List<SalePrice>>of(salePrices);
     
     return this;
   }
+
 
   public CreateServicesBatch200ResponseInner addSalePricesItem(SalePrice salePricesItem) {
     if (this.salePrices == null || !this.salePrices.isPresent()) {
@@ -777,11 +806,13 @@ public class CreateServicesBatch200ResponseInner {
     this.salePrices = JsonNullable.<List<SalePrice>>of(salePrices);
   }
 
+
   public CreateServicesBatch200ResponseInner uom(@javax.annotation.Nullable Uom uom) {
     this.uom = JsonNullable.<Uom>of(uom);
     
     return this;
   }
+
 
   /**
    * Метаданные единиц измерения
@@ -813,11 +844,13 @@ public class CreateServicesBatch200ResponseInner {
     this.uom = JsonNullable.<Uom>of(uom);
   }
 
+
   public CreateServicesBatch200ResponseInner productFolder(@javax.annotation.Nullable ProductFolder productFolder) {
     this.productFolder = JsonNullable.<ProductFolder>of(productFolder);
     
     return this;
   }
+
 
   /**
    * Метаданные группы Услуги
@@ -849,11 +882,13 @@ public class CreateServicesBatch200ResponseInner {
     this.productFolder = JsonNullable.<ProductFolder>of(productFolder);
   }
 
+
   public CreateServicesBatch200ResponseInner files(@javax.annotation.Nullable FileList files) {
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
   }
+
 
   /**
    * Метаданные массива Файлов
@@ -885,11 +920,13 @@ public class CreateServicesBatch200ResponseInner {
     this.files = JsonNullable.<FileList>of(files);
   }
 
+
   public CreateServicesBatch200ResponseInner barcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
     
     return this;
   }
+
 
   public CreateServicesBatch200ResponseInner addBarcodesItem(Barcode barcodesItem) {
     if (this.barcodes == null || !this.barcodes.isPresent()) {
@@ -933,11 +970,13 @@ public class CreateServicesBatch200ResponseInner {
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
   }
 
+
   public CreateServicesBatch200ResponseInner paymentItemType(@javax.annotation.Nullable String paymentItemType) {
     
     this.paymentItemType = paymentItemType;
     return this;
   }
+
 
   /**
    * Признак предмета расчета. Известные значения описаны в PaymentItemType
@@ -960,11 +999,13 @@ public class CreateServicesBatch200ResponseInner {
     this.paymentItemType = paymentItemType;
   }
 
+
   public CreateServicesBatch200ResponseInner taxSystem(@javax.annotation.Nullable String taxSystem) {
     
     this.taxSystem = taxSystem;
     return this;
   }
+
 
   /**
    * Код системы налогообложения. Известные значения описаны в TaxSystem
@@ -987,11 +1028,13 @@ public class CreateServicesBatch200ResponseInner {
     this.taxSystem = taxSystem;
   }
 
+
   public CreateServicesBatch200ResponseInner attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public CreateServicesBatch200ResponseInner addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -1035,11 +1078,13 @@ public class CreateServicesBatch200ResponseInner {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   public CreateServicesBatch200ResponseInner minPrice(@javax.annotation.Nullable MinPrice minPrice) {
     
     this.minPrice = minPrice;
     return this;
   }
+
 
   /**
    * Get minPrice
@@ -1062,11 +1107,13 @@ public class CreateServicesBatch200ResponseInner {
     this.minPrice = minPrice;
   }
 
+
   public CreateServicesBatch200ResponseInner syncId(@javax.annotation.Nullable UUID syncId) {
     
     this.syncId = syncId;
     return this;
   }
+
 
   /**
    * ID синхронизации
@@ -1089,11 +1136,13 @@ public class CreateServicesBatch200ResponseInner {
     this.syncId = syncId;
   }
 
+
   public CreateServicesBatch200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
+
 
   public CreateServicesBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -1123,6 +1172,7 @@ public class CreateServicesBatch200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

@@ -43,7 +43,7 @@ import java.util.StringJoiner;
   WebhookStock.JSON_PROPERTY_ENABLED,
   WebhookStock.JSON_PROPERTY_AUTHOR_APPLICATION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class WebhookStock {
   public static WebhookStock createWithMeta(UUID id) {
     WebhookStock o = new WebhookStock();
@@ -113,6 +113,7 @@ public class WebhookStock {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -133,6 +134,7 @@ public class WebhookStock {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID вебхука на изменение остатков
@@ -172,6 +174,7 @@ public class WebhookStock {
     return this;
   }
 
+
   /**
    * Тип остатков. Известные значения описаны в WebhookStockStockType
    * @return stockType
@@ -193,11 +196,13 @@ public class WebhookStock {
     this.stockType = stockType;
   }
 
+
   public WebhookStock reportType(@javax.annotation.Nullable String reportType) {
     
     this.reportType = reportType;
     return this;
   }
+
 
   /**
    * Тип отчёта остатков. Известные значения описаны в WebhookStockReportType
@@ -220,11 +225,13 @@ public class WebhookStock {
     this.reportType = reportType;
   }
 
+
   public WebhookStock url(@javax.annotation.Nullable URI url) {
     
     this.url = url;
     return this;
   }
+
 
   /**
    * URL, по которому будет происходить обработка вебхука
@@ -247,11 +254,13 @@ public class WebhookStock {
     this.url = url;
   }
 
+
   public WebhookStock enabled(@javax.annotation.Nullable Boolean enabled) {
     
     this.enabled = enabled;
     return this;
   }
+
 
   /**
    * Вебхук включён или отключён
@@ -274,11 +283,13 @@ public class WebhookStock {
     this.enabled = enabled;
   }
 
+
   public WebhookStock authorApplication(@javax.annotation.Nullable Application authorApplication) {
     
     this.authorApplication = authorApplication;
     return this;
   }
+
 
   /**
    * Get authorApplication
@@ -300,6 +311,7 @@ public class WebhookStock {
   public void setAuthorApplication(@javax.annotation.Nullable Application authorApplication) {
     this.authorApplication = authorApplication;
   }
+
 
   @Override
   public boolean equals(Object o) {

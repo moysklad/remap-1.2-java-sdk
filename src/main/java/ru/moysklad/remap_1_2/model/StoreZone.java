@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   StoreZone.JSON_PROPERTY_NAME,
   StoreZone.JSON_PROPERTY_EXTERNAL_CODE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class StoreZone {
   public static StoreZone createWithMeta(UUID parentId, UUID id) {
     StoreZone o = new StoreZone();
@@ -103,6 +103,7 @@ public class StoreZone {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -123,6 +124,7 @@ public class StoreZone {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Зоны склада
@@ -178,6 +180,7 @@ public class StoreZone {
     return this;
   }
 
+
   /**
    * Наименование Зоны склада
    * @return name
@@ -199,11 +202,13 @@ public class StoreZone {
     this.name = name;
   }
 
+
   public StoreZone externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Зоны склада
@@ -225,6 +230,7 @@ public class StoreZone {
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
     this.externalCode = externalCode;
   }
+
 
   @Override
   public boolean equals(Object o) {

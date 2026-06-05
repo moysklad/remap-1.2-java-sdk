@@ -38,7 +38,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ProjectsApi extends BaseApi {
 
@@ -63,6 +63,25 @@ public class ProjectsApi extends BaseApi {
    */
   public Project createProject(@javax.annotation.Nonnull Project project, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createProject(project, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать проект
+   * Создание нового проекта
+   
+   * @param project  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Project
+   * @throws ApiException if fails to make API call
+   */
+  public Project createProject(@javax.annotation.Nonnull Project project, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createProject(project, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -238,6 +257,25 @@ if (contentType != null)
    */
   public List<CreateProjectsBatch200ResponseInner> createProjectsBatch(@javax.annotation.Nonnull List<Project> project, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createProjectsBatch(project, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать или изменить проекты
+   * Создание или изменение нескольких проектов.
+   
+   * @param project  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreateProjectsBatch200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateProjectsBatch200ResponseInner> createProjectsBatch(@javax.annotation.Nonnull List<Project> project, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createProjectsBatch(project, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -574,6 +612,24 @@ if (contentType != null)
     return this.getProjectById(id, expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить проект по ID
+   * Запрос на получение отдельного проекта с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Project
+   * @throws ApiException if fails to make API call
+   */
+  public Project getProjectById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getProjectById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить проект по ID
@@ -897,6 +953,26 @@ if (acceptEncoding != null)
     return this.getProjects(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить список проектов
+   * Запрос всех проектов на данной учетной записи
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ProjectList
+   * @throws ApiException if fails to make API call
+   */
+  public ProjectList getProjects(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getProjects((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить список проектов
@@ -986,6 +1062,28 @@ if (acceptEncoding != null)
    */
   public Project updateProject(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Project project, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateProject(id, project, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Обновить проект
+   * Обновление проекта с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param project  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Project
+   * @throws ApiException if fails to make API call
+   */
+  public Project updateProject(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Project project, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateProject(id, project, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 

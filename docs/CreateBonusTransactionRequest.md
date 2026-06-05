@@ -11,7 +11,7 @@
 |**id** | **UUID** | ID бонусной операции |  [optional] [readonly] |
 |**accountId** | **UUID** | ID учетной записи |  [optional] [readonly] |
 |**owner** | [**Employee**](Employee.md) |  |  [optional] |
-|**agent** | [**Counterparty**](Counterparty.md) |  |  [optional] |
+|**agent** | [**Agent**](Agent.md) | Метаданные контрагента или юрлица, связанного с бонусной операцией |  [optional] |
 |**group** | [**Group**](Group.md) |  |  [optional] |
 |**organization** | [**Organization**](Organization.md) |  |  [optional] |
 |**parentDocument** | [**BonusTransactionParentDocument**](BonusTransactionParentDocument.md) |  |  [optional] |

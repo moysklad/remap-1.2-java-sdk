@@ -35,7 +35,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class RetailStoresApi extends BaseApi {
 
@@ -61,6 +61,28 @@ public class RetailStoresApi extends BaseApi {
    */
   public RetailStore addMasterRetailStore(@javax.annotation.Nonnull UUID retailStoreId, @javax.annotation.Nonnull RetailStore retailStore, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.addMasterRetailStore(retailStoreId, retailStore, accept, acceptEncoding, expand, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Добавить мастер точку продаж
+   * 
+   
+   * @param retailStoreId  (required)
+   
+   
+   * @param retailStore  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return RetailStore
+   * @throws ApiException if fails to make API call
+   */
+  public RetailStore addMasterRetailStore(@javax.annotation.Nonnull UUID retailStoreId, @javax.annotation.Nonnull RetailStore retailStore, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.addMasterRetailStore(retailStoreId, retailStore, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -159,6 +181,25 @@ if (contentType != null)
     return this.createRetailStore(retailStore, accept, acceptEncoding, expand, contentType, Collections.emptyMap());
   }
 
+  /**
+   * Создать точку продаж
+   * 
+   
+   * @param retailStore  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return RetailStore
+   * @throws ApiException if fails to make API call
+   */
+  public RetailStore createRetailStore(@javax.annotation.Nonnull RetailStore retailStore, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createRetailStore(retailStore, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Создать точку продаж
@@ -246,6 +287,25 @@ if (contentType != null)
    */
   public List<CreateRetailStoresBatch200ResponseInner> createRetailStoresBatch(@javax.annotation.Nonnull List<RetailStore> retailStore, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createRetailStoresBatch(retailStore, accept, acceptEncoding, expand, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Массовое создание и обновление точек продаж
+   * 
+   
+   * @param retailStore  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreateRetailStoresBatch200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateRetailStoresBatch200ResponseInner> createRetailStoresBatch(@javax.annotation.Nonnull List<RetailStore> retailStore, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createRetailStoresBatch(retailStore, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -507,6 +567,29 @@ if (contentType != null)
     return this.getMasterRetailStores(retailStoreId, limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить мастер точки продаж
+   * 
+   
+   * @param retailStoreId  (required)
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return RetailStoreList
+   * @throws ApiException if fails to make API call
+   */
+  public RetailStoreList getMasterRetailStores(@javax.annotation.Nonnull UUID retailStoreId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getMasterRetailStores(retailStoreId, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить мастер точки продаж
@@ -603,6 +686,24 @@ if (acceptEncoding != null)
     return this.getRetailStoreById(id, expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить точку продаж
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return RetailStore
+   * @throws ApiException if fails to make API call
+   */
+  public RetailStore getRetailStoreById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getRetailStoreById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить точку продаж
@@ -691,6 +792,26 @@ if (acceptEncoding != null)
    */
   public RetailStoreList getRetailStores(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
     return this.getRetailStores(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  }
+
+  /**
+   * Получить точки продаж
+   * 
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return RetailStoreList
+   * @throws ApiException if fails to make API call
+   */
+  public RetailStoreList getRetailStores(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getRetailStores((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -782,6 +903,28 @@ if (acceptEncoding != null)
    */
   public RetailStore updateRetailStore(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailStore retailStore, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateRetailStore(id, retailStore, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Изменить точку продаж
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param retailStore  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return RetailStore
+   * @throws ApiException if fails to make API call
+   */
+  public RetailStore updateRetailStore(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailStore retailStore, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateRetailStore(id, retailStore, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 

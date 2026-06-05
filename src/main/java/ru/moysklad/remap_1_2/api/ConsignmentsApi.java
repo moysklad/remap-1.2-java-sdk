@@ -38,7 +38,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ConsignmentsApi extends BaseApi {
 
@@ -63,6 +63,25 @@ public class ConsignmentsApi extends BaseApi {
    */
   public Consignment createConsignment(@javax.annotation.Nonnull Consignment consignment, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createConsignment(consignment, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать партию
+   * Создание новой партии
+   
+   * @param consignment  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Consignment
+   * @throws ApiException if fails to make API call
+   */
+  public Consignment createConsignment(@javax.annotation.Nonnull Consignment consignment, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createConsignment(consignment, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -238,6 +257,25 @@ if (contentType != null)
    */
   public List<CreateConsignmentsBatch200ResponseInner> createConsignmentsBatch(@javax.annotation.Nonnull List<Consignment> consignment, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createConsignmentsBatch(consignment, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать или изменить партии
+   * Создание или изменение нескольких партий.
+   
+   * @param consignment  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreateConsignmentsBatch200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateConsignmentsBatch200ResponseInner> createConsignmentsBatch(@javax.annotation.Nonnull List<Consignment> consignment, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createConsignmentsBatch(consignment, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -574,6 +612,24 @@ if (contentType != null)
     return this.getConsignmentById(id, expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить партию по ID
+   * Запрос на получение Партии с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Consignment
+   * @throws ApiException if fails to make API call
+   */
+  public Consignment getConsignmentById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getConsignmentById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить партию по ID
@@ -897,6 +953,26 @@ if (acceptEncoding != null)
     return this.getConsignments(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить список партий
+   * Запрос всех партий на данной учетной записи
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ConsignmentList
+   * @throws ApiException if fails to make API call
+   */
+  public ConsignmentList getConsignments(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getConsignments((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить список партий
@@ -986,6 +1062,28 @@ if (acceptEncoding != null)
    */
   public Consignment updateConsignment(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Consignment consignment, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateConsignment(id, consignment, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Обновить партию
+   * Обновление Партии с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param consignment  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Consignment
+   * @throws ApiException if fails to make API call
+   */
+  public Consignment updateConsignment(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Consignment consignment, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateConsignment(id, consignment, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 

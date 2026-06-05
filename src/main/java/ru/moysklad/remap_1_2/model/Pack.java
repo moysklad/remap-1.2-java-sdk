@@ -47,7 +47,7 @@ import java.util.StringJoiner;
   Pack.JSON_PROPERTY_QUANTITY,
   Pack.JSON_PROPERTY_BARCODES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Pack {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -89,6 +89,7 @@ public class Pack {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -109,6 +110,7 @@ public class Pack {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID упаковки
@@ -132,6 +134,7 @@ public class Pack {
     return this;
   }
 
+
   /**
    * Get uom
    * @return uom
@@ -153,11 +156,13 @@ public class Pack {
     this.uom = uom;
   }
 
+
   public Pack quantity(@javax.annotation.Nullable Float quantity) {
     
     this.quantity = quantity;
     return this;
   }
+
 
   /**
    * Количество товаров в упаковке
@@ -181,11 +186,13 @@ public class Pack {
     this.quantity = quantity;
   }
 
+
   public Pack barcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
     
     return this;
   }
+
 
   public Pack addBarcodesItem(Barcode barcodesItem) {
     if (this.barcodes == null || !this.barcodes.isPresent()) {
@@ -228,6 +235,7 @@ public class Pack {
   public void setBarcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
   }
+
 
   @Override
   public boolean equals(Object o) {

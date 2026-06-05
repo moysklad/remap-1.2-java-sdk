@@ -73,7 +73,7 @@ import java.util.StringJoiner;
   CreateProcessingPlanBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createProcessingPlanBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateProcessingPlanBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -187,6 +187,7 @@ public class CreateProcessingPlanBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -207,6 +208,7 @@ public class CreateProcessingPlanBatch200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Техкарты
@@ -246,6 +248,7 @@ public class CreateProcessingPlanBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Добавлена ли Техкарта в архив
    * @return archived
@@ -267,11 +270,13 @@ public class CreateProcessingPlanBatch200ResponseInner {
     this.archived = archived;
   }
 
+
   public CreateProcessingPlanBatch200ResponseInner code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код Техкарты
@@ -294,11 +299,13 @@ public class CreateProcessingPlanBatch200ResponseInner {
     this.code = code;
   }
 
+
   public CreateProcessingPlanBatch200ResponseInner cost(@javax.annotation.Nullable Double cost) {
     
     this.cost = cost;
     return this;
   }
+
 
   /**
    * Стоимость производства
@@ -320,6 +327,7 @@ public class CreateProcessingPlanBatch200ResponseInner {
   public void setCost(@javax.annotation.Nullable Double cost) {
     this.cost = cost;
   }
+
 
   /**
    * Тип распределения себестоимости. Возможные значения описаны в CostDistributionType
@@ -343,6 +351,7 @@ public class CreateProcessingPlanBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Внешний код Техкарты
    * @return externalCode
@@ -364,11 +373,13 @@ public class CreateProcessingPlanBatch200ResponseInner {
     this.externalCode = externalCode;
   }
 
+
   public CreateProcessingPlanBatch200ResponseInner group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -391,11 +402,13 @@ public class CreateProcessingPlanBatch200ResponseInner {
     this.group = group;
   }
 
+
   public CreateProcessingPlanBatch200ResponseInner name(@javax.annotation.Nullable String name) {
     
     this.name = name;
     return this;
   }
+
 
   /**
    * Наименование Техкарты
@@ -418,11 +431,13 @@ public class CreateProcessingPlanBatch200ResponseInner {
     this.name = name;
   }
 
+
   public CreateProcessingPlanBatch200ResponseInner owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Владелец (Сотрудник)
@@ -454,11 +469,13 @@ public class CreateProcessingPlanBatch200ResponseInner {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public CreateProcessingPlanBatch200ResponseInner parent(@javax.annotation.Nullable ProcessingPlanFolder parent) {
     
     this.parent = parent;
     return this;
   }
+
 
   /**
    * Get parent
@@ -480,6 +497,7 @@ public class CreateProcessingPlanBatch200ResponseInner {
   public void setParent(@javax.annotation.Nullable ProcessingPlanFolder parent) {
     this.parent = parent;
   }
+
 
   /**
    * Наименование группы, в которую входит Техкарта
@@ -503,6 +521,7 @@ public class CreateProcessingPlanBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get processingProcess
    * @return processingProcess
@@ -524,11 +543,13 @@ public class CreateProcessingPlanBatch200ResponseInner {
     this.processingProcess = processingProcess;
   }
 
+
   public CreateProcessingPlanBatch200ResponseInner shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -550,6 +571,7 @@ public class CreateProcessingPlanBatch200ResponseInner {
   public void setShared(@javax.annotation.Nullable Boolean shared) {
     this.shared = shared;
   }
+
 
   /**
    * Момент последнего обновления Техкарты
@@ -573,6 +595,7 @@ public class CreateProcessingPlanBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Коллекция метаданных этапов Техкарты
    * @return stages
@@ -594,11 +617,13 @@ public class CreateProcessingPlanBatch200ResponseInner {
     this.stages = stages;
   }
 
+
   public CreateProcessingPlanBatch200ResponseInner materials(@javax.annotation.Nullable ProcessingPlanMaterialList materials) {
     
     this.materials = materials;
     return this;
   }
+
 
   /**
    * Коллекция метаданных материалов Техкарты
@@ -621,11 +646,13 @@ public class CreateProcessingPlanBatch200ResponseInner {
     this.materials = materials;
   }
 
+
   public CreateProcessingPlanBatch200ResponseInner products(@javax.annotation.Nullable ProcessingPlanProductList products) {
     
     this.products = products;
     return this;
   }
+
 
   /**
    * Коллекция метаданных готовых продуктов Техкарты
@@ -648,11 +675,13 @@ public class CreateProcessingPlanBatch200ResponseInner {
     this.products = products;
   }
 
+
   public CreateProcessingPlanBatch200ResponseInner attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public CreateProcessingPlanBatch200ResponseInner addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -696,11 +725,13 @@ public class CreateProcessingPlanBatch200ResponseInner {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   public CreateProcessingPlanBatch200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
+
 
   public CreateProcessingPlanBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -730,6 +761,7 @@ public class CreateProcessingPlanBatch200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

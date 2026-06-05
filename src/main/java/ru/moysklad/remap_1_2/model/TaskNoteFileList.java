@@ -42,7 +42,7 @@ import java.util.StringJoiner;
   TaskNoteFileList.JSON_PROPERTY_META,
   TaskNoteFileList.JSON_PROPERTY_ROWS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class TaskNoteFileList {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -61,6 +61,7 @@ public class TaskNoteFileList {
     this.meta = meta;
     return this;
   }
+
 
   /**
    * Get meta
@@ -83,11 +84,13 @@ public class TaskNoteFileList {
     this.meta = meta;
   }
 
+
   public TaskNoteFileList rows(@javax.annotation.Nullable List<TaskNoteFile> rows) {
     this.rows = JsonNullable.<List<TaskNoteFile>>of(rows);
     
     return this;
   }
+
 
   public TaskNoteFileList addRowsItem(TaskNoteFile rowsItem) {
     if (this.rows == null || !this.rows.isPresent()) {
@@ -130,6 +133,7 @@ public class TaskNoteFileList {
   public void setRows(@javax.annotation.Nullable List<TaskNoteFile> rows) {
     this.rows = JsonNullable.<List<TaskNoteFile>>of(rows);
   }
+
 
   @Override
   public boolean equals(Object o) {

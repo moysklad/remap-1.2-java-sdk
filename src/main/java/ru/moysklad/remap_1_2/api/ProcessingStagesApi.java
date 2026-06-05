@@ -35,7 +35,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ProcessingStagesApi extends BaseApi {
 
@@ -60,6 +60,25 @@ public class ProcessingStagesApi extends BaseApi {
    */
   public ProcessingStage createProcessingStage(@javax.annotation.Nonnull ProcessingStage processingStage, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createProcessingStage(processingStage, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать Этап производства
+   * Создание нового Этапа производства
+   
+   * @param processingStage  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ProcessingStage
+   * @throws ApiException if fails to make API call
+   */
+  public ProcessingStage createProcessingStage(@javax.annotation.Nonnull ProcessingStage processingStage, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createProcessingStage(processingStage, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -149,6 +168,25 @@ if (contentType != null)
    */
   public List<CreateProcessingStagesBatch200ResponseInner> createProcessingStagesBatch(@javax.annotation.Nonnull List<ProcessingStage> processingStage, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createProcessingStagesBatch(processingStage, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать или изменить Этапы производства
+   * Создание или изменение нескольких Этапов производства.
+   
+   * @param processingStage  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreateProcessingStagesBatch200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateProcessingStagesBatch200ResponseInner> createProcessingStagesBatch(@javax.annotation.Nonnull List<ProcessingStage> processingStage, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createProcessingStagesBatch(processingStage, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -405,6 +443,24 @@ if (contentType != null)
     return this.getProcessingStageById(id, expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить Этап производства по ID
+   * Запрос на получение отдельного Этапа производства с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ProcessingStage
+   * @throws ApiException if fails to make API call
+   */
+  public ProcessingStage getProcessingStageById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getProcessingStageById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить Этап производства по ID
@@ -494,6 +550,25 @@ if (acceptEncoding != null)
     return this.getProcessingStages(limit, offset, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить список Этапов производства
+   * Запрос всех Этапов производства на данной учетной записи
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ProcessingStageList
+   * @throws ApiException if fails to make API call
+   */
+  public ProcessingStageList getProcessingStages(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getProcessingStages((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить список Этапов производства
@@ -581,6 +656,28 @@ if (acceptEncoding != null)
    */
   public ProcessingStage updateProcessingStage(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingStage processingStage, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateProcessingStage(id, processingStage, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Обновить Этап производства
+   * Обновление Этапа производства с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param processingStage  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ProcessingStage
+   * @throws ApiException if fails to make API call
+   */
+  public ProcessingStage updateProcessingStage(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingStage processingStage, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateProcessingStage(id, processingStage, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 

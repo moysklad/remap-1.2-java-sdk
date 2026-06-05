@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   Meta.JSON_PROPERTY_DOWNLOAD_HREF,
   Meta.JSON_PROPERTY_DOWNLOAD_PERMANENT_HREF
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Meta {
 
   public static final String JSON_PROPERTY_HREF = "href";
@@ -79,6 +79,7 @@ public class Meta {
     return this;
   }
 
+
   /**
    * Ссылка на объект
    * @return href
@@ -100,11 +101,13 @@ public class Meta {
     this.href = href;
   }
 
+
   public Meta metadataHref(@javax.annotation.Nullable URI metadataHref) {
     
     this.metadataHref = metadataHref;
     return this;
   }
+
 
   /**
    * Ссылка на метаданные сущности
@@ -127,11 +130,13 @@ public class Meta {
     this.metadataHref = metadataHref;
   }
 
+
   public Meta type(@javax.annotation.Nullable String type) {
     
     this.type = type;
     return this;
   }
+
 
   /**
    * Тип объекта
@@ -154,11 +159,13 @@ public class Meta {
     this.type = type;
   }
 
+
   public Meta mediaType(@javax.annotation.Nullable String mediaType) {
     
     this.mediaType = mediaType;
     return this;
   }
+
 
   /**
    * Тип данных
@@ -181,11 +188,13 @@ public class Meta {
     this.mediaType = mediaType;
   }
 
+
   public Meta uuidHref(@javax.annotation.Nullable URI uuidHref) {
     
     this.uuidHref = uuidHref;
     return this;
   }
+
 
   /**
    * Ссылка на объект на UI
@@ -208,11 +217,13 @@ public class Meta {
     this.uuidHref = uuidHref;
   }
 
+
   public Meta downloadHref(@javax.annotation.Nullable URI downloadHref) {
     
     this.downloadHref = downloadHref;
     return this;
   }
+
 
   /**
    * Ссылка на скачивание (для изображений)
@@ -235,11 +246,13 @@ public class Meta {
     this.downloadHref = downloadHref;
   }
 
+
   public Meta downloadPermanentHref(@javax.annotation.Nullable URI downloadPermanentHref) {
     
     this.downloadPermanentHref = downloadPermanentHref;
     return this;
   }
+
 
   /**
    * Постоянная ссылка для скачивания изображения. Возвращается только при передаче параметра &#x60;?fields&#x3D;downloadPermanentHref&#x60;. Доступно только на платных тарифах. 
@@ -261,6 +274,7 @@ public class Meta {
   public void setDownloadPermanentHref(@javax.annotation.Nullable URI downloadPermanentHref) {
     this.downloadPermanentHref = downloadPermanentHref;
   }
+
 
   @Override
   public boolean equals(Object o) {

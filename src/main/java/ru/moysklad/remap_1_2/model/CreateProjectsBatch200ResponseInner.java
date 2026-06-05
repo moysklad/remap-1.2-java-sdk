@@ -61,7 +61,7 @@ import java.util.StringJoiner;
   CreateProjectsBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createProjectsBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateProjectsBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -143,6 +143,7 @@ public class CreateProjectsBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -163,6 +164,7 @@ public class CreateProjectsBatch200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID проекта
@@ -202,6 +204,7 @@ public class CreateProjectsBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Добавлен ли Проект в архив
    * @return archived
@@ -223,11 +226,13 @@ public class CreateProjectsBatch200ResponseInner {
     this.archived = archived;
   }
 
+
   public CreateProjectsBatch200ResponseInner attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public CreateProjectsBatch200ResponseInner addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -271,11 +276,13 @@ public class CreateProjectsBatch200ResponseInner {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   public CreateProjectsBatch200ResponseInner code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код Проекта
@@ -298,11 +305,13 @@ public class CreateProjectsBatch200ResponseInner {
     this.code = code;
   }
 
+
   public CreateProjectsBatch200ResponseInner description(@javax.annotation.Nullable String description) {
     
     this.description = description;
     return this;
   }
+
 
   /**
    * Описание Проекта
@@ -325,11 +334,13 @@ public class CreateProjectsBatch200ResponseInner {
     this.description = description;
   }
 
+
   public CreateProjectsBatch200ResponseInner externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Проекта
@@ -352,11 +363,13 @@ public class CreateProjectsBatch200ResponseInner {
     this.externalCode = externalCode;
   }
 
+
   public CreateProjectsBatch200ResponseInner group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -379,11 +392,13 @@ public class CreateProjectsBatch200ResponseInner {
     this.group = group;
   }
 
+
   public CreateProjectsBatch200ResponseInner name(@javax.annotation.Nullable String name) {
     
     this.name = name;
     return this;
   }
+
 
   /**
    * Наименование Проекта
@@ -406,11 +421,13 @@ public class CreateProjectsBatch200ResponseInner {
     this.name = name;
   }
 
+
   public CreateProjectsBatch200ResponseInner owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Метаданные владельца (Сотрудника)
@@ -442,11 +459,13 @@ public class CreateProjectsBatch200ResponseInner {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public CreateProjectsBatch200ResponseInner shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -469,6 +488,7 @@ public class CreateProjectsBatch200ResponseInner {
     this.shared = shared;
   }
 
+
   /**
    * Момент последнего обновления сущности
    * @return updated
@@ -490,6 +510,7 @@ public class CreateProjectsBatch200ResponseInner {
     this.errors = errors;
     return this;
   }
+
 
   public CreateProjectsBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -519,6 +540,7 @@ public class CreateProjectsBatch200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

@@ -38,7 +38,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ServicesApi extends BaseApi {
 
@@ -159,6 +159,25 @@ if (contentType != null)
     return this.createService(service, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
+  /**
+   * Создать услугу
+   * Создание новой услуги
+   
+   * @param service  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Service
+   * @throws ApiException if fails to make API call
+   */
+  public Service createService(@javax.annotation.Nonnull Service service, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createService(service, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Создать услугу
@@ -246,6 +265,25 @@ if (contentType != null)
    */
   public List<CreateServicesBatch200ResponseInner> createServicesBatch(@javax.annotation.Nonnull List<Service> service, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createServicesBatch(service, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать или изменить услуги
+   * Создание или изменение нескольких услуг.
+   
+   * @param service  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreateServicesBatch200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateServicesBatch200ResponseInner> createServicesBatch(@javax.annotation.Nonnull List<Service> service, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createServicesBatch(service, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -590,6 +628,24 @@ if (contentType != null)
     return this.getServiceById(id, expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить услугу по ID
+   * Запрос на получение отдельной услуги с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Service
+   * @throws ApiException if fails to make API call
+   */
+  public Service getServiceById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getServiceById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить услугу по ID
@@ -675,6 +731,25 @@ if (acceptEncoding != null)
    */
   public GetProductFiles200Response getServiceFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
     return this.getServiceFiles(id, limit, offset, accept, acceptEncoding, Collections.emptyMap());
+  }
+
+  /**
+   * Получить файлы услуги
+   * Запрос на получение списка всех Файлов данной Услуги.
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return GetProductFiles200Response
+   * @throws ApiException if fails to make API call
+   */
+  public GetProductFiles200Response getServiceFiles(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getServiceFiles(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -769,6 +844,26 @@ if (acceptEncoding != null)
     return this.getServices(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить список товаров
+   * Запрос всех товаров на данной учетной записи
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ServiceList
+   * @throws ApiException if fails to make API call
+   */
+  public ServiceList getServices(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getServices((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить список товаров
@@ -858,6 +953,28 @@ if (acceptEncoding != null)
    */
   public Service updateService(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Service service, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateService(id, service, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Обновить услугу
+   * Обновление услуги с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param service  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Service
+   * @throws ApiException if fails to make API call
+   */
+  public Service updateService(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Service service, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateService(id, service, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 

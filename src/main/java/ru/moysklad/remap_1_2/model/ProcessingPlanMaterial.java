@@ -45,7 +45,7 @@ import java.util.StringJoiner;
   ProcessingPlanMaterial.JSON_PROPERTY_PROCESSING_PROCESS_POSITION,
   ProcessingPlanMaterial.JSON_PROPERTY_MATERIAL_PROCESSING_PLAN
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingPlanMaterial {
   public static ProcessingPlanMaterial createWithMeta(UUID parentId, UUID id) {
     ProcessingPlanMaterial o = new ProcessingPlanMaterial();
@@ -115,6 +115,7 @@ public class ProcessingPlanMaterial {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -135,6 +136,7 @@ public class ProcessingPlanMaterial {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID материала Техкарты
@@ -174,6 +176,7 @@ public class ProcessingPlanMaterial {
     return this;
   }
 
+
   /**
    * Get assortment
    * @return assortment
@@ -197,11 +200,13 @@ public class ProcessingPlanMaterial {
     this.assortment = assortment;
   }
 
+
   public ProcessingPlanMaterial product(@javax.annotation.Nullable Product product) {
     
     this.product = product;
     return this;
   }
+
 
   /**
    * Get product
@@ -224,11 +229,13 @@ public class ProcessingPlanMaterial {
     this.product = product;
   }
 
+
   public ProcessingPlanMaterial quantity(@javax.annotation.Nullable Double quantity) {
     
     this.quantity = quantity;
     return this;
   }
+
 
   /**
    * Количество товаров данного вида в позиции
@@ -252,11 +259,13 @@ public class ProcessingPlanMaterial {
     this.quantity = quantity;
   }
 
+
   public ProcessingPlanMaterial processingProcessPosition(@javax.annotation.Nullable ProcessingProcessPosition processingProcessPosition) {
     
     this.processingProcessPosition = processingProcessPosition;
     return this;
   }
+
 
   /**
    * Get processingProcessPosition
@@ -279,11 +288,13 @@ public class ProcessingPlanMaterial {
     this.processingProcessPosition = processingProcessPosition;
   }
 
+
   public ProcessingPlanMaterial materialProcessingPlan(@javax.annotation.Nullable ProcessingPlan materialProcessingPlan) {
     
     this.materialProcessingPlan = materialProcessingPlan;
     return this;
   }
+
 
   /**
    * Get materialProcessingPlan
@@ -305,6 +316,7 @@ public class ProcessingPlanMaterial {
   public void setMaterialProcessingPlan(@javax.annotation.Nullable ProcessingPlan materialProcessingPlan) {
     this.materialProcessingPlan = materialProcessingPlan;
   }
+
 
   @Override
   public boolean equals(Object o) {

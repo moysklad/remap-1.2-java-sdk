@@ -26,8 +26,8 @@ import java.util.List;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import ru.moysklad.remap_1_2.model.Account;
+import ru.moysklad.remap_1_2.model.Agent;
 import ru.moysklad.remap_1_2.model.AttributeAbstract;
-import ru.moysklad.remap_1_2.model.Counterparty;
 import ru.moysklad.remap_1_2.model.CurrencyRate;
 import ru.moysklad.remap_1_2.model.Employee;
 import ru.moysklad.remap_1_2.model.Group;
@@ -74,7 +74,7 @@ import java.util.StringJoiner;
   Contract.JSON_PROPERTY_RATE,
   Contract.JSON_PROPERTY_ATTRIBUTES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Contract {
   public static Contract createWithMeta(UUID id) {
     Contract o = new Contract();
@@ -173,7 +173,7 @@ public class Contract {
 
   public static final String JSON_PROPERTY_AGENT = "agent";
   @javax.annotation.Nullable
-  private Counterparty agent;
+  private Agent agent;
 
   public static final String JSON_PROPERTY_STATE = "state";
   @javax.annotation.Nullable
@@ -222,6 +222,7 @@ public class Contract {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -242,6 +243,7 @@ public class Contract {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Договора
@@ -281,6 +283,7 @@ public class Contract {
     return this;
   }
 
+
   /**
    * Номер договора
    * @return name
@@ -302,11 +305,13 @@ public class Contract {
     this.name = name;
   }
 
+
   public Contract description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Описание Договора
@@ -338,11 +343,13 @@ public class Contract {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public Contract code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код Договора
@@ -365,11 +372,13 @@ public class Contract {
     this.code = code;
   }
 
+
   public Contract externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Договора
@@ -392,11 +401,13 @@ public class Contract {
     this.externalCode = externalCode;
   }
 
+
   public Contract archived(@javax.annotation.Nullable Boolean archived) {
     
     this.archived = archived;
     return this;
   }
+
 
   /**
    * Добавлен ли Договор в архив
@@ -419,11 +430,13 @@ public class Contract {
     this.archived = archived;
   }
 
+
   public Contract moment(@javax.annotation.Nullable String moment) {
     
     this.moment = moment;
     return this;
   }
+
 
   /**
    * Дата Договора
@@ -446,11 +459,13 @@ public class Contract {
     this.moment = moment;
   }
 
+
   public Contract sum(@javax.annotation.Nullable Integer sum) {
     
     this.sum = sum;
     return this;
   }
+
 
   /**
    * Сумма Договора
@@ -473,11 +488,13 @@ public class Contract {
     this.sum = sum;
   }
 
+
   public Contract contractType(@javax.annotation.Nullable String contractType) {
     
     this.contractType = contractType;
     return this;
   }
+
 
   /**
    * Тип Договора. Известные значения описаны в ContractType
@@ -500,11 +517,13 @@ public class Contract {
     this.contractType = contractType;
   }
 
+
   public Contract rewardType(@javax.annotation.Nullable String rewardType) {
     
     this.rewardType = rewardType;
     return this;
   }
+
 
   /**
    * Тип Вознаграждения. Известные значения описаны в RewardType
@@ -527,11 +546,13 @@ public class Contract {
     this.rewardType = rewardType;
   }
 
+
   public Contract rewardPercent(@javax.annotation.Nullable Integer rewardPercent) {
     
     this.rewardPercent = rewardPercent;
     return this;
   }
+
 
   /**
    * Вознаграждение в процентах (от 0 до 100)
@@ -556,11 +577,13 @@ public class Contract {
     this.rewardPercent = rewardPercent;
   }
 
+
   public Contract shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -582,6 +605,7 @@ public class Contract {
   public void setShared(@javax.annotation.Nullable Boolean shared) {
     this.shared = shared;
   }
+
 
   /**
    * Напечатан ли документ
@@ -637,6 +661,7 @@ public class Contract {
     return this;
   }
 
+
   /**
    * Метаданные владельца (Сотрудника)
    * @return owner
@@ -667,11 +692,13 @@ public class Contract {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public Contract group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -694,11 +721,13 @@ public class Contract {
     this.group = group;
   }
 
+
   public Contract ownAgent(@javax.annotation.Nullable Organization ownAgent) {
     
     this.ownAgent = ownAgent;
     return this;
   }
+
 
   /**
    * Get ownAgent
@@ -721,21 +750,23 @@ public class Contract {
     this.ownAgent = ownAgent;
   }
 
-  public Contract agent(@javax.annotation.Nullable Counterparty agent) {
+
+  public Contract agent(@javax.annotation.Nullable Agent agent) {
     
     this.agent = agent;
     return this;
   }
 
+
   /**
-   * Get agent
+   * Метаданные контрагента или юрлица
    * @return agent
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Counterparty getAgent() {
+  public Agent getAgent() {
     return agent;
   }
 
@@ -744,15 +775,17 @@ public class Contract {
 
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAgent(@javax.annotation.Nullable Counterparty agent) {
+  public void setAgent(@javax.annotation.Nullable Agent agent) {
     this.agent = agent;
   }
+
 
   public Contract state(@javax.annotation.Nullable State state) {
     this.state = JsonNullable.<State>of(state);
     
     return this;
   }
+
 
   /**
    * Метаданные статуса договора
@@ -784,11 +817,13 @@ public class Contract {
     this.state = JsonNullable.<State>of(state);
   }
 
+
   public Contract organizationAccount(@javax.annotation.Nullable Account organizationAccount) {
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
     
     return this;
   }
+
 
   /**
    * Метаданные счета вашего юрлица
@@ -820,11 +855,13 @@ public class Contract {
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
   }
 
+
   public Contract agentAccount(@javax.annotation.Nullable Account agentAccount) {
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
     
     return this;
   }
+
 
   /**
    * Метаданные счета контрагента
@@ -856,11 +893,13 @@ public class Contract {
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
   }
 
+
   public Contract rate(@javax.annotation.Nullable CurrencyRate rate) {
     
     this.rate = rate;
     return this;
   }
+
 
   /**
    * Get rate
@@ -883,11 +922,13 @@ public class Contract {
     this.rate = rate;
   }
 
+
   public Contract attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public Contract addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -930,6 +971,7 @@ public class Contract {
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
+
 
   @Override
   public boolean equals(Object o) {

@@ -55,7 +55,7 @@ import java.util.StringJoiner;
   CustomEntityElement.JSON_PROPERTY_SHARED,
   CustomEntityElement.JSON_PROPERTY_GROUP
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CustomEntityElement {
   public static CustomEntityElement createWithMeta(UUID metadataId, UUID id) {
     CustomEntityElement o = new CustomEntityElement();
@@ -143,6 +143,7 @@ public class CustomEntityElement {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -163,6 +164,7 @@ public class CustomEntityElement {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID элемента пользовательского справочника
@@ -218,6 +220,7 @@ public class CustomEntityElement {
     return this;
   }
 
+
   /**
    * Наименование элемента пользовательского справочника
    * @return name
@@ -239,11 +242,13 @@ public class CustomEntityElement {
     this.name = name;
   }
 
+
   public CustomEntityElement code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код элемента пользовательского справочника
@@ -266,11 +271,13 @@ public class CustomEntityElement {
     this.code = code;
   }
 
+
   public CustomEntityElement description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Описание элемента пользовательского справочника
@@ -302,11 +309,13 @@ public class CustomEntityElement {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public CustomEntityElement externalCode(@javax.annotation.Nullable String externalCode) {
     this.externalCode = JsonNullable.<String>of(externalCode);
     
     return this;
   }
+
 
   /**
    * Внешний код элемента пользовательского справочника
@@ -338,11 +347,13 @@ public class CustomEntityElement {
     this.externalCode = JsonNullable.<String>of(externalCode);
   }
 
+
   public CustomEntityElement attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     
     this.attributes = attributes;
     return this;
   }
+
 
   public CustomEntityElement addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null) {
@@ -373,11 +384,13 @@ public class CustomEntityElement {
     this.attributes = attributes;
   }
 
+
   public CustomEntityElement owner(@javax.annotation.Nullable Employee owner) {
     
     this.owner = owner;
     return this;
   }
+
 
   /**
    * Get owner
@@ -400,11 +413,13 @@ public class CustomEntityElement {
     this.owner = owner;
   }
 
+
   public CustomEntityElement shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -427,11 +442,13 @@ public class CustomEntityElement {
     this.shared = shared;
   }
 
+
   public CustomEntityElement group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -453,6 +470,7 @@ public class CustomEntityElement {
   public void setGroup(@javax.annotation.Nullable Group group) {
     this.group = group;
   }
+
 
   @Override
   public boolean equals(Object o) {

@@ -49,7 +49,7 @@ import java.util.StringJoiner;
   CommissionReportInPosition.JSON_PROPERTY_ASSORTMENT,
   CommissionReportInPosition.JSON_PROPERTY_PACK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CommissionReportInPosition {
   public static CommissionReportInPosition createWithMeta(UUID parentId, UUID id) {
     CommissionReportInPosition o = new CommissionReportInPosition();
@@ -127,6 +127,7 @@ public class CommissionReportInPosition {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -147,6 +148,7 @@ public class CommissionReportInPosition {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID позиции
@@ -186,6 +188,7 @@ public class CommissionReportInPosition {
     return this;
   }
 
+
   /**
    * Количество товаров/услуг в позиции
    * minimum: 0
@@ -208,11 +211,13 @@ public class CommissionReportInPosition {
     this.quantity = quantity;
   }
 
+
   public CommissionReportInPosition price(@javax.annotation.Nullable Double price) {
     
     this.price = price;
     return this;
   }
+
 
   /**
    * Цена товара в копейках
@@ -235,11 +240,13 @@ public class CommissionReportInPosition {
     this.price = price;
   }
 
+
   public CommissionReportInPosition reward(@javax.annotation.Nullable Double reward) {
     
     this.reward = reward;
     return this;
   }
+
 
   /**
    * Вознаграждение
@@ -262,14 +269,18 @@ public class CommissionReportInPosition {
     this.reward = reward;
   }
 
+
   public CommissionReportInPosition vat(@javax.annotation.Nullable Integer vat) {
     
     this.vat = vat;
     return this;
   }
 
+
   /**
    * НДС для позиции
+   * minimum: 0
+   * maximum: 100
    * @return vat
    */
   @javax.annotation.Nullable
@@ -289,11 +300,13 @@ public class CommissionReportInPosition {
     this.vat = vat;
   }
 
+
   public CommissionReportInPosition vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
     
     this.vatEnabled = vatEnabled;
     return this;
   }
+
 
   /**
    * Включен ли НДС для позиции
@@ -316,11 +329,13 @@ public class CommissionReportInPosition {
     this.vatEnabled = vatEnabled;
   }
 
+
   public CommissionReportInPosition assortment(@javax.annotation.Nullable Assortment assortment) {
     
     this.assortment = assortment;
     return this;
   }
+
 
   /**
    * Get assortment
@@ -345,11 +360,13 @@ public class CommissionReportInPosition {
     this.assortment = assortment;
   }
 
+
   public CommissionReportInPosition pack(@javax.annotation.Nullable Pack pack) {
     this.pack = JsonNullable.<Pack>of(pack);
     
     return this;
   }
+
 
   /**
    * Упаковка Товара
@@ -380,6 +397,7 @@ public class CommissionReportInPosition {
   public void setPack(@javax.annotation.Nullable Pack pack) {
     this.pack = JsonNullable.<Pack>of(pack);
   }
+
 
   @Override
   public boolean equals(Object o) {

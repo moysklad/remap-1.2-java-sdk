@@ -45,7 +45,7 @@ import java.util.StringJoiner;
   CreateStoreSlotsRequest.JSON_PROPERTY_ZONE
 })
 @JsonTypeName("createStoreSlots_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateStoreSlotsRequest {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -103,6 +103,7 @@ public class CreateStoreSlotsRequest {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -123,6 +124,7 @@ public class CreateStoreSlotsRequest {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Ячейки склада
@@ -178,6 +180,7 @@ public class CreateStoreSlotsRequest {
     return this;
   }
 
+
   /**
    * Наименование Ячейки склада
    * @return name
@@ -199,11 +202,13 @@ public class CreateStoreSlotsRequest {
     this.name = name;
   }
 
+
   public CreateStoreSlotsRequest externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Ячейки склада
@@ -226,11 +231,13 @@ public class CreateStoreSlotsRequest {
     this.externalCode = externalCode;
   }
 
+
   public CreateStoreSlotsRequest barcode(@javax.annotation.Nullable String barcode) {
     
     this.barcode = barcode;
     return this;
   }
+
 
   /**
    * Штрихкод ячейки
@@ -253,11 +260,13 @@ public class CreateStoreSlotsRequest {
     this.barcode = barcode;
   }
 
+
   public CreateStoreSlotsRequest zone(@javax.annotation.Nullable StoreZone zone) {
     
     this.zone = zone;
     return this;
   }
+
 
   /**
    * Get zone
@@ -279,6 +288,7 @@ public class CreateStoreSlotsRequest {
   public void setZone(@javax.annotation.Nullable StoreZone zone) {
     this.zone = zone;
   }
+
 
   @Override
   public boolean equals(Object o) {

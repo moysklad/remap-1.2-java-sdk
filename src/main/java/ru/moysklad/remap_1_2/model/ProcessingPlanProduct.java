@@ -41,7 +41,7 @@ import java.util.StringJoiner;
   ProcessingPlanProduct.JSON_PROPERTY_PRODUCT,
   ProcessingPlanProduct.JSON_PROPERTY_QUANTITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingPlanProduct {
   public static ProcessingPlanProduct createWithMeta(UUID parentId, UUID id) {
     ProcessingPlanProduct o = new ProcessingPlanProduct();
@@ -103,6 +103,7 @@ public class ProcessingPlanProduct {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -123,6 +124,7 @@ public class ProcessingPlanProduct {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID продукта Техкарты
@@ -162,6 +164,7 @@ public class ProcessingPlanProduct {
     return this;
   }
 
+
   /**
    * Get assortment
    * @return assortment
@@ -185,11 +188,13 @@ public class ProcessingPlanProduct {
     this.assortment = assortment;
   }
 
+
   public ProcessingPlanProduct product(@javax.annotation.Nullable Product product) {
     
     this.product = product;
     return this;
   }
+
 
   /**
    * Get product
@@ -212,11 +217,13 @@ public class ProcessingPlanProduct {
     this.product = product;
   }
 
+
   public ProcessingPlanProduct quantity(@javax.annotation.Nullable Double quantity) {
     
     this.quantity = quantity;
     return this;
   }
+
 
   /**
    * Количество товаров данного вида в позиции
@@ -239,6 +246,7 @@ public class ProcessingPlanProduct {
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
     this.quantity = quantity;
   }
+
 
   @Override
   public boolean equals(Object o) {

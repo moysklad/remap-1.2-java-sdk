@@ -46,7 +46,7 @@ import java.util.StringJoiner;
   CounterpartyMetadata.JSON_PROPERTY_TAGS,
   CounterpartyMetadata.JSON_PROPERTY_CREATE_SHARED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CounterpartyMetadata {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -78,6 +78,7 @@ public class CounterpartyMetadata {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -99,11 +100,13 @@ public class CounterpartyMetadata {
     this.meta = meta;
   }
 
+
   public CounterpartyMetadata attributes(@javax.annotation.Nullable AttributeMetaInfoList attributes) {
     
     this.attributes = attributes;
     return this;
   }
+
 
   /**
    * Get attributes
@@ -126,11 +129,13 @@ public class CounterpartyMetadata {
     this.attributes = attributes;
   }
 
+
   public CounterpartyMetadata states(@javax.annotation.Nullable List<State> states) {
     this.states = JsonNullable.<List<State>>of(states);
     
     return this;
   }
+
 
   public CounterpartyMetadata addStatesItem(State statesItem) {
     if (this.states == null || !this.states.isPresent()) {
@@ -174,11 +179,13 @@ public class CounterpartyMetadata {
     this.states = JsonNullable.<List<State>>of(states);
   }
 
+
   public CounterpartyMetadata tags(@javax.annotation.Nullable List<String> tags) {
     this.tags = JsonNullable.<List<String>>of(tags);
     
     return this;
   }
+
 
   public CounterpartyMetadata addTagsItem(String tagsItem) {
     if (this.tags == null || !this.tags.isPresent()) {
@@ -222,11 +229,13 @@ public class CounterpartyMetadata {
     this.tags = JsonNullable.<List<String>>of(tags);
   }
 
+
   public CounterpartyMetadata createShared(@javax.annotation.Nullable Boolean createShared) {
     
     this.createShared = createShared;
     return this;
   }
+
 
   /**
    * Создавать новых контрагентов с меткой \&quot;Общий\&quot;
@@ -248,6 +257,7 @@ public class CounterpartyMetadata {
   public void setCreateShared(@javax.annotation.Nullable Boolean createShared) {
     this.createShared = createShared;
   }
+
 
   @Override
   public boolean equals(Object o) {

@@ -48,7 +48,7 @@ import java.util.StringJoiner;
   CompanySettings.JSON_PROPERTY_COMPANY_ADDRESS,
   CompanySettings.JSON_PROPERTY_ACCOUNT_COUNTRY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CompanySettings {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -114,6 +114,7 @@ public class CompanySettings {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -135,11 +136,13 @@ public class CompanySettings {
     this.meta = meta;
   }
 
+
   public CompanySettings currency(@javax.annotation.Nullable Currency currency) {
     
     this.currency = currency;
     return this;
   }
+
 
   /**
    * Get currency
@@ -162,11 +165,13 @@ public class CompanySettings {
     this.currency = currency;
   }
 
+
   public CompanySettings priceTypes(@javax.annotation.Nullable List<PriceType> priceTypes) {
     
     this.priceTypes = priceTypes;
     return this;
   }
+
 
   public CompanySettings addPriceTypesItem(PriceType priceTypesItem) {
     if (this.priceTypes == null) {
@@ -197,11 +202,13 @@ public class CompanySettings {
     this.priceTypes = priceTypes;
   }
 
+
   public CompanySettings discountStrategy(@javax.annotation.Nullable String discountStrategy) {
     
     this.discountStrategy = discountStrategy;
     return this;
   }
+
 
   /**
    * Совместное применение скидок. Известные значения описаны в DiscountStrategy
@@ -224,11 +231,13 @@ public class CompanySettings {
     this.discountStrategy = discountStrategy;
   }
 
+
   public CompanySettings globalOperationNumbering(@javax.annotation.Nullable Boolean globalOperationNumbering) {
     
     this.globalOperationNumbering = globalOperationNumbering;
     return this;
   }
+
 
   /**
    * Использовать сквозную нумерацию документов
@@ -251,11 +260,13 @@ public class CompanySettings {
     this.globalOperationNumbering = globalOperationNumbering;
   }
 
+
   public CompanySettings checkShippingStock(@javax.annotation.Nullable Boolean checkShippingStock) {
     
     this.checkShippingStock = checkShippingStock;
     return this;
   }
+
 
   /**
    * Запретить отгрузку отсутствующих товаров
@@ -278,11 +289,13 @@ public class CompanySettings {
     this.checkShippingStock = checkShippingStock;
   }
 
+
   public CompanySettings checkMinPrice(@javax.annotation.Nullable Boolean checkMinPrice) {
     
     this.checkMinPrice = checkMinPrice;
     return this;
   }
+
 
   /**
    * Автоматически устанавливать минимальную цену
@@ -305,11 +318,13 @@ public class CompanySettings {
     this.checkMinPrice = checkMinPrice;
   }
 
+
   public CompanySettings useRecycleBin(@javax.annotation.Nullable Boolean useRecycleBin) {
     
     this.useRecycleBin = useRecycleBin;
     return this;
   }
+
 
   /**
    * Использовать корзину
@@ -332,11 +347,13 @@ public class CompanySettings {
     this.useRecycleBin = useRecycleBin;
   }
 
+
   public CompanySettings useCompanyAddress(@javax.annotation.Nullable Boolean useCompanyAddress) {
     
     this.useCompanyAddress = useCompanyAddress;
     return this;
   }
+
 
   /**
    * Использовать адрес компании для электронных писем
@@ -359,11 +376,13 @@ public class CompanySettings {
     this.useCompanyAddress = useCompanyAddress;
   }
 
+
   public CompanySettings companyAddress(@javax.annotation.Nullable String companyAddress) {
     
     this.companyAddress = companyAddress;
     return this;
   }
+
 
   /**
    * Адрес компании для электронных писем
@@ -385,6 +404,7 @@ public class CompanySettings {
   public void setCompanyAddress(@javax.annotation.Nullable String companyAddress) {
     this.companyAddress = companyAddress;
   }
+
 
   /**
    * Страновая конфигурация аккаунта

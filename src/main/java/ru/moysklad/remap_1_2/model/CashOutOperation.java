@@ -26,30 +26,38 @@ import java.util.List;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import ru.moysklad.remap_1_2.model.Account;
+import ru.moysklad.remap_1_2.model.Agent;
 import ru.moysklad.remap_1_2.model.AttributeAbstract;
-import ru.moysklad.remap_1_2.model.CashOutOperationAnyOf;
-import ru.moysklad.remap_1_2.model.CashOutOperationAnyOf1;
-import ru.moysklad.remap_1_2.model.CashOutOperationAnyOf2;
-import ru.moysklad.remap_1_2.model.CashOutOperationAnyOf3;
-import ru.moysklad.remap_1_2.model.CashOutOperationAnyOf4;
+import ru.moysklad.remap_1_2.model.CommissionReportOutPositionList;
 import ru.moysklad.remap_1_2.model.Contract;
-import ru.moysklad.remap_1_2.model.Counterparty;
+import ru.moysklad.remap_1_2.model.CurrencyRate;
 import ru.moysklad.remap_1_2.model.CustomerOrder;
+import ru.moysklad.remap_1_2.model.CustomerOrderPaymentsInner;
+import ru.moysklad.remap_1_2.model.Demand;
 import ru.moysklad.remap_1_2.model.Employee;
+import ru.moysklad.remap_1_2.model.FactureIn;
+import ru.moysklad.remap_1_2.model.FactureOut;
 import ru.moysklad.remap_1_2.model.FileList;
 import ru.moysklad.remap_1_2.model.Group;
 import ru.moysklad.remap_1_2.model.InternalOrder;
 import ru.moysklad.remap_1_2.model.InvoiceIn;
+import ru.moysklad.remap_1_2.model.Loss;
 import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.Organization;
+import ru.moysklad.remap_1_2.model.Overhead;
+import ru.moysklad.remap_1_2.model.PaymentOutOperationAnyOf;
+import ru.moysklad.remap_1_2.model.PaymentOutOperationAnyOf1;
+import ru.moysklad.remap_1_2.model.PaymentOutOperationAnyOf2;
+import ru.moysklad.remap_1_2.model.PaymentOutOperationAnyOf3;
+import ru.moysklad.remap_1_2.model.PaymentOutOperationAnyOf4;
 import ru.moysklad.remap_1_2.model.ProductionTask;
 import ru.moysklad.remap_1_2.model.Project;
-import ru.moysklad.remap_1_2.model.PurchaseOrderPaymentsInner;
-import ru.moysklad.remap_1_2.model.PurchaseOrderPositionList;
-import ru.moysklad.remap_1_2.model.PurchaseOrderRate;
+import ru.moysklad.remap_1_2.model.PurchaseOrder;
+import ru.moysklad.remap_1_2.model.SalesChannel;
 import ru.moysklad.remap_1_2.model.State;
 import ru.moysklad.remap_1_2.model.Store;
 import ru.moysklad.remap_1_2.model.Supply;
+import ru.moysklad.remap_1_2.model.SupplyReturnsInner;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
@@ -66,7 +74,6 @@ import java.util.StringJoiner;
   CashOutOperation.JSON_PROPERTY_META,
   CashOutOperation.JSON_PROPERTY_ID,
   CashOutOperation.JSON_PROPERTY_ACCOUNT_ID,
-  CashOutOperation.JSON_PROPERTY_LINKED_SUM,
   CashOutOperation.JSON_PROPERTY_NAME,
   CashOutOperation.JSON_PROPERTY_CODE,
   CashOutOperation.JSON_PROPERTY_EXTERNAL_CODE,
@@ -76,7 +83,6 @@ import java.util.StringJoiner;
   CashOutOperation.JSON_PROPERTY_DELETED,
   CashOutOperation.JSON_PROPERTY_UPDATED,
   CashOutOperation.JSON_PROPERTY_MOMENT,
-  CashOutOperation.JSON_PROPERTY_DELIVERY_PLANNED_MOMENT,
   CashOutOperation.JSON_PROPERTY_APPLICABLE,
   CashOutOperation.JSON_PROPERTY_PRINTED,
   CashOutOperation.JSON_PROPERTY_PUBLISHED,
@@ -86,9 +92,6 @@ import java.util.StringJoiner;
   CashOutOperation.JSON_PROPERTY_VAT_SUM,
   CashOutOperation.JSON_PROPERTY_SUM,
   CashOutOperation.JSON_PROPERTY_PAYED_SUM,
-  CashOutOperation.JSON_PROPERTY_SHIPPED_SUM,
-  CashOutOperation.JSON_PROPERTY_INVOICED_SUM,
-  CashOutOperation.JSON_PROPERTY_WAIT_SUM,
   CashOutOperation.JSON_PROPERTY_ORGANIZATION,
   CashOutOperation.JSON_PROPERTY_ORGANIZATION_ACCOUNT,
   CashOutOperation.JSON_PROPERTY_AGENT,
@@ -103,14 +106,35 @@ import java.util.StringJoiner;
   CashOutOperation.JSON_PROPERTY_FILES,
   CashOutOperation.JSON_PROPERTY_RATE,
   CashOutOperation.JSON_PROPERTY_POSITIONS,
+  CashOutOperation.JSON_PROPERTY_SALES_CHANNEL,
+  CashOutOperation.JSON_PROPERTY_DEMAND,
+  CashOutOperation.JSON_PROPERTY_LOSSES,
+  CashOutOperation.JSON_PROPERTY_PAYMENTS,
+  CashOutOperation.JSON_PROPERTY_FACTURE_OUT,
+  CashOutOperation.JSON_PROPERTY_LINKED_SUM,
+  CashOutOperation.JSON_PROPERTY_INCOMING_DATE,
+  CashOutOperation.JSON_PROPERTY_INCOMING_NUMBER,
+  CashOutOperation.JSON_PROPERTY_OVERHEAD,
+  CashOutOperation.JSON_PROPERTY_PURCHASE_ORDER,
+  CashOutOperation.JSON_PROPERTY_FACTURE_IN,
+  CashOutOperation.JSON_PROPERTY_INVOICES_IN,
+  CashOutOperation.JSON_PROPERTY_PRODUCTION_TASK,
+  CashOutOperation.JSON_PROPERTY_RETURNS,
+  CashOutOperation.JSON_PROPERTY_DELIVERY_PLANNED_MOMENT,
+  CashOutOperation.JSON_PROPERTY_SHIPPED_SUM,
+  CashOutOperation.JSON_PROPERTY_INVOICED_SUM,
+  CashOutOperation.JSON_PROPERTY_WAIT_SUM,
   CashOutOperation.JSON_PROPERTY_INTERNAL_ORDER,
   CashOutOperation.JSON_PROPERTY_CUSTOMER_ORDERS,
-  CashOutOperation.JSON_PROPERTY_INVOICES_IN,
   CashOutOperation.JSON_PROPERTY_SUPPLIES,
-  CashOutOperation.JSON_PROPERTY_PAYMENTS,
-  CashOutOperation.JSON_PROPERTY_PRODUCTION_TASKS
+  CashOutOperation.JSON_PROPERTY_PRODUCTION_TASKS,
+  CashOutOperation.JSON_PROPERTY_COMMISSION_PERIOD_END,
+  CashOutOperation.JSON_PROPERTY_COMMISSION_PERIOD_START,
+  CashOutOperation.JSON_PROPERTY_COMMITENT_SUM,
+  CashOutOperation.JSON_PROPERTY_REWARD_PERCENT,
+  CashOutOperation.JSON_PROPERTY_REWARD_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CashOutOperation {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -124,10 +148,6 @@ public class CashOutOperation {
   public static final String JSON_PROPERTY_ACCOUNT_ID = "accountId";
   @javax.annotation.Nullable
   private UUID accountId;
-
-  public static final String JSON_PROPERTY_LINKED_SUM = "linkedSum";
-  @javax.annotation.Nonnull
-  private Double linkedSum;
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nullable
@@ -165,10 +185,6 @@ public class CashOutOperation {
   @javax.annotation.Nullable
   private String moment;
 
-  public static final String JSON_PROPERTY_DELIVERY_PLANNED_MOMENT = "deliveryPlannedMoment";
-  @javax.annotation.Nullable
-  private String deliveryPlannedMoment;
-
   public static final String JSON_PROPERTY_APPLICABLE = "applicable";
   @javax.annotation.Nullable
   private Boolean applicable;
@@ -205,18 +221,6 @@ public class CashOutOperation {
   @javax.annotation.Nullable
   private Double payedSum;
 
-  public static final String JSON_PROPERTY_SHIPPED_SUM = "shippedSum";
-  @javax.annotation.Nullable
-  private Double shippedSum;
-
-  public static final String JSON_PROPERTY_INVOICED_SUM = "invoicedSum";
-  @javax.annotation.Nullable
-  private Double invoicedSum;
-
-  public static final String JSON_PROPERTY_WAIT_SUM = "waitSum";
-  @javax.annotation.Nullable
-  private Double waitSum;
-
   public static final String JSON_PROPERTY_ORGANIZATION = "organization";
   @javax.annotation.Nullable
   private Organization organization;
@@ -227,7 +231,7 @@ public class CashOutOperation {
 
   public static final String JSON_PROPERTY_AGENT = "agent";
   @javax.annotation.Nullable
-  private Counterparty agent;
+  private Agent agent;
 
   public static final String JSON_PROPERTY_AGENT_ACCOUNT = "agentAccount";
   @javax.annotation.Nullable
@@ -267,11 +271,83 @@ public class CashOutOperation {
 
   public static final String JSON_PROPERTY_RATE = "rate";
   @javax.annotation.Nullable
-  private PurchaseOrderRate rate;
+  private CurrencyRate rate;
 
   public static final String JSON_PROPERTY_POSITIONS = "positions";
   @javax.annotation.Nullable
-  private PurchaseOrderPositionList positions;
+  private CommissionReportOutPositionList positions;
+
+  public static final String JSON_PROPERTY_SALES_CHANNEL = "salesChannel";
+  @javax.annotation.Nullable
+  private JsonNullable<SalesChannel> salesChannel = JsonNullable.<SalesChannel>undefined();
+
+  public static final String JSON_PROPERTY_DEMAND = "demand";
+  @javax.annotation.Nullable
+  private JsonNullable<Demand> demand = JsonNullable.<Demand>undefined();
+
+  public static final String JSON_PROPERTY_LOSSES = "losses";
+  @javax.annotation.Nullable
+  private JsonNullable<List<Loss>> losses = JsonNullable.<List<Loss>>undefined();
+
+  public static final String JSON_PROPERTY_PAYMENTS = "payments";
+  @javax.annotation.Nullable
+  private JsonNullable<List<CustomerOrderPaymentsInner>> payments = JsonNullable.<List<CustomerOrderPaymentsInner>>undefined();
+
+  public static final String JSON_PROPERTY_FACTURE_OUT = "factureOut";
+  @javax.annotation.Nullable
+  private JsonNullable<FactureOut> factureOut = JsonNullable.<FactureOut>undefined();
+
+  public static final String JSON_PROPERTY_LINKED_SUM = "linkedSum";
+  @javax.annotation.Nonnull
+  private Double linkedSum;
+
+  public static final String JSON_PROPERTY_INCOMING_DATE = "incomingDate";
+  @javax.annotation.Nullable
+  private JsonNullable<String> incomingDate = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_INCOMING_NUMBER = "incomingNumber";
+  @javax.annotation.Nullable
+  private JsonNullable<String> incomingNumber = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_OVERHEAD = "overhead";
+  @javax.annotation.Nullable
+  private JsonNullable<Overhead> overhead = JsonNullable.<Overhead>undefined();
+
+  public static final String JSON_PROPERTY_PURCHASE_ORDER = "purchaseOrder";
+  @javax.annotation.Nullable
+  private JsonNullable<PurchaseOrder> purchaseOrder = JsonNullable.<PurchaseOrder>undefined();
+
+  public static final String JSON_PROPERTY_FACTURE_IN = "factureIn";
+  @javax.annotation.Nullable
+  private JsonNullable<FactureIn> factureIn = JsonNullable.<FactureIn>undefined();
+
+  public static final String JSON_PROPERTY_INVOICES_IN = "invoicesIn";
+  @javax.annotation.Nullable
+  private JsonNullable<List<InvoiceIn>> invoicesIn = JsonNullable.<List<InvoiceIn>>undefined();
+
+  public static final String JSON_PROPERTY_PRODUCTION_TASK = "productionTask";
+  @javax.annotation.Nullable
+  private JsonNullable<ProductionTask> productionTask = JsonNullable.<ProductionTask>undefined();
+
+  public static final String JSON_PROPERTY_RETURNS = "returns";
+  @javax.annotation.Nullable
+  private JsonNullable<List<SupplyReturnsInner>> returns = JsonNullable.<List<SupplyReturnsInner>>undefined();
+
+  public static final String JSON_PROPERTY_DELIVERY_PLANNED_MOMENT = "deliveryPlannedMoment";
+  @javax.annotation.Nullable
+  private String deliveryPlannedMoment;
+
+  public static final String JSON_PROPERTY_SHIPPED_SUM = "shippedSum";
+  @javax.annotation.Nullable
+  private Double shippedSum;
+
+  public static final String JSON_PROPERTY_INVOICED_SUM = "invoicedSum";
+  @javax.annotation.Nullable
+  private Double invoicedSum;
+
+  public static final String JSON_PROPERTY_WAIT_SUM = "waitSum";
+  @javax.annotation.Nullable
+  private Double waitSum;
 
   public static final String JSON_PROPERTY_INTERNAL_ORDER = "internalOrder";
   @javax.annotation.Nullable
@@ -281,21 +357,33 @@ public class CashOutOperation {
   @javax.annotation.Nullable
   private JsonNullable<List<CustomerOrder>> customerOrders = JsonNullable.<List<CustomerOrder>>undefined();
 
-  public static final String JSON_PROPERTY_INVOICES_IN = "invoicesIn";
-  @javax.annotation.Nullable
-  private JsonNullable<List<InvoiceIn>> invoicesIn = JsonNullable.<List<InvoiceIn>>undefined();
-
   public static final String JSON_PROPERTY_SUPPLIES = "supplies";
   @javax.annotation.Nullable
   private JsonNullable<List<Supply>> supplies = JsonNullable.<List<Supply>>undefined();
 
-  public static final String JSON_PROPERTY_PAYMENTS = "payments";
-  @javax.annotation.Nullable
-  private JsonNullable<List<PurchaseOrderPaymentsInner>> payments = JsonNullable.<List<PurchaseOrderPaymentsInner>>undefined();
-
   public static final String JSON_PROPERTY_PRODUCTION_TASKS = "productionTasks";
   @javax.annotation.Nullable
   private JsonNullable<List<ProductionTask>> productionTasks = JsonNullable.<List<ProductionTask>>undefined();
+
+  public static final String JSON_PROPERTY_COMMISSION_PERIOD_END = "commissionPeriodEnd";
+  @javax.annotation.Nullable
+  private String commissionPeriodEnd;
+
+  public static final String JSON_PROPERTY_COMMISSION_PERIOD_START = "commissionPeriodStart";
+  @javax.annotation.Nullable
+  private String commissionPeriodStart;
+
+  public static final String JSON_PROPERTY_COMMITENT_SUM = "commitentSum";
+  @javax.annotation.Nullable
+  private Double commitentSum;
+
+  public static final String JSON_PROPERTY_REWARD_PERCENT = "rewardPercent";
+  @javax.annotation.Nullable
+  private Integer rewardPercent;
+
+  public static final String JSON_PROPERTY_REWARD_TYPE = "rewardType";
+  @javax.annotation.Nullable
+  private String rewardType;
 
   public CashOutOperation() {
   }
@@ -311,12 +399,11 @@ public class CashOutOperation {
     @JsonProperty(value = JSON_PROPERTY_UPDATED, required = false) String updated, 
     @JsonProperty(value = JSON_PROPERTY_PRINTED, required = false) Boolean printed, 
     @JsonProperty(value = JSON_PROPERTY_PUBLISHED, required = false) Boolean published, 
-    @JsonProperty(value = JSON_PROPERTY_VAT_SUM, required = false) Double vatSum, 
-    @JsonProperty(value = JSON_PROPERTY_SUM, required = false) Double sum, 
     @JsonProperty(value = JSON_PROPERTY_PAYED_SUM, required = false) Double payedSum, 
     @JsonProperty(value = JSON_PROPERTY_SHIPPED_SUM, required = false) Double shippedSum, 
     @JsonProperty(value = JSON_PROPERTY_INVOICED_SUM, required = false) Double invoicedSum, 
-    @JsonProperty(value = JSON_PROPERTY_WAIT_SUM, required = false) Double waitSum
+    @JsonProperty(value = JSON_PROPERTY_WAIT_SUM, required = false) Double waitSum, 
+    @JsonProperty(value = JSON_PROPERTY_COMMITENT_SUM, required = false) Double commitentSum
   ) {
     this();
     this.id = id;
@@ -326,12 +413,11 @@ public class CashOutOperation {
     this.updated = updated;
     this.printed = printed;
     this.published = published;
-    this.vatSum = vatSum;
-    this.sum = sum;
     this.payedSum = payedSum;
     this.shippedSum = shippedSum;
     this.invoicedSum = invoicedSum;
     this.waitSum = waitSum;
+    this.commitentSum = commitentSum;
   }
 
   public CashOutOperation meta(@javax.annotation.Nullable Meta meta) {
@@ -339,6 +425,7 @@ public class CashOutOperation {
     this.meta = meta;
     return this;
   }
+
 
   /**
    * Get meta
@@ -361,8 +448,9 @@ public class CashOutOperation {
     this.meta = meta;
   }
 
+
   /**
-   * ID выданного отчета комиссионера
+   * ID Выданного отчета комиссионера
    * @return id
    */
   @javax.annotation.Nullable
@@ -393,41 +481,15 @@ public class CashOutOperation {
 
 
 
-  public CashOutOperation linkedSum(@javax.annotation.Nonnull Double linkedSum) {
-    
-    this.linkedSum = linkedSum;
-    return this;
-  }
-
-  /**
-   * Сумма, оплаченная по данному документу
-   * @return linkedSum
-   */
-  @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_LINKED_SUM)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public Double getLinkedSum() {
-    return linkedSum;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_LINKED_SUM)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLinkedSum(@javax.annotation.Nonnull Double linkedSum) {
-    this.linkedSum = linkedSum;
-  }
-
   public CashOutOperation name(@javax.annotation.Nullable String name) {
     
     this.name = name;
     return this;
   }
 
+
   /**
-   * Наименование Заказа поставщику
+   * Наименование Выданного отчета комиссионера
    * @return name
    */
   @javax.annotation.Nullable
@@ -447,14 +509,16 @@ public class CashOutOperation {
     this.name = name;
   }
 
+
   public CashOutOperation code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
 
+
   /**
-   * Код Заказа поставщику
+   * Код Выданного отчета комиссионера
    * @return code
    */
   @javax.annotation.Nullable
@@ -474,14 +538,16 @@ public class CashOutOperation {
     this.code = code;
   }
 
+
   public CashOutOperation externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
 
+
   /**
-   * Внешний код Заказа поставщику
+   * Внешний код Выданного отчета комиссионера
    * @return externalCode
    */
   @javax.annotation.Nullable
@@ -501,11 +567,13 @@ public class CashOutOperation {
     this.externalCode = externalCode;
   }
 
+
   public CashOutOperation syncId(@javax.annotation.Nullable UUID syncId) {
     
     this.syncId = syncId;
     return this;
   }
+
 
   /**
    * ID синхронизации
@@ -528,14 +596,16 @@ public class CashOutOperation {
     this.syncId = syncId;
   }
 
+
   public CashOutOperation description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
 
+
   /**
-   * Комментарий Заказа поставщику
+   * Комментарий Выданного отчета комиссионера
    * @return description
    */
   @javax.annotation.Nullable
@@ -564,6 +634,7 @@ public class CashOutOperation {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   /**
    * Дата создания
    * @return created
@@ -581,7 +652,7 @@ public class CashOutOperation {
 
 
   /**
-   * Момент последнего удаления Заказа поставщику
+   * Момент последнего удаления Выданного отчета комиссионера
    * @return deleted
    */
   @javax.annotation.Nullable
@@ -597,7 +668,7 @@ public class CashOutOperation {
 
 
   /**
-   * Момент последнего обновления Заказа поставщику
+   * Момент последнего обновления Выданного отчета комиссионера
    * @return updated
    */
   @javax.annotation.Nullable
@@ -617,6 +688,7 @@ public class CashOutOperation {
     this.moment = moment;
     return this;
   }
+
 
   /**
    * Дата документа
@@ -639,38 +711,13 @@ public class CashOutOperation {
     this.moment = moment;
   }
 
-  public CashOutOperation deliveryPlannedMoment(@javax.annotation.Nullable String deliveryPlannedMoment) {
-    
-    this.deliveryPlannedMoment = deliveryPlannedMoment;
-    return this;
-  }
-
-  /**
-   * Планируемая дата отгрузки
-   * @return deliveryPlannedMoment
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DELIVERY_PLANNED_MOMENT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getDeliveryPlannedMoment() {
-    return deliveryPlannedMoment;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_DELIVERY_PLANNED_MOMENT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDeliveryPlannedMoment(@javax.annotation.Nullable String deliveryPlannedMoment) {
-    this.deliveryPlannedMoment = deliveryPlannedMoment;
-  }
 
   public CashOutOperation applicable(@javax.annotation.Nullable Boolean applicable) {
     
     this.applicable = applicable;
     return this;
   }
+
 
   /**
    * Отметка о проведении
@@ -692,6 +739,7 @@ public class CashOutOperation {
   public void setApplicable(@javax.annotation.Nullable Boolean applicable) {
     this.applicable = applicable;
   }
+
 
   /**
    * Напечатан ли документ
@@ -731,6 +779,7 @@ public class CashOutOperation {
     return this;
   }
 
+
   /**
    * Общий доступ
    * @return shared
@@ -752,11 +801,13 @@ public class CashOutOperation {
     this.shared = shared;
   }
 
+
   public CashOutOperation vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
     
     this.vatEnabled = vatEnabled;
     return this;
   }
+
 
   /**
    * Учитывается ли НДС
@@ -779,11 +830,13 @@ public class CashOutOperation {
     this.vatEnabled = vatEnabled;
   }
 
+
   public CashOutOperation vatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
     
     this.vatIncluded = vatIncluded;
     return this;
   }
+
 
   /**
    * Включен ли НДС в цену
@@ -806,6 +859,14 @@ public class CashOutOperation {
     this.vatIncluded = vatIncluded;
   }
 
+
+  public CashOutOperation vatSum(@javax.annotation.Nullable Double vatSum) {
+    
+    this.vatSum = vatSum;
+    return this;
+  }
+
+
   /**
    * Сумма НДС
    * @return vatSum
@@ -821,9 +882,22 @@ public class CashOutOperation {
   
 
 
+  @JsonProperty(JSON_PROPERTY_VAT_SUM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setVatSum(@javax.annotation.Nullable Double vatSum) {
+    this.vatSum = vatSum;
+  }
+
+
+  public CashOutOperation sum(@javax.annotation.Nullable Double sum) {
+    
+    this.sum = sum;
+    return this;
+  }
+
 
   /**
-   * Сумма Заказа поставщику в установленной валюте
+   * Сумма Выданного отчета комиссионера в копейках
    * @return sum
    */
   @javax.annotation.Nullable
@@ -837,9 +911,15 @@ public class CashOutOperation {
   
 
 
+  @JsonProperty(JSON_PROPERTY_SUM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSum(@javax.annotation.Nullable Double sum) {
+    this.sum = sum;
+  }
+
 
   /**
-   * Сумма входящих платежей по Заказу
+   * Оплаченная сумма
    * @return payedSum
    */
   @javax.annotation.Nullable
@@ -852,6 +932,1105 @@ public class CashOutOperation {
 
   
 
+
+
+  public CashOutOperation organization(@javax.annotation.Nullable Organization organization) {
+    
+    this.organization = organization;
+    return this;
+  }
+
+
+  /**
+   * Get organization
+   * @return organization
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ORGANIZATION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Organization getOrganization() {
+    return organization;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_ORGANIZATION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setOrganization(@javax.annotation.Nullable Organization organization) {
+    this.organization = organization;
+  }
+
+
+  public CashOutOperation organizationAccount(@javax.annotation.Nullable Account organizationAccount) {
+    this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
+    
+    return this;
+  }
+
+
+  /**
+   * Метаданные счета юрлица
+   * @return organizationAccount
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public Account getOrganizationAccount() {
+        return organizationAccount.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_ORGANIZATION_ACCOUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<Account> getOrganizationAccount_JsonNullable() {
+    return organizationAccount;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_ORGANIZATION_ACCOUNT, required = false)
+  public void setOrganizationAccount_JsonNullable(JsonNullable<Account> organizationAccount) {
+    this.organizationAccount = organizationAccount;
+  }
+
+  public void setOrganizationAccount(@javax.annotation.Nullable Account organizationAccount) {
+    this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
+  }
+
+
+  public CashOutOperation agent(@javax.annotation.Nullable Agent agent) {
+    
+    this.agent = agent;
+    return this;
+  }
+
+
+  /**
+   * Метаданные контрагента или юрлица
+   * @return agent
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_AGENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Agent getAgent() {
+    return agent;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_AGENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAgent(@javax.annotation.Nullable Agent agent) {
+    this.agent = agent;
+  }
+
+
+  public CashOutOperation agentAccount(@javax.annotation.Nullable Account agentAccount) {
+    this.agentAccount = JsonNullable.<Account>of(agentAccount);
+    
+    return this;
+  }
+
+
+  /**
+   * Метаданные счета контрагента
+   * @return agentAccount
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public Account getAgentAccount() {
+        return agentAccount.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_AGENT_ACCOUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<Account> getAgentAccount_JsonNullable() {
+    return agentAccount;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_AGENT_ACCOUNT, required = false)
+  public void setAgentAccount_JsonNullable(JsonNullable<Account> agentAccount) {
+    this.agentAccount = agentAccount;
+  }
+
+  public void setAgentAccount(@javax.annotation.Nullable Account agentAccount) {
+    this.agentAccount = JsonNullable.<Account>of(agentAccount);
+  }
+
+
+  public CashOutOperation store(@javax.annotation.Nullable Store store) {
+    this.store = JsonNullable.<Store>of(store);
+    
+    return this;
+  }
+
+
+  /**
+   * Метаданные склада
+   * @return store
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public Store getStore() {
+        return store.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_STORE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<Store> getStore_JsonNullable() {
+    return store;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_STORE, required = false)
+  public void setStore_JsonNullable(JsonNullable<Store> store) {
+    this.store = store;
+  }
+
+  public void setStore(@javax.annotation.Nullable Store store) {
+    this.store = JsonNullable.<Store>of(store);
+  }
+
+
+  public CashOutOperation state(@javax.annotation.Nullable State state) {
+    this.state = JsonNullable.<State>of(state);
+    
+    return this;
+  }
+
+
+  /**
+   * Метаданные статуса Выданного отчета комиссионера
+   * @return state
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public State getState() {
+        return state.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_STATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<State> getState_JsonNullable() {
+    return state;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_STATE, required = false)
+  public void setState_JsonNullable(JsonNullable<State> state) {
+    this.state = state;
+  }
+
+  public void setState(@javax.annotation.Nullable State state) {
+    this.state = JsonNullable.<State>of(state);
+  }
+
+
+  public CashOutOperation contract(@javax.annotation.Nullable Contract contract) {
+    this.contract = JsonNullable.<Contract>of(contract);
+    
+    return this;
+  }
+
+
+  /**
+   * Метаданные договора
+   * @return contract
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public Contract getContract() {
+        return contract.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_CONTRACT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<Contract> getContract_JsonNullable() {
+    return contract;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_CONTRACT, required = false)
+  public void setContract_JsonNullable(JsonNullable<Contract> contract) {
+    this.contract = contract;
+  }
+
+  public void setContract(@javax.annotation.Nullable Contract contract) {
+    this.contract = JsonNullable.<Contract>of(contract);
+  }
+
+
+  public CashOutOperation project(@javax.annotation.Nullable Project project) {
+    this.project = JsonNullable.<Project>of(project);
+    
+    return this;
+  }
+
+
+  /**
+   * Метаданные проекта
+   * @return project
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public Project getProject() {
+        return project.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_PROJECT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<Project> getProject_JsonNullable() {
+    return project;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_PROJECT, required = false)
+  public void setProject_JsonNullable(JsonNullable<Project> project) {
+    this.project = project;
+  }
+
+  public void setProject(@javax.annotation.Nullable Project project) {
+    this.project = JsonNullable.<Project>of(project);
+  }
+
+
+  public CashOutOperation owner(@javax.annotation.Nullable Employee owner) {
+    this.owner = JsonNullable.<Employee>of(owner);
+    
+    return this;
+  }
+
+
+  /**
+   * Владелец (Сотрудник)
+   * @return owner
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public Employee getOwner() {
+        return owner.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_OWNER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<Employee> getOwner_JsonNullable() {
+    return owner;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  public void setOwner_JsonNullable(JsonNullable<Employee> owner) {
+    this.owner = owner;
+  }
+
+  public void setOwner(@javax.annotation.Nullable Employee owner) {
+    this.owner = JsonNullable.<Employee>of(owner);
+  }
+
+
+  public CashOutOperation group(@javax.annotation.Nullable Group group) {
+    
+    this.group = group;
+    return this;
+  }
+
+
+  /**
+   * Get group
+   * @return group
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_GROUP)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Group getGroup() {
+    return group;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_GROUP)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setGroup(@javax.annotation.Nullable Group group) {
+    this.group = group;
+  }
+
+
+  public CashOutOperation attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
+    
+    return this;
+  }
+
+
+  public CashOutOperation addAttributesItem(AttributeAbstract attributesItem) {
+    if (this.attributes == null || !this.attributes.isPresent()) {
+      this.attributes = JsonNullable.<List<AttributeAbstract>>of(new ArrayList<>());
+    }
+    try {
+      this.attributes.get().add(attributesItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
+    return this;
+  }
+
+  /**
+   * Коллекция метаданных доп. полей
+   * @return attributes
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public List<AttributeAbstract> getAttributes() {
+        return attributes.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
+    return attributes;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
+  public void setAttributes_JsonNullable(JsonNullable<List<AttributeAbstract>> attributes) {
+    this.attributes = attributes;
+  }
+
+  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
+  }
+
+
+  public CashOutOperation files(@javax.annotation.Nullable FileList files) {
+    this.files = JsonNullable.<FileList>of(files);
+    
+    return this;
+  }
+
+
+  /**
+   * Метаданные массива файлов
+   * @return files
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public FileList getFiles() {
+        return files.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_FILES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<FileList> getFiles_JsonNullable() {
+    return files;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_FILES, required = false)
+  public void setFiles_JsonNullable(JsonNullable<FileList> files) {
+    this.files = files;
+  }
+
+  public void setFiles(@javax.annotation.Nullable FileList files) {
+    this.files = JsonNullable.<FileList>of(files);
+  }
+
+
+  public CashOutOperation rate(@javax.annotation.Nullable CurrencyRate rate) {
+    
+    this.rate = rate;
+    return this;
+  }
+
+
+  /**
+   * Get rate
+   * @return rate
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_RATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public CurrencyRate getRate() {
+    return rate;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_RATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRate(@javax.annotation.Nullable CurrencyRate rate) {
+    this.rate = rate;
+  }
+
+
+  public CashOutOperation positions(@javax.annotation.Nullable CommissionReportOutPositionList positions) {
+    
+    this.positions = positions;
+    return this;
+  }
+
+
+  /**
+   * Get positions
+   * @return positions
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_POSITIONS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public CommissionReportOutPositionList getPositions() {
+    return positions;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_POSITIONS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPositions(@javax.annotation.Nullable CommissionReportOutPositionList positions) {
+    this.positions = positions;
+  }
+
+
+  public CashOutOperation salesChannel(@javax.annotation.Nullable SalesChannel salesChannel) {
+    this.salesChannel = JsonNullable.<SalesChannel>of(salesChannel);
+    
+    return this;
+  }
+
+
+  /**
+   * Метаданные канала продаж
+   * @return salesChannel
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public SalesChannel getSalesChannel() {
+        return salesChannel.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_SALES_CHANNEL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<SalesChannel> getSalesChannel_JsonNullable() {
+    return salesChannel;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_SALES_CHANNEL, required = false)
+  public void setSalesChannel_JsonNullable(JsonNullable<SalesChannel> salesChannel) {
+    this.salesChannel = salesChannel;
+  }
+
+  public void setSalesChannel(@javax.annotation.Nullable SalesChannel salesChannel) {
+    this.salesChannel = JsonNullable.<SalesChannel>of(salesChannel);
+  }
+
+
+  public CashOutOperation demand(@javax.annotation.Nullable Demand demand) {
+    this.demand = JsonNullable.<Demand>of(demand);
+    
+    return this;
+  }
+
+
+  /**
+   * Отгрузка, по которой произошел возврат
+   * @return demand
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public Demand getDemand() {
+        return demand.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_DEMAND)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<Demand> getDemand_JsonNullable() {
+    return demand;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_DEMAND, required = false)
+  public void setDemand_JsonNullable(JsonNullable<Demand> demand) {
+    this.demand = demand;
+  }
+
+  public void setDemand(@javax.annotation.Nullable Demand demand) {
+    this.demand = JsonNullable.<Demand>of(demand);
+  }
+
+
+  public CashOutOperation losses(@javax.annotation.Nullable List<Loss> losses) {
+    this.losses = JsonNullable.<List<Loss>>of(losses);
+    
+    return this;
+  }
+
+
+  public CashOutOperation addLossesItem(Loss lossesItem) {
+    if (this.losses == null || !this.losses.isPresent()) {
+      this.losses = JsonNullable.<List<Loss>>of(new ArrayList<>());
+    }
+    try {
+      this.losses.get().add(lossesItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
+    return this;
+  }
+
+  /**
+   * Массив ссылок на связанные списания
+   * @return losses
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public List<Loss> getLosses() {
+        return losses.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_LOSSES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<List<Loss>> getLosses_JsonNullable() {
+    return losses;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_LOSSES, required = false)
+  public void setLosses_JsonNullable(JsonNullable<List<Loss>> losses) {
+    this.losses = losses;
+  }
+
+  public void setLosses(@javax.annotation.Nullable List<Loss> losses) {
+    this.losses = JsonNullable.<List<Loss>>of(losses);
+  }
+
+
+  public CashOutOperation payments(@javax.annotation.Nullable List<CustomerOrderPaymentsInner> payments) {
+    this.payments = JsonNullable.<List<CustomerOrderPaymentsInner>>of(payments);
+    
+    return this;
+  }
+
+
+  public CashOutOperation addPaymentsItem(CustomerOrderPaymentsInner paymentsItem) {
+    if (this.payments == null || !this.payments.isPresent()) {
+      this.payments = JsonNullable.<List<CustomerOrderPaymentsInner>>of(new ArrayList<>());
+    }
+    try {
+      this.payments.get().add(paymentsItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
+    return this;
+  }
+
+  /**
+   * Массив ссылок на связанные платежи
+   * @return payments
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public List<CustomerOrderPaymentsInner> getPayments() {
+        return payments.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_PAYMENTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<List<CustomerOrderPaymentsInner>> getPayments_JsonNullable() {
+    return payments;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_PAYMENTS, required = false)
+  public void setPayments_JsonNullable(JsonNullable<List<CustomerOrderPaymentsInner>> payments) {
+    this.payments = payments;
+  }
+
+  public void setPayments(@javax.annotation.Nullable List<CustomerOrderPaymentsInner> payments) {
+    this.payments = JsonNullable.<List<CustomerOrderPaymentsInner>>of(payments);
+  }
+
+
+  public CashOutOperation factureOut(@javax.annotation.Nullable FactureOut factureOut) {
+    this.factureOut = JsonNullable.<FactureOut>of(factureOut);
+    
+    return this;
+  }
+
+
+  /**
+   * Счет-фактура выданный, с которым связан этот возврат
+   * @return factureOut
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public FactureOut getFactureOut() {
+        return factureOut.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_FACTURE_OUT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<FactureOut> getFactureOut_JsonNullable() {
+    return factureOut;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_FACTURE_OUT, required = false)
+  public void setFactureOut_JsonNullable(JsonNullable<FactureOut> factureOut) {
+    this.factureOut = factureOut;
+  }
+
+  public void setFactureOut(@javax.annotation.Nullable FactureOut factureOut) {
+    this.factureOut = JsonNullable.<FactureOut>of(factureOut);
+  }
+
+
+  public CashOutOperation linkedSum(@javax.annotation.Nonnull Double linkedSum) {
+    
+    this.linkedSum = linkedSum;
+    return this;
+  }
+
+
+  /**
+   * Сумма, оплаченная по данному документу
+   * @return linkedSum
+   */
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_LINKED_SUM)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public Double getLinkedSum() {
+    return linkedSum;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_LINKED_SUM)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setLinkedSum(@javax.annotation.Nonnull Double linkedSum) {
+    this.linkedSum = linkedSum;
+  }
+
+
+  public CashOutOperation incomingDate(@javax.annotation.Nullable String incomingDate) {
+    this.incomingDate = JsonNullable.<String>of(incomingDate);
+    
+    return this;
+  }
+
+
+  /**
+   * Входящая дата
+   * @return incomingDate
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public String getIncomingDate() {
+        return incomingDate.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_INCOMING_DATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<String> getIncomingDate_JsonNullable() {
+    return incomingDate;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_INCOMING_DATE, required = false)
+  public void setIncomingDate_JsonNullable(JsonNullable<String> incomingDate) {
+    this.incomingDate = incomingDate;
+  }
+
+  public void setIncomingDate(@javax.annotation.Nullable String incomingDate) {
+    this.incomingDate = JsonNullable.<String>of(incomingDate);
+  }
+
+
+  public CashOutOperation incomingNumber(@javax.annotation.Nullable String incomingNumber) {
+    this.incomingNumber = JsonNullable.<String>of(incomingNumber);
+    
+    return this;
+  }
+
+
+  /**
+   * Входящий номер
+   * @return incomingNumber
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public String getIncomingNumber() {
+        return incomingNumber.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_INCOMING_NUMBER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<String> getIncomingNumber_JsonNullable() {
+    return incomingNumber;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_INCOMING_NUMBER, required = false)
+  public void setIncomingNumber_JsonNullable(JsonNullable<String> incomingNumber) {
+    this.incomingNumber = incomingNumber;
+  }
+
+  public void setIncomingNumber(@javax.annotation.Nullable String incomingNumber) {
+    this.incomingNumber = JsonNullable.<String>of(incomingNumber);
+  }
+
+
+  public CashOutOperation overhead(@javax.annotation.Nullable Overhead overhead) {
+    this.overhead = JsonNullable.<Overhead>of(overhead);
+    
+    return this;
+  }
+
+
+  /**
+   * Get overhead
+   * @return overhead
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public Overhead getOverhead() {
+        return overhead.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_OVERHEAD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<Overhead> getOverhead_JsonNullable() {
+    return overhead;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_OVERHEAD, required = false)
+  public void setOverhead_JsonNullable(JsonNullable<Overhead> overhead) {
+    this.overhead = overhead;
+  }
+
+  public void setOverhead(@javax.annotation.Nullable Overhead overhead) {
+    this.overhead = JsonNullable.<Overhead>of(overhead);
+  }
+
+
+  public CashOutOperation purchaseOrder(@javax.annotation.Nullable PurchaseOrder purchaseOrder) {
+    this.purchaseOrder = JsonNullable.<PurchaseOrder>of(purchaseOrder);
+    
+    return this;
+  }
+
+
+  /**
+   * Заказ поставщику, с которым связана Приемка 
+   * @return purchaseOrder
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public PurchaseOrder getPurchaseOrder() {
+        return purchaseOrder.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_PURCHASE_ORDER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<PurchaseOrder> getPurchaseOrder_JsonNullable() {
+    return purchaseOrder;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_PURCHASE_ORDER, required = false)
+  public void setPurchaseOrder_JsonNullable(JsonNullable<PurchaseOrder> purchaseOrder) {
+    this.purchaseOrder = purchaseOrder;
+  }
+
+  public void setPurchaseOrder(@javax.annotation.Nullable PurchaseOrder purchaseOrder) {
+    this.purchaseOrder = JsonNullable.<PurchaseOrder>of(purchaseOrder);
+  }
+
+
+  public CashOutOperation factureIn(@javax.annotation.Nullable FactureIn factureIn) {
+    this.factureIn = JsonNullable.<FactureIn>of(factureIn);
+    
+    return this;
+  }
+
+
+  /**
+   * Счет-фактура полученный, с которым связана эта Приемка
+   * @return factureIn
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public FactureIn getFactureIn() {
+        return factureIn.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_FACTURE_IN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<FactureIn> getFactureIn_JsonNullable() {
+    return factureIn;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_FACTURE_IN, required = false)
+  public void setFactureIn_JsonNullable(JsonNullable<FactureIn> factureIn) {
+    this.factureIn = factureIn;
+  }
+
+  public void setFactureIn(@javax.annotation.Nullable FactureIn factureIn) {
+    this.factureIn = JsonNullable.<FactureIn>of(factureIn);
+  }
+
+
+  public CashOutOperation invoicesIn(@javax.annotation.Nullable List<InvoiceIn> invoicesIn) {
+    this.invoicesIn = JsonNullable.<List<InvoiceIn>>of(invoicesIn);
+    
+    return this;
+  }
+
+
+  public CashOutOperation addInvoicesInItem(InvoiceIn invoicesInItem) {
+    if (this.invoicesIn == null || !this.invoicesIn.isPresent()) {
+      this.invoicesIn = JsonNullable.<List<InvoiceIn>>of(new ArrayList<>());
+    }
+    try {
+      this.invoicesIn.get().add(invoicesInItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
+    return this;
+  }
+
+  /**
+   * Массив ссылок на связанные счета поставщиков
+   * @return invoicesIn
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public List<InvoiceIn> getInvoicesIn() {
+        return invoicesIn.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_INVOICES_IN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<List<InvoiceIn>> getInvoicesIn_JsonNullable() {
+    return invoicesIn;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_INVOICES_IN, required = false)
+  public void setInvoicesIn_JsonNullable(JsonNullable<List<InvoiceIn>> invoicesIn) {
+    this.invoicesIn = invoicesIn;
+  }
+
+  public void setInvoicesIn(@javax.annotation.Nullable List<InvoiceIn> invoicesIn) {
+    this.invoicesIn = JsonNullable.<List<InvoiceIn>>of(invoicesIn);
+  }
+
+
+  public CashOutOperation productionTask(@javax.annotation.Nullable ProductionTask productionTask) {
+    this.productionTask = JsonNullable.<ProductionTask>of(productionTask);
+    
+    return this;
+  }
+
+
+  /**
+   * Связанное производственное задание
+   * @return productionTask
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public ProductionTask getProductionTask() {
+        return productionTask.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_PRODUCTION_TASK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<ProductionTask> getProductionTask_JsonNullable() {
+    return productionTask;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_PRODUCTION_TASK, required = false)
+  public void setProductionTask_JsonNullable(JsonNullable<ProductionTask> productionTask) {
+    this.productionTask = productionTask;
+  }
+
+  public void setProductionTask(@javax.annotation.Nullable ProductionTask productionTask) {
+    this.productionTask = JsonNullable.<ProductionTask>of(productionTask);
+  }
+
+
+  public CashOutOperation returns(@javax.annotation.Nullable List<SupplyReturnsInner> returns) {
+    this.returns = JsonNullable.<List<SupplyReturnsInner>>of(returns);
+    
+    return this;
+  }
+
+
+  public CashOutOperation addReturnsItem(SupplyReturnsInner returnsItem) {
+    if (this.returns == null || !this.returns.isPresent()) {
+      this.returns = JsonNullable.<List<SupplyReturnsInner>>of(new ArrayList<>());
+    }
+    try {
+      this.returns.get().add(returnsItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
+    return this;
+  }
+
+  /**
+   * Массив ссылок на связанные возвраты 
+   * @return returns
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public List<SupplyReturnsInner> getReturns() {
+        return returns.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_RETURNS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<List<SupplyReturnsInner>> getReturns_JsonNullable() {
+    return returns;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_RETURNS, required = false)
+  public void setReturns_JsonNullable(JsonNullable<List<SupplyReturnsInner>> returns) {
+    this.returns = returns;
+  }
+
+  public void setReturns(@javax.annotation.Nullable List<SupplyReturnsInner> returns) {
+    this.returns = JsonNullable.<List<SupplyReturnsInner>>of(returns);
+  }
+
+
+  public CashOutOperation deliveryPlannedMoment(@javax.annotation.Nullable String deliveryPlannedMoment) {
+    
+    this.deliveryPlannedMoment = deliveryPlannedMoment;
+    return this;
+  }
+
+
+  /**
+   * Планируемая дата отгрузки
+   * @return deliveryPlannedMoment
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_DELIVERY_PLANNED_MOMENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getDeliveryPlannedMoment() {
+    return deliveryPlannedMoment;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_DELIVERY_PLANNED_MOMENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDeliveryPlannedMoment(@javax.annotation.Nullable String deliveryPlannedMoment) {
+    this.deliveryPlannedMoment = deliveryPlannedMoment;
+  }
 
 
   /**
@@ -902,482 +2081,12 @@ public class CashOutOperation {
 
 
 
-  public CashOutOperation organization(@javax.annotation.Nullable Organization organization) {
-    
-    this.organization = organization;
-    return this;
-  }
-
-  /**
-   * Get organization
-   * @return organization
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ORGANIZATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Organization getOrganization() {
-    return organization;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_ORGANIZATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOrganization(@javax.annotation.Nullable Organization organization) {
-    this.organization = organization;
-  }
-
-  public CashOutOperation organizationAccount(@javax.annotation.Nullable Account organizationAccount) {
-    this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
-    
-    return this;
-  }
-
-  /**
-   * Метаданные счета юрлица
-   * @return organizationAccount
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Account getOrganizationAccount() {
-        return organizationAccount.orElse(null);
-  }
-
-  
-
-  @JsonProperty(JSON_PROPERTY_ORGANIZATION_ACCOUNT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-
-  public JsonNullable<Account> getOrganizationAccount_JsonNullable() {
-    return organizationAccount;
-  }
-  
-  @JsonProperty(value = JSON_PROPERTY_ORGANIZATION_ACCOUNT, required = false)
-  public void setOrganizationAccount_JsonNullable(JsonNullable<Account> organizationAccount) {
-    this.organizationAccount = organizationAccount;
-  }
-
-  public void setOrganizationAccount(@javax.annotation.Nullable Account organizationAccount) {
-    this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
-  }
-
-  public CashOutOperation agent(@javax.annotation.Nullable Counterparty agent) {
-    
-    this.agent = agent;
-    return this;
-  }
-
-  /**
-   * Get agent
-   * @return agent
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_AGENT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Counterparty getAgent() {
-    return agent;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_AGENT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAgent(@javax.annotation.Nullable Counterparty agent) {
-    this.agent = agent;
-  }
-
-  public CashOutOperation agentAccount(@javax.annotation.Nullable Account agentAccount) {
-    this.agentAccount = JsonNullable.<Account>of(agentAccount);
-    
-    return this;
-  }
-
-  /**
-   * Метаданные счета контрагента
-   * @return agentAccount
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Account getAgentAccount() {
-        return agentAccount.orElse(null);
-  }
-
-  
-
-  @JsonProperty(JSON_PROPERTY_AGENT_ACCOUNT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-
-  public JsonNullable<Account> getAgentAccount_JsonNullable() {
-    return agentAccount;
-  }
-  
-  @JsonProperty(value = JSON_PROPERTY_AGENT_ACCOUNT, required = false)
-  public void setAgentAccount_JsonNullable(JsonNullable<Account> agentAccount) {
-    this.agentAccount = agentAccount;
-  }
-
-  public void setAgentAccount(@javax.annotation.Nullable Account agentAccount) {
-    this.agentAccount = JsonNullable.<Account>of(agentAccount);
-  }
-
-  public CashOutOperation store(@javax.annotation.Nullable Store store) {
-    this.store = JsonNullable.<Store>of(store);
-    
-    return this;
-  }
-
-  /**
-   * Метаданные склада
-   * @return store
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Store getStore() {
-        return store.orElse(null);
-  }
-
-  
-
-  @JsonProperty(JSON_PROPERTY_STORE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-
-  public JsonNullable<Store> getStore_JsonNullable() {
-    return store;
-  }
-  
-  @JsonProperty(value = JSON_PROPERTY_STORE, required = false)
-  public void setStore_JsonNullable(JsonNullable<Store> store) {
-    this.store = store;
-  }
-
-  public void setStore(@javax.annotation.Nullable Store store) {
-    this.store = JsonNullable.<Store>of(store);
-  }
-
-  public CashOutOperation state(@javax.annotation.Nullable State state) {
-    this.state = JsonNullable.<State>of(state);
-    
-    return this;
-  }
-
-  /**
-   * Метаданные статуса заказа
-   * @return state
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-
-  public State getState() {
-        return state.orElse(null);
-  }
-
-  
-
-  @JsonProperty(JSON_PROPERTY_STATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-
-  public JsonNullable<State> getState_JsonNullable() {
-    return state;
-  }
-  
-  @JsonProperty(value = JSON_PROPERTY_STATE, required = false)
-  public void setState_JsonNullable(JsonNullable<State> state) {
-    this.state = state;
-  }
-
-  public void setState(@javax.annotation.Nullable State state) {
-    this.state = JsonNullable.<State>of(state);
-  }
-
-  public CashOutOperation contract(@javax.annotation.Nullable Contract contract) {
-    this.contract = JsonNullable.<Contract>of(contract);
-    
-    return this;
-  }
-
-  /**
-   * Метаданные договора
-   * @return contract
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Contract getContract() {
-        return contract.orElse(null);
-  }
-
-  
-
-  @JsonProperty(JSON_PROPERTY_CONTRACT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-
-  public JsonNullable<Contract> getContract_JsonNullable() {
-    return contract;
-  }
-  
-  @JsonProperty(value = JSON_PROPERTY_CONTRACT, required = false)
-  public void setContract_JsonNullable(JsonNullable<Contract> contract) {
-    this.contract = contract;
-  }
-
-  public void setContract(@javax.annotation.Nullable Contract contract) {
-    this.contract = JsonNullable.<Contract>of(contract);
-  }
-
-  public CashOutOperation project(@javax.annotation.Nullable Project project) {
-    this.project = JsonNullable.<Project>of(project);
-    
-    return this;
-  }
-
-  /**
-   * Метаданные проекта
-   * @return project
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Project getProject() {
-        return project.orElse(null);
-  }
-
-  
-
-  @JsonProperty(JSON_PROPERTY_PROJECT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-
-  public JsonNullable<Project> getProject_JsonNullable() {
-    return project;
-  }
-  
-  @JsonProperty(value = JSON_PROPERTY_PROJECT, required = false)
-  public void setProject_JsonNullable(JsonNullable<Project> project) {
-    this.project = project;
-  }
-
-  public void setProject(@javax.annotation.Nullable Project project) {
-    this.project = JsonNullable.<Project>of(project);
-  }
-
-  public CashOutOperation owner(@javax.annotation.Nullable Employee owner) {
-    this.owner = JsonNullable.<Employee>of(owner);
-    
-    return this;
-  }
-
-  /**
-   * Владелец (Сотрудник)
-   * @return owner
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Employee getOwner() {
-        return owner.orElse(null);
-  }
-
-  
-
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-
-  public JsonNullable<Employee> getOwner_JsonNullable() {
-    return owner;
-  }
-  
-  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
-  public void setOwner_JsonNullable(JsonNullable<Employee> owner) {
-    this.owner = owner;
-  }
-
-  public void setOwner(@javax.annotation.Nullable Employee owner) {
-    this.owner = JsonNullable.<Employee>of(owner);
-  }
-
-  public CashOutOperation group(@javax.annotation.Nullable Group group) {
-    
-    this.group = group;
-    return this;
-  }
-
-  /**
-   * Get group
-   * @return group
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_GROUP)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Group getGroup() {
-    return group;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_GROUP)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setGroup(@javax.annotation.Nullable Group group) {
-    this.group = group;
-  }
-
-  public CashOutOperation attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
-    
-    return this;
-  }
-
-  public CashOutOperation addAttributesItem(AttributeAbstract attributesItem) {
-    if (this.attributes == null || !this.attributes.isPresent()) {
-      this.attributes = JsonNullable.<List<AttributeAbstract>>of(new ArrayList<>());
-    }
-    try {
-      this.attributes.get().add(attributesItem);
-    } catch (java.util.NoSuchElementException e) {
-      // this can never happen, as we make sure above that the value is present
-    }
-    return this;
-  }
-
-  /**
-   * Коллекция метаданных доп. полей
-   * @return attributes
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-
-  public List<AttributeAbstract> getAttributes() {
-        return attributes.orElse(null);
-  }
-
-  
-
-  @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-
-  public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
-    return attributes;
-  }
-  
-  @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
-  public void setAttributes_JsonNullable(JsonNullable<List<AttributeAbstract>> attributes) {
-    this.attributes = attributes;
-  }
-
-  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
-  }
-
-  public CashOutOperation files(@javax.annotation.Nullable FileList files) {
-    this.files = JsonNullable.<FileList>of(files);
-    
-    return this;
-  }
-
-  /**
-   * Метаданные массива Файлов
-   * @return files
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-
-  public FileList getFiles() {
-        return files.orElse(null);
-  }
-
-  
-
-  @JsonProperty(JSON_PROPERTY_FILES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-
-  public JsonNullable<FileList> getFiles_JsonNullable() {
-    return files;
-  }
-  
-  @JsonProperty(value = JSON_PROPERTY_FILES, required = false)
-  public void setFiles_JsonNullable(JsonNullable<FileList> files) {
-    this.files = files;
-  }
-
-  public void setFiles(@javax.annotation.Nullable FileList files) {
-    this.files = JsonNullable.<FileList>of(files);
-  }
-
-  public CashOutOperation rate(@javax.annotation.Nullable PurchaseOrderRate rate) {
-    
-    this.rate = rate;
-    return this;
-  }
-
-  /**
-   * Get rate
-   * @return rate
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public PurchaseOrderRate getRate() {
-    return rate;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_RATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRate(@javax.annotation.Nullable PurchaseOrderRate rate) {
-    this.rate = rate;
-  }
-
-  public CashOutOperation positions(@javax.annotation.Nullable PurchaseOrderPositionList positions) {
-    
-    this.positions = positions;
-    return this;
-  }
-
-  /**
-   * Get positions
-   * @return positions
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_POSITIONS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public PurchaseOrderPositionList getPositions() {
-    return positions;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_POSITIONS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPositions(@javax.annotation.Nullable PurchaseOrderPositionList positions) {
-    this.positions = positions;
-  }
-
   public CashOutOperation internalOrder(@javax.annotation.Nullable InternalOrder internalOrder) {
     this.internalOrder = JsonNullable.<InternalOrder>of(internalOrder);
     
     return this;
   }
+
 
   /**
    * Внутренний заказ, связанный с заказом поставщику
@@ -1409,11 +2118,13 @@ public class CashOutOperation {
     this.internalOrder = JsonNullable.<InternalOrder>of(internalOrder);
   }
 
+
   public CashOutOperation customerOrders(@javax.annotation.Nullable List<CustomerOrder> customerOrders) {
     this.customerOrders = JsonNullable.<List<CustomerOrder>>of(customerOrders);
     
     return this;
   }
+
 
   public CashOutOperation addCustomerOrdersItem(CustomerOrder customerOrdersItem) {
     if (this.customerOrders == null || !this.customerOrders.isPresent()) {
@@ -1457,59 +2168,13 @@ public class CashOutOperation {
     this.customerOrders = JsonNullable.<List<CustomerOrder>>of(customerOrders);
   }
 
-  public CashOutOperation invoicesIn(@javax.annotation.Nullable List<InvoiceIn> invoicesIn) {
-    this.invoicesIn = JsonNullable.<List<InvoiceIn>>of(invoicesIn);
-    
-    return this;
-  }
-
-  public CashOutOperation addInvoicesInItem(InvoiceIn invoicesInItem) {
-    if (this.invoicesIn == null || !this.invoicesIn.isPresent()) {
-      this.invoicesIn = JsonNullable.<List<InvoiceIn>>of(new ArrayList<>());
-    }
-    try {
-      this.invoicesIn.get().add(invoicesInItem);
-    } catch (java.util.NoSuchElementException e) {
-      // this can never happen, as we make sure above that the value is present
-    }
-    return this;
-  }
-
-  /**
-   * Массив ссылок на связанные счета поставщиков
-   * @return invoicesIn
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-
-  public List<InvoiceIn> getInvoicesIn() {
-        return invoicesIn.orElse(null);
-  }
-
-  
-
-  @JsonProperty(JSON_PROPERTY_INVOICES_IN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-
-  public JsonNullable<List<InvoiceIn>> getInvoicesIn_JsonNullable() {
-    return invoicesIn;
-  }
-  
-  @JsonProperty(value = JSON_PROPERTY_INVOICES_IN, required = false)
-  public void setInvoicesIn_JsonNullable(JsonNullable<List<InvoiceIn>> invoicesIn) {
-    this.invoicesIn = invoicesIn;
-  }
-
-  public void setInvoicesIn(@javax.annotation.Nullable List<InvoiceIn> invoicesIn) {
-    this.invoicesIn = JsonNullable.<List<InvoiceIn>>of(invoicesIn);
-  }
 
   public CashOutOperation supplies(@javax.annotation.Nullable List<Supply> supplies) {
     this.supplies = JsonNullable.<List<Supply>>of(supplies);
     
     return this;
   }
+
 
   public CashOutOperation addSuppliesItem(Supply suppliesItem) {
     if (this.supplies == null || !this.supplies.isPresent()) {
@@ -1553,59 +2218,13 @@ public class CashOutOperation {
     this.supplies = JsonNullable.<List<Supply>>of(supplies);
   }
 
-  public CashOutOperation payments(@javax.annotation.Nullable List<PurchaseOrderPaymentsInner> payments) {
-    this.payments = JsonNullable.<List<PurchaseOrderPaymentsInner>>of(payments);
-    
-    return this;
-  }
-
-  public CashOutOperation addPaymentsItem(PurchaseOrderPaymentsInner paymentsItem) {
-    if (this.payments == null || !this.payments.isPresent()) {
-      this.payments = JsonNullable.<List<PurchaseOrderPaymentsInner>>of(new ArrayList<>());
-    }
-    try {
-      this.payments.get().add(paymentsItem);
-    } catch (java.util.NoSuchElementException e) {
-      // this can never happen, as we make sure above that the value is present
-    }
-    return this;
-  }
-
-  /**
-   * Массив ссылок на связанные платежи
-   * @return payments
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-
-  public List<PurchaseOrderPaymentsInner> getPayments() {
-        return payments.orElse(null);
-  }
-
-  
-
-  @JsonProperty(JSON_PROPERTY_PAYMENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-
-  public JsonNullable<List<PurchaseOrderPaymentsInner>> getPayments_JsonNullable() {
-    return payments;
-  }
-  
-  @JsonProperty(value = JSON_PROPERTY_PAYMENTS, required = false)
-  public void setPayments_JsonNullable(JsonNullable<List<PurchaseOrderPaymentsInner>> payments) {
-    this.payments = payments;
-  }
-
-  public void setPayments(@javax.annotation.Nullable List<PurchaseOrderPaymentsInner> payments) {
-    this.payments = JsonNullable.<List<PurchaseOrderPaymentsInner>>of(payments);
-  }
 
   public CashOutOperation productionTasks(@javax.annotation.Nullable List<ProductionTask> productionTasks) {
     this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
     
     return this;
   }
+
 
   public CashOutOperation addProductionTasksItem(ProductionTask productionTasksItem) {
     if (this.productionTasks == null || !this.productionTasks.isPresent()) {
@@ -1649,6 +2268,141 @@ public class CashOutOperation {
     this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
   }
 
+
+  public CashOutOperation commissionPeriodEnd(@javax.annotation.Nullable String commissionPeriodEnd) {
+    
+    this.commissionPeriodEnd = commissionPeriodEnd;
+    return this;
+  }
+
+
+  /**
+   * Конец периода
+   * @return commissionPeriodEnd
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_COMMISSION_PERIOD_END)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getCommissionPeriodEnd() {
+    return commissionPeriodEnd;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_COMMISSION_PERIOD_END)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCommissionPeriodEnd(@javax.annotation.Nullable String commissionPeriodEnd) {
+    this.commissionPeriodEnd = commissionPeriodEnd;
+  }
+
+
+  public CashOutOperation commissionPeriodStart(@javax.annotation.Nullable String commissionPeriodStart) {
+    
+    this.commissionPeriodStart = commissionPeriodStart;
+    return this;
+  }
+
+
+  /**
+   * Начало периода
+   * @return commissionPeriodStart
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_COMMISSION_PERIOD_START)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getCommissionPeriodStart() {
+    return commissionPeriodStart;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_COMMISSION_PERIOD_START)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCommissionPeriodStart(@javax.annotation.Nullable String commissionPeriodStart) {
+    this.commissionPeriodStart = commissionPeriodStart;
+  }
+
+
+  /**
+   * Сумма коммитента в установленной валюте
+   * @return commitentSum
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_COMMITENT_SUM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Double getCommitentSum() {
+    return commitentSum;
+  }
+
+  
+
+
+
+  public CashOutOperation rewardPercent(@javax.annotation.Nullable Integer rewardPercent) {
+    
+    this.rewardPercent = rewardPercent;
+    return this;
+  }
+
+
+  /**
+   * Процент вознаграждения
+   * minimum: 0
+   * maximum: 100
+   * @return rewardPercent
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_REWARD_PERCENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getRewardPercent() {
+    return rewardPercent;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_REWARD_PERCENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRewardPercent(@javax.annotation.Nullable Integer rewardPercent) {
+    this.rewardPercent = rewardPercent;
+  }
+
+
+  public CashOutOperation rewardType(@javax.annotation.Nullable String rewardType) {
+    
+    this.rewardType = rewardType;
+    return this;
+  }
+
+
+  /**
+   * Тип Вознаграждения. Известные значения описаны в RewardType
+   * @return rewardType
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_REWARD_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getRewardType() {
+    return rewardType;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_REWARD_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRewardType(@javax.annotation.Nullable String rewardType) {
+    this.rewardType = rewardType;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -1661,7 +2415,6 @@ public class CashOutOperation {
     return Objects.equals(this.meta, cashOutOperation.meta) &&
         Objects.equals(this.id, cashOutOperation.id) &&
         Objects.equals(this.accountId, cashOutOperation.accountId) &&
-        Objects.equals(this.linkedSum, cashOutOperation.linkedSum) &&
         Objects.equals(this.name, cashOutOperation.name) &&
         Objects.equals(this.code, cashOutOperation.code) &&
         Objects.equals(this.externalCode, cashOutOperation.externalCode) &&
@@ -1671,7 +2424,6 @@ public class CashOutOperation {
         Objects.equals(this.deleted, cashOutOperation.deleted) &&
         Objects.equals(this.updated, cashOutOperation.updated) &&
         Objects.equals(this.moment, cashOutOperation.moment) &&
-        Objects.equals(this.deliveryPlannedMoment, cashOutOperation.deliveryPlannedMoment) &&
         Objects.equals(this.applicable, cashOutOperation.applicable) &&
         Objects.equals(this.printed, cashOutOperation.printed) &&
         Objects.equals(this.published, cashOutOperation.published) &&
@@ -1681,9 +2433,6 @@ public class CashOutOperation {
         Objects.equals(this.vatSum, cashOutOperation.vatSum) &&
         Objects.equals(this.sum, cashOutOperation.sum) &&
         Objects.equals(this.payedSum, cashOutOperation.payedSum) &&
-        Objects.equals(this.shippedSum, cashOutOperation.shippedSum) &&
-        Objects.equals(this.invoicedSum, cashOutOperation.invoicedSum) &&
-        Objects.equals(this.waitSum, cashOutOperation.waitSum) &&
         Objects.equals(this.organization, cashOutOperation.organization) &&
         equalsNullable(this.organizationAccount, cashOutOperation.organizationAccount) &&
         Objects.equals(this.agent, cashOutOperation.agent) &&
@@ -1698,12 +2447,33 @@ public class CashOutOperation {
         equalsNullable(this.files, cashOutOperation.files) &&
         Objects.equals(this.rate, cashOutOperation.rate) &&
         Objects.equals(this.positions, cashOutOperation.positions) &&
+        equalsNullable(this.salesChannel, cashOutOperation.salesChannel) &&
+        equalsNullable(this.demand, cashOutOperation.demand) &&
+        equalsNullable(this.losses, cashOutOperation.losses) &&
+        equalsNullable(this.payments, cashOutOperation.payments) &&
+        equalsNullable(this.factureOut, cashOutOperation.factureOut) &&
+        Objects.equals(this.linkedSum, cashOutOperation.linkedSum) &&
+        equalsNullable(this.incomingDate, cashOutOperation.incomingDate) &&
+        equalsNullable(this.incomingNumber, cashOutOperation.incomingNumber) &&
+        equalsNullable(this.overhead, cashOutOperation.overhead) &&
+        equalsNullable(this.purchaseOrder, cashOutOperation.purchaseOrder) &&
+        equalsNullable(this.factureIn, cashOutOperation.factureIn) &&
+        equalsNullable(this.invoicesIn, cashOutOperation.invoicesIn) &&
+        equalsNullable(this.productionTask, cashOutOperation.productionTask) &&
+        equalsNullable(this.returns, cashOutOperation.returns) &&
+        Objects.equals(this.deliveryPlannedMoment, cashOutOperation.deliveryPlannedMoment) &&
+        Objects.equals(this.shippedSum, cashOutOperation.shippedSum) &&
+        Objects.equals(this.invoicedSum, cashOutOperation.invoicedSum) &&
+        Objects.equals(this.waitSum, cashOutOperation.waitSum) &&
         equalsNullable(this.internalOrder, cashOutOperation.internalOrder) &&
         equalsNullable(this.customerOrders, cashOutOperation.customerOrders) &&
-        equalsNullable(this.invoicesIn, cashOutOperation.invoicesIn) &&
         equalsNullable(this.supplies, cashOutOperation.supplies) &&
-        equalsNullable(this.payments, cashOutOperation.payments) &&
-        equalsNullable(this.productionTasks, cashOutOperation.productionTasks);
+        equalsNullable(this.productionTasks, cashOutOperation.productionTasks) &&
+        Objects.equals(this.commissionPeriodEnd, cashOutOperation.commissionPeriodEnd) &&
+        Objects.equals(this.commissionPeriodStart, cashOutOperation.commissionPeriodStart) &&
+        Objects.equals(this.commitentSum, cashOutOperation.commitentSum) &&
+        Objects.equals(this.rewardPercent, cashOutOperation.rewardPercent) &&
+        Objects.equals(this.rewardType, cashOutOperation.rewardType);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -1712,7 +2482,7 @@ public class CashOutOperation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, linkedSum, name, code, externalCode, syncId, hashCodeNullable(description), created, deleted, updated, moment, deliveryPlannedMoment, applicable, printed, published, shared, vatEnabled, vatIncluded, vatSum, sum, payedSum, shippedSum, invoicedSum, waitSum, organization, hashCodeNullable(organizationAccount), agent, hashCodeNullable(agentAccount), hashCodeNullable(store), hashCodeNullable(state), hashCodeNullable(contract), hashCodeNullable(project), hashCodeNullable(owner), group, hashCodeNullable(attributes), hashCodeNullable(files), rate, positions, hashCodeNullable(internalOrder), hashCodeNullable(customerOrders), hashCodeNullable(invoicesIn), hashCodeNullable(supplies), hashCodeNullable(payments), hashCodeNullable(productionTasks));
+    return Objects.hash(meta, id, accountId, name, code, externalCode, syncId, hashCodeNullable(description), created, deleted, updated, moment, applicable, printed, published, shared, vatEnabled, vatIncluded, vatSum, sum, payedSum, organization, hashCodeNullable(organizationAccount), agent, hashCodeNullable(agentAccount), hashCodeNullable(store), hashCodeNullable(state), hashCodeNullable(contract), hashCodeNullable(project), hashCodeNullable(owner), group, hashCodeNullable(attributes), hashCodeNullable(files), rate, positions, hashCodeNullable(salesChannel), hashCodeNullable(demand), hashCodeNullable(losses), hashCodeNullable(payments), hashCodeNullable(factureOut), linkedSum, hashCodeNullable(incomingDate), hashCodeNullable(incomingNumber), hashCodeNullable(overhead), hashCodeNullable(purchaseOrder), hashCodeNullable(factureIn), hashCodeNullable(invoicesIn), hashCodeNullable(productionTask), hashCodeNullable(returns), deliveryPlannedMoment, shippedSum, invoicedSum, waitSum, hashCodeNullable(internalOrder), hashCodeNullable(customerOrders), hashCodeNullable(supplies), hashCodeNullable(productionTasks), commissionPeriodEnd, commissionPeriodStart, commitentSum, rewardPercent, rewardType);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1729,7 +2499,6 @@ public class CashOutOperation {
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
-    sb.append("    linkedSum: ").append(toIndentedString(linkedSum)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    externalCode: ").append(toIndentedString(externalCode)).append("\n");
@@ -1739,7 +2508,6 @@ public class CashOutOperation {
     sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
     sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("    moment: ").append(toIndentedString(moment)).append("\n");
-    sb.append("    deliveryPlannedMoment: ").append(toIndentedString(deliveryPlannedMoment)).append("\n");
     sb.append("    applicable: ").append(toIndentedString(applicable)).append("\n");
     sb.append("    printed: ").append(toIndentedString(printed)).append("\n");
     sb.append("    published: ").append(toIndentedString(published)).append("\n");
@@ -1749,9 +2517,6 @@ public class CashOutOperation {
     sb.append("    vatSum: ").append(toIndentedString(vatSum)).append("\n");
     sb.append("    sum: ").append(toIndentedString(sum)).append("\n");
     sb.append("    payedSum: ").append(toIndentedString(payedSum)).append("\n");
-    sb.append("    shippedSum: ").append(toIndentedString(shippedSum)).append("\n");
-    sb.append("    invoicedSum: ").append(toIndentedString(invoicedSum)).append("\n");
-    sb.append("    waitSum: ").append(toIndentedString(waitSum)).append("\n");
     sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
     sb.append("    organizationAccount: ").append(toIndentedString(organizationAccount)).append("\n");
     sb.append("    agent: ").append(toIndentedString(agent)).append("\n");
@@ -1766,12 +2531,33 @@ public class CashOutOperation {
     sb.append("    files: ").append(toIndentedString(files)).append("\n");
     sb.append("    rate: ").append(toIndentedString(rate)).append("\n");
     sb.append("    positions: ").append(toIndentedString(positions)).append("\n");
+    sb.append("    salesChannel: ").append(toIndentedString(salesChannel)).append("\n");
+    sb.append("    demand: ").append(toIndentedString(demand)).append("\n");
+    sb.append("    losses: ").append(toIndentedString(losses)).append("\n");
+    sb.append("    payments: ").append(toIndentedString(payments)).append("\n");
+    sb.append("    factureOut: ").append(toIndentedString(factureOut)).append("\n");
+    sb.append("    linkedSum: ").append(toIndentedString(linkedSum)).append("\n");
+    sb.append("    incomingDate: ").append(toIndentedString(incomingDate)).append("\n");
+    sb.append("    incomingNumber: ").append(toIndentedString(incomingNumber)).append("\n");
+    sb.append("    overhead: ").append(toIndentedString(overhead)).append("\n");
+    sb.append("    purchaseOrder: ").append(toIndentedString(purchaseOrder)).append("\n");
+    sb.append("    factureIn: ").append(toIndentedString(factureIn)).append("\n");
+    sb.append("    invoicesIn: ").append(toIndentedString(invoicesIn)).append("\n");
+    sb.append("    productionTask: ").append(toIndentedString(productionTask)).append("\n");
+    sb.append("    returns: ").append(toIndentedString(returns)).append("\n");
+    sb.append("    deliveryPlannedMoment: ").append(toIndentedString(deliveryPlannedMoment)).append("\n");
+    sb.append("    shippedSum: ").append(toIndentedString(shippedSum)).append("\n");
+    sb.append("    invoicedSum: ").append(toIndentedString(invoicedSum)).append("\n");
+    sb.append("    waitSum: ").append(toIndentedString(waitSum)).append("\n");
     sb.append("    internalOrder: ").append(toIndentedString(internalOrder)).append("\n");
     sb.append("    customerOrders: ").append(toIndentedString(customerOrders)).append("\n");
-    sb.append("    invoicesIn: ").append(toIndentedString(invoicesIn)).append("\n");
     sb.append("    supplies: ").append(toIndentedString(supplies)).append("\n");
-    sb.append("    payments: ").append(toIndentedString(payments)).append("\n");
     sb.append("    productionTasks: ").append(toIndentedString(productionTasks)).append("\n");
+    sb.append("    commissionPeriodEnd: ").append(toIndentedString(commissionPeriodEnd)).append("\n");
+    sb.append("    commissionPeriodStart: ").append(toIndentedString(commissionPeriodStart)).append("\n");
+    sb.append("    commitentSum: ").append(toIndentedString(commitentSum)).append("\n");
+    sb.append("    rewardPercent: ").append(toIndentedString(rewardPercent)).append("\n");
+    sb.append("    rewardType: ").append(toIndentedString(rewardType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -1838,16 +2624,6 @@ public class CashOutOperation {
     if (getAccountId() != null) {
       try {
         joiner.add(String.format(java.util.Locale.ROOT, "%saccountId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAccountId()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
-    }
-
-    // add `linkedSum` to the URL query string
-    if (getLinkedSum() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%slinkedSum%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLinkedSum()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -1944,16 +2720,6 @@ public class CashOutOperation {
       }
     }
 
-    // add `deliveryPlannedMoment` to the URL query string
-    if (getDeliveryPlannedMoment() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%sdeliveryPlannedMoment%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDeliveryPlannedMoment()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
-    }
-
     // add `applicable` to the URL query string
     if (getApplicable() != null) {
       try {
@@ -2044,36 +2810,6 @@ public class CashOutOperation {
       }
     }
 
-    // add `shippedSum` to the URL query string
-    if (getShippedSum() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%sshippedSum%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getShippedSum()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
-    }
-
-    // add `invoicedSum` to the URL query string
-    if (getInvoicedSum() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%sinvoicedSum%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getInvoicedSum()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
-    }
-
-    // add `waitSum` to the URL query string
-    if (getWaitSum() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%swaitSum%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getWaitSum()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
-    }
-
     // add `organization` to the URL query string
     if (getOrganization() != null) {
       joiner.add(getOrganization().toUrlQueryString(prefix + "organization" + suffix));
@@ -2154,36 +2890,21 @@ public class CashOutOperation {
       }
     }
 
-    // add `internalOrder` to the URL query string
-    if (getInternalOrder() != null) {
-      joiner.add(getInternalOrder().toUrlQueryString(prefix + "internalOrder" + suffix));
+    // add `salesChannel` to the URL query string
+    if (getSalesChannel() != null) {
+      joiner.add(getSalesChannel().toUrlQueryString(prefix + "salesChannel" + suffix));
     }
 
-    // add `customerOrders` to the URL query string
-    if (getCustomerOrders() != null) {
-      for (int i = 0; i < getCustomerOrders().size(); i++) {
-        if (getCustomerOrders().get(i) != null) {
-          joiner.add(getCustomerOrders().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%scustomerOrders%s%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
-        }
-      }
+    // add `demand` to the URL query string
+    if (getDemand() != null) {
+      joiner.add(getDemand().toUrlQueryString(prefix + "demand" + suffix));
     }
 
-    // add `invoicesIn` to the URL query string
-    if (getInvoicesIn() != null) {
-      for (int i = 0; i < getInvoicesIn().size(); i++) {
-        if (getInvoicesIn().get(i) != null) {
-          joiner.add(getInvoicesIn().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%sinvoicesIn%s%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
-        }
-      }
-    }
-
-    // add `supplies` to the URL query string
-    if (getSupplies() != null) {
-      for (int i = 0; i < getSupplies().size(); i++) {
-        if (getSupplies().get(i) != null) {
-          joiner.add(getSupplies().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%ssupplies%s%s", prefix, suffix,
+    // add `losses` to the URL query string
+    if (getLosses() != null) {
+      for (int i = 0; i < getLosses().size(); i++) {
+        if (getLosses().get(i) != null) {
+          joiner.add(getLosses().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%slosses%s%s", prefix, suffix,
               "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
@@ -2199,6 +2920,146 @@ public class CashOutOperation {
       }
     }
 
+    // add `factureOut` to the URL query string
+    if (getFactureOut() != null) {
+      joiner.add(getFactureOut().toUrlQueryString(prefix + "factureOut" + suffix));
+    }
+
+    // add `linkedSum` to the URL query string
+    if (getLinkedSum() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%slinkedSum%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLinkedSum()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `incomingDate` to the URL query string
+    if (getIncomingDate() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sincomingDate%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getIncomingDate()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `incomingNumber` to the URL query string
+    if (getIncomingNumber() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sincomingNumber%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getIncomingNumber()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `overhead` to the URL query string
+    if (getOverhead() != null) {
+      joiner.add(getOverhead().toUrlQueryString(prefix + "overhead" + suffix));
+    }
+
+    // add `purchaseOrder` to the URL query string
+    if (getPurchaseOrder() != null) {
+      joiner.add(getPurchaseOrder().toUrlQueryString(prefix + "purchaseOrder" + suffix));
+    }
+
+    // add `factureIn` to the URL query string
+    if (getFactureIn() != null) {
+      joiner.add(getFactureIn().toUrlQueryString(prefix + "factureIn" + suffix));
+    }
+
+    // add `invoicesIn` to the URL query string
+    if (getInvoicesIn() != null) {
+      for (int i = 0; i < getInvoicesIn().size(); i++) {
+        if (getInvoicesIn().get(i) != null) {
+          joiner.add(getInvoicesIn().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%sinvoicesIn%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    // add `productionTask` to the URL query string
+    if (getProductionTask() != null) {
+      joiner.add(getProductionTask().toUrlQueryString(prefix + "productionTask" + suffix));
+    }
+
+    // add `returns` to the URL query string
+    if (getReturns() != null) {
+      for (int i = 0; i < getReturns().size(); i++) {
+        if (getReturns().get(i) != null) {
+          joiner.add(getReturns().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%sreturns%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    // add `deliveryPlannedMoment` to the URL query string
+    if (getDeliveryPlannedMoment() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sdeliveryPlannedMoment%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDeliveryPlannedMoment()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `shippedSum` to the URL query string
+    if (getShippedSum() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sshippedSum%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getShippedSum()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `invoicedSum` to the URL query string
+    if (getInvoicedSum() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sinvoicedSum%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getInvoicedSum()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `waitSum` to the URL query string
+    if (getWaitSum() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%swaitSum%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getWaitSum()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `internalOrder` to the URL query string
+    if (getInternalOrder() != null) {
+      joiner.add(getInternalOrder().toUrlQueryString(prefix + "internalOrder" + suffix));
+    }
+
+    // add `customerOrders` to the URL query string
+    if (getCustomerOrders() != null) {
+      for (int i = 0; i < getCustomerOrders().size(); i++) {
+        if (getCustomerOrders().get(i) != null) {
+          joiner.add(getCustomerOrders().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%scustomerOrders%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    // add `supplies` to the URL query string
+    if (getSupplies() != null) {
+      for (int i = 0; i < getSupplies().size(); i++) {
+        if (getSupplies().get(i) != null) {
+          joiner.add(getSupplies().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%ssupplies%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
     // add `productionTasks` to the URL query string
     if (getProductionTasks() != null) {
       for (int i = 0; i < getProductionTasks().size(); i++) {
@@ -2206,6 +3067,56 @@ public class CashOutOperation {
           joiner.add(getProductionTasks().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%sproductionTasks%s%s", prefix, suffix,
               "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
+      }
+    }
+
+    // add `commissionPeriodEnd` to the URL query string
+    if (getCommissionPeriodEnd() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%scommissionPeriodEnd%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCommissionPeriodEnd()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `commissionPeriodStart` to the URL query string
+    if (getCommissionPeriodStart() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%scommissionPeriodStart%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCommissionPeriodStart()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `commitentSum` to the URL query string
+    if (getCommitentSum() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%scommitentSum%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCommitentSum()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `rewardPercent` to the URL query string
+    if (getRewardPercent() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%srewardPercent%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getRewardPercent()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `rewardType` to the URL query string
+    if (getRewardType() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%srewardType%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getRewardType()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
       }
     }
 

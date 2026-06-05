@@ -71,7 +71,7 @@ import java.util.StringJoiner;
   Employee.JSON_PROPERTY_IMAGE,
   Employee.JSON_PROPERTY_ATTRIBUTES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Employee {
   public static Employee createWithMeta(UUID id) {
     Employee o = new Employee();
@@ -227,6 +227,7 @@ public class Employee {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -247,6 +248,7 @@ public class Employee {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID сотрудника
@@ -302,6 +304,7 @@ public class Employee {
     return this;
   }
 
+
   /**
    * Внешний код сотрудника
    * @return externalCode
@@ -323,11 +326,13 @@ public class Employee {
     this.externalCode = externalCode;
   }
 
+
   public Employee archived(@javax.annotation.Nullable Boolean archived) {
     
     this.archived = archived;
     return this;
   }
+
 
   /**
    * Добавлен ли сотрудник в архив
@@ -349,6 +354,7 @@ public class Employee {
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
     this.archived = archived;
   }
+
 
   /**
    * Момент создания
@@ -388,6 +394,7 @@ public class Employee {
     return this;
   }
 
+
   /**
    * Комментарий к сотруднику
    * @return description
@@ -409,11 +416,13 @@ public class Employee {
     this.description = description;
   }
 
+
   public Employee email(@javax.annotation.Nullable String email) {
     
     this.email = email;
     return this;
   }
+
 
   /**
    * Адрес электронной почты
@@ -436,11 +445,13 @@ public class Employee {
     this.email = email;
   }
 
+
   public Employee phone(@javax.annotation.Nullable String phone) {
     
     this.phone = phone;
     return this;
   }
+
 
   /**
    * Номер телефона
@@ -463,11 +474,13 @@ public class Employee {
     this.phone = phone;
   }
 
+
   public Employee firstName(@javax.annotation.Nullable String firstName) {
     
     this.firstName = firstName;
     return this;
   }
+
 
   /**
    * Имя
@@ -490,11 +503,13 @@ public class Employee {
     this.firstName = firstName;
   }
 
+
   public Employee middleName(@javax.annotation.Nullable String middleName) {
     
     this.middleName = middleName;
     return this;
   }
+
 
   /**
    * Отчество
@@ -517,11 +532,13 @@ public class Employee {
     this.middleName = middleName;
   }
 
+
   public Employee lastName(@javax.annotation.Nullable String lastName) {
     
     this.lastName = lastName;
     return this;
   }
+
 
   /**
    * Фамилия
@@ -543,6 +560,7 @@ public class Employee {
   public void setLastName(@javax.annotation.Nullable String lastName) {
     this.lastName = lastName;
   }
+
 
   /**
    * Полное имя сотрудника
@@ -582,6 +600,7 @@ public class Employee {
     return this;
   }
 
+
   /**
    * Общий доступ
    * @return shared
@@ -603,11 +622,13 @@ public class Employee {
     this.shared = shared;
   }
 
+
   public Employee group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -630,11 +651,13 @@ public class Employee {
     this.group = group;
   }
 
+
   public Employee owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Метаданные владельца (Сотрудника)
@@ -666,11 +689,13 @@ public class Employee {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public Employee inn(@javax.annotation.Nullable String inn) {
     
     this.inn = inn;
     return this;
   }
+
 
   /**
    * ИНН сотрудника (в формате ИНН физического лица)
@@ -693,11 +718,13 @@ public class Employee {
     this.inn = inn;
   }
 
+
   public Employee position(@javax.annotation.Nullable String position) {
     
     this.position = position;
     return this;
   }
+
 
   /**
    * Должность сотрудника
@@ -719,6 +746,7 @@ public class Employee {
   public void setPosition(@javax.annotation.Nullable String position) {
     this.position = position;
   }
+
 
   /**
    * Логин сотрудника
@@ -742,6 +770,7 @@ public class Employee {
     return this;
   }
 
+
   /**
    * Get salary
    * @return salary
@@ -762,6 +791,7 @@ public class Employee {
   public void setSalary(@javax.annotation.Nullable EmployeeSalary salary) {
     this.salary = salary;
   }
+
 
   /**
    * Массив кассиров
@@ -784,6 +814,7 @@ public class Employee {
     
     return this;
   }
+
 
   /**
    * Фотография сотрудника
@@ -815,11 +846,13 @@ public class Employee {
     this.image = JsonNullable.<Image>of(image);
   }
 
+
   public Employee attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public Employee addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -862,6 +895,7 @@ public class Employee {
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
+
 
   @Override
   public boolean equals(Object o) {

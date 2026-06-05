@@ -70,7 +70,7 @@ import java.util.StringJoiner;
   CreateStoresBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createStoresBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateStoresBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -178,6 +178,7 @@ public class CreateStoresBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -198,6 +199,7 @@ public class CreateStoresBatch200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Склада
@@ -237,6 +239,7 @@ public class CreateStoresBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Владелец (Сотрудник)
    * @return owner
@@ -267,11 +270,13 @@ public class CreateStoresBatch200ResponseInner {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public CreateStoresBatch200ResponseInner shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -294,11 +299,13 @@ public class CreateStoresBatch200ResponseInner {
     this.shared = shared;
   }
 
+
   public CreateStoresBatch200ResponseInner group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -320,6 +327,7 @@ public class CreateStoresBatch200ResponseInner {
   public void setGroup(@javax.annotation.Nullable Group group) {
     this.group = group;
   }
+
 
   /**
    * Момент последнего обновления
@@ -343,6 +351,7 @@ public class CreateStoresBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Наименование Склада
    * @return name
@@ -364,11 +373,13 @@ public class CreateStoresBatch200ResponseInner {
     this.name = name;
   }
 
+
   public CreateStoresBatch200ResponseInner description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Комментарий к Складу
@@ -400,11 +411,13 @@ public class CreateStoresBatch200ResponseInner {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public CreateStoresBatch200ResponseInner code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код Склада
@@ -427,11 +440,13 @@ public class CreateStoresBatch200ResponseInner {
     this.code = code;
   }
 
+
   public CreateStoresBatch200ResponseInner externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Склада
@@ -454,11 +469,13 @@ public class CreateStoresBatch200ResponseInner {
     this.externalCode = externalCode;
   }
 
+
   public CreateStoresBatch200ResponseInner archived(@javax.annotation.Nullable Boolean archived) {
     
     this.archived = archived;
     return this;
   }
+
 
   /**
    * Добавлен ли в архив
@@ -481,11 +498,13 @@ public class CreateStoresBatch200ResponseInner {
     this.archived = archived;
   }
 
+
   public CreateStoresBatch200ResponseInner address(@javax.annotation.Nullable String address) {
     
     this.address = address;
     return this;
   }
+
 
   /**
    * Адрес склада
@@ -508,11 +527,13 @@ public class CreateStoresBatch200ResponseInner {
     this.address = address;
   }
 
+
   public CreateStoresBatch200ResponseInner addressFull(@javax.annotation.Nullable Address addressFull) {
     this.addressFull = JsonNullable.<Address>of(addressFull);
     
     return this;
   }
+
 
   /**
    * Адрес с детализацией
@@ -544,6 +565,7 @@ public class CreateStoresBatch200ResponseInner {
     this.addressFull = JsonNullable.<Address>of(addressFull);
   }
 
+
   /**
    * Группа Склада
    * @return pathName
@@ -565,6 +587,7 @@ public class CreateStoresBatch200ResponseInner {
     
     return this;
   }
+
 
   /**
    * Метаданные родительского склада (Группы)
@@ -596,11 +619,13 @@ public class CreateStoresBatch200ResponseInner {
     this.parent = JsonNullable.<Store>of(parent);
   }
 
+
   public CreateStoresBatch200ResponseInner attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public CreateStoresBatch200ResponseInner addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -644,11 +669,13 @@ public class CreateStoresBatch200ResponseInner {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   public CreateStoresBatch200ResponseInner zones(@javax.annotation.Nullable StoreZoneList zones) {
     this.zones = JsonNullable.<StoreZoneList>of(zones);
     
     return this;
   }
+
 
   /**
    * Зоны склада
@@ -680,11 +707,13 @@ public class CreateStoresBatch200ResponseInner {
     this.zones = JsonNullable.<StoreZoneList>of(zones);
   }
 
+
   public CreateStoresBatch200ResponseInner slots(@javax.annotation.Nullable StoreSlotList slots) {
     this.slots = JsonNullable.<StoreSlotList>of(slots);
     
     return this;
   }
+
 
   /**
    * Ячейки склада
@@ -716,11 +745,13 @@ public class CreateStoresBatch200ResponseInner {
     this.slots = JsonNullable.<StoreSlotList>of(slots);
   }
 
+
   public CreateStoresBatch200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
+
 
   public CreateStoresBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -750,6 +781,7 @@ public class CreateStoresBatch200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

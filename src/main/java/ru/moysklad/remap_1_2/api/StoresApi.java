@@ -44,7 +44,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class StoresApi extends BaseApi {
 
@@ -69,6 +69,25 @@ public class StoresApi extends BaseApi {
    */
   public Store createStore(@javax.annotation.Nonnull Store store, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createStore(store, accept, acceptEncoding, expand, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать Склад
+   * 
+   
+   * @param store  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Store
+   * @throws ApiException if fails to make API call
+   */
+  public Store createStore(@javax.annotation.Nonnull Store store, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createStore(store, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -424,6 +443,25 @@ if (acceptEncoding != null)
    */
   public List<CreateStoresBatch200ResponseInner> createStoresBatch(@javax.annotation.Nonnull List<Store> store, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createStoresBatch(store, accept, acceptEncoding, expand, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Массовое создание и обновление Складов
+   * 
+   
+   * @param store  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreateStoresBatch200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateStoresBatch200ResponseInner> createStoresBatch(@javax.annotation.Nonnull List<Store> store, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createStoresBatch(store, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1038,6 +1076,24 @@ if (contentType != null)
     return this.getStoreById(id, expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить Склад
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Store
+   * @throws ApiException if fails to make API call
+   */
+  public Store getStoreById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getStoreById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить Склад
@@ -1123,6 +1179,21 @@ if (acceptEncoding != null)
     return this.getStoreMetadata(expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Метаданные Складов
+   * 
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return StoreMetadata
+   * @throws ApiException if fails to make API call
+   */
+  public StoreMetadata getStoreMetadata(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getStoreMetadata((String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Метаданные Складов
@@ -1201,6 +1272,23 @@ if (acceptEncoding != null)
    */
   public AttributeMetaInfoList getStoreMetadataAttribute(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.getStoreMetadataAttribute(offset, limit, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Доп. поля Store
+   * 
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfoList
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfoList getStoreMetadataAttribute(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getStoreMetadataAttribute((Integer) effectiveOptions.get("offset"), (Integer) effectiveOptions.get("limit"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1722,6 +1810,26 @@ if (acceptEncoding != null)
     return this.getStores(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить Склады
+   * 
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return StoreList
+   * @throws ApiException if fails to make API call
+   */
+  public StoreList getStores(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getStores((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить Склады
@@ -1811,6 +1919,28 @@ if (acceptEncoding != null)
    */
   public Store updateStore(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Store store, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateStore(id, store, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Изменить Склад
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param store  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Store
+   * @throws ApiException if fails to make API call
+   */
+  public Store updateStore(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Store store, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateStore(id, store, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 

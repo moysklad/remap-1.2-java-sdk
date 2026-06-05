@@ -21,8 +21,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.UUID;
+import ru.moysklad.remap_1_2.model.Agent;
 import ru.moysklad.remap_1_2.model.Application;
-import ru.moysklad.remap_1_2.model.Counterparty;
 import ru.moysklad.remap_1_2.model.Employee;
 import ru.moysklad.remap_1_2.model.Meta;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -44,7 +44,7 @@ import java.util.StringJoiner;
   Note.JSON_PROPERTY_CREATED,
   Note.JSON_PROPERTY_DESCRIPTION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Note {
   public static Note createWithMeta(UUID parentId, UUID id) {
     Note o = new Note();
@@ -75,7 +75,7 @@ public class Note {
 
   public static final String JSON_PROPERTY_AGENT = "agent";
   @javax.annotation.Nullable
-  private Counterparty agent;
+  private Agent agent;
 
   public static final String JSON_PROPERTY_AUTHOR = "author";
   @javax.annotation.Nullable
@@ -102,11 +102,13 @@ public class Note {
   public Note(
     @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id, 
     @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId, 
+    @JsonProperty(value = JSON_PROPERTY_AGENT, required = false) Agent agent, 
     @JsonProperty(value = JSON_PROPERTY_CREATED, required = false) String created
   ) {
     this();
     this.id = id;
     this.accountId = accountId;
+    this.agent = agent;
     this.created = created;
   }
 
@@ -115,6 +117,7 @@ public class Note {
     this.meta = meta;
     return this;
   }
+
 
   /**
    * Get meta
@@ -136,6 +139,7 @@ public class Note {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID События
@@ -169,38 +173,28 @@ public class Note {
 
 
 
-  public Note agent(@javax.annotation.Nullable Counterparty agent) {
-    
-    this.agent = agent;
-    return this;
-  }
-
   /**
-   * Get agent
+   * Метаданные контрагента или юрлица
    * @return agent
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Counterparty getAgent() {
+  public Agent getAgent() {
     return agent;
   }
 
   
 
 
-  @JsonProperty(JSON_PROPERTY_AGENT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAgent(@javax.annotation.Nullable Counterparty agent) {
-    this.agent = agent;
-  }
 
   public Note author(@javax.annotation.Nullable Employee author) {
     
     this.author = author;
     return this;
   }
+
 
   /**
    * Get author
@@ -223,11 +217,13 @@ public class Note {
     this.author = author;
   }
 
+
   public Note authorApplication(@javax.annotation.Nullable Application authorApplication) {
     
     this.authorApplication = authorApplication;
     return this;
   }
+
 
   /**
    * Get authorApplication
@@ -249,6 +245,7 @@ public class Note {
   public void setAuthorApplication(@javax.annotation.Nullable Application authorApplication) {
     this.authorApplication = authorApplication;
   }
+
 
   /**
    * Время создания объекта
@@ -272,6 +269,7 @@ public class Note {
     return this;
   }
 
+
   /**
    * Текст события Контрагента
    * @return description
@@ -292,6 +290,7 @@ public class Note {
   public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
+
 
   @Override
   public boolean equals(Object o) {

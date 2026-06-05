@@ -42,7 +42,7 @@ import java.util.StringJoiner;
   ModelFile.JSON_PROPERTY_MINIATURE
 })
 @JsonTypeName("File")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class ModelFile {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -98,6 +98,7 @@ public class ModelFile {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -119,11 +120,13 @@ public class ModelFile {
     this.meta = meta;
   }
 
+
   public ModelFile title(@javax.annotation.Nullable String title) {
     
     this.title = title;
     return this;
   }
+
 
   /**
    * Название файла
@@ -146,11 +149,13 @@ public class ModelFile {
     this.title = title;
   }
 
+
   public ModelFile filename(@javax.annotation.Nullable String filename) {
     
     this.filename = filename;
     return this;
   }
+
 
   /**
    * Имя файла
@@ -172,6 +177,7 @@ public class ModelFile {
   public void setFilename(@javax.annotation.Nullable String filename) {
     this.filename = filename;
   }
+
 
   /**
    * Размер файла в байтах
@@ -211,6 +217,7 @@ public class ModelFile {
     return this;
   }
 
+
   /**
    * Get createdBy
    * @return createdBy
@@ -232,11 +239,13 @@ public class ModelFile {
     this.createdBy = createdBy;
   }
 
+
   public ModelFile tiny(@javax.annotation.Nullable Meta tiny) {
     
     this.tiny = tiny;
     return this;
   }
+
 
   /**
    * Get tiny
@@ -259,11 +268,13 @@ public class ModelFile {
     this.tiny = tiny;
   }
 
+
   public ModelFile miniature(@javax.annotation.Nullable Meta miniature) {
     
     this.miniature = miniature;
     return this;
   }
+
 
   /**
    * Get miniature
@@ -285,6 +296,7 @@ public class ModelFile {
   public void setMiniature(@javax.annotation.Nullable Meta miniature) {
     this.miniature = miniature;
   }
+
 
   @Override
   public boolean equals(Object o) {

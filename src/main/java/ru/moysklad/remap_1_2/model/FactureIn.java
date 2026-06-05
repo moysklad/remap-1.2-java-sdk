@@ -25,8 +25,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
+import ru.moysklad.remap_1_2.model.Agent;
 import ru.moysklad.remap_1_2.model.AttributeAbstract;
-import ru.moysklad.remap_1_2.model.Counterparty;
 import ru.moysklad.remap_1_2.model.CurrencyRate;
 import ru.moysklad.remap_1_2.model.Employee;
 import ru.moysklad.remap_1_2.model.FileList;
@@ -68,7 +68,7 @@ import java.util.StringJoiner;
   FactureIn.JSON_PROPERTY_SHARED,
   FactureIn.JSON_PROPERTY_STATE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class FactureIn {
   public static FactureIn createWithMeta(UUID id) {
     FactureIn o = new FactureIn();
@@ -99,7 +99,7 @@ public class FactureIn {
 
   public static final String JSON_PROPERTY_AGENT = "agent";
   @javax.annotation.Nullable
-  private Counterparty agent;
+  private Agent agent;
 
   public static final String JSON_PROPERTY_APPLICABLE = "applicable";
   @javax.annotation.Nullable
@@ -198,6 +198,7 @@ public class FactureIn {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -218,6 +219,7 @@ public class FactureIn {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Счета-фактуры полученного
@@ -251,21 +253,22 @@ public class FactureIn {
 
 
 
-  public FactureIn agent(@javax.annotation.Nullable Counterparty agent) {
+  public FactureIn agent(@javax.annotation.Nullable Agent agent) {
     
     this.agent = agent;
     return this;
   }
 
+
   /**
-   * Get agent
+   * Метаданные контрагента или юрлица
    * @return agent
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Counterparty getAgent() {
+  public Agent getAgent() {
     return agent;
   }
 
@@ -274,15 +277,17 @@ public class FactureIn {
 
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAgent(@javax.annotation.Nullable Counterparty agent) {
+  public void setAgent(@javax.annotation.Nullable Agent agent) {
     this.agent = agent;
   }
+
 
   public FactureIn applicable(@javax.annotation.Nullable Boolean applicable) {
     
     this.applicable = applicable;
     return this;
   }
+
 
   /**
    * Отметка о проведении
@@ -305,11 +310,13 @@ public class FactureIn {
     this.applicable = applicable;
   }
 
+
   public FactureIn attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public FactureIn addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -353,11 +360,13 @@ public class FactureIn {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   public FactureIn code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код Счета-фактуры полученного
@@ -379,6 +388,7 @@ public class FactureIn {
   public void setCode(@javax.annotation.Nullable String code) {
     this.code = code;
   }
+
 
   /**
    * Дата создания
@@ -418,6 +428,7 @@ public class FactureIn {
     return this;
   }
 
+
   /**
    * Комментарий Счета-фактуры полученного
    * @return description
@@ -448,11 +459,13 @@ public class FactureIn {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public FactureIn externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Счета-фактуры полученного
@@ -475,11 +488,13 @@ public class FactureIn {
     this.externalCode = externalCode;
   }
 
+
   public FactureIn files(@javax.annotation.Nullable FileList files) {
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
   }
+
 
   /**
    * Метаданные массива файлов
@@ -511,11 +526,13 @@ public class FactureIn {
     this.files = JsonNullable.<FileList>of(files);
   }
 
+
   public FactureIn group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -538,11 +555,13 @@ public class FactureIn {
     this.group = group;
   }
 
+
   public FactureIn moment(@javax.annotation.Nullable String moment) {
     
     this.moment = moment;
     return this;
   }
+
 
   /**
    * Дата документа
@@ -565,11 +584,13 @@ public class FactureIn {
     this.moment = moment;
   }
 
+
   public FactureIn name(@javax.annotation.Nullable String name) {
     
     this.name = name;
     return this;
   }
+
 
   /**
    * Наименование Счета-фактуры полученного
@@ -592,11 +613,13 @@ public class FactureIn {
     this.name = name;
   }
 
+
   public FactureIn owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Владелец (Сотрудник)
@@ -627,6 +650,7 @@ public class FactureIn {
   public void setOwner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
   }
+
 
   /**
    * Напечатан ли документ
@@ -666,6 +690,7 @@ public class FactureIn {
     return this;
   }
 
+
   /**
    * Get rate
    * @return rate
@@ -687,11 +712,13 @@ public class FactureIn {
     this.rate = rate;
   }
 
+
   public FactureIn shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -714,11 +741,13 @@ public class FactureIn {
     this.shared = shared;
   }
 
+
   public FactureIn state(@javax.annotation.Nullable State state) {
     this.state = JsonNullable.<State>of(state);
     
     return this;
   }
+
 
   /**
    * Метаданные статуса Счета-фактуры полученного
@@ -749,6 +778,7 @@ public class FactureIn {
   public void setState(@javax.annotation.Nullable State state) {
     this.state = JsonNullable.<State>of(state);
   }
+
 
   @Override
   public boolean equals(Object o) {

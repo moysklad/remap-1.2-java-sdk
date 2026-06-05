@@ -35,7 +35,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class WebhookStocksApi extends BaseApi {
 
@@ -60,6 +60,25 @@ public class WebhookStocksApi extends BaseApi {
    */
   public List<CreateOrUpdateWebhookStocksBatch200ResponseInner> createOrUpdateWebhookStocksBatch(@javax.annotation.Nonnull List<WebhookStock> webhookStock, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createOrUpdateWebhookStocksBatch(webhookStock, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Массово создать/обновить вебхуки на изменение остатков
+   * Массовое создание и обновление (массив в теле). Сочетание stockType, reportType, url должно быть уникальным. Обновляемые записи должны содержать идентификатор в виде метаданных. 
+   
+   * @param webhookStock  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreateOrUpdateWebhookStocksBatch200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateOrUpdateWebhookStocksBatch200ResponseInner> createOrUpdateWebhookStocksBatch(@javax.annotation.Nonnull List<WebhookStock> webhookStock, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createOrUpdateWebhookStocksBatch(webhookStock, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -149,6 +168,25 @@ if (contentType != null)
    */
   public WebhookStock createWebhookStock(@javax.annotation.Nonnull WebhookStock webhookStock, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createWebhookStock(webhookStock, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать вебхук на изменение остатков
+   * Создание одного вебхука (объект в теле). Сочетание stockType, reportType, url должно быть уникальным. 
+   
+   * @param webhookStock  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return WebhookStock
+   * @throws ApiException if fails to make API call
+   */
+  public WebhookStock createWebhookStock(@javax.annotation.Nonnull WebhookStock webhookStock, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createWebhookStock(webhookStock, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -405,6 +443,24 @@ if (contentType != null)
     return this.getWebhookStockById(id, expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить вебхук на изменение остатков по ID
+   * Запрос на получение отдельного вебхука на изменение остатков с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return WebhookStock
+   * @throws ApiException if fails to make API call
+   */
+  public WebhookStock getWebhookStockById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getWebhookStockById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить вебхук на изменение остатков по ID
@@ -493,6 +549,26 @@ if (acceptEncoding != null)
    */
   public WebhookStockList getWebhookStocks(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
     return this.getWebhookStocks(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  }
+
+  /**
+   * Получить список вебхуков на изменение остатков
+   * Запрос на получение всех вебхуков на изменение остатков на данной учетной записи
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return WebhookStockList
+   * @throws ApiException if fails to make API call
+   */
+  public WebhookStockList getWebhookStocks(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getWebhookStocks((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -584,6 +660,28 @@ if (acceptEncoding != null)
    */
   public WebhookStock updateWebhookStock(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull WebhookStock webhookStock, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateWebhookStock(id, webhookStock, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Изменить вебхук на изменение остатков
+   * Изменение сведений о вебхуке (включая отключение через enabled)
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param webhookStock  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return WebhookStock
+   * @throws ApiException if fails to make API call
+   */
+  public WebhookStock updateWebhookStock(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull WebhookStock webhookStock, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateWebhookStock(id, webhookStock, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 

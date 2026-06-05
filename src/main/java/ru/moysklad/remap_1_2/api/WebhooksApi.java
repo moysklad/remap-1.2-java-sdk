@@ -35,7 +35,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class WebhooksApi extends BaseApi {
 
@@ -60,6 +60,25 @@ public class WebhooksApi extends BaseApi {
    */
   public List<CreateOrUpdateWebhooksBatch200ResponseInner> createOrUpdateWebhooksBatch(@javax.annotation.Nonnull List<Webhook> webhook, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createOrUpdateWebhooksBatch(webhook, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Массовое создание и обновление вебхуков
+   * Массовое создание и обновление вебхуков. Обновляемые вебхуки должны содержать идентификатор в виде метаданных. 
+   
+   * @param webhook  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreateOrUpdateWebhooksBatch200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateOrUpdateWebhooksBatch200ResponseInner> createOrUpdateWebhooksBatch(@javax.annotation.Nonnull List<Webhook> webhook, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createOrUpdateWebhooksBatch(webhook, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -149,6 +168,25 @@ if (contentType != null)
    */
   public Webhook createWebhook(@javax.annotation.Nonnull Webhook webhook, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createWebhook(webhook, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать вебхук
+   * Создание вебхука. Сочетание entityType, action, url должно быть уникальным. 
+   
+   * @param webhook  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Webhook
+   * @throws ApiException if fails to make API call
+   */
+  public Webhook createWebhook(@javax.annotation.Nonnull Webhook webhook, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createWebhook(webhook, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -405,6 +443,24 @@ if (contentType != null)
     return this.getWebhookById(id, expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить вебхук по ID
+   * Запрос на получение отдельного вебхука с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Webhook
+   * @throws ApiException if fails to make API call
+   */
+  public Webhook getWebhookById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getWebhookById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить вебхук по ID
@@ -493,6 +549,26 @@ if (acceptEncoding != null)
    */
   public WebhookList getWebhooks(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
     return this.getWebhooks(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  }
+
+  /**
+   * Получить список вебхуков
+   * Запрос на получение всех вебхуков на данной учетной записи
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return WebhookList
+   * @throws ApiException if fails to make API call
+   */
+  public WebhookList getWebhooks(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getWebhooks((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -584,6 +660,28 @@ if (acceptEncoding != null)
    */
   public Webhook updateWebhook(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Webhook webhook, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateWebhook(id, webhook, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Изменить вебхук
+   * Изменение сведений о вебхуке (включая отключение через enabled)
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param webhook  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Webhook
+   * @throws ApiException if fails to make API call
+   */
+  public Webhook updateWebhook(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Webhook webhook, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateWebhook(id, webhook, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 

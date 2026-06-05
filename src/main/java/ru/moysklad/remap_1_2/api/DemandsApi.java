@@ -43,7 +43,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class DemandsApi extends BaseApi {
 
@@ -68,6 +68,25 @@ public class DemandsApi extends BaseApi {
    */
   public Demand createDemand(@javax.annotation.Nonnull Demand demand, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createDemand(demand, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать Отгрузку
+   * 
+   
+   * @param demand  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Demand
+   * @throws ApiException if fails to make API call
+   */
+  public Demand createDemand(@javax.annotation.Nonnull Demand demand, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createDemand(demand, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -157,6 +176,25 @@ if (contentType != null)
    */
   public List<CreateDemandBatch200ResponseInner> createDemandBatch(@javax.annotation.Nonnull List<Demand> demand, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createDemandBatch(demand, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Массовое создание и обновление Отгрузок
+   * 
+   
+   * @param demand  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreateDemandBatch200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateDemandBatch200ResponseInner> createDemandBatch(@javax.annotation.Nonnull List<Demand> demand, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createDemandBatch(demand, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -333,6 +371,28 @@ if (contentType != null)
    */
   public List<CreateDemandPositions200ResponseInner> createDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CreateDemandPositionsRequest createDemandPositionsRequest, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createDemandPositions(id, createDemandPositionsRequest, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать позиции Отгрузки
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param createDemandPositionsRequest  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreateDemandPositions200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateDemandPositions200ResponseInner> createDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CreateDemandPositionsRequest createDemandPositionsRequest, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createDemandPositions(id, createDemandPositionsRequest, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -769,6 +829,27 @@ if (contentType != null)
     this.deleteDemandPosition(id, positionId, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
+  /**
+   * Удалить позицию Отгрузки
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param positionId ID позиции (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteDemandPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteDemandPosition(id, positionId, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Удалить позицию Отгрузки
@@ -958,6 +1039,25 @@ if (contentType != null)
     return this.getDemandById(id, expand, fields, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить Отгрузку
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Demand
+   * @throws ApiException if fails to make API call
+   */
+  public Demand getDemandById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getDemandById(id, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить Отгрузку
@@ -1048,6 +1148,26 @@ if (acceptEncoding != null)
    */
   public DemandList getDemandList(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.getDemandList(limit, offset, search, expand, fields, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Получить список Отгрузок
+   * 
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return DemandList
+   * @throws ApiException if fails to make API call
+   */
+  public DemandList getDemandList(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getDemandList((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1218,6 +1338,23 @@ if (contentType != null)
    */
   public AttributeMetaInfoList getDemandMetadataAttribute(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.getDemandMetadataAttribute(offset, limit, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Доп. поля Отгрузки
+   * 
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfoList
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfoList getDemandMetadataAttribute(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getDemandMetadataAttribute((Integer) effectiveOptions.get("offset"), (Integer) effectiveOptions.get("limit"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1481,6 +1618,29 @@ if (contentType != null)
     return this.getDemandPositionById(id, positionId, expand, fields, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
+  /**
+   * Получить позицию Отгрузки
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param positionId ID позиции (required)
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return DemandPosition
+   * @throws ApiException if fails to make API call
+   */
+  public DemandPosition getDemandPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getDemandPositionById(id, positionId, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить позицию Отгрузки
@@ -1581,6 +1741,28 @@ if (contentType != null)
    */
   public DemandPositionList getDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.getDemandPositions(id, limit, offset, expand, fields, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Получить позиции Отгрузки
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return DemandPositionList
+   * @throws ApiException if fails to make API call
+   */
+  public DemandPositionList getDemandPositions(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getDemandPositions(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1760,6 +1942,29 @@ if (contentType != null)
    */
   public Demand updateDemand(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Demand demand, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateDemand(id, demand, expand, fields, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Изменить Отгрузку
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param demand  (required)
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Demand
+   * @throws ApiException if fails to make API call
+   */
+  public Demand updateDemand(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Demand demand, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateDemand(id, demand, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -2049,6 +2254,32 @@ if (contentType != null)
    */
   public DemandPosition updateDemandPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull DemandPosition demandPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateDemandPosition(id, positionId, demandPosition, expand, fields, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Изменить позицию Отгрузки
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param positionId ID позиции (required)
+   
+   
+   * @param demandPosition  (required)
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return DemandPosition
+   * @throws ApiException if fails to make API call
+   */
+  public DemandPosition updateDemandPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull DemandPosition demandPosition, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateDemandPosition(id, positionId, demandPosition, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 

@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   VariantPack.JSON_PROPERTY_BARCODES,
   VariantPack.JSON_PROPERTY_PARENTPACK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class VariantPack {
 
   public static final String JSON_PROPERTY_ID = "id";
@@ -90,6 +90,7 @@ public class VariantPack {
     return this;
   }
 
+
   public VariantPack addBarcodesItem(Barcode barcodesItem) {
     if (this.barcodes == null) {
       this.barcodes = new ArrayList<>();
@@ -119,11 +120,13 @@ public class VariantPack {
     this.barcodes = barcodes;
   }
 
+
   public VariantPack parentpack(@javax.annotation.Nullable Pack parentpack) {
     
     this.parentpack = parentpack;
     return this;
   }
+
 
   /**
    * Get parentpack
@@ -145,6 +148,7 @@ public class VariantPack {
   public void setParentpack(@javax.annotation.Nullable Pack parentpack) {
     this.parentpack = parentpack;
   }
+
 
   @Override
   public boolean equals(Object o) {

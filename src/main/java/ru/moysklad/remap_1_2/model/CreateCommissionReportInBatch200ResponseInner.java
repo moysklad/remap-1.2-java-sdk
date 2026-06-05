@@ -26,13 +26,13 @@ import java.util.List;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import ru.moysklad.remap_1_2.model.Account;
+import ru.moysklad.remap_1_2.model.Agent;
 import ru.moysklad.remap_1_2.model.AttributeAbstract;
 import ru.moysklad.remap_1_2.model.CommissionReportIn;
 import ru.moysklad.remap_1_2.model.CommissionReportInCommissionOverhead;
 import ru.moysklad.remap_1_2.model.CommissionReportInPositionList;
 import ru.moysklad.remap_1_2.model.CommissionReportInReturnedPositionList;
 import ru.moysklad.remap_1_2.model.Contract;
-import ru.moysklad.remap_1_2.model.Counterparty;
 import ru.moysklad.remap_1_2.model.CurrencyRate;
 import ru.moysklad.remap_1_2.model.CustomerOrderPaymentsInner;
 import ru.moysklad.remap_1_2.model.Employee;
@@ -104,7 +104,7 @@ import java.util.StringJoiner;
   CreateCommissionReportInBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createCommissionReportInBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateCommissionReportInBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -121,7 +121,7 @@ public class CreateCommissionReportInBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_AGENT = "agent";
   @javax.annotation.Nullable
-  private Counterparty agent;
+  private Agent agent;
 
   public static final String JSON_PROPERTY_AGENT_ACCOUNT = "agentAccount";
   @javax.annotation.Nullable
@@ -318,6 +318,7 @@ public class CreateCommissionReportInBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -338,6 +339,7 @@ public class CreateCommissionReportInBatch200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Полученного отчета комиссионера
@@ -371,21 +373,22 @@ public class CreateCommissionReportInBatch200ResponseInner {
 
 
 
-  public CreateCommissionReportInBatch200ResponseInner agent(@javax.annotation.Nullable Counterparty agent) {
+  public CreateCommissionReportInBatch200ResponseInner agent(@javax.annotation.Nullable Agent agent) {
     
     this.agent = agent;
     return this;
   }
 
+
   /**
-   * Get agent
+   * Метаданные контрагента или юрлица
    * @return agent
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Counterparty getAgent() {
+  public Agent getAgent() {
     return agent;
   }
 
@@ -394,15 +397,17 @@ public class CreateCommissionReportInBatch200ResponseInner {
 
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAgent(@javax.annotation.Nullable Counterparty agent) {
+  public void setAgent(@javax.annotation.Nullable Agent agent) {
     this.agent = agent;
   }
+
 
   public CreateCommissionReportInBatch200ResponseInner agentAccount(@javax.annotation.Nullable Account agentAccount) {
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
     
     return this;
   }
+
 
   /**
    * Метаданные счета контрагента
@@ -434,11 +439,13 @@ public class CreateCommissionReportInBatch200ResponseInner {
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
   }
 
+
   public CreateCommissionReportInBatch200ResponseInner applicable(@javax.annotation.Nullable Boolean applicable) {
     
     this.applicable = applicable;
     return this;
   }
+
 
   /**
    * Отметка о проведении
@@ -461,11 +468,13 @@ public class CreateCommissionReportInBatch200ResponseInner {
     this.applicable = applicable;
   }
 
+
   public CreateCommissionReportInBatch200ResponseInner attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public CreateCommissionReportInBatch200ResponseInner addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -509,11 +518,13 @@ public class CreateCommissionReportInBatch200ResponseInner {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   public CreateCommissionReportInBatch200ResponseInner code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код Полученного отчета комиссионера
@@ -536,11 +547,13 @@ public class CreateCommissionReportInBatch200ResponseInner {
     this.code = code;
   }
 
+
   public CreateCommissionReportInBatch200ResponseInner commissionOverhead(@javax.annotation.Nullable CommissionReportInCommissionOverhead commissionOverhead) {
     
     this.commissionOverhead = commissionOverhead;
     return this;
   }
+
 
   /**
    * Get commissionOverhead
@@ -563,11 +576,13 @@ public class CreateCommissionReportInBatch200ResponseInner {
     this.commissionOverhead = commissionOverhead;
   }
 
+
   public CreateCommissionReportInBatch200ResponseInner commissionPeriodEnd(@javax.annotation.Nullable String commissionPeriodEnd) {
     
     this.commissionPeriodEnd = commissionPeriodEnd;
     return this;
   }
+
 
   /**
    * Конец периода
@@ -590,11 +605,13 @@ public class CreateCommissionReportInBatch200ResponseInner {
     this.commissionPeriodEnd = commissionPeriodEnd;
   }
 
+
   public CreateCommissionReportInBatch200ResponseInner commissionPeriodStart(@javax.annotation.Nullable String commissionPeriodStart) {
     
     this.commissionPeriodStart = commissionPeriodStart;
     return this;
   }
+
 
   /**
    * Начало периода
@@ -617,6 +634,7 @@ public class CreateCommissionReportInBatch200ResponseInner {
     this.commissionPeriodStart = commissionPeriodStart;
   }
 
+
   /**
    * Сумма коммитента в установленной валюте
    * @return commitentSum
@@ -638,6 +656,7 @@ public class CreateCommissionReportInBatch200ResponseInner {
     
     return this;
   }
+
 
   /**
    * Метаданные договора
@@ -668,6 +687,7 @@ public class CreateCommissionReportInBatch200ResponseInner {
   public void setContract(@javax.annotation.Nullable Contract contract) {
     this.contract = JsonNullable.<Contract>of(contract);
   }
+
 
   /**
    * Дата создания
@@ -707,6 +727,7 @@ public class CreateCommissionReportInBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Комментарий Полученного отчета комиссионера
    * @return description
@@ -737,11 +758,13 @@ public class CreateCommissionReportInBatch200ResponseInner {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public CreateCommissionReportInBatch200ResponseInner externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Полученного отчета комиссионера
@@ -764,11 +787,13 @@ public class CreateCommissionReportInBatch200ResponseInner {
     this.externalCode = externalCode;
   }
 
+
   public CreateCommissionReportInBatch200ResponseInner files(@javax.annotation.Nullable FileList files) {
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
   }
+
 
   /**
    * Метаданные массива файлов
@@ -800,11 +825,13 @@ public class CreateCommissionReportInBatch200ResponseInner {
     this.files = JsonNullable.<FileList>of(files);
   }
 
+
   public CreateCommissionReportInBatch200ResponseInner group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -827,11 +854,13 @@ public class CreateCommissionReportInBatch200ResponseInner {
     this.group = group;
   }
 
+
   public CreateCommissionReportInBatch200ResponseInner moment(@javax.annotation.Nullable String moment) {
     
     this.moment = moment;
     return this;
   }
+
 
   /**
    * Дата документа
@@ -854,11 +883,13 @@ public class CreateCommissionReportInBatch200ResponseInner {
     this.moment = moment;
   }
 
+
   public CreateCommissionReportInBatch200ResponseInner name(@javax.annotation.Nullable String name) {
     
     this.name = name;
     return this;
   }
+
 
   /**
    * Наименование Полученного отчета комиссионера
@@ -881,11 +912,13 @@ public class CreateCommissionReportInBatch200ResponseInner {
     this.name = name;
   }
 
+
   public CreateCommissionReportInBatch200ResponseInner organization(@javax.annotation.Nullable Organization organization) {
     
     this.organization = organization;
     return this;
   }
+
 
   /**
    * Get organization
@@ -908,11 +941,13 @@ public class CreateCommissionReportInBatch200ResponseInner {
     this.organization = organization;
   }
 
+
   public CreateCommissionReportInBatch200ResponseInner organizationAccount(@javax.annotation.Nullable Account organizationAccount) {
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
     
     return this;
   }
+
 
   /**
    * Метаданные счета юрлица
@@ -944,11 +979,13 @@ public class CreateCommissionReportInBatch200ResponseInner {
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
   }
 
+
   public CreateCommissionReportInBatch200ResponseInner owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Владелец (Сотрудник)
@@ -980,6 +1017,7 @@ public class CreateCommissionReportInBatch200ResponseInner {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   /**
    * Оплаченная сумма
    * @return payedSum
@@ -1002,6 +1040,7 @@ public class CreateCommissionReportInBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get positions
    * @return positions
@@ -1022,6 +1061,7 @@ public class CreateCommissionReportInBatch200ResponseInner {
   public void setPositions(@javax.annotation.Nullable CommissionReportInPositionList positions) {
     this.positions = positions;
   }
+
 
   /**
    * Напечатан ли документ
@@ -1044,6 +1084,7 @@ public class CreateCommissionReportInBatch200ResponseInner {
     
     return this;
   }
+
 
   /**
    * Метаданные проекта
@@ -1075,6 +1116,7 @@ public class CreateCommissionReportInBatch200ResponseInner {
     this.project = JsonNullable.<Project>of(project);
   }
 
+
   /**
    * Опубликован ли документ
    * @return published
@@ -1097,6 +1139,7 @@ public class CreateCommissionReportInBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get rate
    * @return rate
@@ -1118,11 +1161,13 @@ public class CreateCommissionReportInBatch200ResponseInner {
     this.rate = rate;
   }
 
+
   public CreateCommissionReportInBatch200ResponseInner returnToCommissionerPositions(@javax.annotation.Nullable CommissionReportInReturnedPositionList returnToCommissionerPositions) {
     
     this.returnToCommissionerPositions = returnToCommissionerPositions;
     return this;
   }
+
 
   /**
    * Get returnToCommissionerPositions
@@ -1145,14 +1190,18 @@ public class CreateCommissionReportInBatch200ResponseInner {
     this.returnToCommissionerPositions = returnToCommissionerPositions;
   }
 
+
   public CreateCommissionReportInBatch200ResponseInner rewardPercent(@javax.annotation.Nullable Integer rewardPercent) {
     
     this.rewardPercent = rewardPercent;
     return this;
   }
 
+
   /**
    * Процент вознаграждения
+   * minimum: 0
+   * maximum: 100
    * @return rewardPercent
    */
   @javax.annotation.Nullable
@@ -1172,14 +1221,16 @@ public class CreateCommissionReportInBatch200ResponseInner {
     this.rewardPercent = rewardPercent;
   }
 
+
   public CreateCommissionReportInBatch200ResponseInner rewardType(@javax.annotation.Nullable String rewardType) {
     
     this.rewardType = rewardType;
     return this;
   }
 
+
   /**
-   * Тип вознаграждения
+   * Тип Вознаграждения. Известные значения описаны в RewardType
    * @return rewardType
    */
   @javax.annotation.Nullable
@@ -1199,11 +1250,13 @@ public class CreateCommissionReportInBatch200ResponseInner {
     this.rewardType = rewardType;
   }
 
+
   public CreateCommissionReportInBatch200ResponseInner salesChannel(@javax.annotation.Nullable SalesChannel salesChannel) {
     this.salesChannel = JsonNullable.<SalesChannel>of(salesChannel);
     
     return this;
   }
+
 
   /**
    * Метаданные канала продаж
@@ -1235,11 +1288,13 @@ public class CreateCommissionReportInBatch200ResponseInner {
     this.salesChannel = JsonNullable.<SalesChannel>of(salesChannel);
   }
 
+
   public CreateCommissionReportInBatch200ResponseInner shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -1262,11 +1317,13 @@ public class CreateCommissionReportInBatch200ResponseInner {
     this.shared = shared;
   }
 
+
   public CreateCommissionReportInBatch200ResponseInner state(@javax.annotation.Nullable State state) {
     this.state = JsonNullable.<State>of(state);
     
     return this;
   }
+
 
   /**
    * Метаданные статуса Полученного отчета комиссионера
@@ -1298,11 +1355,13 @@ public class CreateCommissionReportInBatch200ResponseInner {
     this.state = JsonNullable.<State>of(state);
   }
 
+
   public CreateCommissionReportInBatch200ResponseInner sum(@javax.annotation.Nullable Double sum) {
     
     this.sum = sum;
     return this;
   }
+
 
   /**
    * Сумма Полученного отчета комиссионера в копейках
@@ -1325,11 +1384,13 @@ public class CreateCommissionReportInBatch200ResponseInner {
     this.sum = sum;
   }
 
+
   public CreateCommissionReportInBatch200ResponseInner syncId(@javax.annotation.Nullable UUID syncId) {
     
     this.syncId = syncId;
     return this;
   }
+
 
   /**
    * ID синхронизации
@@ -1351,6 +1412,7 @@ public class CreateCommissionReportInBatch200ResponseInner {
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
     this.syncId = syncId;
   }
+
 
   /**
    * Момент последнего обновления Полученного отчета комиссионера
@@ -1374,6 +1436,7 @@ public class CreateCommissionReportInBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Учитывается ли НДС
    * @return vatEnabled
@@ -1395,11 +1458,13 @@ public class CreateCommissionReportInBatch200ResponseInner {
     this.vatEnabled = vatEnabled;
   }
 
+
   public CreateCommissionReportInBatch200ResponseInner vatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
     
     this.vatIncluded = vatIncluded;
     return this;
   }
+
 
   /**
    * Включен ли НДС в цену
@@ -1422,11 +1487,13 @@ public class CreateCommissionReportInBatch200ResponseInner {
     this.vatIncluded = vatIncluded;
   }
 
+
   public CreateCommissionReportInBatch200ResponseInner vatSum(@javax.annotation.Nullable Double vatSum) {
     
     this.vatSum = vatSum;
     return this;
   }
+
 
   /**
    * Сумма НДС
@@ -1449,11 +1516,13 @@ public class CreateCommissionReportInBatch200ResponseInner {
     this.vatSum = vatSum;
   }
 
+
   public CreateCommissionReportInBatch200ResponseInner payments(@javax.annotation.Nullable List<CustomerOrderPaymentsInner> payments) {
     this.payments = JsonNullable.<List<CustomerOrderPaymentsInner>>of(payments);
     
     return this;
   }
+
 
   public CreateCommissionReportInBatch200ResponseInner addPaymentsItem(CustomerOrderPaymentsInner paymentsItem) {
     if (this.payments == null || !this.payments.isPresent()) {
@@ -1497,11 +1566,13 @@ public class CreateCommissionReportInBatch200ResponseInner {
     this.payments = JsonNullable.<List<CustomerOrderPaymentsInner>>of(payments);
   }
 
+
   public CreateCommissionReportInBatch200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
+
 
   public CreateCommissionReportInBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -1531,6 +1602,7 @@ public class CreateCommissionReportInBatch200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

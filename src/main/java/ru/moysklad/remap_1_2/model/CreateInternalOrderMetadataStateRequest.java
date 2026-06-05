@@ -43,7 +43,7 @@ import java.util.StringJoiner;
   CreateInternalOrderMetadataStateRequest.JSON_PROPERTY_STATE_TYPE
 })
 @JsonTypeName("createInternalOrderMetadataState_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateInternalOrderMetadataStateRequest {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -97,6 +97,7 @@ public class CreateInternalOrderMetadataStateRequest {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -117,6 +118,7 @@ public class CreateInternalOrderMetadataStateRequest {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID статуса
@@ -140,6 +142,7 @@ public class CreateInternalOrderMetadataStateRequest {
     return this;
   }
 
+
   /**
    * Наименование статуса
    * @return name
@@ -160,6 +163,7 @@ public class CreateInternalOrderMetadataStateRequest {
   public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
+
 
   /**
    * ID учетной записи
@@ -183,6 +187,7 @@ public class CreateInternalOrderMetadataStateRequest {
     return this;
   }
 
+
   /**
    * Цвет Статуса
    * @return color
@@ -203,6 +208,7 @@ public class CreateInternalOrderMetadataStateRequest {
   public void setColor(@javax.annotation.Nullable Integer color) {
     this.color = color;
   }
+
 
   /**
    * Тип сущности, к которой относится Статус (ключевое слово в рамках JSON API)
@@ -226,6 +232,7 @@ public class CreateInternalOrderMetadataStateRequest {
     return this;
   }
 
+
   /**
    * Тип Статуса. Известные значения описаны в StateType
    * @return stateType
@@ -246,6 +253,7 @@ public class CreateInternalOrderMetadataStateRequest {
   public void setStateType(@javax.annotation.Nullable String stateType) {
     this.stateType = stateType;
   }
+
 
   @Override
   public boolean equals(Object o) {

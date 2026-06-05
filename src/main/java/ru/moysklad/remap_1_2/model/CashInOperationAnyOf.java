@@ -27,10 +27,10 @@ import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import ru.moysklad.remap_1_2.model.Account;
 import ru.moysklad.remap_1_2.model.Address;
+import ru.moysklad.remap_1_2.model.Agent;
 import ru.moysklad.remap_1_2.model.AttributeAbstract;
 import ru.moysklad.remap_1_2.model.Contract;
 import ru.moysklad.remap_1_2.model.CurrencyRate;
-import ru.moysklad.remap_1_2.model.CustomerOrderAgent;
 import ru.moysklad.remap_1_2.model.CustomerOrderPaymentsInner;
 import ru.moysklad.remap_1_2.model.CustomerOrderPositionList;
 import ru.moysklad.remap_1_2.model.Demand;
@@ -114,7 +114,7 @@ import java.util.StringJoiner;
   CashInOperationAnyOf.JSON_PROPERTY_LINKED_SUM
 })
 @JsonTypeName("CashInOperation_anyOf")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CashInOperationAnyOf {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -227,7 +227,7 @@ public class CashInOperationAnyOf {
 
   public static final String JSON_PROPERTY_AGENT = "agent";
   @javax.annotation.Nullable
-  private CustomerOrderAgent agent;
+  private Agent agent;
 
   public static final String JSON_PROPERTY_AGENT_ACCOUNT = "agentAccount";
   @javax.annotation.Nullable
@@ -364,6 +364,7 @@ public class CashInOperationAnyOf {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -384,6 +385,7 @@ public class CashInOperationAnyOf {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Заказа покупателя
@@ -423,6 +425,7 @@ public class CashInOperationAnyOf {
     return this;
   }
 
+
   /**
    * Наименование Заказа покупателя
    * @return name
@@ -444,11 +447,13 @@ public class CashInOperationAnyOf {
     this.name = name;
   }
 
+
   public CashInOperationAnyOf code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код Заказа покупателя
@@ -471,11 +476,13 @@ public class CashInOperationAnyOf {
     this.code = code;
   }
 
+
   public CashInOperationAnyOf externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Заказа покупателя
@@ -498,11 +505,13 @@ public class CashInOperationAnyOf {
     this.externalCode = externalCode;
   }
 
+
   public CashInOperationAnyOf syncId(@javax.annotation.Nullable UUID syncId) {
     
     this.syncId = syncId;
     return this;
   }
+
 
   /**
    * ID синхронизации
@@ -525,11 +534,13 @@ public class CashInOperationAnyOf {
     this.syncId = syncId;
   }
 
+
   public CashInOperationAnyOf description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Комментарий Заказа покупателя
@@ -560,6 +571,7 @@ public class CashInOperationAnyOf {
   public void setDescription(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
   }
+
 
   /**
    * Дата создания
@@ -615,6 +627,7 @@ public class CashInOperationAnyOf {
     return this;
   }
 
+
   /**
    * Дата документа
    * @return moment
@@ -636,11 +649,13 @@ public class CashInOperationAnyOf {
     this.moment = moment;
   }
 
+
   public CashInOperationAnyOf deliveryPlannedMoment(@javax.annotation.Nullable String deliveryPlannedMoment) {
     
     this.deliveryPlannedMoment = deliveryPlannedMoment;
     return this;
   }
+
 
   /**
    * Планируемая дата приёмки
@@ -663,11 +678,13 @@ public class CashInOperationAnyOf {
     this.deliveryPlannedMoment = deliveryPlannedMoment;
   }
 
+
   public CashInOperationAnyOf applicable(@javax.annotation.Nullable Boolean applicable) {
     
     this.applicable = applicable;
     return this;
   }
+
 
   /**
    * Отметка о проведении
@@ -689,6 +706,7 @@ public class CashInOperationAnyOf {
   public void setApplicable(@javax.annotation.Nullable Boolean applicable) {
     this.applicable = applicable;
   }
+
 
   /**
    * Напечатан ли документ
@@ -728,6 +746,7 @@ public class CashInOperationAnyOf {
     return this;
   }
 
+
   /**
    * Общий доступ
    * @return shared
@@ -749,11 +768,13 @@ public class CashInOperationAnyOf {
     this.shared = shared;
   }
 
+
   public CashInOperationAnyOf vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
     
     this.vatEnabled = vatEnabled;
     return this;
   }
+
 
   /**
    * Учитывается ли НДС
@@ -776,11 +797,13 @@ public class CashInOperationAnyOf {
     this.vatEnabled = vatEnabled;
   }
 
+
   public CashInOperationAnyOf vatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
     
     this.vatIncluded = vatIncluded;
     return this;
   }
+
 
   /**
    * Включен ли НДС в цену
@@ -802,6 +825,7 @@ public class CashInOperationAnyOf {
   public void setVatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
     this.vatIncluded = vatIncluded;
   }
+
 
   /**
    * Сумма НДС
@@ -905,6 +929,7 @@ public class CashInOperationAnyOf {
     return this;
   }
 
+
   /**
    * Get organization
    * @return organization
@@ -926,11 +951,13 @@ public class CashInOperationAnyOf {
     this.organization = organization;
   }
 
+
   public CashInOperationAnyOf organizationAccount(@javax.annotation.Nullable Account organizationAccount) {
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
     
     return this;
   }
+
 
   /**
    * Метаданные счета юрлица
@@ -962,21 +989,23 @@ public class CashInOperationAnyOf {
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
   }
 
-  public CashInOperationAnyOf agent(@javax.annotation.Nullable CustomerOrderAgent agent) {
+
+  public CashInOperationAnyOf agent(@javax.annotation.Nullable Agent agent) {
     
     this.agent = agent;
     return this;
   }
 
+
   /**
-   * Get agent
+   * Метаданные контрагента или юрлица
    * @return agent
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public CustomerOrderAgent getAgent() {
+  public Agent getAgent() {
     return agent;
   }
 
@@ -985,15 +1014,17 @@ public class CashInOperationAnyOf {
 
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAgent(@javax.annotation.Nullable CustomerOrderAgent agent) {
+  public void setAgent(@javax.annotation.Nullable Agent agent) {
     this.agent = agent;
   }
+
 
   public CashInOperationAnyOf agentAccount(@javax.annotation.Nullable Account agentAccount) {
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
     
     return this;
   }
+
 
   /**
    * Метаданные счета контрагента
@@ -1025,11 +1056,13 @@ public class CashInOperationAnyOf {
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
   }
 
+
   public CashInOperationAnyOf store(@javax.annotation.Nullable Store store) {
     this.store = JsonNullable.<Store>of(store);
     
     return this;
   }
+
 
   /**
    * Метаданные склада
@@ -1061,11 +1094,13 @@ public class CashInOperationAnyOf {
     this.store = JsonNullable.<Store>of(store);
   }
 
+
   public CashInOperationAnyOf state(@javax.annotation.Nullable State state) {
     this.state = JsonNullable.<State>of(state);
     
     return this;
   }
+
 
   /**
    * Метаданные статуса заказа
@@ -1097,11 +1132,13 @@ public class CashInOperationAnyOf {
     this.state = JsonNullable.<State>of(state);
   }
 
+
   public CashInOperationAnyOf contract(@javax.annotation.Nullable Contract contract) {
     this.contract = JsonNullable.<Contract>of(contract);
     
     return this;
   }
+
 
   /**
    * Метаданные договора
@@ -1133,11 +1170,13 @@ public class CashInOperationAnyOf {
     this.contract = JsonNullable.<Contract>of(contract);
   }
 
+
   public CashInOperationAnyOf project(@javax.annotation.Nullable Project project) {
     this.project = JsonNullable.<Project>of(project);
     
     return this;
   }
+
 
   /**
    * Метаданные проекта
@@ -1169,11 +1208,13 @@ public class CashInOperationAnyOf {
     this.project = JsonNullable.<Project>of(project);
   }
 
+
   public CashInOperationAnyOf owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Владелец (Сотрудник)
@@ -1205,11 +1246,13 @@ public class CashInOperationAnyOf {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public CashInOperationAnyOf group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -1232,11 +1275,13 @@ public class CashInOperationAnyOf {
     this.group = group;
   }
 
+
   public CashInOperationAnyOf attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public CashInOperationAnyOf addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -1280,11 +1325,13 @@ public class CashInOperationAnyOf {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   public CashInOperationAnyOf files(@javax.annotation.Nullable FileList files) {
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
   }
+
 
   /**
    * Метаданные массива Файлов
@@ -1316,11 +1363,13 @@ public class CashInOperationAnyOf {
     this.files = JsonNullable.<FileList>of(files);
   }
 
+
   public CashInOperationAnyOf taxSystem(@javax.annotation.Nullable String taxSystem) {
     
     this.taxSystem = taxSystem;
     return this;
   }
+
 
   /**
    * Код системы налогообложения. Известные значения описаны в TaxSystem
@@ -1343,11 +1392,13 @@ public class CashInOperationAnyOf {
     this.taxSystem = taxSystem;
   }
 
+
   public CashInOperationAnyOf rate(@javax.annotation.Nullable CurrencyRate rate) {
     
     this.rate = rate;
     return this;
   }
+
 
   /**
    * Get rate
@@ -1370,11 +1421,13 @@ public class CashInOperationAnyOf {
     this.rate = rate;
   }
 
+
   public CashInOperationAnyOf positions(@javax.annotation.Nullable CustomerOrderPositionList positions) {
     
     this.positions = positions;
     return this;
   }
+
 
   /**
    * Get positions
@@ -1397,11 +1450,13 @@ public class CashInOperationAnyOf {
     this.positions = positions;
   }
 
+
   public CashInOperationAnyOf salesChannel(@javax.annotation.Nullable SalesChannel salesChannel) {
     this.salesChannel = JsonNullable.<SalesChannel>of(salesChannel);
     
     return this;
   }
+
 
   /**
    * Метаданные канала продаж
@@ -1433,11 +1488,13 @@ public class CashInOperationAnyOf {
     this.salesChannel = JsonNullable.<SalesChannel>of(salesChannel);
   }
 
+
   public CashInOperationAnyOf shipmentAddress(@javax.annotation.Nullable String shipmentAddress) {
     this.shipmentAddress = JsonNullable.<String>of(shipmentAddress);
     
     return this;
   }
+
 
   /**
    * Адрес доставки Заказа покупателя
@@ -1469,11 +1526,13 @@ public class CashInOperationAnyOf {
     this.shipmentAddress = JsonNullable.<String>of(shipmentAddress);
   }
 
+
   public CashInOperationAnyOf shipmentAddressFull(@javax.annotation.Nullable Address shipmentAddressFull) {
     this.shipmentAddressFull = JsonNullable.<Address>of(shipmentAddressFull);
     
     return this;
   }
+
 
   /**
    * Адрес доставки Заказа покупателя с детализацией по отдельным полям
@@ -1505,11 +1564,13 @@ public class CashInOperationAnyOf {
     this.shipmentAddressFull = JsonNullable.<Address>of(shipmentAddressFull);
   }
 
+
   public CashInOperationAnyOf invoicesOut(@javax.annotation.Nullable List<InvoiceOut> invoicesOut) {
     this.invoicesOut = JsonNullable.<List<InvoiceOut>>of(invoicesOut);
     
     return this;
   }
+
 
   public CashInOperationAnyOf addInvoicesOutItem(InvoiceOut invoicesOutItem) {
     if (this.invoicesOut == null || !this.invoicesOut.isPresent()) {
@@ -1553,11 +1614,13 @@ public class CashInOperationAnyOf {
     this.invoicesOut = JsonNullable.<List<InvoiceOut>>of(invoicesOut);
   }
 
+
   public CashInOperationAnyOf demands(@javax.annotation.Nullable List<Demand> demands) {
     this.demands = JsonNullable.<List<Demand>>of(demands);
     
     return this;
   }
+
 
   public CashInOperationAnyOf addDemandsItem(Demand demandsItem) {
     if (this.demands == null || !this.demands.isPresent()) {
@@ -1601,11 +1664,13 @@ public class CashInOperationAnyOf {
     this.demands = JsonNullable.<List<Demand>>of(demands);
   }
 
+
   public CashInOperationAnyOf payments(@javax.annotation.Nullable List<CustomerOrderPaymentsInner> payments) {
     this.payments = JsonNullable.<List<CustomerOrderPaymentsInner>>of(payments);
     
     return this;
   }
+
 
   public CashInOperationAnyOf addPaymentsItem(CustomerOrderPaymentsInner paymentsItem) {
     if (this.payments == null || !this.payments.isPresent()) {
@@ -1649,11 +1714,13 @@ public class CashInOperationAnyOf {
     this.payments = JsonNullable.<List<CustomerOrderPaymentsInner>>of(payments);
   }
 
+
   public CashInOperationAnyOf prepayments(@javax.annotation.Nullable List<Prepayment> prepayments) {
     this.prepayments = JsonNullable.<List<Prepayment>>of(prepayments);
     
     return this;
   }
+
 
   public CashInOperationAnyOf addPrepaymentsItem(Prepayment prepaymentsItem) {
     if (this.prepayments == null || !this.prepayments.isPresent()) {
@@ -1697,11 +1764,13 @@ public class CashInOperationAnyOf {
     this.prepayments = JsonNullable.<List<Prepayment>>of(prepayments);
   }
 
+
   public CashInOperationAnyOf purchaseOrders(@javax.annotation.Nullable List<PurchaseOrder> purchaseOrders) {
     this.purchaseOrders = JsonNullable.<List<PurchaseOrder>>of(purchaseOrders);
     
     return this;
   }
+
 
   public CashInOperationAnyOf addPurchaseOrdersItem(PurchaseOrder purchaseOrdersItem) {
     if (this.purchaseOrders == null || !this.purchaseOrders.isPresent()) {
@@ -1745,11 +1814,13 @@ public class CashInOperationAnyOf {
     this.purchaseOrders = JsonNullable.<List<PurchaseOrder>>of(purchaseOrders);
   }
 
+
   public CashInOperationAnyOf moves(@javax.annotation.Nullable List<Move> moves) {
     this.moves = JsonNullable.<List<Move>>of(moves);
     
     return this;
   }
+
 
   public CashInOperationAnyOf addMovesItem(Move movesItem) {
     if (this.moves == null || !this.moves.isPresent()) {
@@ -1793,11 +1864,13 @@ public class CashInOperationAnyOf {
     this.moves = JsonNullable.<List<Move>>of(moves);
   }
 
+
   public CashInOperationAnyOf productionTasks(@javax.annotation.Nullable List<ProductionTask> productionTasks) {
     this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
     
     return this;
   }
+
 
   public CashInOperationAnyOf addProductionTasksItem(ProductionTask productionTasksItem) {
     if (this.productionTasks == null || !this.productionTasks.isPresent()) {
@@ -1841,11 +1914,13 @@ public class CashInOperationAnyOf {
     this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
   }
 
+
   public CashInOperationAnyOf linkedSum(@javax.annotation.Nonnull Double linkedSum) {
     
     this.linkedSum = linkedSum;
     return this;
   }
+
 
   /**
    * Сумма, оплаченная по данному документу
@@ -1867,6 +1942,7 @@ public class CashInOperationAnyOf {
   public void setLinkedSum(@javax.annotation.Nonnull Double linkedSum) {
     this.linkedSum = linkedSum;
   }
+
 
   @Override
   public boolean equals(Object o) {

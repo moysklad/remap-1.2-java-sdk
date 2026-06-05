@@ -41,7 +41,7 @@ import java.util.StringJoiner;
   Region.JSON_PROPERTY_UPDATED,
   Region.JSON_PROPERTY_VERSION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Region {
   public static Region createWithMeta(UUID id) {
     Region o = new Region();
@@ -115,6 +115,7 @@ public class Region {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -135,6 +136,7 @@ public class Region {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Региона
@@ -174,6 +176,7 @@ public class Region {
     return this;
   }
 
+
   /**
    * Наименование Региона
    * @return name
@@ -195,11 +198,13 @@ public class Region {
     this.name = name;
   }
 
+
   public Region code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код Региона
@@ -222,11 +227,13 @@ public class Region {
     this.code = code;
   }
 
+
   public Region externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Региона
@@ -248,6 +255,7 @@ public class Region {
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
     this.externalCode = externalCode;
   }
+
 
   /**
    * Время последнего изменения

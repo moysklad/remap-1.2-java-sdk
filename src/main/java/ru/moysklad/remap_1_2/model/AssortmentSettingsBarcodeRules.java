@@ -35,7 +35,7 @@ import java.util.StringJoiner;
   AssortmentSettingsBarcodeRules.JSON_PROPERTY_WEIGHT_BARCODE_PREFIX
 })
 @JsonTypeName("AssortmentSettings_barcodeRules")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class AssortmentSettingsBarcodeRules {
 
   public static final String JSON_PROPERTY_FILL_E_A_N13_BARCODE = "fillEAN13Barcode";
@@ -59,6 +59,7 @@ public class AssortmentSettingsBarcodeRules {
     return this;
   }
 
+
   /**
    * Автоматически создавать штрихкод EAN13
    * @return fillEAN13Barcode
@@ -80,11 +81,13 @@ public class AssortmentSettingsBarcodeRules {
     this.fillEAN13Barcode = fillEAN13Barcode;
   }
 
+
   public AssortmentSettingsBarcodeRules weightBarcode(@javax.annotation.Nullable Boolean weightBarcode) {
     
     this.weightBarcode = weightBarcode;
     return this;
   }
+
 
   /**
    * Использовать префиксы штрихкодов для весовых товаров
@@ -107,11 +110,13 @@ public class AssortmentSettingsBarcodeRules {
     this.weightBarcode = weightBarcode;
   }
 
+
   public AssortmentSettingsBarcodeRules weightBarcodePrefix(@javax.annotation.Nullable Integer weightBarcodePrefix) {
     
     this.weightBarcodePrefix = weightBarcodePrefix;
     return this;
   }
+
 
   /**
    * Префикс штрихкодов для весовых товаров
@@ -133,6 +138,7 @@ public class AssortmentSettingsBarcodeRules {
   public void setWeightBarcodePrefix(@javax.annotation.Nullable Integer weightBarcodePrefix) {
     this.weightBarcodePrefix = weightBarcodePrefix;
   }
+
 
   @Override
   public boolean equals(Object o) {

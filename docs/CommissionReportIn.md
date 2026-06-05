@@ -11,7 +11,7 @@
 |**meta** | [**Meta**](Meta.md) |  |  [optional] |
 |**id** | **UUID** | ID Полученного отчета комиссионера |  [optional] [readonly] |
 |**accountId** | **UUID** | ID учетной записи |  [optional] [readonly] |
-|**agent** | [**Counterparty**](Counterparty.md) |  |  [optional] |
+|**agent** | [**Agent**](Agent.md) | Метаданные контрагента или юрлица |  [optional] |
 |**agentAccount** | [**Account**](Account.md) | Метаданные счета контрагента |  [optional] |
 |**applicable** | **Boolean** | Отметка о проведении |  [optional] |
 |**attributes** | [**List&lt;AttributeAbstract&gt;**](AttributeAbstract.md) | Коллекция метаданных доп. полей |  [optional] |
@@ -40,7 +40,7 @@
 |**rate** | [**CurrencyRate**](CurrencyRate.md) |  |  [optional] |
 |**returnToCommissionerPositions** | **CommissionReportInReturnedPositionList** | Метаданные позиций возврата на склад комиссионера Полученного отчета комиссионера |  [optional] |
 |**rewardPercent** | **Integer** | Процент вознаграждения |  [optional] |
-|**rewardType** | **String** | Тип вознаграждения |  [optional] |
+|**rewardType** | **String** | Тип Вознаграждения. Известные значения описаны в RewardType |  [optional] |
 |**salesChannel** | [**SalesChannel**](SalesChannel.md) | Метаданные канала продаж |  [optional] |
 |**shared** | **Boolean** | Общий доступ |  [optional] |
 |**state** | [**State**](State.md) | Метаданные статуса Полученного отчета комиссионера |  [optional] |

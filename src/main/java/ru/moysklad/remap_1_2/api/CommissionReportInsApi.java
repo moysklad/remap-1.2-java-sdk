@@ -46,7 +46,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class CommissionReportInsApi extends BaseApi {
 
@@ -71,6 +71,25 @@ public class CommissionReportInsApi extends BaseApi {
    */
   public CommissionReportIn createCommissionReportIn(@javax.annotation.Nonnull CommissionReportIn commissionReportIn, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createCommissionReportIn(commissionReportIn, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать CommissionReportIn
+   * 
+   
+   * @param commissionReportIn  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return CommissionReportIn
+   * @throws ApiException if fails to make API call
+   */
+  public CommissionReportIn createCommissionReportIn(@javax.annotation.Nonnull CommissionReportIn commissionReportIn, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createCommissionReportIn(commissionReportIn, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -160,6 +179,25 @@ if (contentType != null)
    */
   public List<CreateCommissionReportInBatch200ResponseInner> createCommissionReportInBatch(@javax.annotation.Nonnull List<CommissionReportIn> commissionReportIn, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createCommissionReportInBatch(commissionReportIn, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Массовое создание и обновление CommissionReportIn
+   * 
+   
+   * @param commissionReportIn  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreateCommissionReportInBatch200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateCommissionReportInBatch200ResponseInner> createCommissionReportInBatch(@javax.annotation.Nonnull List<CommissionReportIn> commissionReportIn, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createCommissionReportInBatch(commissionReportIn, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -424,6 +462,28 @@ if (contentType != null)
     return this.createCommissionReportInPositions(id, createCommissionReportInPositionsRequest, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
+  /**
+   * Создать позиции CommissionReportIn
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param createCommissionReportInPositionsRequest  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreateCommissionReportInPositions200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateCommissionReportInPositions200ResponseInner> createCommissionReportInPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CreateCommissionReportInPositionsRequest createCommissionReportInPositionsRequest, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createCommissionReportInPositions(id, createCommissionReportInPositionsRequest, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Создать позиции CommissionReportIn
@@ -519,6 +579,28 @@ if (contentType != null)
    */
   public List<CreateCommissionReportInReturnedPositions200ResponseInner> createCommissionReportInReturnedPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CreateCommissionReportInReturnedPositionsRequest createCommissionReportInReturnedPositionsRequest, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createCommissionReportInReturnedPositions(id, createCommissionReportInReturnedPositionsRequest, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать позиции возврата на склад комиссионера
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param createCommissionReportInReturnedPositionsRequest  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreateCommissionReportInReturnedPositions200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateCommissionReportInReturnedPositions200ResponseInner> createCommissionReportInReturnedPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CreateCommissionReportInReturnedPositionsRequest createCommissionReportInReturnedPositionsRequest, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createCommissionReportInReturnedPositions(id, createCommissionReportInReturnedPositionsRequest, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -955,6 +1037,27 @@ if (contentType != null)
     this.deleteCommissionReportInPosition(id, positionId, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
+  /**
+   * Удалить позицию CommissionReportIn
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param positionId ID позиции (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteCommissionReportInPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteCommissionReportInPosition(id, positionId, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Удалить позицию CommissionReportIn
@@ -1142,6 +1245,27 @@ if (contentType != null)
    */
   public void deleteCommissionReportInReturnedPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     this.deleteCommissionReportInReturnedPosition(id, positionId, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Удалить позицию возврата на склад комиссионера
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param positionId ID позиции (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteCommissionReportInReturnedPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteCommissionReportInReturnedPosition(id, positionId, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1333,6 +1457,25 @@ if (contentType != null)
     return this.getCommissionReportInById(id, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
+  /**
+   * Получить CommissionReportIn по ID
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return CommissionReportIn
+   * @throws ApiException if fails to make API call
+   */
+  public CommissionReportIn getCommissionReportInById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getCommissionReportInById(id, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить CommissionReportIn по ID
@@ -1423,6 +1566,25 @@ if (contentType != null)
    */
   public CommissionReportInList getCommissionReportInList(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.getCommissionReportInList(limit, offset, search, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Получить список CommissionReportIn
+   * 
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return CommissionReportInList
+   * @throws ApiException if fails to make API call
+   */
+  public CommissionReportInList getCommissionReportInList(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getCommissionReportInList((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1591,6 +1753,23 @@ if (contentType != null)
    */
   public AttributeMetaInfoList getCommissionReportInMetadataAttribute(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.getCommissionReportInMetadataAttribute(offset, limit, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Доп. поля CommissionReportIn
+   * 
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfoList
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfoList getCommissionReportInMetadataAttribute(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getCommissionReportInMetadataAttribute((Integer) effectiveOptions.get("offset"), (Integer) effectiveOptions.get("limit"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1853,6 +2032,28 @@ if (contentType != null)
     return this.getCommissionReportInPositionById(id, positionId, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
+  /**
+   * Получить позицию CommissionReportIn
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param positionId ID позиции (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return CommissionReportInPosition
+   * @throws ApiException if fails to make API call
+   */
+  public CommissionReportInPosition getCommissionReportInPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getCommissionReportInPositionById(id, positionId, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить позицию CommissionReportIn
@@ -1952,6 +2153,27 @@ if (contentType != null)
     return this.getCommissionReportInPositions(id, limit, offset, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
+  /**
+   * Получить позиции CommissionReportIn
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CommissionReportInPosition&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CommissionReportInPosition> getCommissionReportInPositions(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getCommissionReportInPositions(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить позиции CommissionReportIn
@@ -2045,6 +2267,28 @@ if (contentType != null)
    */
   public CommissionReportInReturnedPosition getCommissionReportInReturnedPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.getCommissionReportInReturnedPositionById(id, positionId, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Получить позицию возврата на склад комиссионера
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param positionId ID позиции (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return CommissionReportInReturnedPosition
+   * @throws ApiException if fails to make API call
+   */
+  public CommissionReportInReturnedPosition getCommissionReportInReturnedPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getCommissionReportInReturnedPositionById(id, positionId, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -2146,6 +2390,27 @@ if (contentType != null)
     return this.getCommissionReportInReturnedPositions(id, limit, offset, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
+  /**
+   * Получить позиции возврата на склад комиссионера
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CommissionReportInReturnedPosition&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CommissionReportInReturnedPosition> getCommissionReportInReturnedPositions(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getCommissionReportInReturnedPositions(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить позиции возврата на склад комиссионера
@@ -2239,6 +2504,28 @@ if (contentType != null)
    */
   public CommissionReportIn updateCommissionReportIn(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CommissionReportIn commissionReportIn, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateCommissionReportIn(id, commissionReportIn, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Изменить CommissionReportIn
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param commissionReportIn  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return CommissionReportIn
+   * @throws ApiException if fails to make API call
+   */
+  public CommissionReportIn updateCommissionReportIn(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CommissionReportIn commissionReportIn, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateCommissionReportIn(id, commissionReportIn, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -2527,6 +2814,31 @@ if (contentType != null)
     return this.updateCommissionReportInPosition(id, positionId, commissionReportInPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
+  /**
+   * Изменить позицию CommissionReportIn
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param positionId ID позиции (required)
+   
+   
+   * @param commissionReportInPosition  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return CommissionReportInPosition
+   * @throws ApiException if fails to make API call
+   */
+  public CommissionReportInPosition updateCommissionReportInPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull CommissionReportInPosition commissionReportInPosition, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateCommissionReportInPosition(id, positionId, commissionReportInPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Изменить позицию CommissionReportIn
@@ -2630,6 +2942,31 @@ if (contentType != null)
    */
   public CommissionReportInReturnedPosition updateCommissionReportInReturnedPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull CommissionReportInReturnedPosition commissionReportInReturnedPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateCommissionReportInReturnedPosition(id, positionId, commissionReportInReturnedPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Изменить позицию возврата на склад комиссионера
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param positionId ID позиции (required)
+   
+   
+   * @param commissionReportInReturnedPosition  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return CommissionReportInReturnedPosition
+   * @throws ApiException if fails to make API call
+   */
+  public CommissionReportInReturnedPosition updateCommissionReportInReturnedPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull CommissionReportInReturnedPosition commissionReportInReturnedPosition, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateCommissionReportInReturnedPosition(id, positionId, commissionReportInReturnedPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 

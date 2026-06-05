@@ -46,7 +46,7 @@ import java.util.StringJoiner;
   CreateCommissionReportInReturnedPositionsRequest.JSON_PROPERTY_ASSORTMENT
 })
 @JsonTypeName("createCommissionReportInReturnedPositions_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateCommissionReportInReturnedPositionsRequest {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -106,6 +106,7 @@ public class CreateCommissionReportInReturnedPositionsRequest {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -126,6 +127,7 @@ public class CreateCommissionReportInReturnedPositionsRequest {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID позиции
@@ -165,6 +167,7 @@ public class CreateCommissionReportInReturnedPositionsRequest {
     return this;
   }
 
+
   /**
    * Количество товаров/услуг в позиции
    * @return quantity
@@ -186,11 +189,13 @@ public class CreateCommissionReportInReturnedPositionsRequest {
     this.quantity = quantity;
   }
 
+
   public CreateCommissionReportInReturnedPositionsRequest price(@javax.annotation.Nullable Double price) {
     
     this.price = price;
     return this;
   }
+
 
   /**
    * Цена товара в копейках
@@ -213,11 +218,13 @@ public class CreateCommissionReportInReturnedPositionsRequest {
     this.price = price;
   }
 
+
   public CreateCommissionReportInReturnedPositionsRequest reward(@javax.annotation.Nullable Double reward) {
     
     this.reward = reward;
     return this;
   }
+
 
   /**
    * Вознаграждение
@@ -240,14 +247,18 @@ public class CreateCommissionReportInReturnedPositionsRequest {
     this.reward = reward;
   }
 
+
   public CreateCommissionReportInReturnedPositionsRequest vat(@javax.annotation.Nullable Integer vat) {
     
     this.vat = vat;
     return this;
   }
 
+
   /**
    * НДС для позиции
+   * minimum: 0
+   * maximum: 100
    * @return vat
    */
   @javax.annotation.Nullable
@@ -267,11 +278,13 @@ public class CreateCommissionReportInReturnedPositionsRequest {
     this.vat = vat;
   }
 
+
   public CreateCommissionReportInReturnedPositionsRequest vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
     
     this.vatEnabled = vatEnabled;
     return this;
   }
+
 
   /**
    * Включен ли НДС для позиции
@@ -294,11 +307,13 @@ public class CreateCommissionReportInReturnedPositionsRequest {
     this.vatEnabled = vatEnabled;
   }
 
+
   public CreateCommissionReportInReturnedPositionsRequest assortment(@javax.annotation.Nullable Assortment assortment) {
     
     this.assortment = assortment;
     return this;
   }
+
 
   /**
    * Get assortment
@@ -322,6 +337,7 @@ public class CreateCommissionReportInReturnedPositionsRequest {
   public void setAssortment(@javax.annotation.Nullable Assortment assortment) {
     this.assortment = assortment;
   }
+
 
   @Override
   public boolean equals(Object o) {

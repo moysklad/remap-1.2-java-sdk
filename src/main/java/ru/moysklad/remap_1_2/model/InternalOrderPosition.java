@@ -48,7 +48,7 @@ import java.util.StringJoiner;
   InternalOrderPosition.JSON_PROPERTY_ASSORTMENT,
   InternalOrderPosition.JSON_PROPERTY_PACK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class InternalOrderPosition {
   public static InternalOrderPosition createWithMeta(UUID parentId, UUID id) {
     InternalOrderPosition o = new InternalOrderPosition();
@@ -122,6 +122,7 @@ public class InternalOrderPosition {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -142,6 +143,7 @@ public class InternalOrderPosition {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID позиции
@@ -181,6 +183,7 @@ public class InternalOrderPosition {
     return this;
   }
 
+
   /**
    * Количество товаров данного вида в позиции
    * @return quantity
@@ -202,11 +205,13 @@ public class InternalOrderPosition {
     this.quantity = quantity;
   }
 
+
   public InternalOrderPosition price(@javax.annotation.Nullable Double price) {
     
     this.price = price;
     return this;
   }
+
 
   /**
    * Цена товара/услуги в копейках
@@ -229,14 +234,18 @@ public class InternalOrderPosition {
     this.price = price;
   }
 
+
   public InternalOrderPosition vat(@javax.annotation.Nullable Integer vat) {
     
     this.vat = vat;
     return this;
   }
 
+
   /**
    * НДС, которым облагается текущая позиция
+   * minimum: 0
+   * maximum: 100
    * @return vat
    */
   @javax.annotation.Nullable
@@ -256,11 +265,13 @@ public class InternalOrderPosition {
     this.vat = vat;
   }
 
+
   public InternalOrderPosition vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
     
     this.vatEnabled = vatEnabled;
     return this;
   }
+
 
   /**
    * Включен ли НДС для позиции
@@ -283,11 +294,13 @@ public class InternalOrderPosition {
     this.vatEnabled = vatEnabled;
   }
 
+
   public InternalOrderPosition assortment(@javax.annotation.Nullable Assortment assortment) {
     
     this.assortment = assortment;
     return this;
   }
+
 
   /**
    * Get assortment
@@ -312,11 +325,13 @@ public class InternalOrderPosition {
     this.assortment = assortment;
   }
 
+
   public InternalOrderPosition pack(@javax.annotation.Nullable Pack pack) {
     this.pack = JsonNullable.<Pack>of(pack);
     
     return this;
   }
+
 
   /**
    * Упаковка Товара
@@ -347,6 +362,7 @@ public class InternalOrderPosition {
   public void setPack(@javax.annotation.Nullable Pack pack) {
     this.pack = JsonNullable.<Pack>of(pack);
   }
+
 
   @Override
   public boolean equals(Object o) {

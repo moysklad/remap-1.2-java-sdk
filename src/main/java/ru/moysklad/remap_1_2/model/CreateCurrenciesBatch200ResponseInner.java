@@ -59,7 +59,7 @@ import java.util.StringJoiner;
   CreateCurrenciesBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createCurrenciesBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateCurrenciesBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -151,6 +151,7 @@ public class CreateCurrenciesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -171,6 +172,7 @@ public class CreateCurrenciesBatch200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID валюты
@@ -210,6 +212,7 @@ public class CreateCurrenciesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Краткое наименование валюты
    * @return name
@@ -231,11 +234,13 @@ public class CreateCurrenciesBatch200ResponseInner {
     this.name = name;
   }
 
+
   public CreateCurrenciesBatch200ResponseInner fullName(@javax.annotation.Nullable String fullName) {
     
     this.fullName = fullName;
     return this;
   }
+
 
   /**
    * Полное наименование валюты
@@ -258,11 +263,13 @@ public class CreateCurrenciesBatch200ResponseInner {
     this.fullName = fullName;
   }
 
+
   public CreateCurrenciesBatch200ResponseInner code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Цифровой код валюты
@@ -285,11 +292,13 @@ public class CreateCurrenciesBatch200ResponseInner {
     this.code = code;
   }
 
+
   public CreateCurrenciesBatch200ResponseInner isoCode(@javax.annotation.Nullable String isoCode) {
     
     this.isoCode = isoCode;
     return this;
   }
+
 
   /**
    * Буквенный код валюты
@@ -312,11 +321,13 @@ public class CreateCurrenciesBatch200ResponseInner {
     this.isoCode = isoCode;
   }
 
+
   public CreateCurrenciesBatch200ResponseInner multiplicity(@javax.annotation.Nullable Integer multiplicity) {
     
     this.multiplicity = multiplicity;
     return this;
   }
+
 
   /**
    * Кратность курса валюты
@@ -339,11 +350,13 @@ public class CreateCurrenciesBatch200ResponseInner {
     this.multiplicity = multiplicity;
   }
 
+
   public CreateCurrenciesBatch200ResponseInner rate(@javax.annotation.Nullable Float rate) {
     
     this.rate = rate;
     return this;
   }
+
 
   /**
    * Курс валюты
@@ -366,11 +379,13 @@ public class CreateCurrenciesBatch200ResponseInner {
     this.rate = rate;
   }
 
+
   public CreateCurrenciesBatch200ResponseInner margin(@javax.annotation.Nullable Float margin) {
     
     this.margin = margin;
     return this;
   }
+
 
   /**
    * Наценка при автоматическом обновлении курса
@@ -393,11 +408,13 @@ public class CreateCurrenciesBatch200ResponseInner {
     this.margin = margin;
   }
 
+
   public CreateCurrenciesBatch200ResponseInner indirect(@javax.annotation.Nullable Boolean indirect) {
     
     this.indirect = indirect;
     return this;
   }
+
 
   /**
    * Признак обратного курса валюты
@@ -420,11 +437,13 @@ public class CreateCurrenciesBatch200ResponseInner {
     this.indirect = indirect;
   }
 
+
   public CreateCurrenciesBatch200ResponseInner rateUpdateType(@javax.annotation.Nullable String rateUpdateType) {
     
     this.rateUpdateType = rateUpdateType;
     return this;
   }
+
 
   /**
    * Способ обновления курса валюты. Известные значения описаны в RateUpdateType
@@ -447,11 +466,13 @@ public class CreateCurrenciesBatch200ResponseInner {
     this.rateUpdateType = rateUpdateType;
   }
 
+
   public CreateCurrenciesBatch200ResponseInner archived(@javax.annotation.Nullable Boolean archived) {
     
     this.archived = archived;
     return this;
   }
+
 
   /**
    * Добавлена ли валюта в архив
@@ -474,11 +495,13 @@ public class CreateCurrenciesBatch200ResponseInner {
     this.archived = archived;
   }
 
+
   public CreateCurrenciesBatch200ResponseInner _default(@javax.annotation.Nullable Boolean _default) {
     
     this._default = _default;
     return this;
   }
+
 
   /**
    * Валюта учета по умолчанию
@@ -501,11 +524,13 @@ public class CreateCurrenciesBatch200ResponseInner {
     this._default = _default;
   }
 
+
   public CreateCurrenciesBatch200ResponseInner majorUnit(@javax.annotation.Nullable CurrencyMajorUnit majorUnit) {
     
     this.majorUnit = majorUnit;
     return this;
   }
+
 
   /**
    * Get majorUnit
@@ -528,11 +553,13 @@ public class CreateCurrenciesBatch200ResponseInner {
     this.majorUnit = majorUnit;
   }
 
+
   public CreateCurrenciesBatch200ResponseInner minorUnit(@javax.annotation.Nullable CurrencyMinorUnit minorUnit) {
     
     this.minorUnit = minorUnit;
     return this;
   }
+
 
   /**
    * Get minorUnit
@@ -555,11 +582,13 @@ public class CreateCurrenciesBatch200ResponseInner {
     this.minorUnit = minorUnit;
   }
 
+
   public CreateCurrenciesBatch200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
+
 
   public CreateCurrenciesBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -589,6 +618,7 @@ public class CreateCurrenciesBatch200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

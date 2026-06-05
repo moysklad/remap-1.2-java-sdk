@@ -80,7 +80,7 @@ import java.util.StringJoiner;
   Service.JSON_PROPERTY_MIN_PRICE,
   Service.JSON_PROPERTY_SYNC_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Service {
   public static Service createWithMeta(UUID id) {
     Service o = new Service();
@@ -246,6 +246,7 @@ public class Service {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -266,6 +267,7 @@ public class Service {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID услуги
@@ -305,6 +307,7 @@ public class Service {
     return this;
   }
 
+
   /**
    * Добавлена ли услуга в архив
    * @return archived
@@ -326,11 +329,13 @@ public class Service {
     this.archived = archived;
   }
 
+
   public Service name(@javax.annotation.Nullable String name) {
     
     this.name = name;
     return this;
   }
+
 
   /**
    * Наименование услуги
@@ -353,11 +358,13 @@ public class Service {
     this.name = name;
   }
 
+
   public Service code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код услуги
@@ -380,11 +387,13 @@ public class Service {
     this.code = code;
   }
 
+
   public Service externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код услуги
@@ -407,6 +416,7 @@ public class Service {
     this.externalCode = externalCode;
   }
 
+
   /**
    * Наименование группы, в которую входит услуга
    * @return pathName
@@ -428,6 +438,7 @@ public class Service {
     
     return this;
   }
+
 
   /**
    * Описание услуги
@@ -459,11 +470,13 @@ public class Service {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public Service vat(@javax.annotation.Nullable Integer vat) {
     
     this.vat = vat;
     return this;
   }
+
 
   /**
    * НДС %
@@ -488,11 +501,13 @@ public class Service {
     this.vat = vat;
   }
 
+
   public Service vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
     
     this.vatEnabled = vatEnabled;
     return this;
   }
+
 
   /**
    * Включен ли НДС для услуги
@@ -515,11 +530,13 @@ public class Service {
     this.vatEnabled = vatEnabled;
   }
 
+
   public Service useParentVat(@javax.annotation.Nullable Boolean useParentVat) {
     
     this.useParentVat = useParentVat;
     return this;
   }
+
 
   /**
    * Используется ли ставка НДС родительской группы
@@ -541,6 +558,7 @@ public class Service {
   public void setUseParentVat(@javax.annotation.Nullable Boolean useParentVat) {
     this.useParentVat = useParentVat;
   }
+
 
   /**
    * Реальный НДС %
@@ -580,6 +598,7 @@ public class Service {
     return this;
   }
 
+
   /**
    * Признак запрета скидок
    * @return discountProhibited
@@ -601,11 +620,13 @@ public class Service {
     this.discountProhibited = discountProhibited;
   }
 
+
   public Service shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -628,11 +649,13 @@ public class Service {
     this.shared = shared;
   }
 
+
   public Service group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -655,11 +678,13 @@ public class Service {
     this.group = group;
   }
 
+
   public Service owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Метаданные владельца (Сотрудника)
@@ -691,6 +716,7 @@ public class Service {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   /**
    * Момент последнего обновления сущности
    * @return updated
@@ -713,6 +739,7 @@ public class Service {
     return this;
   }
 
+
   /**
    * Get buyPrice
    * @return buyPrice
@@ -734,11 +761,13 @@ public class Service {
     this.buyPrice = buyPrice;
   }
 
+
   public Service salePrices(@javax.annotation.Nullable List<SalePrice> salePrices) {
     this.salePrices = JsonNullable.<List<SalePrice>>of(salePrices);
     
     return this;
   }
+
 
   public Service addSalePricesItem(SalePrice salePricesItem) {
     if (this.salePrices == null || !this.salePrices.isPresent()) {
@@ -782,11 +811,13 @@ public class Service {
     this.salePrices = JsonNullable.<List<SalePrice>>of(salePrices);
   }
 
+
   public Service uom(@javax.annotation.Nullable Uom uom) {
     this.uom = JsonNullable.<Uom>of(uom);
     
     return this;
   }
+
 
   /**
    * Метаданные единиц измерения
@@ -818,11 +849,13 @@ public class Service {
     this.uom = JsonNullable.<Uom>of(uom);
   }
 
+
   public Service productFolder(@javax.annotation.Nullable ProductFolder productFolder) {
     this.productFolder = JsonNullable.<ProductFolder>of(productFolder);
     
     return this;
   }
+
 
   /**
    * Метаданные группы Услуги
@@ -854,11 +887,13 @@ public class Service {
     this.productFolder = JsonNullable.<ProductFolder>of(productFolder);
   }
 
+
   public Service files(@javax.annotation.Nullable FileList files) {
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
   }
+
 
   /**
    * Метаданные массива Файлов
@@ -890,11 +925,13 @@ public class Service {
     this.files = JsonNullable.<FileList>of(files);
   }
 
+
   public Service barcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
     
     return this;
   }
+
 
   public Service addBarcodesItem(Barcode barcodesItem) {
     if (this.barcodes == null || !this.barcodes.isPresent()) {
@@ -938,11 +975,13 @@ public class Service {
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
   }
 
+
   public Service paymentItemType(@javax.annotation.Nullable String paymentItemType) {
     
     this.paymentItemType = paymentItemType;
     return this;
   }
+
 
   /**
    * Признак предмета расчета. Известные значения описаны в PaymentItemType
@@ -965,11 +1004,13 @@ public class Service {
     this.paymentItemType = paymentItemType;
   }
 
+
   public Service taxSystem(@javax.annotation.Nullable String taxSystem) {
     
     this.taxSystem = taxSystem;
     return this;
   }
+
 
   /**
    * Код системы налогообложения. Известные значения описаны в TaxSystem
@@ -992,11 +1033,13 @@ public class Service {
     this.taxSystem = taxSystem;
   }
 
+
   public Service attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public Service addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -1040,11 +1083,13 @@ public class Service {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   public Service minPrice(@javax.annotation.Nullable MinPrice minPrice) {
     
     this.minPrice = minPrice;
     return this;
   }
+
 
   /**
    * Get minPrice
@@ -1067,11 +1112,13 @@ public class Service {
     this.minPrice = minPrice;
   }
 
+
   public Service syncId(@javax.annotation.Nullable UUID syncId) {
     
     this.syncId = syncId;
     return this;
   }
+
 
   /**
    * ID синхронизации
@@ -1093,6 +1140,7 @@ public class Service {
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
     this.syncId = syncId;
   }
+
 
   @Override
   public boolean equals(Object o) {

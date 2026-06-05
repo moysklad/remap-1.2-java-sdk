@@ -72,7 +72,7 @@ import java.util.StringJoiner;
   CreateEmissionOrderBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createEmissionOrderBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateEmissionOrderBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -194,6 +194,7 @@ public class CreateEmissionOrderBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -214,6 +215,7 @@ public class CreateEmissionOrderBatch200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Заказа кодов маркировки
@@ -269,6 +271,7 @@ public class CreateEmissionOrderBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Комментарий
    * @return description
@@ -289,6 +292,7 @@ public class CreateEmissionOrderBatch200ResponseInner {
   public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
+
 
   /**
    * Состояние документов маркировки. Известные значения описаны в EmissionOrderDocumentState
@@ -312,6 +316,7 @@ public class CreateEmissionOrderBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Способ ввода в оборот. Известные значения описаны в EmissionOrderEmissionType
    * @return emissionType
@@ -333,11 +338,13 @@ public class CreateEmissionOrderBatch200ResponseInner {
     this.emissionType = emissionType;
   }
 
+
   public CreateEmissionOrderBatch200ResponseInner externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Заказа кодов маркировки
@@ -360,11 +367,13 @@ public class CreateEmissionOrderBatch200ResponseInner {
     this.externalCode = externalCode;
   }
 
+
   public CreateEmissionOrderBatch200ResponseInner group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -387,11 +396,13 @@ public class CreateEmissionOrderBatch200ResponseInner {
     this.group = group;
   }
 
+
   public CreateEmissionOrderBatch200ResponseInner moment(@javax.annotation.Nullable String moment) {
     
     this.moment = moment;
     return this;
   }
+
 
   /**
    * Дата документа
@@ -414,11 +425,13 @@ public class CreateEmissionOrderBatch200ResponseInner {
     this.moment = moment;
   }
 
+
   public CreateEmissionOrderBatch200ResponseInner name(@javax.annotation.Nullable String name) {
     
     this.name = name;
     return this;
   }
+
 
   /**
    * Наименование Заказа кодов маркировки
@@ -441,11 +454,13 @@ public class CreateEmissionOrderBatch200ResponseInner {
     this.name = name;
   }
 
+
   public CreateEmissionOrderBatch200ResponseInner organization(@javax.annotation.Nullable Organization organization) {
     
     this.organization = organization;
     return this;
   }
+
 
   /**
    * Get organization
@@ -468,11 +483,13 @@ public class CreateEmissionOrderBatch200ResponseInner {
     this.organization = organization;
   }
 
+
   public CreateEmissionOrderBatch200ResponseInner owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Владелец (Сотрудник)
@@ -504,11 +521,13 @@ public class CreateEmissionOrderBatch200ResponseInner {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public CreateEmissionOrderBatch200ResponseInner positions(@javax.annotation.Nullable EmissionOrderPositionList positions) {
     
     this.positions = positions;
     return this;
   }
+
 
   /**
    * Get positions
@@ -531,6 +550,7 @@ public class CreateEmissionOrderBatch200ResponseInner {
     this.positions = positions;
   }
 
+
   /**
    * Напечатан ли документ
    * @return printed
@@ -552,6 +572,7 @@ public class CreateEmissionOrderBatch200ResponseInner {
     
     return this;
   }
+
 
   public CreateEmissionOrderBatch200ResponseInner addProductionTasksItem(ProductionTask productionTasksItem) {
     if (this.productionTasks == null || !this.productionTasks.isPresent()) {
@@ -595,6 +616,7 @@ public class CreateEmissionOrderBatch200ResponseInner {
     this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
   }
 
+
   /**
    * Опубликован ли документ
    * @return published
@@ -617,6 +639,7 @@ public class CreateEmissionOrderBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Общий доступ
    * @return shared
@@ -638,11 +661,13 @@ public class CreateEmissionOrderBatch200ResponseInner {
     this.shared = shared;
   }
 
+
   public CreateEmissionOrderBatch200ResponseInner state(@javax.annotation.Nullable State state) {
     this.state = JsonNullable.<State>of(state);
     
     return this;
   }
+
 
   /**
    * Метаданные статуса Заказа кодов маркировки
@@ -674,11 +699,13 @@ public class CreateEmissionOrderBatch200ResponseInner {
     this.state = JsonNullable.<State>of(state);
   }
 
+
   public CreateEmissionOrderBatch200ResponseInner trackingType(@javax.annotation.Nullable String trackingType) {
     
     this.trackingType = trackingType;
     return this;
   }
+
 
   /**
    * Тип маркируемой продукции. Известные значения описаны в TrackingType
@@ -701,6 +728,7 @@ public class CreateEmissionOrderBatch200ResponseInner {
     this.trackingType = trackingType;
   }
 
+
   /**
    * Момент последнего обновления
    * @return updated
@@ -722,6 +750,7 @@ public class CreateEmissionOrderBatch200ResponseInner {
     this.errors = errors;
     return this;
   }
+
 
   public CreateEmissionOrderBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -751,6 +780,7 @@ public class CreateEmissionOrderBatch200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

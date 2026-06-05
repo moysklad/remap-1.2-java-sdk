@@ -33,7 +33,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class SalePlatformsApi extends BaseApi {
 
@@ -142,6 +142,24 @@ if (acceptEncoding != null)
    */
   public SalePlatformList getSalePlatforms(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
     return this.getSalePlatforms(limit, offset, search, filter, accept, acceptEncoding, Collections.emptyMap());
+  }
+
+  /**
+   * Получить список площадок для продаж
+   * Запрос всех площадок для продаж на данной учетной записи
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return SalePlatformList
+   * @throws ApiException if fails to make API call
+   */
+  public SalePlatformList getSalePlatforms(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getSalePlatforms((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 

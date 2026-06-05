@@ -60,7 +60,7 @@ import java.util.StringJoiner;
   CreateProcessingProcessesBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createProcessingProcessesBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateProcessingProcessesBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -138,6 +138,7 @@ public class CreateProcessingProcessesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -158,6 +159,7 @@ public class CreateProcessingProcessesBatch200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Техпроцесса
@@ -197,6 +199,7 @@ public class CreateProcessingProcessesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Метаданные владельца (Сотрудника)
    * @return owner
@@ -227,11 +230,13 @@ public class CreateProcessingProcessesBatch200ResponseInner {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public CreateProcessingProcessesBatch200ResponseInner shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -254,11 +259,13 @@ public class CreateProcessingProcessesBatch200ResponseInner {
     this.shared = shared;
   }
 
+
   public CreateProcessingProcessesBatch200ResponseInner group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -280,6 +287,7 @@ public class CreateProcessingProcessesBatch200ResponseInner {
   public void setGroup(@javax.annotation.Nullable Group group) {
     this.group = group;
   }
+
 
   /**
    * Момент последнего обновления Техпроцесса
@@ -303,6 +311,7 @@ public class CreateProcessingProcessesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Наименование Техпроцесса
    * @return name
@@ -324,11 +333,13 @@ public class CreateProcessingProcessesBatch200ResponseInner {
     this.name = name;
   }
 
+
   public CreateProcessingProcessesBatch200ResponseInner description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Комментарий Техпроцесса
@@ -360,11 +371,13 @@ public class CreateProcessingProcessesBatch200ResponseInner {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public CreateProcessingProcessesBatch200ResponseInner externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Техпроцесса
@@ -387,11 +400,13 @@ public class CreateProcessingProcessesBatch200ResponseInner {
     this.externalCode = externalCode;
   }
 
+
   public CreateProcessingProcessesBatch200ResponseInner archived(@javax.annotation.Nullable Boolean archived) {
     
     this.archived = archived;
     return this;
   }
+
 
   /**
    * Добавлен ли Техпроцесс в архив
@@ -414,11 +429,13 @@ public class CreateProcessingProcessesBatch200ResponseInner {
     this.archived = archived;
   }
 
+
   public CreateProcessingProcessesBatch200ResponseInner positions(@javax.annotation.Nullable ProcessingProcessPositionList positions) {
     
     this.positions = positions;
     return this;
   }
+
 
   /**
    * Get positions
@@ -441,11 +458,13 @@ public class CreateProcessingProcessesBatch200ResponseInner {
     this.positions = positions;
   }
 
+
   public CreateProcessingProcessesBatch200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
+
 
   public CreateProcessingProcessesBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -475,6 +494,7 @@ public class CreateProcessingProcessesBatch200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

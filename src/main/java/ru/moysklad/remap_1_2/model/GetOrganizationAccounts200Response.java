@@ -41,7 +41,7 @@ import java.util.StringJoiner;
   GetOrganizationAccounts200Response.JSON_PROPERTY_ROWS
 })
 @JsonTypeName("getOrganizationAccounts_200_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class GetOrganizationAccounts200Response {
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
@@ -65,6 +65,7 @@ public class GetOrganizationAccounts200Response {
     return this;
   }
 
+
   /**
    * Get context
    * @return context
@@ -86,11 +87,13 @@ public class GetOrganizationAccounts200Response {
     this.context = context;
   }
 
+
   public GetOrganizationAccounts200Response meta(@javax.annotation.Nullable MetaList meta) {
     
     this.meta = meta;
     return this;
   }
+
 
   /**
    * Get meta
@@ -113,11 +116,13 @@ public class GetOrganizationAccounts200Response {
     this.meta = meta;
   }
 
+
   public GetOrganizationAccounts200Response rows(@javax.annotation.Nullable List<Account> rows) {
     
     this.rows = rows;
     return this;
   }
+
 
   public GetOrganizationAccounts200Response addRowsItem(Account rowsItem) {
     if (this.rows == null) {
@@ -147,6 +152,7 @@ public class GetOrganizationAccounts200Response {
   public void setRows(@javax.annotation.Nullable List<Account> rows) {
     this.rows = rows;
   }
+
 
   @Override
   public boolean equals(Object o) {

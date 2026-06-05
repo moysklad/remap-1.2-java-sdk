@@ -43,7 +43,7 @@ import java.util.StringJoiner;
   ProcessingPlanStage.JSON_PROPERTY_STANDARD_HOUR_COST,
   ProcessingPlanStage.JSON_PROPERTY_PROCESSING_PROCESS_POSITION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingPlanStage {
   public static ProcessingPlanStage createWithMeta(UUID parentId, UUID id) {
     ProcessingPlanStage o = new ProcessingPlanStage();
@@ -119,6 +119,7 @@ public class ProcessingPlanStage {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -139,6 +140,7 @@ public class ProcessingPlanStage {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID этапа Техкарты
@@ -178,6 +180,7 @@ public class ProcessingPlanStage {
     return this;
   }
 
+
   /**
    * Признак активности учета по нормо-часам
    * @return enableHourAccounting
@@ -199,11 +202,13 @@ public class ProcessingPlanStage {
     this.enableHourAccounting = enableHourAccounting;
   }
 
+
   public ProcessingPlanStage cost(@javax.annotation.Nullable Double cost) {
     
     this.cost = cost;
     return this;
   }
+
 
   /**
    * Стоимость производства на определенном этапе
@@ -227,11 +232,13 @@ public class ProcessingPlanStage {
     this.cost = cost;
   }
 
+
   public ProcessingPlanStage labourCost(@javax.annotation.Nullable Double labourCost) {
     
     this.labourCost = labourCost;
     return this;
   }
+
 
   /**
    * Оплата труда на определенном этапе
@@ -255,11 +262,13 @@ public class ProcessingPlanStage {
     this.labourCost = labourCost;
   }
 
+
   public ProcessingPlanStage standardHour(@javax.annotation.Nullable Double standardHour) {
     
     this.standardHour = standardHour;
     return this;
   }
+
 
   /**
    * Нормо-часы на определенном этапе
@@ -283,6 +292,7 @@ public class ProcessingPlanStage {
     this.standardHour = standardHour;
   }
 
+
   /**
    * Стоимость нормо-часа
    * @return standardHourCost
@@ -305,6 +315,7 @@ public class ProcessingPlanStage {
     return this;
   }
 
+
   /**
    * Get processingProcessPosition
    * @return processingProcessPosition
@@ -325,6 +336,7 @@ public class ProcessingPlanStage {
   public void setProcessingProcessPosition(@javax.annotation.Nullable ProcessingProcessPosition processingProcessPosition) {
     this.processingProcessPosition = processingProcessPosition;
   }
+
 
   @Override
   public boolean equals(Object o) {

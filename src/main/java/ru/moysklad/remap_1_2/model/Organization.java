@@ -94,7 +94,7 @@ import java.util.StringJoiner;
   Organization.JSON_PROPERTY_ACCOUNTS,
   Organization.JSON_PROPERTY_ATTRIBUTES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Organization {
   public static Organization createWithMeta(UUID id) {
     Organization o = new Organization();
@@ -326,6 +326,7 @@ public class Organization {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -346,6 +347,7 @@ public class Organization {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID юрлица
@@ -369,6 +371,7 @@ public class Organization {
     return this;
   }
 
+
   /**
    * ID синхронизации
    * @return syncId
@@ -389,6 +392,7 @@ public class Organization {
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
     this.syncId = syncId;
   }
+
 
   /**
    * ID учетной записи
@@ -412,6 +416,7 @@ public class Organization {
     return this;
   }
 
+
   /**
    * Наименование юрлица
    * @return name
@@ -433,11 +438,13 @@ public class Organization {
     this.name = name;
   }
 
+
   public Organization code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код юрлица
@@ -460,11 +467,13 @@ public class Organization {
     this.code = code;
   }
 
+
   public Organization externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код юрлица
@@ -487,11 +496,13 @@ public class Organization {
     this.externalCode = externalCode;
   }
 
+
   public Organization archived(@javax.annotation.Nullable Boolean archived) {
     
     this.archived = archived;
     return this;
   }
+
 
   /**
    * Добавлено ли юрлицо в архив
@@ -513,6 +524,7 @@ public class Organization {
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
     this.archived = archived;
   }
+
 
   /**
    * Дата создания
@@ -552,6 +564,7 @@ public class Organization {
     return this;
   }
 
+
   /**
    * Комментарий к юрлицу
    * @return description
@@ -573,11 +586,13 @@ public class Organization {
     this.description = description;
   }
 
+
   public Organization companyType(@javax.annotation.Nullable String companyType) {
     
     this.companyType = companyType;
     return this;
   }
+
 
   /**
    * Тип юрлица. Известные значения описаны в CompanyType
@@ -600,11 +615,13 @@ public class Organization {
     this.companyType = companyType;
   }
 
+
   public Organization email(@javax.annotation.Nullable String email) {
     
     this.email = email;
     return this;
   }
+
 
   /**
    * Адрес электронной почты
@@ -627,11 +644,13 @@ public class Organization {
     this.email = email;
   }
 
+
   public Organization phone(@javax.annotation.Nullable String phone) {
     
     this.phone = phone;
     return this;
   }
+
 
   /**
    * Номер городского телефона
@@ -654,11 +673,13 @@ public class Organization {
     this.phone = phone;
   }
 
+
   public Organization fax(@javax.annotation.Nullable String fax) {
     
     this.fax = fax;
     return this;
   }
+
 
   /**
    * Номер факса
@@ -681,11 +702,13 @@ public class Organization {
     this.fax = fax;
   }
 
+
   public Organization actualAddress(@javax.annotation.Nullable String actualAddress) {
     
     this.actualAddress = actualAddress;
     return this;
   }
+
 
   /**
    * Фактический адрес юрлица
@@ -708,11 +731,13 @@ public class Organization {
     this.actualAddress = actualAddress;
   }
 
+
   public Organization actualAddressFull(@javax.annotation.Nullable Address actualAddressFull) {
     this.actualAddressFull = JsonNullable.<Address>of(actualAddressFull);
     
     return this;
   }
+
 
   /**
    * Фактический адрес юрлица с детализацией по отдельным полям
@@ -744,11 +769,13 @@ public class Organization {
     this.actualAddressFull = JsonNullable.<Address>of(actualAddressFull);
   }
 
+
   public Organization legalAddress(@javax.annotation.Nullable String legalAddress) {
     
     this.legalAddress = legalAddress;
     return this;
   }
+
 
   /**
    * Юридический адрес юрлица
@@ -771,11 +798,13 @@ public class Organization {
     this.legalAddress = legalAddress;
   }
 
+
   public Organization legalAddressFull(@javax.annotation.Nullable Address legalAddressFull) {
     this.legalAddressFull = JsonNullable.<Address>of(legalAddressFull);
     
     return this;
   }
+
 
   /**
    * Юридический адрес юрлица с детализацией по отдельным полям
@@ -807,11 +836,13 @@ public class Organization {
     this.legalAddressFull = JsonNullable.<Address>of(legalAddressFull);
   }
 
+
   public Organization inn(@javax.annotation.Nullable String inn) {
     
     this.inn = inn;
     return this;
   }
+
 
   /**
    * ИНН
@@ -834,11 +865,13 @@ public class Organization {
     this.inn = inn;
   }
 
+
   public Organization kpp(@javax.annotation.Nullable String kpp) {
     
     this.kpp = kpp;
     return this;
   }
+
 
   /**
    * КПП
@@ -861,11 +894,13 @@ public class Organization {
     this.kpp = kpp;
   }
 
+
   public Organization ogrn(@javax.annotation.Nullable String ogrn) {
     
     this.ogrn = ogrn;
     return this;
   }
+
 
   /**
    * ОГРН
@@ -888,11 +923,13 @@ public class Organization {
     this.ogrn = ogrn;
   }
 
+
   public Organization ogrnip(@javax.annotation.Nullable String ogrnip) {
     
     this.ogrnip = ogrnip;
     return this;
   }
+
 
   /**
    * ОГРНИП
@@ -915,11 +952,13 @@ public class Organization {
     this.ogrnip = ogrnip;
   }
 
+
   public Organization okpo(@javax.annotation.Nullable String okpo) {
     
     this.okpo = okpo;
     return this;
   }
+
 
   /**
    * ОКПО
@@ -942,11 +981,13 @@ public class Organization {
     this.okpo = okpo;
   }
 
+
   public Organization certificateNumber(@javax.annotation.Nullable String certificateNumber) {
     
     this.certificateNumber = certificateNumber;
     return this;
   }
+
 
   /**
    * Номер свидетельства
@@ -969,11 +1010,13 @@ public class Organization {
     this.certificateNumber = certificateNumber;
   }
 
+
   public Organization certificateDate(@javax.annotation.Nullable String certificateDate) {
     
     this.certificateDate = certificateDate;
     return this;
   }
+
 
   /**
    * Дата свидетельства
@@ -996,11 +1039,13 @@ public class Organization {
     this.certificateDate = certificateDate;
   }
 
+
   public Organization legalTitle(@javax.annotation.Nullable String legalTitle) {
     
     this.legalTitle = legalTitle;
     return this;
   }
+
 
   /**
    * Полное наименование
@@ -1023,11 +1068,13 @@ public class Organization {
     this.legalTitle = legalTitle;
   }
 
+
   public Organization legalFirstName(@javax.annotation.Nullable String legalFirstName) {
     
     this.legalFirstName = legalFirstName;
     return this;
   }
+
 
   /**
    * Имя для ИП и физлица
@@ -1050,11 +1097,13 @@ public class Organization {
     this.legalFirstName = legalFirstName;
   }
 
+
   public Organization legalLastName(@javax.annotation.Nullable String legalLastName) {
     
     this.legalLastName = legalLastName;
     return this;
   }
+
 
   /**
    * Фамилия для ИП и физлица
@@ -1077,11 +1126,13 @@ public class Organization {
     this.legalLastName = legalLastName;
   }
 
+
   public Organization legalMiddleName(@javax.annotation.Nullable String legalMiddleName) {
     
     this.legalMiddleName = legalMiddleName;
     return this;
   }
+
 
   /**
    * Отчество для ИП и физлица
@@ -1104,11 +1155,13 @@ public class Organization {
     this.legalMiddleName = legalMiddleName;
   }
 
+
   public Organization trackingContractNumber(@javax.annotation.Nullable String trackingContractNumber) {
     
     this.trackingContractNumber = trackingContractNumber;
     return this;
   }
+
 
   /**
    * Номер договора с ЦРПТ
@@ -1131,11 +1184,13 @@ public class Organization {
     this.trackingContractNumber = trackingContractNumber;
   }
 
+
   public Organization trackingContractDate(@javax.annotation.Nullable String trackingContractDate) {
     this.trackingContractDate = JsonNullable.<String>of(trackingContractDate);
     
     return this;
   }
+
 
   /**
    * Дата договора с ЦРПТ
@@ -1167,11 +1222,13 @@ public class Organization {
     this.trackingContractDate = JsonNullable.<String>of(trackingContractDate);
   }
 
+
   public Organization advancePaymentVat(@javax.annotation.Nullable Double advancePaymentVat) {
     
     this.advancePaymentVat = advancePaymentVat;
     return this;
   }
+
 
   /**
    * Налоговая ставка для авансов для плательщиков НДС
@@ -1194,11 +1251,13 @@ public class Organization {
     this.advancePaymentVat = advancePaymentVat;
   }
 
+
   public Organization payerVat(@javax.annotation.Nullable Boolean payerVat) {
     
     this.payerVat = payerVat;
     return this;
   }
+
 
   /**
    * Является ли данное юрлицо плательщиком НДС
@@ -1221,11 +1280,13 @@ public class Organization {
     this.payerVat = payerVat;
   }
 
+
   public Organization director(@javax.annotation.Nullable String director) {
     
     this.director = director;
     return this;
   }
+
 
   /**
    * Руководитель
@@ -1248,11 +1309,13 @@ public class Organization {
     this.director = director;
   }
 
+
   public Organization directorPosition(@javax.annotation.Nullable String directorPosition) {
     
     this.directorPosition = directorPosition;
     return this;
   }
+
 
   /**
    * Должность руководителя
@@ -1275,11 +1338,13 @@ public class Organization {
     this.directorPosition = directorPosition;
   }
 
+
   public Organization chiefAccountant(@javax.annotation.Nullable String chiefAccountant) {
     
     this.chiefAccountant = chiefAccountant;
     return this;
   }
+
 
   /**
    * Главный бухгалтер
@@ -1302,11 +1367,13 @@ public class Organization {
     this.chiefAccountant = chiefAccountant;
   }
 
+
   public Organization directorSign(@javax.annotation.Nullable Image directorSign) {
     this.directorSign = JsonNullable.<Image>of(directorSign);
     
     return this;
   }
+
 
   /**
    * Подпись руководителя
@@ -1338,11 +1405,13 @@ public class Organization {
     this.directorSign = JsonNullable.<Image>of(directorSign);
   }
 
+
   public Organization chiefAccountSign(@javax.annotation.Nullable Image chiefAccountSign) {
     this.chiefAccountSign = JsonNullable.<Image>of(chiefAccountSign);
     
     return this;
   }
+
 
   /**
    * Подпись главного бухгалтера
@@ -1374,11 +1443,13 @@ public class Organization {
     this.chiefAccountSign = JsonNullable.<Image>of(chiefAccountSign);
   }
 
+
   public Organization stamp(@javax.annotation.Nullable Image stamp) {
     this.stamp = JsonNullable.<Image>of(stamp);
     
     return this;
   }
+
 
   /**
    * Печать
@@ -1410,6 +1481,7 @@ public class Organization {
     this.stamp = JsonNullable.<Image>of(stamp);
   }
 
+
   /**
    * Бонусные баллы по активной бонусной программе
    * @return bonusPoints
@@ -1431,6 +1503,7 @@ public class Organization {
     
     return this;
   }
+
 
   /**
    * Метаданные активной бонусной программы
@@ -1462,11 +1535,13 @@ public class Organization {
     this.bonusProgram = JsonNullable.<BonusProgram>of(bonusProgram);
   }
 
+
   public Organization shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -1489,11 +1564,13 @@ public class Organization {
     this.shared = shared;
   }
 
+
   public Organization group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -1516,11 +1593,13 @@ public class Organization {
     this.group = group;
   }
 
+
   public Organization owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Метаданные владельца (Сотрудника)
@@ -1552,11 +1631,13 @@ public class Organization {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public Organization accounts(@javax.annotation.Nullable OrganizationAccounts accounts) {
     
     this.accounts = accounts;
     return this;
   }
+
 
   /**
    * Get accounts
@@ -1579,11 +1660,13 @@ public class Organization {
     this.accounts = accounts;
   }
 
+
   public Organization attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public Organization addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -1626,6 +1709,7 @@ public class Organization {
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
+
 
   @Override
   public boolean equals(Object o) {

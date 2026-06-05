@@ -40,7 +40,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class OrganizationsApi extends BaseApi {
 
@@ -65,6 +65,25 @@ public class OrganizationsApi extends BaseApi {
    */
   public Organization createOrganization(@javax.annotation.Nonnull Organization organization, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createOrganization(organization, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать юрлицо
+   * Создание нового юрлица
+   
+   * @param organization  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Organization
+   * @throws ApiException if fails to make API call
+   */
+  public Organization createOrganization(@javax.annotation.Nonnull Organization organization, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createOrganization(organization, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -240,6 +259,25 @@ if (contentType != null)
    */
   public List<CreateOrganizationsBatch200ResponseInner> createOrganizationsBatch(@javax.annotation.Nonnull List<Organization> organization, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createOrganizationsBatch(organization, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать или изменить юрлица
+   * Массовое создание и обновление юрлиц
+   
+   * @param organization  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreateOrganizationsBatch200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateOrganizationsBatch200ResponseInner> createOrganizationsBatch(@javax.annotation.Nonnull List<Organization> organization, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createOrganizationsBatch(organization, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -759,6 +797,27 @@ if (contentType != null)
     return this.getOrganizationAccountById(id, accountId, expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить счёт юрлица по ID
+   * Запрос на получение отдельного счета юрлица
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param accountId ID счёта юрлица (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Account
+   * @throws ApiException if fails to make API call
+   */
+  public Account getOrganizationAccountById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getOrganizationAccountById(id, accountId, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить счёт юрлица по ID
@@ -853,6 +912,25 @@ if (acceptEncoding != null)
     return this.getOrganizationAccounts(id, limit, offset, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить счета юрлица
+   * Запрос на получение списка счетов юрлица
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return GetOrganizationAccounts200Response
+   * @throws ApiException if fails to make API call
+   */
+  public GetOrganizationAccounts200Response getOrganizationAccounts(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getOrganizationAccounts(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить счета юрлица
@@ -941,6 +1019,24 @@ if (acceptEncoding != null)
     return this.getOrganizationById(id, expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить юрлицо по ID
+   * Запрос на получение юрлица с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Organization
+   * @throws ApiException if fails to make API call
+   */
+  public Organization getOrganizationById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getOrganizationById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить юрлицо по ID
@@ -1024,6 +1120,21 @@ if (acceptEncoding != null)
    */
   public Metadata getOrganizationMetadata(@javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
     return this.getOrganizationMetadata(expand, accept, acceptEncoding, Collections.emptyMap());
+  }
+
+  /**
+   * Получить метаданные юрлиц
+   * Запрос на получение метаданных юрлиц
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Metadata
+   * @throws ApiException if fails to make API call
+   */
+  public Metadata getOrganizationMetadata(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getOrganizationMetadata((String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1188,6 +1299,22 @@ if (acceptEncoding != null)
     return this.getOrganizationMetadataAttributes(offset, limit, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить доп. поля юрлиц
+   * Запрос на получение всех доп. полей для юрлиц
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfoList
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfoList getOrganizationMetadataAttributes(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getOrganizationMetadataAttributes((Integer) effectiveOptions.get("offset"), (Integer) effectiveOptions.get("limit"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить доп. поля юрлиц
@@ -1271,6 +1398,26 @@ if (acceptEncoding != null)
    */
   public OrganizationList getOrganizations(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
     return this.getOrganizations(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  }
+
+  /**
+   * Получить список юрлиц
+   * Запрос на получение списка юрлиц на данной учетной записи
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return OrganizationList
+   * @throws ApiException if fails to make API call
+   */
+  public OrganizationList getOrganizations(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getOrganizations((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1362,6 +1509,28 @@ if (acceptEncoding != null)
    */
   public Organization updateOrganization(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Organization organization, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateOrganization(id, organization, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Обновить юрлицо
+   * Обновление юрлица с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param organization  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Organization
+   * @throws ApiException if fails to make API call
+   */
+  public Organization updateOrganization(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Organization organization, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateOrganization(id, organization, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1460,6 +1629,31 @@ if (contentType != null)
    */
   public Account updateOrganizationAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull Account account, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateOrganizationAccount(id, accountId, account, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Обновить счёт юрлица
+   * Обновление отдельного счета юрлица с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param accountId ID счёта юрлица (required)
+   
+   
+   * @param account  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Account
+   * @throws ApiException if fails to make API call
+   */
+  public Account updateOrganizationAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull Account account, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateOrganizationAccount(id, accountId, account, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 

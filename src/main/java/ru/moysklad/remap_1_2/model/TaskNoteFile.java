@@ -43,7 +43,7 @@ import java.util.StringJoiner;
   TaskNoteFile.JSON_PROPERTY_TINY,
   TaskNoteFile.JSON_PROPERTY_MINIATURE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class TaskNoteFile {
   public static TaskNoteFile createWithMeta(UUID parentId, UUID noteId, UUID id) {
     TaskNoteFile o = new TaskNoteFile();
@@ -119,6 +119,7 @@ public class TaskNoteFile {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -139,6 +140,7 @@ public class TaskNoteFile {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID файла
@@ -162,6 +164,7 @@ public class TaskNoteFile {
     return this;
   }
 
+
   /**
    * Название файла
    * @return title
@@ -183,11 +186,13 @@ public class TaskNoteFile {
     this.title = title;
   }
 
+
   public TaskNoteFile filename(@javax.annotation.Nullable String filename) {
     
     this.filename = filename;
     return this;
   }
+
 
   /**
    * Имя файла
@@ -209,6 +214,7 @@ public class TaskNoteFile {
   public void setFilename(@javax.annotation.Nullable String filename) {
     this.filename = filename;
   }
+
 
   /**
    * Размер файла в байтах
@@ -248,6 +254,7 @@ public class TaskNoteFile {
     return this;
   }
 
+
   /**
    * Get createdBy
    * @return createdBy
@@ -269,11 +276,13 @@ public class TaskNoteFile {
     this.createdBy = createdBy;
   }
 
+
   public TaskNoteFile tiny(@javax.annotation.Nullable Meta tiny) {
     
     this.tiny = tiny;
     return this;
   }
+
 
   /**
    * Get tiny
@@ -296,11 +305,13 @@ public class TaskNoteFile {
     this.tiny = tiny;
   }
 
+
   public TaskNoteFile miniature(@javax.annotation.Nullable Meta miniature) {
     
     this.miniature = miniature;
     return this;
   }
+
 
   /**
    * Get miniature
@@ -322,6 +333,7 @@ public class TaskNoteFile {
   public void setMiniature(@javax.annotation.Nullable Meta miniature) {
     this.miniature = miniature;
   }
+
 
   @Override
   public boolean equals(Object o) {

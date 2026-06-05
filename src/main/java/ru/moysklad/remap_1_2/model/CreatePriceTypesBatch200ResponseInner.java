@@ -45,7 +45,7 @@ import java.util.StringJoiner;
   CreatePriceTypesBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createPriceTypesBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreatePriceTypesBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -87,6 +87,7 @@ public class CreatePriceTypesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -107,6 +108,7 @@ public class CreatePriceTypesBatch200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID типа цены
@@ -130,6 +132,7 @@ public class CreatePriceTypesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Наименование типа цены
    * @return name
@@ -151,11 +154,13 @@ public class CreatePriceTypesBatch200ResponseInner {
     this.name = name;
   }
 
+
   public CreatePriceTypesBatch200ResponseInner externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код типа цены
@@ -178,11 +183,13 @@ public class CreatePriceTypesBatch200ResponseInner {
     this.externalCode = externalCode;
   }
 
+
   public CreatePriceTypesBatch200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
+
 
   public CreatePriceTypesBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -212,6 +219,7 @@ public class CreatePriceTypesBatch200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

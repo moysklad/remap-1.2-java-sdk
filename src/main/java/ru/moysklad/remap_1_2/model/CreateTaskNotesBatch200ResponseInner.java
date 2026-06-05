@@ -56,7 +56,7 @@ import java.util.StringJoiner;
   CreateTaskNotesBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createTaskNotesBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateTaskNotesBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -118,6 +118,7 @@ public class CreateTaskNotesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -138,6 +139,7 @@ public class CreateTaskNotesBatch200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID комментария к Задаче
@@ -177,6 +179,7 @@ public class CreateTaskNotesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get author
    * @return author
@@ -198,11 +201,13 @@ public class CreateTaskNotesBatch200ResponseInner {
     this.author = author;
   }
 
+
   public CreateTaskNotesBatch200ResponseInner authorApplication(@javax.annotation.Nullable Application authorApplication) {
     
     this.authorApplication = authorApplication;
     return this;
   }
+
 
   /**
    * Get authorApplication
@@ -224,6 +229,7 @@ public class CreateTaskNotesBatch200ResponseInner {
   public void setAuthorApplication(@javax.annotation.Nullable Application authorApplication) {
     this.authorApplication = authorApplication;
   }
+
 
   /**
    * Момент создания комментария
@@ -247,6 +253,7 @@ public class CreateTaskNotesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Текст комментария
    * @return text
@@ -268,11 +275,13 @@ public class CreateTaskNotesBatch200ResponseInner {
     this.text = text;
   }
 
+
   public CreateTaskNotesBatch200ResponseInner files(@javax.annotation.Nullable TaskNoteFileList files) {
     this.files = JsonNullable.<TaskNoteFileList>of(files);
     
     return this;
   }
+
 
   /**
    * Метаданные массива Файлов
@@ -304,11 +313,13 @@ public class CreateTaskNotesBatch200ResponseInner {
     this.files = JsonNullable.<TaskNoteFileList>of(files);
   }
 
+
   public CreateTaskNotesBatch200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
+
 
   public CreateTaskNotesBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -338,6 +349,7 @@ public class CreateTaskNotesBatch200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

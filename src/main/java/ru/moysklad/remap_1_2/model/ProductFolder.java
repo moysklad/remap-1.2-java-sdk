@@ -59,7 +59,7 @@ import java.util.StringJoiner;
   ProductFolder.JSON_PROPERTY_PRODUCT_FOLDER,
   ProductFolder.JSON_PROPERTY_TAX_SYSTEM
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProductFolder {
   public static ProductFolder createWithMeta(UUID id) {
     ProductFolder o = new ProductFolder();
@@ -185,6 +185,7 @@ public class ProductFolder {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -205,6 +206,7 @@ public class ProductFolder {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID группы товаров
@@ -244,6 +246,7 @@ public class ProductFolder {
     return this;
   }
 
+
   /**
    * Наименование группы товаров
    * @return name
@@ -265,11 +268,13 @@ public class ProductFolder {
     this.name = name;
   }
 
+
   public ProductFolder code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код группы товаров
@@ -292,11 +297,13 @@ public class ProductFolder {
     this.code = code;
   }
 
+
   public ProductFolder externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код группы товаров
@@ -319,11 +326,13 @@ public class ProductFolder {
     this.externalCode = externalCode;
   }
 
+
   public ProductFolder archived(@javax.annotation.Nullable Boolean archived) {
     
     this.archived = archived;
     return this;
   }
+
 
   /**
    * Добавлена ли группа товаров в архив
@@ -346,6 +355,7 @@ public class ProductFolder {
     this.archived = archived;
   }
 
+
   /**
    * Наименование родительской группы
    * @return pathName
@@ -367,6 +377,7 @@ public class ProductFolder {
     
     return this;
   }
+
 
   /**
    * Описание группы товаров
@@ -398,11 +409,13 @@ public class ProductFolder {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public ProductFolder vat(@javax.annotation.Nullable Integer vat) {
     
     this.vat = vat;
     return this;
   }
+
 
   /**
    * НДС %
@@ -427,11 +440,13 @@ public class ProductFolder {
     this.vat = vat;
   }
 
+
   public ProductFolder vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
     
     this.vatEnabled = vatEnabled;
     return this;
   }
+
 
   /**
    * Включен ли НДС для группы
@@ -453,6 +468,7 @@ public class ProductFolder {
   public void setVatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
     this.vatEnabled = vatEnabled;
   }
+
 
   /**
    * Реальный НДС %
@@ -492,6 +508,7 @@ public class ProductFolder {
     return this;
   }
 
+
   /**
    * Используется ли ставка НДС родительской группы
    * @return useParentVat
@@ -513,11 +530,13 @@ public class ProductFolder {
     this.useParentVat = useParentVat;
   }
 
+
   public ProductFolder shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -540,11 +559,13 @@ public class ProductFolder {
     this.shared = shared;
   }
 
+
   public ProductFolder group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -567,11 +588,13 @@ public class ProductFolder {
     this.group = group;
   }
 
+
   public ProductFolder owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Владелец группы товаров. Может быть Meta объектом или полным объектом в зависимости от expand параметра
@@ -603,6 +626,7 @@ public class ProductFolder {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   /**
    * Момент последнего обновления
    * @return updated
@@ -624,6 +648,7 @@ public class ProductFolder {
     
     return this;
   }
+
 
   /**
    * Родительская группа товаров
@@ -655,11 +680,13 @@ public class ProductFolder {
     this.productFolder = JsonNullable.<ProductFolder>of(productFolder);
   }
 
+
   public ProductFolder taxSystem(@javax.annotation.Nullable String taxSystem) {
     
     this.taxSystem = taxSystem;
     return this;
   }
+
 
   /**
    * Код системы налогообложения. Известные значения описаны в TaxSystem
@@ -681,6 +708,7 @@ public class ProductFolder {
   public void setTaxSystem(@javax.annotation.Nullable String taxSystem) {
     this.taxSystem = taxSystem;
   }
+
 
   @Override
   public boolean equals(Object o) {

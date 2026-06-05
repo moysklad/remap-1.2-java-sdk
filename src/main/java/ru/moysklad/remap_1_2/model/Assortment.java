@@ -122,7 +122,7 @@ import java.util.StringJoiner;
   Assortment.JSON_PROPERTY_IN_TRANSIT,
   Assortment.JSON_PROPERTY_QUANTITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Assortment {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -402,6 +402,7 @@ public class Assortment {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -422,6 +423,7 @@ public class Assortment {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Партии
@@ -461,6 +463,7 @@ public class Assortment {
     return this;
   }
 
+
   /**
    * Get alcoholic
    * @return alcoholic
@@ -482,11 +485,13 @@ public class Assortment {
     this.alcoholic = alcoholic;
   }
 
+
   public Assortment archived(@javax.annotation.Nullable Boolean archived) {
     
     this.archived = archived;
     return this;
   }
+
 
   /**
    * Добавлена ли Партия в архив
@@ -508,6 +513,7 @@ public class Assortment {
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
     this.archived = archived;
   }
+
 
   /**
    * Признак товара, как табачной продукции
@@ -547,6 +553,7 @@ public class Assortment {
     return this;
   }
 
+
   /**
    * Код Партии
    * @return code
@@ -568,11 +575,13 @@ public class Assortment {
     this.code = code;
   }
 
+
   public Assortment externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Партии
@@ -594,6 +603,7 @@ public class Assortment {
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
     this.externalCode = externalCode;
   }
+
 
   /**
    * Наименование группы, в которую входит Комплект
@@ -617,6 +627,7 @@ public class Assortment {
     return this;
   }
 
+
   /**
    * Артикул
    * @return article
@@ -638,11 +649,13 @@ public class Assortment {
     this.article = article;
   }
 
+
   public Assortment description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Описание Партии
@@ -674,11 +687,13 @@ public class Assortment {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public Assortment vat(@javax.annotation.Nullable Integer vat) {
     
     this.vat = vat;
     return this;
   }
+
 
   /**
    * НДС %
@@ -701,11 +716,13 @@ public class Assortment {
     this.vat = vat;
   }
 
+
   public Assortment vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
     
     this.vatEnabled = vatEnabled;
     return this;
   }
+
 
   /**
    * Включен ли НДС для товара
@@ -728,11 +745,13 @@ public class Assortment {
     this.vatEnabled = vatEnabled;
   }
 
+
   public Assortment useParentVat(@javax.annotation.Nullable Boolean useParentVat) {
     
     this.useParentVat = useParentVat;
     return this;
   }
+
 
   /**
    * Используется ли ставка НДС родительской группы
@@ -754,6 +773,7 @@ public class Assortment {
   public void setUseParentVat(@javax.annotation.Nullable Boolean useParentVat) {
     this.useParentVat = useParentVat;
   }
+
 
   /**
    * Реальный НДС %
@@ -793,6 +813,7 @@ public class Assortment {
     return this;
   }
 
+
   /**
    * Признак запрета скидок
    * @return discountProhibited
@@ -813,6 +834,7 @@ public class Assortment {
   public void setDiscountProhibited(@javax.annotation.Nullable Boolean discountProhibited) {
     this.discountProhibited = discountProhibited;
   }
+
 
   /**
    * Количество модификаций у данного товара
@@ -836,6 +858,7 @@ public class Assortment {
     return this;
   }
 
+
   /**
    * Учет по серийным номерам
    * @return isSerialTrackable
@@ -857,11 +880,13 @@ public class Assortment {
     this.isSerialTrackable = isSerialTrackable;
   }
 
+
   public Assortment shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -884,11 +909,13 @@ public class Assortment {
     this.shared = shared;
   }
 
+
   public Assortment group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -911,11 +938,13 @@ public class Assortment {
     this.group = group;
   }
 
+
   public Assortment owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Метаданные владельца (Сотрудника)
@@ -947,6 +976,7 @@ public class Assortment {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   /**
    * Момент последнего обновления сущности
    * @return updated
@@ -969,6 +999,7 @@ public class Assortment {
     return this;
   }
 
+
   /**
    * Вес
    * @return weight
@@ -990,11 +1021,13 @@ public class Assortment {
     this.weight = weight;
   }
 
+
   public Assortment volume(@javax.annotation.Nullable Float volume) {
     
     this.volume = volume;
     return this;
   }
+
 
   /**
    * Объем
@@ -1017,11 +1050,13 @@ public class Assortment {
     this.volume = volume;
   }
 
+
   public Assortment buyPrice(@javax.annotation.Nullable BuyPrice buyPrice) {
     
     this.buyPrice = buyPrice;
     return this;
   }
+
 
   /**
    * Get buyPrice
@@ -1044,11 +1079,13 @@ public class Assortment {
     this.buyPrice = buyPrice;
   }
 
+
   public Assortment salePrices(@javax.annotation.Nullable List<SalePrice> salePrices) {
     this.salePrices = JsonNullable.<List<SalePrice>>of(salePrices);
     
     return this;
   }
+
 
   public Assortment addSalePricesItem(SalePrice salePricesItem) {
     if (this.salePrices == null || !this.salePrices.isPresent()) {
@@ -1092,11 +1129,13 @@ public class Assortment {
     this.salePrices = JsonNullable.<List<SalePrice>>of(salePrices);
   }
 
+
   public Assortment supplier(@javax.annotation.Nullable Counterparty supplier) {
     this.supplier = JsonNullable.<Counterparty>of(supplier);
     
     return this;
   }
+
 
   /**
    * Метаданные контрагента-поставщика
@@ -1128,11 +1167,13 @@ public class Assortment {
     this.supplier = JsonNullable.<Counterparty>of(supplier);
   }
 
+
   public Assortment country(@javax.annotation.Nullable Country country) {
     this.country = JsonNullable.<Country>of(country);
     
     return this;
   }
+
 
   /**
    * Метаданные Страны
@@ -1164,11 +1205,13 @@ public class Assortment {
     this.country = JsonNullable.<Country>of(country);
   }
 
+
   public Assortment uom(@javax.annotation.Nullable Uom uom) {
     this.uom = JsonNullable.<Uom>of(uom);
     
     return this;
   }
+
 
   /**
    * Единицы измерения
@@ -1200,11 +1243,13 @@ public class Assortment {
     this.uom = JsonNullable.<Uom>of(uom);
   }
 
+
   public Assortment productFolder(@javax.annotation.Nullable ProductFolder productFolder) {
     this.productFolder = JsonNullable.<ProductFolder>of(productFolder);
     
     return this;
   }
+
 
   /**
    * Метаданные группы Комплекта
@@ -1236,6 +1281,7 @@ public class Assortment {
     this.productFolder = JsonNullable.<ProductFolder>of(productFolder);
   }
 
+
   /**
    * Массив метаданных Изображений товара, к которому относится данная партия
    * @return images
@@ -1257,6 +1303,7 @@ public class Assortment {
     
     return this;
   }
+
 
   /**
    * Метаданные массива Файлов
@@ -1288,11 +1335,13 @@ public class Assortment {
     this.files = JsonNullable.<FileList>of(files);
   }
 
+
   public Assortment barcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
     
     return this;
   }
+
 
   public Assortment addBarcodesItem(Barcode barcodesItem) {
     if (this.barcodes == null || !this.barcodes.isPresent()) {
@@ -1336,11 +1385,13 @@ public class Assortment {
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
   }
 
+
   public Assortment packs(@javax.annotation.Nullable List<Pack> packs) {
     this.packs = JsonNullable.<List<Pack>>of(packs);
     
     return this;
   }
+
 
   public Assortment addPacksItem(Pack packsItem) {
     if (this.packs == null || !this.packs.isPresent()) {
@@ -1384,11 +1435,13 @@ public class Assortment {
     this.packs = JsonNullable.<List<Pack>>of(packs);
   }
 
+
   public Assortment trackingType(@javax.annotation.Nullable String trackingType) {
     
     this.trackingType = trackingType;
     return this;
   }
+
 
   /**
    * Тип маркируемой продукции. Известные значения описаны в TrackingType
@@ -1411,11 +1464,13 @@ public class Assortment {
     this.trackingType = trackingType;
   }
 
+
   public Assortment tnved(@javax.annotation.Nullable String tnved) {
     
     this.tnved = tnved;
     return this;
   }
+
 
   /**
    * Код ТН ВЭД
@@ -1438,11 +1493,13 @@ public class Assortment {
     this.tnved = tnved;
   }
 
+
   public Assortment paymentItemType(@javax.annotation.Nullable String paymentItemType) {
     
     this.paymentItemType = paymentItemType;
     return this;
   }
+
 
   /**
    * Признак предмета расчета. Известные значения описаны в PaymentItemType
@@ -1465,11 +1522,13 @@ public class Assortment {
     this.paymentItemType = paymentItemType;
   }
 
+
   public Assortment taxSystem(@javax.annotation.Nullable String taxSystem) {
     
     this.taxSystem = taxSystem;
     return this;
   }
+
 
   /**
    * Код системы налогообложения. Известные значения описаны в TaxSystem
@@ -1492,11 +1551,13 @@ public class Assortment {
     this.taxSystem = taxSystem;
   }
 
+
   public Assortment attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public Assortment addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -1540,11 +1601,13 @@ public class Assortment {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   public Assortment minimumStock(@javax.annotation.Nullable MinimumStockAbstract minimumStock) {
     this.minimumStock = JsonNullable.<MinimumStockAbstract>of(minimumStock);
     
     return this;
   }
+
 
   /**
    * Неснижаемый остаток. Не выводится по умолчанию. Для получения передайте параметр &#x60;?fields&#x3D;minimumStock&#x60;. 
@@ -1576,11 +1639,13 @@ public class Assortment {
     this.minimumStock = JsonNullable.<MinimumStockAbstract>of(minimumStock);
   }
 
+
   public Assortment minPrice(@javax.annotation.Nullable MinPrice minPrice) {
     
     this.minPrice = minPrice;
     return this;
   }
+
 
   /**
    * Get minPrice
@@ -1603,11 +1668,13 @@ public class Assortment {
     this.minPrice = minPrice;
   }
 
+
   public Assortment weighed(@javax.annotation.Nullable Boolean weighed) {
     
     this.weighed = weighed;
     return this;
   }
+
 
   /**
    * Поле, показывающее является ли товар весовым
@@ -1630,11 +1697,13 @@ public class Assortment {
     this.weighed = weighed;
   }
 
+
   public Assortment onTap(@javax.annotation.Nullable Boolean onTap) {
     
     this.onTap = onTap;
     return this;
   }
+
 
   /**
    * Поле, показывающее является ли товар разливным
@@ -1657,11 +1726,13 @@ public class Assortment {
     this.onTap = onTap;
   }
 
+
   public Assortment partialDisposal(@javax.annotation.Nullable Boolean partialDisposal) {
     
     this.partialDisposal = partialDisposal;
     return this;
   }
+
 
   /**
    * Управление состоянием частичного выбытия маркированного товара
@@ -1684,11 +1755,13 @@ public class Assortment {
     this.partialDisposal = partialDisposal;
   }
 
+
   public Assortment things(@javax.annotation.Nullable List<String> things) {
     this.things = JsonNullable.<List<String>>of(things);
     
     return this;
   }
+
 
   public Assortment addThingsItem(String thingsItem) {
     if (this.things == null || !this.things.isPresent()) {
@@ -1732,11 +1805,13 @@ public class Assortment {
     this.things = JsonNullable.<List<String>>of(things);
   }
 
+
   public Assortment syncId(@javax.annotation.Nullable UUID syncId) {
     
     this.syncId = syncId;
     return this;
   }
+
 
   /**
    * ID синхронизации
@@ -1759,11 +1834,13 @@ public class Assortment {
     this.syncId = syncId;
   }
 
+
   public Assortment ppeType(@javax.annotation.Nullable String ppeType) {
     
     this.ppeType = ppeType;
     return this;
   }
+
 
   /**
    * Код вида номенклатурной классификации медицинских средств индивидуальной защиты. Известные значения описаны в PpeType
@@ -1786,11 +1863,13 @@ public class Assortment {
     this.ppeType = ppeType;
   }
 
+
   public Assortment product(@javax.annotation.Nullable Product product) {
     
     this.product = product;
     return this;
   }
+
 
   /**
    * Get product
@@ -1813,11 +1892,13 @@ public class Assortment {
     this.product = product;
   }
 
+
   public Assortment characteristics(@javax.annotation.Nullable List<VariantCharacteristicValue> characteristics) {
     this.characteristics = JsonNullable.<List<VariantCharacteristicValue>>of(characteristics);
     
     return this;
   }
+
 
   public Assortment addCharacteristicsItem(VariantCharacteristicValue characteristicsItem) {
     if (this.characteristics == null || !this.characteristics.isPresent()) {
@@ -1861,11 +1942,13 @@ public class Assortment {
     this.characteristics = JsonNullable.<List<VariantCharacteristicValue>>of(characteristics);
   }
 
+
   public Assortment overhead(@javax.annotation.Nullable BundleOverhead overhead) {
     
     this.overhead = overhead;
     return this;
   }
+
 
   /**
    * Get overhead
@@ -1888,11 +1971,13 @@ public class Assortment {
     this.overhead = overhead;
   }
 
+
   public Assortment components(@javax.annotation.Nullable BundleComponentList components) {
     
     this.components = components;
     return this;
   }
+
 
   /**
    * Массив компонентов Комплекта
@@ -1915,11 +2000,13 @@ public class Assortment {
     this.components = components;
   }
 
+
   public Assortment assortment(@javax.annotation.Nullable Assortment assortment) {
     
     this.assortment = assortment;
     return this;
   }
+
 
   /**
    * Get assortment
@@ -1944,11 +2031,13 @@ public class Assortment {
     this.assortment = assortment;
   }
 
+
   public Assortment expiryDate(@javax.annotation.Nullable String expiryDate) {
     
     this.expiryDate = expiryDate;
     return this;
   }
+
 
   /**
    * Срок годности Партии
@@ -1971,11 +2060,13 @@ public class Assortment {
     this.expiryDate = expiryDate;
   }
 
+
   public Assortment label(@javax.annotation.Nullable String label) {
     
     this.label = label;
     return this;
   }
+
 
   /**
    * Метка Партии
@@ -1998,11 +2089,13 @@ public class Assortment {
     this.label = label;
   }
 
+
   public Assortment stock(@javax.annotation.Nullable Double stock) {
     
     this.stock = stock;
     return this;
   }
+
 
   /**
    * Остаток
@@ -2025,11 +2118,13 @@ public class Assortment {
     this.stock = stock;
   }
 
+
   public Assortment reserve(@javax.annotation.Nullable Double reserve) {
     
     this.reserve = reserve;
     return this;
   }
+
 
   /**
    * Резерв
@@ -2052,11 +2147,13 @@ public class Assortment {
     this.reserve = reserve;
   }
 
+
   public Assortment inTransit(@javax.annotation.Nullable Double inTransit) {
     
     this.inTransit = inTransit;
     return this;
   }
+
 
   /**
    * Ожидание
@@ -2079,11 +2176,13 @@ public class Assortment {
     this.inTransit = inTransit;
   }
 
+
   public Assortment quantity(@javax.annotation.Nullable Double quantity) {
     
     this.quantity = quantity;
     return this;
   }
+
 
   /**
    * Доступно
@@ -2105,6 +2204,7 @@ public class Assortment {
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
     this.quantity = quantity;
   }
+
 
   @Override
   public boolean equals(Object o) {

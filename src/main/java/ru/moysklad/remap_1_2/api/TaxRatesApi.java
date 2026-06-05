@@ -35,7 +35,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class TaxRatesApi extends BaseApi {
 
@@ -60,6 +60,25 @@ public class TaxRatesApi extends BaseApi {
    */
   public TaxRate createTaxRate(@javax.annotation.Nonnull TaxRate taxRate, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createTaxRate(taxRate, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать ставку НДС
+   * Создание новой ставки НДС
+   
+   * @param taxRate  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return TaxRate
+   * @throws ApiException if fails to make API call
+   */
+  public TaxRate createTaxRate(@javax.annotation.Nonnull TaxRate taxRate, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createTaxRate(taxRate, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -149,6 +168,25 @@ if (contentType != null)
    */
   public List<CreateTaxRatesBatch200ResponseInner> createTaxRatesBatch(@javax.annotation.Nonnull List<TaxRate> taxRate, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createTaxRatesBatch(taxRate, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать или изменить ставки НДС
+   * Создание или изменение нескольких ставок НДС.
+   
+   * @param taxRate  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreateTaxRatesBatch200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateTaxRatesBatch200ResponseInner> createTaxRatesBatch(@javax.annotation.Nonnull List<TaxRate> taxRate, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createTaxRatesBatch(taxRate, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -405,6 +443,24 @@ if (contentType != null)
     return this.getTaxRateById(id, expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить ставку НДС по ID
+   * Запрос на получение отдельной ставки НДС с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return TaxRate
+   * @throws ApiException if fails to make API call
+   */
+  public TaxRate getTaxRateById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getTaxRateById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить ставку НДС по ID
@@ -493,6 +549,26 @@ if (acceptEncoding != null)
    */
   public TaxRateList getTaxRates(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
     return this.getTaxRates(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  }
+
+  /**
+   * Получить список ставок НДС
+   * Запрос всех ставок НДС на данной учетной записи
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return TaxRateList
+   * @throws ApiException if fails to make API call
+   */
+  public TaxRateList getTaxRates(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getTaxRates((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -584,6 +660,28 @@ if (acceptEncoding != null)
    */
   public TaxRate updateTaxRate(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull TaxRate taxRate, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateTaxRate(id, taxRate, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Обновить ставку НДС
+   * Обновление ставки НДС с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param taxRate  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return TaxRate
+   * @throws ApiException if fails to make API call
+   */
+  public TaxRate updateTaxRate(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull TaxRate taxRate, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateTaxRate(id, taxRate, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 

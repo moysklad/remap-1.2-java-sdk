@@ -41,7 +41,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class EmployeesApi extends BaseApi {
 
@@ -157,6 +157,25 @@ if (contentType != null)
     return this.createEmployee(employee, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
+  /**
+   * Создать сотрудника
+   * Создание нового сотрудника
+   
+   * @param employee  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Employee
+   * @throws ApiException if fails to make API call
+   */
+  public Employee createEmployee(@javax.annotation.Nonnull Employee employee, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createEmployee(employee, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Создать сотрудника
@@ -244,6 +263,25 @@ if (contentType != null)
    */
   public List<CreateEmployeesBatch200ResponseInner> createEmployeesBatch(@javax.annotation.Nonnull List<Employee> employee, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createEmployeesBatch(employee, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать или изменить сотрудников
+   * Создание или изменение нескольких сотрудников.
+   
+   * @param employee  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreateEmployeesBatch200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateEmployeesBatch200ResponseInner> createEmployeesBatch(@javax.annotation.Nonnull List<Employee> employee, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createEmployeesBatch(employee, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -580,6 +618,24 @@ if (contentType != null)
     return this.getEmployeeById(id, expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить сотрудника по ID
+   * Запрос на получение отдельного сотрудника с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Employee
+   * @throws ApiException if fails to make API call
+   */
+  public Employee getEmployeeById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getEmployeeById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить сотрудника по ID
@@ -826,6 +882,26 @@ if (acceptEncoding != null)
    */
   public EmployeeList getEmployees(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
     return this.getEmployees(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  }
+
+  /**
+   * Получить список сотрудников
+   * Запрос всех сотрудников на данной учетной записи
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return EmployeeList
+   * @throws ApiException if fails to make API call
+   */
+  public EmployeeList getEmployees(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getEmployees((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1372,6 +1448,28 @@ if (acceptEncoding != null)
    */
   public Employee updateEmployee(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Employee employee, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateEmployee(id, employee, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Обновить сотрудника
+   * Обновление сотрудника с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param employee  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Employee
+   * @throws ApiException if fails to make API call
+   */
+  public Employee updateEmployee(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Employee employee, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateEmployee(id, employee, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 

@@ -26,11 +26,11 @@ import java.util.List;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import ru.moysklad.remap_1_2.model.Assortment;
-import ru.moysklad.remap_1_2.model.DemandPositionDeclarationInner;
-import ru.moysklad.remap_1_2.model.DemandPositionTrackingCode;
+import ru.moysklad.remap_1_2.model.DeclarationInner;
 import ru.moysklad.remap_1_2.model.DemandPositionTrackingCode1162;
 import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.Pack;
+import ru.moysklad.remap_1_2.model.PositionTrackingCode;
 import ru.moysklad.remap_1_2.model.StoreSlot;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -63,7 +63,7 @@ import java.util.StringJoiner;
   DemandPosition.JSON_PROPERTY_VAT,
   DemandPosition.JSON_PROPERTY_VAT_ENABLED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class DemandPosition {
   public static DemandPosition createWithMeta(UUID parentId, UUID id) {
     DemandPosition o = new DemandPosition();
@@ -102,7 +102,7 @@ public class DemandPosition {
 
   public static final String JSON_PROPERTY_DECLARATION = "declaration";
   @javax.annotation.Nullable
-  private List<DemandPositionDeclarationInner> declaration = new ArrayList<>();
+  private List<DeclarationInner> declaration = new ArrayList<>();
 
   public static final String JSON_PROPERTY_DISCOUNT = "discount";
   @javax.annotation.Nullable
@@ -130,7 +130,7 @@ public class DemandPosition {
 
   public static final String JSON_PROPERTY_TRACKING_CODES = "trackingCodes";
   @javax.annotation.Nullable
-  private List<DemandPositionTrackingCode> trackingCodes = new ArrayList<>();
+  private List<PositionTrackingCode> trackingCodes = new ArrayList<>();
 
   public static final String JSON_PROPERTY_TRACKING_CODES1162 = "trackingCodes_1162";
   @javax.annotation.Nullable
@@ -157,7 +157,7 @@ public class DemandPosition {
   public DemandPosition(
     @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id, 
     @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId, 
-    @JsonProperty(value = JSON_PROPERTY_DECLARATION, required = false) List<DemandPositionDeclarationInner> declaration, 
+    @JsonProperty(value = JSON_PROPERTY_DECLARATION, required = false) List<DeclarationInner> declaration, 
     @JsonProperty(value = JSON_PROPERTY_OVERHEAD, required = false) Integer overhead
   ) {
     this();
@@ -172,6 +172,7 @@ public class DemandPosition {
     this.meta = meta;
     return this;
   }
+
 
   /**
    * Get meta
@@ -193,6 +194,7 @@ public class DemandPosition {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID позиции
@@ -232,6 +234,7 @@ public class DemandPosition {
     return this;
   }
 
+
   /**
    * Get assortment
    * @return assortment
@@ -255,11 +258,13 @@ public class DemandPosition {
     this.assortment = assortment;
   }
 
+
   public DemandPosition cost(@javax.annotation.Nullable Integer cost) {
     
     this.cost = cost;
     return this;
   }
+
 
   /**
    * Себестоимость (только для услуг)
@@ -282,15 +287,16 @@ public class DemandPosition {
     this.cost = cost;
   }
 
+
   /**
-   * Информация о прослеживаемости импортных товаров (ГТД, РНПТ и связанное количество). Не входит в ответ по умолчанию; может быть возвращена только при явном запросе расширенного набора полей для позиций документа. Только для чтения. 
+   * Информация о прослеживаемости импортных товаров. Не входит в ответ по умолчанию; может быть возвращена только при явном запросе &#x60;fields&#x3D;declaration&#x60;. Только для чтения. 
    * @return declaration
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DECLARATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<DemandPositionDeclarationInner> getDeclaration() {
+  public List<DeclarationInner> getDeclaration() {
     return declaration;
   }
 
@@ -303,6 +309,7 @@ public class DemandPosition {
     this.discount = discount;
     return this;
   }
+
 
   /**
    * Процент скидки или наценки. Наценка указывается отрицательным числом (например, &#x60;-10&#x60; задаёт наценку 10%).
@@ -325,11 +332,13 @@ public class DemandPosition {
     this.discount = discount;
   }
 
+
   public DemandPosition pack(@javax.annotation.Nullable Pack pack) {
     this.pack = JsonNullable.<Pack>of(pack);
     
     return this;
   }
+
 
   /**
    * Упаковка Товара
@@ -361,11 +370,13 @@ public class DemandPosition {
     this.pack = JsonNullable.<Pack>of(pack);
   }
 
+
   public DemandPosition price(@javax.annotation.Nullable Double price) {
     
     this.price = price;
     return this;
   }
+
 
   /**
    * Цена товара/услуги в копейках
@@ -388,11 +399,13 @@ public class DemandPosition {
     this.price = price;
   }
 
+
   public DemandPosition quantity(@javax.annotation.Nullable Double quantity) {
     
     this.quantity = quantity;
     return this;
   }
+
 
   /**
    * Количество товаров/услуг данного вида в позиции. Если позиция — товар с учётом по серийным номерам, значение всегда равно количеству серийных номеров для этой позиции в документе. 
@@ -415,11 +428,13 @@ public class DemandPosition {
     this.quantity = quantity;
   }
 
+
   public DemandPosition slot(@javax.annotation.Nullable StoreSlot slot) {
     this.slot = JsonNullable.<StoreSlot>of(slot);
     
     return this;
   }
+
 
   /**
    * Ячейка на складе
@@ -451,11 +466,13 @@ public class DemandPosition {
     this.slot = JsonNullable.<StoreSlot>of(slot);
   }
 
+
   public DemandPosition things(@javax.annotation.Nullable List<String> things) {
     
     this.things = things;
     return this;
   }
+
 
   public DemandPosition addThingsItem(String thingsItem) {
     if (this.things == null) {
@@ -486,13 +503,15 @@ public class DemandPosition {
     this.things = things;
   }
 
-  public DemandPosition trackingCodes(@javax.annotation.Nullable List<DemandPositionTrackingCode> trackingCodes) {
+
+  public DemandPosition trackingCodes(@javax.annotation.Nullable List<PositionTrackingCode> trackingCodes) {
     
     this.trackingCodes = trackingCodes;
     return this;
   }
 
-  public DemandPosition addTrackingCodesItem(DemandPositionTrackingCode trackingCodesItem) {
+
+  public DemandPosition addTrackingCodesItem(PositionTrackingCode trackingCodesItem) {
     if (this.trackingCodes == null) {
       this.trackingCodes = new ArrayList<>();
     }
@@ -508,7 +527,7 @@ public class DemandPosition {
   @JsonProperty(JSON_PROPERTY_TRACKING_CODES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<DemandPositionTrackingCode> getTrackingCodes() {
+  public List<PositionTrackingCode> getTrackingCodes() {
     return trackingCodes;
   }
 
@@ -517,15 +536,17 @@ public class DemandPosition {
 
   @JsonProperty(JSON_PROPERTY_TRACKING_CODES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrackingCodes(@javax.annotation.Nullable List<DemandPositionTrackingCode> trackingCodes) {
+  public void setTrackingCodes(@javax.annotation.Nullable List<PositionTrackingCode> trackingCodes) {
     this.trackingCodes = trackingCodes;
   }
+
 
   public DemandPosition trackingCodes1162(@javax.annotation.Nullable List<DemandPositionTrackingCode1162> trackingCodes1162) {
     
     this.trackingCodes1162 = trackingCodes1162;
     return this;
   }
+
 
   public DemandPosition addTrackingCodes1162Item(DemandPositionTrackingCode1162 trackingCodes1162Item) {
     if (this.trackingCodes1162 == null) {
@@ -556,6 +577,7 @@ public class DemandPosition {
     this.trackingCodes1162 = trackingCodes1162;
   }
 
+
   /**
    * Накладные расходы по позиции. Если позиции Отгрузки не заданы, накладные расходы на уровне документа задать нельзя. 
    * @return overhead
@@ -578,8 +600,11 @@ public class DemandPosition {
     return this;
   }
 
+
   /**
    * НДС, которым облагается текущая позиция
+   * minimum: 0
+   * maximum: 100
    * @return vat
    */
   @javax.annotation.Nullable
@@ -599,11 +624,13 @@ public class DemandPosition {
     this.vat = vat;
   }
 
+
   public DemandPosition vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
     
     this.vatEnabled = vatEnabled;
     return this;
   }
+
 
   /**
    * Включён ли НДС для позиции. Пара &#x60;(vat &#x3D; 0, vatEnabled &#x3D; false)&#x60; соответствует НДС «без НДС»; &#x60;(vat &#x3D; 0, vatEnabled &#x3D; true)&#x60; — НДС 0%. 
@@ -625,6 +652,7 @@ public class DemandPosition {
   public void setVatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
     this.vatEnabled = vatEnabled;
   }
+
 
   @Override
   public boolean equals(Object o) {

@@ -61,7 +61,7 @@ import java.util.StringJoiner;
   CreateProcessingPlanFoldersBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createProcessingPlanFoldersBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateProcessingPlanFoldersBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -149,6 +149,7 @@ public class CreateProcessingPlanFoldersBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -169,6 +170,7 @@ public class CreateProcessingPlanFoldersBatch200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Группы техкарт
@@ -208,6 +210,7 @@ public class CreateProcessingPlanFoldersBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Наименование Группы техкарт
    * @return name
@@ -229,11 +232,13 @@ public class CreateProcessingPlanFoldersBatch200ResponseInner {
     this.name = name;
   }
 
+
   public CreateProcessingPlanFoldersBatch200ResponseInner code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код Группы техкарт
@@ -256,11 +261,13 @@ public class CreateProcessingPlanFoldersBatch200ResponseInner {
     this.code = code;
   }
 
+
   public CreateProcessingPlanFoldersBatch200ResponseInner externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Группы техкарт
@@ -283,11 +290,13 @@ public class CreateProcessingPlanFoldersBatch200ResponseInner {
     this.externalCode = externalCode;
   }
 
+
   public CreateProcessingPlanFoldersBatch200ResponseInner description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Описание Группы техкарт
@@ -319,11 +328,13 @@ public class CreateProcessingPlanFoldersBatch200ResponseInner {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public CreateProcessingPlanFoldersBatch200ResponseInner archived(@javax.annotation.Nullable Boolean archived) {
     
     this.archived = archived;
     return this;
   }
+
 
   /**
    * Добавлена ли Группа техкарт в архив
@@ -345,6 +356,7 @@ public class CreateProcessingPlanFoldersBatch200ResponseInner {
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
     this.archived = archived;
   }
+
 
   /**
    * Наименование группы техкарт, в которую входит данная группа (иерархия)
@@ -368,6 +380,7 @@ public class CreateProcessingPlanFoldersBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Общий доступ
    * @return shared
@@ -388,6 +401,7 @@ public class CreateProcessingPlanFoldersBatch200ResponseInner {
   public void setShared(@javax.annotation.Nullable Boolean shared) {
     this.shared = shared;
   }
+
 
   /**
    * Момент последнего обновления сущности
@@ -411,6 +425,7 @@ public class CreateProcessingPlanFoldersBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get group
    * @return group
@@ -432,11 +447,13 @@ public class CreateProcessingPlanFoldersBatch200ResponseInner {
     this.group = group;
   }
 
+
   public CreateProcessingPlanFoldersBatch200ResponseInner owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Метаданные владельца (сотрудника)
@@ -468,11 +485,13 @@ public class CreateProcessingPlanFoldersBatch200ResponseInner {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public CreateProcessingPlanFoldersBatch200ResponseInner processingplanfolder(@javax.annotation.Nullable ProcessingPlanFolder processingplanfolder) {
     this.processingplanfolder = JsonNullable.<ProcessingPlanFolder>of(processingplanfolder);
     
     return this;
   }
+
 
   /**
    * Родительская Группа техкарт. Для смены иерархии и поля pathName обновите эту ссылку
@@ -504,11 +523,13 @@ public class CreateProcessingPlanFoldersBatch200ResponseInner {
     this.processingplanfolder = JsonNullable.<ProcessingPlanFolder>of(processingplanfolder);
   }
 
+
   public CreateProcessingPlanFoldersBatch200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
+
 
   public CreateProcessingPlanFoldersBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -538,6 +559,7 @@ public class CreateProcessingPlanFoldersBatch200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

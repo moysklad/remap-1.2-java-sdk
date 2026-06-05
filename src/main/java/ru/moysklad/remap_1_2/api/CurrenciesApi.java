@@ -35,7 +35,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class CurrenciesApi extends BaseApi {
 
@@ -60,6 +60,25 @@ public class CurrenciesApi extends BaseApi {
    */
   public List<CreateCurrenciesBatch200ResponseInner> createCurrenciesBatch(@javax.annotation.Nonnull List<Currency> currency, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createCurrenciesBatch(currency, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать или изменить валюту
+   * Создание или изменение нескольких валют.
+   
+   * @param currency  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreateCurrenciesBatch200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateCurrenciesBatch200ResponseInner> createCurrenciesBatch(@javax.annotation.Nonnull List<Currency> currency, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createCurrenciesBatch(currency, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -149,6 +168,25 @@ if (contentType != null)
    */
   public Currency createCurrency(@javax.annotation.Nonnull Currency currency, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createCurrency(currency, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать валюту
+   * Создание новой валюты
+   
+   * @param currency  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Currency
+   * @throws ApiException if fails to make API call
+   */
+  public Currency createCurrency(@javax.annotation.Nonnull Currency currency, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createCurrency(currency, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -409,6 +447,26 @@ if (acceptEncoding != null)
     return this.getCurrencies(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить список валют
+   * Запрос всех валют на данной учетной записи
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return CurrencyList
+   * @throws ApiException if fails to make API call
+   */
+  public CurrencyList getCurrencies(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getCurrencies((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить список валют
@@ -498,6 +556,24 @@ if (acceptEncoding != null)
     return this.getCurrencyById(id, expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить валюту по ID
+   * Запрос на получение отдельной валюты с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Currency
+   * @throws ApiException if fails to make API call
+   */
+  public Currency getCurrencyById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getCurrencyById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить валюту по ID
@@ -584,6 +660,28 @@ if (acceptEncoding != null)
    */
   public Currency updateCurrency(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Currency currency, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateCurrency(id, currency, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Обновить валюту
+   * Обновление валюты с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param currency  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Currency
+   * @throws ApiException if fails to make API call
+   */
+  public Currency updateCurrency(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Currency currency, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateCurrency(id, currency, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 

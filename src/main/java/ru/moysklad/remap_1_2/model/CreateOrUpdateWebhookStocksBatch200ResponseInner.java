@@ -51,7 +51,7 @@ import java.util.StringJoiner;
   CreateOrUpdateWebhookStocksBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createOrUpdateWebhookStocksBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateOrUpdateWebhookStocksBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -111,6 +111,7 @@ public class CreateOrUpdateWebhookStocksBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -131,6 +132,7 @@ public class CreateOrUpdateWebhookStocksBatch200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID вебхука на изменение остатков
@@ -170,6 +172,7 @@ public class CreateOrUpdateWebhookStocksBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Тип остатков. Известные значения описаны в WebhookStockStockType
    * @return stockType
@@ -191,11 +194,13 @@ public class CreateOrUpdateWebhookStocksBatch200ResponseInner {
     this.stockType = stockType;
   }
 
+
   public CreateOrUpdateWebhookStocksBatch200ResponseInner reportType(@javax.annotation.Nullable String reportType) {
     
     this.reportType = reportType;
     return this;
   }
+
 
   /**
    * Тип отчёта остатков. Известные значения описаны в WebhookStockReportType
@@ -218,11 +223,13 @@ public class CreateOrUpdateWebhookStocksBatch200ResponseInner {
     this.reportType = reportType;
   }
 
+
   public CreateOrUpdateWebhookStocksBatch200ResponseInner url(@javax.annotation.Nullable URI url) {
     
     this.url = url;
     return this;
   }
+
 
   /**
    * URL, по которому будет происходить обработка вебхука
@@ -245,11 +252,13 @@ public class CreateOrUpdateWebhookStocksBatch200ResponseInner {
     this.url = url;
   }
 
+
   public CreateOrUpdateWebhookStocksBatch200ResponseInner enabled(@javax.annotation.Nullable Boolean enabled) {
     
     this.enabled = enabled;
     return this;
   }
+
 
   /**
    * Вебхук включён или отключён
@@ -272,11 +281,13 @@ public class CreateOrUpdateWebhookStocksBatch200ResponseInner {
     this.enabled = enabled;
   }
 
+
   public CreateOrUpdateWebhookStocksBatch200ResponseInner authorApplication(@javax.annotation.Nullable Application authorApplication) {
     
     this.authorApplication = authorApplication;
     return this;
   }
+
 
   /**
    * Get authorApplication
@@ -299,11 +310,13 @@ public class CreateOrUpdateWebhookStocksBatch200ResponseInner {
     this.authorApplication = authorApplication;
   }
 
+
   public CreateOrUpdateWebhookStocksBatch200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
+
 
   public CreateOrUpdateWebhookStocksBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -333,6 +346,7 @@ public class CreateOrUpdateWebhookStocksBatch200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

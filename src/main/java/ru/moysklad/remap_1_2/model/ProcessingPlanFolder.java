@@ -53,7 +53,7 @@ import java.util.StringJoiner;
   ProcessingPlanFolder.JSON_PROPERTY_OWNER,
   ProcessingPlanFolder.JSON_PROPERTY_PROCESSINGPLANFOLDER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingPlanFolder {
   public static ProcessingPlanFolder createWithMeta(UUID id) {
     ProcessingPlanFolder o = new ProcessingPlanFolder();
@@ -151,6 +151,7 @@ public class ProcessingPlanFolder {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -171,6 +172,7 @@ public class ProcessingPlanFolder {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Группы техкарт
@@ -210,6 +212,7 @@ public class ProcessingPlanFolder {
     return this;
   }
 
+
   /**
    * Наименование Группы техкарт
    * @return name
@@ -231,11 +234,13 @@ public class ProcessingPlanFolder {
     this.name = name;
   }
 
+
   public ProcessingPlanFolder code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код Группы техкарт
@@ -258,11 +263,13 @@ public class ProcessingPlanFolder {
     this.code = code;
   }
 
+
   public ProcessingPlanFolder externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Группы техкарт
@@ -285,11 +292,13 @@ public class ProcessingPlanFolder {
     this.externalCode = externalCode;
   }
 
+
   public ProcessingPlanFolder description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Описание Группы техкарт
@@ -321,11 +330,13 @@ public class ProcessingPlanFolder {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public ProcessingPlanFolder archived(@javax.annotation.Nullable Boolean archived) {
     
     this.archived = archived;
     return this;
   }
+
 
   /**
    * Добавлена ли Группа техкарт в архив
@@ -347,6 +358,7 @@ public class ProcessingPlanFolder {
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
     this.archived = archived;
   }
+
 
   /**
    * Наименование группы техкарт, в которую входит данная группа (иерархия)
@@ -370,6 +382,7 @@ public class ProcessingPlanFolder {
     return this;
   }
 
+
   /**
    * Общий доступ
    * @return shared
@@ -390,6 +403,7 @@ public class ProcessingPlanFolder {
   public void setShared(@javax.annotation.Nullable Boolean shared) {
     this.shared = shared;
   }
+
 
   /**
    * Момент последнего обновления сущности
@@ -413,6 +427,7 @@ public class ProcessingPlanFolder {
     return this;
   }
 
+
   /**
    * Get group
    * @return group
@@ -434,11 +449,13 @@ public class ProcessingPlanFolder {
     this.group = group;
   }
 
+
   public ProcessingPlanFolder owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Метаданные владельца (сотрудника)
@@ -470,11 +487,13 @@ public class ProcessingPlanFolder {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public ProcessingPlanFolder processingplanfolder(@javax.annotation.Nullable ProcessingPlanFolder processingplanfolder) {
     this.processingplanfolder = JsonNullable.<ProcessingPlanFolder>of(processingplanfolder);
     
     return this;
   }
+
 
   /**
    * Родительская Группа техкарт. Для смены иерархии и поля pathName обновите эту ссылку
@@ -505,6 +524,7 @@ public class ProcessingPlanFolder {
   public void setProcessingplanfolder(@javax.annotation.Nullable ProcessingPlanFolder processingplanfolder) {
     this.processingplanfolder = JsonNullable.<ProcessingPlanFolder>of(processingplanfolder);
   }
+
 
   @Override
   public boolean equals(Object o) {

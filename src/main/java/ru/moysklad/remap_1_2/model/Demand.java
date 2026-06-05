@@ -27,15 +27,12 @@ import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import ru.moysklad.remap_1_2.model.Account;
 import ru.moysklad.remap_1_2.model.Address;
+import ru.moysklad.remap_1_2.model.Agent;
 import ru.moysklad.remap_1_2.model.AttributeAbstract;
 import ru.moysklad.remap_1_2.model.Contract;
 import ru.moysklad.remap_1_2.model.CurrencyRate;
 import ru.moysklad.remap_1_2.model.CustomerOrder;
-import ru.moysklad.remap_1_2.model.CustomerOrderAgent;
 import ru.moysklad.remap_1_2.model.CustomerOrderPaymentsInner;
-import ru.moysklad.remap_1_2.model.DemandCarrier;
-import ru.moysklad.remap_1_2.model.DemandConsignee;
-import ru.moysklad.remap_1_2.model.DemandOverhead;
 import ru.moysklad.remap_1_2.model.DemandPositionList;
 import ru.moysklad.remap_1_2.model.Employee;
 import ru.moysklad.remap_1_2.model.FactureOut;
@@ -44,6 +41,7 @@ import ru.moysklad.remap_1_2.model.Group;
 import ru.moysklad.remap_1_2.model.InvoiceOut;
 import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.Organization;
+import ru.moysklad.remap_1_2.model.Overhead;
 import ru.moysklad.remap_1_2.model.ProductionTask;
 import ru.moysklad.remap_1_2.model.Project;
 import ru.moysklad.remap_1_2.model.SalesChannel;
@@ -117,7 +115,7 @@ import java.util.StringJoiner;
   Demand.JSON_PROPERTY_TRANSPORT_FACILITY,
   Demand.JSON_PROPERTY_TRANSPORT_FACILITY_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Demand {
   public static Demand createWithMeta(UUID id) {
     Demand o = new Demand();
@@ -228,7 +226,7 @@ public class Demand {
 
   public static final String JSON_PROPERTY_AGENT = "agent";
   @javax.annotation.Nullable
-  private CustomerOrderAgent agent;
+  private Agent agent;
 
   public static final String JSON_PROPERTY_AGENT_ACCOUNT = "agentAccount";
   @javax.annotation.Nullable
@@ -288,7 +286,7 @@ public class Demand {
 
   public static final String JSON_PROPERTY_OVERHEAD = "overhead";
   @javax.annotation.Nullable
-  private JsonNullable<DemandOverhead> overhead = JsonNullable.<DemandOverhead>undefined();
+  private JsonNullable<Overhead> overhead = JsonNullable.<Overhead>undefined();
 
   public static final String JSON_PROPERTY_CUSTOMER_ORDER = "customerOrder";
   @javax.annotation.Nullable
@@ -320,11 +318,11 @@ public class Demand {
 
   public static final String JSON_PROPERTY_CARRIER = "carrier";
   @javax.annotation.Nullable
-  private JsonNullable<DemandCarrier> carrier = JsonNullable.<DemandCarrier>undefined();
+  private JsonNullable<Agent> carrier = JsonNullable.<Agent>undefined();
 
   public static final String JSON_PROPERTY_CONSIGNEE = "consignee";
   @javax.annotation.Nullable
-  private JsonNullable<DemandConsignee> consignee = JsonNullable.<DemandConsignee>undefined();
+  private JsonNullable<Agent> consignee = JsonNullable.<Agent>undefined();
 
   public static final String JSON_PROPERTY_GOOD_PACK_QUANTITY = "goodPackQuantity";
   @javax.annotation.Nullable
@@ -383,6 +381,7 @@ public class Demand {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -403,6 +402,7 @@ public class Demand {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Отгрузки
@@ -442,6 +442,7 @@ public class Demand {
     return this;
   }
 
+
   /**
    * Наименование Отгрузки
    * @return name
@@ -463,11 +464,13 @@ public class Demand {
     this.name = name;
   }
 
+
   public Demand code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код Отгрузки
@@ -490,11 +493,13 @@ public class Demand {
     this.code = code;
   }
 
+
   public Demand externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Отгрузки
@@ -517,11 +522,13 @@ public class Demand {
     this.externalCode = externalCode;
   }
 
+
   public Demand syncId(@javax.annotation.Nullable UUID syncId) {
     
     this.syncId = syncId;
     return this;
   }
+
 
   /**
    * ID синхронизации
@@ -544,11 +551,13 @@ public class Demand {
     this.syncId = syncId;
   }
 
+
   public Demand description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Комментарий Отгрузки
@@ -579,6 +588,7 @@ public class Demand {
   public void setDescription(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
   }
+
 
   /**
    * Дата создания
@@ -634,6 +644,7 @@ public class Demand {
     return this;
   }
 
+
   /**
    * Дата документа
    * @return moment
@@ -655,11 +666,13 @@ public class Demand {
     this.moment = moment;
   }
 
+
   public Demand applicable(@javax.annotation.Nullable Boolean applicable) {
     
     this.applicable = applicable;
     return this;
   }
+
 
   /**
    * Отметка о проведении
@@ -681,6 +694,7 @@ public class Demand {
   public void setApplicable(@javax.annotation.Nullable Boolean applicable) {
     this.applicable = applicable;
   }
+
 
   /**
    * Напечатан ли документ
@@ -720,6 +734,7 @@ public class Demand {
     return this;
   }
 
+
   /**
    * Общий доступ
    * @return shared
@@ -741,11 +756,13 @@ public class Demand {
     this.shared = shared;
   }
 
+
   public Demand vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
     
     this.vatEnabled = vatEnabled;
     return this;
   }
+
 
   /**
    * Учитывается ли НДС
@@ -768,11 +785,13 @@ public class Demand {
     this.vatEnabled = vatEnabled;
   }
 
+
   public Demand vatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
     
     this.vatIncluded = vatIncluded;
     return this;
   }
+
 
   /**
    * Включён ли НДС в цену
@@ -794,6 +813,7 @@ public class Demand {
   public void setVatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
     this.vatIncluded = vatIncluded;
   }
+
 
   /**
    * Сумма НДС
@@ -849,6 +869,7 @@ public class Demand {
     return this;
   }
 
+
   /**
    * Get organization
    * @return organization
@@ -870,11 +891,13 @@ public class Demand {
     this.organization = organization;
   }
 
+
   public Demand organizationAccount(@javax.annotation.Nullable Account organizationAccount) {
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
     
     return this;
   }
+
 
   /**
    * Метаданные счета юрлица
@@ -906,21 +929,23 @@ public class Demand {
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
   }
 
-  public Demand agent(@javax.annotation.Nullable CustomerOrderAgent agent) {
+
+  public Demand agent(@javax.annotation.Nullable Agent agent) {
     
     this.agent = agent;
     return this;
   }
 
+
   /**
-   * Get agent
+   * Метаданные контрагента или юрлица
    * @return agent
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public CustomerOrderAgent getAgent() {
+  public Agent getAgent() {
     return agent;
   }
 
@@ -929,15 +954,17 @@ public class Demand {
 
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAgent(@javax.annotation.Nullable CustomerOrderAgent agent) {
+  public void setAgent(@javax.annotation.Nullable Agent agent) {
     this.agent = agent;
   }
+
 
   public Demand agentAccount(@javax.annotation.Nullable Account agentAccount) {
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
     
     return this;
   }
+
 
   /**
    * Метаданные счета контрагента
@@ -969,11 +996,13 @@ public class Demand {
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
   }
 
+
   public Demand store(@javax.annotation.Nullable Store store) {
     this.store = JsonNullable.<Store>of(store);
     
     return this;
   }
+
 
   /**
    * Метаданные склада
@@ -1005,11 +1034,13 @@ public class Demand {
     this.store = JsonNullable.<Store>of(store);
   }
 
+
   public Demand state(@javax.annotation.Nullable State state) {
     this.state = JsonNullable.<State>of(state);
     
     return this;
   }
+
 
   /**
    * Метаданные статуса Отгрузки
@@ -1041,11 +1072,13 @@ public class Demand {
     this.state = JsonNullable.<State>of(state);
   }
 
+
   public Demand contract(@javax.annotation.Nullable Contract contract) {
     this.contract = JsonNullable.<Contract>of(contract);
     
     return this;
   }
+
 
   /**
    * Метаданные договора
@@ -1077,11 +1110,13 @@ public class Demand {
     this.contract = JsonNullable.<Contract>of(contract);
   }
 
+
   public Demand project(@javax.annotation.Nullable Project project) {
     this.project = JsonNullable.<Project>of(project);
     
     return this;
   }
+
 
   /**
    * Метаданные проекта
@@ -1113,11 +1148,13 @@ public class Demand {
     this.project = JsonNullable.<Project>of(project);
   }
 
+
   public Demand owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Владелец (сотрудник)
@@ -1149,11 +1186,13 @@ public class Demand {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public Demand group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -1176,11 +1215,13 @@ public class Demand {
     this.group = group;
   }
 
+
   public Demand attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public Demand addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -1224,11 +1265,13 @@ public class Demand {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   public Demand files(@javax.annotation.Nullable FileList files) {
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
   }
+
 
   /**
    * Метаданные массива файлов
@@ -1260,11 +1303,13 @@ public class Demand {
     this.files = JsonNullable.<FileList>of(files);
   }
 
+
   public Demand rate(@javax.annotation.Nullable CurrencyRate rate) {
     
     this.rate = rate;
     return this;
   }
+
 
   /**
    * Get rate
@@ -1287,11 +1332,13 @@ public class Demand {
     this.rate = rate;
   }
 
+
   public Demand positions(@javax.annotation.Nullable DemandPositionList positions) {
     
     this.positions = positions;
     return this;
   }
+
 
   /**
    * Get positions
@@ -1314,11 +1361,13 @@ public class Demand {
     this.positions = positions;
   }
 
+
   public Demand salesChannel(@javax.annotation.Nullable SalesChannel salesChannel) {
     this.salesChannel = JsonNullable.<SalesChannel>of(salesChannel);
     
     return this;
   }
+
 
   /**
    * Метаданные канала продаж
@@ -1350,11 +1399,13 @@ public class Demand {
     this.salesChannel = JsonNullable.<SalesChannel>of(salesChannel);
   }
 
+
   public Demand shipmentAddress(@javax.annotation.Nullable String shipmentAddress) {
     
     this.shipmentAddress = shipmentAddress;
     return this;
   }
+
 
   /**
    * Адрес доставки Отгрузки (строка). Для удаления адреса передайте пустую строку. Не поддерживается значение &#x60;null&#x60; для сброса — см. документацию по адресу доставки. 
@@ -1377,11 +1428,13 @@ public class Demand {
     this.shipmentAddress = shipmentAddress;
   }
 
+
   public Demand shipmentAddressFull(@javax.annotation.Nullable Address shipmentAddressFull) {
     
     this.shipmentAddressFull = shipmentAddressFull;
     return this;
   }
+
 
   /**
    * Адрес доставки Отгрузки с детализацией по отдельным полям
@@ -1404,11 +1457,13 @@ public class Demand {
     this.shipmentAddressFull = shipmentAddressFull;
   }
 
-  public Demand overhead(@javax.annotation.Nullable DemandOverhead overhead) {
-    this.overhead = JsonNullable.<DemandOverhead>of(overhead);
+
+  public Demand overhead(@javax.annotation.Nullable Overhead overhead) {
+    this.overhead = JsonNullable.<Overhead>of(overhead);
     
     return this;
   }
+
 
   /**
    * Get overhead
@@ -1417,7 +1472,7 @@ public class Demand {
   @javax.annotation.Nullable
   @JsonIgnore
 
-  public DemandOverhead getOverhead() {
+  public Overhead getOverhead() {
         return overhead.orElse(null);
   }
 
@@ -1427,24 +1482,26 @@ public class Demand {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<DemandOverhead> getOverhead_JsonNullable() {
+  public JsonNullable<Overhead> getOverhead_JsonNullable() {
     return overhead;
   }
   
   @JsonProperty(value = JSON_PROPERTY_OVERHEAD, required = false)
-  public void setOverhead_JsonNullable(JsonNullable<DemandOverhead> overhead) {
+  public void setOverhead_JsonNullable(JsonNullable<Overhead> overhead) {
     this.overhead = overhead;
   }
 
-  public void setOverhead(@javax.annotation.Nullable DemandOverhead overhead) {
-    this.overhead = JsonNullable.<DemandOverhead>of(overhead);
+  public void setOverhead(@javax.annotation.Nullable Overhead overhead) {
+    this.overhead = JsonNullable.<Overhead>of(overhead);
   }
+
 
   public Demand customerOrder(@javax.annotation.Nullable CustomerOrder customerOrder) {
     this.customerOrder = JsonNullable.<CustomerOrder>of(customerOrder);
     
     return this;
   }
+
 
   /**
    * Заказ покупателя, с которым связана Отгрузка
@@ -1476,11 +1533,13 @@ public class Demand {
     this.customerOrder = JsonNullable.<CustomerOrder>of(customerOrder);
   }
 
+
   public Demand factureOut(@javax.annotation.Nullable FactureOut factureOut) {
     this.factureOut = JsonNullable.<FactureOut>of(factureOut);
     
     return this;
   }
+
 
   /**
    * Счёт-фактура выданный, с которым связана Отгрузка
@@ -1512,11 +1571,13 @@ public class Demand {
     this.factureOut = JsonNullable.<FactureOut>of(factureOut);
   }
 
+
   public Demand returns(@javax.annotation.Nullable List<SalesReturn> returns) {
     this.returns = JsonNullable.<List<SalesReturn>>of(returns);
     
     return this;
   }
+
 
   public Demand addReturnsItem(SalesReturn returnsItem) {
     if (this.returns == null || !this.returns.isPresent()) {
@@ -1560,11 +1621,13 @@ public class Demand {
     this.returns = JsonNullable.<List<SalesReturn>>of(returns);
   }
 
+
   public Demand payments(@javax.annotation.Nullable List<CustomerOrderPaymentsInner> payments) {
     this.payments = JsonNullable.<List<CustomerOrderPaymentsInner>>of(payments);
     
     return this;
   }
+
 
   public Demand addPaymentsItem(CustomerOrderPaymentsInner paymentsItem) {
     if (this.payments == null || !this.payments.isPresent()) {
@@ -1608,11 +1671,13 @@ public class Demand {
     this.payments = JsonNullable.<List<CustomerOrderPaymentsInner>>of(payments);
   }
 
+
   public Demand productionTasks(@javax.annotation.Nullable List<ProductionTask> productionTasks) {
     this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
     
     return this;
   }
+
 
   public Demand addProductionTasksItem(ProductionTask productionTasksItem) {
     if (this.productionTasks == null || !this.productionTasks.isPresent()) {
@@ -1656,11 +1721,13 @@ public class Demand {
     this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
   }
 
+
   public Demand invoicesOut(@javax.annotation.Nullable List<InvoiceOut> invoicesOut) {
     this.invoicesOut = JsonNullable.<List<InvoiceOut>>of(invoicesOut);
     
     return this;
   }
+
 
   public Demand addInvoicesOutItem(InvoiceOut invoicesOutItem) {
     if (this.invoicesOut == null || !this.invoicesOut.isPresent()) {
@@ -1704,11 +1771,13 @@ public class Demand {
     this.invoicesOut = JsonNullable.<List<InvoiceOut>>of(invoicesOut);
   }
 
+
   public Demand cargoName(@javax.annotation.Nullable String cargoName) {
     
     this.cargoName = cargoName;
     return this;
   }
+
 
   /**
    * Наименование груза
@@ -1731,20 +1800,22 @@ public class Demand {
     this.cargoName = cargoName;
   }
 
-  public Demand carrier(@javax.annotation.Nullable DemandCarrier carrier) {
-    this.carrier = JsonNullable.<DemandCarrier>of(carrier);
+
+  public Demand carrier(@javax.annotation.Nullable Agent carrier) {
+    this.carrier = JsonNullable.<Agent>of(carrier);
     
     return this;
   }
 
+
   /**
-   * Get carrier
+   * Перевозчик (контрагент или юрлицо)
    * @return carrier
    */
   @javax.annotation.Nullable
   @JsonIgnore
 
-  public DemandCarrier getCarrier() {
+  public Agent getCarrier() {
         return carrier.orElse(null);
   }
 
@@ -1754,33 +1825,35 @@ public class Demand {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<DemandCarrier> getCarrier_JsonNullable() {
+  public JsonNullable<Agent> getCarrier_JsonNullable() {
     return carrier;
   }
   
   @JsonProperty(value = JSON_PROPERTY_CARRIER, required = false)
-  public void setCarrier_JsonNullable(JsonNullable<DemandCarrier> carrier) {
+  public void setCarrier_JsonNullable(JsonNullable<Agent> carrier) {
     this.carrier = carrier;
   }
 
-  public void setCarrier(@javax.annotation.Nullable DemandCarrier carrier) {
-    this.carrier = JsonNullable.<DemandCarrier>of(carrier);
+  public void setCarrier(@javax.annotation.Nullable Agent carrier) {
+    this.carrier = JsonNullable.<Agent>of(carrier);
   }
 
-  public Demand consignee(@javax.annotation.Nullable DemandConsignee consignee) {
-    this.consignee = JsonNullable.<DemandConsignee>of(consignee);
+
+  public Demand consignee(@javax.annotation.Nullable Agent consignee) {
+    this.consignee = JsonNullable.<Agent>of(consignee);
     
     return this;
   }
 
+
   /**
-   * Get consignee
+   * Грузополучатель (контрагент или юрлицо)
    * @return consignee
    */
   @javax.annotation.Nullable
   @JsonIgnore
 
-  public DemandConsignee getConsignee() {
+  public Agent getConsignee() {
         return consignee.orElse(null);
   }
 
@@ -1790,24 +1863,26 @@ public class Demand {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<DemandConsignee> getConsignee_JsonNullable() {
+  public JsonNullable<Agent> getConsignee_JsonNullable() {
     return consignee;
   }
   
   @JsonProperty(value = JSON_PROPERTY_CONSIGNEE, required = false)
-  public void setConsignee_JsonNullable(JsonNullable<DemandConsignee> consignee) {
+  public void setConsignee_JsonNullable(JsonNullable<Agent> consignee) {
     this.consignee = consignee;
   }
 
-  public void setConsignee(@javax.annotation.Nullable DemandConsignee consignee) {
-    this.consignee = JsonNullable.<DemandConsignee>of(consignee);
+  public void setConsignee(@javax.annotation.Nullable Agent consignee) {
+    this.consignee = JsonNullable.<Agent>of(consignee);
   }
+
 
   public Demand goodPackQuantity(@javax.annotation.Nullable Integer goodPackQuantity) {
     
     this.goodPackQuantity = goodPackQuantity;
     return this;
   }
+
 
   /**
    * Всего мест
@@ -1830,11 +1905,13 @@ public class Demand {
     this.goodPackQuantity = goodPackQuantity;
   }
 
+
   public Demand shippingInstructions(@javax.annotation.Nullable String shippingInstructions) {
     
     this.shippingInstructions = shippingInstructions;
     return this;
   }
+
 
   /**
    * Указания грузоотправителя
@@ -1857,11 +1934,13 @@ public class Demand {
     this.shippingInstructions = shippingInstructions;
   }
 
+
   public Demand stateContractId(@javax.annotation.Nullable String stateContractId) {
     
     this.stateContractId = stateContractId;
     return this;
   }
+
 
   /**
    * Идентификатор государственного контракта, договора (соглашения)
@@ -1884,11 +1963,13 @@ public class Demand {
     this.stateContractId = stateContractId;
   }
 
+
   public Demand transportFacility(@javax.annotation.Nullable String transportFacility) {
     
     this.transportFacility = transportFacility;
     return this;
   }
+
 
   /**
    * Транспортное средство
@@ -1911,11 +1992,13 @@ public class Demand {
     this.transportFacility = transportFacility;
   }
 
+
   public Demand transportFacilityNumber(@javax.annotation.Nullable String transportFacilityNumber) {
     
     this.transportFacilityNumber = transportFacilityNumber;
     return this;
   }
+
 
   /**
    * Номер автомобиля
@@ -1937,6 +2020,7 @@ public class Demand {
   public void setTransportFacilityNumber(@javax.annotation.Nullable String transportFacilityNumber) {
     this.transportFacilityNumber = transportFacilityNumber;
   }
+
 
   @Override
   public boolean equals(Object o) {

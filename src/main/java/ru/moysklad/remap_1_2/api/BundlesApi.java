@@ -37,7 +37,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class BundlesApi extends BaseApi {
 
@@ -62,6 +62,25 @@ public class BundlesApi extends BaseApi {
    */
   public Bundle createBundle(@javax.annotation.Nonnull Bundle bundle, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createBundle(bundle, accept, acceptEncoding, expand, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать Комплект
+   * 
+   
+   * @param bundle  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Bundle
+   * @throws ApiException if fails to make API call
+   */
+  public Bundle createBundle(@javax.annotation.Nonnull Bundle bundle, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createBundle(bundle, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -152,6 +171,28 @@ if (contentType != null)
    */
   public List<BundleComponent> createBundleComponents(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CreateBundleComponentsRequest createBundleComponentsRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createBundleComponents(id, createBundleComponentsRequest, accept, acceptEncoding, expand, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Добавить компонент Комплекта
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param createBundleComponentsRequest  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;BundleComponent&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<BundleComponent> createBundleComponents(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CreateBundleComponentsRequest createBundleComponentsRequest, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createBundleComponents(id, createBundleComponentsRequest, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -248,6 +289,25 @@ if (contentType != null)
    */
   public List<CreateBundlesBatch200ResponseInner> createBundlesBatch(@javax.annotation.Nonnull List<Bundle> bundle, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createBundlesBatch(bundle, accept, acceptEncoding, expand, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Массовое создание и обновление Комплектов
+   * 
+   
+   * @param bundle  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreateBundlesBatch200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateBundlesBatch200ResponseInner> createBundlesBatch(@javax.annotation.Nonnull List<Bundle> bundle, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createBundlesBatch(bundle, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -683,6 +743,24 @@ if (contentType != null)
     return this.getBundleById(id, expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить Комплект
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Bundle
+   * @throws ApiException if fails to make API call
+   */
+  public Bundle getBundleById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getBundleById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить Комплект
@@ -768,6 +846,27 @@ if (acceptEncoding != null)
    */
   public BundleComponent getBundleComponentById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID componentId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
     return this.getBundleComponentById(id, componentId, expand, accept, acceptEncoding, Collections.emptyMap());
+  }
+
+  /**
+   * Получить компонент
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param componentId  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return BundleComponent
+   * @throws ApiException if fails to make API call
+   */
+  public BundleComponent getBundleComponentById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID componentId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getBundleComponentById(id, componentId, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -866,6 +965,29 @@ if (acceptEncoding != null)
    */
   public BundleComponent getBundleComponents(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
     return this.getBundleComponents(id, limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  }
+
+  /**
+   * Получить компоненты Комплекта
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return BundleComponent
+   * @throws ApiException if fails to make API call
+   */
+  public BundleComponent getBundleComponents(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getBundleComponents(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -968,6 +1090,26 @@ if (acceptEncoding != null)
     return this.getBundles(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить список комплектов
+   * 
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return BundleList
+   * @throws ApiException if fails to make API call
+   */
+  public BundleList getBundles(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getBundles((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить список комплектов
@@ -1057,6 +1199,28 @@ if (acceptEncoding != null)
    */
   public Bundle updateBundle(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Bundle bundle, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateBundle(id, bundle, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Изменить Комплект
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param bundle  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Bundle
+   * @throws ApiException if fails to make API call
+   */
+  public Bundle updateBundle(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Bundle bundle, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateBundle(id, bundle, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1155,6 +1319,31 @@ if (contentType != null)
    */
   public BundleComponent updateBundleComponent(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID componentId, @javax.annotation.Nonnull BundleComponent bundleComponent, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateBundleComponent(id, componentId, bundleComponent, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Изменить компонент
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param componentId  (required)
+   
+   
+   * @param bundleComponent  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return BundleComponent
+   * @throws ApiException if fails to make API call
+   */
+  public BundleComponent updateBundleComponent(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID componentId, @javax.annotation.Nonnull BundleComponent bundleComponent, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateBundleComponent(id, componentId, bundleComponent, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 

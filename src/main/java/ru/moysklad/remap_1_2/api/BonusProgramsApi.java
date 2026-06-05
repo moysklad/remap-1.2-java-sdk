@@ -34,7 +34,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class BonusProgramsApi extends BaseApi {
 
@@ -59,6 +59,25 @@ public class BonusProgramsApi extends BaseApi {
    */
   public BonusProgram createBonusProgram(@javax.annotation.Nonnull BonusProgram bonusProgram, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createBonusProgram(bonusProgram, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать бонусную программу
+   * Создание новой бонусной программы
+   
+   * @param bonusProgram  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return BonusProgram
+   * @throws ApiException if fails to make API call
+   */
+  public BonusProgram createBonusProgram(@javax.annotation.Nonnull BonusProgram bonusProgram, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createBonusProgram(bonusProgram, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -315,6 +334,24 @@ if (contentType != null)
     return this.getBonusProgramById(id, expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить бонусную программу по ID
+   * Запрос бонусной программы с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return BonusProgram
+   * @throws ApiException if fails to make API call
+   */
+  public BonusProgram getBonusProgramById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getBonusProgramById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить бонусную программу по ID
@@ -403,6 +440,26 @@ if (acceptEncoding != null)
    */
   public BonusProgramList getBonusPrograms(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
     return this.getBonusPrograms(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  }
+
+  /**
+   * Получить список бонусных программ
+   * Запрос всех бонусных программ на данной учетной записи
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return BonusProgramList
+   * @throws ApiException if fails to make API call
+   */
+  public BonusProgramList getBonusPrograms(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getBonusPrograms((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -494,6 +551,28 @@ if (acceptEncoding != null)
    */
   public BonusProgram updateBonusProgram(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull BonusProgram bonusProgram, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateBonusProgram(id, bonusProgram, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Изменить бонусную программу
+   * Запрос на изменение бонусной программы с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param bonusProgram  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return BonusProgram
+   * @throws ApiException if fails to make API call
+   */
+  public BonusProgram updateBonusProgram(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull BonusProgram bonusProgram, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateBonusProgram(id, bonusProgram, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 

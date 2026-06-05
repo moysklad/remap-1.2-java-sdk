@@ -11,7 +11,7 @@
 |**meta** | [**Meta**](Meta.md) |  |  [optional] |
 |**id** | **UUID** | ID Счета-фактуры полученного |  [optional] [readonly] |
 |**accountId** | **UUID** | ID учетной записи |  [optional] [readonly] |
-|**agent** | [**Counterparty**](Counterparty.md) |  |  [optional] |
+|**agent** | [**Agent**](Agent.md) | Метаданные контрагента или юрлица |  [optional] |
 |**applicable** | **Boolean** | Отметка о проведении |  [optional] |
 |**attributes** | [**List&lt;AttributeAbstract&gt;**](AttributeAbstract.md) | Коллекция метаданных доп. полей |  [optional] |
 |**code** | **String** | Код Счета-фактуры полученного |  [optional] |

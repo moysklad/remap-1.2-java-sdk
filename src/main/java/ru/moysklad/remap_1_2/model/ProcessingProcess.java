@@ -52,7 +52,7 @@ import java.util.StringJoiner;
   ProcessingProcess.JSON_PROPERTY_ARCHIVED,
   ProcessingProcess.JSON_PROPERTY_POSITIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingProcess {
   public static ProcessingProcess createWithMeta(UUID id) {
     ProcessingProcess o = new ProcessingProcess();
@@ -140,6 +140,7 @@ public class ProcessingProcess {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -160,6 +161,7 @@ public class ProcessingProcess {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Техпроцесса
@@ -199,6 +201,7 @@ public class ProcessingProcess {
     return this;
   }
 
+
   /**
    * Метаданные владельца (Сотрудника)
    * @return owner
@@ -229,11 +232,13 @@ public class ProcessingProcess {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public ProcessingProcess shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -256,11 +261,13 @@ public class ProcessingProcess {
     this.shared = shared;
   }
 
+
   public ProcessingProcess group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -282,6 +289,7 @@ public class ProcessingProcess {
   public void setGroup(@javax.annotation.Nullable Group group) {
     this.group = group;
   }
+
 
   /**
    * Момент последнего обновления Техпроцесса
@@ -305,6 +313,7 @@ public class ProcessingProcess {
     return this;
   }
 
+
   /**
    * Наименование Техпроцесса
    * @return name
@@ -326,11 +335,13 @@ public class ProcessingProcess {
     this.name = name;
   }
 
+
   public ProcessingProcess description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Комментарий Техпроцесса
@@ -362,11 +373,13 @@ public class ProcessingProcess {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public ProcessingProcess externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Техпроцесса
@@ -389,11 +402,13 @@ public class ProcessingProcess {
     this.externalCode = externalCode;
   }
 
+
   public ProcessingProcess archived(@javax.annotation.Nullable Boolean archived) {
     
     this.archived = archived;
     return this;
   }
+
 
   /**
    * Добавлен ли Техпроцесс в архив
@@ -416,11 +431,13 @@ public class ProcessingProcess {
     this.archived = archived;
   }
 
+
   public ProcessingProcess positions(@javax.annotation.Nullable ProcessingProcessPositionList positions) {
     
     this.positions = positions;
     return this;
   }
+
 
   /**
    * Get positions
@@ -442,6 +459,7 @@ public class ProcessingProcess {
   public void setPositions(@javax.annotation.Nullable ProcessingProcessPositionList positions) {
     this.positions = positions;
   }
+
 
   @Override
   public boolean equals(Object o) {

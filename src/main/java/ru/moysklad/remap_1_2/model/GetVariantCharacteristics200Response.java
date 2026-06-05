@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   GetVariantCharacteristics200Response.JSON_PROPERTY_ROWS
 })
 @JsonTypeName("getVariantCharacteristics_200_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class GetVariantCharacteristics200Response {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -58,6 +58,7 @@ public class GetVariantCharacteristics200Response {
     this.meta = meta;
     return this;
   }
+
 
   /**
    * Get meta
@@ -80,11 +81,13 @@ public class GetVariantCharacteristics200Response {
     this.meta = meta;
   }
 
+
   public GetVariantCharacteristics200Response rows(@javax.annotation.Nullable List<VariantCharacteristic> rows) {
     
     this.rows = rows;
     return this;
   }
+
 
   public GetVariantCharacteristics200Response addRowsItem(VariantCharacteristic rowsItem) {
     if (this.rows == null) {
@@ -114,6 +117,7 @@ public class GetVariantCharacteristics200Response {
   public void setRows(@javax.annotation.Nullable List<VariantCharacteristic> rows) {
     this.rows = rows;
   }
+
 
   @Override
   public boolean equals(Object o) {

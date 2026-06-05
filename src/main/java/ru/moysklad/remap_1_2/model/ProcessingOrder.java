@@ -20,9 +20,23 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
+import ru.moysklad.remap_1_2.model.AttributeAbstract;
+import ru.moysklad.remap_1_2.model.Employee;
+import ru.moysklad.remap_1_2.model.FileList;
+import ru.moysklad.remap_1_2.model.Group;
 import ru.moysklad.remap_1_2.model.Meta;
+import ru.moysklad.remap_1_2.model.Organization;
+import ru.moysklad.remap_1_2.model.Processing;
+import ru.moysklad.remap_1_2.model.ProcessingOrderPositionList;
+import ru.moysklad.remap_1_2.model.ProcessingPlan;
+import ru.moysklad.remap_1_2.model.Project;
+import ru.moysklad.remap_1_2.model.State;
+import ru.moysklad.remap_1_2.model.Store;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
@@ -47,9 +61,26 @@ import java.util.StringJoiner;
   ProcessingOrder.JSON_PROPERTY_CREATED,
   ProcessingOrder.JSON_PROPERTY_DELETED,
   ProcessingOrder.JSON_PROPERTY_UPDATED,
-  ProcessingOrder.JSON_PROPERTY_MOMENT
+  ProcessingOrder.JSON_PROPERTY_MOMENT,
+  ProcessingOrder.JSON_PROPERTY_DELIVERY_PLANNED_MOMENT,
+  ProcessingOrder.JSON_PROPERTY_APPLICABLE,
+  ProcessingOrder.JSON_PROPERTY_PRINTED,
+  ProcessingOrder.JSON_PROPERTY_PUBLISHED,
+  ProcessingOrder.JSON_PROPERTY_SHARED,
+  ProcessingOrder.JSON_PROPERTY_ORGANIZATION,
+  ProcessingOrder.JSON_PROPERTY_STORE,
+  ProcessingOrder.JSON_PROPERTY_STATE,
+  ProcessingOrder.JSON_PROPERTY_PROCESSING_PLAN,
+  ProcessingOrder.JSON_PROPERTY_PROJECT,
+  ProcessingOrder.JSON_PROPERTY_OWNER,
+  ProcessingOrder.JSON_PROPERTY_GROUP,
+  ProcessingOrder.JSON_PROPERTY_ATTRIBUTES,
+  ProcessingOrder.JSON_PROPERTY_FILES,
+  ProcessingOrder.JSON_PROPERTY_POSITIONS,
+  ProcessingOrder.JSON_PROPERTY_QUANTITY,
+  ProcessingOrder.JSON_PROPERTY_PROCESSINGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingOrder {
   public static ProcessingOrder createWithMeta(UUID id) {
     ProcessingOrder o = new ProcessingOrder();
@@ -114,6 +145,74 @@ public class ProcessingOrder {
   @javax.annotation.Nullable
   private String moment;
 
+  public static final String JSON_PROPERTY_DELIVERY_PLANNED_MOMENT = "deliveryPlannedMoment";
+  @javax.annotation.Nullable
+  private String deliveryPlannedMoment;
+
+  public static final String JSON_PROPERTY_APPLICABLE = "applicable";
+  @javax.annotation.Nullable
+  private Boolean applicable;
+
+  public static final String JSON_PROPERTY_PRINTED = "printed";
+  @javax.annotation.Nullable
+  private Boolean printed;
+
+  public static final String JSON_PROPERTY_PUBLISHED = "published";
+  @javax.annotation.Nullable
+  private Boolean published;
+
+  public static final String JSON_PROPERTY_SHARED = "shared";
+  @javax.annotation.Nullable
+  private Boolean shared;
+
+  public static final String JSON_PROPERTY_ORGANIZATION = "organization";
+  @javax.annotation.Nullable
+  private Organization organization;
+
+  public static final String JSON_PROPERTY_STORE = "store";
+  @javax.annotation.Nullable
+  private Store store;
+
+  public static final String JSON_PROPERTY_STATE = "state";
+  @javax.annotation.Nullable
+  private JsonNullable<State> state = JsonNullable.<State>undefined();
+
+  public static final String JSON_PROPERTY_PROCESSING_PLAN = "processingPlan";
+  @javax.annotation.Nullable
+  private ProcessingPlan processingPlan;
+
+  public static final String JSON_PROPERTY_PROJECT = "project";
+  @javax.annotation.Nullable
+  private JsonNullable<Project> project = JsonNullable.<Project>undefined();
+
+  public static final String JSON_PROPERTY_OWNER = "owner";
+  @javax.annotation.Nullable
+  private JsonNullable<Employee> owner = JsonNullable.<Employee>undefined();
+
+  public static final String JSON_PROPERTY_GROUP = "group";
+  @javax.annotation.Nullable
+  private Group group;
+
+  public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
+  @javax.annotation.Nullable
+  private JsonNullable<List<AttributeAbstract>> attributes = JsonNullable.<List<AttributeAbstract>>undefined();
+
+  public static final String JSON_PROPERTY_FILES = "files";
+  @javax.annotation.Nullable
+  private JsonNullable<FileList> files = JsonNullable.<FileList>undefined();
+
+  public static final String JSON_PROPERTY_POSITIONS = "positions";
+  @javax.annotation.Nullable
+  private ProcessingOrderPositionList positions;
+
+  public static final String JSON_PROPERTY_QUANTITY = "quantity";
+  @javax.annotation.Nullable
+  private Double quantity;
+
+  public static final String JSON_PROPERTY_PROCESSINGS = "processings";
+  @javax.annotation.Nullable
+  private JsonNullable<List<Processing>> processings = JsonNullable.<List<Processing>>undefined();
+
   public ProcessingOrder() {
   }
   /**
@@ -125,7 +224,10 @@ public class ProcessingOrder {
     @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId, 
     @JsonProperty(value = JSON_PROPERTY_CREATED, required = false) String created, 
     @JsonProperty(value = JSON_PROPERTY_DELETED, required = false) String deleted, 
-    @JsonProperty(value = JSON_PROPERTY_UPDATED, required = false) String updated
+    @JsonProperty(value = JSON_PROPERTY_UPDATED, required = false) String updated, 
+    @JsonProperty(value = JSON_PROPERTY_PRINTED, required = false) Boolean printed, 
+    @JsonProperty(value = JSON_PROPERTY_PUBLISHED, required = false) Boolean published, 
+    @JsonProperty(value = JSON_PROPERTY_SHARED, required = false) Boolean shared
   ) {
     this();
     this.id = id;
@@ -133,6 +235,9 @@ public class ProcessingOrder {
     this.created = created;
     this.deleted = deleted;
     this.updated = updated;
+    this.printed = printed;
+    this.published = published;
+    this.shared = shared;
   }
 
   public ProcessingOrder meta(@javax.annotation.Nullable Meta meta) {
@@ -140,6 +245,7 @@ public class ProcessingOrder {
     this.meta = meta;
     return this;
   }
+
 
   /**
    * Get meta
@@ -161,6 +267,7 @@ public class ProcessingOrder {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID заказа на производство
@@ -200,6 +307,7 @@ public class ProcessingOrder {
     return this;
   }
 
+
   /**
    * Наименование заказа на производство
    * @return name
@@ -221,11 +329,13 @@ public class ProcessingOrder {
     this.name = name;
   }
 
+
   public ProcessingOrder code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код заказа на производство
@@ -248,11 +358,13 @@ public class ProcessingOrder {
     this.code = code;
   }
 
+
   public ProcessingOrder externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код заказа на производство
@@ -275,11 +387,13 @@ public class ProcessingOrder {
     this.externalCode = externalCode;
   }
 
+
   public ProcessingOrder syncId(@javax.annotation.Nullable UUID syncId) {
     
     this.syncId = syncId;
     return this;
   }
+
 
   /**
    * ID синхронизации
@@ -302,11 +416,13 @@ public class ProcessingOrder {
     this.syncId = syncId;
   }
 
+
   public ProcessingOrder description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Комментарий заказа на производство
@@ -337,6 +453,7 @@ public class ProcessingOrder {
   public void setDescription(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
   }
+
 
   /**
    * Дата создания
@@ -392,6 +509,7 @@ public class ProcessingOrder {
     return this;
   }
 
+
   /**
    * Дата документа
    * @return moment
@@ -413,6 +531,539 @@ public class ProcessingOrder {
     this.moment = moment;
   }
 
+
+  public ProcessingOrder deliveryPlannedMoment(@javax.annotation.Nullable String deliveryPlannedMoment) {
+    
+    this.deliveryPlannedMoment = deliveryPlannedMoment;
+    return this;
+  }
+
+
+  /**
+   * Планируемая дата производства
+   * @return deliveryPlannedMoment
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_DELIVERY_PLANNED_MOMENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getDeliveryPlannedMoment() {
+    return deliveryPlannedMoment;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_DELIVERY_PLANNED_MOMENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDeliveryPlannedMoment(@javax.annotation.Nullable String deliveryPlannedMoment) {
+    this.deliveryPlannedMoment = deliveryPlannedMoment;
+  }
+
+
+  public ProcessingOrder applicable(@javax.annotation.Nullable Boolean applicable) {
+    
+    this.applicable = applicable;
+    return this;
+  }
+
+
+  /**
+   * Отметка о проведении
+   * @return applicable
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_APPLICABLE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getApplicable() {
+    return applicable;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_APPLICABLE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setApplicable(@javax.annotation.Nullable Boolean applicable) {
+    this.applicable = applicable;
+  }
+
+
+  /**
+   * Напечатан ли документ
+   * @return printed
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PRINTED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getPrinted() {
+    return printed;
+  }
+
+  
+
+
+
+  /**
+   * Опубликован ли документ
+   * @return published
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PUBLISHED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getPublished() {
+    return published;
+  }
+
+  
+
+
+
+  /**
+   * Общий доступ
+   * @return shared
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_SHARED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getShared() {
+    return shared;
+  }
+
+  
+
+
+
+  public ProcessingOrder organization(@javax.annotation.Nullable Organization organization) {
+    
+    this.organization = organization;
+    return this;
+  }
+
+
+  /**
+   * Get organization
+   * @return organization
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ORGANIZATION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Organization getOrganization() {
+    return organization;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_ORGANIZATION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setOrganization(@javax.annotation.Nullable Organization organization) {
+    this.organization = organization;
+  }
+
+
+  public ProcessingOrder store(@javax.annotation.Nullable Store store) {
+    
+    this.store = store;
+    return this;
+  }
+
+
+  /**
+   * Get store
+   * @return store
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_STORE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Store getStore() {
+    return store;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_STORE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setStore(@javax.annotation.Nullable Store store) {
+    this.store = store;
+  }
+
+
+  public ProcessingOrder state(@javax.annotation.Nullable State state) {
+    this.state = JsonNullable.<State>of(state);
+    
+    return this;
+  }
+
+
+  /**
+   * Метаданные статуса Заказа на производство
+   * @return state
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public State getState() {
+        return state.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_STATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<State> getState_JsonNullable() {
+    return state;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_STATE, required = false)
+  public void setState_JsonNullable(JsonNullable<State> state) {
+    this.state = state;
+  }
+
+  public void setState(@javax.annotation.Nullable State state) {
+    this.state = JsonNullable.<State>of(state);
+  }
+
+
+  public ProcessingOrder processingPlan(@javax.annotation.Nullable ProcessingPlan processingPlan) {
+    
+    this.processingPlan = processingPlan;
+    return this;
+  }
+
+
+  /**
+   * Get processingPlan
+   * @return processingPlan
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PROCESSING_PLAN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public ProcessingPlan getProcessingPlan() {
+    return processingPlan;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_PROCESSING_PLAN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setProcessingPlan(@javax.annotation.Nullable ProcessingPlan processingPlan) {
+    this.processingPlan = processingPlan;
+  }
+
+
+  public ProcessingOrder project(@javax.annotation.Nullable Project project) {
+    this.project = JsonNullable.<Project>of(project);
+    
+    return this;
+  }
+
+
+  /**
+   * Метаданные проекта
+   * @return project
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public Project getProject() {
+        return project.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_PROJECT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<Project> getProject_JsonNullable() {
+    return project;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_PROJECT, required = false)
+  public void setProject_JsonNullable(JsonNullable<Project> project) {
+    this.project = project;
+  }
+
+  public void setProject(@javax.annotation.Nullable Project project) {
+    this.project = JsonNullable.<Project>of(project);
+  }
+
+
+  public ProcessingOrder owner(@javax.annotation.Nullable Employee owner) {
+    this.owner = JsonNullable.<Employee>of(owner);
+    
+    return this;
+  }
+
+
+  /**
+   * Владелец (Сотрудник)
+   * @return owner
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public Employee getOwner() {
+        return owner.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_OWNER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<Employee> getOwner_JsonNullable() {
+    return owner;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  public void setOwner_JsonNullable(JsonNullable<Employee> owner) {
+    this.owner = owner;
+  }
+
+  public void setOwner(@javax.annotation.Nullable Employee owner) {
+    this.owner = JsonNullable.<Employee>of(owner);
+  }
+
+
+  public ProcessingOrder group(@javax.annotation.Nullable Group group) {
+    
+    this.group = group;
+    return this;
+  }
+
+
+  /**
+   * Get group
+   * @return group
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_GROUP)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Group getGroup() {
+    return group;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_GROUP)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setGroup(@javax.annotation.Nullable Group group) {
+    this.group = group;
+  }
+
+
+  public ProcessingOrder attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
+    
+    return this;
+  }
+
+
+  public ProcessingOrder addAttributesItem(AttributeAbstract attributesItem) {
+    if (this.attributes == null || !this.attributes.isPresent()) {
+      this.attributes = JsonNullable.<List<AttributeAbstract>>of(new ArrayList<>());
+    }
+    try {
+      this.attributes.get().add(attributesItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
+    return this;
+  }
+
+  /**
+   * Коллекция метаданных доп. полей
+   * @return attributes
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public List<AttributeAbstract> getAttributes() {
+        return attributes.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
+    return attributes;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
+  public void setAttributes_JsonNullable(JsonNullable<List<AttributeAbstract>> attributes) {
+    this.attributes = attributes;
+  }
+
+  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
+  }
+
+
+  public ProcessingOrder files(@javax.annotation.Nullable FileList files) {
+    this.files = JsonNullable.<FileList>of(files);
+    
+    return this;
+  }
+
+
+  /**
+   * Метаданные массива Файлов
+   * @return files
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public FileList getFiles() {
+        return files.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_FILES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<FileList> getFiles_JsonNullable() {
+    return files;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_FILES, required = false)
+  public void setFiles_JsonNullable(JsonNullable<FileList> files) {
+    this.files = files;
+  }
+
+  public void setFiles(@javax.annotation.Nullable FileList files) {
+    this.files = JsonNullable.<FileList>of(files);
+  }
+
+
+  public ProcessingOrder positions(@javax.annotation.Nullable ProcessingOrderPositionList positions) {
+    
+    this.positions = positions;
+    return this;
+  }
+
+
+  /**
+   * Позиции Заказа на производство
+   * @return positions
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_POSITIONS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public ProcessingOrderPositionList getPositions() {
+    return positions;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_POSITIONS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPositions(@javax.annotation.Nullable ProcessingOrderPositionList positions) {
+    this.positions = positions;
+  }
+
+
+  public ProcessingOrder quantity(@javax.annotation.Nullable Double quantity) {
+    
+    this.quantity = quantity;
+    return this;
+  }
+
+
+  /**
+   * Объем производства
+   * @return quantity
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_QUANTITY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Double getQuantity() {
+    return quantity;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_QUANTITY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setQuantity(@javax.annotation.Nullable Double quantity) {
+    this.quantity = quantity;
+  }
+
+
+  public ProcessingOrder processings(@javax.annotation.Nullable List<Processing> processings) {
+    this.processings = JsonNullable.<List<Processing>>of(processings);
+    
+    return this;
+  }
+
+
+  public ProcessingOrder addProcessingsItem(Processing processingsItem) {
+    if (this.processings == null || !this.processings.isPresent()) {
+      this.processings = JsonNullable.<List<Processing>>of(new ArrayList<>());
+    }
+    try {
+      this.processings.get().add(processingsItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
+    return this;
+  }
+
+  /**
+   * Массив ссылок на связанные техоперации
+   * @return processings
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public List<Processing> getProcessings() {
+        return processings.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_PROCESSINGS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<List<Processing>> getProcessings_JsonNullable() {
+    return processings;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_PROCESSINGS, required = false)
+  public void setProcessings_JsonNullable(JsonNullable<List<Processing>> processings) {
+    this.processings = processings;
+  }
+
+  public void setProcessings(@javax.annotation.Nullable List<Processing> processings) {
+    this.processings = JsonNullable.<List<Processing>>of(processings);
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -433,7 +1084,24 @@ public class ProcessingOrder {
         Objects.equals(this.created, processingOrder.created) &&
         Objects.equals(this.deleted, processingOrder.deleted) &&
         Objects.equals(this.updated, processingOrder.updated) &&
-        Objects.equals(this.moment, processingOrder.moment);
+        Objects.equals(this.moment, processingOrder.moment) &&
+        Objects.equals(this.deliveryPlannedMoment, processingOrder.deliveryPlannedMoment) &&
+        Objects.equals(this.applicable, processingOrder.applicable) &&
+        Objects.equals(this.printed, processingOrder.printed) &&
+        Objects.equals(this.published, processingOrder.published) &&
+        Objects.equals(this.shared, processingOrder.shared) &&
+        Objects.equals(this.organization, processingOrder.organization) &&
+        Objects.equals(this.store, processingOrder.store) &&
+        equalsNullable(this.state, processingOrder.state) &&
+        Objects.equals(this.processingPlan, processingOrder.processingPlan) &&
+        equalsNullable(this.project, processingOrder.project) &&
+        equalsNullable(this.owner, processingOrder.owner) &&
+        Objects.equals(this.group, processingOrder.group) &&
+        equalsNullable(this.attributes, processingOrder.attributes) &&
+        equalsNullable(this.files, processingOrder.files) &&
+        Objects.equals(this.positions, processingOrder.positions) &&
+        Objects.equals(this.quantity, processingOrder.quantity) &&
+        equalsNullable(this.processings, processingOrder.processings);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -442,7 +1110,7 @@ public class ProcessingOrder {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, name, code, externalCode, syncId, hashCodeNullable(description), created, deleted, updated, moment);
+    return Objects.hash(meta, id, accountId, name, code, externalCode, syncId, hashCodeNullable(description), created, deleted, updated, moment, deliveryPlannedMoment, applicable, printed, published, shared, organization, store, hashCodeNullable(state), processingPlan, hashCodeNullable(project), hashCodeNullable(owner), group, hashCodeNullable(attributes), hashCodeNullable(files), positions, quantity, hashCodeNullable(processings));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -468,6 +1136,23 @@ public class ProcessingOrder {
     sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
     sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("    moment: ").append(toIndentedString(moment)).append("\n");
+    sb.append("    deliveryPlannedMoment: ").append(toIndentedString(deliveryPlannedMoment)).append("\n");
+    sb.append("    applicable: ").append(toIndentedString(applicable)).append("\n");
+    sb.append("    printed: ").append(toIndentedString(printed)).append("\n");
+    sb.append("    published: ").append(toIndentedString(published)).append("\n");
+    sb.append("    shared: ").append(toIndentedString(shared)).append("\n");
+    sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
+    sb.append("    store: ").append(toIndentedString(store)).append("\n");
+    sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    processingPlan: ").append(toIndentedString(processingPlan)).append("\n");
+    sb.append("    project: ").append(toIndentedString(project)).append("\n");
+    sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
+    sb.append("    group: ").append(toIndentedString(group)).append("\n");
+    sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
+    sb.append("    files: ").append(toIndentedString(files)).append("\n");
+    sb.append("    positions: ").append(toIndentedString(positions)).append("\n");
+    sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
+    sb.append("    processings: ").append(toIndentedString(processings)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -627,6 +1312,136 @@ public class ProcessingOrder {
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
+      }
+    }
+
+    // add `deliveryPlannedMoment` to the URL query string
+    if (getDeliveryPlannedMoment() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sdeliveryPlannedMoment%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDeliveryPlannedMoment()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `applicable` to the URL query string
+    if (getApplicable() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sapplicable%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getApplicable()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `printed` to the URL query string
+    if (getPrinted() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sprinted%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getPrinted()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `published` to the URL query string
+    if (getPublished() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%spublished%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getPublished()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `shared` to the URL query string
+    if (getShared() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sshared%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getShared()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `organization` to the URL query string
+    if (getOrganization() != null) {
+      joiner.add(getOrganization().toUrlQueryString(prefix + "organization" + suffix));
+    }
+
+    // add `store` to the URL query string
+    if (getStore() != null) {
+      joiner.add(getStore().toUrlQueryString(prefix + "store" + suffix));
+    }
+
+    // add `state` to the URL query string
+    if (getState() != null) {
+      joiner.add(getState().toUrlQueryString(prefix + "state" + suffix));
+    }
+
+    // add `processingPlan` to the URL query string
+    if (getProcessingPlan() != null) {
+      joiner.add(getProcessingPlan().toUrlQueryString(prefix + "processingPlan" + suffix));
+    }
+
+    // add `project` to the URL query string
+    if (getProject() != null) {
+      joiner.add(getProject().toUrlQueryString(prefix + "project" + suffix));
+    }
+
+    // add `owner` to the URL query string
+    if (getOwner() != null) {
+      joiner.add(getOwner().toUrlQueryString(prefix + "owner" + suffix));
+    }
+
+    // add `group` to the URL query string
+    if (getGroup() != null) {
+      joiner.add(getGroup().toUrlQueryString(prefix + "group" + suffix));
+    }
+
+    // add `attributes` to the URL query string
+    if (getAttributes() != null) {
+      for (int i = 0; i < getAttributes().size(); i++) {
+        if (getAttributes().get(i) != null) {
+          joiner.add(getAttributes().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%sattributes%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    // add `files` to the URL query string
+    if (getFiles() != null) {
+      joiner.add(getFiles().toUrlQueryString(prefix + "files" + suffix));
+    }
+
+    // add `positions` to the URL query string
+    if (getPositions() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%spositions%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getPositions()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `quantity` to the URL query string
+    if (getQuantity() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%squantity%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getQuantity()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `processings` to the URL query string
+    if (getProcessings() != null) {
+      for (int i = 0; i < getProcessings().size(); i++) {
+        if (getProcessings().get(i) != null) {
+          joiner.add(getProcessings().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%sprocessings%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
+        }
       }
     }
 

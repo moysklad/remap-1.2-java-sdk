@@ -44,7 +44,7 @@ import java.util.StringJoiner;
   CashierList.JSON_PROPERTY_META,
   CashierList.JSON_PROPERTY_ROWS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CashierList {
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
@@ -68,6 +68,7 @@ public class CashierList {
     return this;
   }
 
+
   /**
    * Get context
    * @return context
@@ -89,11 +90,13 @@ public class CashierList {
     this.context = context;
   }
 
+
   public CashierList meta(@javax.annotation.Nullable MetaList meta) {
     
     this.meta = meta;
     return this;
   }
+
 
   /**
    * Get meta
@@ -116,11 +119,13 @@ public class CashierList {
     this.meta = meta;
   }
 
+
   public CashierList rows(@javax.annotation.Nullable List<Cashier> rows) {
     this.rows = JsonNullable.<List<Cashier>>of(rows);
     
     return this;
   }
+
 
   public CashierList addRowsItem(Cashier rowsItem) {
     if (this.rows == null || !this.rows.isPresent()) {
@@ -163,6 +168,7 @@ public class CashierList {
   public void setRows(@javax.annotation.Nullable List<Cashier> rows) {
     this.rows = JsonNullable.<List<Cashier>>of(rows);
   }
+
 
   @Override
   public boolean equals(Object o) {

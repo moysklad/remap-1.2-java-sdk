@@ -57,7 +57,7 @@ import java.util.StringJoiner;
   CreateOrUpdateWebhooksBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createOrUpdateWebhooksBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateOrUpdateWebhooksBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -125,6 +125,7 @@ public class CreateOrUpdateWebhooksBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -145,6 +146,7 @@ public class CreateOrUpdateWebhooksBatch200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID вебхука
@@ -184,6 +186,7 @@ public class CreateOrUpdateWebhooksBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Тип сущности, к которой привязан вебхук. Известные ограничения см. в документации (нельзя webhook, discount, notes)
    * @return entityType
@@ -205,11 +208,13 @@ public class CreateOrUpdateWebhooksBatch200ResponseInner {
     this.entityType = entityType;
   }
 
+
   public CreateOrUpdateWebhooksBatch200ResponseInner url(@javax.annotation.Nullable URI url) {
     
     this.url = url;
     return this;
   }
+
 
   /**
    * URL, по которому отправляется уведомление
@@ -232,11 +237,13 @@ public class CreateOrUpdateWebhooksBatch200ResponseInner {
     this.url = url;
   }
 
+
   public CreateOrUpdateWebhooksBatch200ResponseInner method(@javax.annotation.Nullable String method) {
     
     this.method = method;
     return this;
   }
+
 
   /**
    * HTTP метод запроса к URL подписчика. Известные значения описаны в WebhookMethod
@@ -259,11 +266,13 @@ public class CreateOrUpdateWebhooksBatch200ResponseInner {
     this.method = method;
   }
 
+
   public CreateOrUpdateWebhooksBatch200ResponseInner enabled(@javax.annotation.Nullable Boolean enabled) {
     
     this.enabled = enabled;
     return this;
   }
+
 
   /**
    * Вебхук включен или отключен
@@ -286,11 +295,13 @@ public class CreateOrUpdateWebhooksBatch200ResponseInner {
     this.enabled = enabled;
   }
 
+
   public CreateOrUpdateWebhooksBatch200ResponseInner action(@javax.annotation.Nullable String action) {
     
     this.action = action;
     return this;
   }
+
 
   /**
    * Отслеживаемое действие. Известные значения описаны в WebhookAction. Значение PROCESSED допустимо только для асинхронных задач
@@ -313,11 +324,13 @@ public class CreateOrUpdateWebhooksBatch200ResponseInner {
     this.action = action;
   }
 
+
   public CreateOrUpdateWebhooksBatch200ResponseInner diffType(@javax.annotation.Nullable String diffType) {
     this.diffType = JsonNullable.<String>of(diffType);
     
     return this;
   }
+
 
   /**
    * Режим для действия UPDATE. Известные значения описаны в WebhookDiffType
@@ -349,11 +362,13 @@ public class CreateOrUpdateWebhooksBatch200ResponseInner {
     this.diffType = JsonNullable.<String>of(diffType);
   }
 
+
   public CreateOrUpdateWebhooksBatch200ResponseInner authorApplication(@javax.annotation.Nullable Application authorApplication) {
     
     this.authorApplication = authorApplication;
     return this;
   }
+
 
   /**
    * Get authorApplication
@@ -376,11 +391,13 @@ public class CreateOrUpdateWebhooksBatch200ResponseInner {
     this.authorApplication = authorApplication;
   }
 
+
   public CreateOrUpdateWebhooksBatch200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
+
 
   public CreateOrUpdateWebhooksBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -410,6 +427,7 @@ public class CreateOrUpdateWebhooksBatch200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

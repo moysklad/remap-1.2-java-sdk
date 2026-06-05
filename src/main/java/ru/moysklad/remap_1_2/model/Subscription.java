@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   Subscription.JSON_PROPERTY_IS_SUBSCRIPTION_CHANGE_AVAILABLE,
   Subscription.JSON_PROPERTY_SUBSCRIPTION_END_DATE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Subscription {
 
   public static final String JSON_PROPERTY_ROLE = "role";

@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   ProductAlcoholic.JSON_PROPERTY_VOLUME
 })
 @JsonTypeName("Product_alcoholic")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProductAlcoholic {
 
   public static final String JSON_PROPERTY_EXCISE = "excise";
@@ -67,6 +67,7 @@ public class ProductAlcoholic {
     
     return this;
   }
+
 
   /**
    * Содержит акцизную марку
@@ -98,11 +99,13 @@ public class ProductAlcoholic {
     this.excise = JsonNullable.<Boolean>of(excise);
   }
 
+
   public ProductAlcoholic type(@javax.annotation.Nullable Integer type) {
     this.type = JsonNullable.<Integer>of(type);
     
     return this;
   }
+
 
   /**
    * Код вида продукции
@@ -135,11 +138,13 @@ public class ProductAlcoholic {
     this.type = JsonNullable.<Integer>of(type);
   }
 
+
   public ProductAlcoholic strength(@javax.annotation.Nullable Float strength) {
     this.strength = JsonNullable.<Float>of(strength);
     
     return this;
   }
+
 
   /**
    * Крепость
@@ -172,11 +177,13 @@ public class ProductAlcoholic {
     this.strength = JsonNullable.<Float>of(strength);
   }
 
+
   public ProductAlcoholic volume(@javax.annotation.Nullable Float volume) {
     this.volume = JsonNullable.<Float>of(volume);
     
     return this;
   }
+
 
   /**
    * Объём тары
@@ -208,6 +215,7 @@ public class ProductAlcoholic {
   public void setVolume(@javax.annotation.Nullable Float volume) {
     this.volume = JsonNullable.<Float>of(volume);
   }
+
 
   @Override
   public boolean equals(Object o) {

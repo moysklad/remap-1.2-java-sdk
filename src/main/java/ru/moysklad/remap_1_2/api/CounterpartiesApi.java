@@ -45,7 +45,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class CounterpartiesApi extends BaseApi {
 
@@ -166,6 +166,25 @@ if (contentType != null)
     return this.createCounterpartiesBatch(counterparty, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
+  /**
+   * Создать или изменить контрагентов
+   * Создание или изменение нескольких контрагентов.
+   
+   * @param counterparty  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreateCounterpartiesBatch200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateCounterpartiesBatch200ResponseInner> createCounterpartiesBatch(@javax.annotation.Nonnull List<Counterparty> counterparty, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createCounterpartiesBatch(counterparty, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Создать или изменить контрагентов
@@ -253,6 +272,25 @@ if (contentType != null)
    */
   public Counterparty createCounterparty(@javax.annotation.Nonnull Counterparty counterparty, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createCounterparty(counterparty, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать контрагента
+   * Создание нового контрагента
+   
+   * @param counterparty  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Counterparty
+   * @throws ApiException if fails to make API call
+   */
+  public Counterparty createCounterparty(@javax.annotation.Nonnull Counterparty counterparty, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createCounterparty(counterparty, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1147,6 +1185,26 @@ if (acceptEncoding != null)
     return this.getCounterparties(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить список контрагентов
+   * Запрос всех контрагентов на данной учетной записи
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return CounterpartyList
+   * @throws ApiException if fails to make API call
+   */
+  public CounterpartyList getCounterparties(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getCounterparties((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить список контрагентов
@@ -1328,6 +1386,25 @@ if (acceptEncoding != null)
     return this.getCounterpartyAccounts(id, limit, offset, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить счета контрагента
+   * Запрос на получение списка всех счетов данного Контрагента.
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return GetCounterpartyAccounts200Response
+   * @throws ApiException if fails to make API call
+   */
+  public GetCounterpartyAccounts200Response getCounterpartyAccounts(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getCounterpartyAccounts(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить счета контрагента
@@ -1414,6 +1491,24 @@ if (acceptEncoding != null)
    */
   public Counterparty getCounterpartyById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
     return this.getCounterpartyById(id, expand, accept, acceptEncoding, Collections.emptyMap());
+  }
+
+  /**
+   * Получить контрагента по ID
+   * Запрос на получение отдельного контрагента с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Counterparty
+   * @throws ApiException if fails to make API call
+   */
+  public Counterparty getCounterpartyById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getCounterpartyById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1594,6 +1689,25 @@ if (acceptEncoding != null)
     return this.getCounterpartyContactPersons(id, limit, offset, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить контактные лица контрагента
+   * Запрос на получение списка всех контактных лиц данного Контрагента.
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return GetCounterpartyContactPersons200Response
+   * @throws ApiException if fails to make API call
+   */
+  public GetCounterpartyContactPersons200Response getCounterpartyContactPersons(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getCounterpartyContactPersons(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить контактные лица контрагента
@@ -1683,6 +1797,25 @@ if (acceptEncoding != null)
     return this.getCounterpartyFiles(id, limit, offset, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить файлы контрагента
+   * Запрос на получение списка всех Файлов данного Контрагента.
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return GetProductFiles200Response
+   * @throws ApiException if fails to make API call
+   */
+  public GetProductFiles200Response getCounterpartyFiles(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getCounterpartyFiles(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить файлы контрагента
@@ -1768,6 +1901,21 @@ if (acceptEncoding != null)
    */
   public CounterpartyMetadata getCounterpartyMetadata(@javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
     return this.getCounterpartyMetadata(expand, accept, acceptEncoding, Collections.emptyMap());
+  }
+
+  /**
+   * Получить метаданные контрагентов
+   * Запрос на получение метаданных контрагентов.
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return CounterpartyMetadata
+   * @throws ApiException if fails to make API call
+   */
+  public CounterpartyMetadata getCounterpartyMetadata(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getCounterpartyMetadata((String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1941,6 +2089,25 @@ if (acceptEncoding != null)
     return this.getCounterpartyNotes(id, limit, offset, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить события контрагента
+   * Запрос на получение списка всех событий данного Контрагента.
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return GetCounterpartyNotes200Response
+   * @throws ApiException if fails to make API call
+   */
+  public GetCounterpartyNotes200Response getCounterpartyNotes(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getCounterpartyNotes(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить события контрагента
@@ -2029,6 +2196,28 @@ if (acceptEncoding != null)
    */
   public Counterparty updateCounterparty(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Counterparty counterparty, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateCounterparty(id, counterparty, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Обновить контрагента
+   * Обновление контрагента с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param counterparty  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Counterparty
+   * @throws ApiException if fails to make API call
+   */
+  public Counterparty updateCounterparty(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Counterparty counterparty, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateCounterparty(id, counterparty, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 

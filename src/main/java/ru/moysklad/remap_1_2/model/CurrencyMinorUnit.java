@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   CurrencyMinorUnit.JSON_PROPERTY_S5
 })
 @JsonTypeName("Currency_minorUnit")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CurrencyMinorUnit {
 
   public static final String JSON_PROPERTY_GENDER = "gender";
@@ -64,6 +64,7 @@ public class CurrencyMinorUnit {
     return this;
   }
 
+
   /**
    * Пол. Известные значения описаны в Gender
    * @return gender
@@ -85,11 +86,13 @@ public class CurrencyMinorUnit {
     this.gender = gender;
   }
 
+
   public CurrencyMinorUnit s1(@javax.annotation.Nullable String s1) {
     
     this.s1 = s1;
     return this;
   }
+
 
   /**
    * Форма единицы, используемая при числительном 1
@@ -112,11 +115,13 @@ public class CurrencyMinorUnit {
     this.s1 = s1;
   }
 
+
   public CurrencyMinorUnit s2(@javax.annotation.Nullable String s2) {
     
     this.s2 = s2;
     return this;
   }
+
 
   /**
    * Форма единицы, используемая при числительном 2
@@ -139,11 +144,13 @@ public class CurrencyMinorUnit {
     this.s2 = s2;
   }
 
+
   public CurrencyMinorUnit s5(@javax.annotation.Nullable String s5) {
     
     this.s5 = s5;
     return this;
   }
+
 
   /**
    * Форма единицы, используемая при числительном 5
@@ -165,6 +172,7 @@ public class CurrencyMinorUnit {
   public void setS5(@javax.annotation.Nullable String s5) {
     this.s5 = s5;
   }
+
 
   @Override
   public boolean equals(Object o) {

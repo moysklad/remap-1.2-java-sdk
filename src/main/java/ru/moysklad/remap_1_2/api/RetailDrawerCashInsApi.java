@@ -42,7 +42,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class RetailDrawerCashInsApi extends BaseApi {
 
@@ -163,6 +163,25 @@ if (contentType != null)
     return this.createRetailDrawerCashIn(retailDrawerCashIn, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
+  /**
+   * Создать Внесение денег
+   * 
+   
+   * @param retailDrawerCashIn  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return RetailDrawerCashIn
+   * @throws ApiException if fails to make API call
+   */
+  public RetailDrawerCashIn createRetailDrawerCashIn(@javax.annotation.Nonnull RetailDrawerCashIn retailDrawerCashIn, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createRetailDrawerCashIn(retailDrawerCashIn, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Создать Внесение денег
@@ -250,6 +269,25 @@ if (contentType != null)
    */
   public List<CreateRetailDrawerCashInBatch200ResponseInner> createRetailDrawerCashInBatch(@javax.annotation.Nonnull List<RetailDrawerCashIn> retailDrawerCashIn, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createRetailDrawerCashInBatch(retailDrawerCashIn, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Массовое создание и обновление Внесений денег
+   * 
+   
+   * @param retailDrawerCashIn  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreateRetailDrawerCashInBatch200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateRetailDrawerCashInBatch200ResponseInner> createRetailDrawerCashInBatch(@javax.annotation.Nonnull List<RetailDrawerCashIn> retailDrawerCashIn, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createRetailDrawerCashInBatch(retailDrawerCashIn, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -926,6 +964,24 @@ if (acceptEncoding != null)
     return this.getRetailDrawerCashInById(id, expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить Внесение денег
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return RetailDrawerCashIn
+   * @throws ApiException if fails to make API call
+   */
+  public RetailDrawerCashIn getRetailDrawerCashInById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getRetailDrawerCashInById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить Внесение денег
@@ -1011,6 +1067,25 @@ if (acceptEncoding != null)
    */
   public GetProductFiles200Response getRetailDrawerCashInFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
     return this.getRetailDrawerCashInFiles(id, limit, offset, accept, acceptEncoding, Collections.emptyMap());
+  }
+
+  /**
+   * Получить файлы внесения денег
+   * Запрос на получение списка всех Файлов данного Внесения денег.
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return GetProductFiles200Response
+   * @throws ApiException if fails to make API call
+   */
+  public GetProductFiles200Response getRetailDrawerCashInFiles(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getRetailDrawerCashInFiles(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1103,6 +1178,24 @@ if (acceptEncoding != null)
     return this.getRetailDrawerCashInList(limit, offset, search, expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить список Внесений денег
+   * 
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return RetailDrawerCashInList
+   * @throws ApiException if fails to make API call
+   */
+  public RetailDrawerCashInList getRetailDrawerCashInList(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getRetailDrawerCashInList((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить список Внесений денег
@@ -1187,6 +1280,21 @@ if (acceptEncoding != null)
     return this.getRetailDrawerCashInMetadata(accept, acceptEncoding, expand, Collections.emptyMap());
   }
 
+  /**
+   * Метаданные Внесений денег
+   * 
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return DocumentMetadata
+   * @throws ApiException if fails to make API call
+   */
+  public DocumentMetadata getRetailDrawerCashInMetadata(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getRetailDrawerCashInMetadata(null, null, (String) effectiveOptions.get("expand"), effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Метаданные Внесений денег
@@ -1264,6 +1372,22 @@ if (acceptEncoding != null)
    */
   public AttributeMetaInfoList getRetailDrawerCashInMetadataAttribute(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
     return this.getRetailDrawerCashInMetadataAttribute(offset, limit, accept, acceptEncoding, Collections.emptyMap());
+  }
+
+  /**
+   * Доп. поля Внесений денег
+   * 
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfoList
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfoList getRetailDrawerCashInMetadataAttribute(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getRetailDrawerCashInMetadataAttribute((Integer) effectiveOptions.get("offset"), (Integer) effectiveOptions.get("limit"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1594,6 +1718,28 @@ if (contentType != null)
    */
   public RetailDrawerCashIn updateRetailDrawerCashIn(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailDrawerCashIn retailDrawerCashIn, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateRetailDrawerCashIn(id, retailDrawerCashIn, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Изменить Внесение денег
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param retailDrawerCashIn  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return RetailDrawerCashIn
+   * @throws ApiException if fails to make API call
+   */
+  public RetailDrawerCashIn updateRetailDrawerCashIn(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailDrawerCashIn retailDrawerCashIn, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateRetailDrawerCashIn(id, retailDrawerCashIn, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 

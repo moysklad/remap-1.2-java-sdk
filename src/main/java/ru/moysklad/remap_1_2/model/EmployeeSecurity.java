@@ -44,7 +44,7 @@ import java.util.StringJoiner;
   EmployeeSecurity.JSON_PROPERTY_AUTHORIZED_IP_NETMASK,
   EmployeeSecurity.JSON_PROPERTY_ROLE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class EmployeeSecurity {
 
   public static final String JSON_PROPERTY_IS_ACTIVE = "isActive";
@@ -88,6 +88,7 @@ public class EmployeeSecurity {
     return this;
   }
 
+
   /**
    * Доступ к сервису МойСклад
    * @return isActive
@@ -109,11 +110,13 @@ public class EmployeeSecurity {
     this.isActive = isActive;
   }
 
+
   public EmployeeSecurity login(@javax.annotation.Nullable String login) {
     
     this.login = login;
     return this;
   }
+
 
   /**
    * Логин сотрудника для входа в МойСклад
@@ -136,11 +139,13 @@ public class EmployeeSecurity {
     this.login = login;
   }
 
+
   public EmployeeSecurity email(@javax.annotation.Nullable String email) {
     
     this.email = email;
     return this;
   }
+
 
   /**
    * Почта сотрудника
@@ -163,11 +168,13 @@ public class EmployeeSecurity {
     this.email = email;
   }
 
+
   public EmployeeSecurity group(@javax.annotation.Nullable EmployeeSecurityGroup group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -190,11 +197,13 @@ public class EmployeeSecurity {
     this.group = group;
   }
 
+
   public EmployeeSecurity authorizedHosts(@javax.annotation.Nullable List<String> authorizedHosts) {
     
     this.authorizedHosts = authorizedHosts;
     return this;
   }
+
 
   public EmployeeSecurity addAuthorizedHostsItem(String authorizedHostsItem) {
     if (this.authorizedHosts == null) {
@@ -225,11 +234,13 @@ public class EmployeeSecurity {
     this.authorizedHosts = authorizedHosts;
   }
 
+
   public EmployeeSecurity authorizedIpNetwork(@javax.annotation.Nullable String authorizedIpNetwork) {
     
     this.authorizedIpNetwork = authorizedIpNetwork;
     return this;
   }
+
 
   /**
    * Ipv4 адрес, идентифицирующий соответствующую подсеть, с правом доступа на аккаунт
@@ -252,11 +263,13 @@ public class EmployeeSecurity {
     this.authorizedIpNetwork = authorizedIpNetwork;
   }
 
+
   public EmployeeSecurity authorizedIpNetmask(@javax.annotation.Nullable String authorizedIpNetmask) {
     
     this.authorizedIpNetmask = authorizedIpNetmask;
     return this;
   }
+
 
   /**
    * Маска подсети с правом доступа на аккаунт
@@ -279,11 +292,13 @@ public class EmployeeSecurity {
     this.authorizedIpNetmask = authorizedIpNetmask;
   }
 
+
   public EmployeeSecurity role(@javax.annotation.Nullable EmployeeRole role) {
     
     this.role = role;
     return this;
   }
+
 
   /**
    * Get role
@@ -305,6 +320,7 @@ public class EmployeeSecurity {
   public void setRole(@javax.annotation.Nullable EmployeeRole role) {
     this.role = role;
   }
+
 
   @Override
   public boolean equals(Object o) {

@@ -67,7 +67,7 @@ import java.util.StringJoiner;
   EmissionOrder.JSON_PROPERTY_TRACKING_TYPE,
   EmissionOrder.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class EmissionOrder {
   public static EmissionOrder createWithMeta(UUID id) {
     EmissionOrder o = new EmissionOrder();
@@ -199,6 +199,7 @@ public class EmissionOrder {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -219,6 +220,7 @@ public class EmissionOrder {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Заказа кодов маркировки
@@ -274,6 +276,7 @@ public class EmissionOrder {
     return this;
   }
 
+
   /**
    * Комментарий
    * @return description
@@ -294,6 +297,7 @@ public class EmissionOrder {
   public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
+
 
   /**
    * Состояние документов маркировки. Известные значения описаны в EmissionOrderDocumentState
@@ -317,6 +321,7 @@ public class EmissionOrder {
     return this;
   }
 
+
   /**
    * Способ ввода в оборот. Известные значения описаны в EmissionOrderEmissionType
    * @return emissionType
@@ -338,11 +343,13 @@ public class EmissionOrder {
     this.emissionType = emissionType;
   }
 
+
   public EmissionOrder externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Заказа кодов маркировки
@@ -365,11 +372,13 @@ public class EmissionOrder {
     this.externalCode = externalCode;
   }
 
+
   public EmissionOrder group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -392,11 +401,13 @@ public class EmissionOrder {
     this.group = group;
   }
 
+
   public EmissionOrder moment(@javax.annotation.Nullable String moment) {
     
     this.moment = moment;
     return this;
   }
+
 
   /**
    * Дата документа
@@ -419,11 +430,13 @@ public class EmissionOrder {
     this.moment = moment;
   }
 
+
   public EmissionOrder name(@javax.annotation.Nullable String name) {
     
     this.name = name;
     return this;
   }
+
 
   /**
    * Наименование Заказа кодов маркировки
@@ -446,11 +459,13 @@ public class EmissionOrder {
     this.name = name;
   }
 
+
   public EmissionOrder organization(@javax.annotation.Nullable Organization organization) {
     
     this.organization = organization;
     return this;
   }
+
 
   /**
    * Get organization
@@ -473,11 +488,13 @@ public class EmissionOrder {
     this.organization = organization;
   }
 
+
   public EmissionOrder owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Владелец (Сотрудник)
@@ -509,11 +526,13 @@ public class EmissionOrder {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public EmissionOrder positions(@javax.annotation.Nullable EmissionOrderPositionList positions) {
     
     this.positions = positions;
     return this;
   }
+
 
   /**
    * Get positions
@@ -536,6 +555,7 @@ public class EmissionOrder {
     this.positions = positions;
   }
 
+
   /**
    * Напечатан ли документ
    * @return printed
@@ -557,6 +577,7 @@ public class EmissionOrder {
     
     return this;
   }
+
 
   public EmissionOrder addProductionTasksItem(ProductionTask productionTasksItem) {
     if (this.productionTasks == null || !this.productionTasks.isPresent()) {
@@ -600,6 +621,7 @@ public class EmissionOrder {
     this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
   }
 
+
   /**
    * Опубликован ли документ
    * @return published
@@ -622,6 +644,7 @@ public class EmissionOrder {
     return this;
   }
 
+
   /**
    * Общий доступ
    * @return shared
@@ -643,11 +666,13 @@ public class EmissionOrder {
     this.shared = shared;
   }
 
+
   public EmissionOrder state(@javax.annotation.Nullable State state) {
     this.state = JsonNullable.<State>of(state);
     
     return this;
   }
+
 
   /**
    * Метаданные статуса Заказа кодов маркировки
@@ -679,11 +704,13 @@ public class EmissionOrder {
     this.state = JsonNullable.<State>of(state);
   }
 
+
   public EmissionOrder trackingType(@javax.annotation.Nullable String trackingType) {
     
     this.trackingType = trackingType;
     return this;
   }
+
 
   /**
    * Тип маркируемой продукции. Известные значения описаны в TrackingType
@@ -705,6 +732,7 @@ public class EmissionOrder {
   public void setTrackingType(@javax.annotation.Nullable String trackingType) {
     this.trackingType = trackingType;
   }
+
 
   /**
    * Момент последнего обновления

@@ -53,7 +53,7 @@ import java.util.StringJoiner;
   PurchaseOrderPosition.JSON_PROPERTY_PACK,
   PurchaseOrderPosition.JSON_PROPERTY_STOCK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class PurchaseOrderPosition {
   public static PurchaseOrderPosition createWithMeta(UUID parentId, UUID id) {
     PurchaseOrderPosition o = new PurchaseOrderPosition();
@@ -147,6 +147,7 @@ public class PurchaseOrderPosition {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -167,6 +168,7 @@ public class PurchaseOrderPosition {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID позиции
@@ -206,6 +208,7 @@ public class PurchaseOrderPosition {
     return this;
   }
 
+
   /**
    * Количество товаров данного вида в позиции
    * @return quantity
@@ -227,11 +230,13 @@ public class PurchaseOrderPosition {
     this.quantity = quantity;
   }
 
+
   public PurchaseOrderPosition price(@javax.annotation.Nullable Double price) {
     
     this.price = price;
     return this;
   }
+
 
   /**
    * Цена товара/услуги в копейках
@@ -254,11 +259,13 @@ public class PurchaseOrderPosition {
     this.price = price;
   }
 
+
   public PurchaseOrderPosition discount(@javax.annotation.Nullable Double discount) {
     
     this.discount = discount;
     return this;
   }
+
 
   /**
    * Процент скидки или наценки
@@ -280,6 +287,7 @@ public class PurchaseOrderPosition {
   public void setDiscount(@javax.annotation.Nullable Double discount) {
     this.discount = discount;
   }
+
 
   /**
    * Принято
@@ -319,8 +327,11 @@ public class PurchaseOrderPosition {
     return this;
   }
 
+
   /**
    * НДС, которым облагается текущая позиция
+   * minimum: 0
+   * maximum: 100
    * @return vat
    */
   @javax.annotation.Nullable
@@ -340,11 +351,13 @@ public class PurchaseOrderPosition {
     this.vat = vat;
   }
 
+
   public PurchaseOrderPosition vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
     
     this.vatEnabled = vatEnabled;
     return this;
   }
+
 
   /**
    * Включен ли НДС для позиции
@@ -367,11 +380,13 @@ public class PurchaseOrderPosition {
     this.vatEnabled = vatEnabled;
   }
 
+
   public PurchaseOrderPosition assortment(@javax.annotation.Nullable AssortmentWithoutBundle assortment) {
     
     this.assortment = assortment;
     return this;
   }
+
 
   /**
    * Get assortment
@@ -394,11 +409,13 @@ public class PurchaseOrderPosition {
     this.assortment = assortment;
   }
 
+
   public PurchaseOrderPosition pack(@javax.annotation.Nullable Pack pack) {
     this.pack = JsonNullable.<Pack>of(pack);
     
     return this;
   }
+
 
   /**
    * Упаковка Товара
@@ -430,11 +447,13 @@ public class PurchaseOrderPosition {
     this.pack = JsonNullable.<Pack>of(pack);
   }
 
+
   public PurchaseOrderPosition stock(@javax.annotation.Nullable PositionStock stock) {
     this.stock = JsonNullable.<PositionStock>of(stock);
     
     return this;
   }
+
 
   /**
    * Остатки и себестоимость позиции. Не выводится по умолчанию. Для получения передайте параметр &#x60;?fields&#x3D;stock&#x60;. 
@@ -465,6 +484,7 @@ public class PurchaseOrderPosition {
   public void setStock(@javax.annotation.Nullable PositionStock stock) {
     this.stock = JsonNullable.<PositionStock>of(stock);
   }
+
 
   @Override
   public boolean equals(Object o) {

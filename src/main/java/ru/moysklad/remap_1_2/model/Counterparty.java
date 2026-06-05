@@ -100,7 +100,7 @@ import java.util.StringJoiner;
   Counterparty.JSON_PROPERTY_TAGS,
   Counterparty.JSON_PROPERTY_ATTRIBUTES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Counterparty {
   public static Counterparty createWithMeta(UUID id) {
     Counterparty o = new Counterparty();
@@ -338,6 +338,7 @@ public class Counterparty {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -358,6 +359,7 @@ public class Counterparty {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID контрагента
@@ -381,6 +383,7 @@ public class Counterparty {
     return this;
   }
 
+
   /**
    * ID синхронизации
    * @return syncId
@@ -401,6 +404,7 @@ public class Counterparty {
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
     this.syncId = syncId;
   }
+
 
   /**
    * ID учетной записи
@@ -424,6 +428,7 @@ public class Counterparty {
     return this;
   }
 
+
   /**
    * Наименование контрагента
    * @return name
@@ -445,11 +450,13 @@ public class Counterparty {
     this.name = name;
   }
 
+
   public Counterparty code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код контрагента
@@ -472,11 +479,13 @@ public class Counterparty {
     this.code = code;
   }
 
+
   public Counterparty externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код контрагента
@@ -499,11 +508,13 @@ public class Counterparty {
     this.externalCode = externalCode;
   }
 
+
   public Counterparty archived(@javax.annotation.Nullable Boolean archived) {
     
     this.archived = archived;
     return this;
   }
+
 
   /**
    * Добавлен ли контрагент в архив
@@ -525,6 +536,7 @@ public class Counterparty {
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
     this.archived = archived;
   }
+
 
   /**
    * Момент создания
@@ -564,6 +576,7 @@ public class Counterparty {
     return this;
   }
 
+
   /**
    * Комментарий к контрагенту
    * @return description
@@ -585,11 +598,13 @@ public class Counterparty {
     this.description = description;
   }
 
+
   public Counterparty companyType(@javax.annotation.Nullable String companyType) {
     
     this.companyType = companyType;
     return this;
   }
+
 
   /**
    * Тип контрагента. Известные значения описаны в CompanyType
@@ -612,11 +627,13 @@ public class Counterparty {
     this.companyType = companyType;
   }
 
+
   public Counterparty email(@javax.annotation.Nullable String email) {
     
     this.email = email;
     return this;
   }
+
 
   /**
    * Адрес электронной почты
@@ -639,11 +656,13 @@ public class Counterparty {
     this.email = email;
   }
 
+
   public Counterparty phone(@javax.annotation.Nullable String phone) {
     
     this.phone = phone;
     return this;
   }
+
 
   /**
    * Номер телефона
@@ -666,11 +685,13 @@ public class Counterparty {
     this.phone = phone;
   }
 
+
   public Counterparty fax(@javax.annotation.Nullable String fax) {
     
     this.fax = fax;
     return this;
   }
+
 
   /**
    * Номер факса
@@ -693,11 +714,13 @@ public class Counterparty {
     this.fax = fax;
   }
 
+
   public Counterparty actualAddress(@javax.annotation.Nullable String actualAddress) {
     
     this.actualAddress = actualAddress;
     return this;
   }
+
 
   /**
    * Фактический адрес контрагента
@@ -720,11 +743,13 @@ public class Counterparty {
     this.actualAddress = actualAddress;
   }
 
+
   public Counterparty actualAddressFull(@javax.annotation.Nullable Address actualAddressFull) {
     this.actualAddressFull = JsonNullable.<Address>of(actualAddressFull);
     
     return this;
   }
+
 
   /**
    * Полный адрес
@@ -756,11 +781,13 @@ public class Counterparty {
     this.actualAddressFull = JsonNullable.<Address>of(actualAddressFull);
   }
 
+
   public Counterparty legalAddress(@javax.annotation.Nullable String legalAddress) {
     
     this.legalAddress = legalAddress;
     return this;
   }
+
 
   /**
    * Юридический адрес контрагента
@@ -783,11 +810,13 @@ public class Counterparty {
     this.legalAddress = legalAddress;
   }
 
+
   public Counterparty legalAddressFull(@javax.annotation.Nullable Address legalAddressFull) {
     this.legalAddressFull = JsonNullable.<Address>of(legalAddressFull);
     
     return this;
   }
+
 
   /**
    * Полный юридический адрес контрагента
@@ -819,11 +848,13 @@ public class Counterparty {
     this.legalAddressFull = JsonNullable.<Address>of(legalAddressFull);
   }
 
+
   public Counterparty inn(@javax.annotation.Nullable String inn) {
     
     this.inn = inn;
     return this;
   }
+
 
   /**
    * ИНН
@@ -846,11 +877,13 @@ public class Counterparty {
     this.inn = inn;
   }
 
+
   public Counterparty kpp(@javax.annotation.Nullable String kpp) {
     
     this.kpp = kpp;
     return this;
   }
+
 
   /**
    * КПП
@@ -873,11 +906,13 @@ public class Counterparty {
     this.kpp = kpp;
   }
 
+
   public Counterparty ogrn(@javax.annotation.Nullable String ogrn) {
     
     this.ogrn = ogrn;
     return this;
   }
+
 
   /**
    * ОГРН
@@ -900,11 +935,13 @@ public class Counterparty {
     this.ogrn = ogrn;
   }
 
+
   public Counterparty ogrnip(@javax.annotation.Nullable String ogrnip) {
     
     this.ogrnip = ogrnip;
     return this;
   }
+
 
   /**
    * ОГРНИП
@@ -927,11 +964,13 @@ public class Counterparty {
     this.ogrnip = ogrnip;
   }
 
+
   public Counterparty okpo(@javax.annotation.Nullable String okpo) {
     
     this.okpo = okpo;
     return this;
   }
+
 
   /**
    * ОКПО
@@ -954,11 +993,13 @@ public class Counterparty {
     this.okpo = okpo;
   }
 
+
   public Counterparty certificateNumber(@javax.annotation.Nullable String certificateNumber) {
     
     this.certificateNumber = certificateNumber;
     return this;
   }
+
 
   /**
    * Номер свидетельства
@@ -981,11 +1022,13 @@ public class Counterparty {
     this.certificateNumber = certificateNumber;
   }
 
+
   public Counterparty certificateDate(@javax.annotation.Nullable String certificateDate) {
     
     this.certificateDate = certificateDate;
     return this;
   }
+
 
   /**
    * Дата свидетельства
@@ -1008,11 +1051,13 @@ public class Counterparty {
     this.certificateDate = certificateDate;
   }
 
+
   public Counterparty legalTitle(@javax.annotation.Nullable String legalTitle) {
     
     this.legalTitle = legalTitle;
     return this;
   }
+
 
   /**
    * Полное наименование
@@ -1035,11 +1080,13 @@ public class Counterparty {
     this.legalTitle = legalTitle;
   }
 
+
   public Counterparty legalFirstName(@javax.annotation.Nullable String legalFirstName) {
     
     this.legalFirstName = legalFirstName;
     return this;
   }
+
 
   /**
    * Имя для ИП и физлица
@@ -1062,11 +1109,13 @@ public class Counterparty {
     this.legalFirstName = legalFirstName;
   }
 
+
   public Counterparty legalLastName(@javax.annotation.Nullable String legalLastName) {
     
     this.legalLastName = legalLastName;
     return this;
   }
+
 
   /**
    * Фамилия для ИП и физлица
@@ -1089,11 +1138,13 @@ public class Counterparty {
     this.legalLastName = legalLastName;
   }
 
+
   public Counterparty legalMiddleName(@javax.annotation.Nullable String legalMiddleName) {
     
     this.legalMiddleName = legalMiddleName;
     return this;
   }
+
 
   /**
    * Отчество для ИП и физлица
@@ -1116,11 +1167,13 @@ public class Counterparty {
     this.legalMiddleName = legalMiddleName;
   }
 
+
   public Counterparty birthDate(@javax.annotation.Nullable String birthDate) {
     
     this.birthDate = birthDate;
     return this;
   }
+
 
   /**
    * Дата рождения для физлица
@@ -1143,11 +1196,13 @@ public class Counterparty {
     this.birthDate = birthDate;
   }
 
+
   public Counterparty sex(@javax.annotation.Nullable String sex) {
     
     this.sex = sex;
     return this;
   }
+
 
   /**
    * Пол контрагента. Известные значения описаны в Sex
@@ -1170,11 +1225,13 @@ public class Counterparty {
     this.sex = sex;
   }
 
+
   public Counterparty discountCardNumber(@javax.annotation.Nullable String discountCardNumber) {
     this.discountCardNumber = JsonNullable.<String>of(discountCardNumber);
     
     return this;
   }
+
 
   /**
    * Номер дисконтной карты контрагента
@@ -1206,11 +1263,13 @@ public class Counterparty {
     this.discountCardNumber = JsonNullable.<String>of(discountCardNumber);
   }
 
+
   public Counterparty discounts(@javax.annotation.Nullable List<AgentDiscount> discounts) {
     this.discounts = JsonNullable.<List<AgentDiscount>>of(discounts);
     
     return this;
   }
+
 
   public Counterparty addDiscountsItem(AgentDiscount discountsItem) {
     if (this.discounts == null || !this.discounts.isPresent()) {
@@ -1254,11 +1313,13 @@ public class Counterparty {
     this.discounts = JsonNullable.<List<AgentDiscount>>of(discounts);
   }
 
+
   public Counterparty shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -1281,11 +1342,13 @@ public class Counterparty {
     this.shared = shared;
   }
 
+
   public Counterparty group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -1308,11 +1371,13 @@ public class Counterparty {
     this.group = group;
   }
 
+
   public Counterparty owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Метаданные владельца (Сотрудника)
@@ -1343,6 +1408,7 @@ public class Counterparty {
   public void setOwner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
   }
+
 
   /**
    * Сумма продаж
@@ -1382,6 +1448,7 @@ public class Counterparty {
     return this;
   }
 
+
   /**
    * Get bonusProgram
    * @return bonusProgram
@@ -1412,11 +1479,13 @@ public class Counterparty {
     this.bonusProgram = JsonNullable.<BonusProgram>of(bonusProgram);
   }
 
+
   public Counterparty priceType(@javax.annotation.Nullable PriceType priceType) {
     this.priceType = JsonNullable.<PriceType>of(priceType);
     
     return this;
   }
+
 
   /**
    * Get priceType
@@ -1448,11 +1517,13 @@ public class Counterparty {
     this.priceType = JsonNullable.<PriceType>of(priceType);
   }
 
+
   public Counterparty state(@javax.annotation.Nullable State state) {
     
     this.state = state;
     return this;
   }
+
 
   /**
    * Get state
@@ -1475,11 +1546,13 @@ public class Counterparty {
     this.state = state;
   }
 
+
   public Counterparty accounts(@javax.annotation.Nullable CounterpartyAccounts accounts) {
     
     this.accounts = accounts;
     return this;
   }
+
 
   /**
    * Get accounts
@@ -1502,11 +1575,13 @@ public class Counterparty {
     this.accounts = accounts;
   }
 
+
   public Counterparty contactpersons(@javax.annotation.Nullable CounterpartyContactpersons contactpersons) {
     
     this.contactpersons = contactpersons;
     return this;
   }
+
 
   /**
    * Get contactpersons
@@ -1529,11 +1604,13 @@ public class Counterparty {
     this.contactpersons = contactpersons;
   }
 
+
   public Counterparty notes(@javax.annotation.Nullable CounterpartyNotes notes) {
     
     this.notes = notes;
     return this;
   }
+
 
   /**
    * Get notes
@@ -1556,11 +1633,13 @@ public class Counterparty {
     this.notes = notes;
   }
 
+
   public Counterparty files(@javax.annotation.Nullable FileList files) {
     
     this.files = files;
     return this;
   }
+
 
   /**
    * Get files
@@ -1583,11 +1662,13 @@ public class Counterparty {
     this.files = files;
   }
 
+
   public Counterparty tags(@javax.annotation.Nullable List<String> tags) {
     this.tags = JsonNullable.<List<String>>of(tags);
     
     return this;
   }
+
 
   public Counterparty addTagsItem(String tagsItem) {
     if (this.tags == null || !this.tags.isPresent()) {
@@ -1631,11 +1712,13 @@ public class Counterparty {
     this.tags = JsonNullable.<List<String>>of(tags);
   }
 
+
   public Counterparty attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public Counterparty addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -1678,6 +1761,7 @@ public class Counterparty {
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
+
 
   @Override
   public boolean equals(Object o) {

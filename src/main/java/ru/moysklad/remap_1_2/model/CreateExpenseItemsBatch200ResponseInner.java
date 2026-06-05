@@ -49,7 +49,7 @@ import java.util.StringJoiner;
   CreateExpenseItemsBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createExpenseItemsBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateExpenseItemsBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -111,6 +111,7 @@ public class CreateExpenseItemsBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -131,6 +132,7 @@ public class CreateExpenseItemsBatch200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Статьи расходов
@@ -170,6 +172,7 @@ public class CreateExpenseItemsBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Код Статьи расходов
    * @return code
@@ -191,11 +194,13 @@ public class CreateExpenseItemsBatch200ResponseInner {
     this.code = code;
   }
 
+
   public CreateExpenseItemsBatch200ResponseInner description(@javax.annotation.Nullable String description) {
     
     this.description = description;
     return this;
   }
+
 
   /**
    * Описание Статьи расходов
@@ -218,11 +223,13 @@ public class CreateExpenseItemsBatch200ResponseInner {
     this.description = description;
   }
 
+
   public CreateExpenseItemsBatch200ResponseInner externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Статьи расходов
@@ -245,11 +252,13 @@ public class CreateExpenseItemsBatch200ResponseInner {
     this.externalCode = externalCode;
   }
 
+
   public CreateExpenseItemsBatch200ResponseInner name(@javax.annotation.Nullable String name) {
     
     this.name = name;
     return this;
   }
+
 
   /**
    * Наименование Статьи расходов
@@ -272,6 +281,7 @@ public class CreateExpenseItemsBatch200ResponseInner {
     this.name = name;
   }
 
+
   /**
    * Момент последнего обновления сущности
    * @return updated
@@ -293,6 +303,7 @@ public class CreateExpenseItemsBatch200ResponseInner {
     this.errors = errors;
     return this;
   }
+
 
   public CreateExpenseItemsBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -322,6 +333,7 @@ public class CreateExpenseItemsBatch200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

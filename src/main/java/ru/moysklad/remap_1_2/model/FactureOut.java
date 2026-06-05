@@ -25,9 +25,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
+import ru.moysklad.remap_1_2.model.Agent;
 import ru.moysklad.remap_1_2.model.AttributeAbstract;
 import ru.moysklad.remap_1_2.model.Contract;
-import ru.moysklad.remap_1_2.model.Counterparty;
 import ru.moysklad.remap_1_2.model.CurrencyRate;
 import ru.moysklad.remap_1_2.model.Demand;
 import ru.moysklad.remap_1_2.model.Employee;
@@ -88,7 +88,7 @@ import java.util.StringJoiner;
   FactureOut.JSON_PROPERTY_PAYMENT_NUMBER,
   FactureOut.JSON_PROPERTY_PAYMENT_DATE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class FactureOut {
   public static FactureOut createWithMeta(UUID id) {
     FactureOut o = new FactureOut();
@@ -119,7 +119,7 @@ public class FactureOut {
 
   public static final String JSON_PROPERTY_AGENT = "agent";
   @javax.annotation.Nullable
-  private Counterparty agent;
+  private Agent agent;
 
   public static final String JSON_PROPERTY_APPLICABLE = "applicable";
   @javax.annotation.Nullable
@@ -239,7 +239,7 @@ public class FactureOut {
 
   public static final String JSON_PROPERTY_CONSIGNEE = "consignee";
   @javax.annotation.Nullable
-  private Counterparty consignee;
+  private JsonNullable<Agent> consignee = JsonNullable.<Agent>undefined();
 
   public static final String JSON_PROPERTY_PAYMENT_NUMBER = "paymentNumber";
   @javax.annotation.Nullable
@@ -284,6 +284,7 @@ public class FactureOut {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -304,6 +305,7 @@ public class FactureOut {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Счета-фактуры выданного
@@ -337,21 +339,22 @@ public class FactureOut {
 
 
 
-  public FactureOut agent(@javax.annotation.Nullable Counterparty agent) {
+  public FactureOut agent(@javax.annotation.Nullable Agent agent) {
     
     this.agent = agent;
     return this;
   }
 
+
   /**
-   * Get agent
+   * Метаданные контрагента или юрлица
    * @return agent
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Counterparty getAgent() {
+  public Agent getAgent() {
     return agent;
   }
 
@@ -360,15 +363,17 @@ public class FactureOut {
 
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAgent(@javax.annotation.Nullable Counterparty agent) {
+  public void setAgent(@javax.annotation.Nullable Agent agent) {
     this.agent = agent;
   }
+
 
   public FactureOut applicable(@javax.annotation.Nullable Boolean applicable) {
     
     this.applicable = applicable;
     return this;
   }
+
 
   /**
    * Отметка о проведении
@@ -391,11 +396,13 @@ public class FactureOut {
     this.applicable = applicable;
   }
 
+
   public FactureOut attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public FactureOut addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -439,11 +446,13 @@ public class FactureOut {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   public FactureOut code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код Счета-фактуры выданного
@@ -466,11 +475,13 @@ public class FactureOut {
     this.code = code;
   }
 
+
   public FactureOut contract(@javax.annotation.Nullable Contract contract) {
     this.contract = JsonNullable.<Contract>of(contract);
     
     return this;
   }
+
 
   /**
    * Метаданные договора
@@ -501,6 +512,7 @@ public class FactureOut {
   public void setContract(@javax.annotation.Nullable Contract contract) {
     this.contract = JsonNullable.<Contract>of(contract);
   }
+
 
   /**
    * Дата создания
@@ -540,6 +552,7 @@ public class FactureOut {
     return this;
   }
 
+
   /**
    * Комментарий Счета-фактуры выданного
    * @return description
@@ -570,11 +583,13 @@ public class FactureOut {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public FactureOut externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Счета-фактуры выданного
@@ -597,11 +612,13 @@ public class FactureOut {
     this.externalCode = externalCode;
   }
 
+
   public FactureOut files(@javax.annotation.Nullable FileList files) {
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
   }
+
 
   /**
    * Метаданные массива файлов
@@ -633,11 +650,13 @@ public class FactureOut {
     this.files = JsonNullable.<FileList>of(files);
   }
 
+
   public FactureOut group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -660,11 +679,13 @@ public class FactureOut {
     this.group = group;
   }
 
+
   public FactureOut moment(@javax.annotation.Nullable String moment) {
     
     this.moment = moment;
     return this;
   }
+
 
   /**
    * Дата документа
@@ -687,11 +708,13 @@ public class FactureOut {
     this.moment = moment;
   }
 
+
   public FactureOut name(@javax.annotation.Nullable String name) {
     
     this.name = name;
     return this;
   }
+
 
   /**
    * Наименование Счета-фактуры выданного
@@ -714,11 +737,13 @@ public class FactureOut {
     this.name = name;
   }
 
+
   public FactureOut organization(@javax.annotation.Nullable Organization organization) {
     
     this.organization = organization;
     return this;
   }
+
 
   /**
    * Get organization
@@ -741,11 +766,13 @@ public class FactureOut {
     this.organization = organization;
   }
 
+
   public FactureOut owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Владелец (Сотрудник)
@@ -776,6 +803,7 @@ public class FactureOut {
   public void setOwner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
   }
+
 
   /**
    * Напечатан ли документ
@@ -815,6 +843,7 @@ public class FactureOut {
     return this;
   }
 
+
   /**
    * Get rate
    * @return rate
@@ -836,11 +865,13 @@ public class FactureOut {
     this.rate = rate;
   }
 
+
   public FactureOut shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -863,11 +894,13 @@ public class FactureOut {
     this.shared = shared;
   }
 
+
   public FactureOut state(@javax.annotation.Nullable State state) {
     this.state = JsonNullable.<State>of(state);
     
     return this;
   }
+
 
   /**
    * Метаданные статуса Счета-фактуры выданного
@@ -899,11 +932,13 @@ public class FactureOut {
     this.state = JsonNullable.<State>of(state);
   }
 
+
   public FactureOut stateContractId(@javax.annotation.Nullable String stateContractId) {
     
     this.stateContractId = stateContractId;
     return this;
   }
+
 
   /**
    * Идентификатор государственного контракта, договора (соглашения)
@@ -925,6 +960,7 @@ public class FactureOut {
   public void setStateContractId(@javax.annotation.Nullable String stateContractId) {
     this.stateContractId = stateContractId;
   }
+
 
   /**
    * Сумма Счета-фактуры выданного в копейках
@@ -948,6 +984,7 @@ public class FactureOut {
     return this;
   }
 
+
   /**
    * ID синхронизации
    * @return syncId
@@ -968,6 +1005,7 @@ public class FactureOut {
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
     this.syncId = syncId;
   }
+
 
   /**
    * Момент последнего обновления Счета-фактуры выданного
@@ -991,6 +1029,7 @@ public class FactureOut {
     return this;
   }
 
+
   /**
    * Ставка НДС для авансового платежа (в процентах)
    * @return advancePaymentVat
@@ -1012,11 +1051,13 @@ public class FactureOut {
     this.advancePaymentVat = advancePaymentVat;
   }
 
+
   public FactureOut paymentPurpose(@javax.annotation.Nullable String paymentPurpose) {
     
     this.paymentPurpose = paymentPurpose;
     return this;
   }
+
 
   /**
    * Назначение платежа
@@ -1039,6 +1080,7 @@ public class FactureOut {
     this.paymentPurpose = paymentPurpose;
   }
 
+
   /**
    * Сумма включая НДС
    * @return vatSum
@@ -1060,6 +1102,7 @@ public class FactureOut {
     
     return this;
   }
+
 
   public FactureOut addDemandsItem(Demand demandsItem) {
     if (this.demands == null || !this.demands.isPresent()) {
@@ -1103,11 +1146,13 @@ public class FactureOut {
     this.demands = JsonNullable.<List<Demand>>of(demands);
   }
 
+
   public FactureOut payments(@javax.annotation.Nullable List<PaymentIn> payments) {
     this.payments = JsonNullable.<List<PaymentIn>>of(payments);
     
     return this;
   }
+
 
   public FactureOut addPaymentsItem(PaymentIn paymentsItem) {
     if (this.payments == null || !this.payments.isPresent()) {
@@ -1151,11 +1196,13 @@ public class FactureOut {
     this.payments = JsonNullable.<List<PaymentIn>>of(payments);
   }
 
+
   public FactureOut returns(@javax.annotation.Nullable List<PurchaseReturn> returns) {
     this.returns = JsonNullable.<List<PurchaseReturn>>of(returns);
     
     return this;
   }
+
 
   public FactureOut addReturnsItem(PurchaseReturn returnsItem) {
     if (this.returns == null || !this.returns.isPresent()) {
@@ -1199,38 +1246,51 @@ public class FactureOut {
     this.returns = JsonNullable.<List<PurchaseReturn>>of(returns);
   }
 
-  public FactureOut consignee(@javax.annotation.Nullable Counterparty consignee) {
+
+  public FactureOut consignee(@javax.annotation.Nullable Agent consignee) {
+    this.consignee = JsonNullable.<Agent>of(consignee);
     
-    this.consignee = consignee;
     return this;
   }
 
+
   /**
-   * Get consignee
+   * Грузополучатель (контрагент или юрлицо)
    * @return consignee
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CONSIGNEE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
-  public Counterparty getConsignee() {
-    return consignee;
+  public Agent getConsignee() {
+        return consignee.orElse(null);
   }
 
   
 
-
   @JsonProperty(JSON_PROPERTY_CONSIGNEE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setConsignee(@javax.annotation.Nullable Counterparty consignee) {
+
+
+  public JsonNullable<Agent> getConsignee_JsonNullable() {
+    return consignee;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_CONSIGNEE, required = false)
+  public void setConsignee_JsonNullable(JsonNullable<Agent> consignee) {
     this.consignee = consignee;
   }
+
+  public void setConsignee(@javax.annotation.Nullable Agent consignee) {
+    this.consignee = JsonNullable.<Agent>of(consignee);
+  }
+
 
   public FactureOut paymentNumber(@javax.annotation.Nullable String paymentNumber) {
     
     this.paymentNumber = paymentNumber;
     return this;
   }
+
 
   /**
    * Название платежного документа
@@ -1253,11 +1313,13 @@ public class FactureOut {
     this.paymentNumber = paymentNumber;
   }
 
+
   public FactureOut paymentDate(@javax.annotation.Nullable String paymentDate) {
     
     this.paymentDate = paymentDate;
     return this;
   }
+
 
   /**
    * Дата платежного документа
@@ -1279,6 +1341,7 @@ public class FactureOut {
   public void setPaymentDate(@javax.annotation.Nullable String paymentDate) {
     this.paymentDate = paymentDate;
   }
+
 
   @Override
   public boolean equals(Object o) {
@@ -1322,7 +1385,7 @@ public class FactureOut {
         equalsNullable(this.demands, factureOut.demands) &&
         equalsNullable(this.payments, factureOut.payments) &&
         equalsNullable(this.returns, factureOut.returns) &&
-        Objects.equals(this.consignee, factureOut.consignee) &&
+        equalsNullable(this.consignee, factureOut.consignee) &&
         Objects.equals(this.paymentNumber, factureOut.paymentNumber) &&
         Objects.equals(this.paymentDate, factureOut.paymentDate);
   }
@@ -1333,7 +1396,7 @@ public class FactureOut {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, agent, applicable, hashCodeNullable(attributes), code, hashCodeNullable(contract), created, deleted, hashCodeNullable(description), externalCode, hashCodeNullable(files), group, moment, name, organization, hashCodeNullable(owner), printed, published, rate, shared, hashCodeNullable(state), stateContractId, sum, syncId, updated, advancePaymentVat, paymentPurpose, vatSum, hashCodeNullable(demands), hashCodeNullable(payments), hashCodeNullable(returns), consignee, paymentNumber, paymentDate);
+    return Objects.hash(meta, id, accountId, agent, applicable, hashCodeNullable(attributes), code, hashCodeNullable(contract), created, deleted, hashCodeNullable(description), externalCode, hashCodeNullable(files), group, moment, name, organization, hashCodeNullable(owner), printed, published, rate, shared, hashCodeNullable(state), stateContractId, sum, syncId, updated, advancePaymentVat, paymentPurpose, vatSum, hashCodeNullable(demands), hashCodeNullable(payments), hashCodeNullable(returns), hashCodeNullable(consignee), paymentNumber, paymentDate);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

@@ -36,7 +36,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class VariantsApi extends BaseApi {
 
@@ -61,6 +61,25 @@ public class VariantsApi extends BaseApi {
    */
   public Variant createVariant(@javax.annotation.Nonnull Variant variant, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createVariant(variant, accept, acceptEncoding, expand, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать Модификацию
+   * 
+   
+   * @param variant  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Variant
+   * @throws ApiException if fails to make API call
+   */
+  public Variant createVariant(@javax.annotation.Nonnull Variant variant, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createVariant(variant, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -150,6 +169,25 @@ if (contentType != null)
    */
   public List<CreateVariantsBatch200ResponseInner> createVariantsBatch(@javax.annotation.Nonnull List<Variant> variant, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createVariantsBatch(variant, accept, acceptEncoding, expand, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Массовое создание и обновление Модификаций
+   * 
+   
+   * @param variant  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreateVariantsBatch200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateVariantsBatch200ResponseInner> createVariantsBatch(@javax.annotation.Nonnull List<Variant> variant, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createVariantsBatch(variant, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -407,6 +445,25 @@ if (contentType != null)
     return this.getVariantById(id, expand, fields, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить Модификацию
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Variant
+   * @throws ApiException if fails to make API call
+   */
+  public Variant getVariantById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getVariantById(id, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить Модификацию
@@ -575,6 +632,27 @@ if (acceptEncoding != null)
     return this.getVariants(limit, offset, search, filter, expand, fields, order, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить список Модификаций
+   * 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return VariantList
+   * @throws ApiException if fails to make API call
+   */
+  public VariantList getVariants(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getVariants((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить список Модификаций
@@ -666,6 +744,28 @@ if (acceptEncoding != null)
    */
   public Variant updateVariant(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Variant variant, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateVariant(id, variant, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Изменить Модификацию
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param variant  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Variant
+   * @throws ApiException if fails to make API call
+   */
+  public Variant updateVariant(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Variant variant, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateVariant(id, variant, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 

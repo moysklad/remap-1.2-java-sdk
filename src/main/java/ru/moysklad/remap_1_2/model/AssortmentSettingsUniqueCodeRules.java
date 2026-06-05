@@ -34,7 +34,7 @@ import java.util.StringJoiner;
   AssortmentSettingsUniqueCodeRules.JSON_PROPERTY_FILL_UNIQUE_CODE
 })
 @JsonTypeName("AssortmentSettings_uniqueCodeRules")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class AssortmentSettingsUniqueCodeRules {
 
   public static final String JSON_PROPERTY_CHECK_UNIQUE_CODE = "checkUniqueCode";
@@ -53,6 +53,7 @@ public class AssortmentSettingsUniqueCodeRules {
     this.checkUniqueCode = checkUniqueCode;
     return this;
   }
+
 
   /**
    * Проверка уникальности кода сущностей ассортимента
@@ -75,11 +76,13 @@ public class AssortmentSettingsUniqueCodeRules {
     this.checkUniqueCode = checkUniqueCode;
   }
 
+
   public AssortmentSettingsUniqueCodeRules fillUniqueCode(@javax.annotation.Nullable Boolean fillUniqueCode) {
     
     this.fillUniqueCode = fillUniqueCode;
     return this;
   }
+
 
   /**
    * Устанавливать уникальный код при создании сущностей ассортимента
@@ -101,6 +104,7 @@ public class AssortmentSettingsUniqueCodeRules {
   public void setFillUniqueCode(@javax.annotation.Nullable Boolean fillUniqueCode) {
     this.fillUniqueCode = fillUniqueCode;
   }
+
 
   @Override
   public boolean equals(Object o) {

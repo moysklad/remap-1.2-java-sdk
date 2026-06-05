@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   ServiceList.JSON_PROPERTY_META,
   ServiceList.JSON_PROPERTY_ROWS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class ServiceList {
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
@@ -64,6 +64,7 @@ public class ServiceList {
     return this;
   }
 
+
   /**
    * Get context
    * @return context
@@ -85,11 +86,13 @@ public class ServiceList {
     this.context = context;
   }
 
+
   public ServiceList meta(@javax.annotation.Nullable MetaList meta) {
     
     this.meta = meta;
     return this;
   }
+
 
   /**
    * Get meta
@@ -112,11 +115,13 @@ public class ServiceList {
     this.meta = meta;
   }
 
+
   public ServiceList rows(@javax.annotation.Nullable List<Service> rows) {
     
     this.rows = rows;
     return this;
   }
+
 
   public ServiceList addRowsItem(Service rowsItem) {
     if (this.rows == null) {
@@ -146,6 +151,7 @@ public class ServiceList {
   public void setRows(@javax.annotation.Nullable List<Service> rows) {
     this.rows = rows;
   }
+
 
   @Override
   public boolean equals(Object o) {

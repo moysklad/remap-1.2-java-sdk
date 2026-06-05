@@ -101,7 +101,7 @@ import java.util.StringJoiner;
   CreateBundlesBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createBundlesBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateBundlesBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -301,6 +301,7 @@ public class CreateBundlesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -321,6 +322,7 @@ public class CreateBundlesBatch200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Комплекта
@@ -360,6 +362,7 @@ public class CreateBundlesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Наименование Комплекта
    * @return name
@@ -381,11 +384,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.name = name;
   }
 
+
   public CreateBundlesBatch200ResponseInner code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код Комплекта
@@ -408,11 +413,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.code = code;
   }
 
+
   public CreateBundlesBatch200ResponseInner externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Комплекта
@@ -435,11 +442,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.externalCode = externalCode;
   }
 
+
   public CreateBundlesBatch200ResponseInner syncId(@javax.annotation.Nullable UUID syncId) {
     
     this.syncId = syncId;
     return this;
   }
+
 
   /**
    * ID синхронизации
@@ -461,6 +470,7 @@ public class CreateBundlesBatch200ResponseInner {
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
     this.syncId = syncId;
   }
+
 
   /**
    * Момент последнего обновления сущности
@@ -484,6 +494,7 @@ public class CreateBundlesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Добавлен ли Комплект в архив
    * @return archived
@@ -505,11 +516,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.archived = archived;
   }
 
+
   public CreateBundlesBatch200ResponseInner shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -532,11 +545,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.shared = shared;
   }
 
+
   public CreateBundlesBatch200ResponseInner description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Описание Комплекта
@@ -568,11 +583,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public CreateBundlesBatch200ResponseInner article(@javax.annotation.Nullable String article) {
     
     this.article = article;
     return this;
   }
+
 
   /**
    * Артикул
@@ -594,6 +611,7 @@ public class CreateBundlesBatch200ResponseInner {
   public void setArticle(@javax.annotation.Nullable String article) {
     this.article = article;
   }
+
 
   /**
    * Наименование группы, в которую входит Комплект
@@ -617,6 +635,7 @@ public class CreateBundlesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Признак запрета скидок
    * @return discountProhibited
@@ -638,11 +657,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.discountProhibited = discountProhibited;
   }
 
+
   public CreateBundlesBatch200ResponseInner partialDisposal(@javax.annotation.Nullable Boolean partialDisposal) {
     
     this.partialDisposal = partialDisposal;
     return this;
   }
+
 
   /**
    * Управление состоянием частичного выбытия маркированного товара
@@ -665,11 +686,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.partialDisposal = partialDisposal;
   }
 
+
   public CreateBundlesBatch200ResponseInner vat(@javax.annotation.Nullable Integer vat) {
     
     this.vat = vat;
     return this;
   }
+
 
   /**
    * НДС %
@@ -692,11 +715,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.vat = vat;
   }
 
+
   public CreateBundlesBatch200ResponseInner vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
     
     this.vatEnabled = vatEnabled;
     return this;
   }
+
 
   /**
    * Включен ли НДС для товара
@@ -719,11 +744,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.vatEnabled = vatEnabled;
   }
 
+
   public CreateBundlesBatch200ResponseInner useParentVat(@javax.annotation.Nullable Boolean useParentVat) {
     
     this.useParentVat = useParentVat;
     return this;
   }
+
 
   /**
    * Используется ли ставка НДС родительской группы
@@ -745,6 +772,7 @@ public class CreateBundlesBatch200ResponseInner {
   public void setUseParentVat(@javax.annotation.Nullable Boolean useParentVat) {
     this.useParentVat = useParentVat;
   }
+
 
   /**
    * Реальный НДС %
@@ -784,6 +812,7 @@ public class CreateBundlesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Признак предмета расчета. Известные значения описаны в PaymentItemType
    * @return paymentItemType
@@ -805,11 +834,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.paymentItemType = paymentItemType;
   }
 
+
   public CreateBundlesBatch200ResponseInner taxSystem(@javax.annotation.Nullable String taxSystem) {
     
     this.taxSystem = taxSystem;
     return this;
   }
+
 
   /**
    * Код системы налогообложения. Известные значения описаны в TaxSystem
@@ -832,11 +863,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.taxSystem = taxSystem;
   }
 
+
   public CreateBundlesBatch200ResponseInner trackingType(@javax.annotation.Nullable String trackingType) {
     
     this.trackingType = trackingType;
     return this;
   }
+
 
   /**
    * Тип маркируемой продукции. Известные значения описаны в TrackingType
@@ -859,11 +892,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.trackingType = trackingType;
   }
 
+
   public CreateBundlesBatch200ResponseInner tnved(@javax.annotation.Nullable String tnved) {
     
     this.tnved = tnved;
     return this;
   }
+
 
   /**
    * Код ТН ВЭД
@@ -886,11 +921,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.tnved = tnved;
   }
 
+
   public CreateBundlesBatch200ResponseInner weight(@javax.annotation.Nullable Float weight) {
     
     this.weight = weight;
     return this;
   }
+
 
   /**
    * Вес
@@ -913,11 +950,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.weight = weight;
   }
 
+
   public CreateBundlesBatch200ResponseInner volume(@javax.annotation.Nullable Float volume) {
     
     this.volume = volume;
     return this;
   }
+
 
   /**
    * Объем
@@ -940,11 +979,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.volume = volume;
   }
 
+
   public CreateBundlesBatch200ResponseInner group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -967,11 +1008,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.group = group;
   }
 
+
   public CreateBundlesBatch200ResponseInner owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Метаданные владельца (Сотрудника)
@@ -1003,11 +1046,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public CreateBundlesBatch200ResponseInner country(@javax.annotation.Nullable Country country) {
     this.country = JsonNullable.<Country>of(country);
     
     return this;
   }
+
 
   /**
    * Метаданные Страны
@@ -1039,11 +1084,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.country = JsonNullable.<Country>of(country);
   }
 
+
   public CreateBundlesBatch200ResponseInner uom(@javax.annotation.Nullable Uom uom) {
     this.uom = JsonNullable.<Uom>of(uom);
     
     return this;
   }
+
 
   /**
    * Единицы измерения
@@ -1075,11 +1122,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.uom = JsonNullable.<Uom>of(uom);
   }
 
+
   public CreateBundlesBatch200ResponseInner productFolder(@javax.annotation.Nullable ProductFolder productFolder) {
     this.productFolder = JsonNullable.<ProductFolder>of(productFolder);
     
     return this;
   }
+
 
   /**
    * Метаданные группы Комплекта
@@ -1111,11 +1160,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.productFolder = JsonNullable.<ProductFolder>of(productFolder);
   }
 
+
   public CreateBundlesBatch200ResponseInner images(@javax.annotation.Nullable ImageList images) {
     this.images = JsonNullable.<ImageList>of(images);
     
     return this;
   }
+
 
   /**
    * Массив метаданных Изображений
@@ -1147,11 +1198,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.images = JsonNullable.<ImageList>of(images);
   }
 
+
   public CreateBundlesBatch200ResponseInner files(@javax.annotation.Nullable FileList files) {
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
   }
+
 
   /**
    * Метаданные массива Файлов
@@ -1183,11 +1236,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.files = JsonNullable.<FileList>of(files);
   }
 
+
   public CreateBundlesBatch200ResponseInner barcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
     
     return this;
   }
+
 
   public CreateBundlesBatch200ResponseInner addBarcodesItem(Barcode barcodesItem) {
     if (this.barcodes == null || !this.barcodes.isPresent()) {
@@ -1231,11 +1286,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
   }
 
+
   public CreateBundlesBatch200ResponseInner packs(@javax.annotation.Nullable List<Pack> packs) {
     this.packs = JsonNullable.<List<Pack>>of(packs);
     
     return this;
   }
+
 
   public CreateBundlesBatch200ResponseInner addPacksItem(Pack packsItem) {
     if (this.packs == null || !this.packs.isPresent()) {
@@ -1279,11 +1336,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.packs = JsonNullable.<List<Pack>>of(packs);
   }
 
+
   public CreateBundlesBatch200ResponseInner salePrices(@javax.annotation.Nullable List<SalePrice> salePrices) {
     this.salePrices = JsonNullable.<List<SalePrice>>of(salePrices);
     
     return this;
   }
+
 
   public CreateBundlesBatch200ResponseInner addSalePricesItem(SalePrice salePricesItem) {
     if (this.salePrices == null || !this.salePrices.isPresent()) {
@@ -1327,11 +1386,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.salePrices = JsonNullable.<List<SalePrice>>of(salePrices);
   }
 
+
   public CreateBundlesBatch200ResponseInner buyPrice(@javax.annotation.Nullable BuyPrice buyPrice) {
     
     this.buyPrice = buyPrice;
     return this;
   }
+
 
   /**
    * Get buyPrice
@@ -1354,11 +1415,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.buyPrice = buyPrice;
   }
 
+
   public CreateBundlesBatch200ResponseInner minPrice(@javax.annotation.Nullable MinPrice minPrice) {
     
     this.minPrice = minPrice;
     return this;
   }
+
 
   /**
    * Get minPrice
@@ -1381,11 +1444,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.minPrice = minPrice;
   }
 
+
   public CreateBundlesBatch200ResponseInner overhead(@javax.annotation.Nullable BundleOverhead overhead) {
     
     this.overhead = overhead;
     return this;
   }
+
 
   /**
    * Get overhead
@@ -1408,11 +1473,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.overhead = overhead;
   }
 
+
   public CreateBundlesBatch200ResponseInner attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public CreateBundlesBatch200ResponseInner addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -1456,11 +1523,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   public CreateBundlesBatch200ResponseInner components(@javax.annotation.Nullable BundleComponentList components) {
     
     this.components = components;
     return this;
   }
+
 
   /**
    * Get components
@@ -1483,11 +1552,13 @@ public class CreateBundlesBatch200ResponseInner {
     this.components = components;
   }
 
+
   public CreateBundlesBatch200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
+
 
   public CreateBundlesBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -1517,6 +1588,7 @@ public class CreateBundlesBatch200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

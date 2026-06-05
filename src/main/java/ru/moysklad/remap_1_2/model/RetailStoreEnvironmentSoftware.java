@@ -35,7 +35,7 @@ import java.util.StringJoiner;
   RetailStoreEnvironmentSoftware.JSON_PROPERTY_VERSION
 })
 @JsonTypeName("RetailStore_environment_software")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStoreEnvironmentSoftware {
 
   public static final String JSON_PROPERTY_NAME = "name";
@@ -59,6 +59,7 @@ public class RetailStoreEnvironmentSoftware {
     return this;
   }
 
+
   /**
    * Наименование ПО
    * @return name
@@ -80,11 +81,13 @@ public class RetailStoreEnvironmentSoftware {
     this.name = name;
   }
 
+
   public RetailStoreEnvironmentSoftware vendor(@javax.annotation.Nullable String vendor) {
     
     this.vendor = vendor;
     return this;
   }
+
 
   /**
    * Производитель ПО
@@ -107,11 +110,13 @@ public class RetailStoreEnvironmentSoftware {
     this.vendor = vendor;
   }
 
+
   public RetailStoreEnvironmentSoftware version(@javax.annotation.Nullable String version) {
     
     this.version = version;
     return this;
   }
+
 
   /**
    * Версия ПО
@@ -133,6 +138,7 @@ public class RetailStoreEnvironmentSoftware {
   public void setVersion(@javax.annotation.Nullable String version) {
     this.version = version;
   }
+
 
   @Override
   public boolean equals(Object o) {

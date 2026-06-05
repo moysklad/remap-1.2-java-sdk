@@ -105,7 +105,7 @@ import java.util.StringJoiner;
   Product.JSON_PROPERTY_SYNC_ID,
   Product.JSON_PROPERTY_PPE_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Product {
   public static Product createWithMeta(UUID id) {
     Product o = new Product();
@@ -351,6 +351,7 @@ public class Product {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -371,6 +372,7 @@ public class Product {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID товара
@@ -410,6 +412,7 @@ public class Product {
     return this;
   }
 
+
   /**
    * Get alcoholic
    * @return alcoholic
@@ -431,11 +434,13 @@ public class Product {
     this.alcoholic = alcoholic;
   }
 
+
   public Product archived(@javax.annotation.Nullable Boolean archived) {
     
     this.archived = archived;
     return this;
   }
+
 
   /**
    * Добавлен ли товар в архив
@@ -457,6 +462,7 @@ public class Product {
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
     this.archived = archived;
   }
+
 
   /**
    * Признак товара, как табачной продукции
@@ -480,6 +486,7 @@ public class Product {
     return this;
   }
 
+
   /**
    * Наименование товара
    * @return name
@@ -501,11 +508,13 @@ public class Product {
     this.name = name;
   }
 
+
   public Product code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код товара
@@ -528,11 +537,13 @@ public class Product {
     this.code = code;
   }
 
+
   public Product externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код товара
@@ -554,6 +565,7 @@ public class Product {
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
     this.externalCode = externalCode;
   }
+
 
   /**
    * Наименование группы, в которую входит товар
@@ -577,6 +589,7 @@ public class Product {
     return this;
   }
 
+
   /**
    * Артикул
    * @return article
@@ -598,11 +611,13 @@ public class Product {
     this.article = article;
   }
 
+
   public Product description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Описание товара
@@ -634,11 +649,13 @@ public class Product {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public Product vat(@javax.annotation.Nullable Integer vat) {
     
     this.vat = vat;
     return this;
   }
+
 
   /**
    * НДС %
@@ -663,11 +680,13 @@ public class Product {
     this.vat = vat;
   }
 
+
   public Product vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
     
     this.vatEnabled = vatEnabled;
     return this;
   }
+
 
   /**
    * Включен ли НДС для товара
@@ -690,11 +709,13 @@ public class Product {
     this.vatEnabled = vatEnabled;
   }
 
+
   public Product useParentVat(@javax.annotation.Nullable Boolean useParentVat) {
     
     this.useParentVat = useParentVat;
     return this;
   }
+
 
   /**
    * Используется ли ставка НДС родительской группы
@@ -716,6 +737,7 @@ public class Product {
   public void setUseParentVat(@javax.annotation.Nullable Boolean useParentVat) {
     this.useParentVat = useParentVat;
   }
+
 
   /**
    * Реальный НДС %
@@ -755,6 +777,7 @@ public class Product {
     return this;
   }
 
+
   /**
    * Признак запрета скидок
    * @return discountProhibited
@@ -775,6 +798,7 @@ public class Product {
   public void setDiscountProhibited(@javax.annotation.Nullable Boolean discountProhibited) {
     this.discountProhibited = discountProhibited;
   }
+
 
   /**
    * Количество модификаций у данного товара
@@ -798,6 +822,7 @@ public class Product {
     return this;
   }
 
+
   /**
    * Учет по серийным номерам
    * @return isSerialTrackable
@@ -819,11 +844,13 @@ public class Product {
     this.isSerialTrackable = isSerialTrackable;
   }
 
+
   public Product shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -846,11 +873,13 @@ public class Product {
     this.shared = shared;
   }
 
+
   public Product group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -873,11 +902,13 @@ public class Product {
     this.group = group;
   }
 
+
   public Product owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Метаданные владельца (Сотрудника)
@@ -909,6 +940,7 @@ public class Product {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   /**
    * Момент последнего обновления сущности
    * @return updated
@@ -930,6 +962,7 @@ public class Product {
     this.weight = weight;
     return this;
   }
+
 
   /**
    * Вес
@@ -953,11 +986,13 @@ public class Product {
     this.weight = weight;
   }
 
+
   public Product volume(@javax.annotation.Nullable Double volume) {
     
     this.volume = volume;
     return this;
   }
+
 
   /**
    * Объем
@@ -981,11 +1016,13 @@ public class Product {
     this.volume = volume;
   }
 
+
   public Product buyPrice(@javax.annotation.Nullable BuyPrice buyPrice) {
     
     this.buyPrice = buyPrice;
     return this;
   }
+
 
   /**
    * Get buyPrice
@@ -1008,11 +1045,13 @@ public class Product {
     this.buyPrice = buyPrice;
   }
 
+
   public Product salePrices(@javax.annotation.Nullable List<SalePrice> salePrices) {
     this.salePrices = JsonNullable.<List<SalePrice>>of(salePrices);
     
     return this;
   }
+
 
   public Product addSalePricesItem(SalePrice salePricesItem) {
     if (this.salePrices == null || !this.salePrices.isPresent()) {
@@ -1056,11 +1095,13 @@ public class Product {
     this.salePrices = JsonNullable.<List<SalePrice>>of(salePrices);
   }
 
+
   public Product supplier(@javax.annotation.Nullable Counterparty supplier) {
     this.supplier = JsonNullable.<Counterparty>of(supplier);
     
     return this;
   }
+
 
   /**
    * Метаданные контрагента-поставщика
@@ -1092,11 +1133,13 @@ public class Product {
     this.supplier = JsonNullable.<Counterparty>of(supplier);
   }
 
+
   public Product country(@javax.annotation.Nullable Country country) {
     this.country = JsonNullable.<Country>of(country);
     
     return this;
   }
+
 
   /**
    * Метаданные Страны
@@ -1128,11 +1171,13 @@ public class Product {
     this.country = JsonNullable.<Country>of(country);
   }
 
+
   public Product uom(@javax.annotation.Nullable Uom uom) {
     this.uom = JsonNullable.<Uom>of(uom);
     
     return this;
   }
+
 
   /**
    * Метаданные единиц измерения
@@ -1164,11 +1209,13 @@ public class Product {
     this.uom = JsonNullable.<Uom>of(uom);
   }
 
+
   public Product productFolder(@javax.annotation.Nullable ProductFolder productFolder) {
     this.productFolder = JsonNullable.<ProductFolder>of(productFolder);
     
     return this;
   }
+
 
   /**
    * Метаданные группы Товара
@@ -1200,11 +1247,13 @@ public class Product {
     this.productFolder = JsonNullable.<ProductFolder>of(productFolder);
   }
 
+
   public Product images(@javax.annotation.Nullable ImageList images) {
     this.images = JsonNullable.<ImageList>of(images);
     
     return this;
   }
+
 
   /**
    * Массив изображений
@@ -1236,11 +1285,13 @@ public class Product {
     this.images = JsonNullable.<ImageList>of(images);
   }
 
+
   public Product files(@javax.annotation.Nullable FileList files) {
     
     this.files = files;
     return this;
   }
+
 
   /**
    * Метаданные массива Файлов
@@ -1263,11 +1314,13 @@ public class Product {
     this.files = files;
   }
 
+
   public Product barcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
     
     return this;
   }
+
 
   public Product addBarcodesItem(Barcode barcodesItem) {
     if (this.barcodes == null || !this.barcodes.isPresent()) {
@@ -1311,11 +1364,13 @@ public class Product {
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
   }
 
+
   public Product packs(@javax.annotation.Nullable List<Pack> packs) {
     this.packs = JsonNullable.<List<Pack>>of(packs);
     
     return this;
   }
+
 
   public Product addPacksItem(Pack packsItem) {
     if (this.packs == null || !this.packs.isPresent()) {
@@ -1359,11 +1414,13 @@ public class Product {
     this.packs = JsonNullable.<List<Pack>>of(packs);
   }
 
+
   public Product trackingType(@javax.annotation.Nullable String trackingType) {
     
     this.trackingType = trackingType;
     return this;
   }
+
 
   /**
    * Тип маркируемой продукции. Известные значения описаны в TrackingType
@@ -1386,11 +1443,13 @@ public class Product {
     this.trackingType = trackingType;
   }
 
+
   public Product tnved(@javax.annotation.Nullable String tnved) {
     
     this.tnved = tnved;
     return this;
   }
+
 
   /**
    * Код ТН ВЭД
@@ -1413,11 +1472,13 @@ public class Product {
     this.tnved = tnved;
   }
 
+
   public Product paymentItemType(@javax.annotation.Nullable String paymentItemType) {
     
     this.paymentItemType = paymentItemType;
     return this;
   }
+
 
   /**
    * Признак предмета расчета. Известные значения описаны в PaymentItemType
@@ -1440,11 +1501,13 @@ public class Product {
     this.paymentItemType = paymentItemType;
   }
 
+
   public Product taxSystem(@javax.annotation.Nullable String taxSystem) {
     
     this.taxSystem = taxSystem;
     return this;
   }
+
 
   /**
    * Код системы налогообложения. Известные значения описаны в TaxSystem
@@ -1467,11 +1530,13 @@ public class Product {
     this.taxSystem = taxSystem;
   }
 
+
   public Product attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public Product addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -1515,11 +1580,13 @@ public class Product {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   public Product minimumStock(@javax.annotation.Nullable MinimumStockAbstract minimumStock) {
     this.minimumStock = JsonNullable.<MinimumStockAbstract>of(minimumStock);
     
     return this;
   }
+
 
   /**
    * Неснижаемый остаток. Не выводится по умолчанию. Для получения передайте параметр &#x60;?fields&#x3D;minimumStock&#x60;. 
@@ -1551,11 +1618,13 @@ public class Product {
     this.minimumStock = JsonNullable.<MinimumStockAbstract>of(minimumStock);
   }
 
+
   public Product minPrice(@javax.annotation.Nullable MinPrice minPrice) {
     
     this.minPrice = minPrice;
     return this;
   }
+
 
   /**
    * Get minPrice
@@ -1578,11 +1647,13 @@ public class Product {
     this.minPrice = minPrice;
   }
 
+
   public Product weighed(@javax.annotation.Nullable Boolean weighed) {
     
     this.weighed = weighed;
     return this;
   }
+
 
   /**
    * Поле, показывающее является ли товар весовым
@@ -1605,11 +1676,13 @@ public class Product {
     this.weighed = weighed;
   }
 
+
   public Product onTap(@javax.annotation.Nullable Boolean onTap) {
     
     this.onTap = onTap;
     return this;
   }
+
 
   /**
    * Поле, показывающее является ли товар разливным
@@ -1632,11 +1705,13 @@ public class Product {
     this.onTap = onTap;
   }
 
+
   public Product partialDisposal(@javax.annotation.Nullable Boolean partialDisposal) {
     
     this.partialDisposal = partialDisposal;
     return this;
   }
+
 
   /**
    * Управление состоянием частичного выбытия маркированного товара
@@ -1659,11 +1734,13 @@ public class Product {
     this.partialDisposal = partialDisposal;
   }
 
+
   public Product things(@javax.annotation.Nullable List<String> things) {
     this.things = JsonNullable.<List<String>>of(things);
     
     return this;
   }
+
 
   public Product addThingsItem(String thingsItem) {
     if (this.things == null || !this.things.isPresent()) {
@@ -1707,11 +1784,13 @@ public class Product {
     this.things = JsonNullable.<List<String>>of(things);
   }
 
+
   public Product syncId(@javax.annotation.Nullable UUID syncId) {
     
     this.syncId = syncId;
     return this;
   }
+
 
   /**
    * ID синхронизации
@@ -1734,11 +1813,13 @@ public class Product {
     this.syncId = syncId;
   }
 
+
   public Product ppeType(@javax.annotation.Nullable String ppeType) {
     
     this.ppeType = ppeType;
     return this;
   }
+
 
   /**
    * Код вида номенклатурной классификации медицинских средств индивидуальной защиты. Известные значения описаны в PpeType
@@ -1760,6 +1841,7 @@ public class Product {
   public void setPpeType(@javax.annotation.Nullable String ppeType) {
     this.ppeType = ppeType;
   }
+
 
   @Override
   public boolean equals(Object o) {

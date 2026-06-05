@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   RetailStoreState.JSON_PROPERTY_PAYMENT_TERMINAL
 })
 @JsonTypeName("RetailStore_state")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStoreState {
 
   public static final String JSON_PROPERTY_SYNC = "sync";
@@ -67,6 +67,7 @@ public class RetailStoreState {
     return this;
   }
 
+
   /**
    * Get sync
    * @return sync
@@ -88,11 +89,13 @@ public class RetailStoreState {
     this.sync = sync;
   }
 
+
   public RetailStoreState lastCheckMoment(@javax.annotation.Nullable String lastCheckMoment) {
     
     this.lastCheckMoment = lastCheckMoment;
     return this;
   }
+
 
   /**
    * Момент последней проверки
@@ -115,11 +118,13 @@ public class RetailStoreState {
     this.lastCheckMoment = lastCheckMoment;
   }
 
+
   public RetailStoreState fiscalMemory(@javax.annotation.Nullable RetailStoreStateFiscalMemory fiscalMemory) {
     
     this.fiscalMemory = fiscalMemory;
     return this;
   }
+
 
   /**
    * Get fiscalMemory
@@ -142,11 +147,13 @@ public class RetailStoreState {
     this.fiscalMemory = fiscalMemory;
   }
 
+
   public RetailStoreState paymentTerminal(@javax.annotation.Nullable RetailStoreStatePaymentTerminal paymentTerminal) {
     
     this.paymentTerminal = paymentTerminal;
     return this;
   }
+
 
   /**
    * Get paymentTerminal
@@ -168,6 +175,7 @@ public class RetailStoreState {
   public void setPaymentTerminal(@javax.annotation.Nullable RetailStoreStatePaymentTerminal paymentTerminal) {
     this.paymentTerminal = paymentTerminal;
   }
+
 
   @Override
   public boolean equals(Object o) {

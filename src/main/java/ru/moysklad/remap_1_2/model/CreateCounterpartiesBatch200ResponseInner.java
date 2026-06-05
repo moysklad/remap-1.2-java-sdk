@@ -105,7 +105,7 @@ import java.util.StringJoiner;
   CreateCounterpartiesBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createCounterpartiesBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateCounterpartiesBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -333,6 +333,7 @@ public class CreateCounterpartiesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -353,6 +354,7 @@ public class CreateCounterpartiesBatch200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID контрагента
@@ -376,6 +378,7 @@ public class CreateCounterpartiesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * ID синхронизации
    * @return syncId
@@ -396,6 +399,7 @@ public class CreateCounterpartiesBatch200ResponseInner {
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
     this.syncId = syncId;
   }
+
 
   /**
    * ID учетной записи
@@ -419,6 +423,7 @@ public class CreateCounterpartiesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Наименование контрагента
    * @return name
@@ -440,11 +445,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.name = name;
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код контрагента
@@ -467,11 +474,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.code = code;
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код контрагента
@@ -494,11 +503,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.externalCode = externalCode;
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner archived(@javax.annotation.Nullable Boolean archived) {
     
     this.archived = archived;
     return this;
   }
+
 
   /**
    * Добавлен ли контрагент в архив
@@ -520,6 +531,7 @@ public class CreateCounterpartiesBatch200ResponseInner {
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
     this.archived = archived;
   }
+
 
   /**
    * Момент создания
@@ -559,6 +571,7 @@ public class CreateCounterpartiesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Комментарий к контрагенту
    * @return description
@@ -580,11 +593,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.description = description;
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner companyType(@javax.annotation.Nullable String companyType) {
     
     this.companyType = companyType;
     return this;
   }
+
 
   /**
    * Тип контрагента. Известные значения описаны в CompanyType
@@ -607,11 +622,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.companyType = companyType;
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner email(@javax.annotation.Nullable String email) {
     
     this.email = email;
     return this;
   }
+
 
   /**
    * Адрес электронной почты
@@ -634,11 +651,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.email = email;
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner phone(@javax.annotation.Nullable String phone) {
     
     this.phone = phone;
     return this;
   }
+
 
   /**
    * Номер телефона
@@ -661,11 +680,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.phone = phone;
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner fax(@javax.annotation.Nullable String fax) {
     
     this.fax = fax;
     return this;
   }
+
 
   /**
    * Номер факса
@@ -688,11 +709,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.fax = fax;
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner actualAddress(@javax.annotation.Nullable String actualAddress) {
     
     this.actualAddress = actualAddress;
     return this;
   }
+
 
   /**
    * Фактический адрес контрагента
@@ -715,11 +738,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.actualAddress = actualAddress;
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner actualAddressFull(@javax.annotation.Nullable Address actualAddressFull) {
     this.actualAddressFull = JsonNullable.<Address>of(actualAddressFull);
     
     return this;
   }
+
 
   /**
    * Полный адрес
@@ -751,11 +776,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.actualAddressFull = JsonNullable.<Address>of(actualAddressFull);
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner legalAddress(@javax.annotation.Nullable String legalAddress) {
     
     this.legalAddress = legalAddress;
     return this;
   }
+
 
   /**
    * Юридический адрес контрагента
@@ -778,11 +805,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.legalAddress = legalAddress;
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner legalAddressFull(@javax.annotation.Nullable Address legalAddressFull) {
     this.legalAddressFull = JsonNullable.<Address>of(legalAddressFull);
     
     return this;
   }
+
 
   /**
    * Полный юридический адрес контрагента
@@ -814,11 +843,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.legalAddressFull = JsonNullable.<Address>of(legalAddressFull);
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner inn(@javax.annotation.Nullable String inn) {
     
     this.inn = inn;
     return this;
   }
+
 
   /**
    * ИНН
@@ -841,11 +872,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.inn = inn;
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner kpp(@javax.annotation.Nullable String kpp) {
     
     this.kpp = kpp;
     return this;
   }
+
 
   /**
    * КПП
@@ -868,11 +901,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.kpp = kpp;
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner ogrn(@javax.annotation.Nullable String ogrn) {
     
     this.ogrn = ogrn;
     return this;
   }
+
 
   /**
    * ОГРН
@@ -895,11 +930,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.ogrn = ogrn;
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner ogrnip(@javax.annotation.Nullable String ogrnip) {
     
     this.ogrnip = ogrnip;
     return this;
   }
+
 
   /**
    * ОГРНИП
@@ -922,11 +959,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.ogrnip = ogrnip;
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner okpo(@javax.annotation.Nullable String okpo) {
     
     this.okpo = okpo;
     return this;
   }
+
 
   /**
    * ОКПО
@@ -949,11 +988,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.okpo = okpo;
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner certificateNumber(@javax.annotation.Nullable String certificateNumber) {
     
     this.certificateNumber = certificateNumber;
     return this;
   }
+
 
   /**
    * Номер свидетельства
@@ -976,11 +1017,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.certificateNumber = certificateNumber;
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner certificateDate(@javax.annotation.Nullable String certificateDate) {
     
     this.certificateDate = certificateDate;
     return this;
   }
+
 
   /**
    * Дата свидетельства
@@ -1003,11 +1046,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.certificateDate = certificateDate;
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner legalTitle(@javax.annotation.Nullable String legalTitle) {
     
     this.legalTitle = legalTitle;
     return this;
   }
+
 
   /**
    * Полное наименование
@@ -1030,11 +1075,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.legalTitle = legalTitle;
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner legalFirstName(@javax.annotation.Nullable String legalFirstName) {
     
     this.legalFirstName = legalFirstName;
     return this;
   }
+
 
   /**
    * Имя для ИП и физлица
@@ -1057,11 +1104,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.legalFirstName = legalFirstName;
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner legalLastName(@javax.annotation.Nullable String legalLastName) {
     
     this.legalLastName = legalLastName;
     return this;
   }
+
 
   /**
    * Фамилия для ИП и физлица
@@ -1084,11 +1133,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.legalLastName = legalLastName;
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner legalMiddleName(@javax.annotation.Nullable String legalMiddleName) {
     
     this.legalMiddleName = legalMiddleName;
     return this;
   }
+
 
   /**
    * Отчество для ИП и физлица
@@ -1111,11 +1162,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.legalMiddleName = legalMiddleName;
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner birthDate(@javax.annotation.Nullable String birthDate) {
     
     this.birthDate = birthDate;
     return this;
   }
+
 
   /**
    * Дата рождения для физлица
@@ -1138,11 +1191,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.birthDate = birthDate;
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner sex(@javax.annotation.Nullable String sex) {
     
     this.sex = sex;
     return this;
   }
+
 
   /**
    * Пол контрагента. Известные значения описаны в Sex
@@ -1165,11 +1220,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.sex = sex;
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner discountCardNumber(@javax.annotation.Nullable String discountCardNumber) {
     this.discountCardNumber = JsonNullable.<String>of(discountCardNumber);
     
     return this;
   }
+
 
   /**
    * Номер дисконтной карты контрагента
@@ -1201,11 +1258,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.discountCardNumber = JsonNullable.<String>of(discountCardNumber);
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner discounts(@javax.annotation.Nullable List<AgentDiscount> discounts) {
     this.discounts = JsonNullable.<List<AgentDiscount>>of(discounts);
     
     return this;
   }
+
 
   public CreateCounterpartiesBatch200ResponseInner addDiscountsItem(AgentDiscount discountsItem) {
     if (this.discounts == null || !this.discounts.isPresent()) {
@@ -1249,11 +1308,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.discounts = JsonNullable.<List<AgentDiscount>>of(discounts);
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -1276,11 +1337,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.shared = shared;
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -1303,11 +1366,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.group = group;
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Метаданные владельца (Сотрудника)
@@ -1338,6 +1403,7 @@ public class CreateCounterpartiesBatch200ResponseInner {
   public void setOwner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
   }
+
 
   /**
    * Сумма продаж
@@ -1377,6 +1443,7 @@ public class CreateCounterpartiesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get bonusProgram
    * @return bonusProgram
@@ -1407,11 +1474,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.bonusProgram = JsonNullable.<BonusProgram>of(bonusProgram);
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner priceType(@javax.annotation.Nullable PriceType priceType) {
     this.priceType = JsonNullable.<PriceType>of(priceType);
     
     return this;
   }
+
 
   /**
    * Get priceType
@@ -1443,11 +1512,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.priceType = JsonNullable.<PriceType>of(priceType);
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner state(@javax.annotation.Nullable State state) {
     
     this.state = state;
     return this;
   }
+
 
   /**
    * Get state
@@ -1470,11 +1541,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.state = state;
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner accounts(@javax.annotation.Nullable CounterpartyAccounts accounts) {
     
     this.accounts = accounts;
     return this;
   }
+
 
   /**
    * Get accounts
@@ -1497,11 +1570,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.accounts = accounts;
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner contactpersons(@javax.annotation.Nullable CounterpartyContactpersons contactpersons) {
     
     this.contactpersons = contactpersons;
     return this;
   }
+
 
   /**
    * Get contactpersons
@@ -1524,11 +1599,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.contactpersons = contactpersons;
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner notes(@javax.annotation.Nullable CounterpartyNotes notes) {
     
     this.notes = notes;
     return this;
   }
+
 
   /**
    * Get notes
@@ -1551,11 +1628,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.notes = notes;
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner files(@javax.annotation.Nullable FileList files) {
     
     this.files = files;
     return this;
   }
+
 
   /**
    * Get files
@@ -1578,11 +1657,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.files = files;
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner tags(@javax.annotation.Nullable List<String> tags) {
     this.tags = JsonNullable.<List<String>>of(tags);
     
     return this;
   }
+
 
   public CreateCounterpartiesBatch200ResponseInner addTagsItem(String tagsItem) {
     if (this.tags == null || !this.tags.isPresent()) {
@@ -1626,11 +1707,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.tags = JsonNullable.<List<String>>of(tags);
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public CreateCounterpartiesBatch200ResponseInner addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -1674,11 +1757,13 @@ public class CreateCounterpartiesBatch200ResponseInner {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   public CreateCounterpartiesBatch200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
+
 
   public CreateCounterpartiesBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -1708,6 +1793,7 @@ public class CreateCounterpartiesBatch200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

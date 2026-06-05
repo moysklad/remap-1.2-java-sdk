@@ -45,7 +45,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ProductsApi extends BaseApi {
 
@@ -260,6 +260,25 @@ if (contentType != null)
     return this.createProduct(product, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
+  /**
+   * Создать товар
+   * Создание нового товара
+   
+   * @param product  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Product
+   * @throws ApiException if fails to make API call
+   */
+  public Product createProduct(@javax.annotation.Nonnull Product product, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createProduct(product, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Создать товар
@@ -441,6 +460,25 @@ if (contentType != null)
    */
   public List<CreateProductsBatch200ResponseInner> createProductsBatch(@javax.annotation.Nonnull List<Product> product, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createProductsBatch(product, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать или изменить товары
+   * Создание или изменение нескольких товаров.
+   
+   * @param product  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreateProductsBatch200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateProductsBatch200ResponseInner> createProductsBatch(@javax.annotation.Nonnull List<Product> product, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createProductsBatch(product, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1219,6 +1257,25 @@ if (acceptEncoding != null)
     return this.getProductById(id, expand, fields, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить товар по ID
+   * Запрос на получение отдельного товара с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Product
+   * @throws ApiException if fails to make API call
+   */
+  public Product getProductById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getProductById(id, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить товар по ID
@@ -1306,6 +1363,25 @@ if (acceptEncoding != null)
    */
   public GetProductFiles200Response getProductFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
     return this.getProductFiles(id, limit, offset, accept, acceptEncoding, Collections.emptyMap());
+  }
+
+  /**
+   * Получить файлы товара
+   * Запрос на получение списка всех Файлов данного Товара.
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return GetProductFiles200Response
+   * @throws ApiException if fails to make API call
+   */
+  public GetProductFiles200Response getProductFiles(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getProductFiles(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1396,6 +1472,26 @@ if (acceptEncoding != null)
    */
   public GetProductImages200Response getProductImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
     return this.getProductImages(id, limit, offset, fields, accept, acceptEncoding, Collections.emptyMap());
+  }
+
+  /**
+   * Получить изображения товара
+   * Запрос на получение всех Изображений Товара.
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return GetProductImages200Response
+   * @throws ApiException if fails to make API call
+   */
+  public GetProductImages200Response getProductImages(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getProductImages(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1580,6 +1676,25 @@ if (acceptEncoding != null)
     return this.getProductStoreBalances(id, limit, offset, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить НСО товара по складам
+   * Запрос на получение списка Неснижаемых остатков Товара по складам.
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return StoreBalanceList
+   * @throws ApiException if fails to make API call
+   */
+  public StoreBalanceList getProductStoreBalances(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getProductStoreBalances(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить НСО товара по складам
@@ -1673,6 +1788,27 @@ if (acceptEncoding != null)
     return this.getProducts(limit, offset, search, filter, expand, order, fields, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить список товаров
+   * Запрос всех товаров на данной учетной записи
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ProductList
+   * @throws ApiException if fails to make API call
+   */
+  public ProductList getProducts(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getProducts((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить список товаров
@@ -1764,6 +1900,28 @@ if (acceptEncoding != null)
    */
   public Product updateProduct(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Product product, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateProduct(id, product, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Обновить товар
+   * Обновление товара с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param product  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Product
+   * @throws ApiException if fails to make API call
+   */
+  public Product updateProduct(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Product product, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateProduct(id, product, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 

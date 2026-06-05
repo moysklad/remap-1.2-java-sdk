@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   CounterpartyContactpersons.JSON_PROPERTY_ROWS
 })
 @JsonTypeName("Counterparty_contactpersons")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CounterpartyContactpersons {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -58,6 +58,7 @@ public class CounterpartyContactpersons {
     this.meta = meta;
     return this;
   }
+
 
   /**
    * Get meta
@@ -80,11 +81,13 @@ public class CounterpartyContactpersons {
     this.meta = meta;
   }
 
+
   public CounterpartyContactpersons rows(@javax.annotation.Nullable List<ContactPerson> rows) {
     
     this.rows = rows;
     return this;
   }
+
 
   public CounterpartyContactpersons addRowsItem(ContactPerson rowsItem) {
     if (this.rows == null) {
@@ -114,6 +117,7 @@ public class CounterpartyContactpersons {
   public void setRows(@javax.annotation.Nullable List<ContactPerson> rows) {
     this.rows = rows;
   }
+
 
   @Override
   public boolean equals(Object o) {

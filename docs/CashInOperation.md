@@ -35,7 +35,7 @@
 |**invoicedSum** | **Double** | Сумма счетов покупателю |  [optional] [readonly] |
 |**organization** | [**Organization**](Organization.md) |  |  [optional] |
 |**organizationAccount** | [**Account**](Account.md) | Метаданные счета юрлица |  [optional] |
-|**agent** | [**Counterparty**](Counterparty.md) |  |  [optional] |
+|**agent** | [**Agent**](Agent.md) | Метаданные контрагента или юрлица |  [optional] |
 |**agentAccount** | [**Account**](Account.md) | Метаданные счета контрагента |  [optional] |
 |**store** | [**Store**](Store.md) | Метаданные склада |  [optional] |
 |**state** | [**State**](State.md) | Метаданные статуса Полученного отчета комиссионера |  [optional] |
@@ -59,13 +59,15 @@
 |**moves** | [**List&lt;Move&gt;**](Move.md) | Массив ссылок на связанные перемещения |  [optional] |
 |**productionTasks** | [**List&lt;ProductionTask&gt;**](ProductionTask.md) | Связанные производственные задания |  [optional] |
 |**linkedSum** | **Double** | Сумма, оплаченная по данному документу |  |
-|**overhead** | [**DemandOverhead**](DemandOverhead.md) |  |  [optional] |
-|**customerOrder** | [**CustomerOrder**](CustomerOrder.md) | Заказ покупателя, с которым связана Отгрузка |  [optional] |
+|**supply** | [**Supply**](Supply.md) | Приемка, по которой произошел возврат |  [optional] |
 |**factureOut** | [**FactureOut**](FactureOut.md) | Счёт-фактура выданный, с которым связана Отгрузка |  [optional] |
+|**factureIn** | [**FactureIn**](FactureIn.md) | Счет-фактура полученный, с которым связан этот возврат |  [optional] |
+|**overhead** | [**Overhead**](Overhead.md) |  |  [optional] |
+|**customerOrder** | [**CustomerOrder**](CustomerOrder.md) | Заказ покупателя, с которым связана Отгрузка |  [optional] |
 |**returns** | [**List&lt;SalesReturn&gt;**](SalesReturn.md) | Связанные возвраты |  [optional] |
 |**cargoName** | **String** | Наименование груза |  [optional] |
-|**carrier** | [**DemandCarrier**](DemandCarrier.md) |  |  [optional] |
-|**consignee** | [**DemandConsignee**](DemandConsignee.md) |  |  [optional] |
+|**carrier** | [**Agent**](Agent.md) | Перевозчик (контрагент или юрлицо) |  [optional] |
+|**consignee** | [**Agent**](Agent.md) | Грузополучатель (контрагент или юрлицо) |  [optional] |
 |**goodPackQuantity** | **Integer** | Всего мест |  [optional] |
 |**shippingInstructions** | **String** | Указания грузоотправителя |  [optional] |
 |**stateContractId** | **String** | Идентификатор государственного контракта, договора (соглашения) |  [optional] |
@@ -77,7 +79,7 @@
 |**commitentSum** | **Double** | Сумма коммитента в установленной валюте |  [optional] [readonly] |
 |**returnToCommissionerPositions** | **CommissionReportInReturnedPositionList** |  |  [optional] |
 |**rewardPercent** | **Integer** | Процент вознаграждения |  [optional] |
-|**rewardType** | **String** | Тип вознаграждения |  [optional] |
+|**rewardType** | **String** | Тип Вознаграждения. Известные значения описаны в RewardType |  [optional] |
 
 
 

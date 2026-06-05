@@ -38,7 +38,7 @@ import java.util.StringJoiner;
   VariantCharacteristic.JSON_PROPERTY_TYPE,
   VariantCharacteristic.JSON_PROPERTY_REQUIRED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class VariantCharacteristic {
   public static VariantCharacteristic createWithMeta(UUID id) {
     VariantCharacteristic o = new VariantCharacteristic();
@@ -98,6 +98,7 @@ public class VariantCharacteristic {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -118,6 +119,7 @@ public class VariantCharacteristic {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID соответствующей Характеристики
@@ -141,6 +143,7 @@ public class VariantCharacteristic {
     return this;
   }
 
+
   /**
    * Наименование Характеристики
    * @return name
@@ -161,6 +164,7 @@ public class VariantCharacteristic {
   public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
+
 
   /**
    * Тип значения Характеристики. Известные значения описаны в VariantCharacteristicType

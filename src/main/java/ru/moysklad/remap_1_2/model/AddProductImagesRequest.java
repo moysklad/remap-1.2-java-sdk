@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   AddProductImagesRequest.JSON_PROPERTY_CONTENT
 })
 @JsonTypeName("addProductImages_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class AddProductImagesRequest {
 
   public static final String JSON_PROPERTY_FILENAME = "filename";
@@ -55,6 +55,7 @@ public class AddProductImagesRequest {
     this.filename = filename;
     return this;
   }
+
 
   /**
    * Имя файла с расширением
@@ -77,11 +78,13 @@ public class AddProductImagesRequest {
     this.filename = filename;
   }
 
+
   public AddProductImagesRequest content(@javax.annotation.Nonnull String content) {
     
     this.content = content;
     return this;
   }
+
 
   /**
    * Файл, закодированный в формате Base64
@@ -103,6 +106,7 @@ public class AddProductImagesRequest {
   public void setContent(@javax.annotation.Nonnull String content) {
     this.content = content;
   }
+
 
   @Override
   public boolean equals(Object o) {

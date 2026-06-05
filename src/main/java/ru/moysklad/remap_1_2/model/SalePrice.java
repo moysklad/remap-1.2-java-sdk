@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   SalePrice.JSON_PROPERTY_CURRENCY,
   SalePrice.JSON_PROPERTY_PRICE_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class SalePrice {
 
   public static final String JSON_PROPERTY_VALUE = "value";
@@ -60,6 +60,7 @@ public class SalePrice {
     return this;
   }
 
+
   /**
    * Значение цены
    * minimum: 0
@@ -82,11 +83,13 @@ public class SalePrice {
     this.value = value;
   }
 
+
   public SalePrice currency(@javax.annotation.Nullable Currency currency) {
     
     this.currency = currency;
     return this;
   }
+
 
   /**
    * Get currency
@@ -109,11 +112,13 @@ public class SalePrice {
     this.currency = currency;
   }
 
+
   public SalePrice priceType(@javax.annotation.Nonnull PriceType priceType) {
     
     this.priceType = priceType;
     return this;
   }
+
 
   /**
    * Get priceType
@@ -135,6 +140,7 @@ public class SalePrice {
   public void setPriceType(@javax.annotation.Nonnull PriceType priceType) {
     this.priceType = priceType;
   }
+
 
   @Override
   public boolean equals(Object o) {

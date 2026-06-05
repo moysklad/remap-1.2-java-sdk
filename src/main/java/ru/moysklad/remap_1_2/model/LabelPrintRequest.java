@@ -38,7 +38,7 @@ import java.util.StringJoiner;
   LabelPrintRequest.JSON_PROPERTY_SALE_PRICE,
   LabelPrintRequest.JSON_PROPERTY_TEMPLATE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class LabelPrintRequest {
 
   public static final String JSON_PROPERTY_ORGANIZATION = "organization";
@@ -66,6 +66,7 @@ public class LabelPrintRequest {
     return this;
   }
 
+
   /**
    * Get organization
    * @return organization
@@ -87,11 +88,13 @@ public class LabelPrintRequest {
     this.organization = organization;
   }
 
+
   public LabelPrintRequest count(@javax.annotation.Nonnull Integer count) {
     
     this.count = count;
     return this;
   }
+
 
   /**
    * Количество ценников/термоэтикеток
@@ -116,11 +119,13 @@ public class LabelPrintRequest {
     this.count = count;
   }
 
+
   public LabelPrintRequest salePrice(@javax.annotation.Nonnull SalePrice salePrice) {
     
     this.salePrice = salePrice;
     return this;
   }
+
 
   /**
    * Get salePrice
@@ -143,11 +148,13 @@ public class LabelPrintRequest {
     this.salePrice = salePrice;
   }
 
+
   public LabelPrintRequest template(@javax.annotation.Nonnull EmbeddedTemplate template) {
     
     this.template = template;
     return this;
   }
+
 
   /**
    * Get template
@@ -169,6 +176,7 @@ public class LabelPrintRequest {
   public void setTemplate(@javax.annotation.Nonnull EmbeddedTemplate template) {
     this.template = template;
   }
+
 
   @Override
   public boolean equals(Object o) {

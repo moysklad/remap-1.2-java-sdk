@@ -34,7 +34,7 @@ import java.util.StringJoiner;
   CurrencyRate.JSON_PROPERTY_CURRENCY,
   CurrencyRate.JSON_PROPERTY_VALUE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CurrencyRate {
 
   public static final String JSON_PROPERTY_CURRENCY = "currency";
@@ -54,8 +54,9 @@ public class CurrencyRate {
     return this;
   }
 
+
   /**
-   * Get currency
+   * Валюта
    * @return currency
    */
   @javax.annotation.Nullable
@@ -75,11 +76,13 @@ public class CurrencyRate {
     this.currency = currency;
   }
 
+
   public CurrencyRate value(@javax.annotation.Nullable Double value) {
     
     this.value = value;
     return this;
   }
+
 
   /**
    * Курс валюты
@@ -101,6 +104,7 @@ public class CurrencyRate {
   public void setValue(@javax.annotation.Nullable Double value) {
     this.value = value;
   }
+
 
   @Override
   public boolean equals(Object o) {
@@ -175,7 +179,12 @@ public class CurrencyRate {
 
     // add `currency` to the URL query string
     if (getCurrency() != null) {
-      joiner.add(getCurrency().toUrlQueryString(prefix + "currency" + suffix));
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%scurrency%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCurrency()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
     }
 
     // add `value` to the URL query string

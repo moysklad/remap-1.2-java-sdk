@@ -32,7 +32,7 @@ import java.util.StringJoiner;
 @JsonPropertyOrder({
   DeleteInfo.JSON_PROPERTY_INFO
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class DeleteInfo {
 
   public static final String JSON_PROPERTY_INFO = "info";
@@ -47,6 +47,7 @@ public class DeleteInfo {
     this.info = info;
     return this;
   }
+
 
   /**
    * Информационное сообщение об удалении сущности
@@ -68,6 +69,7 @@ public class DeleteInfo {
   public void setInfo(@javax.annotation.Nullable String info) {
     this.info = info;
   }
+
 
   @Override
   public boolean equals(Object o) {

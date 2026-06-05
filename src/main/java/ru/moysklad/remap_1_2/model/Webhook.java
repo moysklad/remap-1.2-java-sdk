@@ -49,7 +49,7 @@ import java.util.StringJoiner;
   Webhook.JSON_PROPERTY_DIFF_TYPE,
   Webhook.JSON_PROPERTY_AUTHOR_APPLICATION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Webhook {
   public static Webhook createWithMeta(UUID id) {
     Webhook o = new Webhook();
@@ -127,6 +127,7 @@ public class Webhook {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -147,6 +148,7 @@ public class Webhook {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID вебхука
@@ -186,6 +188,7 @@ public class Webhook {
     return this;
   }
 
+
   /**
    * Тип сущности, к которой привязан вебхук. Известные ограничения см. в документации (нельзя webhook, discount, notes)
    * @return entityType
@@ -207,11 +210,13 @@ public class Webhook {
     this.entityType = entityType;
   }
 
+
   public Webhook url(@javax.annotation.Nullable URI url) {
     
     this.url = url;
     return this;
   }
+
 
   /**
    * URL, по которому отправляется уведомление
@@ -234,11 +239,13 @@ public class Webhook {
     this.url = url;
   }
 
+
   public Webhook method(@javax.annotation.Nullable String method) {
     
     this.method = method;
     return this;
   }
+
 
   /**
    * HTTP метод запроса к URL подписчика. Известные значения описаны в WebhookMethod
@@ -261,11 +268,13 @@ public class Webhook {
     this.method = method;
   }
 
+
   public Webhook enabled(@javax.annotation.Nullable Boolean enabled) {
     
     this.enabled = enabled;
     return this;
   }
+
 
   /**
    * Вебхук включен или отключен
@@ -288,11 +297,13 @@ public class Webhook {
     this.enabled = enabled;
   }
 
+
   public Webhook action(@javax.annotation.Nullable String action) {
     
     this.action = action;
     return this;
   }
+
 
   /**
    * Отслеживаемое действие. Известные значения описаны в WebhookAction. Значение PROCESSED допустимо только для асинхронных задач
@@ -315,11 +326,13 @@ public class Webhook {
     this.action = action;
   }
 
+
   public Webhook diffType(@javax.annotation.Nullable String diffType) {
     this.diffType = JsonNullable.<String>of(diffType);
     
     return this;
   }
+
 
   /**
    * Режим для действия UPDATE. Известные значения описаны в WebhookDiffType
@@ -351,11 +364,13 @@ public class Webhook {
     this.diffType = JsonNullable.<String>of(diffType);
   }
 
+
   public Webhook authorApplication(@javax.annotation.Nullable Application authorApplication) {
     
     this.authorApplication = authorApplication;
     return this;
   }
+
 
   /**
    * Get authorApplication
@@ -377,6 +392,7 @@ public class Webhook {
   public void setAuthorApplication(@javax.annotation.Nullable Application authorApplication) {
     this.authorApplication = authorApplication;
   }
+
 
   @Override
   public boolean equals(Object o) {

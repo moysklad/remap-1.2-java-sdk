@@ -49,7 +49,7 @@ import java.util.StringJoiner;
   Prepayment.JSON_PROPERTY_UPDATED,
   Prepayment.JSON_PROPERTY_MOMENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Prepayment {
   public static Prepayment createWithMeta(UUID id) {
     Prepayment o = new Prepayment();
@@ -141,6 +141,7 @@ public class Prepayment {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -161,6 +162,7 @@ public class Prepayment {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Предоплаты
@@ -200,6 +202,7 @@ public class Prepayment {
     return this;
   }
 
+
   /**
    * Наименование Предоплаты
    * @return name
@@ -221,11 +224,13 @@ public class Prepayment {
     this.name = name;
   }
 
+
   public Prepayment code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код Предоплаты
@@ -248,11 +253,13 @@ public class Prepayment {
     this.code = code;
   }
 
+
   public Prepayment externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Предоплаты
@@ -275,11 +282,13 @@ public class Prepayment {
     this.externalCode = externalCode;
   }
 
+
   public Prepayment syncId(@javax.annotation.Nullable UUID syncId) {
     
     this.syncId = syncId;
     return this;
   }
+
 
   /**
    * ID синхронизации
@@ -302,11 +311,13 @@ public class Prepayment {
     this.syncId = syncId;
   }
 
+
   public Prepayment description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Комментарий Предоплаты
@@ -337,6 +348,7 @@ public class Prepayment {
   public void setDescription(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
   }
+
 
   /**
    * Дата создания
@@ -392,6 +404,7 @@ public class Prepayment {
     return this;
   }
 
+
   /**
    * Дата документа
    * @return moment
@@ -412,6 +425,7 @@ public class Prepayment {
   public void setMoment(@javax.annotation.Nullable String moment) {
     this.moment = moment;
   }
+
 
   @Override
   public boolean equals(Object o) {

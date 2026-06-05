@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   RetailShift.JSON_PROPERTY_ID,
   RetailShift.JSON_PROPERTY_ACCOUNT_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailShift {
   public static RetailShift createWithMeta(UUID id) {
     RetailShift o = new RetailShift();
@@ -86,6 +86,7 @@ public class RetailShift {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -106,6 +107,7 @@ public class RetailShift {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID смены

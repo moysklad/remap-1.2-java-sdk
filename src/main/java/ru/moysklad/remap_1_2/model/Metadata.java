@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   Metadata.JSON_PROPERTY_ATTRIBUTES,
   Metadata.JSON_PROPERTY_CREATE_SHARED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Metadata {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -60,6 +60,7 @@ public class Metadata {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -81,11 +82,13 @@ public class Metadata {
     this.meta = meta;
   }
 
+
   public Metadata attributes(@javax.annotation.Nullable AttributeMetaInfoList attributes) {
     
     this.attributes = attributes;
     return this;
   }
+
 
   /**
    * Get attributes
@@ -108,11 +111,13 @@ public class Metadata {
     this.attributes = attributes;
   }
 
+
   public Metadata createShared(@javax.annotation.Nullable Boolean createShared) {
     
     this.createShared = createShared;
     return this;
   }
+
 
   /**
    * Создавать новые документы с общим доступом
@@ -134,6 +139,7 @@ public class Metadata {
   public void setCreateShared(@javax.annotation.Nullable Boolean createShared) {
     this.createShared = createShared;
   }
+
 
   @Override
   public boolean equals(Object o) {

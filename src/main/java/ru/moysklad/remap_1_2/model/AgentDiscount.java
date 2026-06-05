@@ -35,7 +35,7 @@ import java.util.StringJoiner;
   AgentDiscount.JSON_PROPERTY_PERSONAL_DISCOUNT,
   AgentDiscount.JSON_PROPERTY_DEMAND_SUM_CORRECTION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class AgentDiscount {
 
   public static final String JSON_PROPERTY_DISCOUNT = "discount";
@@ -59,6 +59,7 @@ public class AgentDiscount {
     return this;
   }
 
+
   /**
    * Метаданные скидки
    * @return discount
@@ -80,11 +81,13 @@ public class AgentDiscount {
     this.discount = discount;
   }
 
+
   public AgentDiscount personalDiscount(@javax.annotation.Nullable Double personalDiscount) {
     
     this.personalDiscount = personalDiscount;
     return this;
   }
+
 
   /**
    * Процент персональной скидки
@@ -107,11 +110,13 @@ public class AgentDiscount {
     this.personalDiscount = personalDiscount;
   }
 
+
   public AgentDiscount demandSumCorrection(@javax.annotation.Nullable Double demandSumCorrection) {
     
     this.demandSumCorrection = demandSumCorrection;
     return this;
   }
+
 
   /**
    * Коррекция суммы накоплений по скидке
@@ -133,6 +138,7 @@ public class AgentDiscount {
   public void setDemandSumCorrection(@javax.annotation.Nullable Double demandSumCorrection) {
     this.demandSumCorrection = demandSumCorrection;
   }
+
 
   @Override
   public boolean equals(Object o) {

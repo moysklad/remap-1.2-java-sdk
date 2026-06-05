@@ -11,7 +11,7 @@
 |**meta** | [**Meta**](Meta.md) |  |  [optional] |
 |**id** | **UUID** | ID Счета-фактуры выданного |  [optional] [readonly] |
 |**accountId** | **UUID** | ID учетной записи |  [optional] [readonly] |
-|**agent** | [**Counterparty**](Counterparty.md) |  |  [optional] |
+|**agent** | [**Agent**](Agent.md) | Метаданные контрагента или юрлица |  [optional] |
 |**applicable** | **Boolean** | Отметка о проведении |  [optional] |
 |**attributes** | [**List&lt;AttributeAbstract&gt;**](AttributeAbstract.md) | Коллекция метаданных доп. полей |  [optional] |
 |**code** | **String** | Код Счета-фактуры выданного |  [optional] |
@@ -41,7 +41,7 @@
 |**demands** | [**List&lt;Demand&gt;**](Demand.md) | Связанные отгрузки (метаданные) |  [optional] |
 |**payments** | [**List&lt;PaymentIn&gt;**](PaymentIn.md) | Связанные входящие платежи (метаданные) |  [optional] |
 |**returns** | [**List&lt;PurchaseReturn&gt;**](PurchaseReturn.md) | Связанные возвраты поставщикам (метаданные) |  [optional] |
-|**consignee** | [**Counterparty**](Counterparty.md) |  |  [optional] |
+|**consignee** | [**Agent**](Agent.md) | Грузополучатель (контрагент или юрлицо) |  [optional] |
 |**paymentNumber** | **String** | Название платежного документа |  [optional] |
 |**paymentDate** | **String** | Дата платежного документа |  [optional] |
 

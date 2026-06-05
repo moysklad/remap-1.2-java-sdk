@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   WebhookEvent.JSON_PROPERTY_ACCOUNT_ID,
   WebhookEvent.JSON_PROPERTY_UPDATED_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class WebhookEvent {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -68,6 +68,7 @@ public class WebhookEvent {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -89,11 +90,13 @@ public class WebhookEvent {
     this.meta = meta;
   }
 
+
   public WebhookEvent action(@javax.annotation.Nullable String action) {
     
     this.action = action;
     return this;
   }
+
 
   /**
    * Действие, вызвавшее срабатывание. Известные значения описаны в WebhookAction
@@ -116,11 +119,13 @@ public class WebhookEvent {
     this.action = action;
   }
 
+
   public WebhookEvent accountId(@javax.annotation.Nullable UUID accountId) {
     
     this.accountId = accountId;
     return this;
   }
+
 
   /**
    * ID учетной записи
@@ -143,11 +148,13 @@ public class WebhookEvent {
     this.accountId = accountId;
   }
 
+
   public WebhookEvent updatedFields(@javax.annotation.Nullable List<String> updatedFields) {
     
     this.updatedFields = updatedFields;
     return this;
   }
+
 
   public WebhookEvent addUpdatedFieldsItem(String updatedFieldsItem) {
     if (this.updatedFields == null) {
@@ -177,6 +184,7 @@ public class WebhookEvent {
   public void setUpdatedFields(@javax.annotation.Nullable List<String> updatedFields) {
     this.updatedFields = updatedFields;
   }
+
 
   @Override
   public boolean equals(Object o) {

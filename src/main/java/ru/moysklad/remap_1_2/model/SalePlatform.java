@@ -37,7 +37,7 @@ import java.util.StringJoiner;
   SalePlatform.JSON_PROPERTY_NAME,
   SalePlatform.JSON_PROPERTY_SALE_PLATFORM_GROUP
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class SalePlatform {
   public static SalePlatform createWithMeta(UUID id) {
     SalePlatform o = new SalePlatform();
@@ -89,6 +89,7 @@ public class SalePlatform {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -109,6 +110,7 @@ public class SalePlatform {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Площадки для продаж
@@ -132,6 +134,7 @@ public class SalePlatform {
     return this;
   }
 
+
   /**
    * Наименование Площадки для продаж
    * @return name
@@ -153,11 +156,13 @@ public class SalePlatform {
     this.name = name;
   }
 
+
   public SalePlatform salePlatformGroup(@javax.annotation.Nullable String salePlatformGroup) {
     
     this.salePlatformGroup = salePlatformGroup;
     return this;
   }
+
 
   /**
    * Группа площадок для продаж. Известные значения описаны в SalePlatformGroup
@@ -179,6 +184,7 @@ public class SalePlatform {
   public void setSalePlatformGroup(@javax.annotation.Nullable String salePlatformGroup) {
     this.salePlatformGroup = salePlatformGroup;
   }
+
 
   @Override
   public boolean equals(Object o) {

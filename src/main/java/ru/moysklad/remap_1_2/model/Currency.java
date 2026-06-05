@@ -51,7 +51,7 @@ import java.util.StringJoiner;
   Currency.JSON_PROPERTY_MAJOR_UNIT,
   Currency.JSON_PROPERTY_MINOR_UNIT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Currency {
   public static Currency createWithMeta(UUID id) {
     Currency o = new Currency();
@@ -153,6 +153,7 @@ public class Currency {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -173,6 +174,7 @@ public class Currency {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID валюты
@@ -212,6 +214,7 @@ public class Currency {
     return this;
   }
 
+
   /**
    * Краткое наименование валюты
    * @return name
@@ -233,11 +236,13 @@ public class Currency {
     this.name = name;
   }
 
+
   public Currency fullName(@javax.annotation.Nullable String fullName) {
     
     this.fullName = fullName;
     return this;
   }
+
 
   /**
    * Полное наименование валюты
@@ -260,11 +265,13 @@ public class Currency {
     this.fullName = fullName;
   }
 
+
   public Currency code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Цифровой код валюты
@@ -287,11 +294,13 @@ public class Currency {
     this.code = code;
   }
 
+
   public Currency isoCode(@javax.annotation.Nullable String isoCode) {
     
     this.isoCode = isoCode;
     return this;
   }
+
 
   /**
    * Буквенный код валюты
@@ -314,11 +323,13 @@ public class Currency {
     this.isoCode = isoCode;
   }
 
+
   public Currency multiplicity(@javax.annotation.Nullable Integer multiplicity) {
     
     this.multiplicity = multiplicity;
     return this;
   }
+
 
   /**
    * Кратность курса валюты
@@ -341,11 +352,13 @@ public class Currency {
     this.multiplicity = multiplicity;
   }
 
+
   public Currency rate(@javax.annotation.Nullable Float rate) {
     
     this.rate = rate;
     return this;
   }
+
 
   /**
    * Курс валюты
@@ -368,11 +381,13 @@ public class Currency {
     this.rate = rate;
   }
 
+
   public Currency margin(@javax.annotation.Nullable Float margin) {
     
     this.margin = margin;
     return this;
   }
+
 
   /**
    * Наценка при автоматическом обновлении курса
@@ -395,11 +410,13 @@ public class Currency {
     this.margin = margin;
   }
 
+
   public Currency indirect(@javax.annotation.Nullable Boolean indirect) {
     
     this.indirect = indirect;
     return this;
   }
+
 
   /**
    * Признак обратного курса валюты
@@ -422,11 +439,13 @@ public class Currency {
     this.indirect = indirect;
   }
 
+
   public Currency rateUpdateType(@javax.annotation.Nullable String rateUpdateType) {
     
     this.rateUpdateType = rateUpdateType;
     return this;
   }
+
 
   /**
    * Способ обновления курса валюты. Известные значения описаны в RateUpdateType
@@ -449,11 +468,13 @@ public class Currency {
     this.rateUpdateType = rateUpdateType;
   }
 
+
   public Currency archived(@javax.annotation.Nullable Boolean archived) {
     
     this.archived = archived;
     return this;
   }
+
 
   /**
    * Добавлена ли валюта в архив
@@ -476,11 +497,13 @@ public class Currency {
     this.archived = archived;
   }
 
+
   public Currency _default(@javax.annotation.Nullable Boolean _default) {
     
     this._default = _default;
     return this;
   }
+
 
   /**
    * Валюта учета по умолчанию
@@ -503,11 +526,13 @@ public class Currency {
     this._default = _default;
   }
 
+
   public Currency majorUnit(@javax.annotation.Nullable CurrencyMajorUnit majorUnit) {
     
     this.majorUnit = majorUnit;
     return this;
   }
+
 
   /**
    * Get majorUnit
@@ -530,11 +555,13 @@ public class Currency {
     this.majorUnit = majorUnit;
   }
 
+
   public Currency minorUnit(@javax.annotation.Nullable CurrencyMinorUnit minorUnit) {
     
     this.minorUnit = minorUnit;
     return this;
   }
+
 
   /**
    * Get minorUnit
@@ -556,6 +583,7 @@ public class Currency {
   public void setMinorUnit(@javax.annotation.Nullable CurrencyMinorUnit minorUnit) {
     this.minorUnit = minorUnit;
   }
+
 
   @Override
   public boolean equals(Object o) {

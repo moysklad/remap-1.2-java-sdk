@@ -50,7 +50,7 @@ import java.util.StringJoiner;
   Country.JSON_PROPERTY_OWNER,
   Country.JSON_PROPERTY_SHARED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Country {
   public static Country createWithMeta(UUID id) {
     Country o = new Country();
@@ -134,6 +134,7 @@ public class Country {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -154,6 +155,7 @@ public class Country {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID страны
@@ -193,6 +195,7 @@ public class Country {
     return this;
   }
 
+
   /**
    * Наименование страны
    * @return name
@@ -214,11 +217,13 @@ public class Country {
     this.name = name;
   }
 
+
   public Country description(@javax.annotation.Nullable String description) {
     
     this.description = description;
     return this;
   }
+
 
   /**
    * Описание страны
@@ -241,11 +246,13 @@ public class Country {
     this.description = description;
   }
 
+
   public Country code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код страны
@@ -268,11 +275,13 @@ public class Country {
     this.code = code;
   }
 
+
   public Country externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код страны
@@ -294,6 +303,7 @@ public class Country {
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
     this.externalCode = externalCode;
   }
+
 
   /**
    * Момент последнего обновления сущности
@@ -317,6 +327,7 @@ public class Country {
     return this;
   }
 
+
   /**
    * Get group
    * @return group
@@ -338,11 +349,13 @@ public class Country {
     this.group = group;
   }
 
+
   public Country owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Метаданные владельца (Сотрудника)
@@ -374,11 +387,13 @@ public class Country {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public Country shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -400,6 +415,7 @@ public class Country {
   public void setShared(@javax.annotation.Nullable Boolean shared) {
     this.shared = shared;
   }
+
 
   @Override
   public boolean equals(Object o) {

@@ -68,7 +68,7 @@ import java.util.StringJoiner;
   ProcessingPlan.JSON_PROPERTY_PRODUCTS,
   ProcessingPlan.JSON_PROPERTY_ATTRIBUTES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingPlan {
   public static ProcessingPlan createWithMeta(UUID id) {
     ProcessingPlan o = new ProcessingPlan();
@@ -192,6 +192,7 @@ public class ProcessingPlan {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -212,6 +213,7 @@ public class ProcessingPlan {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Техкарты
@@ -251,6 +253,7 @@ public class ProcessingPlan {
     return this;
   }
 
+
   /**
    * Добавлена ли Техкарта в архив
    * @return archived
@@ -272,11 +275,13 @@ public class ProcessingPlan {
     this.archived = archived;
   }
 
+
   public ProcessingPlan code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код Техкарты
@@ -299,11 +304,13 @@ public class ProcessingPlan {
     this.code = code;
   }
 
+
   public ProcessingPlan cost(@javax.annotation.Nullable Double cost) {
     
     this.cost = cost;
     return this;
   }
+
 
   /**
    * Стоимость производства
@@ -325,6 +332,7 @@ public class ProcessingPlan {
   public void setCost(@javax.annotation.Nullable Double cost) {
     this.cost = cost;
   }
+
 
   /**
    * Тип распределения себестоимости. Возможные значения описаны в CostDistributionType
@@ -348,6 +356,7 @@ public class ProcessingPlan {
     return this;
   }
 
+
   /**
    * Внешний код Техкарты
    * @return externalCode
@@ -369,11 +378,13 @@ public class ProcessingPlan {
     this.externalCode = externalCode;
   }
 
+
   public ProcessingPlan group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -396,11 +407,13 @@ public class ProcessingPlan {
     this.group = group;
   }
 
+
   public ProcessingPlan name(@javax.annotation.Nullable String name) {
     
     this.name = name;
     return this;
   }
+
 
   /**
    * Наименование Техкарты
@@ -423,11 +436,13 @@ public class ProcessingPlan {
     this.name = name;
   }
 
+
   public ProcessingPlan owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Владелец (Сотрудник)
@@ -459,11 +474,13 @@ public class ProcessingPlan {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public ProcessingPlan parent(@javax.annotation.Nullable ProcessingPlanFolder parent) {
     
     this.parent = parent;
     return this;
   }
+
 
   /**
    * Get parent
@@ -485,6 +502,7 @@ public class ProcessingPlan {
   public void setParent(@javax.annotation.Nullable ProcessingPlanFolder parent) {
     this.parent = parent;
   }
+
 
   /**
    * Наименование группы, в которую входит Техкарта
@@ -508,6 +526,7 @@ public class ProcessingPlan {
     return this;
   }
 
+
   /**
    * Get processingProcess
    * @return processingProcess
@@ -529,11 +548,13 @@ public class ProcessingPlan {
     this.processingProcess = processingProcess;
   }
 
+
   public ProcessingPlan shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -555,6 +576,7 @@ public class ProcessingPlan {
   public void setShared(@javax.annotation.Nullable Boolean shared) {
     this.shared = shared;
   }
+
 
   /**
    * Момент последнего обновления Техкарты
@@ -578,6 +600,7 @@ public class ProcessingPlan {
     return this;
   }
 
+
   /**
    * Коллекция метаданных этапов Техкарты
    * @return stages
@@ -599,11 +622,13 @@ public class ProcessingPlan {
     this.stages = stages;
   }
 
+
   public ProcessingPlan materials(@javax.annotation.Nullable ProcessingPlanMaterialList materials) {
     
     this.materials = materials;
     return this;
   }
+
 
   /**
    * Коллекция метаданных материалов Техкарты
@@ -626,11 +651,13 @@ public class ProcessingPlan {
     this.materials = materials;
   }
 
+
   public ProcessingPlan products(@javax.annotation.Nullable ProcessingPlanProductList products) {
     
     this.products = products;
     return this;
   }
+
 
   /**
    * Коллекция метаданных готовых продуктов Техкарты
@@ -653,11 +680,13 @@ public class ProcessingPlan {
     this.products = products;
   }
 
+
   public ProcessingPlan attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public ProcessingPlan addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -700,6 +729,7 @@ public class ProcessingPlan {
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
+
 
   @Override
   public boolean equals(Object o) {

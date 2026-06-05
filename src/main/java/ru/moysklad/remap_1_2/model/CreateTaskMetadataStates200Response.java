@@ -44,7 +44,7 @@ import java.util.StringJoiner;
   CreateTaskMetadataStates200Response.JSON_PROPERTY_STATE_TYPE
 })
 @JsonTypeName("createTaskMetadataStates_200_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateTaskMetadataStates200Response {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -98,6 +98,7 @@ public class CreateTaskMetadataStates200Response {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -118,6 +119,7 @@ public class CreateTaskMetadataStates200Response {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID статуса
@@ -141,6 +143,7 @@ public class CreateTaskMetadataStates200Response {
     return this;
   }
 
+
   /**
    * Наименование статуса
    * @return name
@@ -161,6 +164,7 @@ public class CreateTaskMetadataStates200Response {
   public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
+
 
   /**
    * ID учетной записи
@@ -184,6 +188,7 @@ public class CreateTaskMetadataStates200Response {
     return this;
   }
 
+
   /**
    * Цвет Статуса
    * @return color
@@ -204,6 +209,7 @@ public class CreateTaskMetadataStates200Response {
   public void setColor(@javax.annotation.Nullable Integer color) {
     this.color = color;
   }
+
 
   /**
    * Тип сущности, к которой относится Статус (ключевое слово в рамках JSON API)
@@ -227,6 +233,7 @@ public class CreateTaskMetadataStates200Response {
     return this;
   }
 
+
   /**
    * Тип Статуса. Известные значения описаны в StateType
    * @return stateType
@@ -247,6 +254,7 @@ public class CreateTaskMetadataStates200Response {
   public void setStateType(@javax.annotation.Nullable String stateType) {
     this.stateType = stateType;
   }
+
 
   @Override
   public boolean equals(Object o) {

@@ -33,7 +33,7 @@ import java.util.StringJoiner;
   ActivateEmployee200Response.JSON_PROPERTY_MAIL_ACTIVATION_REQUIRED
 })
 @JsonTypeName("activateEmployee_200_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class ActivateEmployee200Response {
 
   public static final String JSON_PROPERTY_MAIL_ACTIVATION_REQUIRED = "mailActivationRequired";
@@ -48,6 +48,7 @@ public class ActivateEmployee200Response {
     this.mailActivationRequired = mailActivationRequired;
     return this;
   }
+
 
   /**
    * Признак того, что на почту сотрудника выслано письмо для активации
@@ -69,6 +70,7 @@ public class ActivateEmployee200Response {
   public void setMailActivationRequired(@javax.annotation.Nullable Boolean mailActivationRequired) {
     this.mailActivationRequired = mailActivationRequired;
   }
+
 
   @Override
   public boolean equals(Object o) {

@@ -96,7 +96,7 @@ import java.util.StringJoiner;
   Bundle.JSON_PROPERTY_ATTRIBUTES,
   Bundle.JSON_PROPERTY_COMPONENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Bundle {
   public static Bundle createWithMeta(UUID id) {
     Bundle o = new Bundle();
@@ -306,6 +306,7 @@ public class Bundle {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -326,6 +327,7 @@ public class Bundle {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Комплекта
@@ -365,6 +367,7 @@ public class Bundle {
     return this;
   }
 
+
   /**
    * Наименование Комплекта
    * @return name
@@ -386,11 +389,13 @@ public class Bundle {
     this.name = name;
   }
 
+
   public Bundle code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код Комплекта
@@ -413,11 +418,13 @@ public class Bundle {
     this.code = code;
   }
 
+
   public Bundle externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Комплекта
@@ -440,11 +447,13 @@ public class Bundle {
     this.externalCode = externalCode;
   }
 
+
   public Bundle syncId(@javax.annotation.Nullable UUID syncId) {
     
     this.syncId = syncId;
     return this;
   }
+
 
   /**
    * ID синхронизации
@@ -466,6 +475,7 @@ public class Bundle {
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
     this.syncId = syncId;
   }
+
 
   /**
    * Момент последнего обновления сущности
@@ -489,6 +499,7 @@ public class Bundle {
     return this;
   }
 
+
   /**
    * Добавлен ли Комплект в архив
    * @return archived
@@ -510,11 +521,13 @@ public class Bundle {
     this.archived = archived;
   }
 
+
   public Bundle shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -537,11 +550,13 @@ public class Bundle {
     this.shared = shared;
   }
 
+
   public Bundle description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Описание Комплекта
@@ -573,11 +588,13 @@ public class Bundle {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public Bundle article(@javax.annotation.Nullable String article) {
     
     this.article = article;
     return this;
   }
+
 
   /**
    * Артикул
@@ -599,6 +616,7 @@ public class Bundle {
   public void setArticle(@javax.annotation.Nullable String article) {
     this.article = article;
   }
+
 
   /**
    * Наименование группы, в которую входит Комплект
@@ -622,6 +640,7 @@ public class Bundle {
     return this;
   }
 
+
   /**
    * Признак запрета скидок
    * @return discountProhibited
@@ -643,11 +662,13 @@ public class Bundle {
     this.discountProhibited = discountProhibited;
   }
 
+
   public Bundle partialDisposal(@javax.annotation.Nullable Boolean partialDisposal) {
     
     this.partialDisposal = partialDisposal;
     return this;
   }
+
 
   /**
    * Управление состоянием частичного выбытия маркированного товара
@@ -670,11 +691,13 @@ public class Bundle {
     this.partialDisposal = partialDisposal;
   }
 
+
   public Bundle vat(@javax.annotation.Nullable Integer vat) {
     
     this.vat = vat;
     return this;
   }
+
 
   /**
    * НДС %
@@ -697,11 +720,13 @@ public class Bundle {
     this.vat = vat;
   }
 
+
   public Bundle vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
     
     this.vatEnabled = vatEnabled;
     return this;
   }
+
 
   /**
    * Включен ли НДС для товара
@@ -724,11 +749,13 @@ public class Bundle {
     this.vatEnabled = vatEnabled;
   }
 
+
   public Bundle useParentVat(@javax.annotation.Nullable Boolean useParentVat) {
     
     this.useParentVat = useParentVat;
     return this;
   }
+
 
   /**
    * Используется ли ставка НДС родительской группы
@@ -750,6 +777,7 @@ public class Bundle {
   public void setUseParentVat(@javax.annotation.Nullable Boolean useParentVat) {
     this.useParentVat = useParentVat;
   }
+
 
   /**
    * Реальный НДС %
@@ -789,6 +817,7 @@ public class Bundle {
     return this;
   }
 
+
   /**
    * Признак предмета расчета. Известные значения описаны в PaymentItemType
    * @return paymentItemType
@@ -810,11 +839,13 @@ public class Bundle {
     this.paymentItemType = paymentItemType;
   }
 
+
   public Bundle taxSystem(@javax.annotation.Nullable String taxSystem) {
     
     this.taxSystem = taxSystem;
     return this;
   }
+
 
   /**
    * Код системы налогообложения. Известные значения описаны в TaxSystem
@@ -837,11 +868,13 @@ public class Bundle {
     this.taxSystem = taxSystem;
   }
 
+
   public Bundle trackingType(@javax.annotation.Nullable String trackingType) {
     
     this.trackingType = trackingType;
     return this;
   }
+
 
   /**
    * Тип маркируемой продукции. Известные значения описаны в TrackingType
@@ -864,11 +897,13 @@ public class Bundle {
     this.trackingType = trackingType;
   }
 
+
   public Bundle tnved(@javax.annotation.Nullable String tnved) {
     
     this.tnved = tnved;
     return this;
   }
+
 
   /**
    * Код ТН ВЭД
@@ -891,11 +926,13 @@ public class Bundle {
     this.tnved = tnved;
   }
 
+
   public Bundle weight(@javax.annotation.Nullable Float weight) {
     
     this.weight = weight;
     return this;
   }
+
 
   /**
    * Вес
@@ -918,11 +955,13 @@ public class Bundle {
     this.weight = weight;
   }
 
+
   public Bundle volume(@javax.annotation.Nullable Float volume) {
     
     this.volume = volume;
     return this;
   }
+
 
   /**
    * Объем
@@ -945,11 +984,13 @@ public class Bundle {
     this.volume = volume;
   }
 
+
   public Bundle group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -972,11 +1013,13 @@ public class Bundle {
     this.group = group;
   }
 
+
   public Bundle owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Метаданные владельца (Сотрудника)
@@ -1008,11 +1051,13 @@ public class Bundle {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public Bundle country(@javax.annotation.Nullable Country country) {
     this.country = JsonNullable.<Country>of(country);
     
     return this;
   }
+
 
   /**
    * Метаданные Страны
@@ -1044,11 +1089,13 @@ public class Bundle {
     this.country = JsonNullable.<Country>of(country);
   }
 
+
   public Bundle uom(@javax.annotation.Nullable Uom uom) {
     this.uom = JsonNullable.<Uom>of(uom);
     
     return this;
   }
+
 
   /**
    * Единицы измерения
@@ -1080,11 +1127,13 @@ public class Bundle {
     this.uom = JsonNullable.<Uom>of(uom);
   }
 
+
   public Bundle productFolder(@javax.annotation.Nullable ProductFolder productFolder) {
     this.productFolder = JsonNullable.<ProductFolder>of(productFolder);
     
     return this;
   }
+
 
   /**
    * Метаданные группы Комплекта
@@ -1116,11 +1165,13 @@ public class Bundle {
     this.productFolder = JsonNullable.<ProductFolder>of(productFolder);
   }
 
+
   public Bundle images(@javax.annotation.Nullable ImageList images) {
     this.images = JsonNullable.<ImageList>of(images);
     
     return this;
   }
+
 
   /**
    * Массив метаданных Изображений
@@ -1152,11 +1203,13 @@ public class Bundle {
     this.images = JsonNullable.<ImageList>of(images);
   }
 
+
   public Bundle files(@javax.annotation.Nullable FileList files) {
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
   }
+
 
   /**
    * Метаданные массива Файлов
@@ -1188,11 +1241,13 @@ public class Bundle {
     this.files = JsonNullable.<FileList>of(files);
   }
 
+
   public Bundle barcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
     
     return this;
   }
+
 
   public Bundle addBarcodesItem(Barcode barcodesItem) {
     if (this.barcodes == null || !this.barcodes.isPresent()) {
@@ -1236,11 +1291,13 @@ public class Bundle {
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
   }
 
+
   public Bundle packs(@javax.annotation.Nullable List<Pack> packs) {
     this.packs = JsonNullable.<List<Pack>>of(packs);
     
     return this;
   }
+
 
   public Bundle addPacksItem(Pack packsItem) {
     if (this.packs == null || !this.packs.isPresent()) {
@@ -1284,11 +1341,13 @@ public class Bundle {
     this.packs = JsonNullable.<List<Pack>>of(packs);
   }
 
+
   public Bundle salePrices(@javax.annotation.Nullable List<SalePrice> salePrices) {
     this.salePrices = JsonNullable.<List<SalePrice>>of(salePrices);
     
     return this;
   }
+
 
   public Bundle addSalePricesItem(SalePrice salePricesItem) {
     if (this.salePrices == null || !this.salePrices.isPresent()) {
@@ -1332,11 +1391,13 @@ public class Bundle {
     this.salePrices = JsonNullable.<List<SalePrice>>of(salePrices);
   }
 
+
   public Bundle buyPrice(@javax.annotation.Nullable BuyPrice buyPrice) {
     
     this.buyPrice = buyPrice;
     return this;
   }
+
 
   /**
    * Get buyPrice
@@ -1359,11 +1420,13 @@ public class Bundle {
     this.buyPrice = buyPrice;
   }
 
+
   public Bundle minPrice(@javax.annotation.Nullable MinPrice minPrice) {
     
     this.minPrice = minPrice;
     return this;
   }
+
 
   /**
    * Get minPrice
@@ -1386,11 +1449,13 @@ public class Bundle {
     this.minPrice = minPrice;
   }
 
+
   public Bundle overhead(@javax.annotation.Nullable BundleOverhead overhead) {
     
     this.overhead = overhead;
     return this;
   }
+
 
   /**
    * Get overhead
@@ -1413,11 +1478,13 @@ public class Bundle {
     this.overhead = overhead;
   }
 
+
   public Bundle attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public Bundle addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -1461,11 +1528,13 @@ public class Bundle {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   public Bundle components(@javax.annotation.Nullable BundleComponentList components) {
     
     this.components = components;
     return this;
   }
+
 
   /**
    * Массив компонентов Комплекта
@@ -1487,6 +1556,7 @@ public class Bundle {
   public void setComponents(@javax.annotation.Nullable BundleComponentList components) {
     this.components = components;
   }
+
 
   @Override
   public boolean equals(Object o) {

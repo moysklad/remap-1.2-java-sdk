@@ -49,7 +49,7 @@ import java.util.StringJoiner;
   InvoiceIn.JSON_PROPERTY_UPDATED,
   InvoiceIn.JSON_PROPERTY_MOMENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class InvoiceIn {
   public static InvoiceIn createWithMeta(UUID id) {
     InvoiceIn o = new InvoiceIn();
@@ -141,6 +141,7 @@ public class InvoiceIn {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -161,6 +162,7 @@ public class InvoiceIn {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Счета поставщика
@@ -200,6 +202,7 @@ public class InvoiceIn {
     return this;
   }
 
+
   /**
    * Наименование Счета поставщика
    * @return name
@@ -221,11 +224,13 @@ public class InvoiceIn {
     this.name = name;
   }
 
+
   public InvoiceIn code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код Счета поставщика
@@ -248,11 +253,13 @@ public class InvoiceIn {
     this.code = code;
   }
 
+
   public InvoiceIn externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Счета поставщика
@@ -275,11 +282,13 @@ public class InvoiceIn {
     this.externalCode = externalCode;
   }
 
+
   public InvoiceIn syncId(@javax.annotation.Nullable UUID syncId) {
     
     this.syncId = syncId;
     return this;
   }
+
 
   /**
    * ID синхронизации
@@ -302,11 +311,13 @@ public class InvoiceIn {
     this.syncId = syncId;
   }
 
+
   public InvoiceIn description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Комментарий Счета поставщика
@@ -337,6 +348,7 @@ public class InvoiceIn {
   public void setDescription(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
   }
+
 
   /**
    * Дата создания
@@ -392,6 +404,7 @@ public class InvoiceIn {
     return this;
   }
 
+
   /**
    * Дата документа
    * @return moment
@@ -412,6 +425,7 @@ public class InvoiceIn {
   public void setMoment(@javax.annotation.Nullable String moment) {
     this.moment = moment;
   }
+
 
   @Override
   public boolean equals(Object o) {

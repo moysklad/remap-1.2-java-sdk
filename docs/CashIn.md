@@ -35,7 +35,7 @@
 |**state** | [**State**](State.md) | Метаданные статуса Приходного ордера |  [optional] |
 |**rate** | [**CurrencyRate**](CurrencyRate.md) |  |  [optional] |
 |**organization** | [**Organization**](Organization.md) |  |  [optional] |
-|**agent** | [**Counterparty**](Counterparty.md) |  |  [optional] |
+|**agent** | [**Agent**](Agent.md) | Метаданные контрагента или юрлица |  [optional] |
 |**sum** | **Double** | Сумма Приходного ордера в установленной валюте |  [optional] [readonly] |
 |**vatSum** | **Double** | Сумма НДС |  [optional] [readonly] |
 |**factureOut** | [**FactureOut**](FactureOut.md) | Счет-фактура выданный, с которым связан этот платеж |  [optional] |

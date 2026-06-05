@@ -60,7 +60,7 @@ import java.util.StringJoiner;
   CreateSalesChannelsBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createSalesChannelsBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateSalesChannelsBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -142,6 +142,7 @@ public class CreateSalesChannelsBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -162,6 +163,7 @@ public class CreateSalesChannelsBatch200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Канала продаж
@@ -201,6 +203,7 @@ public class CreateSalesChannelsBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Добавлен ли Канал продаж в архив
    * @return archived
@@ -222,11 +225,13 @@ public class CreateSalesChannelsBatch200ResponseInner {
     this.archived = archived;
   }
 
+
   public CreateSalesChannelsBatch200ResponseInner code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код Канала продаж
@@ -249,11 +254,13 @@ public class CreateSalesChannelsBatch200ResponseInner {
     this.code = code;
   }
 
+
   public CreateSalesChannelsBatch200ResponseInner description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Описание Канала продаж
@@ -285,11 +292,13 @@ public class CreateSalesChannelsBatch200ResponseInner {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public CreateSalesChannelsBatch200ResponseInner externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Канала продаж
@@ -312,11 +321,13 @@ public class CreateSalesChannelsBatch200ResponseInner {
     this.externalCode = externalCode;
   }
 
+
   public CreateSalesChannelsBatch200ResponseInner group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -339,11 +350,13 @@ public class CreateSalesChannelsBatch200ResponseInner {
     this.group = group;
   }
 
+
   public CreateSalesChannelsBatch200ResponseInner name(@javax.annotation.Nullable String name) {
     
     this.name = name;
     return this;
   }
+
 
   /**
    * Наименование Канала продаж
@@ -366,11 +379,13 @@ public class CreateSalesChannelsBatch200ResponseInner {
     this.name = name;
   }
 
+
   public CreateSalesChannelsBatch200ResponseInner owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Метаданные владельца (Сотрудника)
@@ -402,11 +417,13 @@ public class CreateSalesChannelsBatch200ResponseInner {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public CreateSalesChannelsBatch200ResponseInner shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -429,11 +446,13 @@ public class CreateSalesChannelsBatch200ResponseInner {
     this.shared = shared;
   }
 
+
   public CreateSalesChannelsBatch200ResponseInner type(@javax.annotation.Nullable String type) {
     
     this.type = type;
     return this;
   }
+
 
   /**
    * Тип Канала продаж. Известные значения описаны в SalesChannelType
@@ -456,6 +475,7 @@ public class CreateSalesChannelsBatch200ResponseInner {
     this.type = type;
   }
 
+
   /**
    * Момент последнего обновления сущности
    * @return updated
@@ -477,6 +497,7 @@ public class CreateSalesChannelsBatch200ResponseInner {
     this.errors = errors;
     return this;
   }
+
 
   public CreateSalesChannelsBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -506,6 +527,7 @@ public class CreateSalesChannelsBatch200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

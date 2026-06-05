@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   EmbeddedTemplate.JSON_PROPERTY_ID,
   EmbeddedTemplate.JSON_PROPERTY_ACCOUNT_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class EmbeddedTemplate {
   public static EmbeddedTemplate createWithMeta(UUID id) {
     EmbeddedTemplate o = new EmbeddedTemplate();
@@ -86,6 +86,7 @@ public class EmbeddedTemplate {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -106,6 +107,7 @@ public class EmbeddedTemplate {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID шаблона печатной формы

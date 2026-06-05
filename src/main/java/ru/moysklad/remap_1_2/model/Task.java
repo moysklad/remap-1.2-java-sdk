@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
+import ru.moysklad.remap_1_2.model.Agent;
 import ru.moysklad.remap_1_2.model.Application;
 import ru.moysklad.remap_1_2.model.DocumentMetadata;
 import ru.moysklad.remap_1_2.model.Employee;
 import ru.moysklad.remap_1_2.model.FileList;
 import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.State;
-import ru.moysklad.remap_1_2.model.TaskAgent;
 import ru.moysklad.remap_1_2.model.TaskNotes;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -62,7 +62,7 @@ import java.util.StringJoiner;
   Task.JSON_PROPERTY_STATE,
   Task.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Task {
   public static Task createWithMeta(UUID id) {
     Task o = new Task();
@@ -93,7 +93,7 @@ public class Task {
 
   public static final String JSON_PROPERTY_AGENT = "agent";
   @javax.annotation.Nullable
-  private JsonNullable<TaskAgent> agent = JsonNullable.<TaskAgent>undefined();
+  private Agent agent;
 
   public static final String JSON_PROPERTY_ASSIGNEE = "assignee";
   @javax.annotation.Nullable
@@ -178,6 +178,7 @@ public class Task {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -198,6 +199,7 @@ public class Task {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Задачи
@@ -231,47 +233,41 @@ public class Task {
 
 
 
-  public Task agent(@javax.annotation.Nullable TaskAgent agent) {
-    this.agent = JsonNullable.<TaskAgent>of(agent);
+  public Task agent(@javax.annotation.Nullable Agent agent) {
     
+    this.agent = agent;
     return this;
   }
 
+
   /**
-   * Get agent
+   * Метаданные Контрагента или юрлица, связанного с задачей
    * @return agent
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public TaskAgent getAgent() {
-        return agent.orElse(null);
-  }
-
-  
-
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-
-  public JsonNullable<TaskAgent> getAgent_JsonNullable() {
+  public Agent getAgent() {
     return agent;
   }
+
   
-  @JsonProperty(value = JSON_PROPERTY_AGENT, required = false)
-  public void setAgent_JsonNullable(JsonNullable<TaskAgent> agent) {
+
+
+  @JsonProperty(JSON_PROPERTY_AGENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAgent(@javax.annotation.Nullable Agent agent) {
     this.agent = agent;
   }
 
-  public void setAgent(@javax.annotation.Nullable TaskAgent agent) {
-    this.agent = JsonNullable.<TaskAgent>of(agent);
-  }
 
   public Task assignee(@javax.annotation.Nullable Employee assignee) {
     
     this.assignee = assignee;
     return this;
   }
+
 
   /**
    * Get assignee
@@ -294,11 +290,13 @@ public class Task {
     this.assignee = assignee;
   }
 
+
   public Task author(@javax.annotation.Nullable Employee author) {
     
     this.author = author;
     return this;
   }
+
 
   /**
    * Get author
@@ -321,11 +319,13 @@ public class Task {
     this.author = author;
   }
 
+
   public Task authorApplication(@javax.annotation.Nullable Application authorApplication) {
     
     this.authorApplication = authorApplication;
     return this;
   }
+
 
   /**
    * Get authorApplication
@@ -347,6 +347,7 @@ public class Task {
   public void setAuthorApplication(@javax.annotation.Nullable Application authorApplication) {
     this.authorApplication = authorApplication;
   }
+
 
   /**
    * Время выполнения задачи
@@ -386,6 +387,7 @@ public class Task {
     return this;
   }
 
+
   /**
    * Текст задачи
    * @return description
@@ -407,11 +409,13 @@ public class Task {
     this.description = description;
   }
 
+
   public Task done(@javax.annotation.Nullable Boolean done) {
     
     this.done = done;
     return this;
   }
+
 
   /**
    * Отметка о выполнении задачи
@@ -434,11 +438,13 @@ public class Task {
     this.done = done;
   }
 
+
   public Task dueToDate(@javax.annotation.Nullable String dueToDate) {
     this.dueToDate = JsonNullable.<String>of(dueToDate);
     
     return this;
   }
+
 
   /**
    * Срок задачи
@@ -470,11 +476,13 @@ public class Task {
     this.dueToDate = JsonNullable.<String>of(dueToDate);
   }
 
+
   public Task files(@javax.annotation.Nullable FileList files) {
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
   }
+
 
   /**
    * Метаданные массива Файлов
@@ -506,11 +514,13 @@ public class Task {
     this.files = JsonNullable.<FileList>of(files);
   }
 
+
   public Task implementer(@javax.annotation.Nullable Employee implementer) {
     
     this.implementer = implementer;
     return this;
   }
+
 
   /**
    * Get implementer
@@ -533,11 +543,13 @@ public class Task {
     this.implementer = implementer;
   }
 
+
   public Task notes(@javax.annotation.Nullable TaskNotes notes) {
     
     this.notes = notes;
     return this;
   }
+
 
   /**
    * Get notes
@@ -560,11 +572,13 @@ public class Task {
     this.notes = notes;
   }
 
+
   public Task operation(@javax.annotation.Nullable DocumentMetadata operation) {
     
     this.operation = operation;
     return this;
   }
+
 
   /**
    * Get operation
@@ -587,11 +601,13 @@ public class Task {
     this.operation = operation;
   }
 
+
   public Task state(@javax.annotation.Nullable State state) {
     this.state = JsonNullable.<State>of(state);
     
     return this;
   }
+
 
   /**
    * Метаданные типа задачи
@@ -623,6 +639,7 @@ public class Task {
     this.state = JsonNullable.<State>of(state);
   }
 
+
   /**
    * Момент последнего обновления Задачи
    * @return updated
@@ -651,7 +668,7 @@ public class Task {
     return Objects.equals(this.meta, task.meta) &&
         Objects.equals(this.id, task.id) &&
         Objects.equals(this.accountId, task.accountId) &&
-        equalsNullable(this.agent, task.agent) &&
+        Objects.equals(this.agent, task.agent) &&
         Objects.equals(this.assignee, task.assignee) &&
         Objects.equals(this.author, task.author) &&
         Objects.equals(this.authorApplication, task.authorApplication) &&
@@ -674,7 +691,7 @@ public class Task {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, hashCodeNullable(agent), assignee, author, authorApplication, completed, created, description, done, hashCodeNullable(dueToDate), hashCodeNullable(files), implementer, notes, operation, hashCodeNullable(state), updated);
+    return Objects.hash(meta, id, accountId, agent, assignee, author, authorApplication, completed, created, description, done, hashCodeNullable(dueToDate), hashCodeNullable(files), implementer, notes, operation, hashCodeNullable(state), updated);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

@@ -47,7 +47,7 @@ import java.util.StringJoiner;
   DiscountBase.JSON_PROPERTY_ALL_AGENTS,
   DiscountBase.JSON_PROPERTY_AGENT_TAGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class DiscountBase {
 
   public static final String JSON_PROPERTY_ID = "id";
@@ -115,6 +115,7 @@ public class DiscountBase {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -135,6 +136,7 @@ public class DiscountBase {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID учетной записи
@@ -158,6 +160,7 @@ public class DiscountBase {
     return this;
   }
 
+
   /**
    * Наименование товара
    * @return name
@@ -179,11 +182,13 @@ public class DiscountBase {
     this.name = name;
   }
 
+
   public DiscountBase active(@javax.annotation.Nullable Boolean active) {
     
     this.active = active;
     return this;
   }
+
 
   /**
    * Включена ли скидка
@@ -206,11 +211,13 @@ public class DiscountBase {
     this.active = active;
   }
 
+
   public DiscountBase allAgents(@javax.annotation.Nullable Boolean allAgents) {
     
     this.allAgents = allAgents;
     return this;
   }
+
 
   /**
    * Для всех ли агентов скидка
@@ -233,11 +240,13 @@ public class DiscountBase {
     this.allAgents = allAgents;
   }
 
+
   public DiscountBase agentTags(@javax.annotation.Nullable List<String> agentTags) {
     this.agentTags = JsonNullable.<List<String>>of(agentTags);
     
     return this;
   }
+
 
   public DiscountBase addAgentTagsItem(String agentTagsItem) {
     if (this.agentTags == null || !this.agentTags.isPresent()) {
@@ -280,6 +289,7 @@ public class DiscountBase {
   public void setAgentTags(@javax.annotation.Nullable List<String> agentTags) {
     this.agentTags = JsonNullable.<List<String>>of(agentTags);
   }
+
 
   @Override
   public boolean equals(Object o) {

@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   BundleComponent.JSON_PROPERTY_QUANTITY,
   BundleComponent.JSON_PROPERTY_ASSORTMENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class BundleComponent {
   public static BundleComponent createWithMeta(UUID parentId, UUID id) {
     BundleComponent o = new BundleComponent();
@@ -97,6 +97,7 @@ public class BundleComponent {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -117,6 +118,7 @@ public class BundleComponent {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID компонента комплекта
@@ -156,6 +158,7 @@ public class BundleComponent {
     return this;
   }
 
+
   /**
    * Количество товаров/услуг/модификаций данного вида в компоненте
    * @return quantity
@@ -177,11 +180,13 @@ public class BundleComponent {
     this.quantity = quantity;
   }
 
+
   public BundleComponent assortment(@javax.annotation.Nullable AssortmentWithoutBundle assortment) {
     
     this.assortment = assortment;
     return this;
   }
+
 
   /**
    * Get assortment
@@ -203,6 +208,7 @@ public class BundleComponent {
   public void setAssortment(@javax.annotation.Nullable AssortmentWithoutBundle assortment) {
     this.assortment = assortment;
   }
+
 
   @Override
   public boolean equals(Object o) {

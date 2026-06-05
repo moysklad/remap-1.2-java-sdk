@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   EmissionOrderPosition.JSON_PROPERTY_QUANTITY,
   EmissionOrderPosition.JSON_PROPERTY_STATUS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class EmissionOrderPosition {
   public static EmissionOrderPosition createWithMeta(UUID parentId, UUID id) {
     EmissionOrderPosition o = new EmissionOrderPosition();
@@ -104,6 +104,7 @@ public class EmissionOrderPosition {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -124,6 +125,7 @@ public class EmissionOrderPosition {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID позиции
@@ -163,6 +165,7 @@ public class EmissionOrderPosition {
     return this;
   }
 
+
   /**
    * Get assortment
    * @return assortment
@@ -186,11 +189,13 @@ public class EmissionOrderPosition {
     this.assortment = assortment;
   }
 
+
   public EmissionOrderPosition quantity(@javax.annotation.Nullable Float quantity) {
     
     this.quantity = quantity;
     return this;
   }
+
 
   /**
    * Количество товаров данного вида в позиции
@@ -214,6 +219,7 @@ public class EmissionOrderPosition {
   public void setQuantity(@javax.annotation.Nullable Float quantity) {
     this.quantity = quantity;
   }
+
 
   /**
    * Статус кодов. Известные значения описаны в EmissionOrderPositionStatus

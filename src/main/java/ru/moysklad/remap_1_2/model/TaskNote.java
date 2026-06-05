@@ -48,7 +48,7 @@ import java.util.StringJoiner;
   TaskNote.JSON_PROPERTY_TEXT,
   TaskNote.JSON_PROPERTY_FILES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class TaskNote {
   public static TaskNote createWithMeta(UUID parentId, UUID id) {
     TaskNote o = new TaskNote();
@@ -120,6 +120,7 @@ public class TaskNote {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -140,6 +141,7 @@ public class TaskNote {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID комментария к Задаче
@@ -179,6 +181,7 @@ public class TaskNote {
     return this;
   }
 
+
   /**
    * Get author
    * @return author
@@ -200,11 +203,13 @@ public class TaskNote {
     this.author = author;
   }
 
+
   public TaskNote authorApplication(@javax.annotation.Nullable Application authorApplication) {
     
     this.authorApplication = authorApplication;
     return this;
   }
+
 
   /**
    * Get authorApplication
@@ -226,6 +231,7 @@ public class TaskNote {
   public void setAuthorApplication(@javax.annotation.Nullable Application authorApplication) {
     this.authorApplication = authorApplication;
   }
+
 
   /**
    * Момент создания комментария
@@ -249,6 +255,7 @@ public class TaskNote {
     return this;
   }
 
+
   /**
    * Текст комментария
    * @return text
@@ -270,11 +277,13 @@ public class TaskNote {
     this.text = text;
   }
 
+
   public TaskNote files(@javax.annotation.Nullable TaskNoteFileList files) {
     this.files = JsonNullable.<TaskNoteFileList>of(files);
     
     return this;
   }
+
 
   /**
    * Метаданные массива Файлов
@@ -305,6 +314,7 @@ public class TaskNote {
   public void setFiles(@javax.annotation.Nullable TaskNoteFileList files) {
     this.files = JsonNullable.<TaskNoteFileList>of(files);
   }
+
 
   @Override
   public boolean equals(Object o) {

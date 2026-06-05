@@ -59,7 +59,7 @@ import java.util.StringJoiner;
   ProcessingStage.JSON_PROPERTY_MATERIAL_STORE,
   ProcessingStage.JSON_PROPERTY_STANDARD_HOUR_COST
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingStage {
   public static ProcessingStage createWithMeta(UUID id) {
     ProcessingStage o = new ProcessingStage();
@@ -165,6 +165,7 @@ public class ProcessingStage {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -185,6 +186,7 @@ public class ProcessingStage {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Этапа производства
@@ -224,6 +226,7 @@ public class ProcessingStage {
     return this;
   }
 
+
   /**
    * Метаданные владельца (Сотрудника)
    * @return owner
@@ -254,11 +257,13 @@ public class ProcessingStage {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public ProcessingStage shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -281,11 +286,13 @@ public class ProcessingStage {
     this.shared = shared;
   }
 
+
   public ProcessingStage group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -307,6 +314,7 @@ public class ProcessingStage {
   public void setGroup(@javax.annotation.Nullable Group group) {
     this.group = group;
   }
+
 
   /**
    * Момент последнего обновления Этапа производства
@@ -330,6 +338,7 @@ public class ProcessingStage {
     return this;
   }
 
+
   /**
    * Наименование Этапа производства
    * @return name
@@ -351,11 +360,13 @@ public class ProcessingStage {
     this.name = name;
   }
 
+
   public ProcessingStage description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Комментарий Этапа производства
@@ -387,11 +398,13 @@ public class ProcessingStage {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public ProcessingStage externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Этапа производства
@@ -414,11 +427,13 @@ public class ProcessingStage {
     this.externalCode = externalCode;
   }
 
+
   public ProcessingStage archived(@javax.annotation.Nullable Boolean archived) {
     
     this.archived = archived;
     return this;
   }
+
 
   /**
    * Добавлен ли Этап производства в архив
@@ -441,11 +456,13 @@ public class ProcessingStage {
     this.archived = archived;
   }
 
+
   public ProcessingStage allPerformers(@javax.annotation.Nullable Boolean allPerformers) {
     
     this.allPerformers = allPerformers;
     return this;
   }
+
 
   /**
    * Признак доступности назначения на этап любого сотрудника
@@ -468,11 +485,13 @@ public class ProcessingStage {
     this.allPerformers = allPerformers;
   }
 
+
   public ProcessingStage distributionRequired(@javax.annotation.Nullable Boolean distributionRequired) {
     
     this.distributionRequired = distributionRequired;
     return this;
   }
+
 
   /**
    * Признак видимости заданий для исполнителей в веб-приложении МойСклад Производство
@@ -495,11 +514,13 @@ public class ProcessingStage {
     this.distributionRequired = distributionRequired;
   }
 
+
   public ProcessingStage performers(@javax.annotation.Nullable List<Employee> performers) {
     this.performers = JsonNullable.<List<Employee>>of(performers);
     
     return this;
   }
+
 
   public ProcessingStage addPerformersItem(Employee performersItem) {
     if (this.performers == null || !this.performers.isPresent()) {
@@ -543,6 +564,7 @@ public class ProcessingStage {
     this.performers = JsonNullable.<List<Employee>>of(performers);
   }
 
+
   /**
    * Метаданные склада материалов
    * @return materialStore
@@ -580,6 +602,7 @@ public class ProcessingStage {
     return this;
   }
 
+
   /**
    * Стоимость нормо-часа
    * minimum: 0
@@ -601,6 +624,7 @@ public class ProcessingStage {
   public void setStandardHourCost(@javax.annotation.Nullable Double standardHourCost) {
     this.standardHourCost = standardHourCost;
   }
+
 
   @Override
   public boolean equals(Object o) {

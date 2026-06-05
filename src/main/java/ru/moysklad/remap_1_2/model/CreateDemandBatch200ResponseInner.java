@@ -27,16 +27,13 @@ import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import ru.moysklad.remap_1_2.model.Account;
 import ru.moysklad.remap_1_2.model.Address;
+import ru.moysklad.remap_1_2.model.Agent;
 import ru.moysklad.remap_1_2.model.AttributeAbstract;
 import ru.moysklad.remap_1_2.model.Contract;
 import ru.moysklad.remap_1_2.model.CurrencyRate;
 import ru.moysklad.remap_1_2.model.CustomerOrder;
-import ru.moysklad.remap_1_2.model.CustomerOrderAgent;
 import ru.moysklad.remap_1_2.model.CustomerOrderPaymentsInner;
 import ru.moysklad.remap_1_2.model.Demand;
-import ru.moysklad.remap_1_2.model.DemandCarrier;
-import ru.moysklad.remap_1_2.model.DemandConsignee;
-import ru.moysklad.remap_1_2.model.DemandOverhead;
 import ru.moysklad.remap_1_2.model.DemandPositionList;
 import ru.moysklad.remap_1_2.model.Employee;
 import ru.moysklad.remap_1_2.model.Error;
@@ -47,6 +44,7 @@ import ru.moysklad.remap_1_2.model.Group;
 import ru.moysklad.remap_1_2.model.InvoiceOut;
 import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.Organization;
+import ru.moysklad.remap_1_2.model.Overhead;
 import ru.moysklad.remap_1_2.model.ProductionTask;
 import ru.moysklad.remap_1_2.model.Project;
 import ru.moysklad.remap_1_2.model.SalesChannel;
@@ -122,7 +120,7 @@ import java.util.StringJoiner;
   CreateDemandBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createDemandBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateDemandBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -219,7 +217,7 @@ public class CreateDemandBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_AGENT = "agent";
   @javax.annotation.Nullable
-  private CustomerOrderAgent agent;
+  private Agent agent;
 
   public static final String JSON_PROPERTY_AGENT_ACCOUNT = "agentAccount";
   @javax.annotation.Nullable
@@ -279,7 +277,7 @@ public class CreateDemandBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_OVERHEAD = "overhead";
   @javax.annotation.Nullable
-  private JsonNullable<DemandOverhead> overhead = JsonNullable.<DemandOverhead>undefined();
+  private JsonNullable<Overhead> overhead = JsonNullable.<Overhead>undefined();
 
   public static final String JSON_PROPERTY_CUSTOMER_ORDER = "customerOrder";
   @javax.annotation.Nullable
@@ -311,11 +309,11 @@ public class CreateDemandBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_CARRIER = "carrier";
   @javax.annotation.Nullable
-  private JsonNullable<DemandCarrier> carrier = JsonNullable.<DemandCarrier>undefined();
+  private JsonNullable<Agent> carrier = JsonNullable.<Agent>undefined();
 
   public static final String JSON_PROPERTY_CONSIGNEE = "consignee";
   @javax.annotation.Nullable
-  private JsonNullable<DemandConsignee> consignee = JsonNullable.<DemandConsignee>undefined();
+  private JsonNullable<Agent> consignee = JsonNullable.<Agent>undefined();
 
   public static final String JSON_PROPERTY_GOOD_PACK_QUANTITY = "goodPackQuantity";
   @javax.annotation.Nullable
@@ -378,6 +376,7 @@ public class CreateDemandBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -398,6 +397,7 @@ public class CreateDemandBatch200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Отгрузки
@@ -437,6 +437,7 @@ public class CreateDemandBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Наименование Отгрузки
    * @return name
@@ -458,11 +459,13 @@ public class CreateDemandBatch200ResponseInner {
     this.name = name;
   }
 
+
   public CreateDemandBatch200ResponseInner code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код Отгрузки
@@ -485,11 +488,13 @@ public class CreateDemandBatch200ResponseInner {
     this.code = code;
   }
 
+
   public CreateDemandBatch200ResponseInner externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Отгрузки
@@ -512,11 +517,13 @@ public class CreateDemandBatch200ResponseInner {
     this.externalCode = externalCode;
   }
 
+
   public CreateDemandBatch200ResponseInner syncId(@javax.annotation.Nullable UUID syncId) {
     
     this.syncId = syncId;
     return this;
   }
+
 
   /**
    * ID синхронизации
@@ -539,11 +546,13 @@ public class CreateDemandBatch200ResponseInner {
     this.syncId = syncId;
   }
 
+
   public CreateDemandBatch200ResponseInner description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Комментарий Отгрузки
@@ -574,6 +583,7 @@ public class CreateDemandBatch200ResponseInner {
   public void setDescription(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
   }
+
 
   /**
    * Дата создания
@@ -629,6 +639,7 @@ public class CreateDemandBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Дата документа
    * @return moment
@@ -650,11 +661,13 @@ public class CreateDemandBatch200ResponseInner {
     this.moment = moment;
   }
 
+
   public CreateDemandBatch200ResponseInner applicable(@javax.annotation.Nullable Boolean applicable) {
     
     this.applicable = applicable;
     return this;
   }
+
 
   /**
    * Отметка о проведении
@@ -676,6 +689,7 @@ public class CreateDemandBatch200ResponseInner {
   public void setApplicable(@javax.annotation.Nullable Boolean applicable) {
     this.applicable = applicable;
   }
+
 
   /**
    * Напечатан ли документ
@@ -715,6 +729,7 @@ public class CreateDemandBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Общий доступ
    * @return shared
@@ -736,11 +751,13 @@ public class CreateDemandBatch200ResponseInner {
     this.shared = shared;
   }
 
+
   public CreateDemandBatch200ResponseInner vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
     
     this.vatEnabled = vatEnabled;
     return this;
   }
+
 
   /**
    * Учитывается ли НДС
@@ -763,11 +780,13 @@ public class CreateDemandBatch200ResponseInner {
     this.vatEnabled = vatEnabled;
   }
 
+
   public CreateDemandBatch200ResponseInner vatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
     
     this.vatIncluded = vatIncluded;
     return this;
   }
+
 
   /**
    * Включён ли НДС в цену
@@ -789,6 +808,7 @@ public class CreateDemandBatch200ResponseInner {
   public void setVatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
     this.vatIncluded = vatIncluded;
   }
+
 
   /**
    * Сумма НДС
@@ -844,6 +864,7 @@ public class CreateDemandBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get organization
    * @return organization
@@ -865,11 +886,13 @@ public class CreateDemandBatch200ResponseInner {
     this.organization = organization;
   }
 
+
   public CreateDemandBatch200ResponseInner organizationAccount(@javax.annotation.Nullable Account organizationAccount) {
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
     
     return this;
   }
+
 
   /**
    * Метаданные счета юрлица
@@ -901,21 +924,23 @@ public class CreateDemandBatch200ResponseInner {
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
   }
 
-  public CreateDemandBatch200ResponseInner agent(@javax.annotation.Nullable CustomerOrderAgent agent) {
+
+  public CreateDemandBatch200ResponseInner agent(@javax.annotation.Nullable Agent agent) {
     
     this.agent = agent;
     return this;
   }
 
+
   /**
-   * Get agent
+   * Метаданные контрагента или юрлица
    * @return agent
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public CustomerOrderAgent getAgent() {
+  public Agent getAgent() {
     return agent;
   }
 
@@ -924,15 +949,17 @@ public class CreateDemandBatch200ResponseInner {
 
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAgent(@javax.annotation.Nullable CustomerOrderAgent agent) {
+  public void setAgent(@javax.annotation.Nullable Agent agent) {
     this.agent = agent;
   }
+
 
   public CreateDemandBatch200ResponseInner agentAccount(@javax.annotation.Nullable Account agentAccount) {
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
     
     return this;
   }
+
 
   /**
    * Метаданные счета контрагента
@@ -964,11 +991,13 @@ public class CreateDemandBatch200ResponseInner {
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
   }
 
+
   public CreateDemandBatch200ResponseInner store(@javax.annotation.Nullable Store store) {
     this.store = JsonNullable.<Store>of(store);
     
     return this;
   }
+
 
   /**
    * Метаданные склада
@@ -1000,11 +1029,13 @@ public class CreateDemandBatch200ResponseInner {
     this.store = JsonNullable.<Store>of(store);
   }
 
+
   public CreateDemandBatch200ResponseInner state(@javax.annotation.Nullable State state) {
     this.state = JsonNullable.<State>of(state);
     
     return this;
   }
+
 
   /**
    * Метаданные статуса Отгрузки
@@ -1036,11 +1067,13 @@ public class CreateDemandBatch200ResponseInner {
     this.state = JsonNullable.<State>of(state);
   }
 
+
   public CreateDemandBatch200ResponseInner contract(@javax.annotation.Nullable Contract contract) {
     this.contract = JsonNullable.<Contract>of(contract);
     
     return this;
   }
+
 
   /**
    * Метаданные договора
@@ -1072,11 +1105,13 @@ public class CreateDemandBatch200ResponseInner {
     this.contract = JsonNullable.<Contract>of(contract);
   }
 
+
   public CreateDemandBatch200ResponseInner project(@javax.annotation.Nullable Project project) {
     this.project = JsonNullable.<Project>of(project);
     
     return this;
   }
+
 
   /**
    * Метаданные проекта
@@ -1108,11 +1143,13 @@ public class CreateDemandBatch200ResponseInner {
     this.project = JsonNullable.<Project>of(project);
   }
 
+
   public CreateDemandBatch200ResponseInner owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Владелец (сотрудник)
@@ -1144,11 +1181,13 @@ public class CreateDemandBatch200ResponseInner {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public CreateDemandBatch200ResponseInner group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -1171,11 +1210,13 @@ public class CreateDemandBatch200ResponseInner {
     this.group = group;
   }
 
+
   public CreateDemandBatch200ResponseInner attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public CreateDemandBatch200ResponseInner addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -1219,11 +1260,13 @@ public class CreateDemandBatch200ResponseInner {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   public CreateDemandBatch200ResponseInner files(@javax.annotation.Nullable FileList files) {
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
   }
+
 
   /**
    * Метаданные массива файлов
@@ -1255,11 +1298,13 @@ public class CreateDemandBatch200ResponseInner {
     this.files = JsonNullable.<FileList>of(files);
   }
 
+
   public CreateDemandBatch200ResponseInner rate(@javax.annotation.Nullable CurrencyRate rate) {
     
     this.rate = rate;
     return this;
   }
+
 
   /**
    * Get rate
@@ -1282,11 +1327,13 @@ public class CreateDemandBatch200ResponseInner {
     this.rate = rate;
   }
 
+
   public CreateDemandBatch200ResponseInner positions(@javax.annotation.Nullable DemandPositionList positions) {
     
     this.positions = positions;
     return this;
   }
+
 
   /**
    * Get positions
@@ -1309,11 +1356,13 @@ public class CreateDemandBatch200ResponseInner {
     this.positions = positions;
   }
 
+
   public CreateDemandBatch200ResponseInner salesChannel(@javax.annotation.Nullable SalesChannel salesChannel) {
     this.salesChannel = JsonNullable.<SalesChannel>of(salesChannel);
     
     return this;
   }
+
 
   /**
    * Метаданные канала продаж
@@ -1345,11 +1394,13 @@ public class CreateDemandBatch200ResponseInner {
     this.salesChannel = JsonNullable.<SalesChannel>of(salesChannel);
   }
 
+
   public CreateDemandBatch200ResponseInner shipmentAddress(@javax.annotation.Nullable String shipmentAddress) {
     
     this.shipmentAddress = shipmentAddress;
     return this;
   }
+
 
   /**
    * Адрес доставки Отгрузки (строка). Для удаления адреса передайте пустую строку. Не поддерживается значение &#x60;null&#x60; для сброса — см. документацию по адресу доставки. 
@@ -1372,11 +1423,13 @@ public class CreateDemandBatch200ResponseInner {
     this.shipmentAddress = shipmentAddress;
   }
 
+
   public CreateDemandBatch200ResponseInner shipmentAddressFull(@javax.annotation.Nullable Address shipmentAddressFull) {
     
     this.shipmentAddressFull = shipmentAddressFull;
     return this;
   }
+
 
   /**
    * Адрес доставки Отгрузки с детализацией по отдельным полям
@@ -1399,11 +1452,13 @@ public class CreateDemandBatch200ResponseInner {
     this.shipmentAddressFull = shipmentAddressFull;
   }
 
-  public CreateDemandBatch200ResponseInner overhead(@javax.annotation.Nullable DemandOverhead overhead) {
-    this.overhead = JsonNullable.<DemandOverhead>of(overhead);
+
+  public CreateDemandBatch200ResponseInner overhead(@javax.annotation.Nullable Overhead overhead) {
+    this.overhead = JsonNullable.<Overhead>of(overhead);
     
     return this;
   }
+
 
   /**
    * Get overhead
@@ -1412,7 +1467,7 @@ public class CreateDemandBatch200ResponseInner {
   @javax.annotation.Nullable
   @JsonIgnore
 
-  public DemandOverhead getOverhead() {
+  public Overhead getOverhead() {
         return overhead.orElse(null);
   }
 
@@ -1422,24 +1477,26 @@ public class CreateDemandBatch200ResponseInner {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<DemandOverhead> getOverhead_JsonNullable() {
+  public JsonNullable<Overhead> getOverhead_JsonNullable() {
     return overhead;
   }
   
   @JsonProperty(value = JSON_PROPERTY_OVERHEAD, required = false)
-  public void setOverhead_JsonNullable(JsonNullable<DemandOverhead> overhead) {
+  public void setOverhead_JsonNullable(JsonNullable<Overhead> overhead) {
     this.overhead = overhead;
   }
 
-  public void setOverhead(@javax.annotation.Nullable DemandOverhead overhead) {
-    this.overhead = JsonNullable.<DemandOverhead>of(overhead);
+  public void setOverhead(@javax.annotation.Nullable Overhead overhead) {
+    this.overhead = JsonNullable.<Overhead>of(overhead);
   }
+
 
   public CreateDemandBatch200ResponseInner customerOrder(@javax.annotation.Nullable CustomerOrder customerOrder) {
     this.customerOrder = JsonNullable.<CustomerOrder>of(customerOrder);
     
     return this;
   }
+
 
   /**
    * Заказ покупателя, с которым связана Отгрузка
@@ -1471,11 +1528,13 @@ public class CreateDemandBatch200ResponseInner {
     this.customerOrder = JsonNullable.<CustomerOrder>of(customerOrder);
   }
 
+
   public CreateDemandBatch200ResponseInner factureOut(@javax.annotation.Nullable FactureOut factureOut) {
     this.factureOut = JsonNullable.<FactureOut>of(factureOut);
     
     return this;
   }
+
 
   /**
    * Счёт-фактура выданный, с которым связана Отгрузка
@@ -1507,11 +1566,13 @@ public class CreateDemandBatch200ResponseInner {
     this.factureOut = JsonNullable.<FactureOut>of(factureOut);
   }
 
+
   public CreateDemandBatch200ResponseInner returns(@javax.annotation.Nullable List<SalesReturn> returns) {
     this.returns = JsonNullable.<List<SalesReturn>>of(returns);
     
     return this;
   }
+
 
   public CreateDemandBatch200ResponseInner addReturnsItem(SalesReturn returnsItem) {
     if (this.returns == null || !this.returns.isPresent()) {
@@ -1555,11 +1616,13 @@ public class CreateDemandBatch200ResponseInner {
     this.returns = JsonNullable.<List<SalesReturn>>of(returns);
   }
 
+
   public CreateDemandBatch200ResponseInner payments(@javax.annotation.Nullable List<CustomerOrderPaymentsInner> payments) {
     this.payments = JsonNullable.<List<CustomerOrderPaymentsInner>>of(payments);
     
     return this;
   }
+
 
   public CreateDemandBatch200ResponseInner addPaymentsItem(CustomerOrderPaymentsInner paymentsItem) {
     if (this.payments == null || !this.payments.isPresent()) {
@@ -1603,11 +1666,13 @@ public class CreateDemandBatch200ResponseInner {
     this.payments = JsonNullable.<List<CustomerOrderPaymentsInner>>of(payments);
   }
 
+
   public CreateDemandBatch200ResponseInner productionTasks(@javax.annotation.Nullable List<ProductionTask> productionTasks) {
     this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
     
     return this;
   }
+
 
   public CreateDemandBatch200ResponseInner addProductionTasksItem(ProductionTask productionTasksItem) {
     if (this.productionTasks == null || !this.productionTasks.isPresent()) {
@@ -1651,11 +1716,13 @@ public class CreateDemandBatch200ResponseInner {
     this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
   }
 
+
   public CreateDemandBatch200ResponseInner invoicesOut(@javax.annotation.Nullable List<InvoiceOut> invoicesOut) {
     this.invoicesOut = JsonNullable.<List<InvoiceOut>>of(invoicesOut);
     
     return this;
   }
+
 
   public CreateDemandBatch200ResponseInner addInvoicesOutItem(InvoiceOut invoicesOutItem) {
     if (this.invoicesOut == null || !this.invoicesOut.isPresent()) {
@@ -1699,11 +1766,13 @@ public class CreateDemandBatch200ResponseInner {
     this.invoicesOut = JsonNullable.<List<InvoiceOut>>of(invoicesOut);
   }
 
+
   public CreateDemandBatch200ResponseInner cargoName(@javax.annotation.Nullable String cargoName) {
     
     this.cargoName = cargoName;
     return this;
   }
+
 
   /**
    * Наименование груза
@@ -1726,20 +1795,22 @@ public class CreateDemandBatch200ResponseInner {
     this.cargoName = cargoName;
   }
 
-  public CreateDemandBatch200ResponseInner carrier(@javax.annotation.Nullable DemandCarrier carrier) {
-    this.carrier = JsonNullable.<DemandCarrier>of(carrier);
+
+  public CreateDemandBatch200ResponseInner carrier(@javax.annotation.Nullable Agent carrier) {
+    this.carrier = JsonNullable.<Agent>of(carrier);
     
     return this;
   }
 
+
   /**
-   * Get carrier
+   * Перевозчик (контрагент или юрлицо)
    * @return carrier
    */
   @javax.annotation.Nullable
   @JsonIgnore
 
-  public DemandCarrier getCarrier() {
+  public Agent getCarrier() {
         return carrier.orElse(null);
   }
 
@@ -1749,33 +1820,35 @@ public class CreateDemandBatch200ResponseInner {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<DemandCarrier> getCarrier_JsonNullable() {
+  public JsonNullable<Agent> getCarrier_JsonNullable() {
     return carrier;
   }
   
   @JsonProperty(value = JSON_PROPERTY_CARRIER, required = false)
-  public void setCarrier_JsonNullable(JsonNullable<DemandCarrier> carrier) {
+  public void setCarrier_JsonNullable(JsonNullable<Agent> carrier) {
     this.carrier = carrier;
   }
 
-  public void setCarrier(@javax.annotation.Nullable DemandCarrier carrier) {
-    this.carrier = JsonNullable.<DemandCarrier>of(carrier);
+  public void setCarrier(@javax.annotation.Nullable Agent carrier) {
+    this.carrier = JsonNullable.<Agent>of(carrier);
   }
 
-  public CreateDemandBatch200ResponseInner consignee(@javax.annotation.Nullable DemandConsignee consignee) {
-    this.consignee = JsonNullable.<DemandConsignee>of(consignee);
+
+  public CreateDemandBatch200ResponseInner consignee(@javax.annotation.Nullable Agent consignee) {
+    this.consignee = JsonNullable.<Agent>of(consignee);
     
     return this;
   }
 
+
   /**
-   * Get consignee
+   * Грузополучатель (контрагент или юрлицо)
    * @return consignee
    */
   @javax.annotation.Nullable
   @JsonIgnore
 
-  public DemandConsignee getConsignee() {
+  public Agent getConsignee() {
         return consignee.orElse(null);
   }
 
@@ -1785,24 +1858,26 @@ public class CreateDemandBatch200ResponseInner {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<DemandConsignee> getConsignee_JsonNullable() {
+  public JsonNullable<Agent> getConsignee_JsonNullable() {
     return consignee;
   }
   
   @JsonProperty(value = JSON_PROPERTY_CONSIGNEE, required = false)
-  public void setConsignee_JsonNullable(JsonNullable<DemandConsignee> consignee) {
+  public void setConsignee_JsonNullable(JsonNullable<Agent> consignee) {
     this.consignee = consignee;
   }
 
-  public void setConsignee(@javax.annotation.Nullable DemandConsignee consignee) {
-    this.consignee = JsonNullable.<DemandConsignee>of(consignee);
+  public void setConsignee(@javax.annotation.Nullable Agent consignee) {
+    this.consignee = JsonNullable.<Agent>of(consignee);
   }
+
 
   public CreateDemandBatch200ResponseInner goodPackQuantity(@javax.annotation.Nullable Integer goodPackQuantity) {
     
     this.goodPackQuantity = goodPackQuantity;
     return this;
   }
+
 
   /**
    * Всего мест
@@ -1825,11 +1900,13 @@ public class CreateDemandBatch200ResponseInner {
     this.goodPackQuantity = goodPackQuantity;
   }
 
+
   public CreateDemandBatch200ResponseInner shippingInstructions(@javax.annotation.Nullable String shippingInstructions) {
     
     this.shippingInstructions = shippingInstructions;
     return this;
   }
+
 
   /**
    * Указания грузоотправителя
@@ -1852,11 +1929,13 @@ public class CreateDemandBatch200ResponseInner {
     this.shippingInstructions = shippingInstructions;
   }
 
+
   public CreateDemandBatch200ResponseInner stateContractId(@javax.annotation.Nullable String stateContractId) {
     
     this.stateContractId = stateContractId;
     return this;
   }
+
 
   /**
    * Идентификатор государственного контракта, договора (соглашения)
@@ -1879,11 +1958,13 @@ public class CreateDemandBatch200ResponseInner {
     this.stateContractId = stateContractId;
   }
 
+
   public CreateDemandBatch200ResponseInner transportFacility(@javax.annotation.Nullable String transportFacility) {
     
     this.transportFacility = transportFacility;
     return this;
   }
+
 
   /**
    * Транспортное средство
@@ -1906,11 +1987,13 @@ public class CreateDemandBatch200ResponseInner {
     this.transportFacility = transportFacility;
   }
 
+
   public CreateDemandBatch200ResponseInner transportFacilityNumber(@javax.annotation.Nullable String transportFacilityNumber) {
     
     this.transportFacilityNumber = transportFacilityNumber;
     return this;
   }
+
 
   /**
    * Номер автомобиля
@@ -1933,11 +2016,13 @@ public class CreateDemandBatch200ResponseInner {
     this.transportFacilityNumber = transportFacilityNumber;
   }
 
+
   public CreateDemandBatch200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
+
 
   public CreateDemandBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -1967,6 +2052,7 @@ public class CreateDemandBatch200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

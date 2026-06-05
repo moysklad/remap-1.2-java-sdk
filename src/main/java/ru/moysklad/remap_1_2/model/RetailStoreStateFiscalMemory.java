@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   RetailStoreStateFiscalMemory.JSON_PROPERTY_NOT_SEND_FIRST_DOC_MOMENT
 })
 @JsonTypeName("RetailStore_state_fiscalMemory")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStoreStateFiscalMemory {
 
   public static final String JSON_PROPERTY_ERROR = "error";
@@ -60,6 +60,7 @@ public class RetailStoreStateFiscalMemory {
     return this;
   }
 
+
   /**
    * Get error
    * @return error
@@ -81,11 +82,13 @@ public class RetailStoreStateFiscalMemory {
     this.error = error;
   }
 
+
   public RetailStoreStateFiscalMemory notSendDocCount(@javax.annotation.Nullable Integer notSendDocCount) {
     
     this.notSendDocCount = notSendDocCount;
     return this;
   }
+
 
   /**
    * Количество неотправленных документов
@@ -108,11 +111,13 @@ public class RetailStoreStateFiscalMemory {
     this.notSendDocCount = notSendDocCount;
   }
 
+
   public RetailStoreStateFiscalMemory notSendFirstDocMoment(@javax.annotation.Nullable String notSendFirstDocMoment) {
     
     this.notSendFirstDocMoment = notSendFirstDocMoment;
     return this;
   }
+
 
   /**
    * Момент первого неотправленного документа
@@ -134,6 +139,7 @@ public class RetailStoreStateFiscalMemory {
   public void setNotSendFirstDocMoment(@javax.annotation.Nullable String notSendFirstDocMoment) {
     this.notSendFirstDocMoment = notSendFirstDocMoment;
   }
+
 
   @Override
   public boolean equals(Object o) {

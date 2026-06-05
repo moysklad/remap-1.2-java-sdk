@@ -35,7 +35,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ExpenseItemsApi extends BaseApi {
 
@@ -60,6 +60,25 @@ public class ExpenseItemsApi extends BaseApi {
    */
   public ExpenseItem createExpenseItem(@javax.annotation.Nonnull ExpenseItem expenseItem, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createExpenseItem(expenseItem, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать статью расходов
+   * Создание новой статьи расходов
+   
+   * @param expenseItem  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ExpenseItem
+   * @throws ApiException if fails to make API call
+   */
+  public ExpenseItem createExpenseItem(@javax.annotation.Nonnull ExpenseItem expenseItem, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createExpenseItem(expenseItem, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -149,6 +168,25 @@ if (contentType != null)
    */
   public List<CreateExpenseItemsBatch200ResponseInner> createExpenseItemsBatch(@javax.annotation.Nonnull List<ExpenseItem> expenseItem, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createExpenseItemsBatch(expenseItem, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать или изменить статьи расходов
+   * Создание или изменение нескольких статей расходов.
+   
+   * @param expenseItem  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreateExpenseItemsBatch200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateExpenseItemsBatch200ResponseInner> createExpenseItemsBatch(@javax.annotation.Nonnull List<ExpenseItem> expenseItem, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createExpenseItemsBatch(expenseItem, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -405,6 +443,24 @@ if (contentType != null)
     return this.getExpenseItemById(id, expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить статью расходов по ID
+   * Запрос на получение Статьи расходов с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ExpenseItem
+   * @throws ApiException if fails to make API call
+   */
+  public ExpenseItem getExpenseItemById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getExpenseItemById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить статью расходов по ID
@@ -493,6 +549,26 @@ if (acceptEncoding != null)
    */
   public ExpenseItemList getExpenseItems(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
     return this.getExpenseItems(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  }
+
+  /**
+   * Получить список статей расходов
+   * Запрос всех статей расходов на данной учетной записи
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ExpenseItemList
+   * @throws ApiException if fails to make API call
+   */
+  public ExpenseItemList getExpenseItems(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getExpenseItems((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -584,6 +660,28 @@ if (acceptEncoding != null)
    */
   public ExpenseItem updateExpenseItem(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ExpenseItem expenseItem, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateExpenseItem(id, expenseItem, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Обновить статью расходов
+   * Обновление Статьи расходов с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param expenseItem  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ExpenseItem
+   * @throws ApiException if fails to make API call
+   */
+  public ExpenseItem updateExpenseItem(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ExpenseItem expenseItem, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateExpenseItem(id, expenseItem, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 

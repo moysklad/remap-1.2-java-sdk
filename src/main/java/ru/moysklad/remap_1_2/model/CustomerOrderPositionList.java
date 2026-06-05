@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   CustomerOrderPositionList.JSON_PROPERTY_META,
   CustomerOrderPositionList.JSON_PROPERTY_ROWS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CustomerOrderPositionList {
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
@@ -64,6 +64,7 @@ public class CustomerOrderPositionList {
     return this;
   }
 
+
   /**
    * Get context
    * @return context
@@ -85,11 +86,13 @@ public class CustomerOrderPositionList {
     this.context = context;
   }
 
+
   public CustomerOrderPositionList meta(@javax.annotation.Nullable MetaList meta) {
     
     this.meta = meta;
     return this;
   }
+
 
   /**
    * Метаданные о выдаче
@@ -112,11 +115,13 @@ public class CustomerOrderPositionList {
     this.meta = meta;
   }
 
+
   public CustomerOrderPositionList rows(@javax.annotation.Nullable List<CustomerOrderPosition> rows) {
     
     this.rows = rows;
     return this;
   }
+
 
   public CustomerOrderPositionList addRowsItem(CustomerOrderPosition rowsItem) {
     if (this.rows == null) {
@@ -146,6 +151,7 @@ public class CustomerOrderPositionList {
   public void setRows(@javax.annotation.Nullable List<CustomerOrderPosition> rows) {
     this.rows = rows;
   }
+
 
   @Override
   public boolean equals(Object o) {

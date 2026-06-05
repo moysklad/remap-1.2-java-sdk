@@ -61,7 +61,7 @@ import java.util.StringJoiner;
   CreatePurchaseOrderPositions200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createPurchaseOrderPositions_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreatePurchaseOrderPositions200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -145,6 +145,7 @@ public class CreatePurchaseOrderPositions200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -165,6 +166,7 @@ public class CreatePurchaseOrderPositions200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID позиции
@@ -204,6 +206,7 @@ public class CreatePurchaseOrderPositions200ResponseInner {
     return this;
   }
 
+
   /**
    * Количество товаров данного вида в позиции
    * @return quantity
@@ -225,11 +228,13 @@ public class CreatePurchaseOrderPositions200ResponseInner {
     this.quantity = quantity;
   }
 
+
   public CreatePurchaseOrderPositions200ResponseInner price(@javax.annotation.Nullable Double price) {
     
     this.price = price;
     return this;
   }
+
 
   /**
    * Цена товара/услуги в копейках
@@ -252,11 +257,13 @@ public class CreatePurchaseOrderPositions200ResponseInner {
     this.price = price;
   }
 
+
   public CreatePurchaseOrderPositions200ResponseInner discount(@javax.annotation.Nullable Double discount) {
     
     this.discount = discount;
     return this;
   }
+
 
   /**
    * Процент скидки или наценки
@@ -278,6 +285,7 @@ public class CreatePurchaseOrderPositions200ResponseInner {
   public void setDiscount(@javax.annotation.Nullable Double discount) {
     this.discount = discount;
   }
+
 
   /**
    * Принято
@@ -317,8 +325,11 @@ public class CreatePurchaseOrderPositions200ResponseInner {
     return this;
   }
 
+
   /**
    * НДС, которым облагается текущая позиция
+   * minimum: 0
+   * maximum: 100
    * @return vat
    */
   @javax.annotation.Nullable
@@ -338,11 +349,13 @@ public class CreatePurchaseOrderPositions200ResponseInner {
     this.vat = vat;
   }
 
+
   public CreatePurchaseOrderPositions200ResponseInner vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
     
     this.vatEnabled = vatEnabled;
     return this;
   }
+
 
   /**
    * Включен ли НДС для позиции
@@ -365,11 +378,13 @@ public class CreatePurchaseOrderPositions200ResponseInner {
     this.vatEnabled = vatEnabled;
   }
 
+
   public CreatePurchaseOrderPositions200ResponseInner assortment(@javax.annotation.Nullable AssortmentWithoutBundle assortment) {
     
     this.assortment = assortment;
     return this;
   }
+
 
   /**
    * Get assortment
@@ -392,11 +407,13 @@ public class CreatePurchaseOrderPositions200ResponseInner {
     this.assortment = assortment;
   }
 
+
   public CreatePurchaseOrderPositions200ResponseInner pack(@javax.annotation.Nullable Pack pack) {
     this.pack = JsonNullable.<Pack>of(pack);
     
     return this;
   }
+
 
   /**
    * Упаковка Товара
@@ -428,11 +445,13 @@ public class CreatePurchaseOrderPositions200ResponseInner {
     this.pack = JsonNullable.<Pack>of(pack);
   }
 
+
   public CreatePurchaseOrderPositions200ResponseInner stock(@javax.annotation.Nullable PositionStock stock) {
     this.stock = JsonNullable.<PositionStock>of(stock);
     
     return this;
   }
+
 
   /**
    * Остатки и себестоимость позиции. Не выводится по умолчанию. Для получения передайте параметр &#x60;?fields&#x3D;stock&#x60;. 
@@ -464,11 +483,13 @@ public class CreatePurchaseOrderPositions200ResponseInner {
     this.stock = JsonNullable.<PositionStock>of(stock);
   }
 
+
   public CreatePurchaseOrderPositions200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
+
 
   public CreatePurchaseOrderPositions200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -498,6 +519,7 @@ public class CreatePurchaseOrderPositions200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

@@ -110,7 +110,7 @@ import java.util.StringJoiner;
   CreateProductsBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createProductsBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateProductsBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -346,6 +346,7 @@ public class CreateProductsBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -366,6 +367,7 @@ public class CreateProductsBatch200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID товара
@@ -405,6 +407,7 @@ public class CreateProductsBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get alcoholic
    * @return alcoholic
@@ -426,11 +429,13 @@ public class CreateProductsBatch200ResponseInner {
     this.alcoholic = alcoholic;
   }
 
+
   public CreateProductsBatch200ResponseInner archived(@javax.annotation.Nullable Boolean archived) {
     
     this.archived = archived;
     return this;
   }
+
 
   /**
    * Добавлен ли товар в архив
@@ -452,6 +457,7 @@ public class CreateProductsBatch200ResponseInner {
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
     this.archived = archived;
   }
+
 
   /**
    * Признак товара, как табачной продукции
@@ -475,6 +481,7 @@ public class CreateProductsBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Наименование товара
    * @return name
@@ -496,11 +503,13 @@ public class CreateProductsBatch200ResponseInner {
     this.name = name;
   }
 
+
   public CreateProductsBatch200ResponseInner code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код товара
@@ -523,11 +532,13 @@ public class CreateProductsBatch200ResponseInner {
     this.code = code;
   }
 
+
   public CreateProductsBatch200ResponseInner externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код товара
@@ -549,6 +560,7 @@ public class CreateProductsBatch200ResponseInner {
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
     this.externalCode = externalCode;
   }
+
 
   /**
    * Наименование группы, в которую входит товар
@@ -572,6 +584,7 @@ public class CreateProductsBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Артикул
    * @return article
@@ -593,11 +606,13 @@ public class CreateProductsBatch200ResponseInner {
     this.article = article;
   }
 
+
   public CreateProductsBatch200ResponseInner description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Описание товара
@@ -629,11 +644,13 @@ public class CreateProductsBatch200ResponseInner {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public CreateProductsBatch200ResponseInner vat(@javax.annotation.Nullable Integer vat) {
     
     this.vat = vat;
     return this;
   }
+
 
   /**
    * НДС %
@@ -658,11 +675,13 @@ public class CreateProductsBatch200ResponseInner {
     this.vat = vat;
   }
 
+
   public CreateProductsBatch200ResponseInner vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
     
     this.vatEnabled = vatEnabled;
     return this;
   }
+
 
   /**
    * Включен ли НДС для товара
@@ -685,11 +704,13 @@ public class CreateProductsBatch200ResponseInner {
     this.vatEnabled = vatEnabled;
   }
 
+
   public CreateProductsBatch200ResponseInner useParentVat(@javax.annotation.Nullable Boolean useParentVat) {
     
     this.useParentVat = useParentVat;
     return this;
   }
+
 
   /**
    * Используется ли ставка НДС родительской группы
@@ -711,6 +732,7 @@ public class CreateProductsBatch200ResponseInner {
   public void setUseParentVat(@javax.annotation.Nullable Boolean useParentVat) {
     this.useParentVat = useParentVat;
   }
+
 
   /**
    * Реальный НДС %
@@ -750,6 +772,7 @@ public class CreateProductsBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Признак запрета скидок
    * @return discountProhibited
@@ -770,6 +793,7 @@ public class CreateProductsBatch200ResponseInner {
   public void setDiscountProhibited(@javax.annotation.Nullable Boolean discountProhibited) {
     this.discountProhibited = discountProhibited;
   }
+
 
   /**
    * Количество модификаций у данного товара
@@ -793,6 +817,7 @@ public class CreateProductsBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Учет по серийным номерам
    * @return isSerialTrackable
@@ -814,11 +839,13 @@ public class CreateProductsBatch200ResponseInner {
     this.isSerialTrackable = isSerialTrackable;
   }
 
+
   public CreateProductsBatch200ResponseInner shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -841,11 +868,13 @@ public class CreateProductsBatch200ResponseInner {
     this.shared = shared;
   }
 
+
   public CreateProductsBatch200ResponseInner group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -868,11 +897,13 @@ public class CreateProductsBatch200ResponseInner {
     this.group = group;
   }
 
+
   public CreateProductsBatch200ResponseInner owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Метаданные владельца (Сотрудника)
@@ -904,6 +935,7 @@ public class CreateProductsBatch200ResponseInner {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   /**
    * Момент последнего обновления сущности
    * @return updated
@@ -925,6 +957,7 @@ public class CreateProductsBatch200ResponseInner {
     this.weight = weight;
     return this;
   }
+
 
   /**
    * Вес
@@ -948,11 +981,13 @@ public class CreateProductsBatch200ResponseInner {
     this.weight = weight;
   }
 
+
   public CreateProductsBatch200ResponseInner volume(@javax.annotation.Nullable Double volume) {
     
     this.volume = volume;
     return this;
   }
+
 
   /**
    * Объем
@@ -976,11 +1011,13 @@ public class CreateProductsBatch200ResponseInner {
     this.volume = volume;
   }
 
+
   public CreateProductsBatch200ResponseInner buyPrice(@javax.annotation.Nullable BuyPrice buyPrice) {
     
     this.buyPrice = buyPrice;
     return this;
   }
+
 
   /**
    * Get buyPrice
@@ -1003,11 +1040,13 @@ public class CreateProductsBatch200ResponseInner {
     this.buyPrice = buyPrice;
   }
 
+
   public CreateProductsBatch200ResponseInner salePrices(@javax.annotation.Nullable List<SalePrice> salePrices) {
     this.salePrices = JsonNullable.<List<SalePrice>>of(salePrices);
     
     return this;
   }
+
 
   public CreateProductsBatch200ResponseInner addSalePricesItem(SalePrice salePricesItem) {
     if (this.salePrices == null || !this.salePrices.isPresent()) {
@@ -1051,11 +1090,13 @@ public class CreateProductsBatch200ResponseInner {
     this.salePrices = JsonNullable.<List<SalePrice>>of(salePrices);
   }
 
+
   public CreateProductsBatch200ResponseInner supplier(@javax.annotation.Nullable Counterparty supplier) {
     this.supplier = JsonNullable.<Counterparty>of(supplier);
     
     return this;
   }
+
 
   /**
    * Метаданные контрагента-поставщика
@@ -1087,11 +1128,13 @@ public class CreateProductsBatch200ResponseInner {
     this.supplier = JsonNullable.<Counterparty>of(supplier);
   }
 
+
   public CreateProductsBatch200ResponseInner country(@javax.annotation.Nullable Country country) {
     this.country = JsonNullable.<Country>of(country);
     
     return this;
   }
+
 
   /**
    * Метаданные Страны
@@ -1123,11 +1166,13 @@ public class CreateProductsBatch200ResponseInner {
     this.country = JsonNullable.<Country>of(country);
   }
 
+
   public CreateProductsBatch200ResponseInner uom(@javax.annotation.Nullable Uom uom) {
     this.uom = JsonNullable.<Uom>of(uom);
     
     return this;
   }
+
 
   /**
    * Метаданные единиц измерения
@@ -1159,11 +1204,13 @@ public class CreateProductsBatch200ResponseInner {
     this.uom = JsonNullable.<Uom>of(uom);
   }
 
+
   public CreateProductsBatch200ResponseInner productFolder(@javax.annotation.Nullable ProductFolder productFolder) {
     this.productFolder = JsonNullable.<ProductFolder>of(productFolder);
     
     return this;
   }
+
 
   /**
    * Метаданные группы Товара
@@ -1195,11 +1242,13 @@ public class CreateProductsBatch200ResponseInner {
     this.productFolder = JsonNullable.<ProductFolder>of(productFolder);
   }
 
+
   public CreateProductsBatch200ResponseInner images(@javax.annotation.Nullable ImageList images) {
     this.images = JsonNullable.<ImageList>of(images);
     
     return this;
   }
+
 
   /**
    * Массив изображений
@@ -1231,11 +1280,13 @@ public class CreateProductsBatch200ResponseInner {
     this.images = JsonNullable.<ImageList>of(images);
   }
 
+
   public CreateProductsBatch200ResponseInner files(@javax.annotation.Nullable FileList files) {
     
     this.files = files;
     return this;
   }
+
 
   /**
    * Метаданные массива Файлов
@@ -1258,11 +1309,13 @@ public class CreateProductsBatch200ResponseInner {
     this.files = files;
   }
 
+
   public CreateProductsBatch200ResponseInner barcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
     
     return this;
   }
+
 
   public CreateProductsBatch200ResponseInner addBarcodesItem(Barcode barcodesItem) {
     if (this.barcodes == null || !this.barcodes.isPresent()) {
@@ -1306,11 +1359,13 @@ public class CreateProductsBatch200ResponseInner {
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
   }
 
+
   public CreateProductsBatch200ResponseInner packs(@javax.annotation.Nullable List<Pack> packs) {
     this.packs = JsonNullable.<List<Pack>>of(packs);
     
     return this;
   }
+
 
   public CreateProductsBatch200ResponseInner addPacksItem(Pack packsItem) {
     if (this.packs == null || !this.packs.isPresent()) {
@@ -1354,11 +1409,13 @@ public class CreateProductsBatch200ResponseInner {
     this.packs = JsonNullable.<List<Pack>>of(packs);
   }
 
+
   public CreateProductsBatch200ResponseInner trackingType(@javax.annotation.Nullable String trackingType) {
     
     this.trackingType = trackingType;
     return this;
   }
+
 
   /**
    * Тип маркируемой продукции. Известные значения описаны в TrackingType
@@ -1381,11 +1438,13 @@ public class CreateProductsBatch200ResponseInner {
     this.trackingType = trackingType;
   }
 
+
   public CreateProductsBatch200ResponseInner tnved(@javax.annotation.Nullable String tnved) {
     
     this.tnved = tnved;
     return this;
   }
+
 
   /**
    * Код ТН ВЭД
@@ -1408,11 +1467,13 @@ public class CreateProductsBatch200ResponseInner {
     this.tnved = tnved;
   }
 
+
   public CreateProductsBatch200ResponseInner paymentItemType(@javax.annotation.Nullable String paymentItemType) {
     
     this.paymentItemType = paymentItemType;
     return this;
   }
+
 
   /**
    * Признак предмета расчета. Известные значения описаны в PaymentItemType
@@ -1435,11 +1496,13 @@ public class CreateProductsBatch200ResponseInner {
     this.paymentItemType = paymentItemType;
   }
 
+
   public CreateProductsBatch200ResponseInner taxSystem(@javax.annotation.Nullable String taxSystem) {
     
     this.taxSystem = taxSystem;
     return this;
   }
+
 
   /**
    * Код системы налогообложения. Известные значения описаны в TaxSystem
@@ -1462,11 +1525,13 @@ public class CreateProductsBatch200ResponseInner {
     this.taxSystem = taxSystem;
   }
 
+
   public CreateProductsBatch200ResponseInner attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public CreateProductsBatch200ResponseInner addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -1510,11 +1575,13 @@ public class CreateProductsBatch200ResponseInner {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   public CreateProductsBatch200ResponseInner minimumStock(@javax.annotation.Nullable MinimumStockAbstract minimumStock) {
     this.minimumStock = JsonNullable.<MinimumStockAbstract>of(minimumStock);
     
     return this;
   }
+
 
   /**
    * Неснижаемый остаток. Не выводится по умолчанию. Для получения передайте параметр &#x60;?fields&#x3D;minimumStock&#x60;. 
@@ -1546,11 +1613,13 @@ public class CreateProductsBatch200ResponseInner {
     this.minimumStock = JsonNullable.<MinimumStockAbstract>of(minimumStock);
   }
 
+
   public CreateProductsBatch200ResponseInner minPrice(@javax.annotation.Nullable MinPrice minPrice) {
     
     this.minPrice = minPrice;
     return this;
   }
+
 
   /**
    * Get minPrice
@@ -1573,11 +1642,13 @@ public class CreateProductsBatch200ResponseInner {
     this.minPrice = minPrice;
   }
 
+
   public CreateProductsBatch200ResponseInner weighed(@javax.annotation.Nullable Boolean weighed) {
     
     this.weighed = weighed;
     return this;
   }
+
 
   /**
    * Поле, показывающее является ли товар весовым
@@ -1600,11 +1671,13 @@ public class CreateProductsBatch200ResponseInner {
     this.weighed = weighed;
   }
 
+
   public CreateProductsBatch200ResponseInner onTap(@javax.annotation.Nullable Boolean onTap) {
     
     this.onTap = onTap;
     return this;
   }
+
 
   /**
    * Поле, показывающее является ли товар разливным
@@ -1627,11 +1700,13 @@ public class CreateProductsBatch200ResponseInner {
     this.onTap = onTap;
   }
 
+
   public CreateProductsBatch200ResponseInner partialDisposal(@javax.annotation.Nullable Boolean partialDisposal) {
     
     this.partialDisposal = partialDisposal;
     return this;
   }
+
 
   /**
    * Управление состоянием частичного выбытия маркированного товара
@@ -1654,11 +1729,13 @@ public class CreateProductsBatch200ResponseInner {
     this.partialDisposal = partialDisposal;
   }
 
+
   public CreateProductsBatch200ResponseInner things(@javax.annotation.Nullable List<String> things) {
     this.things = JsonNullable.<List<String>>of(things);
     
     return this;
   }
+
 
   public CreateProductsBatch200ResponseInner addThingsItem(String thingsItem) {
     if (this.things == null || !this.things.isPresent()) {
@@ -1702,11 +1779,13 @@ public class CreateProductsBatch200ResponseInner {
     this.things = JsonNullable.<List<String>>of(things);
   }
 
+
   public CreateProductsBatch200ResponseInner syncId(@javax.annotation.Nullable UUID syncId) {
     
     this.syncId = syncId;
     return this;
   }
+
 
   /**
    * ID синхронизации
@@ -1729,11 +1808,13 @@ public class CreateProductsBatch200ResponseInner {
     this.syncId = syncId;
   }
 
+
   public CreateProductsBatch200ResponseInner ppeType(@javax.annotation.Nullable String ppeType) {
     
     this.ppeType = ppeType;
     return this;
   }
+
 
   /**
    * Код вида номенклатурной классификации медицинских средств индивидуальной защиты. Известные значения описаны в PpeType
@@ -1756,11 +1837,13 @@ public class CreateProductsBatch200ResponseInner {
     this.ppeType = ppeType;
   }
 
+
   public CreateProductsBatch200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
+
 
   public CreateProductsBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -1790,6 +1873,7 @@ public class CreateProductsBatch200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

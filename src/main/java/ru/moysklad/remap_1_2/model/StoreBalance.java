@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   StoreBalance.JSON_PROPERTY_STORE,
   StoreBalance.JSON_PROPERTY_QUANTITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class StoreBalance {
   public static StoreBalance createWithMeta(UUID parentId, UUID id) {
     StoreBalance o = new StoreBalance();
@@ -129,6 +129,7 @@ public class StoreBalance {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -150,11 +151,13 @@ public class StoreBalance {
     this.meta = meta;
   }
 
+
   public StoreBalance store(@javax.annotation.Nullable Store store) {
     
     this.store = store;
     return this;
   }
+
 
   /**
    * Get store
@@ -177,11 +180,13 @@ public class StoreBalance {
     this.store = store;
   }
 
+
   public StoreBalance quantity(@javax.annotation.Nullable Double quantity) {
     
     this.quantity = quantity;
     return this;
   }
+
 
   /**
    * Количество неснижаемого остатка для склада
@@ -204,6 +209,7 @@ public class StoreBalance {
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
     this.quantity = quantity;
   }
+
 
   @Override
   public boolean equals(Object o) {

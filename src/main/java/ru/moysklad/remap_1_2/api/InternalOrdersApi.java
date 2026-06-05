@@ -43,7 +43,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class InternalOrdersApi extends BaseApi {
 
@@ -68,6 +68,25 @@ public class InternalOrdersApi extends BaseApi {
    */
   public InternalOrder createInternalOrder(@javax.annotation.Nonnull InternalOrder internalOrder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createInternalOrder(internalOrder, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать InternalOrder
+   * 
+   
+   * @param internalOrder  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return InternalOrder
+   * @throws ApiException if fails to make API call
+   */
+  public InternalOrder createInternalOrder(@javax.annotation.Nonnull InternalOrder internalOrder, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createInternalOrder(internalOrder, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -157,6 +176,25 @@ if (contentType != null)
    */
   public List<CreateInternalOrderBatch200ResponseInner> createInternalOrderBatch(@javax.annotation.Nonnull List<InternalOrder> internalOrder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createInternalOrderBatch(internalOrder, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Массовое создание и обновление InternalOrder
+   * 
+   
+   * @param internalOrder  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreateInternalOrderBatch200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateInternalOrderBatch200ResponseInner> createInternalOrderBatch(@javax.annotation.Nonnull List<InternalOrder> internalOrder, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createInternalOrderBatch(internalOrder, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -419,6 +457,28 @@ if (contentType != null)
    */
   public List<CreateInternalOrderPositions200ResponseInner> createInternalOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CreateInternalOrderPositionsRequest createInternalOrderPositionsRequest, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createInternalOrderPositions(id, createInternalOrderPositionsRequest, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать позиции InternalOrder
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param createInternalOrderPositionsRequest  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreateInternalOrderPositions200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateInternalOrderPositions200ResponseInner> createInternalOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CreateInternalOrderPositionsRequest createInternalOrderPositionsRequest, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createInternalOrderPositions(id, createInternalOrderPositionsRequest, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -855,6 +915,27 @@ if (contentType != null)
     this.deleteInternalOrderPosition(id, positionId, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
+  /**
+   * Удалить позицию InternalOrder
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param positionId ID позиции (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteInternalOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteInternalOrderPosition(id, positionId, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Удалить позицию InternalOrder
@@ -1044,6 +1125,25 @@ if (contentType != null)
     return this.getInternalOrderById(id, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
+  /**
+   * Получить InternalOrder
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return InternalOrder
+   * @throws ApiException if fails to make API call
+   */
+  public InternalOrder getInternalOrderById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getInternalOrderById(id, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить InternalOrder
@@ -1134,6 +1234,25 @@ if (contentType != null)
    */
   public InternalOrderList getInternalOrderList(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.getInternalOrderList(limit, offset, search, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Получить список InternalOrder
+   * 
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return InternalOrderList
+   * @throws ApiException if fails to make API call
+   */
+  public InternalOrderList getInternalOrderList(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getInternalOrderList((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1302,6 +1421,23 @@ if (contentType != null)
    */
   public AttributeMetaInfoList getInternalOrderMetadataAttribute(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.getInternalOrderMetadataAttribute(offset, limit, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Доп. поля InternalOrder
+   * 
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfoList
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfoList getInternalOrderMetadataAttribute(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getInternalOrderMetadataAttribute((Integer) effectiveOptions.get("offset"), (Integer) effectiveOptions.get("limit"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1564,6 +1700,28 @@ if (contentType != null)
     return this.getInternalOrderPositionById(id, positionId, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
+  /**
+   * Получить позицию InternalOrder
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param positionId ID позиции (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return InternalOrderPosition
+   * @throws ApiException if fails to make API call
+   */
+  public InternalOrderPosition getInternalOrderPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getInternalOrderPositionById(id, positionId, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить позицию InternalOrder
@@ -1661,6 +1819,27 @@ if (contentType != null)
    */
   public List<InternalOrderPosition> getInternalOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.getInternalOrderPositions(id, limit, offset, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Получить позиции InternalOrder
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;InternalOrderPosition&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<InternalOrderPosition> getInternalOrderPositions(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getInternalOrderPositions(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1837,6 +2016,28 @@ if (contentType != null)
    */
   public InternalOrder updateInternalOrder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull InternalOrder internalOrder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateInternalOrder(id, internalOrder, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Изменить InternalOrder
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param internalOrder  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return InternalOrder
+   * @throws ApiException if fails to make API call
+   */
+  public InternalOrder updateInternalOrder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull InternalOrder internalOrder, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateInternalOrder(id, internalOrder, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -2123,6 +2324,31 @@ if (contentType != null)
    */
   public InternalOrderPosition updateInternalOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull InternalOrderPosition internalOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateInternalOrderPosition(id, positionId, internalOrderPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Изменить позицию InternalOrder
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param positionId ID позиции (required)
+   
+   
+   * @param internalOrderPosition  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return InternalOrderPosition
+   * @throws ApiException if fails to make API call
+   */
+  public InternalOrderPosition updateInternalOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull InternalOrderPosition internalOrderPosition, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateInternalOrderPosition(id, positionId, internalOrderPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 

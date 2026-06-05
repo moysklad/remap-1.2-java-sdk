@@ -27,11 +27,11 @@ import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import ru.moysklad.remap_1_2.model.Account;
 import ru.moysklad.remap_1_2.model.Address;
+import ru.moysklad.remap_1_2.model.Agent;
 import ru.moysklad.remap_1_2.model.AttributeAbstract;
 import ru.moysklad.remap_1_2.model.Contract;
 import ru.moysklad.remap_1_2.model.CurrencyRate;
 import ru.moysklad.remap_1_2.model.CustomerOrder;
-import ru.moysklad.remap_1_2.model.CustomerOrderAgent;
 import ru.moysklad.remap_1_2.model.CustomerOrderPaymentsInner;
 import ru.moysklad.remap_1_2.model.CustomerOrderPositionList;
 import ru.moysklad.remap_1_2.model.Demand;
@@ -117,7 +117,7 @@ import java.util.StringJoiner;
   CreateCustomerOrderBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createCustomerOrderBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateCustomerOrderBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -230,7 +230,7 @@ public class CreateCustomerOrderBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_AGENT = "agent";
   @javax.annotation.Nullable
-  private CustomerOrderAgent agent;
+  private Agent agent;
 
   public static final String JSON_PROPERTY_AGENT_ACCOUNT = "agentAccount";
   @javax.annotation.Nullable
@@ -367,6 +367,7 @@ public class CreateCustomerOrderBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -387,6 +388,7 @@ public class CreateCustomerOrderBatch200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Заказа покупателя
@@ -426,6 +428,7 @@ public class CreateCustomerOrderBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Наименование Заказа покупателя
    * @return name
@@ -447,11 +450,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.name = name;
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код Заказа покупателя
@@ -474,11 +479,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.code = code;
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Заказа покупателя
@@ -501,11 +508,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.externalCode = externalCode;
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner syncId(@javax.annotation.Nullable UUID syncId) {
     
     this.syncId = syncId;
     return this;
   }
+
 
   /**
    * ID синхронизации
@@ -528,11 +537,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.syncId = syncId;
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Комментарий Заказа покупателя
@@ -563,6 +574,7 @@ public class CreateCustomerOrderBatch200ResponseInner {
   public void setDescription(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
   }
+
 
   /**
    * Дата создания
@@ -618,6 +630,7 @@ public class CreateCustomerOrderBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Дата документа
    * @return moment
@@ -639,11 +652,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.moment = moment;
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner deliveryPlannedMoment(@javax.annotation.Nullable String deliveryPlannedMoment) {
     
     this.deliveryPlannedMoment = deliveryPlannedMoment;
     return this;
   }
+
 
   /**
    * Планируемая дата приёмки
@@ -666,11 +681,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.deliveryPlannedMoment = deliveryPlannedMoment;
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner applicable(@javax.annotation.Nullable Boolean applicable) {
     
     this.applicable = applicable;
     return this;
   }
+
 
   /**
    * Отметка о проведении
@@ -692,6 +709,7 @@ public class CreateCustomerOrderBatch200ResponseInner {
   public void setApplicable(@javax.annotation.Nullable Boolean applicable) {
     this.applicable = applicable;
   }
+
 
   /**
    * Напечатан ли документ
@@ -731,6 +749,7 @@ public class CreateCustomerOrderBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Общий доступ
    * @return shared
@@ -752,11 +771,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.shared = shared;
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
     
     this.vatEnabled = vatEnabled;
     return this;
   }
+
 
   /**
    * Учитывается ли НДС
@@ -779,11 +800,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.vatEnabled = vatEnabled;
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner vatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
     
     this.vatIncluded = vatIncluded;
     return this;
   }
+
 
   /**
    * Включен ли НДС в цену
@@ -805,6 +828,7 @@ public class CreateCustomerOrderBatch200ResponseInner {
   public void setVatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
     this.vatIncluded = vatIncluded;
   }
+
 
   /**
    * Сумма НДС
@@ -908,6 +932,7 @@ public class CreateCustomerOrderBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get organization
    * @return organization
@@ -929,11 +954,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.organization = organization;
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner organizationAccount(@javax.annotation.Nullable Account organizationAccount) {
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
     
     return this;
   }
+
 
   /**
    * Метаданные счета юрлица
@@ -965,21 +992,23 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
   }
 
-  public CreateCustomerOrderBatch200ResponseInner agent(@javax.annotation.Nullable CustomerOrderAgent agent) {
+
+  public CreateCustomerOrderBatch200ResponseInner agent(@javax.annotation.Nullable Agent agent) {
     
     this.agent = agent;
     return this;
   }
 
+
   /**
-   * Get agent
+   * Метаданные контрагента или юрлица
    * @return agent
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public CustomerOrderAgent getAgent() {
+  public Agent getAgent() {
     return agent;
   }
 
@@ -988,15 +1017,17 @@ public class CreateCustomerOrderBatch200ResponseInner {
 
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAgent(@javax.annotation.Nullable CustomerOrderAgent agent) {
+  public void setAgent(@javax.annotation.Nullable Agent agent) {
     this.agent = agent;
   }
+
 
   public CreateCustomerOrderBatch200ResponseInner agentAccount(@javax.annotation.Nullable Account agentAccount) {
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
     
     return this;
   }
+
 
   /**
    * Метаданные счета контрагента
@@ -1028,11 +1059,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner store(@javax.annotation.Nullable Store store) {
     this.store = JsonNullable.<Store>of(store);
     
     return this;
   }
+
 
   /**
    * Метаданные склада
@@ -1064,11 +1097,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.store = JsonNullable.<Store>of(store);
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner state(@javax.annotation.Nullable State state) {
     this.state = JsonNullable.<State>of(state);
     
     return this;
   }
+
 
   /**
    * Метаданные статуса заказа
@@ -1100,11 +1135,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.state = JsonNullable.<State>of(state);
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner contract(@javax.annotation.Nullable Contract contract) {
     this.contract = JsonNullable.<Contract>of(contract);
     
     return this;
   }
+
 
   /**
    * Метаданные договора
@@ -1136,11 +1173,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.contract = JsonNullable.<Contract>of(contract);
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner project(@javax.annotation.Nullable Project project) {
     this.project = JsonNullable.<Project>of(project);
     
     return this;
   }
+
 
   /**
    * Метаданные проекта
@@ -1172,11 +1211,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.project = JsonNullable.<Project>of(project);
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Владелец (Сотрудник)
@@ -1208,11 +1249,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -1235,11 +1278,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.group = group;
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public CreateCustomerOrderBatch200ResponseInner addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -1283,11 +1328,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner files(@javax.annotation.Nullable FileList files) {
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
   }
+
 
   /**
    * Метаданные массива Файлов
@@ -1319,11 +1366,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.files = JsonNullable.<FileList>of(files);
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner taxSystem(@javax.annotation.Nullable String taxSystem) {
     
     this.taxSystem = taxSystem;
     return this;
   }
+
 
   /**
    * Код системы налогообложения. Известные значения описаны в TaxSystem
@@ -1346,11 +1395,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.taxSystem = taxSystem;
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner rate(@javax.annotation.Nullable CurrencyRate rate) {
     
     this.rate = rate;
     return this;
   }
+
 
   /**
    * Get rate
@@ -1373,11 +1424,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.rate = rate;
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner positions(@javax.annotation.Nullable CustomerOrderPositionList positions) {
     
     this.positions = positions;
     return this;
   }
+
 
   /**
    * Get positions
@@ -1400,11 +1453,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.positions = positions;
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner salesChannel(@javax.annotation.Nullable SalesChannel salesChannel) {
     this.salesChannel = JsonNullable.<SalesChannel>of(salesChannel);
     
     return this;
   }
+
 
   /**
    * Метаданные канала продаж
@@ -1436,11 +1491,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.salesChannel = JsonNullable.<SalesChannel>of(salesChannel);
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner shipmentAddress(@javax.annotation.Nullable String shipmentAddress) {
     this.shipmentAddress = JsonNullable.<String>of(shipmentAddress);
     
     return this;
   }
+
 
   /**
    * Адрес доставки Заказа покупателя
@@ -1472,11 +1529,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.shipmentAddress = JsonNullable.<String>of(shipmentAddress);
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner shipmentAddressFull(@javax.annotation.Nullable Address shipmentAddressFull) {
     this.shipmentAddressFull = JsonNullable.<Address>of(shipmentAddressFull);
     
     return this;
   }
+
 
   /**
    * Адрес доставки Заказа покупателя с детализацией по отдельным полям
@@ -1508,11 +1567,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.shipmentAddressFull = JsonNullable.<Address>of(shipmentAddressFull);
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner invoicesOut(@javax.annotation.Nullable List<InvoiceOut> invoicesOut) {
     this.invoicesOut = JsonNullable.<List<InvoiceOut>>of(invoicesOut);
     
     return this;
   }
+
 
   public CreateCustomerOrderBatch200ResponseInner addInvoicesOutItem(InvoiceOut invoicesOutItem) {
     if (this.invoicesOut == null || !this.invoicesOut.isPresent()) {
@@ -1556,11 +1617,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.invoicesOut = JsonNullable.<List<InvoiceOut>>of(invoicesOut);
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner demands(@javax.annotation.Nullable List<Demand> demands) {
     this.demands = JsonNullable.<List<Demand>>of(demands);
     
     return this;
   }
+
 
   public CreateCustomerOrderBatch200ResponseInner addDemandsItem(Demand demandsItem) {
     if (this.demands == null || !this.demands.isPresent()) {
@@ -1604,11 +1667,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.demands = JsonNullable.<List<Demand>>of(demands);
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner payments(@javax.annotation.Nullable List<CustomerOrderPaymentsInner> payments) {
     this.payments = JsonNullable.<List<CustomerOrderPaymentsInner>>of(payments);
     
     return this;
   }
+
 
   public CreateCustomerOrderBatch200ResponseInner addPaymentsItem(CustomerOrderPaymentsInner paymentsItem) {
     if (this.payments == null || !this.payments.isPresent()) {
@@ -1652,11 +1717,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.payments = JsonNullable.<List<CustomerOrderPaymentsInner>>of(payments);
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner prepayments(@javax.annotation.Nullable List<Prepayment> prepayments) {
     this.prepayments = JsonNullable.<List<Prepayment>>of(prepayments);
     
     return this;
   }
+
 
   public CreateCustomerOrderBatch200ResponseInner addPrepaymentsItem(Prepayment prepaymentsItem) {
     if (this.prepayments == null || !this.prepayments.isPresent()) {
@@ -1700,11 +1767,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.prepayments = JsonNullable.<List<Prepayment>>of(prepayments);
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner purchaseOrders(@javax.annotation.Nullable List<PurchaseOrder> purchaseOrders) {
     this.purchaseOrders = JsonNullable.<List<PurchaseOrder>>of(purchaseOrders);
     
     return this;
   }
+
 
   public CreateCustomerOrderBatch200ResponseInner addPurchaseOrdersItem(PurchaseOrder purchaseOrdersItem) {
     if (this.purchaseOrders == null || !this.purchaseOrders.isPresent()) {
@@ -1748,11 +1817,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.purchaseOrders = JsonNullable.<List<PurchaseOrder>>of(purchaseOrders);
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner moves(@javax.annotation.Nullable List<Move> moves) {
     this.moves = JsonNullable.<List<Move>>of(moves);
     
     return this;
   }
+
 
   public CreateCustomerOrderBatch200ResponseInner addMovesItem(Move movesItem) {
     if (this.moves == null || !this.moves.isPresent()) {
@@ -1796,11 +1867,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.moves = JsonNullable.<List<Move>>of(moves);
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner productionTasks(@javax.annotation.Nullable List<ProductionTask> productionTasks) {
     this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
     
     return this;
   }
+
 
   public CreateCustomerOrderBatch200ResponseInner addProductionTasksItem(ProductionTask productionTasksItem) {
     if (this.productionTasks == null || !this.productionTasks.isPresent()) {
@@ -1844,11 +1917,13 @@ public class CreateCustomerOrderBatch200ResponseInner {
     this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
   }
 
+
   public CreateCustomerOrderBatch200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
+
 
   public CreateCustomerOrderBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -1878,6 +1953,7 @@ public class CreateCustomerOrderBatch200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

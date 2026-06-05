@@ -33,7 +33,7 @@ import java.util.StringJoiner;
   CommissionReportInCommissionOverhead.JSON_PROPERTY_SUM
 })
 @JsonTypeName("CommissionReportIn_commissionOverhead")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CommissionReportInCommissionOverhead {
 
   public static final String JSON_PROPERTY_SUM = "sum";
@@ -48,6 +48,7 @@ public class CommissionReportInCommissionOverhead {
     this.sum = sum;
     return this;
   }
+
 
   /**
    * Сумма НДС
@@ -69,6 +70,7 @@ public class CommissionReportInCommissionOverhead {
   public void setSum(@javax.annotation.Nullable Double sum) {
     this.sum = sum;
   }
+
 
   @Override
   public boolean equals(Object o) {

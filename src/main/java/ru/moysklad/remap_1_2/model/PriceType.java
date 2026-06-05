@@ -37,7 +37,7 @@ import java.util.StringJoiner;
   PriceType.JSON_PROPERTY_NAME,
   PriceType.JSON_PROPERTY_EXTERNAL_CODE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class PriceType {
   public static PriceType createWithMeta(UUID id) {
     PriceType o = new PriceType();
@@ -89,6 +89,7 @@ public class PriceType {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -109,6 +110,7 @@ public class PriceType {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID типа цены
@@ -132,6 +134,7 @@ public class PriceType {
     return this;
   }
 
+
   /**
    * Наименование типа цены
    * @return name
@@ -153,11 +156,13 @@ public class PriceType {
     this.name = name;
   }
 
+
   public PriceType externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код типа цены
@@ -179,6 +184,7 @@ public class PriceType {
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
     this.externalCode = externalCode;
   }
+
 
   @Override
   public boolean equals(Object o) {

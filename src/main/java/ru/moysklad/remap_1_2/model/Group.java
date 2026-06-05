@@ -38,7 +38,7 @@ import java.util.StringJoiner;
   Group.JSON_PROPERTY_NAME,
   Group.JSON_PROPERTY_INDEX
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Group {
   public static Group createWithMeta(UUID id) {
     Group o = new Group();
@@ -96,6 +96,7 @@ public class Group {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -116,6 +117,7 @@ public class Group {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID группы
@@ -155,6 +157,7 @@ public class Group {
     return this;
   }
 
+
   /**
    * Наименование группы
    * @return name
@@ -176,11 +179,13 @@ public class Group {
     this.name = name;
   }
 
+
   public Group index(@javax.annotation.Nullable Integer index) {
     
     this.index = index;
     return this;
   }
+
 
   /**
    * Порядковый номер в списке групп
@@ -203,6 +208,7 @@ public class Group {
   public void setIndex(@javax.annotation.Nullable Integer index) {
     this.index = index;
   }
+
 
   @Override
   public boolean equals(Object o) {

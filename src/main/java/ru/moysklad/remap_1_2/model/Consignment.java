@@ -59,7 +59,7 @@ import java.util.StringJoiner;
   Consignment.JSON_PROPERTY_NAME,
   Consignment.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Consignment {
   public static Consignment createWithMeta(UUID id) {
     Consignment o = new Consignment();
@@ -163,6 +163,7 @@ public class Consignment {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -183,6 +184,7 @@ public class Consignment {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Партии
@@ -222,6 +224,7 @@ public class Consignment {
     return this;
   }
 
+
   /**
    * Добавлена ли Партия в архив
    * @return archived
@@ -243,11 +246,13 @@ public class Consignment {
     this.archived = archived;
   }
 
+
   public Consignment attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public Consignment addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -291,11 +296,13 @@ public class Consignment {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   public Consignment assortment(@javax.annotation.Nullable Assortment assortment) {
     
     this.assortment = assortment;
     return this;
   }
+
 
   /**
    * Get assortment
@@ -320,11 +327,13 @@ public class Consignment {
     this.assortment = assortment;
   }
 
+
   public Consignment barcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
     
     return this;
   }
+
 
   public Consignment addBarcodesItem(Barcode barcodesItem) {
     if (this.barcodes == null || !this.barcodes.isPresent()) {
@@ -368,11 +377,13 @@ public class Consignment {
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
   }
 
+
   public Consignment code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код Партии
@@ -395,11 +406,13 @@ public class Consignment {
     this.code = code;
   }
 
+
   public Consignment description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Описание Партии
@@ -431,11 +444,13 @@ public class Consignment {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public Consignment expiryDate(@javax.annotation.Nullable String expiryDate) {
     
     this.expiryDate = expiryDate;
     return this;
   }
+
 
   /**
    * Срок годности Партии
@@ -458,11 +473,13 @@ public class Consignment {
     this.expiryDate = expiryDate;
   }
 
+
   public Consignment externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Партии
@@ -484,6 +501,7 @@ public class Consignment {
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
     this.externalCode = externalCode;
   }
+
 
   /**
    * Массив метаданных Изображений товара, к которому относится данная партия
@@ -507,6 +525,7 @@ public class Consignment {
     return this;
   }
 
+
   /**
    * Метка Партии
    * @return label
@@ -527,6 +546,7 @@ public class Consignment {
   public void setLabel(@javax.annotation.Nullable String label) {
     this.label = label;
   }
+
 
   /**
    * Наименование Партии

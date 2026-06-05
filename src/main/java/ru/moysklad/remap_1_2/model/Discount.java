@@ -52,7 +52,7 @@ import java.util.StringJoiner;
   Discount.JSON_PROPERTY_ALL_AGENTS,
   Discount.JSON_PROPERTY_AGENT_TAGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Discount {
   public static Discount createWithMeta(UUID id) {
     Discount o = new Discount();
@@ -130,6 +130,7 @@ public class Discount {
     return this;
   }
 
+
   /**
    * Действует ли скидка на все товары
    * @return allProducts
@@ -151,11 +152,13 @@ public class Discount {
     this.allProducts = allProducts;
   }
 
+
   public Discount assortment(@javax.annotation.Nullable List<DiscountAssortmentItem> assortment) {
     this.assortment = JsonNullable.<List<DiscountAssortmentItem>>of(assortment);
     
     return this;
   }
+
 
   public Discount addAssortmentItem(DiscountAssortmentItem assortmentItem) {
     if (this.assortment == null || !this.assortment.isPresent()) {
@@ -199,11 +202,13 @@ public class Discount {
     this.assortment = JsonNullable.<List<DiscountAssortmentItem>>of(assortment);
   }
 
+
   public Discount productFolders(@javax.annotation.Nullable List<ProductFolder> productFolders) {
     this.productFolders = JsonNullable.<List<ProductFolder>>of(productFolders);
     
     return this;
   }
+
 
   public Discount addProductFoldersItem(ProductFolder productFoldersItem) {
     if (this.productFolders == null || !this.productFolders.isPresent()) {
@@ -247,6 +252,7 @@ public class Discount {
     this.productFolders = JsonNullable.<List<ProductFolder>>of(productFolders);
   }
 
+
   /**
    * ID дополнительного поля
    * @return id
@@ -269,6 +275,7 @@ public class Discount {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -289,6 +296,7 @@ public class Discount {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID учетной записи
@@ -312,6 +320,7 @@ public class Discount {
     return this;
   }
 
+
   /**
    * Наименование товара
    * @return name
@@ -333,11 +342,13 @@ public class Discount {
     this.name = name;
   }
 
+
   public Discount active(@javax.annotation.Nullable Boolean active) {
     
     this.active = active;
     return this;
   }
+
 
   /**
    * Включена ли скидка
@@ -360,11 +371,13 @@ public class Discount {
     this.active = active;
   }
 
+
   public Discount allAgents(@javax.annotation.Nullable Boolean allAgents) {
     
     this.allAgents = allAgents;
     return this;
   }
+
 
   /**
    * Для всех ли агентов скидка
@@ -387,11 +400,13 @@ public class Discount {
     this.allAgents = allAgents;
   }
 
+
   public Discount agentTags(@javax.annotation.Nullable List<String> agentTags) {
     this.agentTags = JsonNullable.<List<String>>of(agentTags);
     
     return this;
   }
+
 
   public Discount addAgentTagsItem(String agentTagsItem) {
     if (this.agentTags == null || !this.agentTags.isPresent()) {
@@ -434,6 +449,7 @@ public class Discount {
   public void setAgentTags(@javax.annotation.Nullable List<String> agentTags) {
     this.agentTags = JsonNullable.<List<String>>of(agentTags);
   }
+
 
   @Override
   public boolean equals(Object o) {

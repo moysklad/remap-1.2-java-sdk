@@ -35,7 +35,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class CustomEntitiesApi extends BaseApi {
 
@@ -147,6 +147,28 @@ if (contentType != null)
    */
   public CustomEntityElement createCustomEntityElement(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CustomEntityElement customEntityElement, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createCustomEntityElement(id, customEntityElement, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать элемент пользовательского справочника
+   * Создание нового элемента пользовательского справочника
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param customEntityElement  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return CustomEntityElement
+   * @throws ApiException if fails to make API call
+   */
+  public CustomEntityElement createCustomEntityElement(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CustomEntityElement customEntityElement, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createCustomEntityElement(id, customEntityElement, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -413,6 +435,27 @@ if (acceptEncoding != null)
     return this.getCustomEntityElementById(metadataId, id, accept, acceptEncoding, expand, Collections.emptyMap());
   }
 
+  /**
+   * Получить элемент пользовательского справочника
+   * Получить элемент пользовательского справочника с указанным id
+   
+   * @param metadataId  (required)
+   
+   
+   * @param id  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return CustomEntityElement
+   * @throws ApiException if fails to make API call
+   */
+  public CustomEntityElement getCustomEntityElementById(@javax.annotation.Nonnull UUID metadataId, @javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getCustomEntityElementById(metadataId, id, null, null, (String) effectiveOptions.get("expand"), effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить элемент пользовательского справочника
@@ -506,6 +549,24 @@ if (acceptEncoding != null)
     return this.getCustomEntityElements(id, expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить элементы пользовательского справочника
+   * Получить все элементы пользовательского справочника
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return CustomEntityElementList
+   * @throws ApiException if fails to make API call
+   */
+  public CustomEntityElementList getCustomEntityElements(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getCustomEntityElements(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить элементы пользовательского справочника
@@ -590,6 +651,24 @@ if (acceptEncoding != null)
    */
   public CustomEntityMetadata getCustomEntityMetadata(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand) throws ApiException {
     return this.getCustomEntityMetadata(id, accept, acceptEncoding, expand, Collections.emptyMap());
+  }
+
+  /**
+   * Метаданные пользовательского справочника
+   * Запрос метаданных пользовательского справочника
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return CustomEntityMetadata
+   * @throws ApiException if fails to make API call
+   */
+  public CustomEntityMetadata getCustomEntityMetadata(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getCustomEntityMetadata(id, null, null, (String) effectiveOptions.get("expand"), effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -678,6 +757,28 @@ if (acceptEncoding != null)
    */
   public CustomEntity updateCustomEntity(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CustomEntity customEntity, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateCustomEntity(id, customEntity, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Изменить пользовательский справочник
+   * Обновление пользовательского справочника с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param customEntity  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return CustomEntity
+   * @throws ApiException if fails to make API call
+   */
+  public CustomEntity updateCustomEntity(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CustomEntity customEntity, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateCustomEntity(id, customEntity, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -776,6 +877,31 @@ if (contentType != null)
    */
   public CustomEntityElement updateCustomEntityElement(@javax.annotation.Nonnull UUID metadataId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CustomEntityElement customEntityElement, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, @javax.annotation.Nullable String expand) throws ApiException {
     return this.updateCustomEntityElement(metadataId, id, customEntityElement, accept, acceptEncoding, contentType, expand, Collections.emptyMap());
+  }
+
+  /**
+   * Изменить элемент пользовательского справочника
+   * Обновление элемента пользовательского справочника с указанным id
+   
+   * @param metadataId  (required)
+   
+   
+   * @param id  (required)
+   
+   
+   * @param customEntityElement  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return CustomEntityElement
+   * @throws ApiException if fails to make API call
+   */
+  public CustomEntityElement updateCustomEntityElement(@javax.annotation.Nonnull UUID metadataId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CustomEntityElement customEntityElement, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateCustomEntityElement(metadataId, id, customEntityElement, null, null, null, (String) effectiveOptions.get("expand"), effectiveOptions.getAdditionalHeaders());
   }
 
 

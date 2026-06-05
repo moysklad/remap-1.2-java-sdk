@@ -37,7 +37,7 @@ import java.util.StringJoiner;
   VariantCharacteristicValue.JSON_PROPERTY_NAME,
   VariantCharacteristicValue.JSON_PROPERTY_VALUE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class VariantCharacteristicValue {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -77,6 +77,7 @@ public class VariantCharacteristicValue {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -97,6 +98,7 @@ public class VariantCharacteristicValue {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID соответствующей Характеристики
@@ -120,6 +122,7 @@ public class VariantCharacteristicValue {
     return this;
   }
 
+
   /**
    * Наименование Характеристики
    * @return name
@@ -140,6 +143,7 @@ public class VariantCharacteristicValue {
   public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
+
 
   /**
    * Значение Характеристики

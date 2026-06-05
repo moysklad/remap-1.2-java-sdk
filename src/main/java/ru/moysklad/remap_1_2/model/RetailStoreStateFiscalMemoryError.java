@@ -34,7 +34,7 @@ import java.util.StringJoiner;
   RetailStoreStateFiscalMemoryError.JSON_PROPERTY_MESSAGE
 })
 @JsonTypeName("RetailStore_state_fiscalMemory_error")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStoreStateFiscalMemoryError {
 
   public static final String JSON_PROPERTY_CODE = "code";
@@ -53,6 +53,7 @@ public class RetailStoreStateFiscalMemoryError {
     this.code = code;
     return this;
   }
+
 
   /**
    * Код ошибки
@@ -75,11 +76,13 @@ public class RetailStoreStateFiscalMemoryError {
     this.code = code;
   }
 
+
   public RetailStoreStateFiscalMemoryError message(@javax.annotation.Nullable String message) {
     
     this.message = message;
     return this;
   }
+
 
   /**
    * Сообщение ошибки
@@ -101,6 +104,7 @@ public class RetailStoreStateFiscalMemoryError {
   public void setMessage(@javax.annotation.Nullable String message) {
     this.message = message;
   }
+
 
   @Override
   public boolean equals(Object o) {

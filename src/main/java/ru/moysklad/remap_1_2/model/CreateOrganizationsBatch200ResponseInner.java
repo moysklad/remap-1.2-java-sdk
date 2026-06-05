@@ -99,7 +99,7 @@ import java.util.StringJoiner;
   CreateOrganizationsBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createOrganizationsBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateOrganizationsBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -321,6 +321,7 @@ public class CreateOrganizationsBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -341,6 +342,7 @@ public class CreateOrganizationsBatch200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID юрлица
@@ -364,6 +366,7 @@ public class CreateOrganizationsBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * ID синхронизации
    * @return syncId
@@ -384,6 +387,7 @@ public class CreateOrganizationsBatch200ResponseInner {
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
     this.syncId = syncId;
   }
+
 
   /**
    * ID учетной записи
@@ -407,6 +411,7 @@ public class CreateOrganizationsBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Наименование юрлица
    * @return name
@@ -428,11 +433,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.name = name;
   }
 
+
   public CreateOrganizationsBatch200ResponseInner code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код юрлица
@@ -455,11 +462,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.code = code;
   }
 
+
   public CreateOrganizationsBatch200ResponseInner externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код юрлица
@@ -482,11 +491,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.externalCode = externalCode;
   }
 
+
   public CreateOrganizationsBatch200ResponseInner archived(@javax.annotation.Nullable Boolean archived) {
     
     this.archived = archived;
     return this;
   }
+
 
   /**
    * Добавлено ли юрлицо в архив
@@ -508,6 +519,7 @@ public class CreateOrganizationsBatch200ResponseInner {
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
     this.archived = archived;
   }
+
 
   /**
    * Дата создания
@@ -547,6 +559,7 @@ public class CreateOrganizationsBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Комментарий к юрлицу
    * @return description
@@ -568,11 +581,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.description = description;
   }
 
+
   public CreateOrganizationsBatch200ResponseInner companyType(@javax.annotation.Nullable String companyType) {
     
     this.companyType = companyType;
     return this;
   }
+
 
   /**
    * Тип юрлица. Известные значения описаны в CompanyType
@@ -595,11 +610,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.companyType = companyType;
   }
 
+
   public CreateOrganizationsBatch200ResponseInner email(@javax.annotation.Nullable String email) {
     
     this.email = email;
     return this;
   }
+
 
   /**
    * Адрес электронной почты
@@ -622,11 +639,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.email = email;
   }
 
+
   public CreateOrganizationsBatch200ResponseInner phone(@javax.annotation.Nullable String phone) {
     
     this.phone = phone;
     return this;
   }
+
 
   /**
    * Номер городского телефона
@@ -649,11 +668,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.phone = phone;
   }
 
+
   public CreateOrganizationsBatch200ResponseInner fax(@javax.annotation.Nullable String fax) {
     
     this.fax = fax;
     return this;
   }
+
 
   /**
    * Номер факса
@@ -676,11 +697,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.fax = fax;
   }
 
+
   public CreateOrganizationsBatch200ResponseInner actualAddress(@javax.annotation.Nullable String actualAddress) {
     
     this.actualAddress = actualAddress;
     return this;
   }
+
 
   /**
    * Фактический адрес юрлица
@@ -703,11 +726,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.actualAddress = actualAddress;
   }
 
+
   public CreateOrganizationsBatch200ResponseInner actualAddressFull(@javax.annotation.Nullable Address actualAddressFull) {
     this.actualAddressFull = JsonNullable.<Address>of(actualAddressFull);
     
     return this;
   }
+
 
   /**
    * Фактический адрес юрлица с детализацией по отдельным полям
@@ -739,11 +764,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.actualAddressFull = JsonNullable.<Address>of(actualAddressFull);
   }
 
+
   public CreateOrganizationsBatch200ResponseInner legalAddress(@javax.annotation.Nullable String legalAddress) {
     
     this.legalAddress = legalAddress;
     return this;
   }
+
 
   /**
    * Юридический адрес юрлица
@@ -766,11 +793,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.legalAddress = legalAddress;
   }
 
+
   public CreateOrganizationsBatch200ResponseInner legalAddressFull(@javax.annotation.Nullable Address legalAddressFull) {
     this.legalAddressFull = JsonNullable.<Address>of(legalAddressFull);
     
     return this;
   }
+
 
   /**
    * Юридический адрес юрлица с детализацией по отдельным полям
@@ -802,11 +831,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.legalAddressFull = JsonNullable.<Address>of(legalAddressFull);
   }
 
+
   public CreateOrganizationsBatch200ResponseInner inn(@javax.annotation.Nullable String inn) {
     
     this.inn = inn;
     return this;
   }
+
 
   /**
    * ИНН
@@ -829,11 +860,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.inn = inn;
   }
 
+
   public CreateOrganizationsBatch200ResponseInner kpp(@javax.annotation.Nullable String kpp) {
     
     this.kpp = kpp;
     return this;
   }
+
 
   /**
    * КПП
@@ -856,11 +889,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.kpp = kpp;
   }
 
+
   public CreateOrganizationsBatch200ResponseInner ogrn(@javax.annotation.Nullable String ogrn) {
     
     this.ogrn = ogrn;
     return this;
   }
+
 
   /**
    * ОГРН
@@ -883,11 +918,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.ogrn = ogrn;
   }
 
+
   public CreateOrganizationsBatch200ResponseInner ogrnip(@javax.annotation.Nullable String ogrnip) {
     
     this.ogrnip = ogrnip;
     return this;
   }
+
 
   /**
    * ОГРНИП
@@ -910,11 +947,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.ogrnip = ogrnip;
   }
 
+
   public CreateOrganizationsBatch200ResponseInner okpo(@javax.annotation.Nullable String okpo) {
     
     this.okpo = okpo;
     return this;
   }
+
 
   /**
    * ОКПО
@@ -937,11 +976,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.okpo = okpo;
   }
 
+
   public CreateOrganizationsBatch200ResponseInner certificateNumber(@javax.annotation.Nullable String certificateNumber) {
     
     this.certificateNumber = certificateNumber;
     return this;
   }
+
 
   /**
    * Номер свидетельства
@@ -964,11 +1005,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.certificateNumber = certificateNumber;
   }
 
+
   public CreateOrganizationsBatch200ResponseInner certificateDate(@javax.annotation.Nullable String certificateDate) {
     
     this.certificateDate = certificateDate;
     return this;
   }
+
 
   /**
    * Дата свидетельства
@@ -991,11 +1034,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.certificateDate = certificateDate;
   }
 
+
   public CreateOrganizationsBatch200ResponseInner legalTitle(@javax.annotation.Nullable String legalTitle) {
     
     this.legalTitle = legalTitle;
     return this;
   }
+
 
   /**
    * Полное наименование
@@ -1018,11 +1063,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.legalTitle = legalTitle;
   }
 
+
   public CreateOrganizationsBatch200ResponseInner legalFirstName(@javax.annotation.Nullable String legalFirstName) {
     
     this.legalFirstName = legalFirstName;
     return this;
   }
+
 
   /**
    * Имя для ИП и физлица
@@ -1045,11 +1092,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.legalFirstName = legalFirstName;
   }
 
+
   public CreateOrganizationsBatch200ResponseInner legalLastName(@javax.annotation.Nullable String legalLastName) {
     
     this.legalLastName = legalLastName;
     return this;
   }
+
 
   /**
    * Фамилия для ИП и физлица
@@ -1072,11 +1121,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.legalLastName = legalLastName;
   }
 
+
   public CreateOrganizationsBatch200ResponseInner legalMiddleName(@javax.annotation.Nullable String legalMiddleName) {
     
     this.legalMiddleName = legalMiddleName;
     return this;
   }
+
 
   /**
    * Отчество для ИП и физлица
@@ -1099,11 +1150,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.legalMiddleName = legalMiddleName;
   }
 
+
   public CreateOrganizationsBatch200ResponseInner trackingContractNumber(@javax.annotation.Nullable String trackingContractNumber) {
     
     this.trackingContractNumber = trackingContractNumber;
     return this;
   }
+
 
   /**
    * Номер договора с ЦРПТ
@@ -1126,11 +1179,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.trackingContractNumber = trackingContractNumber;
   }
 
+
   public CreateOrganizationsBatch200ResponseInner trackingContractDate(@javax.annotation.Nullable String trackingContractDate) {
     this.trackingContractDate = JsonNullable.<String>of(trackingContractDate);
     
     return this;
   }
+
 
   /**
    * Дата договора с ЦРПТ
@@ -1162,11 +1217,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.trackingContractDate = JsonNullable.<String>of(trackingContractDate);
   }
 
+
   public CreateOrganizationsBatch200ResponseInner advancePaymentVat(@javax.annotation.Nullable Double advancePaymentVat) {
     
     this.advancePaymentVat = advancePaymentVat;
     return this;
   }
+
 
   /**
    * Налоговая ставка для авансов для плательщиков НДС
@@ -1189,11 +1246,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.advancePaymentVat = advancePaymentVat;
   }
 
+
   public CreateOrganizationsBatch200ResponseInner payerVat(@javax.annotation.Nullable Boolean payerVat) {
     
     this.payerVat = payerVat;
     return this;
   }
+
 
   /**
    * Является ли данное юрлицо плательщиком НДС
@@ -1216,11 +1275,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.payerVat = payerVat;
   }
 
+
   public CreateOrganizationsBatch200ResponseInner director(@javax.annotation.Nullable String director) {
     
     this.director = director;
     return this;
   }
+
 
   /**
    * Руководитель
@@ -1243,11 +1304,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.director = director;
   }
 
+
   public CreateOrganizationsBatch200ResponseInner directorPosition(@javax.annotation.Nullable String directorPosition) {
     
     this.directorPosition = directorPosition;
     return this;
   }
+
 
   /**
    * Должность руководителя
@@ -1270,11 +1333,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.directorPosition = directorPosition;
   }
 
+
   public CreateOrganizationsBatch200ResponseInner chiefAccountant(@javax.annotation.Nullable String chiefAccountant) {
     
     this.chiefAccountant = chiefAccountant;
     return this;
   }
+
 
   /**
    * Главный бухгалтер
@@ -1297,11 +1362,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.chiefAccountant = chiefAccountant;
   }
 
+
   public CreateOrganizationsBatch200ResponseInner directorSign(@javax.annotation.Nullable Image directorSign) {
     this.directorSign = JsonNullable.<Image>of(directorSign);
     
     return this;
   }
+
 
   /**
    * Подпись руководителя
@@ -1333,11 +1400,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.directorSign = JsonNullable.<Image>of(directorSign);
   }
 
+
   public CreateOrganizationsBatch200ResponseInner chiefAccountSign(@javax.annotation.Nullable Image chiefAccountSign) {
     this.chiefAccountSign = JsonNullable.<Image>of(chiefAccountSign);
     
     return this;
   }
+
 
   /**
    * Подпись главного бухгалтера
@@ -1369,11 +1438,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.chiefAccountSign = JsonNullable.<Image>of(chiefAccountSign);
   }
 
+
   public CreateOrganizationsBatch200ResponseInner stamp(@javax.annotation.Nullable Image stamp) {
     this.stamp = JsonNullable.<Image>of(stamp);
     
     return this;
   }
+
 
   /**
    * Печать
@@ -1405,6 +1476,7 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.stamp = JsonNullable.<Image>of(stamp);
   }
 
+
   /**
    * Бонусные баллы по активной бонусной программе
    * @return bonusPoints
@@ -1426,6 +1498,7 @@ public class CreateOrganizationsBatch200ResponseInner {
     
     return this;
   }
+
 
   /**
    * Метаданные активной бонусной программы
@@ -1457,11 +1530,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.bonusProgram = JsonNullable.<BonusProgram>of(bonusProgram);
   }
 
+
   public CreateOrganizationsBatch200ResponseInner shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -1484,11 +1559,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.shared = shared;
   }
 
+
   public CreateOrganizationsBatch200ResponseInner group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -1511,11 +1588,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.group = group;
   }
 
+
   public CreateOrganizationsBatch200ResponseInner owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Метаданные владельца (Сотрудника)
@@ -1547,11 +1626,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public CreateOrganizationsBatch200ResponseInner accounts(@javax.annotation.Nullable OrganizationAccounts accounts) {
     
     this.accounts = accounts;
     return this;
   }
+
 
   /**
    * Get accounts
@@ -1574,11 +1655,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.accounts = accounts;
   }
 
+
   public CreateOrganizationsBatch200ResponseInner attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public CreateOrganizationsBatch200ResponseInner addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -1622,11 +1705,13 @@ public class CreateOrganizationsBatch200ResponseInner {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   public CreateOrganizationsBatch200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
+
 
   public CreateOrganizationsBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -1656,6 +1741,7 @@ public class CreateOrganizationsBatch200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

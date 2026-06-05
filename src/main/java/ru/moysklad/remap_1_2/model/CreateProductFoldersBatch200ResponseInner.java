@@ -67,7 +67,7 @@ import java.util.StringJoiner;
   CreateProductFoldersBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createProductFoldersBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateProductFoldersBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -183,6 +183,7 @@ public class CreateProductFoldersBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -203,6 +204,7 @@ public class CreateProductFoldersBatch200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID группы товаров
@@ -242,6 +244,7 @@ public class CreateProductFoldersBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Наименование группы товаров
    * @return name
@@ -263,11 +266,13 @@ public class CreateProductFoldersBatch200ResponseInner {
     this.name = name;
   }
 
+
   public CreateProductFoldersBatch200ResponseInner code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код группы товаров
@@ -290,11 +295,13 @@ public class CreateProductFoldersBatch200ResponseInner {
     this.code = code;
   }
 
+
   public CreateProductFoldersBatch200ResponseInner externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код группы товаров
@@ -317,11 +324,13 @@ public class CreateProductFoldersBatch200ResponseInner {
     this.externalCode = externalCode;
   }
 
+
   public CreateProductFoldersBatch200ResponseInner archived(@javax.annotation.Nullable Boolean archived) {
     
     this.archived = archived;
     return this;
   }
+
 
   /**
    * Добавлена ли группа товаров в архив
@@ -344,6 +353,7 @@ public class CreateProductFoldersBatch200ResponseInner {
     this.archived = archived;
   }
 
+
   /**
    * Наименование родительской группы
    * @return pathName
@@ -365,6 +375,7 @@ public class CreateProductFoldersBatch200ResponseInner {
     
     return this;
   }
+
 
   /**
    * Описание группы товаров
@@ -396,11 +407,13 @@ public class CreateProductFoldersBatch200ResponseInner {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public CreateProductFoldersBatch200ResponseInner vat(@javax.annotation.Nullable Integer vat) {
     
     this.vat = vat;
     return this;
   }
+
 
   /**
    * НДС %
@@ -425,11 +438,13 @@ public class CreateProductFoldersBatch200ResponseInner {
     this.vat = vat;
   }
 
+
   public CreateProductFoldersBatch200ResponseInner vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
     
     this.vatEnabled = vatEnabled;
     return this;
   }
+
 
   /**
    * Включен ли НДС для группы
@@ -451,6 +466,7 @@ public class CreateProductFoldersBatch200ResponseInner {
   public void setVatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
     this.vatEnabled = vatEnabled;
   }
+
 
   /**
    * Реальный НДС %
@@ -490,6 +506,7 @@ public class CreateProductFoldersBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Используется ли ставка НДС родительской группы
    * @return useParentVat
@@ -511,11 +528,13 @@ public class CreateProductFoldersBatch200ResponseInner {
     this.useParentVat = useParentVat;
   }
 
+
   public CreateProductFoldersBatch200ResponseInner shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -538,11 +557,13 @@ public class CreateProductFoldersBatch200ResponseInner {
     this.shared = shared;
   }
 
+
   public CreateProductFoldersBatch200ResponseInner group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -565,11 +586,13 @@ public class CreateProductFoldersBatch200ResponseInner {
     this.group = group;
   }
 
+
   public CreateProductFoldersBatch200ResponseInner owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Владелец группы товаров. Может быть Meta объектом или полным объектом в зависимости от expand параметра
@@ -601,6 +624,7 @@ public class CreateProductFoldersBatch200ResponseInner {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   /**
    * Момент последнего обновления
    * @return updated
@@ -622,6 +646,7 @@ public class CreateProductFoldersBatch200ResponseInner {
     
     return this;
   }
+
 
   /**
    * Родительская группа товаров
@@ -653,11 +678,13 @@ public class CreateProductFoldersBatch200ResponseInner {
     this.productFolder = JsonNullable.<ProductFolder>of(productFolder);
   }
 
+
   public CreateProductFoldersBatch200ResponseInner taxSystem(@javax.annotation.Nullable String taxSystem) {
     
     this.taxSystem = taxSystem;
     return this;
   }
+
 
   /**
    * Код системы налогообложения. Известные значения описаны в TaxSystem
@@ -680,11 +707,13 @@ public class CreateProductFoldersBatch200ResponseInner {
     this.taxSystem = taxSystem;
   }
 
+
   public CreateProductFoldersBatch200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
+
 
   public CreateProductFoldersBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -714,6 +743,7 @@ public class CreateProductFoldersBatch200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

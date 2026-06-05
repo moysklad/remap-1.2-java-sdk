@@ -69,7 +69,7 @@ import java.util.StringJoiner;
   Variant.JSON_PROPERTY_MINIMUM_STOCK,
   Variant.JSON_PROPERTY_THINGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Variant {
   public static Variant createWithMeta(UUID id) {
     Variant o = new Variant();
@@ -189,6 +189,7 @@ public class Variant {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -209,6 +210,7 @@ public class Variant {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Модификации
@@ -264,6 +266,7 @@ public class Variant {
     return this;
   }
 
+
   /**
    * Наименование Модификации
    * @return name
@@ -285,11 +288,13 @@ public class Variant {
     this.name = name;
   }
 
+
   public Variant code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код Модификации
@@ -312,11 +317,13 @@ public class Variant {
     this.code = code;
   }
 
+
   public Variant externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Модификации
@@ -339,11 +346,13 @@ public class Variant {
     this.externalCode = externalCode;
   }
 
+
   public Variant archived(@javax.annotation.Nullable Boolean archived) {
     
     this.archived = archived;
     return this;
   }
+
 
   /**
    * Добавлена ли Модификация в архив
@@ -366,11 +375,13 @@ public class Variant {
     this.archived = archived;
   }
 
+
   public Variant description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Описание Модификации
@@ -402,11 +413,13 @@ public class Variant {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public Variant discountProhibited(@javax.annotation.Nullable Boolean discountProhibited) {
     
     this.discountProhibited = discountProhibited;
     return this;
   }
+
 
   /**
    * Признак запрета скидок
@@ -429,11 +442,13 @@ public class Variant {
     this.discountProhibited = discountProhibited;
   }
 
+
   public Variant product(@javax.annotation.Nullable Product product) {
     
     this.product = product;
     return this;
   }
+
 
   /**
    * Get product
@@ -456,11 +471,13 @@ public class Variant {
     this.product = product;
   }
 
+
   public Variant characteristics(@javax.annotation.Nullable List<VariantCharacteristicValue> characteristics) {
     this.characteristics = JsonNullable.<List<VariantCharacteristicValue>>of(characteristics);
     
     return this;
   }
+
 
   public Variant addCharacteristicsItem(VariantCharacteristicValue characteristicsItem) {
     if (this.characteristics == null || !this.characteristics.isPresent()) {
@@ -504,11 +521,13 @@ public class Variant {
     this.characteristics = JsonNullable.<List<VariantCharacteristicValue>>of(characteristics);
   }
 
+
   public Variant salePrices(@javax.annotation.Nullable List<SalePrice> salePrices) {
     this.salePrices = JsonNullable.<List<SalePrice>>of(salePrices);
     
     return this;
   }
+
 
   public Variant addSalePricesItem(SalePrice salePricesItem) {
     if (this.salePrices == null || !this.salePrices.isPresent()) {
@@ -552,11 +571,13 @@ public class Variant {
     this.salePrices = JsonNullable.<List<SalePrice>>of(salePrices);
   }
 
+
   public Variant buyPrice(@javax.annotation.Nullable BuyPrice buyPrice) {
     this.buyPrice = JsonNullable.<BuyPrice>of(buyPrice);
     
     return this;
   }
+
 
   /**
    * Закупочная цена
@@ -588,11 +609,13 @@ public class Variant {
     this.buyPrice = JsonNullable.<BuyPrice>of(buyPrice);
   }
 
+
   public Variant minPrice(@javax.annotation.Nullable MinPrice minPrice) {
     
     this.minPrice = minPrice;
     return this;
   }
+
 
   /**
    * Get minPrice
@@ -615,11 +638,13 @@ public class Variant {
     this.minPrice = minPrice;
   }
 
+
   public Variant barcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
     
     return this;
   }
+
 
   public Variant addBarcodesItem(Barcode barcodesItem) {
     if (this.barcodes == null || !this.barcodes.isPresent()) {
@@ -663,11 +688,13 @@ public class Variant {
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
   }
 
+
   public Variant packs(@javax.annotation.Nullable List<VariantPack> packs) {
     this.packs = JsonNullable.<List<VariantPack>>of(packs);
     
     return this;
   }
+
 
   public Variant addPacksItem(VariantPack packsItem) {
     if (this.packs == null || !this.packs.isPresent()) {
@@ -711,11 +738,13 @@ public class Variant {
     this.packs = JsonNullable.<List<VariantPack>>of(packs);
   }
 
+
   public Variant images(@javax.annotation.Nullable ImageList images) {
     this.images = JsonNullable.<ImageList>of(images);
     
     return this;
   }
+
 
   /**
    * Массив метаданных Изображений
@@ -747,11 +776,13 @@ public class Variant {
     this.images = JsonNullable.<ImageList>of(images);
   }
 
+
   public Variant minimumStock(@javax.annotation.Nullable MinimumStockAbstract minimumStock) {
     this.minimumStock = JsonNullable.<MinimumStockAbstract>of(minimumStock);
     
     return this;
   }
+
 
   /**
    * Неснижаемый остаток. Не выводится по умолчанию. Для получения передайте параметр &#x60;?fields&#x3D;minimumStock&#x60;. 
@@ -783,11 +814,13 @@ public class Variant {
     this.minimumStock = JsonNullable.<MinimumStockAbstract>of(minimumStock);
   }
 
+
   public Variant things(@javax.annotation.Nullable List<String> things) {
     this.things = JsonNullable.<List<String>>of(things);
     
     return this;
   }
+
 
   public Variant addThingsItem(String thingsItem) {
     if (this.things == null || !this.things.isPresent()) {
@@ -830,6 +863,7 @@ public class Variant {
   public void setThings(@javax.annotation.Nullable List<String> things) {
     this.things = JsonNullable.<List<String>>of(things);
   }
+
 
   @Override
   public boolean equals(Object o) {

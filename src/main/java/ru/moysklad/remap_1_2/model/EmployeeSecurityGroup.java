@@ -37,7 +37,7 @@ import java.util.StringJoiner;
   EmployeeSecurityGroup.JSON_PROPERTY_NAME
 })
 @JsonTypeName("EmployeeSecurity_group")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class EmployeeSecurityGroup {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -61,6 +61,7 @@ public class EmployeeSecurityGroup {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -82,11 +83,13 @@ public class EmployeeSecurityGroup {
     this.meta = meta;
   }
 
+
   public EmployeeSecurityGroup id(@javax.annotation.Nullable UUID id) {
     
     this.id = id;
     return this;
   }
+
 
   /**
    * ID группы
@@ -109,11 +112,13 @@ public class EmployeeSecurityGroup {
     this.id = id;
   }
 
+
   public EmployeeSecurityGroup name(@javax.annotation.Nullable String name) {
     
     this.name = name;
     return this;
   }
+
 
   /**
    * Название группы
@@ -135,6 +140,7 @@ public class EmployeeSecurityGroup {
   public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
+
 
   @Override
   public boolean equals(Object o) {

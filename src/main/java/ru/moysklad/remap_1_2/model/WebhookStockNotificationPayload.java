@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   WebhookStockNotificationPayload.JSON_PROPERTY_REPORT_TYPE,
   WebhookStockNotificationPayload.JSON_PROPERTY_REPORT_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class WebhookStockNotificationPayload {
 
   public static final String JSON_PROPERTY_ACCOUNT_ID = "accountId";
@@ -64,6 +64,7 @@ public class WebhookStockNotificationPayload {
     return this;
   }
 
+
   /**
    * ID учетной записи
    * @return accountId
@@ -85,11 +86,13 @@ public class WebhookStockNotificationPayload {
     this.accountId = accountId;
   }
 
+
   public WebhookStockNotificationPayload stockType(@javax.annotation.Nullable String stockType) {
     
     this.stockType = stockType;
     return this;
   }
+
 
   /**
    * Тип остатков. Известные значения описаны в WebhookStockStockType
@@ -112,11 +115,13 @@ public class WebhookStockNotificationPayload {
     this.stockType = stockType;
   }
 
+
   public WebhookStockNotificationPayload reportType(@javax.annotation.Nullable String reportType) {
     
     this.reportType = reportType;
     return this;
   }
+
 
   /**
    * Тип отчёта. Известные значения описаны в WebhookStockReportType
@@ -139,11 +144,13 @@ public class WebhookStockNotificationPayload {
     this.reportType = reportType;
   }
 
+
   public WebhookStockNotificationPayload reportUrl(@javax.annotation.Nullable String reportUrl) {
     
     this.reportUrl = reportUrl;
     return this;
   }
+
 
   /**
    * URL для получения данных по изменившейся номенклатуре за период (отчёт об остатках)
@@ -165,6 +172,7 @@ public class WebhookStockNotificationPayload {
   public void setReportUrl(@javax.annotation.Nullable String reportUrl) {
     this.reportUrl = reportUrl;
   }
+
 
   @Override
   public boolean equals(Object o) {

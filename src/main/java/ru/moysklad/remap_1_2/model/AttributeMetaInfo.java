@@ -41,7 +41,7 @@ import java.util.StringJoiner;
   AttributeMetaInfo.JSON_PROPERTY_META,
   AttributeMetaInfo.JSON_PROPERTY_CUSTOM_ENTITY_META
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class AttributeMetaInfo {
 
   public static final String JSON_PROPERTY_ID = "id";
@@ -85,6 +85,7 @@ public class AttributeMetaInfo {
     return this;
   }
 
+
   /**
    * ID дополнительного поля
    * @return id
@@ -106,11 +107,13 @@ public class AttributeMetaInfo {
     this.id = id;
   }
 
+
   public AttributeMetaInfo name(@javax.annotation.Nullable String name) {
     
     this.name = name;
     return this;
   }
+
 
   /**
    * Наименование дополнительного поля
@@ -133,11 +136,13 @@ public class AttributeMetaInfo {
     this.name = name;
   }
 
+
   public AttributeMetaInfo type(@javax.annotation.Nullable String type) {
     
     this.type = type;
     return this;
   }
+
 
   /**
    * Тип дополнительного поля
@@ -160,11 +165,13 @@ public class AttributeMetaInfo {
     this.type = type;
   }
 
+
   public AttributeMetaInfo required(@javax.annotation.Nullable Boolean required) {
     
     this.required = required;
     return this;
   }
+
 
   /**
    * Является ли поле обязательным
@@ -187,11 +194,13 @@ public class AttributeMetaInfo {
     this.required = required;
   }
 
+
   public AttributeMetaInfo show(@javax.annotation.Nullable Boolean show) {
     
     this.show = show;
     return this;
   }
+
 
   /**
    * Показывать ли поле на UI
@@ -214,11 +223,13 @@ public class AttributeMetaInfo {
     this.show = show;
   }
 
+
   public AttributeMetaInfo description(@javax.annotation.Nullable String description) {
     
     this.description = description;
     return this;
   }
+
 
   /**
    * Описание дополнительного поля
@@ -241,11 +252,13 @@ public class AttributeMetaInfo {
     this.description = description;
   }
 
+
   public AttributeMetaInfo meta(@javax.annotation.Nullable Meta meta) {
     
     this.meta = meta;
     return this;
   }
+
 
   /**
    * Get meta
@@ -268,11 +281,13 @@ public class AttributeMetaInfo {
     this.meta = meta;
   }
 
+
   public AttributeMetaInfo customEntityMeta(@javax.annotation.Nullable Meta customEntityMeta) {
     
     this.customEntityMeta = customEntityMeta;
     return this;
   }
+
 
   /**
    * Get customEntityMeta
@@ -294,6 +309,7 @@ public class AttributeMetaInfo {
   public void setCustomEntityMeta(@javax.annotation.Nullable Meta customEntityMeta) {
     this.customEntityMeta = customEntityMeta;
   }
+
 
   @Override
   public boolean equals(Object o) {

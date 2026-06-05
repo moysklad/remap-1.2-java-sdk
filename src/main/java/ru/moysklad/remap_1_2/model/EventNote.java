@@ -42,7 +42,7 @@ import java.util.StringJoiner;
   EventNote.JSON_PROPERTY_AUTHOR,
   EventNote.JSON_PROPERTY_AUTHOR_APPLICATION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class EventNote {
   public static EventNote createWithMeta(UUID documentType, UUID parentId, UUID id) {
     EventNote o = new EventNote();
@@ -112,6 +112,7 @@ public class EventNote {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -132,6 +133,7 @@ public class EventNote {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID События
@@ -187,6 +189,7 @@ public class EventNote {
     return this;
   }
 
+
   /**
    * Текст События
    * @return description
@@ -208,11 +211,13 @@ public class EventNote {
     this.description = description;
   }
 
+
   public EventNote author(@javax.annotation.Nullable Employee author) {
     
     this.author = author;
     return this;
   }
+
 
   /**
    * Get author
@@ -234,6 +239,7 @@ public class EventNote {
   public void setAuthor(@javax.annotation.Nullable Employee author) {
     this.author = author;
   }
+
 
   /**
    * Метаданные Решения - создателя События

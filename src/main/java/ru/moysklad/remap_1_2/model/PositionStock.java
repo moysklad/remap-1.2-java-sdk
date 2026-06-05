@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   PositionStock.JSON_PROPERTY_INTRANSIT,
   PositionStock.JSON_PROPERTY_AVAILABLE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class PositionStock {
 
   public static final String JSON_PROPERTY_COST = "cost";
@@ -68,6 +68,7 @@ public class PositionStock {
     return this;
   }
 
+
   /**
    * Себестоимость в копейках
    * @return cost
@@ -89,11 +90,13 @@ public class PositionStock {
     this.cost = cost;
   }
 
+
   public PositionStock quantity(@javax.annotation.Nullable Double quantity) {
     
     this.quantity = quantity;
     return this;
   }
+
 
   /**
    * Остаток
@@ -116,11 +119,13 @@ public class PositionStock {
     this.quantity = quantity;
   }
 
+
   public PositionStock reserve(@javax.annotation.Nullable Double reserve) {
     
     this.reserve = reserve;
     return this;
   }
+
 
   /**
    * Резерв
@@ -143,11 +148,13 @@ public class PositionStock {
     this.reserve = reserve;
   }
 
+
   public PositionStock intransit(@javax.annotation.Nullable Double intransit) {
     
     this.intransit = intransit;
     return this;
   }
+
 
   /**
    * Ожидание
@@ -170,11 +177,13 @@ public class PositionStock {
     this.intransit = intransit;
   }
 
+
   public PositionStock available(@javax.annotation.Nullable Double available) {
     
     this.available = available;
     return this;
   }
+
 
   /**
    * Доступно
@@ -196,6 +205,7 @@ public class PositionStock {
   public void setAvailable(@javax.annotation.Nullable Double available) {
     this.available = available;
   }
+
 
   @Override
   public boolean equals(Object o) {

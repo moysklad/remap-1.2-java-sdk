@@ -27,7 +27,7 @@
 |**owner** | [**Employee**](Employee.md) | Метаданные владельца (Сотрудника) |  [optional] |
 |**group** | [**Group**](Group.md) |  |  [optional] |
 |**ownAgent** | [**Organization**](Organization.md) |  |  [optional] |
-|**agent** | [**Counterparty**](Counterparty.md) |  |  [optional] |
+|**agent** | [**Agent**](Agent.md) | Метаданные контрагента или юрлица |  [optional] |
 |**state** | [**State**](State.md) | Метаданные статуса договора |  [optional] |
 |**organizationAccount** | [**Account**](Account.md) | Метаданные счета вашего юрлица |  [optional] |
 |**agentAccount** | [**Account**](Account.md) | Метаданные счета контрагента |  [optional] |

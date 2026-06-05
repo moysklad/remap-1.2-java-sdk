@@ -26,9 +26,9 @@ import java.util.List;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import ru.moysklad.remap_1_2.model.Account;
+import ru.moysklad.remap_1_2.model.Agent;
 import ru.moysklad.remap_1_2.model.AttributeAbstract;
 import ru.moysklad.remap_1_2.model.Contract;
-import ru.moysklad.remap_1_2.model.Counterparty;
 import ru.moysklad.remap_1_2.model.CustomerOrder;
 import ru.moysklad.remap_1_2.model.Employee;
 import ru.moysklad.remap_1_2.model.FileList;
@@ -39,9 +39,9 @@ import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.Organization;
 import ru.moysklad.remap_1_2.model.ProductionTask;
 import ru.moysklad.remap_1_2.model.Project;
-import ru.moysklad.remap_1_2.model.PurchaseOrderPaymentsInner;
 import ru.moysklad.remap_1_2.model.PurchaseOrderPositionList;
 import ru.moysklad.remap_1_2.model.PurchaseOrderRate;
+import ru.moysklad.remap_1_2.model.SalesReturnPaymentsInner;
 import ru.moysklad.remap_1_2.model.State;
 import ru.moysklad.remap_1_2.model.Store;
 import ru.moysklad.remap_1_2.model.Supply;
@@ -104,7 +104,7 @@ import java.util.StringJoiner;
   PurchaseOrder.JSON_PROPERTY_PAYMENTS,
   PurchaseOrder.JSON_PROPERTY_PRODUCTION_TASKS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class PurchaseOrder {
   public static PurchaseOrder createWithMeta(UUID id) {
     PurchaseOrder o = new PurchaseOrder();
@@ -231,7 +231,7 @@ public class PurchaseOrder {
 
   public static final String JSON_PROPERTY_AGENT = "agent";
   @javax.annotation.Nullable
-  private Counterparty agent;
+  private Agent agent;
 
   public static final String JSON_PROPERTY_AGENT_ACCOUNT = "agentAccount";
   @javax.annotation.Nullable
@@ -295,7 +295,7 @@ public class PurchaseOrder {
 
   public static final String JSON_PROPERTY_PAYMENTS = "payments";
   @javax.annotation.Nullable
-  private JsonNullable<List<PurchaseOrderPaymentsInner>> payments = JsonNullable.<List<PurchaseOrderPaymentsInner>>undefined();
+  private JsonNullable<List<SalesReturnPaymentsInner>> payments = JsonNullable.<List<SalesReturnPaymentsInner>>undefined();
 
   public static final String JSON_PROPERTY_PRODUCTION_TASKS = "productionTasks";
   @javax.annotation.Nullable
@@ -344,6 +344,7 @@ public class PurchaseOrder {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -364,6 +365,7 @@ public class PurchaseOrder {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Заказа поставщику
@@ -403,6 +405,7 @@ public class PurchaseOrder {
     return this;
   }
 
+
   /**
    * Наименование Заказа поставщику
    * @return name
@@ -424,11 +427,13 @@ public class PurchaseOrder {
     this.name = name;
   }
 
+
   public PurchaseOrder code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код Заказа поставщику
@@ -451,11 +456,13 @@ public class PurchaseOrder {
     this.code = code;
   }
 
+
   public PurchaseOrder externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Заказа поставщику
@@ -478,11 +485,13 @@ public class PurchaseOrder {
     this.externalCode = externalCode;
   }
 
+
   public PurchaseOrder syncId(@javax.annotation.Nullable UUID syncId) {
     
     this.syncId = syncId;
     return this;
   }
+
 
   /**
    * ID синхронизации
@@ -505,11 +514,13 @@ public class PurchaseOrder {
     this.syncId = syncId;
   }
 
+
   public PurchaseOrder description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Комментарий Заказа поставщику
@@ -540,6 +551,7 @@ public class PurchaseOrder {
   public void setDescription(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
   }
+
 
   /**
    * Дата создания
@@ -595,6 +607,7 @@ public class PurchaseOrder {
     return this;
   }
 
+
   /**
    * Дата документа
    * @return moment
@@ -616,11 +629,13 @@ public class PurchaseOrder {
     this.moment = moment;
   }
 
+
   public PurchaseOrder deliveryPlannedMoment(@javax.annotation.Nullable String deliveryPlannedMoment) {
     
     this.deliveryPlannedMoment = deliveryPlannedMoment;
     return this;
   }
+
 
   /**
    * Планируемая дата отгрузки
@@ -643,11 +658,13 @@ public class PurchaseOrder {
     this.deliveryPlannedMoment = deliveryPlannedMoment;
   }
 
+
   public PurchaseOrder applicable(@javax.annotation.Nullable Boolean applicable) {
     
     this.applicable = applicable;
     return this;
   }
+
 
   /**
    * Отметка о проведении
@@ -669,6 +686,7 @@ public class PurchaseOrder {
   public void setApplicable(@javax.annotation.Nullable Boolean applicable) {
     this.applicable = applicable;
   }
+
 
   /**
    * Напечатан ли документ
@@ -708,6 +726,7 @@ public class PurchaseOrder {
     return this;
   }
 
+
   /**
    * Общий доступ
    * @return shared
@@ -729,11 +748,13 @@ public class PurchaseOrder {
     this.shared = shared;
   }
 
+
   public PurchaseOrder vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
     
     this.vatEnabled = vatEnabled;
     return this;
   }
+
 
   /**
    * Учитывается ли НДС
@@ -756,11 +777,13 @@ public class PurchaseOrder {
     this.vatEnabled = vatEnabled;
   }
 
+
   public PurchaseOrder vatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
     
     this.vatIncluded = vatIncluded;
     return this;
   }
+
 
   /**
    * Включен ли НДС в цену
@@ -782,6 +805,7 @@ public class PurchaseOrder {
   public void setVatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
     this.vatIncluded = vatIncluded;
   }
+
 
   /**
    * Сумма НДС
@@ -885,6 +909,7 @@ public class PurchaseOrder {
     return this;
   }
 
+
   /**
    * Get organization
    * @return organization
@@ -906,11 +931,13 @@ public class PurchaseOrder {
     this.organization = organization;
   }
 
+
   public PurchaseOrder organizationAccount(@javax.annotation.Nullable Account organizationAccount) {
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
     
     return this;
   }
+
 
   /**
    * Метаданные счета юрлица
@@ -942,21 +969,23 @@ public class PurchaseOrder {
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
   }
 
-  public PurchaseOrder agent(@javax.annotation.Nullable Counterparty agent) {
+
+  public PurchaseOrder agent(@javax.annotation.Nullable Agent agent) {
     
     this.agent = agent;
     return this;
   }
 
+
   /**
-   * Get agent
+   * Метаданные контрагента или юрлица
    * @return agent
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Counterparty getAgent() {
+  public Agent getAgent() {
     return agent;
   }
 
@@ -965,15 +994,17 @@ public class PurchaseOrder {
 
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAgent(@javax.annotation.Nullable Counterparty agent) {
+  public void setAgent(@javax.annotation.Nullable Agent agent) {
     this.agent = agent;
   }
+
 
   public PurchaseOrder agentAccount(@javax.annotation.Nullable Account agentAccount) {
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
     
     return this;
   }
+
 
   /**
    * Метаданные счета контрагента
@@ -1005,11 +1036,13 @@ public class PurchaseOrder {
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
   }
 
+
   public PurchaseOrder store(@javax.annotation.Nullable Store store) {
     this.store = JsonNullable.<Store>of(store);
     
     return this;
   }
+
 
   /**
    * Метаданные склада
@@ -1041,11 +1074,13 @@ public class PurchaseOrder {
     this.store = JsonNullable.<Store>of(store);
   }
 
+
   public PurchaseOrder state(@javax.annotation.Nullable State state) {
     this.state = JsonNullable.<State>of(state);
     
     return this;
   }
+
 
   /**
    * Метаданные статуса заказа
@@ -1077,11 +1112,13 @@ public class PurchaseOrder {
     this.state = JsonNullable.<State>of(state);
   }
 
+
   public PurchaseOrder contract(@javax.annotation.Nullable Contract contract) {
     this.contract = JsonNullable.<Contract>of(contract);
     
     return this;
   }
+
 
   /**
    * Метаданные договора
@@ -1113,11 +1150,13 @@ public class PurchaseOrder {
     this.contract = JsonNullable.<Contract>of(contract);
   }
 
+
   public PurchaseOrder project(@javax.annotation.Nullable Project project) {
     this.project = JsonNullable.<Project>of(project);
     
     return this;
   }
+
 
   /**
    * Метаданные проекта
@@ -1149,11 +1188,13 @@ public class PurchaseOrder {
     this.project = JsonNullable.<Project>of(project);
   }
 
+
   public PurchaseOrder owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Владелец (Сотрудник)
@@ -1185,11 +1226,13 @@ public class PurchaseOrder {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public PurchaseOrder group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -1212,11 +1255,13 @@ public class PurchaseOrder {
     this.group = group;
   }
 
+
   public PurchaseOrder attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public PurchaseOrder addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -1260,11 +1305,13 @@ public class PurchaseOrder {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   public PurchaseOrder files(@javax.annotation.Nullable FileList files) {
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
   }
+
 
   /**
    * Метаданные массива Файлов
@@ -1296,11 +1343,13 @@ public class PurchaseOrder {
     this.files = JsonNullable.<FileList>of(files);
   }
 
+
   public PurchaseOrder rate(@javax.annotation.Nullable PurchaseOrderRate rate) {
     
     this.rate = rate;
     return this;
   }
+
 
   /**
    * Get rate
@@ -1323,11 +1372,13 @@ public class PurchaseOrder {
     this.rate = rate;
   }
 
+
   public PurchaseOrder positions(@javax.annotation.Nullable PurchaseOrderPositionList positions) {
     
     this.positions = positions;
     return this;
   }
+
 
   /**
    * Позиции Заказа поставщику
@@ -1350,11 +1401,13 @@ public class PurchaseOrder {
     this.positions = positions;
   }
 
+
   public PurchaseOrder internalOrder(@javax.annotation.Nullable InternalOrder internalOrder) {
     this.internalOrder = JsonNullable.<InternalOrder>of(internalOrder);
     
     return this;
   }
+
 
   /**
    * Внутренний заказ, связанный с заказом поставщику
@@ -1386,11 +1439,13 @@ public class PurchaseOrder {
     this.internalOrder = JsonNullable.<InternalOrder>of(internalOrder);
   }
 
+
   public PurchaseOrder customerOrders(@javax.annotation.Nullable List<CustomerOrder> customerOrders) {
     this.customerOrders = JsonNullable.<List<CustomerOrder>>of(customerOrders);
     
     return this;
   }
+
 
   public PurchaseOrder addCustomerOrdersItem(CustomerOrder customerOrdersItem) {
     if (this.customerOrders == null || !this.customerOrders.isPresent()) {
@@ -1434,11 +1489,13 @@ public class PurchaseOrder {
     this.customerOrders = JsonNullable.<List<CustomerOrder>>of(customerOrders);
   }
 
+
   public PurchaseOrder invoicesIn(@javax.annotation.Nullable List<InvoiceIn> invoicesIn) {
     this.invoicesIn = JsonNullable.<List<InvoiceIn>>of(invoicesIn);
     
     return this;
   }
+
 
   public PurchaseOrder addInvoicesInItem(InvoiceIn invoicesInItem) {
     if (this.invoicesIn == null || !this.invoicesIn.isPresent()) {
@@ -1482,11 +1539,13 @@ public class PurchaseOrder {
     this.invoicesIn = JsonNullable.<List<InvoiceIn>>of(invoicesIn);
   }
 
+
   public PurchaseOrder supplies(@javax.annotation.Nullable List<Supply> supplies) {
     this.supplies = JsonNullable.<List<Supply>>of(supplies);
     
     return this;
   }
+
 
   public PurchaseOrder addSuppliesItem(Supply suppliesItem) {
     if (this.supplies == null || !this.supplies.isPresent()) {
@@ -1530,15 +1589,17 @@ public class PurchaseOrder {
     this.supplies = JsonNullable.<List<Supply>>of(supplies);
   }
 
-  public PurchaseOrder payments(@javax.annotation.Nullable List<PurchaseOrderPaymentsInner> payments) {
-    this.payments = JsonNullable.<List<PurchaseOrderPaymentsInner>>of(payments);
+
+  public PurchaseOrder payments(@javax.annotation.Nullable List<SalesReturnPaymentsInner> payments) {
+    this.payments = JsonNullable.<List<SalesReturnPaymentsInner>>of(payments);
     
     return this;
   }
 
-  public PurchaseOrder addPaymentsItem(PurchaseOrderPaymentsInner paymentsItem) {
+
+  public PurchaseOrder addPaymentsItem(SalesReturnPaymentsInner paymentsItem) {
     if (this.payments == null || !this.payments.isPresent()) {
-      this.payments = JsonNullable.<List<PurchaseOrderPaymentsInner>>of(new ArrayList<>());
+      this.payments = JsonNullable.<List<SalesReturnPaymentsInner>>of(new ArrayList<>());
     }
     try {
       this.payments.get().add(paymentsItem);
@@ -1555,7 +1616,7 @@ public class PurchaseOrder {
   @javax.annotation.Nullable
   @JsonIgnore
 
-  public List<PurchaseOrderPaymentsInner> getPayments() {
+  public List<SalesReturnPaymentsInner> getPayments() {
         return payments.orElse(null);
   }
 
@@ -1565,24 +1626,26 @@ public class PurchaseOrder {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<PurchaseOrderPaymentsInner>> getPayments_JsonNullable() {
+  public JsonNullable<List<SalesReturnPaymentsInner>> getPayments_JsonNullable() {
     return payments;
   }
   
   @JsonProperty(value = JSON_PROPERTY_PAYMENTS, required = false)
-  public void setPayments_JsonNullable(JsonNullable<List<PurchaseOrderPaymentsInner>> payments) {
+  public void setPayments_JsonNullable(JsonNullable<List<SalesReturnPaymentsInner>> payments) {
     this.payments = payments;
   }
 
-  public void setPayments(@javax.annotation.Nullable List<PurchaseOrderPaymentsInner> payments) {
-    this.payments = JsonNullable.<List<PurchaseOrderPaymentsInner>>of(payments);
+  public void setPayments(@javax.annotation.Nullable List<SalesReturnPaymentsInner> payments) {
+    this.payments = JsonNullable.<List<SalesReturnPaymentsInner>>of(payments);
   }
+
 
   public PurchaseOrder productionTasks(@javax.annotation.Nullable List<ProductionTask> productionTasks) {
     this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
     
     return this;
   }
+
 
   public PurchaseOrder addProductionTasksItem(ProductionTask productionTasksItem) {
     if (this.productionTasks == null || !this.productionTasks.isPresent()) {
@@ -1625,6 +1688,7 @@ public class PurchaseOrder {
   public void setProductionTasks(@javax.annotation.Nullable List<ProductionTask> productionTasks) {
     this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
   }
+
 
   @Override
   public boolean equals(Object o) {

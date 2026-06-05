@@ -44,7 +44,7 @@ import java.util.StringJoiner;
   ProcessingPlanStageList.JSON_PROPERTY_META,
   ProcessingPlanStageList.JSON_PROPERTY_ROWS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingPlanStageList {
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
@@ -68,6 +68,7 @@ public class ProcessingPlanStageList {
     return this;
   }
 
+
   /**
    * Get context
    * @return context
@@ -89,11 +90,13 @@ public class ProcessingPlanStageList {
     this.context = context;
   }
 
+
   public ProcessingPlanStageList meta(@javax.annotation.Nullable MetaList meta) {
     
     this.meta = meta;
     return this;
   }
+
 
   /**
    * Get meta
@@ -116,11 +119,13 @@ public class ProcessingPlanStageList {
     this.meta = meta;
   }
 
+
   public ProcessingPlanStageList rows(@javax.annotation.Nullable List<ProcessingPlanStage> rows) {
     this.rows = JsonNullable.<List<ProcessingPlanStage>>of(rows);
     
     return this;
   }
+
 
   public ProcessingPlanStageList addRowsItem(ProcessingPlanStage rowsItem) {
     if (this.rows == null || !this.rows.isPresent()) {
@@ -163,6 +168,7 @@ public class ProcessingPlanStageList {
   public void setRows(@javax.annotation.Nullable List<ProcessingPlanStage> rows) {
     this.rows = JsonNullable.<List<ProcessingPlanStage>>of(rows);
   }
+
 
   @Override
   public boolean equals(Object o) {

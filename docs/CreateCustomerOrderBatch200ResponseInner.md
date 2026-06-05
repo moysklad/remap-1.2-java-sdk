@@ -34,7 +34,7 @@
 |**invoicedSum** | **Double** | Сумма счетов покупателю |  [optional] [readonly] |
 |**organization** | [**Organization**](Organization.md) |  |  [optional] |
 |**organizationAccount** | [**Account**](Account.md) | Метаданные счета юрлица |  [optional] |
-|**agent** | [**CustomerOrderAgent**](CustomerOrderAgent.md) |  |  [optional] |
+|**agent** | [**Agent**](Agent.md) | Метаданные контрагента или юрлица |  [optional] |
 |**agentAccount** | [**Account**](Account.md) | Метаданные счета контрагента |  [optional] |
 |**store** | [**Store**](Store.md) | Метаданные склада |  [optional] |
 |**state** | [**State**](State.md) | Метаданные статуса заказа |  [optional] |

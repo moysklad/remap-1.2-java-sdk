@@ -49,7 +49,7 @@ import java.util.StringJoiner;
   TaxRate.JSON_PROPERTY_ARCHIVED,
   TaxRate.JSON_PROPERTY_COMMENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class TaxRate {
   public static TaxRate createWithMeta(UUID id) {
     TaxRate o = new TaxRate();
@@ -129,6 +129,7 @@ public class TaxRate {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -149,6 +150,7 @@ public class TaxRate {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID налоговой ставки
@@ -188,6 +190,7 @@ public class TaxRate {
     return this;
   }
 
+
   /**
    * Метаданные владельца (Сотрудника)
    * @return owner
@@ -218,11 +221,13 @@ public class TaxRate {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public TaxRate shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Флаг общего доступа
@@ -245,11 +250,13 @@ public class TaxRate {
     this.shared = shared;
   }
 
+
   public TaxRate group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -271,6 +278,7 @@ public class TaxRate {
   public void setGroup(@javax.annotation.Nullable Group group) {
     this.group = group;
   }
+
 
   /**
    * Момент последнего обновления сущности
@@ -294,6 +302,7 @@ public class TaxRate {
     return this;
   }
 
+
   /**
    * Значение налоговой ставки
    * @return rate
@@ -315,11 +324,13 @@ public class TaxRate {
     this.rate = rate;
   }
 
+
   public TaxRate archived(@javax.annotation.Nullable Boolean archived) {
     
     this.archived = archived;
     return this;
   }
+
 
   /**
    * Флаг принадлежности ставки к архивным ставкам
@@ -342,11 +353,13 @@ public class TaxRate {
     this.archived = archived;
   }
 
+
   public TaxRate comment(@javax.annotation.Nullable String comment) {
     
     this.comment = comment;
     return this;
   }
+
 
   /**
    * Комментарий к налоговой ставке
@@ -368,6 +381,7 @@ public class TaxRate {
   public void setComment(@javax.annotation.Nullable String comment) {
     this.comment = comment;
   }
+
 
   @Override
   public boolean equals(Object o) {

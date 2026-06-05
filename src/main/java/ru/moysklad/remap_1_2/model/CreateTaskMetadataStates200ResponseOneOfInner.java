@@ -48,7 +48,7 @@ import java.util.StringJoiner;
   CreateTaskMetadataStates200ResponseOneOfInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createTaskMetadataStates_200_response_oneOf_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateTaskMetadataStates200ResponseOneOfInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -106,6 +106,7 @@ public class CreateTaskMetadataStates200ResponseOneOfInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -126,6 +127,7 @@ public class CreateTaskMetadataStates200ResponseOneOfInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID статуса
@@ -149,6 +151,7 @@ public class CreateTaskMetadataStates200ResponseOneOfInner {
     return this;
   }
 
+
   /**
    * Наименование статуса
    * @return name
@@ -169,6 +172,7 @@ public class CreateTaskMetadataStates200ResponseOneOfInner {
   public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
+
 
   /**
    * ID учетной записи
@@ -192,6 +196,7 @@ public class CreateTaskMetadataStates200ResponseOneOfInner {
     return this;
   }
 
+
   /**
    * Цвет Статуса
    * @return color
@@ -212,6 +217,7 @@ public class CreateTaskMetadataStates200ResponseOneOfInner {
   public void setColor(@javax.annotation.Nullable Integer color) {
     this.color = color;
   }
+
 
   /**
    * Тип сущности, к которой относится Статус (ключевое слово в рамках JSON API)
@@ -235,6 +241,7 @@ public class CreateTaskMetadataStates200ResponseOneOfInner {
     return this;
   }
 
+
   /**
    * Тип Статуса. Известные значения описаны в StateType
    * @return stateType
@@ -256,11 +263,13 @@ public class CreateTaskMetadataStates200ResponseOneOfInner {
     this.stateType = stateType;
   }
 
+
   public CreateTaskMetadataStates200ResponseOneOfInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
+
 
   public CreateTaskMetadataStates200ResponseOneOfInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -290,6 +299,7 @@ public class CreateTaskMetadataStates200ResponseOneOfInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

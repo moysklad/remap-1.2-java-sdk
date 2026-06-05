@@ -45,7 +45,7 @@ import java.util.StringJoiner;
   ContactPerson.JSON_PROPERTY_EXTERNAL_CODE,
   ContactPerson.JSON_PROPERTY_AGENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class ContactPerson {
   public static ContactPerson createWithMeta(UUID parentId, UUID id) {
     ContactPerson o = new ContactPerson();
@@ -129,6 +129,7 @@ public class ContactPerson {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -149,6 +150,7 @@ public class ContactPerson {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID контактного лица
@@ -204,6 +206,7 @@ public class ContactPerson {
     return this;
   }
 
+
   /**
    * ФИО контактного лица
    * @return name
@@ -225,11 +228,13 @@ public class ContactPerson {
     this.name = name;
   }
 
+
   public ContactPerson description(@javax.annotation.Nullable String description) {
     
     this.description = description;
     return this;
   }
+
 
   /**
    * Описание контактного лица
@@ -252,11 +257,13 @@ public class ContactPerson {
     this.description = description;
   }
 
+
   public ContactPerson email(@javax.annotation.Nullable String email) {
     
     this.email = email;
     return this;
   }
+
 
   /**
    * Адрес электронной почты
@@ -279,11 +286,13 @@ public class ContactPerson {
     this.email = email;
   }
 
+
   public ContactPerson phone(@javax.annotation.Nullable String phone) {
     
     this.phone = phone;
     return this;
   }
+
 
   /**
    * Номер телефона
@@ -306,11 +315,13 @@ public class ContactPerson {
     this.phone = phone;
   }
 
+
   public ContactPerson position(@javax.annotation.Nullable String position) {
     
     this.position = position;
     return this;
   }
+
 
   /**
    * Должность
@@ -333,11 +344,13 @@ public class ContactPerson {
     this.position = position;
   }
 
+
   public ContactPerson externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код контактного лица
@@ -360,11 +373,13 @@ public class ContactPerson {
     this.externalCode = externalCode;
   }
 
+
   public ContactPerson agent(@javax.annotation.Nullable Counterparty agent) {
     
     this.agent = agent;
     return this;
   }
+
 
   /**
    * Get agent
@@ -386,6 +401,7 @@ public class ContactPerson {
   public void setAgent(@javax.annotation.Nullable Counterparty agent) {
     this.agent = agent;
   }
+
 
   @Override
   public boolean equals(Object o) {

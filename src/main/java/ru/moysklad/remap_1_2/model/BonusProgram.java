@@ -56,7 +56,7 @@ import java.util.StringJoiner;
   BonusProgram.JSON_PROPERTY_ALL_AGENTS,
   BonusProgram.JSON_PROPERTY_AGENT_TAGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class BonusProgram {
 
   public static final String JSON_PROPERTY_EARN_RATE_ROUBLES_TO_POINT = "earnRateRoublesToPoint";
@@ -144,6 +144,7 @@ public class BonusProgram {
     return this;
   }
 
+
   /**
    * Курс начисления
    * @return earnRateRoublesToPoint
@@ -165,11 +166,13 @@ public class BonusProgram {
     this.earnRateRoublesToPoint = earnRateRoublesToPoint;
   }
 
+
   public BonusProgram earnWhileRedeeming(@javax.annotation.Nullable Boolean earnWhileRedeeming) {
     
     this.earnWhileRedeeming = earnWhileRedeeming;
     return this;
   }
+
 
   /**
    * Разрешить одновременное начисление и списание бонусов
@@ -192,11 +195,13 @@ public class BonusProgram {
     this.earnWhileRedeeming = earnWhileRedeeming;
   }
 
+
   public BonusProgram postponedBonusesDelayDays(@javax.annotation.Nullable Integer postponedBonusesDelayDays) {
     
     this.postponedBonusesDelayDays = postponedBonusesDelayDays;
     return this;
   }
+
 
   /**
    * Баллы начисляются через N дней
@@ -219,11 +224,13 @@ public class BonusProgram {
     this.postponedBonusesDelayDays = postponedBonusesDelayDays;
   }
 
+
   public BonusProgram spendRatePointsToRouble(@javax.annotation.Nullable Integer spendRatePointsToRouble) {
     
     this.spendRatePointsToRouble = spendRatePointsToRouble;
     return this;
   }
+
 
   /**
    * Курс списания
@@ -246,11 +253,13 @@ public class BonusProgram {
     this.spendRatePointsToRouble = spendRatePointsToRouble;
   }
 
+
   public BonusProgram welcomeBonusesEnabled(@javax.annotation.Nullable Boolean welcomeBonusesEnabled) {
     
     this.welcomeBonusesEnabled = welcomeBonusesEnabled;
     return this;
   }
+
 
   /**
    * Возможность начисления приветственных баллов
@@ -273,11 +282,13 @@ public class BonusProgram {
     this.welcomeBonusesEnabled = welcomeBonusesEnabled;
   }
 
+
   public BonusProgram welcomeBonusesValue(@javax.annotation.Nullable Integer welcomeBonusesValue) {
     
     this.welcomeBonusesValue = welcomeBonusesValue;
     return this;
   }
+
 
   /**
    * Количество приветственных баллов, начисляемых участникам бонусной программы
@@ -300,11 +311,13 @@ public class BonusProgram {
     this.welcomeBonusesValue = welcomeBonusesValue;
   }
 
+
   public BonusProgram welcomeBonusesMode(@javax.annotation.Nullable String welcomeBonusesMode) {
     
     this.welcomeBonusesMode = welcomeBonusesMode;
     return this;
   }
+
 
   /**
    * Условие начисления приветственных баллов. Известные значения описаны в WelcomeBonusesMode
@@ -327,11 +340,13 @@ public class BonusProgram {
     this.welcomeBonusesMode = welcomeBonusesMode;
   }
 
+
   public BonusProgram maxPaidRatePercents(@javax.annotation.Nullable Integer maxPaidRatePercents) {
     
     this.maxPaidRatePercents = maxPaidRatePercents;
     return this;
   }
+
 
   /**
    * Максимальный процент оплаты баллами
@@ -356,11 +371,13 @@ public class BonusProgram {
     this.maxPaidRatePercents = maxPaidRatePercents;
   }
 
+
   public BonusProgram allProducts(@javax.annotation.Nullable Boolean allProducts) {
     
     this.allProducts = allProducts;
     return this;
   }
+
 
   /**
    * Для всех ли товаров скидка
@@ -382,6 +399,7 @@ public class BonusProgram {
   public void setAllProducts(@javax.annotation.Nullable Boolean allProducts) {
     this.allProducts = allProducts;
   }
+
 
   /**
    * ID дополнительного поля
@@ -405,6 +423,7 @@ public class BonusProgram {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -425,6 +444,7 @@ public class BonusProgram {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID учетной записи
@@ -448,6 +468,7 @@ public class BonusProgram {
     return this;
   }
 
+
   /**
    * Наименование товара
    * @return name
@@ -469,11 +490,13 @@ public class BonusProgram {
     this.name = name;
   }
 
+
   public BonusProgram active(@javax.annotation.Nullable Boolean active) {
     
     this.active = active;
     return this;
   }
+
 
   /**
    * Включена ли скидка
@@ -496,11 +519,13 @@ public class BonusProgram {
     this.active = active;
   }
 
+
   public BonusProgram allAgents(@javax.annotation.Nullable Boolean allAgents) {
     
     this.allAgents = allAgents;
     return this;
   }
+
 
   /**
    * Для всех ли агентов скидка
@@ -523,11 +548,13 @@ public class BonusProgram {
     this.allAgents = allAgents;
   }
 
+
   public BonusProgram agentTags(@javax.annotation.Nullable List<String> agentTags) {
     this.agentTags = JsonNullable.<List<String>>of(agentTags);
     
     return this;
   }
+
 
   public BonusProgram addAgentTagsItem(String agentTagsItem) {
     if (this.agentTags == null || !this.agentTags.isPresent()) {
@@ -570,6 +597,7 @@ public class BonusProgram {
   public void setAgentTags(@javax.annotation.Nullable List<String> agentTags) {
     this.agentTags = JsonNullable.<List<String>>of(agentTags);
   }
+
 
   @Override
   public boolean equals(Object o) {

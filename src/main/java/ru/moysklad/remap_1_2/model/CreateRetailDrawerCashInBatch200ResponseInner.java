@@ -78,7 +78,7 @@ import java.util.StringJoiner;
   CreateRetailDrawerCashInBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createRetailDrawerCashInBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateRetailDrawerCashInBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -216,6 +216,7 @@ public class CreateRetailDrawerCashInBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -236,6 +237,7 @@ public class CreateRetailDrawerCashInBatch200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Внесения денег
@@ -275,6 +277,7 @@ public class CreateRetailDrawerCashInBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get agent
    * @return agent
@@ -296,11 +299,13 @@ public class CreateRetailDrawerCashInBatch200ResponseInner {
     this.agent = agent;
   }
 
+
   public CreateRetailDrawerCashInBatch200ResponseInner applicable(@javax.annotation.Nullable Boolean applicable) {
     
     this.applicable = applicable;
     return this;
   }
+
 
   /**
    * Отметка о проведении
@@ -323,11 +328,13 @@ public class CreateRetailDrawerCashInBatch200ResponseInner {
     this.applicable = applicable;
   }
 
+
   public CreateRetailDrawerCashInBatch200ResponseInner attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public CreateRetailDrawerCashInBatch200ResponseInner addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -371,6 +378,7 @@ public class CreateRetailDrawerCashInBatch200ResponseInner {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   /**
    * Дата создания
    * @return created
@@ -409,6 +417,7 @@ public class CreateRetailDrawerCashInBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Комментарий Внесения денег
    * @return description
@@ -439,11 +448,13 @@ public class CreateRetailDrawerCashInBatch200ResponseInner {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public CreateRetailDrawerCashInBatch200ResponseInner externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Внесения денег
@@ -466,11 +477,13 @@ public class CreateRetailDrawerCashInBatch200ResponseInner {
     this.externalCode = externalCode;
   }
 
+
   public CreateRetailDrawerCashInBatch200ResponseInner files(@javax.annotation.Nullable FileList files) {
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
   }
+
 
   /**
    * Метаданные массива файлов
@@ -502,11 +515,13 @@ public class CreateRetailDrawerCashInBatch200ResponseInner {
     this.files = JsonNullable.<FileList>of(files);
   }
 
+
   public CreateRetailDrawerCashInBatch200ResponseInner group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -529,11 +544,13 @@ public class CreateRetailDrawerCashInBatch200ResponseInner {
     this.group = group;
   }
 
+
   public CreateRetailDrawerCashInBatch200ResponseInner moment(@javax.annotation.Nullable String moment) {
     
     this.moment = moment;
     return this;
   }
+
 
   /**
    * Дата документа
@@ -556,11 +573,13 @@ public class CreateRetailDrawerCashInBatch200ResponseInner {
     this.moment = moment;
   }
 
+
   public CreateRetailDrawerCashInBatch200ResponseInner name(@javax.annotation.Nullable String name) {
     
     this.name = name;
     return this;
   }
+
 
   /**
    * Наименование Внесения денег
@@ -583,11 +602,13 @@ public class CreateRetailDrawerCashInBatch200ResponseInner {
     this.name = name;
   }
 
+
   public CreateRetailDrawerCashInBatch200ResponseInner organization(@javax.annotation.Nullable Organization organization) {
     
     this.organization = organization;
     return this;
   }
+
 
   /**
    * Get organization
@@ -610,11 +631,13 @@ public class CreateRetailDrawerCashInBatch200ResponseInner {
     this.organization = organization;
   }
 
+
   public CreateRetailDrawerCashInBatch200ResponseInner owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Владелец (Сотрудник)
@@ -645,6 +668,7 @@ public class CreateRetailDrawerCashInBatch200ResponseInner {
   public void setOwner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
   }
+
 
   /**
    * Напечатан ли документ
@@ -684,6 +708,7 @@ public class CreateRetailDrawerCashInBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get rate
    * @return rate
@@ -705,11 +730,13 @@ public class CreateRetailDrawerCashInBatch200ResponseInner {
     this.rate = rate;
   }
 
+
   public CreateRetailDrawerCashInBatch200ResponseInner retailShift(@javax.annotation.Nullable RetailShift retailShift) {
     
     this.retailShift = retailShift;
     return this;
   }
+
 
   /**
    * Get retailShift
@@ -732,11 +759,13 @@ public class CreateRetailDrawerCashInBatch200ResponseInner {
     this.retailShift = retailShift;
   }
 
+
   public CreateRetailDrawerCashInBatch200ResponseInner shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -759,11 +788,13 @@ public class CreateRetailDrawerCashInBatch200ResponseInner {
     this.shared = shared;
   }
 
+
   public CreateRetailDrawerCashInBatch200ResponseInner state(@javax.annotation.Nullable State state) {
     this.state = JsonNullable.<State>of(state);
     
     return this;
   }
+
 
   /**
    * Метаданные статуса Внесения денег
@@ -795,15 +826,17 @@ public class CreateRetailDrawerCashInBatch200ResponseInner {
     this.state = JsonNullable.<State>of(state);
   }
 
+
   public CreateRetailDrawerCashInBatch200ResponseInner sum(@javax.annotation.Nullable Double sum) {
     
     this.sum = sum;
     return this;
   }
 
+
   /**
    * Сумма Внесения денег в копейках
-   * minimum: 0.5
+   * minimum: 1
    * @return sum
    */
   @javax.annotation.Nullable
@@ -823,11 +856,13 @@ public class CreateRetailDrawerCashInBatch200ResponseInner {
     this.sum = sum;
   }
 
+
   public CreateRetailDrawerCashInBatch200ResponseInner syncId(@javax.annotation.Nullable UUID syncId) {
     
     this.syncId = syncId;
     return this;
   }
+
 
   /**
    * ID синхронизации
@@ -850,6 +885,7 @@ public class CreateRetailDrawerCashInBatch200ResponseInner {
     this.syncId = syncId;
   }
 
+
   /**
    * Момент последнего обновления Внесения денег
    * @return updated
@@ -871,6 +907,7 @@ public class CreateRetailDrawerCashInBatch200ResponseInner {
     this.errors = errors;
     return this;
   }
+
 
   public CreateRetailDrawerCashInBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -900,6 +937,7 @@ public class CreateRetailDrawerCashInBatch200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

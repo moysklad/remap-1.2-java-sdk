@@ -38,7 +38,7 @@ import java.util.StringJoiner;
   WebhookNotificationPayload.JSON_PROPERTY_AUDIT_CONTEXT,
   WebhookNotificationPayload.JSON_PROPERTY_EVENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class WebhookNotificationPayload {
 
   public static final String JSON_PROPERTY_AUDIT_CONTEXT = "auditContext";
@@ -57,6 +57,7 @@ public class WebhookNotificationPayload {
     this.auditContext = auditContext;
     return this;
   }
+
 
   /**
    * Get auditContext
@@ -79,11 +80,13 @@ public class WebhookNotificationPayload {
     this.auditContext = auditContext;
   }
 
+
   public WebhookNotificationPayload events(@javax.annotation.Nullable List<WebhookEvent> events) {
     
     this.events = events;
     return this;
   }
+
 
   public WebhookNotificationPayload addEventsItem(WebhookEvent eventsItem) {
     if (this.events == null) {
@@ -113,6 +116,7 @@ public class WebhookNotificationPayload {
   public void setEvents(@javax.annotation.Nullable List<WebhookEvent> events) {
     this.events = events;
   }
+
 
   @Override
   public boolean equals(Object o) {

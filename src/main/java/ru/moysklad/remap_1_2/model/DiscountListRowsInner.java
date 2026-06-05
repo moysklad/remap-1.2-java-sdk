@@ -71,7 +71,7 @@ import java.util.StringJoiner;
   DiscountListRowsInner.JSON_PROPERTY_MAX_PAID_RATE_PERCENTS
 })
 @JsonTypeName("DiscountList_rows_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class DiscountListRowsInner {
 
   public static final String JSON_PROPERTY_ALL_PRODUCTS = "allProducts";
@@ -183,6 +183,7 @@ public class DiscountListRowsInner {
     return this;
   }
 
+
   /**
    * Для всех ли товаров скидка
    * @return allProducts
@@ -204,11 +205,13 @@ public class DiscountListRowsInner {
     this.allProducts = allProducts;
   }
 
+
   public DiscountListRowsInner assortment(@javax.annotation.Nullable List<DiscountAssortmentItem> assortment) {
     
     this.assortment = assortment;
     return this;
   }
+
 
   public DiscountListRowsInner addAssortmentItem(DiscountAssortmentItem assortmentItem) {
     if (this.assortment == null) {
@@ -239,11 +242,13 @@ public class DiscountListRowsInner {
     this.assortment = assortment;
   }
 
+
   public DiscountListRowsInner productFolders(@javax.annotation.Nullable List<ProductFolder> productFolders) {
     
     this.productFolders = productFolders;
     return this;
   }
+
 
   public DiscountListRowsInner addProductFoldersItem(ProductFolder productFoldersItem) {
     if (this.productFolders == null) {
@@ -274,6 +279,7 @@ public class DiscountListRowsInner {
     this.productFolders = productFolders;
   }
 
+
   /**
    * ID дополнительного поля
    * @return id
@@ -296,6 +302,7 @@ public class DiscountListRowsInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -316,6 +323,7 @@ public class DiscountListRowsInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID учетной записи
@@ -339,6 +347,7 @@ public class DiscountListRowsInner {
     return this;
   }
 
+
   /**
    * Наименование товара
    * @return name
@@ -360,11 +369,13 @@ public class DiscountListRowsInner {
     this.name = name;
   }
 
+
   public DiscountListRowsInner active(@javax.annotation.Nullable Boolean active) {
     
     this.active = active;
     return this;
   }
+
 
   /**
    * Включена ли скидка
@@ -387,11 +398,13 @@ public class DiscountListRowsInner {
     this.active = active;
   }
 
+
   public DiscountListRowsInner allAgents(@javax.annotation.Nullable Boolean allAgents) {
     
     this.allAgents = allAgents;
     return this;
   }
+
 
   /**
    * Для всех ли агентов скидка
@@ -414,11 +427,13 @@ public class DiscountListRowsInner {
     this.allAgents = allAgents;
   }
 
+
   public DiscountListRowsInner agentTags(@javax.annotation.Nullable List<String> agentTags) {
     this.agentTags = JsonNullable.<List<String>>of(agentTags);
     
     return this;
   }
+
 
   public DiscountListRowsInner addAgentTagsItem(String agentTagsItem) {
     if (this.agentTags == null || !this.agentTags.isPresent()) {
@@ -462,11 +477,13 @@ public class DiscountListRowsInner {
     this.agentTags = JsonNullable.<List<String>>of(agentTags);
   }
 
+
   public DiscountListRowsInner usePriceType(@javax.annotation.Nullable Boolean usePriceType) {
     
     this.usePriceType = usePriceType;
     return this;
   }
+
 
   /**
    * Использовать ли специальную цену
@@ -489,11 +506,13 @@ public class DiscountListRowsInner {
     this.usePriceType = usePriceType;
   }
 
+
   public DiscountListRowsInner discount(@javax.annotation.Nullable Float discount) {
     this.discount = JsonNullable.<Float>of(discount);
     
     return this;
   }
+
 
   /**
    * Процент скидки (используется при usePriceType&#x3D;false)
@@ -525,11 +544,13 @@ public class DiscountListRowsInner {
     this.discount = JsonNullable.<Float>of(discount);
   }
 
+
   public DiscountListRowsInner specialPrice(@javax.annotation.Nullable Object specialPrice) {
     this.specialPrice = JsonNullable.<Object>of(specialPrice);
     
     return this;
   }
+
 
   /**
    * Спец. цена (используется при usePriceType&#x3D;true)
@@ -561,11 +582,13 @@ public class DiscountListRowsInner {
     this.specialPrice = JsonNullable.<Object>of(specialPrice);
   }
 
+
   public DiscountListRowsInner levels(@javax.annotation.Nullable List<Object> levels) {
     
     this.levels = levels;
     return this;
   }
+
 
   public DiscountListRowsInner addLevelsItem(Object levelsItem) {
     if (this.levels == null) {
@@ -596,11 +619,13 @@ public class DiscountListRowsInner {
     this.levels = levels;
   }
 
+
   public DiscountListRowsInner earnRateRoublesToPoint(@javax.annotation.Nullable Integer earnRateRoublesToPoint) {
     
     this.earnRateRoublesToPoint = earnRateRoublesToPoint;
     return this;
   }
+
 
   /**
    * Курс начисления
@@ -623,11 +648,13 @@ public class DiscountListRowsInner {
     this.earnRateRoublesToPoint = earnRateRoublesToPoint;
   }
 
+
   public DiscountListRowsInner earnWhileRedeeming(@javax.annotation.Nullable Boolean earnWhileRedeeming) {
     
     this.earnWhileRedeeming = earnWhileRedeeming;
     return this;
   }
+
 
   /**
    * Разрешить одновременное начисление и списание бонусов
@@ -650,11 +677,13 @@ public class DiscountListRowsInner {
     this.earnWhileRedeeming = earnWhileRedeeming;
   }
 
+
   public DiscountListRowsInner postponedBonusesDelayDays(@javax.annotation.Nullable Integer postponedBonusesDelayDays) {
     
     this.postponedBonusesDelayDays = postponedBonusesDelayDays;
     return this;
   }
+
 
   /**
    * Баллы начисляются через N дней
@@ -677,11 +706,13 @@ public class DiscountListRowsInner {
     this.postponedBonusesDelayDays = postponedBonusesDelayDays;
   }
 
+
   public DiscountListRowsInner spendRatePointsToRouble(@javax.annotation.Nullable Integer spendRatePointsToRouble) {
     
     this.spendRatePointsToRouble = spendRatePointsToRouble;
     return this;
   }
+
 
   /**
    * Курс списания
@@ -704,11 +735,13 @@ public class DiscountListRowsInner {
     this.spendRatePointsToRouble = spendRatePointsToRouble;
   }
 
+
   public DiscountListRowsInner welcomeBonusesEnabled(@javax.annotation.Nullable Boolean welcomeBonusesEnabled) {
     
     this.welcomeBonusesEnabled = welcomeBonusesEnabled;
     return this;
   }
+
 
   /**
    * Возможность начисления приветственных баллов
@@ -731,11 +764,13 @@ public class DiscountListRowsInner {
     this.welcomeBonusesEnabled = welcomeBonusesEnabled;
   }
 
+
   public DiscountListRowsInner welcomeBonusesValue(@javax.annotation.Nullable Integer welcomeBonusesValue) {
     
     this.welcomeBonusesValue = welcomeBonusesValue;
     return this;
   }
+
 
   /**
    * Количество приветственных баллов, начисляемых участникам бонусной программы
@@ -758,11 +793,13 @@ public class DiscountListRowsInner {
     this.welcomeBonusesValue = welcomeBonusesValue;
   }
 
+
   public DiscountListRowsInner welcomeBonusesMode(@javax.annotation.Nullable String welcomeBonusesMode) {
     
     this.welcomeBonusesMode = welcomeBonusesMode;
     return this;
   }
+
 
   /**
    * Условие начисления приветственных баллов. Известные значения описаны в WelcomeBonusesMode
@@ -785,11 +822,13 @@ public class DiscountListRowsInner {
     this.welcomeBonusesMode = welcomeBonusesMode;
   }
 
+
   public DiscountListRowsInner maxPaidRatePercents(@javax.annotation.Nullable Integer maxPaidRatePercents) {
     
     this.maxPaidRatePercents = maxPaidRatePercents;
     return this;
   }
+
 
   /**
    * Максимальный процент оплаты баллами
@@ -813,6 +852,7 @@ public class DiscountListRowsInner {
   public void setMaxPaidRatePercents(@javax.annotation.Nullable Integer maxPaidRatePercents) {
     this.maxPaidRatePercents = maxPaidRatePercents;
   }
+
 
   @Override
   public boolean equals(Object o) {

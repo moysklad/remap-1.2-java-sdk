@@ -52,7 +52,7 @@ import java.util.StringJoiner;
   PersonalDiscount.JSON_PROPERTY_ALL_AGENTS,
   PersonalDiscount.JSON_PROPERTY_AGENT_TAGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class PersonalDiscount {
   public static PersonalDiscount createWithMeta(UUID id) {
     PersonalDiscount o = new PersonalDiscount();
@@ -130,6 +130,7 @@ public class PersonalDiscount {
     return this;
   }
 
+
   public PersonalDiscount addAssortmentItem(DiscountAssortmentItem assortmentItem) {
     if (this.assortment == null) {
       this.assortment = new ArrayList<>();
@@ -159,11 +160,13 @@ public class PersonalDiscount {
     this.assortment = assortment;
   }
 
+
   public PersonalDiscount productFolders(@javax.annotation.Nullable List<ProductFolder> productFolders) {
     
     this.productFolders = productFolders;
     return this;
   }
+
 
   public PersonalDiscount addProductFoldersItem(ProductFolder productFoldersItem) {
     if (this.productFolders == null) {
@@ -194,11 +197,13 @@ public class PersonalDiscount {
     this.productFolders = productFolders;
   }
 
+
   public PersonalDiscount allProducts(@javax.annotation.Nullable Boolean allProducts) {
     
     this.allProducts = allProducts;
     return this;
   }
+
 
   /**
    * Для всех ли товаров скидка
@@ -220,6 +225,7 @@ public class PersonalDiscount {
   public void setAllProducts(@javax.annotation.Nullable Boolean allProducts) {
     this.allProducts = allProducts;
   }
+
 
   /**
    * ID дополнительного поля
@@ -243,6 +249,7 @@ public class PersonalDiscount {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -263,6 +270,7 @@ public class PersonalDiscount {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID учетной записи
@@ -286,6 +294,7 @@ public class PersonalDiscount {
     return this;
   }
 
+
   /**
    * Наименование товара
    * @return name
@@ -307,11 +316,13 @@ public class PersonalDiscount {
     this.name = name;
   }
 
+
   public PersonalDiscount active(@javax.annotation.Nullable Boolean active) {
     
     this.active = active;
     return this;
   }
+
 
   /**
    * Включена ли скидка
@@ -334,11 +345,13 @@ public class PersonalDiscount {
     this.active = active;
   }
 
+
   public PersonalDiscount allAgents(@javax.annotation.Nullable Boolean allAgents) {
     
     this.allAgents = allAgents;
     return this;
   }
+
 
   /**
    * Для всех ли агентов скидка
@@ -361,11 +374,13 @@ public class PersonalDiscount {
     this.allAgents = allAgents;
   }
 
+
   public PersonalDiscount agentTags(@javax.annotation.Nullable List<String> agentTags) {
     this.agentTags = JsonNullable.<List<String>>of(agentTags);
     
     return this;
   }
+
 
   public PersonalDiscount addAgentTagsItem(String agentTagsItem) {
     if (this.agentTags == null || !this.agentTags.isPresent()) {
@@ -408,6 +423,7 @@ public class PersonalDiscount {
   public void setAgentTags(@javax.annotation.Nullable List<String> agentTags) {
     this.agentTags = JsonNullable.<List<String>>of(agentTags);
   }
+
 
   @Override
   public boolean equals(Object o) {

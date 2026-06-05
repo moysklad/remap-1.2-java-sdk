@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   Image.JSON_PROPERTY_TINY,
   Image.JSON_PROPERTY_MINIATURE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Image {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -91,6 +91,7 @@ public class Image {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -112,11 +113,13 @@ public class Image {
     this.meta = meta;
   }
 
+
   public Image title(@javax.annotation.Nullable String title) {
     
     this.title = title;
     return this;
   }
+
 
   /**
    * Название изображения
@@ -139,11 +142,13 @@ public class Image {
     this.title = title;
   }
 
+
   public Image filename(@javax.annotation.Nullable String filename) {
     
     this.filename = filename;
     return this;
   }
+
 
   /**
    * Имя файла
@@ -165,6 +170,7 @@ public class Image {
   public void setFilename(@javax.annotation.Nullable String filename) {
     this.filename = filename;
   }
+
 
   /**
    * Размер файла в байтах
@@ -204,6 +210,7 @@ public class Image {
     return this;
   }
 
+
   /**
    * Get tiny
    * @return tiny
@@ -225,11 +232,13 @@ public class Image {
     this.tiny = tiny;
   }
 
+
   public Image miniature(@javax.annotation.Nullable Meta miniature) {
     
     this.miniature = miniature;
     return this;
   }
+
 
   /**
    * Get miniature
@@ -251,6 +260,7 @@ public class Image {
   public void setMiniature(@javax.annotation.Nullable Meta miniature) {
     this.miniature = miniature;
   }
+
 
   @Override
   public boolean equals(Object o) {

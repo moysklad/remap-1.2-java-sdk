@@ -73,7 +73,7 @@ import java.util.StringJoiner;
   RetailDrawerCashIn.JSON_PROPERTY_SYNC_ID,
   RetailDrawerCashIn.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailDrawerCashIn {
   public static RetailDrawerCashIn createWithMeta(UUID id) {
     RetailDrawerCashIn o = new RetailDrawerCashIn();
@@ -221,6 +221,7 @@ public class RetailDrawerCashIn {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -241,6 +242,7 @@ public class RetailDrawerCashIn {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Внесения денег
@@ -280,6 +282,7 @@ public class RetailDrawerCashIn {
     return this;
   }
 
+
   /**
    * Get agent
    * @return agent
@@ -301,11 +304,13 @@ public class RetailDrawerCashIn {
     this.agent = agent;
   }
 
+
   public RetailDrawerCashIn applicable(@javax.annotation.Nullable Boolean applicable) {
     
     this.applicable = applicable;
     return this;
   }
+
 
   /**
    * Отметка о проведении
@@ -328,11 +333,13 @@ public class RetailDrawerCashIn {
     this.applicable = applicable;
   }
 
+
   public RetailDrawerCashIn attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public RetailDrawerCashIn addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -376,6 +383,7 @@ public class RetailDrawerCashIn {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   /**
    * Дата создания
    * @return created
@@ -414,6 +422,7 @@ public class RetailDrawerCashIn {
     return this;
   }
 
+
   /**
    * Комментарий Внесения денег
    * @return description
@@ -444,11 +453,13 @@ public class RetailDrawerCashIn {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public RetailDrawerCashIn externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Внесения денег
@@ -471,11 +482,13 @@ public class RetailDrawerCashIn {
     this.externalCode = externalCode;
   }
 
+
   public RetailDrawerCashIn files(@javax.annotation.Nullable FileList files) {
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
   }
+
 
   /**
    * Метаданные массива файлов
@@ -507,11 +520,13 @@ public class RetailDrawerCashIn {
     this.files = JsonNullable.<FileList>of(files);
   }
 
+
   public RetailDrawerCashIn group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -534,11 +549,13 @@ public class RetailDrawerCashIn {
     this.group = group;
   }
 
+
   public RetailDrawerCashIn moment(@javax.annotation.Nullable String moment) {
     
     this.moment = moment;
     return this;
   }
+
 
   /**
    * Дата документа
@@ -561,11 +578,13 @@ public class RetailDrawerCashIn {
     this.moment = moment;
   }
 
+
   public RetailDrawerCashIn name(@javax.annotation.Nullable String name) {
     
     this.name = name;
     return this;
   }
+
 
   /**
    * Наименование Внесения денег
@@ -588,11 +607,13 @@ public class RetailDrawerCashIn {
     this.name = name;
   }
 
+
   public RetailDrawerCashIn organization(@javax.annotation.Nullable Organization organization) {
     
     this.organization = organization;
     return this;
   }
+
 
   /**
    * Get organization
@@ -615,11 +636,13 @@ public class RetailDrawerCashIn {
     this.organization = organization;
   }
 
+
   public RetailDrawerCashIn owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Владелец (Сотрудник)
@@ -650,6 +673,7 @@ public class RetailDrawerCashIn {
   public void setOwner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
   }
+
 
   /**
    * Напечатан ли документ
@@ -689,6 +713,7 @@ public class RetailDrawerCashIn {
     return this;
   }
 
+
   /**
    * Get rate
    * @return rate
@@ -710,11 +735,13 @@ public class RetailDrawerCashIn {
     this.rate = rate;
   }
 
+
   public RetailDrawerCashIn retailShift(@javax.annotation.Nullable RetailShift retailShift) {
     
     this.retailShift = retailShift;
     return this;
   }
+
 
   /**
    * Get retailShift
@@ -737,11 +764,13 @@ public class RetailDrawerCashIn {
     this.retailShift = retailShift;
   }
 
+
   public RetailDrawerCashIn shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -764,11 +793,13 @@ public class RetailDrawerCashIn {
     this.shared = shared;
   }
 
+
   public RetailDrawerCashIn state(@javax.annotation.Nullable State state) {
     this.state = JsonNullable.<State>of(state);
     
     return this;
   }
+
 
   /**
    * Метаданные статуса Внесения денег
@@ -800,15 +831,17 @@ public class RetailDrawerCashIn {
     this.state = JsonNullable.<State>of(state);
   }
 
+
   public RetailDrawerCashIn sum(@javax.annotation.Nullable Double sum) {
     
     this.sum = sum;
     return this;
   }
 
+
   /**
    * Сумма Внесения денег в копейках
-   * minimum: 0.5
+   * minimum: 1
    * @return sum
    */
   @javax.annotation.Nullable
@@ -828,11 +861,13 @@ public class RetailDrawerCashIn {
     this.sum = sum;
   }
 
+
   public RetailDrawerCashIn syncId(@javax.annotation.Nullable UUID syncId) {
     
     this.syncId = syncId;
     return this;
   }
+
 
   /**
    * ID синхронизации
@@ -854,6 +889,7 @@ public class RetailDrawerCashIn {
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
     this.syncId = syncId;
   }
+
 
   /**
    * Момент последнего обновления Внесения денег

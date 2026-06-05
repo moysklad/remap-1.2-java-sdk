@@ -56,7 +56,7 @@ import java.util.StringJoiner;
   SpecialPriceDiscount.JSON_PROPERTY_ALL_AGENTS,
   SpecialPriceDiscount.JSON_PROPERTY_AGENT_TAGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class SpecialPriceDiscount {
   public static SpecialPriceDiscount createWithMeta(UUID id) {
     SpecialPriceDiscount o = new SpecialPriceDiscount();
@@ -146,6 +146,7 @@ public class SpecialPriceDiscount {
     return this;
   }
 
+
   public SpecialPriceDiscount addAssortmentItem(DiscountAssortmentItem assortmentItem) {
     if (this.assortment == null) {
       this.assortment = new ArrayList<>();
@@ -175,11 +176,13 @@ public class SpecialPriceDiscount {
     this.assortment = assortment;
   }
 
+
   public SpecialPriceDiscount productFolders(@javax.annotation.Nullable List<ProductFolder> productFolders) {
     
     this.productFolders = productFolders;
     return this;
   }
+
 
   public SpecialPriceDiscount addProductFoldersItem(ProductFolder productFoldersItem) {
     if (this.productFolders == null) {
@@ -210,11 +213,13 @@ public class SpecialPriceDiscount {
     this.productFolders = productFolders;
   }
 
+
   public SpecialPriceDiscount allProducts(@javax.annotation.Nullable Boolean allProducts) {
     
     this.allProducts = allProducts;
     return this;
   }
+
 
   /**
    * Для всех ли товаров скидка
@@ -237,11 +242,13 @@ public class SpecialPriceDiscount {
     this.allProducts = allProducts;
   }
 
+
   public SpecialPriceDiscount usePriceType(@javax.annotation.Nullable Boolean usePriceType) {
     
     this.usePriceType = usePriceType;
     return this;
   }
+
 
   /**
    * Использовать ли специальную цену
@@ -264,11 +271,13 @@ public class SpecialPriceDiscount {
     this.usePriceType = usePriceType;
   }
 
+
   public SpecialPriceDiscount discount(@javax.annotation.Nullable Float discount) {
     this.discount = JsonNullable.<Float>of(discount);
     
     return this;
   }
+
 
   /**
    * Процент скидки (используется при usePriceType&#x3D;false)
@@ -300,11 +309,13 @@ public class SpecialPriceDiscount {
     this.discount = JsonNullable.<Float>of(discount);
   }
 
+
   public SpecialPriceDiscount specialPrice(@javax.annotation.Nullable Object specialPrice) {
     this.specialPrice = JsonNullable.<Object>of(specialPrice);
     
     return this;
   }
+
 
   /**
    * Спец. цена (используется при usePriceType&#x3D;true)
@@ -336,6 +347,7 @@ public class SpecialPriceDiscount {
     this.specialPrice = JsonNullable.<Object>of(specialPrice);
   }
 
+
   /**
    * ID дополнительного поля
    * @return id
@@ -358,6 +370,7 @@ public class SpecialPriceDiscount {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -378,6 +391,7 @@ public class SpecialPriceDiscount {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID учетной записи
@@ -401,6 +415,7 @@ public class SpecialPriceDiscount {
     return this;
   }
 
+
   /**
    * Наименование товара
    * @return name
@@ -422,11 +437,13 @@ public class SpecialPriceDiscount {
     this.name = name;
   }
 
+
   public SpecialPriceDiscount active(@javax.annotation.Nullable Boolean active) {
     
     this.active = active;
     return this;
   }
+
 
   /**
    * Включена ли скидка
@@ -449,11 +466,13 @@ public class SpecialPriceDiscount {
     this.active = active;
   }
 
+
   public SpecialPriceDiscount allAgents(@javax.annotation.Nullable Boolean allAgents) {
     
     this.allAgents = allAgents;
     return this;
   }
+
 
   /**
    * Для всех ли агентов скидка
@@ -476,11 +495,13 @@ public class SpecialPriceDiscount {
     this.allAgents = allAgents;
   }
 
+
   public SpecialPriceDiscount agentTags(@javax.annotation.Nullable List<String> agentTags) {
     this.agentTags = JsonNullable.<List<String>>of(agentTags);
     
     return this;
   }
+
 
   public SpecialPriceDiscount addAgentTagsItem(String agentTagsItem) {
     if (this.agentTags == null || !this.agentTags.isPresent()) {
@@ -523,6 +544,7 @@ public class SpecialPriceDiscount {
   public void setAgentTags(@javax.annotation.Nullable List<String> agentTags) {
     this.agentTags = JsonNullable.<List<String>>of(agentTags);
   }
+
 
   @Override
   public boolean equals(Object o) {

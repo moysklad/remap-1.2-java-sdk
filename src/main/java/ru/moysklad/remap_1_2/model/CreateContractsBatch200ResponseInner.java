@@ -26,9 +26,9 @@ import java.util.List;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import ru.moysklad.remap_1_2.model.Account;
+import ru.moysklad.remap_1_2.model.Agent;
 import ru.moysklad.remap_1_2.model.AttributeAbstract;
 import ru.moysklad.remap_1_2.model.Contract;
-import ru.moysklad.remap_1_2.model.Counterparty;
 import ru.moysklad.remap_1_2.model.CurrencyRate;
 import ru.moysklad.remap_1_2.model.Employee;
 import ru.moysklad.remap_1_2.model.Error;
@@ -79,7 +79,7 @@ import java.util.StringJoiner;
   CreateContractsBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createContractsBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateContractsBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -164,7 +164,7 @@ public class CreateContractsBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_AGENT = "agent";
   @javax.annotation.Nullable
-  private Counterparty agent;
+  private Agent agent;
 
   public static final String JSON_PROPERTY_STATE = "state";
   @javax.annotation.Nullable
@@ -217,6 +217,7 @@ public class CreateContractsBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -237,6 +238,7 @@ public class CreateContractsBatch200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Договора
@@ -276,6 +278,7 @@ public class CreateContractsBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Номер договора
    * @return name
@@ -297,11 +300,13 @@ public class CreateContractsBatch200ResponseInner {
     this.name = name;
   }
 
+
   public CreateContractsBatch200ResponseInner description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Описание Договора
@@ -333,11 +338,13 @@ public class CreateContractsBatch200ResponseInner {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public CreateContractsBatch200ResponseInner code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код Договора
@@ -360,11 +367,13 @@ public class CreateContractsBatch200ResponseInner {
     this.code = code;
   }
 
+
   public CreateContractsBatch200ResponseInner externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Договора
@@ -387,11 +396,13 @@ public class CreateContractsBatch200ResponseInner {
     this.externalCode = externalCode;
   }
 
+
   public CreateContractsBatch200ResponseInner archived(@javax.annotation.Nullable Boolean archived) {
     
     this.archived = archived;
     return this;
   }
+
 
   /**
    * Добавлен ли Договор в архив
@@ -414,11 +425,13 @@ public class CreateContractsBatch200ResponseInner {
     this.archived = archived;
   }
 
+
   public CreateContractsBatch200ResponseInner moment(@javax.annotation.Nullable String moment) {
     
     this.moment = moment;
     return this;
   }
+
 
   /**
    * Дата Договора
@@ -441,11 +454,13 @@ public class CreateContractsBatch200ResponseInner {
     this.moment = moment;
   }
 
+
   public CreateContractsBatch200ResponseInner sum(@javax.annotation.Nullable Integer sum) {
     
     this.sum = sum;
     return this;
   }
+
 
   /**
    * Сумма Договора
@@ -468,11 +483,13 @@ public class CreateContractsBatch200ResponseInner {
     this.sum = sum;
   }
 
+
   public CreateContractsBatch200ResponseInner contractType(@javax.annotation.Nullable String contractType) {
     
     this.contractType = contractType;
     return this;
   }
+
 
   /**
    * Тип Договора. Известные значения описаны в ContractType
@@ -495,11 +512,13 @@ public class CreateContractsBatch200ResponseInner {
     this.contractType = contractType;
   }
 
+
   public CreateContractsBatch200ResponseInner rewardType(@javax.annotation.Nullable String rewardType) {
     
     this.rewardType = rewardType;
     return this;
   }
+
 
   /**
    * Тип Вознаграждения. Известные значения описаны в RewardType
@@ -522,11 +541,13 @@ public class CreateContractsBatch200ResponseInner {
     this.rewardType = rewardType;
   }
 
+
   public CreateContractsBatch200ResponseInner rewardPercent(@javax.annotation.Nullable Integer rewardPercent) {
     
     this.rewardPercent = rewardPercent;
     return this;
   }
+
 
   /**
    * Вознаграждение в процентах (от 0 до 100)
@@ -551,11 +572,13 @@ public class CreateContractsBatch200ResponseInner {
     this.rewardPercent = rewardPercent;
   }
 
+
   public CreateContractsBatch200ResponseInner shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -577,6 +600,7 @@ public class CreateContractsBatch200ResponseInner {
   public void setShared(@javax.annotation.Nullable Boolean shared) {
     this.shared = shared;
   }
+
 
   /**
    * Напечатан ли документ
@@ -632,6 +656,7 @@ public class CreateContractsBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Метаданные владельца (Сотрудника)
    * @return owner
@@ -662,11 +687,13 @@ public class CreateContractsBatch200ResponseInner {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public CreateContractsBatch200ResponseInner group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -689,11 +716,13 @@ public class CreateContractsBatch200ResponseInner {
     this.group = group;
   }
 
+
   public CreateContractsBatch200ResponseInner ownAgent(@javax.annotation.Nullable Organization ownAgent) {
     
     this.ownAgent = ownAgent;
     return this;
   }
+
 
   /**
    * Get ownAgent
@@ -716,21 +745,23 @@ public class CreateContractsBatch200ResponseInner {
     this.ownAgent = ownAgent;
   }
 
-  public CreateContractsBatch200ResponseInner agent(@javax.annotation.Nullable Counterparty agent) {
+
+  public CreateContractsBatch200ResponseInner agent(@javax.annotation.Nullable Agent agent) {
     
     this.agent = agent;
     return this;
   }
 
+
   /**
-   * Get agent
+   * Метаданные контрагента или юрлица
    * @return agent
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Counterparty getAgent() {
+  public Agent getAgent() {
     return agent;
   }
 
@@ -739,15 +770,17 @@ public class CreateContractsBatch200ResponseInner {
 
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAgent(@javax.annotation.Nullable Counterparty agent) {
+  public void setAgent(@javax.annotation.Nullable Agent agent) {
     this.agent = agent;
   }
+
 
   public CreateContractsBatch200ResponseInner state(@javax.annotation.Nullable State state) {
     this.state = JsonNullable.<State>of(state);
     
     return this;
   }
+
 
   /**
    * Метаданные статуса договора
@@ -779,11 +812,13 @@ public class CreateContractsBatch200ResponseInner {
     this.state = JsonNullable.<State>of(state);
   }
 
+
   public CreateContractsBatch200ResponseInner organizationAccount(@javax.annotation.Nullable Account organizationAccount) {
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
     
     return this;
   }
+
 
   /**
    * Метаданные счета вашего юрлица
@@ -815,11 +850,13 @@ public class CreateContractsBatch200ResponseInner {
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
   }
 
+
   public CreateContractsBatch200ResponseInner agentAccount(@javax.annotation.Nullable Account agentAccount) {
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
     
     return this;
   }
+
 
   /**
    * Метаданные счета контрагента
@@ -851,11 +888,13 @@ public class CreateContractsBatch200ResponseInner {
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
   }
 
+
   public CreateContractsBatch200ResponseInner rate(@javax.annotation.Nullable CurrencyRate rate) {
     
     this.rate = rate;
     return this;
   }
+
 
   /**
    * Get rate
@@ -878,11 +917,13 @@ public class CreateContractsBatch200ResponseInner {
     this.rate = rate;
   }
 
+
   public CreateContractsBatch200ResponseInner attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public CreateContractsBatch200ResponseInner addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -926,11 +967,13 @@ public class CreateContractsBatch200ResponseInner {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   public CreateContractsBatch200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
+
 
   public CreateContractsBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -960,6 +1003,7 @@ public class CreateContractsBatch200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

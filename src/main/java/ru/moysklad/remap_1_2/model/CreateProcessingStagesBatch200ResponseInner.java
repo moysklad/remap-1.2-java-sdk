@@ -64,7 +64,7 @@ import java.util.StringJoiner;
   CreateProcessingStagesBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createProcessingStagesBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateProcessingStagesBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -160,6 +160,7 @@ public class CreateProcessingStagesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -180,6 +181,7 @@ public class CreateProcessingStagesBatch200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Этапа производства
@@ -219,6 +221,7 @@ public class CreateProcessingStagesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Метаданные владельца (Сотрудника)
    * @return owner
@@ -249,11 +252,13 @@ public class CreateProcessingStagesBatch200ResponseInner {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public CreateProcessingStagesBatch200ResponseInner shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -276,11 +281,13 @@ public class CreateProcessingStagesBatch200ResponseInner {
     this.shared = shared;
   }
 
+
   public CreateProcessingStagesBatch200ResponseInner group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -302,6 +309,7 @@ public class CreateProcessingStagesBatch200ResponseInner {
   public void setGroup(@javax.annotation.Nullable Group group) {
     this.group = group;
   }
+
 
   /**
    * Момент последнего обновления Этапа производства
@@ -325,6 +333,7 @@ public class CreateProcessingStagesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Наименование Этапа производства
    * @return name
@@ -346,11 +355,13 @@ public class CreateProcessingStagesBatch200ResponseInner {
     this.name = name;
   }
 
+
   public CreateProcessingStagesBatch200ResponseInner description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Комментарий Этапа производства
@@ -382,11 +393,13 @@ public class CreateProcessingStagesBatch200ResponseInner {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public CreateProcessingStagesBatch200ResponseInner externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Этапа производства
@@ -409,11 +422,13 @@ public class CreateProcessingStagesBatch200ResponseInner {
     this.externalCode = externalCode;
   }
 
+
   public CreateProcessingStagesBatch200ResponseInner archived(@javax.annotation.Nullable Boolean archived) {
     
     this.archived = archived;
     return this;
   }
+
 
   /**
    * Добавлен ли Этап производства в архив
@@ -436,11 +451,13 @@ public class CreateProcessingStagesBatch200ResponseInner {
     this.archived = archived;
   }
 
+
   public CreateProcessingStagesBatch200ResponseInner allPerformers(@javax.annotation.Nullable Boolean allPerformers) {
     
     this.allPerformers = allPerformers;
     return this;
   }
+
 
   /**
    * Признак доступности назначения на этап любого сотрудника
@@ -463,11 +480,13 @@ public class CreateProcessingStagesBatch200ResponseInner {
     this.allPerformers = allPerformers;
   }
 
+
   public CreateProcessingStagesBatch200ResponseInner distributionRequired(@javax.annotation.Nullable Boolean distributionRequired) {
     
     this.distributionRequired = distributionRequired;
     return this;
   }
+
 
   /**
    * Признак видимости заданий для исполнителей в веб-приложении МойСклад Производство
@@ -490,11 +509,13 @@ public class CreateProcessingStagesBatch200ResponseInner {
     this.distributionRequired = distributionRequired;
   }
 
+
   public CreateProcessingStagesBatch200ResponseInner performers(@javax.annotation.Nullable List<Employee> performers) {
     this.performers = JsonNullable.<List<Employee>>of(performers);
     
     return this;
   }
+
 
   public CreateProcessingStagesBatch200ResponseInner addPerformersItem(Employee performersItem) {
     if (this.performers == null || !this.performers.isPresent()) {
@@ -538,6 +559,7 @@ public class CreateProcessingStagesBatch200ResponseInner {
     this.performers = JsonNullable.<List<Employee>>of(performers);
   }
 
+
   /**
    * Метаданные склада материалов
    * @return materialStore
@@ -575,6 +597,7 @@ public class CreateProcessingStagesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Стоимость нормо-часа
    * minimum: 0
@@ -597,11 +620,13 @@ public class CreateProcessingStagesBatch200ResponseInner {
     this.standardHourCost = standardHourCost;
   }
 
+
   public CreateProcessingStagesBatch200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
+
 
   public CreateProcessingStagesBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -631,6 +656,7 @@ public class CreateProcessingStagesBatch200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

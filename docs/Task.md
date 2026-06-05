@@ -11,7 +11,7 @@
 |**meta** | [**Meta**](Meta.md) |  |  [optional] |
 |**id** | **UUID** | ID Задачи |  [optional] [readonly] |
 |**accountId** | **UUID** | ID учетной записи |  [optional] [readonly] |
-|**agent** | [**TaskAgent**](TaskAgent.md) |  |  [optional] |
+|**agent** | [**Agent**](Agent.md) | Метаданные Контрагента или юрлица, связанного с задачей |  [optional] |
 |**assignee** | [**Employee**](Employee.md) |  |  [optional] |
 |**author** | [**Employee**](Employee.md) |  |  [optional] |
 |**authorApplication** | [**Application**](Application.md) |  |  [optional] |

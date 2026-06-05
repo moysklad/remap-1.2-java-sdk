@@ -50,7 +50,7 @@ import java.util.StringJoiner;
   Uom.JSON_PROPERTY_SHARED,
   Uom.JSON_PROPERTY_EXTERNAL_CODE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Uom {
   public static Uom createWithMeta(UUID id) {
     Uom o = new Uom();
@@ -134,6 +134,7 @@ public class Uom {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -154,6 +155,7 @@ public class Uom {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID единицы измерения
@@ -193,6 +195,7 @@ public class Uom {
     return this;
   }
 
+
   /**
    * Наименование единицы измерения
    * @return name
@@ -214,11 +217,13 @@ public class Uom {
     this.name = name;
   }
 
+
   public Uom description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Описание единицы измерения
@@ -250,11 +255,13 @@ public class Uom {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public Uom code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код единицы измерения
@@ -277,11 +284,13 @@ public class Uom {
     this.code = code;
   }
 
+
   public Uom group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -304,11 +313,13 @@ public class Uom {
     this.group = group;
   }
 
+
   public Uom owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Метаданные владельца (Сотрудника)
@@ -340,6 +351,7 @@ public class Uom {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   /**
    * Момент последнего обновления сущности
    * @return updated
@@ -362,6 +374,7 @@ public class Uom {
     return this;
   }
 
+
   /**
    * Общий доступ
    * @return shared
@@ -383,11 +396,13 @@ public class Uom {
     this.shared = shared;
   }
 
+
   public Uom externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код единицы измерения
@@ -409,6 +424,7 @@ public class Uom {
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
     this.externalCode = externalCode;
   }
+
 
   @Override
   public boolean equals(Object o) {

@@ -35,7 +35,7 @@ import java.util.StringJoiner;
   BundleOverhead.JSON_PROPERTY_CURRENCY
 })
 @JsonTypeName("Bundle_overhead")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class BundleOverhead {
 
   public static final String JSON_PROPERTY_VALUE = "value";
@@ -54,6 +54,7 @@ public class BundleOverhead {
     this.value = value;
     return this;
   }
+
 
   /**
    * Значение цены
@@ -76,11 +77,13 @@ public class BundleOverhead {
     this.value = value;
   }
 
+
   public BundleOverhead currency(@javax.annotation.Nullable Currency currency) {
     
     this.currency = currency;
     return this;
   }
+
 
   /**
    * Get currency
@@ -102,6 +105,7 @@ public class BundleOverhead {
   public void setCurrency(@javax.annotation.Nullable Currency currency) {
     this.currency = currency;
   }
+
 
   @Override
   public boolean equals(Object o) {

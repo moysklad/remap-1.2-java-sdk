@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   RetailStoreEnvironment.JSON_PROPERTY_PAYMENT_TERMINAL
 })
 @JsonTypeName("RetailStore_environment")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStoreEnvironment {
 
   public static final String JSON_PROPERTY_DEVICE = "device";
@@ -71,6 +71,7 @@ public class RetailStoreEnvironment {
     return this;
   }
 
+
   /**
    * Устройство
    * @return device
@@ -92,11 +93,13 @@ public class RetailStoreEnvironment {
     this.device = device;
   }
 
+
   public RetailStoreEnvironment os(@javax.annotation.Nullable String os) {
     
     this.os = os;
     return this;
   }
+
 
   /**
    * Операционная система
@@ -119,11 +122,13 @@ public class RetailStoreEnvironment {
     this.os = os;
   }
 
+
   public RetailStoreEnvironment software(@javax.annotation.Nullable RetailStoreEnvironmentSoftware software) {
     
     this.software = software;
     return this;
   }
+
 
   /**
    * Get software
@@ -146,11 +151,13 @@ public class RetailStoreEnvironment {
     this.software = software;
   }
 
+
   public RetailStoreEnvironment chequePrinter(@javax.annotation.Nullable RetailStoreEnvironmentChequePrinter chequePrinter) {
     
     this.chequePrinter = chequePrinter;
     return this;
   }
+
 
   /**
    * Get chequePrinter
@@ -173,11 +180,13 @@ public class RetailStoreEnvironment {
     this.chequePrinter = chequePrinter;
   }
 
+
   public RetailStoreEnvironment paymentTerminal(@javax.annotation.Nullable String paymentTerminal) {
     
     this.paymentTerminal = paymentTerminal;
     return this;
   }
+
 
   /**
    * Терминал оплаты
@@ -199,6 +208,7 @@ public class RetailStoreEnvironment {
   public void setPaymentTerminal(@javax.annotation.Nullable String paymentTerminal) {
     this.paymentTerminal = paymentTerminal;
   }
+
 
   @Override
   public boolean equals(Object o) {

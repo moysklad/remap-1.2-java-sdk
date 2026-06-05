@@ -65,7 +65,7 @@ import java.util.StringJoiner;
   Store.JSON_PROPERTY_ZONES,
   Store.JSON_PROPERTY_SLOTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Store {
   public static Store createWithMeta(UUID id) {
     Store o = new Store();
@@ -183,6 +183,7 @@ public class Store {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -203,6 +204,7 @@ public class Store {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Склада
@@ -242,6 +244,7 @@ public class Store {
     return this;
   }
 
+
   /**
    * Владелец (Сотрудник)
    * @return owner
@@ -272,11 +275,13 @@ public class Store {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public Store shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Общий доступ
@@ -299,11 +304,13 @@ public class Store {
     this.shared = shared;
   }
 
+
   public Store group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -325,6 +332,7 @@ public class Store {
   public void setGroup(@javax.annotation.Nullable Group group) {
     this.group = group;
   }
+
 
   /**
    * Момент последнего обновления
@@ -348,6 +356,7 @@ public class Store {
     return this;
   }
 
+
   /**
    * Наименование Склада
    * @return name
@@ -369,11 +378,13 @@ public class Store {
     this.name = name;
   }
 
+
   public Store description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Комментарий к Складу
@@ -405,11 +416,13 @@ public class Store {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public Store code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код Склада
@@ -432,11 +445,13 @@ public class Store {
     this.code = code;
   }
 
+
   public Store externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Склада
@@ -459,11 +474,13 @@ public class Store {
     this.externalCode = externalCode;
   }
 
+
   public Store archived(@javax.annotation.Nullable Boolean archived) {
     
     this.archived = archived;
     return this;
   }
+
 
   /**
    * Добавлен ли в архив
@@ -486,11 +503,13 @@ public class Store {
     this.archived = archived;
   }
 
+
   public Store address(@javax.annotation.Nullable String address) {
     
     this.address = address;
     return this;
   }
+
 
   /**
    * Адрес склада
@@ -513,11 +532,13 @@ public class Store {
     this.address = address;
   }
 
+
   public Store addressFull(@javax.annotation.Nullable Address addressFull) {
     this.addressFull = JsonNullable.<Address>of(addressFull);
     
     return this;
   }
+
 
   /**
    * Адрес с детализацией
@@ -549,6 +570,7 @@ public class Store {
     this.addressFull = JsonNullable.<Address>of(addressFull);
   }
 
+
   /**
    * Группа Склада
    * @return pathName
@@ -570,6 +592,7 @@ public class Store {
     
     return this;
   }
+
 
   /**
    * Метаданные родительского склада (Группы)
@@ -601,11 +624,13 @@ public class Store {
     this.parent = JsonNullable.<Store>of(parent);
   }
 
+
   public Store attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public Store addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -649,11 +674,13 @@ public class Store {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   public Store zones(@javax.annotation.Nullable StoreZoneList zones) {
     this.zones = JsonNullable.<StoreZoneList>of(zones);
     
     return this;
   }
+
 
   /**
    * Зоны склада
@@ -685,11 +712,13 @@ public class Store {
     this.zones = JsonNullable.<StoreZoneList>of(zones);
   }
 
+
   public Store slots(@javax.annotation.Nullable StoreSlotList slots) {
     this.slots = JsonNullable.<StoreSlotList>of(slots);
     
     return this;
   }
+
 
   /**
    * Ячейки склада
@@ -720,6 +749,7 @@ public class Store {
   public void setSlots(@javax.annotation.Nullable StoreSlotList slots) {
     this.slots = JsonNullable.<StoreSlotList>of(slots);
   }
+
 
   @Override
   public boolean equals(Object o) {

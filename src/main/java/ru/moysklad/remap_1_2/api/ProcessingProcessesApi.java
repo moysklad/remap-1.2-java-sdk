@@ -37,7 +37,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ProcessingProcessesApi extends BaseApi {
 
@@ -62,6 +62,25 @@ public class ProcessingProcessesApi extends BaseApi {
    */
   public ProcessingProcess createProcessingProcess(@javax.annotation.Nonnull ProcessingProcess processingProcess, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createProcessingProcess(processingProcess, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать Техпроцесс
+   * Создание нового Техпроцесса
+   
+   * @param processingProcess  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ProcessingProcess
+   * @throws ApiException if fails to make API call
+   */
+  public ProcessingProcess createProcessingProcess(@javax.annotation.Nonnull ProcessingProcess processingProcess, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createProcessingProcess(processingProcess, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -152,6 +171,28 @@ if (contentType != null)
    */
   public ProcessingProcessPosition createProcessingProcessPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingProcessPosition processingProcessPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createProcessingProcessPositions(id, processingProcessPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать позицию Техпроцесса
+   * Создание позиции Техпроцесса
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param processingProcessPosition  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ProcessingProcessPosition
+   * @throws ApiException if fails to make API call
+   */
+  public ProcessingProcessPosition createProcessingProcessPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingProcessPosition processingProcessPosition, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createProcessingProcessPositions(id, processingProcessPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -248,6 +289,25 @@ if (contentType != null)
    */
   public List<CreateProcessingProcessesBatch200ResponseInner> createProcessingProcessesBatch(@javax.annotation.Nonnull List<ProcessingProcess> processingProcess, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createProcessingProcessesBatch(processingProcess, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать или изменить Техпроцессы
+   * Создание или изменение нескольких Техпроцессов.
+   
+   * @param processingProcess  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreateProcessingProcessesBatch200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateProcessingProcessesBatch200ResponseInner> createProcessingProcessesBatch(@javax.annotation.Nonnull List<ProcessingProcess> processingProcess, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createProcessingProcessesBatch(processingProcess, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -686,6 +746,24 @@ if (contentType != null)
     return this.getProcessingProcessById(id, expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить Техпроцесс по ID
+   * Запрос на получение отдельного Техпроцесса с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ProcessingProcess
+   * @throws ApiException if fails to make API call
+   */
+  public ProcessingProcess getProcessingProcessById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getProcessingProcessById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить Техпроцесс по ID
@@ -771,6 +849,27 @@ if (acceptEncoding != null)
    */
   public ProcessingProcessPosition getProcessingProcessPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
     return this.getProcessingProcessPositionById(id, positionId, expand, accept, acceptEncoding, Collections.emptyMap());
+  }
+
+  /**
+   * Получить позицию Техпроцесса
+   * Запрос на получение отдельной позиции Техпроцесса с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param positionId ID позиции (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ProcessingProcessPosition
+   * @throws ApiException if fails to make API call
+   */
+  public ProcessingProcessPosition getProcessingProcessPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getProcessingProcessPositionById(id, positionId, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -868,6 +967,26 @@ if (acceptEncoding != null)
     return this.getProcessingProcessPositions(id, limit, offset, expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить позиции Техпроцесса
+   * Запрос на получение списка всех позиций данного Техпроцесса
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ProcessingProcessPositionList
+   * @throws ApiException if fails to make API call
+   */
+  public ProcessingProcessPositionList getProcessingProcessPositions(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getProcessingProcessPositions(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить позиции Техпроцесса
@@ -961,6 +1080,25 @@ if (acceptEncoding != null)
     return this.getProcessingProcesses(limit, offset, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить список Техпроцессов
+   * Запрос всех Техпроцессов на данной учетной записи
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ProcessingProcessList
+   * @throws ApiException if fails to make API call
+   */
+  public ProcessingProcessList getProcessingProcesses(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getProcessingProcesses((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить список Техпроцессов
@@ -1048,6 +1186,28 @@ if (acceptEncoding != null)
    */
   public ProcessingProcess updateProcessingProcess(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingProcess processingProcess, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateProcessingProcess(id, processingProcess, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Обновить Техпроцесс
+   * Обновление Техпроцесса с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param processingProcess  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ProcessingProcess
+   * @throws ApiException if fails to make API call
+   */
+  public ProcessingProcess updateProcessingProcess(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingProcess processingProcess, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateProcessingProcess(id, processingProcess, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1146,6 +1306,31 @@ if (contentType != null)
    */
   public ProcessingProcessPosition updateProcessingProcessPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull ProcessingProcessPosition processingProcessPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateProcessingProcessPosition(id, positionId, processingProcessPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Изменить позицию Техпроцесса
+   * Обновление позиции Техпроцесса с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param positionId ID позиции (required)
+   
+   
+   * @param processingProcessPosition  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ProcessingProcessPosition
+   * @throws ApiException if fails to make API call
+   */
+  public ProcessingProcessPosition updateProcessingProcessPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull ProcessingProcessPosition processingProcessPosition, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateProcessingProcessPosition(id, positionId, processingProcessPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 

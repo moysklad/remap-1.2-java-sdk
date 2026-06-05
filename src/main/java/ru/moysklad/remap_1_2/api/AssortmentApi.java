@@ -34,7 +34,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class AssortmentApi extends BaseApi {
 
@@ -151,6 +151,29 @@ if (contentType != null)
    */
   public AssortmentList getAssortment(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String stockMode, @javax.annotation.Nullable String quantityMode, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
     return this.getAssortment(limit, offset, search, filter, expand, order, groupBy, stockMode, quantityMode, accept, acceptEncoding, Collections.emptyMap());
+  }
+
+  /**
+   * Получить список ассортимента
+   * Запрос всех товаров, услуг, комплектов, модификаций и партий в виде списка
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AssortmentList
+   * @throws ApiException if fails to make API call
+   */
+  public AssortmentList getAssortment(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getAssortment((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), (String) effectiveOptions.get("groupBy"), (String) effectiveOptions.get("stockMode"), (String) effectiveOptions.get("quantityMode"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 

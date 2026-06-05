@@ -89,7 +89,7 @@ import java.util.StringJoiner;
   InternalOrder.JSON_PROPERTY_MOVES,
   InternalOrder.JSON_PROPERTY_PROCESSING_ORDER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class InternalOrder {
   public static InternalOrder createWithMeta(UUID id) {
     InternalOrder o = new InternalOrder();
@@ -283,6 +283,7 @@ public class InternalOrder {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -303,6 +304,7 @@ public class InternalOrder {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Внутреннего заказа
@@ -342,6 +344,7 @@ public class InternalOrder {
     return this;
   }
 
+
   /**
    * Наименование Внутреннего заказа
    * @return name
@@ -363,11 +366,13 @@ public class InternalOrder {
     this.name = name;
   }
 
+
   public InternalOrder code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код Внутреннего заказа
@@ -390,11 +395,13 @@ public class InternalOrder {
     this.code = code;
   }
 
+
   public InternalOrder externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Внутреннего заказа
@@ -417,11 +424,13 @@ public class InternalOrder {
     this.externalCode = externalCode;
   }
 
+
   public InternalOrder syncId(@javax.annotation.Nullable UUID syncId) {
     
     this.syncId = syncId;
     return this;
   }
+
 
   /**
    * ID синхронизации
@@ -444,11 +453,13 @@ public class InternalOrder {
     this.syncId = syncId;
   }
 
+
   public InternalOrder description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Комментарий Внутреннего заказа
@@ -479,6 +490,7 @@ public class InternalOrder {
   public void setDescription(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
   }
+
 
   /**
    * Дата создания
@@ -534,6 +546,7 @@ public class InternalOrder {
     return this;
   }
 
+
   /**
    * Дата документа
    * @return moment
@@ -555,11 +568,13 @@ public class InternalOrder {
     this.moment = moment;
   }
 
+
   public InternalOrder deliveryPlannedMoment(@javax.annotation.Nullable String deliveryPlannedMoment) {
     
     this.deliveryPlannedMoment = deliveryPlannedMoment;
     return this;
   }
+
 
   /**
    * Планируемая дата приемки
@@ -582,11 +597,13 @@ public class InternalOrder {
     this.deliveryPlannedMoment = deliveryPlannedMoment;
   }
 
+
   public InternalOrder applicable(@javax.annotation.Nullable Boolean applicable) {
     
     this.applicable = applicable;
     return this;
   }
+
 
   /**
    * Отметка о проведении
@@ -608,6 +625,7 @@ public class InternalOrder {
   public void setApplicable(@javax.annotation.Nullable Boolean applicable) {
     this.applicable = applicable;
   }
+
 
   /**
    * Напечатан ли документ
@@ -663,6 +681,7 @@ public class InternalOrder {
     return this;
   }
 
+
   /**
    * Учитывается ли НДС
    * @return vatEnabled
@@ -684,11 +703,13 @@ public class InternalOrder {
     this.vatEnabled = vatEnabled;
   }
 
+
   public InternalOrder vatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
     
     this.vatIncluded = vatIncluded;
     return this;
   }
+
 
   /**
    * Включен ли НДС в цену
@@ -710,6 +731,7 @@ public class InternalOrder {
   public void setVatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
     this.vatIncluded = vatIncluded;
   }
+
 
   /**
    * Сумма НДС
@@ -749,6 +771,7 @@ public class InternalOrder {
     return this;
   }
 
+
   /**
    * Get organization
    * @return organization
@@ -770,11 +793,13 @@ public class InternalOrder {
     this.organization = organization;
   }
 
+
   public InternalOrder store(@javax.annotation.Nullable Store store) {
     this.store = JsonNullable.<Store>of(store);
     
     return this;
   }
+
 
   /**
    * Метаданные склада
@@ -806,11 +831,13 @@ public class InternalOrder {
     this.store = JsonNullable.<Store>of(store);
   }
 
+
   public InternalOrder state(@javax.annotation.Nullable State state) {
     this.state = JsonNullable.<State>of(state);
     
     return this;
   }
+
 
   /**
    * Метаданные статуса Внутреннего заказа
@@ -842,11 +869,13 @@ public class InternalOrder {
     this.state = JsonNullable.<State>of(state);
   }
 
+
   public InternalOrder project(@javax.annotation.Nullable Project project) {
     this.project = JsonNullable.<Project>of(project);
     
     return this;
   }
+
 
   /**
    * Метаданные проекта
@@ -878,11 +907,13 @@ public class InternalOrder {
     this.project = JsonNullable.<Project>of(project);
   }
 
+
   public InternalOrder owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Владелец (Сотрудник)
@@ -914,11 +945,13 @@ public class InternalOrder {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public InternalOrder group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -941,11 +974,13 @@ public class InternalOrder {
     this.group = group;
   }
 
+
   public InternalOrder attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public InternalOrder addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -989,11 +1024,13 @@ public class InternalOrder {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   public InternalOrder files(@javax.annotation.Nullable FileList files) {
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
   }
+
 
   /**
    * Метаданные массива Файлов
@@ -1025,11 +1062,13 @@ public class InternalOrder {
     this.files = JsonNullable.<FileList>of(files);
   }
 
+
   public InternalOrder rate(@javax.annotation.Nullable CurrencyRate rate) {
     
     this.rate = rate;
     return this;
   }
+
 
   /**
    * Get rate
@@ -1052,11 +1091,13 @@ public class InternalOrder {
     this.rate = rate;
   }
 
+
   public InternalOrder positions(@javax.annotation.Nullable InternalOrderPositionList positions) {
     
     this.positions = positions;
     return this;
   }
+
 
   /**
    * Позиций Внутреннего заказа
@@ -1079,11 +1120,13 @@ public class InternalOrder {
     this.positions = positions;
   }
 
+
   public InternalOrder purchaseOrders(@javax.annotation.Nullable List<PurchaseOrder> purchaseOrders) {
     this.purchaseOrders = JsonNullable.<List<PurchaseOrder>>of(purchaseOrders);
     
     return this;
   }
+
 
   public InternalOrder addPurchaseOrdersItem(PurchaseOrder purchaseOrdersItem) {
     if (this.purchaseOrders == null || !this.purchaseOrders.isPresent()) {
@@ -1127,11 +1170,13 @@ public class InternalOrder {
     this.purchaseOrders = JsonNullable.<List<PurchaseOrder>>of(purchaseOrders);
   }
 
+
   public InternalOrder productionTasks(@javax.annotation.Nullable List<ProductionTask> productionTasks) {
     this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
     
     return this;
   }
+
 
   public InternalOrder addProductionTasksItem(ProductionTask productionTasksItem) {
     if (this.productionTasks == null || !this.productionTasks.isPresent()) {
@@ -1175,11 +1220,13 @@ public class InternalOrder {
     this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
   }
 
+
   public InternalOrder moves(@javax.annotation.Nullable List<Move> moves) {
     this.moves = JsonNullable.<List<Move>>of(moves);
     
     return this;
   }
+
 
   public InternalOrder addMovesItem(Move movesItem) {
     if (this.moves == null || !this.moves.isPresent()) {
@@ -1223,11 +1270,13 @@ public class InternalOrder {
     this.moves = JsonNullable.<List<Move>>of(moves);
   }
 
+
   public InternalOrder processingOrder(@javax.annotation.Nullable ProcessingOrder processingOrder) {
     this.processingOrder = JsonNullable.<ProcessingOrder>of(processingOrder);
     
     return this;
   }
+
 
   /**
    * Метаданные Заказа на производство
@@ -1258,6 +1307,7 @@ public class InternalOrder {
   public void setProcessingOrder(@javax.annotation.Nullable ProcessingOrder processingOrder) {
     this.processingOrder = JsonNullable.<ProcessingOrder>of(processingOrder);
   }
+
 
   @Override
   public boolean equals(Object o) {

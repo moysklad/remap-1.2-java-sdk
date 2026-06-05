@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   State.JSON_PROPERTY_ENTITY_TYPE,
   State.JSON_PROPERTY_STATE_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class State {
   public static State createWithMeta(UUID entityType, UUID id) {
     State o = new State();
@@ -108,6 +108,7 @@ public class State {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -128,6 +129,7 @@ public class State {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID статуса
@@ -151,6 +153,7 @@ public class State {
     return this;
   }
 
+
   /**
    * Наименование статуса
    * @return name
@@ -171,6 +174,7 @@ public class State {
   public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
+
 
   /**
    * ID учетной записи
@@ -194,6 +198,7 @@ public class State {
     return this;
   }
 
+
   /**
    * Цвет Статуса
    * @return color
@@ -214,6 +219,7 @@ public class State {
   public void setColor(@javax.annotation.Nullable Integer color) {
     this.color = color;
   }
+
 
   /**
    * Тип сущности, к которой относится Статус (ключевое слово в рамках JSON API)
@@ -237,6 +243,7 @@ public class State {
     return this;
   }
 
+
   /**
    * Тип Статуса. Известные значения описаны в StateType
    * @return stateType
@@ -257,6 +264,7 @@ public class State {
   public void setStateType(@javax.annotation.Nullable String stateType) {
     this.stateType = stateType;
   }
+
 
   @Override
   public boolean equals(Object o) {

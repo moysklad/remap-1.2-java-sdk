@@ -42,7 +42,7 @@ import java.util.StringJoiner;
   StoreSlot.JSON_PROPERTY_BARCODE,
   StoreSlot.JSON_PROPERTY_ZONE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class StoreSlot {
   public static StoreSlot createWithMeta(UUID parentId, UUID id) {
     StoreSlot o = new StoreSlot();
@@ -114,6 +114,7 @@ public class StoreSlot {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -134,6 +135,7 @@ public class StoreSlot {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Ячейки склада
@@ -189,6 +191,7 @@ public class StoreSlot {
     return this;
   }
 
+
   /**
    * Наименование Ячейки склада
    * @return name
@@ -210,11 +213,13 @@ public class StoreSlot {
     this.name = name;
   }
 
+
   public StoreSlot externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Ячейки склада
@@ -237,11 +242,13 @@ public class StoreSlot {
     this.externalCode = externalCode;
   }
 
+
   public StoreSlot barcode(@javax.annotation.Nullable String barcode) {
     
     this.barcode = barcode;
     return this;
   }
+
 
   /**
    * Штрихкод ячейки
@@ -264,11 +271,13 @@ public class StoreSlot {
     this.barcode = barcode;
   }
 
+
   public StoreSlot zone(@javax.annotation.Nullable StoreZone zone) {
     
     this.zone = zone;
     return this;
   }
+
 
   /**
    * Get zone
@@ -290,6 +299,7 @@ public class StoreSlot {
   public void setZone(@javax.annotation.Nullable StoreZone zone) {
     this.zone = zone;
   }
+
 
   @Override
   public boolean equals(Object o) {

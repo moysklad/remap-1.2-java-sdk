@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   CustomEntity.JSON_PROPERTY_ID,
   CustomEntity.JSON_PROPERTY_NAME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CustomEntity {
   public static CustomEntity createWithMeta(UUID id) {
     CustomEntity o = new CustomEntity();
@@ -84,6 +84,7 @@ public class CustomEntity {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -104,6 +105,7 @@ public class CustomEntity {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID пользовательского справочника
@@ -127,6 +129,7 @@ public class CustomEntity {
     return this;
   }
 
+
   /**
    * Наименование пользовательского справочника
    * @return name
@@ -147,6 +150,7 @@ public class CustomEntity {
   public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
+
 
   @Override
   public boolean equals(Object o) {

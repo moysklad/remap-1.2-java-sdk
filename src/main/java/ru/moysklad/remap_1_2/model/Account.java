@@ -49,7 +49,7 @@ import java.util.StringJoiner;
   Account.JSON_PROPERTY_BIC,
   Account.JSON_PROPERTY_CURRENCY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Account {
   public static Account createWithMeta(UUID entityType, UUID parentId, UUID id) {
     Account o = new Account();
@@ -133,6 +133,7 @@ public class Account {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -153,6 +154,7 @@ public class Account {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID счета
@@ -208,6 +210,7 @@ public class Account {
     return this;
   }
 
+
   /**
    * Основной счет
    * @return isDefault
@@ -229,11 +232,13 @@ public class Account {
     this.isDefault = isDefault;
   }
 
+
   public Account accountNumber(@javax.annotation.Nullable String accountNumber) {
     
     this.accountNumber = accountNumber;
     return this;
   }
+
 
   /**
    * Номер счета
@@ -256,11 +261,13 @@ public class Account {
     this.accountNumber = accountNumber;
   }
 
+
   public Account bankName(@javax.annotation.Nullable String bankName) {
     
     this.bankName = bankName;
     return this;
   }
+
 
   /**
    * Наименование банка
@@ -283,11 +290,13 @@ public class Account {
     this.bankName = bankName;
   }
 
+
   public Account bankLocation(@javax.annotation.Nullable String bankLocation) {
     
     this.bankLocation = bankLocation;
     return this;
   }
+
 
   /**
    * Адрес банка
@@ -310,11 +319,13 @@ public class Account {
     this.bankLocation = bankLocation;
   }
 
+
   public Account correspondentAccount(@javax.annotation.Nullable String correspondentAccount) {
     
     this.correspondentAccount = correspondentAccount;
     return this;
   }
+
 
   /**
    * Корр. счет
@@ -337,11 +348,13 @@ public class Account {
     this.correspondentAccount = correspondentAccount;
   }
 
+
   public Account bic(@javax.annotation.Nullable String bic) {
     
     this.bic = bic;
     return this;
   }
+
 
   /**
    * БИК
@@ -364,11 +377,13 @@ public class Account {
     this.bic = bic;
   }
 
+
   public Account currency(@javax.annotation.Nullable Currency currency) {
     this.currency = JsonNullable.<Currency>of(currency);
     
     return this;
   }
+
 
   /**
    * Метаданные валюты расчетного счета юрлица
@@ -399,6 +414,7 @@ public class Account {
   public void setCurrency(@javax.annotation.Nullable Currency currency) {
     this.currency = JsonNullable.<Currency>of(currency);
   }
+
 
   @Override
   public boolean equals(Object o) {

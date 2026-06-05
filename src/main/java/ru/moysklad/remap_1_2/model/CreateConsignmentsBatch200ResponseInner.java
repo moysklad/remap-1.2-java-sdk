@@ -64,7 +64,7 @@ import java.util.StringJoiner;
   CreateConsignmentsBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createConsignmentsBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateConsignmentsBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -158,6 +158,7 @@ public class CreateConsignmentsBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -178,6 +179,7 @@ public class CreateConsignmentsBatch200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Партии
@@ -217,6 +219,7 @@ public class CreateConsignmentsBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Добавлена ли Партия в архив
    * @return archived
@@ -238,11 +241,13 @@ public class CreateConsignmentsBatch200ResponseInner {
     this.archived = archived;
   }
 
+
   public CreateConsignmentsBatch200ResponseInner attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public CreateConsignmentsBatch200ResponseInner addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -286,11 +291,13 @@ public class CreateConsignmentsBatch200ResponseInner {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   public CreateConsignmentsBatch200ResponseInner assortment(@javax.annotation.Nullable Assortment assortment) {
     
     this.assortment = assortment;
     return this;
   }
+
 
   /**
    * Get assortment
@@ -315,11 +322,13 @@ public class CreateConsignmentsBatch200ResponseInner {
     this.assortment = assortment;
   }
 
+
   public CreateConsignmentsBatch200ResponseInner barcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
     
     return this;
   }
+
 
   public CreateConsignmentsBatch200ResponseInner addBarcodesItem(Barcode barcodesItem) {
     if (this.barcodes == null || !this.barcodes.isPresent()) {
@@ -363,11 +372,13 @@ public class CreateConsignmentsBatch200ResponseInner {
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
   }
 
+
   public CreateConsignmentsBatch200ResponseInner code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
   }
+
 
   /**
    * Код Партии
@@ -390,11 +401,13 @@ public class CreateConsignmentsBatch200ResponseInner {
     this.code = code;
   }
 
+
   public CreateConsignmentsBatch200ResponseInner description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Описание Партии
@@ -426,11 +439,13 @@ public class CreateConsignmentsBatch200ResponseInner {
     this.description = JsonNullable.<String>of(description);
   }
 
+
   public CreateConsignmentsBatch200ResponseInner expiryDate(@javax.annotation.Nullable String expiryDate) {
     
     this.expiryDate = expiryDate;
     return this;
   }
+
 
   /**
    * Срок годности Партии
@@ -453,11 +468,13 @@ public class CreateConsignmentsBatch200ResponseInner {
     this.expiryDate = expiryDate;
   }
 
+
   public CreateConsignmentsBatch200ResponseInner externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
   }
+
 
   /**
    * Внешний код Партии
@@ -479,6 +496,7 @@ public class CreateConsignmentsBatch200ResponseInner {
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
     this.externalCode = externalCode;
   }
+
 
   /**
    * Массив метаданных Изображений товара, к которому относится данная партия
@@ -502,6 +520,7 @@ public class CreateConsignmentsBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Метка Партии
    * @return label
@@ -522,6 +541,7 @@ public class CreateConsignmentsBatch200ResponseInner {
   public void setLabel(@javax.annotation.Nullable String label) {
     this.label = label;
   }
+
 
   /**
    * Наименование Партии
@@ -561,6 +581,7 @@ public class CreateConsignmentsBatch200ResponseInner {
     return this;
   }
 
+
   public CreateConsignmentsBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
       this.errors = new ArrayList<>();
@@ -589,6 +610,7 @@ public class CreateConsignmentsBatch200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

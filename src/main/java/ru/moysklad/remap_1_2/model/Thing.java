@@ -42,7 +42,7 @@ import java.util.StringJoiner;
   Thing.JSON_PROPERTY_NAME,
   Thing.JSON_PROPERTY_DESCRIPTION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class Thing {
   public static Thing createWithMeta(UUID id) {
     Thing o = new Thing();
@@ -100,6 +100,7 @@ public class Thing {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -120,6 +121,7 @@ public class Thing {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID Серийного номера
@@ -159,6 +161,7 @@ public class Thing {
     return this;
   }
 
+
   /**
    * Значение серийного номера
    * @return name
@@ -180,11 +183,13 @@ public class Thing {
     this.name = name;
   }
 
+
   public Thing description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
   }
+
 
   /**
    * Комментарий к серийному номеру
@@ -215,6 +220,7 @@ public class Thing {
   public void setDescription(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
   }
+
 
   @Override
   public boolean equals(Object o) {

@@ -57,7 +57,7 @@ import java.util.StringJoiner;
   CreateTaxRatesBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createTaxRatesBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateTaxRatesBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -127,6 +127,7 @@ public class CreateTaxRatesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -147,6 +148,7 @@ public class CreateTaxRatesBatch200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID налоговой ставки
@@ -186,6 +188,7 @@ public class CreateTaxRatesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Метаданные владельца (Сотрудника)
    * @return owner
@@ -216,11 +219,13 @@ public class CreateTaxRatesBatch200ResponseInner {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public CreateTaxRatesBatch200ResponseInner shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
   }
+
 
   /**
    * Флаг общего доступа
@@ -243,11 +248,13 @@ public class CreateTaxRatesBatch200ResponseInner {
     this.shared = shared;
   }
 
+
   public CreateTaxRatesBatch200ResponseInner group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -269,6 +276,7 @@ public class CreateTaxRatesBatch200ResponseInner {
   public void setGroup(@javax.annotation.Nullable Group group) {
     this.group = group;
   }
+
 
   /**
    * Момент последнего обновления сущности
@@ -292,6 +300,7 @@ public class CreateTaxRatesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Значение налоговой ставки
    * @return rate
@@ -313,11 +322,13 @@ public class CreateTaxRatesBatch200ResponseInner {
     this.rate = rate;
   }
 
+
   public CreateTaxRatesBatch200ResponseInner archived(@javax.annotation.Nullable Boolean archived) {
     
     this.archived = archived;
     return this;
   }
+
 
   /**
    * Флаг принадлежности ставки к архивным ставкам
@@ -340,11 +351,13 @@ public class CreateTaxRatesBatch200ResponseInner {
     this.archived = archived;
   }
 
+
   public CreateTaxRatesBatch200ResponseInner comment(@javax.annotation.Nullable String comment) {
     
     this.comment = comment;
     return this;
   }
+
 
   /**
    * Комментарий к налоговой ставке
@@ -367,11 +380,13 @@ public class CreateTaxRatesBatch200ResponseInner {
     this.comment = comment;
   }
 
+
   public CreateTaxRatesBatch200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
+
 
   public CreateTaxRatesBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -401,6 +416,7 @@ public class CreateTaxRatesBatch200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

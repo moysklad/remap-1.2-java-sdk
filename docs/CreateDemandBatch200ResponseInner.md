@@ -30,7 +30,7 @@
 |**payedSum** | **Double** | Сумма входящих платежей по Отгрузке |  [optional] [readonly] |
 |**organization** | [**Organization**](Organization.md) |  |  [optional] |
 |**organizationAccount** | [**Account**](Account.md) | Метаданные счета юрлица |  [optional] |
-|**agent** | [**CustomerOrderAgent**](CustomerOrderAgent.md) |  |  [optional] |
+|**agent** | [**Agent**](Agent.md) | Метаданные контрагента или юрлица |  [optional] |
 |**agentAccount** | [**Account**](Account.md) | Метаданные счета контрагента |  [optional] |
 |**store** | [**Store**](Store.md) | Метаданные склада |  [optional] |
 |**state** | [**State**](State.md) | Метаданные статуса Отгрузки |  [optional] |
@@ -45,7 +45,7 @@
 |**salesChannel** | [**SalesChannel**](SalesChannel.md) | Метаданные канала продаж |  [optional] |
 |**shipmentAddress** | **String** | Адрес доставки Отгрузки (строка). Для удаления адреса передайте пустую строку. Не поддерживается значение &#x60;null&#x60; для сброса — см. документацию по адресу доставки.  |  [optional] |
 |**shipmentAddressFull** | [**Address**](Address.md) | Адрес доставки Отгрузки с детализацией по отдельным полям |  [optional] |
-|**overhead** | [**DemandOverhead**](DemandOverhead.md) |  |  [optional] |
+|**overhead** | [**Overhead**](Overhead.md) |  |  [optional] |
 |**customerOrder** | [**CustomerOrder**](CustomerOrder.md) | Заказ покупателя, с которым связана Отгрузка |  [optional] |
 |**factureOut** | [**FactureOut**](FactureOut.md) | Счёт-фактура выданный, с которым связана Отгрузка |  [optional] |
 |**returns** | [**List&lt;SalesReturn&gt;**](SalesReturn.md) | Связанные возвраты |  [optional] |
@@ -53,8 +53,8 @@
 |**productionTasks** | [**List&lt;ProductionTask&gt;**](ProductionTask.md) | Связанные производственные задания |  [optional] |
 |**invoicesOut** | [**List&lt;InvoiceOut&gt;**](InvoiceOut.md) | Связанные счета покупателям |  [optional] |
 |**cargoName** | **String** | Наименование груза |  [optional] |
-|**carrier** | [**DemandCarrier**](DemandCarrier.md) |  |  [optional] |
-|**consignee** | [**DemandConsignee**](DemandConsignee.md) |  |  [optional] |
+|**carrier** | [**Agent**](Agent.md) | Перевозчик (контрагент или юрлицо) |  [optional] |
+|**consignee** | [**Agent**](Agent.md) | Грузополучатель (контрагент или юрлицо) |  [optional] |
 |**goodPackQuantity** | **Integer** | Всего мест |  [optional] |
 |**shippingInstructions** | **String** | Указания грузоотправителя |  [optional] |
 |**stateContractId** | **String** | Идентификатор государственного контракта, договора (соглашения) |  [optional] |

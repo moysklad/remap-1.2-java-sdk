@@ -38,7 +38,7 @@ import java.util.StringJoiner;
   CashInOperationAnyOf5.JSON_PROPERTY_LINKED_SUM
 })
 @JsonTypeName("CashInOperation_anyOf_5")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CashInOperationAnyOf5 {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -78,6 +78,7 @@ public class CashInOperationAnyOf5 {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -98,6 +99,7 @@ public class CashInOperationAnyOf5 {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID смены
@@ -137,6 +139,7 @@ public class CashInOperationAnyOf5 {
     return this;
   }
 
+
   /**
    * Сумма, оплаченная по данному документу
    * @return linkedSum
@@ -157,6 +160,7 @@ public class CashInOperationAnyOf5 {
   public void setLinkedSum(@javax.annotation.Nonnull Double linkedSum) {
     this.linkedSum = linkedSum;
   }
+
 
   @Override
   public boolean equals(Object o) {

@@ -76,7 +76,7 @@ import java.util.StringJoiner;
   CreateEmployeesBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createEmployeesBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateEmployeesBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -222,6 +222,7 @@ public class CreateEmployeesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -242,6 +243,7 @@ public class CreateEmployeesBatch200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID сотрудника
@@ -297,6 +299,7 @@ public class CreateEmployeesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Внешний код сотрудника
    * @return externalCode
@@ -318,11 +321,13 @@ public class CreateEmployeesBatch200ResponseInner {
     this.externalCode = externalCode;
   }
 
+
   public CreateEmployeesBatch200ResponseInner archived(@javax.annotation.Nullable Boolean archived) {
     
     this.archived = archived;
     return this;
   }
+
 
   /**
    * Добавлен ли сотрудник в архив
@@ -344,6 +349,7 @@ public class CreateEmployeesBatch200ResponseInner {
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
     this.archived = archived;
   }
+
 
   /**
    * Момент создания
@@ -383,6 +389,7 @@ public class CreateEmployeesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Комментарий к сотруднику
    * @return description
@@ -404,11 +411,13 @@ public class CreateEmployeesBatch200ResponseInner {
     this.description = description;
   }
 
+
   public CreateEmployeesBatch200ResponseInner email(@javax.annotation.Nullable String email) {
     
     this.email = email;
     return this;
   }
+
 
   /**
    * Адрес электронной почты
@@ -431,11 +440,13 @@ public class CreateEmployeesBatch200ResponseInner {
     this.email = email;
   }
 
+
   public CreateEmployeesBatch200ResponseInner phone(@javax.annotation.Nullable String phone) {
     
     this.phone = phone;
     return this;
   }
+
 
   /**
    * Номер телефона
@@ -458,11 +469,13 @@ public class CreateEmployeesBatch200ResponseInner {
     this.phone = phone;
   }
 
+
   public CreateEmployeesBatch200ResponseInner firstName(@javax.annotation.Nullable String firstName) {
     
     this.firstName = firstName;
     return this;
   }
+
 
   /**
    * Имя
@@ -485,11 +498,13 @@ public class CreateEmployeesBatch200ResponseInner {
     this.firstName = firstName;
   }
 
+
   public CreateEmployeesBatch200ResponseInner middleName(@javax.annotation.Nullable String middleName) {
     
     this.middleName = middleName;
     return this;
   }
+
 
   /**
    * Отчество
@@ -512,11 +527,13 @@ public class CreateEmployeesBatch200ResponseInner {
     this.middleName = middleName;
   }
 
+
   public CreateEmployeesBatch200ResponseInner lastName(@javax.annotation.Nullable String lastName) {
     
     this.lastName = lastName;
     return this;
   }
+
 
   /**
    * Фамилия
@@ -538,6 +555,7 @@ public class CreateEmployeesBatch200ResponseInner {
   public void setLastName(@javax.annotation.Nullable String lastName) {
     this.lastName = lastName;
   }
+
 
   /**
    * Полное имя сотрудника
@@ -577,6 +595,7 @@ public class CreateEmployeesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Общий доступ
    * @return shared
@@ -598,11 +617,13 @@ public class CreateEmployeesBatch200ResponseInner {
     this.shared = shared;
   }
 
+
   public CreateEmployeesBatch200ResponseInner group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -625,11 +646,13 @@ public class CreateEmployeesBatch200ResponseInner {
     this.group = group;
   }
 
+
   public CreateEmployeesBatch200ResponseInner owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
   }
+
 
   /**
    * Метаданные владельца (Сотрудника)
@@ -661,11 +684,13 @@ public class CreateEmployeesBatch200ResponseInner {
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
+
   public CreateEmployeesBatch200ResponseInner inn(@javax.annotation.Nullable String inn) {
     
     this.inn = inn;
     return this;
   }
+
 
   /**
    * ИНН сотрудника (в формате ИНН физического лица)
@@ -688,11 +713,13 @@ public class CreateEmployeesBatch200ResponseInner {
     this.inn = inn;
   }
 
+
   public CreateEmployeesBatch200ResponseInner position(@javax.annotation.Nullable String position) {
     
     this.position = position;
     return this;
   }
+
 
   /**
    * Должность сотрудника
@@ -714,6 +741,7 @@ public class CreateEmployeesBatch200ResponseInner {
   public void setPosition(@javax.annotation.Nullable String position) {
     this.position = position;
   }
+
 
   /**
    * Логин сотрудника
@@ -737,6 +765,7 @@ public class CreateEmployeesBatch200ResponseInner {
     return this;
   }
 
+
   /**
    * Get salary
    * @return salary
@@ -757,6 +786,7 @@ public class CreateEmployeesBatch200ResponseInner {
   public void setSalary(@javax.annotation.Nullable EmployeeSalary salary) {
     this.salary = salary;
   }
+
 
   /**
    * Массив кассиров
@@ -779,6 +809,7 @@ public class CreateEmployeesBatch200ResponseInner {
     
     return this;
   }
+
 
   /**
    * Фотография сотрудника
@@ -810,11 +841,13 @@ public class CreateEmployeesBatch200ResponseInner {
     this.image = JsonNullable.<Image>of(image);
   }
 
+
   public CreateEmployeesBatch200ResponseInner attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
+
 
   public CreateEmployeesBatch200ResponseInner addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
@@ -858,11 +891,13 @@ public class CreateEmployeesBatch200ResponseInner {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
+
   public CreateEmployeesBatch200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
+
 
   public CreateEmployeesBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -892,6 +927,7 @@ public class CreateEmployeesBatch200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

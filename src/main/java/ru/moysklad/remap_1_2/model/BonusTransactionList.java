@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   BonusTransactionList.JSON_PROPERTY_META,
   BonusTransactionList.JSON_PROPERTY_ROWS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class BonusTransactionList {
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
@@ -64,6 +64,7 @@ public class BonusTransactionList {
     return this;
   }
 
+
   /**
    * Get context
    * @return context
@@ -85,11 +86,13 @@ public class BonusTransactionList {
     this.context = context;
   }
 
+
   public BonusTransactionList meta(@javax.annotation.Nullable MetaList meta) {
     
     this.meta = meta;
     return this;
   }
+
 
   /**
    * Get meta
@@ -112,11 +115,13 @@ public class BonusTransactionList {
     this.meta = meta;
   }
 
+
   public BonusTransactionList rows(@javax.annotation.Nullable List<BonusTransaction> rows) {
     
     this.rows = rows;
     return this;
   }
+
 
   public BonusTransactionList addRowsItem(BonusTransaction rowsItem) {
     if (this.rows == null) {
@@ -146,6 +151,7 @@ public class BonusTransactionList {
   public void setRows(@javax.annotation.Nullable List<BonusTransaction> rows) {
     this.rows = rows;
   }
+
 
   @Override
   public boolean equals(Object o) {

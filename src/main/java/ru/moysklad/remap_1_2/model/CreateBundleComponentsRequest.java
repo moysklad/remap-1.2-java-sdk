@@ -42,7 +42,7 @@ import java.util.StringJoiner;
   CreateBundleComponentsRequest.JSON_PROPERTY_ASSORTMENT
 })
 @JsonTypeName("createBundleComponents_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateBundleComponentsRequest {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -86,6 +86,7 @@ public class CreateBundleComponentsRequest {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -106,6 +107,7 @@ public class CreateBundleComponentsRequest {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID компонента комплекта
@@ -145,6 +147,7 @@ public class CreateBundleComponentsRequest {
     return this;
   }
 
+
   /**
    * Количество товаров/услуг/модификаций данного вида в компоненте
    * @return quantity
@@ -166,11 +169,13 @@ public class CreateBundleComponentsRequest {
     this.quantity = quantity;
   }
 
+
   public CreateBundleComponentsRequest assortment(@javax.annotation.Nullable AssortmentWithoutBundle assortment) {
     
     this.assortment = assortment;
     return this;
   }
+
 
   /**
    * Get assortment
@@ -192,6 +197,7 @@ public class CreateBundleComponentsRequest {
   public void setAssortment(@javax.annotation.Nullable AssortmentWithoutBundle assortment) {
     this.assortment = assortment;
   }
+
 
   @Override
   public boolean equals(Object o) {

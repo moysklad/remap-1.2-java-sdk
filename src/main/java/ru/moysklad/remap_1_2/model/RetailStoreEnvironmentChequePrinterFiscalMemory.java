@@ -34,7 +34,7 @@ import java.util.StringJoiner;
   RetailStoreEnvironmentChequePrinterFiscalMemory.JSON_PROPERTY_FISCAL_VALIDITY_DATE
 })
 @JsonTypeName("RetailStore_environment_chequePrinter_fiscalMemory")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStoreEnvironmentChequePrinterFiscalMemory {
 
   public static final String JSON_PROPERTY_FISCAL_DATA_VERSION = "fiscalDataVersion";
@@ -53,6 +53,7 @@ public class RetailStoreEnvironmentChequePrinterFiscalMemory {
     this.fiscalDataVersion = fiscalDataVersion;
     return this;
   }
+
 
   /**
    * Версия фискальных данных
@@ -75,11 +76,13 @@ public class RetailStoreEnvironmentChequePrinterFiscalMemory {
     this.fiscalDataVersion = fiscalDataVersion;
   }
 
+
   public RetailStoreEnvironmentChequePrinterFiscalMemory fiscalValidityDate(@javax.annotation.Nullable String fiscalValidityDate) {
     
     this.fiscalValidityDate = fiscalValidityDate;
     return this;
   }
+
 
   /**
    * Дата окончания действия фискальной памяти
@@ -101,6 +104,7 @@ public class RetailStoreEnvironmentChequePrinterFiscalMemory {
   public void setFiscalValidityDate(@javax.annotation.Nullable String fiscalValidityDate) {
     this.fiscalValidityDate = fiscalValidityDate;
   }
+
 
   @Override
   public boolean equals(Object o) {

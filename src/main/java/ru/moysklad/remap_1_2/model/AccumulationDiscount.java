@@ -53,7 +53,7 @@ import java.util.StringJoiner;
   AccumulationDiscount.JSON_PROPERTY_ALL_AGENTS,
   AccumulationDiscount.JSON_PROPERTY_AGENT_TAGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class AccumulationDiscount {
   public static AccumulationDiscount createWithMeta(UUID id) {
     AccumulationDiscount o = new AccumulationDiscount();
@@ -135,6 +135,7 @@ public class AccumulationDiscount {
     return this;
   }
 
+
   public AccumulationDiscount addAssortmentItem(DiscountAssortmentItem assortmentItem) {
     if (this.assortment == null) {
       this.assortment = new ArrayList<>();
@@ -164,11 +165,13 @@ public class AccumulationDiscount {
     this.assortment = assortment;
   }
 
+
   public AccumulationDiscount productFolders(@javax.annotation.Nullable List<ProductFolder> productFolders) {
     
     this.productFolders = productFolders;
     return this;
   }
+
 
   public AccumulationDiscount addProductFoldersItem(ProductFolder productFoldersItem) {
     if (this.productFolders == null) {
@@ -199,11 +202,13 @@ public class AccumulationDiscount {
     this.productFolders = productFolders;
   }
 
+
   public AccumulationDiscount allProducts(@javax.annotation.Nullable Boolean allProducts) {
     
     this.allProducts = allProducts;
     return this;
   }
+
 
   /**
    * Для всех ли товаров скидка
@@ -226,11 +231,13 @@ public class AccumulationDiscount {
     this.allProducts = allProducts;
   }
 
+
   public AccumulationDiscount levels(@javax.annotation.Nullable List<Object> levels) {
     
     this.levels = levels;
     return this;
   }
+
 
   public AccumulationDiscount addLevelsItem(Object levelsItem) {
     if (this.levels == null) {
@@ -261,6 +268,7 @@ public class AccumulationDiscount {
     this.levels = levels;
   }
 
+
   /**
    * ID дополнительного поля
    * @return id
@@ -283,6 +291,7 @@ public class AccumulationDiscount {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -303,6 +312,7 @@ public class AccumulationDiscount {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID учетной записи
@@ -326,6 +336,7 @@ public class AccumulationDiscount {
     return this;
   }
 
+
   /**
    * Наименование товара
    * @return name
@@ -347,11 +358,13 @@ public class AccumulationDiscount {
     this.name = name;
   }
 
+
   public AccumulationDiscount active(@javax.annotation.Nullable Boolean active) {
     
     this.active = active;
     return this;
   }
+
 
   /**
    * Включена ли скидка
@@ -374,11 +387,13 @@ public class AccumulationDiscount {
     this.active = active;
   }
 
+
   public AccumulationDiscount allAgents(@javax.annotation.Nullable Boolean allAgents) {
     
     this.allAgents = allAgents;
     return this;
   }
+
 
   /**
    * Для всех ли агентов скидка
@@ -401,11 +416,13 @@ public class AccumulationDiscount {
     this.allAgents = allAgents;
   }
 
+
   public AccumulationDiscount agentTags(@javax.annotation.Nullable List<String> agentTags) {
     this.agentTags = JsonNullable.<List<String>>of(agentTags);
     
     return this;
   }
+
 
   public AccumulationDiscount addAgentTagsItem(String agentTagsItem) {
     if (this.agentTags == null || !this.agentTags.isPresent()) {
@@ -448,6 +465,7 @@ public class AccumulationDiscount {
   public void setAgentTags(@javax.annotation.Nullable List<String> agentTags) {
     this.agentTags = JsonNullable.<List<String>>of(agentTags);
   }
+
 
   @Override
   public boolean equals(Object o) {

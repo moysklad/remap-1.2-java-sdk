@@ -26,7 +26,7 @@
 |**published** | **Boolean** | Опубликован ли документ |  [optional] [readonly] |
 |**rate** | [**CurrencyRate**](CurrencyRate.md) |  |  [optional] |
 |**organization** | [**Organization**](Organization.md) |  |  [optional] |
-|**agent** | [**Counterparty**](Counterparty.md) |  |  [optional] |
+|**agent** | [**Agent**](Agent.md) | Метаданные контрагента или юрлица |  [optional] |
 |**expenseItem** | [**ExpenseItem**](ExpenseItem.md) | Метаданные статьи расхода |  [optional] |
 |**attributes** | [**List&lt;AttributeAbstract&gt;**](AttributeAbstract.md) | Коллекция метаданных доп. полей |  [optional] |
 |**contract** | [**Contract**](Contract.md) | Метаданные договора |  [optional] |

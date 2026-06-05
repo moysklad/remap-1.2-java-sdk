@@ -62,7 +62,7 @@ import java.util.StringJoiner;
   CreateCustomerOrderPositions200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createCustomerOrderPositions_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateCustomerOrderPositions200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -148,6 +148,7 @@ public class CreateCustomerOrderPositions200ResponseInner {
     return this;
   }
 
+
   /**
    * Get meta
    * @return meta
@@ -168,6 +169,7 @@ public class CreateCustomerOrderPositions200ResponseInner {
   public void setMeta(@javax.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
+
 
   /**
    * ID позиции
@@ -207,6 +209,7 @@ public class CreateCustomerOrderPositions200ResponseInner {
     return this;
   }
 
+
   /**
    * Количество товаров данного вида в позиции
    * @return quantity
@@ -228,11 +231,13 @@ public class CreateCustomerOrderPositions200ResponseInner {
     this.quantity = quantity;
   }
 
+
   public CreateCustomerOrderPositions200ResponseInner price(@javax.annotation.Nullable Double price) {
     
     this.price = price;
     return this;
   }
+
 
   /**
    * Цена товара/услуги в копейках
@@ -255,11 +260,13 @@ public class CreateCustomerOrderPositions200ResponseInner {
     this.price = price;
   }
 
+
   public CreateCustomerOrderPositions200ResponseInner discount(@javax.annotation.Nullable Double discount) {
     
     this.discount = discount;
     return this;
   }
+
 
   /**
    * Процент скидки или наценки
@@ -282,11 +289,13 @@ public class CreateCustomerOrderPositions200ResponseInner {
     this.discount = discount;
   }
 
+
   public CreateCustomerOrderPositions200ResponseInner reserve(@javax.annotation.Nullable Double reserve) {
     
     this.reserve = reserve;
     return this;
   }
+
 
   /**
    * Резерв данной позиции
@@ -308,6 +317,7 @@ public class CreateCustomerOrderPositions200ResponseInner {
   public void setReserve(@javax.annotation.Nullable Double reserve) {
     this.reserve = reserve;
   }
+
 
   /**
    * Доставлено
@@ -331,8 +341,11 @@ public class CreateCustomerOrderPositions200ResponseInner {
     return this;
   }
 
+
   /**
    * НДС, которым облагается текущая позиция
+   * minimum: 0
+   * maximum: 100
    * @return vat
    */
   @javax.annotation.Nullable
@@ -352,11 +365,13 @@ public class CreateCustomerOrderPositions200ResponseInner {
     this.vat = vat;
   }
 
+
   public CreateCustomerOrderPositions200ResponseInner vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
     
     this.vatEnabled = vatEnabled;
     return this;
   }
+
 
   /**
    * Включен ли НДС для позиции
@@ -379,11 +394,13 @@ public class CreateCustomerOrderPositions200ResponseInner {
     this.vatEnabled = vatEnabled;
   }
 
+
   public CreateCustomerOrderPositions200ResponseInner taxSystem(@javax.annotation.Nullable String taxSystem) {
     
     this.taxSystem = taxSystem;
     return this;
   }
+
 
   /**
    * Код системы налогообложения. Известные значения описаны в TaxSystem
@@ -406,11 +423,13 @@ public class CreateCustomerOrderPositions200ResponseInner {
     this.taxSystem = taxSystem;
   }
 
+
   public CreateCustomerOrderPositions200ResponseInner assortment(@javax.annotation.Nullable Assortment assortment) {
     
     this.assortment = assortment;
     return this;
   }
+
 
   /**
    * Get assortment
@@ -435,11 +454,13 @@ public class CreateCustomerOrderPositions200ResponseInner {
     this.assortment = assortment;
   }
 
+
   public CreateCustomerOrderPositions200ResponseInner pack(@javax.annotation.Nullable Pack pack) {
     this.pack = JsonNullable.<Pack>of(pack);
     
     return this;
   }
+
 
   /**
    * Упаковка Товара
@@ -471,11 +492,13 @@ public class CreateCustomerOrderPositions200ResponseInner {
     this.pack = JsonNullable.<Pack>of(pack);
   }
 
+
   public CreateCustomerOrderPositions200ResponseInner stock(@javax.annotation.Nullable PositionStock stock) {
     this.stock = JsonNullable.<PositionStock>of(stock);
     
     return this;
   }
+
 
   /**
    * Остатки и себестоимость позиции. Не выводится по умолчанию. Для получения передайте параметр &#x60;?fields&#x3D;stock&#x60;. 
@@ -507,11 +530,13 @@ public class CreateCustomerOrderPositions200ResponseInner {
     this.stock = JsonNullable.<PositionStock>of(stock);
   }
 
+
   public CreateCustomerOrderPositions200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
+
 
   public CreateCustomerOrderPositions200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
@@ -541,6 +566,7 @@ public class CreateCustomerOrderPositions200ResponseInner {
   public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     this.errors = errors;
   }
+
 
   @Override
   public boolean equals(Object o) {

@@ -37,7 +37,7 @@ import java.util.StringJoiner;
   ActivateEmployeeRequest.JSON_PROPERTY_ROLE
 })
 @JsonTypeName("activateEmployee_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class ActivateEmployeeRequest {
 
   public static final String JSON_PROPERTY_LOGIN = "login";
@@ -61,6 +61,7 @@ public class ActivateEmployeeRequest {
     return this;
   }
 
+
   /**
    * Логин сотрудника (обязателен при первой активации)
    * @return login
@@ -82,11 +83,13 @@ public class ActivateEmployeeRequest {
     this.login = login;
   }
 
+
   public ActivateEmployeeRequest group(@javax.annotation.Nullable ActivateEmployeeRequestGroup group) {
     
     this.group = group;
     return this;
   }
+
 
   /**
    * Get group
@@ -109,11 +112,13 @@ public class ActivateEmployeeRequest {
     this.group = group;
   }
 
+
   public ActivateEmployeeRequest role(@javax.annotation.Nullable EmployeeRole role) {
     
     this.role = role;
     return this;
   }
+
 
   /**
    * Get role
@@ -135,6 +140,7 @@ public class ActivateEmployeeRequest {
   public void setRole(@javax.annotation.Nullable EmployeeRole role) {
     this.role = role;
   }
+
 
   @Override
   public boolean equals(Object o) {

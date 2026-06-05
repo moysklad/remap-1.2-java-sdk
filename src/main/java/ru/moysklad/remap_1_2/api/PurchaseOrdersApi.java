@@ -45,7 +45,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class PurchaseOrdersApi extends BaseApi {
 
@@ -70,6 +70,25 @@ public class PurchaseOrdersApi extends BaseApi {
    */
   public PurchaseOrder createPurchaseOrder(@javax.annotation.Nonnull PurchaseOrder purchaseOrder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createPurchaseOrder(purchaseOrder, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать PurchaseOrder
+   * 
+   
+   * @param purchaseOrder  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return PurchaseOrder
+   * @throws ApiException if fails to make API call
+   */
+  public PurchaseOrder createPurchaseOrder(@javax.annotation.Nonnull PurchaseOrder purchaseOrder, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createPurchaseOrder(purchaseOrder, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -159,6 +178,25 @@ if (contentType != null)
    */
   public List<CreatePurchaseOrderBatch200ResponseInner> createPurchaseOrderBatch(@javax.annotation.Nonnull List<PurchaseOrder> purchaseOrder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createPurchaseOrderBatch(purchaseOrder, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Массовое создание и обновление PurchaseOrder
+   * 
+   
+   * @param purchaseOrder  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreatePurchaseOrderBatch200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreatePurchaseOrderBatch200ResponseInner> createPurchaseOrderBatch(@javax.annotation.Nonnull List<PurchaseOrder> purchaseOrder, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createPurchaseOrderBatch(purchaseOrder, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -515,6 +553,28 @@ if (contentType != null)
    */
   public List<CreatePurchaseOrderPositions200ResponseInner> createPurchaseOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CreatePurchaseOrderPositionsRequest createPurchaseOrderPositionsRequest, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createPurchaseOrderPositions(id, createPurchaseOrderPositionsRequest, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать позиции PurchaseOrder
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param createPurchaseOrderPositionsRequest  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreatePurchaseOrderPositions200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreatePurchaseOrderPositions200ResponseInner> createPurchaseOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CreatePurchaseOrderPositionsRequest createPurchaseOrderPositionsRequest, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createPurchaseOrderPositions(id, createPurchaseOrderPositionsRequest, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1039,6 +1099,27 @@ if (acceptEncoding != null)
     this.deletePurchaseOrderPosition(id, positionId, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
+  /**
+   * Удалить позицию PurchaseOrder
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param positionId ID позиции (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deletePurchaseOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deletePurchaseOrderPosition(id, positionId, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Удалить позицию PurchaseOrder
@@ -1229,6 +1310,26 @@ if (contentType != null)
     return this.getPurchaseOrderById(id, expand, fields, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
+  /**
+   * Получить PurchaseOrder
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return PurchaseOrder
+   * @throws ApiException if fails to make API call
+   */
+  public PurchaseOrder getPurchaseOrderById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getPurchaseOrderById(id, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить PurchaseOrder
@@ -1322,6 +1423,26 @@ if (contentType != null)
    */
   public PurchaseOrderList getPurchaseOrderList(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.getPurchaseOrderList(limit, offset, search, expand, fields, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Получить список PurchaseOrder
+   * 
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return PurchaseOrderList
+   * @throws ApiException if fails to make API call
+   */
+  public PurchaseOrderList getPurchaseOrderList(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getPurchaseOrderList((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1492,6 +1613,23 @@ if (contentType != null)
    */
   public AttributeMetaInfoList getPurchaseOrderMetadataAttribute(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.getPurchaseOrderMetadataAttribute(offset, limit, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Доп. поля PurchaseOrder
+   * 
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfoList
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfoList getPurchaseOrderMetadataAttribute(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getPurchaseOrderMetadataAttribute((Integer) effectiveOptions.get("offset"), (Integer) effectiveOptions.get("limit"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1845,6 +1983,26 @@ if (acceptEncoding != null)
     return this.getPurchaseOrderNotes(id, limit, offset, expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить список Событий Заказа поставщику
+   * Запрос на получение всех Событий Заказа поставщику для данной учетной записи
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return EventNoteList
+   * @throws ApiException if fails to make API call
+   */
+  public EventNoteList getPurchaseOrderNotes(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getPurchaseOrderNotes(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить список Событий Заказа поставщику
@@ -1936,6 +2094,29 @@ if (acceptEncoding != null)
    */
   public PurchaseOrderPosition getPurchaseOrderPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.getPurchaseOrderPositionById(id, positionId, expand, fields, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Получить позицию PurchaseOrder
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param positionId ID позиции (required)
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return PurchaseOrderPosition
+   * @throws ApiException if fails to make API call
+   */
+  public PurchaseOrderPosition getPurchaseOrderPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getPurchaseOrderPositionById(id, positionId, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -2038,6 +2219,28 @@ if (contentType != null)
    */
   public List<PurchaseOrderPosition> getPurchaseOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.getPurchaseOrderPositions(id, limit, offset, expand, fields, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Получить позиции PurchaseOrder
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;PurchaseOrderPosition&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<PurchaseOrderPosition> getPurchaseOrderPositions(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getPurchaseOrderPositions(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -2217,6 +2420,29 @@ if (contentType != null)
    */
   public PurchaseOrder updatePurchaseOrder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull PurchaseOrder purchaseOrder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updatePurchaseOrder(id, purchaseOrder, expand, fields, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Изменить PurchaseOrder
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param purchaseOrder  (required)
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return PurchaseOrder
+   * @throws ApiException if fails to make API call
+   */
+  public PurchaseOrder updatePurchaseOrder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull PurchaseOrder purchaseOrder, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updatePurchaseOrder(id, purchaseOrder, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -2608,6 +2834,32 @@ if (contentType != null)
    */
   public PurchaseOrderPosition updatePurchaseOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull PurchaseOrderPosition purchaseOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updatePurchaseOrderPosition(id, positionId, purchaseOrderPosition, expand, fields, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Изменить позицию PurchaseOrder
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param positionId ID позиции (required)
+   
+   
+   * @param purchaseOrderPosition  (required)
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return PurchaseOrderPosition
+   * @throws ApiException if fails to make API call
+   */
+  public PurchaseOrderPosition updatePurchaseOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull PurchaseOrderPosition purchaseOrderPosition, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updatePurchaseOrderPosition(id, positionId, purchaseOrderPosition, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 

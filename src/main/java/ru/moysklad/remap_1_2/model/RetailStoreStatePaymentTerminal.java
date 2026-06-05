@@ -33,7 +33,7 @@ import java.util.StringJoiner;
   RetailStoreStatePaymentTerminal.JSON_PROPERTY_ACQUIRING_TYPE
 })
 @JsonTypeName("RetailStore_state_paymentTerminal")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStoreStatePaymentTerminal {
 
   public static final String JSON_PROPERTY_ACQUIRING_TYPE = "acquiringType";
@@ -48,6 +48,7 @@ public class RetailStoreStatePaymentTerminal {
     this.acquiringType = acquiringType;
     return this;
   }
+
 
   /**
    * Тип эквайринга
@@ -69,6 +70,7 @@ public class RetailStoreStatePaymentTerminal {
   public void setAcquiringType(@javax.annotation.Nullable String acquiringType) {
     this.acquiringType = acquiringType;
   }
+
 
   @Override
   public boolean equals(Object o) {

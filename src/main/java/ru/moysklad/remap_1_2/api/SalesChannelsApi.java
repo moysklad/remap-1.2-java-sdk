@@ -35,7 +35,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T13:41:10.768379078Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class SalesChannelsApi extends BaseApi {
 
@@ -60,6 +60,25 @@ public class SalesChannelsApi extends BaseApi {
    */
   public SalesChannel createSalesChannel(@javax.annotation.Nonnull SalesChannel salesChannel, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createSalesChannel(salesChannel, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать Канал продаж
+   * Создание нового Канала продаж
+   
+   * @param salesChannel  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return SalesChannel
+   * @throws ApiException if fails to make API call
+   */
+  public SalesChannel createSalesChannel(@javax.annotation.Nonnull SalesChannel salesChannel, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createSalesChannel(salesChannel, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -149,6 +168,25 @@ if (contentType != null)
    */
   public List<CreateSalesChannelsBatch200ResponseInner> createSalesChannelsBatch(@javax.annotation.Nonnull List<SalesChannel> salesChannel, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createSalesChannelsBatch(salesChannel, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать или изменить Каналы продаж
+   * Создание или изменение нескольких Каналов продаж.
+   
+   * @param salesChannel  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreateSalesChannelsBatch200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateSalesChannelsBatch200ResponseInner> createSalesChannelsBatch(@javax.annotation.Nonnull List<SalesChannel> salesChannel, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createSalesChannelsBatch(salesChannel, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -405,6 +443,24 @@ if (contentType != null)
     return this.getSalesChannelById(id, expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
+  /**
+   * Получить Канал продаж по ID
+   * Запрос на получение отдельного Канала продаж с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return SalesChannel
+   * @throws ApiException if fails to make API call
+   */
+  public SalesChannel getSalesChannelById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getSalesChannelById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
 
   /**
    * Получить Канал продаж по ID
@@ -493,6 +549,26 @@ if (acceptEncoding != null)
    */
   public SalesChannelList getSalesChannels(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
     return this.getSalesChannels(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  }
+
+  /**
+   * Получить Каналы продаж
+   * Запрос на получение списка всех каналов продаж на данной учетной записи
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return SalesChannelList
+   * @throws ApiException if fails to make API call
+   */
+  public SalesChannelList getSalesChannels(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getSalesChannels((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -584,6 +660,28 @@ if (acceptEncoding != null)
    */
   public SalesChannel updateSalesChannel(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SalesChannel salesChannel, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.updateSalesChannel(id, salesChannel, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Обновить Канал продаж
+   * Обновление Канала продаж с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param salesChannel  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return SalesChannel
+   * @throws ApiException if fails to make API call
+   */
+  public SalesChannel updateSalesChannel(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SalesChannel salesChannel, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateSalesChannel(id, salesChannel, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
