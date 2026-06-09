@@ -76,7 +76,7 @@ import java.util.StringJoiner;
   Inventory.JSON_PROPERTY_ENTERS,
   Inventory.JSON_PROPERTY_LOSSES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
 public class Inventory {
   public static Inventory createWithMeta(UUID id) {
     Inventory o = new Inventory();

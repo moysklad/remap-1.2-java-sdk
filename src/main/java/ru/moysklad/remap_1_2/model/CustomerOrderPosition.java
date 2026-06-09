@@ -54,7 +54,7 @@ import java.util.StringJoiner;
   CustomerOrderPosition.JSON_PROPERTY_PACK,
   CustomerOrderPosition.JSON_PROPERTY_STOCK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
 public class CustomerOrderPosition {
   public static CustomerOrderPosition createWithMeta(UUID parentId, UUID id) {
     CustomerOrderPosition o = new CustomerOrderPosition();

@@ -96,7 +96,7 @@ import java.util.StringJoiner;
   Bundle.JSON_PROPERTY_ATTRIBUTES,
   Bundle.JSON_PROPERTY_COMPONENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
 public class Bundle {
   public static Bundle createWithMeta(UUID id) {
     Bundle o = new Bundle();

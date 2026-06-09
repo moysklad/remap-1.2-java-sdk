@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   GetCounterpartyAccounts200Response.JSON_PROPERTY_ROWS
 })
 @JsonTypeName("getCounterpartyAccounts_200_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
 public class GetCounterpartyAccounts200Response {
 
   public static final String JSON_PROPERTY_META = "meta";

@@ -88,7 +88,7 @@ import java.util.StringJoiner;
   FactureOut.JSON_PROPERTY_PAYMENT_NUMBER,
   FactureOut.JSON_PROPERTY_PAYMENT_DATE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
 public class FactureOut {
   public static FactureOut createWithMeta(UUID id) {
     FactureOut o = new FactureOut();
@@ -845,7 +845,7 @@ public class FactureOut {
 
 
   /**
-   * Get rate
+   * Валюта документа. Если значение курса валюты не указано, используется курс из справочника валют. 
    * @return rate
    */
   @javax.annotation.Nullable
@@ -1031,7 +1031,7 @@ public class FactureOut {
 
 
   /**
-   * Ставка НДС для авансового платежа (в процентах)
+   * Ставка НДС для авансового платежа (в процентах). Доступно только для счетов-фактур с основаниями-платежами. 
    * @return advancePaymentVat
    */
   @javax.annotation.Nullable
@@ -1060,7 +1060,7 @@ public class FactureOut {
 
 
   /**
-   * Назначение платежа
+   * Назначение платежа. Доступно только для счетов-фактур с основаниями-платежами. 
    * @return paymentPurpose
    */
   @javax.annotation.Nullable
@@ -1082,7 +1082,7 @@ public class FactureOut {
 
 
   /**
-   * Сумма включая НДС
+   * Сумма включая НДС. Доступно только для счетов-фактур с основаниями-платежами. 
    * @return vatSum
    */
   @javax.annotation.Nullable
@@ -1660,7 +1660,12 @@ public class FactureOut {
 
     // add `rate` to the URL query string
     if (getRate() != null) {
-      joiner.add(getRate().toUrlQueryString(prefix + "rate" + suffix));
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%srate%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getRate()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
     }
 
     // add `shared` to the URL query string

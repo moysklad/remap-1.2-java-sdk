@@ -56,7 +56,7 @@ import java.util.StringJoiner;
   SpecialPriceDiscount.JSON_PROPERTY_ALL_AGENTS,
   SpecialPriceDiscount.JSON_PROPERTY_AGENT_TAGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
 public class SpecialPriceDiscount {
   public static SpecialPriceDiscount createWithMeta(UUID id) {
     SpecialPriceDiscount o = new SpecialPriceDiscount();

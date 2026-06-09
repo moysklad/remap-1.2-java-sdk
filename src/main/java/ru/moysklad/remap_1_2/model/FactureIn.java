@@ -27,12 +27,16 @@ import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import ru.moysklad.remap_1_2.model.Agent;
 import ru.moysklad.remap_1_2.model.AttributeAbstract;
+import ru.moysklad.remap_1_2.model.Contract;
 import ru.moysklad.remap_1_2.model.CurrencyRate;
 import ru.moysklad.remap_1_2.model.Employee;
 import ru.moysklad.remap_1_2.model.FileList;
 import ru.moysklad.remap_1_2.model.Group;
 import ru.moysklad.remap_1_2.model.Meta;
+import ru.moysklad.remap_1_2.model.Organization;
+import ru.moysklad.remap_1_2.model.PaymentOut;
 import ru.moysklad.remap_1_2.model.State;
+import ru.moysklad.remap_1_2.model.Supply;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
@@ -53,6 +57,7 @@ import java.util.StringJoiner;
   FactureIn.JSON_PROPERTY_APPLICABLE,
   FactureIn.JSON_PROPERTY_ATTRIBUTES,
   FactureIn.JSON_PROPERTY_CODE,
+  FactureIn.JSON_PROPERTY_CONTRACT,
   FactureIn.JSON_PROPERTY_CREATED,
   FactureIn.JSON_PROPERTY_DELETED,
   FactureIn.JSON_PROPERTY_DESCRIPTION,
@@ -61,14 +66,22 @@ import java.util.StringJoiner;
   FactureIn.JSON_PROPERTY_GROUP,
   FactureIn.JSON_PROPERTY_MOMENT,
   FactureIn.JSON_PROPERTY_NAME,
+  FactureIn.JSON_PROPERTY_ORGANIZATION,
   FactureIn.JSON_PROPERTY_OWNER,
   FactureIn.JSON_PROPERTY_PRINTED,
   FactureIn.JSON_PROPERTY_PUBLISHED,
   FactureIn.JSON_PROPERTY_RATE,
   FactureIn.JSON_PROPERTY_SHARED,
-  FactureIn.JSON_PROPERTY_STATE
+  FactureIn.JSON_PROPERTY_STATE,
+  FactureIn.JSON_PROPERTY_SUM,
+  FactureIn.JSON_PROPERTY_SYNC_ID,
+  FactureIn.JSON_PROPERTY_UPDATED,
+  FactureIn.JSON_PROPERTY_SUPPLIES,
+  FactureIn.JSON_PROPERTY_PAYMENTS,
+  FactureIn.JSON_PROPERTY_INCOMING_NUMBER,
+  FactureIn.JSON_PROPERTY_INCOMING_DATE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
 public class FactureIn {
   public static FactureIn createWithMeta(UUID id) {
     FactureIn o = new FactureIn();
@@ -113,6 +126,10 @@ public class FactureIn {
   @javax.annotation.Nullable
   private String code;
 
+  public static final String JSON_PROPERTY_CONTRACT = "contract";
+  @javax.annotation.Nullable
+  private JsonNullable<Contract> contract = JsonNullable.<Contract>undefined();
+
   public static final String JSON_PROPERTY_CREATED = "created";
   @javax.annotation.Nullable
   private String created;
@@ -145,6 +162,10 @@ public class FactureIn {
   @javax.annotation.Nullable
   private String name;
 
+  public static final String JSON_PROPERTY_ORGANIZATION = "organization";
+  @javax.annotation.Nullable
+  private Organization organization;
+
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
   private JsonNullable<Employee> owner = JsonNullable.<Employee>undefined();
@@ -169,6 +190,34 @@ public class FactureIn {
   @javax.annotation.Nullable
   private JsonNullable<State> state = JsonNullable.<State>undefined();
 
+  public static final String JSON_PROPERTY_SUM = "sum";
+  @javax.annotation.Nullable
+  private Double sum;
+
+  public static final String JSON_PROPERTY_SYNC_ID = "syncId";
+  @javax.annotation.Nullable
+  private UUID syncId;
+
+  public static final String JSON_PROPERTY_UPDATED = "updated";
+  @javax.annotation.Nullable
+  private String updated;
+
+  public static final String JSON_PROPERTY_SUPPLIES = "supplies";
+  @javax.annotation.Nullable
+  private JsonNullable<List<Supply>> supplies = JsonNullable.<List<Supply>>undefined();
+
+  public static final String JSON_PROPERTY_PAYMENTS = "payments";
+  @javax.annotation.Nullable
+  private JsonNullable<List<PaymentOut>> payments = JsonNullable.<List<PaymentOut>>undefined();
+
+  public static final String JSON_PROPERTY_INCOMING_NUMBER = "incomingNumber";
+  @javax.annotation.Nullable
+  private JsonNullable<String> incomingNumber = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_INCOMING_DATE = "incomingDate";
+  @javax.annotation.Nullable
+  private JsonNullable<String> incomingDate = JsonNullable.<String>undefined();
+
   public FactureIn() {
   }
   /**
@@ -181,7 +230,9 @@ public class FactureIn {
     @JsonProperty(value = JSON_PROPERTY_CREATED, required = false) String created, 
     @JsonProperty(value = JSON_PROPERTY_DELETED, required = false) String deleted, 
     @JsonProperty(value = JSON_PROPERTY_PRINTED, required = false) Boolean printed, 
-    @JsonProperty(value = JSON_PROPERTY_PUBLISHED, required = false) Boolean published
+    @JsonProperty(value = JSON_PROPERTY_PUBLISHED, required = false) Boolean published, 
+    @JsonProperty(value = JSON_PROPERTY_SUM, required = false) Double sum, 
+    @JsonProperty(value = JSON_PROPERTY_UPDATED, required = false) String updated
   ) {
     this();
     this.id = id;
@@ -190,6 +241,8 @@ public class FactureIn {
     this.deleted = deleted;
     this.printed = printed;
     this.published = published;
+    this.sum = sum;
+    this.updated = updated;
   }
 
   public FactureIn meta(@javax.annotation.Nullable Meta meta) {
@@ -387,6 +440,44 @@ public class FactureIn {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
     this.code = code;
+  }
+
+
+  public FactureIn contract(@javax.annotation.Nullable Contract contract) {
+    this.contract = JsonNullable.<Contract>of(contract);
+    
+    return this;
+  }
+
+
+  /**
+   * Метаданные договора
+   * @return contract
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public Contract getContract() {
+        return contract.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_CONTRACT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<Contract> getContract_JsonNullable() {
+    return contract;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_CONTRACT, required = false)
+  public void setContract_JsonNullable(JsonNullable<Contract> contract) {
+    this.contract = contract;
+  }
+
+  public void setContract(@javax.annotation.Nullable Contract contract) {
+    this.contract = JsonNullable.<Contract>of(contract);
   }
 
 
@@ -614,6 +705,35 @@ public class FactureIn {
   }
 
 
+  public FactureIn organization(@javax.annotation.Nullable Organization organization) {
+    
+    this.organization = organization;
+    return this;
+  }
+
+
+  /**
+   * Get organization
+   * @return organization
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ORGANIZATION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Organization getOrganization() {
+    return organization;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_ORGANIZATION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setOrganization(@javax.annotation.Nullable Organization organization) {
+    this.organization = organization;
+  }
+
+
   public FactureIn owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
@@ -692,7 +812,7 @@ public class FactureIn {
 
 
   /**
-   * Get rate
+   * Валюта документа. Если значение курса валюты не указано, используется курс из справочника валют. 
    * @return rate
    */
   @javax.annotation.Nullable
@@ -780,6 +900,243 @@ public class FactureIn {
   }
 
 
+  /**
+   * Сумма Счета-фактуры полученного в установленной валюте
+   * @return sum
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_SUM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Double getSum() {
+    return sum;
+  }
+
+  
+
+
+
+  public FactureIn syncId(@javax.annotation.Nullable UUID syncId) {
+    
+    this.syncId = syncId;
+    return this;
+  }
+
+
+  /**
+   * ID синхронизации
+   * @return syncId
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_SYNC_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public UUID getSyncId() {
+    return syncId;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_SYNC_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSyncId(@javax.annotation.Nullable UUID syncId) {
+    this.syncId = syncId;
+  }
+
+
+  /**
+   * Момент последнего обновления Счета-фактуры полученного
+   * @return updated
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_UPDATED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getUpdated() {
+    return updated;
+  }
+
+  
+
+
+
+  public FactureIn supplies(@javax.annotation.Nullable List<Supply> supplies) {
+    this.supplies = JsonNullable.<List<Supply>>of(supplies);
+    
+    return this;
+  }
+
+
+  public FactureIn addSuppliesItem(Supply suppliesItem) {
+    if (this.supplies == null || !this.supplies.isPresent()) {
+      this.supplies = JsonNullable.<List<Supply>>of(new ArrayList<>());
+    }
+    try {
+      this.supplies.get().add(suppliesItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
+    return this;
+  }
+
+  /**
+   * Массив ссылок на связанные приемки
+   * @return supplies
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public List<Supply> getSupplies() {
+        return supplies.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_SUPPLIES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<List<Supply>> getSupplies_JsonNullable() {
+    return supplies;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_SUPPLIES, required = false)
+  public void setSupplies_JsonNullable(JsonNullable<List<Supply>> supplies) {
+    this.supplies = supplies;
+  }
+
+  public void setSupplies(@javax.annotation.Nullable List<Supply> supplies) {
+    this.supplies = JsonNullable.<List<Supply>>of(supplies);
+  }
+
+
+  public FactureIn payments(@javax.annotation.Nullable List<PaymentOut> payments) {
+    this.payments = JsonNullable.<List<PaymentOut>>of(payments);
+    
+    return this;
+  }
+
+
+  public FactureIn addPaymentsItem(PaymentOut paymentsItem) {
+    if (this.payments == null || !this.payments.isPresent()) {
+      this.payments = JsonNullable.<List<PaymentOut>>of(new ArrayList<>());
+    }
+    try {
+      this.payments.get().add(paymentsItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
+    return this;
+  }
+
+  /**
+   * Массив ссылок на связанные исходящие платежи
+   * @return payments
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public List<PaymentOut> getPayments() {
+        return payments.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_PAYMENTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<List<PaymentOut>> getPayments_JsonNullable() {
+    return payments;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_PAYMENTS, required = false)
+  public void setPayments_JsonNullable(JsonNullable<List<PaymentOut>> payments) {
+    this.payments = payments;
+  }
+
+  public void setPayments(@javax.annotation.Nullable List<PaymentOut> payments) {
+    this.payments = JsonNullable.<List<PaymentOut>>of(payments);
+  }
+
+
+  public FactureIn incomingNumber(@javax.annotation.Nullable String incomingNumber) {
+    this.incomingNumber = JsonNullable.<String>of(incomingNumber);
+    
+    return this;
+  }
+
+
+  /**
+   * Входящий номер
+   * @return incomingNumber
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public String getIncomingNumber() {
+        return incomingNumber.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_INCOMING_NUMBER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<String> getIncomingNumber_JsonNullable() {
+    return incomingNumber;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_INCOMING_NUMBER, required = false)
+  public void setIncomingNumber_JsonNullable(JsonNullable<String> incomingNumber) {
+    this.incomingNumber = incomingNumber;
+  }
+
+  public void setIncomingNumber(@javax.annotation.Nullable String incomingNumber) {
+    this.incomingNumber = JsonNullable.<String>of(incomingNumber);
+  }
+
+
+  public FactureIn incomingDate(@javax.annotation.Nullable String incomingDate) {
+    this.incomingDate = JsonNullable.<String>of(incomingDate);
+    
+    return this;
+  }
+
+
+  /**
+   * Входящая дата
+   * @return incomingDate
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public String getIncomingDate() {
+        return incomingDate.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_INCOMING_DATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<String> getIncomingDate_JsonNullable() {
+    return incomingDate;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_INCOMING_DATE, required = false)
+  public void setIncomingDate_JsonNullable(JsonNullable<String> incomingDate) {
+    this.incomingDate = incomingDate;
+  }
+
+  public void setIncomingDate(@javax.annotation.Nullable String incomingDate) {
+    this.incomingDate = JsonNullable.<String>of(incomingDate);
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -796,6 +1153,7 @@ public class FactureIn {
         Objects.equals(this.applicable, factureIn.applicable) &&
         equalsNullable(this.attributes, factureIn.attributes) &&
         Objects.equals(this.code, factureIn.code) &&
+        equalsNullable(this.contract, factureIn.contract) &&
         Objects.equals(this.created, factureIn.created) &&
         Objects.equals(this.deleted, factureIn.deleted) &&
         equalsNullable(this.description, factureIn.description) &&
@@ -804,12 +1162,20 @@ public class FactureIn {
         Objects.equals(this.group, factureIn.group) &&
         Objects.equals(this.moment, factureIn.moment) &&
         Objects.equals(this.name, factureIn.name) &&
+        Objects.equals(this.organization, factureIn.organization) &&
         equalsNullable(this.owner, factureIn.owner) &&
         Objects.equals(this.printed, factureIn.printed) &&
         Objects.equals(this.published, factureIn.published) &&
         Objects.equals(this.rate, factureIn.rate) &&
         Objects.equals(this.shared, factureIn.shared) &&
-        equalsNullable(this.state, factureIn.state);
+        equalsNullable(this.state, factureIn.state) &&
+        Objects.equals(this.sum, factureIn.sum) &&
+        Objects.equals(this.syncId, factureIn.syncId) &&
+        Objects.equals(this.updated, factureIn.updated) &&
+        equalsNullable(this.supplies, factureIn.supplies) &&
+        equalsNullable(this.payments, factureIn.payments) &&
+        equalsNullable(this.incomingNumber, factureIn.incomingNumber) &&
+        equalsNullable(this.incomingDate, factureIn.incomingDate);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -818,7 +1184,7 @@ public class FactureIn {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, agent, applicable, hashCodeNullable(attributes), code, created, deleted, hashCodeNullable(description), externalCode, hashCodeNullable(files), group, moment, name, hashCodeNullable(owner), printed, published, rate, shared, hashCodeNullable(state));
+    return Objects.hash(meta, id, accountId, agent, applicable, hashCodeNullable(attributes), code, hashCodeNullable(contract), created, deleted, hashCodeNullable(description), externalCode, hashCodeNullable(files), group, moment, name, organization, hashCodeNullable(owner), printed, published, rate, shared, hashCodeNullable(state), sum, syncId, updated, hashCodeNullable(supplies), hashCodeNullable(payments), hashCodeNullable(incomingNumber), hashCodeNullable(incomingDate));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -839,6 +1205,7 @@ public class FactureIn {
     sb.append("    applicable: ").append(toIndentedString(applicable)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
@@ -847,12 +1214,20 @@ public class FactureIn {
     sb.append("    group: ").append(toIndentedString(group)).append("\n");
     sb.append("    moment: ").append(toIndentedString(moment)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
     sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
     sb.append("    printed: ").append(toIndentedString(printed)).append("\n");
     sb.append("    published: ").append(toIndentedString(published)).append("\n");
     sb.append("    rate: ").append(toIndentedString(rate)).append("\n");
     sb.append("    shared: ").append(toIndentedString(shared)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    sum: ").append(toIndentedString(sum)).append("\n");
+    sb.append("    syncId: ").append(toIndentedString(syncId)).append("\n");
+    sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
+    sb.append("    supplies: ").append(toIndentedString(supplies)).append("\n");
+    sb.append("    payments: ").append(toIndentedString(payments)).append("\n");
+    sb.append("    incomingNumber: ").append(toIndentedString(incomingNumber)).append("\n");
+    sb.append("    incomingDate: ").append(toIndentedString(incomingDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -960,6 +1335,11 @@ public class FactureIn {
       }
     }
 
+    // add `contract` to the URL query string
+    if (getContract() != null) {
+      joiner.add(getContract().toUrlQueryString(prefix + "contract" + suffix));
+    }
+
     // add `created` to the URL query string
     if (getCreated() != null) {
       try {
@@ -1030,6 +1410,11 @@ public class FactureIn {
       }
     }
 
+    // add `organization` to the URL query string
+    if (getOrganization() != null) {
+      joiner.add(getOrganization().toUrlQueryString(prefix + "organization" + suffix));
+    }
+
     // add `owner` to the URL query string
     if (getOwner() != null) {
       joiner.add(getOwner().toUrlQueryString(prefix + "owner" + suffix));
@@ -1057,7 +1442,12 @@ public class FactureIn {
 
     // add `rate` to the URL query string
     if (getRate() != null) {
-      joiner.add(getRate().toUrlQueryString(prefix + "rate" + suffix));
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%srate%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getRate()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
     }
 
     // add `shared` to the URL query string
@@ -1073,6 +1463,76 @@ public class FactureIn {
     // add `state` to the URL query string
     if (getState() != null) {
       joiner.add(getState().toUrlQueryString(prefix + "state" + suffix));
+    }
+
+    // add `sum` to the URL query string
+    if (getSum() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%ssum%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSum()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `syncId` to the URL query string
+    if (getSyncId() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%ssyncId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSyncId()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `updated` to the URL query string
+    if (getUpdated() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%supdated%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getUpdated()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `supplies` to the URL query string
+    if (getSupplies() != null) {
+      for (int i = 0; i < getSupplies().size(); i++) {
+        if (getSupplies().get(i) != null) {
+          joiner.add(getSupplies().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%ssupplies%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    // add `payments` to the URL query string
+    if (getPayments() != null) {
+      for (int i = 0; i < getPayments().size(); i++) {
+        if (getPayments().get(i) != null) {
+          joiner.add(getPayments().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%spayments%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    // add `incomingNumber` to the URL query string
+    if (getIncomingNumber() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sincomingNumber%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getIncomingNumber()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `incomingDate` to the URL query string
+    if (getIncomingDate() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sincomingDate%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getIncomingDate()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
     }
 
     return joiner.toString();

@@ -52,18 +52,19 @@
 |**incomingDate** | **String** | Входящая дата |  [optional] |
 |**incomingNumber** | **String** | Входящий номер |  [optional] |
 |**overhead** | [**Overhead**](Overhead.md) |  |  [optional] |
-|**purchaseOrder** | [**PurchaseOrder**](PurchaseOrder.md) | Заказ поставщику, с которым связана Приемка  |  [optional] |
+|**purchaseOrder** | [**PurchaseOrder**](PurchaseOrder.md) | Заказ поставщику, с которым связан Счет поставщика |  [optional] |
 |**factureIn** | [**FactureIn**](FactureIn.md) | Счет-фактура полученный, с которым связана эта Приемка |  [optional] |
 |**invoicesIn** | [**List&lt;InvoiceIn&gt;**](InvoiceIn.md) | Массив ссылок на связанные счета поставщиков |  [optional] |
 |**productionTask** | [**ProductionTask**](ProductionTask.md) | Связанное производственное задание |  [optional] |
 |**returns** | [**List&lt;SupplyReturnsInner&gt;**](SupplyReturnsInner.md) | Массив ссылок на связанные возвраты  |  [optional] |
-|**deliveryPlannedMoment** | **String** | Планируемая дата отгрузки |  [optional] |
+|**paymentPlannedMoment** | **String** | Планируемая дата оплаты |  [optional] |
 |**shippedSum** | **Double** | Сумма принятого |  [optional] [readonly] |
+|**supplies** | [**List&lt;Supply&gt;**](Supply.md) | Массив ссылок на связанные приемки |  [optional] |
+|**deliveryPlannedMoment** | **String** | Планируемая дата отгрузки |  [optional] |
 |**invoicedSum** | **Double** | Сумма счетов поставщику |  [optional] [readonly] |
 |**waitSum** | **Double** | Сумма товаров в пути |  [optional] [readonly] |
 |**internalOrder** | [**InternalOrder**](InternalOrder.md) | Внутренний заказ, связанный с заказом поставщику |  [optional] |
 |**customerOrders** | [**List&lt;CustomerOrder&gt;**](CustomerOrder.md) | Массив ссылок на связанные заказы покупателей |  [optional] |
-|**supplies** | [**List&lt;Supply&gt;**](Supply.md) | Массив ссылок на связанные приемки |  [optional] |
 |**productionTasks** | [**List&lt;ProductionTask&gt;**](ProductionTask.md) | Массив ссылок на связанные производственные задания |  [optional] |
 |**commissionPeriodEnd** | **String** | Конец периода |  [optional] |
 |**commissionPeriodStart** | **String** | Начало периода |  [optional] |

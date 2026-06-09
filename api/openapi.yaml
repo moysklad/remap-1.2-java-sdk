@@ -95,6 +95,10 @@ tags:
   name: Stores
 - description: Операции с заказами покупателя
   name: CustomerOrders
+- description: Операции со счетами поставщику
+  name: InvoiceIns
+- description: Операции со счетами покупателю
+  name: InvoiceOuts
 - description: Операции с отгрузками
   name: Demands
 - description: Операции с перемещениями
@@ -125,6 +129,10 @@ tags:
   name: CashIns
 - description: Операции с входящими платежами
   name: PaymentIns
+- description: Операции со Счетами-фактурами полученными
+  name: FactureIns
+- description: Операции со Счетами-фактурами выданными
+  name: FactureOuts
 - description: Операции с исходящими платежами
   name: PaymentOuts
 - description: Операции с внесениями денег
@@ -28693,6 +28701,3404 @@ paths:
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
+  /entity/invoiceout:
+    get:
+      operationId: getInvoiceOutList
+      parameters:
+      - description: Максимальное количество элементов в выданном списке (максимум
+          1000)
+        in: query
+        name: limit
+        schema:
+          default: 1000
+          maximum: 1000
+          minimum: 1
+          type: integer
+      - description: Отступ в выданном списке
+        in: query
+        name: offset
+        schema:
+          default: 0
+          minimum: 0
+          type: integer
+      - description: Контекстный поиск по строковым полям сущностей
+        in: query
+        name: search
+        schema:
+          example: name=123
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - description: |
+          Включить в ответ скрытые поля, не выводимые по умолчанию.
+          В одном запросе можно передать только одно значение.
+          - `minimumStock` — неснижаемый остаток (товар, модификация)
+          - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф)
+          - `stock` — остатки и себестоимость в позициях документов
+          - `declaration` — прослеживаемость импортных товаров в позициях документов
+        example: minimumStock
+        in: query
+        name: fields
+        schema:
+          enum:
+          - minimumStock
+          - downloadPermanentHref
+          - stock
+          - declaration
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InvoiceOutList"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить список Счетов покупателям
+      tags:
+      - InvoiceOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    post:
+      operationId: createInvoiceOut
+      parameters:
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/InvoiceOut"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InvoiceOut"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать Счет покупателю
+      tags:
+      - InvoiceOuts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoiceout/{id}:
+    delete:
+      operationId: deleteInvoiceOut
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      responses:
+        "200":
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Удалить Счет покупателю
+      tags:
+      - InvoiceOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    get:
+      operationId: getInvoiceOutById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - description: |
+          Включить в ответ скрытые поля, не выводимые по умолчанию.
+          В одном запросе можно передать только одно значение.
+          - `minimumStock` — неснижаемый остаток (товар, модификация)
+          - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф)
+          - `stock` — остатки и себестоимость в позициях документов
+          - `declaration` — прослеживаемость импортных товаров в позициях документов
+        example: minimumStock
+        in: query
+        name: fields
+        schema:
+          enum:
+          - minimumStock
+          - downloadPermanentHref
+          - stock
+          - declaration
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InvoiceOut"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить Счет покупателю
+      tags:
+      - InvoiceOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    put:
+      operationId: updateInvoiceOut
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - description: |
+          Включить в ответ скрытые поля, не выводимые по умолчанию.
+          В одном запросе можно передать только одно значение.
+          - `minimumStock` — неснижаемый остаток (товар, модификация)
+          - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф)
+          - `stock` — остатки и себестоимость в позициях документов
+          - `declaration` — прослеживаемость импортных товаров в позициях документов
+        example: minimumStock
+        in: query
+        name: fields
+        schema:
+          enum:
+          - minimumStock
+          - downloadPermanentHref
+          - stock
+          - declaration
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/InvoiceOut"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InvoiceOut"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Изменить Счет покупателю
+      tags:
+      - InvoiceOuts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoiceout/delete:
+    post:
+      operationId: deleteInvoiceOutBatch
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: "#/components/schemas/InvoiceOut"
+              maxItems: 1000
+              minItems: 1
+              type: array
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/deleteContractsBatch_200_response_inner"
+                type: array
+          description: Результат по каждому элементу (успех или объект ошибки)
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Массовое удаление Счетов покупателям
+      tags:
+      - InvoiceOuts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoiceout/batch:
+    post:
+      operationId: createInvoiceOutBatch
+      parameters:
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: "#/components/schemas/InvoiceOut"
+              maxItems: 1000
+              minItems: 1
+              type: array
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/createInvoiceOutBatch_200_response_inner"
+                type: array
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Массовое создание и обновление Счетов покупателям
+      tags:
+      - InvoiceOuts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoiceout/metadata:
+    get:
+      operationId: getInvoiceOutMetadata
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DocumentMetadata"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Метаданные Счетов покупателям
+      tags:
+      - InvoiceOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoiceout/metadata/attributes:
+    get:
+      operationId: getInvoiceOutMetadataAttribute
+      parameters:
+      - description: Отступ в выданном списке
+        in: query
+        name: offset
+        schema:
+          default: 0
+          minimum: 0
+          type: integer
+      - description: Максимальное количество элементов в выданном списке (максимум
+          1000)
+        in: query
+        name: limit
+        schema:
+          default: 1000
+          maximum: 1000
+          minimum: 1
+          type: integer
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttributeMetaInfoList"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Доп. поля InvoiceOut
+      tags:
+      - InvoiceOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    post:
+      operationId: createInvoiceOutMetadataAttribute
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AttributeMetaInfo"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttributeMetaInfo"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать Доп. поле InvoiceOut
+      tags:
+      - InvoiceOuts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoiceout/metadata/attributes/{id}:
+    delete:
+      operationId: deleteInvoiceOutMetadataAttributeById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      responses:
+        "200":
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Удалить отдельное доп. поле InvoiceOut
+      tags:
+      - InvoiceOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    get:
+      operationId: getInvoiceOutMetadataAttributeById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttributeMetaInfo"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Отдельное доп. поле InvoiceOut
+      tags:
+      - InvoiceOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    put:
+      operationId: updateInvoiceOutMetadataAttributeById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AttributeMetaInfo"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttributeMetaInfo"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Обновить отдельное доп. поле InvoiceOut
+      tags:
+      - InvoiceOuts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoiceout/metadata/states/{id}:
+    delete:
+      operationId: deleteInvoiceOutMetadataStateById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      responses:
+        "200":
+          description: Успешный запрос
+        "404":
+          $ref: "#/components/responses/NotFoundEmpty"
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Удалить отдельный статус InvoiceOut
+      tags:
+      - InvoiceOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    get:
+      operationId: getInvoiceOutMetadataStateById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/State"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Отдельный статус InvoiceOut
+      tags:
+      - InvoiceOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    put:
+      operationId: updateInvoiceOutMetadataStateById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/State"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/State"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Обновить отдельный статус InvoiceOut
+      tags:
+      - InvoiceOuts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoiceout/new:
+    put:
+      description: |
+        Предзаполненный шаблон Счета покупателю. Пустое тело — стандартные значения без привязки к документу;
+        в теле можно передать, например, `customerOrder` или `demands` для шаблона на основе документа.
+      operationId: getInvoiceOutTemplate
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+        required: false
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InvoiceOut"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Шаблон Счета покупателю
+      tags:
+      - InvoiceOuts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoiceout/{id}/positions:
+    get:
+      operationId: getInvoiceOutPositions
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Максимальное количество элементов в выданном списке (максимум
+          1000)
+        in: query
+        name: limit
+        schema:
+          default: 1000
+          maximum: 1000
+          minimum: 1
+          type: integer
+      - description: Отступ в выданном списке
+        in: query
+        name: offset
+        schema:
+          default: 0
+          minimum: 0
+          type: integer
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - description: |
+          Включить в ответ скрытые поля, не выводимые по умолчанию.
+          В одном запросе можно передать только одно значение.
+          - `minimumStock` — неснижаемый остаток (товар, модификация)
+          - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф)
+          - `stock` — остатки и себестоимость в позициях документов
+          - `declaration` — прослеживаемость импортных товаров в позициях документов
+        example: minimumStock
+        in: query
+        name: fields
+        schema:
+          enum:
+          - minimumStock
+          - downloadPermanentHref
+          - stock
+          - declaration
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InvoiceOutPositionList"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить позиции Счета покупателю
+      tags:
+      - InvoiceOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    post:
+      operationId: createInvoiceOutPositions
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/InvoiceOutPosition"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InvoiceOutPosition"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать позицию Счета покупателю
+      tags:
+      - InvoiceOuts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoiceout/{id}/positions/batch:
+    post:
+      operationId: createInvoiceOutPositionsBatch
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: "#/components/schemas/InvoiceOutPosition"
+              maxItems: 1000
+              minItems: 1
+              type: array
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/createInvoiceOutPositionsBatch_200_response_inner"
+                type: array
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать позиции Счета покупателю
+      tags:
+      - InvoiceOuts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoiceout/{id}/positions/{positionId}:
+    delete:
+      operationId: deleteInvoiceOutPosition
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - description: ID позиции
+        in: path
+        name: positionId
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000054
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      responses:
+        "200":
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Удалить позицию Счета покупателю
+      tags:
+      - InvoiceOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    get:
+      operationId: getInvoiceOutPositionById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - description: |
+          Включить в ответ скрытые поля, не выводимые по умолчанию.
+          В одном запросе можно передать только одно значение.
+          - `minimumStock` — неснижаемый остаток (товар, модификация)
+          - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф)
+          - `stock` — остатки и себестоимость в позициях документов
+          - `declaration` — прослеживаемость импортных товаров в позициях документов
+        example: minimumStock
+        in: query
+        name: fields
+        schema:
+          enum:
+          - minimumStock
+          - downloadPermanentHref
+          - stock
+          - declaration
+          type: string
+      - description: ID позиции
+        in: path
+        name: positionId
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000054
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InvoiceOutPosition"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить позицию Счета покупателю
+      tags:
+      - InvoiceOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    put:
+      operationId: updateInvoiceOutPosition
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - description: |
+          Включить в ответ скрытые поля, не выводимые по умолчанию.
+          В одном запросе можно передать только одно значение.
+          - `minimumStock` — неснижаемый остаток (товар, модификация)
+          - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф)
+          - `stock` — остатки и себестоимость в позициях документов
+          - `declaration` — прослеживаемость импортных товаров в позициях документов
+        example: minimumStock
+        in: query
+        name: fields
+        schema:
+          enum:
+          - minimumStock
+          - downloadPermanentHref
+          - stock
+          - declaration
+          type: string
+      - description: ID позиции
+        in: path
+        name: positionId
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000054
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/InvoiceOutPosition"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InvoiceOutPosition"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Изменить позицию Счета покупателю
+      tags:
+      - InvoiceOuts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoiceout/{id}/positions/delete:
+    post:
+      operationId: deleteInvoiceOutPositionsBatch
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: "#/components/schemas/InvoiceOutPosition"
+              maxItems: 1000
+              minItems: 1
+              type: array
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/deleteContractsBatch_200_response_inner"
+                type: array
+          description: Результат по каждому элементу (успех или объект ошибки)
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Массовое удаление позиций Счета покупателю
+      tags:
+      - InvoiceOuts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoiceout/{id}/files:
+    get:
+      description: Запрос на получение списка всех Файлов данного Счета покупателю.
+      operationId: getInvoiceOutFiles
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Максимальное количество элементов в выданном списке (максимум
+          1000)
+        in: query
+        name: limit
+        schema:
+          default: 1000
+          maximum: 1000
+          minimum: 1
+          type: integer
+      - description: Отступ в выданном списке
+        in: query
+        name: offset
+        schema:
+          default: 0
+          minimum: 0
+          type: integer
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/getProductFiles_200_response"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить файлы Счета покупателю
+      tags:
+      - InvoiceOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    post:
+      description: |
+        Добавить новые Файлы к Счету покупателю. В одном запросе можно добавить максимум 10 Файлов.
+        В поле `content` нужно указать файл, закодированный в Base64, в поле `filename` — имя файла с расширением.
+      operationId: addInvoiceOutFiles
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: "#/components/schemas/FileUpload"
+              maxItems: 10
+              type: array
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/File"
+                type: array
+          description: Файлы успешно добавлены. Результат — массив всех Файлов Счета
+            покупателю.
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Добавить файлы к Счету покупателю
+      tags:
+      - InvoiceOuts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoiceout/{id}/files/{fileId}:
+    delete:
+      description: Удаление Файла Счета покупателю.
+      operationId: deleteInvoiceOutFile
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: ID файла
+        in: path
+        name: fileId
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          description: Файл успешно удалён
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Удалить файл Счета покупателю
+      tags:
+      - InvoiceOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    get:
+      description: Получение Файла Счета покупателю.
+      operationId: getInvoiceOutFile
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: ID файла
+        in: path
+        name: fileId
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/File"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить файл Счета покупателю
+      tags:
+      - InvoiceOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoicein:
+    get:
+      operationId: getInvoiceInList
+      parameters:
+      - description: Максимальное количество элементов в выданном списке (максимум
+          1000)
+        in: query
+        name: limit
+        schema:
+          default: 1000
+          maximum: 1000
+          minimum: 1
+          type: integer
+      - description: Отступ в выданном списке
+        in: query
+        name: offset
+        schema:
+          default: 0
+          minimum: 0
+          type: integer
+      - description: Контекстный поиск по строковым полям сущностей
+        in: query
+        name: search
+        schema:
+          example: name=123
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - description: |
+          Включить в ответ скрытые поля, не выводимые по умолчанию.
+          В одном запросе можно передать только одно значение.
+          - `minimumStock` — неснижаемый остаток (товар, модификация)
+          - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф)
+          - `stock` — остатки и себестоимость в позициях документов
+          - `declaration` — прослеживаемость импортных товаров в позициях документов
+        example: minimumStock
+        in: query
+        name: fields
+        schema:
+          enum:
+          - minimumStock
+          - downloadPermanentHref
+          - stock
+          - declaration
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InvoiceInList"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить список Счетов поставщикам
+      tags:
+      - InvoiceIns
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    post:
+      operationId: createInvoiceIn
+      parameters:
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/InvoiceIn"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InvoiceIn"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать Счет поставщику
+      tags:
+      - InvoiceIns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoicein/{id}:
+    delete:
+      operationId: deleteInvoiceIn
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      responses:
+        "200":
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Удалить Счет поставщику
+      tags:
+      - InvoiceIns
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    get:
+      operationId: getInvoiceInById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - description: |
+          Включить в ответ скрытые поля, не выводимые по умолчанию.
+          В одном запросе можно передать только одно значение.
+          - `minimumStock` — неснижаемый остаток (товар, модификация)
+          - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф)
+          - `stock` — остатки и себестоимость в позициях документов
+          - `declaration` — прослеживаемость импортных товаров в позициях документов
+        example: minimumStock
+        in: query
+        name: fields
+        schema:
+          enum:
+          - minimumStock
+          - downloadPermanentHref
+          - stock
+          - declaration
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InvoiceIn"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить Счет поставщику
+      tags:
+      - InvoiceIns
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    put:
+      operationId: updateInvoiceIn
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - description: |
+          Включить в ответ скрытые поля, не выводимые по умолчанию.
+          В одном запросе можно передать только одно значение.
+          - `minimumStock` — неснижаемый остаток (товар, модификация)
+          - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф)
+          - `stock` — остатки и себестоимость в позициях документов
+          - `declaration` — прослеживаемость импортных товаров в позициях документов
+        example: minimumStock
+        in: query
+        name: fields
+        schema:
+          enum:
+          - minimumStock
+          - downloadPermanentHref
+          - stock
+          - declaration
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/InvoiceIn"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InvoiceIn"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Изменить Счет поставщику
+      tags:
+      - InvoiceIns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoicein/delete:
+    post:
+      operationId: deleteInvoiceInBatch
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: "#/components/schemas/InvoiceIn"
+              maxItems: 1000
+              minItems: 1
+              type: array
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/deleteContractsBatch_200_response_inner"
+                type: array
+          description: Результат по каждому элементу (успех или объект ошибки)
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Массовое удаление Счетов поставщикам
+      tags:
+      - InvoiceIns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoicein/batch:
+    post:
+      operationId: createInvoiceInBatch
+      parameters:
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: "#/components/schemas/InvoiceIn"
+              maxItems: 1000
+              minItems: 1
+              type: array
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/createInvoiceInBatch_200_response_inner"
+                type: array
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Массовое создание и обновление Счетов поставщикам
+      tags:
+      - InvoiceIns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoicein/metadata:
+    get:
+      operationId: getInvoiceInMetadata
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DocumentMetadata"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Метаданные Счетов поставщикам
+      tags:
+      - InvoiceIns
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoicein/metadata/attributes:
+    get:
+      operationId: getInvoiceInMetadataAttribute
+      parameters:
+      - description: Отступ в выданном списке
+        in: query
+        name: offset
+        schema:
+          default: 0
+          minimum: 0
+          type: integer
+      - description: Максимальное количество элементов в выданном списке (максимум
+          1000)
+        in: query
+        name: limit
+        schema:
+          default: 1000
+          maximum: 1000
+          minimum: 1
+          type: integer
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttributeMetaInfoList"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Доп. поля InvoiceIn
+      tags:
+      - InvoiceIns
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    post:
+      operationId: createInvoiceInMetadataAttribute
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AttributeMetaInfo"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttributeMetaInfo"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать Доп. поле InvoiceIn
+      tags:
+      - InvoiceIns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoicein/metadata/attributes/{id}:
+    delete:
+      operationId: deleteInvoiceInMetadataAttributeById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      responses:
+        "200":
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Удалить отдельное доп. поле InvoiceIn
+      tags:
+      - InvoiceIns
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    get:
+      operationId: getInvoiceInMetadataAttributeById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttributeMetaInfo"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Отдельное доп. поле InvoiceIn
+      tags:
+      - InvoiceIns
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    put:
+      operationId: updateInvoiceInMetadataAttributeById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AttributeMetaInfo"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttributeMetaInfo"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Обновить отдельное доп. поле InvoiceIn
+      tags:
+      - InvoiceIns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoicein/metadata/states/{id}:
+    delete:
+      operationId: deleteInvoiceInMetadataStateById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      responses:
+        "200":
+          description: Успешный запрос
+        "404":
+          $ref: "#/components/responses/NotFoundEmpty"
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Удалить отдельный статус InvoiceIn
+      tags:
+      - InvoiceIns
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    get:
+      operationId: getInvoiceInMetadataStateById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/State"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Отдельный статус InvoiceIn
+      tags:
+      - InvoiceIns
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    put:
+      operationId: updateInvoiceInMetadataStateById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/State"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/State"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Обновить отдельный статус InvoiceIn
+      tags:
+      - InvoiceIns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoicein/new:
+    put:
+      description: |
+        Предзаполненный шаблон Счета поставщику. Пустое тело — стандартные значения без привязки к документу;
+        в теле можно передать, например, `purchaseOrder` или `supplies` для шаблона на основе документа.
+      operationId: getInvoiceInTemplate
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+        required: false
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InvoiceIn"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Шаблон Счета поставщику
+      tags:
+      - InvoiceIns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoicein/{id}/positions:
+    get:
+      operationId: getInvoiceInPositions
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Максимальное количество элементов в выданном списке (максимум
+          1000)
+        in: query
+        name: limit
+        schema:
+          default: 1000
+          maximum: 1000
+          minimum: 1
+          type: integer
+      - description: Отступ в выданном списке
+        in: query
+        name: offset
+        schema:
+          default: 0
+          minimum: 0
+          type: integer
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - description: |
+          Включить в ответ скрытые поля, не выводимые по умолчанию.
+          В одном запросе можно передать только одно значение.
+          - `minimumStock` — неснижаемый остаток (товар, модификация)
+          - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф)
+          - `stock` — остатки и себестоимость в позициях документов
+          - `declaration` — прослеживаемость импортных товаров в позициях документов
+        example: minimumStock
+        in: query
+        name: fields
+        schema:
+          enum:
+          - minimumStock
+          - downloadPermanentHref
+          - stock
+          - declaration
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InvoiceInPositionList"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить позиции Счета поставщику
+      tags:
+      - InvoiceIns
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    post:
+      operationId: createInvoiceInPositions
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/InvoiceInPosition"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InvoiceInPosition"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать позицию Счета поставщику
+      tags:
+      - InvoiceIns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoicein/{id}/positions/batch:
+    post:
+      operationId: createInvoiceInPositionsBatch
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: "#/components/schemas/InvoiceInPosition"
+              maxItems: 1000
+              minItems: 1
+              type: array
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/createInvoiceInPositionsBatch_200_response_inner"
+                type: array
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать позиции Счета поставщику
+      tags:
+      - InvoiceIns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoicein/{id}/positions/{positionId}:
+    delete:
+      operationId: deleteInvoiceInPosition
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - description: ID позиции
+        in: path
+        name: positionId
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000054
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      responses:
+        "200":
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Удалить позицию Счета поставщику
+      tags:
+      - InvoiceIns
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    get:
+      operationId: getInvoiceInPositionById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - description: |
+          Включить в ответ скрытые поля, не выводимые по умолчанию.
+          В одном запросе можно передать только одно значение.
+          - `minimumStock` — неснижаемый остаток (товар, модификация)
+          - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф)
+          - `stock` — остатки и себестоимость в позициях документов
+          - `declaration` — прослеживаемость импортных товаров в позициях документов
+        example: minimumStock
+        in: query
+        name: fields
+        schema:
+          enum:
+          - minimumStock
+          - downloadPermanentHref
+          - stock
+          - declaration
+          type: string
+      - description: ID позиции
+        in: path
+        name: positionId
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000054
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InvoiceInPosition"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить позицию Счета поставщику
+      tags:
+      - InvoiceIns
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    put:
+      operationId: updateInvoiceInPosition
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - description: |
+          Включить в ответ скрытые поля, не выводимые по умолчанию.
+          В одном запросе можно передать только одно значение.
+          - `minimumStock` — неснижаемый остаток (товар, модификация)
+          - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф)
+          - `stock` — остатки и себестоимость в позициях документов
+          - `declaration` — прослеживаемость импортных товаров в позициях документов
+        example: minimumStock
+        in: query
+        name: fields
+        schema:
+          enum:
+          - minimumStock
+          - downloadPermanentHref
+          - stock
+          - declaration
+          type: string
+      - description: ID позиции
+        in: path
+        name: positionId
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000054
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/InvoiceInPosition"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InvoiceInPosition"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Изменить позицию Счета поставщику
+      tags:
+      - InvoiceIns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoicein/{id}/positions/delete:
+    post:
+      operationId: deleteInvoiceInPositionsBatch
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: "#/components/schemas/InvoiceInPosition"
+              maxItems: 1000
+              minItems: 1
+              type: array
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/deleteContractsBatch_200_response_inner"
+                type: array
+          description: Результат по каждому элементу (успех или объект ошибки)
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Массовое удаление позиций Счета поставщику
+      tags:
+      - InvoiceIns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoicein/{id}/files:
+    get:
+      description: Запрос на получение списка всех Файлов данного Счета поставщику.
+      operationId: getInvoiceInFiles
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Максимальное количество элементов в выданном списке (максимум
+          1000)
+        in: query
+        name: limit
+        schema:
+          default: 1000
+          maximum: 1000
+          minimum: 1
+          type: integer
+      - description: Отступ в выданном списке
+        in: query
+        name: offset
+        schema:
+          default: 0
+          minimum: 0
+          type: integer
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/getProductFiles_200_response"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить файлы Счета поставщику
+      tags:
+      - InvoiceIns
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    post:
+      description: |
+        Добавить новые Файлы к Счету поставщику. В одном запросе можно добавить максимум 10 Файлов.
+        В поле `content` нужно указать файл, закодированный в Base64, в поле `filename` — имя файла с расширением.
+      operationId: addInvoiceInFiles
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: "#/components/schemas/FileUpload"
+              maxItems: 10
+              type: array
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/File"
+                type: array
+          description: Файлы успешно добавлены. Результат — массив всех Файлов Счета
+            поставщику.
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Добавить файлы к Счету поставщику
+      tags:
+      - InvoiceIns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoicein/{id}/files/{fileId}:
+    delete:
+      description: Удаление Файла Счета поставщику.
+      operationId: deleteInvoiceInFile
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: ID файла
+        in: path
+        name: fileId
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          description: Файл успешно удалён
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Удалить файл Счета поставщику
+      tags:
+      - InvoiceIns
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    get:
+      description: Получение Файла Счета поставщику.
+      operationId: getInvoiceInFile
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: ID файла
+        in: path
+        name: fileId
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/File"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить файл Счета поставщику
+      tags:
+      - InvoiceIns
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
   /entity/demand:
     get:
       operationId: getDemandList
@@ -51049,6 +54455,1852 @@ paths:
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
+  /entity/facturein:
+    get:
+      operationId: getFactureIns
+      parameters:
+      - description: Максимальное количество элементов в выданном списке (максимум
+          1000)
+        in: query
+        name: limit
+        schema:
+          default: 1000
+          maximum: 1000
+          minimum: 1
+          type: integer
+      - description: Отступ в выданном списке
+        in: query
+        name: offset
+        schema:
+          default: 0
+          minimum: 0
+          type: integer
+      - description: Контекстный поиск по строковым полям сущностей
+        in: query
+        name: search
+        schema:
+          example: name=123
+          type: string
+      - description: Фильтрация выборки
+        example: archived=false
+        in: query
+        name: filter
+        schema:
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - description: Сортировка
+        example: name
+        in: query
+        name: order
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FactureInList"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить список Счетов-фактур полученных
+      tags:
+      - FactureIns
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    post:
+      operationId: createFactureIn
+      parameters:
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FactureIn"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FactureIn"
+          description: Счет-фактура полученный успешно создан
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать Счет-фактуру полученный
+      tags:
+      - FactureIns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/facturein/{id}:
+    delete:
+      operationId: deleteFactureIn
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          description: Счет-фактура полученный успешно удалена
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Удалить Счет-фактуру полученный
+      tags:
+      - FactureIns
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    get:
+      operationId: getFactureInById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FactureIn"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить Счет-фактуру полученный
+      tags:
+      - FactureIns
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    put:
+      operationId: updateFactureIn
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FactureIn"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FactureIn"
+          description: Счет-фактура полученный успешно обновлен
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Изменить Счет-фактуру полученный
+      tags:
+      - FactureIns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/facturein/delete:
+    post:
+      description: Массовое удаление Счетов-фактур полученных по их мета-объектам
+      operationId: deleteFactureInsBatch
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: "#/components/schemas/FactureIn"
+              maxItems: 1000
+              minItems: 1
+              type: array
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/deleteContractsBatch_200_response_inner"
+                type: array
+          description: Результат по каждому элементу (успех или объект ошибки)
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Массовое удаление Счетов-фактур полученных
+      tags:
+      - FactureIns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/facturein/batch:
+    post:
+      operationId: createFactureInsBatch
+      parameters:
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: "#/components/schemas/FactureIn"
+              maxItems: 1000
+              minItems: 1
+              type: array
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/createFactureInsBatch_200_response_inner"
+                type: array
+          description: Счета-фактуры полученные успешно созданы или изменены
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Массовое создание и обновление Счетов-фактур полученных
+      tags:
+      - FactureIns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/facturein/metadata:
+    get:
+      description: Запрос на получение метаданных Счетов-фактур полученных
+      operationId: getFactureInMetadata
+      parameters:
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DocumentMetadata"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Метаданные Счетов-фактур полученных
+      tags:
+      - FactureIns
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/facturein/metadata/attributes:
+    get:
+      operationId: getFactureInMetadataAttributes
+      parameters:
+      - description: Отступ в выданном списке
+        in: query
+        name: offset
+        schema:
+          default: 0
+          minimum: 0
+          type: integer
+      - description: Максимальное количество элементов в выданном списке (максимум
+          1000)
+        in: query
+        name: limit
+        schema:
+          default: 1000
+          maximum: 1000
+          minimum: 1
+          type: integer
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttributeMetaInfoList"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Доп. поля Счетов-фактур полученных
+      tags:
+      - FactureIns
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    post:
+      operationId: createFactureInMetadataAttribute
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AttributeMetaInfo"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttributeMetaInfo"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать доп. поле Счета-фактуры полученного
+      tags:
+      - FactureIns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/facturein/metadata/attributes/{id}:
+    delete:
+      operationId: deleteFactureInMetadataAttributeById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Удалить отдельное доп. поле Счета-фактуры полученного
+      tags:
+      - FactureIns
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    get:
+      operationId: getFactureInMetadataAttributeById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttributeMetaInfo"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Отдельное доп. поле Счета-фактуры полученного
+      tags:
+      - FactureIns
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    put:
+      operationId: updateFactureInMetadataAttributeById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AttributeMetaInfo"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttributeMetaInfo"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Обновить отдельное доп. поле Счета-фактуры полученного
+      tags:
+      - FactureIns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/facturein/metadata/states:
+    post:
+      operationId: createFactureInMetadataState
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/State"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/State"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать статус Счета-фактуры полученного
+      tags:
+      - FactureIns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/facturein/metadata/states/{id}:
+    delete:
+      operationId: deleteFactureInMetadataStateById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          description: Успешный запрос
+        "404":
+          $ref: "#/components/responses/NotFoundEmpty"
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Удалить отдельный статус Счета-фактуры полученного
+      tags:
+      - FactureIns
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    get:
+      operationId: getFactureInMetadataStateById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/State"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Отдельный статус Счета-фактуры полученного
+      tags:
+      - FactureIns
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    put:
+      operationId: updateFactureInMetadataStateById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/State"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/State"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Обновить отдельный статус Счета-фактуры полученного
+      tags:
+      - FactureIns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/facturein/new:
+    put:
+      description: |
+        Предзаполненный шаблон Счета-фактуры полученного на основе приемки или исходящего платежа.
+      operationId: getFactureInTemplate
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FactureIn"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Шаблон Счета-фактуры полученного
+      tags:
+      - FactureIns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/factureout:
+    get:
+      description: Запрос всех Счетов-фактур выданных на данной учетной записи
+      operationId: getFactureOuts
+      parameters:
+      - description: Максимальное количество элементов в выданном списке (максимум
+          1000)
+        in: query
+        name: limit
+        schema:
+          default: 1000
+          maximum: 1000
+          minimum: 1
+          type: integer
+      - description: Отступ в выданном списке
+        in: query
+        name: offset
+        schema:
+          default: 0
+          minimum: 0
+          type: integer
+      - description: Контекстный поиск по строковым полям сущностей
+        in: query
+        name: search
+        schema:
+          example: name=123
+          type: string
+      - description: Фильтрация выборки
+        example: archived=false
+        in: query
+        name: filter
+        schema:
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - description: Сортировка
+        example: name
+        in: query
+        name: order
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FactureOutList"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить список Счетов-фактур выданных
+      tags:
+      - FactureOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    post:
+      description: Создание Счета-фактуры выданного
+      operationId: createFactureOut
+      parameters:
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FactureOut"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FactureOut"
+          description: Счет-фактура выданный успешно создан
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать Счет-фактуру выданный
+      tags:
+      - FactureOuts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/factureout/{id}:
+    delete:
+      description: Удаление Счета-фактуры выданного с указанным id
+      operationId: deleteFactureOut
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          description: Счет-фактура выданный успешно удалена
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Удалить Счет-фактуру выданный
+      tags:
+      - FactureOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    get:
+      operationId: getFactureOutById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FactureOut"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить Счет-фактуру выданный
+      tags:
+      - FactureOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    put:
+      description: Обновление Счета-фактуры выданного с указанным id
+      operationId: updateFactureOut
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FactureOut"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FactureOut"
+          description: Счет-фактура выданный успешно обновлен
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Изменить Счет-фактуру выданный
+      tags:
+      - FactureOuts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/factureout/delete:
+    post:
+      description: Массовое удаление Счетов-фактур выданных по их мета-объектам
+      operationId: deleteFactureOutsBatch
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: "#/components/schemas/FactureOut"
+              maxItems: 1000
+              minItems: 1
+              type: array
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/deleteContractsBatch_200_response_inner"
+                type: array
+          description: Результат по каждому элементу (успех или объект ошибки)
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Массовое удаление Счетов-фактур выданных
+      tags:
+      - FactureOuts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/factureout/batch:
+    post:
+      operationId: createFactureOutsBatch
+      parameters:
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: "#/components/schemas/FactureOut"
+              maxItems: 1000
+              minItems: 1
+              type: array
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/createFactureOutsBatch_200_response_inner"
+                type: array
+          description: Счета-фактуры выданные успешно созданы или изменены
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Массовое создание и обновление Счетов-фактур выданных
+      tags:
+      - FactureOuts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/factureout/metadata:
+    get:
+      description: Запрос на получение метаданных Счетов-фактур выданных
+      operationId: getFactureOutMetadata
+      parameters:
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DocumentMetadata"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Метаданные Счетов-фактур выданных
+      tags:
+      - FactureOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/factureout/metadata/attributes:
+    get:
+      operationId: getFactureOutMetadataAttributes
+      parameters:
+      - description: Отступ в выданном списке
+        in: query
+        name: offset
+        schema:
+          default: 0
+          minimum: 0
+          type: integer
+      - description: Максимальное количество элементов в выданном списке (максимум
+          1000)
+        in: query
+        name: limit
+        schema:
+          default: 1000
+          maximum: 1000
+          minimum: 1
+          type: integer
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttributeMetaInfoList"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Доп. поля Счетов-фактур выданных
+      tags:
+      - FactureOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    post:
+      operationId: createFactureOutMetadataAttribute
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AttributeMetaInfo"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttributeMetaInfo"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать доп. поле Счета-фактуры выданного
+      tags:
+      - FactureOuts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/factureout/metadata/attributes/{id}:
+    delete:
+      operationId: deleteFactureOutMetadataAttributeById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Удалить отдельное доп. поле Счета-фактуры выданного
+      tags:
+      - FactureOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    get:
+      operationId: getFactureOutMetadataAttributeById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttributeMetaInfo"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Отдельное доп. поле Счета-фактуры выданного
+      tags:
+      - FactureOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    put:
+      operationId: updateFactureOutMetadataAttributeById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AttributeMetaInfo"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttributeMetaInfo"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Обновить отдельное доп. поле Счета-фактуры выданного
+      tags:
+      - FactureOuts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/factureout/metadata/states:
+    post:
+      operationId: createFactureOutMetadataState
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/createInternalOrderMetadataState_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/State"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать статус Счета-фактуры выданного
+      tags:
+      - FactureOuts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/factureout/metadata/states/{id}:
+    delete:
+      operationId: deleteFactureOutMetadataStateById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          description: Успешный запрос
+        "404":
+          $ref: "#/components/responses/NotFoundEmpty"
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Удалить отдельный статус Счета-фактуры выданного
+      tags:
+      - FactureOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    get:
+      operationId: getFactureOutMetadataStateById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/State"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Отдельный статус Счета-фактуры выданного
+      tags:
+      - FactureOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    put:
+      operationId: updateFactureOutMetadataStateById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/State"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/State"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Обновить отдельный статус Счета-фактуры выданного
+      tags:
+      - FactureOuts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/factureout/new:
+    put:
+      description: |
+        Предзаполненный шаблон Счета-фактуры выданного на основе отгрузки, возврата поставщику или входящего платежа.
+      operationId: getFactureOutTemplate
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FactureOut"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Шаблон Счета-фактуры выданного
+      tags:
+      - FactureOuts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
   /entity/paymentout:
     get:
       operationId: getPaymentOutList
@@ -57052,6 +62304,7 @@ components:
           allOf:
           - $ref: "#/components/schemas/Agent"
           description: Метаданные контрагента или юрлица
+          type: object
           x-agent-reference: true
         applicable:
           description: Отметка о проведении
@@ -57068,7 +62321,7 @@ components:
           type: string
         contract:
           allOf:
-          - $ref: "#/components/schemas/Contract"
+          - $ref: "#/components/schemas/Contract_1"
           description: Метаданные договора
           nullable: true
           type: object
@@ -57108,7 +62361,7 @@ components:
           $ref: "#/components/schemas/Organization"
         owner:
           allOf:
-          - $ref: "#/components/schemas/Employee"
+          - $ref: "#/components/schemas/Employee_1"
           description: Владелец (Сотрудник)
           nullable: true
           type: object
@@ -57127,7 +62380,7 @@ components:
           type: boolean
         state:
           allOf:
-          - $ref: "#/components/schemas/State"
+          - $ref: "#/components/schemas/State_1"
           description: Метаданные статуса Счета-фактуры выданного
           nullable: true
           type: object
@@ -57150,34 +62403,40 @@ components:
           readOnly: true
           type: string
         advancePaymentVat:
-          description: Ставка НДС для авансового платежа (в процентах)
+          description: |
+            Ставка НДС для авансового платежа (в процентах).
+            Доступно только для счетов-фактур с основаниями-платежами.
           format: int32
           type: integer
         paymentPurpose:
-          description: Назначение платежа
+          description: |
+            Назначение платежа.
+            Доступно только для счетов-фактур с основаниями-платежами.
           maxLength: 255
           type: string
         vatSum:
-          description: Сумма включая НДС
+          description: |
+            Сумма включая НДС.
+            Доступно только для счетов-фактур с основаниями-платежами.
           format: double
           readOnly: true
           type: number
         demands:
           description: Связанные отгрузки (метаданные)
           items:
-            $ref: "#/components/schemas/Demand"
+            $ref: "#/components/schemas/Demand_1"
           nullable: true
           type: array
         payments:
           description: Связанные входящие платежи (метаданные)
           items:
-            $ref: "#/components/schemas/PaymentIn"
+            $ref: "#/components/schemas/PaymentIn_1"
           nullable: true
           type: array
         returns:
           description: Связанные возвраты поставщикам (метаданные)
           items:
-            $ref: "#/components/schemas/PurchaseReturn"
+            $ref: "#/components/schemas/PurchaseReturn_1"
           nullable: true
           type: array
         consignee:
@@ -57203,6 +62462,19 @@ components:
         - path: factureout
         - param: id
         type: factureout
+    FactureOutList:
+      description: Список Счетов-фактур выданных
+      properties:
+        context:
+          $ref: "#/components/schemas/Context"
+        meta:
+          $ref: "#/components/schemas/MetaList"
+        rows:
+          description: Массив Счетов-фактур выданных
+          items:
+            $ref: "#/components/schemas/FactureOut_1"
+          type: array
+      type: object
     FactureIn:
       description: Счет-фактура полученный (facturein)
       properties:
@@ -57222,6 +62494,7 @@ components:
           allOf:
           - $ref: "#/components/schemas/Agent"
           description: Метаданные контрагента или юрлица
+          type: object
           x-agent-reference: true
         applicable:
           description: Отметка о проведении
@@ -57236,6 +62509,12 @@ components:
           description: Код Счета-фактуры полученного
           maxLength: 255
           type: string
+        contract:
+          allOf:
+          - $ref: "#/components/schemas/Contract_1"
+          description: Метаданные договора
+          nullable: true
+          type: object
         created:
           description: Дата создания
           readOnly: true
@@ -57268,9 +62547,11 @@ components:
           description: Наименование Счета-фактуры полученного
           maxLength: 255
           type: string
+        organization:
+          $ref: "#/components/schemas/Organization"
         owner:
           allOf:
-          - $ref: "#/components/schemas/Employee"
+          - $ref: "#/components/schemas/Employee_1"
           description: Владелец (Сотрудник)
           nullable: true
           type: object
@@ -57289,10 +62570,44 @@ components:
           type: boolean
         state:
           allOf:
-          - $ref: "#/components/schemas/State"
+          - $ref: "#/components/schemas/State_1"
           description: Метаданные статуса Счета-фактуры полученного
           nullable: true
           type: object
+        sum:
+          description: Сумма Счета-фактуры полученного в установленной валюте
+          format: double
+          readOnly: true
+          type: number
+        syncId:
+          description: ID синхронизации
+          format: uuid
+          type: string
+        updated:
+          description: Момент последнего обновления Счета-фактуры полученного
+          readOnly: true
+          type: string
+        supplies:
+          description: Массив ссылок на связанные приемки
+          items:
+            $ref: "#/components/schemas/Supply_1"
+          nullable: true
+          type: array
+        payments:
+          description: Массив ссылок на связанные исходящие платежи
+          items:
+            $ref: "#/components/schemas/PaymentOut_1"
+          nullable: true
+          type: array
+        incomingNumber:
+          description: Входящий номер
+          maxLength: 255
+          nullable: true
+          type: string
+        incomingDate:
+          description: Входящая дата
+          nullable: true
+          type: string
       type: object
       x-entity-static-builder:
         methodParams:
@@ -57302,6 +62617,19 @@ components:
         - path: facturein
         - param: id
         type: facturein
+    FactureInList:
+      description: Список Счетов-фактур полученных
+      properties:
+        context:
+          $ref: "#/components/schemas/Context"
+        meta:
+          $ref: "#/components/schemas/MetaList"
+        rows:
+          description: Массив Счетов-фактур полученных
+          items:
+            $ref: "#/components/schemas/FactureIn_1"
+          type: array
+      type: object
     FiscalType:
       description: Известные значения фискального режима работы точки продаж
       enum:
@@ -59578,7 +64906,7 @@ components:
           type: array
         factureOut:
           allOf:
-          - $ref: "#/components/schemas/FactureOut"
+          - $ref: "#/components/schemas/FactureOut_1"
           description: "Счет-фактура выданный, с которым связан этот возврат"
           nullable: true
           type: object
@@ -62671,7 +67999,7 @@ components:
         invoicesOut:
           description: Массив ссылок на связанные счета покупателям
           items:
-            $ref: "#/components/schemas/InvoiceOut"
+            $ref: "#/components/schemas/InvoiceOut_1"
           nullable: true
           type: array
         demands:
@@ -63201,7 +68529,7 @@ components:
         invoicesIn:
           description: Массив ссылок на связанные счета поставщиков
           items:
-            $ref: "#/components/schemas/InvoiceIn"
+            $ref: "#/components/schemas/InvoiceIn_1"
           nullable: true
           type: array
         supplies:
@@ -63492,13 +68820,13 @@ components:
           type: object
         factureOut:
           allOf:
-          - $ref: "#/components/schemas/FactureOut"
+          - $ref: "#/components/schemas/FactureOut_1"
           description: "Счет-фактура выданный, с которым связан этот возврат"
           nullable: true
           type: object
         factureIn:
           allOf:
-          - $ref: "#/components/schemas/FactureIn"
+          - $ref: "#/components/schemas/FactureIn_1"
           description: "Счет-фактура полученный, с которым связан этот возврат"
           nullable: true
           type: object
@@ -63668,6 +68996,143 @@ components:
         moment:
           description: Дата документа
           type: string
+        paymentPlannedMoment:
+          description: Планируемая дата оплаты
+          type: string
+        incomingDate:
+          description: Входящая дата
+          nullable: true
+          type: string
+        incomingNumber:
+          description: Входящий номер
+          maxLength: 255
+          nullable: true
+          type: string
+        applicable:
+          description: Отметка о проведении
+          type: boolean
+        printed:
+          description: Напечатан ли документ
+          readOnly: true
+          type: boolean
+        published:
+          description: Опубликован ли документ
+          readOnly: true
+          type: boolean
+        shared:
+          description: Общий доступ
+          type: boolean
+        vatEnabled:
+          description: Учитывается ли НДС
+          type: boolean
+        vatIncluded:
+          description: Включен ли НДС в цену
+          type: boolean
+        vatSum:
+          description: Сумма НДС
+          format: double
+          readOnly: true
+          type: number
+        sum:
+          description: Сумма Счета в установленной валюте
+          format: double
+          readOnly: true
+          type: number
+        payedSum:
+          description: Сумма входящих платежей по Счету поставщика
+          format: double
+          readOnly: true
+          type: number
+        shippedSum:
+          description: Сумма отгруженного
+          format: double
+          readOnly: true
+          type: number
+        organization:
+          $ref: "#/components/schemas/Organization"
+        organizationAccount:
+          allOf:
+          - $ref: "#/components/schemas/Account_1"
+          description: Метаданные счета юрлица
+          nullable: true
+          type: object
+        agent:
+          allOf:
+          - $ref: "#/components/schemas/Agent"
+          description: Метаданные контрагента
+          x-agent-reference: true
+        agentAccount:
+          allOf:
+          - $ref: "#/components/schemas/Account_1"
+          description: Метаданные счета контрагента
+          nullable: true
+          type: object
+        store:
+          allOf:
+          - $ref: "#/components/schemas/Store_1"
+          description: Метаданные склада
+          nullable: true
+          type: object
+        state:
+          allOf:
+          - $ref: "#/components/schemas/State_1"
+          description: Метаданные статуса счета
+          nullable: true
+          type: object
+        contract:
+          allOf:
+          - $ref: "#/components/schemas/Contract_1"
+          description: Метаданные договора
+          nullable: true
+          type: object
+        project:
+          allOf:
+          - $ref: "#/components/schemas/Project_1"
+          description: Метаданные проекта
+          nullable: true
+          type: object
+        owner:
+          allOf:
+          - $ref: "#/components/schemas/Employee_1"
+          description: Владелец (Сотрудник)
+          nullable: true
+          type: object
+        group:
+          $ref: "#/components/schemas/Group"
+        attributes:
+          description: Коллекция метаданных доп. полей
+          items:
+            $ref: "#/components/schemas/AttributeAbstract"
+          nullable: true
+          type: array
+        files:
+          allOf:
+          - $ref: "#/components/schemas/FileList"
+          description: Метаданные массива Файлов
+          nullable: true
+          type: object
+        rate:
+          $ref: "#/components/schemas/CurrencyRate"
+        positions:
+          $ref: "#/components/schemas/InvoiceInPositionList"
+        purchaseOrder:
+          allOf:
+          - $ref: "#/components/schemas/PurchaseOrder_1"
+          description: "Заказ поставщику, с которым связан Счет поставщика"
+          nullable: true
+          type: object
+        supplies:
+          description: Массив ссылок на связанные приемки
+          items:
+            $ref: "#/components/schemas/Supply_1"
+          nullable: true
+          type: array
+        payments:
+          description: Массив ссылок на связанные операции
+          items:
+            $ref: "#/components/schemas/SalesReturn_payments_inner"
+          nullable: true
+          type: array
       type: object
       x-entity-static-builder:
         methodParams:
@@ -63677,6 +69142,89 @@ components:
         - path: invoicein
         - param: id
         type: invoicein
+    InvoiceInList:
+      description: Список Счетов поставщикам
+      properties:
+        context:
+          $ref: "#/components/schemas/Context"
+        meta:
+          $ref: "#/components/schemas/MetaList"
+        rows:
+          description: Массив Счетов поставщикам
+          items:
+            $ref: "#/components/schemas/InvoiceIn_1"
+          type: array
+      type: object
+    InvoiceInPosition:
+      description: Позиция Счета поставщику
+      properties:
+        meta:
+          $ref: "#/components/schemas/Meta"
+        id:
+          description: ID позиции
+          format: uuid
+          readOnly: true
+          type: string
+        accountId:
+          description: ID учетной записи
+          format: uuid
+          readOnly: true
+          type: string
+        quantity:
+          description: Количество товаров/услуг данного вида в позиции
+          exclusiveMinimum: true
+          format: double
+          minimum: 0
+          type: number
+        price:
+          description: Цена товара/услуги в копейках
+          format: double
+          type: number
+        discount:
+          description: Процент скидки или наценки
+          format: double
+          type: number
+        vat:
+          description: "НДС, которым облагается текущая позиция"
+          type: integer
+        vatEnabled:
+          description: Включен ли НДС для позиции
+          type: boolean
+        assortment:
+          $ref: "#/components/schemas/Assortment"
+        pack:
+          allOf:
+          - $ref: "#/components/schemas/Pack"
+          description: Упаковка Товара
+          nullable: true
+          type: object
+      type: object
+      x-entity-static-builder:
+        methodParams:
+        - parentId
+        - id
+        href:
+        - path: entity
+        - path: invoicein
+        - param: parentId
+        - path: positions
+        - param: id
+        type: invoiceposition
+    InvoiceInPositionList:
+      description: Список позиций Счета поставщику
+      properties:
+        context:
+          $ref: "#/components/schemas/Context"
+        meta:
+          allOf:
+          - $ref: "#/components/schemas/MetaList"
+          description: Метаданные о выдаче
+        rows:
+          description: Массив позиций Счета поставщику
+          items:
+            $ref: "#/components/schemas/InvoiceInPosition_1"
+          type: array
+      type: object
     InvoiceOut:
       description: Счет покупателя
       properties:
@@ -63728,6 +69276,140 @@ components:
         moment:
           description: Дата документа
           type: string
+        paymentPlannedMoment:
+          description: Планируемая дата оплаты
+          type: string
+        applicable:
+          description: Отметка о проведении
+          type: boolean
+        printed:
+          description: Напечатан ли документ
+          readOnly: true
+          type: boolean
+        published:
+          description: Опубликован ли документ
+          readOnly: true
+          type: boolean
+        shared:
+          description: Общий доступ
+          type: boolean
+        vatEnabled:
+          description: Учитывается ли НДС
+          type: boolean
+        vatIncluded:
+          description: Включен ли НДС в цену
+          type: boolean
+        vatSum:
+          description: Сумма НДС
+          format: double
+          readOnly: true
+          type: number
+        sum:
+          description: Сумма Счета в установленной валюте
+          format: double
+          readOnly: true
+          type: number
+        payedSum:
+          description: Сумма входящих платежей по Счету покупателя
+          format: double
+          readOnly: true
+          type: number
+        shippedSum:
+          description: Сумма отгруженного
+          format: double
+          readOnly: true
+          type: number
+        organization:
+          $ref: "#/components/schemas/Organization"
+        organizationAccount:
+          allOf:
+          - $ref: "#/components/schemas/Account_1"
+          description: Метаданные счета юрлица
+          nullable: true
+          type: object
+        agent:
+          allOf:
+          - $ref: "#/components/schemas/Agent"
+          description: Метаданные контрагента
+          x-agent-reference: true
+        agentAccount:
+          allOf:
+          - $ref: "#/components/schemas/Account_1"
+          description: Метаданные счета контрагента
+          nullable: true
+          type: object
+        store:
+          allOf:
+          - $ref: "#/components/schemas/Store_1"
+          description: Метаданные склада
+          nullable: true
+          type: object
+        state:
+          allOf:
+          - $ref: "#/components/schemas/State_1"
+          description: Метаданные статуса счета
+          nullable: true
+          type: object
+        contract:
+          allOf:
+          - $ref: "#/components/schemas/Contract_1"
+          description: Метаданные договора
+          nullable: true
+          type: object
+        project:
+          allOf:
+          - $ref: "#/components/schemas/Project_1"
+          description: Метаданные проекта
+          nullable: true
+          type: object
+        owner:
+          allOf:
+          - $ref: "#/components/schemas/Employee_1"
+          description: Владелец (Сотрудник)
+          nullable: true
+          type: object
+        group:
+          $ref: "#/components/schemas/Group"
+        attributes:
+          description: Коллекция метаданных доп. полей
+          items:
+            $ref: "#/components/schemas/AttributeAbstract"
+          nullable: true
+          type: array
+        files:
+          allOf:
+          - $ref: "#/components/schemas/FileList"
+          description: Метаданные массива Файлов
+          nullable: true
+          type: object
+        rate:
+          $ref: "#/components/schemas/CurrencyRate"
+        positions:
+          $ref: "#/components/schemas/InvoiceOutPositionList"
+        salesChannel:
+          allOf:
+          - $ref: "#/components/schemas/SalesChannel_1"
+          description: Метаданные канала продаж
+          nullable: true
+          type: object
+        customerOrder:
+          allOf:
+          - $ref: "#/components/schemas/CustomerOrder_1"
+          description: "Заказ покупателя, с которым связан Счет покупателю"
+          nullable: true
+          type: object
+        demands:
+          description: Массив ссылок на связанные отгрузки
+          items:
+            $ref: "#/components/schemas/Demand_1"
+          nullable: true
+          type: array
+        payments:
+          description: Массив ссылок на связанные операции
+          items:
+            $ref: "#/components/schemas/CustomerOrder_payments_inner"
+          nullable: true
+          type: array
       type: object
       x-entity-static-builder:
         methodParams:
@@ -63737,6 +69419,89 @@ components:
         - path: invoiceout
         - param: id
         type: invoiceout
+    InvoiceOutList:
+      description: Список Счетов покупателям
+      properties:
+        context:
+          $ref: "#/components/schemas/Context"
+        meta:
+          $ref: "#/components/schemas/MetaList"
+        rows:
+          description: Массив Счетов покупателям
+          items:
+            $ref: "#/components/schemas/InvoiceOut_1"
+          type: array
+      type: object
+    InvoiceOutPosition:
+      description: Позиция Счета покупателю
+      properties:
+        meta:
+          $ref: "#/components/schemas/Meta"
+        id:
+          description: ID позиции
+          format: uuid
+          readOnly: true
+          type: string
+        accountId:
+          description: ID учетной записи
+          format: uuid
+          readOnly: true
+          type: string
+        quantity:
+          description: Количество товаров/услуг данного вида в позиции
+          exclusiveMinimum: true
+          format: double
+          minimum: 0
+          type: number
+        price:
+          description: Цена товара/услуги в копейках
+          format: double
+          type: number
+        discount:
+          description: Процент скидки или наценки
+          format: double
+          type: number
+        vat:
+          description: "НДС, которым облагается текущая позиция"
+          type: integer
+        vatEnabled:
+          description: Включен ли НДС для позиции
+          type: boolean
+        assortment:
+          $ref: "#/components/schemas/Assortment"
+        pack:
+          allOf:
+          - $ref: "#/components/schemas/Pack"
+          description: Упаковка Товара
+          nullable: true
+          type: object
+      type: object
+      x-entity-static-builder:
+        methodParams:
+        - parentId
+        - id
+        href:
+        - path: entity
+        - path: invoiceout
+        - param: parentId
+        - path: positions
+        - param: id
+        type: invoiceposition
+    InvoiceOutPositionList:
+      description: Список позиций Счета покупателю
+      properties:
+        context:
+          $ref: "#/components/schemas/Context"
+        meta:
+          allOf:
+          - $ref: "#/components/schemas/MetaList"
+          description: Метаданные о выдаче
+        rows:
+          description: Массив позиций Счета покупателю
+          items:
+            $ref: "#/components/schemas/InvoiceOutPosition_1"
+          type: array
+      type: object
     Supply:
       description: Приемка
       properties:
@@ -63910,14 +69675,14 @@ components:
           type: object
         factureIn:
           allOf:
-          - $ref: "#/components/schemas/FactureIn"
+          - $ref: "#/components/schemas/FactureIn_1"
           description: "Счет-фактура полученный, с которым связана эта Приемка"
           nullable: true
           type: object
         invoicesIn:
           description: Массив ссылок на связанные счета поставщиков
           items:
-            $ref: "#/components/schemas/InvoiceIn"
+            $ref: "#/components/schemas/InvoiceIn_1"
           nullable: true
           type: array
         payments:
@@ -64218,7 +69983,7 @@ components:
           type: number
         factureIn:
           allOf:
-          - $ref: "#/components/schemas/FactureIn"
+          - $ref: "#/components/schemas/FactureIn_1"
           description: "Счет-фактура полученный, с которым связан этот платеж"
           nullable: true
           type: object
@@ -64435,7 +70200,7 @@ components:
           type: string
         factureOut:
           allOf:
-          - $ref: "#/components/schemas/FactureOut"
+          - $ref: "#/components/schemas/FactureOut_1"
           description: "Счет-фактура выданный, с которым связан этот платеж"
           nullable: true
           type: object
@@ -64904,7 +70669,7 @@ components:
           type: number
         factureIn:
           allOf:
-          - $ref: "#/components/schemas/FactureIn"
+          - $ref: "#/components/schemas/FactureIn_1"
           description: "Счет-фактура полученный, с которым связан этот платеж"
           nullable: true
           type: object
@@ -65073,7 +70838,7 @@ components:
           type: number
         factureOut:
           allOf:
-          - $ref: "#/components/schemas/FactureOut"
+          - $ref: "#/components/schemas/FactureOut_1"
           description: "Счет-фактура выданный, с которым связан этот платеж"
           nullable: true
           type: object
@@ -66504,7 +72269,7 @@ components:
           type: object
         factureOut:
           allOf:
-          - $ref: "#/components/schemas/FactureOut"
+          - $ref: "#/components/schemas/FactureOut_1"
           description: "Счёт-фактура выданный, с которым связана Отгрузка"
           nullable: true
           type: object
@@ -66529,7 +72294,7 @@ components:
         invoicesOut:
           description: Связанные счета покупателям
           items:
-            $ref: "#/components/schemas/InvoiceOut"
+            $ref: "#/components/schemas/InvoiceOut_1"
           nullable: true
           type: array
         cargoName:
@@ -68536,6 +74301,22 @@ components:
       $ref: "#/components/schemas/Image"
     EmployeeRole_1:
       $ref: "#/components/schemas/EmployeeRole"
+    Contract_1:
+      $ref: "#/components/schemas/Contract"
+    Demand_1:
+      $ref: "#/components/schemas/Demand"
+    PaymentIn_1:
+      $ref: "#/components/schemas/PaymentIn"
+    PurchaseReturn_1:
+      $ref: "#/components/schemas/PurchaseReturn"
+    FactureOut_1:
+      $ref: "#/components/schemas/FactureOut"
+    Supply_1:
+      $ref: "#/components/schemas/Supply"
+    PaymentOut_1:
+      $ref: "#/components/schemas/PaymentOut"
+    FactureIn_1:
+      $ref: "#/components/schemas/FactureIn"
     AttributeMetaInfoList_1:
       $ref: "#/components/schemas/AttributeMetaInfoList"
     ExpenseItem_1:
@@ -68596,16 +74377,10 @@ components:
       $ref: "#/components/schemas/CashierList"
     SalePlatform_1:
       $ref: "#/components/schemas/SalePlatform"
-    Contract_1:
-      $ref: "#/components/schemas/Contract"
     SalesReturnPositionList_1:
       $ref: "#/components/schemas/SalesReturnPositionList"
     SalesChannel_1:
       $ref: "#/components/schemas/SalesChannel"
-    Demand_1:
-      $ref: "#/components/schemas/Demand"
-    PaymentOut_1:
-      $ref: "#/components/schemas/PaymentOut"
     CashOut_1:
       $ref: "#/components/schemas/CashOut"
     SalesReturnPosition_1:
@@ -68648,8 +74423,8 @@ components:
       $ref: "#/components/schemas/DocumentMetadata"
     Task_1:
       $ref: "#/components/schemas/Task"
-    PaymentIn_1:
-      $ref: "#/components/schemas/PaymentIn"
+    InvoiceOut_1:
+      $ref: "#/components/schemas/InvoiceOut"
     CashIn_1:
       $ref: "#/components/schemas/CashIn"
     CustomerOrder_1:
@@ -68660,14 +74435,20 @@ components:
       $ref: "#/components/schemas/EmissionOrderPosition"
     EmissionOrder_1:
       $ref: "#/components/schemas/EmissionOrder"
-    Supply_1:
-      $ref: "#/components/schemas/Supply"
+    InvoiceIn_1:
+      $ref: "#/components/schemas/InvoiceIn"
     PurchaseReturnPositionList_1:
       $ref: "#/components/schemas/PurchaseReturnPositionList"
-    PurchaseReturn_1:
-      $ref: "#/components/schemas/PurchaseReturn"
     PurchaseReturnPosition_1:
       $ref: "#/components/schemas/PurchaseReturnPosition"
+    InvoiceInPositionList_1:
+      $ref: "#/components/schemas/InvoiceInPositionList"
+    InvoiceInPosition_1:
+      $ref: "#/components/schemas/InvoiceInPosition"
+    InvoiceOutPositionList_1:
+      $ref: "#/components/schemas/InvoiceOutPositionList"
+    InvoiceOutPosition_1:
+      $ref: "#/components/schemas/InvoiceOutPosition"
     overhead:
       description: Накладные расходы на уровне документа
       nullable: true
@@ -69065,6 +74846,22 @@ components:
       oneOf:
       - $ref: "#/components/schemas/CustomerOrderPosition"
       - $ref: "#/components/schemas/Error"
+    createInvoiceOutBatch_200_response_inner:
+      oneOf:
+      - $ref: "#/components/schemas/InvoiceOut"
+      - $ref: "#/components/schemas/Error"
+    createInvoiceOutPositionsBatch_200_response_inner:
+      oneOf:
+      - $ref: "#/components/schemas/InvoiceOutPosition"
+      - $ref: "#/components/schemas/Error"
+    createInvoiceInBatch_200_response_inner:
+      oneOf:
+      - $ref: "#/components/schemas/InvoiceIn"
+      - $ref: "#/components/schemas/Error"
+    createInvoiceInPositionsBatch_200_response_inner:
+      oneOf:
+      - $ref: "#/components/schemas/InvoiceInPosition"
+      - $ref: "#/components/schemas/Error"
     createDemandBatch_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/Demand"
@@ -69252,6 +75049,14 @@ components:
     createPaymentInBatch_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/PaymentIn"
+      - $ref: "#/components/schemas/Error"
+    createFactureInsBatch_200_response_inner:
+      oneOf:
+      - $ref: "#/components/schemas/FactureIn"
+      - $ref: "#/components/schemas/Error"
+    createFactureOutsBatch_200_response_inner:
+      oneOf:
+      - $ref: "#/components/schemas/FactureOut"
       - $ref: "#/components/schemas/Error"
     createPaymentOutBatch_200_response_inner:
       oneOf:

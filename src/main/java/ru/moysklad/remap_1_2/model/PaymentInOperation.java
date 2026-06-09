@@ -140,6 +140,7 @@ import java.util.StringJoiner;
   PaymentInOperation.JSON_PROPERTY_STATE_CONTRACT_ID,
   PaymentInOperation.JSON_PROPERTY_TRANSPORT_FACILITY,
   PaymentInOperation.JSON_PROPERTY_TRANSPORT_FACILITY_NUMBER,
+  PaymentInOperation.JSON_PROPERTY_PAYMENT_PLANNED_MOMENT,
   PaymentInOperation.JSON_PROPERTY_COMMISSION_OVERHEAD,
   PaymentInOperation.JSON_PROPERTY_COMMISSION_PERIOD_END,
   PaymentInOperation.JSON_PROPERTY_COMMISSION_PERIOD_START,
@@ -148,7 +149,7 @@ import java.util.StringJoiner;
   PaymentInOperation.JSON_PROPERTY_REWARD_PERCENT,
   PaymentInOperation.JSON_PROPERTY_REWARD_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
 public class PaymentInOperation {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -410,6 +411,10 @@ public class PaymentInOperation {
   public static final String JSON_PROPERTY_TRANSPORT_FACILITY_NUMBER = "transportFacilityNumber";
   @javax.annotation.Nullable
   private String transportFacilityNumber;
+
+  public static final String JSON_PROPERTY_PAYMENT_PLANNED_MOMENT = "paymentPlannedMoment";
+  @javax.annotation.Nullable
+  private String paymentPlannedMoment;
 
   public static final String JSON_PROPERTY_COMMISSION_OVERHEAD = "commissionOverhead";
   @javax.annotation.Nullable
@@ -2228,7 +2233,7 @@ public class PaymentInOperation {
 
 
   /**
-   * Заказ покупателя, с которым связана Отгрузка
+   * Заказ покупателя, с которым связан Счет покупателю
    * @return customerOrder
    */
   @javax.annotation.Nullable
@@ -2558,6 +2563,35 @@ public class PaymentInOperation {
   }
 
 
+  public PaymentInOperation paymentPlannedMoment(@javax.annotation.Nullable String paymentPlannedMoment) {
+    
+    this.paymentPlannedMoment = paymentPlannedMoment;
+    return this;
+  }
+
+
+  /**
+   * Планируемая дата оплаты
+   * @return paymentPlannedMoment
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PAYMENT_PLANNED_MOMENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getPaymentPlannedMoment() {
+    return paymentPlannedMoment;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_PAYMENT_PLANNED_MOMENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPaymentPlannedMoment(@javax.annotation.Nullable String paymentPlannedMoment) {
+    this.paymentPlannedMoment = paymentPlannedMoment;
+  }
+
+
   public PaymentInOperation commissionOverhead(@javax.annotation.Nullable CommissionReportInCommissionOverhead commissionOverhead) {
     
     this.commissionOverhead = commissionOverhead;
@@ -2824,6 +2858,7 @@ public class PaymentInOperation {
         Objects.equals(this.stateContractId, paymentInOperation.stateContractId) &&
         Objects.equals(this.transportFacility, paymentInOperation.transportFacility) &&
         Objects.equals(this.transportFacilityNumber, paymentInOperation.transportFacilityNumber) &&
+        Objects.equals(this.paymentPlannedMoment, paymentInOperation.paymentPlannedMoment) &&
         Objects.equals(this.commissionOverhead, paymentInOperation.commissionOverhead) &&
         Objects.equals(this.commissionPeriodEnd, paymentInOperation.commissionPeriodEnd) &&
         Objects.equals(this.commissionPeriodStart, paymentInOperation.commissionPeriodStart) &&
@@ -2839,7 +2874,7 @@ public class PaymentInOperation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, name, code, externalCode, syncId, hashCodeNullable(description), created, deleted, updated, moment, deliveryPlannedMoment, applicable, printed, published, shared, vatEnabled, vatIncluded, vatSum, sum, payedSum, shippedSum, reservedSum, invoicedSum, organization, hashCodeNullable(organizationAccount), agent, hashCodeNullable(agentAccount), hashCodeNullable(store), hashCodeNullable(state), hashCodeNullable(contract), hashCodeNullable(project), hashCodeNullable(owner), group, hashCodeNullable(attributes), hashCodeNullable(files), taxSystem, rate, positions, hashCodeNullable(salesChannel), shipmentAddress, shipmentAddressFull, hashCodeNullable(invoicesOut), hashCodeNullable(demands), hashCodeNullable(payments), hashCodeNullable(prepayments), hashCodeNullable(purchaseOrders), hashCodeNullable(moves), hashCodeNullable(productionTasks), linkedSum, hashCodeNullable(supply), hashCodeNullable(factureOut), hashCodeNullable(factureIn), hashCodeNullable(overhead), hashCodeNullable(customerOrder), hashCodeNullable(returns), cargoName, hashCodeNullable(carrier), hashCodeNullable(consignee), goodPackQuantity, shippingInstructions, stateContractId, transportFacility, transportFacilityNumber, commissionOverhead, commissionPeriodEnd, commissionPeriodStart, commitentSum, returnToCommissionerPositions, rewardPercent, rewardType);
+    return Objects.hash(meta, id, accountId, name, code, externalCode, syncId, hashCodeNullable(description), created, deleted, updated, moment, deliveryPlannedMoment, applicable, printed, published, shared, vatEnabled, vatIncluded, vatSum, sum, payedSum, shippedSum, reservedSum, invoicedSum, organization, hashCodeNullable(organizationAccount), agent, hashCodeNullable(agentAccount), hashCodeNullable(store), hashCodeNullable(state), hashCodeNullable(contract), hashCodeNullable(project), hashCodeNullable(owner), group, hashCodeNullable(attributes), hashCodeNullable(files), taxSystem, rate, positions, hashCodeNullable(salesChannel), shipmentAddress, shipmentAddressFull, hashCodeNullable(invoicesOut), hashCodeNullable(demands), hashCodeNullable(payments), hashCodeNullable(prepayments), hashCodeNullable(purchaseOrders), hashCodeNullable(moves), hashCodeNullable(productionTasks), linkedSum, hashCodeNullable(supply), hashCodeNullable(factureOut), hashCodeNullable(factureIn), hashCodeNullable(overhead), hashCodeNullable(customerOrder), hashCodeNullable(returns), cargoName, hashCodeNullable(carrier), hashCodeNullable(consignee), goodPackQuantity, shippingInstructions, stateContractId, transportFacility, transportFacilityNumber, paymentPlannedMoment, commissionOverhead, commissionPeriodEnd, commissionPeriodStart, commitentSum, returnToCommissionerPositions, rewardPercent, rewardType);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -2918,6 +2953,7 @@ public class PaymentInOperation {
     sb.append("    stateContractId: ").append(toIndentedString(stateContractId)).append("\n");
     sb.append("    transportFacility: ").append(toIndentedString(transportFacility)).append("\n");
     sb.append("    transportFacilityNumber: ").append(toIndentedString(transportFacilityNumber)).append("\n");
+    sb.append("    paymentPlannedMoment: ").append(toIndentedString(paymentPlannedMoment)).append("\n");
     sb.append("    commissionOverhead: ").append(toIndentedString(commissionOverhead)).append("\n");
     sb.append("    commissionPeriodEnd: ").append(toIndentedString(commissionPeriodEnd)).append("\n");
     sb.append("    commissionPeriodStart: ").append(toIndentedString(commissionPeriodStart)).append("\n");
@@ -3506,6 +3542,16 @@ public class PaymentInOperation {
     if (getTransportFacilityNumber() != null) {
       try {
         joiner.add(String.format(java.util.Locale.ROOT, "%stransportFacilityNumber%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTransportFacilityNumber()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `paymentPlannedMoment` to the URL query string
+    if (getPaymentPlannedMoment() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%spaymentPlannedMoment%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getPaymentPlannedMoment()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);

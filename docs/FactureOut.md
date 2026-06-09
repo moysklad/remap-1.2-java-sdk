@@ -28,16 +28,16 @@
 |**owner** | [**Employee**](Employee.md) | Владелец (Сотрудник) |  [optional] |
 |**printed** | **Boolean** | Напечатан ли документ |  [optional] [readonly] |
 |**published** | **Boolean** | Опубликован ли документ |  [optional] [readonly] |
-|**rate** | [**CurrencyRate**](CurrencyRate.md) |  |  [optional] |
+|**rate** | **CurrencyRate** | Валюта документа. Если значение курса валюты не указано, используется курс из справочника валют.  |  [optional] |
 |**shared** | **Boolean** | Общий доступ |  [optional] |
 |**state** | [**State**](State.md) | Метаданные статуса Счета-фактуры выданного |  [optional] |
 |**stateContractId** | **String** | Идентификатор государственного контракта, договора (соглашения) |  [optional] |
 |**sum** | **Double** | Сумма Счета-фактуры выданного в копейках |  [optional] [readonly] |
 |**syncId** | **UUID** | ID синхронизации |  [optional] |
 |**updated** | **String** | Момент последнего обновления Счета-фактуры выданного |  [optional] [readonly] |
-|**advancePaymentVat** | **Integer** | Ставка НДС для авансового платежа (в процентах) |  [optional] |
-|**paymentPurpose** | **String** | Назначение платежа |  [optional] |
-|**vatSum** | **Double** | Сумма включая НДС |  [optional] [readonly] |
+|**advancePaymentVat** | **Integer** | Ставка НДС для авансового платежа (в процентах). Доступно только для счетов-фактур с основаниями-платежами.  |  [optional] |
+|**paymentPurpose** | **String** | Назначение платежа. Доступно только для счетов-фактур с основаниями-платежами.  |  [optional] |
+|**vatSum** | **Double** | Сумма включая НДС. Доступно только для счетов-фактур с основаниями-платежами.  |  [optional] [readonly] |
 |**demands** | [**List&lt;Demand&gt;**](Demand.md) | Связанные отгрузки (метаданные) |  [optional] |
 |**payments** | [**List&lt;PaymentIn&gt;**](PaymentIn.md) | Связанные входящие платежи (метаданные) |  [optional] |
 |**returns** | [**List&lt;PurchaseReturn&gt;**](PurchaseReturn.md) | Связанные возвраты поставщикам (метаданные) |  [optional] |

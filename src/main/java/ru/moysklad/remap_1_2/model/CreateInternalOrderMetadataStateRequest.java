@@ -43,7 +43,7 @@ import java.util.StringJoiner;
   CreateInternalOrderMetadataStateRequest.JSON_PROPERTY_STATE_TYPE
 })
 @JsonTypeName("createInternalOrderMetadataState_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateInternalOrderMetadataStateRequest {
 
   public static final String JSON_PROPERTY_META = "meta";

@@ -120,13 +120,14 @@ import java.util.StringJoiner;
   PaymentOutOperation.JSON_PROPERTY_INVOICES_IN,
   PaymentOutOperation.JSON_PROPERTY_PRODUCTION_TASK,
   PaymentOutOperation.JSON_PROPERTY_RETURNS,
-  PaymentOutOperation.JSON_PROPERTY_DELIVERY_PLANNED_MOMENT,
+  PaymentOutOperation.JSON_PROPERTY_PAYMENT_PLANNED_MOMENT,
   PaymentOutOperation.JSON_PROPERTY_SHIPPED_SUM,
+  PaymentOutOperation.JSON_PROPERTY_SUPPLIES,
+  PaymentOutOperation.JSON_PROPERTY_DELIVERY_PLANNED_MOMENT,
   PaymentOutOperation.JSON_PROPERTY_INVOICED_SUM,
   PaymentOutOperation.JSON_PROPERTY_WAIT_SUM,
   PaymentOutOperation.JSON_PROPERTY_INTERNAL_ORDER,
   PaymentOutOperation.JSON_PROPERTY_CUSTOMER_ORDERS,
-  PaymentOutOperation.JSON_PROPERTY_SUPPLIES,
   PaymentOutOperation.JSON_PROPERTY_PRODUCTION_TASKS,
   PaymentOutOperation.JSON_PROPERTY_COMMISSION_PERIOD_END,
   PaymentOutOperation.JSON_PROPERTY_COMMISSION_PERIOD_START,
@@ -134,7 +135,7 @@ import java.util.StringJoiner;
   PaymentOutOperation.JSON_PROPERTY_REWARD_PERCENT,
   PaymentOutOperation.JSON_PROPERTY_REWARD_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
 public class PaymentOutOperation {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -333,13 +334,21 @@ public class PaymentOutOperation {
   @javax.annotation.Nullable
   private JsonNullable<List<SupplyReturnsInner>> returns = JsonNullable.<List<SupplyReturnsInner>>undefined();
 
-  public static final String JSON_PROPERTY_DELIVERY_PLANNED_MOMENT = "deliveryPlannedMoment";
+  public static final String JSON_PROPERTY_PAYMENT_PLANNED_MOMENT = "paymentPlannedMoment";
   @javax.annotation.Nullable
-  private String deliveryPlannedMoment;
+  private String paymentPlannedMoment;
 
   public static final String JSON_PROPERTY_SHIPPED_SUM = "shippedSum";
   @javax.annotation.Nullable
   private Double shippedSum;
+
+  public static final String JSON_PROPERTY_SUPPLIES = "supplies";
+  @javax.annotation.Nullable
+  private JsonNullable<List<Supply>> supplies = JsonNullable.<List<Supply>>undefined();
+
+  public static final String JSON_PROPERTY_DELIVERY_PLANNED_MOMENT = "deliveryPlannedMoment";
+  @javax.annotation.Nullable
+  private String deliveryPlannedMoment;
 
   public static final String JSON_PROPERTY_INVOICED_SUM = "invoicedSum";
   @javax.annotation.Nullable
@@ -356,10 +365,6 @@ public class PaymentOutOperation {
   public static final String JSON_PROPERTY_CUSTOMER_ORDERS = "customerOrders";
   @javax.annotation.Nullable
   private JsonNullable<List<CustomerOrder>> customerOrders = JsonNullable.<List<CustomerOrder>>undefined();
-
-  public static final String JSON_PROPERTY_SUPPLIES = "supplies";
-  @javax.annotation.Nullable
-  private JsonNullable<List<Supply>> supplies = JsonNullable.<List<Supply>>undefined();
 
   public static final String JSON_PROPERTY_PRODUCTION_TASKS = "productionTasks";
   @javax.annotation.Nullable
@@ -1798,7 +1803,7 @@ public class PaymentOutOperation {
 
 
   /**
-   * Заказ поставщику, с которым связана Приемка 
+   * Заказ поставщику, с которым связан Счет поставщика
    * @return purchaseOrder
    */
   @javax.annotation.Nullable
@@ -2004,6 +2009,101 @@ public class PaymentOutOperation {
   }
 
 
+  public PaymentOutOperation paymentPlannedMoment(@javax.annotation.Nullable String paymentPlannedMoment) {
+    
+    this.paymentPlannedMoment = paymentPlannedMoment;
+    return this;
+  }
+
+
+  /**
+   * Планируемая дата оплаты
+   * @return paymentPlannedMoment
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PAYMENT_PLANNED_MOMENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getPaymentPlannedMoment() {
+    return paymentPlannedMoment;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_PAYMENT_PLANNED_MOMENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPaymentPlannedMoment(@javax.annotation.Nullable String paymentPlannedMoment) {
+    this.paymentPlannedMoment = paymentPlannedMoment;
+  }
+
+
+  /**
+   * Сумма принятого
+   * @return shippedSum
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_SHIPPED_SUM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Double getShippedSum() {
+    return shippedSum;
+  }
+
+  
+
+
+
+  public PaymentOutOperation supplies(@javax.annotation.Nullable List<Supply> supplies) {
+    this.supplies = JsonNullable.<List<Supply>>of(supplies);
+    
+    return this;
+  }
+
+
+  public PaymentOutOperation addSuppliesItem(Supply suppliesItem) {
+    if (this.supplies == null || !this.supplies.isPresent()) {
+      this.supplies = JsonNullable.<List<Supply>>of(new ArrayList<>());
+    }
+    try {
+      this.supplies.get().add(suppliesItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
+    return this;
+  }
+
+  /**
+   * Массив ссылок на связанные приемки
+   * @return supplies
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public List<Supply> getSupplies() {
+        return supplies.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_SUPPLIES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<List<Supply>> getSupplies_JsonNullable() {
+    return supplies;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_SUPPLIES, required = false)
+  public void setSupplies_JsonNullable(JsonNullable<List<Supply>> supplies) {
+    this.supplies = supplies;
+  }
+
+  public void setSupplies(@javax.annotation.Nullable List<Supply> supplies) {
+    this.supplies = JsonNullable.<List<Supply>>of(supplies);
+  }
+
+
   public PaymentOutOperation deliveryPlannedMoment(@javax.annotation.Nullable String deliveryPlannedMoment) {
     
     this.deliveryPlannedMoment = deliveryPlannedMoment;
@@ -2031,22 +2131,6 @@ public class PaymentOutOperation {
   public void setDeliveryPlannedMoment(@javax.annotation.Nullable String deliveryPlannedMoment) {
     this.deliveryPlannedMoment = deliveryPlannedMoment;
   }
-
-
-  /**
-   * Сумма принятого
-   * @return shippedSum
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SHIPPED_SUM)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Double getShippedSum() {
-    return shippedSum;
-  }
-
-  
-
 
 
   /**
@@ -2166,56 +2250,6 @@ public class PaymentOutOperation {
 
   public void setCustomerOrders(@javax.annotation.Nullable List<CustomerOrder> customerOrders) {
     this.customerOrders = JsonNullable.<List<CustomerOrder>>of(customerOrders);
-  }
-
-
-  public PaymentOutOperation supplies(@javax.annotation.Nullable List<Supply> supplies) {
-    this.supplies = JsonNullable.<List<Supply>>of(supplies);
-    
-    return this;
-  }
-
-
-  public PaymentOutOperation addSuppliesItem(Supply suppliesItem) {
-    if (this.supplies == null || !this.supplies.isPresent()) {
-      this.supplies = JsonNullable.<List<Supply>>of(new ArrayList<>());
-    }
-    try {
-      this.supplies.get().add(suppliesItem);
-    } catch (java.util.NoSuchElementException e) {
-      // this can never happen, as we make sure above that the value is present
-    }
-    return this;
-  }
-
-  /**
-   * Массив ссылок на связанные приемки
-   * @return supplies
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-
-  public List<Supply> getSupplies() {
-        return supplies.orElse(null);
-  }
-
-  
-
-  @JsonProperty(JSON_PROPERTY_SUPPLIES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-
-  public JsonNullable<List<Supply>> getSupplies_JsonNullable() {
-    return supplies;
-  }
-  
-  @JsonProperty(value = JSON_PROPERTY_SUPPLIES, required = false)
-  public void setSupplies_JsonNullable(JsonNullable<List<Supply>> supplies) {
-    this.supplies = supplies;
-  }
-
-  public void setSupplies(@javax.annotation.Nullable List<Supply> supplies) {
-    this.supplies = JsonNullable.<List<Supply>>of(supplies);
   }
 
 
@@ -2461,13 +2495,14 @@ public class PaymentOutOperation {
         equalsNullable(this.invoicesIn, paymentOutOperation.invoicesIn) &&
         equalsNullable(this.productionTask, paymentOutOperation.productionTask) &&
         equalsNullable(this.returns, paymentOutOperation.returns) &&
-        Objects.equals(this.deliveryPlannedMoment, paymentOutOperation.deliveryPlannedMoment) &&
+        Objects.equals(this.paymentPlannedMoment, paymentOutOperation.paymentPlannedMoment) &&
         Objects.equals(this.shippedSum, paymentOutOperation.shippedSum) &&
+        equalsNullable(this.supplies, paymentOutOperation.supplies) &&
+        Objects.equals(this.deliveryPlannedMoment, paymentOutOperation.deliveryPlannedMoment) &&
         Objects.equals(this.invoicedSum, paymentOutOperation.invoicedSum) &&
         Objects.equals(this.waitSum, paymentOutOperation.waitSum) &&
         equalsNullable(this.internalOrder, paymentOutOperation.internalOrder) &&
         equalsNullable(this.customerOrders, paymentOutOperation.customerOrders) &&
-        equalsNullable(this.supplies, paymentOutOperation.supplies) &&
         equalsNullable(this.productionTasks, paymentOutOperation.productionTasks) &&
         Objects.equals(this.commissionPeriodEnd, paymentOutOperation.commissionPeriodEnd) &&
         Objects.equals(this.commissionPeriodStart, paymentOutOperation.commissionPeriodStart) &&
@@ -2482,7 +2517,7 @@ public class PaymentOutOperation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, name, code, externalCode, syncId, hashCodeNullable(description), created, deleted, updated, moment, applicable, printed, published, shared, vatEnabled, vatIncluded, vatSum, sum, payedSum, organization, hashCodeNullable(organizationAccount), agent, hashCodeNullable(agentAccount), hashCodeNullable(store), hashCodeNullable(state), hashCodeNullable(contract), hashCodeNullable(project), hashCodeNullable(owner), group, hashCodeNullable(attributes), hashCodeNullable(files), rate, positions, hashCodeNullable(salesChannel), hashCodeNullable(demand), hashCodeNullable(losses), hashCodeNullable(payments), hashCodeNullable(factureOut), linkedSum, hashCodeNullable(incomingDate), hashCodeNullable(incomingNumber), hashCodeNullable(overhead), hashCodeNullable(purchaseOrder), hashCodeNullable(factureIn), hashCodeNullable(invoicesIn), hashCodeNullable(productionTask), hashCodeNullable(returns), deliveryPlannedMoment, shippedSum, invoicedSum, waitSum, hashCodeNullable(internalOrder), hashCodeNullable(customerOrders), hashCodeNullable(supplies), hashCodeNullable(productionTasks), commissionPeriodEnd, commissionPeriodStart, commitentSum, rewardPercent, rewardType);
+    return Objects.hash(meta, id, accountId, name, code, externalCode, syncId, hashCodeNullable(description), created, deleted, updated, moment, applicable, printed, published, shared, vatEnabled, vatIncluded, vatSum, sum, payedSum, organization, hashCodeNullable(organizationAccount), agent, hashCodeNullable(agentAccount), hashCodeNullable(store), hashCodeNullable(state), hashCodeNullable(contract), hashCodeNullable(project), hashCodeNullable(owner), group, hashCodeNullable(attributes), hashCodeNullable(files), rate, positions, hashCodeNullable(salesChannel), hashCodeNullable(demand), hashCodeNullable(losses), hashCodeNullable(payments), hashCodeNullable(factureOut), linkedSum, hashCodeNullable(incomingDate), hashCodeNullable(incomingNumber), hashCodeNullable(overhead), hashCodeNullable(purchaseOrder), hashCodeNullable(factureIn), hashCodeNullable(invoicesIn), hashCodeNullable(productionTask), hashCodeNullable(returns), paymentPlannedMoment, shippedSum, hashCodeNullable(supplies), deliveryPlannedMoment, invoicedSum, waitSum, hashCodeNullable(internalOrder), hashCodeNullable(customerOrders), hashCodeNullable(productionTasks), commissionPeriodEnd, commissionPeriodStart, commitentSum, rewardPercent, rewardType);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -2545,13 +2580,14 @@ public class PaymentOutOperation {
     sb.append("    invoicesIn: ").append(toIndentedString(invoicesIn)).append("\n");
     sb.append("    productionTask: ").append(toIndentedString(productionTask)).append("\n");
     sb.append("    returns: ").append(toIndentedString(returns)).append("\n");
-    sb.append("    deliveryPlannedMoment: ").append(toIndentedString(deliveryPlannedMoment)).append("\n");
+    sb.append("    paymentPlannedMoment: ").append(toIndentedString(paymentPlannedMoment)).append("\n");
     sb.append("    shippedSum: ").append(toIndentedString(shippedSum)).append("\n");
+    sb.append("    supplies: ").append(toIndentedString(supplies)).append("\n");
+    sb.append("    deliveryPlannedMoment: ").append(toIndentedString(deliveryPlannedMoment)).append("\n");
     sb.append("    invoicedSum: ").append(toIndentedString(invoicedSum)).append("\n");
     sb.append("    waitSum: ").append(toIndentedString(waitSum)).append("\n");
     sb.append("    internalOrder: ").append(toIndentedString(internalOrder)).append("\n");
     sb.append("    customerOrders: ").append(toIndentedString(customerOrders)).append("\n");
-    sb.append("    supplies: ").append(toIndentedString(supplies)).append("\n");
     sb.append("    productionTasks: ").append(toIndentedString(productionTasks)).append("\n");
     sb.append("    commissionPeriodEnd: ").append(toIndentedString(commissionPeriodEnd)).append("\n");
     sb.append("    commissionPeriodStart: ").append(toIndentedString(commissionPeriodStart)).append("\n");
@@ -2995,10 +3031,10 @@ public class PaymentOutOperation {
       }
     }
 
-    // add `deliveryPlannedMoment` to the URL query string
-    if (getDeliveryPlannedMoment() != null) {
+    // add `paymentPlannedMoment` to the URL query string
+    if (getPaymentPlannedMoment() != null) {
       try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%sdeliveryPlannedMoment%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDeliveryPlannedMoment()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%spaymentPlannedMoment%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getPaymentPlannedMoment()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -3009,6 +3045,26 @@ public class PaymentOutOperation {
     if (getShippedSum() != null) {
       try {
         joiner.add(String.format(java.util.Locale.ROOT, "%sshippedSum%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getShippedSum()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `supplies` to the URL query string
+    if (getSupplies() != null) {
+      for (int i = 0; i < getSupplies().size(); i++) {
+        if (getSupplies().get(i) != null) {
+          joiner.add(getSupplies().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%ssupplies%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    // add `deliveryPlannedMoment` to the URL query string
+    if (getDeliveryPlannedMoment() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sdeliveryPlannedMoment%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDeliveryPlannedMoment()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -3045,16 +3101,6 @@ public class PaymentOutOperation {
       for (int i = 0; i < getCustomerOrders().size(); i++) {
         if (getCustomerOrders().get(i) != null) {
           joiner.add(getCustomerOrders().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%scustomerOrders%s%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
-        }
-      }
-    }
-
-    // add `supplies` to the URL query string
-    if (getSupplies() != null) {
-      for (int i = 0; i < getSupplies().size(); i++) {
-        if (getSupplies().get(i) != null) {
-          joiner.add(getSupplies().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%ssupplies%s%s", prefix, suffix,
               "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }

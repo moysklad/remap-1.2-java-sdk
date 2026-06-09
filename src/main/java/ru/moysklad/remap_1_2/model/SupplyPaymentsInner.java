@@ -98,7 +98,7 @@ import java.util.StringJoiner;
   SupplyPaymentsInner.JSON_PROPERTY_FACTURE_OUT
 })
 @JsonTypeName("Supply_payments_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T10:06:57.153447033Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
 public class SupplyPaymentsInner {
 
   public static final String JSON_PROPERTY_META = "meta";

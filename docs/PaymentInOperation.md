@@ -63,7 +63,7 @@
 |**factureOut** | [**FactureOut**](FactureOut.md) | Счёт-фактура выданный, с которым связана Отгрузка |  [optional] |
 |**factureIn** | [**FactureIn**](FactureIn.md) | Счет-фактура полученный, с которым связан этот возврат |  [optional] |
 |**overhead** | [**Overhead**](Overhead.md) |  |  [optional] |
-|**customerOrder** | [**CustomerOrder**](CustomerOrder.md) | Заказ покупателя, с которым связана Отгрузка |  [optional] |
+|**customerOrder** | [**CustomerOrder**](CustomerOrder.md) | Заказ покупателя, с которым связан Счет покупателю |  [optional] |
 |**returns** | [**List&lt;SalesReturn&gt;**](SalesReturn.md) | Связанные возвраты |  [optional] |
 |**cargoName** | **String** | Наименование груза |  [optional] |
 |**carrier** | [**Agent**](Agent.md) | Перевозчик (контрагент или юрлицо) |  [optional] |
@@ -73,6 +73,7 @@
 |**stateContractId** | **String** | Идентификатор государственного контракта, договора (соглашения) |  [optional] |
 |**transportFacility** | **String** | Транспортное средство |  [optional] |
 |**transportFacilityNumber** | **String** | Номер автомобиля |  [optional] |
+|**paymentPlannedMoment** | **String** | Планируемая дата оплаты |  [optional] |
 |**commissionOverhead** | [**CommissionReportInCommissionOverhead**](CommissionReportInCommissionOverhead.md) |  |  [optional] |
 |**commissionPeriodEnd** | **String** | Конец периода |  [optional] |
 |**commissionPeriodStart** | **String** | Начало периода |  [optional] |
