@@ -49,7 +49,7 @@ import java.util.StringJoiner;
   PrepaymentReturnPosition.JSON_PROPERTY_VAT,
   PrepaymentReturnPosition.JSON_PROPERTY_VAT_ENABLED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
 public class PrepaymentReturnPosition {
   public static PrepaymentReturnPosition createWithMeta(UUID parentId, UUID id) {
     PrepaymentReturnPosition o = new PrepaymentReturnPosition();

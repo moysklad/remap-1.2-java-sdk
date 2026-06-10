@@ -42,25 +42,25 @@ import java.net.URLEncoder;
 import java.util.StringJoiner;
 
 /**
- * CreateMovePositionsBatch200ResponseInner
+ * CreateMovePositions200ResponseInner
  */
 @JsonPropertyOrder({
-  CreateMovePositionsBatch200ResponseInner.JSON_PROPERTY_META,
-  CreateMovePositionsBatch200ResponseInner.JSON_PROPERTY_ID,
-  CreateMovePositionsBatch200ResponseInner.JSON_PROPERTY_ACCOUNT_ID,
-  CreateMovePositionsBatch200ResponseInner.JSON_PROPERTY_ASSORTMENT,
-  CreateMovePositionsBatch200ResponseInner.JSON_PROPERTY_OVERHEAD,
-  CreateMovePositionsBatch200ResponseInner.JSON_PROPERTY_PACK,
-  CreateMovePositionsBatch200ResponseInner.JSON_PROPERTY_PRICE,
-  CreateMovePositionsBatch200ResponseInner.JSON_PROPERTY_QUANTITY,
-  CreateMovePositionsBatch200ResponseInner.JSON_PROPERTY_SOURCE_SLOT,
-  CreateMovePositionsBatch200ResponseInner.JSON_PROPERTY_TARGET_SLOT,
-  CreateMovePositionsBatch200ResponseInner.JSON_PROPERTY_THINGS,
-  CreateMovePositionsBatch200ResponseInner.JSON_PROPERTY_ERRORS
+  CreateMovePositions200ResponseInner.JSON_PROPERTY_META,
+  CreateMovePositions200ResponseInner.JSON_PROPERTY_ID,
+  CreateMovePositions200ResponseInner.JSON_PROPERTY_ACCOUNT_ID,
+  CreateMovePositions200ResponseInner.JSON_PROPERTY_ASSORTMENT,
+  CreateMovePositions200ResponseInner.JSON_PROPERTY_OVERHEAD,
+  CreateMovePositions200ResponseInner.JSON_PROPERTY_PACK,
+  CreateMovePositions200ResponseInner.JSON_PROPERTY_PRICE,
+  CreateMovePositions200ResponseInner.JSON_PROPERTY_QUANTITY,
+  CreateMovePositions200ResponseInner.JSON_PROPERTY_SOURCE_SLOT,
+  CreateMovePositions200ResponseInner.JSON_PROPERTY_TARGET_SLOT,
+  CreateMovePositions200ResponseInner.JSON_PROPERTY_THINGS,
+  CreateMovePositions200ResponseInner.JSON_PROPERTY_ERRORS
 })
-@JsonTypeName("createMovePositionsBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
-public class CreateMovePositionsBatch200ResponseInner {
+@JsonTypeName("createMovePositions_200_response_inner")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
+public class CreateMovePositions200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
@@ -110,13 +110,13 @@ public class CreateMovePositionsBatch200ResponseInner {
   @javax.annotation.Nonnull
   private List<ErrorErrorsInner> errors = new ArrayList<>();
 
-  public CreateMovePositionsBatch200ResponseInner() {
+  public CreateMovePositions200ResponseInner() {
   }
   /**
    * Constructor with only readonly parameters
    */
   @JsonCreator
-  public CreateMovePositionsBatch200ResponseInner(
+  public CreateMovePositions200ResponseInner(
     @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id, 
     @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId, 
     @JsonProperty(value = JSON_PROPERTY_OVERHEAD, required = false) Integer overhead
@@ -127,7 +127,7 @@ public class CreateMovePositionsBatch200ResponseInner {
     this.overhead = overhead;
   }
 
-  public CreateMovePositionsBatch200ResponseInner meta(@javax.annotation.Nullable Meta meta) {
+  public CreateMovePositions200ResponseInner meta(@javax.annotation.Nullable Meta meta) {
     
     this.meta = meta;
     return this;
@@ -188,7 +188,7 @@ public class CreateMovePositionsBatch200ResponseInner {
 
 
 
-  public CreateMovePositionsBatch200ResponseInner assortment(@javax.annotation.Nullable Assortment assortment) {
+  public CreateMovePositions200ResponseInner assortment(@javax.annotation.Nullable Assortment assortment) {
     
     this.assortment = assortment;
     return this;
@@ -235,7 +235,7 @@ public class CreateMovePositionsBatch200ResponseInner {
 
 
 
-  public CreateMovePositionsBatch200ResponseInner pack(@javax.annotation.Nullable Pack pack) {
+  public CreateMovePositions200ResponseInner pack(@javax.annotation.Nullable Pack pack) {
     this.pack = JsonNullable.<Pack>of(pack);
     
     return this;
@@ -273,7 +273,7 @@ public class CreateMovePositionsBatch200ResponseInner {
   }
 
 
-  public CreateMovePositionsBatch200ResponseInner price(@javax.annotation.Nullable Double price) {
+  public CreateMovePositions200ResponseInner price(@javax.annotation.Nullable Double price) {
     
     this.price = price;
     return this;
@@ -302,7 +302,7 @@ public class CreateMovePositionsBatch200ResponseInner {
   }
 
 
-  public CreateMovePositionsBatch200ResponseInner quantity(@javax.annotation.Nullable Double quantity) {
+  public CreateMovePositions200ResponseInner quantity(@javax.annotation.Nullable Double quantity) {
     
     this.quantity = quantity;
     return this;
@@ -332,7 +332,7 @@ public class CreateMovePositionsBatch200ResponseInner {
   }
 
 
-  public CreateMovePositionsBatch200ResponseInner sourceSlot(@javax.annotation.Nullable StoreSlot sourceSlot) {
+  public CreateMovePositions200ResponseInner sourceSlot(@javax.annotation.Nullable StoreSlot sourceSlot) {
     this.sourceSlot = JsonNullable.<StoreSlot>of(sourceSlot);
     
     return this;
@@ -370,7 +370,7 @@ public class CreateMovePositionsBatch200ResponseInner {
   }
 
 
-  public CreateMovePositionsBatch200ResponseInner targetSlot(@javax.annotation.Nullable StoreSlot targetSlot) {
+  public CreateMovePositions200ResponseInner targetSlot(@javax.annotation.Nullable StoreSlot targetSlot) {
     this.targetSlot = JsonNullable.<StoreSlot>of(targetSlot);
     
     return this;
@@ -408,14 +408,14 @@ public class CreateMovePositionsBatch200ResponseInner {
   }
 
 
-  public CreateMovePositionsBatch200ResponseInner things(@javax.annotation.Nullable List<String> things) {
+  public CreateMovePositions200ResponseInner things(@javax.annotation.Nullable List<String> things) {
     
     this.things = things;
     return this;
   }
 
 
-  public CreateMovePositionsBatch200ResponseInner addThingsItem(String thingsItem) {
+  public CreateMovePositions200ResponseInner addThingsItem(String thingsItem) {
     if (this.things == null) {
       this.things = new ArrayList<>();
     }
@@ -445,14 +445,14 @@ public class CreateMovePositionsBatch200ResponseInner {
   }
 
 
-  public CreateMovePositionsBatch200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
+  public CreateMovePositions200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
 
 
-  public CreateMovePositionsBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
+  public CreateMovePositions200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
       this.errors = new ArrayList<>();
     }
@@ -490,19 +490,19 @@ public class CreateMovePositionsBatch200ResponseInner {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CreateMovePositionsBatch200ResponseInner createMovePositionsBatch200ResponseInner = (CreateMovePositionsBatch200ResponseInner) o;
-    return Objects.equals(this.meta, createMovePositionsBatch200ResponseInner.meta) &&
-        Objects.equals(this.id, createMovePositionsBatch200ResponseInner.id) &&
-        Objects.equals(this.accountId, createMovePositionsBatch200ResponseInner.accountId) &&
-        Objects.equals(this.assortment, createMovePositionsBatch200ResponseInner.assortment) &&
-        Objects.equals(this.overhead, createMovePositionsBatch200ResponseInner.overhead) &&
-        equalsNullable(this.pack, createMovePositionsBatch200ResponseInner.pack) &&
-        Objects.equals(this.price, createMovePositionsBatch200ResponseInner.price) &&
-        Objects.equals(this.quantity, createMovePositionsBatch200ResponseInner.quantity) &&
-        equalsNullable(this.sourceSlot, createMovePositionsBatch200ResponseInner.sourceSlot) &&
-        equalsNullable(this.targetSlot, createMovePositionsBatch200ResponseInner.targetSlot) &&
-        Objects.equals(this.things, createMovePositionsBatch200ResponseInner.things) &&
-        Objects.equals(this.errors, createMovePositionsBatch200ResponseInner.errors);
+    CreateMovePositions200ResponseInner createMovePositions200ResponseInner = (CreateMovePositions200ResponseInner) o;
+    return Objects.equals(this.meta, createMovePositions200ResponseInner.meta) &&
+        Objects.equals(this.id, createMovePositions200ResponseInner.id) &&
+        Objects.equals(this.accountId, createMovePositions200ResponseInner.accountId) &&
+        Objects.equals(this.assortment, createMovePositions200ResponseInner.assortment) &&
+        Objects.equals(this.overhead, createMovePositions200ResponseInner.overhead) &&
+        equalsNullable(this.pack, createMovePositions200ResponseInner.pack) &&
+        Objects.equals(this.price, createMovePositions200ResponseInner.price) &&
+        Objects.equals(this.quantity, createMovePositions200ResponseInner.quantity) &&
+        equalsNullable(this.sourceSlot, createMovePositions200ResponseInner.sourceSlot) &&
+        equalsNullable(this.targetSlot, createMovePositions200ResponseInner.targetSlot) &&
+        Objects.equals(this.things, createMovePositions200ResponseInner.things) &&
+        Objects.equals(this.errors, createMovePositions200ResponseInner.errors);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -524,7 +524,7 @@ public class CreateMovePositionsBatch200ResponseInner {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CreateMovePositionsBatch200ResponseInner {\n");
+    sb.append("class CreateMovePositions200ResponseInner {\n");
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");

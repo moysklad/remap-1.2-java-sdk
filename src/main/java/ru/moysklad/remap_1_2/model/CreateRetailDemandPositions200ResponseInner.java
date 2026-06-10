@@ -27,10 +27,11 @@ import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import ru.moysklad.remap_1_2.model.Assortment;
 import ru.moysklad.remap_1_2.model.DeclarationInner;
-import ru.moysklad.remap_1_2.model.LossPosition;
+import ru.moysklad.remap_1_2.model.Error;
+import ru.moysklad.remap_1_2.model.ErrorErrorsInner;
 import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.Pack;
-import ru.moysklad.remap_1_2.model.StoreSlot;
+import ru.moysklad.remap_1_2.model.RetailDemandPosition;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
@@ -41,24 +42,27 @@ import java.net.URLEncoder;
 import java.util.StringJoiner;
 
 /**
- * CreateLossPositionsRequest
+ * CreateRetailDemandPositions200ResponseInner
  */
 @JsonPropertyOrder({
-  CreateLossPositionsRequest.JSON_PROPERTY_META,
-  CreateLossPositionsRequest.JSON_PROPERTY_ID,
-  CreateLossPositionsRequest.JSON_PROPERTY_ACCOUNT_ID,
-  CreateLossPositionsRequest.JSON_PROPERTY_ASSORTMENT,
-  CreateLossPositionsRequest.JSON_PROPERTY_DECLARATION,
-  CreateLossPositionsRequest.JSON_PROPERTY_PACK,
-  CreateLossPositionsRequest.JSON_PROPERTY_PRICE,
-  CreateLossPositionsRequest.JSON_PROPERTY_QUANTITY,
-  CreateLossPositionsRequest.JSON_PROPERTY_REASON,
-  CreateLossPositionsRequest.JSON_PROPERTY_SLOT,
-  CreateLossPositionsRequest.JSON_PROPERTY_THINGS
+  CreateRetailDemandPositions200ResponseInner.JSON_PROPERTY_META,
+  CreateRetailDemandPositions200ResponseInner.JSON_PROPERTY_ID,
+  CreateRetailDemandPositions200ResponseInner.JSON_PROPERTY_ACCOUNT_ID,
+  CreateRetailDemandPositions200ResponseInner.JSON_PROPERTY_ASSORTMENT,
+  CreateRetailDemandPositions200ResponseInner.JSON_PROPERTY_COST,
+  CreateRetailDemandPositions200ResponseInner.JSON_PROPERTY_DECLARATION,
+  CreateRetailDemandPositions200ResponseInner.JSON_PROPERTY_DISCOUNT,
+  CreateRetailDemandPositions200ResponseInner.JSON_PROPERTY_PACK,
+  CreateRetailDemandPositions200ResponseInner.JSON_PROPERTY_PRICE,
+  CreateRetailDemandPositions200ResponseInner.JSON_PROPERTY_QUANTITY,
+  CreateRetailDemandPositions200ResponseInner.JSON_PROPERTY_THINGS,
+  CreateRetailDemandPositions200ResponseInner.JSON_PROPERTY_VAT,
+  CreateRetailDemandPositions200ResponseInner.JSON_PROPERTY_VAT_ENABLED,
+  CreateRetailDemandPositions200ResponseInner.JSON_PROPERTY_ERRORS
 })
-@JsonTypeName("createLossPositions_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
-public class CreateLossPositionsRequest {
+@JsonTypeName("createRetailDemandPositions_200_response_inner")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
+public class CreateRetailDemandPositions200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
@@ -76,9 +80,17 @@ public class CreateLossPositionsRequest {
   @javax.annotation.Nullable
   private Assortment assortment;
 
+  public static final String JSON_PROPERTY_COST = "cost";
+  @javax.annotation.Nullable
+  private Integer cost;
+
   public static final String JSON_PROPERTY_DECLARATION = "declaration";
   @javax.annotation.Nullable
   private List<DeclarationInner> declaration = new ArrayList<>();
+
+  public static final String JSON_PROPERTY_DISCOUNT = "discount";
+  @javax.annotation.Nullable
+  private Double discount;
 
   public static final String JSON_PROPERTY_PACK = "pack";
   @javax.annotation.Nullable
@@ -92,25 +104,29 @@ public class CreateLossPositionsRequest {
   @javax.annotation.Nullable
   private Double quantity;
 
-  public static final String JSON_PROPERTY_REASON = "reason";
-  @javax.annotation.Nullable
-  private String reason;
-
-  public static final String JSON_PROPERTY_SLOT = "slot";
-  @javax.annotation.Nullable
-  private JsonNullable<StoreSlot> slot = JsonNullable.<StoreSlot>undefined();
-
   public static final String JSON_PROPERTY_THINGS = "things";
   @javax.annotation.Nullable
   private List<String> things = new ArrayList<>();
 
-  public CreateLossPositionsRequest() {
+  public static final String JSON_PROPERTY_VAT = "vat";
+  @javax.annotation.Nullable
+  private Integer vat;
+
+  public static final String JSON_PROPERTY_VAT_ENABLED = "vatEnabled";
+  @javax.annotation.Nullable
+  private Boolean vatEnabled;
+
+  public static final String JSON_PROPERTY_ERRORS = "errors";
+  @javax.annotation.Nonnull
+  private List<ErrorErrorsInner> errors = new ArrayList<>();
+
+  public CreateRetailDemandPositions200ResponseInner() {
   }
   /**
    * Constructor with only readonly parameters
    */
   @JsonCreator
-  public CreateLossPositionsRequest(
+  public CreateRetailDemandPositions200ResponseInner(
     @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id, 
     @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId, 
     @JsonProperty(value = JSON_PROPERTY_DECLARATION, required = false) List<DeclarationInner> declaration
@@ -121,7 +137,7 @@ public class CreateLossPositionsRequest {
     this.declaration = declaration;
   }
 
-  public CreateLossPositionsRequest meta(@javax.annotation.Nullable Meta meta) {
+  public CreateRetailDemandPositions200ResponseInner meta(@javax.annotation.Nullable Meta meta) {
     
     this.meta = meta;
     return this;
@@ -182,7 +198,7 @@ public class CreateLossPositionsRequest {
 
 
 
-  public CreateLossPositionsRequest assortment(@javax.annotation.Nullable Assortment assortment) {
+  public CreateRetailDemandPositions200ResponseInner assortment(@javax.annotation.Nullable Assortment assortment) {
     
     this.assortment = assortment;
     return this;
@@ -213,6 +229,35 @@ public class CreateLossPositionsRequest {
   }
 
 
+  public CreateRetailDemandPositions200ResponseInner cost(@javax.annotation.Nullable Integer cost) {
+    
+    this.cost = cost;
+    return this;
+  }
+
+
+  /**
+   * Себестоимость (только для услуг)
+   * @return cost
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_COST)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getCost() {
+    return cost;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_COST)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCost(@javax.annotation.Nullable Integer cost) {
+    this.cost = cost;
+  }
+
+
   /**
    * Информация о прослеживаемости импортных товаров. Не входит в ответ по умолчанию; может быть возвращена только при явном запросе &#x60;fields&#x3D;declaration&#x60;. Только для чтения. 
    * @return declaration
@@ -229,7 +274,36 @@ public class CreateLossPositionsRequest {
 
 
 
-  public CreateLossPositionsRequest pack(@javax.annotation.Nullable Pack pack) {
+  public CreateRetailDemandPositions200ResponseInner discount(@javax.annotation.Nullable Double discount) {
+    
+    this.discount = discount;
+    return this;
+  }
+
+
+  /**
+   * Процент скидки или наценки. Наценка указывается отрицательным числом (например, &#x60;-10&#x60; задаёт наценку 10%).
+   * @return discount
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_DISCOUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Double getDiscount() {
+    return discount;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_DISCOUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDiscount(@javax.annotation.Nullable Double discount) {
+    this.discount = discount;
+  }
+
+
+  public CreateRetailDemandPositions200ResponseInner pack(@javax.annotation.Nullable Pack pack) {
     this.pack = JsonNullable.<Pack>of(pack);
     
     return this;
@@ -237,7 +311,7 @@ public class CreateLossPositionsRequest {
 
 
   /**
-   * Упаковка Товара
+   * Упаковка товара
    * @return pack
    */
   @javax.annotation.Nullable
@@ -267,7 +341,7 @@ public class CreateLossPositionsRequest {
   }
 
 
-  public CreateLossPositionsRequest price(@javax.annotation.Nullable Double price) {
+  public CreateRetailDemandPositions200ResponseInner price(@javax.annotation.Nullable Double price) {
     
     this.price = price;
     return this;
@@ -296,7 +370,7 @@ public class CreateLossPositionsRequest {
   }
 
 
-  public CreateLossPositionsRequest quantity(@javax.annotation.Nullable Double quantity) {
+  public CreateRetailDemandPositions200ResponseInner quantity(@javax.annotation.Nullable Double quantity) {
     
     this.quantity = quantity;
     return this;
@@ -304,7 +378,8 @@ public class CreateLossPositionsRequest {
 
 
   /**
-   * Количество товаров/услуг данного вида в позиции
+   * Количество товаров/услуг данного вида в позиции. Если позиция является товаром с учётом по серийным номерам, значение всегда равно количеству серийных номеров для этой позиции в документе. 
+   * minimum: 0
    * @return quantity
    */
   @javax.annotation.Nullable
@@ -325,81 +400,14 @@ public class CreateLossPositionsRequest {
   }
 
 
-  public CreateLossPositionsRequest reason(@javax.annotation.Nullable String reason) {
-    
-    this.reason = reason;
-    return this;
-  }
-
-
-  /**
-   * Причина списания данной позиции
-   * @return reason
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_REASON)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getReason() {
-    return reason;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_REASON)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReason(@javax.annotation.Nullable String reason) {
-    this.reason = reason;
-  }
-
-
-  public CreateLossPositionsRequest slot(@javax.annotation.Nullable StoreSlot slot) {
-    this.slot = JsonNullable.<StoreSlot>of(slot);
-    
-    return this;
-  }
-
-
-  /**
-   * Ячейка на складе
-   * @return slot
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-
-  public StoreSlot getSlot() {
-        return slot.orElse(null);
-  }
-
-  
-
-  @JsonProperty(JSON_PROPERTY_SLOT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-
-  public JsonNullable<StoreSlot> getSlot_JsonNullable() {
-    return slot;
-  }
-  
-  @JsonProperty(value = JSON_PROPERTY_SLOT, required = false)
-  public void setSlot_JsonNullable(JsonNullable<StoreSlot> slot) {
-    this.slot = slot;
-  }
-
-  public void setSlot(@javax.annotation.Nullable StoreSlot slot) {
-    this.slot = JsonNullable.<StoreSlot>of(slot);
-  }
-
-
-  public CreateLossPositionsRequest things(@javax.annotation.Nullable List<String> things) {
+  public CreateRetailDemandPositions200ResponseInner things(@javax.annotation.Nullable List<String> things) {
     
     this.things = things;
     return this;
   }
 
 
-  public CreateLossPositionsRequest addThingsItem(String thingsItem) {
+  public CreateRetailDemandPositions200ResponseInner addThingsItem(String thingsItem) {
     if (this.things == null) {
       this.things = new ArrayList<>();
     }
@@ -408,7 +416,7 @@ public class CreateLossPositionsRequest {
   }
 
   /**
-   * Серийные номера
+   * Серийные номера. Игнорируется, если товар позиции не на серийном учёте; иначе количество единиц в позиции совпадает с числом переданных серийных номеров. 
    * @return things
    */
   @javax.annotation.Nullable
@@ -429,6 +437,101 @@ public class CreateLossPositionsRequest {
   }
 
 
+  public CreateRetailDemandPositions200ResponseInner vat(@javax.annotation.Nullable Integer vat) {
+    
+    this.vat = vat;
+    return this;
+  }
+
+
+  /**
+   * НДС, которым облагается текущая позиция
+   * @return vat
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_VAT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getVat() {
+    return vat;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_VAT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setVat(@javax.annotation.Nullable Integer vat) {
+    this.vat = vat;
+  }
+
+
+  public CreateRetailDemandPositions200ResponseInner vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+    
+    this.vatEnabled = vatEnabled;
+    return this;
+  }
+
+
+  /**
+   * Включен ли НДС для позиции
+   * @return vatEnabled
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getVatEnabled() {
+    return vatEnabled;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setVatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+    this.vatEnabled = vatEnabled;
+  }
+
+
+  public CreateRetailDemandPositions200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
+    
+    this.errors = errors;
+    return this;
+  }
+
+
+  public CreateRetailDemandPositions200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
+    if (this.errors == null) {
+      this.errors = new ArrayList<>();
+    }
+    this.errors.add(errorsItem);
+    return this;
+  }
+
+  /**
+   * Get errors
+   * @return errors
+   */
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_ERRORS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public List<ErrorErrorsInner> getErrors() {
+    return errors;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_ERRORS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
+    this.errors = errors;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -437,18 +540,21 @@ public class CreateLossPositionsRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CreateLossPositionsRequest createLossPositionsRequest = (CreateLossPositionsRequest) o;
-    return Objects.equals(this.meta, createLossPositionsRequest.meta) &&
-        Objects.equals(this.id, createLossPositionsRequest.id) &&
-        Objects.equals(this.accountId, createLossPositionsRequest.accountId) &&
-        Objects.equals(this.assortment, createLossPositionsRequest.assortment) &&
-        Objects.equals(this.declaration, createLossPositionsRequest.declaration) &&
-        equalsNullable(this.pack, createLossPositionsRequest.pack) &&
-        Objects.equals(this.price, createLossPositionsRequest.price) &&
-        Objects.equals(this.quantity, createLossPositionsRequest.quantity) &&
-        Objects.equals(this.reason, createLossPositionsRequest.reason) &&
-        equalsNullable(this.slot, createLossPositionsRequest.slot) &&
-        Objects.equals(this.things, createLossPositionsRequest.things);
+    CreateRetailDemandPositions200ResponseInner createRetailDemandPositions200ResponseInner = (CreateRetailDemandPositions200ResponseInner) o;
+    return Objects.equals(this.meta, createRetailDemandPositions200ResponseInner.meta) &&
+        Objects.equals(this.id, createRetailDemandPositions200ResponseInner.id) &&
+        Objects.equals(this.accountId, createRetailDemandPositions200ResponseInner.accountId) &&
+        Objects.equals(this.assortment, createRetailDemandPositions200ResponseInner.assortment) &&
+        Objects.equals(this.cost, createRetailDemandPositions200ResponseInner.cost) &&
+        Objects.equals(this.declaration, createRetailDemandPositions200ResponseInner.declaration) &&
+        Objects.equals(this.discount, createRetailDemandPositions200ResponseInner.discount) &&
+        equalsNullable(this.pack, createRetailDemandPositions200ResponseInner.pack) &&
+        Objects.equals(this.price, createRetailDemandPositions200ResponseInner.price) &&
+        Objects.equals(this.quantity, createRetailDemandPositions200ResponseInner.quantity) &&
+        Objects.equals(this.things, createRetailDemandPositions200ResponseInner.things) &&
+        Objects.equals(this.vat, createRetailDemandPositions200ResponseInner.vat) &&
+        Objects.equals(this.vatEnabled, createRetailDemandPositions200ResponseInner.vatEnabled) &&
+        Objects.equals(this.errors, createRetailDemandPositions200ResponseInner.errors);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -457,7 +563,7 @@ public class CreateLossPositionsRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, assortment, declaration, hashCodeNullable(pack), price, quantity, reason, hashCodeNullable(slot), things);
+    return Objects.hash(meta, id, accountId, assortment, cost, declaration, discount, hashCodeNullable(pack), price, quantity, things, vat, vatEnabled, errors);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -470,18 +576,21 @@ public class CreateLossPositionsRequest {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CreateLossPositionsRequest {\n");
+    sb.append("class CreateRetailDemandPositions200ResponseInner {\n");
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("    assortment: ").append(toIndentedString(assortment)).append("\n");
+    sb.append("    cost: ").append(toIndentedString(cost)).append("\n");
     sb.append("    declaration: ").append(toIndentedString(declaration)).append("\n");
+    sb.append("    discount: ").append(toIndentedString(discount)).append("\n");
     sb.append("    pack: ").append(toIndentedString(pack)).append("\n");
     sb.append("    price: ").append(toIndentedString(price)).append("\n");
     sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
-    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
-    sb.append("    slot: ").append(toIndentedString(slot)).append("\n");
     sb.append("    things: ").append(toIndentedString(things)).append("\n");
+    sb.append("    vat: ").append(toIndentedString(vat)).append("\n");
+    sb.append("    vatEnabled: ").append(toIndentedString(vatEnabled)).append("\n");
+    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -559,6 +668,16 @@ public class CreateLossPositionsRequest {
       joiner.add(getAssortment().toUrlQueryString(prefix + "assortment" + suffix));
     }
 
+    // add `cost` to the URL query string
+    if (getCost() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%scost%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCost()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
     // add `declaration` to the URL query string
     if (getDeclaration() != null) {
       for (int i = 0; i < getDeclaration().size(); i++) {
@@ -566,6 +685,16 @@ public class CreateLossPositionsRequest {
           joiner.add(getDeclaration().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%sdeclaration%s%s", prefix, suffix,
               "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
+      }
+    }
+
+    // add `discount` to the URL query string
+    if (getDiscount() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sdiscount%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDiscount()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
       }
     }
 
@@ -594,21 +723,6 @@ public class CreateLossPositionsRequest {
       }
     }
 
-    // add `reason` to the URL query string
-    if (getReason() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%sreason%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getReason()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
-    }
-
-    // add `slot` to the URL query string
-    if (getSlot() != null) {
-      joiner.add(getSlot().toUrlQueryString(prefix + "slot" + suffix));
-    }
-
     // add `things` to the URL query string
     if (getThings() != null) {
       for (int i = 0; i < getThings().size(); i++) {
@@ -619,6 +733,36 @@ public class CreateLossPositionsRequest {
         } catch (UnsupportedEncodingException e) {
           // Should never happen, UTF-8 is always supported
           throw new RuntimeException(e);
+        }
+      }
+    }
+
+    // add `vat` to the URL query string
+    if (getVat() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%svat%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getVat()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `vatEnabled` to the URL query string
+    if (getVatEnabled() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%svatEnabled%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getVatEnabled()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `errors` to the URL query string
+    if (getErrors() != null) {
+      for (int i = 0; i < getErrors().size(); i++) {
+        if (getErrors().get(i) != null) {
+          joiner.add(getErrors().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%serrors%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }

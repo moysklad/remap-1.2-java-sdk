@@ -1,6 +1,6 @@
 
 
-# CreateSupplyPositionsBatch200ResponseInner
+# CreateSupplyPositions200ResponseInner
 
 
 ## Properties

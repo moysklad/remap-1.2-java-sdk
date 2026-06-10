@@ -5,7 +5,8 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**createProcessingProcess**](ProcessingProcessesApi.md#createProcessingProcess) | **POST** /entity/processingprocess | Создать Техпроцесс |
-| [**createProcessingProcessPositions**](ProcessingProcessesApi.md#createProcessingProcessPositions) | **POST** /entity/processingprocess/{id}/positions | Создать позицию Техпроцесса |
+| [**createProcessingProcessPosition**](ProcessingProcessesApi.md#createProcessingProcessPosition) | **POST** /entity/processingprocess/{id}/positions | Создать и обновить позицию Техпроцесса |
+| [**createProcessingProcessPositions**](ProcessingProcessesApi.md#createProcessingProcessPositions) | **POST** /entity/processingprocess/{id}/positions/batch | Массовое создание и обновление позиций Техпроцесса |
 | [**createProcessingProcessesBatch**](ProcessingProcessesApi.md#createProcessingProcessesBatch) | **POST** /entity/processingprocess/batch | Создать или изменить Техпроцессы |
 | [**deleteProcessingProcess**](ProcessingProcessesApi.md#deleteProcessingProcess) | **DELETE** /entity/processingprocess/{id} | Удалить Техпроцесс |
 | [**deleteProcessingProcessPosition**](ProcessingProcessesApi.md#deleteProcessingProcessPosition) | **DELETE** /entity/processingprocess/{id}/positions/{positionId} | Удалить позицию Техпроцесса |
@@ -105,13 +106,11 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 
-## createProcessingProcessPositions
+## createProcessingProcessPosition
 
-> ProcessingProcessPosition createProcessingProcessPositions(id, processingProcessPosition, expand, accept, acceptEncoding, contentType)
+> ProcessingProcessPosition createProcessingProcessPosition(id, processingProcessPosition, expand, accept, acceptEncoding, contentType)
 
-Создать позицию Техпроцесса
-
-Создание позиции Техпроцесса
+Создать и обновить позицию Техпроцесса
 
 ### Example
 
@@ -146,10 +145,10 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            ProcessingProcessPosition result = apiInstance.createProcessingProcessPositions(id, processingProcessPosition, expand, accept, acceptEncoding, contentType);
+            ProcessingProcessPosition result = apiInstance.createProcessingProcessPosition(id, processingProcessPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProcessingProcessesApi#createProcessingProcessPositions");
+            System.err.println("Exception when calling ProcessingProcessesApi#createProcessingProcessPosition");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -188,7 +187,92 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Позиция Техпроцесса успешно созданы |  -  |
+| **200** | Позиция Техпроцесса успешно создана |  -  |
+| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+
+
+## createProcessingProcessPositions
+
+> List&lt;CreateProcessingProcessPositions200ResponseInner&gt; createProcessingProcessPositions(id, processingProcessPosition, expand, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление позиций Техпроцесса
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.ProcessingProcessesApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        ProcessingProcessesApi apiInstance = new ProcessingProcessesApi(defaultClient);
+        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        List<ProcessingProcessPosition> processingProcessPosition = Arrays.asList(); // List<ProcessingProcessPosition> | 
+        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<CreateProcessingProcessPositions200ResponseInner> result = apiInstance.createProcessingProcessPositions(id, processingProcessPosition, expand, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProcessingProcessesApi#createProcessingProcessPositions");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **processingProcessPosition** | [**List&lt;ProcessingProcessPosition&gt;**](ProcessingProcessPosition.md)|  | |
+| **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;CreateProcessingProcessPositions200ResponseInner&gt;**](CreateProcessingProcessPositions200ResponseInner.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 

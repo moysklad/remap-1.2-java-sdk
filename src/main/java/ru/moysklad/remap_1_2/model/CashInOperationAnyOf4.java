@@ -101,7 +101,7 @@ import java.util.StringJoiner;
   CashInOperationAnyOf4.JSON_PROPERTY_LINKED_SUM
 })
 @JsonTypeName("CashInOperation_anyOf_4")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
 public class CashInOperationAnyOf4 {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -1961,12 +1961,7 @@ public class CashInOperationAnyOf4 {
 
     // add `positions` to the URL query string
     if (getPositions() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%spositions%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getPositions()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
+      joiner.add(getPositions().toUrlQueryString(prefix + "positions" + suffix));
     }
 
     // add `printed` to the URL query string

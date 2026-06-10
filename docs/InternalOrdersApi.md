@@ -8,7 +8,8 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createInternalOrderBatch**](InternalOrdersApi.md#createInternalOrderBatch) | **POST** /entity/internalorder/batch | Массовое создание и обновление InternalOrder |
 | [**createInternalOrderMetadataAttribute**](InternalOrdersApi.md#createInternalOrderMetadataAttribute) | **POST** /entity/internalorder/metadata/attributes | Создать Доп. поле InternalOrder |
 | [**createInternalOrderMetadataState**](InternalOrdersApi.md#createInternalOrderMetadataState) | **POST** /entity/internalorder/metadata/states | Создать статус InternalOrder |
-| [**createInternalOrderPositions**](InternalOrdersApi.md#createInternalOrderPositions) | **POST** /entity/internalorder/{id}/positions | Создать позиции InternalOrder |
+| [**createInternalOrderPosition**](InternalOrdersApi.md#createInternalOrderPosition) | **POST** /entity/internalorder/{id}/positions | Создать и обновить позицию Внутреннего заказа |
+| [**createInternalOrderPositions**](InternalOrdersApi.md#createInternalOrderPositions) | **POST** /entity/internalorder/{id}/positions/batch | Массовое создание и обновление позиций Внутреннего заказа |
 | [**deleteInternalOrder**](InternalOrdersApi.md#deleteInternalOrder) | **DELETE** /entity/internalorder/{id} | Удалить InternalOrder |
 | [**deleteInternalOrderBatch**](InternalOrdersApi.md#deleteInternalOrderBatch) | **POST** /entity/internalorder/delete | Массовое удаление InternalOrder |
 | [**deleteInternalOrderMetadataAttributeById**](InternalOrdersApi.md#deleteInternalOrderMetadataAttributeById) | **DELETE** /entity/internalorder/metadata/attributes/{id} | Удалить отдельное доп. поле InternalOrder |
@@ -359,11 +360,11 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 
-## createInternalOrderPositions
+## createInternalOrderPosition
 
-> List&lt;CreateInternalOrderPositions200ResponseInner&gt; createInternalOrderPositions(id, createInternalOrderPositionsRequest, expand, accept, acceptEncoding, contentType)
+> InternalOrderPosition createInternalOrderPosition(id, internalOrderPosition, expand, accept, acceptEncoding, contentType)
 
-Создать позиции InternalOrder
+Создать и обновить позицию Внутреннего заказа
 
 ### Example
 
@@ -392,13 +393,98 @@ public class Example {
 
         InternalOrdersApi apiInstance = new InternalOrdersApi(defaultClient);
         UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        CreateInternalOrderPositionsRequest createInternalOrderPositionsRequest = new CreateInternalOrderPositionsRequest(); // CreateInternalOrderPositionsRequest | 
+        InternalOrderPosition internalOrderPosition = new InternalOrderPosition(); // InternalOrderPosition | 
         String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateInternalOrderPositions200ResponseInner> result = apiInstance.createInternalOrderPositions(id, createInternalOrderPositionsRequest, expand, accept, acceptEncoding, contentType);
+            InternalOrderPosition result = apiInstance.createInternalOrderPosition(id, internalOrderPosition, expand, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling InternalOrdersApi#createInternalOrderPosition");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **internalOrderPosition** | [**InternalOrderPosition**](InternalOrderPosition.md)|  | |
+| **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**InternalOrderPosition**](InternalOrderPosition.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+
+
+## createInternalOrderPositions
+
+> List&lt;CreateInternalOrderPositions200ResponseInner&gt; createInternalOrderPositions(id, internalOrderPosition, expand, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление позиций Внутреннего заказа
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.InternalOrdersApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        InternalOrdersApi apiInstance = new InternalOrdersApi(defaultClient);
+        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        List<InternalOrderPosition> internalOrderPosition = Arrays.asList(); // List<InternalOrderPosition> | 
+        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<CreateInternalOrderPositions200ResponseInner> result = apiInstance.createInternalOrderPositions(id, internalOrderPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling InternalOrdersApi#createInternalOrderPositions");
@@ -417,7 +503,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **createInternalOrderPositionsRequest** | [**CreateInternalOrderPositionsRequest**](CreateInternalOrderPositionsRequest.md)|  | |
+| **internalOrderPosition** | [**List&lt;InternalOrderPosition&gt;**](InternalOrderPosition.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -1514,7 +1600,7 @@ public class Example {
 
 ## getInternalOrderPositions
 
-> List&lt;InternalOrderPosition&gt; getInternalOrderPositions(id, limit, offset, expand, accept, acceptEncoding, contentType)
+> InternalOrderPositionList getInternalOrderPositions(id, limit, offset, expand, accept, acceptEncoding)
 
 Получить позиции InternalOrder
 
@@ -1550,9 +1636,8 @@ public class Example {
         String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
-        String contentType = "application/json"; // String | 
         try {
-            List<InternalOrderPosition> result = apiInstance.getInternalOrderPositions(id, limit, offset, expand, accept, acceptEncoding, contentType);
+            InternalOrderPositionList result = apiInstance.getInternalOrderPositions(id, limit, offset, expand, accept, acceptEncoding);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling InternalOrdersApi#getInternalOrderPositions");
@@ -1576,11 +1661,10 @@ public class Example {
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
-| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;InternalOrderPosition&gt;**](InternalOrderPosition.md)
+[**InternalOrderPositionList**](InternalOrderPositionList.md)
 
 ### Authorization
 

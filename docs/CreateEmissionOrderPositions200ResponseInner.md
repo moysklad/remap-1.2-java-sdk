@@ -1,6 +1,6 @@
 
 
-# CreateEmissionOrderPositionsBatch200ResponseInner
+# CreateEmissionOrderPositions200ResponseInner
 
 
 ## Properties

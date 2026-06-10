@@ -6,8 +6,8 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 |------------- | ------------- | -------------|
 | [**createEmissionOrder**](EmissionOrdersApi.md#createEmissionOrder) | **POST** /entity/emissionorder | Создать Заказ кодов маркировки |
 | [**createEmissionOrderBatch**](EmissionOrdersApi.md#createEmissionOrderBatch) | **POST** /entity/emissionorder/batch | Массовое создание и обновление Заказов кодов маркировки |
-| [**createEmissionOrderPositions**](EmissionOrdersApi.md#createEmissionOrderPositions) | **POST** /entity/emissionorder/{id}/positions | Создать позицию Заказа кодов маркировки |
-| [**createEmissionOrderPositionsBatch**](EmissionOrdersApi.md#createEmissionOrderPositionsBatch) | **POST** /entity/emissionorder/{id}/positions/batch | Создать позиции Заказа кодов маркировки |
+| [**createEmissionOrderPosition**](EmissionOrdersApi.md#createEmissionOrderPosition) | **POST** /entity/emissionorder/{id}/positions | Создать и обновить позицию Заказа кодов маркировки |
+| [**createEmissionOrderPositions**](EmissionOrdersApi.md#createEmissionOrderPositions) | **POST** /entity/emissionorder/{id}/positions/batch | Массовое создание и обновление позиций Заказа кодов маркировки |
 | [**deleteEmissionOrderMetadataStateById**](EmissionOrdersApi.md#deleteEmissionOrderMetadataStateById) | **DELETE** /entity/emissionorder/metadata/states/{id} | Удалить отдельный статус Заказа кодов маркировки |
 | [**getEmissionOrderById**](EmissionOrdersApi.md#getEmissionOrderById) | **GET** /entity/emissionorder/{id} | Получить Заказ кодов маркировки |
 | [**getEmissionOrderList**](EmissionOrdersApi.md#getEmissionOrderList) | **GET** /entity/emissionorder | Получить список Заказов кодов маркировки |
@@ -187,11 +187,11 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 
-## createEmissionOrderPositions
+## createEmissionOrderPosition
 
-> EmissionOrderPosition createEmissionOrderPositions(id, emissionOrderPosition, expand, accept, acceptEncoding, contentType)
+> EmissionOrderPosition createEmissionOrderPosition(id, emissionOrderPosition, expand, accept, acceptEncoding, contentType)
 
-Создать позицию Заказа кодов маркировки
+Создать и обновить позицию Заказа кодов маркировки
 
 ### Example
 
@@ -226,10 +226,10 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            EmissionOrderPosition result = apiInstance.createEmissionOrderPositions(id, emissionOrderPosition, expand, accept, acceptEncoding, contentType);
+            EmissionOrderPosition result = apiInstance.createEmissionOrderPosition(id, emissionOrderPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling EmissionOrdersApi#createEmissionOrderPositions");
+            System.err.println("Exception when calling EmissionOrdersApi#createEmissionOrderPosition");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -272,11 +272,11 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 
-## createEmissionOrderPositionsBatch
+## createEmissionOrderPositions
 
-> List&lt;CreateEmissionOrderPositionsBatch200ResponseInner&gt; createEmissionOrderPositionsBatch(id, emissionOrderPosition, expand, accept, acceptEncoding, contentType)
+> List&lt;CreateEmissionOrderPositions200ResponseInner&gt; createEmissionOrderPositions(id, emissionOrderPosition, expand, accept, acceptEncoding, contentType)
 
-Создать позиции Заказа кодов маркировки
+Массовое создание и обновление позиций Заказа кодов маркировки
 
 ### Example
 
@@ -311,10 +311,10 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateEmissionOrderPositionsBatch200ResponseInner> result = apiInstance.createEmissionOrderPositionsBatch(id, emissionOrderPosition, expand, accept, acceptEncoding, contentType);
+            List<CreateEmissionOrderPositions200ResponseInner> result = apiInstance.createEmissionOrderPositions(id, emissionOrderPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling EmissionOrdersApi#createEmissionOrderPositionsBatch");
+            System.err.println("Exception when calling EmissionOrdersApi#createEmissionOrderPositions");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -338,7 +338,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreateEmissionOrderPositionsBatch200ResponseInner&gt;**](CreateEmissionOrderPositionsBatch200ResponseInner.md)
+[**List&lt;CreateEmissionOrderPositions200ResponseInner&gt;**](CreateEmissionOrderPositions200ResponseInner.md)
 
 ### Authorization
 

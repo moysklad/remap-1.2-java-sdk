@@ -1,6 +1,6 @@
 
 
-# CreateMovePositionsBatch200ResponseInner
+# CreateMovePositions200ResponseInner
 
 
 ## Properties

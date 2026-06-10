@@ -9,8 +9,8 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createCommissionReportOutBatch**](CommissionReportOutsApi.md#createCommissionReportOutBatch) | **POST** /entity/commissionreportout/batch | Массовое создание и обновление CommissionReportOut |
 | [**createCommissionReportOutMetadataAttribute**](CommissionReportOutsApi.md#createCommissionReportOutMetadataAttribute) | **POST** /entity/commissionreportout/metadata/attributes | Создать доп. поле CommissionReportOut |
 | [**createCommissionReportOutMetadataState**](CommissionReportOutsApi.md#createCommissionReportOutMetadataState) | **POST** /entity/commissionreportout/metadata/states | Создать статус CommissionReportOut |
-| [**createCommissionReportOutPosition**](CommissionReportOutsApi.md#createCommissionReportOutPosition) | **POST** /entity/commissionreportout/{id}/positions | Создать позицию CommissionReportOut |
-| [**createCommissionReportOutPositionsBatch**](CommissionReportOutsApi.md#createCommissionReportOutPositionsBatch) | **POST** /entity/commissionreportout/{id}/positions/batch | Массовое создание позиций CommissionReportOut |
+| [**createCommissionReportOutPosition**](CommissionReportOutsApi.md#createCommissionReportOutPosition) | **POST** /entity/commissionreportout/{id}/positions | Создать и обновить позицию Выданного отчета комиссионера |
+| [**createCommissionReportOutPositions**](CommissionReportOutsApi.md#createCommissionReportOutPositions) | **POST** /entity/commissionreportout/{id}/positions/batch | Массовое создание и обновление позиций Выданного отчета комиссионера |
 | [**deleteCommissionReportOut**](CommissionReportOutsApi.md#deleteCommissionReportOut) | **DELETE** /entity/commissionreportout/{id} | Удалить CommissionReportOut |
 | [**deleteCommissionReportOutBatch**](CommissionReportOutsApi.md#deleteCommissionReportOutBatch) | **POST** /entity/commissionreportout/delete | Массовое удаление CommissionReportOut |
 | [**deleteCommissionReportOutFile**](CommissionReportOutsApi.md#deleteCommissionReportOutFile) | **DELETE** /entity/commissionreportout/{id}/files/{fileId} | Удалить файл Выданного отчета комиссионера |
@@ -451,7 +451,7 @@ public class Example {
 
 > CommissionReportOutPosition createCommissionReportOutPosition(id, commissionReportOutPosition, expand, accept, acceptEncoding, contentType)
 
-Создать позицию CommissionReportOut
+Создать и обновить позицию Выданного отчета комиссионера
 
 ### Example
 
@@ -532,11 +532,11 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 
-## createCommissionReportOutPositionsBatch
+## createCommissionReportOutPositions
 
-> List&lt;CreateCommissionReportOutPositionsBatch200ResponseInner&gt; createCommissionReportOutPositionsBatch(id, commissionReportOutPosition, expand, accept, acceptEncoding, contentType)
+> List&lt;CreateCommissionReportOutPositions200ResponseInner&gt; createCommissionReportOutPositions(id, commissionReportOutPosition, expand, accept, acceptEncoding, contentType)
 
-Массовое создание позиций CommissionReportOut
+Массовое создание и обновление позиций Выданного отчета комиссионера
 
 ### Example
 
@@ -571,10 +571,10 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateCommissionReportOutPositionsBatch200ResponseInner> result = apiInstance.createCommissionReportOutPositionsBatch(id, commissionReportOutPosition, expand, accept, acceptEncoding, contentType);
+            List<CreateCommissionReportOutPositions200ResponseInner> result = apiInstance.createCommissionReportOutPositions(id, commissionReportOutPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling CommissionReportOutsApi#createCommissionReportOutPositionsBatch");
+            System.err.println("Exception when calling CommissionReportOutsApi#createCommissionReportOutPositions");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -598,7 +598,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreateCommissionReportOutPositionsBatch200ResponseInner&gt;**](CreateCommissionReportOutPositionsBatch200ResponseInner.md)
+[**List&lt;CreateCommissionReportOutPositions200ResponseInner&gt;**](CreateCommissionReportOutPositions200ResponseInner.md)
 
 ### Authorization
 

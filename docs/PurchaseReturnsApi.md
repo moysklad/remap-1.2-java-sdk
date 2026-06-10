@@ -9,7 +9,8 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createPurchaseReturnBatch**](PurchaseReturnsApi.md#createPurchaseReturnBatch) | **POST** /entity/purchasereturn/batch | Массовое создание и обновление Возвратов поставщикам |
 | [**createPurchaseReturnMetadataAttribute**](PurchaseReturnsApi.md#createPurchaseReturnMetadataAttribute) | **POST** /entity/purchasereturn/metadata/attributes | Создать доп. поле Возврата поставщику |
 | [**createPurchaseReturnMetadataState**](PurchaseReturnsApi.md#createPurchaseReturnMetadataState) | **POST** /entity/purchasereturn/metadata/states | Создать статус Возврата поставщику |
-| [**createPurchaseReturnPositions**](PurchaseReturnsApi.md#createPurchaseReturnPositions) | **POST** /entity/purchasereturn/{id}/positions | Создать позиции Возврата поставщику |
+| [**createPurchaseReturnPosition**](PurchaseReturnsApi.md#createPurchaseReturnPosition) | **POST** /entity/purchasereturn/{id}/positions | Создать и обновить позицию Возврата поставщику |
+| [**createPurchaseReturnPositions**](PurchaseReturnsApi.md#createPurchaseReturnPositions) | **POST** /entity/purchasereturn/{id}/positions/batch | Массовое создание и обновление позиций Возврата поставщику |
 | [**deletePurchaseReturn**](PurchaseReturnsApi.md#deletePurchaseReturn) | **DELETE** /entity/purchasereturn/{id} | Удалить Возврат поставщику |
 | [**deletePurchaseReturnBatch**](PurchaseReturnsApi.md#deletePurchaseReturnBatch) | **POST** /entity/purchasereturn/delete | Массовое удаление Возвратов поставщикам |
 | [**deletePurchaseReturnFile**](PurchaseReturnsApi.md#deletePurchaseReturnFile) | **DELETE** /entity/purchasereturn/{id}/files/{fileId} | Удалить файл возврата поставщику |
@@ -447,11 +448,11 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 
-## createPurchaseReturnPositions
+## createPurchaseReturnPosition
 
-> List&lt;CreatePurchaseReturnPositions200ResponseInner&gt; createPurchaseReturnPositions(id, createPurchaseReturnPositionsRequest, expand, accept, acceptEncoding, contentType)
+> PurchaseReturnPosition createPurchaseReturnPosition(id, purchaseReturnPosition, expand, accept, acceptEncoding, contentType)
 
-Создать позиции Возврата поставщику
+Создать и обновить позицию Возврата поставщику
 
 ### Example
 
@@ -480,13 +481,98 @@ public class Example {
 
         PurchaseReturnsApi apiInstance = new PurchaseReturnsApi(defaultClient);
         UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        CreatePurchaseReturnPositionsRequest createPurchaseReturnPositionsRequest = new CreatePurchaseReturnPositionsRequest(); // CreatePurchaseReturnPositionsRequest | 
+        PurchaseReturnPosition purchaseReturnPosition = new PurchaseReturnPosition(); // PurchaseReturnPosition | 
         String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreatePurchaseReturnPositions200ResponseInner> result = apiInstance.createPurchaseReturnPositions(id, createPurchaseReturnPositionsRequest, expand, accept, acceptEncoding, contentType);
+            PurchaseReturnPosition result = apiInstance.createPurchaseReturnPosition(id, purchaseReturnPosition, expand, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PurchaseReturnsApi#createPurchaseReturnPosition");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **purchaseReturnPosition** | [**PurchaseReturnPosition**](PurchaseReturnPosition.md)|  | |
+| **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**PurchaseReturnPosition**](PurchaseReturnPosition.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+
+
+## createPurchaseReturnPositions
+
+> List&lt;CreatePurchaseReturnPositions200ResponseInner&gt; createPurchaseReturnPositions(id, purchaseReturnPosition, expand, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление позиций Возврата поставщику
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.PurchaseReturnsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        PurchaseReturnsApi apiInstance = new PurchaseReturnsApi(defaultClient);
+        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        List<PurchaseReturnPosition> purchaseReturnPosition = Arrays.asList(); // List<PurchaseReturnPosition> | 
+        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<CreatePurchaseReturnPositions200ResponseInner> result = apiInstance.createPurchaseReturnPositions(id, purchaseReturnPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PurchaseReturnsApi#createPurchaseReturnPositions");
@@ -505,7 +591,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **createPurchaseReturnPositionsRequest** | [**CreatePurchaseReturnPositionsRequest**](CreatePurchaseReturnPositionsRequest.md)|  | |
+| **purchaseReturnPosition** | [**List&lt;PurchaseReturnPosition&gt;**](PurchaseReturnPosition.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -1757,7 +1843,7 @@ public class Example {
 
 ## getPurchaseReturnPositions
 
-> PurchaseReturnPositionList getPurchaseReturnPositions(id, limit, offset, expand, fields, accept, acceptEncoding, contentType)
+> PurchaseReturnPositionList getPurchaseReturnPositions(id, limit, offset, expand, fields, accept, acceptEncoding)
 
 Получить позиции Возврата поставщику
 
@@ -1794,9 +1880,8 @@ public class Example {
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
-        String contentType = "application/json"; // String | 
         try {
-            PurchaseReturnPositionList result = apiInstance.getPurchaseReturnPositions(id, limit, offset, expand, fields, accept, acceptEncoding, contentType);
+            PurchaseReturnPositionList result = apiInstance.getPurchaseReturnPositions(id, limit, offset, expand, fields, accept, acceptEncoding);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PurchaseReturnsApi#getPurchaseReturnPositions");
@@ -1821,7 +1906,6 @@ public class Example {
 | **fields** | **String**| Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  | [optional] [enum: minimumStock, downloadPermanentHref, stock, declaration] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
-| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 

@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   ProcessingProduct.JSON_PROPERTY_ASSORTMENT,
   ProcessingProduct.JSON_PROPERTY_QUANTITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingProduct {
   public static ProcessingProduct createWithMeta(UUID parentId, UUID id) {
     ProcessingProduct o = new ProcessingProduct();

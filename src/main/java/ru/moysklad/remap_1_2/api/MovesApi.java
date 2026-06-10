@@ -23,7 +23,7 @@ import ru.moysklad.remap_1_2.Pair;
 import ru.moysklad.remap_1_2.model.AttributeMetaInfo;
 import ru.moysklad.remap_1_2.model.AttributeMetaInfoList;
 import ru.moysklad.remap_1_2.model.CreateMoveBatch200ResponseInner;
-import ru.moysklad.remap_1_2.model.CreateMovePositionsBatch200ResponseInner;
+import ru.moysklad.remap_1_2.model.CreateMovePositions200ResponseInner;
 import ru.moysklad.remap_1_2.model.DeleteContractsBatch200ResponseInner;
 import ru.moysklad.remap_1_2.model.DocumentMetadata;
 import ru.moysklad.remap_1_2.model.ErrorOrArray;
@@ -45,7 +45,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class MovesApi extends BaseApi {
 
@@ -454,7 +454,7 @@ if (contentType != null)
   }
 
   /**
-   * Создать позицию Перемещения
+   * Создать и обновить позицию Перемещения
    * 
    * @param id ID сущности (required)
    * @param movePosition  (required)
@@ -465,12 +465,12 @@ if (contentType != null)
    * @return MovePosition
    * @throws ApiException if fails to make API call
    */
-  public MovePosition createMovePositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull MovePosition movePosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createMovePositions(id, movePosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public MovePosition createMovePosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull MovePosition movePosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+    return this.createMovePosition(id, movePosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
   /**
-   * Создать позицию Перемещения
+   * Создать и обновить позицию Перемещения
    * 
    
    * @param id ID сущности (required)
@@ -486,14 +486,14 @@ if (contentType != null)
    * @return MovePosition
    * @throws ApiException if fails to make API call
    */
-  public MovePosition createMovePositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull MovePosition movePosition, RequestOptions options) throws ApiException {
+  public MovePosition createMovePosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull MovePosition movePosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
-    return this.createMovePositions(id, movePosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.createMovePosition(id, movePosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
   /**
-   * Создать позицию Перемещения
+   * Создать и обновить позицию Перемещения
    * 
    * @param id ID сущности (required)
    * @param movePosition  (required)
@@ -505,17 +505,17 @@ if (contentType != null)
    * @return MovePosition
    * @throws ApiException if fails to make API call
    */
-  public MovePosition createMovePositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull MovePosition movePosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public MovePosition createMovePosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull MovePosition movePosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = movePosition;
     
     // verify the required parameter 'id' is set
     if (id == null) {
-      throw new ApiException(400, "Missing the required parameter 'id' when calling createMovePositions");
+      throw new ApiException(400, "Missing the required parameter 'id' when calling createMovePosition");
     }
     
     // verify the required parameter 'movePosition' is set
     if (movePosition == null) {
-      throw new ApiException(400, "Missing the required parameter 'movePosition' when calling createMovePositions");
+      throw new ApiException(400, "Missing the required parameter 'movePosition' when calling createMovePosition");
     }
     
     // create path and map variables
@@ -573,7 +573,7 @@ if (contentType != null)
   }
 
   /**
-   * Создать позиции Перемещения
+   * Массовое создание и обновление позиций Перемещения
    * 
    * @param id ID сущности (required)
    * @param movePosition  (required)
@@ -581,15 +581,15 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;CreateMovePositionsBatch200ResponseInner&gt;
+   * @return List&lt;CreateMovePositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateMovePositionsBatch200ResponseInner> createMovePositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<MovePosition> movePosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createMovePositionsBatch(id, movePosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<CreateMovePositions200ResponseInner> createMovePositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<MovePosition> movePosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+    return this.createMovePositions(id, movePosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
   /**
-   * Создать позиции Перемещения
+   * Массовое создание и обновление позиций Перемещения
    * 
    
    * @param id ID сущности (required)
@@ -602,17 +602,17 @@ if (contentType != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return List&lt;CreateMovePositionsBatch200ResponseInner&gt;
+   * @return List&lt;CreateMovePositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateMovePositionsBatch200ResponseInner> createMovePositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<MovePosition> movePosition, RequestOptions options) throws ApiException {
+  public List<CreateMovePositions200ResponseInner> createMovePositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<MovePosition> movePosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
-    return this.createMovePositionsBatch(id, movePosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.createMovePositions(id, movePosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
   /**
-   * Создать позиции Перемещения
+   * Массовое создание и обновление позиций Перемещения
    * 
    * @param id ID сущности (required)
    * @param movePosition  (required)
@@ -621,20 +621,20 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;CreateMovePositionsBatch200ResponseInner&gt;
+   * @return List&lt;CreateMovePositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateMovePositionsBatch200ResponseInner> createMovePositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<MovePosition> movePosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<CreateMovePositions200ResponseInner> createMovePositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<MovePosition> movePosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = movePosition;
     
     // verify the required parameter 'id' is set
     if (id == null) {
-      throw new ApiException(400, "Missing the required parameter 'id' when calling createMovePositionsBatch");
+      throw new ApiException(400, "Missing the required parameter 'id' when calling createMovePositions");
     }
     
     // verify the required parameter 'movePosition' is set
     if (movePosition == null) {
-      throw new ApiException(400, "Missing the required parameter 'movePosition' when calling createMovePositionsBatch");
+      throw new ApiException(400, "Missing the required parameter 'movePosition' when calling createMovePositions");
     }
     
     // create path and map variables
@@ -673,7 +673,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<CreateMovePositionsBatch200ResponseInner>> localVarReturnType = new TypeReference<List<CreateMovePositionsBatch200ResponseInner>>() {};
+    TypeReference<List<CreateMovePositions200ResponseInner>> localVarReturnType = new TypeReference<List<CreateMovePositions200ResponseInner>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

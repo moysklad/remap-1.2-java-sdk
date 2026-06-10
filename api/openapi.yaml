@@ -8363,8 +8363,7 @@ paths:
       - application/json
       - text/html;charset=UTF-8
     post:
-      description: Создание позиции Техпроцесса
-      operationId: createProcessingProcessPositions
+      operationId: createProcessingProcessPosition
       parameters:
       - description: ID сущности
         in: path
@@ -8416,10 +8415,80 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ProcessingProcessPosition"
-          description: Позиция Техпроцесса успешно созданы
+          description: Позиция Техпроцесса успешно создана
         default:
           $ref: "#/components/responses/CommonError"
-      summary: Создать позицию Техпроцесса
+      summary: Создать и обновить позицию Техпроцесса
+      tags:
+      - ProcessingProcesses
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/processingprocess/{id}/positions/batch:
+    post:
+      operationId: createProcessingProcessPositions
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: "#/components/schemas/ProcessingProcessPosition"
+              maxItems: 1000
+              minItems: 1
+              type: array
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/createProcessingProcessPositions_200_response_inner"
+                type: array
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Массовое создание и обновление позиций Техпроцесса
       tags:
       - ProcessingProcesses
       x-content-type: application/json
@@ -23256,22 +23325,12 @@ paths:
           default: "gzip, deflate, br"
           example: "gzip, deflate, br"
           type: string
-      - in: header
-        name: Content-Type
-        required: false
-        schema:
-          default: application/json
-          enum:
-          - application/json
-          type: string
       responses:
         "200":
           content:
             application/json:
               schema:
-                items:
-                  $ref: "#/components/schemas/InternalOrderPosition"
-                type: array
+                $ref: "#/components/schemas/InternalOrderPositionList"
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
@@ -23281,6 +23340,70 @@ paths:
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
+    post:
+      operationId: createInternalOrderPosition
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/InternalOrderPosition"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalOrderPosition"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать и обновить позицию Внутреннего заказа
+      tags:
+      - InternalOrders
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/internalorder/{id}/positions/batch:
     post:
       operationId: createInternalOrderPositions
       parameters:
@@ -23326,7 +23449,11 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/createInternalOrderPositions_request"
+              items:
+                $ref: "#/components/schemas/InternalOrderPosition"
+              maxItems: 1000
+              minItems: 1
+              type: array
         required: true
       responses:
         "200":
@@ -23339,7 +23466,7 @@ paths:
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
-      summary: Создать позиции InternalOrder
+      summary: Массовое создание и обновление позиций Внутреннего заказа
       tags:
       - InternalOrders
       x-content-type: application/json
@@ -24573,6 +24700,70 @@ paths:
       - application/json
       - text/html;charset=UTF-8
     post:
+      operationId: createProcessingOrderPosition
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ProcessingOrderPosition"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ProcessingOrderPosition"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Обновить позицию ProcessingOrder
+      tags:
+      - ProcessingOrders
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/processingorder/{id}/positions/batch:
+    post:
       operationId: createProcessingOrderPositions
       parameters:
       - description: ID сущности
@@ -24617,7 +24808,11 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/createProcessingOrderPositions_request"
+              items:
+                $ref: "#/components/schemas/ProcessingOrderPosition"
+              maxItems: 1000
+              minItems: 1
+              type: array
         required: true
       responses:
         "200":
@@ -24627,10 +24822,10 @@ paths:
                 items:
                   $ref: "#/components/schemas/createProcessingOrderPositions_200_response_inner"
                 type: array
-          description: Успешный запрос
+          description: Результат по каждому элементу (успех или объект ошибки)
         default:
           $ref: "#/components/responses/CommonError"
-      summary: Создать позиции ProcessingOrder
+      summary: Массовое изменение позиций Заказа на производство
       tags:
       - ProcessingOrders
       x-content-type: application/json
@@ -28030,22 +28225,12 @@ paths:
           default: "gzip, deflate, br"
           example: "gzip, deflate, br"
           type: string
-      - in: header
-        name: Content-Type
-        required: false
-        schema:
-          default: application/json
-          enum:
-          - application/json
-          type: string
       responses:
         "200":
           content:
             application/json:
               schema:
-                items:
-                  $ref: "#/components/schemas/CustomerOrderPosition"
-                type: array
+                $ref: "#/components/schemas/CustomerOrderPositionList"
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
@@ -28055,6 +28240,70 @@ paths:
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
+    post:
+      operationId: createCustomerOrderPosition
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CustomerOrderPosition"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomerOrderPosition"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать и обновить позицию Заказа покупателя
+      tags:
+      - CustomerOrders
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/customerorder/{id}/positions/batch:
     post:
       operationId: createCustomerOrderPositions
       parameters:
@@ -28100,7 +28349,11 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/createCustomerOrderPositions_request"
+              items:
+                $ref: "#/components/schemas/CustomerOrderPosition"
+              maxItems: 1000
+              minItems: 1
+              type: array
         required: true
       responses:
         "200":
@@ -28113,7 +28366,7 @@ paths:
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
-      summary: Создать позиции CustomerOrders
+      summary: Массовое создание и обновление позиций Заказа покупателя
       tags:
       - CustomerOrders
       x-content-type: application/json
@@ -33157,6 +33410,70 @@ paths:
       - application/json
       - text/html;charset=UTF-8
     post:
+      operationId: createDemandPosition
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DemandPosition"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DemandPosition"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать и обновить позицию Отгрузки
+      tags:
+      - Demands
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/demand/{id}/positions/batch:
+    post:
       operationId: createDemandPositions
       parameters:
       - description: ID сущности
@@ -33201,7 +33518,11 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/createDemandPositions_request"
+              items:
+                $ref: "#/components/schemas/DemandPosition"
+              maxItems: 1000
+              minItems: 1
+              type: array
         required: true
       responses:
         "200":
@@ -33214,7 +33535,7 @@ paths:
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
-      summary: Создать позиции Отгрузки
+      summary: Массовое создание и обновление позиций Отгрузки
       tags:
       - Demands
       x-content-type: application/json
@@ -34549,14 +34870,6 @@ paths:
           default: "gzip, deflate, br"
           example: "gzip, deflate, br"
           type: string
-      - in: header
-        name: Content-Type
-        required: false
-        schema:
-          default: application/json
-          enum:
-          - application/json
-          type: string
       responses:
         "200":
           content:
@@ -34573,7 +34886,7 @@ paths:
       - application/json
       - text/html;charset=UTF-8
     post:
-      operationId: createRetailDemandPositions
+      operationId: createRetailDemandPosition
       parameters:
       - description: ID сущности
         in: path
@@ -34628,7 +34941,7 @@ paths:
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
-      summary: Создать позиции Розничной продажи
+      summary: Создать и обновить позицию Розничной продажи
       tags:
       - RetailDemands
       x-content-type: application/json
@@ -34637,7 +34950,7 @@ paths:
       - text/html;charset=UTF-8
   /entity/retaildemand/{id}/positions/batch:
     post:
-      operationId: createRetailDemandPositionsBatch
+      operationId: createRetailDemandPositions
       parameters:
       - description: ID сущности
         in: path
@@ -34693,12 +35006,12 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: "#/components/schemas/createRetailDemandPositionsBatch_200_response_inner"
+                  $ref: "#/components/schemas/createRetailDemandPositions_200_response_inner"
                 type: array
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
-      summary: Создать позиции Розничной продажи
+      summary: Массовое создание и обновление позиций Розничной продажи
       tags:
       - RetailDemands
       x-content-type: application/json
@@ -36143,6 +36456,70 @@ paths:
       - application/json
       - text/html;charset=UTF-8
     post:
+      operationId: createEnterPosition
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EnterPosition"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EnterPosition"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать и обновить позицию Оприходования
+      tags:
+      - Enters
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/enter/{id}/positions/batch:
+    post:
       operationId: createEnterPositions
       parameters:
       - description: ID сущности
@@ -36187,7 +36564,11 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/createEnterPositions_request"
+              items:
+                $ref: "#/components/schemas/EnterPosition"
+              maxItems: 1000
+              minItems: 1
+              type: array
         required: true
       responses:
         "200":
@@ -36200,7 +36581,7 @@ paths:
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
-      summary: Создать позиции Оприходования
+      summary: Массовое создание и обновление позиций Оприходования
       tags:
       - Enters
       x-content-type: application/json
@@ -37479,14 +37860,6 @@ paths:
           default: "gzip, deflate, br"
           example: "gzip, deflate, br"
           type: string
-      - in: header
-        name: Content-Type
-        required: false
-        schema:
-          default: application/json
-          enum:
-          - application/json
-          type: string
       responses:
         "200":
           content:
@@ -37502,6 +37875,70 @@ paths:
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
+    post:
+      operationId: createSalesReturnPosition
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SalesReturnPosition"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SalesReturnPosition"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать и обновить позицию Возврата покупателя
+      tags:
+      - SalesReturns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/salesreturn/{id}/positions/batch:
     post:
       operationId: createSalesReturnPositions
       parameters:
@@ -37547,7 +37984,11 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/createSalesReturnPositions_request"
+              items:
+                $ref: "#/components/schemas/SalesReturnPosition"
+              maxItems: 1000
+              minItems: 1
+              type: array
         required: true
       responses:
         "200":
@@ -37560,7 +38001,7 @@ paths:
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
-      summary: Создать позиции Возврата покупателя
+      summary: Массовое создание и обновление позиций Возврата покупателя
       tags:
       - SalesReturns
       x-content-type: application/json
@@ -38847,6 +39288,70 @@ paths:
       - application/json
       - text/html;charset=UTF-8
     post:
+      operationId: createLossPosition
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LossPosition"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LossPosition"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать и обновить позицию Списания
+      tags:
+      - Losses
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/loss/{id}/positions/batch:
+    post:
       operationId: createLossPositions
       parameters:
       - description: ID сущности
@@ -38891,7 +39396,11 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/createLossPositions_request"
+              items:
+                $ref: "#/components/schemas/LossPosition"
+              maxItems: 1000
+              minItems: 1
+              type: array
         required: true
       responses:
         "200":
@@ -38904,7 +39413,7 @@ paths:
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
-      summary: Создать позиции Списания
+      summary: Массовое создание и обновление позиций Списания
       tags:
       - Losses
       x-content-type: application/json
@@ -40336,6 +40845,70 @@ paths:
       - application/json
       - text/html;charset=UTF-8
     post:
+      operationId: createInventoryPosition
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/InventoryPosition"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InventoryPosition"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать и обновить позицию Инвентаризации
+      tags:
+      - Inventories
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/inventory/{id}/positions/batch:
+    post:
       operationId: createInventoryPositions
       parameters:
       - description: ID сущности
@@ -40380,7 +40953,11 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/createInventoryPositions_request"
+              items:
+                $ref: "#/components/schemas/InventoryPosition"
+              maxItems: 1000
+              minItems: 1
+              type: array
         required: true
       responses:
         "200":
@@ -40393,7 +40970,7 @@ paths:
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
-      summary: Создать позиции Инвентаризации
+      summary: Массовое создание и обновление позиций Инвентаризации
       tags:
       - Inventories
       x-content-type: application/json
@@ -41892,14 +42469,6 @@ paths:
           default: "gzip, deflate, br"
           example: "gzip, deflate, br"
           type: string
-      - in: header
-        name: Content-Type
-        required: false
-        schema:
-          default: application/json
-          enum:
-          - application/json
-          type: string
       responses:
         "200":
           content:
@@ -41915,6 +42484,70 @@ paths:
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
+    post:
+      operationId: createPurchaseReturnPosition
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PurchaseReturnPosition"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PurchaseReturnPosition"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать и обновить позицию Возврата поставщику
+      tags:
+      - PurchaseReturns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/purchasereturn/{id}/positions/batch:
     post:
       operationId: createPurchaseReturnPositions
       parameters:
@@ -41960,7 +42593,11 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/createPurchaseReturnPositions_request"
+              items:
+                $ref: "#/components/schemas/PurchaseReturnPosition"
+              maxItems: 1000
+              minItems: 1
+              type: array
         required: true
       responses:
         "200":
@@ -41973,7 +42610,7 @@ paths:
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
-      summary: Создать позиции Возврата поставщику
+      summary: Массовое создание и обновление позиций Возврата поставщику
       tags:
       - PurchaseReturns
       x-content-type: application/json
@@ -43488,7 +44125,7 @@ paths:
       - application/json
       - text/html;charset=UTF-8
     post:
-      operationId: createSupplyPositions
+      operationId: createSupplyPosition
       parameters:
       - description: ID сущности
         in: path
@@ -43543,7 +44180,7 @@ paths:
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
-      summary: Создать позицию Приемки
+      summary: Создать и обновить позицию Приемки
       tags:
       - Supplies
       x-content-type: application/json
@@ -43552,7 +44189,7 @@ paths:
       - text/html;charset=UTF-8
   /entity/supply/{id}/positions/batch:
     post:
-      operationId: createSupplyPositionsBatch
+      operationId: createSupplyPositions
       parameters:
       - description: ID сущности
         in: path
@@ -43608,12 +44245,12 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: "#/components/schemas/createSupplyPositionsBatch_200_response_inner"
+                  $ref: "#/components/schemas/createSupplyPositions_200_response_inner"
                 type: array
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
-      summary: Создать позиции Приемки
+      summary: Массовое создание и обновление позиций Приемки
       tags:
       - Supplies
       x-content-type: application/json
@@ -45987,7 +46624,7 @@ paths:
       - application/json
       - text/html;charset=UTF-8
     post:
-      operationId: createMovePositions
+      operationId: createMovePosition
       parameters:
       - description: ID сущности
         in: path
@@ -46042,7 +46679,7 @@ paths:
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
-      summary: Создать позицию Перемещения
+      summary: Создать и обновить позицию Перемещения
       tags:
       - Moves
       x-content-type: application/json
@@ -46051,7 +46688,7 @@ paths:
       - text/html;charset=UTF-8
   /entity/move/{id}/positions/batch:
     post:
-      operationId: createMovePositionsBatch
+      operationId: createMovePositions
       parameters:
       - description: ID сущности
         in: path
@@ -46107,12 +46744,12 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: "#/components/schemas/createMovePositionsBatch_200_response_inner"
+                  $ref: "#/components/schemas/createMovePositions_200_response_inner"
                 type: array
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
-      summary: Создать позиции Перемещения
+      summary: Массовое создание и обновление позиций Перемещения
       tags:
       - Moves
       x-content-type: application/json
@@ -47502,22 +48139,12 @@ paths:
           default: "gzip, deflate, br"
           example: "gzip, deflate, br"
           type: string
-      - in: header
-        name: Content-Type
-        required: false
-        schema:
-          default: application/json
-          enum:
-          - application/json
-          type: string
       responses:
         "200":
           content:
             application/json:
               schema:
-                items:
-                  $ref: "#/components/schemas/PurchaseOrderPosition"
-                type: array
+                $ref: "#/components/schemas/PurchaseOrderPositionList"
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
@@ -47527,6 +48154,70 @@ paths:
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
+    post:
+      operationId: createPurchaseOrderPosition
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PurchaseOrderPosition"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PurchaseOrderPosition"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать и обновить позицию Заказа поставщику
+      tags:
+      - PurchaseOrders
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/purchaseorder/{id}/positions/batch:
     post:
       operationId: createPurchaseOrderPositions
       parameters:
@@ -47572,7 +48263,11 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/createPurchaseOrderPositions_request"
+              items:
+                $ref: "#/components/schemas/PurchaseOrderPosition"
+              maxItems: 1000
+              minItems: 1
+              type: array
         required: true
       responses:
         "200":
@@ -47585,7 +48280,7 @@ paths:
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
-      summary: Создать позиции PurchaseOrder
+      summary: Массовое создание и обновление позиций Заказа поставщику
       tags:
       - PurchaseOrders
       x-content-type: application/json
@@ -48792,7 +49487,7 @@ paths:
       - application/json
       - text/html;charset=UTF-8
     post:
-      operationId: createEmissionOrderPositions
+      operationId: createEmissionOrderPosition
       parameters:
       - description: ID сущности
         in: path
@@ -48847,7 +49542,7 @@ paths:
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
-      summary: Создать позицию Заказа кодов маркировки
+      summary: Создать и обновить позицию Заказа кодов маркировки
       tags:
       - EmissionOrders
       x-content-type: application/json
@@ -48856,7 +49551,7 @@ paths:
       - text/html;charset=UTF-8
   /entity/emissionorder/{id}/positions/batch:
     post:
-      operationId: createEmissionOrderPositionsBatch
+      operationId: createEmissionOrderPositions
       parameters:
       - description: ID сущности
         in: path
@@ -48912,12 +49607,12 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: "#/components/schemas/createEmissionOrderPositionsBatch_200_response_inner"
+                  $ref: "#/components/schemas/createEmissionOrderPositions_200_response_inner"
                 type: array
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
-      summary: Создать позиции Заказа кодов маркировки
+      summary: Массовое создание и обновление позиций Заказа кодов маркировки
       tags:
       - EmissionOrders
       x-content-type: application/json
@@ -50057,22 +50752,12 @@ paths:
           default: "gzip, deflate, br"
           example: "gzip, deflate, br"
           type: string
-      - in: header
-        name: Content-Type
-        required: false
-        schema:
-          default: application/json
-          enum:
-          - application/json
-          type: string
       responses:
         "200":
           content:
             application/json:
               schema:
-                items:
-                  $ref: "#/components/schemas/CommissionReportInPosition"
-                type: array
+                $ref: "#/components/schemas/CommissionReportInPositionList"
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
@@ -50082,6 +50767,70 @@ paths:
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
+    post:
+      operationId: createCommissionReportInPosition
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 12a8b923-692c-11e6-8a84-bae500000053
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        example: "agent,organization"
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          example: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CommissionReportInPosition"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CommissionReportInPosition"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать и обновить позицию Полученного отчета комиссионера
+      tags:
+      - CommissionReportIns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/commissionreportin/{id}/positions/batch:
     post:
       operationId: createCommissionReportInPositions
       parameters:
@@ -50127,7 +50876,11 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/createCommissionReportInPositions_request"
+              items:
+                $ref: "#/components/schemas/CommissionReportInPosition"
+              maxItems: 1000
+              minItems: 1
+              type: array
         required: true
       responses:
         "200":
@@ -50140,7 +50893,7 @@ paths:
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
-      summary: Создать позиции CommissionReportIn
+      summary: Массовое создание и обновление позиций Полученного отчета комиссионера
       tags:
       - CommissionReportIns
       x-content-type: application/json
@@ -51859,7 +52612,7 @@ paths:
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
-      summary: Создать позицию CommissionReportOut
+      summary: Создать и обновить позицию Выданного отчета комиссионера
       tags:
       - CommissionReportOuts
       x-content-type: application/json
@@ -51868,7 +52621,7 @@ paths:
       - text/html;charset=UTF-8
   /entity/commissionreportout/{id}/positions/batch:
     post:
-      operationId: createCommissionReportOutPositionsBatch
+      operationId: createCommissionReportOutPositions
       parameters:
       - description: ID сущности
         in: path
@@ -51924,12 +52677,12 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: "#/components/schemas/createCommissionReportOutPositionsBatch_200_response_inner"
+                  $ref: "#/components/schemas/createCommissionReportOutPositions_200_response_inner"
                 type: array
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
-      summary: Массовое создание позиций CommissionReportOut
+      summary: Массовое создание и обновление позиций Выданного отчета комиссионера
       tags:
       - CommissionReportOuts
       x-content-type: application/json
@@ -67294,7 +68047,7 @@ components:
         rows:
           description: Массив позиций Внутреннего заказа
           items:
-            $ref: "#/components/schemas/InternalOrderPosition"
+            $ref: "#/components/schemas/InternalOrderPosition_1"
           type: array
       type: object
     InternalOrderList:
@@ -68133,7 +68886,7 @@ components:
         rows:
           description: Массив позиций Заказа покупателя
           items:
-            $ref: "#/components/schemas/CustomerOrderPosition"
+            $ref: "#/components/schemas/CustomerOrderPosition_1"
           type: array
       type: object
     CustomerOrderList:
@@ -68655,7 +69408,7 @@ components:
         rows:
           description: Массив позиций Заказа поставщику
           items:
-            $ref: "#/components/schemas/PurchaseOrderPosition"
+            $ref: "#/components/schemas/PurchaseOrderPosition_1"
           type: array
       type: object
     PurchaseReturn:
@@ -73383,7 +74136,7 @@ components:
         rows:
           description: Массив позиций Полученного отчета комиссионера
           items:
-            $ref: "#/components/schemas/CommissionReportInPosition"
+            $ref: "#/components/schemas/CommissionReportInPosition_1"
           type: array
       type: object
     CommissionReportInReturnedPosition:
@@ -74409,12 +75162,16 @@ components:
       $ref: "#/components/schemas/Enter"
     InventoryPosition_1:
       $ref: "#/components/schemas/InventoryPosition"
+    InternalOrderPositionList_1:
+      $ref: "#/components/schemas/InternalOrderPositionList"
     PurchaseOrder_1:
       $ref: "#/components/schemas/PurchaseOrder"
     Move_1:
       $ref: "#/components/schemas/Move"
     ProcessingOrder_1:
       $ref: "#/components/schemas/ProcessingOrder"
+    InternalOrderPosition_1:
+      $ref: "#/components/schemas/InternalOrderPosition"
     InternalOrder_1:
       $ref: "#/components/schemas/InternalOrder"
     TaskNote_1:
@@ -74423,10 +75180,14 @@ components:
       $ref: "#/components/schemas/DocumentMetadata"
     Task_1:
       $ref: "#/components/schemas/Task"
+    CustomerOrderPositionList_1:
+      $ref: "#/components/schemas/CustomerOrderPositionList"
     InvoiceOut_1:
       $ref: "#/components/schemas/InvoiceOut"
     CashIn_1:
       $ref: "#/components/schemas/CashIn"
+    CustomerOrderPosition_1:
+      $ref: "#/components/schemas/CustomerOrderPosition"
     CustomerOrder_1:
       $ref: "#/components/schemas/CustomerOrder"
     EmissionOrderPositionList_1:
@@ -74435,8 +75196,12 @@ components:
       $ref: "#/components/schemas/EmissionOrderPosition"
     EmissionOrder_1:
       $ref: "#/components/schemas/EmissionOrder"
+    PurchaseOrderPositionList_1:
+      $ref: "#/components/schemas/PurchaseOrderPositionList"
     InvoiceIn_1:
       $ref: "#/components/schemas/InvoiceIn"
+    PurchaseOrderPosition_1:
+      $ref: "#/components/schemas/PurchaseOrderPosition"
     PurchaseReturnPositionList_1:
       $ref: "#/components/schemas/PurchaseReturnPositionList"
     PurchaseReturnPosition_1:
@@ -74504,8 +75269,12 @@ components:
       $ref: "#/components/schemas/EnterPositionList"
     EnterPosition_1:
       $ref: "#/components/schemas/EnterPosition"
+    CommissionReportInPositionList_1:
+      $ref: "#/components/schemas/CommissionReportInPositionList"
     CommissionReportIn_1:
       $ref: "#/components/schemas/CommissionReportIn"
+    CommissionReportInPosition_1:
+      $ref: "#/components/schemas/CommissionReportInPosition"
     CommissionReportOut_1:
       $ref: "#/components/schemas/CommissionReportOut"
     CustomEntityMetadata_1:
@@ -74626,6 +75395,10 @@ components:
     createProcessingProcessesBatch_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/ProcessingProcess"
+      - $ref: "#/components/schemas/Error"
+    createProcessingProcessPositions_200_response_inner:
+      oneOf:
+      - $ref: "#/components/schemas/ProcessingProcessPosition"
       - $ref: "#/components/schemas/Error"
     createProcessingPlanBatch_200_response_inner:
       oneOf:
@@ -74798,14 +75571,6 @@ components:
       - items:
           $ref: "#/components/schemas/State"
         type: array
-    createInternalOrderPositions_request:
-      maxItems: 1000
-      minItems: 1
-      oneOf:
-      - $ref: "#/components/schemas/InternalOrderPosition"
-      - items:
-          $ref: "#/components/schemas/InternalOrderPosition"
-        type: array
     createInternalOrderPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/InternalOrderPosition"
@@ -74814,14 +75579,6 @@ components:
       oneOf:
       - $ref: "#/components/schemas/ProcessingOrder"
       - $ref: "#/components/schemas/Error"
-    createProcessingOrderPositions_request:
-      maxItems: 1000
-      minItems: 1
-      oneOf:
-      - $ref: "#/components/schemas/ProcessingOrderPosition"
-      - items:
-          $ref: "#/components/schemas/ProcessingOrderPosition"
-        type: array
     createProcessingOrderPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/ProcessingOrderPosition"
@@ -74834,14 +75591,6 @@ components:
       oneOf:
       - $ref: "#/components/schemas/CustomerOrder"
       - $ref: "#/components/schemas/Error"
-    createCustomerOrderPositions_request:
-      maxItems: 1000
-      minItems: 1
-      oneOf:
-      - $ref: "#/components/schemas/CustomerOrderPosition"
-      - items:
-          $ref: "#/components/schemas/CustomerOrderPosition"
-        type: array
     createCustomerOrderPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/CustomerOrderPosition"
@@ -74866,14 +75615,6 @@ components:
       oneOf:
       - $ref: "#/components/schemas/Demand"
       - $ref: "#/components/schemas/Error"
-    createDemandPositions_request:
-      maxItems: 1000
-      minItems: 1
-      oneOf:
-      - $ref: "#/components/schemas/DemandPosition"
-      - items:
-          $ref: "#/components/schemas/DemandPosition"
-        type: array
     createDemandPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/DemandPosition"
@@ -74882,7 +75623,7 @@ components:
       oneOf:
       - $ref: "#/components/schemas/RetailDemand"
       - $ref: "#/components/schemas/Error"
-    createRetailDemandPositionsBatch_200_response_inner:
+    createRetailDemandPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/RetailDemandPosition"
       - $ref: "#/components/schemas/Error"
@@ -74890,14 +75631,6 @@ components:
       oneOf:
       - $ref: "#/components/schemas/Enter"
       - $ref: "#/components/schemas/Error"
-    createEnterPositions_request:
-      maxItems: 1000
-      minItems: 1
-      oneOf:
-      - $ref: "#/components/schemas/EnterPosition"
-      - items:
-          $ref: "#/components/schemas/EnterPosition"
-        type: array
     createEnterPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/EnterPosition"
@@ -74906,14 +75639,6 @@ components:
       oneOf:
       - $ref: "#/components/schemas/SalesReturn"
       - $ref: "#/components/schemas/Error"
-    createSalesReturnPositions_request:
-      maxItems: 1000
-      minItems: 1
-      oneOf:
-      - $ref: "#/components/schemas/SalesReturnPosition"
-      - items:
-          $ref: "#/components/schemas/SalesReturnPosition"
-        type: array
     createSalesReturnPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/SalesReturnPosition"
@@ -74922,14 +75647,6 @@ components:
       oneOf:
       - $ref: "#/components/schemas/Loss"
       - $ref: "#/components/schemas/Error"
-    createLossPositions_request:
-      maxItems: 1000
-      minItems: 1
-      oneOf:
-      - $ref: "#/components/schemas/LossPosition"
-      - items:
-          $ref: "#/components/schemas/LossPosition"
-        type: array
     createLossPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/LossPosition"
@@ -74938,14 +75655,6 @@ components:
       oneOf:
       - $ref: "#/components/schemas/Inventory"
       - $ref: "#/components/schemas/Error"
-    createInventoryPositions_request:
-      maxItems: 1000
-      minItems: 1
-      oneOf:
-      - $ref: "#/components/schemas/InventoryPosition"
-      - items:
-          $ref: "#/components/schemas/InventoryPosition"
-        type: array
     createInventoryPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/InventoryPosition"
@@ -74954,14 +75663,6 @@ components:
       oneOf:
       - $ref: "#/components/schemas/PurchaseReturn"
       - $ref: "#/components/schemas/Error"
-    createPurchaseReturnPositions_request:
-      maxItems: 1000
-      minItems: 1
-      oneOf:
-      - $ref: "#/components/schemas/PurchaseReturnPosition"
-      - items:
-          $ref: "#/components/schemas/PurchaseReturnPosition"
-        type: array
     createPurchaseReturnPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/PurchaseReturnPosition"
@@ -74970,7 +75671,7 @@ components:
       oneOf:
       - $ref: "#/components/schemas/Supply"
       - $ref: "#/components/schemas/Error"
-    createSupplyPositionsBatch_200_response_inner:
+    createSupplyPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/SupplyPosition"
       - $ref: "#/components/schemas/Error"
@@ -74978,7 +75679,7 @@ components:
       oneOf:
       - $ref: "#/components/schemas/Move"
       - $ref: "#/components/schemas/Error"
-    createMovePositionsBatch_200_response_inner:
+    createMovePositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/MovePosition"
       - $ref: "#/components/schemas/Error"
@@ -74986,14 +75687,6 @@ components:
       oneOf:
       - $ref: "#/components/schemas/PurchaseOrder"
       - $ref: "#/components/schemas/Error"
-    createPurchaseOrderPositions_request:
-      oneOf:
-      - $ref: "#/components/schemas/PurchaseOrderPosition"
-      - items:
-          $ref: "#/components/schemas/PurchaseOrderPosition"
-        maxItems: 1000
-        minItems: 1
-        type: array
     createPurchaseOrderPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/PurchaseOrderPosition"
@@ -75002,7 +75695,7 @@ components:
       oneOf:
       - $ref: "#/components/schemas/EmissionOrder"
       - $ref: "#/components/schemas/Error"
-    createEmissionOrderPositionsBatch_200_response_inner:
+    createEmissionOrderPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/EmissionOrderPosition"
       - $ref: "#/components/schemas/Error"
@@ -75010,14 +75703,6 @@ components:
       oneOf:
       - $ref: "#/components/schemas/CommissionReportIn"
       - $ref: "#/components/schemas/Error"
-    createCommissionReportInPositions_request:
-      maxItems: 1000
-      minItems: 1
-      oneOf:
-      - $ref: "#/components/schemas/CommissionReportInPosition"
-      - items:
-          $ref: "#/components/schemas/CommissionReportInPosition"
-        type: array
     createCommissionReportInPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/CommissionReportInPosition"
@@ -75038,7 +75723,7 @@ components:
       oneOf:
       - $ref: "#/components/schemas/CommissionReportOut"
       - $ref: "#/components/schemas/Error"
-    createCommissionReportOutPositionsBatch_200_response_inner:
+    createCommissionReportOutPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/CommissionReportOutPosition"
       - $ref: "#/components/schemas/Error"

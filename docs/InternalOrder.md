@@ -38,7 +38,7 @@
 |**attributes** | [**List&lt;AttributeAbstract&gt;**](AttributeAbstract.md) | Коллекция метаданных доп. полей |  [optional] |
 |**files** | [**FileList**](FileList.md) | Метаданные массива Файлов |  [optional] |
 |**rate** | [**CurrencyRate**](CurrencyRate.md) |  |  [optional] |
-|**positions** | **InternalOrderPositionList** | Позиций Внутреннего заказа |  [optional] |
+|**positions** | [**InternalOrderPositionList**](InternalOrderPositionList.md) |  |  [optional] |
 |**purchaseOrders** | [**List&lt;PurchaseOrder&gt;**](PurchaseOrder.md) | Коллекция метаданных на связанные заказы поставщику |  [optional] |
 |**productionTasks** | [**List&lt;ProductionTask&gt;**](ProductionTask.md) | Массив ссылок на связанные производственные задания |  [optional] |
 |**moves** | [**List&lt;Move&gt;**](Move.md) | Коллекция метаданных на связанные заказы перемещения |  [optional] |

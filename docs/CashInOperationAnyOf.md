@@ -47,7 +47,7 @@
 |**files** | [**FileList**](FileList.md) | Метаданные массива Файлов |  [optional] |
 |**taxSystem** | **String** | Код системы налогообложения. Известные значения описаны в TaxSystem |  [optional] |
 |**rate** | [**CurrencyRate**](CurrencyRate.md) |  |  [optional] |
-|**positions** | **CustomerOrderPositionList** |  |  [optional] |
+|**positions** | [**CustomerOrderPositionList**](CustomerOrderPositionList.md) |  |  [optional] |
 |**salesChannel** | [**SalesChannel**](SalesChannel.md) | Метаданные канала продаж |  [optional] |
 |**shipmentAddress** | **String** | Адрес доставки Заказа покупателя |  [optional] |
 |**shipmentAddressFull** | [**Address**](Address.md) | Адрес доставки Заказа покупателя с детализацией по отдельным полям |  [optional] |

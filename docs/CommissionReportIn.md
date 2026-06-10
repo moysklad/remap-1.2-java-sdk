@@ -33,7 +33,7 @@
 |**organizationAccount** | [**Account**](Account.md) | Метаданные счета юрлица |  [optional] |
 |**owner** | [**Employee**](Employee.md) | Владелец (Сотрудник) |  [optional] |
 |**payedSum** | **Double** | Оплаченная сумма |  [optional] [readonly] |
-|**positions** | **CommissionReportInPositionList** | Метаданные позиций реализовано комиссионером Полученного отчета комиссионера |  [optional] |
+|**positions** | [**CommissionReportInPositionList**](CommissionReportInPositionList.md) |  |  [optional] |
 |**printed** | **Boolean** | Напечатан ли документ |  [optional] [readonly] |
 |**project** | [**Project**](Project.md) | Метаданные проекта |  [optional] |
 |**published** | **Boolean** | Опубликован ли документ |  [optional] [readonly] |

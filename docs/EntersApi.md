@@ -9,7 +9,8 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createEnterBatch**](EntersApi.md#createEnterBatch) | **POST** /entity/enter/batch | Массовое создание и обновление Оприходований |
 | [**createEnterMetadataAttribute**](EntersApi.md#createEnterMetadataAttribute) | **POST** /entity/enter/metadata/attributes | Создать доп. поле Оприходований |
 | [**createEnterMetadataState**](EntersApi.md#createEnterMetadataState) | **POST** /entity/enter/metadata/states | Создать статус Оприходования |
-| [**createEnterPositions**](EntersApi.md#createEnterPositions) | **POST** /entity/enter/{id}/positions | Создать позиции Оприходования |
+| [**createEnterPosition**](EntersApi.md#createEnterPosition) | **POST** /entity/enter/{id}/positions | Создать и обновить позицию Оприходования |
+| [**createEnterPositions**](EntersApi.md#createEnterPositions) | **POST** /entity/enter/{id}/positions/batch | Массовое создание и обновление позиций Оприходования |
 | [**deleteEnter**](EntersApi.md#deleteEnter) | **DELETE** /entity/enter/{id} | Удалить Оприходование |
 | [**deleteEnterBatch**](EntersApi.md#deleteEnterBatch) | **POST** /entity/enter/delete | Массовое удаление Оприходований |
 | [**deleteEnterFile**](EntersApi.md#deleteEnterFile) | **DELETE** /entity/enter/{id}/files/{fileId} | Удалить файл Оприходования |
@@ -447,11 +448,11 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 
-## createEnterPositions
+## createEnterPosition
 
-> List&lt;CreateEnterPositions200ResponseInner&gt; createEnterPositions(id, createEnterPositionsRequest, expand, accept, acceptEncoding, contentType)
+> EnterPosition createEnterPosition(id, enterPosition, expand, accept, acceptEncoding, contentType)
 
-Создать позиции Оприходования
+Создать и обновить позицию Оприходования
 
 ### Example
 
@@ -480,13 +481,98 @@ public class Example {
 
         EntersApi apiInstance = new EntersApi(defaultClient);
         UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        CreateEnterPositionsRequest createEnterPositionsRequest = new CreateEnterPositionsRequest(); // CreateEnterPositionsRequest | 
+        EnterPosition enterPosition = new EnterPosition(); // EnterPosition | 
         String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateEnterPositions200ResponseInner> result = apiInstance.createEnterPositions(id, createEnterPositionsRequest, expand, accept, acceptEncoding, contentType);
+            EnterPosition result = apiInstance.createEnterPosition(id, enterPosition, expand, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling EntersApi#createEnterPosition");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **enterPosition** | [**EnterPosition**](EnterPosition.md)|  | |
+| **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**EnterPosition**](EnterPosition.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+
+
+## createEnterPositions
+
+> List&lt;CreateEnterPositions200ResponseInner&gt; createEnterPositions(id, enterPosition, expand, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление позиций Оприходования
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.EntersApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        EntersApi apiInstance = new EntersApi(defaultClient);
+        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        List<EnterPosition> enterPosition = Arrays.asList(); // List<EnterPosition> | 
+        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<CreateEnterPositions200ResponseInner> result = apiInstance.createEnterPositions(id, enterPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling EntersApi#createEnterPositions");
@@ -505,7 +591,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **createEnterPositionsRequest** | [**CreateEnterPositionsRequest**](CreateEnterPositionsRequest.md)|  | |
+| **enterPosition** | [**List&lt;EnterPosition&gt;**](EnterPosition.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |

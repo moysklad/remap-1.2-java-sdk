@@ -94,7 +94,7 @@ import java.util.StringJoiner;
   CreateInternalOrderBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createInternalOrderBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateInternalOrderBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -1748,12 +1748,7 @@ public class CreateInternalOrderBatch200ResponseInner {
 
     // add `positions` to the URL query string
     if (getPositions() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%spositions%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getPositions()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
+      joiner.add(getPositions().toUrlQueryString(prefix + "positions" + suffix));
     }
 
     // add `purchaseOrders` to the URL query string

@@ -43,7 +43,7 @@ import java.util.StringJoiner;
   CommissionReportInReturnedPosition.JSON_PROPERTY_VAT_ENABLED,
   CommissionReportInReturnedPosition.JSON_PROPERTY_ASSORTMENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
 public class CommissionReportInReturnedPosition {
   public static CommissionReportInReturnedPosition createWithMeta(UUID parentId, UUID id) {
     CommissionReportInReturnedPosition o = new CommissionReportInReturnedPosition();

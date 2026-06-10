@@ -8,8 +8,8 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createMove**](MovesApi.md#createMove) | **POST** /entity/move | Создать Перемещение |
 | [**createMoveBatch**](MovesApi.md#createMoveBatch) | **POST** /entity/move/batch | Массовое создание и обновление Перемещений |
 | [**createMoveMetadataAttribute**](MovesApi.md#createMoveMetadataAttribute) | **POST** /entity/move/metadata/attributes | Создать доп. поле Перемещения |
-| [**createMovePositions**](MovesApi.md#createMovePositions) | **POST** /entity/move/{id}/positions | Создать позицию Перемещения |
-| [**createMovePositionsBatch**](MovesApi.md#createMovePositionsBatch) | **POST** /entity/move/{id}/positions/batch | Создать позиции Перемещения |
+| [**createMovePosition**](MovesApi.md#createMovePosition) | **POST** /entity/move/{id}/positions | Создать и обновить позицию Перемещения |
+| [**createMovePositions**](MovesApi.md#createMovePositions) | **POST** /entity/move/{id}/positions/batch | Массовое создание и обновление позиций Перемещения |
 | [**deleteMove**](MovesApi.md#deleteMove) | **DELETE** /entity/move/{id} | Удалить Перемещение |
 | [**deleteMoveBatch**](MovesApi.md#deleteMoveBatch) | **POST** /entity/move/delete | Массовое удаление Перемещений |
 | [**deleteMoveFile**](MovesApi.md#deleteMoveFile) | **DELETE** /entity/move/{id}/files/{fileId} | Удалить файл перемещения |
@@ -366,11 +366,11 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 
-## createMovePositions
+## createMovePosition
 
-> MovePosition createMovePositions(id, movePosition, expand, accept, acceptEncoding, contentType)
+> MovePosition createMovePosition(id, movePosition, expand, accept, acceptEncoding, contentType)
 
-Создать позицию Перемещения
+Создать и обновить позицию Перемещения
 
 ### Example
 
@@ -405,10 +405,10 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            MovePosition result = apiInstance.createMovePositions(id, movePosition, expand, accept, acceptEncoding, contentType);
+            MovePosition result = apiInstance.createMovePosition(id, movePosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling MovesApi#createMovePositions");
+            System.err.println("Exception when calling MovesApi#createMovePosition");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -451,11 +451,11 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 
-## createMovePositionsBatch
+## createMovePositions
 
-> List&lt;CreateMovePositionsBatch200ResponseInner&gt; createMovePositionsBatch(id, movePosition, expand, accept, acceptEncoding, contentType)
+> List&lt;CreateMovePositions200ResponseInner&gt; createMovePositions(id, movePosition, expand, accept, acceptEncoding, contentType)
 
-Создать позиции Перемещения
+Массовое создание и обновление позиций Перемещения
 
 ### Example
 
@@ -490,10 +490,10 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateMovePositionsBatch200ResponseInner> result = apiInstance.createMovePositionsBatch(id, movePosition, expand, accept, acceptEncoding, contentType);
+            List<CreateMovePositions200ResponseInner> result = apiInstance.createMovePositions(id, movePosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling MovesApi#createMovePositionsBatch");
+            System.err.println("Exception when calling MovesApi#createMovePositions");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -517,7 +517,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreateMovePositionsBatch200ResponseInner&gt;**](CreateMovePositionsBatch200ResponseInner.md)
+[**List&lt;CreateMovePositions200ResponseInner&gt;**](CreateMovePositions200ResponseInner.md)
 
 ### Authorization
 

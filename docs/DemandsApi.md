@@ -7,7 +7,8 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createDemand**](DemandsApi.md#createDemand) | **POST** /entity/demand | Создать Отгрузку |
 | [**createDemandBatch**](DemandsApi.md#createDemandBatch) | **POST** /entity/demand/batch | Массовое создание и обновление Отгрузок |
 | [**createDemandMetadataAttribute**](DemandsApi.md#createDemandMetadataAttribute) | **POST** /entity/demand/metadata/attributes | Создать доп. поле Отгрузки |
-| [**createDemandPositions**](DemandsApi.md#createDemandPositions) | **POST** /entity/demand/{id}/positions | Создать позиции Отгрузки |
+| [**createDemandPosition**](DemandsApi.md#createDemandPosition) | **POST** /entity/demand/{id}/positions | Создать и обновить позицию Отгрузки |
+| [**createDemandPositions**](DemandsApi.md#createDemandPositions) | **POST** /entity/demand/{id}/positions/batch | Массовое создание и обновление позиций Отгрузки |
 | [**deleteDemand**](DemandsApi.md#deleteDemand) | **DELETE** /entity/demand/{id} | Удалить Отгрузку |
 | [**deleteDemandBatch**](DemandsApi.md#deleteDemandBatch) | **POST** /entity/demand/delete | Массовое удаление Отгрузок |
 | [**deleteDemandMetadataAttributeById**](DemandsApi.md#deleteDemandMetadataAttributeById) | **DELETE** /entity/demand/metadata/attributes/{id} | Удалить отдельное доп. поле Отгрузки |
@@ -277,11 +278,11 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 
-## createDemandPositions
+## createDemandPosition
 
-> List&lt;CreateDemandPositions200ResponseInner&gt; createDemandPositions(id, createDemandPositionsRequest, expand, accept, acceptEncoding, contentType)
+> DemandPosition createDemandPosition(id, demandPosition, expand, accept, acceptEncoding, contentType)
 
-Создать позиции Отгрузки
+Создать и обновить позицию Отгрузки
 
 ### Example
 
@@ -310,13 +311,98 @@ public class Example {
 
         DemandsApi apiInstance = new DemandsApi(defaultClient);
         UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        CreateDemandPositionsRequest createDemandPositionsRequest = new CreateDemandPositionsRequest(); // CreateDemandPositionsRequest | 
+        DemandPosition demandPosition = new DemandPosition(); // DemandPosition | 
         String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateDemandPositions200ResponseInner> result = apiInstance.createDemandPositions(id, createDemandPositionsRequest, expand, accept, acceptEncoding, contentType);
+            DemandPosition result = apiInstance.createDemandPosition(id, demandPosition, expand, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DemandsApi#createDemandPosition");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **demandPosition** | [**DemandPosition**](DemandPosition.md)|  | |
+| **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**DemandPosition**](DemandPosition.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+
+
+## createDemandPositions
+
+> List&lt;CreateDemandPositions200ResponseInner&gt; createDemandPositions(id, demandPosition, expand, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление позиций Отгрузки
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.DemandsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        DemandsApi apiInstance = new DemandsApi(defaultClient);
+        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        List<DemandPosition> demandPosition = Arrays.asList(); // List<DemandPosition> | 
+        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<CreateDemandPositions200ResponseInner> result = apiInstance.createDemandPositions(id, demandPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DemandsApi#createDemandPositions");
@@ -335,7 +421,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **createDemandPositionsRequest** | [**CreateDemandPositionsRequest**](CreateDemandPositionsRequest.md)|  | |
+| **demandPosition** | [**List&lt;DemandPosition&gt;**](DemandPosition.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |

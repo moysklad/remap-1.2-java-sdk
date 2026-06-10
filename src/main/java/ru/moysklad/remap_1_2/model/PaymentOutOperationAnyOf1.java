@@ -106,7 +106,7 @@ import java.util.StringJoiner;
   PaymentOutOperationAnyOf1.JSON_PROPERTY_LINKED_SUM
 })
 @JsonTypeName("PaymentOutOperation_anyOf_1")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
 public class PaymentOutOperationAnyOf1 {
 
   public static final String JSON_PROPERTY_META = "meta";

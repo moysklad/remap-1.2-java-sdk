@@ -41,24 +41,24 @@ import java.net.URLEncoder;
 import java.util.StringJoiner;
 
 /**
- * CreateCommissionReportOutPositionsBatch200ResponseInner
+ * CreateCommissionReportOutPositions200ResponseInner
  */
 @JsonPropertyOrder({
-  CreateCommissionReportOutPositionsBatch200ResponseInner.JSON_PROPERTY_META,
-  CreateCommissionReportOutPositionsBatch200ResponseInner.JSON_PROPERTY_ID,
-  CreateCommissionReportOutPositionsBatch200ResponseInner.JSON_PROPERTY_ACCOUNT_ID,
-  CreateCommissionReportOutPositionsBatch200ResponseInner.JSON_PROPERTY_QUANTITY,
-  CreateCommissionReportOutPositionsBatch200ResponseInner.JSON_PROPERTY_PRICE,
-  CreateCommissionReportOutPositionsBatch200ResponseInner.JSON_PROPERTY_REWARD,
-  CreateCommissionReportOutPositionsBatch200ResponseInner.JSON_PROPERTY_VAT,
-  CreateCommissionReportOutPositionsBatch200ResponseInner.JSON_PROPERTY_VAT_ENABLED,
-  CreateCommissionReportOutPositionsBatch200ResponseInner.JSON_PROPERTY_ASSORTMENT,
-  CreateCommissionReportOutPositionsBatch200ResponseInner.JSON_PROPERTY_PACK,
-  CreateCommissionReportOutPositionsBatch200ResponseInner.JSON_PROPERTY_ERRORS
+  CreateCommissionReportOutPositions200ResponseInner.JSON_PROPERTY_META,
+  CreateCommissionReportOutPositions200ResponseInner.JSON_PROPERTY_ID,
+  CreateCommissionReportOutPositions200ResponseInner.JSON_PROPERTY_ACCOUNT_ID,
+  CreateCommissionReportOutPositions200ResponseInner.JSON_PROPERTY_QUANTITY,
+  CreateCommissionReportOutPositions200ResponseInner.JSON_PROPERTY_PRICE,
+  CreateCommissionReportOutPositions200ResponseInner.JSON_PROPERTY_REWARD,
+  CreateCommissionReportOutPositions200ResponseInner.JSON_PROPERTY_VAT,
+  CreateCommissionReportOutPositions200ResponseInner.JSON_PROPERTY_VAT_ENABLED,
+  CreateCommissionReportOutPositions200ResponseInner.JSON_PROPERTY_ASSORTMENT,
+  CreateCommissionReportOutPositions200ResponseInner.JSON_PROPERTY_PACK,
+  CreateCommissionReportOutPositions200ResponseInner.JSON_PROPERTY_ERRORS
 })
-@JsonTypeName("createCommissionReportOutPositionsBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
-public class CreateCommissionReportOutPositionsBatch200ResponseInner {
+@JsonTypeName("createCommissionReportOutPositions_200_response_inner")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
+public class CreateCommissionReportOutPositions200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
@@ -104,13 +104,13 @@ public class CreateCommissionReportOutPositionsBatch200ResponseInner {
   @javax.annotation.Nonnull
   private List<ErrorErrorsInner> errors = new ArrayList<>();
 
-  public CreateCommissionReportOutPositionsBatch200ResponseInner() {
+  public CreateCommissionReportOutPositions200ResponseInner() {
   }
   /**
    * Constructor with only readonly parameters
    */
   @JsonCreator
-  public CreateCommissionReportOutPositionsBatch200ResponseInner(
+  public CreateCommissionReportOutPositions200ResponseInner(
     @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id, 
     @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId
   ) {
@@ -119,7 +119,7 @@ public class CreateCommissionReportOutPositionsBatch200ResponseInner {
     this.accountId = accountId;
   }
 
-  public CreateCommissionReportOutPositionsBatch200ResponseInner meta(@javax.annotation.Nullable Meta meta) {
+  public CreateCommissionReportOutPositions200ResponseInner meta(@javax.annotation.Nullable Meta meta) {
     
     this.meta = meta;
     return this;
@@ -180,7 +180,7 @@ public class CreateCommissionReportOutPositionsBatch200ResponseInner {
 
 
 
-  public CreateCommissionReportOutPositionsBatch200ResponseInner quantity(@javax.annotation.Nullable Double quantity) {
+  public CreateCommissionReportOutPositions200ResponseInner quantity(@javax.annotation.Nullable Double quantity) {
     
     this.quantity = quantity;
     return this;
@@ -210,7 +210,7 @@ public class CreateCommissionReportOutPositionsBatch200ResponseInner {
   }
 
 
-  public CreateCommissionReportOutPositionsBatch200ResponseInner price(@javax.annotation.Nullable Double price) {
+  public CreateCommissionReportOutPositions200ResponseInner price(@javax.annotation.Nullable Double price) {
     
     this.price = price;
     return this;
@@ -239,7 +239,7 @@ public class CreateCommissionReportOutPositionsBatch200ResponseInner {
   }
 
 
-  public CreateCommissionReportOutPositionsBatch200ResponseInner reward(@javax.annotation.Nullable Double reward) {
+  public CreateCommissionReportOutPositions200ResponseInner reward(@javax.annotation.Nullable Double reward) {
     
     this.reward = reward;
     return this;
@@ -269,7 +269,7 @@ public class CreateCommissionReportOutPositionsBatch200ResponseInner {
   }
 
 
-  public CreateCommissionReportOutPositionsBatch200ResponseInner vat(@javax.annotation.Nullable Integer vat) {
+  public CreateCommissionReportOutPositions200ResponseInner vat(@javax.annotation.Nullable Integer vat) {
     
     this.vat = vat;
     return this;
@@ -298,7 +298,7 @@ public class CreateCommissionReportOutPositionsBatch200ResponseInner {
   }
 
 
-  public CreateCommissionReportOutPositionsBatch200ResponseInner vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+  public CreateCommissionReportOutPositions200ResponseInner vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
     
     this.vatEnabled = vatEnabled;
     return this;
@@ -327,7 +327,7 @@ public class CreateCommissionReportOutPositionsBatch200ResponseInner {
   }
 
 
-  public CreateCommissionReportOutPositionsBatch200ResponseInner assortment(@javax.annotation.Nullable Assortment assortment) {
+  public CreateCommissionReportOutPositions200ResponseInner assortment(@javax.annotation.Nullable Assortment assortment) {
     
     this.assortment = assortment;
     return this;
@@ -358,7 +358,7 @@ public class CreateCommissionReportOutPositionsBatch200ResponseInner {
   }
 
 
-  public CreateCommissionReportOutPositionsBatch200ResponseInner pack(@javax.annotation.Nullable Pack pack) {
+  public CreateCommissionReportOutPositions200ResponseInner pack(@javax.annotation.Nullable Pack pack) {
     this.pack = JsonNullable.<Pack>of(pack);
     
     return this;
@@ -396,14 +396,14 @@ public class CreateCommissionReportOutPositionsBatch200ResponseInner {
   }
 
 
-  public CreateCommissionReportOutPositionsBatch200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
+  public CreateCommissionReportOutPositions200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
 
 
-  public CreateCommissionReportOutPositionsBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
+  public CreateCommissionReportOutPositions200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
       this.errors = new ArrayList<>();
     }
@@ -441,18 +441,18 @@ public class CreateCommissionReportOutPositionsBatch200ResponseInner {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CreateCommissionReportOutPositionsBatch200ResponseInner createCommissionReportOutPositionsBatch200ResponseInner = (CreateCommissionReportOutPositionsBatch200ResponseInner) o;
-    return Objects.equals(this.meta, createCommissionReportOutPositionsBatch200ResponseInner.meta) &&
-        Objects.equals(this.id, createCommissionReportOutPositionsBatch200ResponseInner.id) &&
-        Objects.equals(this.accountId, createCommissionReportOutPositionsBatch200ResponseInner.accountId) &&
-        Objects.equals(this.quantity, createCommissionReportOutPositionsBatch200ResponseInner.quantity) &&
-        Objects.equals(this.price, createCommissionReportOutPositionsBatch200ResponseInner.price) &&
-        Objects.equals(this.reward, createCommissionReportOutPositionsBatch200ResponseInner.reward) &&
-        Objects.equals(this.vat, createCommissionReportOutPositionsBatch200ResponseInner.vat) &&
-        Objects.equals(this.vatEnabled, createCommissionReportOutPositionsBatch200ResponseInner.vatEnabled) &&
-        Objects.equals(this.assortment, createCommissionReportOutPositionsBatch200ResponseInner.assortment) &&
-        equalsNullable(this.pack, createCommissionReportOutPositionsBatch200ResponseInner.pack) &&
-        Objects.equals(this.errors, createCommissionReportOutPositionsBatch200ResponseInner.errors);
+    CreateCommissionReportOutPositions200ResponseInner createCommissionReportOutPositions200ResponseInner = (CreateCommissionReportOutPositions200ResponseInner) o;
+    return Objects.equals(this.meta, createCommissionReportOutPositions200ResponseInner.meta) &&
+        Objects.equals(this.id, createCommissionReportOutPositions200ResponseInner.id) &&
+        Objects.equals(this.accountId, createCommissionReportOutPositions200ResponseInner.accountId) &&
+        Objects.equals(this.quantity, createCommissionReportOutPositions200ResponseInner.quantity) &&
+        Objects.equals(this.price, createCommissionReportOutPositions200ResponseInner.price) &&
+        Objects.equals(this.reward, createCommissionReportOutPositions200ResponseInner.reward) &&
+        Objects.equals(this.vat, createCommissionReportOutPositions200ResponseInner.vat) &&
+        Objects.equals(this.vatEnabled, createCommissionReportOutPositions200ResponseInner.vatEnabled) &&
+        Objects.equals(this.assortment, createCommissionReportOutPositions200ResponseInner.assortment) &&
+        equalsNullable(this.pack, createCommissionReportOutPositions200ResponseInner.pack) &&
+        Objects.equals(this.errors, createCommissionReportOutPositions200ResponseInner.errors);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -474,7 +474,7 @@ public class CreateCommissionReportOutPositionsBatch200ResponseInner {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CreateCommissionReportOutPositionsBatch200ResponseInner {\n");
+    sb.append("class CreateCommissionReportOutPositions200ResponseInner {\n");
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");

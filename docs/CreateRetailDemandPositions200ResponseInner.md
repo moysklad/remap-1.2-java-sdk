@@ -1,6 +1,6 @@
 
 
-# CreateRetailDemandPositionsBatch200ResponseInner
+# CreateRetailDemandPositions200ResponseInner
 
 
 ## Properties

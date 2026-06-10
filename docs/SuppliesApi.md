@@ -9,8 +9,8 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createSupplyBatch**](SuppliesApi.md#createSupplyBatch) | **POST** /entity/supply/batch | Массовое создание и обновление Приемок |
 | [**createSupplyMetadataAttribute**](SuppliesApi.md#createSupplyMetadataAttribute) | **POST** /entity/supply/metadata/attributes | Создать доп. поле Приемки |
 | [**createSupplyMetadataState**](SuppliesApi.md#createSupplyMetadataState) | **POST** /entity/supply/metadata/states | Создать статус Приемки |
-| [**createSupplyPositions**](SuppliesApi.md#createSupplyPositions) | **POST** /entity/supply/{id}/positions | Создать позицию Приемки |
-| [**createSupplyPositionsBatch**](SuppliesApi.md#createSupplyPositionsBatch) | **POST** /entity/supply/{id}/positions/batch | Создать позиции Приемки |
+| [**createSupplyPosition**](SuppliesApi.md#createSupplyPosition) | **POST** /entity/supply/{id}/positions | Создать и обновить позицию Приемки |
+| [**createSupplyPositions**](SuppliesApi.md#createSupplyPositions) | **POST** /entity/supply/{id}/positions/batch | Массовое создание и обновление позиций Приемки |
 | [**deleteSupply**](SuppliesApi.md#deleteSupply) | **DELETE** /entity/supply/{id} | Удалить Приемку |
 | [**deleteSupplyBatch**](SuppliesApi.md#deleteSupplyBatch) | **POST** /entity/supply/delete | Массовое удаление Приемок |
 | [**deleteSupplyFile**](SuppliesApi.md#deleteSupplyFile) | **DELETE** /entity/supply/{id}/files/{fileId} | Удалить файл Приемки |
@@ -448,11 +448,11 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 
-## createSupplyPositions
+## createSupplyPosition
 
-> SupplyPosition createSupplyPositions(id, supplyPosition, expand, accept, acceptEncoding, contentType)
+> SupplyPosition createSupplyPosition(id, supplyPosition, expand, accept, acceptEncoding, contentType)
 
-Создать позицию Приемки
+Создать и обновить позицию Приемки
 
 ### Example
 
@@ -487,10 +487,10 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            SupplyPosition result = apiInstance.createSupplyPositions(id, supplyPosition, expand, accept, acceptEncoding, contentType);
+            SupplyPosition result = apiInstance.createSupplyPosition(id, supplyPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling SuppliesApi#createSupplyPositions");
+            System.err.println("Exception when calling SuppliesApi#createSupplyPosition");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -533,11 +533,11 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 
-## createSupplyPositionsBatch
+## createSupplyPositions
 
-> List&lt;CreateSupplyPositionsBatch200ResponseInner&gt; createSupplyPositionsBatch(id, supplyPosition, expand, accept, acceptEncoding, contentType)
+> List&lt;CreateSupplyPositions200ResponseInner&gt; createSupplyPositions(id, supplyPosition, expand, accept, acceptEncoding, contentType)
 
-Создать позиции Приемки
+Массовое создание и обновление позиций Приемки
 
 ### Example
 
@@ -572,10 +572,10 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateSupplyPositionsBatch200ResponseInner> result = apiInstance.createSupplyPositionsBatch(id, supplyPosition, expand, accept, acceptEncoding, contentType);
+            List<CreateSupplyPositions200ResponseInner> result = apiInstance.createSupplyPositions(id, supplyPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling SuppliesApi#createSupplyPositionsBatch");
+            System.err.println("Exception when calling SuppliesApi#createSupplyPositions");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -599,7 +599,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreateSupplyPositionsBatch200ResponseInner&gt;**](CreateSupplyPositionsBatch200ResponseInner.md)
+[**List&lt;CreateSupplyPositions200ResponseInner&gt;**](CreateSupplyPositions200ResponseInner.md)
 
 ### Authorization
 

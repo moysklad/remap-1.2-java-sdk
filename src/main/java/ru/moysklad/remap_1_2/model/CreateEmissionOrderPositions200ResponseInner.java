@@ -20,16 +20,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
-import org.openapitools.jackson.nullable.JsonNullable;
 import ru.moysklad.remap_1_2.model.Assortment;
+import ru.moysklad.remap_1_2.model.EmissionOrderPosition;
+import ru.moysklad.remap_1_2.model.Error;
+import ru.moysklad.remap_1_2.model.ErrorErrorsInner;
 import ru.moysklad.remap_1_2.model.Meta;
-import ru.moysklad.remap_1_2.model.Pack;
-import ru.moysklad.remap_1_2.model.ProcessingOrderPosition;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.io.UnsupportedEncodingException;
@@ -37,20 +36,20 @@ import java.net.URLEncoder;
 import java.util.StringJoiner;
 
 /**
- * CreateProcessingOrderPositionsRequest
+ * CreateEmissionOrderPositions200ResponseInner
  */
 @JsonPropertyOrder({
-  CreateProcessingOrderPositionsRequest.JSON_PROPERTY_META,
-  CreateProcessingOrderPositionsRequest.JSON_PROPERTY_ID,
-  CreateProcessingOrderPositionsRequest.JSON_PROPERTY_ACCOUNT_ID,
-  CreateProcessingOrderPositionsRequest.JSON_PROPERTY_QUANTITY,
-  CreateProcessingOrderPositionsRequest.JSON_PROPERTY_RESERVE,
-  CreateProcessingOrderPositionsRequest.JSON_PROPERTY_ASSORTMENT,
-  CreateProcessingOrderPositionsRequest.JSON_PROPERTY_PACK
+  CreateEmissionOrderPositions200ResponseInner.JSON_PROPERTY_META,
+  CreateEmissionOrderPositions200ResponseInner.JSON_PROPERTY_ID,
+  CreateEmissionOrderPositions200ResponseInner.JSON_PROPERTY_ACCOUNT_ID,
+  CreateEmissionOrderPositions200ResponseInner.JSON_PROPERTY_ASSORTMENT,
+  CreateEmissionOrderPositions200ResponseInner.JSON_PROPERTY_QUANTITY,
+  CreateEmissionOrderPositions200ResponseInner.JSON_PROPERTY_STATUS,
+  CreateEmissionOrderPositions200ResponseInner.JSON_PROPERTY_ERRORS
 })
-@JsonTypeName("createProcessingOrderPositions_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
-public class CreateProcessingOrderPositionsRequest {
+@JsonTypeName("createEmissionOrderPositions_200_response_inner")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
+public class CreateEmissionOrderPositions200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
@@ -64,38 +63,40 @@ public class CreateProcessingOrderPositionsRequest {
   @javax.annotation.Nullable
   private UUID accountId;
 
-  public static final String JSON_PROPERTY_QUANTITY = "quantity";
-  @javax.annotation.Nullable
-  private Double quantity;
-
-  public static final String JSON_PROPERTY_RESERVE = "reserve";
-  @javax.annotation.Nullable
-  private Double reserve;
-
   public static final String JSON_PROPERTY_ASSORTMENT = "assortment";
   @javax.annotation.Nullable
   private Assortment assortment;
 
-  public static final String JSON_PROPERTY_PACK = "pack";
+  public static final String JSON_PROPERTY_QUANTITY = "quantity";
   @javax.annotation.Nullable
-  private JsonNullable<Pack> pack = JsonNullable.<Pack>undefined();
+  private Float quantity;
 
-  public CreateProcessingOrderPositionsRequest() {
+  public static final String JSON_PROPERTY_STATUS = "status";
+  @javax.annotation.Nullable
+  private String status;
+
+  public static final String JSON_PROPERTY_ERRORS = "errors";
+  @javax.annotation.Nonnull
+  private List<ErrorErrorsInner> errors = new ArrayList<>();
+
+  public CreateEmissionOrderPositions200ResponseInner() {
   }
   /**
    * Constructor with only readonly parameters
    */
   @JsonCreator
-  public CreateProcessingOrderPositionsRequest(
+  public CreateEmissionOrderPositions200ResponseInner(
     @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id, 
-    @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId
+    @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId, 
+    @JsonProperty(value = JSON_PROPERTY_STATUS, required = false) String status
   ) {
     this();
     this.id = id;
     this.accountId = accountId;
+    this.status = status;
   }
 
-  public CreateProcessingOrderPositionsRequest meta(@javax.annotation.Nullable Meta meta) {
+  public CreateEmissionOrderPositions200ResponseInner meta(@javax.annotation.Nullable Meta meta) {
     
     this.meta = meta;
     return this;
@@ -156,67 +157,7 @@ public class CreateProcessingOrderPositionsRequest {
 
 
 
-  public CreateProcessingOrderPositionsRequest quantity(@javax.annotation.Nullable Double quantity) {
-    
-    this.quantity = quantity;
-    return this;
-  }
-
-
-  /**
-   * Количество товаров данного вида в позиции
-   * minimum: 0.0000010
-   * @return quantity
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_QUANTITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Double getQuantity() {
-    return quantity;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_QUANTITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setQuantity(@javax.annotation.Nullable Double quantity) {
-    this.quantity = quantity;
-  }
-
-
-  public CreateProcessingOrderPositionsRequest reserve(@javax.annotation.Nullable Double reserve) {
-    
-    this.reserve = reserve;
-    return this;
-  }
-
-
-  /**
-   * Резерв данной позиции
-   * minimum: 0
-   * @return reserve
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RESERVE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Double getReserve() {
-    return reserve;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_RESERVE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReserve(@javax.annotation.Nullable Double reserve) {
-    this.reserve = reserve;
-  }
-
-
-  public CreateProcessingOrderPositionsRequest assortment(@javax.annotation.Nullable Assortment assortment) {
+  public CreateEmissionOrderPositions200ResponseInner assortment(@javax.annotation.Nullable Assortment assortment) {
     
     this.assortment = assortment;
     return this;
@@ -247,41 +188,87 @@ public class CreateProcessingOrderPositionsRequest {
   }
 
 
-  public CreateProcessingOrderPositionsRequest pack(@javax.annotation.Nullable Pack pack) {
-    this.pack = JsonNullable.<Pack>of(pack);
+  public CreateEmissionOrderPositions200ResponseInner quantity(@javax.annotation.Nullable Float quantity) {
     
+    this.quantity = quantity;
     return this;
   }
 
 
   /**
-   * Упаковка Товара
-   * @return pack
+   * Количество товаров данного вида в позиции
+   * minimum: 0
+   * maximum: 1000
+   * @return quantity
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Pack getPack() {
-        return pack.orElse(null);
-  }
-
-  
-
-  @JsonProperty(JSON_PROPERTY_PACK)
+  @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-
-  public JsonNullable<Pack> getPack_JsonNullable() {
-    return pack;
+  public Float getQuantity() {
+    return quantity;
   }
+
   
-  @JsonProperty(value = JSON_PROPERTY_PACK, required = false)
-  public void setPack_JsonNullable(JsonNullable<Pack> pack) {
-    this.pack = pack;
+
+
+  @JsonProperty(JSON_PROPERTY_QUANTITY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setQuantity(@javax.annotation.Nullable Float quantity) {
+    this.quantity = quantity;
   }
 
-  public void setPack(@javax.annotation.Nullable Pack pack) {
-    this.pack = JsonNullable.<Pack>of(pack);
+
+  /**
+   * Статус кодов. Известные значения описаны в EmissionOrderPositionStatus
+   * @return status
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getStatus() {
+    return status;
+  }
+
+  
+
+
+
+  public CreateEmissionOrderPositions200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
+    
+    this.errors = errors;
+    return this;
+  }
+
+
+  public CreateEmissionOrderPositions200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
+    if (this.errors == null) {
+      this.errors = new ArrayList<>();
+    }
+    this.errors.add(errorsItem);
+    return this;
+  }
+
+  /**
+   * Get errors
+   * @return errors
+   */
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_ERRORS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public List<ErrorErrorsInner> getErrors() {
+    return errors;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_ERRORS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
+    this.errors = errors;
   }
 
 
@@ -293,43 +280,32 @@ public class CreateProcessingOrderPositionsRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CreateProcessingOrderPositionsRequest createProcessingOrderPositionsRequest = (CreateProcessingOrderPositionsRequest) o;
-    return Objects.equals(this.meta, createProcessingOrderPositionsRequest.meta) &&
-        Objects.equals(this.id, createProcessingOrderPositionsRequest.id) &&
-        Objects.equals(this.accountId, createProcessingOrderPositionsRequest.accountId) &&
-        Objects.equals(this.quantity, createProcessingOrderPositionsRequest.quantity) &&
-        Objects.equals(this.reserve, createProcessingOrderPositionsRequest.reserve) &&
-        Objects.equals(this.assortment, createProcessingOrderPositionsRequest.assortment) &&
-        equalsNullable(this.pack, createProcessingOrderPositionsRequest.pack);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+    CreateEmissionOrderPositions200ResponseInner createEmissionOrderPositions200ResponseInner = (CreateEmissionOrderPositions200ResponseInner) o;
+    return Objects.equals(this.meta, createEmissionOrderPositions200ResponseInner.meta) &&
+        Objects.equals(this.id, createEmissionOrderPositions200ResponseInner.id) &&
+        Objects.equals(this.accountId, createEmissionOrderPositions200ResponseInner.accountId) &&
+        Objects.equals(this.assortment, createEmissionOrderPositions200ResponseInner.assortment) &&
+        Objects.equals(this.quantity, createEmissionOrderPositions200ResponseInner.quantity) &&
+        Objects.equals(this.status, createEmissionOrderPositions200ResponseInner.status) &&
+        Objects.equals(this.errors, createEmissionOrderPositions200ResponseInner.errors);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, quantity, reserve, assortment, hashCodeNullable(pack));
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(meta, id, accountId, assortment, quantity, status, errors);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CreateProcessingOrderPositionsRequest {\n");
+    sb.append("class CreateEmissionOrderPositions200ResponseInner {\n");
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
-    sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
-    sb.append("    reserve: ").append(toIndentedString(reserve)).append("\n");
     sb.append("    assortment: ").append(toIndentedString(assortment)).append("\n");
-    sb.append("    pack: ").append(toIndentedString(pack)).append("\n");
+    sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -402,6 +378,11 @@ public class CreateProcessingOrderPositionsRequest {
       }
     }
 
+    // add `assortment` to the URL query string
+    if (getAssortment() != null) {
+      joiner.add(getAssortment().toUrlQueryString(prefix + "assortment" + suffix));
+    }
+
     // add `quantity` to the URL query string
     if (getQuantity() != null) {
       try {
@@ -412,24 +393,24 @@ public class CreateProcessingOrderPositionsRequest {
       }
     }
 
-    // add `reserve` to the URL query string
-    if (getReserve() != null) {
+    // add `status` to the URL query string
+    if (getStatus() != null) {
       try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%sreserve%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getReserve()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sstatus%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getStatus()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
       }
     }
 
-    // add `assortment` to the URL query string
-    if (getAssortment() != null) {
-      joiner.add(getAssortment().toUrlQueryString(prefix + "assortment" + suffix));
-    }
-
-    // add `pack` to the URL query string
-    if (getPack() != null) {
-      joiner.add(getPack().toUrlQueryString(prefix + "pack" + suffix));
+    // add `errors` to the URL query string
+    if (getErrors() != null) {
+      for (int i = 0; i < getErrors().size(); i++) {
+        if (getErrors().get(i) != null) {
+          joiner.add(getErrors().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%serrors%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
     }
 
     return joiner.toString();

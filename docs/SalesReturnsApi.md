@@ -7,7 +7,8 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createSalesReturn**](SalesReturnsApi.md#createSalesReturn) | **POST** /entity/salesreturn | Создать Возврат покупателя |
 | [**createSalesReturnBatch**](SalesReturnsApi.md#createSalesReturnBatch) | **POST** /entity/salesreturn/batch | Массовое создание и обновление Возвратов покупателей |
 | [**createSalesReturnMetadataAttribute**](SalesReturnsApi.md#createSalesReturnMetadataAttribute) | **POST** /entity/salesreturn/metadata/attributes | Создать доп. поле Возврата покупателя |
-| [**createSalesReturnPositions**](SalesReturnsApi.md#createSalesReturnPositions) | **POST** /entity/salesreturn/{id}/positions | Создать позиции Возврата покупателя |
+| [**createSalesReturnPosition**](SalesReturnsApi.md#createSalesReturnPosition) | **POST** /entity/salesreturn/{id}/positions | Создать и обновить позицию Возврата покупателя |
+| [**createSalesReturnPositions**](SalesReturnsApi.md#createSalesReturnPositions) | **POST** /entity/salesreturn/{id}/positions/batch | Массовое создание и обновление позиций Возврата покупателя |
 | [**deleteSalesReturn**](SalesReturnsApi.md#deleteSalesReturn) | **DELETE** /entity/salesreturn/{id} | Удалить Возврат покупателя |
 | [**deleteSalesReturnBatch**](SalesReturnsApi.md#deleteSalesReturnBatch) | **POST** /entity/salesreturn/delete | Массовое удаление Возвратов покупателей |
 | [**deleteSalesReturnMetadataAttributeById**](SalesReturnsApi.md#deleteSalesReturnMetadataAttributeById) | **DELETE** /entity/salesreturn/metadata/attributes/{id} | Удалить отдельное доп. поле Возврата покупателя |
@@ -277,11 +278,11 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 
-## createSalesReturnPositions
+## createSalesReturnPosition
 
-> List&lt;CreateSalesReturnPositions200ResponseInner&gt; createSalesReturnPositions(id, createSalesReturnPositionsRequest, expand, accept, acceptEncoding, contentType)
+> SalesReturnPosition createSalesReturnPosition(id, salesReturnPosition, expand, accept, acceptEncoding, contentType)
 
-Создать позиции Возврата покупателя
+Создать и обновить позицию Возврата покупателя
 
 ### Example
 
@@ -310,13 +311,98 @@ public class Example {
 
         SalesReturnsApi apiInstance = new SalesReturnsApi(defaultClient);
         UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        CreateSalesReturnPositionsRequest createSalesReturnPositionsRequest = new CreateSalesReturnPositionsRequest(); // CreateSalesReturnPositionsRequest | 
+        SalesReturnPosition salesReturnPosition = new SalesReturnPosition(); // SalesReturnPosition | 
         String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateSalesReturnPositions200ResponseInner> result = apiInstance.createSalesReturnPositions(id, createSalesReturnPositionsRequest, expand, accept, acceptEncoding, contentType);
+            SalesReturnPosition result = apiInstance.createSalesReturnPosition(id, salesReturnPosition, expand, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SalesReturnsApi#createSalesReturnPosition");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **salesReturnPosition** | [**SalesReturnPosition**](SalesReturnPosition.md)|  | |
+| **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**SalesReturnPosition**](SalesReturnPosition.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+
+
+## createSalesReturnPositions
+
+> List&lt;CreateSalesReturnPositions200ResponseInner&gt; createSalesReturnPositions(id, salesReturnPosition, expand, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление позиций Возврата покупателя
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.SalesReturnsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        SalesReturnsApi apiInstance = new SalesReturnsApi(defaultClient);
+        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        List<SalesReturnPosition> salesReturnPosition = Arrays.asList(); // List<SalesReturnPosition> | 
+        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<CreateSalesReturnPositions200ResponseInner> result = apiInstance.createSalesReturnPositions(id, salesReturnPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling SalesReturnsApi#createSalesReturnPositions");
@@ -335,7 +421,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **createSalesReturnPositionsRequest** | [**CreateSalesReturnPositionsRequest**](CreateSalesReturnPositionsRequest.md)|  | |
+| **salesReturnPosition** | [**List&lt;SalesReturnPosition&gt;**](SalesReturnPosition.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -1436,7 +1522,7 @@ public class Example {
 
 ## getSalesReturnPositions
 
-> SalesReturnPositionList getSalesReturnPositions(id, limit, offset, expand, fields, accept, acceptEncoding, contentType)
+> SalesReturnPositionList getSalesReturnPositions(id, limit, offset, expand, fields, accept, acceptEncoding)
 
 Получить позиции Возврата покупателя
 
@@ -1473,9 +1559,8 @@ public class Example {
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
-        String contentType = "application/json"; // String | 
         try {
-            SalesReturnPositionList result = apiInstance.getSalesReturnPositions(id, limit, offset, expand, fields, accept, acceptEncoding, contentType);
+            SalesReturnPositionList result = apiInstance.getSalesReturnPositions(id, limit, offset, expand, fields, accept, acceptEncoding);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling SalesReturnsApi#getSalesReturnPositions");
@@ -1500,7 +1585,6 @@ public class Example {
 | **fields** | **String**| Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  | [optional] [enum: minimumStock, downloadPermanentHref, stock, declaration] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
-| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 

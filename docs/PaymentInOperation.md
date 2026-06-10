@@ -47,7 +47,7 @@
 |**files** | [**FileList**](FileList.md) | Метаданные массива файлов |  [optional] |
 |**taxSystem** | **String** | Код системы налогообложения. Известные значения описаны в TaxSystem |  [optional] |
 |**rate** | [**CurrencyRate**](CurrencyRate.md) |  |  [optional] |
-|**positions** | **CommissionReportInPositionList** |  |  [optional] |
+|**positions** | [**CommissionReportInPositionList**](CommissionReportInPositionList.md) |  |  [optional] |
 |**salesChannel** | [**SalesChannel**](SalesChannel.md) | Метаданные канала продаж |  [optional] |
 |**shipmentAddress** | **String** | Адрес доставки Отгрузки (строка). Для удаления адреса передайте пустую строку. Не поддерживается значение &#x60;null&#x60; для сброса — см. документацию по адресу доставки.  |  [optional] |
 |**shipmentAddressFull** | [**Address**](Address.md) | Адрес доставки Отгрузки с детализацией по отдельным полям |  [optional] |

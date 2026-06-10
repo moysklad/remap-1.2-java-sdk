@@ -20,6 +20,7 @@ import ru.moysklad.remap_1_2.BaseApi;
 import ru.moysklad.remap_1_2.Configuration;
 import ru.moysklad.remap_1_2.Pair;
 
+import ru.moysklad.remap_1_2.model.CreateProcessingProcessPositions200ResponseInner;
 import ru.moysklad.remap_1_2.model.CreateProcessingProcessesBatch200ResponseInner;
 import ru.moysklad.remap_1_2.model.DeleteContractsBatch200ResponseInner;
 import ru.moysklad.remap_1_2.model.ErrorOrArray;
@@ -37,7 +38,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ProcessingProcessesApi extends BaseApi {
 
@@ -158,8 +159,8 @@ if (contentType != null)
   }
 
   /**
-   * Создать позицию Техпроцесса
-   * Создание позиции Техпроцесса
+   * Создать и обновить позицию Техпроцесса
+   * 
    * @param id ID сущности (required)
    * @param processingProcessPosition  (required)
    * @param expand Замена ссылок объектами с помощью expand (optional)
@@ -169,13 +170,13 @@ if (contentType != null)
    * @return ProcessingProcessPosition
    * @throws ApiException if fails to make API call
    */
-  public ProcessingProcessPosition createProcessingProcessPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingProcessPosition processingProcessPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createProcessingProcessPositions(id, processingProcessPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public ProcessingProcessPosition createProcessingProcessPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingProcessPosition processingProcessPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+    return this.createProcessingProcessPosition(id, processingProcessPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
   /**
-   * Создать позицию Техпроцесса
-   * Создание позиции Техпроцесса
+   * Создать и обновить позицию Техпроцесса
+   * 
    
    * @param id ID сущности (required)
    
@@ -190,15 +191,15 @@ if (contentType != null)
    * @return ProcessingProcessPosition
    * @throws ApiException if fails to make API call
    */
-  public ProcessingProcessPosition createProcessingProcessPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingProcessPosition processingProcessPosition, RequestOptions options) throws ApiException {
+  public ProcessingProcessPosition createProcessingProcessPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingProcessPosition processingProcessPosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
-    return this.createProcessingProcessPositions(id, processingProcessPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.createProcessingProcessPosition(id, processingProcessPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
   /**
-   * Создать позицию Техпроцесса
-   * Создание позиции Техпроцесса
+   * Создать и обновить позицию Техпроцесса
+   * 
    * @param id ID сущности (required)
    * @param processingProcessPosition  (required)
    * @param expand Замена ссылок объектами с помощью expand (optional)
@@ -209,17 +210,17 @@ if (contentType != null)
    * @return ProcessingProcessPosition
    * @throws ApiException if fails to make API call
    */
-  public ProcessingProcessPosition createProcessingProcessPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingProcessPosition processingProcessPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public ProcessingProcessPosition createProcessingProcessPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingProcessPosition processingProcessPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = processingProcessPosition;
     
     // verify the required parameter 'id' is set
     if (id == null) {
-      throw new ApiException(400, "Missing the required parameter 'id' when calling createProcessingProcessPositions");
+      throw new ApiException(400, "Missing the required parameter 'id' when calling createProcessingProcessPosition");
     }
     
     // verify the required parameter 'processingProcessPosition' is set
     if (processingProcessPosition == null) {
-      throw new ApiException(400, "Missing the required parameter 'processingProcessPosition' when calling createProcessingProcessPositions");
+      throw new ApiException(400, "Missing the required parameter 'processingProcessPosition' when calling createProcessingProcessPosition");
     }
     
     // create path and map variables
@@ -259,6 +260,125 @@ if (contentType != null)
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
     TypeReference<ProcessingProcessPosition> localVarReturnType = new TypeReference<ProcessingProcessPosition>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Массовое создание и обновление позиций Техпроцесса
+   * 
+   * @param id ID сущности (required)
+   * @param processingProcessPosition  (required)
+   * @param expand Замена ссылок объектами с помощью expand (optional)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @return List&lt;CreateProcessingProcessPositions200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateProcessingProcessPositions200ResponseInner> createProcessingProcessPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<ProcessingProcessPosition> processingProcessPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+    return this.createProcessingProcessPositions(id, processingProcessPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Массовое создание и обновление позиций Техпроцесса
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param processingProcessPosition  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;CreateProcessingProcessPositions200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateProcessingProcessPositions200ResponseInner> createProcessingProcessPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<ProcessingProcessPosition> processingProcessPosition, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createProcessingProcessPositions(id, processingProcessPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Массовое создание и обновление позиций Техпроцесса
+   * 
+   * @param id ID сущности (required)
+   * @param processingProcessPosition  (required)
+   * @param expand Замена ссылок объектами с помощью expand (optional)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return List&lt;CreateProcessingProcessPositions200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<CreateProcessingProcessPositions200ResponseInner> createProcessingProcessPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<ProcessingProcessPosition> processingProcessPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = processingProcessPosition;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling createProcessingProcessPositions");
+    }
+    
+    // verify the required parameter 'processingProcessPosition' is set
+    if (processingProcessPosition == null) {
+      throw new ApiException(400, "Missing the required parameter 'processingProcessPosition' when calling createProcessingProcessPositions");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/processingprocess/{id}/positions/batch"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
+    if (accept != null)
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+if (acceptEncoding != null)
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+if (contentType != null)
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+
+    localVarHeaderParams.putAll(additionalHeaders);
+
+    
+    
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<List<CreateProcessingProcessPositions200ResponseInner>> localVarReturnType = new TypeReference<List<CreateProcessingProcessPositions200ResponseInner>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

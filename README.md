@@ -4,7 +4,7 @@
 
 - API version: 1.0.0
 
-- Build date: 2026-06-09T13:35:37.869485882Z[GMT]
+- Build date: 2026-06-10T08:38:11.949143335Z[GMT]
 
 - Generator version: 7.14.0
 
@@ -209,7 +209,8 @@ Class | Method | HTTP request | Description
 *CommissionReportInsApi* | [**createCommissionReportInBatch**](docs/CommissionReportInsApi.md#createCommissionReportInBatch) | **POST** /entity/commissionreportin/batch | Массовое создание и обновление CommissionReportIn
 *CommissionReportInsApi* | [**createCommissionReportInMetadataAttribute**](docs/CommissionReportInsApi.md#createCommissionReportInMetadataAttribute) | **POST** /entity/commissionreportin/metadata/attributes | Создать доп. поле CommissionReportIn
 *CommissionReportInsApi* | [**createCommissionReportInMetadataState**](docs/CommissionReportInsApi.md#createCommissionReportInMetadataState) | **POST** /entity/commissionreportin/metadata/states | Создать статус CommissionReportIn
-*CommissionReportInsApi* | [**createCommissionReportInPositions**](docs/CommissionReportInsApi.md#createCommissionReportInPositions) | **POST** /entity/commissionreportin/{id}/positions | Создать позиции CommissionReportIn
+*CommissionReportInsApi* | [**createCommissionReportInPosition**](docs/CommissionReportInsApi.md#createCommissionReportInPosition) | **POST** /entity/commissionreportin/{id}/positions | Создать и обновить позицию Полученного отчета комиссионера
+*CommissionReportInsApi* | [**createCommissionReportInPositions**](docs/CommissionReportInsApi.md#createCommissionReportInPositions) | **POST** /entity/commissionreportin/{id}/positions/batch | Массовое создание и обновление позиций Полученного отчета комиссионера
 *CommissionReportInsApi* | [**createCommissionReportInReturnedPositions**](docs/CommissionReportInsApi.md#createCommissionReportInReturnedPositions) | **POST** /entity/commissionreportin/{id}/returntocommissionerpositions | Создать позиции возврата на склад комиссионера
 *CommissionReportInsApi* | [**deleteCommissionReportIn**](docs/CommissionReportInsApi.md#deleteCommissionReportIn) | **DELETE** /entity/commissionreportin/{id} | Удалить CommissionReportIn
 *CommissionReportInsApi* | [**deleteCommissionReportInBatch**](docs/CommissionReportInsApi.md#deleteCommissionReportInBatch) | **POST** /entity/commissionreportin/delete | Массовое удаление CommissionReportIn
@@ -239,8 +240,8 @@ Class | Method | HTTP request | Description
 *CommissionReportOutsApi* | [**createCommissionReportOutBatch**](docs/CommissionReportOutsApi.md#createCommissionReportOutBatch) | **POST** /entity/commissionreportout/batch | Массовое создание и обновление CommissionReportOut
 *CommissionReportOutsApi* | [**createCommissionReportOutMetadataAttribute**](docs/CommissionReportOutsApi.md#createCommissionReportOutMetadataAttribute) | **POST** /entity/commissionreportout/metadata/attributes | Создать доп. поле CommissionReportOut
 *CommissionReportOutsApi* | [**createCommissionReportOutMetadataState**](docs/CommissionReportOutsApi.md#createCommissionReportOutMetadataState) | **POST** /entity/commissionreportout/metadata/states | Создать статус CommissionReportOut
-*CommissionReportOutsApi* | [**createCommissionReportOutPosition**](docs/CommissionReportOutsApi.md#createCommissionReportOutPosition) | **POST** /entity/commissionreportout/{id}/positions | Создать позицию CommissionReportOut
-*CommissionReportOutsApi* | [**createCommissionReportOutPositionsBatch**](docs/CommissionReportOutsApi.md#createCommissionReportOutPositionsBatch) | **POST** /entity/commissionreportout/{id}/positions/batch | Массовое создание позиций CommissionReportOut
+*CommissionReportOutsApi* | [**createCommissionReportOutPosition**](docs/CommissionReportOutsApi.md#createCommissionReportOutPosition) | **POST** /entity/commissionreportout/{id}/positions | Создать и обновить позицию Выданного отчета комиссионера
+*CommissionReportOutsApi* | [**createCommissionReportOutPositions**](docs/CommissionReportOutsApi.md#createCommissionReportOutPositions) | **POST** /entity/commissionreportout/{id}/positions/batch | Массовое создание и обновление позиций Выданного отчета комиссионера
 *CommissionReportOutsApi* | [**deleteCommissionReportOut**](docs/CommissionReportOutsApi.md#deleteCommissionReportOut) | **DELETE** /entity/commissionreportout/{id} | Удалить CommissionReportOut
 *CommissionReportOutsApi* | [**deleteCommissionReportOutBatch**](docs/CommissionReportOutsApi.md#deleteCommissionReportOutBatch) | **POST** /entity/commissionreportout/delete | Массовое удаление CommissionReportOut
 *CommissionReportOutsApi* | [**deleteCommissionReportOutFile**](docs/CommissionReportOutsApi.md#deleteCommissionReportOutFile) | **DELETE** /entity/commissionreportout/{id}/files/{fileId} | Удалить файл Выданного отчета комиссионера
@@ -347,7 +348,8 @@ Class | Method | HTTP request | Description
 *CustomerOrdersApi* | [**createCustomerOrderMetadataAttribute**](docs/CustomerOrdersApi.md#createCustomerOrderMetadataAttribute) | **POST** /entity/customerorder/metadata/attributes | Создать Доп. поле CustomerOrder
 *CustomerOrdersApi* | [**createCustomerOrderMetadataState**](docs/CustomerOrdersApi.md#createCustomerOrderMetadataState) | **POST** /entity/customerorder/metadata/states | Создать статус CustomerOrder
 *CustomerOrdersApi* | [**createCustomerOrderNote**](docs/CustomerOrdersApi.md#createCustomerOrderNote) | **POST** /entity/customerorder/{id}/notes | Добавить Событие Заказа покупателя
-*CustomerOrdersApi* | [**createCustomerOrderPositions**](docs/CustomerOrdersApi.md#createCustomerOrderPositions) | **POST** /entity/customerorder/{id}/positions | Создать позиции CustomerOrders
+*CustomerOrdersApi* | [**createCustomerOrderPosition**](docs/CustomerOrdersApi.md#createCustomerOrderPosition) | **POST** /entity/customerorder/{id}/positions | Создать и обновить позицию Заказа покупателя
+*CustomerOrdersApi* | [**createCustomerOrderPositions**](docs/CustomerOrdersApi.md#createCustomerOrderPositions) | **POST** /entity/customerorder/{id}/positions/batch | Массовое создание и обновление позиций Заказа покупателя
 *CustomerOrdersApi* | [**deleteCustomerOrder**](docs/CustomerOrdersApi.md#deleteCustomerOrder) | **DELETE** /entity/customerorder/{id} | Удалить CustomerOrders
 *CustomerOrdersApi* | [**deleteCustomerOrderBatch**](docs/CustomerOrdersApi.md#deleteCustomerOrderBatch) | **POST** /entity/customerorder/delete | Массовое удаление CustomerOrders
 *CustomerOrdersApi* | [**deleteCustomerOrderMetadataAttributeById**](docs/CustomerOrdersApi.md#deleteCustomerOrderMetadataAttributeById) | **DELETE** /entity/customerorder/metadata/attributes/{id} | Удалить отдельное доп. поле CustomerOrder
@@ -374,7 +376,8 @@ Class | Method | HTTP request | Description
 *DemandsApi* | [**createDemand**](docs/DemandsApi.md#createDemand) | **POST** /entity/demand | Создать Отгрузку
 *DemandsApi* | [**createDemandBatch**](docs/DemandsApi.md#createDemandBatch) | **POST** /entity/demand/batch | Массовое создание и обновление Отгрузок
 *DemandsApi* | [**createDemandMetadataAttribute**](docs/DemandsApi.md#createDemandMetadataAttribute) | **POST** /entity/demand/metadata/attributes | Создать доп. поле Отгрузки
-*DemandsApi* | [**createDemandPositions**](docs/DemandsApi.md#createDemandPositions) | **POST** /entity/demand/{id}/positions | Создать позиции Отгрузки
+*DemandsApi* | [**createDemandPosition**](docs/DemandsApi.md#createDemandPosition) | **POST** /entity/demand/{id}/positions | Создать и обновить позицию Отгрузки
+*DemandsApi* | [**createDemandPositions**](docs/DemandsApi.md#createDemandPositions) | **POST** /entity/demand/{id}/positions/batch | Массовое создание и обновление позиций Отгрузки
 *DemandsApi* | [**deleteDemand**](docs/DemandsApi.md#deleteDemand) | **DELETE** /entity/demand/{id} | Удалить Отгрузку
 *DemandsApi* | [**deleteDemandBatch**](docs/DemandsApi.md#deleteDemandBatch) | **POST** /entity/demand/delete | Массовое удаление Отгрузок
 *DemandsApi* | [**deleteDemandMetadataAttributeById**](docs/DemandsApi.md#deleteDemandMetadataAttributeById) | **DELETE** /entity/demand/metadata/attributes/{id} | Удалить отдельное доп. поле Отгрузки
@@ -410,8 +413,8 @@ Class | Method | HTTP request | Description
 *DiscountsApi* | [**updateSpecialPriceDiscount**](docs/DiscountsApi.md#updateSpecialPriceDiscount) | **PUT** /entity/specialpricediscount/{id} | Изменить специальную цену
 *EmissionOrdersApi* | [**createEmissionOrder**](docs/EmissionOrdersApi.md#createEmissionOrder) | **POST** /entity/emissionorder | Создать Заказ кодов маркировки
 *EmissionOrdersApi* | [**createEmissionOrderBatch**](docs/EmissionOrdersApi.md#createEmissionOrderBatch) | **POST** /entity/emissionorder/batch | Массовое создание и обновление Заказов кодов маркировки
-*EmissionOrdersApi* | [**createEmissionOrderPositions**](docs/EmissionOrdersApi.md#createEmissionOrderPositions) | **POST** /entity/emissionorder/{id}/positions | Создать позицию Заказа кодов маркировки
-*EmissionOrdersApi* | [**createEmissionOrderPositionsBatch**](docs/EmissionOrdersApi.md#createEmissionOrderPositionsBatch) | **POST** /entity/emissionorder/{id}/positions/batch | Создать позиции Заказа кодов маркировки
+*EmissionOrdersApi* | [**createEmissionOrderPosition**](docs/EmissionOrdersApi.md#createEmissionOrderPosition) | **POST** /entity/emissionorder/{id}/positions | Создать и обновить позицию Заказа кодов маркировки
+*EmissionOrdersApi* | [**createEmissionOrderPositions**](docs/EmissionOrdersApi.md#createEmissionOrderPositions) | **POST** /entity/emissionorder/{id}/positions/batch | Массовое создание и обновление позиций Заказа кодов маркировки
 *EmissionOrdersApi* | [**deleteEmissionOrderMetadataStateById**](docs/EmissionOrdersApi.md#deleteEmissionOrderMetadataStateById) | **DELETE** /entity/emissionorder/metadata/states/{id} | Удалить отдельный статус Заказа кодов маркировки
 *EmissionOrdersApi* | [**getEmissionOrderById**](docs/EmissionOrdersApi.md#getEmissionOrderById) | **GET** /entity/emissionorder/{id} | Получить Заказ кодов маркировки
 *EmissionOrdersApi* | [**getEmissionOrderList**](docs/EmissionOrdersApi.md#getEmissionOrderList) | **GET** /entity/emissionorder | Получить список Заказов кодов маркировки
@@ -445,7 +448,8 @@ Class | Method | HTTP request | Description
 *EntersApi* | [**createEnterBatch**](docs/EntersApi.md#createEnterBatch) | **POST** /entity/enter/batch | Массовое создание и обновление Оприходований
 *EntersApi* | [**createEnterMetadataAttribute**](docs/EntersApi.md#createEnterMetadataAttribute) | **POST** /entity/enter/metadata/attributes | Создать доп. поле Оприходований
 *EntersApi* | [**createEnterMetadataState**](docs/EntersApi.md#createEnterMetadataState) | **POST** /entity/enter/metadata/states | Создать статус Оприходования
-*EntersApi* | [**createEnterPositions**](docs/EntersApi.md#createEnterPositions) | **POST** /entity/enter/{id}/positions | Создать позиции Оприходования
+*EntersApi* | [**createEnterPosition**](docs/EntersApi.md#createEnterPosition) | **POST** /entity/enter/{id}/positions | Создать и обновить позицию Оприходования
+*EntersApi* | [**createEnterPositions**](docs/EntersApi.md#createEnterPositions) | **POST** /entity/enter/{id}/positions/batch | Массовое создание и обновление позиций Оприходования
 *EntersApi* | [**deleteEnter**](docs/EntersApi.md#deleteEnter) | **DELETE** /entity/enter/{id} | Удалить Оприходование
 *EntersApi* | [**deleteEnterBatch**](docs/EntersApi.md#deleteEnterBatch) | **POST** /entity/enter/delete | Массовое удаление Оприходований
 *EntersApi* | [**deleteEnterFile**](docs/EntersApi.md#deleteEnterFile) | **DELETE** /entity/enter/{id}/files/{fileId} | Удалить файл Оприходования
@@ -519,7 +523,8 @@ Class | Method | HTTP request | Description
 *InternalOrdersApi* | [**createInternalOrderBatch**](docs/InternalOrdersApi.md#createInternalOrderBatch) | **POST** /entity/internalorder/batch | Массовое создание и обновление InternalOrder
 *InternalOrdersApi* | [**createInternalOrderMetadataAttribute**](docs/InternalOrdersApi.md#createInternalOrderMetadataAttribute) | **POST** /entity/internalorder/metadata/attributes | Создать Доп. поле InternalOrder
 *InternalOrdersApi* | [**createInternalOrderMetadataState**](docs/InternalOrdersApi.md#createInternalOrderMetadataState) | **POST** /entity/internalorder/metadata/states | Создать статус InternalOrder
-*InternalOrdersApi* | [**createInternalOrderPositions**](docs/InternalOrdersApi.md#createInternalOrderPositions) | **POST** /entity/internalorder/{id}/positions | Создать позиции InternalOrder
+*InternalOrdersApi* | [**createInternalOrderPosition**](docs/InternalOrdersApi.md#createInternalOrderPosition) | **POST** /entity/internalorder/{id}/positions | Создать и обновить позицию Внутреннего заказа
+*InternalOrdersApi* | [**createInternalOrderPositions**](docs/InternalOrdersApi.md#createInternalOrderPositions) | **POST** /entity/internalorder/{id}/positions/batch | Массовое создание и обновление позиций Внутреннего заказа
 *InternalOrdersApi* | [**deleteInternalOrder**](docs/InternalOrdersApi.md#deleteInternalOrder) | **DELETE** /entity/internalorder/{id} | Удалить InternalOrder
 *InternalOrdersApi* | [**deleteInternalOrderBatch**](docs/InternalOrdersApi.md#deleteInternalOrderBatch) | **POST** /entity/internalorder/delete | Массовое удаление InternalOrder
 *InternalOrdersApi* | [**deleteInternalOrderMetadataAttributeById**](docs/InternalOrdersApi.md#deleteInternalOrderMetadataAttributeById) | **DELETE** /entity/internalorder/metadata/attributes/{id} | Удалить отдельное доп. поле InternalOrder
@@ -544,7 +549,8 @@ Class | Method | HTTP request | Description
 *InventoriesApi* | [**createInventory**](docs/InventoriesApi.md#createInventory) | **POST** /entity/inventory | Создать Инвентаризацию
 *InventoriesApi* | [**createInventoryMetadataAttribute**](docs/InventoriesApi.md#createInventoryMetadataAttribute) | **POST** /entity/inventory/metadata/attributes | Создать доп. поле Инвентаризаций
 *InventoriesApi* | [**createInventoryMetadataState**](docs/InventoriesApi.md#createInventoryMetadataState) | **POST** /entity/inventory/metadata/states | Создать статус Инвентаризации
-*InventoriesApi* | [**createInventoryPositions**](docs/InventoriesApi.md#createInventoryPositions) | **POST** /entity/inventory/{id}/positions | Создать позиции Инвентаризации
+*InventoriesApi* | [**createInventoryPosition**](docs/InventoriesApi.md#createInventoryPosition) | **POST** /entity/inventory/{id}/positions | Создать и обновить позицию Инвентаризации
+*InventoriesApi* | [**createInventoryPositions**](docs/InventoriesApi.md#createInventoryPositions) | **POST** /entity/inventory/{id}/positions/batch | Массовое создание и обновление позиций Инвентаризации
 *InventoriesApi* | [**deleteInventoriesBatch**](docs/InventoriesApi.md#deleteInventoriesBatch) | **POST** /entity/inventory/delete | Массовое удаление Инвентаризации
 *InventoriesApi* | [**deleteInventory**](docs/InventoriesApi.md#deleteInventory) | **DELETE** /entity/inventory/{id} | Удалить Инвентаризацию
 *InventoriesApi* | [**deleteInventoryFile**](docs/InventoriesApi.md#deleteInventoryFile) | **DELETE** /entity/inventory/{id}/files/{fileId} | Удалить файл Инвентаризации
@@ -627,7 +633,8 @@ Class | Method | HTTP request | Description
 *LossesApi* | [**createLoss**](docs/LossesApi.md#createLoss) | **POST** /entity/loss | Создать Списание
 *LossesApi* | [**createLossBatch**](docs/LossesApi.md#createLossBatch) | **POST** /entity/loss/batch | Массовое создание и обновление Списаний
 *LossesApi* | [**createLossMetadataAttribute**](docs/LossesApi.md#createLossMetadataAttribute) | **POST** /entity/loss/metadata/attributes | Создать доп. поле Списания
-*LossesApi* | [**createLossPositions**](docs/LossesApi.md#createLossPositions) | **POST** /entity/loss/{id}/positions | Создать позиции Списания
+*LossesApi* | [**createLossPosition**](docs/LossesApi.md#createLossPosition) | **POST** /entity/loss/{id}/positions | Создать и обновить позицию Списания
+*LossesApi* | [**createLossPositions**](docs/LossesApi.md#createLossPositions) | **POST** /entity/loss/{id}/positions/batch | Массовое создание и обновление позиций Списания
 *LossesApi* | [**deleteLoss**](docs/LossesApi.md#deleteLoss) | **DELETE** /entity/loss/{id} | Удалить Списание
 *LossesApi* | [**deleteLossBatch**](docs/LossesApi.md#deleteLossBatch) | **POST** /entity/loss/delete | Массовое удаление Списаний
 *LossesApi* | [**deleteLossMetadataAttributeById**](docs/LossesApi.md#deleteLossMetadataAttributeById) | **DELETE** /entity/loss/metadata/attributes/{id} | Удалить отдельное доп. поле Списания
@@ -651,8 +658,8 @@ Class | Method | HTTP request | Description
 *MovesApi* | [**createMove**](docs/MovesApi.md#createMove) | **POST** /entity/move | Создать Перемещение
 *MovesApi* | [**createMoveBatch**](docs/MovesApi.md#createMoveBatch) | **POST** /entity/move/batch | Массовое создание и обновление Перемещений
 *MovesApi* | [**createMoveMetadataAttribute**](docs/MovesApi.md#createMoveMetadataAttribute) | **POST** /entity/move/metadata/attributes | Создать доп. поле Перемещения
-*MovesApi* | [**createMovePositions**](docs/MovesApi.md#createMovePositions) | **POST** /entity/move/{id}/positions | Создать позицию Перемещения
-*MovesApi* | [**createMovePositionsBatch**](docs/MovesApi.md#createMovePositionsBatch) | **POST** /entity/move/{id}/positions/batch | Создать позиции Перемещения
+*MovesApi* | [**createMovePosition**](docs/MovesApi.md#createMovePosition) | **POST** /entity/move/{id}/positions | Создать и обновить позицию Перемещения
+*MovesApi* | [**createMovePositions**](docs/MovesApi.md#createMovePositions) | **POST** /entity/move/{id}/positions/batch | Массовое создание и обновление позиций Перемещения
 *MovesApi* | [**deleteMove**](docs/MovesApi.md#deleteMove) | **DELETE** /entity/move/{id} | Удалить Перемещение
 *MovesApi* | [**deleteMoveBatch**](docs/MovesApi.md#deleteMoveBatch) | **POST** /entity/move/delete | Массовое удаление Перемещений
 *MovesApi* | [**deleteMoveFile**](docs/MovesApi.md#deleteMoveFile) | **DELETE** /entity/move/{id}/files/{fileId} | Удалить файл перемещения
@@ -762,7 +769,8 @@ Class | Method | HTTP request | Description
 *ProcessingOrdersApi* | [**createProcessingOrderBatch**](docs/ProcessingOrdersApi.md#createProcessingOrderBatch) | **POST** /entity/processingorder/batch | Массовое создание и обновление ProcessingOrder
 *ProcessingOrdersApi* | [**createProcessingOrderMetadataAttribute**](docs/ProcessingOrdersApi.md#createProcessingOrderMetadataAttribute) | **POST** /entity/processingorder/metadata/attributes | Создать Доп. поле ProcessingOrder
 *ProcessingOrdersApi* | [**createProcessingOrderMetadataState**](docs/ProcessingOrdersApi.md#createProcessingOrderMetadataState) | **POST** /entity/processingorder/metadata/states | Создать статус ProcessingOrder
-*ProcessingOrdersApi* | [**createProcessingOrderPositions**](docs/ProcessingOrdersApi.md#createProcessingOrderPositions) | **POST** /entity/processingorder/{id}/positions | Создать позиции ProcessingOrder
+*ProcessingOrdersApi* | [**createProcessingOrderPosition**](docs/ProcessingOrdersApi.md#createProcessingOrderPosition) | **POST** /entity/processingorder/{id}/positions | Обновить позицию ProcessingOrder
+*ProcessingOrdersApi* | [**createProcessingOrderPositions**](docs/ProcessingOrdersApi.md#createProcessingOrderPositions) | **POST** /entity/processingorder/{id}/positions/batch | Массовое изменение позиций Заказа на производство
 *ProcessingOrdersApi* | [**deleteProcessingOrder**](docs/ProcessingOrdersApi.md#deleteProcessingOrder) | **DELETE** /entity/processingorder/{id} | Удалить ProcessingOrder
 *ProcessingOrdersApi* | [**deleteProcessingOrderBatch**](docs/ProcessingOrdersApi.md#deleteProcessingOrderBatch) | **POST** /entity/processingorder/delete | Массовое удаление ProcessingOrder
 *ProcessingOrdersApi* | [**deleteProcessingOrderFile**](docs/ProcessingOrdersApi.md#deleteProcessingOrderFile) | **DELETE** /entity/processingorder/{id}/files/{fileId} | Удалить файл Заказа на производство
@@ -822,7 +830,8 @@ Class | Method | HTTP request | Description
 *ProcessingPlansApi* | [**updateProcessingPlanProduct**](docs/ProcessingPlansApi.md#updateProcessingPlanProduct) | **PUT** /entity/processingplan/{id}/products/{positionId} | Изменить продукт Техкарты
 *ProcessingPlansApi* | [**updateProcessingPlanStage**](docs/ProcessingPlansApi.md#updateProcessingPlanStage) | **PUT** /entity/processingplan/{id}/stages/{positionId} | Изменить отдельный этап Техкарты
 *ProcessingProcessesApi* | [**createProcessingProcess**](docs/ProcessingProcessesApi.md#createProcessingProcess) | **POST** /entity/processingprocess | Создать Техпроцесс
-*ProcessingProcessesApi* | [**createProcessingProcessPositions**](docs/ProcessingProcessesApi.md#createProcessingProcessPositions) | **POST** /entity/processingprocess/{id}/positions | Создать позицию Техпроцесса
+*ProcessingProcessesApi* | [**createProcessingProcessPosition**](docs/ProcessingProcessesApi.md#createProcessingProcessPosition) | **POST** /entity/processingprocess/{id}/positions | Создать и обновить позицию Техпроцесса
+*ProcessingProcessesApi* | [**createProcessingProcessPositions**](docs/ProcessingProcessesApi.md#createProcessingProcessPositions) | **POST** /entity/processingprocess/{id}/positions/batch | Массовое создание и обновление позиций Техпроцесса
 *ProcessingProcessesApi* | [**createProcessingProcessesBatch**](docs/ProcessingProcessesApi.md#createProcessingProcessesBatch) | **POST** /entity/processingprocess/batch | Создать или изменить Техпроцессы
 *ProcessingProcessesApi* | [**deleteProcessingProcess**](docs/ProcessingProcessesApi.md#deleteProcessingProcess) | **DELETE** /entity/processingprocess/{id} | Удалить Техпроцесс
 *ProcessingProcessesApi* | [**deleteProcessingProcessPosition**](docs/ProcessingProcessesApi.md#deleteProcessingProcessPosition) | **DELETE** /entity/processingprocess/{id}/positions/{positionId} | Удалить позицию Техпроцесса
@@ -921,7 +930,8 @@ Class | Method | HTTP request | Description
 *PurchaseOrdersApi* | [**createPurchaseOrderMetadataAttribute**](docs/PurchaseOrdersApi.md#createPurchaseOrderMetadataAttribute) | **POST** /entity/purchaseorder/metadata/attributes | Создать Доп. поле PurchaseOrder
 *PurchaseOrdersApi* | [**createPurchaseOrderMetadataState**](docs/PurchaseOrdersApi.md#createPurchaseOrderMetadataState) | **POST** /entity/purchaseorder/metadata/states | Создать статус PurchaseOrder
 *PurchaseOrdersApi* | [**createPurchaseOrderNote**](docs/PurchaseOrdersApi.md#createPurchaseOrderNote) | **POST** /entity/purchaseorder/{id}/notes | Добавить Событие Заказа поставщику
-*PurchaseOrdersApi* | [**createPurchaseOrderPositions**](docs/PurchaseOrdersApi.md#createPurchaseOrderPositions) | **POST** /entity/purchaseorder/{id}/positions | Создать позиции PurchaseOrder
+*PurchaseOrdersApi* | [**createPurchaseOrderPosition**](docs/PurchaseOrdersApi.md#createPurchaseOrderPosition) | **POST** /entity/purchaseorder/{id}/positions | Создать и обновить позицию Заказа поставщику
+*PurchaseOrdersApi* | [**createPurchaseOrderPositions**](docs/PurchaseOrdersApi.md#createPurchaseOrderPositions) | **POST** /entity/purchaseorder/{id}/positions/batch | Массовое создание и обновление позиций Заказа поставщику
 *PurchaseOrdersApi* | [**deletePurchaseOrder**](docs/PurchaseOrdersApi.md#deletePurchaseOrder) | **DELETE** /entity/purchaseorder/{id} | Удалить PurchaseOrder
 *PurchaseOrdersApi* | [**deletePurchaseOrderBatch**](docs/PurchaseOrdersApi.md#deletePurchaseOrderBatch) | **POST** /entity/purchaseorder/delete | Массовое удаление PurchaseOrder
 *PurchaseOrdersApi* | [**deletePurchaseOrderMetadataAttributeById**](docs/PurchaseOrdersApi.md#deletePurchaseOrderMetadataAttributeById) | **DELETE** /entity/purchaseorder/metadata/attributes/{id} | Удалить отдельное доп. поле PurchaseOrder
@@ -950,7 +960,8 @@ Class | Method | HTTP request | Description
 *PurchaseReturnsApi* | [**createPurchaseReturnBatch**](docs/PurchaseReturnsApi.md#createPurchaseReturnBatch) | **POST** /entity/purchasereturn/batch | Массовое создание и обновление Возвратов поставщикам
 *PurchaseReturnsApi* | [**createPurchaseReturnMetadataAttribute**](docs/PurchaseReturnsApi.md#createPurchaseReturnMetadataAttribute) | **POST** /entity/purchasereturn/metadata/attributes | Создать доп. поле Возврата поставщику
 *PurchaseReturnsApi* | [**createPurchaseReturnMetadataState**](docs/PurchaseReturnsApi.md#createPurchaseReturnMetadataState) | **POST** /entity/purchasereturn/metadata/states | Создать статус Возврата поставщику
-*PurchaseReturnsApi* | [**createPurchaseReturnPositions**](docs/PurchaseReturnsApi.md#createPurchaseReturnPositions) | **POST** /entity/purchasereturn/{id}/positions | Создать позиции Возврата поставщику
+*PurchaseReturnsApi* | [**createPurchaseReturnPosition**](docs/PurchaseReturnsApi.md#createPurchaseReturnPosition) | **POST** /entity/purchasereturn/{id}/positions | Создать и обновить позицию Возврата поставщику
+*PurchaseReturnsApi* | [**createPurchaseReturnPositions**](docs/PurchaseReturnsApi.md#createPurchaseReturnPositions) | **POST** /entity/purchasereturn/{id}/positions/batch | Массовое создание и обновление позиций Возврата поставщику
 *PurchaseReturnsApi* | [**deletePurchaseReturn**](docs/PurchaseReturnsApi.md#deletePurchaseReturn) | **DELETE** /entity/purchasereturn/{id} | Удалить Возврат поставщику
 *PurchaseReturnsApi* | [**deletePurchaseReturnBatch**](docs/PurchaseReturnsApi.md#deletePurchaseReturnBatch) | **POST** /entity/purchasereturn/delete | Массовое удаление Возвратов поставщикам
 *PurchaseReturnsApi* | [**deletePurchaseReturnFile**](docs/PurchaseReturnsApi.md#deletePurchaseReturnFile) | **DELETE** /entity/purchasereturn/{id}/files/{fileId} | Удалить файл возврата поставщику
@@ -977,8 +988,8 @@ Class | Method | HTTP request | Description
 *RetailDemandsApi* | [**createRetailDemand**](docs/RetailDemandsApi.md#createRetailDemand) | **POST** /entity/retaildemand | Создать Розничную продажу
 *RetailDemandsApi* | [**createRetailDemandBatch**](docs/RetailDemandsApi.md#createRetailDemandBatch) | **POST** /entity/retaildemand/batch | Массовое создание и обновление Розничных продаж
 *RetailDemandsApi* | [**createRetailDemandMetadataAttribute**](docs/RetailDemandsApi.md#createRetailDemandMetadataAttribute) | **POST** /entity/retaildemand/metadata/attributes | Создать доп. поле Розничной продажи
-*RetailDemandsApi* | [**createRetailDemandPositions**](docs/RetailDemandsApi.md#createRetailDemandPositions) | **POST** /entity/retaildemand/{id}/positions | Создать позиции Розничной продажи
-*RetailDemandsApi* | [**createRetailDemandPositionsBatch**](docs/RetailDemandsApi.md#createRetailDemandPositionsBatch) | **POST** /entity/retaildemand/{id}/positions/batch | Создать позиции Розничной продажи
+*RetailDemandsApi* | [**createRetailDemandPosition**](docs/RetailDemandsApi.md#createRetailDemandPosition) | **POST** /entity/retaildemand/{id}/positions | Создать и обновить позицию Розничной продажи
+*RetailDemandsApi* | [**createRetailDemandPositions**](docs/RetailDemandsApi.md#createRetailDemandPositions) | **POST** /entity/retaildemand/{id}/positions/batch | Массовое создание и обновление позиций Розничной продажи
 *RetailDemandsApi* | [**deleteRetailDemand**](docs/RetailDemandsApi.md#deleteRetailDemand) | **DELETE** /entity/retaildemand/{id} | Удалить Розничную продажу
 *RetailDemandsApi* | [**deleteRetailDemandBatch**](docs/RetailDemandsApi.md#deleteRetailDemandBatch) | **POST** /entity/retaildemand/delete | Массовое удаление Розничных продаж
 *RetailDemandsApi* | [**deleteRetailDemandMetadataAttributeById**](docs/RetailDemandsApi.md#deleteRetailDemandMetadataAttributeById) | **DELETE** /entity/retaildemand/metadata/attributes/{id} | Удалить отдельное доп. поле Розничной продажи
@@ -1062,7 +1073,8 @@ Class | Method | HTTP request | Description
 *SalesReturnsApi* | [**createSalesReturn**](docs/SalesReturnsApi.md#createSalesReturn) | **POST** /entity/salesreturn | Создать Возврат покупателя
 *SalesReturnsApi* | [**createSalesReturnBatch**](docs/SalesReturnsApi.md#createSalesReturnBatch) | **POST** /entity/salesreturn/batch | Массовое создание и обновление Возвратов покупателей
 *SalesReturnsApi* | [**createSalesReturnMetadataAttribute**](docs/SalesReturnsApi.md#createSalesReturnMetadataAttribute) | **POST** /entity/salesreturn/metadata/attributes | Создать доп. поле Возврата покупателя
-*SalesReturnsApi* | [**createSalesReturnPositions**](docs/SalesReturnsApi.md#createSalesReturnPositions) | **POST** /entity/salesreturn/{id}/positions | Создать позиции Возврата покупателя
+*SalesReturnsApi* | [**createSalesReturnPosition**](docs/SalesReturnsApi.md#createSalesReturnPosition) | **POST** /entity/salesreturn/{id}/positions | Создать и обновить позицию Возврата покупателя
+*SalesReturnsApi* | [**createSalesReturnPositions**](docs/SalesReturnsApi.md#createSalesReturnPositions) | **POST** /entity/salesreturn/{id}/positions/batch | Массовое создание и обновление позиций Возврата покупателя
 *SalesReturnsApi* | [**deleteSalesReturn**](docs/SalesReturnsApi.md#deleteSalesReturn) | **DELETE** /entity/salesreturn/{id} | Удалить Возврат покупателя
 *SalesReturnsApi* | [**deleteSalesReturnBatch**](docs/SalesReturnsApi.md#deleteSalesReturnBatch) | **POST** /entity/salesreturn/delete | Массовое удаление Возвратов покупателей
 *SalesReturnsApi* | [**deleteSalesReturnMetadataAttributeById**](docs/SalesReturnsApi.md#deleteSalesReturnMetadataAttributeById) | **DELETE** /entity/salesreturn/metadata/attributes/{id} | Удалить отдельное доп. поле Возврата покупателя
@@ -1121,8 +1133,8 @@ Class | Method | HTTP request | Description
 *SuppliesApi* | [**createSupplyBatch**](docs/SuppliesApi.md#createSupplyBatch) | **POST** /entity/supply/batch | Массовое создание и обновление Приемок
 *SuppliesApi* | [**createSupplyMetadataAttribute**](docs/SuppliesApi.md#createSupplyMetadataAttribute) | **POST** /entity/supply/metadata/attributes | Создать доп. поле Приемки
 *SuppliesApi* | [**createSupplyMetadataState**](docs/SuppliesApi.md#createSupplyMetadataState) | **POST** /entity/supply/metadata/states | Создать статус Приемки
-*SuppliesApi* | [**createSupplyPositions**](docs/SuppliesApi.md#createSupplyPositions) | **POST** /entity/supply/{id}/positions | Создать позицию Приемки
-*SuppliesApi* | [**createSupplyPositionsBatch**](docs/SuppliesApi.md#createSupplyPositionsBatch) | **POST** /entity/supply/{id}/positions/batch | Создать позиции Приемки
+*SuppliesApi* | [**createSupplyPosition**](docs/SuppliesApi.md#createSupplyPosition) | **POST** /entity/supply/{id}/positions | Создать и обновить позицию Приемки
+*SuppliesApi* | [**createSupplyPositions**](docs/SuppliesApi.md#createSupplyPositions) | **POST** /entity/supply/{id}/positions/batch | Массовое создание и обновление позиций Приемки
 *SuppliesApi* | [**deleteSupply**](docs/SuppliesApi.md#deleteSupply) | **DELETE** /entity/supply/{id} | Удалить Приемку
 *SuppliesApi* | [**deleteSupplyBatch**](docs/SuppliesApi.md#deleteSupplyBatch) | **POST** /entity/supply/delete | Массовое удаление Приемок
 *SuppliesApi* | [**deleteSupplyFile**](docs/SuppliesApi.md#deleteSupplyFile) | **DELETE** /entity/supply/{id}/files/{fileId} | Удалить файл Приемки
@@ -1304,11 +1316,10 @@ Class | Method | HTTP request | Description
  - [CreateCashOutBatch200ResponseInner](docs/CreateCashOutBatch200ResponseInner.md)
  - [CreateCommissionReportInBatch200ResponseInner](docs/CreateCommissionReportInBatch200ResponseInner.md)
  - [CreateCommissionReportInPositions200ResponseInner](docs/CreateCommissionReportInPositions200ResponseInner.md)
- - [CreateCommissionReportInPositionsRequest](docs/CreateCommissionReportInPositionsRequest.md)
  - [CreateCommissionReportInReturnedPositions200ResponseInner](docs/CreateCommissionReportInReturnedPositions200ResponseInner.md)
  - [CreateCommissionReportInReturnedPositionsRequest](docs/CreateCommissionReportInReturnedPositionsRequest.md)
  - [CreateCommissionReportOutBatch200ResponseInner](docs/CreateCommissionReportOutBatch200ResponseInner.md)
- - [CreateCommissionReportOutPositionsBatch200ResponseInner](docs/CreateCommissionReportOutPositionsBatch200ResponseInner.md)
+ - [CreateCommissionReportOutPositions200ResponseInner](docs/CreateCommissionReportOutPositions200ResponseInner.md)
  - [CreateConsignmentsBatch200ResponseInner](docs/CreateConsignmentsBatch200ResponseInner.md)
  - [CreateContractsBatch200ResponseInner](docs/CreateContractsBatch200ResponseInner.md)
  - [CreateCounterpartiesBatch200ResponseInner](docs/CreateCounterpartiesBatch200ResponseInner.md)
@@ -1316,35 +1327,29 @@ Class | Method | HTTP request | Description
  - [CreateCurrenciesBatch200ResponseInner](docs/CreateCurrenciesBatch200ResponseInner.md)
  - [CreateCustomerOrderBatch200ResponseInner](docs/CreateCustomerOrderBatch200ResponseInner.md)
  - [CreateCustomerOrderPositions200ResponseInner](docs/CreateCustomerOrderPositions200ResponseInner.md)
- - [CreateCustomerOrderPositionsRequest](docs/CreateCustomerOrderPositionsRequest.md)
  - [CreateDemandBatch200ResponseInner](docs/CreateDemandBatch200ResponseInner.md)
  - [CreateDemandPositions200ResponseInner](docs/CreateDemandPositions200ResponseInner.md)
- - [CreateDemandPositionsRequest](docs/CreateDemandPositionsRequest.md)
  - [CreateEmissionOrderBatch200ResponseInner](docs/CreateEmissionOrderBatch200ResponseInner.md)
- - [CreateEmissionOrderPositionsBatch200ResponseInner](docs/CreateEmissionOrderPositionsBatch200ResponseInner.md)
+ - [CreateEmissionOrderPositions200ResponseInner](docs/CreateEmissionOrderPositions200ResponseInner.md)
  - [CreateEmployeesBatch200ResponseInner](docs/CreateEmployeesBatch200ResponseInner.md)
  - [CreateEnterBatch200ResponseInner](docs/CreateEnterBatch200ResponseInner.md)
  - [CreateEnterPositions200ResponseInner](docs/CreateEnterPositions200ResponseInner.md)
- - [CreateEnterPositionsRequest](docs/CreateEnterPositionsRequest.md)
  - [CreateExpenseItemsBatch200ResponseInner](docs/CreateExpenseItemsBatch200ResponseInner.md)
  - [CreateFactureInsBatch200ResponseInner](docs/CreateFactureInsBatch200ResponseInner.md)
  - [CreateFactureOutsBatch200ResponseInner](docs/CreateFactureOutsBatch200ResponseInner.md)
  - [CreateInternalOrderBatch200ResponseInner](docs/CreateInternalOrderBatch200ResponseInner.md)
  - [CreateInternalOrderMetadataStateRequest](docs/CreateInternalOrderMetadataStateRequest.md)
  - [CreateInternalOrderPositions200ResponseInner](docs/CreateInternalOrderPositions200ResponseInner.md)
- - [CreateInternalOrderPositionsRequest](docs/CreateInternalOrderPositionsRequest.md)
  - [CreateInventoriesBatch200ResponseInner](docs/CreateInventoriesBatch200ResponseInner.md)
  - [CreateInventoryPositions200ResponseInner](docs/CreateInventoryPositions200ResponseInner.md)
- - [CreateInventoryPositionsRequest](docs/CreateInventoryPositionsRequest.md)
  - [CreateInvoiceInBatch200ResponseInner](docs/CreateInvoiceInBatch200ResponseInner.md)
  - [CreateInvoiceInPositionsBatch200ResponseInner](docs/CreateInvoiceInPositionsBatch200ResponseInner.md)
  - [CreateInvoiceOutBatch200ResponseInner](docs/CreateInvoiceOutBatch200ResponseInner.md)
  - [CreateInvoiceOutPositionsBatch200ResponseInner](docs/CreateInvoiceOutPositionsBatch200ResponseInner.md)
  - [CreateLossBatch200ResponseInner](docs/CreateLossBatch200ResponseInner.md)
  - [CreateLossPositions200ResponseInner](docs/CreateLossPositions200ResponseInner.md)
- - [CreateLossPositionsRequest](docs/CreateLossPositionsRequest.md)
  - [CreateMoveBatch200ResponseInner](docs/CreateMoveBatch200ResponseInner.md)
- - [CreateMovePositionsBatch200ResponseInner](docs/CreateMovePositionsBatch200ResponseInner.md)
+ - [CreateMovePositions200ResponseInner](docs/CreateMovePositions200ResponseInner.md)
  - [CreateOrUpdateWebhookStocksBatch200ResponseInner](docs/CreateOrUpdateWebhookStocksBatch200ResponseInner.md)
  - [CreateOrUpdateWebhooksBatch200ResponseInner](docs/CreateOrUpdateWebhooksBatch200ResponseInner.md)
  - [CreateOrganizationsBatch200ResponseInner](docs/CreateOrganizationsBatch200ResponseInner.md)
@@ -1354,9 +1359,9 @@ Class | Method | HTTP request | Description
  - [CreateProcessingBatch200ResponseInner](docs/CreateProcessingBatch200ResponseInner.md)
  - [CreateProcessingOrderBatch200ResponseInner](docs/CreateProcessingOrderBatch200ResponseInner.md)
  - [CreateProcessingOrderPositions200ResponseInner](docs/CreateProcessingOrderPositions200ResponseInner.md)
- - [CreateProcessingOrderPositionsRequest](docs/CreateProcessingOrderPositionsRequest.md)
  - [CreateProcessingPlanBatch200ResponseInner](docs/CreateProcessingPlanBatch200ResponseInner.md)
  - [CreateProcessingPlanFoldersBatch200ResponseInner](docs/CreateProcessingPlanFoldersBatch200ResponseInner.md)
+ - [CreateProcessingProcessPositions200ResponseInner](docs/CreateProcessingProcessPositions200ResponseInner.md)
  - [CreateProcessingProcessesBatch200ResponseInner](docs/CreateProcessingProcessesBatch200ResponseInner.md)
  - [CreateProcessingStagesBatch200ResponseInner](docs/CreateProcessingStagesBatch200ResponseInner.md)
  - [CreateProductFoldersBatch200ResponseInner](docs/CreateProductFoldersBatch200ResponseInner.md)
@@ -1364,25 +1369,22 @@ Class | Method | HTTP request | Description
  - [CreateProjectsBatch200ResponseInner](docs/CreateProjectsBatch200ResponseInner.md)
  - [CreatePurchaseOrderBatch200ResponseInner](docs/CreatePurchaseOrderBatch200ResponseInner.md)
  - [CreatePurchaseOrderPositions200ResponseInner](docs/CreatePurchaseOrderPositions200ResponseInner.md)
- - [CreatePurchaseOrderPositionsRequest](docs/CreatePurchaseOrderPositionsRequest.md)
  - [CreatePurchaseReturnBatch200ResponseInner](docs/CreatePurchaseReturnBatch200ResponseInner.md)
  - [CreatePurchaseReturnPositions200ResponseInner](docs/CreatePurchaseReturnPositions200ResponseInner.md)
- - [CreatePurchaseReturnPositionsRequest](docs/CreatePurchaseReturnPositionsRequest.md)
  - [CreateRetailDemandBatch200ResponseInner](docs/CreateRetailDemandBatch200ResponseInner.md)
- - [CreateRetailDemandPositionsBatch200ResponseInner](docs/CreateRetailDemandPositionsBatch200ResponseInner.md)
+ - [CreateRetailDemandPositions200ResponseInner](docs/CreateRetailDemandPositions200ResponseInner.md)
  - [CreateRetailDrawerCashInBatch200ResponseInner](docs/CreateRetailDrawerCashInBatch200ResponseInner.md)
  - [CreateRetailDrawerCashOutBatch200ResponseInner](docs/CreateRetailDrawerCashOutBatch200ResponseInner.md)
  - [CreateRetailStoresBatch200ResponseInner](docs/CreateRetailStoresBatch200ResponseInner.md)
  - [CreateSalesChannelsBatch200ResponseInner](docs/CreateSalesChannelsBatch200ResponseInner.md)
  - [CreateSalesReturnBatch200ResponseInner](docs/CreateSalesReturnBatch200ResponseInner.md)
  - [CreateSalesReturnPositions200ResponseInner](docs/CreateSalesReturnPositions200ResponseInner.md)
- - [CreateSalesReturnPositionsRequest](docs/CreateSalesReturnPositionsRequest.md)
  - [CreateServicesBatch200ResponseInner](docs/CreateServicesBatch200ResponseInner.md)
  - [CreateStoreSlotsRequest](docs/CreateStoreSlotsRequest.md)
  - [CreateStoreZonesRequest](docs/CreateStoreZonesRequest.md)
  - [CreateStoresBatch200ResponseInner](docs/CreateStoresBatch200ResponseInner.md)
  - [CreateSupplyBatch200ResponseInner](docs/CreateSupplyBatch200ResponseInner.md)
- - [CreateSupplyPositionsBatch200ResponseInner](docs/CreateSupplyPositionsBatch200ResponseInner.md)
+ - [CreateSupplyPositions200ResponseInner](docs/CreateSupplyPositions200ResponseInner.md)
  - [CreateTaskMetadataStates200Response](docs/CreateTaskMetadataStates200Response.md)
  - [CreateTaskMetadataStates200ResponseOneOfInner](docs/CreateTaskMetadataStates200ResponseOneOfInner.md)
  - [CreateTaskMetadataStatesRequest](docs/CreateTaskMetadataStatesRequest.md)

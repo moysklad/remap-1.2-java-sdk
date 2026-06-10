@@ -89,7 +89,7 @@ import java.util.StringJoiner;
   InternalOrder.JSON_PROPERTY_MOVES,
   InternalOrder.JSON_PROPERTY_PROCESSING_ORDER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
 public class InternalOrder {
   public static InternalOrder createWithMeta(UUID id) {
     InternalOrder o = new InternalOrder();
@@ -1100,7 +1100,7 @@ public class InternalOrder {
 
 
   /**
-   * Позиций Внутреннего заказа
+   * Get positions
    * @return positions
    */
   @javax.annotation.Nullable
@@ -1714,12 +1714,7 @@ public class InternalOrder {
 
     // add `positions` to the URL query string
     if (getPositions() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%spositions%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getPositions()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
+      joiner.add(getPositions().toUrlQueryString(prefix + "positions" + suffix));
     }
 
     // add `purchaseOrders` to the URL query string

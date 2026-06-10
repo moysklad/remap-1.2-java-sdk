@@ -21,7 +21,7 @@ import ru.moysklad.remap_1_2.Configuration;
 import ru.moysklad.remap_1_2.Pair;
 
 import ru.moysklad.remap_1_2.model.CreateEmissionOrderBatch200ResponseInner;
-import ru.moysklad.remap_1_2.model.CreateEmissionOrderPositionsBatch200ResponseInner;
+import ru.moysklad.remap_1_2.model.CreateEmissionOrderPositions200ResponseInner;
 import ru.moysklad.remap_1_2.model.DocumentMetadata;
 import ru.moysklad.remap_1_2.model.EmissionOrder;
 import ru.moysklad.remap_1_2.model.EmissionOrderList;
@@ -39,7 +39,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class EmissionOrdersApi extends BaseApi {
 
@@ -268,7 +268,7 @@ if (contentType != null)
   }
 
   /**
-   * Создать позицию Заказа кодов маркировки
+   * Создать и обновить позицию Заказа кодов маркировки
    * 
    * @param id ID сущности (required)
    * @param emissionOrderPosition  (required)
@@ -279,12 +279,12 @@ if (contentType != null)
    * @return EmissionOrderPosition
    * @throws ApiException if fails to make API call
    */
-  public EmissionOrderPosition createEmissionOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EmissionOrderPosition emissionOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createEmissionOrderPositions(id, emissionOrderPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public EmissionOrderPosition createEmissionOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EmissionOrderPosition emissionOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+    return this.createEmissionOrderPosition(id, emissionOrderPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
   /**
-   * Создать позицию Заказа кодов маркировки
+   * Создать и обновить позицию Заказа кодов маркировки
    * 
    
    * @param id ID сущности (required)
@@ -300,14 +300,14 @@ if (contentType != null)
    * @return EmissionOrderPosition
    * @throws ApiException if fails to make API call
    */
-  public EmissionOrderPosition createEmissionOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EmissionOrderPosition emissionOrderPosition, RequestOptions options) throws ApiException {
+  public EmissionOrderPosition createEmissionOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EmissionOrderPosition emissionOrderPosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
-    return this.createEmissionOrderPositions(id, emissionOrderPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.createEmissionOrderPosition(id, emissionOrderPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
   /**
-   * Создать позицию Заказа кодов маркировки
+   * Создать и обновить позицию Заказа кодов маркировки
    * 
    * @param id ID сущности (required)
    * @param emissionOrderPosition  (required)
@@ -319,17 +319,17 @@ if (contentType != null)
    * @return EmissionOrderPosition
    * @throws ApiException if fails to make API call
    */
-  public EmissionOrderPosition createEmissionOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EmissionOrderPosition emissionOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public EmissionOrderPosition createEmissionOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EmissionOrderPosition emissionOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = emissionOrderPosition;
     
     // verify the required parameter 'id' is set
     if (id == null) {
-      throw new ApiException(400, "Missing the required parameter 'id' when calling createEmissionOrderPositions");
+      throw new ApiException(400, "Missing the required parameter 'id' when calling createEmissionOrderPosition");
     }
     
     // verify the required parameter 'emissionOrderPosition' is set
     if (emissionOrderPosition == null) {
-      throw new ApiException(400, "Missing the required parameter 'emissionOrderPosition' when calling createEmissionOrderPositions");
+      throw new ApiException(400, "Missing the required parameter 'emissionOrderPosition' when calling createEmissionOrderPosition");
     }
     
     // create path and map variables
@@ -387,7 +387,7 @@ if (contentType != null)
   }
 
   /**
-   * Создать позиции Заказа кодов маркировки
+   * Массовое создание и обновление позиций Заказа кодов маркировки
    * 
    * @param id ID сущности (required)
    * @param emissionOrderPosition  (required)
@@ -395,15 +395,15 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;CreateEmissionOrderPositionsBatch200ResponseInner&gt;
+   * @return List&lt;CreateEmissionOrderPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateEmissionOrderPositionsBatch200ResponseInner> createEmissionOrderPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<EmissionOrderPosition> emissionOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createEmissionOrderPositionsBatch(id, emissionOrderPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<CreateEmissionOrderPositions200ResponseInner> createEmissionOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<EmissionOrderPosition> emissionOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+    return this.createEmissionOrderPositions(id, emissionOrderPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
   /**
-   * Создать позиции Заказа кодов маркировки
+   * Массовое создание и обновление позиций Заказа кодов маркировки
    * 
    
    * @param id ID сущности (required)
@@ -416,17 +416,17 @@ if (contentType != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return List&lt;CreateEmissionOrderPositionsBatch200ResponseInner&gt;
+   * @return List&lt;CreateEmissionOrderPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateEmissionOrderPositionsBatch200ResponseInner> createEmissionOrderPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<EmissionOrderPosition> emissionOrderPosition, RequestOptions options) throws ApiException {
+  public List<CreateEmissionOrderPositions200ResponseInner> createEmissionOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<EmissionOrderPosition> emissionOrderPosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
-    return this.createEmissionOrderPositionsBatch(id, emissionOrderPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.createEmissionOrderPositions(id, emissionOrderPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
   /**
-   * Создать позиции Заказа кодов маркировки
+   * Массовое создание и обновление позиций Заказа кодов маркировки
    * 
    * @param id ID сущности (required)
    * @param emissionOrderPosition  (required)
@@ -435,20 +435,20 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;CreateEmissionOrderPositionsBatch200ResponseInner&gt;
+   * @return List&lt;CreateEmissionOrderPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateEmissionOrderPositionsBatch200ResponseInner> createEmissionOrderPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<EmissionOrderPosition> emissionOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<CreateEmissionOrderPositions200ResponseInner> createEmissionOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<EmissionOrderPosition> emissionOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = emissionOrderPosition;
     
     // verify the required parameter 'id' is set
     if (id == null) {
-      throw new ApiException(400, "Missing the required parameter 'id' when calling createEmissionOrderPositionsBatch");
+      throw new ApiException(400, "Missing the required parameter 'id' when calling createEmissionOrderPositions");
     }
     
     // verify the required parameter 'emissionOrderPosition' is set
     if (emissionOrderPosition == null) {
-      throw new ApiException(400, "Missing the required parameter 'emissionOrderPosition' when calling createEmissionOrderPositionsBatch");
+      throw new ApiException(400, "Missing the required parameter 'emissionOrderPosition' when calling createEmissionOrderPositions");
     }
     
     // create path and map variables
@@ -487,7 +487,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<CreateEmissionOrderPositionsBatch200ResponseInner>> localVarReturnType = new TypeReference<List<CreateEmissionOrderPositionsBatch200ResponseInner>>() {};
+    TypeReference<List<CreateEmissionOrderPositions200ResponseInner>> localVarReturnType = new TypeReference<List<CreateEmissionOrderPositions200ResponseInner>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

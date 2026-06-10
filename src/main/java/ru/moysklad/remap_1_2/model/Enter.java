@@ -79,7 +79,7 @@ import java.util.StringJoiner;
   Enter.JSON_PROPERTY_SYNC_ID,
   Enter.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
 public class Enter {
   public static Enter createWithMeta(UUID id) {
     Enter o = new Enter();

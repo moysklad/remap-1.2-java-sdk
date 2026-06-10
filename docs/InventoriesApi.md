@@ -9,7 +9,8 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createInventory**](InventoriesApi.md#createInventory) | **POST** /entity/inventory | Создать Инвентаризацию |
 | [**createInventoryMetadataAttribute**](InventoriesApi.md#createInventoryMetadataAttribute) | **POST** /entity/inventory/metadata/attributes | Создать доп. поле Инвентаризаций |
 | [**createInventoryMetadataState**](InventoriesApi.md#createInventoryMetadataState) | **POST** /entity/inventory/metadata/states | Создать статус Инвентаризации |
-| [**createInventoryPositions**](InventoriesApi.md#createInventoryPositions) | **POST** /entity/inventory/{id}/positions | Создать позиции Инвентаризации |
+| [**createInventoryPosition**](InventoriesApi.md#createInventoryPosition) | **POST** /entity/inventory/{id}/positions | Создать и обновить позицию Инвентаризации |
+| [**createInventoryPositions**](InventoriesApi.md#createInventoryPositions) | **POST** /entity/inventory/{id}/positions/batch | Массовое создание и обновление позиций Инвентаризации |
 | [**deleteInventoriesBatch**](InventoriesApi.md#deleteInventoriesBatch) | **POST** /entity/inventory/delete | Массовое удаление Инвентаризации |
 | [**deleteInventory**](InventoriesApi.md#deleteInventory) | **DELETE** /entity/inventory/{id} | Удалить Инвентаризацию |
 | [**deleteInventoryFile**](InventoriesApi.md#deleteInventoryFile) | **DELETE** /entity/inventory/{id}/files/{fileId} | Удалить файл Инвентаризации |
@@ -448,11 +449,11 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 
-## createInventoryPositions
+## createInventoryPosition
 
-> List&lt;CreateInventoryPositions200ResponseInner&gt; createInventoryPositions(id, createInventoryPositionsRequest, expand, accept, acceptEncoding, contentType)
+> InventoryPosition createInventoryPosition(id, inventoryPosition, expand, accept, acceptEncoding, contentType)
 
-Создать позиции Инвентаризации
+Создать и обновить позицию Инвентаризации
 
 ### Example
 
@@ -481,13 +482,98 @@ public class Example {
 
         InventoriesApi apiInstance = new InventoriesApi(defaultClient);
         UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        CreateInventoryPositionsRequest createInventoryPositionsRequest = new CreateInventoryPositionsRequest(); // CreateInventoryPositionsRequest | 
+        InventoryPosition inventoryPosition = new InventoryPosition(); // InventoryPosition | 
         String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateInventoryPositions200ResponseInner> result = apiInstance.createInventoryPositions(id, createInventoryPositionsRequest, expand, accept, acceptEncoding, contentType);
+            InventoryPosition result = apiInstance.createInventoryPosition(id, inventoryPosition, expand, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling InventoriesApi#createInventoryPosition");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **inventoryPosition** | [**InventoryPosition**](InventoryPosition.md)|  | |
+| **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**InventoryPosition**](InventoryPosition.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+
+
+## createInventoryPositions
+
+> List&lt;CreateInventoryPositions200ResponseInner&gt; createInventoryPositions(id, inventoryPosition, expand, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление позиций Инвентаризации
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.InventoriesApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        InventoriesApi apiInstance = new InventoriesApi(defaultClient);
+        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        List<InventoryPosition> inventoryPosition = Arrays.asList(); // List<InventoryPosition> | 
+        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<CreateInventoryPositions200ResponseInner> result = apiInstance.createInventoryPositions(id, inventoryPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling InventoriesApi#createInventoryPositions");
@@ -506,7 +592,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **createInventoryPositionsRequest** | [**CreateInventoryPositionsRequest**](CreateInventoryPositionsRequest.md)|  | |
+| **inventoryPosition** | [**List&lt;InventoryPosition&gt;**](InventoryPosition.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |

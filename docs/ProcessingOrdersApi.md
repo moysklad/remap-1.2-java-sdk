@@ -9,7 +9,8 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createProcessingOrderBatch**](ProcessingOrdersApi.md#createProcessingOrderBatch) | **POST** /entity/processingorder/batch | Массовое создание и обновление ProcessingOrder |
 | [**createProcessingOrderMetadataAttribute**](ProcessingOrdersApi.md#createProcessingOrderMetadataAttribute) | **POST** /entity/processingorder/metadata/attributes | Создать Доп. поле ProcessingOrder |
 | [**createProcessingOrderMetadataState**](ProcessingOrdersApi.md#createProcessingOrderMetadataState) | **POST** /entity/processingorder/metadata/states | Создать статус ProcessingOrder |
-| [**createProcessingOrderPositions**](ProcessingOrdersApi.md#createProcessingOrderPositions) | **POST** /entity/processingorder/{id}/positions | Создать позиции ProcessingOrder |
+| [**createProcessingOrderPosition**](ProcessingOrdersApi.md#createProcessingOrderPosition) | **POST** /entity/processingorder/{id}/positions | Обновить позицию ProcessingOrder |
+| [**createProcessingOrderPositions**](ProcessingOrdersApi.md#createProcessingOrderPositions) | **POST** /entity/processingorder/{id}/positions/batch | Массовое изменение позиций Заказа на производство |
 | [**deleteProcessingOrder**](ProcessingOrdersApi.md#deleteProcessingOrder) | **DELETE** /entity/processingorder/{id} | Удалить ProcessingOrder |
 | [**deleteProcessingOrderBatch**](ProcessingOrdersApi.md#deleteProcessingOrderBatch) | **POST** /entity/processingorder/delete | Массовое удаление ProcessingOrder |
 | [**deleteProcessingOrderFile**](ProcessingOrdersApi.md#deleteProcessingOrderFile) | **DELETE** /entity/processingorder/{id}/files/{fileId} | Удалить файл Заказа на производство |
@@ -448,11 +449,11 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 
-## createProcessingOrderPositions
+## createProcessingOrderPosition
 
-> List&lt;CreateProcessingOrderPositions200ResponseInner&gt; createProcessingOrderPositions(id, createProcessingOrderPositionsRequest, expand, accept, acceptEncoding, contentType)
+> ProcessingOrderPosition createProcessingOrderPosition(id, processingOrderPosition, expand, accept, acceptEncoding, contentType)
 
-Создать позиции ProcessingOrder
+Обновить позицию ProcessingOrder
 
 ### Example
 
@@ -481,13 +482,98 @@ public class Example {
 
         ProcessingOrdersApi apiInstance = new ProcessingOrdersApi(defaultClient);
         UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        CreateProcessingOrderPositionsRequest createProcessingOrderPositionsRequest = new CreateProcessingOrderPositionsRequest(); // CreateProcessingOrderPositionsRequest | 
+        ProcessingOrderPosition processingOrderPosition = new ProcessingOrderPosition(); // ProcessingOrderPosition | 
         String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateProcessingOrderPositions200ResponseInner> result = apiInstance.createProcessingOrderPositions(id, createProcessingOrderPositionsRequest, expand, accept, acceptEncoding, contentType);
+            ProcessingOrderPosition result = apiInstance.createProcessingOrderPosition(id, processingOrderPosition, expand, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProcessingOrdersApi#createProcessingOrderPosition");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **processingOrderPosition** | [**ProcessingOrderPosition**](ProcessingOrderPosition.md)|  | |
+| **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**ProcessingOrderPosition**](ProcessingOrderPosition.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+
+
+## createProcessingOrderPositions
+
+> List&lt;CreateProcessingOrderPositions200ResponseInner&gt; createProcessingOrderPositions(id, processingOrderPosition, expand, accept, acceptEncoding, contentType)
+
+Массовое изменение позиций Заказа на производство
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.ProcessingOrdersApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        ProcessingOrdersApi apiInstance = new ProcessingOrdersApi(defaultClient);
+        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        List<ProcessingOrderPosition> processingOrderPosition = Arrays.asList(); // List<ProcessingOrderPosition> | 
+        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<CreateProcessingOrderPositions200ResponseInner> result = apiInstance.createProcessingOrderPositions(id, processingOrderPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProcessingOrdersApi#createProcessingOrderPositions");
@@ -506,7 +592,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **createProcessingOrderPositionsRequest** | [**CreateProcessingOrderPositionsRequest**](CreateProcessingOrderPositionsRequest.md)|  | |
+| **processingOrderPosition** | [**List&lt;ProcessingOrderPosition&gt;**](ProcessingOrderPosition.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -529,7 +615,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Успешный запрос |  -  |
+| **200** | Результат по каждому элементу (успех или объект ошибки) |  -  |
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 

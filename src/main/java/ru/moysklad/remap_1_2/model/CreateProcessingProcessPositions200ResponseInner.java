@@ -24,11 +24,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
-import ru.moysklad.remap_1_2.model.Assortment;
-import ru.moysklad.remap_1_2.model.EmissionOrderPosition;
+import org.openapitools.jackson.nullable.JsonNullable;
 import ru.moysklad.remap_1_2.model.Error;
 import ru.moysklad.remap_1_2.model.ErrorErrorsInner;
 import ru.moysklad.remap_1_2.model.Meta;
+import ru.moysklad.remap_1_2.model.ProcessingProcessPosition;
+import ru.moysklad.remap_1_2.model.ProcessingProcessPositionNextPositionsInner;
+import ru.moysklad.remap_1_2.model.ProcessingStage;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.io.UnsupportedEncodingException;
@@ -36,20 +41,19 @@ import java.net.URLEncoder;
 import java.util.StringJoiner;
 
 /**
- * CreateEmissionOrderPositionsBatch200ResponseInner
+ * CreateProcessingProcessPositions200ResponseInner
  */
 @JsonPropertyOrder({
-  CreateEmissionOrderPositionsBatch200ResponseInner.JSON_PROPERTY_META,
-  CreateEmissionOrderPositionsBatch200ResponseInner.JSON_PROPERTY_ID,
-  CreateEmissionOrderPositionsBatch200ResponseInner.JSON_PROPERTY_ACCOUNT_ID,
-  CreateEmissionOrderPositionsBatch200ResponseInner.JSON_PROPERTY_ASSORTMENT,
-  CreateEmissionOrderPositionsBatch200ResponseInner.JSON_PROPERTY_QUANTITY,
-  CreateEmissionOrderPositionsBatch200ResponseInner.JSON_PROPERTY_STATUS,
-  CreateEmissionOrderPositionsBatch200ResponseInner.JSON_PROPERTY_ERRORS
+  CreateProcessingProcessPositions200ResponseInner.JSON_PROPERTY_META,
+  CreateProcessingProcessPositions200ResponseInner.JSON_PROPERTY_ID,
+  CreateProcessingProcessPositions200ResponseInner.JSON_PROPERTY_ACCOUNT_ID,
+  CreateProcessingProcessPositions200ResponseInner.JSON_PROPERTY_PROCESSINGSTAGE,
+  CreateProcessingProcessPositions200ResponseInner.JSON_PROPERTY_NEXT_POSITIONS,
+  CreateProcessingProcessPositions200ResponseInner.JSON_PROPERTY_ERRORS
 })
-@JsonTypeName("createEmissionOrderPositionsBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
-public class CreateEmissionOrderPositionsBatch200ResponseInner {
+@JsonTypeName("createProcessingProcessPositions_200_response_inner")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
+public class CreateProcessingProcessPositions200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
@@ -63,40 +67,34 @@ public class CreateEmissionOrderPositionsBatch200ResponseInner {
   @javax.annotation.Nullable
   private UUID accountId;
 
-  public static final String JSON_PROPERTY_ASSORTMENT = "assortment";
+  public static final String JSON_PROPERTY_PROCESSINGSTAGE = "processingstage";
   @javax.annotation.Nullable
-  private Assortment assortment;
+  private ProcessingStage processingstage;
 
-  public static final String JSON_PROPERTY_QUANTITY = "quantity";
+  public static final String JSON_PROPERTY_NEXT_POSITIONS = "nextPositions";
   @javax.annotation.Nullable
-  private Float quantity;
-
-  public static final String JSON_PROPERTY_STATUS = "status";
-  @javax.annotation.Nullable
-  private String status;
+  private JsonNullable<List<ProcessingProcessPositionNextPositionsInner>> nextPositions = JsonNullable.<List<ProcessingProcessPositionNextPositionsInner>>undefined();
 
   public static final String JSON_PROPERTY_ERRORS = "errors";
   @javax.annotation.Nonnull
   private List<ErrorErrorsInner> errors = new ArrayList<>();
 
-  public CreateEmissionOrderPositionsBatch200ResponseInner() {
+  public CreateProcessingProcessPositions200ResponseInner() {
   }
   /**
    * Constructor with only readonly parameters
    */
   @JsonCreator
-  public CreateEmissionOrderPositionsBatch200ResponseInner(
+  public CreateProcessingProcessPositions200ResponseInner(
     @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id, 
-    @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId, 
-    @JsonProperty(value = JSON_PROPERTY_STATUS, required = false) String status
+    @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId
   ) {
     this();
     this.id = id;
     this.accountId = accountId;
-    this.status = status;
   }
 
-  public CreateEmissionOrderPositionsBatch200ResponseInner meta(@javax.annotation.Nullable Meta meta) {
+  public CreateProcessingProcessPositions200ResponseInner meta(@javax.annotation.Nullable Meta meta) {
     
     this.meta = meta;
     return this;
@@ -157,92 +155,93 @@ public class CreateEmissionOrderPositionsBatch200ResponseInner {
 
 
 
-  public CreateEmissionOrderPositionsBatch200ResponseInner assortment(@javax.annotation.Nullable Assortment assortment) {
+  public CreateProcessingProcessPositions200ResponseInner processingstage(@javax.annotation.Nullable ProcessingStage processingstage) {
     
-    this.assortment = assortment;
+    this.processingstage = processingstage;
     return this;
   }
 
 
   /**
-   * Get assortment
-   * @return assortment
-   * @deprecated
+   * Get processingstage
+   * @return processingstage
    */
-  @Deprecated
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ASSORTMENT)
+  @JsonProperty(JSON_PROPERTY_PROCESSINGSTAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Assortment getAssortment() {
-    return assortment;
+  public ProcessingStage getProcessingstage() {
+    return processingstage;
   }
 
   
 
 
-  @JsonProperty(JSON_PROPERTY_ASSORTMENT)
+  @JsonProperty(JSON_PROPERTY_PROCESSINGSTAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAssortment(@javax.annotation.Nullable Assortment assortment) {
-    this.assortment = assortment;
+  public void setProcessingstage(@javax.annotation.Nullable ProcessingStage processingstage) {
+    this.processingstage = processingstage;
   }
 
 
-  public CreateEmissionOrderPositionsBatch200ResponseInner quantity(@javax.annotation.Nullable Float quantity) {
+  public CreateProcessingProcessPositions200ResponseInner nextPositions(@javax.annotation.Nullable List<ProcessingProcessPositionNextPositionsInner> nextPositions) {
+    this.nextPositions = JsonNullable.<List<ProcessingProcessPositionNextPositionsInner>>of(nextPositions);
     
-    this.quantity = quantity;
     return this;
   }
 
 
+  public CreateProcessingProcessPositions200ResponseInner addNextPositionsItem(ProcessingProcessPositionNextPositionsInner nextPositionsItem) {
+    if (this.nextPositions == null || !this.nextPositions.isPresent()) {
+      this.nextPositions = JsonNullable.<List<ProcessingProcessPositionNextPositionsInner>>of(new ArrayList<>());
+    }
+    try {
+      this.nextPositions.get().add(nextPositionsItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
+    return this;
+  }
+
   /**
-   * Количество товаров данного вида в позиции
-   * minimum: 0
-   * maximum: 1000
-   * @return quantity
+   * Метаданные следующих позиций позиции Техпроцесса
+   * @return nextPositions
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_QUANTITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
-  public Float getQuantity() {
-    return quantity;
+  public List<ProcessingProcessPositionNextPositionsInner> getNextPositions() {
+        return nextPositions.orElse(null);
   }
 
   
 
-
-  @JsonProperty(JSON_PROPERTY_QUANTITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setQuantity(@javax.annotation.Nullable Float quantity) {
-    this.quantity = quantity;
-  }
-
-
-  /**
-   * Статус кодов. Известные значения описаны в EmissionOrderPositionStatus
-   * @return status
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonProperty(JSON_PROPERTY_NEXT_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getStatus() {
-    return status;
-  }
 
+  public JsonNullable<List<ProcessingProcessPositionNextPositionsInner>> getNextPositions_JsonNullable() {
+    return nextPositions;
+  }
   
+  @JsonProperty(value = JSON_PROPERTY_NEXT_POSITIONS, required = false)
+  public void setNextPositions_JsonNullable(JsonNullable<List<ProcessingProcessPositionNextPositionsInner>> nextPositions) {
+    this.nextPositions = nextPositions;
+  }
+
+  public void setNextPositions(@javax.annotation.Nullable List<ProcessingProcessPositionNextPositionsInner> nextPositions) {
+    this.nextPositions = JsonNullable.<List<ProcessingProcessPositionNextPositionsInner>>of(nextPositions);
+  }
 
 
-
-  public CreateEmissionOrderPositionsBatch200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
+  public CreateProcessingProcessPositions200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
 
 
-  public CreateEmissionOrderPositionsBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
+  public CreateProcessingProcessPositions200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
     if (this.errors == null) {
       this.errors = new ArrayList<>();
     }
@@ -280,31 +279,40 @@ public class CreateEmissionOrderPositionsBatch200ResponseInner {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CreateEmissionOrderPositionsBatch200ResponseInner createEmissionOrderPositionsBatch200ResponseInner = (CreateEmissionOrderPositionsBatch200ResponseInner) o;
-    return Objects.equals(this.meta, createEmissionOrderPositionsBatch200ResponseInner.meta) &&
-        Objects.equals(this.id, createEmissionOrderPositionsBatch200ResponseInner.id) &&
-        Objects.equals(this.accountId, createEmissionOrderPositionsBatch200ResponseInner.accountId) &&
-        Objects.equals(this.assortment, createEmissionOrderPositionsBatch200ResponseInner.assortment) &&
-        Objects.equals(this.quantity, createEmissionOrderPositionsBatch200ResponseInner.quantity) &&
-        Objects.equals(this.status, createEmissionOrderPositionsBatch200ResponseInner.status) &&
-        Objects.equals(this.errors, createEmissionOrderPositionsBatch200ResponseInner.errors);
+    CreateProcessingProcessPositions200ResponseInner createProcessingProcessPositions200ResponseInner = (CreateProcessingProcessPositions200ResponseInner) o;
+    return Objects.equals(this.meta, createProcessingProcessPositions200ResponseInner.meta) &&
+        Objects.equals(this.id, createProcessingProcessPositions200ResponseInner.id) &&
+        Objects.equals(this.accountId, createProcessingProcessPositions200ResponseInner.accountId) &&
+        Objects.equals(this.processingstage, createProcessingProcessPositions200ResponseInner.processingstage) &&
+        equalsNullable(this.nextPositions, createProcessingProcessPositions200ResponseInner.nextPositions) &&
+        Objects.equals(this.errors, createProcessingProcessPositions200ResponseInner.errors);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, assortment, quantity, status, errors);
+    return Objects.hash(meta, id, accountId, processingstage, hashCodeNullable(nextPositions), errors);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CreateEmissionOrderPositionsBatch200ResponseInner {\n");
+    sb.append("class CreateProcessingProcessPositions200ResponseInner {\n");
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
-    sb.append("    assortment: ").append(toIndentedString(assortment)).append("\n");
-    sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    processingstage: ").append(toIndentedString(processingstage)).append("\n");
+    sb.append("    nextPositions: ").append(toIndentedString(nextPositions)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -378,28 +386,18 @@ public class CreateEmissionOrderPositionsBatch200ResponseInner {
       }
     }
 
-    // add `assortment` to the URL query string
-    if (getAssortment() != null) {
-      joiner.add(getAssortment().toUrlQueryString(prefix + "assortment" + suffix));
+    // add `processingstage` to the URL query string
+    if (getProcessingstage() != null) {
+      joiner.add(getProcessingstage().toUrlQueryString(prefix + "processingstage" + suffix));
     }
 
-    // add `quantity` to the URL query string
-    if (getQuantity() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%squantity%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getQuantity()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
-    }
-
-    // add `status` to the URL query string
-    if (getStatus() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%sstatus%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getStatus()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
+    // add `nextPositions` to the URL query string
+    if (getNextPositions() != null) {
+      for (int i = 0; i < getNextPositions().size(); i++) {
+        if (getNextPositions().get(i) != null) {
+          joiner.add(getNextPositions().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%snextPositions%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
+        }
       }
     }
 

@@ -46,7 +46,7 @@
 |**attributes** | [**List&lt;AttributeAbstract&gt;**](AttributeAbstract.md) | Коллекция метаданных доп. полей |  [optional] |
 |**files** | [**FileList**](FileList.md) | Метаданные массива Файлов |  [optional] |
 |**rate** | [**PurchaseOrderRate**](PurchaseOrderRate.md) |  |  [optional] |
-|**positions** | **PurchaseOrderPositionList** |  |  [optional] |
+|**positions** | [**PurchaseOrderPositionList**](PurchaseOrderPositionList.md) |  |  [optional] |
 |**internalOrder** | [**InternalOrder**](InternalOrder.md) | Внутренний заказ, связанный с заказом поставщику |  [optional] |
 |**customerOrders** | [**List&lt;CustomerOrder&gt;**](CustomerOrder.md) | Массив ссылок на связанные заказы покупателей |  [optional] |
 |**invoicesIn** | [**List&lt;InvoiceIn&gt;**](InvoiceIn.md) | Массив ссылок на связанные счета поставщиков |  [optional] |

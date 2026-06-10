@@ -24,7 +24,6 @@ import ru.moysklad.remap_1_2.model.AttributeMetaInfo;
 import ru.moysklad.remap_1_2.model.AttributeMetaInfoList;
 import ru.moysklad.remap_1_2.model.CreateInventoriesBatch200ResponseInner;
 import ru.moysklad.remap_1_2.model.CreateInventoryPositions200ResponseInner;
-import ru.moysklad.remap_1_2.model.CreateInventoryPositionsRequest;
 import ru.moysklad.remap_1_2.model.DeleteContractsBatch200ResponseInner;
 import ru.moysklad.remap_1_2.model.DocumentMetadata;
 import ru.moysklad.remap_1_2.model.ErrorOrArray;
@@ -46,7 +45,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class InventoriesApi extends BaseApi {
 
@@ -541,10 +540,129 @@ if (contentType != null)
   }
 
   /**
-   * Создать позиции Инвентаризации
+   * Создать и обновить позицию Инвентаризации
    * 
    * @param id ID сущности (required)
-   * @param createInventoryPositionsRequest  (required)
+   * @param inventoryPosition  (required)
+   * @param expand Замена ссылок объектами с помощью expand (optional)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @return InventoryPosition
+   * @throws ApiException if fails to make API call
+   */
+  public InventoryPosition createInventoryPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull InventoryPosition inventoryPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+    return this.createInventoryPosition(id, inventoryPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать и обновить позицию Инвентаризации
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param inventoryPosition  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return InventoryPosition
+   * @throws ApiException if fails to make API call
+   */
+  public InventoryPosition createInventoryPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull InventoryPosition inventoryPosition, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createInventoryPosition(id, inventoryPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Создать и обновить позицию Инвентаризации
+   * 
+   * @param id ID сущности (required)
+   * @param inventoryPosition  (required)
+   * @param expand Замена ссылок объектами с помощью expand (optional)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return InventoryPosition
+   * @throws ApiException if fails to make API call
+   */
+  public InventoryPosition createInventoryPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull InventoryPosition inventoryPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = inventoryPosition;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling createInventoryPosition");
+    }
+    
+    // verify the required parameter 'inventoryPosition' is set
+    if (inventoryPosition == null) {
+      throw new ApiException(400, "Missing the required parameter 'inventoryPosition' when calling createInventoryPosition");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/inventory/{id}/positions"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
+    if (accept != null)
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+if (acceptEncoding != null)
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+if (contentType != null)
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+
+    localVarHeaderParams.putAll(additionalHeaders);
+
+    
+    
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<InventoryPosition> localVarReturnType = new TypeReference<InventoryPosition>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Массовое создание и обновление позиций Инвентаризации
+   * 
+   * @param id ID сущности (required)
+   * @param inventoryPosition  (required)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
@@ -552,18 +670,18 @@ if (contentType != null)
    * @return List&lt;CreateInventoryPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateInventoryPositions200ResponseInner> createInventoryPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CreateInventoryPositionsRequest createInventoryPositionsRequest, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createInventoryPositions(id, createInventoryPositionsRequest, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<CreateInventoryPositions200ResponseInner> createInventoryPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<InventoryPosition> inventoryPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+    return this.createInventoryPositions(id, inventoryPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
   /**
-   * Создать позиции Инвентаризации
+   * Массовое создание и обновление позиций Инвентаризации
    * 
    
    * @param id ID сущности (required)
    
    
-   * @param createInventoryPositionsRequest  (required)
+   * @param inventoryPosition  (required)
    
    
    
@@ -573,17 +691,17 @@ if (contentType != null)
    * @return List&lt;CreateInventoryPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateInventoryPositions200ResponseInner> createInventoryPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CreateInventoryPositionsRequest createInventoryPositionsRequest, RequestOptions options) throws ApiException {
+  public List<CreateInventoryPositions200ResponseInner> createInventoryPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<InventoryPosition> inventoryPosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
-    return this.createInventoryPositions(id, createInventoryPositionsRequest, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.createInventoryPositions(id, inventoryPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
   /**
-   * Создать позиции Инвентаризации
+   * Массовое создание и обновление позиций Инвентаризации
    * 
    * @param id ID сущности (required)
-   * @param createInventoryPositionsRequest  (required)
+   * @param inventoryPosition  (required)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
@@ -592,21 +710,21 @@ if (contentType != null)
    * @return List&lt;CreateInventoryPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateInventoryPositions200ResponseInner> createInventoryPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CreateInventoryPositionsRequest createInventoryPositionsRequest, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
-    Object localVarPostBody = createInventoryPositionsRequest;
+  public List<CreateInventoryPositions200ResponseInner> createInventoryPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<InventoryPosition> inventoryPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = inventoryPosition;
     
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling createInventoryPositions");
     }
     
-    // verify the required parameter 'createInventoryPositionsRequest' is set
-    if (createInventoryPositionsRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'createInventoryPositionsRequest' when calling createInventoryPositions");
+    // verify the required parameter 'inventoryPosition' is set
+    if (inventoryPosition == null) {
+      throw new ApiException(400, "Missing the required parameter 'inventoryPosition' when calling createInventoryPositions");
     }
     
     // create path and map variables
-    String localVarPath = "/entity/inventory/{id}/positions"
+    String localVarPath = "/entity/inventory/{id}/positions/batch"
       .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
 
     StringJoiner localVarQueryStringJoiner = new StringJoiner("&");

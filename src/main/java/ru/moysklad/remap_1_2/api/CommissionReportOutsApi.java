@@ -26,7 +26,7 @@ import ru.moysklad.remap_1_2.model.CommissionReportOut;
 import ru.moysklad.remap_1_2.model.CommissionReportOutList;
 import ru.moysklad.remap_1_2.model.CommissionReportOutPosition;
 import ru.moysklad.remap_1_2.model.CreateCommissionReportOutBatch200ResponseInner;
-import ru.moysklad.remap_1_2.model.CreateCommissionReportOutPositionsBatch200ResponseInner;
+import ru.moysklad.remap_1_2.model.CreateCommissionReportOutPositions200ResponseInner;
 import ru.moysklad.remap_1_2.model.CreateInternalOrderMetadataStateRequest;
 import ru.moysklad.remap_1_2.model.DeleteContractsBatch200ResponseInner;
 import ru.moysklad.remap_1_2.model.DocumentMetadata;
@@ -45,7 +45,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class CommissionReportOutsApi extends BaseApi {
 
@@ -540,7 +540,7 @@ if (contentType != null)
   }
 
   /**
-   * Создать позицию CommissionReportOut
+   * Создать и обновить позицию Выданного отчета комиссионера
    * 
    * @param id ID сущности (required)
    * @param commissionReportOutPosition  (required)
@@ -556,7 +556,7 @@ if (contentType != null)
   }
 
   /**
-   * Создать позицию CommissionReportOut
+   * Создать и обновить позицию Выданного отчета комиссионера
    * 
    
    * @param id ID сущности (required)
@@ -579,7 +579,7 @@ if (contentType != null)
 
 
   /**
-   * Создать позицию CommissionReportOut
+   * Создать и обновить позицию Выданного отчета комиссионера
    * 
    * @param id ID сущности (required)
    * @param commissionReportOutPosition  (required)
@@ -659,7 +659,7 @@ if (contentType != null)
   }
 
   /**
-   * Массовое создание позиций CommissionReportOut
+   * Массовое создание и обновление позиций Выданного отчета комиссионера
    * 
    * @param id ID сущности (required)
    * @param commissionReportOutPosition  (required)
@@ -667,15 +667,15 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;CreateCommissionReportOutPositionsBatch200ResponseInner&gt;
+   * @return List&lt;CreateCommissionReportOutPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateCommissionReportOutPositionsBatch200ResponseInner> createCommissionReportOutPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<CommissionReportOutPosition> commissionReportOutPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createCommissionReportOutPositionsBatch(id, commissionReportOutPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<CreateCommissionReportOutPositions200ResponseInner> createCommissionReportOutPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<CommissionReportOutPosition> commissionReportOutPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+    return this.createCommissionReportOutPositions(id, commissionReportOutPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
   /**
-   * Массовое создание позиций CommissionReportOut
+   * Массовое создание и обновление позиций Выданного отчета комиссионера
    * 
    
    * @param id ID сущности (required)
@@ -688,17 +688,17 @@ if (contentType != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return List&lt;CreateCommissionReportOutPositionsBatch200ResponseInner&gt;
+   * @return List&lt;CreateCommissionReportOutPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateCommissionReportOutPositionsBatch200ResponseInner> createCommissionReportOutPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<CommissionReportOutPosition> commissionReportOutPosition, RequestOptions options) throws ApiException {
+  public List<CreateCommissionReportOutPositions200ResponseInner> createCommissionReportOutPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<CommissionReportOutPosition> commissionReportOutPosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
-    return this.createCommissionReportOutPositionsBatch(id, commissionReportOutPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.createCommissionReportOutPositions(id, commissionReportOutPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
   /**
-   * Массовое создание позиций CommissionReportOut
+   * Массовое создание и обновление позиций Выданного отчета комиссионера
    * 
    * @param id ID сущности (required)
    * @param commissionReportOutPosition  (required)
@@ -707,20 +707,20 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;CreateCommissionReportOutPositionsBatch200ResponseInner&gt;
+   * @return List&lt;CreateCommissionReportOutPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateCommissionReportOutPositionsBatch200ResponseInner> createCommissionReportOutPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<CommissionReportOutPosition> commissionReportOutPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<CreateCommissionReportOutPositions200ResponseInner> createCommissionReportOutPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<CommissionReportOutPosition> commissionReportOutPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = commissionReportOutPosition;
     
     // verify the required parameter 'id' is set
     if (id == null) {
-      throw new ApiException(400, "Missing the required parameter 'id' when calling createCommissionReportOutPositionsBatch");
+      throw new ApiException(400, "Missing the required parameter 'id' when calling createCommissionReportOutPositions");
     }
     
     // verify the required parameter 'commissionReportOutPosition' is set
     if (commissionReportOutPosition == null) {
-      throw new ApiException(400, "Missing the required parameter 'commissionReportOutPosition' when calling createCommissionReportOutPositionsBatch");
+      throw new ApiException(400, "Missing the required parameter 'commissionReportOutPosition' when calling createCommissionReportOutPositions");
     }
     
     // create path and map variables
@@ -759,7 +759,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<CreateCommissionReportOutPositionsBatch200ResponseInner>> localVarReturnType = new TypeReference<List<CreateCommissionReportOutPositionsBatch200ResponseInner>>() {};
+    TypeReference<List<CreateCommissionReportOutPositions200ResponseInner>> localVarReturnType = new TypeReference<List<CreateCommissionReportOutPositions200ResponseInner>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

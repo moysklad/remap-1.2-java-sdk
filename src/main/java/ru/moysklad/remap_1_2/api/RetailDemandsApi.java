@@ -23,7 +23,7 @@ import ru.moysklad.remap_1_2.Pair;
 import ru.moysklad.remap_1_2.model.AttributeMetaInfo;
 import ru.moysklad.remap_1_2.model.AttributeMetaInfoList;
 import ru.moysklad.remap_1_2.model.CreateRetailDemandBatch200ResponseInner;
-import ru.moysklad.remap_1_2.model.CreateRetailDemandPositionsBatch200ResponseInner;
+import ru.moysklad.remap_1_2.model.CreateRetailDemandPositions200ResponseInner;
 import ru.moysklad.remap_1_2.model.DeleteContractsBatch200ResponseInner;
 import ru.moysklad.remap_1_2.model.DocumentMetadata;
 import ru.moysklad.remap_1_2.model.ErrorOrArray;
@@ -42,7 +42,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class RetailDemandsApi extends BaseApi {
 
@@ -357,7 +357,7 @@ if (contentType != null)
   }
 
   /**
-   * Создать позиции Розничной продажи
+   * Создать и обновить позицию Розничной продажи
    * 
    * @param id ID сущности (required)
    * @param retailDemandPosition  (required)
@@ -368,12 +368,12 @@ if (contentType != null)
    * @return RetailDemandPosition
    * @throws ApiException if fails to make API call
    */
-  public RetailDemandPosition createRetailDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailDemandPosition retailDemandPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createRetailDemandPositions(id, retailDemandPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public RetailDemandPosition createRetailDemandPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailDemandPosition retailDemandPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+    return this.createRetailDemandPosition(id, retailDemandPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
   /**
-   * Создать позиции Розничной продажи
+   * Создать и обновить позицию Розничной продажи
    * 
    
    * @param id ID сущности (required)
@@ -389,14 +389,14 @@ if (contentType != null)
    * @return RetailDemandPosition
    * @throws ApiException if fails to make API call
    */
-  public RetailDemandPosition createRetailDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailDemandPosition retailDemandPosition, RequestOptions options) throws ApiException {
+  public RetailDemandPosition createRetailDemandPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailDemandPosition retailDemandPosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
-    return this.createRetailDemandPositions(id, retailDemandPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.createRetailDemandPosition(id, retailDemandPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
   /**
-   * Создать позиции Розничной продажи
+   * Создать и обновить позицию Розничной продажи
    * 
    * @param id ID сущности (required)
    * @param retailDemandPosition  (required)
@@ -408,17 +408,17 @@ if (contentType != null)
    * @return RetailDemandPosition
    * @throws ApiException if fails to make API call
    */
-  public RetailDemandPosition createRetailDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailDemandPosition retailDemandPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public RetailDemandPosition createRetailDemandPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailDemandPosition retailDemandPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = retailDemandPosition;
     
     // verify the required parameter 'id' is set
     if (id == null) {
-      throw new ApiException(400, "Missing the required parameter 'id' when calling createRetailDemandPositions");
+      throw new ApiException(400, "Missing the required parameter 'id' when calling createRetailDemandPosition");
     }
     
     // verify the required parameter 'retailDemandPosition' is set
     if (retailDemandPosition == null) {
-      throw new ApiException(400, "Missing the required parameter 'retailDemandPosition' when calling createRetailDemandPositions");
+      throw new ApiException(400, "Missing the required parameter 'retailDemandPosition' when calling createRetailDemandPosition");
     }
     
     // create path and map variables
@@ -476,7 +476,7 @@ if (contentType != null)
   }
 
   /**
-   * Создать позиции Розничной продажи
+   * Массовое создание и обновление позиций Розничной продажи
    * 
    * @param id ID сущности (required)
    * @param retailDemandPosition  (required)
@@ -484,15 +484,15 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;CreateRetailDemandPositionsBatch200ResponseInner&gt;
+   * @return List&lt;CreateRetailDemandPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateRetailDemandPositionsBatch200ResponseInner> createRetailDemandPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<RetailDemandPosition> retailDemandPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createRetailDemandPositionsBatch(id, retailDemandPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<CreateRetailDemandPositions200ResponseInner> createRetailDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<RetailDemandPosition> retailDemandPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+    return this.createRetailDemandPositions(id, retailDemandPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
   /**
-   * Создать позиции Розничной продажи
+   * Массовое создание и обновление позиций Розничной продажи
    * 
    
    * @param id ID сущности (required)
@@ -505,17 +505,17 @@ if (contentType != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return List&lt;CreateRetailDemandPositionsBatch200ResponseInner&gt;
+   * @return List&lt;CreateRetailDemandPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateRetailDemandPositionsBatch200ResponseInner> createRetailDemandPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<RetailDemandPosition> retailDemandPosition, RequestOptions options) throws ApiException {
+  public List<CreateRetailDemandPositions200ResponseInner> createRetailDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<RetailDemandPosition> retailDemandPosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
-    return this.createRetailDemandPositionsBatch(id, retailDemandPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.createRetailDemandPositions(id, retailDemandPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
   /**
-   * Создать позиции Розничной продажи
+   * Массовое создание и обновление позиций Розничной продажи
    * 
    * @param id ID сущности (required)
    * @param retailDemandPosition  (required)
@@ -524,20 +524,20 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;CreateRetailDemandPositionsBatch200ResponseInner&gt;
+   * @return List&lt;CreateRetailDemandPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateRetailDemandPositionsBatch200ResponseInner> createRetailDemandPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<RetailDemandPosition> retailDemandPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<CreateRetailDemandPositions200ResponseInner> createRetailDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<RetailDemandPosition> retailDemandPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = retailDemandPosition;
     
     // verify the required parameter 'id' is set
     if (id == null) {
-      throw new ApiException(400, "Missing the required parameter 'id' when calling createRetailDemandPositionsBatch");
+      throw new ApiException(400, "Missing the required parameter 'id' when calling createRetailDemandPositions");
     }
     
     // verify the required parameter 'retailDemandPosition' is set
     if (retailDemandPosition == null) {
-      throw new ApiException(400, "Missing the required parameter 'retailDemandPosition' when calling createRetailDemandPositionsBatch");
+      throw new ApiException(400, "Missing the required parameter 'retailDemandPosition' when calling createRetailDemandPositions");
     }
     
     // create path and map variables
@@ -576,7 +576,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<CreateRetailDemandPositionsBatch200ResponseInner>> localVarReturnType = new TypeReference<List<CreateRetailDemandPositionsBatch200ResponseInner>>() {};
+    TypeReference<List<CreateRetailDemandPositions200ResponseInner>> localVarReturnType = new TypeReference<List<CreateRetailDemandPositions200ResponseInner>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
@@ -1853,12 +1853,11 @@ if (contentType != null)
    * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return RetailDemandPositionList
    * @throws ApiException if fails to make API call
    */
-  public RetailDemandPositionList getRetailDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.getRetailDemandPositions(id, limit, offset, expand, fields, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public RetailDemandPositionList getRetailDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
+    return this.getRetailDemandPositions(id, limit, offset, expand, fields, accept, acceptEncoding, Collections.emptyMap());
   }
 
   /**
@@ -1866,7 +1865,6 @@ if (contentType != null)
    * 
    
    * @param id ID сущности (required)
-   
    
    
    
@@ -1880,7 +1878,7 @@ if (contentType != null)
    */
   public RetailDemandPositionList getRetailDemandPositions(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
-    return this.getRetailDemandPositions(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.getRetailDemandPositions(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1894,12 +1892,11 @@ if (contentType != null)
    * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
    * @return RetailDemandPositionList
    * @throws ApiException if fails to make API call
    */
-  public RetailDemandPositionList getRetailDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public RetailDemandPositionList getRetailDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1927,8 +1924,6 @@ if (contentType != null)
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
 if (acceptEncoding != null)
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
-      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
 
     localVarHeaderParams.putAll(additionalHeaders);
 

@@ -9,7 +9,8 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createPurchaseOrderMetadataAttribute**](PurchaseOrdersApi.md#createPurchaseOrderMetadataAttribute) | **POST** /entity/purchaseorder/metadata/attributes | Создать Доп. поле PurchaseOrder |
 | [**createPurchaseOrderMetadataState**](PurchaseOrdersApi.md#createPurchaseOrderMetadataState) | **POST** /entity/purchaseorder/metadata/states | Создать статус PurchaseOrder |
 | [**createPurchaseOrderNote**](PurchaseOrdersApi.md#createPurchaseOrderNote) | **POST** /entity/purchaseorder/{id}/notes | Добавить Событие Заказа поставщику |
-| [**createPurchaseOrderPositions**](PurchaseOrdersApi.md#createPurchaseOrderPositions) | **POST** /entity/purchaseorder/{id}/positions | Создать позиции PurchaseOrder |
+| [**createPurchaseOrderPosition**](PurchaseOrdersApi.md#createPurchaseOrderPosition) | **POST** /entity/purchaseorder/{id}/positions | Создать и обновить позицию Заказа поставщику |
+| [**createPurchaseOrderPositions**](PurchaseOrdersApi.md#createPurchaseOrderPositions) | **POST** /entity/purchaseorder/{id}/positions/batch | Массовое создание и обновление позиций Заказа поставщику |
 | [**deletePurchaseOrder**](PurchaseOrdersApi.md#deletePurchaseOrder) | **DELETE** /entity/purchaseorder/{id} | Удалить PurchaseOrder |
 | [**deletePurchaseOrderBatch**](PurchaseOrdersApi.md#deletePurchaseOrderBatch) | **POST** /entity/purchaseorder/delete | Массовое удаление PurchaseOrder |
 | [**deletePurchaseOrderMetadataAttributeById**](PurchaseOrdersApi.md#deletePurchaseOrderMetadataAttributeById) | **DELETE** /entity/purchaseorder/metadata/attributes/{id} | Удалить отдельное доп. поле PurchaseOrder |
@@ -449,11 +450,11 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 
-## createPurchaseOrderPositions
+## createPurchaseOrderPosition
 
-> List&lt;CreatePurchaseOrderPositions200ResponseInner&gt; createPurchaseOrderPositions(id, createPurchaseOrderPositionsRequest, expand, accept, acceptEncoding, contentType)
+> PurchaseOrderPosition createPurchaseOrderPosition(id, purchaseOrderPosition, expand, accept, acceptEncoding, contentType)
 
-Создать позиции PurchaseOrder
+Создать и обновить позицию Заказа поставщику
 
 ### Example
 
@@ -482,13 +483,98 @@ public class Example {
 
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
         UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        CreatePurchaseOrderPositionsRequest createPurchaseOrderPositionsRequest = new CreatePurchaseOrderPositionsRequest(); // CreatePurchaseOrderPositionsRequest | 
+        PurchaseOrderPosition purchaseOrderPosition = new PurchaseOrderPosition(); // PurchaseOrderPosition | 
         String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreatePurchaseOrderPositions200ResponseInner> result = apiInstance.createPurchaseOrderPositions(id, createPurchaseOrderPositionsRequest, expand, accept, acceptEncoding, contentType);
+            PurchaseOrderPosition result = apiInstance.createPurchaseOrderPosition(id, purchaseOrderPosition, expand, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PurchaseOrdersApi#createPurchaseOrderPosition");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **purchaseOrderPosition** | [**PurchaseOrderPosition**](PurchaseOrderPosition.md)|  | |
+| **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**PurchaseOrderPosition**](PurchaseOrderPosition.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+
+
+## createPurchaseOrderPositions
+
+> List&lt;CreatePurchaseOrderPositions200ResponseInner&gt; createPurchaseOrderPositions(id, purchaseOrderPosition, expand, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление позиций Заказа поставщику
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.PurchaseOrdersApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
+        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        List<PurchaseOrderPosition> purchaseOrderPosition = Arrays.asList(); // List<PurchaseOrderPosition> | 
+        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<CreatePurchaseOrderPositions200ResponseInner> result = apiInstance.createPurchaseOrderPositions(id, purchaseOrderPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PurchaseOrdersApi#createPurchaseOrderPositions");
@@ -507,7 +593,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **createPurchaseOrderPositionsRequest** | [**CreatePurchaseOrderPositionsRequest**](CreatePurchaseOrderPositionsRequest.md)|  | |
+| **purchaseOrderPosition** | [**List&lt;PurchaseOrderPosition&gt;**](PurchaseOrderPosition.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -1862,7 +1948,7 @@ public class Example {
 
 ## getPurchaseOrderPositions
 
-> List&lt;PurchaseOrderPosition&gt; getPurchaseOrderPositions(id, limit, offset, expand, fields, accept, acceptEncoding, contentType)
+> PurchaseOrderPositionList getPurchaseOrderPositions(id, limit, offset, expand, fields, accept, acceptEncoding)
 
 Получить позиции PurchaseOrder
 
@@ -1899,9 +1985,8 @@ public class Example {
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
-        String contentType = "application/json"; // String | 
         try {
-            List<PurchaseOrderPosition> result = apiInstance.getPurchaseOrderPositions(id, limit, offset, expand, fields, accept, acceptEncoding, contentType);
+            PurchaseOrderPositionList result = apiInstance.getPurchaseOrderPositions(id, limit, offset, expand, fields, accept, acceptEncoding);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PurchaseOrdersApi#getPurchaseOrderPositions");
@@ -1926,11 +2011,10 @@ public class Example {
 | **fields** | **String**| Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  | [optional] [enum: minimumStock, downloadPermanentHref, stock, declaration] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
-| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;PurchaseOrderPosition&gt;**](PurchaseOrderPosition.md)
+[**PurchaseOrderPositionList**](PurchaseOrderPositionList.md)
 
 ### Authorization
 

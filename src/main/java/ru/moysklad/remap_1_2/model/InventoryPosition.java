@@ -53,7 +53,7 @@ import java.util.StringJoiner;
   InventoryPosition.JSON_PROPERTY_THINGS,
   InventoryPosition.JSON_PROPERTY_QUANTITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
 public class InventoryPosition {
   public static InventoryPosition createWithMeta(UUID parentId, UUID id) {
     InventoryPosition o = new InventoryPosition();

@@ -8,7 +8,8 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createCommissionReportInBatch**](CommissionReportInsApi.md#createCommissionReportInBatch) | **POST** /entity/commissionreportin/batch | Массовое создание и обновление CommissionReportIn |
 | [**createCommissionReportInMetadataAttribute**](CommissionReportInsApi.md#createCommissionReportInMetadataAttribute) | **POST** /entity/commissionreportin/metadata/attributes | Создать доп. поле CommissionReportIn |
 | [**createCommissionReportInMetadataState**](CommissionReportInsApi.md#createCommissionReportInMetadataState) | **POST** /entity/commissionreportin/metadata/states | Создать статус CommissionReportIn |
-| [**createCommissionReportInPositions**](CommissionReportInsApi.md#createCommissionReportInPositions) | **POST** /entity/commissionreportin/{id}/positions | Создать позиции CommissionReportIn |
+| [**createCommissionReportInPosition**](CommissionReportInsApi.md#createCommissionReportInPosition) | **POST** /entity/commissionreportin/{id}/positions | Создать и обновить позицию Полученного отчета комиссионера |
+| [**createCommissionReportInPositions**](CommissionReportInsApi.md#createCommissionReportInPositions) | **POST** /entity/commissionreportin/{id}/positions/batch | Массовое создание и обновление позиций Полученного отчета комиссионера |
 | [**createCommissionReportInReturnedPositions**](CommissionReportInsApi.md#createCommissionReportInReturnedPositions) | **POST** /entity/commissionreportin/{id}/returntocommissionerpositions | Создать позиции возврата на склад комиссионера |
 | [**deleteCommissionReportIn**](CommissionReportInsApi.md#deleteCommissionReportIn) | **DELETE** /entity/commissionreportin/{id} | Удалить CommissionReportIn |
 | [**deleteCommissionReportInBatch**](CommissionReportInsApi.md#deleteCommissionReportInBatch) | **POST** /entity/commissionreportin/delete | Массовое удаление CommissionReportIn |
@@ -364,11 +365,11 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 
-## createCommissionReportInPositions
+## createCommissionReportInPosition
 
-> List&lt;CreateCommissionReportInPositions200ResponseInner&gt; createCommissionReportInPositions(id, createCommissionReportInPositionsRequest, expand, accept, acceptEncoding, contentType)
+> CommissionReportInPosition createCommissionReportInPosition(id, commissionReportInPosition, expand, accept, acceptEncoding, contentType)
 
-Создать позиции CommissionReportIn
+Создать и обновить позицию Полученного отчета комиссионера
 
 ### Example
 
@@ -397,13 +398,98 @@ public class Example {
 
         CommissionReportInsApi apiInstance = new CommissionReportInsApi(defaultClient);
         UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        CreateCommissionReportInPositionsRequest createCommissionReportInPositionsRequest = new CreateCommissionReportInPositionsRequest(); // CreateCommissionReportInPositionsRequest | 
+        CommissionReportInPosition commissionReportInPosition = new CommissionReportInPosition(); // CommissionReportInPosition | 
         String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateCommissionReportInPositions200ResponseInner> result = apiInstance.createCommissionReportInPositions(id, createCommissionReportInPositionsRequest, expand, accept, acceptEncoding, contentType);
+            CommissionReportInPosition result = apiInstance.createCommissionReportInPosition(id, commissionReportInPosition, expand, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CommissionReportInsApi#createCommissionReportInPosition");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **commissionReportInPosition** | [**CommissionReportInPosition**](CommissionReportInPosition.md)|  | |
+| **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**CommissionReportInPosition**](CommissionReportInPosition.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+
+
+## createCommissionReportInPositions
+
+> List&lt;CreateCommissionReportInPositions200ResponseInner&gt; createCommissionReportInPositions(id, commissionReportInPosition, expand, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление позиций Полученного отчета комиссионера
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.CommissionReportInsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        CommissionReportInsApi apiInstance = new CommissionReportInsApi(defaultClient);
+        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        List<CommissionReportInPosition> commissionReportInPosition = Arrays.asList(); // List<CommissionReportInPosition> | 
+        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<CreateCommissionReportInPositions200ResponseInner> result = apiInstance.createCommissionReportInPositions(id, commissionReportInPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CommissionReportInsApi#createCommissionReportInPositions");
@@ -422,7 +508,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **createCommissionReportInPositionsRequest** | [**CreateCommissionReportInPositionsRequest**](CreateCommissionReportInPositionsRequest.md)|  | |
+| **commissionReportInPosition** | [**List&lt;CommissionReportInPosition&gt;**](CommissionReportInPosition.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -1771,7 +1857,7 @@ public class Example {
 
 ## getCommissionReportInPositions
 
-> List&lt;CommissionReportInPosition&gt; getCommissionReportInPositions(id, limit, offset, expand, accept, acceptEncoding, contentType)
+> CommissionReportInPositionList getCommissionReportInPositions(id, limit, offset, expand, accept, acceptEncoding)
 
 Получить позиции CommissionReportIn
 
@@ -1807,9 +1893,8 @@ public class Example {
         String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
-        String contentType = "application/json"; // String | 
         try {
-            List<CommissionReportInPosition> result = apiInstance.getCommissionReportInPositions(id, limit, offset, expand, accept, acceptEncoding, contentType);
+            CommissionReportInPositionList result = apiInstance.getCommissionReportInPositions(id, limit, offset, expand, accept, acceptEncoding);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CommissionReportInsApi#getCommissionReportInPositions");
@@ -1833,11 +1918,10 @@ public class Example {
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
-| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;CommissionReportInPosition&gt;**](CommissionReportInPosition.md)
+[**CommissionReportInPositionList**](CommissionReportInPositionList.md)
 
 ### Authorization
 

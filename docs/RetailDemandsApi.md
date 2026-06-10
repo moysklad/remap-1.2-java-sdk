@@ -7,8 +7,8 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createRetailDemand**](RetailDemandsApi.md#createRetailDemand) | **POST** /entity/retaildemand | Создать Розничную продажу |
 | [**createRetailDemandBatch**](RetailDemandsApi.md#createRetailDemandBatch) | **POST** /entity/retaildemand/batch | Массовое создание и обновление Розничных продаж |
 | [**createRetailDemandMetadataAttribute**](RetailDemandsApi.md#createRetailDemandMetadataAttribute) | **POST** /entity/retaildemand/metadata/attributes | Создать доп. поле Розничной продажи |
-| [**createRetailDemandPositions**](RetailDemandsApi.md#createRetailDemandPositions) | **POST** /entity/retaildemand/{id}/positions | Создать позиции Розничной продажи |
-| [**createRetailDemandPositionsBatch**](RetailDemandsApi.md#createRetailDemandPositionsBatch) | **POST** /entity/retaildemand/{id}/positions/batch | Создать позиции Розничной продажи |
+| [**createRetailDemandPosition**](RetailDemandsApi.md#createRetailDemandPosition) | **POST** /entity/retaildemand/{id}/positions | Создать и обновить позицию Розничной продажи |
+| [**createRetailDemandPositions**](RetailDemandsApi.md#createRetailDemandPositions) | **POST** /entity/retaildemand/{id}/positions/batch | Массовое создание и обновление позиций Розничной продажи |
 | [**deleteRetailDemand**](RetailDemandsApi.md#deleteRetailDemand) | **DELETE** /entity/retaildemand/{id} | Удалить Розничную продажу |
 | [**deleteRetailDemandBatch**](RetailDemandsApi.md#deleteRetailDemandBatch) | **POST** /entity/retaildemand/delete | Массовое удаление Розничных продаж |
 | [**deleteRetailDemandMetadataAttributeById**](RetailDemandsApi.md#deleteRetailDemandMetadataAttributeById) | **DELETE** /entity/retaildemand/metadata/attributes/{id} | Удалить отдельное доп. поле Розничной продажи |
@@ -278,11 +278,11 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 
-## createRetailDemandPositions
+## createRetailDemandPosition
 
-> RetailDemandPosition createRetailDemandPositions(id, retailDemandPosition, expand, accept, acceptEncoding, contentType)
+> RetailDemandPosition createRetailDemandPosition(id, retailDemandPosition, expand, accept, acceptEncoding, contentType)
 
-Создать позиции Розничной продажи
+Создать и обновить позицию Розничной продажи
 
 ### Example
 
@@ -317,10 +317,10 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            RetailDemandPosition result = apiInstance.createRetailDemandPositions(id, retailDemandPosition, expand, accept, acceptEncoding, contentType);
+            RetailDemandPosition result = apiInstance.createRetailDemandPosition(id, retailDemandPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling RetailDemandsApi#createRetailDemandPositions");
+            System.err.println("Exception when calling RetailDemandsApi#createRetailDemandPosition");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -363,11 +363,11 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 
-## createRetailDemandPositionsBatch
+## createRetailDemandPositions
 
-> List&lt;CreateRetailDemandPositionsBatch200ResponseInner&gt; createRetailDemandPositionsBatch(id, retailDemandPosition, expand, accept, acceptEncoding, contentType)
+> List&lt;CreateRetailDemandPositions200ResponseInner&gt; createRetailDemandPositions(id, retailDemandPosition, expand, accept, acceptEncoding, contentType)
 
-Создать позиции Розничной продажи
+Массовое создание и обновление позиций Розничной продажи
 
 ### Example
 
@@ -402,10 +402,10 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateRetailDemandPositionsBatch200ResponseInner> result = apiInstance.createRetailDemandPositionsBatch(id, retailDemandPosition, expand, accept, acceptEncoding, contentType);
+            List<CreateRetailDemandPositions200ResponseInner> result = apiInstance.createRetailDemandPositions(id, retailDemandPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling RetailDemandsApi#createRetailDemandPositionsBatch");
+            System.err.println("Exception when calling RetailDemandsApi#createRetailDemandPositions");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -429,7 +429,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreateRetailDemandPositionsBatch200ResponseInner&gt;**](CreateRetailDemandPositionsBatch200ResponseInner.md)
+[**List&lt;CreateRetailDemandPositions200ResponseInner&gt;**](CreateRetailDemandPositions200ResponseInner.md)
 
 ### Authorization
 
@@ -1522,7 +1522,7 @@ public class Example {
 
 ## getRetailDemandPositions
 
-> RetailDemandPositionList getRetailDemandPositions(id, limit, offset, expand, fields, accept, acceptEncoding, contentType)
+> RetailDemandPositionList getRetailDemandPositions(id, limit, offset, expand, fields, accept, acceptEncoding)
 
 Получить позиции Розничной продажи
 
@@ -1559,9 +1559,8 @@ public class Example {
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
-        String contentType = "application/json"; // String | 
         try {
-            RetailDemandPositionList result = apiInstance.getRetailDemandPositions(id, limit, offset, expand, fields, accept, acceptEncoding, contentType);
+            RetailDemandPositionList result = apiInstance.getRetailDemandPositions(id, limit, offset, expand, fields, accept, acceptEncoding);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling RetailDemandsApi#getRetailDemandPositions");
@@ -1586,7 +1585,6 @@ public class Example {
 | **fields** | **String**| Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  | [optional] [enum: minimumStock, downloadPermanentHref, stock, declaration] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
-| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 

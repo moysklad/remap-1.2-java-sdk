@@ -24,7 +24,6 @@ import ru.moysklad.remap_1_2.model.AttributeMetaInfo;
 import ru.moysklad.remap_1_2.model.AttributeMetaInfoList;
 import ru.moysklad.remap_1_2.model.CreateDemandBatch200ResponseInner;
 import ru.moysklad.remap_1_2.model.CreateDemandPositions200ResponseInner;
-import ru.moysklad.remap_1_2.model.CreateDemandPositionsRequest;
 import ru.moysklad.remap_1_2.model.DeleteContractsBatch200ResponseInner;
 import ru.moysklad.remap_1_2.model.Demand;
 import ru.moysklad.remap_1_2.model.DemandList;
@@ -43,7 +42,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class DemandsApi extends BaseApi {
 
@@ -358,10 +357,129 @@ if (contentType != null)
   }
 
   /**
-   * Создать позиции Отгрузки
+   * Создать и обновить позицию Отгрузки
    * 
    * @param id ID сущности (required)
-   * @param createDemandPositionsRequest  (required)
+   * @param demandPosition  (required)
+   * @param expand Замена ссылок объектами с помощью expand (optional)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @return DemandPosition
+   * @throws ApiException if fails to make API call
+   */
+  public DemandPosition createDemandPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull DemandPosition demandPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+    return this.createDemandPosition(id, demandPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать и обновить позицию Отгрузки
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param demandPosition  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return DemandPosition
+   * @throws ApiException if fails to make API call
+   */
+  public DemandPosition createDemandPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull DemandPosition demandPosition, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createDemandPosition(id, demandPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Создать и обновить позицию Отгрузки
+   * 
+   * @param id ID сущности (required)
+   * @param demandPosition  (required)
+   * @param expand Замена ссылок объектами с помощью expand (optional)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return DemandPosition
+   * @throws ApiException if fails to make API call
+   */
+  public DemandPosition createDemandPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull DemandPosition demandPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = demandPosition;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling createDemandPosition");
+    }
+    
+    // verify the required parameter 'demandPosition' is set
+    if (demandPosition == null) {
+      throw new ApiException(400, "Missing the required parameter 'demandPosition' when calling createDemandPosition");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/demand/{id}/positions"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
+    if (accept != null)
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+if (acceptEncoding != null)
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+if (contentType != null)
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+
+    localVarHeaderParams.putAll(additionalHeaders);
+
+    
+    
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<DemandPosition> localVarReturnType = new TypeReference<DemandPosition>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Массовое создание и обновление позиций Отгрузки
+   * 
+   * @param id ID сущности (required)
+   * @param demandPosition  (required)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
@@ -369,18 +487,18 @@ if (contentType != null)
    * @return List&lt;CreateDemandPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateDemandPositions200ResponseInner> createDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CreateDemandPositionsRequest createDemandPositionsRequest, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createDemandPositions(id, createDemandPositionsRequest, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<CreateDemandPositions200ResponseInner> createDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<DemandPosition> demandPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+    return this.createDemandPositions(id, demandPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
   /**
-   * Создать позиции Отгрузки
+   * Массовое создание и обновление позиций Отгрузки
    * 
    
    * @param id ID сущности (required)
    
    
-   * @param createDemandPositionsRequest  (required)
+   * @param demandPosition  (required)
    
    
    
@@ -390,17 +508,17 @@ if (contentType != null)
    * @return List&lt;CreateDemandPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateDemandPositions200ResponseInner> createDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CreateDemandPositionsRequest createDemandPositionsRequest, RequestOptions options) throws ApiException {
+  public List<CreateDemandPositions200ResponseInner> createDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<DemandPosition> demandPosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
-    return this.createDemandPositions(id, createDemandPositionsRequest, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.createDemandPositions(id, demandPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
   /**
-   * Создать позиции Отгрузки
+   * Массовое создание и обновление позиций Отгрузки
    * 
    * @param id ID сущности (required)
-   * @param createDemandPositionsRequest  (required)
+   * @param demandPosition  (required)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
@@ -409,21 +527,21 @@ if (contentType != null)
    * @return List&lt;CreateDemandPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateDemandPositions200ResponseInner> createDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CreateDemandPositionsRequest createDemandPositionsRequest, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
-    Object localVarPostBody = createDemandPositionsRequest;
+  public List<CreateDemandPositions200ResponseInner> createDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<DemandPosition> demandPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = demandPosition;
     
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling createDemandPositions");
     }
     
-    // verify the required parameter 'createDemandPositionsRequest' is set
-    if (createDemandPositionsRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'createDemandPositionsRequest' when calling createDemandPositions");
+    // verify the required parameter 'demandPosition' is set
+    if (demandPosition == null) {
+      throw new ApiException(400, "Missing the required parameter 'demandPosition' when calling createDemandPositions");
     }
     
     // create path and map variables
-    String localVarPath = "/entity/demand/{id}/positions"
+    String localVarPath = "/entity/demand/{id}/positions/batch"
       .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
 
     StringJoiner localVarQueryStringJoiner = new StringJoiner("&");

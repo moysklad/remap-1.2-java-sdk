@@ -23,7 +23,7 @@ import ru.moysklad.remap_1_2.Pair;
 import ru.moysklad.remap_1_2.model.AttributeMetaInfo;
 import ru.moysklad.remap_1_2.model.AttributeMetaInfoList;
 import ru.moysklad.remap_1_2.model.CreateSupplyBatch200ResponseInner;
-import ru.moysklad.remap_1_2.model.CreateSupplyPositionsBatch200ResponseInner;
+import ru.moysklad.remap_1_2.model.CreateSupplyPositions200ResponseInner;
 import ru.moysklad.remap_1_2.model.DeleteContractsBatch200ResponseInner;
 import ru.moysklad.remap_1_2.model.DocumentMetadata;
 import ru.moysklad.remap_1_2.model.ErrorOrArray;
@@ -45,7 +45,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class SuppliesApi extends BaseApi {
 
@@ -540,7 +540,7 @@ if (contentType != null)
   }
 
   /**
-   * Создать позицию Приемки
+   * Создать и обновить позицию Приемки
    * 
    * @param id ID сущности (required)
    * @param supplyPosition  (required)
@@ -551,12 +551,12 @@ if (contentType != null)
    * @return SupplyPosition
    * @throws ApiException if fails to make API call
    */
-  public SupplyPosition createSupplyPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SupplyPosition supplyPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createSupplyPositions(id, supplyPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public SupplyPosition createSupplyPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SupplyPosition supplyPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+    return this.createSupplyPosition(id, supplyPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
   /**
-   * Создать позицию Приемки
+   * Создать и обновить позицию Приемки
    * 
    
    * @param id ID сущности (required)
@@ -572,14 +572,14 @@ if (contentType != null)
    * @return SupplyPosition
    * @throws ApiException if fails to make API call
    */
-  public SupplyPosition createSupplyPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SupplyPosition supplyPosition, RequestOptions options) throws ApiException {
+  public SupplyPosition createSupplyPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SupplyPosition supplyPosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
-    return this.createSupplyPositions(id, supplyPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.createSupplyPosition(id, supplyPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
   /**
-   * Создать позицию Приемки
+   * Создать и обновить позицию Приемки
    * 
    * @param id ID сущности (required)
    * @param supplyPosition  (required)
@@ -591,17 +591,17 @@ if (contentType != null)
    * @return SupplyPosition
    * @throws ApiException if fails to make API call
    */
-  public SupplyPosition createSupplyPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SupplyPosition supplyPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public SupplyPosition createSupplyPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SupplyPosition supplyPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = supplyPosition;
     
     // verify the required parameter 'id' is set
     if (id == null) {
-      throw new ApiException(400, "Missing the required parameter 'id' when calling createSupplyPositions");
+      throw new ApiException(400, "Missing the required parameter 'id' when calling createSupplyPosition");
     }
     
     // verify the required parameter 'supplyPosition' is set
     if (supplyPosition == null) {
-      throw new ApiException(400, "Missing the required parameter 'supplyPosition' when calling createSupplyPositions");
+      throw new ApiException(400, "Missing the required parameter 'supplyPosition' when calling createSupplyPosition");
     }
     
     // create path and map variables
@@ -659,7 +659,7 @@ if (contentType != null)
   }
 
   /**
-   * Создать позиции Приемки
+   * Массовое создание и обновление позиций Приемки
    * 
    * @param id ID сущности (required)
    * @param supplyPosition  (required)
@@ -667,15 +667,15 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;CreateSupplyPositionsBatch200ResponseInner&gt;
+   * @return List&lt;CreateSupplyPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateSupplyPositionsBatch200ResponseInner> createSupplyPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<SupplyPosition> supplyPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createSupplyPositionsBatch(id, supplyPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<CreateSupplyPositions200ResponseInner> createSupplyPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<SupplyPosition> supplyPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+    return this.createSupplyPositions(id, supplyPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
   /**
-   * Создать позиции Приемки
+   * Массовое создание и обновление позиций Приемки
    * 
    
    * @param id ID сущности (required)
@@ -688,17 +688,17 @@ if (contentType != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return List&lt;CreateSupplyPositionsBatch200ResponseInner&gt;
+   * @return List&lt;CreateSupplyPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateSupplyPositionsBatch200ResponseInner> createSupplyPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<SupplyPosition> supplyPosition, RequestOptions options) throws ApiException {
+  public List<CreateSupplyPositions200ResponseInner> createSupplyPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<SupplyPosition> supplyPosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
-    return this.createSupplyPositionsBatch(id, supplyPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.createSupplyPositions(id, supplyPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
   /**
-   * Создать позиции Приемки
+   * Массовое создание и обновление позиций Приемки
    * 
    * @param id ID сущности (required)
    * @param supplyPosition  (required)
@@ -707,20 +707,20 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;CreateSupplyPositionsBatch200ResponseInner&gt;
+   * @return List&lt;CreateSupplyPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateSupplyPositionsBatch200ResponseInner> createSupplyPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<SupplyPosition> supplyPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<CreateSupplyPositions200ResponseInner> createSupplyPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<SupplyPosition> supplyPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = supplyPosition;
     
     // verify the required parameter 'id' is set
     if (id == null) {
-      throw new ApiException(400, "Missing the required parameter 'id' when calling createSupplyPositionsBatch");
+      throw new ApiException(400, "Missing the required parameter 'id' when calling createSupplyPositions");
     }
     
     // verify the required parameter 'supplyPosition' is set
     if (supplyPosition == null) {
-      throw new ApiException(400, "Missing the required parameter 'supplyPosition' when calling createSupplyPositionsBatch");
+      throw new ApiException(400, "Missing the required parameter 'supplyPosition' when calling createSupplyPositions");
     }
     
     // create path and map variables
@@ -759,7 +759,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<CreateSupplyPositionsBatch200ResponseInner>> localVarReturnType = new TypeReference<List<CreateSupplyPositionsBatch200ResponseInner>>() {};
+    TypeReference<List<CreateSupplyPositions200ResponseInner>> localVarReturnType = new TypeReference<List<CreateSupplyPositions200ResponseInner>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

@@ -25,7 +25,6 @@ import ru.moysklad.remap_1_2.model.AttributeMetaInfoList;
 import ru.moysklad.remap_1_2.model.CreateInternalOrderMetadataStateRequest;
 import ru.moysklad.remap_1_2.model.CreatePurchaseOrderBatch200ResponseInner;
 import ru.moysklad.remap_1_2.model.CreatePurchaseOrderPositions200ResponseInner;
-import ru.moysklad.remap_1_2.model.CreatePurchaseOrderPositionsRequest;
 import ru.moysklad.remap_1_2.model.DeleteContractsBatch200ResponseInner;
 import ru.moysklad.remap_1_2.model.DocumentMetadata;
 import ru.moysklad.remap_1_2.model.ErrorOrArray;
@@ -34,6 +33,7 @@ import ru.moysklad.remap_1_2.model.EventNoteList;
 import ru.moysklad.remap_1_2.model.PurchaseOrder;
 import ru.moysklad.remap_1_2.model.PurchaseOrderList;
 import ru.moysklad.remap_1_2.model.PurchaseOrderPosition;
+import ru.moysklad.remap_1_2.model.PurchaseOrderPositionList;
 import ru.moysklad.remap_1_2.model.State;
 import java.util.UUID;
 
@@ -45,7 +45,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class PurchaseOrdersApi extends BaseApi {
 
@@ -540,10 +540,129 @@ if (contentType != null)
   }
 
   /**
-   * Создать позиции PurchaseOrder
+   * Создать и обновить позицию Заказа поставщику
    * 
    * @param id ID сущности (required)
-   * @param createPurchaseOrderPositionsRequest  (required)
+   * @param purchaseOrderPosition  (required)
+   * @param expand Замена ссылок объектами с помощью expand (optional)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @return PurchaseOrderPosition
+   * @throws ApiException if fails to make API call
+   */
+  public PurchaseOrderPosition createPurchaseOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull PurchaseOrderPosition purchaseOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+    return this.createPurchaseOrderPosition(id, purchaseOrderPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать и обновить позицию Заказа поставщику
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param purchaseOrderPosition  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return PurchaseOrderPosition
+   * @throws ApiException if fails to make API call
+   */
+  public PurchaseOrderPosition createPurchaseOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull PurchaseOrderPosition purchaseOrderPosition, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createPurchaseOrderPosition(id, purchaseOrderPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Создать и обновить позицию Заказа поставщику
+   * 
+   * @param id ID сущности (required)
+   * @param purchaseOrderPosition  (required)
+   * @param expand Замена ссылок объектами с помощью expand (optional)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return PurchaseOrderPosition
+   * @throws ApiException if fails to make API call
+   */
+  public PurchaseOrderPosition createPurchaseOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull PurchaseOrderPosition purchaseOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = purchaseOrderPosition;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling createPurchaseOrderPosition");
+    }
+    
+    // verify the required parameter 'purchaseOrderPosition' is set
+    if (purchaseOrderPosition == null) {
+      throw new ApiException(400, "Missing the required parameter 'purchaseOrderPosition' when calling createPurchaseOrderPosition");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/purchaseorder/{id}/positions"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
+    if (accept != null)
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+if (acceptEncoding != null)
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+if (contentType != null)
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+
+    localVarHeaderParams.putAll(additionalHeaders);
+
+    
+    
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<PurchaseOrderPosition> localVarReturnType = new TypeReference<PurchaseOrderPosition>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Массовое создание и обновление позиций Заказа поставщику
+   * 
+   * @param id ID сущности (required)
+   * @param purchaseOrderPosition  (required)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
@@ -551,18 +670,18 @@ if (contentType != null)
    * @return List&lt;CreatePurchaseOrderPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreatePurchaseOrderPositions200ResponseInner> createPurchaseOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CreatePurchaseOrderPositionsRequest createPurchaseOrderPositionsRequest, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createPurchaseOrderPositions(id, createPurchaseOrderPositionsRequest, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<CreatePurchaseOrderPositions200ResponseInner> createPurchaseOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<PurchaseOrderPosition> purchaseOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+    return this.createPurchaseOrderPositions(id, purchaseOrderPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
   /**
-   * Создать позиции PurchaseOrder
+   * Массовое создание и обновление позиций Заказа поставщику
    * 
    
    * @param id ID сущности (required)
    
    
-   * @param createPurchaseOrderPositionsRequest  (required)
+   * @param purchaseOrderPosition  (required)
    
    
    
@@ -572,17 +691,17 @@ if (contentType != null)
    * @return List&lt;CreatePurchaseOrderPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreatePurchaseOrderPositions200ResponseInner> createPurchaseOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CreatePurchaseOrderPositionsRequest createPurchaseOrderPositionsRequest, RequestOptions options) throws ApiException {
+  public List<CreatePurchaseOrderPositions200ResponseInner> createPurchaseOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<PurchaseOrderPosition> purchaseOrderPosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
-    return this.createPurchaseOrderPositions(id, createPurchaseOrderPositionsRequest, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.createPurchaseOrderPositions(id, purchaseOrderPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
   /**
-   * Создать позиции PurchaseOrder
+   * Массовое создание и обновление позиций Заказа поставщику
    * 
    * @param id ID сущности (required)
-   * @param createPurchaseOrderPositionsRequest  (required)
+   * @param purchaseOrderPosition  (required)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
@@ -591,21 +710,21 @@ if (contentType != null)
    * @return List&lt;CreatePurchaseOrderPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreatePurchaseOrderPositions200ResponseInner> createPurchaseOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CreatePurchaseOrderPositionsRequest createPurchaseOrderPositionsRequest, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
-    Object localVarPostBody = createPurchaseOrderPositionsRequest;
+  public List<CreatePurchaseOrderPositions200ResponseInner> createPurchaseOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<PurchaseOrderPosition> purchaseOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = purchaseOrderPosition;
     
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling createPurchaseOrderPositions");
     }
     
-    // verify the required parameter 'createPurchaseOrderPositionsRequest' is set
-    if (createPurchaseOrderPositionsRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'createPurchaseOrderPositionsRequest' when calling createPurchaseOrderPositions");
+    // verify the required parameter 'purchaseOrderPosition' is set
+    if (purchaseOrderPosition == null) {
+      throw new ApiException(400, "Missing the required parameter 'purchaseOrderPosition' when calling createPurchaseOrderPositions");
     }
     
     // create path and map variables
-    String localVarPath = "/entity/purchaseorder/{id}/positions"
+    String localVarPath = "/entity/purchaseorder/{id}/positions/batch"
       .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
 
     StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
@@ -2213,12 +2332,11 @@ if (contentType != null)
    * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
-   * @return List&lt;PurchaseOrderPosition&gt;
+   * @return PurchaseOrderPositionList
    * @throws ApiException if fails to make API call
    */
-  public List<PurchaseOrderPosition> getPurchaseOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.getPurchaseOrderPositions(id, limit, offset, expand, fields, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public PurchaseOrderPositionList getPurchaseOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
+    return this.getPurchaseOrderPositions(id, limit, offset, expand, fields, accept, acceptEncoding, Collections.emptyMap());
   }
 
   /**
@@ -2233,14 +2351,13 @@ if (contentType != null)
    
    
    
-   
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return List&lt;PurchaseOrderPosition&gt;
+   * @return PurchaseOrderPositionList
    * @throws ApiException if fails to make API call
    */
-  public List<PurchaseOrderPosition> getPurchaseOrderPositions(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+  public PurchaseOrderPositionList getPurchaseOrderPositions(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
-    return this.getPurchaseOrderPositions(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.getPurchaseOrderPositions(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -2254,12 +2371,11 @@ if (contentType != null)
    * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;PurchaseOrderPosition&gt;
+   * @return PurchaseOrderPositionList
    * @throws ApiException if fails to make API call
    */
-  public List<PurchaseOrderPosition> getPurchaseOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public PurchaseOrderPositionList getPurchaseOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -2287,8 +2403,6 @@ if (contentType != null)
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
 if (acceptEncoding != null)
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
-      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
 
     localVarHeaderParams.putAll(additionalHeaders);
 
@@ -2306,7 +2420,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<PurchaseOrderPosition>> localVarReturnType = new TypeReference<List<PurchaseOrderPosition>>() {};
+    TypeReference<PurchaseOrderPositionList> localVarReturnType = new TypeReference<PurchaseOrderPositionList>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "GET",

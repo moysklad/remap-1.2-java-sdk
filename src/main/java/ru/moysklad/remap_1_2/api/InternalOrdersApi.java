@@ -25,13 +25,13 @@ import ru.moysklad.remap_1_2.model.AttributeMetaInfoList;
 import ru.moysklad.remap_1_2.model.CreateInternalOrderBatch200ResponseInner;
 import ru.moysklad.remap_1_2.model.CreateInternalOrderMetadataStateRequest;
 import ru.moysklad.remap_1_2.model.CreateInternalOrderPositions200ResponseInner;
-import ru.moysklad.remap_1_2.model.CreateInternalOrderPositionsRequest;
 import ru.moysklad.remap_1_2.model.DeleteContractsBatch200ResponseInner;
 import ru.moysklad.remap_1_2.model.DocumentMetadata;
 import ru.moysklad.remap_1_2.model.ErrorOrArray;
 import ru.moysklad.remap_1_2.model.InternalOrder;
 import ru.moysklad.remap_1_2.model.InternalOrderList;
 import ru.moysklad.remap_1_2.model.InternalOrderPosition;
+import ru.moysklad.remap_1_2.model.InternalOrderPositionList;
 import ru.moysklad.remap_1_2.model.State;
 import java.util.UUID;
 
@@ -43,7 +43,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-09T13:35:37.869485882Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class InternalOrdersApi extends BaseApi {
 
@@ -444,10 +444,129 @@ if (contentType != null)
   }
 
   /**
-   * Создать позиции InternalOrder
+   * Создать и обновить позицию Внутреннего заказа
    * 
    * @param id ID сущности (required)
-   * @param createInternalOrderPositionsRequest  (required)
+   * @param internalOrderPosition  (required)
+   * @param expand Замена ссылок объектами с помощью expand (optional)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @return InternalOrderPosition
+   * @throws ApiException if fails to make API call
+   */
+  public InternalOrderPosition createInternalOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull InternalOrderPosition internalOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+    return this.createInternalOrderPosition(id, internalOrderPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+  /**
+   * Создать и обновить позицию Внутреннего заказа
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param internalOrderPosition  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return InternalOrderPosition
+   * @throws ApiException if fails to make API call
+   */
+  public InternalOrderPosition createInternalOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull InternalOrderPosition internalOrderPosition, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createInternalOrderPosition(id, internalOrderPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Создать и обновить позицию Внутреннего заказа
+   * 
+   * @param id ID сущности (required)
+   * @param internalOrderPosition  (required)
+   * @param expand Замена ссылок объектами с помощью expand (optional)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return InternalOrderPosition
+   * @throws ApiException if fails to make API call
+   */
+  public InternalOrderPosition createInternalOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull InternalOrderPosition internalOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = internalOrderPosition;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling createInternalOrderPosition");
+    }
+    
+    // verify the required parameter 'internalOrderPosition' is set
+    if (internalOrderPosition == null) {
+      throw new ApiException(400, "Missing the required parameter 'internalOrderPosition' when calling createInternalOrderPosition");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/internalorder/{id}/positions"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
+    if (accept != null)
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+if (acceptEncoding != null)
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+if (contentType != null)
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+
+    localVarHeaderParams.putAll(additionalHeaders);
+
+    
+    
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<InternalOrderPosition> localVarReturnType = new TypeReference<InternalOrderPosition>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Массовое создание и обновление позиций Внутреннего заказа
+   * 
+   * @param id ID сущности (required)
+   * @param internalOrderPosition  (required)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
@@ -455,18 +574,18 @@ if (contentType != null)
    * @return List&lt;CreateInternalOrderPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateInternalOrderPositions200ResponseInner> createInternalOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CreateInternalOrderPositionsRequest createInternalOrderPositionsRequest, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createInternalOrderPositions(id, createInternalOrderPositionsRequest, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<CreateInternalOrderPositions200ResponseInner> createInternalOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<InternalOrderPosition> internalOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+    return this.createInternalOrderPositions(id, internalOrderPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
   /**
-   * Создать позиции InternalOrder
+   * Массовое создание и обновление позиций Внутреннего заказа
    * 
    
    * @param id ID сущности (required)
    
    
-   * @param createInternalOrderPositionsRequest  (required)
+   * @param internalOrderPosition  (required)
    
    
    
@@ -476,17 +595,17 @@ if (contentType != null)
    * @return List&lt;CreateInternalOrderPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateInternalOrderPositions200ResponseInner> createInternalOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CreateInternalOrderPositionsRequest createInternalOrderPositionsRequest, RequestOptions options) throws ApiException {
+  public List<CreateInternalOrderPositions200ResponseInner> createInternalOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<InternalOrderPosition> internalOrderPosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
-    return this.createInternalOrderPositions(id, createInternalOrderPositionsRequest, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.createInternalOrderPositions(id, internalOrderPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
   /**
-   * Создать позиции InternalOrder
+   * Массовое создание и обновление позиций Внутреннего заказа
    * 
    * @param id ID сущности (required)
-   * @param createInternalOrderPositionsRequest  (required)
+   * @param internalOrderPosition  (required)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
@@ -495,21 +614,21 @@ if (contentType != null)
    * @return List&lt;CreateInternalOrderPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateInternalOrderPositions200ResponseInner> createInternalOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CreateInternalOrderPositionsRequest createInternalOrderPositionsRequest, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
-    Object localVarPostBody = createInternalOrderPositionsRequest;
+  public List<CreateInternalOrderPositions200ResponseInner> createInternalOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<InternalOrderPosition> internalOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = internalOrderPosition;
     
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling createInternalOrderPositions");
     }
     
-    // verify the required parameter 'createInternalOrderPositionsRequest' is set
-    if (createInternalOrderPositionsRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'createInternalOrderPositionsRequest' when calling createInternalOrderPositions");
+    // verify the required parameter 'internalOrderPosition' is set
+    if (internalOrderPosition == null) {
+      throw new ApiException(400, "Missing the required parameter 'internalOrderPosition' when calling createInternalOrderPositions");
     }
     
     // create path and map variables
-    String localVarPath = "/entity/internalorder/{id}/positions"
+    String localVarPath = "/entity/internalorder/{id}/positions/batch"
       .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
 
     StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
@@ -1813,12 +1932,11 @@ if (contentType != null)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
-   * @return List&lt;InternalOrderPosition&gt;
+   * @return InternalOrderPositionList
    * @throws ApiException if fails to make API call
    */
-  public List<InternalOrderPosition> getInternalOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.getInternalOrderPositions(id, limit, offset, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public InternalOrderPositionList getInternalOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
+    return this.getInternalOrderPositions(id, limit, offset, expand, accept, acceptEncoding, Collections.emptyMap());
   }
 
   /**
@@ -1832,14 +1950,13 @@ if (contentType != null)
    
    
    
-   
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return List&lt;InternalOrderPosition&gt;
+   * @return InternalOrderPositionList
    * @throws ApiException if fails to make API call
    */
-  public List<InternalOrderPosition> getInternalOrderPositions(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+  public InternalOrderPositionList getInternalOrderPositions(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
-    return this.getInternalOrderPositions(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.getInternalOrderPositions(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1852,12 +1969,11 @@ if (contentType != null)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;InternalOrderPosition&gt;
+   * @return InternalOrderPositionList
    * @throws ApiException if fails to make API call
    */
-  public List<InternalOrderPosition> getInternalOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public InternalOrderPositionList getInternalOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1884,8 +2000,6 @@ if (contentType != null)
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
 if (acceptEncoding != null)
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
-      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
 
     localVarHeaderParams.putAll(additionalHeaders);
 
@@ -1903,7 +2017,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<InternalOrderPosition>> localVarReturnType = new TypeReference<List<InternalOrderPosition>>() {};
+    TypeReference<InternalOrderPositionList> localVarReturnType = new TypeReference<InternalOrderPositionList>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "GET",
