@@ -67,7 +67,7 @@ import java.util.StringJoiner;
   EmissionOrder.JSON_PROPERTY_TRACKING_TYPE,
   EmissionOrder.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
 public class EmissionOrder {
   public static EmissionOrder createWithMeta(UUID id) {
     EmissionOrder o = new EmissionOrder();
@@ -1054,3 +1054,4 @@ public class EmissionOrder {
   }
 
 }
+

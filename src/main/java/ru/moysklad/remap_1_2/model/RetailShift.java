@@ -20,8 +20,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.UUID;
+import org.openapitools.jackson.nullable.JsonNullable;
 import ru.moysklad.remap_1_2.model.Meta;
+import ru.moysklad.remap_1_2.model.RetailShiftPaymentsInner;
+import ru.moysklad.remap_1_2.model.RetailStore;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.io.UnsupportedEncodingException;
@@ -34,9 +43,13 @@ import java.util.StringJoiner;
 @JsonPropertyOrder({
   RetailShift.JSON_PROPERTY_META,
   RetailShift.JSON_PROPERTY_ID,
-  RetailShift.JSON_PROPERTY_ACCOUNT_ID
+  RetailShift.JSON_PROPERTY_ACCOUNT_ID,
+  RetailShift.JSON_PROPERTY_NAME,
+  RetailShift.JSON_PROPERTY_MOMENT,
+  RetailShift.JSON_PROPERTY_RETAIL_STORE,
+  RetailShift.JSON_PROPERTY_PAYMENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailShift {
   public static RetailShift createWithMeta(UUID id) {
     RetailShift o = new RetailShift();
@@ -64,6 +77,22 @@ public class RetailShift {
   public static final String JSON_PROPERTY_ACCOUNT_ID = "accountId";
   @javax.annotation.Nullable
   private UUID accountId;
+
+  public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
+  private String name;
+
+  public static final String JSON_PROPERTY_MOMENT = "moment";
+  @javax.annotation.Nullable
+  private String moment;
+
+  public static final String JSON_PROPERTY_RETAIL_STORE = "retailStore";
+  @javax.annotation.Nullable
+  private JsonNullable<RetailStore> retailStore = JsonNullable.<RetailStore>undefined();
+
+  public static final String JSON_PROPERTY_PAYMENTS = "payments";
+  @javax.annotation.Nullable
+  private JsonNullable<List<RetailShiftPaymentsInner>> payments = JsonNullable.<List<RetailShiftPaymentsInner>>undefined();
 
   public RetailShift() {
   }
@@ -141,6 +170,152 @@ public class RetailShift {
 
 
 
+  public RetailShift name(@javax.annotation.Nullable String name) {
+    
+    this.name = name;
+    return this;
+  }
+
+
+  /**
+   * Наименование смены
+   * @return name
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getName() {
+    return name;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setName(@javax.annotation.Nullable String name) {
+    this.name = name;
+  }
+
+
+  public RetailShift moment(@javax.annotation.Nullable String moment) {
+    
+    this.moment = moment;
+    return this;
+  }
+
+
+  /**
+   * Дата смены
+   * @return moment
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_MOMENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getMoment() {
+    return moment;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_MOMENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMoment(@javax.annotation.Nullable String moment) {
+    this.moment = moment;
+  }
+
+
+  public RetailShift retailStore(@javax.annotation.Nullable RetailStore retailStore) {
+    this.retailStore = JsonNullable.<RetailStore>of(retailStore);
+    
+    return this;
+  }
+
+
+  /**
+   * Метаданные точки продаж
+   * @return retailStore
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public RetailStore getRetailStore() {
+        return retailStore.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_RETAIL_STORE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<RetailStore> getRetailStore_JsonNullable() {
+    return retailStore;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_RETAIL_STORE, required = false)
+  public void setRetailStore_JsonNullable(JsonNullable<RetailStore> retailStore) {
+    this.retailStore = retailStore;
+  }
+
+  public void setRetailStore(@javax.annotation.Nullable RetailStore retailStore) {
+    this.retailStore = JsonNullable.<RetailStore>of(retailStore);
+  }
+
+
+  public RetailShift payments(@javax.annotation.Nullable List<RetailShiftPaymentsInner> payments) {
+    this.payments = JsonNullable.<List<RetailShiftPaymentsInner>>of(payments);
+    
+    return this;
+  }
+
+
+  public RetailShift addPaymentsItem(RetailShiftPaymentsInner paymentsItem) {
+    if (this.payments == null || !this.payments.isPresent()) {
+      this.payments = JsonNullable.<List<RetailShiftPaymentsInner>>of(new ArrayList<>());
+    }
+    try {
+      this.payments.get().add(paymentsItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
+    return this;
+  }
+
+  /**
+   * Связанные платежи
+   * @return payments
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public List<RetailShiftPaymentsInner> getPayments() {
+        return payments.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_PAYMENTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<List<RetailShiftPaymentsInner>> getPayments_JsonNullable() {
+    return payments;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_PAYMENTS, required = false)
+  public void setPayments_JsonNullable(JsonNullable<List<RetailShiftPaymentsInner>> payments) {
+    this.payments = payments;
+  }
+
+  public void setPayments(@javax.annotation.Nullable List<RetailShiftPaymentsInner> payments) {
+    this.payments = JsonNullable.<List<RetailShiftPaymentsInner>>of(payments);
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -152,12 +327,27 @@ public class RetailShift {
     RetailShift retailShift = (RetailShift) o;
     return Objects.equals(this.meta, retailShift.meta) &&
         Objects.equals(this.id, retailShift.id) &&
-        Objects.equals(this.accountId, retailShift.accountId);
+        Objects.equals(this.accountId, retailShift.accountId) &&
+        Objects.equals(this.name, retailShift.name) &&
+        Objects.equals(this.moment, retailShift.moment) &&
+        equalsNullable(this.retailStore, retailShift.retailStore) &&
+        equalsNullable(this.payments, retailShift.payments);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId);
+    return Objects.hash(meta, id, accountId, name, moment, hashCodeNullable(retailStore), hashCodeNullable(payments));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -167,6 +357,10 @@ public class RetailShift {
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    moment: ").append(toIndentedString(moment)).append("\n");
+    sb.append("    retailStore: ").append(toIndentedString(retailStore)).append("\n");
+    sb.append("    payments: ").append(toIndentedString(payments)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -239,7 +433,43 @@ public class RetailShift {
       }
     }
 
+    // add `name` to the URL query string
+    if (getName() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sname%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getName()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `moment` to the URL query string
+    if (getMoment() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%smoment%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getMoment()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `retailStore` to the URL query string
+    if (getRetailStore() != null) {
+      joiner.add(getRetailStore().toUrlQueryString(prefix + "retailStore" + suffix));
+    }
+
+    // add `payments` to the URL query string
+    if (getPayments() != null) {
+      for (int i = 0; i < getPayments().size(); i++) {
+        if (getPayments().get(i) != null) {
+          joiner.add(getPayments().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%spayments%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
     return joiner.toString();
   }
 
 }
+

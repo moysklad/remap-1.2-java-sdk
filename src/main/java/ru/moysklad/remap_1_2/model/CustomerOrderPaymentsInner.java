@@ -29,12 +29,12 @@ import ru.moysklad.remap_1_2.model.Account;
 import ru.moysklad.remap_1_2.model.Agent;
 import ru.moysklad.remap_1_2.model.AttributeAbstract;
 import ru.moysklad.remap_1_2.model.CashIn;
-import ru.moysklad.remap_1_2.model.CashInOperation;
 import ru.moysklad.remap_1_2.model.Contract;
 import ru.moysklad.remap_1_2.model.CurrencyRate;
 import ru.moysklad.remap_1_2.model.Employee;
 import ru.moysklad.remap_1_2.model.FactureOut;
 import ru.moysklad.remap_1_2.model.FileList;
+import ru.moysklad.remap_1_2.model.FinanceInOperationAbstract;
 import ru.moysklad.remap_1_2.model.Group;
 import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.Organization;
@@ -93,7 +93,7 @@ import java.util.StringJoiner;
   CustomerOrderPaymentsInner.JSON_PROPERTY_OPERATIONS
 })
 @JsonTypeName("CustomerOrder_payments_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
 public class CustomerOrderPaymentsInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -238,7 +238,7 @@ public class CustomerOrderPaymentsInner {
 
   public static final String JSON_PROPERTY_OPERATIONS = "operations";
   @javax.annotation.Nullable
-  private JsonNullable<List<CashInOperation>> operations = JsonNullable.<List<CashInOperation>>undefined();
+  private JsonNullable<List<FinanceInOperationAbstract>> operations = JsonNullable.<List<FinanceInOperationAbstract>>undefined();
 
   public CustomerOrderPaymentsInner() {
   }
@@ -1285,16 +1285,16 @@ public class CustomerOrderPaymentsInner {
   }
 
 
-  public CustomerOrderPaymentsInner operations(@javax.annotation.Nullable List<CashInOperation> operations) {
-    this.operations = JsonNullable.<List<CashInOperation>>of(operations);
+  public CustomerOrderPaymentsInner operations(@javax.annotation.Nullable List<FinanceInOperationAbstract> operations) {
+    this.operations = JsonNullable.<List<FinanceInOperationAbstract>>of(operations);
     
     return this;
   }
 
 
-  public CustomerOrderPaymentsInner addOperationsItem(CashInOperation operationsItem) {
+  public CustomerOrderPaymentsInner addOperationsItem(FinanceInOperationAbstract operationsItem) {
     if (this.operations == null || !this.operations.isPresent()) {
-      this.operations = JsonNullable.<List<CashInOperation>>of(new ArrayList<>());
+      this.operations = JsonNullable.<List<FinanceInOperationAbstract>>of(new ArrayList<>());
     }
     try {
       this.operations.get().add(operationsItem);
@@ -1305,13 +1305,13 @@ public class CustomerOrderPaymentsInner {
   }
 
   /**
-   * Связанные операции. Допустимые типы по &#x60;meta.type&#x60;: customerorder, purchasereturn, demand, invoiceout, commissionreportin, retailshift. 
+   * Связанные операции. Допустимые типы по &#x60;meta.type&#x60;: customerorder, purchasereturn, demand, invoiceout, commissionreportin, retailshift 
    * @return operations
    */
   @javax.annotation.Nullable
   @JsonIgnore
 
-  public List<CashInOperation> getOperations() {
+  public List<FinanceInOperationAbstract> getOperations() {
         return operations.orElse(null);
   }
 
@@ -1321,17 +1321,17 @@ public class CustomerOrderPaymentsInner {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<CashInOperation>> getOperations_JsonNullable() {
+  public JsonNullable<List<FinanceInOperationAbstract>> getOperations_JsonNullable() {
     return operations;
   }
   
   @JsonProperty(value = JSON_PROPERTY_OPERATIONS, required = false)
-  public void setOperations_JsonNullable(JsonNullable<List<CashInOperation>> operations) {
+  public void setOperations_JsonNullable(JsonNullable<List<FinanceInOperationAbstract>> operations) {
     this.operations = operations;
   }
 
-  public void setOperations(@javax.annotation.Nullable List<CashInOperation> operations) {
-    this.operations = JsonNullable.<List<CashInOperation>>of(operations);
+  public void setOperations(@javax.annotation.Nullable List<FinanceInOperationAbstract> operations) {
+    this.operations = JsonNullable.<List<FinanceInOperationAbstract>>of(operations);
   }
 
 
@@ -1779,3 +1779,4 @@ public class CustomerOrderPaymentsInner {
   }
 
 }
+

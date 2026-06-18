@@ -1,6 +1,6 @@
 
 
-# PaymentOutOperationAnyOf2
+# FinanceOutOperationInvoiceIn
 
 Счет поставщика + linkedSum
 
@@ -50,7 +50,6 @@
 |**purchaseOrder** | [**PurchaseOrder**](PurchaseOrder.md) | Заказ поставщику, с которым связан Счет поставщика |  [optional] |
 |**supplies** | [**List&lt;Supply&gt;**](Supply.md) | Массив ссылок на связанные приемки |  [optional] |
 |**payments** | [**List&lt;SalesReturnPaymentsInner&gt;**](SalesReturnPaymentsInner.md) | Массив ссылок на связанные операции |  [optional] |
-|**linkedSum** | **Double** | Сумма, оплаченная по данному документу |  |
 
 
 

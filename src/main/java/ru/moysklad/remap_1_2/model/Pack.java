@@ -47,7 +47,7 @@ import java.util.StringJoiner;
   Pack.JSON_PROPERTY_QUANTITY,
   Pack.JSON_PROPERTY_BARCODES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
 public class Pack {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -369,3 +369,4 @@ public class Pack {
   }
 
 }
+

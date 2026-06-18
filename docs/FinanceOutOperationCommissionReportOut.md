@@ -1,6 +1,6 @@
 
 
-# PaymentOutOperationAnyOf4
+# FinanceOutOperationCommissionReportOut
 
 Выданный отчет комиссионера + linkedSum
 
@@ -49,7 +49,6 @@
 |**vatIncluded** | **Boolean** | Включен ли НДС в цену |  [optional] |
 |**vatSum** | **Double** | Сумма НДС |  [optional] |
 |**payments** | [**List&lt;CustomerOrderPaymentsInner&gt;**](CustomerOrderPaymentsInner.md) | Массив ссылок на связанные платежи |  [optional] |
-|**linkedSum** | **Double** | Сумма, оплаченная по данному документу |  |
 
 
 

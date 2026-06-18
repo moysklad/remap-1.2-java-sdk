@@ -28,7 +28,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import ru.moysklad.remap_1_2.model.Agent;
 import ru.moysklad.remap_1_2.model.AttributeAbstract;
 import ru.moysklad.remap_1_2.model.CashOut;
-import ru.moysklad.remap_1_2.model.CashOutOperation;
 import ru.moysklad.remap_1_2.model.Contract;
 import ru.moysklad.remap_1_2.model.CurrencyRate;
 import ru.moysklad.remap_1_2.model.Employee;
@@ -37,6 +36,7 @@ import ru.moysklad.remap_1_2.model.ErrorErrorsInner;
 import ru.moysklad.remap_1_2.model.ExpenseItem;
 import ru.moysklad.remap_1_2.model.FactureIn;
 import ru.moysklad.remap_1_2.model.FileList;
+import ru.moysklad.remap_1_2.model.FinanceOutOperationAbstract;
 import ru.moysklad.remap_1_2.model.Group;
 import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.Organization;
@@ -93,7 +93,7 @@ import java.util.StringJoiner;
   CreateCashOutBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createCashOutBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateCashOutBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -230,7 +230,7 @@ public class CreateCashOutBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_OPERATIONS = "operations";
   @javax.annotation.Nullable
-  private JsonNullable<List<CashOutOperation>> operations = JsonNullable.<List<CashOutOperation>>undefined();
+  private JsonNullable<List<FinanceOutOperationAbstract>> operations = JsonNullable.<List<FinanceOutOperationAbstract>>undefined();
 
   public static final String JSON_PROPERTY_ERRORS = "errors";
   @javax.annotation.Nonnull
@@ -1196,16 +1196,16 @@ public class CreateCashOutBatch200ResponseInner {
   }
 
 
-  public CreateCashOutBatch200ResponseInner operations(@javax.annotation.Nullable List<CashOutOperation> operations) {
-    this.operations = JsonNullable.<List<CashOutOperation>>of(operations);
+  public CreateCashOutBatch200ResponseInner operations(@javax.annotation.Nullable List<FinanceOutOperationAbstract> operations) {
+    this.operations = JsonNullable.<List<FinanceOutOperationAbstract>>of(operations);
     
     return this;
   }
 
 
-  public CreateCashOutBatch200ResponseInner addOperationsItem(CashOutOperation operationsItem) {
+  public CreateCashOutBatch200ResponseInner addOperationsItem(FinanceOutOperationAbstract operationsItem) {
     if (this.operations == null || !this.operations.isPresent()) {
-      this.operations = JsonNullable.<List<CashOutOperation>>of(new ArrayList<>());
+      this.operations = JsonNullable.<List<FinanceOutOperationAbstract>>of(new ArrayList<>());
     }
     try {
       this.operations.get().add(operationsItem);
@@ -1216,13 +1216,13 @@ public class CreateCashOutBatch200ResponseInner {
   }
 
   /**
-   * Связанные операции: полное тело документа плюс &#x60;linkedSum&#x60;. Допустимые типы по &#x60;meta.type&#x60;: salesreturn, supply, invoicein, purchaseorder, commissionreportout. См. &#x60;CashOutOperation&#x60;. 
+   * Связанные операции: полное тело документа плюс &#x60;linkedSum&#x60;. Допустимые типы по &#x60;meta.type&#x60;: salesreturn, supply, invoicein, purchaseorder, commissionreportout 
    * @return operations
    */
   @javax.annotation.Nullable
   @JsonIgnore
 
-  public List<CashOutOperation> getOperations() {
+  public List<FinanceOutOperationAbstract> getOperations() {
         return operations.orElse(null);
   }
 
@@ -1232,17 +1232,17 @@ public class CreateCashOutBatch200ResponseInner {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<CashOutOperation>> getOperations_JsonNullable() {
+  public JsonNullable<List<FinanceOutOperationAbstract>> getOperations_JsonNullable() {
     return operations;
   }
   
   @JsonProperty(value = JSON_PROPERTY_OPERATIONS, required = false)
-  public void setOperations_JsonNullable(JsonNullable<List<CashOutOperation>> operations) {
+  public void setOperations_JsonNullable(JsonNullable<List<FinanceOutOperationAbstract>> operations) {
     this.operations = operations;
   }
 
-  public void setOperations(@javax.annotation.Nullable List<CashOutOperation> operations) {
-    this.operations = JsonNullable.<List<CashOutOperation>>of(operations);
+  public void setOperations(@javax.annotation.Nullable List<FinanceOutOperationAbstract> operations) {
+    this.operations = JsonNullable.<List<FinanceOutOperationAbstract>>of(operations);
   }
 
 
@@ -1720,3 +1720,4 @@ public class CreateCashOutBatch200ResponseInner {
   }
 
 }
+

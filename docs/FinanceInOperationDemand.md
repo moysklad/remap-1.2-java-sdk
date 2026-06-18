@@ -1,6 +1,6 @@
 
 
-# CashInOperationAnyOf2
+# FinanceInOperationDemand
 
 Отгрузка + linkedSum
 
@@ -61,7 +61,6 @@
 |**stateContractId** | **String** | Идентификатор государственного контракта, договора (соглашения) |  [optional] |
 |**transportFacility** | **String** | Транспортное средство |  [optional] |
 |**transportFacilityNumber** | **String** | Номер автомобиля |  [optional] |
-|**linkedSum** | **Double** | Сумма, оплаченная по данному документу |  |
 
 
 

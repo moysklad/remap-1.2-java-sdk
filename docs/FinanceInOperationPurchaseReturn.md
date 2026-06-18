@@ -1,6 +1,6 @@
 
 
-# CashInOperationAnyOf1
+# FinanceInOperationPurchaseReturn
 
 Возврат поставщику + linkedSum
 
@@ -47,7 +47,6 @@
 |**factureOut** | [**FactureOut**](FactureOut.md) | Счет-фактура выданный, с которым связан этот возврат |  [optional] |
 |**factureIn** | [**FactureIn**](FactureIn.md) | Счет-фактура полученный, с которым связан этот возврат |  [optional] |
 |**payments** | [**List&lt;CustomerOrderPaymentsInner&gt;**](CustomerOrderPaymentsInner.md) | Массив ссылок на связанные платежи |  [optional] |
-|**linkedSum** | **Double** | Сумма, оплаченная по данному документу |  |
 
 
 

@@ -63863,6 +63863,7 @@ components:
           description: Массив позиций Списания
           items:
             $ref: "#/components/schemas/LossPosition_1"
+          nullable: true
           type: array
       type: object
     MinimumStockAllWarehouseSame:
@@ -65782,6 +65783,7 @@ components:
           description: Массив позиций Возврата покупателя
           items:
             $ref: "#/components/schemas/SalesReturnPosition_1"
+          nullable: true
           type: array
       type: object
     Service:
@@ -67583,6 +67585,25 @@ components:
           format: uuid
           readOnly: true
           type: string
+        name:
+          description: Наименование смены
+          maxLength: 255
+          type: string
+        moment:
+          description: Дата смены
+          type: string
+        retailStore:
+          allOf:
+          - $ref: "#/components/schemas/RetailStore"
+          description: Метаданные точки продаж
+          nullable: true
+          type: object
+        payments:
+          description: Связанные платежи
+          items:
+            $ref: "#/components/schemas/RetailShift_payments_inner"
+          nullable: true
+          type: array
       type: object
       x-entity-static-builder:
         methodParams:
@@ -67822,6 +67843,7 @@ components:
           description: Массив позиций Инвентаризации
           items:
             $ref: "#/components/schemas/InventoryPosition_1"
+          nullable: true
           type: array
       type: object
     InternalOrder:
@@ -68048,6 +68070,7 @@ components:
           description: Массив позиций Внутреннего заказа
           items:
             $ref: "#/components/schemas/InternalOrderPosition_1"
+          nullable: true
           type: array
       type: object
     InternalOrderList:
@@ -68887,6 +68910,7 @@ components:
           description: Массив позиций Заказа покупателя
           items:
             $ref: "#/components/schemas/CustomerOrderPosition_1"
+          nullable: true
           type: array
       type: object
     CustomerOrderList:
@@ -69049,6 +69073,7 @@ components:
           description: Массив позиций Заказа кодов маркировки
           items:
             $ref: "#/components/schemas/EmissionOrderPosition_1"
+          nullable: true
           type: array
       type: object
     EmissionOrderList:
@@ -69409,6 +69434,7 @@ components:
           description: Массив позиций Заказа поставщику
           items:
             $ref: "#/components/schemas/PurchaseOrderPosition_1"
+          nullable: true
           type: array
       type: object
     PurchaseReturn:
@@ -69696,6 +69722,7 @@ components:
           description: Массив позиций Возврата поставщику
           items:
             $ref: "#/components/schemas/PurchaseReturnPosition_1"
+          nullable: true
           type: array
       type: object
     InvoiceIn:
@@ -70588,6 +70615,7 @@ components:
           description: Массив позиций Приемки
           items:
             $ref: "#/components/schemas/SupplyPosition_1"
+          nullable: true
           type: array
       type: object
     PaymentOut:
@@ -70755,9 +70783,9 @@ components:
         operations:
           description: |
             Связанные операции: полное тело документа плюс `linkedSum`. Допустимые типы по `meta.type`:
-            salesreturn, supply, invoicein, purchaseorder, commissionreportout. См. `PaymentOutOperation`.
+            salesreturn, supply, invoicein, purchaseorder, commissionreportout
           items:
-            $ref: "#/components/schemas/PaymentOutOperation"
+            $ref: "#/components/schemas/FinanceOutOperationAbstract"
           nullable: true
           type: array
       type: object
@@ -70781,19 +70809,6 @@ components:
           items:
             $ref: "#/components/schemas/PaymentOut_1"
           type: array
-      type: object
-    PaymentOutOperation:
-      anyOf:
-      - $ref: "#/components/schemas/PaymentOutOperation_anyOf"
-      - $ref: "#/components/schemas/PaymentOutOperation_anyOf_1"
-      - $ref: "#/components/schemas/PaymentOutOperation_anyOf_2"
-      - $ref: "#/components/schemas/PaymentOutOperation_anyOf_3"
-      - $ref: "#/components/schemas/PaymentOutOperation_anyOf_4"
-      description: |
-        Элемент массива `operations` исходящего платежа: **полноценный документ** одного из допустимых типов
-        плюс обязательное поле `linkedSum`.
-
-        Допустимые `meta.type`: salesreturn, supply, invoicein, purchaseorder, commissionreportout
       type: object
     PaymentIn:
       description: Входящий платеж
@@ -70962,7 +70977,7 @@ components:
             Связанные операции. Допустимые типы по `meta.type`: customerorder, purchasereturn, demand,
             invoiceout, commissionreportin, retailshift.
           items:
-            $ref: "#/components/schemas/PaymentInOperation"
+            $ref: "#/components/schemas/FinanceInOperationAbstract"
           nullable: true
           type: array
       type: object
@@ -71276,6 +71291,7 @@ components:
           description: Массив позиций Возврата предоплаты
           items:
             $ref: "#/components/schemas/PrepaymentReturnPosition_1"
+          nullable: true
           type: array
       type: object
     CashOut:
@@ -71429,9 +71445,9 @@ components:
         operations:
           description: |
             Связанные операции: полное тело документа плюс `linkedSum`. Допустимые типы по `meta.type`:
-            salesreturn, supply, invoicein, purchaseorder, commissionreportout. См. `CashOutOperation`.
+            salesreturn, supply, invoicein, purchaseorder, commissionreportout
           items:
-            $ref: "#/components/schemas/CashOutOperation"
+            $ref: "#/components/schemas/FinanceOutOperationAbstract"
           nullable: true
           type: array
       type: object
@@ -71443,19 +71459,6 @@ components:
         - path: cashout
         - param: id
         type: cashout
-    CashOutOperation:
-      anyOf:
-      - $ref: "#/components/schemas/PaymentOutOperation_anyOf"
-      - $ref: "#/components/schemas/PaymentOutOperation_anyOf_1"
-      - $ref: "#/components/schemas/PaymentOutOperation_anyOf_2"
-      - $ref: "#/components/schemas/PaymentOutOperation_anyOf_3"
-      - $ref: "#/components/schemas/PaymentOutOperation_anyOf_4"
-      description: |
-        Элемент массива `operations` расходного ордера: **полноценный документ** одного из допустимых типов
-        плюс обязательное поле `linkedSum`.
-
-        Допустимые `meta.type`: salesreturn, supply, invoicein, purchaseorder, commissionreportout
-      type: object
     CashIn:
       description: Приходный ордер
       properties:
@@ -71598,9 +71601,9 @@ components:
         operations:
           description: |
             Связанные операции. Допустимые типы по `meta.type`: customerorder, purchasereturn, demand,
-            invoiceout, commissionreportin, retailshift.
+            invoiceout, commissionreportin, retailshift
           items:
-            $ref: "#/components/schemas/CashInOperation"
+            $ref: "#/components/schemas/FinanceInOperationAbstract"
           nullable: true
           type: array
       type: object
@@ -71612,34 +71615,124 @@ components:
         - path: cashin
         - param: id
         type: cashin
-    CashInOperation:
-      anyOf:
-      - $ref: "#/components/schemas/CashInOperation_anyOf"
-      - $ref: "#/components/schemas/CashInOperation_anyOf_1"
-      - $ref: "#/components/schemas/CashInOperation_anyOf_2"
-      - $ref: "#/components/schemas/CashInOperation_anyOf_3"
-      - $ref: "#/components/schemas/CashInOperation_anyOf_4"
-      - $ref: "#/components/schemas/CashInOperation_anyOf_5"
+    FinanceOutOperationAbstract:
+      allOf:
+      - $ref: "#/components/schemas/OperationLinkedSum"
       description: |
-        Элемент массива `operations` приходного ордера.
+        Элемент массива `operations` расходного ордера / исходящего платежа: документ одного из
+        допустимых типов плюс обязательное поле `linkedSum`.
 
-        Допустимые `meta.type`: customerorder, purchasereturn, demand, invoiceout, commissionreportin,
-        retailshift.
+        Допустимые `meta.type`: salesreturn, supply, invoicein, purchaseorder, commissionreportout.
+      required:
+      - linkedSum
+      - meta
       type: object
-    PaymentInOperation:
-      anyOf:
-      - $ref: "#/components/schemas/CashInOperation_anyOf"
-      - $ref: "#/components/schemas/CashInOperation_anyOf_1"
-      - $ref: "#/components/schemas/CashInOperation_anyOf_2"
-      - $ref: "#/components/schemas/CashInOperation_anyOf_3"
-      - $ref: "#/components/schemas/CashInOperation_anyOf_4"
-      - $ref: "#/components/schemas/CashInOperation_anyOf_5"
+      x-polymorphic-discriminator:
+        path: meta.type
+        mappings:
+        - type: salesreturn
+          componentName: FinanceOutOperationSalesReturn
+        - type: supply
+          componentName: FinanceOutOperationSupply
+        - type: invoicein
+          componentName: FinanceOutOperationInvoiceIn
+        - type: purchaseorder
+          componentName: FinanceOutOperationPurchaseOrder
+        - type: commissionreportout
+          componentName: FinanceOutOperationCommissionReportOut
+    FinanceOutOperationSalesReturn:
+      allOf:
+      - $ref: "#/components/schemas/SalesReturn"
+      description: Возврат покупателя + linkedSum
+      type: object
+      x-polymorphic-parent: FinanceOutOperationAbstract
+    FinanceOutOperationSupply:
+      allOf:
+      - $ref: "#/components/schemas/Supply"
+      description: Приемка + linkedSum
+      type: object
+      x-polymorphic-parent: FinanceOutOperationAbstract
+    FinanceOutOperationInvoiceIn:
+      allOf:
+      - $ref: "#/components/schemas/InvoiceIn"
+      description: Счет поставщика + linkedSum
+      type: object
+      x-polymorphic-parent: FinanceOutOperationAbstract
+    FinanceOutOperationPurchaseOrder:
+      allOf:
+      - $ref: "#/components/schemas/PurchaseOrder"
+      description: Заказ поставщику + linkedSum
+      type: object
+      x-polymorphic-parent: FinanceOutOperationAbstract
+    FinanceOutOperationCommissionReportOut:
+      allOf:
+      - $ref: "#/components/schemas/CommissionReportOut"
+      description: Выданный отчет комиссионера + linkedSum
+      type: object
+      x-polymorphic-parent: FinanceOutOperationAbstract
+    FinanceInOperationAbstract:
+      allOf:
+      - $ref: "#/components/schemas/OperationLinkedSum"
       description: |
-        Элемент массива `operations` входящего платежа.
+        Элемент массива `operations` приходного ордера / входящего платежа.
 
-        Допустимые `meta.type`: customerorder, purchasereturn, demand, invoiceout, commissionreportin,
-        retailshift.
+        Допустимые `meta.type`: customerorder, purchasereturn, demand, invoiceout,
+        commissionreportin, retailshift.
+      required:
+      - linkedSum
+      - meta
       type: object
+      x-polymorphic-discriminator:
+        path: meta.type
+        mappings:
+        - type: customerorder
+          componentName: FinanceInOperationCustomerOrder
+        - type: purchasereturn
+          componentName: FinanceInOperationPurchaseReturn
+        - type: demand
+          componentName: FinanceInOperationDemand
+        - type: invoiceout
+          componentName: FinanceInOperationInvoiceOut
+        - type: commissionreportin
+          componentName: FinanceInOperationCommissionReportIn
+        - type: retailshift
+          componentName: FinanceInOperationRetailShift
+    FinanceInOperationCustomerOrder:
+      allOf:
+      - $ref: "#/components/schemas/CustomerOrder"
+      description: Заказ покупателя + linkedSum
+      type: object
+      x-polymorphic-parent: FinanceInOperationAbstract
+    FinanceInOperationPurchaseReturn:
+      allOf:
+      - $ref: "#/components/schemas/PurchaseReturn"
+      description: Возврат поставщику + linkedSum
+      type: object
+      x-polymorphic-parent: FinanceInOperationAbstract
+    FinanceInOperationDemand:
+      allOf:
+      - $ref: "#/components/schemas/Demand"
+      description: Отгрузка + linkedSum
+      type: object
+      x-polymorphic-parent: FinanceInOperationAbstract
+    FinanceInOperationInvoiceOut:
+      allOf:
+      - $ref: "#/components/schemas/InvoiceOut"
+      description: Счет покупателю + linkedSum
+      type: object
+      x-polymorphic-parent: FinanceInOperationAbstract
+    FinanceInOperationCommissionReportIn:
+      allOf:
+      - $ref: "#/components/schemas/CommissionReportIn"
+      description: Полученный отчет комиссионера + linkedSum
+      type: object
+      x-polymorphic-parent: FinanceInOperationAbstract
+    FinanceInOperationRetailShift:
+      allOf:
+      - $ref: "#/components/schemas/RetailShift"
+      description: Смена + linkedSum
+      type: object
+      x-polymorphic-parent: FinanceInOperationAbstract
     OperationLinkedSum:
       description: |
         Поле суммы по связанной операции. Комбинируется через `allOf` с телом документа в элементах
@@ -72303,6 +72396,7 @@ components:
           description: Массив позиций Перемещения
           items:
             $ref: "#/components/schemas/MovePosition_1"
+          nullable: true
           type: array
       type: object
     ProcessingPlanFolder:
@@ -73227,6 +73321,7 @@ components:
           description: Массив позиций Отгрузки
           items:
             $ref: "#/components/schemas/DemandPosition_1"
+          nullable: true
           type: array
       type: object
     DemandPositionTrackingCode1162:
@@ -73637,6 +73732,7 @@ components:
           description: Массив позиций Розничной продажи
           items:
             $ref: "#/components/schemas/RetailDemandPosition_1"
+          nullable: true
           type: array
       type: object
     Enter:
@@ -73864,6 +73960,7 @@ components:
           description: Массив позиций Оприходования
           items:
             $ref: "#/components/schemas/EnterPosition_1"
+          nullable: true
           type: array
       type: object
     CommissionReportIn:
@@ -74137,6 +74234,7 @@ components:
           description: Массив позиций Полученного отчета комиссионера
           items:
             $ref: "#/components/schemas/CommissionReportInPosition_1"
+          nullable: true
           type: array
       type: object
     CommissionReportInReturnedPosition:
@@ -74201,6 +74299,7 @@ components:
             комиссионера
           items:
             $ref: "#/components/schemas/CommissionReportInReturnedPosition"
+          nullable: true
           type: array
       type: object
     CommissionReportOut:
@@ -74469,6 +74568,7 @@ components:
           description: Массив позиций Выданного отчета комиссионера
           items:
             $ref: "#/components/schemas/CommissionReportOutPosition"
+          nullable: true
           type: array
       type: object
     CompanySettings:
@@ -76162,6 +76262,10 @@ components:
         currency:
           $ref: "#/components/schemas/Currency"
       type: object
+    RetailShift_payments_inner:
+      anyOf:
+      - $ref: "#/components/schemas/PaymentIn"
+      - $ref: "#/components/schemas/CashIn"
     Task_notes:
       description: Метаданные комментариев к задаче
       properties:
@@ -76196,61 +76300,6 @@ components:
       - $ref: "#/components/schemas/SalesReturn_1"
       - $ref: "#/components/schemas/PurchaseReturn_1"
       - $ref: "#/components/schemas/PrepaymentReturn_1"
-    PaymentOutOperation_anyOf:
-      allOf:
-      - $ref: "#/components/schemas/SalesReturn"
-      - $ref: "#/components/schemas/OperationLinkedSum"
-      description: Возврат покупателя + linkedSum
-    PaymentOutOperation_anyOf_1:
-      allOf:
-      - $ref: "#/components/schemas/Supply"
-      - $ref: "#/components/schemas/OperationLinkedSum"
-      description: Приемка + linkedSum
-    PaymentOutOperation_anyOf_2:
-      allOf:
-      - $ref: "#/components/schemas/InvoiceIn"
-      - $ref: "#/components/schemas/OperationLinkedSum"
-      description: Счет поставщика + linkedSum
-    PaymentOutOperation_anyOf_3:
-      allOf:
-      - $ref: "#/components/schemas/PurchaseOrder"
-      - $ref: "#/components/schemas/OperationLinkedSum"
-      description: Заказ поставщику + linkedSum
-    PaymentOutOperation_anyOf_4:
-      allOf:
-      - $ref: "#/components/schemas/CommissionReportOut"
-      - $ref: "#/components/schemas/OperationLinkedSum"
-      description: Выданный отчет комиссионера + linkedSum
-    CashInOperation_anyOf:
-      allOf:
-      - $ref: "#/components/schemas/CustomerOrder"
-      - $ref: "#/components/schemas/OperationLinkedSum"
-      description: Заказ покупателя + linkedSum
-    CashInOperation_anyOf_1:
-      allOf:
-      - $ref: "#/components/schemas/PurchaseReturn"
-      - $ref: "#/components/schemas/OperationLinkedSum"
-      description: Возврат поставщику + linkedSum
-    CashInOperation_anyOf_2:
-      allOf:
-      - $ref: "#/components/schemas/Demand"
-      - $ref: "#/components/schemas/OperationLinkedSum"
-      description: Отгрузка + linkedSum
-    CashInOperation_anyOf_3:
-      allOf:
-      - $ref: "#/components/schemas/InvoiceOut"
-      - $ref: "#/components/schemas/OperationLinkedSum"
-      description: Счет покупателю + linkedSum
-    CashInOperation_anyOf_4:
-      allOf:
-      - $ref: "#/components/schemas/CommissionReportIn"
-      - $ref: "#/components/schemas/OperationLinkedSum"
-      description: Полученный отчет комиссионера + linkedSum
-    CashInOperation_anyOf_5:
-      allOf:
-      - $ref: "#/components/schemas/RetailShift"
-      - $ref: "#/components/schemas/OperationLinkedSum"
-      description: Смена + linkedSum
     CommissionReportIn_commissionOverhead:
       description: Прочие расходы
       properties:

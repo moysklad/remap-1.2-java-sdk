@@ -55,54 +55,52 @@ import java.util.StringJoiner;
  * Полученный отчет комиссионера + linkedSum
  */
 @JsonPropertyOrder({
-  CashInOperationAnyOf4.JSON_PROPERTY_META,
-  CashInOperationAnyOf4.JSON_PROPERTY_ID,
-  CashInOperationAnyOf4.JSON_PROPERTY_ACCOUNT_ID,
-  CashInOperationAnyOf4.JSON_PROPERTY_AGENT,
-  CashInOperationAnyOf4.JSON_PROPERTY_AGENT_ACCOUNT,
-  CashInOperationAnyOf4.JSON_PROPERTY_APPLICABLE,
-  CashInOperationAnyOf4.JSON_PROPERTY_ATTRIBUTES,
-  CashInOperationAnyOf4.JSON_PROPERTY_CODE,
-  CashInOperationAnyOf4.JSON_PROPERTY_COMMISSION_OVERHEAD,
-  CashInOperationAnyOf4.JSON_PROPERTY_COMMISSION_PERIOD_END,
-  CashInOperationAnyOf4.JSON_PROPERTY_COMMISSION_PERIOD_START,
-  CashInOperationAnyOf4.JSON_PROPERTY_COMMITENT_SUM,
-  CashInOperationAnyOf4.JSON_PROPERTY_CONTRACT,
-  CashInOperationAnyOf4.JSON_PROPERTY_CREATED,
-  CashInOperationAnyOf4.JSON_PROPERTY_DELETED,
-  CashInOperationAnyOf4.JSON_PROPERTY_DESCRIPTION,
-  CashInOperationAnyOf4.JSON_PROPERTY_EXTERNAL_CODE,
-  CashInOperationAnyOf4.JSON_PROPERTY_FILES,
-  CashInOperationAnyOf4.JSON_PROPERTY_GROUP,
-  CashInOperationAnyOf4.JSON_PROPERTY_MOMENT,
-  CashInOperationAnyOf4.JSON_PROPERTY_NAME,
-  CashInOperationAnyOf4.JSON_PROPERTY_ORGANIZATION,
-  CashInOperationAnyOf4.JSON_PROPERTY_ORGANIZATION_ACCOUNT,
-  CashInOperationAnyOf4.JSON_PROPERTY_OWNER,
-  CashInOperationAnyOf4.JSON_PROPERTY_PAYED_SUM,
-  CashInOperationAnyOf4.JSON_PROPERTY_POSITIONS,
-  CashInOperationAnyOf4.JSON_PROPERTY_PRINTED,
-  CashInOperationAnyOf4.JSON_PROPERTY_PROJECT,
-  CashInOperationAnyOf4.JSON_PROPERTY_PUBLISHED,
-  CashInOperationAnyOf4.JSON_PROPERTY_RATE,
-  CashInOperationAnyOf4.JSON_PROPERTY_RETURN_TO_COMMISSIONER_POSITIONS,
-  CashInOperationAnyOf4.JSON_PROPERTY_REWARD_PERCENT,
-  CashInOperationAnyOf4.JSON_PROPERTY_REWARD_TYPE,
-  CashInOperationAnyOf4.JSON_PROPERTY_SALES_CHANNEL,
-  CashInOperationAnyOf4.JSON_PROPERTY_SHARED,
-  CashInOperationAnyOf4.JSON_PROPERTY_STATE,
-  CashInOperationAnyOf4.JSON_PROPERTY_SUM,
-  CashInOperationAnyOf4.JSON_PROPERTY_SYNC_ID,
-  CashInOperationAnyOf4.JSON_PROPERTY_UPDATED,
-  CashInOperationAnyOf4.JSON_PROPERTY_VAT_ENABLED,
-  CashInOperationAnyOf4.JSON_PROPERTY_VAT_INCLUDED,
-  CashInOperationAnyOf4.JSON_PROPERTY_VAT_SUM,
-  CashInOperationAnyOf4.JSON_PROPERTY_PAYMENTS,
-  CashInOperationAnyOf4.JSON_PROPERTY_LINKED_SUM
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_META,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_ID,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_ACCOUNT_ID,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_AGENT,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_AGENT_ACCOUNT,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_APPLICABLE,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_ATTRIBUTES,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_CODE,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_COMMISSION_OVERHEAD,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_COMMISSION_PERIOD_END,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_COMMISSION_PERIOD_START,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_COMMITENT_SUM,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_CONTRACT,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_CREATED,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_DELETED,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_DESCRIPTION,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_EXTERNAL_CODE,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_FILES,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_GROUP,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_MOMENT,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_NAME,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_ORGANIZATION,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_ORGANIZATION_ACCOUNT,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_OWNER,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_PAYED_SUM,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_POSITIONS,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_PRINTED,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_PROJECT,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_PUBLISHED,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_RATE,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_RETURN_TO_COMMISSIONER_POSITIONS,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_REWARD_PERCENT,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_REWARD_TYPE,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_SALES_CHANNEL,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_SHARED,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_STATE,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_SUM,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_SYNC_ID,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_UPDATED,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_VAT_ENABLED,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_VAT_INCLUDED,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_VAT_SUM,
+  FinanceInOperationCommissionReportIn.JSON_PROPERTY_PAYMENTS
 })
-@JsonTypeName("CashInOperation_anyOf_4")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
-public class CashInOperationAnyOf4 {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+public class FinanceInOperationCommissionReportIn extends FinanceInOperationAbstract {
 
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
@@ -276,17 +274,13 @@ public class CashInOperationAnyOf4 {
   @javax.annotation.Nullable
   private JsonNullable<List<CustomerOrderPaymentsInner>> payments = JsonNullable.<List<CustomerOrderPaymentsInner>>undefined();
 
-  public static final String JSON_PROPERTY_LINKED_SUM = "linkedSum";
-  @javax.annotation.Nonnull
-  private Double linkedSum;
-
-  public CashInOperationAnyOf4() {
+  public FinanceInOperationCommissionReportIn() {
   }
   /**
    * Constructor with only readonly parameters
    */
   @JsonCreator
-  public CashInOperationAnyOf4(
+  public FinanceInOperationCommissionReportIn(
     @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id, 
     @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId, 
     @JsonProperty(value = JSON_PROPERTY_COMMITENT_SUM, required = false) Double commitentSum, 
@@ -309,7 +303,7 @@ public class CashInOperationAnyOf4 {
     this.updated = updated;
   }
 
-  public CashInOperationAnyOf4 meta(@javax.annotation.Nullable Meta meta) {
+  public FinanceInOperationCommissionReportIn meta(@javax.annotation.Nullable Meta meta) {
     
     this.meta = meta;
     return this;
@@ -370,7 +364,7 @@ public class CashInOperationAnyOf4 {
 
 
 
-  public CashInOperationAnyOf4 agent(@javax.annotation.Nullable Agent agent) {
+  public FinanceInOperationCommissionReportIn agent(@javax.annotation.Nullable Agent agent) {
     
     this.agent = agent;
     return this;
@@ -399,7 +393,7 @@ public class CashInOperationAnyOf4 {
   }
 
 
-  public CashInOperationAnyOf4 agentAccount(@javax.annotation.Nullable Account agentAccount) {
+  public FinanceInOperationCommissionReportIn agentAccount(@javax.annotation.Nullable Account agentAccount) {
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
     
     return this;
@@ -437,7 +431,7 @@ public class CashInOperationAnyOf4 {
   }
 
 
-  public CashInOperationAnyOf4 applicable(@javax.annotation.Nullable Boolean applicable) {
+  public FinanceInOperationCommissionReportIn applicable(@javax.annotation.Nullable Boolean applicable) {
     
     this.applicable = applicable;
     return this;
@@ -466,14 +460,14 @@ public class CashInOperationAnyOf4 {
   }
 
 
-  public CashInOperationAnyOf4 attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+  public FinanceInOperationCommissionReportIn attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
 
 
-  public CashInOperationAnyOf4 addAttributesItem(AttributeAbstract attributesItem) {
+  public FinanceInOperationCommissionReportIn addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
       this.attributes = JsonNullable.<List<AttributeAbstract>>of(new ArrayList<>());
     }
@@ -516,7 +510,7 @@ public class CashInOperationAnyOf4 {
   }
 
 
-  public CashInOperationAnyOf4 code(@javax.annotation.Nullable String code) {
+  public FinanceInOperationCommissionReportIn code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
@@ -545,7 +539,7 @@ public class CashInOperationAnyOf4 {
   }
 
 
-  public CashInOperationAnyOf4 commissionOverhead(@javax.annotation.Nullable CommissionReportInCommissionOverhead commissionOverhead) {
+  public FinanceInOperationCommissionReportIn commissionOverhead(@javax.annotation.Nullable CommissionReportInCommissionOverhead commissionOverhead) {
     
     this.commissionOverhead = commissionOverhead;
     return this;
@@ -574,7 +568,7 @@ public class CashInOperationAnyOf4 {
   }
 
 
-  public CashInOperationAnyOf4 commissionPeriodEnd(@javax.annotation.Nullable String commissionPeriodEnd) {
+  public FinanceInOperationCommissionReportIn commissionPeriodEnd(@javax.annotation.Nullable String commissionPeriodEnd) {
     
     this.commissionPeriodEnd = commissionPeriodEnd;
     return this;
@@ -603,7 +597,7 @@ public class CashInOperationAnyOf4 {
   }
 
 
-  public CashInOperationAnyOf4 commissionPeriodStart(@javax.annotation.Nullable String commissionPeriodStart) {
+  public FinanceInOperationCommissionReportIn commissionPeriodStart(@javax.annotation.Nullable String commissionPeriodStart) {
     
     this.commissionPeriodStart = commissionPeriodStart;
     return this;
@@ -648,7 +642,7 @@ public class CashInOperationAnyOf4 {
 
 
 
-  public CashInOperationAnyOf4 contract(@javax.annotation.Nullable Contract contract) {
+  public FinanceInOperationCommissionReportIn contract(@javax.annotation.Nullable Contract contract) {
     this.contract = JsonNullable.<Contract>of(contract);
     
     return this;
@@ -718,7 +712,7 @@ public class CashInOperationAnyOf4 {
 
 
 
-  public CashInOperationAnyOf4 description(@javax.annotation.Nullable String description) {
+  public FinanceInOperationCommissionReportIn description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -756,7 +750,7 @@ public class CashInOperationAnyOf4 {
   }
 
 
-  public CashInOperationAnyOf4 externalCode(@javax.annotation.Nullable String externalCode) {
+  public FinanceInOperationCommissionReportIn externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
@@ -785,7 +779,7 @@ public class CashInOperationAnyOf4 {
   }
 
 
-  public CashInOperationAnyOf4 files(@javax.annotation.Nullable FileList files) {
+  public FinanceInOperationCommissionReportIn files(@javax.annotation.Nullable FileList files) {
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
@@ -823,7 +817,7 @@ public class CashInOperationAnyOf4 {
   }
 
 
-  public CashInOperationAnyOf4 group(@javax.annotation.Nullable Group group) {
+  public FinanceInOperationCommissionReportIn group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
@@ -852,7 +846,7 @@ public class CashInOperationAnyOf4 {
   }
 
 
-  public CashInOperationAnyOf4 moment(@javax.annotation.Nullable String moment) {
+  public FinanceInOperationCommissionReportIn moment(@javax.annotation.Nullable String moment) {
     
     this.moment = moment;
     return this;
@@ -881,7 +875,7 @@ public class CashInOperationAnyOf4 {
   }
 
 
-  public CashInOperationAnyOf4 name(@javax.annotation.Nullable String name) {
+  public FinanceInOperationCommissionReportIn name(@javax.annotation.Nullable String name) {
     
     this.name = name;
     return this;
@@ -910,7 +904,7 @@ public class CashInOperationAnyOf4 {
   }
 
 
-  public CashInOperationAnyOf4 organization(@javax.annotation.Nullable Organization organization) {
+  public FinanceInOperationCommissionReportIn organization(@javax.annotation.Nullable Organization organization) {
     
     this.organization = organization;
     return this;
@@ -939,7 +933,7 @@ public class CashInOperationAnyOf4 {
   }
 
 
-  public CashInOperationAnyOf4 organizationAccount(@javax.annotation.Nullable Account organizationAccount) {
+  public FinanceInOperationCommissionReportIn organizationAccount(@javax.annotation.Nullable Account organizationAccount) {
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
     
     return this;
@@ -977,7 +971,7 @@ public class CashInOperationAnyOf4 {
   }
 
 
-  public CashInOperationAnyOf4 owner(@javax.annotation.Nullable Employee owner) {
+  public FinanceInOperationCommissionReportIn owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -1031,7 +1025,7 @@ public class CashInOperationAnyOf4 {
 
 
 
-  public CashInOperationAnyOf4 positions(@javax.annotation.Nullable CommissionReportInPositionList positions) {
+  public FinanceInOperationCommissionReportIn positions(@javax.annotation.Nullable CommissionReportInPositionList positions) {
     
     this.positions = positions;
     return this;
@@ -1076,7 +1070,7 @@ public class CashInOperationAnyOf4 {
 
 
 
-  public CashInOperationAnyOf4 project(@javax.annotation.Nullable Project project) {
+  public FinanceInOperationCommissionReportIn project(@javax.annotation.Nullable Project project) {
     this.project = JsonNullable.<Project>of(project);
     
     return this;
@@ -1130,7 +1124,7 @@ public class CashInOperationAnyOf4 {
 
 
 
-  public CashInOperationAnyOf4 rate(@javax.annotation.Nullable CurrencyRate rate) {
+  public FinanceInOperationCommissionReportIn rate(@javax.annotation.Nullable CurrencyRate rate) {
     
     this.rate = rate;
     return this;
@@ -1159,7 +1153,7 @@ public class CashInOperationAnyOf4 {
   }
 
 
-  public CashInOperationAnyOf4 returnToCommissionerPositions(@javax.annotation.Nullable CommissionReportInReturnedPositionList returnToCommissionerPositions) {
+  public FinanceInOperationCommissionReportIn returnToCommissionerPositions(@javax.annotation.Nullable CommissionReportInReturnedPositionList returnToCommissionerPositions) {
     
     this.returnToCommissionerPositions = returnToCommissionerPositions;
     return this;
@@ -1188,7 +1182,7 @@ public class CashInOperationAnyOf4 {
   }
 
 
-  public CashInOperationAnyOf4 rewardPercent(@javax.annotation.Nullable Integer rewardPercent) {
+  public FinanceInOperationCommissionReportIn rewardPercent(@javax.annotation.Nullable Integer rewardPercent) {
     
     this.rewardPercent = rewardPercent;
     return this;
@@ -1219,7 +1213,7 @@ public class CashInOperationAnyOf4 {
   }
 
 
-  public CashInOperationAnyOf4 rewardType(@javax.annotation.Nullable String rewardType) {
+  public FinanceInOperationCommissionReportIn rewardType(@javax.annotation.Nullable String rewardType) {
     
     this.rewardType = rewardType;
     return this;
@@ -1248,7 +1242,7 @@ public class CashInOperationAnyOf4 {
   }
 
 
-  public CashInOperationAnyOf4 salesChannel(@javax.annotation.Nullable SalesChannel salesChannel) {
+  public FinanceInOperationCommissionReportIn salesChannel(@javax.annotation.Nullable SalesChannel salesChannel) {
     this.salesChannel = JsonNullable.<SalesChannel>of(salesChannel);
     
     return this;
@@ -1286,7 +1280,7 @@ public class CashInOperationAnyOf4 {
   }
 
 
-  public CashInOperationAnyOf4 shared(@javax.annotation.Nullable Boolean shared) {
+  public FinanceInOperationCommissionReportIn shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
@@ -1315,7 +1309,7 @@ public class CashInOperationAnyOf4 {
   }
 
 
-  public CashInOperationAnyOf4 state(@javax.annotation.Nullable State state) {
+  public FinanceInOperationCommissionReportIn state(@javax.annotation.Nullable State state) {
     this.state = JsonNullable.<State>of(state);
     
     return this;
@@ -1353,7 +1347,7 @@ public class CashInOperationAnyOf4 {
   }
 
 
-  public CashInOperationAnyOf4 sum(@javax.annotation.Nullable Double sum) {
+  public FinanceInOperationCommissionReportIn sum(@javax.annotation.Nullable Double sum) {
     
     this.sum = sum;
     return this;
@@ -1382,7 +1376,7 @@ public class CashInOperationAnyOf4 {
   }
 
 
-  public CashInOperationAnyOf4 syncId(@javax.annotation.Nullable UUID syncId) {
+  public FinanceInOperationCommissionReportIn syncId(@javax.annotation.Nullable UUID syncId) {
     
     this.syncId = syncId;
     return this;
@@ -1427,7 +1421,7 @@ public class CashInOperationAnyOf4 {
 
 
 
-  public CashInOperationAnyOf4 vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+  public FinanceInOperationCommissionReportIn vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
     
     this.vatEnabled = vatEnabled;
     return this;
@@ -1456,7 +1450,7 @@ public class CashInOperationAnyOf4 {
   }
 
 
-  public CashInOperationAnyOf4 vatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
+  public FinanceInOperationCommissionReportIn vatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
     
     this.vatIncluded = vatIncluded;
     return this;
@@ -1485,7 +1479,7 @@ public class CashInOperationAnyOf4 {
   }
 
 
-  public CashInOperationAnyOf4 vatSum(@javax.annotation.Nullable Double vatSum) {
+  public FinanceInOperationCommissionReportIn vatSum(@javax.annotation.Nullable Double vatSum) {
     
     this.vatSum = vatSum;
     return this;
@@ -1514,14 +1508,14 @@ public class CashInOperationAnyOf4 {
   }
 
 
-  public CashInOperationAnyOf4 payments(@javax.annotation.Nullable List<CustomerOrderPaymentsInner> payments) {
+  public FinanceInOperationCommissionReportIn payments(@javax.annotation.Nullable List<CustomerOrderPaymentsInner> payments) {
     this.payments = JsonNullable.<List<CustomerOrderPaymentsInner>>of(payments);
     
     return this;
   }
 
 
-  public CashInOperationAnyOf4 addPaymentsItem(CustomerOrderPaymentsInner paymentsItem) {
+  public FinanceInOperationCommissionReportIn addPaymentsItem(CustomerOrderPaymentsInner paymentsItem) {
     if (this.payments == null || !this.payments.isPresent()) {
       this.payments = JsonNullable.<List<CustomerOrderPaymentsInner>>of(new ArrayList<>());
     }
@@ -1564,35 +1558,6 @@ public class CashInOperationAnyOf4 {
   }
 
 
-  public CashInOperationAnyOf4 linkedSum(@javax.annotation.Nonnull Double linkedSum) {
-    
-    this.linkedSum = linkedSum;
-    return this;
-  }
-
-
-  /**
-   * Сумма, оплаченная по данному документу
-   * @return linkedSum
-   */
-  @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_LINKED_SUM)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public Double getLinkedSum() {
-    return linkedSum;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_LINKED_SUM)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLinkedSum(@javax.annotation.Nonnull Double linkedSum) {
-    this.linkedSum = linkedSum;
-  }
-
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -1601,51 +1566,50 @@ public class CashInOperationAnyOf4 {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CashInOperationAnyOf4 cashInOperationAnyOf4 = (CashInOperationAnyOf4) o;
-    return Objects.equals(this.meta, cashInOperationAnyOf4.meta) &&
-        Objects.equals(this.id, cashInOperationAnyOf4.id) &&
-        Objects.equals(this.accountId, cashInOperationAnyOf4.accountId) &&
-        Objects.equals(this.agent, cashInOperationAnyOf4.agent) &&
-        equalsNullable(this.agentAccount, cashInOperationAnyOf4.agentAccount) &&
-        Objects.equals(this.applicable, cashInOperationAnyOf4.applicable) &&
-        equalsNullable(this.attributes, cashInOperationAnyOf4.attributes) &&
-        Objects.equals(this.code, cashInOperationAnyOf4.code) &&
-        Objects.equals(this.commissionOverhead, cashInOperationAnyOf4.commissionOverhead) &&
-        Objects.equals(this.commissionPeriodEnd, cashInOperationAnyOf4.commissionPeriodEnd) &&
-        Objects.equals(this.commissionPeriodStart, cashInOperationAnyOf4.commissionPeriodStart) &&
-        Objects.equals(this.commitentSum, cashInOperationAnyOf4.commitentSum) &&
-        equalsNullable(this.contract, cashInOperationAnyOf4.contract) &&
-        Objects.equals(this.created, cashInOperationAnyOf4.created) &&
-        Objects.equals(this.deleted, cashInOperationAnyOf4.deleted) &&
-        equalsNullable(this.description, cashInOperationAnyOf4.description) &&
-        Objects.equals(this.externalCode, cashInOperationAnyOf4.externalCode) &&
-        equalsNullable(this.files, cashInOperationAnyOf4.files) &&
-        Objects.equals(this.group, cashInOperationAnyOf4.group) &&
-        Objects.equals(this.moment, cashInOperationAnyOf4.moment) &&
-        Objects.equals(this.name, cashInOperationAnyOf4.name) &&
-        Objects.equals(this.organization, cashInOperationAnyOf4.organization) &&
-        equalsNullable(this.organizationAccount, cashInOperationAnyOf4.organizationAccount) &&
-        equalsNullable(this.owner, cashInOperationAnyOf4.owner) &&
-        Objects.equals(this.payedSum, cashInOperationAnyOf4.payedSum) &&
-        Objects.equals(this.positions, cashInOperationAnyOf4.positions) &&
-        Objects.equals(this.printed, cashInOperationAnyOf4.printed) &&
-        equalsNullable(this.project, cashInOperationAnyOf4.project) &&
-        Objects.equals(this.published, cashInOperationAnyOf4.published) &&
-        Objects.equals(this.rate, cashInOperationAnyOf4.rate) &&
-        Objects.equals(this.returnToCommissionerPositions, cashInOperationAnyOf4.returnToCommissionerPositions) &&
-        Objects.equals(this.rewardPercent, cashInOperationAnyOf4.rewardPercent) &&
-        Objects.equals(this.rewardType, cashInOperationAnyOf4.rewardType) &&
-        equalsNullable(this.salesChannel, cashInOperationAnyOf4.salesChannel) &&
-        Objects.equals(this.shared, cashInOperationAnyOf4.shared) &&
-        equalsNullable(this.state, cashInOperationAnyOf4.state) &&
-        Objects.equals(this.sum, cashInOperationAnyOf4.sum) &&
-        Objects.equals(this.syncId, cashInOperationAnyOf4.syncId) &&
-        Objects.equals(this.updated, cashInOperationAnyOf4.updated) &&
-        Objects.equals(this.vatEnabled, cashInOperationAnyOf4.vatEnabled) &&
-        Objects.equals(this.vatIncluded, cashInOperationAnyOf4.vatIncluded) &&
-        Objects.equals(this.vatSum, cashInOperationAnyOf4.vatSum) &&
-        equalsNullable(this.payments, cashInOperationAnyOf4.payments) &&
-        Objects.equals(this.linkedSum, cashInOperationAnyOf4.linkedSum);
+    FinanceInOperationCommissionReportIn financeInOperationCommissionReportIn = (FinanceInOperationCommissionReportIn) o;
+    return Objects.equals(this.meta, financeInOperationCommissionReportIn.meta) &&
+        Objects.equals(this.id, financeInOperationCommissionReportIn.id) &&
+        Objects.equals(this.accountId, financeInOperationCommissionReportIn.accountId) &&
+        Objects.equals(this.agent, financeInOperationCommissionReportIn.agent) &&
+        equalsNullable(this.agentAccount, financeInOperationCommissionReportIn.agentAccount) &&
+        Objects.equals(this.applicable, financeInOperationCommissionReportIn.applicable) &&
+        equalsNullable(this.attributes, financeInOperationCommissionReportIn.attributes) &&
+        Objects.equals(this.code, financeInOperationCommissionReportIn.code) &&
+        Objects.equals(this.commissionOverhead, financeInOperationCommissionReportIn.commissionOverhead) &&
+        Objects.equals(this.commissionPeriodEnd, financeInOperationCommissionReportIn.commissionPeriodEnd) &&
+        Objects.equals(this.commissionPeriodStart, financeInOperationCommissionReportIn.commissionPeriodStart) &&
+        Objects.equals(this.commitentSum, financeInOperationCommissionReportIn.commitentSum) &&
+        equalsNullable(this.contract, financeInOperationCommissionReportIn.contract) &&
+        Objects.equals(this.created, financeInOperationCommissionReportIn.created) &&
+        Objects.equals(this.deleted, financeInOperationCommissionReportIn.deleted) &&
+        equalsNullable(this.description, financeInOperationCommissionReportIn.description) &&
+        Objects.equals(this.externalCode, financeInOperationCommissionReportIn.externalCode) &&
+        equalsNullable(this.files, financeInOperationCommissionReportIn.files) &&
+        Objects.equals(this.group, financeInOperationCommissionReportIn.group) &&
+        Objects.equals(this.moment, financeInOperationCommissionReportIn.moment) &&
+        Objects.equals(this.name, financeInOperationCommissionReportIn.name) &&
+        Objects.equals(this.organization, financeInOperationCommissionReportIn.organization) &&
+        equalsNullable(this.organizationAccount, financeInOperationCommissionReportIn.organizationAccount) &&
+        equalsNullable(this.owner, financeInOperationCommissionReportIn.owner) &&
+        Objects.equals(this.payedSum, financeInOperationCommissionReportIn.payedSum) &&
+        Objects.equals(this.positions, financeInOperationCommissionReportIn.positions) &&
+        Objects.equals(this.printed, financeInOperationCommissionReportIn.printed) &&
+        equalsNullable(this.project, financeInOperationCommissionReportIn.project) &&
+        Objects.equals(this.published, financeInOperationCommissionReportIn.published) &&
+        Objects.equals(this.rate, financeInOperationCommissionReportIn.rate) &&
+        Objects.equals(this.returnToCommissionerPositions, financeInOperationCommissionReportIn.returnToCommissionerPositions) &&
+        Objects.equals(this.rewardPercent, financeInOperationCommissionReportIn.rewardPercent) &&
+        Objects.equals(this.rewardType, financeInOperationCommissionReportIn.rewardType) &&
+        equalsNullable(this.salesChannel, financeInOperationCommissionReportIn.salesChannel) &&
+        Objects.equals(this.shared, financeInOperationCommissionReportIn.shared) &&
+        equalsNullable(this.state, financeInOperationCommissionReportIn.state) &&
+        Objects.equals(this.sum, financeInOperationCommissionReportIn.sum) &&
+        Objects.equals(this.syncId, financeInOperationCommissionReportIn.syncId) &&
+        Objects.equals(this.updated, financeInOperationCommissionReportIn.updated) &&
+        Objects.equals(this.vatEnabled, financeInOperationCommissionReportIn.vatEnabled) &&
+        Objects.equals(this.vatIncluded, financeInOperationCommissionReportIn.vatIncluded) &&
+        Objects.equals(this.vatSum, financeInOperationCommissionReportIn.vatSum) &&
+        equalsNullable(this.payments, financeInOperationCommissionReportIn.payments);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -1654,7 +1618,7 @@ public class CashInOperationAnyOf4 {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, agent, hashCodeNullable(agentAccount), applicable, hashCodeNullable(attributes), code, commissionOverhead, commissionPeriodEnd, commissionPeriodStart, commitentSum, hashCodeNullable(contract), created, deleted, hashCodeNullable(description), externalCode, hashCodeNullable(files), group, moment, name, organization, hashCodeNullable(organizationAccount), hashCodeNullable(owner), payedSum, positions, printed, hashCodeNullable(project), published, rate, returnToCommissionerPositions, rewardPercent, rewardType, hashCodeNullable(salesChannel), shared, hashCodeNullable(state), sum, syncId, updated, vatEnabled, vatIncluded, vatSum, hashCodeNullable(payments), linkedSum);
+    return Objects.hash(meta, id, accountId, agent, hashCodeNullable(agentAccount), applicable, hashCodeNullable(attributes), code, commissionOverhead, commissionPeriodEnd, commissionPeriodStart, commitentSum, hashCodeNullable(contract), created, deleted, hashCodeNullable(description), externalCode, hashCodeNullable(files), group, moment, name, organization, hashCodeNullable(organizationAccount), hashCodeNullable(owner), payedSum, positions, printed, hashCodeNullable(project), published, rate, returnToCommissionerPositions, rewardPercent, rewardType, hashCodeNullable(salesChannel), shared, hashCodeNullable(state), sum, syncId, updated, vatEnabled, vatIncluded, vatSum, hashCodeNullable(payments));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1667,7 +1631,7 @@ public class CashInOperationAnyOf4 {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CashInOperationAnyOf4 {\n");
+    sb.append("class FinanceInOperationCommissionReportIn {\n");
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
@@ -1711,7 +1675,6 @@ public class CashInOperationAnyOf4 {
     sb.append("    vatIncluded: ").append(toIndentedString(vatIncluded)).append("\n");
     sb.append("    vatSum: ").append(toIndentedString(vatSum)).append("\n");
     sb.append("    payments: ").append(toIndentedString(payments)).append("\n");
-    sb.append("    linkedSum: ").append(toIndentedString(linkedSum)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -2114,17 +2077,8 @@ public class CashInOperationAnyOf4 {
       }
     }
 
-    // add `linkedSum` to the URL query string
-    if (getLinkedSum() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%slinkedSum%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLinkedSum()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
-    }
-
     return joiner.toString();
   }
 
 }
+

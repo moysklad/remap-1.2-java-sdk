@@ -20,120 +20,43 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.UUID;
-import ru.moysklad.remap_1_2.model.Meta;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
 
+import ru.moysklad.remap_1_2.deserialize.OpenApiPolymorphicTypeInfo;
+import ru.moysklad.remap_1_2.deserialize.OpenApiPolymorphicSubTypes;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import ru.moysklad.remap_1_2.deserialize.PolymorphicMetaTypeDeserializer;
+
 /**
- * Смена + linkedSum
+ * Элемент массива &#x60;operations&#x60; расходного ордера / исходящего платежа: документ одного из допустимых типов плюс обязательное поле &#x60;linkedSum&#x60;.  Допустимые &#x60;meta.type&#x60;: salesreturn, supply, invoicein, purchaseorder, commissionreportout. 
  */
 @JsonPropertyOrder({
-  CashInOperationAnyOf5.JSON_PROPERTY_META,
-  CashInOperationAnyOf5.JSON_PROPERTY_ID,
-  CashInOperationAnyOf5.JSON_PROPERTY_ACCOUNT_ID,
-  CashInOperationAnyOf5.JSON_PROPERTY_LINKED_SUM
+  FinanceOutOperationAbstract.JSON_PROPERTY_LINKED_SUM
 })
-@JsonTypeName("CashInOperation_anyOf_5")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
-public class CashInOperationAnyOf5 {
-
-  public static final String JSON_PROPERTY_META = "meta";
-  @javax.annotation.Nullable
-  private Meta meta;
-
-  public static final String JSON_PROPERTY_ID = "id";
-  @javax.annotation.Nullable
-  private UUID id;
-
-  public static final String JSON_PROPERTY_ACCOUNT_ID = "accountId";
-  @javax.annotation.Nullable
-  private UUID accountId;
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@OpenApiPolymorphicTypeInfo(path = "meta.type")
+@OpenApiPolymorphicSubTypes({
+  @OpenApiPolymorphicSubTypes.Type(value = FinanceOutOperationSalesReturn.class, name = "salesreturn"),
+  @OpenApiPolymorphicSubTypes.Type(value = FinanceOutOperationSupply.class, name = "supply"),
+  @OpenApiPolymorphicSubTypes.Type(value = FinanceOutOperationInvoiceIn.class, name = "invoicein"),
+  @OpenApiPolymorphicSubTypes.Type(value = FinanceOutOperationPurchaseOrder.class, name = "purchaseorder"),
+  @OpenApiPolymorphicSubTypes.Type(value = FinanceOutOperationCommissionReportOut.class, name = "commissionreportout")
+})
+@JsonDeserialize(using = PolymorphicMetaTypeDeserializer.class)
+public class FinanceOutOperationAbstract {
 
   public static final String JSON_PROPERTY_LINKED_SUM = "linkedSum";
   @javax.annotation.Nonnull
   private Double linkedSum;
 
-  public CashInOperationAnyOf5() {
-  }
-  /**
-   * Constructor with only readonly parameters
-   */
-  @JsonCreator
-  public CashInOperationAnyOf5(
-    @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id, 
-    @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId
-  ) {
-    this();
-    this.id = id;
-    this.accountId = accountId;
+  public FinanceOutOperationAbstract() {
   }
 
-  public CashInOperationAnyOf5 meta(@javax.annotation.Nullable Meta meta) {
-    
-    this.meta = meta;
-    return this;
-  }
-
-
-  /**
-   * Get meta
-   * @return meta
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_META)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Meta getMeta() {
-    return meta;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_META)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMeta(@javax.annotation.Nullable Meta meta) {
-    this.meta = meta;
-  }
-
-
-  /**
-   * ID смены
-   * @return id
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public UUID getId() {
-    return id;
-  }
-
-  
-
-
-
-  /**
-   * ID учетной записи
-   * @return accountId
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public UUID getAccountId() {
-    return accountId;
-  }
-
-  
-
-
-
-  public CashInOperationAnyOf5 linkedSum(@javax.annotation.Nonnull Double linkedSum) {
+  public FinanceOutOperationAbstract linkedSum(@javax.annotation.Nonnull Double linkedSum) {
     
     this.linkedSum = linkedSum;
     return this;
@@ -170,25 +93,19 @@ public class CashInOperationAnyOf5 {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CashInOperationAnyOf5 cashInOperationAnyOf5 = (CashInOperationAnyOf5) o;
-    return Objects.equals(this.meta, cashInOperationAnyOf5.meta) &&
-        Objects.equals(this.id, cashInOperationAnyOf5.id) &&
-        Objects.equals(this.accountId, cashInOperationAnyOf5.accountId) &&
-        Objects.equals(this.linkedSum, cashInOperationAnyOf5.linkedSum);
+    FinanceOutOperationAbstract financeOutOperationAbstract = (FinanceOutOperationAbstract) o;
+    return Objects.equals(this.linkedSum, financeOutOperationAbstract.linkedSum);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, linkedSum);
+    return Objects.hash(linkedSum);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CashInOperationAnyOf5 {\n");
-    sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
+    sb.append("class FinanceOutOperationAbstract {\n");
     sb.append("    linkedSum: ").append(toIndentedString(linkedSum)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -237,31 +154,6 @@ public class CashInOperationAnyOf5 {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `meta` to the URL query string
-    if (getMeta() != null) {
-      joiner.add(getMeta().toUrlQueryString(prefix + "meta" + suffix));
-    }
-
-    // add `id` to the URL query string
-    if (getId() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
-    }
-
-    // add `accountId` to the URL query string
-    if (getAccountId() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%saccountId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAccountId()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
-    }
-
     // add `linkedSum` to the URL query string
     if (getLinkedSum() != null) {
       try {
@@ -276,3 +168,4 @@ public class CashInOperationAnyOf5 {
   }
 
 }
+

@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   Barcode.JSON_PROPERTY_GTIN,
   Barcode.JSON_PROPERTY_UPC
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
 public class Barcode {
 
   public static final String JSON_PROPERTY_EAN13 = "ean13";
@@ -338,3 +338,4 @@ public class Barcode {
   }
 
 }
+

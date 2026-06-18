@@ -1,6 +1,6 @@
 
 
-# CashInOperationAnyOf3
+# FinanceInOperationInvoiceOut
 
 Счет покупателю + linkedSum
 
@@ -49,7 +49,6 @@
 |**customerOrder** | [**CustomerOrder**](CustomerOrder.md) | Заказ покупателя, с которым связан Счет покупателю |  [optional] |
 |**demands** | [**List&lt;Demand&gt;**](Demand.md) | Массив ссылок на связанные отгрузки |  [optional] |
 |**payments** | [**List&lt;CustomerOrderPaymentsInner&gt;**](CustomerOrderPaymentsInner.md) | Массив ссылок на связанные операции |  [optional] |
-|**linkedSum** | **Double** | Сумма, оплаченная по данному документу |  |
 
 
 

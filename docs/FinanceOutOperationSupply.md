@@ -1,6 +1,6 @@
 
 
-# PaymentOutOperationAnyOf1
+# FinanceOutOperationSupply
 
 Приемка + linkedSum
 
@@ -52,7 +52,6 @@
 |**payments** | [**List&lt;SupplyPaymentsInner&gt;**](SupplyPaymentsInner.md) | Массив ссылок на связанные платежи |  [optional] |
 |**productionTask** | [**ProductionTask**](ProductionTask.md) | Связанное производственное задание |  [optional] |
 |**returns** | [**List&lt;SupplyReturnsInner&gt;**](SupplyReturnsInner.md) | Массив ссылок на связанные возвраты  |  [optional] |
-|**linkedSum** | **Double** | Сумма, оплаченная по данному документу |  |
 
 
 

@@ -33,7 +33,7 @@ import java.util.StringJoiner;
   RetailStoreStatePaymentTerminal.JSON_PROPERTY_ACQUIRING_TYPE
 })
 @JsonTypeName("RetailStore_state_paymentTerminal")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStoreStatePaymentTerminal {
 
   public static final String JSON_PROPERTY_ACQUIRING_TYPE = "acquiringType";
@@ -155,3 +155,4 @@ public class RetailStoreStatePaymentTerminal {
   }
 
 }
+

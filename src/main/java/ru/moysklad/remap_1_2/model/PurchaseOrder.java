@@ -104,7 +104,7 @@ import java.util.StringJoiner;
   PurchaseOrder.JSON_PROPERTY_PAYMENTS,
   PurchaseOrder.JSON_PROPERTY_PRODUCTION_TASKS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
 public class PurchaseOrder {
   public static PurchaseOrder createWithMeta(UUID id) {
     PurchaseOrder o = new PurchaseOrder();
@@ -2237,3 +2237,4 @@ public class PurchaseOrder {
   }
 
 }
+

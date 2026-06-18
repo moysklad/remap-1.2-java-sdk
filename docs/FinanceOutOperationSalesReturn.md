@@ -1,6 +1,6 @@
 
 
-# PaymentOutOperationAnyOf
+# FinanceOutOperationSalesReturn
 
 Возврат покупателя + linkedSum
 
@@ -48,7 +48,6 @@
 |**losses** | [**List&lt;Loss&gt;**](Loss.md) | Массив ссылок на связанные списания |  [optional] |
 |**payments** | [**List&lt;SalesReturnPaymentsInner&gt;**](SalesReturnPaymentsInner.md) | Массив ссылок на связанные платежи |  [optional] |
 |**factureOut** | [**FactureOut**](FactureOut.md) | Счет-фактура выданный, с которым связан этот возврат |  [optional] |
-|**linkedSum** | **Double** | Сумма, оплаченная по данному документу |  |
 
 
 

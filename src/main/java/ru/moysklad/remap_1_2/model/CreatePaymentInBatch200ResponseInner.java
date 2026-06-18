@@ -35,11 +35,11 @@ import ru.moysklad.remap_1_2.model.Error;
 import ru.moysklad.remap_1_2.model.ErrorErrorsInner;
 import ru.moysklad.remap_1_2.model.FactureOut;
 import ru.moysklad.remap_1_2.model.FileList;
+import ru.moysklad.remap_1_2.model.FinanceInOperationAbstract;
 import ru.moysklad.remap_1_2.model.Group;
 import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.Organization;
 import ru.moysklad.remap_1_2.model.PaymentIn;
-import ru.moysklad.remap_1_2.model.PaymentInOperation;
 import ru.moysklad.remap_1_2.model.Project;
 import ru.moysklad.remap_1_2.model.SalesChannel;
 import ru.moysklad.remap_1_2.model.State;
@@ -95,7 +95,7 @@ import java.util.StringJoiner;
   CreatePaymentInBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createPaymentInBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreatePaymentInBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -240,7 +240,7 @@ public class CreatePaymentInBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_OPERATIONS = "operations";
   @javax.annotation.Nullable
-  private JsonNullable<List<PaymentInOperation>> operations = JsonNullable.<List<PaymentInOperation>>undefined();
+  private JsonNullable<List<FinanceInOperationAbstract>> operations = JsonNullable.<List<FinanceInOperationAbstract>>undefined();
 
   public static final String JSON_PROPERTY_ERRORS = "errors";
   @javax.annotation.Nonnull
@@ -1293,16 +1293,16 @@ public class CreatePaymentInBatch200ResponseInner {
   }
 
 
-  public CreatePaymentInBatch200ResponseInner operations(@javax.annotation.Nullable List<PaymentInOperation> operations) {
-    this.operations = JsonNullable.<List<PaymentInOperation>>of(operations);
+  public CreatePaymentInBatch200ResponseInner operations(@javax.annotation.Nullable List<FinanceInOperationAbstract> operations) {
+    this.operations = JsonNullable.<List<FinanceInOperationAbstract>>of(operations);
     
     return this;
   }
 
 
-  public CreatePaymentInBatch200ResponseInner addOperationsItem(PaymentInOperation operationsItem) {
+  public CreatePaymentInBatch200ResponseInner addOperationsItem(FinanceInOperationAbstract operationsItem) {
     if (this.operations == null || !this.operations.isPresent()) {
-      this.operations = JsonNullable.<List<PaymentInOperation>>of(new ArrayList<>());
+      this.operations = JsonNullable.<List<FinanceInOperationAbstract>>of(new ArrayList<>());
     }
     try {
       this.operations.get().add(operationsItem);
@@ -1319,7 +1319,7 @@ public class CreatePaymentInBatch200ResponseInner {
   @javax.annotation.Nullable
   @JsonIgnore
 
-  public List<PaymentInOperation> getOperations() {
+  public List<FinanceInOperationAbstract> getOperations() {
         return operations.orElse(null);
   }
 
@@ -1329,17 +1329,17 @@ public class CreatePaymentInBatch200ResponseInner {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<PaymentInOperation>> getOperations_JsonNullable() {
+  public JsonNullable<List<FinanceInOperationAbstract>> getOperations_JsonNullable() {
     return operations;
   }
   
   @JsonProperty(value = JSON_PROPERTY_OPERATIONS, required = false)
-  public void setOperations_JsonNullable(JsonNullable<List<PaymentInOperation>> operations) {
+  public void setOperations_JsonNullable(JsonNullable<List<FinanceInOperationAbstract>> operations) {
     this.operations = operations;
   }
 
-  public void setOperations(@javax.annotation.Nullable List<PaymentInOperation> operations) {
-    this.operations = JsonNullable.<List<PaymentInOperation>>of(operations);
+  public void setOperations(@javax.annotation.Nullable List<FinanceInOperationAbstract> operations) {
+    this.operations = JsonNullable.<List<FinanceInOperationAbstract>>of(operations);
   }
 
 
@@ -1836,3 +1836,4 @@ public class CreatePaymentInBatch200ResponseInner {
   }
 
 }
+

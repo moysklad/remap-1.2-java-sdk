@@ -53,7 +53,7 @@ import java.util.StringJoiner;
   ProcessingPlanFolder.JSON_PROPERTY_OWNER,
   ProcessingPlanFolder.JSON_PROPERTY_PROCESSINGPLANFOLDER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingPlanFolder {
   public static ProcessingPlanFolder createWithMeta(UUID id) {
     ProcessingPlanFolder o = new ProcessingPlanFolder();
@@ -756,3 +756,4 @@ public class ProcessingPlanFolder {
   }
 
 }
+

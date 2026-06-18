@@ -80,7 +80,7 @@ import java.util.StringJoiner;
   ProcessingOrder.JSON_PROPERTY_QUANTITY,
   ProcessingOrder.JSON_PROPERTY_PROCESSINGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingOrder {
   public static ProcessingOrder createWithMeta(UUID id) {
     ProcessingOrder o = new ProcessingOrder();
@@ -1449,3 +1449,4 @@ public class ProcessingOrder {
   }
 
 }
+

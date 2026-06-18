@@ -53,52 +53,50 @@ import java.util.StringJoiner;
  * Выданный отчет комиссионера + linkedSum
  */
 @JsonPropertyOrder({
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_META,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_ID,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_ACCOUNT_ID,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_AGENT,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_AGENT_ACCOUNT,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_APPLICABLE,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_ATTRIBUTES,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_CODE,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_COMMISSION_PERIOD_END,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_COMMISSION_PERIOD_START,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_COMMITENT_SUM,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_CONTRACT,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_CREATED,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_DELETED,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_DESCRIPTION,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_EXTERNAL_CODE,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_FILES,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_GROUP,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_MOMENT,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_NAME,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_ORGANIZATION,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_ORGANIZATION_ACCOUNT,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_OWNER,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_PAYED_SUM,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_POSITIONS,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_PRINTED,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_PROJECT,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_PUBLISHED,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_RATE,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_REWARD_PERCENT,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_REWARD_TYPE,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_SALES_CHANNEL,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_SHARED,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_STATE,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_SUM,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_SYNC_ID,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_UPDATED,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_VAT_ENABLED,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_VAT_INCLUDED,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_VAT_SUM,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_PAYMENTS,
-  PaymentOutOperationAnyOf4.JSON_PROPERTY_LINKED_SUM
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_META,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_ID,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_ACCOUNT_ID,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_AGENT,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_AGENT_ACCOUNT,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_APPLICABLE,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_ATTRIBUTES,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_CODE,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_COMMISSION_PERIOD_END,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_COMMISSION_PERIOD_START,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_COMMITENT_SUM,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_CONTRACT,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_CREATED,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_DELETED,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_DESCRIPTION,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_EXTERNAL_CODE,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_FILES,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_GROUP,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_MOMENT,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_NAME,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_ORGANIZATION,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_ORGANIZATION_ACCOUNT,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_OWNER,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_PAYED_SUM,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_POSITIONS,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_PRINTED,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_PROJECT,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_PUBLISHED,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_RATE,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_REWARD_PERCENT,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_REWARD_TYPE,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_SALES_CHANNEL,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_SHARED,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_STATE,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_SUM,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_SYNC_ID,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_UPDATED,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_VAT_ENABLED,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_VAT_INCLUDED,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_VAT_SUM,
+  FinanceOutOperationCommissionReportOut.JSON_PROPERTY_PAYMENTS
 })
-@JsonTypeName("PaymentOutOperation_anyOf_4")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
-public class PaymentOutOperationAnyOf4 {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+public class FinanceOutOperationCommissionReportOut extends FinanceOutOperationAbstract {
 
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
@@ -264,17 +262,13 @@ public class PaymentOutOperationAnyOf4 {
   @javax.annotation.Nullable
   private JsonNullable<List<CustomerOrderPaymentsInner>> payments = JsonNullable.<List<CustomerOrderPaymentsInner>>undefined();
 
-  public static final String JSON_PROPERTY_LINKED_SUM = "linkedSum";
-  @javax.annotation.Nonnull
-  private Double linkedSum;
-
-  public PaymentOutOperationAnyOf4() {
+  public FinanceOutOperationCommissionReportOut() {
   }
   /**
    * Constructor with only readonly parameters
    */
   @JsonCreator
-  public PaymentOutOperationAnyOf4(
+  public FinanceOutOperationCommissionReportOut(
     @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id, 
     @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId, 
     @JsonProperty(value = JSON_PROPERTY_COMMITENT_SUM, required = false) Double commitentSum, 
@@ -297,7 +291,7 @@ public class PaymentOutOperationAnyOf4 {
     this.updated = updated;
   }
 
-  public PaymentOutOperationAnyOf4 meta(@javax.annotation.Nullable Meta meta) {
+  public FinanceOutOperationCommissionReportOut meta(@javax.annotation.Nullable Meta meta) {
     
     this.meta = meta;
     return this;
@@ -358,7 +352,7 @@ public class PaymentOutOperationAnyOf4 {
 
 
 
-  public PaymentOutOperationAnyOf4 agent(@javax.annotation.Nullable Agent agent) {
+  public FinanceOutOperationCommissionReportOut agent(@javax.annotation.Nullable Agent agent) {
     
     this.agent = agent;
     return this;
@@ -387,7 +381,7 @@ public class PaymentOutOperationAnyOf4 {
   }
 
 
-  public PaymentOutOperationAnyOf4 agentAccount(@javax.annotation.Nullable Account agentAccount) {
+  public FinanceOutOperationCommissionReportOut agentAccount(@javax.annotation.Nullable Account agentAccount) {
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
     
     return this;
@@ -425,7 +419,7 @@ public class PaymentOutOperationAnyOf4 {
   }
 
 
-  public PaymentOutOperationAnyOf4 applicable(@javax.annotation.Nullable Boolean applicable) {
+  public FinanceOutOperationCommissionReportOut applicable(@javax.annotation.Nullable Boolean applicable) {
     
     this.applicable = applicable;
     return this;
@@ -454,14 +448,14 @@ public class PaymentOutOperationAnyOf4 {
   }
 
 
-  public PaymentOutOperationAnyOf4 attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+  public FinanceOutOperationCommissionReportOut attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
 
 
-  public PaymentOutOperationAnyOf4 addAttributesItem(AttributeAbstract attributesItem) {
+  public FinanceOutOperationCommissionReportOut addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
       this.attributes = JsonNullable.<List<AttributeAbstract>>of(new ArrayList<>());
     }
@@ -504,7 +498,7 @@ public class PaymentOutOperationAnyOf4 {
   }
 
 
-  public PaymentOutOperationAnyOf4 code(@javax.annotation.Nullable String code) {
+  public FinanceOutOperationCommissionReportOut code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
@@ -533,7 +527,7 @@ public class PaymentOutOperationAnyOf4 {
   }
 
 
-  public PaymentOutOperationAnyOf4 commissionPeriodEnd(@javax.annotation.Nullable String commissionPeriodEnd) {
+  public FinanceOutOperationCommissionReportOut commissionPeriodEnd(@javax.annotation.Nullable String commissionPeriodEnd) {
     
     this.commissionPeriodEnd = commissionPeriodEnd;
     return this;
@@ -562,7 +556,7 @@ public class PaymentOutOperationAnyOf4 {
   }
 
 
-  public PaymentOutOperationAnyOf4 commissionPeriodStart(@javax.annotation.Nullable String commissionPeriodStart) {
+  public FinanceOutOperationCommissionReportOut commissionPeriodStart(@javax.annotation.Nullable String commissionPeriodStart) {
     
     this.commissionPeriodStart = commissionPeriodStart;
     return this;
@@ -607,7 +601,7 @@ public class PaymentOutOperationAnyOf4 {
 
 
 
-  public PaymentOutOperationAnyOf4 contract(@javax.annotation.Nullable Contract contract) {
+  public FinanceOutOperationCommissionReportOut contract(@javax.annotation.Nullable Contract contract) {
     this.contract = JsonNullable.<Contract>of(contract);
     
     return this;
@@ -677,7 +671,7 @@ public class PaymentOutOperationAnyOf4 {
 
 
 
-  public PaymentOutOperationAnyOf4 description(@javax.annotation.Nullable String description) {
+  public FinanceOutOperationCommissionReportOut description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -715,7 +709,7 @@ public class PaymentOutOperationAnyOf4 {
   }
 
 
-  public PaymentOutOperationAnyOf4 externalCode(@javax.annotation.Nullable String externalCode) {
+  public FinanceOutOperationCommissionReportOut externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
@@ -744,7 +738,7 @@ public class PaymentOutOperationAnyOf4 {
   }
 
 
-  public PaymentOutOperationAnyOf4 files(@javax.annotation.Nullable FileList files) {
+  public FinanceOutOperationCommissionReportOut files(@javax.annotation.Nullable FileList files) {
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
@@ -782,7 +776,7 @@ public class PaymentOutOperationAnyOf4 {
   }
 
 
-  public PaymentOutOperationAnyOf4 group(@javax.annotation.Nullable Group group) {
+  public FinanceOutOperationCommissionReportOut group(@javax.annotation.Nullable Group group) {
     
     this.group = group;
     return this;
@@ -811,7 +805,7 @@ public class PaymentOutOperationAnyOf4 {
   }
 
 
-  public PaymentOutOperationAnyOf4 moment(@javax.annotation.Nullable String moment) {
+  public FinanceOutOperationCommissionReportOut moment(@javax.annotation.Nullable String moment) {
     
     this.moment = moment;
     return this;
@@ -840,7 +834,7 @@ public class PaymentOutOperationAnyOf4 {
   }
 
 
-  public PaymentOutOperationAnyOf4 name(@javax.annotation.Nullable String name) {
+  public FinanceOutOperationCommissionReportOut name(@javax.annotation.Nullable String name) {
     
     this.name = name;
     return this;
@@ -869,7 +863,7 @@ public class PaymentOutOperationAnyOf4 {
   }
 
 
-  public PaymentOutOperationAnyOf4 organization(@javax.annotation.Nullable Organization organization) {
+  public FinanceOutOperationCommissionReportOut organization(@javax.annotation.Nullable Organization organization) {
     
     this.organization = organization;
     return this;
@@ -898,7 +892,7 @@ public class PaymentOutOperationAnyOf4 {
   }
 
 
-  public PaymentOutOperationAnyOf4 organizationAccount(@javax.annotation.Nullable Account organizationAccount) {
+  public FinanceOutOperationCommissionReportOut organizationAccount(@javax.annotation.Nullable Account organizationAccount) {
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
     
     return this;
@@ -936,7 +930,7 @@ public class PaymentOutOperationAnyOf4 {
   }
 
 
-  public PaymentOutOperationAnyOf4 owner(@javax.annotation.Nullable Employee owner) {
+  public FinanceOutOperationCommissionReportOut owner(@javax.annotation.Nullable Employee owner) {
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -990,7 +984,7 @@ public class PaymentOutOperationAnyOf4 {
 
 
 
-  public PaymentOutOperationAnyOf4 positions(@javax.annotation.Nullable CommissionReportOutPositionList positions) {
+  public FinanceOutOperationCommissionReportOut positions(@javax.annotation.Nullable CommissionReportOutPositionList positions) {
     
     this.positions = positions;
     return this;
@@ -1035,7 +1029,7 @@ public class PaymentOutOperationAnyOf4 {
 
 
 
-  public PaymentOutOperationAnyOf4 project(@javax.annotation.Nullable Project project) {
+  public FinanceOutOperationCommissionReportOut project(@javax.annotation.Nullable Project project) {
     this.project = JsonNullable.<Project>of(project);
     
     return this;
@@ -1089,7 +1083,7 @@ public class PaymentOutOperationAnyOf4 {
 
 
 
-  public PaymentOutOperationAnyOf4 rate(@javax.annotation.Nullable CurrencyRate rate) {
+  public FinanceOutOperationCommissionReportOut rate(@javax.annotation.Nullable CurrencyRate rate) {
     
     this.rate = rate;
     return this;
@@ -1118,7 +1112,7 @@ public class PaymentOutOperationAnyOf4 {
   }
 
 
-  public PaymentOutOperationAnyOf4 rewardPercent(@javax.annotation.Nullable Integer rewardPercent) {
+  public FinanceOutOperationCommissionReportOut rewardPercent(@javax.annotation.Nullable Integer rewardPercent) {
     
     this.rewardPercent = rewardPercent;
     return this;
@@ -1149,7 +1143,7 @@ public class PaymentOutOperationAnyOf4 {
   }
 
 
-  public PaymentOutOperationAnyOf4 rewardType(@javax.annotation.Nullable String rewardType) {
+  public FinanceOutOperationCommissionReportOut rewardType(@javax.annotation.Nullable String rewardType) {
     
     this.rewardType = rewardType;
     return this;
@@ -1178,7 +1172,7 @@ public class PaymentOutOperationAnyOf4 {
   }
 
 
-  public PaymentOutOperationAnyOf4 salesChannel(@javax.annotation.Nullable SalesChannel salesChannel) {
+  public FinanceOutOperationCommissionReportOut salesChannel(@javax.annotation.Nullable SalesChannel salesChannel) {
     this.salesChannel = JsonNullable.<SalesChannel>of(salesChannel);
     
     return this;
@@ -1216,7 +1210,7 @@ public class PaymentOutOperationAnyOf4 {
   }
 
 
-  public PaymentOutOperationAnyOf4 shared(@javax.annotation.Nullable Boolean shared) {
+  public FinanceOutOperationCommissionReportOut shared(@javax.annotation.Nullable Boolean shared) {
     
     this.shared = shared;
     return this;
@@ -1245,7 +1239,7 @@ public class PaymentOutOperationAnyOf4 {
   }
 
 
-  public PaymentOutOperationAnyOf4 state(@javax.annotation.Nullable State state) {
+  public FinanceOutOperationCommissionReportOut state(@javax.annotation.Nullable State state) {
     this.state = JsonNullable.<State>of(state);
     
     return this;
@@ -1283,7 +1277,7 @@ public class PaymentOutOperationAnyOf4 {
   }
 
 
-  public PaymentOutOperationAnyOf4 sum(@javax.annotation.Nullable Double sum) {
+  public FinanceOutOperationCommissionReportOut sum(@javax.annotation.Nullable Double sum) {
     
     this.sum = sum;
     return this;
@@ -1312,7 +1306,7 @@ public class PaymentOutOperationAnyOf4 {
   }
 
 
-  public PaymentOutOperationAnyOf4 syncId(@javax.annotation.Nullable UUID syncId) {
+  public FinanceOutOperationCommissionReportOut syncId(@javax.annotation.Nullable UUID syncId) {
     
     this.syncId = syncId;
     return this;
@@ -1357,7 +1351,7 @@ public class PaymentOutOperationAnyOf4 {
 
 
 
-  public PaymentOutOperationAnyOf4 vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+  public FinanceOutOperationCommissionReportOut vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
     
     this.vatEnabled = vatEnabled;
     return this;
@@ -1386,7 +1380,7 @@ public class PaymentOutOperationAnyOf4 {
   }
 
 
-  public PaymentOutOperationAnyOf4 vatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
+  public FinanceOutOperationCommissionReportOut vatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
     
     this.vatIncluded = vatIncluded;
     return this;
@@ -1415,7 +1409,7 @@ public class PaymentOutOperationAnyOf4 {
   }
 
 
-  public PaymentOutOperationAnyOf4 vatSum(@javax.annotation.Nullable Double vatSum) {
+  public FinanceOutOperationCommissionReportOut vatSum(@javax.annotation.Nullable Double vatSum) {
     
     this.vatSum = vatSum;
     return this;
@@ -1444,14 +1438,14 @@ public class PaymentOutOperationAnyOf4 {
   }
 
 
-  public PaymentOutOperationAnyOf4 payments(@javax.annotation.Nullable List<CustomerOrderPaymentsInner> payments) {
+  public FinanceOutOperationCommissionReportOut payments(@javax.annotation.Nullable List<CustomerOrderPaymentsInner> payments) {
     this.payments = JsonNullable.<List<CustomerOrderPaymentsInner>>of(payments);
     
     return this;
   }
 
 
-  public PaymentOutOperationAnyOf4 addPaymentsItem(CustomerOrderPaymentsInner paymentsItem) {
+  public FinanceOutOperationCommissionReportOut addPaymentsItem(CustomerOrderPaymentsInner paymentsItem) {
     if (this.payments == null || !this.payments.isPresent()) {
       this.payments = JsonNullable.<List<CustomerOrderPaymentsInner>>of(new ArrayList<>());
     }
@@ -1494,35 +1488,6 @@ public class PaymentOutOperationAnyOf4 {
   }
 
 
-  public PaymentOutOperationAnyOf4 linkedSum(@javax.annotation.Nonnull Double linkedSum) {
-    
-    this.linkedSum = linkedSum;
-    return this;
-  }
-
-
-  /**
-   * Сумма, оплаченная по данному документу
-   * @return linkedSum
-   */
-  @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_LINKED_SUM)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public Double getLinkedSum() {
-    return linkedSum;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_LINKED_SUM)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLinkedSum(@javax.annotation.Nonnull Double linkedSum) {
-    this.linkedSum = linkedSum;
-  }
-
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -1531,49 +1496,48 @@ public class PaymentOutOperationAnyOf4 {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PaymentOutOperationAnyOf4 paymentOutOperationAnyOf4 = (PaymentOutOperationAnyOf4) o;
-    return Objects.equals(this.meta, paymentOutOperationAnyOf4.meta) &&
-        Objects.equals(this.id, paymentOutOperationAnyOf4.id) &&
-        Objects.equals(this.accountId, paymentOutOperationAnyOf4.accountId) &&
-        Objects.equals(this.agent, paymentOutOperationAnyOf4.agent) &&
-        equalsNullable(this.agentAccount, paymentOutOperationAnyOf4.agentAccount) &&
-        Objects.equals(this.applicable, paymentOutOperationAnyOf4.applicable) &&
-        equalsNullable(this.attributes, paymentOutOperationAnyOf4.attributes) &&
-        Objects.equals(this.code, paymentOutOperationAnyOf4.code) &&
-        Objects.equals(this.commissionPeriodEnd, paymentOutOperationAnyOf4.commissionPeriodEnd) &&
-        Objects.equals(this.commissionPeriodStart, paymentOutOperationAnyOf4.commissionPeriodStart) &&
-        Objects.equals(this.commitentSum, paymentOutOperationAnyOf4.commitentSum) &&
-        equalsNullable(this.contract, paymentOutOperationAnyOf4.contract) &&
-        Objects.equals(this.created, paymentOutOperationAnyOf4.created) &&
-        Objects.equals(this.deleted, paymentOutOperationAnyOf4.deleted) &&
-        equalsNullable(this.description, paymentOutOperationAnyOf4.description) &&
-        Objects.equals(this.externalCode, paymentOutOperationAnyOf4.externalCode) &&
-        equalsNullable(this.files, paymentOutOperationAnyOf4.files) &&
-        Objects.equals(this.group, paymentOutOperationAnyOf4.group) &&
-        Objects.equals(this.moment, paymentOutOperationAnyOf4.moment) &&
-        Objects.equals(this.name, paymentOutOperationAnyOf4.name) &&
-        Objects.equals(this.organization, paymentOutOperationAnyOf4.organization) &&
-        equalsNullable(this.organizationAccount, paymentOutOperationAnyOf4.organizationAccount) &&
-        equalsNullable(this.owner, paymentOutOperationAnyOf4.owner) &&
-        Objects.equals(this.payedSum, paymentOutOperationAnyOf4.payedSum) &&
-        Objects.equals(this.positions, paymentOutOperationAnyOf4.positions) &&
-        Objects.equals(this.printed, paymentOutOperationAnyOf4.printed) &&
-        equalsNullable(this.project, paymentOutOperationAnyOf4.project) &&
-        Objects.equals(this.published, paymentOutOperationAnyOf4.published) &&
-        Objects.equals(this.rate, paymentOutOperationAnyOf4.rate) &&
-        Objects.equals(this.rewardPercent, paymentOutOperationAnyOf4.rewardPercent) &&
-        Objects.equals(this.rewardType, paymentOutOperationAnyOf4.rewardType) &&
-        equalsNullable(this.salesChannel, paymentOutOperationAnyOf4.salesChannel) &&
-        Objects.equals(this.shared, paymentOutOperationAnyOf4.shared) &&
-        equalsNullable(this.state, paymentOutOperationAnyOf4.state) &&
-        Objects.equals(this.sum, paymentOutOperationAnyOf4.sum) &&
-        Objects.equals(this.syncId, paymentOutOperationAnyOf4.syncId) &&
-        Objects.equals(this.updated, paymentOutOperationAnyOf4.updated) &&
-        Objects.equals(this.vatEnabled, paymentOutOperationAnyOf4.vatEnabled) &&
-        Objects.equals(this.vatIncluded, paymentOutOperationAnyOf4.vatIncluded) &&
-        Objects.equals(this.vatSum, paymentOutOperationAnyOf4.vatSum) &&
-        equalsNullable(this.payments, paymentOutOperationAnyOf4.payments) &&
-        Objects.equals(this.linkedSum, paymentOutOperationAnyOf4.linkedSum);
+    FinanceOutOperationCommissionReportOut financeOutOperationCommissionReportOut = (FinanceOutOperationCommissionReportOut) o;
+    return Objects.equals(this.meta, financeOutOperationCommissionReportOut.meta) &&
+        Objects.equals(this.id, financeOutOperationCommissionReportOut.id) &&
+        Objects.equals(this.accountId, financeOutOperationCommissionReportOut.accountId) &&
+        Objects.equals(this.agent, financeOutOperationCommissionReportOut.agent) &&
+        equalsNullable(this.agentAccount, financeOutOperationCommissionReportOut.agentAccount) &&
+        Objects.equals(this.applicable, financeOutOperationCommissionReportOut.applicable) &&
+        equalsNullable(this.attributes, financeOutOperationCommissionReportOut.attributes) &&
+        Objects.equals(this.code, financeOutOperationCommissionReportOut.code) &&
+        Objects.equals(this.commissionPeriodEnd, financeOutOperationCommissionReportOut.commissionPeriodEnd) &&
+        Objects.equals(this.commissionPeriodStart, financeOutOperationCommissionReportOut.commissionPeriodStart) &&
+        Objects.equals(this.commitentSum, financeOutOperationCommissionReportOut.commitentSum) &&
+        equalsNullable(this.contract, financeOutOperationCommissionReportOut.contract) &&
+        Objects.equals(this.created, financeOutOperationCommissionReportOut.created) &&
+        Objects.equals(this.deleted, financeOutOperationCommissionReportOut.deleted) &&
+        equalsNullable(this.description, financeOutOperationCommissionReportOut.description) &&
+        Objects.equals(this.externalCode, financeOutOperationCommissionReportOut.externalCode) &&
+        equalsNullable(this.files, financeOutOperationCommissionReportOut.files) &&
+        Objects.equals(this.group, financeOutOperationCommissionReportOut.group) &&
+        Objects.equals(this.moment, financeOutOperationCommissionReportOut.moment) &&
+        Objects.equals(this.name, financeOutOperationCommissionReportOut.name) &&
+        Objects.equals(this.organization, financeOutOperationCommissionReportOut.organization) &&
+        equalsNullable(this.organizationAccount, financeOutOperationCommissionReportOut.organizationAccount) &&
+        equalsNullable(this.owner, financeOutOperationCommissionReportOut.owner) &&
+        Objects.equals(this.payedSum, financeOutOperationCommissionReportOut.payedSum) &&
+        Objects.equals(this.positions, financeOutOperationCommissionReportOut.positions) &&
+        Objects.equals(this.printed, financeOutOperationCommissionReportOut.printed) &&
+        equalsNullable(this.project, financeOutOperationCommissionReportOut.project) &&
+        Objects.equals(this.published, financeOutOperationCommissionReportOut.published) &&
+        Objects.equals(this.rate, financeOutOperationCommissionReportOut.rate) &&
+        Objects.equals(this.rewardPercent, financeOutOperationCommissionReportOut.rewardPercent) &&
+        Objects.equals(this.rewardType, financeOutOperationCommissionReportOut.rewardType) &&
+        equalsNullable(this.salesChannel, financeOutOperationCommissionReportOut.salesChannel) &&
+        Objects.equals(this.shared, financeOutOperationCommissionReportOut.shared) &&
+        equalsNullable(this.state, financeOutOperationCommissionReportOut.state) &&
+        Objects.equals(this.sum, financeOutOperationCommissionReportOut.sum) &&
+        Objects.equals(this.syncId, financeOutOperationCommissionReportOut.syncId) &&
+        Objects.equals(this.updated, financeOutOperationCommissionReportOut.updated) &&
+        Objects.equals(this.vatEnabled, financeOutOperationCommissionReportOut.vatEnabled) &&
+        Objects.equals(this.vatIncluded, financeOutOperationCommissionReportOut.vatIncluded) &&
+        Objects.equals(this.vatSum, financeOutOperationCommissionReportOut.vatSum) &&
+        equalsNullable(this.payments, financeOutOperationCommissionReportOut.payments);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -1582,7 +1546,7 @@ public class PaymentOutOperationAnyOf4 {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, agent, hashCodeNullable(agentAccount), applicable, hashCodeNullable(attributes), code, commissionPeriodEnd, commissionPeriodStart, commitentSum, hashCodeNullable(contract), created, deleted, hashCodeNullable(description), externalCode, hashCodeNullable(files), group, moment, name, organization, hashCodeNullable(organizationAccount), hashCodeNullable(owner), payedSum, positions, printed, hashCodeNullable(project), published, rate, rewardPercent, rewardType, hashCodeNullable(salesChannel), shared, hashCodeNullable(state), sum, syncId, updated, vatEnabled, vatIncluded, vatSum, hashCodeNullable(payments), linkedSum);
+    return Objects.hash(meta, id, accountId, agent, hashCodeNullable(agentAccount), applicable, hashCodeNullable(attributes), code, commissionPeriodEnd, commissionPeriodStart, commitentSum, hashCodeNullable(contract), created, deleted, hashCodeNullable(description), externalCode, hashCodeNullable(files), group, moment, name, organization, hashCodeNullable(organizationAccount), hashCodeNullable(owner), payedSum, positions, printed, hashCodeNullable(project), published, rate, rewardPercent, rewardType, hashCodeNullable(salesChannel), shared, hashCodeNullable(state), sum, syncId, updated, vatEnabled, vatIncluded, vatSum, hashCodeNullable(payments));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1595,7 +1559,7 @@ public class PaymentOutOperationAnyOf4 {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PaymentOutOperationAnyOf4 {\n");
+    sb.append("class FinanceOutOperationCommissionReportOut {\n");
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
@@ -1637,7 +1601,6 @@ public class PaymentOutOperationAnyOf4 {
     sb.append("    vatIncluded: ").append(toIndentedString(vatIncluded)).append("\n");
     sb.append("    vatSum: ").append(toIndentedString(vatSum)).append("\n");
     sb.append("    payments: ").append(toIndentedString(payments)).append("\n");
-    sb.append("    linkedSum: ").append(toIndentedString(linkedSum)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -2030,17 +1993,8 @@ public class PaymentOutOperationAnyOf4 {
       }
     }
 
-    // add `linkedSum` to the URL query string
-    if (getLinkedSum() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%slinkedSum%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLinkedSum()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
-    }
-
     return joiner.toString();
   }
 
 }
+

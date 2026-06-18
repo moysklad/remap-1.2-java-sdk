@@ -39,7 +39,7 @@
 |**sum** | **Double** | Сумма Приходного ордера в установленной валюте |  [optional] [readonly] |
 |**vatSum** | **Double** | Сумма НДС |  [optional] [readonly] |
 |**factureOut** | [**FactureOut**](FactureOut.md) | Счет-фактура выданный, с которым связан этот платеж |  [optional] |
-|**operations** | [**List&lt;CashInOperation&gt;**](CashInOperation.md) | Связанные операции. Допустимые типы по &#x60;meta.type&#x60;: customerorder, purchasereturn, demand, invoiceout, commissionreportin, retailshift.  |  [optional] |
+|**operations** | [**List&lt;FinanceInOperationAbstract&gt;**](FinanceInOperationAbstract.md) | Связанные операции. Допустимые типы по &#x60;meta.type&#x60;: customerorder, purchasereturn, demand, invoiceout, commissionreportin, retailshift  |  [optional] |
 
 
 

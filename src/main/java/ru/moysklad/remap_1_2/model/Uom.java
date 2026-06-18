@@ -50,7 +50,7 @@ import java.util.StringJoiner;
   Uom.JSON_PROPERTY_SHARED,
   Uom.JSON_PROPERTY_EXTERNAL_CODE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
 public class Uom {
   public static Uom createWithMeta(UUID id) {
     Uom o = new Uom();
@@ -625,3 +625,4 @@ public class Uom {
   }
 
 }
+

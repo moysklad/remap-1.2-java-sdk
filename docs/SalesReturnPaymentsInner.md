@@ -42,7 +42,7 @@
 |**factureIn** | [**FactureIn**](FactureIn.md) | Счет-фактура полученный, с которым связан этот платеж |  [optional] |
 |**agentAccount** | [**Account**](Account.md) | Метаданные счета контрагента или юрлица |  [optional] |
 |**organizationAccount** | [**Account**](Account.md) | Метаданные счета юрлица |  [optional] |
-|**operations** | [**List&lt;CashOutOperation&gt;**](CashOutOperation.md) | Связанные операции: полное тело документа плюс &#x60;linkedSum&#x60;. Допустимые типы по &#x60;meta.type&#x60;: salesreturn, supply, invoicein, purchaseorder, commissionreportout. См. &#x60;CashOutOperation&#x60;.  |  [optional] |
+|**operations** | [**List&lt;FinanceOutOperationAbstract&gt;**](FinanceOutOperationAbstract.md) | Связанные операции: полное тело документа плюс &#x60;linkedSum&#x60;. Допустимые типы по &#x60;meta.type&#x60;: salesreturn, supply, invoicein, purchaseorder, commissionreportout  |  [optional] |
 
 
 

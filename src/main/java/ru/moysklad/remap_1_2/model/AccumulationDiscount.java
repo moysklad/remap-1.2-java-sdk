@@ -53,7 +53,7 @@ import java.util.StringJoiner;
   AccumulationDiscount.JSON_PROPERTY_ALL_AGENTS,
   AccumulationDiscount.JSON_PROPERTY_AGENT_TAGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
 public class AccumulationDiscount {
   public static AccumulationDiscount createWithMeta(UUID id) {
     AccumulationDiscount o = new AccumulationDiscount();
@@ -640,3 +640,4 @@ public class AccumulationDiscount {
   }
 
 }
+

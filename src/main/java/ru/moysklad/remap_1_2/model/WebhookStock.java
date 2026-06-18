@@ -43,7 +43,7 @@ import java.util.StringJoiner;
   WebhookStock.JSON_PROPERTY_ENABLED,
   WebhookStock.JSON_PROPERTY_AUTHOR_APPLICATION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
 public class WebhookStock {
   public static WebhookStock createWithMeta(UUID id) {
     WebhookStock o = new WebhookStock();
@@ -470,3 +470,4 @@ public class WebhookStock {
   }
 
 }
+

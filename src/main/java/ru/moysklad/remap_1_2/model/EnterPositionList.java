@@ -23,9 +23,13 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 import ru.moysklad.remap_1_2.model.Context;
 import ru.moysklad.remap_1_2.model.EnterPosition;
 import ru.moysklad.remap_1_2.model.MetaList;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.io.UnsupportedEncodingException;
@@ -40,7 +44,7 @@ import java.util.StringJoiner;
   EnterPositionList.JSON_PROPERTY_META,
   EnterPositionList.JSON_PROPERTY_ROWS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
 public class EnterPositionList {
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
@@ -53,7 +57,7 @@ public class EnterPositionList {
 
   public static final String JSON_PROPERTY_ROWS = "rows";
   @javax.annotation.Nullable
-  private List<EnterPosition> rows = new ArrayList<>();
+  private JsonNullable<List<EnterPosition>> rows = JsonNullable.<List<EnterPosition>>undefined();
 
   public EnterPositionList() {
   }
@@ -117,17 +121,21 @@ public class EnterPositionList {
 
 
   public EnterPositionList rows(@javax.annotation.Nullable List<EnterPosition> rows) {
+    this.rows = JsonNullable.<List<EnterPosition>>of(rows);
     
-    this.rows = rows;
     return this;
   }
 
 
   public EnterPositionList addRowsItem(EnterPosition rowsItem) {
-    if (this.rows == null) {
-      this.rows = new ArrayList<>();
+    if (this.rows == null || !this.rows.isPresent()) {
+      this.rows = JsonNullable.<List<EnterPosition>>of(new ArrayList<>());
     }
-    this.rows.add(rowsItem);
+    try {
+      this.rows.get().add(rowsItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
     return this;
   }
 
@@ -136,20 +144,29 @@ public class EnterPositionList {
    * @return rows
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ROWS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public List<EnterPosition> getRows() {
-    return rows;
+        return rows.orElse(null);
   }
 
   
 
-
   @JsonProperty(JSON_PROPERTY_ROWS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRows(@javax.annotation.Nullable List<EnterPosition> rows) {
+
+
+  public JsonNullable<List<EnterPosition>> getRows_JsonNullable() {
+    return rows;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_ROWS, required = false)
+  public void setRows_JsonNullable(JsonNullable<List<EnterPosition>> rows) {
     this.rows = rows;
+  }
+
+  public void setRows(@javax.annotation.Nullable List<EnterPosition> rows) {
+    this.rows = JsonNullable.<List<EnterPosition>>of(rows);
   }
 
 
@@ -164,12 +181,23 @@ public class EnterPositionList {
     EnterPositionList enterPositionList = (EnterPositionList) o;
     return Objects.equals(this.context, enterPositionList.context) &&
         Objects.equals(this.meta, enterPositionList.meta) &&
-        Objects.equals(this.rows, enterPositionList.rows);
+        equalsNullable(this.rows, enterPositionList.rows);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(context, meta, rows);
+    return Objects.hash(context, meta, hashCodeNullable(rows));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -250,3 +278,4 @@ public class EnterPositionList {
   }
 
 }
+

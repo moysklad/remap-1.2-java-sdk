@@ -36,11 +36,11 @@ import ru.moysklad.remap_1_2.model.ErrorErrorsInner;
 import ru.moysklad.remap_1_2.model.ExpenseItem;
 import ru.moysklad.remap_1_2.model.FactureIn;
 import ru.moysklad.remap_1_2.model.FileList;
+import ru.moysklad.remap_1_2.model.FinanceOutOperationAbstract;
 import ru.moysklad.remap_1_2.model.Group;
 import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.Organization;
 import ru.moysklad.remap_1_2.model.PaymentOut;
-import ru.moysklad.remap_1_2.model.PaymentOutOperation;
 import ru.moysklad.remap_1_2.model.Project;
 import ru.moysklad.remap_1_2.model.SalesChannel;
 import ru.moysklad.remap_1_2.model.State;
@@ -96,7 +96,7 @@ import java.util.StringJoiner;
   CreatePaymentOutBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createPaymentOutBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T08:38:11.949143335Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreatePaymentOutBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -241,7 +241,7 @@ public class CreatePaymentOutBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_OPERATIONS = "operations";
   @javax.annotation.Nullable
-  private JsonNullable<List<PaymentOutOperation>> operations = JsonNullable.<List<PaymentOutOperation>>undefined();
+  private JsonNullable<List<FinanceOutOperationAbstract>> operations = JsonNullable.<List<FinanceOutOperationAbstract>>undefined();
 
   public static final String JSON_PROPERTY_ERRORS = "errors";
   @javax.annotation.Nonnull
@@ -1285,16 +1285,16 @@ public class CreatePaymentOutBatch200ResponseInner {
   }
 
 
-  public CreatePaymentOutBatch200ResponseInner operations(@javax.annotation.Nullable List<PaymentOutOperation> operations) {
-    this.operations = JsonNullable.<List<PaymentOutOperation>>of(operations);
+  public CreatePaymentOutBatch200ResponseInner operations(@javax.annotation.Nullable List<FinanceOutOperationAbstract> operations) {
+    this.operations = JsonNullable.<List<FinanceOutOperationAbstract>>of(operations);
     
     return this;
   }
 
 
-  public CreatePaymentOutBatch200ResponseInner addOperationsItem(PaymentOutOperation operationsItem) {
+  public CreatePaymentOutBatch200ResponseInner addOperationsItem(FinanceOutOperationAbstract operationsItem) {
     if (this.operations == null || !this.operations.isPresent()) {
-      this.operations = JsonNullable.<List<PaymentOutOperation>>of(new ArrayList<>());
+      this.operations = JsonNullable.<List<FinanceOutOperationAbstract>>of(new ArrayList<>());
     }
     try {
       this.operations.get().add(operationsItem);
@@ -1305,13 +1305,13 @@ public class CreatePaymentOutBatch200ResponseInner {
   }
 
   /**
-   * Связанные операции: полное тело документа плюс &#x60;linkedSum&#x60;. Допустимые типы по &#x60;meta.type&#x60;: salesreturn, supply, invoicein, purchaseorder, commissionreportout. См. &#x60;PaymentOutOperation&#x60;. 
+   * Связанные операции: полное тело документа плюс &#x60;linkedSum&#x60;. Допустимые типы по &#x60;meta.type&#x60;: salesreturn, supply, invoicein, purchaseorder, commissionreportout 
    * @return operations
    */
   @javax.annotation.Nullable
   @JsonIgnore
 
-  public List<PaymentOutOperation> getOperations() {
+  public List<FinanceOutOperationAbstract> getOperations() {
         return operations.orElse(null);
   }
 
@@ -1321,17 +1321,17 @@ public class CreatePaymentOutBatch200ResponseInner {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<PaymentOutOperation>> getOperations_JsonNullable() {
+  public JsonNullable<List<FinanceOutOperationAbstract>> getOperations_JsonNullable() {
     return operations;
   }
   
   @JsonProperty(value = JSON_PROPERTY_OPERATIONS, required = false)
-  public void setOperations_JsonNullable(JsonNullable<List<PaymentOutOperation>> operations) {
+  public void setOperations_JsonNullable(JsonNullable<List<FinanceOutOperationAbstract>> operations) {
     this.operations = operations;
   }
 
-  public void setOperations(@javax.annotation.Nullable List<PaymentOutOperation> operations) {
-    this.operations = JsonNullable.<List<PaymentOutOperation>>of(operations);
+  public void setOperations(@javax.annotation.Nullable List<FinanceOutOperationAbstract> operations) {
+    this.operations = JsonNullable.<List<FinanceOutOperationAbstract>>of(operations);
   }
 
 
@@ -1823,3 +1823,4 @@ public class CreatePaymentOutBatch200ResponseInner {
   }
 
 }
+
