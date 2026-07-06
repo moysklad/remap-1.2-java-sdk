@@ -22,14 +22,14 @@ import ru.moysklad.remap_1_2.Pair;
 
 import ru.moysklad.remap_1_2.model.AttributeMetaInfo;
 import ru.moysklad.remap_1_2.model.AttributeMetaInfoList;
+import ru.moysklad.remap_1_2.model.BatchResponseEntity;
 import ru.moysklad.remap_1_2.model.CashOut;
 import ru.moysklad.remap_1_2.model.CashOutList;
-import ru.moysklad.remap_1_2.model.CreateCashOutBatch200ResponseInner;
-import ru.moysklad.remap_1_2.model.CreateInternalOrderMetadataStateRequest;
-import ru.moysklad.remap_1_2.model.DeleteContractsBatch200ResponseInner;
+import ru.moysklad.remap_1_2.model.DeleteRowResult;
 import ru.moysklad.remap_1_2.model.DocumentMetadata;
 import ru.moysklad.remap_1_2.model.ErrorOrArray;
 import ru.moysklad.remap_1_2.model.State;
+import ru.moysklad.remap_1_2.model.StateRowResult;
 import java.util.UUID;
 
 
@@ -40,7 +40,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+import javax.validation.constraints.*;
+import javax.validation.Valid;
+
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class CashOutsApi extends BaseApi {
 
@@ -168,10 +171,10 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;CreateCashOutBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateCashOutBatch200ResponseInner> createCashOutBatch(@javax.annotation.Nonnull List<CashOut> cashOut, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<BatchResponseEntity> createCashOutBatch(@javax.annotation.Nonnull List<@Valid CashOut> cashOut, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createCashOutBatch(cashOut, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -186,10 +189,10 @@ if (contentType != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return List&lt;CreateCashOutBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateCashOutBatch200ResponseInner> createCashOutBatch(@javax.annotation.Nonnull List<CashOut> cashOut, RequestOptions options) throws ApiException {
+  public List<BatchResponseEntity> createCashOutBatch(@javax.annotation.Nonnull List<@Valid CashOut> cashOut, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createCashOutBatch(cashOut, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -204,10 +207,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;CreateCashOutBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateCashOutBatch200ResponseInner> createCashOutBatch(@javax.annotation.Nonnull List<CashOut> cashOut, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<BatchResponseEntity> createCashOutBatch(@javax.annotation.Nonnull List<@Valid CashOut> cashOut, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = cashOut;
     
     // verify the required parameter 'cashOut' is set
@@ -250,7 +253,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<CreateCashOutBatch200ResponseInner>> localVarReturnType = new TypeReference<List<CreateCashOutBatch200ResponseInner>>() {};
+    TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
@@ -357,35 +360,35 @@ if (contentType != null)
   /**
    * Создать статус CashOut
    * 
-   * @param createInternalOrderMetadataStateRequest  (required)
+   * @param state  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return CreateInternalOrderMetadataStateRequest
+   * @return State
    * @throws ApiException if fails to make API call
    */
-  public CreateInternalOrderMetadataStateRequest createCashOutMetadataState(@javax.annotation.Nonnull CreateInternalOrderMetadataStateRequest createInternalOrderMetadataStateRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createCashOutMetadataState(createInternalOrderMetadataStateRequest, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public State createCashOutMetadataState(@javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+    return this.createCashOutMetadataState(state, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
 
   /**
    * Создать статус CashOut
    * 
-   * @param createInternalOrderMetadataStateRequest  (required)
+   * @param state  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return CreateInternalOrderMetadataStateRequest
+   * @return State
    * @throws ApiException if fails to make API call
    */
-  public CreateInternalOrderMetadataStateRequest createCashOutMetadataState(@javax.annotation.Nonnull CreateInternalOrderMetadataStateRequest createInternalOrderMetadataStateRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
-    Object localVarPostBody = createInternalOrderMetadataStateRequest;
+  public State createCashOutMetadataState(@javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = state;
     
-    // verify the required parameter 'createInternalOrderMetadataStateRequest' is set
-    if (createInternalOrderMetadataStateRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'createInternalOrderMetadataStateRequest' when calling createCashOutMetadataState");
+    // verify the required parameter 'state' is set
+    if (state == null) {
+      throw new ApiException(400, "Missing the required parameter 'state' when calling createCashOutMetadataState");
     }
     
     // create path and map variables
@@ -422,7 +425,93 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<CreateInternalOrderMetadataStateRequest> localVarReturnType = new TypeReference<CreateInternalOrderMetadataStateRequest>() {};
+    TypeReference<State> localVarReturnType = new TypeReference<State>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Массовое создание и обновление статусов CashOut
+   * 
+   * @param state  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @return List&lt;StateRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<StateRowResult> createCashOutMetadataStatesBatch(@javax.annotation.Nonnull List<@Valid State> state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+    return this.createCashOutMetadataStatesBatch(state, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+
+  /**
+   * Массовое создание и обновление статусов CashOut
+   * 
+   * @param state  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return List&lt;StateRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<StateRowResult> createCashOutMetadataStatesBatch(@javax.annotation.Nonnull List<@Valid State> state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = state;
+    
+    // verify the required parameter 'state' is set
+    if (state == null) {
+      throw new ApiException(400, "Missing the required parameter 'state' when calling createCashOutMetadataStatesBatch");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/cashout/metadata/states/batch";
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null)
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+if (acceptEncoding != null)
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+if (contentType != null)
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+
+    localVarHeaderParams.putAll(additionalHeaders);
+
+    
+    
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<List<StateRowResult>> localVarReturnType = new TypeReference<List<StateRowResult>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
@@ -531,10 +620,10 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deleteCashOutBatch(@javax.annotation.Nonnull List<CashOut> cashOut, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<DeleteRowResult> deleteCashOutBatch(@javax.annotation.Nonnull List<@Valid CashOut> cashOut, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.deleteCashOutBatch(cashOut, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -547,10 +636,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deleteCashOutBatch(@javax.annotation.Nonnull List<CashOut> cashOut, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<DeleteRowResult> deleteCashOutBatch(@javax.annotation.Nonnull List<@Valid CashOut> cashOut, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = cashOut;
     
     // verify the required parameter 'cashOut' is set
@@ -592,7 +681,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<DeleteContractsBatch200ResponseInner>> localVarReturnType = new TypeReference<List<DeleteContractsBatch200ResponseInner>>() {};
+    TypeReference<List<DeleteRowResult>> localVarReturnType = new TypeReference<List<DeleteRowResult>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

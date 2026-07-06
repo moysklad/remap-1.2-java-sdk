@@ -33,13 +33,13 @@ import ru.moysklad.remap_1_2.model.CommissionReportInPositionList;
 import ru.moysklad.remap_1_2.model.CommissionReportInReturnedPositionList;
 import ru.moysklad.remap_1_2.model.Contract;
 import ru.moysklad.remap_1_2.model.CurrencyRate;
-import ru.moysklad.remap_1_2.model.CustomerOrderPaymentsInner;
 import ru.moysklad.remap_1_2.model.Employee;
 import ru.moysklad.remap_1_2.model.FileList;
 import ru.moysklad.remap_1_2.model.Group;
 import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.Organization;
 import ru.moysklad.remap_1_2.model.Project;
+import ru.moysklad.remap_1_2.model.RetailShiftPaymentsInner;
 import ru.moysklad.remap_1_2.model.SalesChannel;
 import ru.moysklad.remap_1_2.model.State;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -47,6 +47,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -99,8 +101,8 @@ import java.util.StringJoiner;
   CommissionReportIn.JSON_PROPERTY_VAT_SUM,
   CommissionReportIn.JSON_PROPERTY_PAYMENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
-public class CommissionReportIn {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
+public class CommissionReportIn extends EntityWithMeta {
   public static CommissionReportIn createWithMeta(UUID id) {
     CommissionReportIn o = new CommissionReportIn();
     Meta meta = new Meta();
@@ -142,7 +144,7 @@ public class CommissionReportIn {
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
-  private JsonNullable<List<AttributeAbstract>> attributes = JsonNullable.<List<AttributeAbstract>>undefined();
+  private JsonNullable<List<@Valid AttributeAbstract>> attributes = JsonNullable.<List<@Valid AttributeAbstract>>undefined();
 
   public static final String JSON_PROPERTY_CODE = "code";
   @javax.annotation.Nullable
@@ -286,7 +288,7 @@ public class CommissionReportIn {
 
   public static final String JSON_PROPERTY_PAYMENTS = "payments";
   @javax.annotation.Nullable
-  private JsonNullable<List<CustomerOrderPaymentsInner>> payments = JsonNullable.<List<CustomerOrderPaymentsInner>>undefined();
+  private JsonNullable<List<RetailShiftPaymentsInner>> payments = JsonNullable.<List<RetailShiftPaymentsInner>>undefined();
 
   public CommissionReportIn() {
   }
@@ -329,6 +331,9 @@ public class CommissionReportIn {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -351,6 +356,9 @@ public class CommissionReportIn {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -367,6 +375,9 @@ public class CommissionReportIn {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -390,6 +401,9 @@ public class CommissionReportIn {
    * @return agent
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -419,6 +433,9 @@ public class CommissionReportIn {
    * @return agentAccount
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Account getAgentAccount() {
@@ -457,6 +474,8 @@ public class CommissionReportIn {
    * @return applicable
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_APPLICABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -474,8 +493,8 @@ public class CommissionReportIn {
   }
 
 
-  public CommissionReportIn attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
+  public CommissionReportIn attributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
     
     return this;
   }
@@ -483,7 +502,7 @@ public class CommissionReportIn {
 
   public CommissionReportIn addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
-      this.attributes = JsonNullable.<List<AttributeAbstract>>of(new ArrayList<>());
+      this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(new ArrayList<>());
     }
     try {
       this.attributes.get().add(attributesItem);
@@ -498,9 +517,12 @@ public class CommissionReportIn {
    * @return attributes
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
-  public List<AttributeAbstract> getAttributes() {
+  public List<@Valid AttributeAbstract> getAttributes() {
         return attributes.orElse(null);
   }
 
@@ -510,17 +532,17 @@ public class CommissionReportIn {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
+  public JsonNullable<List<@Valid AttributeAbstract>> getAttributes_JsonNullable() {
     return attributes;
   }
   
   @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
-  public void setAttributes_JsonNullable(JsonNullable<List<AttributeAbstract>> attributes) {
+  public void setAttributes_JsonNullable(JsonNullable<List<@Valid AttributeAbstract>> attributes) {
     this.attributes = attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
+  public void setAttributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
   }
 
 
@@ -536,6 +558,8 @@ public class CommissionReportIn {
    * @return code
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -565,6 +589,9 @@ public class CommissionReportIn {
    * @return commissionOverhead
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_COMMISSION_OVERHEAD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -594,6 +621,8 @@ public class CommissionReportIn {
    * @return commissionPeriodEnd
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_COMMISSION_PERIOD_END)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -623,6 +652,8 @@ public class CommissionReportIn {
    * @return commissionPeriodStart
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_COMMISSION_PERIOD_START)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -645,6 +676,8 @@ public class CommissionReportIn {
    * @return commitentSum
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_COMMITENT_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -668,6 +701,9 @@ public class CommissionReportIn {
    * @return contract
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Contract getContract() {
@@ -699,6 +735,8 @@ public class CommissionReportIn {
    * @return created
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_CREATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -715,6 +753,8 @@ public class CommissionReportIn {
    * @return deleted
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_DELETED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -738,6 +778,8 @@ public class CommissionReportIn {
    * @return description
    */
   @javax.annotation.Nullable
+ @Size(max=4096)
+
   @JsonIgnore
 
   public String getDescription() {
@@ -776,6 +818,8 @@ public class CommissionReportIn {
    * @return externalCode
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -805,6 +849,9 @@ public class CommissionReportIn {
    * @return files
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public FileList getFiles() {
@@ -843,6 +890,9 @@ public class CommissionReportIn {
    * @return group
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -872,6 +922,8 @@ public class CommissionReportIn {
    * @return moment
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -901,6 +953,8 @@ public class CommissionReportIn {
    * @return name
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -930,6 +984,9 @@ public class CommissionReportIn {
    * @return organization
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -959,6 +1016,9 @@ public class CommissionReportIn {
    * @return organizationAccount
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Account getOrganizationAccount() {
@@ -997,6 +1057,9 @@ public class CommissionReportIn {
    * @return owner
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Employee getOwner() {
@@ -1028,6 +1091,8 @@ public class CommissionReportIn {
    * @return payedSum
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PAYED_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1051,6 +1116,9 @@ public class CommissionReportIn {
    * @return positions
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1073,6 +1141,8 @@ public class CommissionReportIn {
    * @return printed
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PRINTED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1096,6 +1166,9 @@ public class CommissionReportIn {
    * @return project
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Project getProject() {
@@ -1127,6 +1200,8 @@ public class CommissionReportIn {
    * @return published
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PUBLISHED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1150,6 +1225,9 @@ public class CommissionReportIn {
    * @return rate
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1179,6 +1257,9 @@ public class CommissionReportIn {
    * @return returnToCommissionerPositions
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_RETURN_TO_COMMISSIONER_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1210,6 +1291,8 @@ public class CommissionReportIn {
    * @return rewardPercent
    */
   @javax.annotation.Nullable
+ @Min(0) @Max(100)
+
   @JsonProperty(JSON_PROPERTY_REWARD_PERCENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1239,6 +1322,8 @@ public class CommissionReportIn {
    * @return rewardType
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_REWARD_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1268,6 +1353,9 @@ public class CommissionReportIn {
    * @return salesChannel
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public SalesChannel getSalesChannel() {
@@ -1306,6 +1394,8 @@ public class CommissionReportIn {
    * @return shared
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1335,6 +1425,9 @@ public class CommissionReportIn {
    * @return state
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public State getState() {
@@ -1373,6 +1466,8 @@ public class CommissionReportIn {
    * @return sum
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1402,6 +1497,9 @@ public class CommissionReportIn {
    * @return syncId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1424,6 +1522,8 @@ public class CommissionReportIn {
    * @return updated
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1447,6 +1547,8 @@ public class CommissionReportIn {
    * @return vatEnabled
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1476,6 +1578,8 @@ public class CommissionReportIn {
    * @return vatIncluded
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_VAT_INCLUDED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1505,6 +1609,8 @@ public class CommissionReportIn {
    * @return vatSum
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_VAT_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1522,16 +1628,16 @@ public class CommissionReportIn {
   }
 
 
-  public CommissionReportIn payments(@javax.annotation.Nullable List<CustomerOrderPaymentsInner> payments) {
-    this.payments = JsonNullable.<List<CustomerOrderPaymentsInner>>of(payments);
+  public CommissionReportIn payments(@javax.annotation.Nullable List<RetailShiftPaymentsInner> payments) {
+    this.payments = JsonNullable.<List<RetailShiftPaymentsInner>>of(payments);
     
     return this;
   }
 
 
-  public CommissionReportIn addPaymentsItem(CustomerOrderPaymentsInner paymentsItem) {
+  public CommissionReportIn addPaymentsItem(RetailShiftPaymentsInner paymentsItem) {
     if (this.payments == null || !this.payments.isPresent()) {
-      this.payments = JsonNullable.<List<CustomerOrderPaymentsInner>>of(new ArrayList<>());
+      this.payments = JsonNullable.<List<RetailShiftPaymentsInner>>of(new ArrayList<>());
     }
     try {
       this.payments.get().add(paymentsItem);
@@ -1546,9 +1652,12 @@ public class CommissionReportIn {
    * @return payments
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
-  public List<CustomerOrderPaymentsInner> getPayments() {
+  public List<RetailShiftPaymentsInner> getPayments() {
         return payments.orElse(null);
   }
 
@@ -1558,17 +1667,17 @@ public class CommissionReportIn {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<CustomerOrderPaymentsInner>> getPayments_JsonNullable() {
+  public JsonNullable<List<RetailShiftPaymentsInner>> getPayments_JsonNullable() {
     return payments;
   }
   
   @JsonProperty(value = JSON_PROPERTY_PAYMENTS, required = false)
-  public void setPayments_JsonNullable(JsonNullable<List<CustomerOrderPaymentsInner>> payments) {
+  public void setPayments_JsonNullable(JsonNullable<List<RetailShiftPaymentsInner>> payments) {
     this.payments = payments;
   }
 
-  public void setPayments(@javax.annotation.Nullable List<CustomerOrderPaymentsInner> payments) {
-    this.payments = JsonNullable.<List<CustomerOrderPaymentsInner>>of(payments);
+  public void setPayments(@javax.annotation.Nullable List<RetailShiftPaymentsInner> payments) {
+    this.payments = JsonNullable.<List<RetailShiftPaymentsInner>>of(payments);
   }
 
 

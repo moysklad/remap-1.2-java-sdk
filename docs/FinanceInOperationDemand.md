@@ -50,7 +50,7 @@
 |**customerOrder** | [**CustomerOrder**](CustomerOrder.md) | Заказ покупателя, с которым связана Отгрузка |  [optional] |
 |**factureOut** | [**FactureOut**](FactureOut.md) | Счёт-фактура выданный, с которым связана Отгрузка |  [optional] |
 |**returns** | [**List&lt;SalesReturn&gt;**](SalesReturn.md) | Связанные возвраты |  [optional] |
-|**payments** | [**List&lt;CustomerOrderPaymentsInner&gt;**](CustomerOrderPaymentsInner.md) | Связанные платежи |  [optional] |
+|**payments** | [**List&lt;RetailShiftPaymentsInner&gt;**](RetailShiftPaymentsInner.md) | Связанные платежи |  [optional] |
 |**productionTasks** | [**List&lt;ProductionTask&gt;**](ProductionTask.md) | Связанные производственные задания |  [optional] |
 |**invoicesOut** | [**List&lt;InvoiceOut&gt;**](InvoiceOut.md) | Связанные счета покупателям |  [optional] |
 |**cargoName** | **String** | Наименование груза |  [optional] |

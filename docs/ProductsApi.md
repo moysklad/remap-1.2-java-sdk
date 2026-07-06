@@ -62,8 +62,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProductsApi apiInstance = new ProductsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<FileUpload> fileUpload = Arrays.asList(); // List<FileUpload> | 
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid FileUpload> fileUpload = Arrays.asList(); // List<@Valid FileUpload> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -87,7 +87,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **fileUpload** | [**List&lt;FileUpload&gt;**](FileUpload.md)|  | |
+| **fileUpload** | [**List&lt;@Valid FileUpload&gt;**](FileUpload.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -147,7 +147,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProductsApi apiInstance = new ProductsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         AddProductImagesRequest addProductImagesRequest = new AddProductImagesRequest(); // AddProductImagesRequest | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -233,7 +233,7 @@ public class Example {
 
         ProductsApi apiInstance = new ProductsApi(defaultClient);
         Product product = new Product(); // Product | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -317,7 +317,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProductsApi apiInstance = new ProductsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         StoreBalance storeBalance = new StoreBalance(); // StoreBalance | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -370,7 +370,7 @@ public class Example {
 
 ## createProductsBatch
 
-> List&lt;CreateProductsBatch200ResponseInner&gt; createProductsBatch(product, expand, accept, acceptEncoding, contentType)
+> List&lt;BatchResponseEntity&gt; createProductsBatch(product, expand, accept, acceptEncoding, contentType)
 
 Создать или изменить товары
 
@@ -402,13 +402,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProductsApi apiInstance = new ProductsApi(defaultClient);
-        List<Product> product = Arrays.asList(); // List<Product> | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        List<@Valid Product> product = Arrays.asList(); // List<@Valid Product> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateProductsBatch200ResponseInner> result = apiInstance.createProductsBatch(product, expand, accept, acceptEncoding, contentType);
+            List<BatchResponseEntity> result = apiInstance.createProductsBatch(product, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProductsApi#createProductsBatch");
@@ -426,7 +426,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **product** | [**List&lt;Product&gt;**](Product.md)|  | |
+| **product** | [**List&lt;@Valid Product&gt;**](Product.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -434,7 +434,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreateProductsBatch200ResponseInner&gt;**](CreateProductsBatch200ResponseInner.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -487,7 +487,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProductsApi apiInstance = new ProductsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -567,7 +567,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProductsApi apiInstance = new ProductsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID fileId = UUID.randomUUID(); // UUID | ID файла
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -649,7 +649,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProductsApi apiInstance = new ProductsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID imageId = UUID.randomUUID(); // UUID | ID изображения
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -731,8 +731,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProductsApi apiInstance = new ProductsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<DeleteProductImagesRequestInner> deleteProductImagesRequestInner = Arrays.asList(); // List<DeleteProductImagesRequestInner> | 
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid DeleteProductImagesRequestInner> deleteProductImagesRequestInner = Arrays.asList(); // List<@Valid DeleteProductImagesRequestInner> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -755,7 +755,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **deleteProductImagesRequestInner** | [**List&lt;DeleteProductImagesRequestInner&gt;**](DeleteProductImagesRequestInner.md)|  | |
+| **deleteProductImagesRequestInner** | [**List&lt;@Valid DeleteProductImagesRequestInner&gt;**](DeleteProductImagesRequestInner.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -815,7 +815,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProductsApi apiInstance = new ProductsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID storeBalanceId = UUID.randomUUID(); // UUID | ID неснижаемого остатка
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -897,8 +897,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProductsApi apiInstance = new ProductsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<DeleteProductImagesRequestInner> deleteProductImagesRequestInner = Arrays.asList(); // List<DeleteProductImagesRequestInner> | 
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid DeleteProductImagesRequestInner> deleteProductImagesRequestInner = Arrays.asList(); // List<@Valid DeleteProductImagesRequestInner> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -921,7 +921,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **deleteProductImagesRequestInner** | [**List&lt;DeleteProductImagesRequestInner&gt;**](DeleteProductImagesRequestInner.md)|  | |
+| **deleteProductImagesRequestInner** | [**List&lt;@Valid DeleteProductImagesRequestInner&gt;**](DeleteProductImagesRequestInner.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -949,7 +949,7 @@ null (empty response body)
 
 ## deleteProductsBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteProductsBatch(product, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteProductsBatch(product, accept, acceptEncoding, contentType)
 
 Удалить товары
 
@@ -981,12 +981,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProductsApi apiInstance = new ProductsApi(defaultClient);
-        List<Product> product = Arrays.asList(); // List<Product> | 
+        List<@Valid Product> product = Arrays.asList(); // List<@Valid Product> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteProductsBatch(product, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteProductsBatch(product, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProductsApi#deleteProductsBatch");
@@ -1004,14 +1004,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **product** | [**List&lt;Product&gt;**](Product.md)|  | |
+| **product** | [**List&lt;@Valid Product&gt;**](Product.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -1143,8 +1143,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProductsApi apiInstance = new ProductsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1228,7 +1228,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProductsApi apiInstance = new ProductsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
         String accept = "application/json"; // String | 
@@ -1313,7 +1313,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProductsApi apiInstance = new ProductsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
@@ -1400,7 +1400,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProductsApi apiInstance = new ProductsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID storeBalanceId = UUID.randomUUID(); // UUID | ID неснижаемого остатка
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1483,7 +1483,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProductsApi apiInstance = new ProductsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
         String accept = "application/json"; // String | 
@@ -1570,10 +1570,10 @@ public class Example {
         ProductsApi apiInstance = new ProductsApi(defaultClient);
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String search = "name=123"; // String | Контекстный поиск по строковым полям сущностей
-        String filter = "archived=false"; // String | Фильтрация выборки
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
-        String order = "name"; // String | Сортировка
+        String search = "search_example"; // String | Контекстный поиск по строковым полям сущностей
+        String filter = "filter_example"; // String | Фильтрация выборки
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
+        String order = "order_example"; // String | Сортировка
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1661,9 +1661,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProductsApi apiInstance = new ProductsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Product product = new Product(); // Product | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1748,7 +1748,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProductsApi apiInstance = new ProductsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID storeBalanceId = UUID.randomUUID(); // UUID | ID неснижаемого остатка
         StoreBalance storeBalance = new StoreBalance(); // StoreBalance | 
         String accept = "application/json"; // String | 

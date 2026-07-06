@@ -22,9 +22,9 @@ import ru.moysklad.remap_1_2.Pair;
 
 import ru.moysklad.remap_1_2.model.AttributeMetaInfo;
 import ru.moysklad.remap_1_2.model.AttributeMetaInfoList;
-import ru.moysklad.remap_1_2.model.CreateInventoriesBatch200ResponseInner;
+import ru.moysklad.remap_1_2.model.BatchResponseEntity;
 import ru.moysklad.remap_1_2.model.CreateInventoryPositions200ResponseInner;
-import ru.moysklad.remap_1_2.model.DeleteContractsBatch200ResponseInner;
+import ru.moysklad.remap_1_2.model.DeleteRowResult;
 import ru.moysklad.remap_1_2.model.DocumentMetadata;
 import ru.moysklad.remap_1_2.model.ErrorOrArray;
 import ru.moysklad.remap_1_2.model.FileUpload;
@@ -35,6 +35,7 @@ import ru.moysklad.remap_1_2.model.InventoryPosition;
 import ru.moysklad.remap_1_2.model.InventoryPositionList;
 import ru.moysklad.remap_1_2.model.ModelFile;
 import ru.moysklad.remap_1_2.model.State;
+import ru.moysklad.remap_1_2.model.StateRowResult;
 import java.util.UUID;
 
 
@@ -45,7 +46,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+import javax.validation.constraints.*;
+import javax.validation.Valid;
+
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class InventoriesApi extends BaseApi {
 
@@ -68,7 +72,7 @@ public class InventoriesApi extends BaseApi {
    * @return List&lt;ModelFile&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<ModelFile> addInventoryFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<ModelFile> addInventoryFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.addInventoryFiles(id, fileUpload, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -85,7 +89,7 @@ public class InventoriesApi extends BaseApi {
    * @return List&lt;ModelFile&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<ModelFile> addInventoryFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<ModelFile> addInventoryFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = fileUpload;
     
     // verify the required parameter 'id' is set
@@ -159,10 +163,10 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;CreateInventoriesBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateInventoriesBatch200ResponseInner> createInventoriesBatch(@javax.annotation.Nonnull List<Inventory> inventory, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<BatchResponseEntity> createInventoriesBatch(@javax.annotation.Nonnull List<@Valid Inventory> inventory, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createInventoriesBatch(inventory, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -177,10 +181,10 @@ if (contentType != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return List&lt;CreateInventoriesBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateInventoriesBatch200ResponseInner> createInventoriesBatch(@javax.annotation.Nonnull List<Inventory> inventory, RequestOptions options) throws ApiException {
+  public List<BatchResponseEntity> createInventoriesBatch(@javax.annotation.Nonnull List<@Valid Inventory> inventory, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createInventoriesBatch(inventory, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -195,10 +199,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;CreateInventoriesBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateInventoriesBatch200ResponseInner> createInventoriesBatch(@javax.annotation.Nonnull List<Inventory> inventory, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<BatchResponseEntity> createInventoriesBatch(@javax.annotation.Nonnull List<@Valid Inventory> inventory, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = inventory;
     
     // verify the required parameter 'inventory' is set
@@ -241,7 +245,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<CreateInventoriesBatch200ResponseInner>> localVarReturnType = new TypeReference<List<CreateInventoriesBatch200ResponseInner>>() {};
+    TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
@@ -540,6 +544,92 @@ if (contentType != null)
   }
 
   /**
+   * Массовое создание и обновление статусов Инвентаризации
+   * 
+   * @param state  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @return List&lt;StateRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<StateRowResult> createInventoryMetadataStatesBatch(@javax.annotation.Nonnull List<@Valid State> state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+    return this.createInventoryMetadataStatesBatch(state, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+
+  /**
+   * Массовое создание и обновление статусов Инвентаризации
+   * 
+   * @param state  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return List&lt;StateRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<StateRowResult> createInventoryMetadataStatesBatch(@javax.annotation.Nonnull List<@Valid State> state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = state;
+    
+    // verify the required parameter 'state' is set
+    if (state == null) {
+      throw new ApiException(400, "Missing the required parameter 'state' when calling createInventoryMetadataStatesBatch");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/inventory/metadata/states/batch";
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null)
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+if (acceptEncoding != null)
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+if (contentType != null)
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+
+    localVarHeaderParams.putAll(additionalHeaders);
+
+    
+    
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<List<StateRowResult>> localVarReturnType = new TypeReference<List<StateRowResult>>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
    * Создать и обновить позицию Инвентаризации
    * 
    * @param id ID сущности (required)
@@ -670,7 +760,7 @@ if (contentType != null)
    * @return List&lt;CreateInventoryPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateInventoryPositions200ResponseInner> createInventoryPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<InventoryPosition> inventoryPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<CreateInventoryPositions200ResponseInner> createInventoryPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid InventoryPosition> inventoryPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createInventoryPositions(id, inventoryPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -691,7 +781,7 @@ if (contentType != null)
    * @return List&lt;CreateInventoryPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateInventoryPositions200ResponseInner> createInventoryPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<InventoryPosition> inventoryPosition, RequestOptions options) throws ApiException {
+  public List<CreateInventoryPositions200ResponseInner> createInventoryPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid InventoryPosition> inventoryPosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createInventoryPositions(id, inventoryPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -710,7 +800,7 @@ if (contentType != null)
    * @return List&lt;CreateInventoryPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateInventoryPositions200ResponseInner> createInventoryPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<InventoryPosition> inventoryPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<CreateInventoryPositions200ResponseInner> createInventoryPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid InventoryPosition> inventoryPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = inventoryPosition;
     
     // verify the required parameter 'id' is set
@@ -784,10 +874,10 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deleteInventoriesBatch(@javax.annotation.Nonnull List<Inventory> inventory, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<DeleteRowResult> deleteInventoriesBatch(@javax.annotation.Nonnull List<@Valid Inventory> inventory, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.deleteInventoriesBatch(inventory, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -800,10 +890,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deleteInventoriesBatch(@javax.annotation.Nonnull List<Inventory> inventory, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<DeleteRowResult> deleteInventoriesBatch(@javax.annotation.Nonnull List<@Valid Inventory> inventory, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = inventory;
     
     // verify the required parameter 'inventory' is set
@@ -845,7 +935,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<DeleteContractsBatch200ResponseInner>> localVarReturnType = new TypeReference<List<DeleteContractsBatch200ResponseInner>>() {};
+    TypeReference<List<DeleteRowResult>> localVarReturnType = new TypeReference<List<DeleteRowResult>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
@@ -1287,10 +1377,10 @@ if (acceptEncoding != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deleteInventoryPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<InventoryPosition> inventoryPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<DeleteRowResult> deleteInventoryPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid InventoryPosition> inventoryPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.deleteInventoryPositionsBatch(id, inventoryPosition, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -1304,10 +1394,10 @@ if (acceptEncoding != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deleteInventoryPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<InventoryPosition> inventoryPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<DeleteRowResult> deleteInventoryPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid InventoryPosition> inventoryPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = inventoryPosition;
     
     // verify the required parameter 'id' is set
@@ -1355,7 +1445,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<DeleteContractsBatch200ResponseInner>> localVarReturnType = new TypeReference<List<DeleteContractsBatch200ResponseInner>>() {};
+    TypeReference<List<DeleteRowResult>> localVarReturnType = new TypeReference<List<DeleteRowResult>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

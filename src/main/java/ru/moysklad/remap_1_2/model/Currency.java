@@ -26,6 +26,8 @@ import ru.moysklad.remap_1_2.model.CurrencyMinorUnit;
 import ru.moysklad.remap_1_2.model.Meta;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -51,8 +53,8 @@ import java.util.StringJoiner;
   Currency.JSON_PROPERTY_MAJOR_UNIT,
   Currency.JSON_PROPERTY_MINOR_UNIT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
-public class Currency {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
+public class Currency extends EntityWithMeta {
   public static Currency createWithMeta(UUID id) {
     Currency o = new Currency();
     Meta meta = new Meta();
@@ -159,6 +161,9 @@ public class Currency {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -181,6 +186,9 @@ public class Currency {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -197,6 +205,8 @@ public class Currency {
    * @return system
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SYSTEM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -220,6 +230,8 @@ public class Currency {
    * @return name
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -249,6 +261,8 @@ public class Currency {
    * @return fullName
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_FULL_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -278,6 +292,8 @@ public class Currency {
    * @return code
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -307,6 +323,8 @@ public class Currency {
    * @return isoCode
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_ISO_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -336,6 +354,8 @@ public class Currency {
    * @return multiplicity
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_MULTIPLICITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -365,6 +385,8 @@ public class Currency {
    * @return rate
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -394,6 +416,8 @@ public class Currency {
    * @return margin
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_MARGIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -423,6 +447,8 @@ public class Currency {
    * @return indirect
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_INDIRECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -452,6 +478,8 @@ public class Currency {
    * @return rateUpdateType
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_RATE_UPDATE_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -481,6 +509,8 @@ public class Currency {
    * @return archived
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -510,6 +540,8 @@ public class Currency {
    * @return _default
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_DEFAULT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -539,6 +571,9 @@ public class Currency {
    * @return majorUnit
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_MAJOR_UNIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -568,6 +603,9 @@ public class Currency {
    * @return minorUnit
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_MINOR_UNIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

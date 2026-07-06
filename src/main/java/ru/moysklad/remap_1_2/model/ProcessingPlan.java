@@ -39,6 +39,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -68,8 +70,8 @@ import java.util.StringJoiner;
   ProcessingPlan.JSON_PROPERTY_PRODUCTS,
   ProcessingPlan.JSON_PROPERTY_ATTRIBUTES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
-public class ProcessingPlan {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
+public class ProcessingPlan extends EntityWithMeta {
   public static ProcessingPlan createWithMeta(UUID id) {
     ProcessingPlan o = new ProcessingPlan();
     Meta meta = new Meta();
@@ -163,7 +165,7 @@ public class ProcessingPlan {
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
-  private JsonNullable<List<AttributeAbstract>> attributes = JsonNullable.<List<AttributeAbstract>>undefined();
+  private JsonNullable<List<@Valid AttributeAbstract>> attributes = JsonNullable.<List<@Valid AttributeAbstract>>undefined();
 
   public ProcessingPlan() {
   }
@@ -198,6 +200,9 @@ public class ProcessingPlan {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -220,6 +225,9 @@ public class ProcessingPlan {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -236,6 +244,9 @@ public class ProcessingPlan {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -259,6 +270,8 @@ public class ProcessingPlan {
    * @return archived
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -288,6 +301,8 @@ public class ProcessingPlan {
    * @return code
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -317,6 +332,8 @@ public class ProcessingPlan {
    * @return cost
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_COST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -339,6 +356,8 @@ public class ProcessingPlan {
    * @return costDistributionType
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_COST_DISTRIBUTION_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -362,6 +381,8 @@ public class ProcessingPlan {
    * @return externalCode
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -391,6 +412,9 @@ public class ProcessingPlan {
    * @return group
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -420,6 +444,8 @@ public class ProcessingPlan {
    * @return name
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -449,6 +475,9 @@ public class ProcessingPlan {
    * @return owner
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Employee getOwner() {
@@ -487,6 +516,9 @@ public class ProcessingPlan {
    * @return parent
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_PARENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -509,6 +541,8 @@ public class ProcessingPlan {
    * @return pathName
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PATH_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -532,6 +566,9 @@ public class ProcessingPlan {
    * @return processingProcess
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_PROCESSING_PROCESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -561,6 +598,8 @@ public class ProcessingPlan {
    * @return shared
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -583,6 +622,8 @@ public class ProcessingPlan {
    * @return updated
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -606,6 +647,9 @@ public class ProcessingPlan {
    * @return stages
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_STAGES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -635,6 +679,9 @@ public class ProcessingPlan {
    * @return materials
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_MATERIALS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -664,6 +711,9 @@ public class ProcessingPlan {
    * @return products
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_PRODUCTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -681,8 +731,8 @@ public class ProcessingPlan {
   }
 
 
-  public ProcessingPlan attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
+  public ProcessingPlan attributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
     
     return this;
   }
@@ -690,7 +740,7 @@ public class ProcessingPlan {
 
   public ProcessingPlan addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
-      this.attributes = JsonNullable.<List<AttributeAbstract>>of(new ArrayList<>());
+      this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(new ArrayList<>());
     }
     try {
       this.attributes.get().add(attributesItem);
@@ -705,9 +755,12 @@ public class ProcessingPlan {
    * @return attributes
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
-  public List<AttributeAbstract> getAttributes() {
+  public List<@Valid AttributeAbstract> getAttributes() {
         return attributes.orElse(null);
   }
 
@@ -717,17 +770,17 @@ public class ProcessingPlan {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
+  public JsonNullable<List<@Valid AttributeAbstract>> getAttributes_JsonNullable() {
     return attributes;
   }
   
   @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
-  public void setAttributes_JsonNullable(JsonNullable<List<AttributeAbstract>> attributes) {
+  public void setAttributes_JsonNullable(JsonNullable<List<@Valid AttributeAbstract>> attributes) {
     this.attributes = attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
+  public void setAttributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
   }
 
 

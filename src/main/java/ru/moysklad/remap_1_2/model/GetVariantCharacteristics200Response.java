@@ -27,6 +27,8 @@ import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.VariantCharacteristic;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -39,7 +41,7 @@ import java.util.StringJoiner;
   GetVariantCharacteristics200Response.JSON_PROPERTY_ROWS
 })
 @JsonTypeName("getVariantCharacteristics_200_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class GetVariantCharacteristics200Response {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -48,7 +50,7 @@ public class GetVariantCharacteristics200Response {
 
   public static final String JSON_PROPERTY_ROWS = "rows";
   @javax.annotation.Nullable
-  private List<VariantCharacteristic> rows = new ArrayList<>();
+  private List<@Valid VariantCharacteristic> rows = new ArrayList<>();
 
   public GetVariantCharacteristics200Response() {
   }
@@ -65,6 +67,9 @@ public class GetVariantCharacteristics200Response {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -82,7 +87,7 @@ public class GetVariantCharacteristics200Response {
   }
 
 
-  public GetVariantCharacteristics200Response rows(@javax.annotation.Nullable List<VariantCharacteristic> rows) {
+  public GetVariantCharacteristics200Response rows(@javax.annotation.Nullable List<@Valid VariantCharacteristic> rows) {
     
     this.rows = rows;
     return this;
@@ -102,10 +107,13 @@ public class GetVariantCharacteristics200Response {
    * @return rows
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ROWS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<VariantCharacteristic> getRows() {
+  public List<@Valid VariantCharacteristic> getRows() {
     return rows;
   }
 
@@ -114,7 +122,7 @@ public class GetVariantCharacteristics200Response {
 
   @JsonProperty(JSON_PROPERTY_ROWS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRows(@javax.annotation.Nullable List<VariantCharacteristic> rows) {
+  public void setRows(@javax.annotation.Nullable List<@Valid VariantCharacteristic> rows) {
     this.rows = rows;
   }
 

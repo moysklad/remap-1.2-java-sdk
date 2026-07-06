@@ -25,6 +25,8 @@ import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.ProcessingProcessPosition;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -43,7 +45,7 @@ import java.util.StringJoiner;
   ProcessingPlanStage.JSON_PROPERTY_STANDARD_HOUR_COST,
   ProcessingPlanStage.JSON_PROPERTY_PROCESSING_PROCESS_POSITION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingPlanStage {
   public static ProcessingPlanStage createWithMeta(UUID parentId, UUID id) {
     ProcessingPlanStage o = new ProcessingPlanStage();
@@ -125,6 +127,9 @@ public class ProcessingPlanStage {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -147,6 +152,9 @@ public class ProcessingPlanStage {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -163,6 +171,9 @@ public class ProcessingPlanStage {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -186,6 +197,8 @@ public class ProcessingPlanStage {
    * @return enableHourAccounting
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_ENABLE_HOUR_ACCOUNTING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -216,6 +229,8 @@ public class ProcessingPlanStage {
    * @return cost
    */
   @javax.annotation.Nullable
+ @DecimalMin("0")
+
   @JsonProperty(JSON_PROPERTY_COST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -246,6 +261,8 @@ public class ProcessingPlanStage {
    * @return labourCost
    */
   @javax.annotation.Nullable
+ @DecimalMin("0")
+
   @JsonProperty(JSON_PROPERTY_LABOUR_COST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -276,6 +293,8 @@ public class ProcessingPlanStage {
    * @return standardHour
    */
   @javax.annotation.Nullable
+ @DecimalMin("0")
+
   @JsonProperty(JSON_PROPERTY_STANDARD_HOUR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -298,6 +317,8 @@ public class ProcessingPlanStage {
    * @return standardHourCost
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_STANDARD_HOUR_COST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -321,6 +342,9 @@ public class ProcessingPlanStage {
    * @return processingProcessPosition
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_PROCESSING_PROCESS_POSITION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

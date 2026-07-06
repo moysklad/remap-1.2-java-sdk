@@ -61,7 +61,7 @@ public class Example {
 
         OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
         Organization organization = new Organization(); // Organization | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -196,7 +196,7 @@ public class Example {
 
 ## createOrganizationsBatch
 
-> List&lt;CreateOrganizationsBatch200ResponseInner&gt; createOrganizationsBatch(organization, expand, accept, acceptEncoding, contentType)
+> List&lt;BatchResponseEntity&gt; createOrganizationsBatch(organization, expand, accept, acceptEncoding, contentType)
 
 Создать или изменить юрлица
 
@@ -228,13 +228,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-        List<Organization> organization = Arrays.asList(); // List<Organization> | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        List<@Valid Organization> organization = Arrays.asList(); // List<@Valid Organization> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateOrganizationsBatch200ResponseInner> result = apiInstance.createOrganizationsBatch(organization, expand, accept, acceptEncoding, contentType);
+            List<BatchResponseEntity> result = apiInstance.createOrganizationsBatch(organization, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling OrganizationsApi#createOrganizationsBatch");
@@ -252,7 +252,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **organization** | [**List&lt;Organization&gt;**](Organization.md)|  | |
+| **organization** | [**List&lt;@Valid Organization&gt;**](Organization.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -260,7 +260,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreateOrganizationsBatch200ResponseInner&gt;**](CreateOrganizationsBatch200ResponseInner.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -313,7 +313,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -393,7 +393,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID accountId = UUID.randomUUID(); // UUID | ID счёта юрлица
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -443,7 +443,7 @@ null (empty response body)
 
 ## deleteOrganizationAccountsBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteOrganizationAccountsBatch(id, account, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteOrganizationAccountsBatch(id, account, accept, acceptEncoding, contentType)
 
 Удалить счета юрлица
 
@@ -475,13 +475,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<Account> account = Arrays.asList(); // List<Account> | 
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid Account> account = Arrays.asList(); // List<@Valid Account> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteOrganizationAccountsBatch(id, account, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteOrganizationAccountsBatch(id, account, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling OrganizationsApi#deleteOrganizationAccountsBatch");
@@ -500,14 +500,14 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **account** | [**List&lt;Account&gt;**](Account.md)|  | |
+| **account** | [**List&lt;@Valid Account&gt;**](Account.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -558,7 +558,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -606,7 +606,7 @@ null (empty response body)
 
 ## deleteOrganizationsBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteOrganizationsBatch(organization, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteOrganizationsBatch(organization, accept, acceptEncoding, contentType)
 
 Удалить юрлица
 
@@ -638,12 +638,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-        List<Organization> organization = Arrays.asList(); // List<Organization> | 
+        List<@Valid Organization> organization = Arrays.asList(); // List<@Valid Organization> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteOrganizationsBatch(organization, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteOrganizationsBatch(organization, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling OrganizationsApi#deleteOrganizationsBatch");
@@ -661,14 +661,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **organization** | [**List&lt;Organization&gt;**](Organization.md)|  | |
+| **organization** | [**List&lt;@Valid Organization&gt;**](Organization.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -721,9 +721,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID accountId = UUID.randomUUID(); // UUID | ID счёта юрлица
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -806,7 +806,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
         String accept = "application/json"; // String | 
@@ -891,8 +891,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -974,7 +974,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1055,7 +1055,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1221,10 +1221,10 @@ public class Example {
         OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String search = "name=123"; // String | Контекстный поиск по строковым полям сущностей
-        String filter = "archived=false"; // String | Фильтрация выборки
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
-        String order = "name"; // String | Сортировка
+        String search = "search_example"; // String | Контекстный поиск по строковым полям сущностей
+        String filter = "filter_example"; // String | Фильтрация выборки
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
+        String order = "order_example"; // String | Сортировка
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1310,9 +1310,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Organization organization = new Organization(); // Organization | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1397,10 +1397,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID accountId = UUID.randomUUID(); // UUID | ID счёта юрлица
         Account account = new Account(); // Account | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1486,7 +1486,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Account account = new Account(); // Account | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1569,7 +1569,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         AttributeMetaInfo attributeMetaInfo = new AttributeMetaInfo(); // AttributeMetaInfo | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 

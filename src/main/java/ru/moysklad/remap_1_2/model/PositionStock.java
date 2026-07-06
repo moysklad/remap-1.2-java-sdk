@@ -22,6 +22,8 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -36,7 +38,7 @@ import java.util.StringJoiner;
   PositionStock.JSON_PROPERTY_INTRANSIT,
   PositionStock.JSON_PROPERTY_AVAILABLE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class PositionStock {
 
   public static final String JSON_PROPERTY_COST = "cost";
@@ -74,6 +76,8 @@ public class PositionStock {
    * @return cost
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_COST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -103,6 +107,8 @@ public class PositionStock {
    * @return quantity
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -132,6 +138,8 @@ public class PositionStock {
    * @return reserve
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_RESERVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -161,6 +169,8 @@ public class PositionStock {
    * @return intransit
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_INTRANSIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -190,6 +200,8 @@ public class PositionStock {
    * @return available
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_AVAILABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

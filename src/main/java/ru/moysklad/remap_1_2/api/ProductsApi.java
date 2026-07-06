@@ -21,9 +21,9 @@ import ru.moysklad.remap_1_2.Configuration;
 import ru.moysklad.remap_1_2.Pair;
 
 import ru.moysklad.remap_1_2.model.AddProductImagesRequest;
-import ru.moysklad.remap_1_2.model.CreateProductsBatch200ResponseInner;
-import ru.moysklad.remap_1_2.model.DeleteContractsBatch200ResponseInner;
+import ru.moysklad.remap_1_2.model.BatchResponseEntity;
 import ru.moysklad.remap_1_2.model.DeleteProductImagesRequestInner;
+import ru.moysklad.remap_1_2.model.DeleteRowResult;
 import ru.moysklad.remap_1_2.model.ErrorOrArray;
 import ru.moysklad.remap_1_2.model.FileUpload;
 import ru.moysklad.remap_1_2.model.GetProductFiles200Response;
@@ -45,7 +45,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+import javax.validation.constraints.*;
+import javax.validation.Valid;
+
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ProductsApi extends BaseApi {
 
@@ -68,7 +71,7 @@ public class ProductsApi extends BaseApi {
    * @return List&lt;ModelFile&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<ModelFile> addProductFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<ModelFile> addProductFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.addProductFiles(id, fileUpload, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -85,7 +88,7 @@ public class ProductsApi extends BaseApi {
    * @return List&lt;ModelFile&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<ModelFile> addProductFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<ModelFile> addProductFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = fileUpload;
     
     // verify the required parameter 'id' is set
@@ -455,10 +458,10 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;CreateProductsBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateProductsBatch200ResponseInner> createProductsBatch(@javax.annotation.Nonnull List<Product> product, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<BatchResponseEntity> createProductsBatch(@javax.annotation.Nonnull List<@Valid Product> product, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createProductsBatch(product, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -473,10 +476,10 @@ if (contentType != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return List&lt;CreateProductsBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateProductsBatch200ResponseInner> createProductsBatch(@javax.annotation.Nonnull List<Product> product, RequestOptions options) throws ApiException {
+  public List<BatchResponseEntity> createProductsBatch(@javax.annotation.Nonnull List<@Valid Product> product, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createProductsBatch(product, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -491,10 +494,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;CreateProductsBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateProductsBatch200ResponseInner> createProductsBatch(@javax.annotation.Nonnull List<Product> product, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<BatchResponseEntity> createProductsBatch(@javax.annotation.Nonnull List<@Valid Product> product, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = product;
     
     // verify the required parameter 'product' is set
@@ -537,7 +540,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<CreateProductsBatch200ResponseInner>> localVarReturnType = new TypeReference<List<CreateProductsBatch200ResponseInner>>() {};
+    TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
@@ -821,7 +824,7 @@ if (acceptEncoding != null)
    * @param contentType  (optional, default to application/json)
    * @throws ApiException if fails to make API call
    */
-  public void deleteProductImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<DeleteProductImagesRequestInner> deleteProductImagesRequestInner, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public void deleteProductImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid DeleteProductImagesRequestInner> deleteProductImagesRequestInner, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     this.deleteProductImages(id, deleteProductImagesRequestInner, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -837,7 +840,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteProductImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<DeleteProductImagesRequestInner> deleteProductImagesRequestInner, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public void deleteProductImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid DeleteProductImagesRequestInner> deleteProductImagesRequestInner, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = deleteProductImagesRequestInner;
     
     // verify the required parameter 'id' is set
@@ -1000,7 +1003,7 @@ if (acceptEncoding != null)
    * @param contentType  (optional, default to application/json)
    * @throws ApiException if fails to make API call
    */
-  public void deleteProductStoreBalances(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<DeleteProductImagesRequestInner> deleteProductImagesRequestInner, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public void deleteProductStoreBalances(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid DeleteProductImagesRequestInner> deleteProductImagesRequestInner, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     this.deleteProductStoreBalances(id, deleteProductImagesRequestInner, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -1016,7 +1019,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteProductStoreBalances(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<DeleteProductImagesRequestInner> deleteProductImagesRequestInner, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public void deleteProductStoreBalances(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid DeleteProductImagesRequestInner> deleteProductImagesRequestInner, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = deleteProductImagesRequestInner;
     
     // verify the required parameter 'id' is set
@@ -1088,10 +1091,10 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deleteProductsBatch(@javax.annotation.Nonnull List<Product> product, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<DeleteRowResult> deleteProductsBatch(@javax.annotation.Nonnull List<@Valid Product> product, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.deleteProductsBatch(product, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -1104,10 +1107,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deleteProductsBatch(@javax.annotation.Nonnull List<Product> product, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<DeleteRowResult> deleteProductsBatch(@javax.annotation.Nonnull List<@Valid Product> product, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = product;
     
     // verify the required parameter 'product' is set
@@ -1149,7 +1152,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<DeleteContractsBatch200ResponseInner>> localVarReturnType = new TypeReference<List<DeleteContractsBatch200ResponseInner>>() {};
+    TypeReference<List<DeleteRowResult>> localVarReturnType = new TypeReference<List<DeleteRowResult>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

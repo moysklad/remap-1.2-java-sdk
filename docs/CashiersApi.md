@@ -42,8 +42,8 @@ public class Example {
 
         CashiersApi apiInstance = new CashiersApi(defaultClient);
         UUID retailStoreId = UUID.randomUUID(); // UUID | 
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -127,10 +127,10 @@ public class Example {
         UUID retailStoreId = UUID.randomUUID(); // UUID | 
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String search = "name=123"; // String | Контекстный поиск по строковым полям сущностей
-        String filter = "archived=false"; // String | Фильтрация выборки
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
-        String order = "name"; // String | Сортировка
+        String search = "search_example"; // String | Контекстный поиск по строковым полям сущностей
+        String filter = "filter_example"; // String | Фильтрация выборки
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
+        String order = "order_example"; // String | Сортировка
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {

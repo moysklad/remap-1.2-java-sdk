@@ -133,9 +133,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CustomEntitiesApi apiInstance = new CustomEntitiesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         CustomEntityElement customEntityElement = new CustomEntityElement(); // CustomEntityElement | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -220,7 +220,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CustomEntitiesApi apiInstance = new CustomEntitiesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -386,7 +386,7 @@ public class Example {
         UUID id = UUID.randomUUID(); // UUID | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         try {
             CustomEntityElement result = apiInstance.getCustomEntityElementById(metadataId, id, accept, acceptEncoding, expand);
             System.out.println(result);
@@ -467,8 +467,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CustomEntitiesApi apiInstance = new CustomEntitiesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -550,10 +550,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CustomEntitiesApi apiInstance = new CustomEntitiesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         try {
             CustomEntityMetadata result = apiInstance.getCustomEntityMetadata(id, accept, acceptEncoding, expand);
             System.out.println(result);
@@ -633,9 +633,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CustomEntitiesApi apiInstance = new CustomEntitiesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         CustomEntity customEntity = new CustomEntity(); // CustomEntity | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -726,7 +726,7 @@ public class Example {
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         try {
             CustomEntityElement result = apiInstance.updateCustomEntityElement(metadataId, id, customEntityElement, accept, acceptEncoding, contentType, expand);
             System.out.println(result);

@@ -27,6 +27,8 @@ import ru.moysklad.remap_1_2.model.EmployeeRole;
 import ru.moysklad.remap_1_2.model.EmployeeSecurityGroup;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -44,7 +46,7 @@ import java.util.StringJoiner;
   EmployeeSecurity.JSON_PROPERTY_AUTHORIZED_IP_NETMASK,
   EmployeeSecurity.JSON_PROPERTY_ROLE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class EmployeeSecurity {
 
   public static final String JSON_PROPERTY_IS_ACTIVE = "isActive";
@@ -94,6 +96,8 @@ public class EmployeeSecurity {
    * @return isActive
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_IS_ACTIVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -123,6 +127,8 @@ public class EmployeeSecurity {
    * @return login
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_LOGIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -152,6 +158,8 @@ public class EmployeeSecurity {
    * @return email
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -181,6 +189,9 @@ public class EmployeeSecurity {
    * @return group
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -218,6 +229,8 @@ public class EmployeeSecurity {
    * @return authorizedHosts
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_AUTHORIZED_HOSTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -247,6 +260,8 @@ public class EmployeeSecurity {
    * @return authorizedIpNetwork
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_AUTHORIZED_IP_NETWORK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -276,6 +291,8 @@ public class EmployeeSecurity {
    * @return authorizedIpNetmask
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_AUTHORIZED_IP_NETMASK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -305,6 +322,9 @@ public class EmployeeSecurity {
    * @return role
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ROLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

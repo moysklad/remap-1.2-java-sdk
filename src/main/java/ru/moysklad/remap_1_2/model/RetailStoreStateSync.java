@@ -22,6 +22,8 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -34,7 +36,7 @@ import java.util.StringJoiner;
   RetailStoreStateSync.JSON_PROPERTY_LAST_ATTEMP_MOMENT
 })
 @JsonTypeName("RetailStore_state_sync")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStoreStateSync {
 
   public static final String JSON_PROPERTY_MESSAGE = "message";
@@ -60,6 +62,8 @@ public class RetailStoreStateSync {
    * @return message
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -89,6 +93,8 @@ public class RetailStoreStateSync {
    * @return lastAttempMoment
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_LAST_ATTEMP_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

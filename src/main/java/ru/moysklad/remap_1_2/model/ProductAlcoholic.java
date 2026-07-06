@@ -26,6 +26,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -40,7 +42,7 @@ import java.util.StringJoiner;
   ProductAlcoholic.JSON_PROPERTY_VOLUME
 })
 @JsonTypeName("Product_alcoholic")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProductAlcoholic {
 
   public static final String JSON_PROPERTY_EXCISE = "excise";
@@ -74,6 +76,8 @@ public class ProductAlcoholic {
    * @return excise
    */
   @javax.annotation.Nullable
+
+
   @JsonIgnore
 
   public Boolean getExcise() {
@@ -113,6 +117,8 @@ public class ProductAlcoholic {
    * @return type
    */
   @javax.annotation.Nullable
+ @Min(0)
+
   @JsonIgnore
 
   public Integer getType() {
@@ -152,6 +158,8 @@ public class ProductAlcoholic {
    * @return strength
    */
   @javax.annotation.Nullable
+ @DecimalMin("0")
+
   @JsonIgnore
 
   public Float getStrength() {
@@ -191,6 +199,8 @@ public class ProductAlcoholic {
    * @return volume
    */
   @javax.annotation.Nullable
+ @DecimalMin("0")
+
   @JsonIgnore
 
   public Float getVolume() {

@@ -32,6 +32,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -44,7 +46,7 @@ import java.util.StringJoiner;
   CommissionReportOutPositionList.JSON_PROPERTY_META,
   CommissionReportOutPositionList.JSON_PROPERTY_ROWS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class CommissionReportOutPositionList {
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
@@ -57,7 +59,7 @@ public class CommissionReportOutPositionList {
 
   public static final String JSON_PROPERTY_ROWS = "rows";
   @javax.annotation.Nullable
-  private JsonNullable<List<CommissionReportOutPosition>> rows = JsonNullable.<List<CommissionReportOutPosition>>undefined();
+  private JsonNullable<List<@Valid CommissionReportOutPosition>> rows = JsonNullable.<List<@Valid CommissionReportOutPosition>>undefined();
 
   public CommissionReportOutPositionList() {
   }
@@ -74,6 +76,9 @@ public class CommissionReportOutPositionList {
    * @return context
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_CONTEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -103,6 +108,9 @@ public class CommissionReportOutPositionList {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -120,8 +128,8 @@ public class CommissionReportOutPositionList {
   }
 
 
-  public CommissionReportOutPositionList rows(@javax.annotation.Nullable List<CommissionReportOutPosition> rows) {
-    this.rows = JsonNullable.<List<CommissionReportOutPosition>>of(rows);
+  public CommissionReportOutPositionList rows(@javax.annotation.Nullable List<@Valid CommissionReportOutPosition> rows) {
+    this.rows = JsonNullable.<List<@Valid CommissionReportOutPosition>>of(rows);
     
     return this;
   }
@@ -129,7 +137,7 @@ public class CommissionReportOutPositionList {
 
   public CommissionReportOutPositionList addRowsItem(CommissionReportOutPosition rowsItem) {
     if (this.rows == null || !this.rows.isPresent()) {
-      this.rows = JsonNullable.<List<CommissionReportOutPosition>>of(new ArrayList<>());
+      this.rows = JsonNullable.<List<@Valid CommissionReportOutPosition>>of(new ArrayList<>());
     }
     try {
       this.rows.get().add(rowsItem);
@@ -144,9 +152,12 @@ public class CommissionReportOutPositionList {
    * @return rows
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
-  public List<CommissionReportOutPosition> getRows() {
+  public List<@Valid CommissionReportOutPosition> getRows() {
         return rows.orElse(null);
   }
 
@@ -156,17 +167,17 @@ public class CommissionReportOutPositionList {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<CommissionReportOutPosition>> getRows_JsonNullable() {
+  public JsonNullable<List<@Valid CommissionReportOutPosition>> getRows_JsonNullable() {
     return rows;
   }
   
   @JsonProperty(value = JSON_PROPERTY_ROWS, required = false)
-  public void setRows_JsonNullable(JsonNullable<List<CommissionReportOutPosition>> rows) {
+  public void setRows_JsonNullable(JsonNullable<List<@Valid CommissionReportOutPosition>> rows) {
     this.rows = rows;
   }
 
-  public void setRows(@javax.annotation.Nullable List<CommissionReportOutPosition> rows) {
-    this.rows = JsonNullable.<List<CommissionReportOutPosition>>of(rows);
+  public void setRows(@javax.annotation.Nullable List<@Valid CommissionReportOutPosition> rows) {
+    this.rows = JsonNullable.<List<@Valid CommissionReportOutPosition>>of(rows);
   }
 
 

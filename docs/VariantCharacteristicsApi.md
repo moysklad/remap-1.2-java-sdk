@@ -121,7 +121,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         VariantCharacteristicsApi apiInstance = new VariantCharacteristicsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {

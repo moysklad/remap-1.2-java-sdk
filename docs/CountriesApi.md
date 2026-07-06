@@ -16,7 +16,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 
 ## createCountriesBatch
 
-> List&lt;CreateCountriesBatch200ResponseInner&gt; createCountriesBatch(country, expand, accept, acceptEncoding, contentType)
+> List&lt;BatchResponseEntity&gt; createCountriesBatch(country, expand, accept, acceptEncoding, contentType)
 
 Создать или изменить страны
 
@@ -48,13 +48,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CountriesApi apiInstance = new CountriesApi(defaultClient);
-        List<Country> country = Arrays.asList(); // List<Country> | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        List<@Valid Country> country = Arrays.asList(); // List<@Valid Country> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateCountriesBatch200ResponseInner> result = apiInstance.createCountriesBatch(country, expand, accept, acceptEncoding, contentType);
+            List<BatchResponseEntity> result = apiInstance.createCountriesBatch(country, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CountriesApi#createCountriesBatch");
@@ -72,7 +72,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **country** | [**List&lt;Country&gt;**](Country.md)|  | |
+| **country** | [**List&lt;@Valid Country&gt;**](Country.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -80,7 +80,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreateCountriesBatch200ResponseInner&gt;**](CreateCountriesBatch200ResponseInner.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -134,7 +134,7 @@ public class Example {
 
         CountriesApi apiInstance = new CountriesApi(defaultClient);
         Country country = new Country(); // Country | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -186,7 +186,7 @@ public class Example {
 
 ## deleteCountriesBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteCountriesBatch(country, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteCountriesBatch(country, accept, acceptEncoding, contentType)
 
 Удалить страны
 
@@ -218,12 +218,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CountriesApi apiInstance = new CountriesApi(defaultClient);
-        List<Country> country = Arrays.asList(); // List<Country> | 
+        List<@Valid Country> country = Arrays.asList(); // List<@Valid Country> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteCountriesBatch(country, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteCountriesBatch(country, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CountriesApi#deleteCountriesBatch");
@@ -241,14 +241,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **country** | [**List&lt;Country&gt;**](Country.md)|  | |
+| **country** | [**List&lt;@Valid Country&gt;**](Country.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -301,7 +301,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CountriesApi apiInstance = new CountriesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -383,10 +383,10 @@ public class Example {
         CountriesApi apiInstance = new CountriesApi(defaultClient);
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String search = "name=123"; // String | Контекстный поиск по строковым полям сущностей
-        String filter = "archived=false"; // String | Фильтрация выборки
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
-        String order = "name"; // String | Сортировка
+        String search = "search_example"; // String | Контекстный поиск по строковым полям сущностей
+        String filter = "filter_example"; // String | Фильтрация выборки
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
+        String order = "order_example"; // String | Сортировка
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -472,8 +472,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CountriesApi apiInstance = new CountriesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -555,9 +555,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CountriesApi apiInstance = new CountriesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Country country = new Country(); // Country | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 

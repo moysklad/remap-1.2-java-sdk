@@ -24,6 +24,8 @@ import ru.moysklad.remap_1_2.model.Country;
 import ru.moysklad.remap_1_2.model.Region;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -42,7 +44,7 @@ import java.util.StringJoiner;
   Address.JSON_PROPERTY_REGION,
   Address.JSON_PROPERTY_STREET
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class Address {
 
   public static final String JSON_PROPERTY_ADD_INFO = "addInfo";
@@ -96,6 +98,8 @@ public class Address {
    * @return addInfo
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_ADD_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -125,6 +129,8 @@ public class Address {
    * @return apartment
    */
   @javax.annotation.Nullable
+ @Size(max=30)
+
   @JsonProperty(JSON_PROPERTY_APARTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -154,6 +160,8 @@ public class Address {
    * @return city
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_CITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -183,6 +191,8 @@ public class Address {
    * @return comment
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_COMMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -212,6 +222,9 @@ public class Address {
    * @return country
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_COUNTRY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -241,6 +254,8 @@ public class Address {
    * @return house
    */
   @javax.annotation.Nullable
+ @Size(max=30)
+
   @JsonProperty(JSON_PROPERTY_HOUSE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -270,6 +285,8 @@ public class Address {
    * @return postalCode
    */
   @javax.annotation.Nullable
+ @Size(max=6)
+
   @JsonProperty(JSON_PROPERTY_POSTAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -299,6 +316,9 @@ public class Address {
    * @return region
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_REGION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -328,6 +348,8 @@ public class Address {
    * @return street
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_STREET)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

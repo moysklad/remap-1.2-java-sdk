@@ -36,6 +36,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -71,8 +73,8 @@ import java.util.StringJoiner;
   Employee.JSON_PROPERTY_IMAGE,
   Employee.JSON_PROPERTY_ATTRIBUTES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
-public class Employee {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
+public class Employee extends EntityWithMeta {
   public static Employee createWithMeta(UUID id) {
     Employee o = new Employee();
     Meta meta = new Meta();
@@ -190,7 +192,7 @@ public class Employee {
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
-  private JsonNullable<List<AttributeAbstract>> attributes = JsonNullable.<List<AttributeAbstract>>undefined();
+  private JsonNullable<List<@Valid AttributeAbstract>> attributes = JsonNullable.<List<@Valid AttributeAbstract>>undefined();
 
   public Employee() {
   }
@@ -233,6 +235,9 @@ public class Employee {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -255,6 +260,9 @@ public class Employee {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -271,6 +279,9 @@ public class Employee {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -287,6 +298,8 @@ public class Employee {
    * @return name
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -310,6 +323,8 @@ public class Employee {
    * @return externalCode
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -339,6 +354,8 @@ public class Employee {
    * @return archived
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -361,6 +378,8 @@ public class Employee {
    * @return created
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_CREATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -377,6 +396,8 @@ public class Employee {
    * @return updated
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -400,6 +421,8 @@ public class Employee {
    * @return description
    */
   @javax.annotation.Nullable
+ @Size(max=4096)
+
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -429,6 +452,8 @@ public class Employee {
    * @return email
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -458,6 +483,8 @@ public class Employee {
    * @return phone
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PHONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -487,6 +514,8 @@ public class Employee {
    * @return firstName
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_FIRST_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -516,6 +545,8 @@ public class Employee {
    * @return middleName
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_MIDDLE_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -545,6 +576,8 @@ public class Employee {
    * @return lastName
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_LAST_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -567,6 +600,8 @@ public class Employee {
    * @return fullName
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_FULL_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -583,6 +618,8 @@ public class Employee {
    * @return shortFio
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SHORT_FIO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -606,6 +643,8 @@ public class Employee {
    * @return shared
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -635,6 +674,9 @@ public class Employee {
    * @return group
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -664,6 +706,9 @@ public class Employee {
    * @return owner
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Employee getOwner() {
@@ -702,6 +747,8 @@ public class Employee {
    * @return inn
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_INN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -731,6 +778,8 @@ public class Employee {
    * @return position
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_POSITION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -753,6 +802,8 @@ public class Employee {
    * @return uid
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_UID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -776,6 +827,9 @@ public class Employee {
    * @return salary
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_SALARY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -798,6 +852,9 @@ public class Employee {
    * @return cashiers
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_CASHIERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -821,6 +878,9 @@ public class Employee {
    * @return image
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Image getImage() {
@@ -847,8 +907,8 @@ public class Employee {
   }
 
 
-  public Employee attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
+  public Employee attributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
     
     return this;
   }
@@ -856,7 +916,7 @@ public class Employee {
 
   public Employee addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
-      this.attributes = JsonNullable.<List<AttributeAbstract>>of(new ArrayList<>());
+      this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(new ArrayList<>());
     }
     try {
       this.attributes.get().add(attributesItem);
@@ -871,9 +931,12 @@ public class Employee {
    * @return attributes
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
-  public List<AttributeAbstract> getAttributes() {
+  public List<@Valid AttributeAbstract> getAttributes() {
         return attributes.orElse(null);
   }
 
@@ -883,17 +946,17 @@ public class Employee {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
+  public JsonNullable<List<@Valid AttributeAbstract>> getAttributes_JsonNullable() {
     return attributes;
   }
   
   @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
-  public void setAttributes_JsonNullable(JsonNullable<List<AttributeAbstract>> attributes) {
+  public void setAttributes_JsonNullable(JsonNullable<List<@Valid AttributeAbstract>> attributes) {
     this.attributes = attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
+  public void setAttributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
   }
 
 

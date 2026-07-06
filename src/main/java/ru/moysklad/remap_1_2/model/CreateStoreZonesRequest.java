@@ -26,6 +26,8 @@ import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.StoreZone;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -42,7 +44,7 @@ import java.util.StringJoiner;
   CreateStoreZonesRequest.JSON_PROPERTY_EXTERNAL_CODE
 })
 @JsonTypeName("createStoreZones_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateStoreZonesRequest {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -98,6 +100,9 @@ public class CreateStoreZonesRequest {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -120,6 +125,9 @@ public class CreateStoreZonesRequest {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -136,6 +144,9 @@ public class CreateStoreZonesRequest {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -152,6 +163,8 @@ public class CreateStoreZonesRequest {
    * @return updated
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -175,6 +188,8 @@ public class CreateStoreZonesRequest {
    * @return name
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -204,6 +219,8 @@ public class CreateStoreZonesRequest {
    * @return externalCode
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

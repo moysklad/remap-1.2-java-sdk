@@ -16,7 +16,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 
 ## createOrUpdateWebhooksBatch
 
-> List&lt;CreateOrUpdateWebhooksBatch200ResponseInner&gt; createOrUpdateWebhooksBatch(webhook, expand, accept, acceptEncoding, contentType)
+> List&lt;BatchResponseEntity&gt; createOrUpdateWebhooksBatch(webhook, expand, accept, acceptEncoding, contentType)
 
 Массовое создание и обновление вебхуков
 
@@ -48,13 +48,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-        List<Webhook> webhook = Arrays.asList(); // List<Webhook> | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        List<@Valid Webhook> webhook = Arrays.asList(); // List<@Valid Webhook> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateOrUpdateWebhooksBatch200ResponseInner> result = apiInstance.createOrUpdateWebhooksBatch(webhook, expand, accept, acceptEncoding, contentType);
+            List<BatchResponseEntity> result = apiInstance.createOrUpdateWebhooksBatch(webhook, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling WebhooksApi#createOrUpdateWebhooksBatch");
@@ -72,7 +72,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **webhook** | [**List&lt;Webhook&gt;**](Webhook.md)|  | |
+| **webhook** | [**List&lt;@Valid Webhook&gt;**](Webhook.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -80,7 +80,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreateOrUpdateWebhooksBatch200ResponseInner&gt;**](CreateOrUpdateWebhooksBatch200ResponseInner.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -134,7 +134,7 @@ public class Example {
 
         WebhooksApi apiInstance = new WebhooksApi(defaultClient);
         Webhook webhook = new Webhook(); // Webhook | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -218,7 +218,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -266,7 +266,7 @@ null (empty response body)
 
 ## deleteWebhooksBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteWebhooksBatch(webhook, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteWebhooksBatch(webhook, accept, acceptEncoding, contentType)
 
 Массовое удаление вебхуков
 
@@ -298,12 +298,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-        List<Webhook> webhook = Arrays.asList(); // List<Webhook> | 
+        List<@Valid Webhook> webhook = Arrays.asList(); // List<@Valid Webhook> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteWebhooksBatch(webhook, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteWebhooksBatch(webhook, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling WebhooksApi#deleteWebhooksBatch");
@@ -321,14 +321,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **webhook** | [**List&lt;Webhook&gt;**](Webhook.md)|  | |
+| **webhook** | [**List&lt;@Valid Webhook&gt;**](Webhook.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -381,8 +381,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -466,10 +466,10 @@ public class Example {
         WebhooksApi apiInstance = new WebhooksApi(defaultClient);
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String search = "name=123"; // String | Контекстный поиск по строковым полям сущностей
-        String filter = "archived=false"; // String | Фильтрация выборки
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
-        String order = "name"; // String | Сортировка
+        String search = "search_example"; // String | Контекстный поиск по строковым полям сущностей
+        String filter = "filter_example"; // String | Фильтрация выборки
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
+        String order = "order_example"; // String | Сортировка
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -555,9 +555,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Webhook webhook = new Webhook(); // Webhook | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 

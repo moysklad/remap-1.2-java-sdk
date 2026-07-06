@@ -55,7 +55,7 @@ public class Example {
         Bundle bundle = new Bundle(); // Bundle | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String contentType = "application/json"; // String | 
         try {
             Bundle result = apiInstance.createBundle(bundle, accept, acceptEncoding, expand, contentType);
@@ -135,11 +135,11 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         BundlesApi apiInstance = new BundlesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         CreateBundleComponentsRequest createBundleComponentsRequest = new CreateBundleComponentsRequest(); // CreateBundleComponentsRequest | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String contentType = "application/json"; // String | 
         try {
             List<BundleComponent> result = apiInstance.createBundleComponents(id, createBundleComponentsRequest, accept, acceptEncoding, expand, contentType);
@@ -190,7 +190,7 @@ public class Example {
 
 ## createBundlesBatch
 
-> List&lt;CreateBundlesBatch200ResponseInner&gt; createBundlesBatch(bundle, accept, acceptEncoding, expand, contentType)
+> List&lt;BatchResponseEntity&gt; createBundlesBatch(bundle, accept, acceptEncoding, expand, contentType)
 
 Массовое создание и обновление Комплектов
 
@@ -220,13 +220,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         BundlesApi apiInstance = new BundlesApi(defaultClient);
-        List<Bundle> bundle = Arrays.asList(); // List<Bundle> | 
+        List<@Valid Bundle> bundle = Arrays.asList(); // List<@Valid Bundle> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String contentType = "application/json"; // String | 
         try {
-            List<CreateBundlesBatch200ResponseInner> result = apiInstance.createBundlesBatch(bundle, accept, acceptEncoding, expand, contentType);
+            List<BatchResponseEntity> result = apiInstance.createBundlesBatch(bundle, accept, acceptEncoding, expand, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling BundlesApi#createBundlesBatch");
@@ -244,7 +244,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **bundle** | [**List&lt;Bundle&gt;**](Bundle.md)|  | |
+| **bundle** | [**List&lt;@Valid Bundle&gt;**](Bundle.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
@@ -252,7 +252,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreateBundlesBatch200ResponseInner&gt;**](CreateBundlesBatch200ResponseInner.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -303,7 +303,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         BundlesApi apiInstance = new BundlesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -381,7 +381,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         BundlesApi apiInstance = new BundlesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID componentId = UUID.randomUUID(); // UUID | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -461,8 +461,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         BundlesApi apiInstance = new BundlesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<BundleComponent> bundleComponent = Arrays.asList(); // List<BundleComponent> | 
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid BundleComponent> bundleComponent = Arrays.asList(); // List<@Valid BundleComponent> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -485,7 +485,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **bundleComponent** | [**List&lt;BundleComponent&gt;**](BundleComponent.md)|  | |
+| **bundleComponent** | [**List&lt;@Valid BundleComponent&gt;**](BundleComponent.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -513,7 +513,7 @@ null (empty response body)
 
 ## deleteBundlesBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteBundlesBatch(bundle, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteBundlesBatch(bundle, accept, acceptEncoding, contentType)
 
 Массовое удаление Комплектов
 
@@ -543,12 +543,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         BundlesApi apiInstance = new BundlesApi(defaultClient);
-        List<Bundle> bundle = Arrays.asList(); // List<Bundle> | 
+        List<@Valid Bundle> bundle = Arrays.asList(); // List<@Valid Bundle> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteBundlesBatch(bundle, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteBundlesBatch(bundle, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling BundlesApi#deleteBundlesBatch");
@@ -566,14 +566,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **bundle** | [**List&lt;Bundle&gt;**](Bundle.md)|  | |
+| **bundle** | [**List&lt;@Valid Bundle&gt;**](Bundle.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -624,8 +624,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         BundlesApi apiInstance = new BundlesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -705,9 +705,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         BundlesApi apiInstance = new BundlesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID componentId = UUID.randomUUID(); // UUID | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -788,13 +788,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         BundlesApi apiInstance = new BundlesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String search = "name=123"; // String | Контекстный поиск по строковым полям сущностей
-        String filter = "archived=false"; // String | Фильтрация выборки
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
-        String order = "name"; // String | Сортировка
+        String search = "search_example"; // String | Контекстный поиск по строковым полям сущностей
+        String filter = "filter_example"; // String | Фильтрация выборки
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
+        String order = "order_example"; // String | Сортировка
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -881,10 +881,10 @@ public class Example {
         BundlesApi apiInstance = new BundlesApi(defaultClient);
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String search = "name=123"; // String | Контекстный поиск по строковым полям сущностей
-        String filter = "archived=false"; // String | Фильтрация выборки
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
-        String order = "name"; // String | Сортировка
+        String search = "search_example"; // String | Контекстный поиск по строковым полям сущностей
+        String filter = "filter_example"; // String | Фильтрация выборки
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
+        String order = "order_example"; // String | Сортировка
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -968,9 +968,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         BundlesApi apiInstance = new BundlesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Bundle bundle = new Bundle(); // Bundle | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1053,10 +1053,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         BundlesApi apiInstance = new BundlesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID componentId = UUID.randomUUID(); // UUID | 
         BundleComponent bundleComponent = new BundleComponent(); // BundleComponent | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 

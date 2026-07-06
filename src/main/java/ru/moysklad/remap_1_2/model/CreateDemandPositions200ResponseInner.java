@@ -40,6 +40,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -68,7 +70,7 @@ import java.util.StringJoiner;
   CreateDemandPositions200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createDemandPositions_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateDemandPositions200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -93,7 +95,7 @@ public class CreateDemandPositions200ResponseInner {
 
   public static final String JSON_PROPERTY_DECLARATION = "declaration";
   @javax.annotation.Nullable
-  private List<DeclarationInner> declaration = new ArrayList<>();
+  private List<@Valid DeclarationInner> declaration = new ArrayList<>();
 
   public static final String JSON_PROPERTY_DISCOUNT = "discount";
   @javax.annotation.Nullable
@@ -121,11 +123,11 @@ public class CreateDemandPositions200ResponseInner {
 
   public static final String JSON_PROPERTY_TRACKING_CODES = "trackingCodes";
   @javax.annotation.Nullable
-  private List<PositionTrackingCode> trackingCodes = new ArrayList<>();
+  private List<@Valid PositionTrackingCode> trackingCodes = new ArrayList<>();
 
   public static final String JSON_PROPERTY_TRACKING_CODES1162 = "trackingCodes_1162";
   @javax.annotation.Nullable
-  private List<DemandPositionTrackingCode1162> trackingCodes1162 = new ArrayList<>();
+  private List<@Valid DemandPositionTrackingCode1162> trackingCodes1162 = new ArrayList<>();
 
   public static final String JSON_PROPERTY_OVERHEAD = "overhead";
   @javax.annotation.Nullable
@@ -141,7 +143,7 @@ public class CreateDemandPositions200ResponseInner {
 
   public static final String JSON_PROPERTY_ERRORS = "errors";
   @javax.annotation.Nonnull
-  private List<ErrorErrorsInner> errors = new ArrayList<>();
+  private List<@Valid ErrorErrorsInner> errors = new ArrayList<>();
 
   public CreateDemandPositions200ResponseInner() {
   }
@@ -152,7 +154,7 @@ public class CreateDemandPositions200ResponseInner {
   public CreateDemandPositions200ResponseInner(
     @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id, 
     @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId, 
-    @JsonProperty(value = JSON_PROPERTY_DECLARATION, required = false) List<DeclarationInner> declaration, 
+    @JsonProperty(value = JSON_PROPERTY_DECLARATION, required = false) List<@Valid DeclarationInner> declaration, 
     @JsonProperty(value = JSON_PROPERTY_OVERHEAD, required = false) Integer overhead
   ) {
     this();
@@ -174,6 +176,9 @@ public class CreateDemandPositions200ResponseInner {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -196,6 +201,9 @@ public class CreateDemandPositions200ResponseInner {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -212,6 +220,9 @@ public class CreateDemandPositions200ResponseInner {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -237,6 +248,9 @@ public class CreateDemandPositions200ResponseInner {
    */
   @Deprecated
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -266,6 +280,8 @@ public class CreateDemandPositions200ResponseInner {
    * @return cost
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_COST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -288,10 +304,13 @@ public class CreateDemandPositions200ResponseInner {
    * @return declaration
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_DECLARATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<DeclarationInner> getDeclaration() {
+  public List<@Valid DeclarationInner> getDeclaration() {
     return declaration;
   }
 
@@ -311,6 +330,8 @@ public class CreateDemandPositions200ResponseInner {
    * @return discount
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_DISCOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -340,6 +361,9 @@ public class CreateDemandPositions200ResponseInner {
    * @return pack
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Pack getPack() {
@@ -378,6 +402,8 @@ public class CreateDemandPositions200ResponseInner {
    * @return price
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -407,6 +433,8 @@ public class CreateDemandPositions200ResponseInner {
    * @return quantity
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -436,6 +464,9 @@ public class CreateDemandPositions200ResponseInner {
    * @return slot
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public StoreSlot getSlot() {
@@ -482,6 +513,8 @@ public class CreateDemandPositions200ResponseInner {
    * @return things
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_THINGS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -499,7 +532,7 @@ public class CreateDemandPositions200ResponseInner {
   }
 
 
-  public CreateDemandPositions200ResponseInner trackingCodes(@javax.annotation.Nullable List<PositionTrackingCode> trackingCodes) {
+  public CreateDemandPositions200ResponseInner trackingCodes(@javax.annotation.Nullable List<@Valid PositionTrackingCode> trackingCodes) {
     
     this.trackingCodes = trackingCodes;
     return this;
@@ -519,10 +552,13 @@ public class CreateDemandPositions200ResponseInner {
    * @return trackingCodes
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_TRACKING_CODES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<PositionTrackingCode> getTrackingCodes() {
+  public List<@Valid PositionTrackingCode> getTrackingCodes() {
     return trackingCodes;
   }
 
@@ -531,12 +567,12 @@ public class CreateDemandPositions200ResponseInner {
 
   @JsonProperty(JSON_PROPERTY_TRACKING_CODES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrackingCodes(@javax.annotation.Nullable List<PositionTrackingCode> trackingCodes) {
+  public void setTrackingCodes(@javax.annotation.Nullable List<@Valid PositionTrackingCode> trackingCodes) {
     this.trackingCodes = trackingCodes;
   }
 
 
-  public CreateDemandPositions200ResponseInner trackingCodes1162(@javax.annotation.Nullable List<DemandPositionTrackingCode1162> trackingCodes1162) {
+  public CreateDemandPositions200ResponseInner trackingCodes1162(@javax.annotation.Nullable List<@Valid DemandPositionTrackingCode1162> trackingCodes1162) {
     
     this.trackingCodes1162 = trackingCodes1162;
     return this;
@@ -556,10 +592,13 @@ public class CreateDemandPositions200ResponseInner {
    * @return trackingCodes1162
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_TRACKING_CODES1162)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<DemandPositionTrackingCode1162> getTrackingCodes1162() {
+  public List<@Valid DemandPositionTrackingCode1162> getTrackingCodes1162() {
     return trackingCodes1162;
   }
 
@@ -568,7 +607,7 @@ public class CreateDemandPositions200ResponseInner {
 
   @JsonProperty(JSON_PROPERTY_TRACKING_CODES1162)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrackingCodes1162(@javax.annotation.Nullable List<DemandPositionTrackingCode1162> trackingCodes1162) {
+  public void setTrackingCodes1162(@javax.annotation.Nullable List<@Valid DemandPositionTrackingCode1162> trackingCodes1162) {
     this.trackingCodes1162 = trackingCodes1162;
   }
 
@@ -578,6 +617,8 @@ public class CreateDemandPositions200ResponseInner {
    * @return overhead
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_OVERHEAD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -603,6 +644,8 @@ public class CreateDemandPositions200ResponseInner {
    * @return vat
    */
   @javax.annotation.Nullable
+ @Min(0) @Max(100)
+
   @JsonProperty(JSON_PROPERTY_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -632,6 +675,8 @@ public class CreateDemandPositions200ResponseInner {
    * @return vatEnabled
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -649,7 +694,7 @@ public class CreateDemandPositions200ResponseInner {
   }
 
 
-  public CreateDemandPositions200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
+  public CreateDemandPositions200ResponseInner errors(@javax.annotation.Nonnull List<@Valid ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
@@ -669,10 +714,14 @@ public class CreateDemandPositions200ResponseInner {
    * @return errors
    */
   @javax.annotation.Nonnull
+  @NotNull
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ERRORS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public List<ErrorErrorsInner> getErrors() {
+  public List<@Valid ErrorErrorsInner> getErrors() {
     return errors;
   }
 
@@ -681,7 +730,7 @@ public class CreateDemandPositions200ResponseInner {
 
   @JsonProperty(JSON_PROPERTY_ERRORS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
+  public void setErrors(@javax.annotation.Nonnull List<@Valid ErrorErrorsInner> errors) {
     this.errors = errors;
   }
 

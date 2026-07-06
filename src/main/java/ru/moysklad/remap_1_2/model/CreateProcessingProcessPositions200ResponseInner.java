@@ -36,6 +36,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -52,7 +54,7 @@ import java.util.StringJoiner;
   CreateProcessingProcessPositions200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createProcessingProcessPositions_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateProcessingProcessPositions200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -73,11 +75,11 @@ public class CreateProcessingProcessPositions200ResponseInner {
 
   public static final String JSON_PROPERTY_NEXT_POSITIONS = "nextPositions";
   @javax.annotation.Nullable
-  private JsonNullable<List<ProcessingProcessPositionNextPositionsInner>> nextPositions = JsonNullable.<List<ProcessingProcessPositionNextPositionsInner>>undefined();
+  private JsonNullable<List<@Valid ProcessingProcessPositionNextPositionsInner>> nextPositions = JsonNullable.<List<@Valid ProcessingProcessPositionNextPositionsInner>>undefined();
 
   public static final String JSON_PROPERTY_ERRORS = "errors";
   @javax.annotation.Nonnull
-  private List<ErrorErrorsInner> errors = new ArrayList<>();
+  private List<@Valid ErrorErrorsInner> errors = new ArrayList<>();
 
   public CreateProcessingProcessPositions200ResponseInner() {
   }
@@ -106,6 +108,9 @@ public class CreateProcessingProcessPositions200ResponseInner {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -128,6 +133,9 @@ public class CreateProcessingProcessPositions200ResponseInner {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -144,6 +152,9 @@ public class CreateProcessingProcessPositions200ResponseInner {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -167,6 +178,9 @@ public class CreateProcessingProcessPositions200ResponseInner {
    * @return processingstage
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_PROCESSINGSTAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -184,8 +198,8 @@ public class CreateProcessingProcessPositions200ResponseInner {
   }
 
 
-  public CreateProcessingProcessPositions200ResponseInner nextPositions(@javax.annotation.Nullable List<ProcessingProcessPositionNextPositionsInner> nextPositions) {
-    this.nextPositions = JsonNullable.<List<ProcessingProcessPositionNextPositionsInner>>of(nextPositions);
+  public CreateProcessingProcessPositions200ResponseInner nextPositions(@javax.annotation.Nullable List<@Valid ProcessingProcessPositionNextPositionsInner> nextPositions) {
+    this.nextPositions = JsonNullable.<List<@Valid ProcessingProcessPositionNextPositionsInner>>of(nextPositions);
     
     return this;
   }
@@ -193,7 +207,7 @@ public class CreateProcessingProcessPositions200ResponseInner {
 
   public CreateProcessingProcessPositions200ResponseInner addNextPositionsItem(ProcessingProcessPositionNextPositionsInner nextPositionsItem) {
     if (this.nextPositions == null || !this.nextPositions.isPresent()) {
-      this.nextPositions = JsonNullable.<List<ProcessingProcessPositionNextPositionsInner>>of(new ArrayList<>());
+      this.nextPositions = JsonNullable.<List<@Valid ProcessingProcessPositionNextPositionsInner>>of(new ArrayList<>());
     }
     try {
       this.nextPositions.get().add(nextPositionsItem);
@@ -208,9 +222,12 @@ public class CreateProcessingProcessPositions200ResponseInner {
    * @return nextPositions
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
-  public List<ProcessingProcessPositionNextPositionsInner> getNextPositions() {
+  public List<@Valid ProcessingProcessPositionNextPositionsInner> getNextPositions() {
         return nextPositions.orElse(null);
   }
 
@@ -220,21 +237,21 @@ public class CreateProcessingProcessPositions200ResponseInner {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<ProcessingProcessPositionNextPositionsInner>> getNextPositions_JsonNullable() {
+  public JsonNullable<List<@Valid ProcessingProcessPositionNextPositionsInner>> getNextPositions_JsonNullable() {
     return nextPositions;
   }
   
   @JsonProperty(value = JSON_PROPERTY_NEXT_POSITIONS, required = false)
-  public void setNextPositions_JsonNullable(JsonNullable<List<ProcessingProcessPositionNextPositionsInner>> nextPositions) {
+  public void setNextPositions_JsonNullable(JsonNullable<List<@Valid ProcessingProcessPositionNextPositionsInner>> nextPositions) {
     this.nextPositions = nextPositions;
   }
 
-  public void setNextPositions(@javax.annotation.Nullable List<ProcessingProcessPositionNextPositionsInner> nextPositions) {
-    this.nextPositions = JsonNullable.<List<ProcessingProcessPositionNextPositionsInner>>of(nextPositions);
+  public void setNextPositions(@javax.annotation.Nullable List<@Valid ProcessingProcessPositionNextPositionsInner> nextPositions) {
+    this.nextPositions = JsonNullable.<List<@Valid ProcessingProcessPositionNextPositionsInner>>of(nextPositions);
   }
 
 
-  public CreateProcessingProcessPositions200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
+  public CreateProcessingProcessPositions200ResponseInner errors(@javax.annotation.Nonnull List<@Valid ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
@@ -254,10 +271,14 @@ public class CreateProcessingProcessPositions200ResponseInner {
    * @return errors
    */
   @javax.annotation.Nonnull
+  @NotNull
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ERRORS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public List<ErrorErrorsInner> getErrors() {
+  public List<@Valid ErrorErrorsInner> getErrors() {
     return errors;
   }
 
@@ -266,7 +287,7 @@ public class CreateProcessingProcessPositions200ResponseInner {
 
   @JsonProperty(JSON_PROPERTY_ERRORS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
+  public void setErrors(@javax.annotation.Nonnull List<@Valid ErrorErrorsInner> errors) {
     this.errors = errors;
   }
 

@@ -6,6 +6,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 |------------- | ------------- | -------------|
 | [**createPrepaymentReturnMetadataAttribute**](PrepaymentReturnsApi.md#createPrepaymentReturnMetadataAttribute) | **POST** /entity/prepaymentreturn/metadata/attributes | Создать доп. поле Возврата предоплаты |
 | [**createPrepaymentReturnMetadataState**](PrepaymentReturnsApi.md#createPrepaymentReturnMetadataState) | **POST** /entity/prepaymentreturn/metadata/states | Создать статус Возврата предоплаты |
+| [**createPrepaymentReturnMetadataStatesBatch**](PrepaymentReturnsApi.md#createPrepaymentReturnMetadataStatesBatch) | **POST** /entity/prepaymentreturn/metadata/states/batch | Массовое создание и обновление статусов Возврата предоплаты |
 | [**deletePrepaymentReturn**](PrepaymentReturnsApi.md#deletePrepaymentReturn) | **DELETE** /entity/prepaymentreturn/{id} | Удалить Возврат предоплаты |
 | [**deletePrepaymentReturnMetadataAttributeById**](PrepaymentReturnsApi.md#deletePrepaymentReturnMetadataAttributeById) | **DELETE** /entity/prepaymentreturn/metadata/attributes/{id} | Удалить отдельное доп. поле Возврата предоплаты |
 | [**deletePrepaymentReturnMetadataStateById**](PrepaymentReturnsApi.md#deletePrepaymentReturnMetadataStateById) | **DELETE** /entity/prepaymentreturn/metadata/states/{id} | Удалить отдельный статус Возврата предоплаты |
@@ -105,7 +106,7 @@ public class Example {
 
 ## createPrepaymentReturnMetadataState
 
-> CreateInternalOrderMetadataStateRequest createPrepaymentReturnMetadataState(createInternalOrderMetadataStateRequest, accept, acceptEncoding, contentType)
+> State createPrepaymentReturnMetadataState(state, accept, acceptEncoding, contentType)
 
 Создать статус Возврата предоплаты
 
@@ -135,12 +136,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PrepaymentReturnsApi apiInstance = new PrepaymentReturnsApi(defaultClient);
-        CreateInternalOrderMetadataStateRequest createInternalOrderMetadataStateRequest = new CreateInternalOrderMetadataStateRequest(); // CreateInternalOrderMetadataStateRequest | 
+        State state = new State(); // State | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            CreateInternalOrderMetadataStateRequest result = apiInstance.createPrepaymentReturnMetadataState(createInternalOrderMetadataStateRequest, accept, acceptEncoding, contentType);
+            State result = apiInstance.createPrepaymentReturnMetadataState(state, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PrepaymentReturnsApi#createPrepaymentReturnMetadataState");
@@ -158,14 +159,95 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **createInternalOrderMetadataStateRequest** | [**CreateInternalOrderMetadataStateRequest**](CreateInternalOrderMetadataStateRequest.md)|  | |
+| **state** | [**State**](State.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**CreateInternalOrderMetadataStateRequest**](CreateInternalOrderMetadataStateRequest.md)
+[**State**](State.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+
+
+## createPrepaymentReturnMetadataStatesBatch
+
+> List&lt;StateRowResult&gt; createPrepaymentReturnMetadataStatesBatch(state, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление статусов Возврата предоплаты
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.PrepaymentReturnsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        PrepaymentReturnsApi apiInstance = new PrepaymentReturnsApi(defaultClient);
+        List<@Valid State> state = Arrays.asList(); // List<@Valid State> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<StateRowResult> result = apiInstance.createPrepaymentReturnMetadataStatesBatch(state, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PrepaymentReturnsApi#createPrepaymentReturnMetadataStatesBatch");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **state** | [**List&lt;@Valid State&gt;**](State.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;StateRowResult&gt;**](StateRowResult.md)
 
 ### Authorization
 
@@ -216,7 +298,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PrepaymentReturnsApi apiInstance = new PrepaymentReturnsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -294,7 +376,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PrepaymentReturnsApi apiInstance = new PrepaymentReturnsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -372,7 +454,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PrepaymentReturnsApi apiInstance = new PrepaymentReturnsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -451,8 +533,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PrepaymentReturnsApi apiInstance = new PrepaymentReturnsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -536,8 +618,8 @@ public class Example {
         PrepaymentReturnsApi apiInstance = new PrepaymentReturnsApi(defaultClient);
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String search = "name=123"; // String | Контекстный поиск по строковым полям сущностей
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String search = "search_example"; // String | Контекстный поиск по строковым полям сущностей
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -779,7 +861,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PrepaymentReturnsApi apiInstance = new PrepaymentReturnsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -858,7 +940,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PrepaymentReturnsApi apiInstance = new PrepaymentReturnsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -937,9 +1019,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PrepaymentReturnsApi apiInstance = new PrepaymentReturnsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1022,10 +1104,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PrepaymentReturnsApi apiInstance = new PrepaymentReturnsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1109,7 +1191,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PrepaymentReturnsApi apiInstance = new PrepaymentReturnsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         AttributeMetaInfo attributeMetaInfo = new AttributeMetaInfo(); // AttributeMetaInfo | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1192,7 +1274,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PrepaymentReturnsApi apiInstance = new PrepaymentReturnsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         State state = new State(); // State | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 

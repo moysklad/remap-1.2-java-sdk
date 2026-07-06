@@ -29,6 +29,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -49,7 +51,7 @@ import java.util.StringJoiner;
   Account.JSON_PROPERTY_BIC,
   Account.JSON_PROPERTY_CURRENCY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class Account {
   public static Account createWithMeta(UUID entityType, UUID parentId, UUID id) {
     Account o = new Account();
@@ -139,6 +141,9 @@ public class Account {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -161,6 +166,9 @@ public class Account {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -177,6 +185,9 @@ public class Account {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -193,6 +204,8 @@ public class Account {
    * @return updated
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -216,6 +229,8 @@ public class Account {
    * @return isDefault
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_IS_DEFAULT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -245,6 +260,8 @@ public class Account {
    * @return accountNumber
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -274,6 +291,8 @@ public class Account {
    * @return bankName
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_BANK_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -303,6 +322,8 @@ public class Account {
    * @return bankLocation
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_BANK_LOCATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -332,6 +353,8 @@ public class Account {
    * @return correspondentAccount
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_CORRESPONDENT_ACCOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -361,6 +384,8 @@ public class Account {
    * @return bic
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_BIC)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -390,6 +415,9 @@ public class Account {
    * @return currency
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Currency getCurrency() {

@@ -34,6 +34,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -59,8 +61,8 @@ import java.util.StringJoiner;
   ProcessingStage.JSON_PROPERTY_MATERIAL_STORE,
   ProcessingStage.JSON_PROPERTY_STANDARD_HOUR_COST
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
-public class ProcessingStage {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
+public class ProcessingStage extends EntityWithMeta {
   public static ProcessingStage createWithMeta(UUID id) {
     ProcessingStage o = new ProcessingStage();
     Meta meta = new Meta();
@@ -171,6 +173,9 @@ public class ProcessingStage {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -193,6 +198,9 @@ public class ProcessingStage {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -209,6 +217,9 @@ public class ProcessingStage {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -232,6 +243,9 @@ public class ProcessingStage {
    * @return owner
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Employee getOwner() {
@@ -270,6 +284,8 @@ public class ProcessingStage {
    * @return shared
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -299,6 +315,9 @@ public class ProcessingStage {
    * @return group
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -321,6 +340,8 @@ public class ProcessingStage {
    * @return updated
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -344,6 +365,8 @@ public class ProcessingStage {
    * @return name
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -373,6 +396,8 @@ public class ProcessingStage {
    * @return description
    */
   @javax.annotation.Nullable
+ @Size(max=4096)
+
   @JsonIgnore
 
   public String getDescription() {
@@ -411,6 +436,8 @@ public class ProcessingStage {
    * @return externalCode
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -440,6 +467,8 @@ public class ProcessingStage {
    * @return archived
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -469,6 +498,8 @@ public class ProcessingStage {
    * @return allPerformers
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_ALL_PERFORMERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -498,6 +529,8 @@ public class ProcessingStage {
    * @return distributionRequired
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_DISTRIBUTION_REQUIRED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -539,6 +572,9 @@ public class ProcessingStage {
    * @return performers
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public List<Employee> getPerformers() {
@@ -570,6 +606,9 @@ public class ProcessingStage {
    * @return materialStore
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Store getMaterialStore() {
@@ -609,6 +648,8 @@ public class ProcessingStage {
    * @return standardHourCost
    */
   @javax.annotation.Nullable
+ @DecimalMin("0")
+
   @JsonProperty(JSON_PROPERTY_STANDARD_HOUR_COST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

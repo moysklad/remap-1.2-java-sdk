@@ -68,8 +68,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         MovesApi apiInstance = new MovesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<FileUpload> fileUpload = Arrays.asList(); // List<FileUpload> | 
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid FileUpload> fileUpload = Arrays.asList(); // List<@Valid FileUpload> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -93,7 +93,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **fileUpload** | [**List&lt;FileUpload&gt;**](FileUpload.md)|  | |
+| **fileUpload** | [**List&lt;@Valid FileUpload&gt;**](FileUpload.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -152,7 +152,7 @@ public class Example {
 
         MovesApi apiInstance = new MovesApi(defaultClient);
         Move move = new Move(); // Move | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -204,7 +204,7 @@ public class Example {
 
 ## createMoveBatch
 
-> List&lt;CreateMoveBatch200ResponseInner&gt; createMoveBatch(move, expand, accept, acceptEncoding, contentType)
+> List&lt;BatchResponseEntity&gt; createMoveBatch(move, expand, accept, acceptEncoding, contentType)
 
 Массовое создание и обновление Перемещений
 
@@ -234,13 +234,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         MovesApi apiInstance = new MovesApi(defaultClient);
-        List<Move> move = Arrays.asList(); // List<Move> | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        List<@Valid Move> move = Arrays.asList(); // List<@Valid Move> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateMoveBatch200ResponseInner> result = apiInstance.createMoveBatch(move, expand, accept, acceptEncoding, contentType);
+            List<BatchResponseEntity> result = apiInstance.createMoveBatch(move, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MovesApi#createMoveBatch");
@@ -258,7 +258,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **move** | [**List&lt;Move&gt;**](Move.md)|  | |
+| **move** | [**List&lt;@Valid Move&gt;**](Move.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -266,7 +266,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreateMoveBatch200ResponseInner&gt;**](CreateMoveBatch200ResponseInner.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -398,9 +398,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         MovesApi apiInstance = new MovesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         MovePosition movePosition = new MovePosition(); // MovePosition | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -453,7 +453,7 @@ public class Example {
 
 ## createMovePositions
 
-> List&lt;CreateMovePositions200ResponseInner&gt; createMovePositions(id, movePosition, expand, accept, acceptEncoding, contentType)
+> List&lt;BatchResponseEntity&gt; createMovePositions(id, movePosition, expand, accept, acceptEncoding, contentType)
 
 Массовое создание и обновление позиций Перемещения
 
@@ -483,14 +483,14 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         MovesApi apiInstance = new MovesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<MovePosition> movePosition = Arrays.asList(); // List<MovePosition> | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid MovePosition> movePosition = Arrays.asList(); // List<@Valid MovePosition> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateMovePositions200ResponseInner> result = apiInstance.createMovePositions(id, movePosition, expand, accept, acceptEncoding, contentType);
+            List<BatchResponseEntity> result = apiInstance.createMovePositions(id, movePosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MovesApi#createMovePositions");
@@ -509,7 +509,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **movePosition** | [**List&lt;MovePosition&gt;**](MovePosition.md)|  | |
+| **movePosition** | [**List&lt;@Valid MovePosition&gt;**](MovePosition.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -517,7 +517,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreateMovePositions200ResponseInner&gt;**](CreateMovePositions200ResponseInner.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -568,7 +568,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         MovesApi apiInstance = new MovesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -618,7 +618,7 @@ null (empty response body)
 
 ## deleteMoveBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteMoveBatch(move, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteMoveBatch(move, accept, acceptEncoding, contentType)
 
 Массовое удаление Перемещений
 
@@ -648,12 +648,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         MovesApi apiInstance = new MovesApi(defaultClient);
-        List<Move> move = Arrays.asList(); // List<Move> | 
+        List<@Valid Move> move = Arrays.asList(); // List<@Valid Move> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteMoveBatch(move, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteMoveBatch(move, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MovesApi#deleteMoveBatch");
@@ -671,14 +671,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **move** | [**List&lt;Move&gt;**](Move.md)|  | |
+| **move** | [**List&lt;@Valid Move&gt;**](Move.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -731,7 +731,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         MovesApi apiInstance = new MovesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID fileId = UUID.randomUUID(); // UUID | ID файла
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -811,7 +811,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         MovesApi apiInstance = new MovesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -891,7 +891,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         MovesApi apiInstance = new MovesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -972,9 +972,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         MovesApi apiInstance = new MovesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1026,7 +1026,7 @@ null (empty response body)
 
 ## deleteMovePositionsBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteMovePositionsBatch(id, movePosition, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteMovePositionsBatch(id, movePosition, accept, acceptEncoding, contentType)
 
 Массовое удаление позиций Перемещения
 
@@ -1056,13 +1056,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         MovesApi apiInstance = new MovesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<MovePosition> movePosition = Arrays.asList(); // List<MovePosition> | 
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid MovePosition> movePosition = Arrays.asList(); // List<@Valid MovePosition> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteMovePositionsBatch(id, movePosition, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteMovePositionsBatch(id, movePosition, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MovesApi#deleteMovePositionsBatch");
@@ -1081,14 +1081,14 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **movePosition** | [**List&lt;MovePosition&gt;**](MovePosition.md)|  | |
+| **movePosition** | [**List&lt;@Valid MovePosition&gt;**](MovePosition.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -1139,8 +1139,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         MovesApi apiInstance = new MovesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1224,7 +1224,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         MovesApi apiInstance = new MovesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
         String accept = "application/json"; // String | 
@@ -1309,8 +1309,8 @@ public class Example {
         MovesApi apiInstance = new MovesApi(defaultClient);
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String search = "name=123"; // String | Контекстный поиск по строковым полям сущностей
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String search = "search_example"; // String | Контекстный поиск по строковым полям сущностей
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1558,7 +1558,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         MovesApi apiInstance = new MovesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1639,7 +1639,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         MovesApi apiInstance = new MovesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1720,9 +1720,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         MovesApi apiInstance = new MovesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1807,11 +1807,11 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         MovesApi apiInstance = new MovesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String search = "name=123"; // String | Контекстный поиск по строковым полям сущностей
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String search = "search_example"; // String | Контекстный поиск по строковым полям сущностей
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1981,9 +1981,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         MovesApi apiInstance = new MovesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Move move = new Move(); // Move | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -2068,7 +2068,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         MovesApi apiInstance = new MovesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         AttributeMetaInfo attributeMetaInfo = new AttributeMetaInfo(); // AttributeMetaInfo | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -2151,7 +2151,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         MovesApi apiInstance = new MovesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         State state = new State(); // State | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -2234,10 +2234,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         MovesApi apiInstance = new MovesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
         MovePosition movePosition = new MovePosition(); // MovePosition | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 

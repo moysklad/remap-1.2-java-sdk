@@ -52,7 +52,7 @@ public class Example {
         RetailStore retailStore = new RetailStore(); // RetailStore | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String contentType = "application/json"; // String | 
         try {
             RetailStore result = apiInstance.addMasterRetailStore(retailStoreId, retailStore, accept, acceptEncoding, expand, contentType);
@@ -136,7 +136,7 @@ public class Example {
         RetailStore retailStore = new RetailStore(); // RetailStore | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String contentType = "application/json"; // String | 
         try {
             RetailStore result = apiInstance.createRetailStore(retailStore, accept, acceptEncoding, expand, contentType);
@@ -186,7 +186,7 @@ public class Example {
 
 ## createRetailStoresBatch
 
-> List&lt;CreateRetailStoresBatch200ResponseInner&gt; createRetailStoresBatch(retailStore, accept, acceptEncoding, expand, contentType)
+> List&lt;BatchResponseEntity&gt; createRetailStoresBatch(retailStore, accept, acceptEncoding, expand, contentType)
 
 Массовое создание и обновление точек продаж
 
@@ -216,13 +216,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         RetailStoresApi apiInstance = new RetailStoresApi(defaultClient);
-        List<RetailStore> retailStore = Arrays.asList(); // List<RetailStore> | 
+        List<@Valid RetailStore> retailStore = Arrays.asList(); // List<@Valid RetailStore> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String contentType = "application/json"; // String | 
         try {
-            List<CreateRetailStoresBatch200ResponseInner> result = apiInstance.createRetailStoresBatch(retailStore, accept, acceptEncoding, expand, contentType);
+            List<BatchResponseEntity> result = apiInstance.createRetailStoresBatch(retailStore, accept, acceptEncoding, expand, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling RetailStoresApi#createRetailStoresBatch");
@@ -240,7 +240,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **retailStore** | [**List&lt;RetailStore&gt;**](RetailStore.md)|  | |
+| **retailStore** | [**List&lt;@Valid RetailStore&gt;**](RetailStore.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
@@ -248,7 +248,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreateRetailStoresBatch200ResponseInner&gt;**](CreateRetailStoresBatch200ResponseInner.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -299,7 +299,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         RetailStoresApi apiInstance = new RetailStoresApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -347,7 +347,7 @@ null (empty response body)
 
 ## deleteRetailStoresBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteRetailStoresBatch(retailStore, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteRetailStoresBatch(retailStore, accept, acceptEncoding, contentType)
 
 Массовое удаление точек продаж
 
@@ -377,12 +377,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         RetailStoresApi apiInstance = new RetailStoresApi(defaultClient);
-        List<RetailStore> retailStore = Arrays.asList(); // List<RetailStore> | 
+        List<@Valid RetailStore> retailStore = Arrays.asList(); // List<@Valid RetailStore> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteRetailStoresBatch(retailStore, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteRetailStoresBatch(retailStore, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling RetailStoresApi#deleteRetailStoresBatch");
@@ -400,14 +400,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **retailStore** | [**List&lt;RetailStore&gt;**](RetailStore.md)|  | |
+| **retailStore** | [**List&lt;@Valid RetailStore&gt;**](RetailStore.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -461,10 +461,10 @@ public class Example {
         UUID retailStoreId = UUID.randomUUID(); // UUID | 
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String search = "name=123"; // String | Контекстный поиск по строковым полям сущностей
-        String filter = "archived=false"; // String | Фильтрация выборки
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
-        String order = "name"; // String | Сортировка
+        String search = "search_example"; // String | Контекстный поиск по строковым полям сущностей
+        String filter = "filter_example"; // String | Фильтрация выборки
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
+        String order = "order_example"; // String | Сортировка
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -549,8 +549,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         RetailStoresApi apiInstance = new RetailStoresApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -632,10 +632,10 @@ public class Example {
         RetailStoresApi apiInstance = new RetailStoresApi(defaultClient);
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String search = "name=123"; // String | Контекстный поиск по строковым полям сущностей
-        String filter = "archived=false"; // String | Фильтрация выборки
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
-        String order = "name"; // String | Сортировка
+        String search = "search_example"; // String | Контекстный поиск по строковым полям сущностей
+        String filter = "filter_example"; // String | Фильтрация выборки
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
+        String order = "order_example"; // String | Сортировка
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -719,9 +719,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         RetailStoresApi apiInstance = new RetailStoresApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         RetailStore retailStore = new RetailStore(); // RetailStore | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 

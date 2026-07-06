@@ -20,12 +20,12 @@ import ru.moysklad.remap_1_2.BaseApi;
 import ru.moysklad.remap_1_2.Configuration;
 import ru.moysklad.remap_1_2.Pair;
 
+import ru.moysklad.remap_1_2.model.BatchResponseEntity;
 import ru.moysklad.remap_1_2.model.Bundle;
 import ru.moysklad.remap_1_2.model.BundleComponent;
 import ru.moysklad.remap_1_2.model.BundleList;
 import ru.moysklad.remap_1_2.model.CreateBundleComponentsRequest;
-import ru.moysklad.remap_1_2.model.CreateBundlesBatch200ResponseInner;
-import ru.moysklad.remap_1_2.model.DeleteContractsBatch200ResponseInner;
+import ru.moysklad.remap_1_2.model.DeleteRowResult;
 import ru.moysklad.remap_1_2.model.ErrorOrArray;
 import java.util.UUID;
 
@@ -37,7 +37,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+import javax.validation.constraints.*;
+import javax.validation.Valid;
+
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class BundlesApi extends BaseApi {
 
@@ -284,10 +287,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;CreateBundlesBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateBundlesBatch200ResponseInner> createBundlesBatch(@javax.annotation.Nonnull List<Bundle> bundle, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<BatchResponseEntity> createBundlesBatch(@javax.annotation.Nonnull List<@Valid Bundle> bundle, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createBundlesBatch(bundle, accept, acceptEncoding, expand, contentType, Collections.emptyMap());
   }
 
@@ -302,10 +305,10 @@ if (contentType != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return List&lt;CreateBundlesBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateBundlesBatch200ResponseInner> createBundlesBatch(@javax.annotation.Nonnull List<Bundle> bundle, RequestOptions options) throws ApiException {
+  public List<BatchResponseEntity> createBundlesBatch(@javax.annotation.Nonnull List<@Valid Bundle> bundle, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createBundlesBatch(bundle, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
@@ -320,10 +323,10 @@ if (contentType != null)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;CreateBundlesBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateBundlesBatch200ResponseInner> createBundlesBatch(@javax.annotation.Nonnull List<Bundle> bundle, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<BatchResponseEntity> createBundlesBatch(@javax.annotation.Nonnull List<@Valid Bundle> bundle, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = bundle;
     
     // verify the required parameter 'bundle' is set
@@ -366,7 +369,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<CreateBundlesBatch200ResponseInner>> localVarReturnType = new TypeReference<List<CreateBundlesBatch200ResponseInner>>() {};
+    TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
@@ -562,7 +565,7 @@ if (acceptEncoding != null)
    * @param contentType  (optional, default to application/json)
    * @throws ApiException if fails to make API call
    */
-  public void deleteBundleComponentsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<BundleComponent> bundleComponent, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public void deleteBundleComponentsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid BundleComponent> bundleComponent, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     this.deleteBundleComponentsBatch(id, bundleComponent, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -578,7 +581,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteBundleComponentsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<BundleComponent> bundleComponent, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public void deleteBundleComponentsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid BundleComponent> bundleComponent, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = bundleComponent;
     
     // verify the required parameter 'id' is set
@@ -650,10 +653,10 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deleteBundlesBatch(@javax.annotation.Nonnull List<Bundle> bundle, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<DeleteRowResult> deleteBundlesBatch(@javax.annotation.Nonnull List<@Valid Bundle> bundle, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.deleteBundlesBatch(bundle, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -666,10 +669,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deleteBundlesBatch(@javax.annotation.Nonnull List<Bundle> bundle, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<DeleteRowResult> deleteBundlesBatch(@javax.annotation.Nonnull List<@Valid Bundle> bundle, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = bundle;
     
     // verify the required parameter 'bundle' is set
@@ -711,7 +714,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<DeleteContractsBatch200ResponseInner>> localVarReturnType = new TypeReference<List<DeleteContractsBatch200ResponseInner>>() {};
+    TypeReference<List<DeleteRowResult>> localVarReturnType = new TypeReference<List<DeleteRowResult>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

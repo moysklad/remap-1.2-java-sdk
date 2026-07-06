@@ -70,7 +70,7 @@ public class Example {
 
         ProcessingPlansApi apiInstance = new ProcessingPlansApi(defaultClient);
         ProcessingPlan processingPlan = new ProcessingPlan(); // ProcessingPlan | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -122,7 +122,7 @@ public class Example {
 
 ## createProcessingPlanBatch
 
-> List&lt;CreateProcessingPlanBatch200ResponseInner&gt; createProcessingPlanBatch(processingPlan, expand, accept, acceptEncoding, contentType)
+> List&lt;BatchResponseEntity&gt; createProcessingPlanBatch(processingPlan, expand, accept, acceptEncoding, contentType)
 
 Создать или изменить Техкарты
 
@@ -154,13 +154,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingPlansApi apiInstance = new ProcessingPlansApi(defaultClient);
-        List<ProcessingPlan> processingPlan = Arrays.asList(); // List<ProcessingPlan> | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        List<@Valid ProcessingPlan> processingPlan = Arrays.asList(); // List<@Valid ProcessingPlan> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateProcessingPlanBatch200ResponseInner> result = apiInstance.createProcessingPlanBatch(processingPlan, expand, accept, acceptEncoding, contentType);
+            List<BatchResponseEntity> result = apiInstance.createProcessingPlanBatch(processingPlan, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProcessingPlansApi#createProcessingPlanBatch");
@@ -178,7 +178,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **processingPlan** | [**List&lt;ProcessingPlan&gt;**](ProcessingPlan.md)|  | |
+| **processingPlan** | [**List&lt;@Valid ProcessingPlan&gt;**](ProcessingPlan.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -186,7 +186,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreateProcessingPlanBatch200ResponseInner&gt;**](CreateProcessingPlanBatch200ResponseInner.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -239,9 +239,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingPlansApi apiInstance = new ProcessingPlansApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         ProcessingPlanMaterial processingPlanMaterial = new ProcessingPlanMaterial(); // ProcessingPlanMaterial | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -407,9 +407,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingPlansApi apiInstance = new ProcessingPlansApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         ProcessingPlanProduct processingPlanProduct = new ProcessingPlanProduct(); // ProcessingPlanProduct | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -494,7 +494,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingPlansApi apiInstance = new ProcessingPlansApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -576,8 +576,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingPlansApi apiInstance = new ProcessingPlansApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -626,7 +626,7 @@ null (empty response body)
 
 ## deleteProcessingPlanMaterialsBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteProcessingPlanMaterialsBatch(id, processingPlanMaterial, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteProcessingPlanMaterialsBatch(id, processingPlanMaterial, accept, acceptEncoding, contentType)
 
 Массовое удаление материалов Техкарты
 
@@ -658,13 +658,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingPlansApi apiInstance = new ProcessingPlansApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<ProcessingPlanMaterial> processingPlanMaterial = Arrays.asList(); // List<ProcessingPlanMaterial> | 
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid ProcessingPlanMaterial> processingPlanMaterial = Arrays.asList(); // List<@Valid ProcessingPlanMaterial> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteProcessingPlanMaterialsBatch(id, processingPlanMaterial, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteProcessingPlanMaterialsBatch(id, processingPlanMaterial, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProcessingPlansApi#deleteProcessingPlanMaterialsBatch");
@@ -683,14 +683,14 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **processingPlanMaterial** | [**List&lt;ProcessingPlanMaterial&gt;**](ProcessingPlanMaterial.md)|  | |
+| **processingPlanMaterial** | [**List&lt;@Valid ProcessingPlanMaterial&gt;**](ProcessingPlanMaterial.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -741,7 +741,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingPlansApi apiInstance = new ProcessingPlansApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -823,8 +823,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingPlansApi apiInstance = new ProcessingPlansApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -873,7 +873,7 @@ null (empty response body)
 
 ## deleteProcessingPlanProductsBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteProcessingPlanProductsBatch(id, processingPlanProduct, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteProcessingPlanProductsBatch(id, processingPlanProduct, accept, acceptEncoding, contentType)
 
 Массовое удаление продуктов Техкарты
 
@@ -905,13 +905,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingPlansApi apiInstance = new ProcessingPlansApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<ProcessingPlanProduct> processingPlanProduct = Arrays.asList(); // List<ProcessingPlanProduct> | 
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid ProcessingPlanProduct> processingPlanProduct = Arrays.asList(); // List<@Valid ProcessingPlanProduct> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteProcessingPlanProductsBatch(id, processingPlanProduct, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteProcessingPlanProductsBatch(id, processingPlanProduct, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProcessingPlansApi#deleteProcessingPlanProductsBatch");
@@ -930,14 +930,14 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **processingPlanProduct** | [**List&lt;ProcessingPlanProduct&gt;**](ProcessingPlanProduct.md)|  | |
+| **processingPlanProduct** | [**List&lt;@Valid ProcessingPlanProduct&gt;**](ProcessingPlanProduct.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -958,7 +958,7 @@ public class Example {
 
 ## deleteProcessingPlansBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteProcessingPlansBatch(processingPlan, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteProcessingPlansBatch(processingPlan, accept, acceptEncoding, contentType)
 
 Массовое удаление Техкарт
 
@@ -990,12 +990,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingPlansApi apiInstance = new ProcessingPlansApi(defaultClient);
-        List<ProcessingPlan> processingPlan = Arrays.asList(); // List<ProcessingPlan> | 
+        List<@Valid ProcessingPlan> processingPlan = Arrays.asList(); // List<@Valid ProcessingPlan> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteProcessingPlansBatch(processingPlan, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteProcessingPlansBatch(processingPlan, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProcessingPlansApi#deleteProcessingPlansBatch");
@@ -1013,14 +1013,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **processingPlan** | [**List&lt;ProcessingPlan&gt;**](ProcessingPlan.md)|  | |
+| **processingPlan** | [**List&lt;@Valid ProcessingPlan&gt;**](ProcessingPlan.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -1073,8 +1073,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingPlansApi apiInstance = new ProcessingPlansApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1158,9 +1158,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingPlansApi apiInstance = new ProcessingPlansApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1243,10 +1243,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingPlansApi apiInstance = new ProcessingPlansApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1328,7 +1328,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingPlansApi apiInstance = new ProcessingPlansApi(defaultClient);
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1490,7 +1490,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingPlansApi apiInstance = new ProcessingPlansApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1571,9 +1571,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingPlansApi apiInstance = new ProcessingPlansApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1656,10 +1656,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingPlansApi apiInstance = new ProcessingPlansApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1743,9 +1743,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingPlansApi apiInstance = new ProcessingPlansApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1828,10 +1828,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingPlansApi apiInstance = new ProcessingPlansApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1917,10 +1917,10 @@ public class Example {
         ProcessingPlansApi apiInstance = new ProcessingPlansApi(defaultClient);
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String search = "name=123"; // String | Контекстный поиск по строковым полям сущностей
-        String filter = "archived=false"; // String | Фильтрация выборки
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
-        String order = "name"; // String | Сортировка
+        String search = "search_example"; // String | Контекстный поиск по строковым полям сущностей
+        String filter = "filter_example"; // String | Фильтрация выборки
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
+        String order = "order_example"; // String | Сортировка
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -2008,9 +2008,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingPlansApi apiInstance = new ProcessingPlansApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         ProcessingPlan processingPlan = new ProcessingPlan(); // ProcessingPlan | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -2095,10 +2095,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingPlansApi apiInstance = new ProcessingPlansApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
         ProcessingPlanMaterial processingPlanMaterial = new ProcessingPlanMaterial(); // ProcessingPlanMaterial | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -2182,7 +2182,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingPlansApi apiInstance = new ProcessingPlansApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         AttributeMetaInfo attributeMetaInfo = new AttributeMetaInfo(); // AttributeMetaInfo | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -2267,10 +2267,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingPlansApi apiInstance = new ProcessingPlansApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
         ProcessingPlanProduct processingPlanProduct = new ProcessingPlanProduct(); // ProcessingPlanProduct | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -2356,10 +2356,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingPlansApi apiInstance = new ProcessingPlansApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
         ProcessingPlanStage processingPlanStage = new ProcessingPlanStage(); // ProcessingPlanStage | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 

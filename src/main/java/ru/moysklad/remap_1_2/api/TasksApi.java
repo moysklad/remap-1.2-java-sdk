@@ -20,14 +20,12 @@ import ru.moysklad.remap_1_2.BaseApi;
 import ru.moysklad.remap_1_2.Configuration;
 import ru.moysklad.remap_1_2.Pair;
 
-import ru.moysklad.remap_1_2.model.CreateTaskMetadataStates200Response;
-import ru.moysklad.remap_1_2.model.CreateTaskMetadataStatesRequest;
-import ru.moysklad.remap_1_2.model.CreateTaskNotesBatch200ResponseInner;
-import ru.moysklad.remap_1_2.model.CreateTasksBatch200ResponseInner;
-import ru.moysklad.remap_1_2.model.DeleteContractsBatch200ResponseInner;
+import ru.moysklad.remap_1_2.model.BatchResponseEntity;
+import ru.moysklad.remap_1_2.model.DeleteRowResult;
 import ru.moysklad.remap_1_2.model.DocumentMetadata;
 import ru.moysklad.remap_1_2.model.ErrorOrArray;
 import ru.moysklad.remap_1_2.model.State;
+import ru.moysklad.remap_1_2.model.StateRowResult;
 import ru.moysklad.remap_1_2.model.Task;
 import ru.moysklad.remap_1_2.model.TaskList;
 import ru.moysklad.remap_1_2.model.TaskNote;
@@ -42,7 +40,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+import javax.validation.constraints.*;
+import javax.validation.Valid;
+
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class TasksApi extends BaseApi {
 
@@ -165,35 +166,35 @@ if (contentType != null)
   /**
    * Создать или изменить типы задач
    * Создание одного или нескольких типов задач
-   * @param createTaskMetadataStatesRequest  (required)
+   * @param state  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return CreateTaskMetadataStates200Response
+   * @return State
    * @throws ApiException if fails to make API call
    */
-  public CreateTaskMetadataStates200Response createTaskMetadataStates(@javax.annotation.Nonnull CreateTaskMetadataStatesRequest createTaskMetadataStatesRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createTaskMetadataStates(createTaskMetadataStatesRequest, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public State createTaskMetadataStates(@javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+    return this.createTaskMetadataStates(state, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
 
   /**
    * Создать или изменить типы задач
    * Создание одного или нескольких типов задач
-   * @param createTaskMetadataStatesRequest  (required)
+   * @param state  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return CreateTaskMetadataStates200Response
+   * @return State
    * @throws ApiException if fails to make API call
    */
-  public CreateTaskMetadataStates200Response createTaskMetadataStates(@javax.annotation.Nonnull CreateTaskMetadataStatesRequest createTaskMetadataStatesRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
-    Object localVarPostBody = createTaskMetadataStatesRequest;
+  public State createTaskMetadataStates(@javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = state;
     
-    // verify the required parameter 'createTaskMetadataStatesRequest' is set
-    if (createTaskMetadataStatesRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'createTaskMetadataStatesRequest' when calling createTaskMetadataStates");
+    // verify the required parameter 'state' is set
+    if (state == null) {
+      throw new ApiException(400, "Missing the required parameter 'state' when calling createTaskMetadataStates");
     }
     
     // create path and map variables
@@ -230,7 +231,93 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<CreateTaskMetadataStates200Response> localVarReturnType = new TypeReference<CreateTaskMetadataStates200Response>() {};
+    TypeReference<State> localVarReturnType = new TypeReference<State>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Массовое создание и обновление типов задач
+   * 
+   * @param state  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @return List&lt;StateRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<StateRowResult> createTaskMetadataStatesBatch(@javax.annotation.Nonnull List<@Valid State> state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+    return this.createTaskMetadataStatesBatch(state, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+
+  /**
+   * Массовое создание и обновление типов задач
+   * 
+   * @param state  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return List&lt;StateRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<StateRowResult> createTaskMetadataStatesBatch(@javax.annotation.Nonnull List<@Valid State> state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = state;
+    
+    // verify the required parameter 'state' is set
+    if (state == null) {
+      throw new ApiException(400, "Missing the required parameter 'state' when calling createTaskMetadataStatesBatch");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/task/metadata/states/batch";
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null)
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+if (acceptEncoding != null)
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+if (contentType != null)
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+
+    localVarHeaderParams.putAll(additionalHeaders);
+
+    
+    
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<List<StateRowResult>> localVarReturnType = new TypeReference<List<StateRowResult>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
@@ -350,10 +437,10 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;CreateTaskNotesBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateTaskNotesBatch200ResponseInner> createTaskNotesBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<TaskNote> taskNote, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<BatchResponseEntity> createTaskNotesBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid TaskNote> taskNote, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createTaskNotesBatch(id, taskNote, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -367,10 +454,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;CreateTaskNotesBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateTaskNotesBatch200ResponseInner> createTaskNotesBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<TaskNote> taskNote, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<BatchResponseEntity> createTaskNotesBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid TaskNote> taskNote, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = taskNote;
     
     // verify the required parameter 'id' is set
@@ -418,7 +505,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<CreateTaskNotesBatch200ResponseInner>> localVarReturnType = new TypeReference<List<CreateTaskNotesBatch200ResponseInner>>() {};
+    TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
@@ -444,10 +531,10 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;CreateTasksBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateTasksBatch200ResponseInner> createTasksBatch(@javax.annotation.Nonnull List<Task> task, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<BatchResponseEntity> createTasksBatch(@javax.annotation.Nonnull List<@Valid Task> task, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createTasksBatch(task, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -462,10 +549,10 @@ if (contentType != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return List&lt;CreateTasksBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateTasksBatch200ResponseInner> createTasksBatch(@javax.annotation.Nonnull List<Task> task, RequestOptions options) throws ApiException {
+  public List<BatchResponseEntity> createTasksBatch(@javax.annotation.Nonnull List<@Valid Task> task, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createTasksBatch(task, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -480,10 +567,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;CreateTasksBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateTasksBatch200ResponseInner> createTasksBatch(@javax.annotation.Nonnull List<Task> task, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<BatchResponseEntity> createTasksBatch(@javax.annotation.Nonnull List<@Valid Task> task, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = task;
     
     // verify the required parameter 'task' is set
@@ -526,7 +613,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<CreateTasksBatch200ResponseInner>> localVarReturnType = new TypeReference<List<CreateTasksBatch200ResponseInner>>() {};
+    TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
@@ -806,7 +893,7 @@ if (acceptEncoding != null)
    * @param contentType  (optional, default to application/json)
    * @throws ApiException if fails to make API call
    */
-  public void deleteTaskNotesBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<TaskNote> taskNote, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public void deleteTaskNotesBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid TaskNote> taskNote, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     this.deleteTaskNotesBatch(id, taskNote, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -822,7 +909,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteTaskNotesBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<TaskNote> taskNote, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public void deleteTaskNotesBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid TaskNote> taskNote, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = taskNote;
     
     // verify the required parameter 'id' is set
@@ -894,10 +981,10 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deleteTasksBatch(@javax.annotation.Nonnull List<Task> task, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<DeleteRowResult> deleteTasksBatch(@javax.annotation.Nonnull List<@Valid Task> task, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.deleteTasksBatch(task, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -910,10 +997,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deleteTasksBatch(@javax.annotation.Nonnull List<Task> task, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<DeleteRowResult> deleteTasksBatch(@javax.annotation.Nonnull List<@Valid Task> task, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = task;
     
     // verify the required parameter 'task' is set
@@ -955,7 +1042,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<DeleteContractsBatch200ResponseInner>> localVarReturnType = new TypeReference<List<DeleteContractsBatch200ResponseInner>>() {};
+    TypeReference<List<DeleteRowResult>> localVarReturnType = new TypeReference<List<DeleteRowResult>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

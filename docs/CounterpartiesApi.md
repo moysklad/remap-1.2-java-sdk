@@ -67,8 +67,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<FileUpload> fileUpload = Arrays.asList(); // List<FileUpload> | 
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid FileUpload> fileUpload = Arrays.asList(); // List<@Valid FileUpload> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -92,7 +92,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **fileUpload** | [**List&lt;FileUpload&gt;**](FileUpload.md)|  | |
+| **fileUpload** | [**List&lt;@Valid FileUpload&gt;**](FileUpload.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -120,7 +120,7 @@ public class Example {
 
 ## createCounterpartiesBatch
 
-> List&lt;CreateCounterpartiesBatch200ResponseInner&gt; createCounterpartiesBatch(counterparty, expand, accept, acceptEncoding, contentType)
+> List&lt;BatchResponseEntity&gt; createCounterpartiesBatch(counterparty, expand, accept, acceptEncoding, contentType)
 
 Создать или изменить контрагентов
 
@@ -152,13 +152,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
-        List<Counterparty> counterparty = Arrays.asList(); // List<Counterparty> | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        List<@Valid Counterparty> counterparty = Arrays.asList(); // List<@Valid Counterparty> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateCounterpartiesBatch200ResponseInner> result = apiInstance.createCounterpartiesBatch(counterparty, expand, accept, acceptEncoding, contentType);
+            List<BatchResponseEntity> result = apiInstance.createCounterpartiesBatch(counterparty, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CounterpartiesApi#createCounterpartiesBatch");
@@ -176,7 +176,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **counterparty** | [**List&lt;Counterparty&gt;**](Counterparty.md)|  | |
+| **counterparty** | [**List&lt;@Valid Counterparty&gt;**](Counterparty.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -184,7 +184,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreateCounterpartiesBatch200ResponseInner&gt;**](CreateCounterpartiesBatch200ResponseInner.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -238,7 +238,7 @@ public class Example {
 
         CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
         Counterparty counterparty = new Counterparty(); // Counterparty | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -322,7 +322,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Account account = new Account(); // Account | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -407,7 +407,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         ContactPerson contactPerson = new ContactPerson(); // ContactPerson | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -492,7 +492,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Note note = new Note(); // Note | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -545,7 +545,7 @@ public class Example {
 
 ## deleteCounterpartiesBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteCounterpartiesBatch(counterparty, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteCounterpartiesBatch(counterparty, accept, acceptEncoding, contentType)
 
 Удалить контрагентов
 
@@ -577,12 +577,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
-        List<Counterparty> counterparty = Arrays.asList(); // List<Counterparty> | 
+        List<@Valid Counterparty> counterparty = Arrays.asList(); // List<@Valid Counterparty> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteCounterpartiesBatch(counterparty, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteCounterpartiesBatch(counterparty, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CounterpartiesApi#deleteCounterpartiesBatch");
@@ -600,14 +600,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **counterparty** | [**List&lt;Counterparty&gt;**](Counterparty.md)|  | |
+| **counterparty** | [**List&lt;@Valid Counterparty&gt;**](Counterparty.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -660,7 +660,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -740,7 +740,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID accountId = UUID.randomUUID(); // UUID | ID счёта контрагента
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -822,7 +822,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID contactPersonId = UUID.randomUUID(); // UUID | ID контактного лица
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -904,7 +904,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID fileId = UUID.randomUUID(); // UUID | ID файла
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -986,7 +986,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID noteId = UUID.randomUUID(); // UUID | ID события контрагента
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1070,10 +1070,10 @@ public class Example {
         CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String search = "name=123"; // String | Контекстный поиск по строковым полям сущностей
-        String filter = "archived=false"; // String | Фильтрация выборки
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
-        String order = "name"; // String | Сортировка
+        String search = "search_example"; // String | Контекстный поиск по строковым полям сущностей
+        String filter = "filter_example"; // String | Фильтрация выборки
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
+        String order = "order_example"; // String | Сортировка
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1159,7 +1159,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID accountId = UUID.randomUUID(); // UUID | ID счёта контрагента
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1242,7 +1242,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
         String accept = "application/json"; // String | 
@@ -1327,8 +1327,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1410,7 +1410,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID contactPersonId = UUID.randomUUID(); // UUID | ID контактного лица
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1493,7 +1493,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
         String accept = "application/json"; // String | 
@@ -1578,7 +1578,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
         String accept = "application/json"; // String | 
@@ -1663,7 +1663,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1744,7 +1744,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID noteId = UUID.randomUUID(); // UUID | ID события контрагента
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1827,7 +1827,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
         String accept = "application/json"; // String | 
@@ -1912,9 +1912,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Counterparty counterparty = new Counterparty(); // Counterparty | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1999,7 +1999,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID accountId = UUID.randomUUID(); // UUID | ID счёта контрагента
         Account account = new Account(); // Account | 
         String accept = "application/json"; // String | 
@@ -2086,7 +2086,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID contactPersonId = UUID.randomUUID(); // UUID | ID контактного лица
         ContactPerson contactPerson = new ContactPerson(); // ContactPerson | 
         String accept = "application/json"; // String | 
@@ -2173,7 +2173,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID noteId = UUID.randomUUID(); // UUID | ID события контрагента
         Note note = new Note(); // Note | 
         String accept = "application/json"; // String | 

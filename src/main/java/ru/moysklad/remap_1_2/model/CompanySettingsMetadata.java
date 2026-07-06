@@ -27,6 +27,8 @@ import ru.moysklad.remap_1_2.model.CustomEntityMetadata;
 import ru.moysklad.remap_1_2.model.Meta;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -38,7 +40,7 @@ import java.util.StringJoiner;
   CompanySettingsMetadata.JSON_PROPERTY_META,
   CompanySettingsMetadata.JSON_PROPERTY_CUSTOM_ENTITIES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class CompanySettingsMetadata {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -64,6 +66,9 @@ public class CompanySettingsMetadata {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -101,6 +106,9 @@ public class CompanySettingsMetadata {
    * @return customEntities
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_CUSTOM_ENTITIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

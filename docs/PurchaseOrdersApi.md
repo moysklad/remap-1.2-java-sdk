@@ -8,6 +8,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createPurchaseOrderBatch**](PurchaseOrdersApi.md#createPurchaseOrderBatch) | **POST** /entity/purchaseorder/batch | Массовое создание и обновление PurchaseOrder |
 | [**createPurchaseOrderMetadataAttribute**](PurchaseOrdersApi.md#createPurchaseOrderMetadataAttribute) | **POST** /entity/purchaseorder/metadata/attributes | Создать Доп. поле PurchaseOrder |
 | [**createPurchaseOrderMetadataState**](PurchaseOrdersApi.md#createPurchaseOrderMetadataState) | **POST** /entity/purchaseorder/metadata/states | Создать статус PurchaseOrder |
+| [**createPurchaseOrderMetadataStatesBatch**](PurchaseOrdersApi.md#createPurchaseOrderMetadataStatesBatch) | **POST** /entity/purchaseorder/metadata/states/batch | Массовое создание и обновление статусов PurchaseOrder |
 | [**createPurchaseOrderNote**](PurchaseOrdersApi.md#createPurchaseOrderNote) | **POST** /entity/purchaseorder/{id}/notes | Добавить Событие Заказа поставщику |
 | [**createPurchaseOrderPosition**](PurchaseOrdersApi.md#createPurchaseOrderPosition) | **POST** /entity/purchaseorder/{id}/positions | Создать и обновить позицию Заказа поставщику |
 | [**createPurchaseOrderPositions**](PurchaseOrdersApi.md#createPurchaseOrderPositions) | **POST** /entity/purchaseorder/{id}/positions/batch | Массовое создание и обновление позиций Заказа поставщику |
@@ -70,7 +71,7 @@ public class Example {
 
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
         PurchaseOrder purchaseOrder = new PurchaseOrder(); // PurchaseOrder | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -122,7 +123,7 @@ public class Example {
 
 ## createPurchaseOrderBatch
 
-> List&lt;CreatePurchaseOrderBatch200ResponseInner&gt; createPurchaseOrderBatch(purchaseOrder, expand, accept, acceptEncoding, contentType)
+> List&lt;BatchResponseEntity&gt; createPurchaseOrderBatch(purchaseOrder, expand, accept, acceptEncoding, contentType)
 
 Массовое создание и обновление PurchaseOrder
 
@@ -152,13 +153,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
-        List<PurchaseOrder> purchaseOrder = Arrays.asList(); // List<PurchaseOrder> | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        List<@Valid PurchaseOrder> purchaseOrder = Arrays.asList(); // List<@Valid PurchaseOrder> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreatePurchaseOrderBatch200ResponseInner> result = apiInstance.createPurchaseOrderBatch(purchaseOrder, expand, accept, acceptEncoding, contentType);
+            List<BatchResponseEntity> result = apiInstance.createPurchaseOrderBatch(purchaseOrder, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PurchaseOrdersApi#createPurchaseOrderBatch");
@@ -176,7 +177,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **purchaseOrder** | [**List&lt;PurchaseOrder&gt;**](PurchaseOrder.md)|  | |
+| **purchaseOrder** | [**List&lt;@Valid PurchaseOrder&gt;**](PurchaseOrder.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -184,7 +185,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreatePurchaseOrderBatch200ResponseInner&gt;**](CreatePurchaseOrderBatch200ResponseInner.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -286,7 +287,7 @@ public class Example {
 
 ## createPurchaseOrderMetadataState
 
-> CreateInternalOrderMetadataStateRequest createPurchaseOrderMetadataState(createInternalOrderMetadataStateRequest, accept, acceptEncoding, contentType)
+> State createPurchaseOrderMetadataState(state, accept, acceptEncoding, contentType)
 
 Создать статус PurchaseOrder
 
@@ -316,12 +317,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
-        CreateInternalOrderMetadataStateRequest createInternalOrderMetadataStateRequest = new CreateInternalOrderMetadataStateRequest(); // CreateInternalOrderMetadataStateRequest | 
+        State state = new State(); // State | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            CreateInternalOrderMetadataStateRequest result = apiInstance.createPurchaseOrderMetadataState(createInternalOrderMetadataStateRequest, accept, acceptEncoding, contentType);
+            State result = apiInstance.createPurchaseOrderMetadataState(state, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PurchaseOrdersApi#createPurchaseOrderMetadataState");
@@ -339,14 +340,95 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **createInternalOrderMetadataStateRequest** | [**CreateInternalOrderMetadataStateRequest**](CreateInternalOrderMetadataStateRequest.md)|  | |
+| **state** | [**State**](State.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**CreateInternalOrderMetadataStateRequest**](CreateInternalOrderMetadataStateRequest.md)
+[**State**](State.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+
+
+## createPurchaseOrderMetadataStatesBatch
+
+> List&lt;StateRowResult&gt; createPurchaseOrderMetadataStatesBatch(state, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление статусов PurchaseOrder
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.PurchaseOrdersApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
+        List<@Valid State> state = Arrays.asList(); // List<@Valid State> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<StateRowResult> result = apiInstance.createPurchaseOrderMetadataStatesBatch(state, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PurchaseOrdersApi#createPurchaseOrderMetadataStatesBatch");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **state** | [**List&lt;@Valid State&gt;**](State.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;StateRowResult&gt;**](StateRowResult.md)
 
 ### Authorization
 
@@ -399,7 +481,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         EventNote eventNote = new EventNote(); // EventNote | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -482,9 +564,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         PurchaseOrderPosition purchaseOrderPosition = new PurchaseOrderPosition(); // PurchaseOrderPosition | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -567,9 +649,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<PurchaseOrderPosition> purchaseOrderPosition = Arrays.asList(); // List<PurchaseOrderPosition> | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid PurchaseOrderPosition> purchaseOrderPosition = Arrays.asList(); // List<@Valid PurchaseOrderPosition> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -593,7 +675,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **purchaseOrderPosition** | [**List&lt;PurchaseOrderPosition&gt;**](PurchaseOrderPosition.md)|  | |
+| **purchaseOrderPosition** | [**List&lt;@Valid PurchaseOrderPosition&gt;**](PurchaseOrderPosition.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -652,7 +734,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -702,7 +784,7 @@ null (empty response body)
 
 ## deletePurchaseOrderBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deletePurchaseOrderBatch(purchaseOrder, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deletePurchaseOrderBatch(purchaseOrder, accept, acceptEncoding, contentType)
 
 Массовое удаление PurchaseOrder
 
@@ -732,12 +814,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
-        List<PurchaseOrder> purchaseOrder = Arrays.asList(); // List<PurchaseOrder> | 
+        List<@Valid PurchaseOrder> purchaseOrder = Arrays.asList(); // List<@Valid PurchaseOrder> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deletePurchaseOrderBatch(purchaseOrder, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deletePurchaseOrderBatch(purchaseOrder, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PurchaseOrdersApi#deletePurchaseOrderBatch");
@@ -755,14 +837,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **purchaseOrder** | [**List&lt;PurchaseOrder&gt;**](PurchaseOrder.md)|  | |
+| **purchaseOrder** | [**List&lt;@Valid PurchaseOrder&gt;**](PurchaseOrder.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -813,7 +895,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -893,7 +975,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -976,7 +1058,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID noteId = UUID.randomUUID(); // UUID | ID События
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1056,9 +1138,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1110,7 +1192,7 @@ null (empty response body)
 
 ## deletePurchaseOrderPositionsBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deletePurchaseOrderPositionsBatch(id, purchaseOrderPosition, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deletePurchaseOrderPositionsBatch(id, purchaseOrderPosition, accept, acceptEncoding, contentType)
 
 Массовое удаление позиций PurchaseOrder
 
@@ -1140,13 +1222,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<PurchaseOrderPosition> purchaseOrderPosition = Arrays.asList(); // List<PurchaseOrderPosition> | 
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid PurchaseOrderPosition> purchaseOrderPosition = Arrays.asList(); // List<@Valid PurchaseOrderPosition> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deletePurchaseOrderPositionsBatch(id, purchaseOrderPosition, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deletePurchaseOrderPositionsBatch(id, purchaseOrderPosition, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PurchaseOrdersApi#deletePurchaseOrderPositionsBatch");
@@ -1165,14 +1247,14 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **purchaseOrderPosition** | [**List&lt;PurchaseOrderPosition&gt;**](PurchaseOrderPosition.md)|  | |
+| **purchaseOrderPosition** | [**List&lt;@Valid PurchaseOrderPosition&gt;**](PurchaseOrderPosition.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -1223,8 +1305,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1310,8 +1392,8 @@ public class Example {
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String search = "name=123"; // String | Контекстный поиск по строковым полям сущностей
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String search = "search_example"; // String | Контекстный поиск по строковым полям сущностей
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1559,7 +1641,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1640,7 +1722,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1723,7 +1805,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID noteId = UUID.randomUUID(); // UUID | ID События
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1806,10 +1888,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1891,9 +1973,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1978,10 +2060,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -2146,9 +2228,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         PurchaseOrder purchaseOrder = new PurchaseOrder(); // PurchaseOrder | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -2233,7 +2315,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         AttributeMetaInfo attributeMetaInfo = new AttributeMetaInfo(); // AttributeMetaInfo | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -2316,7 +2398,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         State state = new State(); // State | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -2401,7 +2483,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID noteId = UUID.randomUUID(); // UUID | ID События
         EventNote eventNote = new EventNote(); // EventNote | 
         String accept = "application/json"; // String | 
@@ -2486,10 +2568,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
         PurchaseOrderPosition purchaseOrderPosition = new PurchaseOrderPosition(); // PurchaseOrderPosition | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 

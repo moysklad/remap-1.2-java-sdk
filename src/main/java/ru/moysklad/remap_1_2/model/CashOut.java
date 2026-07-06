@@ -45,6 +45,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -88,8 +90,8 @@ import java.util.StringJoiner;
   CashOut.JSON_PROPERTY_FACTURE_IN,
   CashOut.JSON_PROPERTY_OPERATIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
-public class CashOut {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
+public class CashOut extends EntityWithMeta {
   public static CashOut createWithMeta(UUID id) {
     CashOut o = new CashOut();
     Meta meta = new Meta();
@@ -191,7 +193,7 @@ public class CashOut {
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
-  private JsonNullable<List<AttributeAbstract>> attributes = JsonNullable.<List<AttributeAbstract>>undefined();
+  private JsonNullable<List<@Valid AttributeAbstract>> attributes = JsonNullable.<List<@Valid AttributeAbstract>>undefined();
 
   public static final String JSON_PROPERTY_CONTRACT = "contract";
   @javax.annotation.Nullable
@@ -239,7 +241,7 @@ public class CashOut {
 
   public static final String JSON_PROPERTY_OPERATIONS = "operations";
   @javax.annotation.Nullable
-  private JsonNullable<List<FinanceOutOperationAbstract>> operations = JsonNullable.<List<FinanceOutOperationAbstract>>undefined();
+  private JsonNullable<List<@Valid FinanceOutOperationAbstract>> operations = JsonNullable.<List<@Valid FinanceOutOperationAbstract>>undefined();
 
   public CashOut() {
   }
@@ -284,6 +286,9 @@ public class CashOut {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -306,6 +311,9 @@ public class CashOut {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -322,6 +330,9 @@ public class CashOut {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -345,6 +356,8 @@ public class CashOut {
    * @return name
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -374,6 +387,8 @@ public class CashOut {
    * @return code
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -403,6 +418,8 @@ public class CashOut {
    * @return externalCode
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -432,6 +449,9 @@ public class CashOut {
    * @return syncId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -461,6 +481,8 @@ public class CashOut {
    * @return description
    */
   @javax.annotation.Nullable
+ @Size(max=4096)
+
   @JsonIgnore
 
   public String getDescription() {
@@ -492,6 +514,8 @@ public class CashOut {
    * @return created
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_CREATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -508,6 +532,8 @@ public class CashOut {
    * @return deleted
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_DELETED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -524,6 +550,8 @@ public class CashOut {
    * @return updated
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -547,6 +575,8 @@ public class CashOut {
    * @return moment
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -576,6 +606,9 @@ public class CashOut {
    * @return owner
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Employee getOwner() {
@@ -614,6 +647,9 @@ public class CashOut {
    * @return group
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -643,6 +679,8 @@ public class CashOut {
    * @return applicable
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_APPLICABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -665,6 +703,8 @@ public class CashOut {
    * @return printed
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PRINTED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -681,6 +721,8 @@ public class CashOut {
    * @return published
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PUBLISHED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -704,6 +746,9 @@ public class CashOut {
    * @return rate
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -733,6 +778,9 @@ public class CashOut {
    * @return organization
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -762,6 +810,9 @@ public class CashOut {
    * @return agent
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -791,6 +842,9 @@ public class CashOut {
    * @return expenseItem
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public ExpenseItem getExpenseItem() {
@@ -817,8 +871,8 @@ public class CashOut {
   }
 
 
-  public CashOut attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
+  public CashOut attributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
     
     return this;
   }
@@ -826,7 +880,7 @@ public class CashOut {
 
   public CashOut addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
-      this.attributes = JsonNullable.<List<AttributeAbstract>>of(new ArrayList<>());
+      this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(new ArrayList<>());
     }
     try {
       this.attributes.get().add(attributesItem);
@@ -841,9 +895,12 @@ public class CashOut {
    * @return attributes
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
-  public List<AttributeAbstract> getAttributes() {
+  public List<@Valid AttributeAbstract> getAttributes() {
         return attributes.orElse(null);
   }
 
@@ -853,17 +910,17 @@ public class CashOut {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
+  public JsonNullable<List<@Valid AttributeAbstract>> getAttributes_JsonNullable() {
     return attributes;
   }
   
   @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
-  public void setAttributes_JsonNullable(JsonNullable<List<AttributeAbstract>> attributes) {
+  public void setAttributes_JsonNullable(JsonNullable<List<@Valid AttributeAbstract>> attributes) {
     this.attributes = attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
+  public void setAttributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
   }
 
 
@@ -879,6 +936,9 @@ public class CashOut {
    * @return contract
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Contract getContract() {
@@ -917,6 +977,9 @@ public class CashOut {
    * @return files
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public FileList getFiles() {
@@ -955,6 +1018,8 @@ public class CashOut {
    * @return noClosingDocs
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_NO_CLOSING_DOCS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -984,6 +1049,8 @@ public class CashOut {
    * @return paymentPurpose
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_PAYMENT_PURPOSE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1013,6 +1080,9 @@ public class CashOut {
    * @return project
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Project getProject() {
@@ -1051,6 +1121,9 @@ public class CashOut {
    * @return salesChannel
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public SalesChannel getSalesChannel() {
@@ -1082,6 +1155,8 @@ public class CashOut {
    * @return shared
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1105,6 +1180,9 @@ public class CashOut {
    * @return state
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public State getState() {
@@ -1136,6 +1214,8 @@ public class CashOut {
    * @return sum
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1152,6 +1232,8 @@ public class CashOut {
    * @return vatSum
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_VAT_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1175,6 +1257,9 @@ public class CashOut {
    * @return factureIn
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public FactureIn getFactureIn() {
@@ -1201,8 +1286,8 @@ public class CashOut {
   }
 
 
-  public CashOut operations(@javax.annotation.Nullable List<FinanceOutOperationAbstract> operations) {
-    this.operations = JsonNullable.<List<FinanceOutOperationAbstract>>of(operations);
+  public CashOut operations(@javax.annotation.Nullable List<@Valid FinanceOutOperationAbstract> operations) {
+    this.operations = JsonNullable.<List<@Valid FinanceOutOperationAbstract>>of(operations);
     
     return this;
   }
@@ -1210,7 +1295,7 @@ public class CashOut {
 
   public CashOut addOperationsItem(FinanceOutOperationAbstract operationsItem) {
     if (this.operations == null || !this.operations.isPresent()) {
-      this.operations = JsonNullable.<List<FinanceOutOperationAbstract>>of(new ArrayList<>());
+      this.operations = JsonNullable.<List<@Valid FinanceOutOperationAbstract>>of(new ArrayList<>());
     }
     try {
       this.operations.get().add(operationsItem);
@@ -1225,9 +1310,12 @@ public class CashOut {
    * @return operations
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
-  public List<FinanceOutOperationAbstract> getOperations() {
+  public List<@Valid FinanceOutOperationAbstract> getOperations() {
         return operations.orElse(null);
   }
 
@@ -1237,17 +1325,17 @@ public class CashOut {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<FinanceOutOperationAbstract>> getOperations_JsonNullable() {
+  public JsonNullable<List<@Valid FinanceOutOperationAbstract>> getOperations_JsonNullable() {
     return operations;
   }
   
   @JsonProperty(value = JSON_PROPERTY_OPERATIONS, required = false)
-  public void setOperations_JsonNullable(JsonNullable<List<FinanceOutOperationAbstract>> operations) {
+  public void setOperations_JsonNullable(JsonNullable<List<@Valid FinanceOutOperationAbstract>> operations) {
     this.operations = operations;
   }
 
-  public void setOperations(@javax.annotation.Nullable List<FinanceOutOperationAbstract> operations) {
-    this.operations = JsonNullable.<List<FinanceOutOperationAbstract>>of(operations);
+  public void setOperations(@javax.annotation.Nullable List<@Valid FinanceOutOperationAbstract> operations) {
+    this.operations = JsonNullable.<List<@Valid FinanceOutOperationAbstract>>of(operations);
   }
 
 

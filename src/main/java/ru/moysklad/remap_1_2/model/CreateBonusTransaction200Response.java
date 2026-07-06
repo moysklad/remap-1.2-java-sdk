@@ -36,6 +36,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -70,7 +72,7 @@ import java.util.StringJoiner;
   CreateBonusTransaction200Response.JSON_PROPERTY_UPDATED_BY
 })
 @JsonTypeName("createBonusTransaction_200_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateBonusTransaction200Response {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -204,6 +206,9 @@ public class CreateBonusTransaction200Response {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -226,6 +231,9 @@ public class CreateBonusTransaction200Response {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -242,6 +250,9 @@ public class CreateBonusTransaction200Response {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -265,6 +276,9 @@ public class CreateBonusTransaction200Response {
    * @return owner
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_OWNER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -294,6 +308,9 @@ public class CreateBonusTransaction200Response {
    * @return agent
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -323,6 +340,9 @@ public class CreateBonusTransaction200Response {
    * @return group
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -352,6 +372,9 @@ public class CreateBonusTransaction200Response {
    * @return organization
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -381,6 +404,9 @@ public class CreateBonusTransaction200Response {
    * @return parentDocument
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public BonusTransactionParentDocument getParentDocument() {
@@ -419,6 +445,8 @@ public class CreateBonusTransaction200Response {
    * @return applicable
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_APPLICABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -448,6 +476,9 @@ public class CreateBonusTransaction200Response {
    * @return bonusProgram
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_BONUS_PROGRAM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -477,6 +508,8 @@ public class CreateBonusTransaction200Response {
    * @return bonusValue
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_BONUS_VALUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -506,6 +539,8 @@ public class CreateBonusTransaction200Response {
    * @return transactionType
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_TRANSACTION_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -528,6 +563,8 @@ public class CreateBonusTransaction200Response {
    * @return transactionStatus
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_TRANSACTION_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -544,6 +581,8 @@ public class CreateBonusTransaction200Response {
    * @return categoryType
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_CATEGORY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -567,6 +606,8 @@ public class CreateBonusTransaction200Response {
    * @return code
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -596,6 +637,8 @@ public class CreateBonusTransaction200Response {
    * @return name
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -625,6 +668,8 @@ public class CreateBonusTransaction200Response {
    * @return externalCode
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -654,6 +699,8 @@ public class CreateBonusTransaction200Response {
    * @return description
    */
   @javax.annotation.Nullable
+ @Size(max=4096)
+
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -683,6 +730,8 @@ public class CreateBonusTransaction200Response {
    * @return moment
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -705,6 +754,8 @@ public class CreateBonusTransaction200Response {
    * @return created
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_CREATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -721,6 +772,8 @@ public class CreateBonusTransaction200Response {
    * @return updated
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -744,6 +797,8 @@ public class CreateBonusTransaction200Response {
    * @return executionDate
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_EXECUTION_DATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -773,6 +828,8 @@ public class CreateBonusTransaction200Response {
    * @return shared
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -802,6 +859,8 @@ public class CreateBonusTransaction200Response {
    * @return updatedBy
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_UPDATED_BY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

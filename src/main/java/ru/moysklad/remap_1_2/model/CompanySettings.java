@@ -28,6 +28,8 @@ import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.PriceType;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -48,7 +50,7 @@ import java.util.StringJoiner;
   CompanySettings.JSON_PROPERTY_COMPANY_ADDRESS,
   CompanySettings.JSON_PROPERTY_ACCOUNT_COUNTRY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class CompanySettings {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -120,6 +122,9 @@ public class CompanySettings {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -149,6 +154,9 @@ public class CompanySettings {
    * @return currency
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -186,6 +194,9 @@ public class CompanySettings {
    * @return priceTypes
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_PRICE_TYPES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -215,6 +226,8 @@ public class CompanySettings {
    * @return discountStrategy
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_DISCOUNT_STRATEGY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -244,6 +257,8 @@ public class CompanySettings {
    * @return globalOperationNumbering
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_GLOBAL_OPERATION_NUMBERING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -273,6 +288,8 @@ public class CompanySettings {
    * @return checkShippingStock
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_CHECK_SHIPPING_STOCK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -302,6 +319,8 @@ public class CompanySettings {
    * @return checkMinPrice
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_CHECK_MIN_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -331,6 +350,8 @@ public class CompanySettings {
    * @return useRecycleBin
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_USE_RECYCLE_BIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -360,6 +381,8 @@ public class CompanySettings {
    * @return useCompanyAddress
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_USE_COMPANY_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -389,6 +412,8 @@ public class CompanySettings {
    * @return companyAddress
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_COMPANY_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -411,6 +436,8 @@ public class CompanySettings {
    * @return accountCountry
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_COUNTRY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

@@ -24,7 +24,7 @@ import ru.moysklad.remap_1_2.model.AttributeMetaInfo;
 import ru.moysklad.remap_1_2.model.AttributeMetaInfoList;
 import ru.moysklad.remap_1_2.model.CreateInvoiceInBatch200ResponseInner;
 import ru.moysklad.remap_1_2.model.CreateInvoiceInPositionsBatch200ResponseInner;
-import ru.moysklad.remap_1_2.model.DeleteContractsBatch200ResponseInner;
+import ru.moysklad.remap_1_2.model.DeleteInvoiceOutBatch200ResponseInner;
 import ru.moysklad.remap_1_2.model.DocumentMetadata;
 import ru.moysklad.remap_1_2.model.ErrorOrArray;
 import ru.moysklad.remap_1_2.model.FileUpload;
@@ -45,7 +45,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+import javax.validation.constraints.*;
+import javax.validation.Valid;
+
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class InvoiceInsApi extends BaseApi {
 
@@ -68,7 +71,7 @@ public class InvoiceInsApi extends BaseApi {
    * @return List&lt;ModelFile&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<ModelFile> addInvoiceInFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<ModelFile> addInvoiceInFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.addInvoiceInFiles(id, fileUpload, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -85,7 +88,7 @@ public class InvoiceInsApi extends BaseApi {
    * @return List&lt;ModelFile&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<ModelFile> addInvoiceInFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<ModelFile> addInvoiceInFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = fileUpload;
     
     // verify the required parameter 'id' is set
@@ -270,7 +273,7 @@ if (contentType != null)
    * @return List&lt;CreateInvoiceInBatch200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateInvoiceInBatch200ResponseInner> createInvoiceInBatch(@javax.annotation.Nonnull List<InvoiceIn> invoiceIn, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<CreateInvoiceInBatch200ResponseInner> createInvoiceInBatch(@javax.annotation.Nonnull List<@Valid InvoiceIn> invoiceIn, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createInvoiceInBatch(invoiceIn, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -288,7 +291,7 @@ if (contentType != null)
    * @return List&lt;CreateInvoiceInBatch200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateInvoiceInBatch200ResponseInner> createInvoiceInBatch(@javax.annotation.Nonnull List<InvoiceIn> invoiceIn, RequestOptions options) throws ApiException {
+  public List<CreateInvoiceInBatch200ResponseInner> createInvoiceInBatch(@javax.annotation.Nonnull List<@Valid InvoiceIn> invoiceIn, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createInvoiceInBatch(invoiceIn, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -306,7 +309,7 @@ if (contentType != null)
    * @return List&lt;CreateInvoiceInBatch200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateInvoiceInBatch200ResponseInner> createInvoiceInBatch(@javax.annotation.Nonnull List<InvoiceIn> invoiceIn, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<CreateInvoiceInBatch200ResponseInner> createInvoiceInBatch(@javax.annotation.Nonnull List<@Valid InvoiceIn> invoiceIn, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = invoiceIn;
     
     // verify the required parameter 'invoiceIn' is set
@@ -584,7 +587,7 @@ if (contentType != null)
    * @return List&lt;CreateInvoiceInPositionsBatch200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateInvoiceInPositionsBatch200ResponseInner> createInvoiceInPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<InvoiceInPosition> invoiceInPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<CreateInvoiceInPositionsBatch200ResponseInner> createInvoiceInPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid InvoiceInPosition> invoiceInPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createInvoiceInPositionsBatch(id, invoiceInPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -605,7 +608,7 @@ if (contentType != null)
    * @return List&lt;CreateInvoiceInPositionsBatch200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateInvoiceInPositionsBatch200ResponseInner> createInvoiceInPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<InvoiceInPosition> invoiceInPosition, RequestOptions options) throws ApiException {
+  public List<CreateInvoiceInPositionsBatch200ResponseInner> createInvoiceInPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid InvoiceInPosition> invoiceInPosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createInvoiceInPositionsBatch(id, invoiceInPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -624,7 +627,7 @@ if (contentType != null)
    * @return List&lt;CreateInvoiceInPositionsBatch200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateInvoiceInPositionsBatch200ResponseInner> createInvoiceInPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<InvoiceInPosition> invoiceInPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<CreateInvoiceInPositionsBatch200ResponseInner> createInvoiceInPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid InvoiceInPosition> invoiceInPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = invoiceInPosition;
     
     // verify the required parameter 'id' is set
@@ -782,10 +785,10 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteInvoiceOutBatch200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deleteInvoiceInBatch(@javax.annotation.Nonnull List<InvoiceIn> invoiceIn, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<DeleteInvoiceOutBatch200ResponseInner> deleteInvoiceInBatch(@javax.annotation.Nonnull List<@Valid InvoiceIn> invoiceIn, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.deleteInvoiceInBatch(invoiceIn, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -798,10 +801,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteInvoiceOutBatch200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deleteInvoiceInBatch(@javax.annotation.Nonnull List<InvoiceIn> invoiceIn, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<DeleteInvoiceOutBatch200ResponseInner> deleteInvoiceInBatch(@javax.annotation.Nonnull List<@Valid InvoiceIn> invoiceIn, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = invoiceIn;
     
     // verify the required parameter 'invoiceIn' is set
@@ -843,7 +846,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<DeleteContractsBatch200ResponseInner>> localVarReturnType = new TypeReference<List<DeleteContractsBatch200ResponseInner>>() {};
+    TypeReference<List<DeleteInvoiceOutBatch200ResponseInner>> localVarReturnType = new TypeReference<List<DeleteInvoiceOutBatch200ResponseInner>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
@@ -1241,10 +1244,10 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteInvoiceOutBatch200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deleteInvoiceInPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<InvoiceInPosition> invoiceInPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<DeleteInvoiceOutBatch200ResponseInner> deleteInvoiceInPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid InvoiceInPosition> invoiceInPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.deleteInvoiceInPositionsBatch(id, invoiceInPosition, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -1258,10 +1261,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteInvoiceOutBatch200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deleteInvoiceInPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<InvoiceInPosition> invoiceInPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<DeleteInvoiceOutBatch200ResponseInner> deleteInvoiceInPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid InvoiceInPosition> invoiceInPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = invoiceInPosition;
     
     // verify the required parameter 'id' is set
@@ -1309,7 +1312,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<DeleteContractsBatch200ResponseInner>> localVarReturnType = new TypeReference<List<DeleteContractsBatch200ResponseInner>>() {};
+    TypeReference<List<DeleteInvoiceOutBatch200ResponseInner>> localVarReturnType = new TypeReference<List<DeleteInvoiceOutBatch200ResponseInner>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

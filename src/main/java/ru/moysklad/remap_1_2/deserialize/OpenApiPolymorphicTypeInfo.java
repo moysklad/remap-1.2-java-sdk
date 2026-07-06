@@ -24,10 +24,15 @@ import java.lang.annotation.Target;
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public @interface OpenApiPolymorphicTypeInfo {
   /**
    * Dot-notation path to the discriminator value in the JSON payload.
    */
   String path();
+
+  /**
+   * Resolve payloads shaped like batch errors to the Error model when mappings do not match.
+   */
+  boolean batchErrorFallback() default false;
 }

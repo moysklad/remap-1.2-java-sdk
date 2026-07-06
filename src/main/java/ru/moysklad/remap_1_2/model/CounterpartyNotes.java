@@ -27,6 +27,8 @@ import ru.moysklad.remap_1_2.model.MetaList;
 import ru.moysklad.remap_1_2.model.Note;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -39,7 +41,7 @@ import java.util.StringJoiner;
   CounterpartyNotes.JSON_PROPERTY_ROWS
 })
 @JsonTypeName("Counterparty_notes")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class CounterpartyNotes {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -65,6 +67,9 @@ public class CounterpartyNotes {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -102,6 +107,9 @@ public class CounterpartyNotes {
    * @return rows
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ROWS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

@@ -24,6 +24,8 @@ import ru.moysklad.remap_1_2.model.RetailStoreEnvironmentChequePrinter;
 import ru.moysklad.remap_1_2.model.RetailStoreEnvironmentSoftware;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -39,7 +41,7 @@ import java.util.StringJoiner;
   RetailStoreEnvironment.JSON_PROPERTY_PAYMENT_TERMINAL
 })
 @JsonTypeName("RetailStore_environment")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStoreEnvironment {
 
   public static final String JSON_PROPERTY_DEVICE = "device";
@@ -77,6 +79,8 @@ public class RetailStoreEnvironment {
    * @return device
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_DEVICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -106,6 +110,8 @@ public class RetailStoreEnvironment {
    * @return os
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_OS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -135,6 +141,9 @@ public class RetailStoreEnvironment {
    * @return software
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_SOFTWARE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -164,6 +173,9 @@ public class RetailStoreEnvironment {
    * @return chequePrinter
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_CHEQUE_PRINTER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -193,6 +205,8 @@ public class RetailStoreEnvironment {
    * @return paymentTerminal
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_PAYMENT_TERMINAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

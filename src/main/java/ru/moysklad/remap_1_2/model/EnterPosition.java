@@ -36,6 +36,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -58,7 +60,7 @@ import java.util.StringJoiner;
   EnterPosition.JSON_PROPERTY_SLOT,
   EnterPosition.JSON_PROPERTY_THINGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class EnterPosition {
   public static EnterPosition createWithMeta(UUID parentId, UUID id) {
     EnterPosition o = new EnterPosition();
@@ -156,6 +158,9 @@ public class EnterPosition {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -178,6 +183,9 @@ public class EnterPosition {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -194,6 +202,9 @@ public class EnterPosition {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -219,6 +230,9 @@ public class EnterPosition {
    */
   @Deprecated
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -248,6 +262,9 @@ public class EnterPosition {
    * @return country
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Country getCountry() {
@@ -286,6 +303,9 @@ public class EnterPosition {
    * @return gtd
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Gtd getGtd() {
@@ -317,6 +337,8 @@ public class EnterPosition {
    * @return overhead
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_OVERHEAD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -340,6 +362,9 @@ public class EnterPosition {
    * @return pack
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Pack getPack() {
@@ -378,6 +403,8 @@ public class EnterPosition {
    * @return price
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -407,6 +434,8 @@ public class EnterPosition {
    * @return quantity
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -436,6 +465,8 @@ public class EnterPosition {
    * @return reason
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonIgnore
 
   public String getReason() {
@@ -474,6 +505,9 @@ public class EnterPosition {
    * @return slot
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public StoreSlot getSlot() {
@@ -520,6 +554,8 @@ public class EnterPosition {
    * @return things
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_THINGS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

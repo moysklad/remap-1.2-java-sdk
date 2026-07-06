@@ -53,7 +53,7 @@
 |**shipmentAddressFull** | [**Address**](Address.md) | Адрес доставки Заказа покупателя с детализацией по отдельным полям |  [optional] |
 |**invoicesOut** | [**List&lt;InvoiceOut&gt;**](InvoiceOut.md) | Массив ссылок на связанные счета покупателям |  [optional] |
 |**demands** | [**List&lt;Demand&gt;**](Demand.md) | Массив ссылок на связанные отгрузки |  [optional] |
-|**payments** | [**List&lt;CustomerOrderPaymentsInner&gt;**](CustomerOrderPaymentsInner.md) | Массив ссылок на связанные платежи |  [optional] |
+|**payments** | [**List&lt;RetailShiftPaymentsInner&gt;**](RetailShiftPaymentsInner.md) | Массив ссылок на связанные платежи |  [optional] |
 |**prepayments** | [**List&lt;Prepayment&gt;**](Prepayment.md) | Массив ссылок на связанные предоплаты |  [optional] |
 |**purchaseOrders** | [**List&lt;PurchaseOrder&gt;**](PurchaseOrder.md) | Массив ссылок на связанные заказы поставщикам |  [optional] |
 |**moves** | [**List&lt;Move&gt;**](Move.md) | Массив ссылок на связанные перемещения |  [optional] |

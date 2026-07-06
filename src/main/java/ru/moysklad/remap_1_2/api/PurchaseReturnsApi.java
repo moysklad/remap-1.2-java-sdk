@@ -22,9 +22,9 @@ import ru.moysklad.remap_1_2.Pair;
 
 import ru.moysklad.remap_1_2.model.AttributeMetaInfo;
 import ru.moysklad.remap_1_2.model.AttributeMetaInfoList;
-import ru.moysklad.remap_1_2.model.CreatePurchaseReturnBatch200ResponseInner;
+import ru.moysklad.remap_1_2.model.BatchResponseEntity;
 import ru.moysklad.remap_1_2.model.CreatePurchaseReturnPositions200ResponseInner;
-import ru.moysklad.remap_1_2.model.DeleteContractsBatch200ResponseInner;
+import ru.moysklad.remap_1_2.model.DeleteRowResult;
 import ru.moysklad.remap_1_2.model.DocumentMetadata;
 import ru.moysklad.remap_1_2.model.ErrorOrArray;
 import ru.moysklad.remap_1_2.model.FileUpload;
@@ -35,6 +35,7 @@ import ru.moysklad.remap_1_2.model.PurchaseReturnList;
 import ru.moysklad.remap_1_2.model.PurchaseReturnPosition;
 import ru.moysklad.remap_1_2.model.PurchaseReturnPositionList;
 import ru.moysklad.remap_1_2.model.State;
+import ru.moysklad.remap_1_2.model.StateRowResult;
 import java.util.UUID;
 
 
@@ -45,7 +46,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+import javax.validation.constraints.*;
+import javax.validation.Valid;
+
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class PurchaseReturnsApi extends BaseApi {
 
@@ -68,7 +72,7 @@ public class PurchaseReturnsApi extends BaseApi {
    * @return List&lt;ModelFile&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<ModelFile> addPurchaseReturnFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<ModelFile> addPurchaseReturnFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.addPurchaseReturnFiles(id, fileUpload, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -85,7 +89,7 @@ public class PurchaseReturnsApi extends BaseApi {
    * @return List&lt;ModelFile&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<ModelFile> addPurchaseReturnFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<ModelFile> addPurchaseReturnFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = fileUpload;
     
     // verify the required parameter 'id' is set
@@ -267,10 +271,10 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;CreatePurchaseReturnBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreatePurchaseReturnBatch200ResponseInner> createPurchaseReturnBatch(@javax.annotation.Nonnull List<PurchaseReturn> purchaseReturn, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<BatchResponseEntity> createPurchaseReturnBatch(@javax.annotation.Nonnull List<@Valid PurchaseReturn> purchaseReturn, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createPurchaseReturnBatch(purchaseReturn, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -285,10 +289,10 @@ if (contentType != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return List&lt;CreatePurchaseReturnBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreatePurchaseReturnBatch200ResponseInner> createPurchaseReturnBatch(@javax.annotation.Nonnull List<PurchaseReturn> purchaseReturn, RequestOptions options) throws ApiException {
+  public List<BatchResponseEntity> createPurchaseReturnBatch(@javax.annotation.Nonnull List<@Valid PurchaseReturn> purchaseReturn, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createPurchaseReturnBatch(purchaseReturn, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -303,10 +307,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;CreatePurchaseReturnBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreatePurchaseReturnBatch200ResponseInner> createPurchaseReturnBatch(@javax.annotation.Nonnull List<PurchaseReturn> purchaseReturn, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<BatchResponseEntity> createPurchaseReturnBatch(@javax.annotation.Nonnull List<@Valid PurchaseReturn> purchaseReturn, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = purchaseReturn;
     
     // verify the required parameter 'purchaseReturn' is set
@@ -349,7 +353,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<CreatePurchaseReturnBatch200ResponseInner>> localVarReturnType = new TypeReference<List<CreatePurchaseReturnBatch200ResponseInner>>() {};
+    TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
@@ -540,6 +544,92 @@ if (contentType != null)
   }
 
   /**
+   * Массовое создание и обновление статусов Возврата поставщику
+   * 
+   * @param state  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @return List&lt;StateRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<StateRowResult> createPurchaseReturnMetadataStatesBatch(@javax.annotation.Nonnull List<@Valid State> state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+    return this.createPurchaseReturnMetadataStatesBatch(state, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+
+  /**
+   * Массовое создание и обновление статусов Возврата поставщику
+   * 
+   * @param state  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return List&lt;StateRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<StateRowResult> createPurchaseReturnMetadataStatesBatch(@javax.annotation.Nonnull List<@Valid State> state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = state;
+    
+    // verify the required parameter 'state' is set
+    if (state == null) {
+      throw new ApiException(400, "Missing the required parameter 'state' when calling createPurchaseReturnMetadataStatesBatch");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/purchasereturn/metadata/states/batch";
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null)
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+if (acceptEncoding != null)
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+if (contentType != null)
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+
+    localVarHeaderParams.putAll(additionalHeaders);
+
+    
+    
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<List<StateRowResult>> localVarReturnType = new TypeReference<List<StateRowResult>>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
    * Создать и обновить позицию Возврата поставщику
    * 
    * @param id ID сущности (required)
@@ -670,7 +760,7 @@ if (contentType != null)
    * @return List&lt;CreatePurchaseReturnPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreatePurchaseReturnPositions200ResponseInner> createPurchaseReturnPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<PurchaseReturnPosition> purchaseReturnPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<CreatePurchaseReturnPositions200ResponseInner> createPurchaseReturnPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid PurchaseReturnPosition> purchaseReturnPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createPurchaseReturnPositions(id, purchaseReturnPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -691,7 +781,7 @@ if (contentType != null)
    * @return List&lt;CreatePurchaseReturnPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreatePurchaseReturnPositions200ResponseInner> createPurchaseReturnPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<PurchaseReturnPosition> purchaseReturnPosition, RequestOptions options) throws ApiException {
+  public List<CreatePurchaseReturnPositions200ResponseInner> createPurchaseReturnPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid PurchaseReturnPosition> purchaseReturnPosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createPurchaseReturnPositions(id, purchaseReturnPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -710,7 +800,7 @@ if (contentType != null)
    * @return List&lt;CreatePurchaseReturnPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreatePurchaseReturnPositions200ResponseInner> createPurchaseReturnPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<PurchaseReturnPosition> purchaseReturnPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<CreatePurchaseReturnPositions200ResponseInner> createPurchaseReturnPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid PurchaseReturnPosition> purchaseReturnPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = purchaseReturnPosition;
     
     // verify the required parameter 'id' is set
@@ -864,10 +954,10 @@ if (acceptEncoding != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deletePurchaseReturnBatch(@javax.annotation.Nonnull List<PurchaseReturn> purchaseReturn, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<DeleteRowResult> deletePurchaseReturnBatch(@javax.annotation.Nonnull List<@Valid PurchaseReturn> purchaseReturn, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.deletePurchaseReturnBatch(purchaseReturn, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -880,10 +970,10 @@ if (acceptEncoding != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deletePurchaseReturnBatch(@javax.annotation.Nonnull List<PurchaseReturn> purchaseReturn, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<DeleteRowResult> deletePurchaseReturnBatch(@javax.annotation.Nonnull List<@Valid PurchaseReturn> purchaseReturn, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = purchaseReturn;
     
     // verify the required parameter 'purchaseReturn' is set
@@ -925,7 +1015,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<DeleteContractsBatch200ResponseInner>> localVarReturnType = new TypeReference<List<DeleteContractsBatch200ResponseInner>>() {};
+    TypeReference<List<DeleteRowResult>> localVarReturnType = new TypeReference<List<DeleteRowResult>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
@@ -1310,10 +1400,10 @@ if (acceptEncoding != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deletePurchaseReturnPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<PurchaseReturnPosition> purchaseReturnPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<DeleteRowResult> deletePurchaseReturnPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid PurchaseReturnPosition> purchaseReturnPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.deletePurchaseReturnPositions(id, purchaseReturnPosition, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -1327,10 +1417,10 @@ if (acceptEncoding != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deletePurchaseReturnPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<PurchaseReturnPosition> purchaseReturnPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<DeleteRowResult> deletePurchaseReturnPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid PurchaseReturnPosition> purchaseReturnPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = purchaseReturnPosition;
     
     // verify the required parameter 'id' is set
@@ -1378,7 +1468,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<DeleteContractsBatch200ResponseInner>> localVarReturnType = new TypeReference<List<DeleteContractsBatch200ResponseInner>>() {};
+    TypeReference<List<DeleteRowResult>> localVarReturnType = new TypeReference<List<DeleteRowResult>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

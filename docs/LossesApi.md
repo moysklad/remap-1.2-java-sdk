@@ -64,7 +64,7 @@ public class Example {
 
         LossesApi apiInstance = new LossesApi(defaultClient);
         Loss loss = new Loss(); // Loss | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -116,7 +116,7 @@ public class Example {
 
 ## createLossBatch
 
-> List&lt;CreateLossBatch200ResponseInner&gt; createLossBatch(loss, expand, accept, acceptEncoding, contentType)
+> List&lt;BatchResponseEntity&gt; createLossBatch(loss, expand, accept, acceptEncoding, contentType)
 
 Массовое создание и обновление Списаний
 
@@ -146,13 +146,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         LossesApi apiInstance = new LossesApi(defaultClient);
-        List<Loss> loss = Arrays.asList(); // List<Loss> | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        List<@Valid Loss> loss = Arrays.asList(); // List<@Valid Loss> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateLossBatch200ResponseInner> result = apiInstance.createLossBatch(loss, expand, accept, acceptEncoding, contentType);
+            List<BatchResponseEntity> result = apiInstance.createLossBatch(loss, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling LossesApi#createLossBatch");
@@ -170,7 +170,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **loss** | [**List&lt;Loss&gt;**](Loss.md)|  | |
+| **loss** | [**List&lt;@Valid Loss&gt;**](Loss.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -178,7 +178,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreateLossBatch200ResponseInner&gt;**](CreateLossBatch200ResponseInner.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -310,9 +310,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         LossesApi apiInstance = new LossesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         LossPosition lossPosition = new LossPosition(); // LossPosition | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -395,9 +395,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         LossesApi apiInstance = new LossesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<LossPosition> lossPosition = Arrays.asList(); // List<LossPosition> | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid LossPosition> lossPosition = Arrays.asList(); // List<@Valid LossPosition> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -421,7 +421,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **lossPosition** | [**List&lt;LossPosition&gt;**](LossPosition.md)|  | |
+| **lossPosition** | [**List&lt;@Valid LossPosition&gt;**](LossPosition.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -480,7 +480,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         LossesApi apiInstance = new LossesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -528,7 +528,7 @@ null (empty response body)
 
 ## deleteLossBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteLossBatch(loss, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteLossBatch(loss, accept, acceptEncoding, contentType)
 
 Массовое удаление Списаний
 
@@ -558,12 +558,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         LossesApi apiInstance = new LossesApi(defaultClient);
-        List<Loss> loss = Arrays.asList(); // List<Loss> | 
+        List<@Valid Loss> loss = Arrays.asList(); // List<@Valid Loss> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteLossBatch(loss, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteLossBatch(loss, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling LossesApi#deleteLossBatch");
@@ -581,14 +581,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **loss** | [**List&lt;Loss&gt;**](Loss.md)|  | |
+| **loss** | [**List&lt;@Valid Loss&gt;**](Loss.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -639,7 +639,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         LossesApi apiInstance = new LossesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -717,7 +717,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         LossesApi apiInstance = new LossesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -796,9 +796,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         LossesApi apiInstance = new LossesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -848,7 +848,7 @@ null (empty response body)
 
 ## deleteLossPositionsBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteLossPositionsBatch(id, lossPosition, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteLossPositionsBatch(id, lossPosition, accept, acceptEncoding, contentType)
 
 Массовое удаление позиций Списания
 
@@ -878,13 +878,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         LossesApi apiInstance = new LossesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<LossPosition> lossPosition = Arrays.asList(); // List<LossPosition> | 
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid LossPosition> lossPosition = Arrays.asList(); // List<@Valid LossPosition> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteLossPositionsBatch(id, lossPosition, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteLossPositionsBatch(id, lossPosition, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling LossesApi#deleteLossPositionsBatch");
@@ -903,14 +903,14 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **lossPosition** | [**List&lt;LossPosition&gt;**](LossPosition.md)|  | |
+| **lossPosition** | [**List&lt;@Valid LossPosition&gt;**](LossPosition.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -961,8 +961,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         LossesApi apiInstance = new LossesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1046,8 +1046,8 @@ public class Example {
         LossesApi apiInstance = new LossesApi(defaultClient);
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String search = "name=123"; // String | Контекстный поиск по строковым полям сущностей
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String search = "search_example"; // String | Контекстный поиск по строковым полям сущностей
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1289,7 +1289,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         LossesApi apiInstance = new LossesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1368,7 +1368,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         LossesApi apiInstance = new LossesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1447,9 +1447,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         LossesApi apiInstance = new LossesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1532,10 +1532,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         LossesApi apiInstance = new LossesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1702,9 +1702,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         LossesApi apiInstance = new LossesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Loss loss = new Loss(); // Loss | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1789,7 +1789,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         LossesApi apiInstance = new LossesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         AttributeMetaInfo attributeMetaInfo = new AttributeMetaInfo(); // AttributeMetaInfo | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1872,7 +1872,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         LossesApi apiInstance = new LossesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         State state = new State(); // State | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1955,10 +1955,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         LossesApi apiInstance = new LossesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
         LossPosition lossPosition = new LossPosition(); // LossPosition | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 

@@ -9,6 +9,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createCommissionReportOutBatch**](CommissionReportOutsApi.md#createCommissionReportOutBatch) | **POST** /entity/commissionreportout/batch | Массовое создание и обновление CommissionReportOut |
 | [**createCommissionReportOutMetadataAttribute**](CommissionReportOutsApi.md#createCommissionReportOutMetadataAttribute) | **POST** /entity/commissionreportout/metadata/attributes | Создать доп. поле CommissionReportOut |
 | [**createCommissionReportOutMetadataState**](CommissionReportOutsApi.md#createCommissionReportOutMetadataState) | **POST** /entity/commissionreportout/metadata/states | Создать статус CommissionReportOut |
+| [**createCommissionReportOutMetadataStatesBatch**](CommissionReportOutsApi.md#createCommissionReportOutMetadataStatesBatch) | **POST** /entity/commissionreportout/metadata/states/batch | Массовое создание и обновление статусов CommissionReportOut |
 | [**createCommissionReportOutPosition**](CommissionReportOutsApi.md#createCommissionReportOutPosition) | **POST** /entity/commissionreportout/{id}/positions | Создать и обновить позицию Выданного отчета комиссионера |
 | [**createCommissionReportOutPositions**](CommissionReportOutsApi.md#createCommissionReportOutPositions) | **POST** /entity/commissionreportout/{id}/positions/batch | Массовое создание и обновление позиций Выданного отчета комиссионера |
 | [**deleteCommissionReportOut**](CommissionReportOutsApi.md#deleteCommissionReportOut) | **DELETE** /entity/commissionreportout/{id} | Удалить CommissionReportOut |
@@ -68,8 +69,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CommissionReportOutsApi apiInstance = new CommissionReportOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<FileUpload> fileUpload = Arrays.asList(); // List<FileUpload> | 
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid FileUpload> fileUpload = Arrays.asList(); // List<@Valid FileUpload> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -93,7 +94,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **fileUpload** | [**List&lt;FileUpload&gt;**](FileUpload.md)|  | |
+| **fileUpload** | [**List&lt;@Valid FileUpload&gt;**](FileUpload.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -152,7 +153,7 @@ public class Example {
 
         CommissionReportOutsApi apiInstance = new CommissionReportOutsApi(defaultClient);
         CommissionReportOut commissionReportOut = new CommissionReportOut(); // CommissionReportOut | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -204,7 +205,7 @@ public class Example {
 
 ## createCommissionReportOutBatch
 
-> List&lt;CreateCommissionReportOutBatch200ResponseInner&gt; createCommissionReportOutBatch(commissionReportOut, expand, accept, acceptEncoding, contentType)
+> List&lt;BatchResponseEntity&gt; createCommissionReportOutBatch(commissionReportOut, expand, accept, acceptEncoding, contentType)
 
 Массовое создание и обновление CommissionReportOut
 
@@ -234,13 +235,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CommissionReportOutsApi apiInstance = new CommissionReportOutsApi(defaultClient);
-        List<CommissionReportOut> commissionReportOut = Arrays.asList(); // List<CommissionReportOut> | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        List<@Valid CommissionReportOut> commissionReportOut = Arrays.asList(); // List<@Valid CommissionReportOut> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateCommissionReportOutBatch200ResponseInner> result = apiInstance.createCommissionReportOutBatch(commissionReportOut, expand, accept, acceptEncoding, contentType);
+            List<BatchResponseEntity> result = apiInstance.createCommissionReportOutBatch(commissionReportOut, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CommissionReportOutsApi#createCommissionReportOutBatch");
@@ -258,7 +259,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **commissionReportOut** | [**List&lt;CommissionReportOut&gt;**](CommissionReportOut.md)|  | |
+| **commissionReportOut** | [**List&lt;@Valid CommissionReportOut&gt;**](CommissionReportOut.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -266,7 +267,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreateCommissionReportOutBatch200ResponseInner&gt;**](CreateCommissionReportOutBatch200ResponseInner.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -368,7 +369,7 @@ public class Example {
 
 ## createCommissionReportOutMetadataState
 
-> CreateInternalOrderMetadataStateRequest createCommissionReportOutMetadataState(createInternalOrderMetadataStateRequest, accept, acceptEncoding, contentType)
+> State createCommissionReportOutMetadataState(state, accept, acceptEncoding, contentType)
 
 Создать статус CommissionReportOut
 
@@ -398,12 +399,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CommissionReportOutsApi apiInstance = new CommissionReportOutsApi(defaultClient);
-        CreateInternalOrderMetadataStateRequest createInternalOrderMetadataStateRequest = new CreateInternalOrderMetadataStateRequest(); // CreateInternalOrderMetadataStateRequest | 
+        State state = new State(); // State | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            CreateInternalOrderMetadataStateRequest result = apiInstance.createCommissionReportOutMetadataState(createInternalOrderMetadataStateRequest, accept, acceptEncoding, contentType);
+            State result = apiInstance.createCommissionReportOutMetadataState(state, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CommissionReportOutsApi#createCommissionReportOutMetadataState");
@@ -421,14 +422,95 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **createInternalOrderMetadataStateRequest** | [**CreateInternalOrderMetadataStateRequest**](CreateInternalOrderMetadataStateRequest.md)|  | |
+| **state** | [**State**](State.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**CreateInternalOrderMetadataStateRequest**](CreateInternalOrderMetadataStateRequest.md)
+[**State**](State.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+
+
+## createCommissionReportOutMetadataStatesBatch
+
+> List&lt;StateRowResult&gt; createCommissionReportOutMetadataStatesBatch(state, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление статусов CommissionReportOut
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.CommissionReportOutsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        CommissionReportOutsApi apiInstance = new CommissionReportOutsApi(defaultClient);
+        List<@Valid State> state = Arrays.asList(); // List<@Valid State> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<StateRowResult> result = apiInstance.createCommissionReportOutMetadataStatesBatch(state, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CommissionReportOutsApi#createCommissionReportOutMetadataStatesBatch");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **state** | [**List&lt;@Valid State&gt;**](State.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;StateRowResult&gt;**](StateRowResult.md)
 
 ### Authorization
 
@@ -479,9 +561,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CommissionReportOutsApi apiInstance = new CommissionReportOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         CommissionReportOutPosition commissionReportOutPosition = new CommissionReportOutPosition(); // CommissionReportOutPosition | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -534,7 +616,7 @@ public class Example {
 
 ## createCommissionReportOutPositions
 
-> List&lt;CreateCommissionReportOutPositions200ResponseInner&gt; createCommissionReportOutPositions(id, commissionReportOutPosition, expand, accept, acceptEncoding, contentType)
+> List&lt;BatchResponseEntity&gt; createCommissionReportOutPositions(id, commissionReportOutPosition, expand, accept, acceptEncoding, contentType)
 
 Массовое создание и обновление позиций Выданного отчета комиссионера
 
@@ -564,14 +646,14 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CommissionReportOutsApi apiInstance = new CommissionReportOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<CommissionReportOutPosition> commissionReportOutPosition = Arrays.asList(); // List<CommissionReportOutPosition> | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid CommissionReportOutPosition> commissionReportOutPosition = Arrays.asList(); // List<@Valid CommissionReportOutPosition> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateCommissionReportOutPositions200ResponseInner> result = apiInstance.createCommissionReportOutPositions(id, commissionReportOutPosition, expand, accept, acceptEncoding, contentType);
+            List<BatchResponseEntity> result = apiInstance.createCommissionReportOutPositions(id, commissionReportOutPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CommissionReportOutsApi#createCommissionReportOutPositions");
@@ -590,7 +672,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **commissionReportOutPosition** | [**List&lt;CommissionReportOutPosition&gt;**](CommissionReportOutPosition.md)|  | |
+| **commissionReportOutPosition** | [**List&lt;@Valid CommissionReportOutPosition&gt;**](CommissionReportOutPosition.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -598,7 +680,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreateCommissionReportOutPositions200ResponseInner&gt;**](CreateCommissionReportOutPositions200ResponseInner.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -649,7 +731,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CommissionReportOutsApi apiInstance = new CommissionReportOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -699,7 +781,7 @@ null (empty response body)
 
 ## deleteCommissionReportOutBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteCommissionReportOutBatch(commissionReportOut, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteCommissionReportOutBatch(commissionReportOut, accept, acceptEncoding, contentType)
 
 Массовое удаление CommissionReportOut
 
@@ -729,12 +811,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CommissionReportOutsApi apiInstance = new CommissionReportOutsApi(defaultClient);
-        List<CommissionReportOut> commissionReportOut = Arrays.asList(); // List<CommissionReportOut> | 
+        List<@Valid CommissionReportOut> commissionReportOut = Arrays.asList(); // List<@Valid CommissionReportOut> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteCommissionReportOutBatch(commissionReportOut, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteCommissionReportOutBatch(commissionReportOut, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CommissionReportOutsApi#deleteCommissionReportOutBatch");
@@ -752,14 +834,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **commissionReportOut** | [**List&lt;CommissionReportOut&gt;**](CommissionReportOut.md)|  | |
+| **commissionReportOut** | [**List&lt;@Valid CommissionReportOut&gt;**](CommissionReportOut.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -812,7 +894,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CommissionReportOutsApi apiInstance = new CommissionReportOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID fileId = UUID.randomUUID(); // UUID | ID файла
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -892,7 +974,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CommissionReportOutsApi apiInstance = new CommissionReportOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -972,7 +1054,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CommissionReportOutsApi apiInstance = new CommissionReportOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1053,9 +1135,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CommissionReportOutsApi apiInstance = new CommissionReportOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1107,7 +1189,7 @@ null (empty response body)
 
 ## deleteCommissionReportOutPositionsBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteCommissionReportOutPositionsBatch(id, commissionReportOutPosition, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteCommissionReportOutPositionsBatch(id, commissionReportOutPosition, accept, acceptEncoding, contentType)
 
 Массовое удаление позиций CommissionReportOut
 
@@ -1137,13 +1219,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CommissionReportOutsApi apiInstance = new CommissionReportOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<CommissionReportOutPosition> commissionReportOutPosition = Arrays.asList(); // List<CommissionReportOutPosition> | 
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid CommissionReportOutPosition> commissionReportOutPosition = Arrays.asList(); // List<@Valid CommissionReportOutPosition> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteCommissionReportOutPositionsBatch(id, commissionReportOutPosition, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteCommissionReportOutPositionsBatch(id, commissionReportOutPosition, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CommissionReportOutsApi#deleteCommissionReportOutPositionsBatch");
@@ -1162,14 +1244,14 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **commissionReportOutPosition** | [**List&lt;CommissionReportOutPosition&gt;**](CommissionReportOutPosition.md)|  | |
+| **commissionReportOutPosition** | [**List&lt;@Valid CommissionReportOutPosition&gt;**](CommissionReportOutPosition.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -1220,8 +1302,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CommissionReportOutsApi apiInstance = new CommissionReportOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1305,7 +1387,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CommissionReportOutsApi apiInstance = new CommissionReportOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
         String accept = "application/json"; // String | 
@@ -1390,8 +1472,8 @@ public class Example {
         CommissionReportOutsApi apiInstance = new CommissionReportOutsApi(defaultClient);
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String search = "name=123"; // String | Контекстный поиск по строковым полям сущностей
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String search = "search_example"; // String | Контекстный поиск по строковым полям сущностей
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1637,7 +1719,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CommissionReportOutsApi apiInstance = new CommissionReportOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1718,7 +1800,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CommissionReportOutsApi apiInstance = new CommissionReportOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1799,9 +1881,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CommissionReportOutsApi apiInstance = new CommissionReportOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1884,10 +1966,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CommissionReportOutsApi apiInstance = new CommissionReportOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1971,9 +2053,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CommissionReportOutsApi apiInstance = new CommissionReportOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         CommissionReportOut commissionReportOut = new CommissionReportOut(); // CommissionReportOut | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -2056,7 +2138,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CommissionReportOutsApi apiInstance = new CommissionReportOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         AttributeMetaInfo attributeMetaInfo = new AttributeMetaInfo(); // AttributeMetaInfo | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -2139,7 +2221,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CommissionReportOutsApi apiInstance = new CommissionReportOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         State state = new State(); // State | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -2222,10 +2304,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CommissionReportOutsApi apiInstance = new CommissionReportOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
         CommissionReportOutPosition commissionReportOutPosition = new CommissionReportOutPosition(); // CommissionReportOutPosition | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 

@@ -25,6 +25,8 @@ import ru.moysklad.remap_1_2.model.Employee;
 import ru.moysklad.remap_1_2.model.Meta;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -43,7 +45,7 @@ import java.util.StringJoiner;
   TaskNoteFile.JSON_PROPERTY_TINY,
   TaskNoteFile.JSON_PROPERTY_MINIATURE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class TaskNoteFile {
   public static TaskNoteFile createWithMeta(UUID parentId, UUID noteId, UUID id) {
     TaskNoteFile o = new TaskNoteFile();
@@ -125,6 +127,9 @@ public class TaskNoteFile {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -147,6 +152,9 @@ public class TaskNoteFile {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -170,6 +178,8 @@ public class TaskNoteFile {
    * @return title
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_TITLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -199,6 +209,8 @@ public class TaskNoteFile {
    * @return filename
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_FILENAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -221,6 +233,8 @@ public class TaskNoteFile {
    * @return size
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -237,6 +251,8 @@ public class TaskNoteFile {
    * @return created
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_CREATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -260,6 +276,9 @@ public class TaskNoteFile {
    * @return createdBy
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_CREATED_BY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -289,6 +308,9 @@ public class TaskNoteFile {
    * @return tiny
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_TINY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -318,6 +340,9 @@ public class TaskNoteFile {
    * @return miniature
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_MINIATURE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

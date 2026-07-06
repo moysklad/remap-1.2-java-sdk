@@ -98,7 +98,7 @@ public class Example {
 
 ## createProcessingPlanFoldersBatch
 
-> List&lt;CreateProcessingPlanFoldersBatch200ResponseInner&gt; createProcessingPlanFoldersBatch(processingPlanFolder, accept, acceptEncoding, contentType)
+> List&lt;BatchResponseEntity&gt; createProcessingPlanFoldersBatch(processingPlanFolder, accept, acceptEncoding, contentType)
 
 Массовое создание и обновление групп техкарт
 
@@ -128,12 +128,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingPlanFoldersApi apiInstance = new ProcessingPlanFoldersApi(defaultClient);
-        List<ProcessingPlanFolder> processingPlanFolder = Arrays.asList(); // List<ProcessingPlanFolder> | 
+        List<@Valid ProcessingPlanFolder> processingPlanFolder = Arrays.asList(); // List<@Valid ProcessingPlanFolder> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateProcessingPlanFoldersBatch200ResponseInner> result = apiInstance.createProcessingPlanFoldersBatch(processingPlanFolder, accept, acceptEncoding, contentType);
+            List<BatchResponseEntity> result = apiInstance.createProcessingPlanFoldersBatch(processingPlanFolder, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProcessingPlanFoldersApi#createProcessingPlanFoldersBatch");
@@ -151,14 +151,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **processingPlanFolder** | [**List&lt;ProcessingPlanFolder&gt;**](ProcessingPlanFolder.md)|  | |
+| **processingPlanFolder** | [**List&lt;@Valid ProcessingPlanFolder&gt;**](ProcessingPlanFolder.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;CreateProcessingPlanFoldersBatch200ResponseInner&gt;**](CreateProcessingPlanFoldersBatch200ResponseInner.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -209,7 +209,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingPlanFoldersApi apiInstance = new ProcessingPlanFoldersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -259,7 +259,7 @@ null (empty response body)
 
 ## deleteProcessingPlanFoldersBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteProcessingPlanFoldersBatch(processingPlanFolder, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteProcessingPlanFoldersBatch(processingPlanFolder, accept, acceptEncoding, contentType)
 
 Массовое удаление групп техкарт
 
@@ -289,12 +289,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingPlanFoldersApi apiInstance = new ProcessingPlanFoldersApi(defaultClient);
-        List<ProcessingPlanFolder> processingPlanFolder = Arrays.asList(); // List<ProcessingPlanFolder> | 
+        List<@Valid ProcessingPlanFolder> processingPlanFolder = Arrays.asList(); // List<@Valid ProcessingPlanFolder> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteProcessingPlanFoldersBatch(processingPlanFolder, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteProcessingPlanFoldersBatch(processingPlanFolder, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProcessingPlanFoldersApi#deleteProcessingPlanFoldersBatch");
@@ -312,14 +312,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **processingPlanFolder** | [**List&lt;ProcessingPlanFolder&gt;**](ProcessingPlanFolder.md)|  | |
+| **processingPlanFolder** | [**List&lt;@Valid ProcessingPlanFolder&gt;**](ProcessingPlanFolder.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -370,7 +370,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingPlanFoldersApi apiInstance = new ProcessingPlanFoldersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -611,7 +611,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingPlanFoldersApi apiInstance = new ProcessingPlanFoldersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         ProcessingPlanFolder processingPlanFolder = new ProcessingPlanFolder(); // ProcessingPlanFolder | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 

@@ -22,20 +22,20 @@ import ru.moysklad.remap_1_2.Pair;
 
 import ru.moysklad.remap_1_2.model.AttributeMetaInfo;
 import ru.moysklad.remap_1_2.model.AttributeMetaInfoList;
+import ru.moysklad.remap_1_2.model.BatchResponseEntity;
 import ru.moysklad.remap_1_2.model.CommissionReportIn;
 import ru.moysklad.remap_1_2.model.CommissionReportInList;
 import ru.moysklad.remap_1_2.model.CommissionReportInPosition;
 import ru.moysklad.remap_1_2.model.CommissionReportInPositionList;
 import ru.moysklad.remap_1_2.model.CommissionReportInReturnedPosition;
-import ru.moysklad.remap_1_2.model.CreateCommissionReportInBatch200ResponseInner;
 import ru.moysklad.remap_1_2.model.CreateCommissionReportInPositions200ResponseInner;
 import ru.moysklad.remap_1_2.model.CreateCommissionReportInReturnedPositions200ResponseInner;
 import ru.moysklad.remap_1_2.model.CreateCommissionReportInReturnedPositionsRequest;
-import ru.moysklad.remap_1_2.model.CreateInternalOrderMetadataStateRequest;
-import ru.moysklad.remap_1_2.model.DeleteContractsBatch200ResponseInner;
+import ru.moysklad.remap_1_2.model.DeleteRowResult;
 import ru.moysklad.remap_1_2.model.DocumentMetadata;
 import ru.moysklad.remap_1_2.model.ErrorOrArray;
 import ru.moysklad.remap_1_2.model.State;
+import ru.moysklad.remap_1_2.model.StateRowResult;
 import java.util.UUID;
 
 
@@ -46,7 +46,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+import javax.validation.constraints.*;
+import javax.validation.Valid;
+
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class CommissionReportInsApi extends BaseApi {
 
@@ -174,10 +177,10 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;CreateCommissionReportInBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateCommissionReportInBatch200ResponseInner> createCommissionReportInBatch(@javax.annotation.Nonnull List<CommissionReportIn> commissionReportIn, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<BatchResponseEntity> createCommissionReportInBatch(@javax.annotation.Nonnull List<@Valid CommissionReportIn> commissionReportIn, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createCommissionReportInBatch(commissionReportIn, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -192,10 +195,10 @@ if (contentType != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return List&lt;CreateCommissionReportInBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateCommissionReportInBatch200ResponseInner> createCommissionReportInBatch(@javax.annotation.Nonnull List<CommissionReportIn> commissionReportIn, RequestOptions options) throws ApiException {
+  public List<BatchResponseEntity> createCommissionReportInBatch(@javax.annotation.Nonnull List<@Valid CommissionReportIn> commissionReportIn, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createCommissionReportInBatch(commissionReportIn, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -210,10 +213,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;CreateCommissionReportInBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateCommissionReportInBatch200ResponseInner> createCommissionReportInBatch(@javax.annotation.Nonnull List<CommissionReportIn> commissionReportIn, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<BatchResponseEntity> createCommissionReportInBatch(@javax.annotation.Nonnull List<@Valid CommissionReportIn> commissionReportIn, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = commissionReportIn;
     
     // verify the required parameter 'commissionReportIn' is set
@@ -256,7 +259,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<CreateCommissionReportInBatch200ResponseInner>> localVarReturnType = new TypeReference<List<CreateCommissionReportInBatch200ResponseInner>>() {};
+    TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
@@ -363,35 +366,35 @@ if (contentType != null)
   /**
    * Создать статус CommissionReportIn
    * 
-   * @param createInternalOrderMetadataStateRequest  (required)
+   * @param state  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return CreateInternalOrderMetadataStateRequest
+   * @return State
    * @throws ApiException if fails to make API call
    */
-  public CreateInternalOrderMetadataStateRequest createCommissionReportInMetadataState(@javax.annotation.Nonnull CreateInternalOrderMetadataStateRequest createInternalOrderMetadataStateRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createCommissionReportInMetadataState(createInternalOrderMetadataStateRequest, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public State createCommissionReportInMetadataState(@javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+    return this.createCommissionReportInMetadataState(state, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
 
   /**
    * Создать статус CommissionReportIn
    * 
-   * @param createInternalOrderMetadataStateRequest  (required)
+   * @param state  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return CreateInternalOrderMetadataStateRequest
+   * @return State
    * @throws ApiException if fails to make API call
    */
-  public CreateInternalOrderMetadataStateRequest createCommissionReportInMetadataState(@javax.annotation.Nonnull CreateInternalOrderMetadataStateRequest createInternalOrderMetadataStateRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
-    Object localVarPostBody = createInternalOrderMetadataStateRequest;
+  public State createCommissionReportInMetadataState(@javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = state;
     
-    // verify the required parameter 'createInternalOrderMetadataStateRequest' is set
-    if (createInternalOrderMetadataStateRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'createInternalOrderMetadataStateRequest' when calling createCommissionReportInMetadataState");
+    // verify the required parameter 'state' is set
+    if (state == null) {
+      throw new ApiException(400, "Missing the required parameter 'state' when calling createCommissionReportInMetadataState");
     }
     
     // create path and map variables
@@ -428,7 +431,93 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<CreateInternalOrderMetadataStateRequest> localVarReturnType = new TypeReference<CreateInternalOrderMetadataStateRequest>() {};
+    TypeReference<State> localVarReturnType = new TypeReference<State>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Массовое создание и обновление статусов CommissionReportIn
+   * 
+   * @param state  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @return List&lt;StateRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<StateRowResult> createCommissionReportInMetadataStatesBatch(@javax.annotation.Nonnull List<@Valid State> state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+    return this.createCommissionReportInMetadataStatesBatch(state, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+
+  /**
+   * Массовое создание и обновление статусов CommissionReportIn
+   * 
+   * @param state  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return List&lt;StateRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<StateRowResult> createCommissionReportInMetadataStatesBatch(@javax.annotation.Nonnull List<@Valid State> state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = state;
+    
+    // verify the required parameter 'state' is set
+    if (state == null) {
+      throw new ApiException(400, "Missing the required parameter 'state' when calling createCommissionReportInMetadataStatesBatch");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/commissionreportin/metadata/states/batch";
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null)
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+if (acceptEncoding != null)
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+if (contentType != null)
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+
+    localVarHeaderParams.putAll(additionalHeaders);
+
+    
+    
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<List<StateRowResult>> localVarReturnType = new TypeReference<List<StateRowResult>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
@@ -577,7 +666,7 @@ if (contentType != null)
    * @return List&lt;CreateCommissionReportInPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateCommissionReportInPositions200ResponseInner> createCommissionReportInPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<CommissionReportInPosition> commissionReportInPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<CreateCommissionReportInPositions200ResponseInner> createCommissionReportInPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid CommissionReportInPosition> commissionReportInPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createCommissionReportInPositions(id, commissionReportInPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -598,7 +687,7 @@ if (contentType != null)
    * @return List&lt;CreateCommissionReportInPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateCommissionReportInPositions200ResponseInner> createCommissionReportInPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<CommissionReportInPosition> commissionReportInPosition, RequestOptions options) throws ApiException {
+  public List<CreateCommissionReportInPositions200ResponseInner> createCommissionReportInPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid CommissionReportInPosition> commissionReportInPosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createCommissionReportInPositions(id, commissionReportInPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -617,7 +706,7 @@ if (contentType != null)
    * @return List&lt;CreateCommissionReportInPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateCommissionReportInPositions200ResponseInner> createCommissionReportInPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<CommissionReportInPosition> commissionReportInPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<CreateCommissionReportInPositions200ResponseInner> createCommissionReportInPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid CommissionReportInPosition> commissionReportInPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = commissionReportInPosition;
     
     // verify the required parameter 'id' is set
@@ -894,10 +983,10 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deleteCommissionReportInBatch(@javax.annotation.Nonnull List<CommissionReportIn> commissionReportIn, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<DeleteRowResult> deleteCommissionReportInBatch(@javax.annotation.Nonnull List<@Valid CommissionReportIn> commissionReportIn, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.deleteCommissionReportInBatch(commissionReportIn, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -910,10 +999,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deleteCommissionReportInBatch(@javax.annotation.Nonnull List<CommissionReportIn> commissionReportIn, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<DeleteRowResult> deleteCommissionReportInBatch(@javax.annotation.Nonnull List<@Valid CommissionReportIn> commissionReportIn, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = commissionReportIn;
     
     // verify the required parameter 'commissionReportIn' is set
@@ -955,7 +1044,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<DeleteContractsBatch200ResponseInner>> localVarReturnType = new TypeReference<List<DeleteContractsBatch200ResponseInner>>() {};
+    TypeReference<List<DeleteRowResult>> localVarReturnType = new TypeReference<List<DeleteRowResult>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
@@ -1265,10 +1354,10 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deleteCommissionReportInPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<CommissionReportInPosition> commissionReportInPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<DeleteRowResult> deleteCommissionReportInPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid CommissionReportInPosition> commissionReportInPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.deleteCommissionReportInPositionsBatch(id, commissionReportInPosition, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -1282,10 +1371,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deleteCommissionReportInPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<CommissionReportInPosition> commissionReportInPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<DeleteRowResult> deleteCommissionReportInPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid CommissionReportInPosition> commissionReportInPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = commissionReportInPosition;
     
     // verify the required parameter 'id' is set
@@ -1333,7 +1422,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<DeleteContractsBatch200ResponseInner>> localVarReturnType = new TypeReference<List<DeleteContractsBatch200ResponseInner>>() {};
+    TypeReference<List<DeleteRowResult>> localVarReturnType = new TypeReference<List<DeleteRowResult>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
@@ -1475,10 +1564,10 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deleteCommissionReportInReturnedPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<CommissionReportInReturnedPosition> commissionReportInReturnedPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<DeleteRowResult> deleteCommissionReportInReturnedPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid CommissionReportInReturnedPosition> commissionReportInReturnedPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.deleteCommissionReportInReturnedPositionsBatch(id, commissionReportInReturnedPosition, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -1492,10 +1581,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deleteCommissionReportInReturnedPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<CommissionReportInReturnedPosition> commissionReportInReturnedPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<DeleteRowResult> deleteCommissionReportInReturnedPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid CommissionReportInReturnedPosition> commissionReportInReturnedPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = commissionReportInReturnedPosition;
     
     // verify the required parameter 'id' is set
@@ -1543,7 +1632,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<DeleteContractsBatch200ResponseInner>> localVarReturnType = new TypeReference<List<DeleteContractsBatch200ResponseInner>>() {};
+    TypeReference<List<DeleteRowResult>> localVarReturnType = new TypeReference<List<DeleteRowResult>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

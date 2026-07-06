@@ -20,12 +20,13 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.ContextualDeserializer;
+import ru.moysklad.remap_1_2.model.Error;
 
 import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class PolymorphicMetaTypeDeserializer extends JsonDeserializer<Object> implements ContextualDeserializer {
   private final JavaType targetType;
 
@@ -67,19 +68,19 @@ public class PolymorphicMetaTypeDeserializer extends JsonDeserializer<Object> im
       return null;
     }
 
-    JsonNode discriminatorNode = readPath(node, path);
-    if (discriminatorNode == null || !discriminatorNode.isTextual()) {
-      return null;
-    }
-
     Map<String, Class<?>> mappings = discriminatorMappings(targetClass);
-    if (mappings == null) {
-      return null;
+    JsonNode discriminatorNode = readPath(node, path);
+    Class<?> resolvedClass = null;
+
+    if (discriminatorNode != null && discriminatorNode.isTextual() && mappings != null) {
+      resolvedClass = mappings.get(discriminatorNode.asText());
+      if (resolvedClass == null) {
+        resolvedClass = mappings.get("undefined");
+      }
     }
 
-    Class<?> resolvedClass = mappings.get(discriminatorNode.asText());
-    if (resolvedClass == null) {
-      resolvedClass = mappings.get("undefined");
+    if (resolvedClass == null && useBatchErrorFallback(targetClass) && isBatchErrorPayload(node)) {
+      resolvedClass = Error.class;
     }
 
     if (resolvedClass != null && !targetClass.isAssignableFrom(resolvedClass)) {
@@ -88,6 +89,30 @@ public class PolymorphicMetaTypeDeserializer extends JsonDeserializer<Object> im
     }
 
     return resolvedClass;
+  }
+
+  private boolean useBatchErrorFallback(Class<?> targetClass) {
+    for (Class<?> current = targetClass; current != null && current != Object.class; current = current.getSuperclass()) {
+      OpenApiPolymorphicTypeInfo typeInfo = current.getAnnotation(OpenApiPolymorphicTypeInfo.class);
+      if (typeInfo != null) {
+        return typeInfo.batchErrorFallback();
+      }
+    }
+
+    return false;
+  }
+
+  private boolean isBatchErrorPayload(JsonNode node) {
+    JsonNode errors = node.get("errors");
+    if (errors == null || !errors.isArray() || errors.isEmpty()) {
+      return false;
+    }
+
+    if (errors.isEmpty() || errors.get(0) == null) {
+        return false;
+    }
+    JsonNode title = errors.get(0).get("error");
+    return title != null && title.isTextual();
   }
 
   private String discriminatorPath(Class<?> targetClass) {

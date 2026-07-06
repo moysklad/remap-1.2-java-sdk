@@ -6,6 +6,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 |------------- | ------------- | -------------|
 | [**createTask**](TasksApi.md#createTask) | **POST** /entity/task | Создать задачу |
 | [**createTaskMetadataStates**](TasksApi.md#createTaskMetadataStates) | **POST** /entity/task/metadata/states | Создать или изменить типы задач |
+| [**createTaskMetadataStatesBatch**](TasksApi.md#createTaskMetadataStatesBatch) | **POST** /entity/task/metadata/states/batch | Массовое создание и обновление типов задач |
 | [**createTaskNote**](TasksApi.md#createTaskNote) | **POST** /entity/task/{id}/notes | Создать комментарий Задачи |
 | [**createTaskNotesBatch**](TasksApi.md#createTaskNotesBatch) | **POST** /entity/task/{id}/notes/batch | Создать комментарии Задачи |
 | [**createTasksBatch**](TasksApi.md#createTasksBatch) | **POST** /entity/task/batch | Создать или изменить задачи |
@@ -60,7 +61,7 @@ public class Example {
 
         TasksApi apiInstance = new TasksApi(defaultClient);
         Task task = new Task(); // Task | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -112,7 +113,7 @@ public class Example {
 
 ## createTaskMetadataStates
 
-> CreateTaskMetadataStates200Response createTaskMetadataStates(createTaskMetadataStatesRequest, accept, acceptEncoding, contentType)
+> State createTaskMetadataStates(state, accept, acceptEncoding, contentType)
 
 Создать или изменить типы задач
 
@@ -144,12 +145,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         TasksApi apiInstance = new TasksApi(defaultClient);
-        CreateTaskMetadataStatesRequest createTaskMetadataStatesRequest = new CreateTaskMetadataStatesRequest(); // CreateTaskMetadataStatesRequest | 
+        State state = new State(); // State | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            CreateTaskMetadataStates200Response result = apiInstance.createTaskMetadataStates(createTaskMetadataStatesRequest, accept, acceptEncoding, contentType);
+            State result = apiInstance.createTaskMetadataStates(state, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling TasksApi#createTaskMetadataStates");
@@ -167,14 +168,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **createTaskMetadataStatesRequest** | [**CreateTaskMetadataStatesRequest**](CreateTaskMetadataStatesRequest.md)|  | |
+| **state** | [**State**](State.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**CreateTaskMetadataStates200Response**](CreateTaskMetadataStates200Response.md)
+[**State**](State.md)
 
 ### Authorization
 
@@ -190,6 +191,87 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Тип задачи или список типов задач успешно обработаны |  -  |
+| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+
+
+## createTaskMetadataStatesBatch
+
+> List&lt;StateRowResult&gt; createTaskMetadataStatesBatch(state, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление типов задач
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.TasksApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        TasksApi apiInstance = new TasksApi(defaultClient);
+        List<@Valid State> state = Arrays.asList(); // List<@Valid State> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<StateRowResult> result = apiInstance.createTaskMetadataStatesBatch(state, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TasksApi#createTaskMetadataStatesBatch");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **state** | [**List&lt;@Valid State&gt;**](State.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;StateRowResult&gt;**](StateRowResult.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 
@@ -227,7 +309,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         TasksApi apiInstance = new TasksApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         TaskNote taskNote = new TaskNote(); // TaskNote | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -280,7 +362,7 @@ public class Example {
 
 ## createTaskNotesBatch
 
-> List&lt;CreateTaskNotesBatch200ResponseInner&gt; createTaskNotesBatch(id, taskNote, accept, acceptEncoding, contentType)
+> List&lt;BatchResponseEntity&gt; createTaskNotesBatch(id, taskNote, accept, acceptEncoding, contentType)
 
 Создать комментарии Задачи
 
@@ -312,13 +394,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         TasksApi apiInstance = new TasksApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<TaskNote> taskNote = Arrays.asList(); // List<TaskNote> | 
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid TaskNote> taskNote = Arrays.asList(); // List<@Valid TaskNote> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateTaskNotesBatch200ResponseInner> result = apiInstance.createTaskNotesBatch(id, taskNote, accept, acceptEncoding, contentType);
+            List<BatchResponseEntity> result = apiInstance.createTaskNotesBatch(id, taskNote, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling TasksApi#createTaskNotesBatch");
@@ -337,14 +419,14 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **taskNote** | [**List&lt;TaskNote&gt;**](TaskNote.md)|  | |
+| **taskNote** | [**List&lt;@Valid TaskNote&gt;**](TaskNote.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;CreateTaskNotesBatch200ResponseInner&gt;**](CreateTaskNotesBatch200ResponseInner.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -365,7 +447,7 @@ public class Example {
 
 ## createTasksBatch
 
-> List&lt;CreateTasksBatch200ResponseInner&gt; createTasksBatch(task, expand, accept, acceptEncoding, contentType)
+> List&lt;BatchResponseEntity&gt; createTasksBatch(task, expand, accept, acceptEncoding, contentType)
 
 Создать или изменить задачи
 
@@ -397,13 +479,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         TasksApi apiInstance = new TasksApi(defaultClient);
-        List<Task> task = Arrays.asList(); // List<Task> | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        List<@Valid Task> task = Arrays.asList(); // List<@Valid Task> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateTasksBatch200ResponseInner> result = apiInstance.createTasksBatch(task, expand, accept, acceptEncoding, contentType);
+            List<BatchResponseEntity> result = apiInstance.createTasksBatch(task, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling TasksApi#createTasksBatch");
@@ -421,7 +503,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **task** | [**List&lt;Task&gt;**](Task.md)|  | |
+| **task** | [**List&lt;@Valid Task&gt;**](Task.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -429,7 +511,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreateTasksBatch200ResponseInner&gt;**](CreateTasksBatch200ResponseInner.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -482,7 +564,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         TasksApi apiInstance = new TasksApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -562,7 +644,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         TasksApi apiInstance = new TasksApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -645,7 +727,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         TasksApi apiInstance = new TasksApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID noteId = UUID.randomUUID(); // UUID | ID комментария к Задаче
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -727,8 +809,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         TasksApi apiInstance = new TasksApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<TaskNote> taskNote = Arrays.asList(); // List<TaskNote> | 
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid TaskNote> taskNote = Arrays.asList(); // List<@Valid TaskNote> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -751,7 +833,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **taskNote** | [**List&lt;TaskNote&gt;**](TaskNote.md)|  | |
+| **taskNote** | [**List&lt;@Valid TaskNote&gt;**](TaskNote.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -779,7 +861,7 @@ null (empty response body)
 
 ## deleteTasksBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteTasksBatch(task, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteTasksBatch(task, accept, acceptEncoding, contentType)
 
 Удалить задачи
 
@@ -811,12 +893,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         TasksApi apiInstance = new TasksApi(defaultClient);
-        List<Task> task = Arrays.asList(); // List<Task> | 
+        List<@Valid Task> task = Arrays.asList(); // List<@Valid Task> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteTasksBatch(task, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteTasksBatch(task, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling TasksApi#deleteTasksBatch");
@@ -834,14 +916,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **task** | [**List&lt;Task&gt;**](Task.md)|  | |
+| **task** | [**List&lt;@Valid Task&gt;**](Task.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -894,8 +976,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         TasksApi apiInstance = new TasksApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1056,7 +1138,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         TasksApi apiInstance = new TasksApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID noteId = UUID.randomUUID(); // UUID | ID комментария к Задаче
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1139,7 +1221,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         TasksApi apiInstance = new TasksApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
         String updatedBy = "updatedBy_example"; // String | Автор последнего обновления (uid, используется для фильтрации)
@@ -1232,9 +1314,9 @@ public class Example {
         TasksApi apiInstance = new TasksApi(defaultClient);
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String filter = "archived=false"; // String | Фильтрация выборки
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
-        String order = "name"; // String | Сортировка
+        String filter = "filter_example"; // String | Фильтрация выборки
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
+        String order = "order_example"; // String | Сортировка
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1319,9 +1401,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         TasksApi apiInstance = new TasksApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Task task = new Task(); // Task | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1406,7 +1488,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         TasksApi apiInstance = new TasksApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         State state = new State(); // State | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1491,7 +1573,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         TasksApi apiInstance = new TasksApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID noteId = UUID.randomUUID(); // UUID | ID комментария к Задаче
         TaskNote taskNote = new TaskNote(); // TaskNote | 
         String accept = "application/json"; // String | 

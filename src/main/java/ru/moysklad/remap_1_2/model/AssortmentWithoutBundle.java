@@ -50,6 +50,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -117,7 +119,7 @@ import java.util.StringJoiner;
   AssortmentWithoutBundle.JSON_PROPERTY_IN_TRANSIT,
   AssortmentWithoutBundle.JSON_PROPERTY_QUANTITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class AssortmentWithoutBundle {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -230,7 +232,7 @@ public class AssortmentWithoutBundle {
 
   public static final String JSON_PROPERTY_SALE_PRICES = "salePrices";
   @javax.annotation.Nullable
-  private JsonNullable<List<SalePrice>> salePrices = JsonNullable.<List<SalePrice>>undefined();
+  private JsonNullable<List<@Valid SalePrice>> salePrices = JsonNullable.<List<@Valid SalePrice>>undefined();
 
   public static final String JSON_PROPERTY_SUPPLIER = "supplier";
   @javax.annotation.Nullable
@@ -258,11 +260,11 @@ public class AssortmentWithoutBundle {
 
   public static final String JSON_PROPERTY_BARCODES = "barcodes";
   @javax.annotation.Nullable
-  private JsonNullable<List<Barcode>> barcodes = JsonNullable.<List<Barcode>>undefined();
+  private JsonNullable<List<@Valid Barcode>> barcodes = JsonNullable.<List<@Valid Barcode>>undefined();
 
   public static final String JSON_PROPERTY_PACKS = "packs";
   @javax.annotation.Nullable
-  private JsonNullable<List<VariantPack>> packs = JsonNullable.<List<VariantPack>>undefined();
+  private JsonNullable<List<@Valid VariantPack>> packs = JsonNullable.<List<@Valid VariantPack>>undefined();
 
   public static final String JSON_PROPERTY_TRACKING_TYPE = "trackingType";
   @javax.annotation.Nullable
@@ -282,7 +284,7 @@ public class AssortmentWithoutBundle {
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
-  private JsonNullable<List<AttributeAbstract>> attributes = JsonNullable.<List<AttributeAbstract>>undefined();
+  private JsonNullable<List<@Valid AttributeAbstract>> attributes = JsonNullable.<List<@Valid AttributeAbstract>>undefined();
 
   public static final String JSON_PROPERTY_MINIMUM_STOCK = "minimumStock";
   @javax.annotation.Nullable
@@ -322,7 +324,7 @@ public class AssortmentWithoutBundle {
 
   public static final String JSON_PROPERTY_CHARACTERISTICS = "characteristics";
   @javax.annotation.Nullable
-  private JsonNullable<List<VariantCharacteristicValue>> characteristics = JsonNullable.<List<VariantCharacteristicValue>>undefined();
+  private JsonNullable<List<@Valid VariantCharacteristicValue>> characteristics = JsonNullable.<List<@Valid VariantCharacteristicValue>>undefined();
 
   public static final String JSON_PROPERTY_ASSORTMENT = "assortment";
   @javax.annotation.Nullable
@@ -395,6 +397,9 @@ public class AssortmentWithoutBundle {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -417,6 +422,9 @@ public class AssortmentWithoutBundle {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -433,6 +441,9 @@ public class AssortmentWithoutBundle {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -456,6 +467,9 @@ public class AssortmentWithoutBundle {
    * @return alcoholic
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ALCOHOLIC)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -485,6 +499,8 @@ public class AssortmentWithoutBundle {
    * @return archived
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -507,6 +523,8 @@ public class AssortmentWithoutBundle {
    * @return tobacco
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_TOBACCO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -523,6 +541,8 @@ public class AssortmentWithoutBundle {
    * @return name
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -546,6 +566,8 @@ public class AssortmentWithoutBundle {
    * @return code
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -575,6 +597,8 @@ public class AssortmentWithoutBundle {
    * @return externalCode
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -597,6 +621,8 @@ public class AssortmentWithoutBundle {
    * @return pathName
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PATH_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -620,6 +646,8 @@ public class AssortmentWithoutBundle {
    * @return article
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_ARTICLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -649,6 +677,8 @@ public class AssortmentWithoutBundle {
    * @return description
    */
   @javax.annotation.Nullable
+ @Size(max=4096)
+
   @JsonIgnore
 
   public String getDescription() {
@@ -689,6 +719,8 @@ public class AssortmentWithoutBundle {
    * @return vat
    */
   @javax.annotation.Nullable
+ @Min(0) @Max(99)
+
   @JsonProperty(JSON_PROPERTY_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -718,6 +750,8 @@ public class AssortmentWithoutBundle {
    * @return vatEnabled
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -747,6 +781,8 @@ public class AssortmentWithoutBundle {
    * @return useParentVat
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_USE_PARENT_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -769,6 +805,8 @@ public class AssortmentWithoutBundle {
    * @return effectiveVat
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_EFFECTIVE_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -785,6 +823,8 @@ public class AssortmentWithoutBundle {
    * @return effectiveVatEnabled
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_EFFECTIVE_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -808,6 +848,8 @@ public class AssortmentWithoutBundle {
    * @return discountProhibited
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_DISCOUNT_PROHIBITED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -830,6 +872,8 @@ public class AssortmentWithoutBundle {
    * @return variantsCount
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_VARIANTS_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -853,6 +897,8 @@ public class AssortmentWithoutBundle {
    * @return isSerialTrackable
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_IS_SERIAL_TRACKABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -882,6 +928,8 @@ public class AssortmentWithoutBundle {
    * @return shared
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -911,6 +959,9 @@ public class AssortmentWithoutBundle {
    * @return group
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -940,6 +991,9 @@ public class AssortmentWithoutBundle {
    * @return owner
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Employee getOwner() {
@@ -971,6 +1025,8 @@ public class AssortmentWithoutBundle {
    * @return updated
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -995,6 +1051,8 @@ public class AssortmentWithoutBundle {
    * @return weight
    */
   @javax.annotation.Nullable
+ @DecimalMin("0")
+
   @JsonProperty(JSON_PROPERTY_WEIGHT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1025,6 +1083,8 @@ public class AssortmentWithoutBundle {
    * @return volume
    */
   @javax.annotation.Nullable
+ @DecimalMin("0")
+
   @JsonProperty(JSON_PROPERTY_VOLUME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1054,6 +1114,9 @@ public class AssortmentWithoutBundle {
    * @return buyPrice
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public BuyPrice getBuyPrice() {
@@ -1080,8 +1143,8 @@ public class AssortmentWithoutBundle {
   }
 
 
-  public AssortmentWithoutBundle salePrices(@javax.annotation.Nullable List<SalePrice> salePrices) {
-    this.salePrices = JsonNullable.<List<SalePrice>>of(salePrices);
+  public AssortmentWithoutBundle salePrices(@javax.annotation.Nullable List<@Valid SalePrice> salePrices) {
+    this.salePrices = JsonNullable.<List<@Valid SalePrice>>of(salePrices);
     
     return this;
   }
@@ -1089,7 +1152,7 @@ public class AssortmentWithoutBundle {
 
   public AssortmentWithoutBundle addSalePricesItem(SalePrice salePricesItem) {
     if (this.salePrices == null || !this.salePrices.isPresent()) {
-      this.salePrices = JsonNullable.<List<SalePrice>>of(new ArrayList<>());
+      this.salePrices = JsonNullable.<List<@Valid SalePrice>>of(new ArrayList<>());
     }
     try {
       this.salePrices.get().add(salePricesItem);
@@ -1104,9 +1167,12 @@ public class AssortmentWithoutBundle {
    * @return salePrices
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
-  public List<SalePrice> getSalePrices() {
+  public List<@Valid SalePrice> getSalePrices() {
         return salePrices.orElse(null);
   }
 
@@ -1116,17 +1182,17 @@ public class AssortmentWithoutBundle {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<SalePrice>> getSalePrices_JsonNullable() {
+  public JsonNullable<List<@Valid SalePrice>> getSalePrices_JsonNullable() {
     return salePrices;
   }
   
   @JsonProperty(value = JSON_PROPERTY_SALE_PRICES, required = false)
-  public void setSalePrices_JsonNullable(JsonNullable<List<SalePrice>> salePrices) {
+  public void setSalePrices_JsonNullable(JsonNullable<List<@Valid SalePrice>> salePrices) {
     this.salePrices = salePrices;
   }
 
-  public void setSalePrices(@javax.annotation.Nullable List<SalePrice> salePrices) {
-    this.salePrices = JsonNullable.<List<SalePrice>>of(salePrices);
+  public void setSalePrices(@javax.annotation.Nullable List<@Valid SalePrice> salePrices) {
+    this.salePrices = JsonNullable.<List<@Valid SalePrice>>of(salePrices);
   }
 
 
@@ -1142,6 +1208,9 @@ public class AssortmentWithoutBundle {
    * @return supplier
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Counterparty getSupplier() {
@@ -1180,6 +1249,9 @@ public class AssortmentWithoutBundle {
    * @return country
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Country getCountry() {
@@ -1218,6 +1290,9 @@ public class AssortmentWithoutBundle {
    * @return uom
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Uom getUom() {
@@ -1256,6 +1331,9 @@ public class AssortmentWithoutBundle {
    * @return productFolder
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public ProductFolder getProductFolder() {
@@ -1287,6 +1365,9 @@ public class AssortmentWithoutBundle {
    * @return images
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_IMAGES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1310,6 +1391,9 @@ public class AssortmentWithoutBundle {
    * @return files
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public FileList getFiles() {
@@ -1336,8 +1420,8 @@ public class AssortmentWithoutBundle {
   }
 
 
-  public AssortmentWithoutBundle barcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
-    this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
+  public AssortmentWithoutBundle barcodes(@javax.annotation.Nullable List<@Valid Barcode> barcodes) {
+    this.barcodes = JsonNullable.<List<@Valid Barcode>>of(barcodes);
     
     return this;
   }
@@ -1345,7 +1429,7 @@ public class AssortmentWithoutBundle {
 
   public AssortmentWithoutBundle addBarcodesItem(Barcode barcodesItem) {
     if (this.barcodes == null || !this.barcodes.isPresent()) {
-      this.barcodes = JsonNullable.<List<Barcode>>of(new ArrayList<>());
+      this.barcodes = JsonNullable.<List<@Valid Barcode>>of(new ArrayList<>());
     }
     try {
       this.barcodes.get().add(barcodesItem);
@@ -1360,9 +1444,12 @@ public class AssortmentWithoutBundle {
    * @return barcodes
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
-  public List<Barcode> getBarcodes() {
+  public List<@Valid Barcode> getBarcodes() {
         return barcodes.orElse(null);
   }
 
@@ -1372,22 +1459,22 @@ public class AssortmentWithoutBundle {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<Barcode>> getBarcodes_JsonNullable() {
+  public JsonNullable<List<@Valid Barcode>> getBarcodes_JsonNullable() {
     return barcodes;
   }
   
   @JsonProperty(value = JSON_PROPERTY_BARCODES, required = false)
-  public void setBarcodes_JsonNullable(JsonNullable<List<Barcode>> barcodes) {
+  public void setBarcodes_JsonNullable(JsonNullable<List<@Valid Barcode>> barcodes) {
     this.barcodes = barcodes;
   }
 
-  public void setBarcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
-    this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
+  public void setBarcodes(@javax.annotation.Nullable List<@Valid Barcode> barcodes) {
+    this.barcodes = JsonNullable.<List<@Valid Barcode>>of(barcodes);
   }
 
 
-  public AssortmentWithoutBundle packs(@javax.annotation.Nullable List<VariantPack> packs) {
-    this.packs = JsonNullable.<List<VariantPack>>of(packs);
+  public AssortmentWithoutBundle packs(@javax.annotation.Nullable List<@Valid VariantPack> packs) {
+    this.packs = JsonNullable.<List<@Valid VariantPack>>of(packs);
     
     return this;
   }
@@ -1395,7 +1482,7 @@ public class AssortmentWithoutBundle {
 
   public AssortmentWithoutBundle addPacksItem(VariantPack packsItem) {
     if (this.packs == null || !this.packs.isPresent()) {
-      this.packs = JsonNullable.<List<VariantPack>>of(new ArrayList<>());
+      this.packs = JsonNullable.<List<@Valid VariantPack>>of(new ArrayList<>());
     }
     try {
       this.packs.get().add(packsItem);
@@ -1410,9 +1497,12 @@ public class AssortmentWithoutBundle {
    * @return packs
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
-  public List<VariantPack> getPacks() {
+  public List<@Valid VariantPack> getPacks() {
         return packs.orElse(null);
   }
 
@@ -1422,17 +1512,17 @@ public class AssortmentWithoutBundle {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<VariantPack>> getPacks_JsonNullable() {
+  public JsonNullable<List<@Valid VariantPack>> getPacks_JsonNullable() {
     return packs;
   }
   
   @JsonProperty(value = JSON_PROPERTY_PACKS, required = false)
-  public void setPacks_JsonNullable(JsonNullable<List<VariantPack>> packs) {
+  public void setPacks_JsonNullable(JsonNullable<List<@Valid VariantPack>> packs) {
     this.packs = packs;
   }
 
-  public void setPacks(@javax.annotation.Nullable List<VariantPack> packs) {
-    this.packs = JsonNullable.<List<VariantPack>>of(packs);
+  public void setPacks(@javax.annotation.Nullable List<@Valid VariantPack> packs) {
+    this.packs = JsonNullable.<List<@Valid VariantPack>>of(packs);
   }
 
 
@@ -1448,6 +1538,8 @@ public class AssortmentWithoutBundle {
    * @return trackingType
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_TRACKING_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1477,6 +1569,8 @@ public class AssortmentWithoutBundle {
    * @return tnved
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_TNVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1506,6 +1600,8 @@ public class AssortmentWithoutBundle {
    * @return paymentItemType
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PAYMENT_ITEM_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1535,6 +1631,8 @@ public class AssortmentWithoutBundle {
    * @return taxSystem
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_TAX_SYSTEM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1552,8 +1650,8 @@ public class AssortmentWithoutBundle {
   }
 
 
-  public AssortmentWithoutBundle attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
+  public AssortmentWithoutBundle attributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
     
     return this;
   }
@@ -1561,7 +1659,7 @@ public class AssortmentWithoutBundle {
 
   public AssortmentWithoutBundle addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
-      this.attributes = JsonNullable.<List<AttributeAbstract>>of(new ArrayList<>());
+      this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(new ArrayList<>());
     }
     try {
       this.attributes.get().add(attributesItem);
@@ -1576,9 +1674,12 @@ public class AssortmentWithoutBundle {
    * @return attributes
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
-  public List<AttributeAbstract> getAttributes() {
+  public List<@Valid AttributeAbstract> getAttributes() {
         return attributes.orElse(null);
   }
 
@@ -1588,17 +1689,17 @@ public class AssortmentWithoutBundle {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
+  public JsonNullable<List<@Valid AttributeAbstract>> getAttributes_JsonNullable() {
     return attributes;
   }
   
   @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
-  public void setAttributes_JsonNullable(JsonNullable<List<AttributeAbstract>> attributes) {
+  public void setAttributes_JsonNullable(JsonNullable<List<@Valid AttributeAbstract>> attributes) {
     this.attributes = attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
+  public void setAttributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
   }
 
 
@@ -1614,6 +1715,9 @@ public class AssortmentWithoutBundle {
    * @return minimumStock
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public MinimumStockAbstract getMinimumStock() {
@@ -1652,6 +1756,9 @@ public class AssortmentWithoutBundle {
    * @return minPrice
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_MIN_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1681,6 +1788,8 @@ public class AssortmentWithoutBundle {
    * @return weighed
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_WEIGHED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1710,6 +1819,8 @@ public class AssortmentWithoutBundle {
    * @return onTap
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_ON_TAP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1739,6 +1850,8 @@ public class AssortmentWithoutBundle {
    * @return partialDisposal
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PARTIAL_DISPOSAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1780,6 +1893,8 @@ public class AssortmentWithoutBundle {
    * @return things
    */
   @javax.annotation.Nullable
+
+
   @JsonIgnore
 
   public List<String> getThings() {
@@ -1818,6 +1933,9 @@ public class AssortmentWithoutBundle {
    * @return syncId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1847,6 +1965,8 @@ public class AssortmentWithoutBundle {
    * @return ppeType
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PPE_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1876,6 +1996,9 @@ public class AssortmentWithoutBundle {
    * @return product
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_PRODUCT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1893,8 +2016,8 @@ public class AssortmentWithoutBundle {
   }
 
 
-  public AssortmentWithoutBundle characteristics(@javax.annotation.Nullable List<VariantCharacteristicValue> characteristics) {
-    this.characteristics = JsonNullable.<List<VariantCharacteristicValue>>of(characteristics);
+  public AssortmentWithoutBundle characteristics(@javax.annotation.Nullable List<@Valid VariantCharacteristicValue> characteristics) {
+    this.characteristics = JsonNullable.<List<@Valid VariantCharacteristicValue>>of(characteristics);
     
     return this;
   }
@@ -1902,7 +2025,7 @@ public class AssortmentWithoutBundle {
 
   public AssortmentWithoutBundle addCharacteristicsItem(VariantCharacteristicValue characteristicsItem) {
     if (this.characteristics == null || !this.characteristics.isPresent()) {
-      this.characteristics = JsonNullable.<List<VariantCharacteristicValue>>of(new ArrayList<>());
+      this.characteristics = JsonNullable.<List<@Valid VariantCharacteristicValue>>of(new ArrayList<>());
     }
     try {
       this.characteristics.get().add(characteristicsItem);
@@ -1917,9 +2040,12 @@ public class AssortmentWithoutBundle {
    * @return characteristics
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
-  public List<VariantCharacteristicValue> getCharacteristics() {
+  public List<@Valid VariantCharacteristicValue> getCharacteristics() {
         return characteristics.orElse(null);
   }
 
@@ -1929,17 +2055,17 @@ public class AssortmentWithoutBundle {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<VariantCharacteristicValue>> getCharacteristics_JsonNullable() {
+  public JsonNullable<List<@Valid VariantCharacteristicValue>> getCharacteristics_JsonNullable() {
     return characteristics;
   }
   
   @JsonProperty(value = JSON_PROPERTY_CHARACTERISTICS, required = false)
-  public void setCharacteristics_JsonNullable(JsonNullable<List<VariantCharacteristicValue>> characteristics) {
+  public void setCharacteristics_JsonNullable(JsonNullable<List<@Valid VariantCharacteristicValue>> characteristics) {
     this.characteristics = characteristics;
   }
 
-  public void setCharacteristics(@javax.annotation.Nullable List<VariantCharacteristicValue> characteristics) {
-    this.characteristics = JsonNullable.<List<VariantCharacteristicValue>>of(characteristics);
+  public void setCharacteristics(@javax.annotation.Nullable List<@Valid VariantCharacteristicValue> characteristics) {
+    this.characteristics = JsonNullable.<List<@Valid VariantCharacteristicValue>>of(characteristics);
   }
 
 
@@ -1957,6 +2083,9 @@ public class AssortmentWithoutBundle {
    */
   @Deprecated
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1986,6 +2115,8 @@ public class AssortmentWithoutBundle {
    * @return expiryDate
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_EXPIRY_DATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2015,6 +2146,8 @@ public class AssortmentWithoutBundle {
    * @return label
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_LABEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2044,6 +2177,8 @@ public class AssortmentWithoutBundle {
    * @return stock
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_STOCK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2073,6 +2208,8 @@ public class AssortmentWithoutBundle {
    * @return reserve
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_RESERVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2102,6 +2239,8 @@ public class AssortmentWithoutBundle {
    * @return inTransit
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_IN_TRANSIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2131,6 +2270,8 @@ public class AssortmentWithoutBundle {
    * @return quantity
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

@@ -24,6 +24,8 @@ import ru.moysklad.remap_1_2.model.RetailStoreEnvironmentChequePrinterDriver;
 import ru.moysklad.remap_1_2.model.RetailStoreEnvironmentChequePrinterFiscalMemory;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -41,7 +43,7 @@ import java.util.StringJoiner;
   RetailStoreEnvironmentChequePrinter.JSON_PROPERTY_VENDOR
 })
 @JsonTypeName("RetailStore_environment_chequePrinter")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStoreEnvironmentChequePrinter {
 
   public static final String JSON_PROPERTY_DRIVER = "driver";
@@ -87,6 +89,9 @@ public class RetailStoreEnvironmentChequePrinter {
    * @return driver
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_DRIVER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -116,6 +121,8 @@ public class RetailStoreEnvironmentChequePrinter {
    * @return firmwareVersion
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_FIRMWARE_VERSION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -145,6 +152,8 @@ public class RetailStoreEnvironmentChequePrinter {
    * @return fiscalDataVersion
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_FISCAL_DATA_VERSION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -174,6 +183,9 @@ public class RetailStoreEnvironmentChequePrinter {
    * @return fiscalMemory
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_FISCAL_MEMORY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -203,6 +215,8 @@ public class RetailStoreEnvironmentChequePrinter {
    * @return name
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -232,6 +246,8 @@ public class RetailStoreEnvironmentChequePrinter {
    * @return serial
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_SERIAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -261,6 +277,8 @@ public class RetailStoreEnvironmentChequePrinter {
    * @return vendor
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_VENDOR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

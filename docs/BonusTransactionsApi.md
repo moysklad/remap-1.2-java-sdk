@@ -48,7 +48,7 @@ public class Example {
 
         BonusTransactionsApi apiInstance = new BonusTransactionsApi(defaultClient);
         CreateBonusTransactionRequest createBonusTransactionRequest = new CreateBonusTransactionRequest(); // CreateBonusTransactionRequest | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -132,7 +132,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         BonusTransactionsApi apiInstance = new BonusTransactionsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -180,7 +180,7 @@ null (empty response body)
 
 ## deleteBonusTransactionsBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteBonusTransactionsBatch(bonusTransaction, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteBonusTransactionsBatch(bonusTransaction, accept, acceptEncoding, contentType)
 
 Удалить бонусные операции
 
@@ -212,12 +212,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         BonusTransactionsApi apiInstance = new BonusTransactionsApi(defaultClient);
-        List<BonusTransaction> bonusTransaction = Arrays.asList(); // List<BonusTransaction> | 
+        List<@Valid BonusTransaction> bonusTransaction = Arrays.asList(); // List<@Valid BonusTransaction> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteBonusTransactionsBatch(bonusTransaction, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteBonusTransactionsBatch(bonusTransaction, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling BonusTransactionsApi#deleteBonusTransactionsBatch");
@@ -235,14 +235,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **bonusTransaction** | [**List&lt;BonusTransaction&gt;**](BonusTransaction.md)|  | |
+| **bonusTransaction** | [**List&lt;@Valid BonusTransaction&gt;**](BonusTransaction.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -295,8 +295,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         BonusTransactionsApi apiInstance = new BonusTransactionsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -380,10 +380,10 @@ public class Example {
         BonusTransactionsApi apiInstance = new BonusTransactionsApi(defaultClient);
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String search = "name=123"; // String | Контекстный поиск по строковым полям сущностей
-        String filter = "archived=false"; // String | Фильтрация выборки
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
-        String order = "name"; // String | Сортировка
+        String search = "search_example"; // String | Контекстный поиск по строковым полям сущностей
+        String filter = "filter_example"; // String | Фильтрация выборки
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
+        String order = "order_example"; // String | Сортировка
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -469,9 +469,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         BonusTransactionsApi apiInstance = new BonusTransactionsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         BonusTransaction bonusTransaction = new BonusTransaction(); // BonusTransaction | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 

@@ -25,6 +25,8 @@ import ru.moysklad.remap_1_2.model.Assortment;
 import ru.moysklad.remap_1_2.model.Meta;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -40,8 +42,8 @@ import java.util.StringJoiner;
   EmissionOrderPosition.JSON_PROPERTY_QUANTITY,
   EmissionOrderPosition.JSON_PROPERTY_STATUS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
-public class EmissionOrderPosition {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
+public class EmissionOrderPosition extends EntityWithMeta {
   public static EmissionOrderPosition createWithMeta(UUID parentId, UUID id) {
     EmissionOrderPosition o = new EmissionOrderPosition();
     Meta meta = new Meta();
@@ -110,6 +112,9 @@ public class EmissionOrderPosition {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -132,6 +137,9 @@ public class EmissionOrderPosition {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -148,6 +156,9 @@ public class EmissionOrderPosition {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -173,6 +184,9 @@ public class EmissionOrderPosition {
    */
   @Deprecated
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -204,6 +218,8 @@ public class EmissionOrderPosition {
    * @return quantity
    */
   @javax.annotation.Nullable
+ @DecimalMin("0") @DecimalMax("1000")
+
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -226,6 +242,8 @@ public class EmissionOrderPosition {
    * @return status
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

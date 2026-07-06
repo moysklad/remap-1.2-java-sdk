@@ -65,7 +65,7 @@ public class Example {
         Store store = new Store(); // Store | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String contentType = "application/json"; // String | 
         try {
             Store result = apiInstance.createStore(store, accept, acceptEncoding, expand, contentType);
@@ -358,7 +358,7 @@ public class Example {
 
 ## createStoresBatch
 
-> List&lt;CreateStoresBatch200ResponseInner&gt; createStoresBatch(store, accept, acceptEncoding, expand, contentType)
+> List&lt;BatchResponseEntity&gt; createStoresBatch(store, accept, acceptEncoding, expand, contentType)
 
 Массовое создание и обновление Складов
 
@@ -388,13 +388,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         StoresApi apiInstance = new StoresApi(defaultClient);
-        List<Store> store = Arrays.asList(); // List<Store> | 
+        List<@Valid Store> store = Arrays.asList(); // List<@Valid Store> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String contentType = "application/json"; // String | 
         try {
-            List<CreateStoresBatch200ResponseInner> result = apiInstance.createStoresBatch(store, accept, acceptEncoding, expand, contentType);
+            List<BatchResponseEntity> result = apiInstance.createStoresBatch(store, accept, acceptEncoding, expand, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling StoresApi#createStoresBatch");
@@ -412,7 +412,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **store** | [**List&lt;Store&gt;**](Store.md)|  | |
+| **store** | [**List&lt;@Valid Store&gt;**](Store.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
@@ -420,7 +420,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreateStoresBatch200ResponseInner&gt;**](CreateStoresBatch200ResponseInner.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -471,7 +471,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         StoresApi apiInstance = new StoresApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -630,7 +630,7 @@ public class Example {
 
         StoresApi apiInstance = new StoresApi(defaultClient);
         UUID storeId = UUID.randomUUID(); // UUID | 
-        List<StoreSlot> storeSlot = Arrays.asList(); // List<StoreSlot> | 
+        List<@Valid StoreSlot> storeSlot = Arrays.asList(); // List<@Valid StoreSlot> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -653,7 +653,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **storeId** | **UUID**|  | |
-| **storeSlot** | [**List&lt;StoreSlot&gt;**](StoreSlot.md)|  | |
+| **storeSlot** | [**List&lt;@Valid StoreSlot&gt;**](StoreSlot.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -792,7 +792,7 @@ public class Example {
 
         StoresApi apiInstance = new StoresApi(defaultClient);
         UUID storeId = UUID.randomUUID(); // UUID | 
-        List<StoreZone> storeZone = Arrays.asList(); // List<StoreZone> | 
+        List<@Valid StoreZone> storeZone = Arrays.asList(); // List<@Valid StoreZone> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -815,7 +815,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **storeId** | **UUID**|  | |
-| **storeZone** | [**List&lt;StoreZone&gt;**](StoreZone.md)|  | |
+| **storeZone** | [**List&lt;@Valid StoreZone&gt;**](StoreZone.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -843,7 +843,7 @@ null (empty response body)
 
 ## deleteStoresBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteStoresBatch(store, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteStoresBatch(store, accept, acceptEncoding, contentType)
 
 Массовое удаление Складов
 
@@ -873,12 +873,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         StoresApi apiInstance = new StoresApi(defaultClient);
-        List<Store> store = Arrays.asList(); // List<Store> | 
+        List<@Valid Store> store = Arrays.asList(); // List<@Valid Store> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteStoresBatch(store, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteStoresBatch(store, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling StoresApi#deleteStoresBatch");
@@ -896,14 +896,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **store** | [**List&lt;Store&gt;**](Store.md)|  | |
+| **store** | [**List&lt;@Valid Store&gt;**](Store.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -954,8 +954,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         StoresApi apiInstance = new StoresApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1035,7 +1035,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         StoresApi apiInstance = new StoresApi(defaultClient);
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1197,7 +1197,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         StoresApi apiInstance = new StoresApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1598,10 +1598,10 @@ public class Example {
         StoresApi apiInstance = new StoresApi(defaultClient);
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String search = "name=123"; // String | Контекстный поиск по строковым полям сущностей
-        String filter = "archived=false"; // String | Фильтрация выборки
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
-        String order = "name"; // String | Сортировка
+        String search = "search_example"; // String | Контекстный поиск по строковым полям сущностей
+        String filter = "filter_example"; // String | Фильтрация выборки
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
+        String order = "order_example"; // String | Сортировка
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1685,9 +1685,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         StoresApi apiInstance = new StoresApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Store store = new Store(); // Store | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 

@@ -20,6 +20,11 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JavaType;
 import org.openapitools.jackson.nullable.JsonNullableModule;
+import org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator;
+
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
 
 import org.apache.hc.client5.http.cookie.BasicCookieStore;
 import org.apache.hc.client5.http.cookie.Cookie;
@@ -80,7 +85,7 @@ import ru.moysklad.remap_1_2.auth.Authentication;
 import ru.moysklad.remap_1_2.auth.HttpBasicAuth;
 import ru.moysklad.remap_1_2.auth.HttpBearerAuth;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ApiClient extends JavaTimeFormatter {
   protected Map<String, String> defaultHeaderMap = new HashMap<String, String>();
@@ -108,6 +113,7 @@ public class ApiClient extends JavaTimeFormatter {
   protected ThreadLocal<Map<String, List<String>>> lastResponseHeaders = new ThreadLocal<>();
 
   protected DateFormat dateFormat;
+  protected final Validator beanValidator;
 
   // Methods that can have a request body
   protected static List<String> bodyMethods = Arrays.asList("POST", "PUT", "DELETE", "PATCH");
@@ -132,6 +138,11 @@ public class ApiClient extends JavaTimeFormatter {
     objectMapper.setDateFormat(ApiClient.buildDefaultDateFormat());
 
     dateFormat = ApiClient.buildDefaultDateFormat();
+    beanValidator = Validation.byDefaultProvider()
+        .configure()
+        .messageInterpolator(new ParameterMessageInterpolator())
+        .buildValidatorFactory()
+        .getValidator();
 
     // Set default User-Agent.
     setUserAgent("OpenAPI-Generator/1.0.0/java");
@@ -930,6 +941,49 @@ public class ApiClient extends JavaTimeFormatter {
     return bodyMethods.contains(method);
   }
 
+  private void validateRequestBody(Object requestBody) throws ApiException {
+    if (requestBody == null) {
+      return;
+    }
+
+    List<String> errors = new ArrayList<String>();
+    collectValidationErrors(requestBody, errors, "");
+    if (!errors.isEmpty()) {
+      throw new ApiException(400, "Request body validation failed: " + String.join("; ", errors));
+    }
+  }
+
+  private void collectValidationErrors(Object value, List<String> errors, String pathPrefix) {
+    if (value == null) {
+      return;
+    }
+    if (value instanceof Collection<?>) {
+      int index = 0;
+      for (Object item : (Collection<?>) value) {
+        collectValidationErrors(item, errors, pathPrefix + "[" + index + "]");
+        index++;
+      }
+      return;
+    }
+    if (value instanceof Map<?, ?>) {
+      for (Entry<?, ?> entry : ((Map<?, ?>) value).entrySet()) {
+        collectValidationErrors(entry.getValue(), errors, pathPrefix + "[" + entry.getKey() + "]");
+      }
+      return;
+    }
+
+    for (ConstraintViolation<Object> violation : beanValidator.validate(value)) {
+      String propertyPath = violation.getPropertyPath().toString();
+      if (pathPrefix == null || pathPrefix.isEmpty()) {
+        errors.add(propertyPath + ": " + violation.getMessage());
+      } else if (propertyPath == null || propertyPath.isEmpty()) {
+        errors.add(pathPrefix + ": " + violation.getMessage());
+      } else {
+        errors.add(pathPrefix + "." + propertyPath + ": " + violation.getMessage());
+      }
+    }
+  }
+
   protected Cookie buildCookie(String key, String value, URI uri) {
     BasicClientCookie cookie = new BasicClientCookie(key, value);
     cookie.setDomain(uri.getHost());
@@ -992,6 +1046,7 @@ public class ApiClient extends JavaTimeFormatter {
     if (body != null && !formParams.isEmpty()) {
       throw new ApiException("Cannot have body and form params");
     }
+    validateRequestBody(body);
 
     updateParamsForAuth(authNames, queryParams, headerParams, cookieParams);
     final String url = buildUrl(path, queryParams, collectionQueryParams, urlQueryDeepObject);

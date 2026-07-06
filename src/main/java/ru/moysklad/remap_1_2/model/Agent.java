@@ -46,6 +46,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -113,7 +115,7 @@ import java.util.StringJoiner;
   Agent.JSON_PROPERTY_CHIEF_ACCOUNT_SIGN,
   Agent.JSON_PROPERTY_STAMP
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class Agent {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -250,7 +252,7 @@ public class Agent {
 
   public static final String JSON_PROPERTY_DISCOUNTS = "discounts";
   @javax.annotation.Nullable
-  private JsonNullable<List<AgentDiscount>> discounts = JsonNullable.<List<AgentDiscount>>undefined();
+  private JsonNullable<List<@Valid AgentDiscount>> discounts = JsonNullable.<List<@Valid AgentDiscount>>undefined();
 
   public static final String JSON_PROPERTY_SHARED = "shared";
   @javax.annotation.Nullable
@@ -306,7 +308,7 @@ public class Agent {
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
-  private JsonNullable<List<AttributeAbstract>> attributes = JsonNullable.<List<AttributeAbstract>>undefined();
+  private JsonNullable<List<@Valid AttributeAbstract>> attributes = JsonNullable.<List<@Valid AttributeAbstract>>undefined();
 
   public static final String JSON_PROPERTY_TRACKING_CONTRACT_NUMBER = "trackingContractNumber";
   @javax.annotation.Nullable
@@ -383,6 +385,9 @@ public class Agent {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -405,6 +410,9 @@ public class Agent {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -428,6 +436,9 @@ public class Agent {
    * @return syncId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -450,6 +461,9 @@ public class Agent {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -473,6 +487,8 @@ public class Agent {
    * @return name
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -502,6 +518,8 @@ public class Agent {
    * @return code
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -531,6 +549,8 @@ public class Agent {
    * @return externalCode
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -560,6 +580,8 @@ public class Agent {
    * @return archived
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -582,6 +604,8 @@ public class Agent {
    * @return created
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_CREATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -598,6 +622,8 @@ public class Agent {
    * @return updated
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -621,6 +647,8 @@ public class Agent {
    * @return description
    */
   @javax.annotation.Nullable
+ @Size(max=4096)
+
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -650,6 +678,8 @@ public class Agent {
    * @return companyType
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_COMPANY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -679,6 +709,8 @@ public class Agent {
    * @return email
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -708,6 +740,8 @@ public class Agent {
    * @return phone
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_PHONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -737,6 +771,8 @@ public class Agent {
    * @return fax
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_FAX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -766,6 +802,8 @@ public class Agent {
    * @return actualAddress
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_ACTUAL_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -795,6 +833,9 @@ public class Agent {
    * @return actualAddressFull
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Address getActualAddressFull() {
@@ -833,6 +874,8 @@ public class Agent {
    * @return legalAddress
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_LEGAL_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -862,6 +905,9 @@ public class Agent {
    * @return legalAddressFull
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Address getLegalAddressFull() {
@@ -900,6 +946,8 @@ public class Agent {
    * @return inn
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_INN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -929,6 +977,8 @@ public class Agent {
    * @return kpp
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_KPP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -958,6 +1008,8 @@ public class Agent {
    * @return ogrn
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_OGRN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -987,6 +1039,8 @@ public class Agent {
    * @return ogrnip
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_OGRNIP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1016,6 +1070,8 @@ public class Agent {
    * @return okpo
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_OKPO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1045,6 +1101,8 @@ public class Agent {
    * @return certificateNumber
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_CERTIFICATE_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1074,6 +1132,8 @@ public class Agent {
    * @return certificateDate
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_CERTIFICATE_DATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1103,6 +1163,8 @@ public class Agent {
    * @return legalTitle
    */
   @javax.annotation.Nullable
+ @Size(max=4096)
+
   @JsonProperty(JSON_PROPERTY_LEGAL_TITLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1132,6 +1194,8 @@ public class Agent {
    * @return legalFirstName
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_LEGAL_FIRST_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1161,6 +1225,8 @@ public class Agent {
    * @return legalLastName
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_LEGAL_LAST_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1190,6 +1256,8 @@ public class Agent {
    * @return legalMiddleName
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_LEGAL_MIDDLE_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1219,6 +1287,8 @@ public class Agent {
    * @return birthDate
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_BIRTH_DATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1248,6 +1318,8 @@ public class Agent {
    * @return sex
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SEX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1277,6 +1349,8 @@ public class Agent {
    * @return discountCardNumber
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonIgnore
 
   public String getDiscountCardNumber() {
@@ -1303,8 +1377,8 @@ public class Agent {
   }
 
 
-  public Agent discounts(@javax.annotation.Nullable List<AgentDiscount> discounts) {
-    this.discounts = JsonNullable.<List<AgentDiscount>>of(discounts);
+  public Agent discounts(@javax.annotation.Nullable List<@Valid AgentDiscount> discounts) {
+    this.discounts = JsonNullable.<List<@Valid AgentDiscount>>of(discounts);
     
     return this;
   }
@@ -1312,7 +1386,7 @@ public class Agent {
 
   public Agent addDiscountsItem(AgentDiscount discountsItem) {
     if (this.discounts == null || !this.discounts.isPresent()) {
-      this.discounts = JsonNullable.<List<AgentDiscount>>of(new ArrayList<>());
+      this.discounts = JsonNullable.<List<@Valid AgentDiscount>>of(new ArrayList<>());
     }
     try {
       this.discounts.get().add(discountsItem);
@@ -1327,9 +1401,12 @@ public class Agent {
    * @return discounts
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
-  public List<AgentDiscount> getDiscounts() {
+  public List<@Valid AgentDiscount> getDiscounts() {
         return discounts.orElse(null);
   }
 
@@ -1339,17 +1416,17 @@ public class Agent {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<AgentDiscount>> getDiscounts_JsonNullable() {
+  public JsonNullable<List<@Valid AgentDiscount>> getDiscounts_JsonNullable() {
     return discounts;
   }
   
   @JsonProperty(value = JSON_PROPERTY_DISCOUNTS, required = false)
-  public void setDiscounts_JsonNullable(JsonNullable<List<AgentDiscount>> discounts) {
+  public void setDiscounts_JsonNullable(JsonNullable<List<@Valid AgentDiscount>> discounts) {
     this.discounts = discounts;
   }
 
-  public void setDiscounts(@javax.annotation.Nullable List<AgentDiscount> discounts) {
-    this.discounts = JsonNullable.<List<AgentDiscount>>of(discounts);
+  public void setDiscounts(@javax.annotation.Nullable List<@Valid AgentDiscount> discounts) {
+    this.discounts = JsonNullable.<List<@Valid AgentDiscount>>of(discounts);
   }
 
 
@@ -1365,6 +1442,8 @@ public class Agent {
    * @return shared
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1394,6 +1473,9 @@ public class Agent {
    * @return group
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1423,6 +1505,9 @@ public class Agent {
    * @return owner
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Employee getOwner() {
@@ -1454,6 +1539,8 @@ public class Agent {
    * @return salesAmount
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SALES_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1470,6 +1557,8 @@ public class Agent {
    * @return bonusPoints
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_BONUS_POINTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1493,6 +1582,9 @@ public class Agent {
    * @return bonusProgram
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public BonusProgram getBonusProgram() {
@@ -1531,6 +1623,9 @@ public class Agent {
    * @return priceType
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public PriceType getPriceType() {
@@ -1569,6 +1664,9 @@ public class Agent {
    * @return state
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_STATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1598,6 +1696,9 @@ public class Agent {
    * @return accounts
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1627,6 +1728,9 @@ public class Agent {
    * @return contactpersons
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_CONTACTPERSONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1656,6 +1760,9 @@ public class Agent {
    * @return notes
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_NOTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1685,6 +1792,9 @@ public class Agent {
    * @return files
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_FILES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1726,6 +1836,8 @@ public class Agent {
    * @return tags
    */
   @javax.annotation.Nullable
+
+
   @JsonIgnore
 
   public List<String> getTags() {
@@ -1752,8 +1864,8 @@ public class Agent {
   }
 
 
-  public Agent attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
+  public Agent attributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
     
     return this;
   }
@@ -1761,7 +1873,7 @@ public class Agent {
 
   public Agent addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
-      this.attributes = JsonNullable.<List<AttributeAbstract>>of(new ArrayList<>());
+      this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(new ArrayList<>());
     }
     try {
       this.attributes.get().add(attributesItem);
@@ -1776,9 +1888,12 @@ public class Agent {
    * @return attributes
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
-  public List<AttributeAbstract> getAttributes() {
+  public List<@Valid AttributeAbstract> getAttributes() {
         return attributes.orElse(null);
   }
 
@@ -1788,17 +1903,17 @@ public class Agent {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
+  public JsonNullable<List<@Valid AttributeAbstract>> getAttributes_JsonNullable() {
     return attributes;
   }
   
   @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
-  public void setAttributes_JsonNullable(JsonNullable<List<AttributeAbstract>> attributes) {
+  public void setAttributes_JsonNullable(JsonNullable<List<@Valid AttributeAbstract>> attributes) {
     this.attributes = attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
+  public void setAttributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
   }
 
 
@@ -1814,6 +1929,8 @@ public class Agent {
    * @return trackingContractNumber
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_TRACKING_CONTRACT_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1843,6 +1960,8 @@ public class Agent {
    * @return trackingContractDate
    */
   @javax.annotation.Nullable
+
+
   @JsonIgnore
 
   public String getTrackingContractDate() {
@@ -1881,6 +2000,8 @@ public class Agent {
    * @return advancePaymentVat
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_ADVANCE_PAYMENT_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1910,6 +2031,8 @@ public class Agent {
    * @return payerVat
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PAYER_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1939,6 +2062,8 @@ public class Agent {
    * @return director
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_DIRECTOR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1968,6 +2093,8 @@ public class Agent {
    * @return directorPosition
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_DIRECTOR_POSITION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1997,6 +2124,8 @@ public class Agent {
    * @return chiefAccountant
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_CHIEF_ACCOUNTANT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2026,6 +2155,9 @@ public class Agent {
    * @return directorSign
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Image getDirectorSign() {
@@ -2064,6 +2196,9 @@ public class Agent {
    * @return chiefAccountSign
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Image getChiefAccountSign() {
@@ -2102,6 +2237,9 @@ public class Agent {
    * @return stamp
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Image getStamp() {

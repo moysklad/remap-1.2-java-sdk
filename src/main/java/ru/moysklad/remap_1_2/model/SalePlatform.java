@@ -24,6 +24,8 @@ import java.util.UUID;
 import ru.moysklad.remap_1_2.model.Meta;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -37,7 +39,7 @@ import java.util.StringJoiner;
   SalePlatform.JSON_PROPERTY_NAME,
   SalePlatform.JSON_PROPERTY_SALE_PLATFORM_GROUP
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class SalePlatform {
   public static SalePlatform createWithMeta(UUID id) {
     SalePlatform o = new SalePlatform();
@@ -95,6 +97,9 @@ public class SalePlatform {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -117,6 +122,9 @@ public class SalePlatform {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -140,6 +148,8 @@ public class SalePlatform {
    * @return name
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -169,6 +179,8 @@ public class SalePlatform {
    * @return salePlatformGroup
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SALE_PLATFORM_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

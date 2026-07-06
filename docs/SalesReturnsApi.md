@@ -64,7 +64,7 @@ public class Example {
 
         SalesReturnsApi apiInstance = new SalesReturnsApi(defaultClient);
         SalesReturn salesReturn = new SalesReturn(); // SalesReturn | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -116,7 +116,7 @@ public class Example {
 
 ## createSalesReturnBatch
 
-> List&lt;CreateSalesReturnBatch200ResponseInner&gt; createSalesReturnBatch(salesReturn, expand, accept, acceptEncoding, contentType)
+> List&lt;BatchResponseEntity&gt; createSalesReturnBatch(salesReturn, expand, accept, acceptEncoding, contentType)
 
 Массовое создание и обновление Возвратов покупателей
 
@@ -146,13 +146,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         SalesReturnsApi apiInstance = new SalesReturnsApi(defaultClient);
-        List<SalesReturn> salesReturn = Arrays.asList(); // List<SalesReturn> | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        List<@Valid SalesReturn> salesReturn = Arrays.asList(); // List<@Valid SalesReturn> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateSalesReturnBatch200ResponseInner> result = apiInstance.createSalesReturnBatch(salesReturn, expand, accept, acceptEncoding, contentType);
+            List<BatchResponseEntity> result = apiInstance.createSalesReturnBatch(salesReturn, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling SalesReturnsApi#createSalesReturnBatch");
@@ -170,7 +170,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **salesReturn** | [**List&lt;SalesReturn&gt;**](SalesReturn.md)|  | |
+| **salesReturn** | [**List&lt;@Valid SalesReturn&gt;**](SalesReturn.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -178,7 +178,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreateSalesReturnBatch200ResponseInner&gt;**](CreateSalesReturnBatch200ResponseInner.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -310,9 +310,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         SalesReturnsApi apiInstance = new SalesReturnsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         SalesReturnPosition salesReturnPosition = new SalesReturnPosition(); // SalesReturnPosition | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -395,9 +395,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         SalesReturnsApi apiInstance = new SalesReturnsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<SalesReturnPosition> salesReturnPosition = Arrays.asList(); // List<SalesReturnPosition> | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid SalesReturnPosition> salesReturnPosition = Arrays.asList(); // List<@Valid SalesReturnPosition> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -421,7 +421,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **salesReturnPosition** | [**List&lt;SalesReturnPosition&gt;**](SalesReturnPosition.md)|  | |
+| **salesReturnPosition** | [**List&lt;@Valid SalesReturnPosition&gt;**](SalesReturnPosition.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -480,7 +480,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         SalesReturnsApi apiInstance = new SalesReturnsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -530,7 +530,7 @@ null (empty response body)
 
 ## deleteSalesReturnBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteSalesReturnBatch(salesReturn, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteSalesReturnBatch(salesReturn, accept, acceptEncoding, contentType)
 
 Массовое удаление Возвратов покупателей
 
@@ -560,12 +560,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         SalesReturnsApi apiInstance = new SalesReturnsApi(defaultClient);
-        List<SalesReturn> salesReturn = Arrays.asList(); // List<SalesReturn> | 
+        List<@Valid SalesReturn> salesReturn = Arrays.asList(); // List<@Valid SalesReturn> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteSalesReturnBatch(salesReturn, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteSalesReturnBatch(salesReturn, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling SalesReturnsApi#deleteSalesReturnBatch");
@@ -583,14 +583,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **salesReturn** | [**List&lt;SalesReturn&gt;**](SalesReturn.md)|  | |
+| **salesReturn** | [**List&lt;@Valid SalesReturn&gt;**](SalesReturn.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -641,7 +641,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         SalesReturnsApi apiInstance = new SalesReturnsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -721,7 +721,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         SalesReturnsApi apiInstance = new SalesReturnsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -802,9 +802,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         SalesReturnsApi apiInstance = new SalesReturnsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -856,7 +856,7 @@ null (empty response body)
 
 ## deleteSalesReturnPositionsBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteSalesReturnPositionsBatch(id, salesReturnPosition, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteSalesReturnPositionsBatch(id, salesReturnPosition, accept, acceptEncoding, contentType)
 
 Массовое удаление позиций Возврата покупателя
 
@@ -886,13 +886,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         SalesReturnsApi apiInstance = new SalesReturnsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<SalesReturnPosition> salesReturnPosition = Arrays.asList(); // List<SalesReturnPosition> | 
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid SalesReturnPosition> salesReturnPosition = Arrays.asList(); // List<@Valid SalesReturnPosition> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteSalesReturnPositionsBatch(id, salesReturnPosition, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteSalesReturnPositionsBatch(id, salesReturnPosition, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling SalesReturnsApi#deleteSalesReturnPositionsBatch");
@@ -911,14 +911,14 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **salesReturnPosition** | [**List&lt;SalesReturnPosition&gt;**](SalesReturnPosition.md)|  | |
+| **salesReturnPosition** | [**List&lt;@Valid SalesReturnPosition&gt;**](SalesReturnPosition.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -969,8 +969,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         SalesReturnsApi apiInstance = new SalesReturnsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1054,8 +1054,8 @@ public class Example {
         SalesReturnsApi apiInstance = new SalesReturnsApi(defaultClient);
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String search = "name=123"; // String | Контекстный поиск по строковым полям сущностей
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String search = "search_example"; // String | Контекстный поиск по строковым полям сущностей
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1303,7 +1303,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         SalesReturnsApi apiInstance = new SalesReturnsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1384,7 +1384,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         SalesReturnsApi apiInstance = new SalesReturnsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1465,9 +1465,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         SalesReturnsApi apiInstance = new SalesReturnsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1552,10 +1552,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         SalesReturnsApi apiInstance = new SalesReturnsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1722,9 +1722,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         SalesReturnsApi apiInstance = new SalesReturnsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         SalesReturn salesReturn = new SalesReturn(); // SalesReturn | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1809,7 +1809,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         SalesReturnsApi apiInstance = new SalesReturnsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         AttributeMetaInfo attributeMetaInfo = new AttributeMetaInfo(); // AttributeMetaInfo | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1892,7 +1892,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         SalesReturnsApi apiInstance = new SalesReturnsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         State state = new State(); // State | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1975,10 +1975,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         SalesReturnsApi apiInstance = new SalesReturnsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
         SalesReturnPosition salesReturnPosition = new SalesReturnPosition(); // SalesReturnPosition | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 

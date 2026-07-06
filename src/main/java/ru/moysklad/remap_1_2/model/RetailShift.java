@@ -25,20 +25,34 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
+import ru.moysklad.remap_1_2.model.Account;
+import ru.moysklad.remap_1_2.model.Agent;
+import ru.moysklad.remap_1_2.model.AttributeAbstract;
+import ru.moysklad.remap_1_2.model.Contract;
+import ru.moysklad.remap_1_2.model.Employee;
+import ru.moysklad.remap_1_2.model.FileList;
+import ru.moysklad.remap_1_2.model.Group;
 import ru.moysklad.remap_1_2.model.Meta;
+import ru.moysklad.remap_1_2.model.Organization;
+import ru.moysklad.remap_1_2.model.RetailShiftCheque;
+import ru.moysklad.remap_1_2.model.RetailShiftOperation;
+import ru.moysklad.remap_1_2.model.RetailShiftPaymentOperation;
 import ru.moysklad.remap_1_2.model.RetailShiftPaymentsInner;
 import ru.moysklad.remap_1_2.model.RetailStore;
+import ru.moysklad.remap_1_2.model.Store;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
 
 /**
- * Смена (retailshift). Заглушка: в спецификации нет полного описания сущности; при развёртывании в ответе API возможны дополнительные поля. 
+ * Розничная смена
  */
 @JsonPropertyOrder({
   RetailShift.JSON_PROPERTY_META,
@@ -47,9 +61,43 @@ import java.util.StringJoiner;
   RetailShift.JSON_PROPERTY_NAME,
   RetailShift.JSON_PROPERTY_MOMENT,
   RetailShift.JSON_PROPERTY_RETAIL_STORE,
-  RetailShift.JSON_PROPERTY_PAYMENTS
+  RetailShift.JSON_PROPERTY_PAYMENTS,
+  RetailShift.JSON_PROPERTY_ACQUIRE,
+  RetailShift.JSON_PROPERTY_AGENT_ACCOUNT,
+  RetailShift.JSON_PROPERTY_ATTRIBUTES,
+  RetailShift.JSON_PROPERTY_BANK_COMISSION,
+  RetailShift.JSON_PROPERTY_BANK_PERCENT,
+  RetailShift.JSON_PROPERTY_CHEQUE,
+  RetailShift.JSON_PROPERTY_CLOSE_DATE,
+  RetailShift.JSON_PROPERTY_CONTRACT,
+  RetailShift.JSON_PROPERTY_CREATED,
+  RetailShift.JSON_PROPERTY_DELETED,
+  RetailShift.JSON_PROPERTY_DESCRIPTION,
+  RetailShift.JSON_PROPERTY_EXTERNAL_CODE,
+  RetailShift.JSON_PROPERTY_FILES,
+  RetailShift.JSON_PROPERTY_GROUP,
+  RetailShift.JSON_PROPERTY_OPERATIONS,
+  RetailShift.JSON_PROPERTY_ORGANIZATION,
+  RetailShift.JSON_PROPERTY_ORGANIZATION_ACCOUNT,
+  RetailShift.JSON_PROPERTY_OWNER,
+  RetailShift.JSON_PROPERTY_PAYMENT_OPERATIONS,
+  RetailShift.JSON_PROPERTY_PRINTED,
+  RetailShift.JSON_PROPERTY_PROCEEDS_CASH,
+  RetailShift.JSON_PROPERTY_PROCEEDS_NO_CASH,
+  RetailShift.JSON_PROPERTY_PUBLISHED,
+  RetailShift.JSON_PROPERTY_QR_ACQUIRE,
+  RetailShift.JSON_PROPERTY_QR_BANK_COMISSION,
+  RetailShift.JSON_PROPERTY_QR_BANK_PERCENT,
+  RetailShift.JSON_PROPERTY_RECEIVED_CASH,
+  RetailShift.JSON_PROPERTY_RECEIVED_NO_CASH,
+  RetailShift.JSON_PROPERTY_SHARED,
+  RetailShift.JSON_PROPERTY_STORE,
+  RetailShift.JSON_PROPERTY_SYNC_ID,
+  RetailShift.JSON_PROPERTY_UPDATED,
+  RetailShift.JSON_PROPERTY_VAT_ENABLED,
+  RetailShift.JSON_PROPERTY_VAT_INCLUDED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailShift {
   public static RetailShift createWithMeta(UUID id) {
     RetailShift o = new RetailShift();
@@ -94,6 +142,142 @@ public class RetailShift {
   @javax.annotation.Nullable
   private JsonNullable<List<RetailShiftPaymentsInner>> payments = JsonNullable.<List<RetailShiftPaymentsInner>>undefined();
 
+  public static final String JSON_PROPERTY_ACQUIRE = "acquire";
+  @javax.annotation.Nullable
+  private JsonNullable<Agent> acquire = JsonNullable.<Agent>undefined();
+
+  public static final String JSON_PROPERTY_AGENT_ACCOUNT = "agentAccount";
+  @javax.annotation.Nullable
+  private JsonNullable<Account> agentAccount = JsonNullable.<Account>undefined();
+
+  public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
+  @javax.annotation.Nullable
+  private JsonNullable<List<@Valid AttributeAbstract>> attributes = JsonNullable.<List<@Valid AttributeAbstract>>undefined();
+
+  public static final String JSON_PROPERTY_BANK_COMISSION = "bankComission";
+  @javax.annotation.Nullable
+  private Double bankComission;
+
+  public static final String JSON_PROPERTY_BANK_PERCENT = "bankPercent";
+  @javax.annotation.Nullable
+  private Double bankPercent;
+
+  public static final String JSON_PROPERTY_CHEQUE = "cheque";
+  @javax.annotation.Nullable
+  private JsonNullable<RetailShiftCheque> cheque = JsonNullable.<RetailShiftCheque>undefined();
+
+  public static final String JSON_PROPERTY_CLOSE_DATE = "closeDate";
+  @javax.annotation.Nullable
+  private JsonNullable<String> closeDate = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_CONTRACT = "contract";
+  @javax.annotation.Nullable
+  private JsonNullable<Contract> contract = JsonNullable.<Contract>undefined();
+
+  public static final String JSON_PROPERTY_CREATED = "created";
+  @javax.annotation.Nullable
+  private String created;
+
+  public static final String JSON_PROPERTY_DELETED = "deleted";
+  @javax.annotation.Nullable
+  private JsonNullable<String> deleted = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  @javax.annotation.Nullable
+  private JsonNullable<String> description = JsonNullable.<String>undefined();
+
+  public static final String JSON_PROPERTY_EXTERNAL_CODE = "externalCode";
+  @javax.annotation.Nullable
+  private String externalCode;
+
+  public static final String JSON_PROPERTY_FILES = "files";
+  @javax.annotation.Nullable
+  private JsonNullable<FileList> files = JsonNullable.<FileList>undefined();
+
+  public static final String JSON_PROPERTY_GROUP = "group";
+  @javax.annotation.Nullable
+  private Group group;
+
+  public static final String JSON_PROPERTY_OPERATIONS = "operations";
+  @javax.annotation.Nullable
+  private JsonNullable<List<@Valid RetailShiftOperation>> operations = JsonNullable.<List<@Valid RetailShiftOperation>>undefined();
+
+  public static final String JSON_PROPERTY_ORGANIZATION = "organization";
+  @javax.annotation.Nullable
+  private Organization organization;
+
+  public static final String JSON_PROPERTY_ORGANIZATION_ACCOUNT = "organizationAccount";
+  @javax.annotation.Nullable
+  private JsonNullable<Account> organizationAccount = JsonNullable.<Account>undefined();
+
+  public static final String JSON_PROPERTY_OWNER = "owner";
+  @javax.annotation.Nullable
+  private JsonNullable<Employee> owner = JsonNullable.<Employee>undefined();
+
+  public static final String JSON_PROPERTY_PAYMENT_OPERATIONS = "paymentOperations";
+  @javax.annotation.Nullable
+  private JsonNullable<List<@Valid RetailShiftPaymentOperation>> paymentOperations = JsonNullable.<List<@Valid RetailShiftPaymentOperation>>undefined();
+
+  public static final String JSON_PROPERTY_PRINTED = "printed";
+  @javax.annotation.Nullable
+  private Boolean printed;
+
+  public static final String JSON_PROPERTY_PROCEEDS_CASH = "proceedsCash";
+  @javax.annotation.Nullable
+  private Double proceedsCash;
+
+  public static final String JSON_PROPERTY_PROCEEDS_NO_CASH = "proceedsNoCash";
+  @javax.annotation.Nullable
+  private Double proceedsNoCash;
+
+  public static final String JSON_PROPERTY_PUBLISHED = "published";
+  @javax.annotation.Nullable
+  private Boolean published;
+
+  public static final String JSON_PROPERTY_QR_ACQUIRE = "qrAcquire";
+  @javax.annotation.Nullable
+  private JsonNullable<Agent> qrAcquire = JsonNullable.<Agent>undefined();
+
+  public static final String JSON_PROPERTY_QR_BANK_COMISSION = "qrBankComission";
+  @javax.annotation.Nullable
+  private Double qrBankComission;
+
+  public static final String JSON_PROPERTY_QR_BANK_PERCENT = "qrBankPercent";
+  @javax.annotation.Nullable
+  private Double qrBankPercent;
+
+  public static final String JSON_PROPERTY_RECEIVED_CASH = "receivedCash";
+  @javax.annotation.Nullable
+  private Double receivedCash;
+
+  public static final String JSON_PROPERTY_RECEIVED_NO_CASH = "receivedNoCash";
+  @javax.annotation.Nullable
+  private Double receivedNoCash;
+
+  public static final String JSON_PROPERTY_SHARED = "shared";
+  @javax.annotation.Nullable
+  private Boolean shared;
+
+  public static final String JSON_PROPERTY_STORE = "store";
+  @javax.annotation.Nullable
+  private Store store;
+
+  public static final String JSON_PROPERTY_SYNC_ID = "syncId";
+  @javax.annotation.Nullable
+  private UUID syncId;
+
+  public static final String JSON_PROPERTY_UPDATED = "updated";
+  @javax.annotation.Nullable
+  private String updated;
+
+  public static final String JSON_PROPERTY_VAT_ENABLED = "vatEnabled";
+  @javax.annotation.Nullable
+  private Boolean vatEnabled;
+
+  public static final String JSON_PROPERTY_VAT_INCLUDED = "vatIncluded";
+  @javax.annotation.Nullable
+  private Boolean vatIncluded;
+
   public RetailShift() {
   }
   /**
@@ -102,11 +286,39 @@ public class RetailShift {
   @JsonCreator
   public RetailShift(
     @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id, 
-    @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId
+    @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId, 
+    @JsonProperty(value = JSON_PROPERTY_AGENT_ACCOUNT, required = false) Account agentAccount, 
+    @JsonProperty(value = JSON_PROPERTY_CONTRACT, required = false) Contract contract, 
+    @JsonProperty(value = JSON_PROPERTY_CREATED, required = false) String created, 
+    @JsonProperty(value = JSON_PROPERTY_DELETED, required = false) String deleted, 
+    @JsonProperty(value = JSON_PROPERTY_OPERATIONS, required = false) List<@Valid RetailShiftOperation> operations, 
+    @JsonProperty(value = JSON_PROPERTY_PAYMENT_OPERATIONS, required = false) List<@Valid RetailShiftPaymentOperation> paymentOperations, 
+    @JsonProperty(value = JSON_PROPERTY_PRINTED, required = false) Boolean printed, 
+    @JsonProperty(value = JSON_PROPERTY_PROCEEDS_CASH, required = false) Double proceedsCash, 
+    @JsonProperty(value = JSON_PROPERTY_PROCEEDS_NO_CASH, required = false) Double proceedsNoCash, 
+    @JsonProperty(value = JSON_PROPERTY_PUBLISHED, required = false) Boolean published, 
+    @JsonProperty(value = JSON_PROPERTY_RECEIVED_CASH, required = false) Double receivedCash, 
+    @JsonProperty(value = JSON_PROPERTY_RECEIVED_NO_CASH, required = false) Double receivedNoCash, 
+    @JsonProperty(value = JSON_PROPERTY_UPDATED, required = false) String updated, 
+    @JsonProperty(value = JSON_PROPERTY_VAT_ENABLED, required = false) Boolean vatEnabled
   ) {
     this();
     this.id = id;
     this.accountId = accountId;
+    this.agentAccount = agentAccount == null ? JsonNullable.<Account>undefined() : JsonNullable.of(agentAccount);
+    this.contract = contract == null ? JsonNullable.<Contract>undefined() : JsonNullable.of(contract);
+    this.created = created;
+    this.deleted = deleted == null ? JsonNullable.<String>undefined() : JsonNullable.of(deleted);
+    this.operations = operations == null ? JsonNullable.<List<@Valid RetailShiftOperation>>undefined() : JsonNullable.of(operations);
+    this.paymentOperations = paymentOperations == null ? JsonNullable.<List<@Valid RetailShiftPaymentOperation>>undefined() : JsonNullable.of(paymentOperations);
+    this.printed = printed;
+    this.proceedsCash = proceedsCash;
+    this.proceedsNoCash = proceedsNoCash;
+    this.published = published;
+    this.receivedCash = receivedCash;
+    this.receivedNoCash = receivedNoCash;
+    this.updated = updated;
+    this.vatEnabled = vatEnabled;
   }
 
   public RetailShift meta(@javax.annotation.Nullable Meta meta) {
@@ -121,6 +333,9 @@ public class RetailShift {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -139,10 +354,13 @@ public class RetailShift {
 
 
   /**
-   * ID смены
+   * ID Розничной смены
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -159,6 +377,9 @@ public class RetailShift {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -182,6 +403,8 @@ public class RetailShift {
    * @return name
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -211,6 +434,8 @@ public class RetailShift {
    * @return moment
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -240,6 +465,9 @@ public class RetailShift {
    * @return retailStore
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public RetailStore getRetailStore() {
@@ -290,6 +518,9 @@ public class RetailShift {
    * @return payments
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public List<RetailShiftPaymentsInner> getPayments() {
@@ -316,6 +547,1065 @@ public class RetailShift {
   }
 
 
+  public RetailShift acquire(@javax.annotation.Nullable Agent acquire) {
+    this.acquire = JsonNullable.<Agent>of(acquire);
+    
+    return this;
+  }
+
+
+  /**
+   * Метаданные Банка-эквайера по операциям по карте
+   * @return acquire
+   */
+  @javax.annotation.Nullable
+  @Valid
+
+
+  @JsonIgnore
+
+  public Agent getAcquire() {
+        return acquire.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_ACQUIRE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<Agent> getAcquire_JsonNullable() {
+    return acquire;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_ACQUIRE, required = false)
+  public void setAcquire_JsonNullable(JsonNullable<Agent> acquire) {
+    this.acquire = acquire;
+  }
+
+  public void setAcquire(@javax.annotation.Nullable Agent acquire) {
+    this.acquire = JsonNullable.<Agent>of(acquire);
+  }
+
+
+  /**
+   * Метаданные счета контрагента
+   * @return agentAccount
+   */
+  @javax.annotation.Nullable
+  @Valid
+
+
+  @JsonIgnore
+
+  public Account getAgentAccount() {
+    
+    if (agentAccount == null) {
+      agentAccount = JsonNullable.<Account>undefined();
+    }
+    return agentAccount.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_AGENT_ACCOUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<Account> getAgentAccount_JsonNullable() {
+    return agentAccount;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_AGENT_ACCOUNT, required = false)
+  private void setAgentAccount_JsonNullable(JsonNullable<Account> agentAccount) {
+    this.agentAccount = agentAccount;
+  }
+
+
+  public RetailShift attributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
+    
+    return this;
+  }
+
+
+  public RetailShift addAttributesItem(AttributeAbstract attributesItem) {
+    if (this.attributes == null || !this.attributes.isPresent()) {
+      this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(new ArrayList<>());
+    }
+    try {
+      this.attributes.get().add(attributesItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
+    return this;
+  }
+
+  /**
+   * Коллекция метаданных доп. полей
+   * @return attributes
+   */
+  @javax.annotation.Nullable
+  @Valid
+
+
+  @JsonIgnore
+
+  public List<@Valid AttributeAbstract> getAttributes() {
+        return attributes.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<List<@Valid AttributeAbstract>> getAttributes_JsonNullable() {
+    return attributes;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
+  public void setAttributes_JsonNullable(JsonNullable<List<@Valid AttributeAbstract>> attributes) {
+    this.attributes = attributes;
+  }
+
+  public void setAttributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
+  }
+
+
+  public RetailShift bankComission(@javax.annotation.Nullable Double bankComission) {
+    
+    this.bankComission = bankComission;
+    return this;
+  }
+
+
+  /**
+   * Сумма комиссии эквайера за проведение безналичных платежей по банковской карте
+   * @return bankComission
+   */
+  @javax.annotation.Nullable
+
+
+  @JsonProperty(JSON_PROPERTY_BANK_COMISSION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Double getBankComission() {
+    return bankComission;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_BANK_COMISSION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setBankComission(@javax.annotation.Nullable Double bankComission) {
+    this.bankComission = bankComission;
+  }
+
+
+  public RetailShift bankPercent(@javax.annotation.Nullable Double bankPercent) {
+    
+    this.bankPercent = bankPercent;
+    return this;
+  }
+
+
+  /**
+   * Комиссия банка-эквайера по операциям по карте (в процентах)
+   * minimum: 0
+   * maximum: 100
+   * @return bankPercent
+   */
+  @javax.annotation.Nullable
+ @DecimalMin("0") @DecimalMax("100")
+
+  @JsonProperty(JSON_PROPERTY_BANK_PERCENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Double getBankPercent() {
+    return bankPercent;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_BANK_PERCENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setBankPercent(@javax.annotation.Nullable Double bankPercent) {
+    this.bankPercent = bankPercent;
+  }
+
+
+  public RetailShift cheque(@javax.annotation.Nullable RetailShiftCheque cheque) {
+    this.cheque = JsonNullable.<RetailShiftCheque>of(cheque);
+    
+    return this;
+  }
+
+
+  /**
+   * Информация о смене ККТ
+   * @return cheque
+   */
+  @javax.annotation.Nullable
+  @Valid
+
+
+  @JsonIgnore
+
+  public RetailShiftCheque getCheque() {
+        return cheque.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_CHEQUE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<RetailShiftCheque> getCheque_JsonNullable() {
+    return cheque;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_CHEQUE, required = false)
+  public void setCheque_JsonNullable(JsonNullable<RetailShiftCheque> cheque) {
+    this.cheque = cheque;
+  }
+
+  public void setCheque(@javax.annotation.Nullable RetailShiftCheque cheque) {
+    this.cheque = JsonNullable.<RetailShiftCheque>of(cheque);
+  }
+
+
+  public RetailShift closeDate(@javax.annotation.Nullable String closeDate) {
+    this.closeDate = JsonNullable.<String>of(closeDate);
+    
+    return this;
+  }
+
+
+  /**
+   * Дата закрытия смены
+   * @return closeDate
+   */
+  @javax.annotation.Nullable
+
+
+  @JsonIgnore
+
+  public String getCloseDate() {
+        return closeDate.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_CLOSE_DATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<String> getCloseDate_JsonNullable() {
+    return closeDate;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_CLOSE_DATE, required = false)
+  public void setCloseDate_JsonNullable(JsonNullable<String> closeDate) {
+    this.closeDate = closeDate;
+  }
+
+  public void setCloseDate(@javax.annotation.Nullable String closeDate) {
+    this.closeDate = JsonNullable.<String>of(closeDate);
+  }
+
+
+  /**
+   * Метаданные договора
+   * @return contract
+   */
+  @javax.annotation.Nullable
+  @Valid
+
+
+  @JsonIgnore
+
+  public Contract getContract() {
+    
+    if (contract == null) {
+      contract = JsonNullable.<Contract>undefined();
+    }
+    return contract.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_CONTRACT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<Contract> getContract_JsonNullable() {
+    return contract;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_CONTRACT, required = false)
+  private void setContract_JsonNullable(JsonNullable<Contract> contract) {
+    this.contract = contract;
+  }
+
+
+  /**
+   * Дата создания
+   * @return created
+   */
+  @javax.annotation.Nullable
+
+
+  @JsonProperty(JSON_PROPERTY_CREATED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getCreated() {
+    return created;
+  }
+
+  
+
+
+
+  /**
+   * Момент последнего удаления Розничной смены
+   * @return deleted
+   */
+  @javax.annotation.Nullable
+
+
+  @JsonIgnore
+
+  public String getDeleted() {
+    
+    if (deleted == null) {
+      deleted = JsonNullable.<String>undefined();
+    }
+    return deleted.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_DELETED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<String> getDeleted_JsonNullable() {
+    return deleted;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_DELETED, required = false)
+  private void setDeleted_JsonNullable(JsonNullable<String> deleted) {
+    this.deleted = deleted;
+  }
+
+
+  public RetailShift description(@javax.annotation.Nullable String description) {
+    this.description = JsonNullable.<String>of(description);
+    
+    return this;
+  }
+
+
+  /**
+   * Комментарий Розничной смены
+   * @return description
+   */
+  @javax.annotation.Nullable
+ @Size(max=4096)
+
+  @JsonIgnore
+
+  public String getDescription() {
+        return description.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<String> getDescription_JsonNullable() {
+    return description;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = false)
+  public void setDescription_JsonNullable(JsonNullable<String> description) {
+    this.description = description;
+  }
+
+  public void setDescription(@javax.annotation.Nullable String description) {
+    this.description = JsonNullable.<String>of(description);
+  }
+
+
+  public RetailShift externalCode(@javax.annotation.Nullable String externalCode) {
+    
+    this.externalCode = externalCode;
+    return this;
+  }
+
+
+  /**
+   * Внешний код Розничной смены
+   * @return externalCode
+   */
+  @javax.annotation.Nullable
+ @Size(max=255)
+
+  @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getExternalCode() {
+    return externalCode;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+    this.externalCode = externalCode;
+  }
+
+
+  public RetailShift files(@javax.annotation.Nullable FileList files) {
+    this.files = JsonNullable.<FileList>of(files);
+    
+    return this;
+  }
+
+
+  /**
+   * Метаданные массива Файлов
+   * @return files
+   */
+  @javax.annotation.Nullable
+  @Valid
+
+
+  @JsonIgnore
+
+  public FileList getFiles() {
+        return files.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_FILES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<FileList> getFiles_JsonNullable() {
+    return files;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_FILES, required = false)
+  public void setFiles_JsonNullable(JsonNullable<FileList> files) {
+    this.files = files;
+  }
+
+  public void setFiles(@javax.annotation.Nullable FileList files) {
+    this.files = JsonNullable.<FileList>of(files);
+  }
+
+
+  public RetailShift group(@javax.annotation.Nullable Group group) {
+    
+    this.group = group;
+    return this;
+  }
+
+
+  /**
+   * Отдел сотрудника
+   * @return group
+   */
+  @javax.annotation.Nullable
+  @Valid
+
+
+  @JsonProperty(JSON_PROPERTY_GROUP)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Group getGroup() {
+    return group;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_GROUP)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setGroup(@javax.annotation.Nullable Group group) {
+    this.group = group;
+  }
+
+
+  /**
+   * Связанные операции. Допустимые типы по &#x60;meta.type&#x60;: retaildemand, retailsalesreturn, retaildrawercashin, retaildrawercashout, prepayment, prepaymentreturn. 
+   * @return operations
+   */
+  @javax.annotation.Nullable
+  @Valid
+
+
+  @JsonIgnore
+
+  public List<@Valid RetailShiftOperation> getOperations() {
+    
+    if (operations == null) {
+      operations = JsonNullable.<List<@Valid RetailShiftOperation>>undefined();
+    }
+    return operations.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_OPERATIONS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<List<@Valid RetailShiftOperation>> getOperations_JsonNullable() {
+    return operations;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_OPERATIONS, required = false)
+  private void setOperations_JsonNullable(JsonNullable<List<@Valid RetailShiftOperation>> operations) {
+    this.operations = operations;
+  }
+
+
+  public RetailShift organization(@javax.annotation.Nullable Organization organization) {
+    
+    this.organization = organization;
+    return this;
+  }
+
+
+  /**
+   * Get organization
+   * @return organization
+   */
+  @javax.annotation.Nullable
+  @Valid
+
+
+  @JsonProperty(JSON_PROPERTY_ORGANIZATION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Organization getOrganization() {
+    return organization;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_ORGANIZATION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setOrganization(@javax.annotation.Nullable Organization organization) {
+    this.organization = organization;
+  }
+
+
+  public RetailShift organizationAccount(@javax.annotation.Nullable Account organizationAccount) {
+    this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
+    
+    return this;
+  }
+
+
+  /**
+   * Метаданные счета юрлица
+   * @return organizationAccount
+   */
+  @javax.annotation.Nullable
+  @Valid
+
+
+  @JsonIgnore
+
+  public Account getOrganizationAccount() {
+        return organizationAccount.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_ORGANIZATION_ACCOUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<Account> getOrganizationAccount_JsonNullable() {
+    return organizationAccount;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_ORGANIZATION_ACCOUNT, required = false)
+  public void setOrganizationAccount_JsonNullable(JsonNullable<Account> organizationAccount) {
+    this.organizationAccount = organizationAccount;
+  }
+
+  public void setOrganizationAccount(@javax.annotation.Nullable Account organizationAccount) {
+    this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
+  }
+
+
+  public RetailShift owner(@javax.annotation.Nullable Employee owner) {
+    this.owner = JsonNullable.<Employee>of(owner);
+    
+    return this;
+  }
+
+
+  /**
+   * Владелец (Сотрудник)
+   * @return owner
+   */
+  @javax.annotation.Nullable
+  @Valid
+
+
+  @JsonIgnore
+
+  public Employee getOwner() {
+        return owner.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_OWNER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<Employee> getOwner_JsonNullable() {
+    return owner;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  public void setOwner_JsonNullable(JsonNullable<Employee> owner) {
+    this.owner = owner;
+  }
+
+  public void setOwner(@javax.annotation.Nullable Employee owner) {
+    this.owner = JsonNullable.<Employee>of(owner);
+  }
+
+
+  /**
+   * Коллекция метаданных платежных операций
+   * @return paymentOperations
+   */
+  @javax.annotation.Nullable
+  @Valid
+
+
+  @JsonIgnore
+
+  public List<@Valid RetailShiftPaymentOperation> getPaymentOperations() {
+    
+    if (paymentOperations == null) {
+      paymentOperations = JsonNullable.<List<@Valid RetailShiftPaymentOperation>>undefined();
+    }
+    return paymentOperations.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_PAYMENT_OPERATIONS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<List<@Valid RetailShiftPaymentOperation>> getPaymentOperations_JsonNullable() {
+    return paymentOperations;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_PAYMENT_OPERATIONS, required = false)
+  private void setPaymentOperations_JsonNullable(JsonNullable<List<@Valid RetailShiftPaymentOperation>> paymentOperations) {
+    this.paymentOperations = paymentOperations;
+  }
+
+
+  /**
+   * Напечатан ли документ
+   * @return printed
+   */
+  @javax.annotation.Nullable
+
+
+  @JsonProperty(JSON_PROPERTY_PRINTED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getPrinted() {
+    return printed;
+  }
+
+  
+
+
+
+  /**
+   * Выручка наличными
+   * @return proceedsCash
+   */
+  @javax.annotation.Nullable
+
+
+  @JsonProperty(JSON_PROPERTY_PROCEEDS_CASH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Double getProceedsCash() {
+    return proceedsCash;
+  }
+
+  
+
+
+
+  /**
+   * Выручка безнал
+   * @return proceedsNoCash
+   */
+  @javax.annotation.Nullable
+
+
+  @JsonProperty(JSON_PROPERTY_PROCEEDS_NO_CASH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Double getProceedsNoCash() {
+    return proceedsNoCash;
+  }
+
+  
+
+
+
+  /**
+   * Опубликован ли документ
+   * @return published
+   */
+  @javax.annotation.Nullable
+
+
+  @JsonProperty(JSON_PROPERTY_PUBLISHED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getPublished() {
+    return published;
+  }
+
+  
+
+
+
+  public RetailShift qrAcquire(@javax.annotation.Nullable Agent qrAcquire) {
+    this.qrAcquire = JsonNullable.<Agent>of(qrAcquire);
+    
+    return this;
+  }
+
+
+  /**
+   * Метаданные Банка-эквайера по операциям по QR-коду
+   * @return qrAcquire
+   */
+  @javax.annotation.Nullable
+  @Valid
+
+
+  @JsonIgnore
+
+  public Agent getQrAcquire() {
+        return qrAcquire.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_QR_ACQUIRE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<Agent> getQrAcquire_JsonNullable() {
+    return qrAcquire;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_QR_ACQUIRE, required = false)
+  public void setQrAcquire_JsonNullable(JsonNullable<Agent> qrAcquire) {
+    this.qrAcquire = qrAcquire;
+  }
+
+  public void setQrAcquire(@javax.annotation.Nullable Agent qrAcquire) {
+    this.qrAcquire = JsonNullable.<Agent>of(qrAcquire);
+  }
+
+
+  public RetailShift qrBankComission(@javax.annotation.Nullable Double qrBankComission) {
+    
+    this.qrBankComission = qrBankComission;
+    return this;
+  }
+
+
+  /**
+   * Сумма комиссии эквайера за проведение безналичных платежей по QR-коду
+   * @return qrBankComission
+   */
+  @javax.annotation.Nullable
+
+
+  @JsonProperty(JSON_PROPERTY_QR_BANK_COMISSION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Double getQrBankComission() {
+    return qrBankComission;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_QR_BANK_COMISSION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setQrBankComission(@javax.annotation.Nullable Double qrBankComission) {
+    this.qrBankComission = qrBankComission;
+  }
+
+
+  public RetailShift qrBankPercent(@javax.annotation.Nullable Double qrBankPercent) {
+    
+    this.qrBankPercent = qrBankPercent;
+    return this;
+  }
+
+
+  /**
+   * Комиссия банка-эквайера по операция по QR-коду (в процентах)
+   * minimum: 0
+   * maximum: 100
+   * @return qrBankPercent
+   */
+  @javax.annotation.Nullable
+ @DecimalMin("0") @DecimalMax("100")
+
+  @JsonProperty(JSON_PROPERTY_QR_BANK_PERCENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Double getQrBankPercent() {
+    return qrBankPercent;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_QR_BANK_PERCENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setQrBankPercent(@javax.annotation.Nullable Double qrBankPercent) {
+    this.qrBankPercent = qrBankPercent;
+  }
+
+
+  /**
+   * Получено наличными
+   * @return receivedCash
+   */
+  @javax.annotation.Nullable
+
+
+  @JsonProperty(JSON_PROPERTY_RECEIVED_CASH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Double getReceivedCash() {
+    return receivedCash;
+  }
+
+  
+
+
+
+  /**
+   * Получено безнал
+   * @return receivedNoCash
+   */
+  @javax.annotation.Nullable
+
+
+  @JsonProperty(JSON_PROPERTY_RECEIVED_NO_CASH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Double getReceivedNoCash() {
+    return receivedNoCash;
+  }
+
+  
+
+
+
+  public RetailShift shared(@javax.annotation.Nullable Boolean shared) {
+    
+    this.shared = shared;
+    return this;
+  }
+
+
+  /**
+   * Общий доступ
+   * @return shared
+   */
+  @javax.annotation.Nullable
+
+
+  @JsonProperty(JSON_PROPERTY_SHARED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getShared() {
+    return shared;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_SHARED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setShared(@javax.annotation.Nullable Boolean shared) {
+    this.shared = shared;
+  }
+
+
+  public RetailShift store(@javax.annotation.Nullable Store store) {
+    
+    this.store = store;
+    return this;
+  }
+
+
+  /**
+   * Get store
+   * @return store
+   */
+  @javax.annotation.Nullable
+  @Valid
+
+
+  @JsonProperty(JSON_PROPERTY_STORE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Store getStore() {
+    return store;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_STORE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setStore(@javax.annotation.Nullable Store store) {
+    this.store = store;
+  }
+
+
+  public RetailShift syncId(@javax.annotation.Nullable UUID syncId) {
+    
+    this.syncId = syncId;
+    return this;
+  }
+
+
+  /**
+   * ID синхронизации
+   * @return syncId
+   */
+  @javax.annotation.Nullable
+  @Valid
+
+
+  @JsonProperty(JSON_PROPERTY_SYNC_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public UUID getSyncId() {
+    return syncId;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_SYNC_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSyncId(@javax.annotation.Nullable UUID syncId) {
+    this.syncId = syncId;
+  }
+
+
+  /**
+   * Момент последнего обновления Розничной смены
+   * @return updated
+   */
+  @javax.annotation.Nullable
+
+
+  @JsonProperty(JSON_PROPERTY_UPDATED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getUpdated() {
+    return updated;
+  }
+
+  
+
+
+
+  /**
+   * Учитывается ли НДС
+   * @return vatEnabled
+   */
+  @javax.annotation.Nullable
+
+
+  @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getVatEnabled() {
+    return vatEnabled;
+  }
+
+  
+
+
+
+  public RetailShift vatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
+    
+    this.vatIncluded = vatIncluded;
+    return this;
+  }
+
+
+  /**
+   * Включен ли НДС в цену
+   * @return vatIncluded
+   */
+  @javax.annotation.Nullable
+
+
+  @JsonProperty(JSON_PROPERTY_VAT_INCLUDED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getVatIncluded() {
+    return vatIncluded;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_VAT_INCLUDED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setVatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
+    this.vatIncluded = vatIncluded;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -331,7 +1621,41 @@ public class RetailShift {
         Objects.equals(this.name, retailShift.name) &&
         Objects.equals(this.moment, retailShift.moment) &&
         equalsNullable(this.retailStore, retailShift.retailStore) &&
-        equalsNullable(this.payments, retailShift.payments);
+        equalsNullable(this.payments, retailShift.payments) &&
+        equalsNullable(this.acquire, retailShift.acquire) &&
+        equalsNullable(this.agentAccount, retailShift.agentAccount) &&
+        equalsNullable(this.attributes, retailShift.attributes) &&
+        Objects.equals(this.bankComission, retailShift.bankComission) &&
+        Objects.equals(this.bankPercent, retailShift.bankPercent) &&
+        equalsNullable(this.cheque, retailShift.cheque) &&
+        equalsNullable(this.closeDate, retailShift.closeDate) &&
+        equalsNullable(this.contract, retailShift.contract) &&
+        Objects.equals(this.created, retailShift.created) &&
+        equalsNullable(this.deleted, retailShift.deleted) &&
+        equalsNullable(this.description, retailShift.description) &&
+        Objects.equals(this.externalCode, retailShift.externalCode) &&
+        equalsNullable(this.files, retailShift.files) &&
+        Objects.equals(this.group, retailShift.group) &&
+        equalsNullable(this.operations, retailShift.operations) &&
+        Objects.equals(this.organization, retailShift.organization) &&
+        equalsNullable(this.organizationAccount, retailShift.organizationAccount) &&
+        equalsNullable(this.owner, retailShift.owner) &&
+        equalsNullable(this.paymentOperations, retailShift.paymentOperations) &&
+        Objects.equals(this.printed, retailShift.printed) &&
+        Objects.equals(this.proceedsCash, retailShift.proceedsCash) &&
+        Objects.equals(this.proceedsNoCash, retailShift.proceedsNoCash) &&
+        Objects.equals(this.published, retailShift.published) &&
+        equalsNullable(this.qrAcquire, retailShift.qrAcquire) &&
+        Objects.equals(this.qrBankComission, retailShift.qrBankComission) &&
+        Objects.equals(this.qrBankPercent, retailShift.qrBankPercent) &&
+        Objects.equals(this.receivedCash, retailShift.receivedCash) &&
+        Objects.equals(this.receivedNoCash, retailShift.receivedNoCash) &&
+        Objects.equals(this.shared, retailShift.shared) &&
+        Objects.equals(this.store, retailShift.store) &&
+        Objects.equals(this.syncId, retailShift.syncId) &&
+        Objects.equals(this.updated, retailShift.updated) &&
+        Objects.equals(this.vatEnabled, retailShift.vatEnabled) &&
+        Objects.equals(this.vatIncluded, retailShift.vatIncluded);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -340,7 +1664,7 @@ public class RetailShift {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, name, moment, hashCodeNullable(retailStore), hashCodeNullable(payments));
+    return Objects.hash(meta, id, accountId, name, moment, hashCodeNullable(retailStore), hashCodeNullable(payments), hashCodeNullable(acquire), hashCodeNullable(agentAccount), hashCodeNullable(attributes), bankComission, bankPercent, hashCodeNullable(cheque), hashCodeNullable(closeDate), hashCodeNullable(contract), created, hashCodeNullable(deleted), hashCodeNullable(description), externalCode, hashCodeNullable(files), group, hashCodeNullable(operations), organization, hashCodeNullable(organizationAccount), hashCodeNullable(owner), hashCodeNullable(paymentOperations), printed, proceedsCash, proceedsNoCash, published, hashCodeNullable(qrAcquire), qrBankComission, qrBankPercent, receivedCash, receivedNoCash, shared, store, syncId, updated, vatEnabled, vatIncluded);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -361,6 +1685,40 @@ public class RetailShift {
     sb.append("    moment: ").append(toIndentedString(moment)).append("\n");
     sb.append("    retailStore: ").append(toIndentedString(retailStore)).append("\n");
     sb.append("    payments: ").append(toIndentedString(payments)).append("\n");
+    sb.append("    acquire: ").append(toIndentedString(acquire)).append("\n");
+    sb.append("    agentAccount: ").append(toIndentedString(agentAccount)).append("\n");
+    sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
+    sb.append("    bankComission: ").append(toIndentedString(bankComission)).append("\n");
+    sb.append("    bankPercent: ").append(toIndentedString(bankPercent)).append("\n");
+    sb.append("    cheque: ").append(toIndentedString(cheque)).append("\n");
+    sb.append("    closeDate: ").append(toIndentedString(closeDate)).append("\n");
+    sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
+    sb.append("    created: ").append(toIndentedString(created)).append("\n");
+    sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    externalCode: ").append(toIndentedString(externalCode)).append("\n");
+    sb.append("    files: ").append(toIndentedString(files)).append("\n");
+    sb.append("    group: ").append(toIndentedString(group)).append("\n");
+    sb.append("    operations: ").append(toIndentedString(operations)).append("\n");
+    sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
+    sb.append("    organizationAccount: ").append(toIndentedString(organizationAccount)).append("\n");
+    sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
+    sb.append("    paymentOperations: ").append(toIndentedString(paymentOperations)).append("\n");
+    sb.append("    printed: ").append(toIndentedString(printed)).append("\n");
+    sb.append("    proceedsCash: ").append(toIndentedString(proceedsCash)).append("\n");
+    sb.append("    proceedsNoCash: ").append(toIndentedString(proceedsNoCash)).append("\n");
+    sb.append("    published: ").append(toIndentedString(published)).append("\n");
+    sb.append("    qrAcquire: ").append(toIndentedString(qrAcquire)).append("\n");
+    sb.append("    qrBankComission: ").append(toIndentedString(qrBankComission)).append("\n");
+    sb.append("    qrBankPercent: ").append(toIndentedString(qrBankPercent)).append("\n");
+    sb.append("    receivedCash: ").append(toIndentedString(receivedCash)).append("\n");
+    sb.append("    receivedNoCash: ").append(toIndentedString(receivedNoCash)).append("\n");
+    sb.append("    shared: ").append(toIndentedString(shared)).append("\n");
+    sb.append("    store: ").append(toIndentedString(store)).append("\n");
+    sb.append("    syncId: ").append(toIndentedString(syncId)).append("\n");
+    sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
+    sb.append("    vatEnabled: ").append(toIndentedString(vatEnabled)).append("\n");
+    sb.append("    vatIncluded: ").append(toIndentedString(vatIncluded)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -465,6 +1823,291 @@ public class RetailShift {
           joiner.add(getPayments().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%spayments%s%s", prefix, suffix,
               "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
+      }
+    }
+
+    // add `acquire` to the URL query string
+    if (getAcquire() != null) {
+      joiner.add(getAcquire().toUrlQueryString(prefix + "acquire" + suffix));
+    }
+
+    // add `agentAccount` to the URL query string
+    if (getAgentAccount() != null) {
+      joiner.add(getAgentAccount().toUrlQueryString(prefix + "agentAccount" + suffix));
+    }
+
+    // add `attributes` to the URL query string
+    if (getAttributes() != null) {
+      for (int i = 0; i < getAttributes().size(); i++) {
+        if (getAttributes().get(i) != null) {
+          joiner.add(getAttributes().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%sattributes%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    // add `bankComission` to the URL query string
+    if (getBankComission() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sbankComission%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getBankComission()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `bankPercent` to the URL query string
+    if (getBankPercent() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sbankPercent%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getBankPercent()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `cheque` to the URL query string
+    if (getCheque() != null) {
+      joiner.add(getCheque().toUrlQueryString(prefix + "cheque" + suffix));
+    }
+
+    // add `closeDate` to the URL query string
+    if (getCloseDate() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%scloseDate%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCloseDate()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `contract` to the URL query string
+    if (getContract() != null) {
+      joiner.add(getContract().toUrlQueryString(prefix + "contract" + suffix));
+    }
+
+    // add `created` to the URL query string
+    if (getCreated() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%screated%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCreated()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `deleted` to the URL query string
+    if (getDeleted() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sdeleted%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDeleted()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `description` to the URL query string
+    if (getDescription() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sdescription%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDescription()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `externalCode` to the URL query string
+    if (getExternalCode() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sexternalCode%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getExternalCode()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `files` to the URL query string
+    if (getFiles() != null) {
+      joiner.add(getFiles().toUrlQueryString(prefix + "files" + suffix));
+    }
+
+    // add `group` to the URL query string
+    if (getGroup() != null) {
+      joiner.add(getGroup().toUrlQueryString(prefix + "group" + suffix));
+    }
+
+    // add `operations` to the URL query string
+    if (getOperations() != null) {
+      for (int i = 0; i < getOperations().size(); i++) {
+        if (getOperations().get(i) != null) {
+          joiner.add(getOperations().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%soperations%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    // add `organization` to the URL query string
+    if (getOrganization() != null) {
+      joiner.add(getOrganization().toUrlQueryString(prefix + "organization" + suffix));
+    }
+
+    // add `organizationAccount` to the URL query string
+    if (getOrganizationAccount() != null) {
+      joiner.add(getOrganizationAccount().toUrlQueryString(prefix + "organizationAccount" + suffix));
+    }
+
+    // add `owner` to the URL query string
+    if (getOwner() != null) {
+      joiner.add(getOwner().toUrlQueryString(prefix + "owner" + suffix));
+    }
+
+    // add `paymentOperations` to the URL query string
+    if (getPaymentOperations() != null) {
+      for (int i = 0; i < getPaymentOperations().size(); i++) {
+        if (getPaymentOperations().get(i) != null) {
+          joiner.add(getPaymentOperations().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%spaymentOperations%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    // add `printed` to the URL query string
+    if (getPrinted() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sprinted%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getPrinted()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `proceedsCash` to the URL query string
+    if (getProceedsCash() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sproceedsCash%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getProceedsCash()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `proceedsNoCash` to the URL query string
+    if (getProceedsNoCash() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sproceedsNoCash%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getProceedsNoCash()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `published` to the URL query string
+    if (getPublished() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%spublished%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getPublished()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `qrAcquire` to the URL query string
+    if (getQrAcquire() != null) {
+      joiner.add(getQrAcquire().toUrlQueryString(prefix + "qrAcquire" + suffix));
+    }
+
+    // add `qrBankComission` to the URL query string
+    if (getQrBankComission() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sqrBankComission%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getQrBankComission()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `qrBankPercent` to the URL query string
+    if (getQrBankPercent() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sqrBankPercent%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getQrBankPercent()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `receivedCash` to the URL query string
+    if (getReceivedCash() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sreceivedCash%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getReceivedCash()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `receivedNoCash` to the URL query string
+    if (getReceivedNoCash() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sreceivedNoCash%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getReceivedNoCash()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `shared` to the URL query string
+    if (getShared() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sshared%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getShared()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `store` to the URL query string
+    if (getStore() != null) {
+      joiner.add(getStore().toUrlQueryString(prefix + "store" + suffix));
+    }
+
+    // add `syncId` to the URL query string
+    if (getSyncId() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%ssyncId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSyncId()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `updated` to the URL query string
+    if (getUpdated() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%supdated%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getUpdated()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `vatEnabled` to the URL query string
+    if (getVatEnabled() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%svatEnabled%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getVatEnabled()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `vatIncluded` to the URL query string
+    if (getVatIncluded() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%svatIncluded%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getVatIncluded()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
       }
     }
 

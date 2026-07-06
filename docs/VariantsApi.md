@@ -50,7 +50,7 @@ public class Example {
         Variant variant = new Variant(); // Variant | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String contentType = "application/json"; // String | 
         try {
             Variant result = apiInstance.createVariant(variant, accept, acceptEncoding, expand, contentType);
@@ -100,7 +100,7 @@ public class Example {
 
 ## createVariantsBatch
 
-> List&lt;CreateVariantsBatch200ResponseInner&gt; createVariantsBatch(variant, accept, acceptEncoding, expand, contentType)
+> List&lt;BatchResponseEntity&gt; createVariantsBatch(variant, accept, acceptEncoding, expand, contentType)
 
 Массовое создание и обновление Модификаций
 
@@ -130,13 +130,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         VariantsApi apiInstance = new VariantsApi(defaultClient);
-        List<Variant> variant = Arrays.asList(); // List<Variant> | 
+        List<@Valid Variant> variant = Arrays.asList(); // List<@Valid Variant> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String contentType = "application/json"; // String | 
         try {
-            List<CreateVariantsBatch200ResponseInner> result = apiInstance.createVariantsBatch(variant, accept, acceptEncoding, expand, contentType);
+            List<BatchResponseEntity> result = apiInstance.createVariantsBatch(variant, accept, acceptEncoding, expand, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling VariantsApi#createVariantsBatch");
@@ -154,7 +154,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **variant** | [**List&lt;Variant&gt;**](Variant.md)|  | |
+| **variant** | [**List&lt;@Valid Variant&gt;**](Variant.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
@@ -162,7 +162,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreateVariantsBatch200ResponseInner&gt;**](CreateVariantsBatch200ResponseInner.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         VariantsApi apiInstance = new VariantsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -261,7 +261,7 @@ null (empty response body)
 
 ## deleteVariantsBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteVariantsBatch(variant, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteVariantsBatch(variant, accept, acceptEncoding, contentType)
 
 Массовое удаление Модификаций
 
@@ -291,12 +291,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         VariantsApi apiInstance = new VariantsApi(defaultClient);
-        List<Variant> variant = Arrays.asList(); // List<Variant> | 
+        List<@Valid Variant> variant = Arrays.asList(); // List<@Valid Variant> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteVariantsBatch(variant, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteVariantsBatch(variant, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling VariantsApi#deleteVariantsBatch");
@@ -314,14 +314,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **variant** | [**List&lt;Variant&gt;**](Variant.md)|  | |
+| **variant** | [**List&lt;@Valid Variant&gt;**](Variant.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -372,8 +372,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         VariantsApi apiInstance = new VariantsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -534,11 +534,11 @@ public class Example {
         VariantsApi apiInstance = new VariantsApi(defaultClient);
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String search = "name=123"; // String | Контекстный поиск по строковым полям сущностей
-        String filter = "archived=false"; // String | Фильтрация выборки
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String search = "search_example"; // String | Контекстный поиск по строковым полям сущностей
+        String filter = "filter_example"; // String | Фильтрация выборки
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
-        String order = "name"; // String | Сортировка
+        String order = "order_example"; // String | Сортировка
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -623,9 +623,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         VariantsApi apiInstance = new VariantsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Variant variant = new Variant(); // Variant | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 

@@ -47,6 +47,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -106,8 +108,8 @@ import java.util.StringJoiner;
   RetailDemand.JSON_PROPERTY_GIFT_CARDS,
   RetailDemand.JSON_PROPERTY_CHEQUE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
-public class RetailDemand {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
+public class RetailDemand extends EntityWithMeta {
   public static RetailDemand createWithMeta(UUID id) {
     RetailDemand o = new RetailDemand();
     Meta meta = new Meta();
@@ -237,7 +239,7 @@ public class RetailDemand {
 
   public static final String JSON_PROPERTY_CHECK_NUMBER = "checkNumber";
   @javax.annotation.Nullable
-  private String checkNumber;
+  private Integer checkNumber;
 
   public static final String JSON_PROPERTY_CHECK_SUM = "checkSum";
   @javax.annotation.Nullable
@@ -245,11 +247,11 @@ public class RetailDemand {
 
   public static final String JSON_PROPERTY_DOCUMENT_NUMBER = "documentNumber";
   @javax.annotation.Nullable
-  private String documentNumber;
+  private Integer documentNumber;
 
   public static final String JSON_PROPERTY_SESSION_NUMBER = "sessionNumber";
   @javax.annotation.Nullable
-  private String sessionNumber;
+  private Integer sessionNumber;
 
   public static final String JSON_PROPERTY_TAX_SYSTEM = "taxSystem";
   @javax.annotation.Nullable
@@ -301,7 +303,7 @@ public class RetailDemand {
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
-  private JsonNullable<List<AttributeAbstract>> attributes = JsonNullable.<List<AttributeAbstract>>undefined();
+  private JsonNullable<List<@Valid AttributeAbstract>> attributes = JsonNullable.<List<@Valid AttributeAbstract>>undefined();
 
   public static final String JSON_PROPERTY_FILES = "files";
   @javax.annotation.Nullable
@@ -317,7 +319,7 @@ public class RetailDemand {
 
   public static final String JSON_PROPERTY_GIFT_CARDS = "giftCards";
   @javax.annotation.Nullable
-  private JsonNullable<List<RetailDemandGiftCard>> giftCards = JsonNullable.<List<RetailDemandGiftCard>>undefined();
+  private JsonNullable<List<@Valid RetailDemandGiftCard>> giftCards = JsonNullable.<List<@Valid RetailDemandGiftCard>>undefined();
 
   public static final String JSON_PROPERTY_CHEQUE = "cheque";
   @javax.annotation.Nullable
@@ -368,6 +370,9 @@ public class RetailDemand {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -390,6 +395,9 @@ public class RetailDemand {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -406,6 +414,9 @@ public class RetailDemand {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -429,6 +440,8 @@ public class RetailDemand {
    * @return name
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -458,6 +471,8 @@ public class RetailDemand {
    * @return code
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -487,6 +502,8 @@ public class RetailDemand {
    * @return externalCode
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -516,6 +533,9 @@ public class RetailDemand {
    * @return syncId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -545,6 +565,8 @@ public class RetailDemand {
    * @return description
    */
   @javax.annotation.Nullable
+ @Size(max=4096)
+
   @JsonIgnore
 
   public String getDescription() {
@@ -576,6 +598,8 @@ public class RetailDemand {
    * @return created
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_CREATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -592,6 +616,8 @@ public class RetailDemand {
    * @return deleted
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_DELETED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -608,6 +634,8 @@ public class RetailDemand {
    * @return updated
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -631,6 +659,8 @@ public class RetailDemand {
    * @return moment
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -660,6 +690,8 @@ public class RetailDemand {
    * @return applicable
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_APPLICABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -682,6 +714,8 @@ public class RetailDemand {
    * @return printed
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PRINTED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -698,6 +732,8 @@ public class RetailDemand {
    * @return published
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PUBLISHED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -721,6 +757,8 @@ public class RetailDemand {
    * @return shared
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -750,6 +788,8 @@ public class RetailDemand {
    * @return vatEnabled
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -779,6 +819,8 @@ public class RetailDemand {
    * @return vatIncluded
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_VAT_INCLUDED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -801,6 +843,8 @@ public class RetailDemand {
    * @return vatSum
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_VAT_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -817,6 +861,8 @@ public class RetailDemand {
    * @return sum
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -833,6 +879,8 @@ public class RetailDemand {
    * @return payedSum
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PAYED_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -853,9 +901,12 @@ public class RetailDemand {
 
   /**
    * Оплачено наличными
+   * minimum: 0
    * @return cashSum
    */
   @javax.annotation.Nullable
+ @DecimalMin("0")
+
   @JsonProperty(JSON_PROPERTY_CASH_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -882,9 +933,12 @@ public class RetailDemand {
 
   /**
    * Оплачено картой
+   * minimum: 0
    * @return noCashSum
    */
   @javax.annotation.Nullable
+ @DecimalMin("0")
+
   @JsonProperty(JSON_PROPERTY_NO_CASH_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -911,9 +965,12 @@ public class RetailDemand {
 
   /**
    * Оплачено по QR-коду
+   * minimum: 0
    * @return qrSum
    */
   @javax.annotation.Nullable
+ @DecimalMin("0")
+
   @JsonProperty(JSON_PROPERTY_QR_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -940,9 +997,12 @@ public class RetailDemand {
 
   /**
    * Предоплата наличными
+   * minimum: 0
    * @return prepaymentCashSum
    */
   @javax.annotation.Nullable
+ @DecimalMin("0")
+
   @JsonProperty(JSON_PROPERTY_PREPAYMENT_CASH_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -969,9 +1029,12 @@ public class RetailDemand {
 
   /**
    * Предоплата картой
+   * minimum: 0
    * @return prepaymentNoCashSum
    */
   @javax.annotation.Nullable
+ @DecimalMin("0")
+
   @JsonProperty(JSON_PROPERTY_PREPAYMENT_NO_CASH_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -998,9 +1061,12 @@ public class RetailDemand {
 
   /**
    * Предоплата по QR-коду
+   * minimum: 0
    * @return prepaymentQrSum
    */
   @javax.annotation.Nullable
+ @DecimalMin("0")
+
   @JsonProperty(JSON_PROPERTY_PREPAYMENT_QR_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1027,9 +1093,12 @@ public class RetailDemand {
 
   /**
    * Оплачено из аванса
+   * minimum: 0
    * @return advancePaymentSum
    */
   @javax.annotation.Nullable
+ @DecimalMin("0")
+
   @JsonProperty(JSON_PROPERTY_ADVANCE_PAYMENT_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1047,7 +1116,7 @@ public class RetailDemand {
   }
 
 
-  public RetailDemand checkNumber(@javax.annotation.Nullable String checkNumber) {
+  public RetailDemand checkNumber(@javax.annotation.Nullable Integer checkNumber) {
     
     this.checkNumber = checkNumber;
     return this;
@@ -1059,10 +1128,12 @@ public class RetailDemand {
    * @return checkNumber
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_CHECK_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getCheckNumber() {
+  public Integer getCheckNumber() {
     return checkNumber;
   }
 
@@ -1071,7 +1142,7 @@ public class RetailDemand {
 
   @JsonProperty(JSON_PROPERTY_CHECK_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCheckNumber(@javax.annotation.Nullable String checkNumber) {
+  public void setCheckNumber(@javax.annotation.Nullable Integer checkNumber) {
     this.checkNumber = checkNumber;
   }
 
@@ -1088,6 +1159,8 @@ public class RetailDemand {
    * @return checkSum
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_CHECK_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1105,7 +1178,7 @@ public class RetailDemand {
   }
 
 
-  public RetailDemand documentNumber(@javax.annotation.Nullable String documentNumber) {
+  public RetailDemand documentNumber(@javax.annotation.Nullable Integer documentNumber) {
     
     this.documentNumber = documentNumber;
     return this;
@@ -1117,10 +1190,12 @@ public class RetailDemand {
    * @return documentNumber
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_DOCUMENT_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getDocumentNumber() {
+  public Integer getDocumentNumber() {
     return documentNumber;
   }
 
@@ -1129,12 +1204,12 @@ public class RetailDemand {
 
   @JsonProperty(JSON_PROPERTY_DOCUMENT_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDocumentNumber(@javax.annotation.Nullable String documentNumber) {
+  public void setDocumentNumber(@javax.annotation.Nullable Integer documentNumber) {
     this.documentNumber = documentNumber;
   }
 
 
-  public RetailDemand sessionNumber(@javax.annotation.Nullable String sessionNumber) {
+  public RetailDemand sessionNumber(@javax.annotation.Nullable Integer sessionNumber) {
     
     this.sessionNumber = sessionNumber;
     return this;
@@ -1146,10 +1221,12 @@ public class RetailDemand {
    * @return sessionNumber
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SESSION_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getSessionNumber() {
+  public Integer getSessionNumber() {
     return sessionNumber;
   }
 
@@ -1158,7 +1235,7 @@ public class RetailDemand {
 
   @JsonProperty(JSON_PROPERTY_SESSION_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSessionNumber(@javax.annotation.Nullable String sessionNumber) {
+  public void setSessionNumber(@javax.annotation.Nullable Integer sessionNumber) {
     this.sessionNumber = sessionNumber;
   }
 
@@ -1175,6 +1252,8 @@ public class RetailDemand {
    * @return taxSystem
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_TAX_SYSTEM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1204,6 +1283,9 @@ public class RetailDemand {
    * @return state
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public State getState() {
@@ -1242,6 +1324,9 @@ public class RetailDemand {
    * @return organization
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1271,6 +1356,9 @@ public class RetailDemand {
    * @return organizationAccount
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Account getOrganizationAccount() {
@@ -1309,6 +1397,9 @@ public class RetailDemand {
    * @return agent
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1338,6 +1429,9 @@ public class RetailDemand {
    * @return agentAccount
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Account getAgentAccount() {
@@ -1376,6 +1470,9 @@ public class RetailDemand {
    * @return store
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1405,6 +1502,9 @@ public class RetailDemand {
    * @return retailStore
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_RETAIL_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1434,6 +1534,9 @@ public class RetailDemand {
    * @return retailShift
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_RETAIL_SHIFT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1463,6 +1566,9 @@ public class RetailDemand {
    * @return customerOrder
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public CustomerOrder getCustomerOrder() {
@@ -1501,6 +1607,9 @@ public class RetailDemand {
    * @return owner
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Employee getOwner() {
@@ -1539,6 +1648,9 @@ public class RetailDemand {
    * @return group
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1556,8 +1668,8 @@ public class RetailDemand {
   }
 
 
-  public RetailDemand attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
+  public RetailDemand attributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
     
     return this;
   }
@@ -1565,7 +1677,7 @@ public class RetailDemand {
 
   public RetailDemand addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
-      this.attributes = JsonNullable.<List<AttributeAbstract>>of(new ArrayList<>());
+      this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(new ArrayList<>());
     }
     try {
       this.attributes.get().add(attributesItem);
@@ -1580,9 +1692,12 @@ public class RetailDemand {
    * @return attributes
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
-  public List<AttributeAbstract> getAttributes() {
+  public List<@Valid AttributeAbstract> getAttributes() {
         return attributes.orElse(null);
   }
 
@@ -1592,17 +1707,17 @@ public class RetailDemand {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
+  public JsonNullable<List<@Valid AttributeAbstract>> getAttributes_JsonNullable() {
     return attributes;
   }
   
   @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
-  public void setAttributes_JsonNullable(JsonNullable<List<AttributeAbstract>> attributes) {
+  public void setAttributes_JsonNullable(JsonNullable<List<@Valid AttributeAbstract>> attributes) {
     this.attributes = attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
+  public void setAttributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
   }
 
 
@@ -1618,6 +1733,9 @@ public class RetailDemand {
    * @return files
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public FileList getFiles() {
@@ -1656,6 +1774,9 @@ public class RetailDemand {
    * @return rate
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1685,6 +1806,9 @@ public class RetailDemand {
    * @return positions
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1702,8 +1826,8 @@ public class RetailDemand {
   }
 
 
-  public RetailDemand giftCards(@javax.annotation.Nullable List<RetailDemandGiftCard> giftCards) {
-    this.giftCards = JsonNullable.<List<RetailDemandGiftCard>>of(giftCards);
+  public RetailDemand giftCards(@javax.annotation.Nullable List<@Valid RetailDemandGiftCard> giftCards) {
+    this.giftCards = JsonNullable.<List<@Valid RetailDemandGiftCard>>of(giftCards);
     
     return this;
   }
@@ -1711,7 +1835,7 @@ public class RetailDemand {
 
   public RetailDemand addGiftCardsItem(RetailDemandGiftCard giftCardsItem) {
     if (this.giftCards == null || !this.giftCards.isPresent()) {
-      this.giftCards = JsonNullable.<List<RetailDemandGiftCard>>of(new ArrayList<>());
+      this.giftCards = JsonNullable.<List<@Valid RetailDemandGiftCard>>of(new ArrayList<>());
     }
     try {
       this.giftCards.get().add(giftCardsItem);
@@ -1726,9 +1850,12 @@ public class RetailDemand {
    * @return giftCards
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
-  public List<RetailDemandGiftCard> getGiftCards() {
+  public List<@Valid RetailDemandGiftCard> getGiftCards() {
         return giftCards.orElse(null);
   }
 
@@ -1738,17 +1865,17 @@ public class RetailDemand {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<RetailDemandGiftCard>> getGiftCards_JsonNullable() {
+  public JsonNullable<List<@Valid RetailDemandGiftCard>> getGiftCards_JsonNullable() {
     return giftCards;
   }
   
   @JsonProperty(value = JSON_PROPERTY_GIFT_CARDS, required = false)
-  public void setGiftCards_JsonNullable(JsonNullable<List<RetailDemandGiftCard>> giftCards) {
+  public void setGiftCards_JsonNullable(JsonNullable<List<@Valid RetailDemandGiftCard>> giftCards) {
     this.giftCards = giftCards;
   }
 
-  public void setGiftCards(@javax.annotation.Nullable List<RetailDemandGiftCard> giftCards) {
-    this.giftCards = JsonNullable.<List<RetailDemandGiftCard>>of(giftCards);
+  public void setGiftCards(@javax.annotation.Nullable List<@Valid RetailDemandGiftCard> giftCards) {
+    this.giftCards = JsonNullable.<List<@Valid RetailDemandGiftCard>>of(giftCards);
   }
 
 
@@ -1757,6 +1884,9 @@ public class RetailDemand {
    * @return cheque
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_CHEQUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

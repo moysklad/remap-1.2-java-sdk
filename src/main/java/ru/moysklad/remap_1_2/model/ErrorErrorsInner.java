@@ -26,6 +26,8 @@ import java.util.List;
 import ru.moysklad.remap_1_2.model.Meta;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -45,7 +47,7 @@ import java.util.StringJoiner;
   ErrorErrorsInner.JSON_PROPERTY_META
 })
 @JsonTypeName("Error_errors_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class ErrorErrorsInner {
 
   public static final String JSON_PROPERTY_ERROR = "error";
@@ -78,7 +80,7 @@ public class ErrorErrorsInner {
 
   public static final String JSON_PROPERTY_DEPENDENCIES = "dependencies";
   @javax.annotation.Nullable
-  private List<Meta> dependencies = new ArrayList<>();
+  private List<@Valid Meta> dependencies = new ArrayList<>();
 
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
@@ -99,6 +101,9 @@ public class ErrorErrorsInner {
    * @return error
    */
   @javax.annotation.Nonnull
+  @NotNull
+
+
   @JsonProperty(JSON_PROPERTY_ERROR)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -128,6 +133,8 @@ public class ErrorErrorsInner {
    * @return parameter
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PARAMETER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -157,6 +164,8 @@ public class ErrorErrorsInner {
    * @return code
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -186,6 +195,8 @@ public class ErrorErrorsInner {
    * @return errorMessage
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_ERROR_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -215,6 +226,8 @@ public class ErrorErrorsInner {
    * @return moreInfo
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_MORE_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -244,6 +257,8 @@ public class ErrorErrorsInner {
    * @return line
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_LINE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -273,6 +288,8 @@ public class ErrorErrorsInner {
    * @return column
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_COLUMN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -290,7 +307,7 @@ public class ErrorErrorsInner {
   }
 
 
-  public ErrorErrorsInner dependencies(@javax.annotation.Nullable List<Meta> dependencies) {
+  public ErrorErrorsInner dependencies(@javax.annotation.Nullable List<@Valid Meta> dependencies) {
     
     this.dependencies = dependencies;
     return this;
@@ -310,10 +327,13 @@ public class ErrorErrorsInner {
    * @return dependencies
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_DEPENDENCIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<Meta> getDependencies() {
+  public List<@Valid Meta> getDependencies() {
     return dependencies;
   }
 
@@ -322,7 +342,7 @@ public class ErrorErrorsInner {
 
   @JsonProperty(JSON_PROPERTY_DEPENDENCIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDependencies(@javax.annotation.Nullable List<Meta> dependencies) {
+  public void setDependencies(@javax.annotation.Nullable List<@Valid Meta> dependencies) {
     this.dependencies = dependencies;
   }
 
@@ -339,6 +359,9 @@ public class ErrorErrorsInner {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

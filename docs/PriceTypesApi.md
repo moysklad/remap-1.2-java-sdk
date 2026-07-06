@@ -13,7 +13,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 
 ## createPriceTypesBatch
 
-> List&lt;CreatePriceTypesBatch200ResponseInner&gt; createPriceTypesBatch(priceType, accept, acceptEncoding, contentType)
+> List&lt;BatchResponseEntity&gt; createPriceTypesBatch(priceType, accept, acceptEncoding, contentType)
 
 Создать или изменить типы цен
 
@@ -45,12 +45,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PriceTypesApi apiInstance = new PriceTypesApi(defaultClient);
-        List<PriceType> priceType = Arrays.asList(); // List<PriceType> | 
+        List<@Valid PriceType> priceType = Arrays.asList(); // List<@Valid PriceType> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreatePriceTypesBatch200ResponseInner> result = apiInstance.createPriceTypesBatch(priceType, accept, acceptEncoding, contentType);
+            List<BatchResponseEntity> result = apiInstance.createPriceTypesBatch(priceType, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PriceTypesApi#createPriceTypesBatch");
@@ -68,14 +68,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **priceType** | [**List&lt;PriceType&gt;**](PriceType.md)|  | |
+| **priceType** | [**List&lt;@Valid PriceType&gt;**](PriceType.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;CreatePriceTypesBatch200ResponseInner&gt;**](CreatePriceTypesBatch200ResponseInner.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -207,7 +207,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PriceTypesApi apiInstance = new PriceTypesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {

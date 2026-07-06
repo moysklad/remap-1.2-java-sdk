@@ -27,6 +27,8 @@ import ru.moysklad.remap_1_2.model.Error;
 import ru.moysklad.remap_1_2.model.ErrorErrorsInner;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -38,17 +40,17 @@ import java.util.StringJoiner;
   ErrorOrArray.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("errorOrArray")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class ErrorOrArray {
 
   public static final String JSON_PROPERTY_ERRORS = "errors";
   @javax.annotation.Nonnull
-  private List<ErrorErrorsInner> errors = new ArrayList<>();
+  private List<@Valid ErrorErrorsInner> errors = new ArrayList<>();
 
   public ErrorOrArray() {
   }
 
-  public ErrorOrArray errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
+  public ErrorOrArray errors(@javax.annotation.Nonnull List<@Valid ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
@@ -68,10 +70,14 @@ public class ErrorOrArray {
    * @return errors
    */
   @javax.annotation.Nonnull
+  @NotNull
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ERRORS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public List<ErrorErrorsInner> getErrors() {
+  public List<@Valid ErrorErrorsInner> getErrors() {
     return errors;
   }
 
@@ -80,7 +86,7 @@ public class ErrorOrArray {
 
   @JsonProperty(JSON_PROPERTY_ERRORS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
+  public void setErrors(@javax.annotation.Nonnull List<@Valid ErrorErrorsInner> errors) {
     this.errors = errors;
   }
 

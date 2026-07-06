@@ -59,7 +59,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         EmployeesApi apiInstance = new EmployeesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -145,7 +145,7 @@ public class Example {
 
         EmployeesApi apiInstance = new EmployeesApi(defaultClient);
         Employee employee = new Employee(); // Employee | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -197,7 +197,7 @@ public class Example {
 
 ## createEmployeesBatch
 
-> List&lt;CreateEmployeesBatch200ResponseInner&gt; createEmployeesBatch(employee, expand, accept, acceptEncoding, contentType)
+> List&lt;BatchResponseEntity&gt; createEmployeesBatch(employee, expand, accept, acceptEncoding, contentType)
 
 Создать или изменить сотрудников
 
@@ -229,13 +229,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         EmployeesApi apiInstance = new EmployeesApi(defaultClient);
-        List<Employee> employee = Arrays.asList(); // List<Employee> | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        List<@Valid Employee> employee = Arrays.asList(); // List<@Valid Employee> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateEmployeesBatch200ResponseInner> result = apiInstance.createEmployeesBatch(employee, expand, accept, acceptEncoding, contentType);
+            List<BatchResponseEntity> result = apiInstance.createEmployeesBatch(employee, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling EmployeesApi#createEmployeesBatch");
@@ -253,7 +253,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **employee** | [**List&lt;Employee&gt;**](Employee.md)|  | |
+| **employee** | [**List&lt;@Valid Employee&gt;**](Employee.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -261,7 +261,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreateEmployeesBatch200ResponseInner&gt;**](CreateEmployeesBatch200ResponseInner.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -314,7 +314,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         EmployeesApi apiInstance = new EmployeesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -394,7 +394,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         EmployeesApi apiInstance = new EmployeesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -442,7 +442,7 @@ null (empty response body)
 
 ## deleteEmployeesBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteEmployeesBatch(employee, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteEmployeesBatch(employee, accept, acceptEncoding, contentType)
 
 Удалить сотрудников
 
@@ -474,12 +474,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         EmployeesApi apiInstance = new EmployeesApi(defaultClient);
-        List<Employee> employee = Arrays.asList(); // List<Employee> | 
+        List<@Valid Employee> employee = Arrays.asList(); // List<@Valid Employee> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteEmployeesBatch(employee, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteEmployeesBatch(employee, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling EmployeesApi#deleteEmployeesBatch");
@@ -497,14 +497,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **employee** | [**List&lt;Employee&gt;**](Employee.md)|  | |
+| **employee** | [**List&lt;@Valid Employee&gt;**](Employee.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -557,8 +557,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         EmployeesApi apiInstance = new EmployeesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -723,7 +723,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         EmployeesApi apiInstance = new EmployeesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -806,10 +806,10 @@ public class Example {
         EmployeesApi apiInstance = new EmployeesApi(defaultClient);
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String search = "name=123"; // String | Контекстный поиск по строковым полям сущностей
-        String filter = "archived=false"; // String | Фильтрация выборки
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
-        String order = "name"; // String | Сортировка
+        String search = "search_example"; // String | Контекстный поиск по строковым полям сущностей
+        String filter = "filter_example"; // String | Фильтрация выборки
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
+        String order = "order_example"; // String | Сортировка
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1290,7 +1290,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         EmployeesApi apiInstance = new EmployeesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1370,9 +1370,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         EmployeesApi apiInstance = new EmployeesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Employee employee = new Employee(); // Employee | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1457,7 +1457,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         EmployeesApi apiInstance = new EmployeesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         EmployeeSecurity employeeSecurity = new EmployeeSecurity(); // EmployeeSecurity | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 

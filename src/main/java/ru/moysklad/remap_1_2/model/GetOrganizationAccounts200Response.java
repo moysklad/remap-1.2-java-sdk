@@ -28,6 +28,8 @@ import ru.moysklad.remap_1_2.model.Context;
 import ru.moysklad.remap_1_2.model.MetaList;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -41,7 +43,7 @@ import java.util.StringJoiner;
   GetOrganizationAccounts200Response.JSON_PROPERTY_ROWS
 })
 @JsonTypeName("getOrganizationAccounts_200_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class GetOrganizationAccounts200Response {
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
@@ -54,7 +56,7 @@ public class GetOrganizationAccounts200Response {
 
   public static final String JSON_PROPERTY_ROWS = "rows";
   @javax.annotation.Nullable
-  private List<Account> rows = new ArrayList<>();
+  private List<@Valid Account> rows = new ArrayList<>();
 
   public GetOrganizationAccounts200Response() {
   }
@@ -71,6 +73,9 @@ public class GetOrganizationAccounts200Response {
    * @return context
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_CONTEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -100,6 +105,9 @@ public class GetOrganizationAccounts200Response {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -117,7 +125,7 @@ public class GetOrganizationAccounts200Response {
   }
 
 
-  public GetOrganizationAccounts200Response rows(@javax.annotation.Nullable List<Account> rows) {
+  public GetOrganizationAccounts200Response rows(@javax.annotation.Nullable List<@Valid Account> rows) {
     
     this.rows = rows;
     return this;
@@ -137,10 +145,13 @@ public class GetOrganizationAccounts200Response {
    * @return rows
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ROWS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<Account> getRows() {
+  public List<@Valid Account> getRows() {
     return rows;
   }
 
@@ -149,7 +160,7 @@ public class GetOrganizationAccounts200Response {
 
   @JsonProperty(JSON_PROPERTY_ROWS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRows(@javax.annotation.Nullable List<Account> rows) {
+  public void setRows(@javax.annotation.Nullable List<@Valid Account> rows) {
     this.rows = rows;
   }
 

@@ -47,7 +47,7 @@
 |**salesChannel** | [**SalesChannel**](SalesChannel.md) | Метаданные канала продаж |  [optional] |
 |**customerOrder** | [**CustomerOrder**](CustomerOrder.md) | Заказ покупателя, с которым связан Счет покупателю |  [optional] |
 |**demands** | [**List&lt;Demand&gt;**](Demand.md) | Массив ссылок на связанные отгрузки |  [optional] |
-|**payments** | [**List&lt;CustomerOrderPaymentsInner&gt;**](CustomerOrderPaymentsInner.md) | Массив ссылок на связанные операции |  [optional] |
+|**payments** | [**List&lt;RetailShiftPaymentsInner&gt;**](RetailShiftPaymentsInner.md) | Массив ссылок на связанные операции |  [optional] |
 |**errors** | [**List&lt;ErrorErrorsInner&gt;**](ErrorErrorsInner.md) |  |  |
 
 

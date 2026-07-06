@@ -35,6 +35,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -62,8 +64,8 @@ import java.util.StringJoiner;
   Task.JSON_PROPERTY_STATE,
   Task.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
-public class Task {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
+public class Task extends EntityWithMeta {
   public static Task createWithMeta(UUID id) {
     Task o = new Task();
     Meta meta = new Meta();
@@ -184,6 +186,9 @@ public class Task {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -206,6 +211,9 @@ public class Task {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -222,6 +230,9 @@ public class Task {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -245,6 +256,9 @@ public class Task {
    * @return agent
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -274,6 +288,9 @@ public class Task {
    * @return assignee
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ASSIGNEE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -303,6 +320,9 @@ public class Task {
    * @return author
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_AUTHOR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -332,6 +352,9 @@ public class Task {
    * @return authorApplication
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_AUTHOR_APPLICATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -354,6 +377,8 @@ public class Task {
    * @return completed
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_COMPLETED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -370,6 +395,8 @@ public class Task {
    * @return created
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_CREATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -393,6 +420,8 @@ public class Task {
    * @return description
    */
   @javax.annotation.Nullable
+ @Size(max=4096)
+
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -422,6 +451,8 @@ public class Task {
    * @return done
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_DONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -451,6 +482,8 @@ public class Task {
    * @return dueToDate
    */
   @javax.annotation.Nullable
+
+
   @JsonIgnore
 
   public String getDueToDate() {
@@ -489,6 +522,9 @@ public class Task {
    * @return files
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public FileList getFiles() {
@@ -527,6 +563,9 @@ public class Task {
    * @return implementer
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_IMPLEMENTER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -556,6 +595,9 @@ public class Task {
    * @return notes
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_NOTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -585,6 +627,9 @@ public class Task {
    * @return operation
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_OPERATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -614,6 +659,9 @@ public class Task {
    * @return state
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public State getState() {
@@ -645,6 +693,8 @@ public class Task {
    * @return updated
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

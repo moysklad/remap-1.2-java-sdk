@@ -31,6 +31,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -42,7 +44,7 @@ import java.util.StringJoiner;
   ImageList.JSON_PROPERTY_META,
   ImageList.JSON_PROPERTY_ROWS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class ImageList {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -51,7 +53,7 @@ public class ImageList {
 
   public static final String JSON_PROPERTY_ROWS = "rows";
   @javax.annotation.Nullable
-  private JsonNullable<List<Image>> rows = JsonNullable.<List<Image>>undefined();
+  private JsonNullable<List<@Valid Image>> rows = JsonNullable.<List<@Valid Image>>undefined();
 
   public ImageList() {
   }
@@ -68,6 +70,9 @@ public class ImageList {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -85,8 +90,8 @@ public class ImageList {
   }
 
 
-  public ImageList rows(@javax.annotation.Nullable List<Image> rows) {
-    this.rows = JsonNullable.<List<Image>>of(rows);
+  public ImageList rows(@javax.annotation.Nullable List<@Valid Image> rows) {
+    this.rows = JsonNullable.<List<@Valid Image>>of(rows);
     
     return this;
   }
@@ -94,7 +99,7 @@ public class ImageList {
 
   public ImageList addRowsItem(Image rowsItem) {
     if (this.rows == null || !this.rows.isPresent()) {
-      this.rows = JsonNullable.<List<Image>>of(new ArrayList<>());
+      this.rows = JsonNullable.<List<@Valid Image>>of(new ArrayList<>());
     }
     try {
       this.rows.get().add(rowsItem);
@@ -109,9 +114,12 @@ public class ImageList {
    * @return rows
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
-  public List<Image> getRows() {
+  public List<@Valid Image> getRows() {
         return rows.orElse(null);
   }
 
@@ -121,17 +129,17 @@ public class ImageList {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<Image>> getRows_JsonNullable() {
+  public JsonNullable<List<@Valid Image>> getRows_JsonNullable() {
     return rows;
   }
   
   @JsonProperty(value = JSON_PROPERTY_ROWS, required = false)
-  public void setRows_JsonNullable(JsonNullable<List<Image>> rows) {
+  public void setRows_JsonNullable(JsonNullable<List<@Valid Image>> rows) {
     this.rows = rows;
   }
 
-  public void setRows(@javax.annotation.Nullable List<Image> rows) {
-    this.rows = JsonNullable.<List<Image>>of(rows);
+  public void setRows(@javax.annotation.Nullable List<@Valid Image> rows) {
+    this.rows = JsonNullable.<List<@Valid Image>>of(rows);
   }
 
 

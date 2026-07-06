@@ -22,6 +22,8 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -33,7 +35,7 @@ import java.util.StringJoiner;
   RetailDemandGiftCard.JSON_PROPERTY_NAME,
   RetailDemandGiftCard.JSON_PROPERTY_PAYMENT_SUM
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailDemandGiftCard {
 
   public static final String JSON_PROPERTY_NAME = "name";
@@ -45,6 +47,16 @@ public class RetailDemandGiftCard {
   private Double paymentSum;
 
   public RetailDemandGiftCard() {
+  }
+  /**
+   * Constructor with only readonly parameters
+   */
+  @JsonCreator
+  public RetailDemandGiftCard(
+    @JsonProperty(value = JSON_PROPERTY_PAYMENT_SUM, required = false) Double paymentSum
+  ) {
+    this();
+    this.paymentSum = paymentSum;
   }
 
   public RetailDemandGiftCard name(@javax.annotation.Nullable String name) {
@@ -59,6 +71,8 @@ public class RetailDemandGiftCard {
    * @return name
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -76,18 +90,13 @@ public class RetailDemandGiftCard {
   }
 
 
-  public RetailDemandGiftCard paymentSum(@javax.annotation.Nullable Double paymentSum) {
-    
-    this.paymentSum = paymentSum;
-    return this;
-  }
-
-
   /**
    * Сумма сертификата
    * @return paymentSum
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PAYMENT_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -97,12 +106,6 @@ public class RetailDemandGiftCard {
 
   
 
-
-  @JsonProperty(JSON_PROPERTY_PAYMENT_SUM)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPaymentSum(@javax.annotation.Nullable Double paymentSum) {
-    this.paymentSum = paymentSum;
-  }
 
 
   @Override

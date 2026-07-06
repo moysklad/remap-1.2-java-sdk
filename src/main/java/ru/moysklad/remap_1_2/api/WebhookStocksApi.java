@@ -20,8 +20,8 @@ import ru.moysklad.remap_1_2.BaseApi;
 import ru.moysklad.remap_1_2.Configuration;
 import ru.moysklad.remap_1_2.Pair;
 
-import ru.moysklad.remap_1_2.model.CreateOrUpdateWebhookStocksBatch200ResponseInner;
-import ru.moysklad.remap_1_2.model.DeleteContractsBatch200ResponseInner;
+import ru.moysklad.remap_1_2.model.BatchResponseEntity;
+import ru.moysklad.remap_1_2.model.DeleteRowResult;
 import ru.moysklad.remap_1_2.model.ErrorOrArray;
 import java.util.UUID;
 import ru.moysklad.remap_1_2.model.WebhookStock;
@@ -35,7 +35,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+import javax.validation.constraints.*;
+import javax.validation.Valid;
+
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class WebhookStocksApi extends BaseApi {
 
@@ -55,10 +58,10 @@ public class WebhookStocksApi extends BaseApi {
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;CreateOrUpdateWebhookStocksBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateOrUpdateWebhookStocksBatch200ResponseInner> createOrUpdateWebhookStocksBatch(@javax.annotation.Nonnull List<WebhookStock> webhookStock, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<BatchResponseEntity> createOrUpdateWebhookStocksBatch(@javax.annotation.Nonnull List<@Valid WebhookStock> webhookStock, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createOrUpdateWebhookStocksBatch(webhookStock, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -73,10 +76,10 @@ public class WebhookStocksApi extends BaseApi {
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return List&lt;CreateOrUpdateWebhookStocksBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateOrUpdateWebhookStocksBatch200ResponseInner> createOrUpdateWebhookStocksBatch(@javax.annotation.Nonnull List<WebhookStock> webhookStock, RequestOptions options) throws ApiException {
+  public List<BatchResponseEntity> createOrUpdateWebhookStocksBatch(@javax.annotation.Nonnull List<@Valid WebhookStock> webhookStock, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createOrUpdateWebhookStocksBatch(webhookStock, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -91,10 +94,10 @@ public class WebhookStocksApi extends BaseApi {
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;CreateOrUpdateWebhookStocksBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateOrUpdateWebhookStocksBatch200ResponseInner> createOrUpdateWebhookStocksBatch(@javax.annotation.Nonnull List<WebhookStock> webhookStock, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<BatchResponseEntity> createOrUpdateWebhookStocksBatch(@javax.annotation.Nonnull List<@Valid WebhookStock> webhookStock, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = webhookStock;
     
     // verify the required parameter 'webhookStock' is set
@@ -137,7 +140,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<CreateOrUpdateWebhookStocksBatch200ResponseInner>> localVarReturnType = new TypeReference<List<CreateOrUpdateWebhookStocksBatch200ResponseInner>>() {};
+    TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
@@ -350,10 +353,10 @@ if (acceptEncoding != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deleteWebhookStocksBatch(@javax.annotation.Nonnull List<WebhookStock> webhookStock, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<DeleteRowResult> deleteWebhookStocksBatch(@javax.annotation.Nonnull List<@Valid WebhookStock> webhookStock, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.deleteWebhookStocksBatch(webhookStock, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -366,10 +369,10 @@ if (acceptEncoding != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deleteWebhookStocksBatch(@javax.annotation.Nonnull List<WebhookStock> webhookStock, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<DeleteRowResult> deleteWebhookStocksBatch(@javax.annotation.Nonnull List<@Valid WebhookStock> webhookStock, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = webhookStock;
     
     // verify the required parameter 'webhookStock' is set
@@ -411,7 +414,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<DeleteContractsBatch200ResponseInner>> localVarReturnType = new TypeReference<List<DeleteContractsBatch200ResponseInner>>() {};
+    TypeReference<List<DeleteRowResult>> localVarReturnType = new TypeReference<List<DeleteRowResult>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

@@ -24,6 +24,8 @@ import java.util.UUID;
 import ru.moysklad.remap_1_2.model.Meta;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -41,7 +43,7 @@ import java.util.StringJoiner;
   AttributeMetaInfo.JSON_PROPERTY_META,
   AttributeMetaInfo.JSON_PROPERTY_CUSTOM_ENTITY_META
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class AttributeMetaInfo {
 
   public static final String JSON_PROPERTY_ID = "id";
@@ -91,6 +93,9 @@ public class AttributeMetaInfo {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -120,6 +125,8 @@ public class AttributeMetaInfo {
    * @return name
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -149,6 +156,8 @@ public class AttributeMetaInfo {
    * @return type
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -178,6 +187,8 @@ public class AttributeMetaInfo {
    * @return required
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_REQUIRED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -207,6 +218,8 @@ public class AttributeMetaInfo {
    * @return show
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SHOW)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -236,6 +249,8 @@ public class AttributeMetaInfo {
    * @return description
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -265,6 +280,9 @@ public class AttributeMetaInfo {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -294,6 +312,9 @@ public class AttributeMetaInfo {
    * @return customEntityMeta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_CUSTOM_ENTITY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

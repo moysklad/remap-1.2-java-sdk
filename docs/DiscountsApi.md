@@ -304,7 +304,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         DiscountsApi apiInstance = new DiscountsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -384,7 +384,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         DiscountsApi apiInstance = new DiscountsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -464,7 +464,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         DiscountsApi apiInstance = new DiscountsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -544,7 +544,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         DiscountsApi apiInstance = new DiscountsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -629,7 +629,7 @@ public class Example {
         Integer offset = 0; // Integer | Отступ в выданном списке
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         try {
             DiscountList result = apiInstance.getDiscounts(limit, offset, accept, acceptEncoding, expand);
             System.out.println(result);
@@ -710,7 +710,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         DiscountsApi apiInstance = new DiscountsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -791,7 +791,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         DiscountsApi apiInstance = new DiscountsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -872,7 +872,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         DiscountsApi apiInstance = new DiscountsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         AccumulationDiscount accumulationDiscount = new AccumulationDiscount(); // AccumulationDiscount | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -957,7 +957,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         DiscountsApi apiInstance = new DiscountsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Discount discount = new Discount(); // Discount | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1042,7 +1042,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         DiscountsApi apiInstance = new DiscountsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         PersonalDiscount personalDiscount = new PersonalDiscount(); // PersonalDiscount | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1127,7 +1127,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         DiscountsApi apiInstance = new DiscountsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         SpecialPriceDiscount specialPriceDiscount = new SpecialPriceDiscount(); // SpecialPriceDiscount | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 

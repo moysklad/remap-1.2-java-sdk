@@ -42,7 +42,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         LabelsApi apiInstance = new LabelsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String type = "product"; // String | Тип сущности, для которой запрашивается печать
         LabelPrintRequest labelPrintRequest = new LabelPrintRequest(); // LabelPrintRequest | 
         String accept = "application/json"; // String | 

@@ -22,10 +22,9 @@ import ru.moysklad.remap_1_2.Pair;
 
 import ru.moysklad.remap_1_2.model.AttributeMetaInfo;
 import ru.moysklad.remap_1_2.model.AttributeMetaInfoList;
-import ru.moysklad.remap_1_2.model.CreateInternalOrderMetadataStateRequest;
-import ru.moysklad.remap_1_2.model.CreatePurchaseOrderBatch200ResponseInner;
+import ru.moysklad.remap_1_2.model.BatchResponseEntity;
 import ru.moysklad.remap_1_2.model.CreatePurchaseOrderPositions200ResponseInner;
-import ru.moysklad.remap_1_2.model.DeleteContractsBatch200ResponseInner;
+import ru.moysklad.remap_1_2.model.DeleteRowResult;
 import ru.moysklad.remap_1_2.model.DocumentMetadata;
 import ru.moysklad.remap_1_2.model.ErrorOrArray;
 import ru.moysklad.remap_1_2.model.EventNote;
@@ -35,6 +34,7 @@ import ru.moysklad.remap_1_2.model.PurchaseOrderList;
 import ru.moysklad.remap_1_2.model.PurchaseOrderPosition;
 import ru.moysklad.remap_1_2.model.PurchaseOrderPositionList;
 import ru.moysklad.remap_1_2.model.State;
+import ru.moysklad.remap_1_2.model.StateRowResult;
 import java.util.UUID;
 
 
@@ -45,7 +45,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+import javax.validation.constraints.*;
+import javax.validation.Valid;
+
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class PurchaseOrdersApi extends BaseApi {
 
@@ -173,10 +176,10 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;CreatePurchaseOrderBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreatePurchaseOrderBatch200ResponseInner> createPurchaseOrderBatch(@javax.annotation.Nonnull List<PurchaseOrder> purchaseOrder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<BatchResponseEntity> createPurchaseOrderBatch(@javax.annotation.Nonnull List<@Valid PurchaseOrder> purchaseOrder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createPurchaseOrderBatch(purchaseOrder, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -191,10 +194,10 @@ if (contentType != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return List&lt;CreatePurchaseOrderBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreatePurchaseOrderBatch200ResponseInner> createPurchaseOrderBatch(@javax.annotation.Nonnull List<PurchaseOrder> purchaseOrder, RequestOptions options) throws ApiException {
+  public List<BatchResponseEntity> createPurchaseOrderBatch(@javax.annotation.Nonnull List<@Valid PurchaseOrder> purchaseOrder, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createPurchaseOrderBatch(purchaseOrder, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -209,10 +212,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;CreatePurchaseOrderBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreatePurchaseOrderBatch200ResponseInner> createPurchaseOrderBatch(@javax.annotation.Nonnull List<PurchaseOrder> purchaseOrder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<BatchResponseEntity> createPurchaseOrderBatch(@javax.annotation.Nonnull List<@Valid PurchaseOrder> purchaseOrder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = purchaseOrder;
     
     // verify the required parameter 'purchaseOrder' is set
@@ -255,7 +258,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<CreatePurchaseOrderBatch200ResponseInner>> localVarReturnType = new TypeReference<List<CreatePurchaseOrderBatch200ResponseInner>>() {};
+    TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
@@ -362,35 +365,35 @@ if (contentType != null)
   /**
    * Создать статус PurchaseOrder
    * 
-   * @param createInternalOrderMetadataStateRequest  (required)
+   * @param state  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return CreateInternalOrderMetadataStateRequest
+   * @return State
    * @throws ApiException if fails to make API call
    */
-  public CreateInternalOrderMetadataStateRequest createPurchaseOrderMetadataState(@javax.annotation.Nonnull CreateInternalOrderMetadataStateRequest createInternalOrderMetadataStateRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createPurchaseOrderMetadataState(createInternalOrderMetadataStateRequest, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public State createPurchaseOrderMetadataState(@javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+    return this.createPurchaseOrderMetadataState(state, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
 
   /**
    * Создать статус PurchaseOrder
    * 
-   * @param createInternalOrderMetadataStateRequest  (required)
+   * @param state  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return CreateInternalOrderMetadataStateRequest
+   * @return State
    * @throws ApiException if fails to make API call
    */
-  public CreateInternalOrderMetadataStateRequest createPurchaseOrderMetadataState(@javax.annotation.Nonnull CreateInternalOrderMetadataStateRequest createInternalOrderMetadataStateRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
-    Object localVarPostBody = createInternalOrderMetadataStateRequest;
+  public State createPurchaseOrderMetadataState(@javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = state;
     
-    // verify the required parameter 'createInternalOrderMetadataStateRequest' is set
-    if (createInternalOrderMetadataStateRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'createInternalOrderMetadataStateRequest' when calling createPurchaseOrderMetadataState");
+    // verify the required parameter 'state' is set
+    if (state == null) {
+      throw new ApiException(400, "Missing the required parameter 'state' when calling createPurchaseOrderMetadataState");
     }
     
     // create path and map variables
@@ -427,7 +430,93 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<CreateInternalOrderMetadataStateRequest> localVarReturnType = new TypeReference<CreateInternalOrderMetadataStateRequest>() {};
+    TypeReference<State> localVarReturnType = new TypeReference<State>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Массовое создание и обновление статусов PurchaseOrder
+   * 
+   * @param state  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @return List&lt;StateRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<StateRowResult> createPurchaseOrderMetadataStatesBatch(@javax.annotation.Nonnull List<@Valid State> state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+    return this.createPurchaseOrderMetadataStatesBatch(state, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+
+  /**
+   * Массовое создание и обновление статусов PurchaseOrder
+   * 
+   * @param state  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return List&lt;StateRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<StateRowResult> createPurchaseOrderMetadataStatesBatch(@javax.annotation.Nonnull List<@Valid State> state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = state;
+    
+    // verify the required parameter 'state' is set
+    if (state == null) {
+      throw new ApiException(400, "Missing the required parameter 'state' when calling createPurchaseOrderMetadataStatesBatch");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/purchaseorder/metadata/states/batch";
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null)
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+if (acceptEncoding != null)
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+if (contentType != null)
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+
+    localVarHeaderParams.putAll(additionalHeaders);
+
+    
+    
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<List<StateRowResult>> localVarReturnType = new TypeReference<List<StateRowResult>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
@@ -670,7 +759,7 @@ if (contentType != null)
    * @return List&lt;CreatePurchaseOrderPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreatePurchaseOrderPositions200ResponseInner> createPurchaseOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<PurchaseOrderPosition> purchaseOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<CreatePurchaseOrderPositions200ResponseInner> createPurchaseOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid PurchaseOrderPosition> purchaseOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createPurchaseOrderPositions(id, purchaseOrderPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -691,7 +780,7 @@ if (contentType != null)
    * @return List&lt;CreatePurchaseOrderPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreatePurchaseOrderPositions200ResponseInner> createPurchaseOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<PurchaseOrderPosition> purchaseOrderPosition, RequestOptions options) throws ApiException {
+  public List<CreatePurchaseOrderPositions200ResponseInner> createPurchaseOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid PurchaseOrderPosition> purchaseOrderPosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createPurchaseOrderPositions(id, purchaseOrderPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -710,7 +799,7 @@ if (contentType != null)
    * @return List&lt;CreatePurchaseOrderPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreatePurchaseOrderPositions200ResponseInner> createPurchaseOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<PurchaseOrderPosition> purchaseOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<CreatePurchaseOrderPositions200ResponseInner> createPurchaseOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid PurchaseOrderPosition> purchaseOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = purchaseOrderPosition;
     
     // verify the required parameter 'id' is set
@@ -868,10 +957,10 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deletePurchaseOrderBatch(@javax.annotation.Nonnull List<PurchaseOrder> purchaseOrder, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<DeleteRowResult> deletePurchaseOrderBatch(@javax.annotation.Nonnull List<@Valid PurchaseOrder> purchaseOrder, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.deletePurchaseOrderBatch(purchaseOrder, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -884,10 +973,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deletePurchaseOrderBatch(@javax.annotation.Nonnull List<PurchaseOrder> purchaseOrder, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<DeleteRowResult> deletePurchaseOrderBatch(@javax.annotation.Nonnull List<@Valid PurchaseOrder> purchaseOrder, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = purchaseOrder;
     
     // verify the required parameter 'purchaseOrder' is set
@@ -929,7 +1018,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<DeleteContractsBatch200ResponseInner>> localVarReturnType = new TypeReference<List<DeleteContractsBatch200ResponseInner>>() {};
+    TypeReference<List<DeleteRowResult>> localVarReturnType = new TypeReference<List<DeleteRowResult>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
@@ -1327,10 +1416,10 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deletePurchaseOrderPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<PurchaseOrderPosition> purchaseOrderPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<DeleteRowResult> deletePurchaseOrderPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid PurchaseOrderPosition> purchaseOrderPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.deletePurchaseOrderPositionsBatch(id, purchaseOrderPosition, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -1344,10 +1433,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deletePurchaseOrderPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<PurchaseOrderPosition> purchaseOrderPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<DeleteRowResult> deletePurchaseOrderPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid PurchaseOrderPosition> purchaseOrderPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = purchaseOrderPosition;
     
     // verify the required parameter 'id' is set
@@ -1395,7 +1484,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<DeleteContractsBatch200ResponseInner>> localVarReturnType = new TypeReference<List<DeleteContractsBatch200ResponseInner>>() {};
+    TypeReference<List<DeleteRowResult>> localVarReturnType = new TypeReference<List<DeleteRowResult>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

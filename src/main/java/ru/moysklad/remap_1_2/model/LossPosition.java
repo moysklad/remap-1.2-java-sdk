@@ -35,6 +35,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -55,7 +57,7 @@ import java.util.StringJoiner;
   LossPosition.JSON_PROPERTY_SLOT,
   LossPosition.JSON_PROPERTY_THINGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class LossPosition {
   public static LossPosition createWithMeta(UUID parentId, UUID id) {
     LossPosition o = new LossPosition();
@@ -90,7 +92,7 @@ public class LossPosition {
 
   public static final String JSON_PROPERTY_DECLARATION = "declaration";
   @javax.annotation.Nullable
-  private List<DeclarationInner> declaration = new ArrayList<>();
+  private List<@Valid DeclarationInner> declaration = new ArrayList<>();
 
   public static final String JSON_PROPERTY_PACK = "pack";
   @javax.annotation.Nullable
@@ -125,7 +127,7 @@ public class LossPosition {
   public LossPosition(
     @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id, 
     @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId, 
-    @JsonProperty(value = JSON_PROPERTY_DECLARATION, required = false) List<DeclarationInner> declaration
+    @JsonProperty(value = JSON_PROPERTY_DECLARATION, required = false) List<@Valid DeclarationInner> declaration
   ) {
     this();
     this.id = id;
@@ -145,6 +147,9 @@ public class LossPosition {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -167,6 +172,9 @@ public class LossPosition {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -183,6 +191,9 @@ public class LossPosition {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -208,6 +219,9 @@ public class LossPosition {
    */
   @Deprecated
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -230,10 +244,13 @@ public class LossPosition {
    * @return declaration
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_DECLARATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<DeclarationInner> getDeclaration() {
+  public List<@Valid DeclarationInner> getDeclaration() {
     return declaration;
   }
 
@@ -253,6 +270,9 @@ public class LossPosition {
    * @return pack
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Pack getPack() {
@@ -291,6 +311,8 @@ public class LossPosition {
    * @return price
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -320,6 +342,8 @@ public class LossPosition {
    * @return quantity
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -349,6 +373,8 @@ public class LossPosition {
    * @return reason
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_REASON)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -378,6 +404,9 @@ public class LossPosition {
    * @return slot
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public StoreSlot getSlot() {
@@ -424,6 +453,8 @@ public class LossPosition {
    * @return things
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_THINGS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

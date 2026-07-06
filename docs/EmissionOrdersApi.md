@@ -54,7 +54,7 @@ public class Example {
 
         EmissionOrdersApi apiInstance = new EmissionOrdersApi(defaultClient);
         EmissionOrder emissionOrder = new EmissionOrder(); // EmissionOrder | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -106,7 +106,7 @@ public class Example {
 
 ## createEmissionOrderBatch
 
-> List&lt;CreateEmissionOrderBatch200ResponseInner&gt; createEmissionOrderBatch(emissionOrder, expand, accept, acceptEncoding, contentType)
+> List&lt;BatchResponseEntity&gt; createEmissionOrderBatch(emissionOrder, expand, accept, acceptEncoding, contentType)
 
 Массовое создание и обновление Заказов кодов маркировки
 
@@ -136,13 +136,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         EmissionOrdersApi apiInstance = new EmissionOrdersApi(defaultClient);
-        List<EmissionOrder> emissionOrder = Arrays.asList(); // List<EmissionOrder> | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        List<@Valid EmissionOrder> emissionOrder = Arrays.asList(); // List<@Valid EmissionOrder> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateEmissionOrderBatch200ResponseInner> result = apiInstance.createEmissionOrderBatch(emissionOrder, expand, accept, acceptEncoding, contentType);
+            List<BatchResponseEntity> result = apiInstance.createEmissionOrderBatch(emissionOrder, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling EmissionOrdersApi#createEmissionOrderBatch");
@@ -160,7 +160,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **emissionOrder** | [**List&lt;EmissionOrder&gt;**](EmissionOrder.md)|  | |
+| **emissionOrder** | [**List&lt;@Valid EmissionOrder&gt;**](EmissionOrder.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -168,7 +168,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreateEmissionOrderBatch200ResponseInner&gt;**](CreateEmissionOrderBatch200ResponseInner.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -219,9 +219,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         EmissionOrdersApi apiInstance = new EmissionOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         EmissionOrderPosition emissionOrderPosition = new EmissionOrderPosition(); // EmissionOrderPosition | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -274,7 +274,7 @@ public class Example {
 
 ## createEmissionOrderPositions
 
-> List&lt;CreateEmissionOrderPositions200ResponseInner&gt; createEmissionOrderPositions(id, emissionOrderPosition, expand, accept, acceptEncoding, contentType)
+> List&lt;BatchResponseEntity&gt; createEmissionOrderPositions(id, emissionOrderPosition, expand, accept, acceptEncoding, contentType)
 
 Массовое создание и обновление позиций Заказа кодов маркировки
 
@@ -304,14 +304,14 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         EmissionOrdersApi apiInstance = new EmissionOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<EmissionOrderPosition> emissionOrderPosition = Arrays.asList(); // List<EmissionOrderPosition> | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid EmissionOrderPosition> emissionOrderPosition = Arrays.asList(); // List<@Valid EmissionOrderPosition> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateEmissionOrderPositions200ResponseInner> result = apiInstance.createEmissionOrderPositions(id, emissionOrderPosition, expand, accept, acceptEncoding, contentType);
+            List<BatchResponseEntity> result = apiInstance.createEmissionOrderPositions(id, emissionOrderPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling EmissionOrdersApi#createEmissionOrderPositions");
@@ -330,7 +330,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **emissionOrderPosition** | [**List&lt;EmissionOrderPosition&gt;**](EmissionOrderPosition.md)|  | |
+| **emissionOrderPosition** | [**List&lt;@Valid EmissionOrderPosition&gt;**](EmissionOrderPosition.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -338,7 +338,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreateEmissionOrderPositions200ResponseInner&gt;**](CreateEmissionOrderPositions200ResponseInner.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -389,7 +389,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         EmissionOrdersApi apiInstance = new EmissionOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -470,8 +470,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         EmissionOrdersApi apiInstance = new EmissionOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -555,7 +555,7 @@ public class Example {
         EmissionOrdersApi apiInstance = new EmissionOrdersApi(defaultClient);
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -717,7 +717,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         EmissionOrdersApi apiInstance = new EmissionOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -798,9 +798,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         EmissionOrdersApi apiInstance = new EmissionOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -883,10 +883,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         EmissionOrdersApi apiInstance = new EmissionOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -970,9 +970,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         EmissionOrdersApi apiInstance = new EmissionOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         EmissionOrder emissionOrder = new EmissionOrder(); // EmissionOrder | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1057,7 +1057,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         EmissionOrdersApi apiInstance = new EmissionOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         State state = new State(); // State | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1140,10 +1140,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         EmissionOrdersApi apiInstance = new EmissionOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
         EmissionOrderPosition emissionOrderPosition = new EmissionOrderPosition(); // EmissionOrderPosition | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 

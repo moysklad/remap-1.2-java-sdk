@@ -24,6 +24,8 @@ import java.util.UUID;
 import ru.moysklad.remap_1_2.model.Meta;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -38,7 +40,7 @@ import java.util.StringJoiner;
   Application.JSON_PROPERTY_NAME,
   Application.JSON_PROPERTY_APP_UID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class Application {
   public static Application createWithMeta(UUID id) {
     Application o = new Application();
@@ -106,6 +108,9 @@ public class Application {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -128,6 +133,9 @@ public class Application {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -144,6 +152,9 @@ public class Application {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -160,6 +171,8 @@ public class Application {
    * @return name
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -176,6 +189,8 @@ public class Application {
    * @return appUid
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_APP_UID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

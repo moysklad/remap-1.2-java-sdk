@@ -30,6 +30,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -48,7 +50,7 @@ import java.util.StringJoiner;
   InternalOrderPosition.JSON_PROPERTY_ASSORTMENT,
   InternalOrderPosition.JSON_PROPERTY_PACK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class InternalOrderPosition {
   public static InternalOrderPosition createWithMeta(UUID parentId, UUID id) {
     InternalOrderPosition o = new InternalOrderPosition();
@@ -128,6 +130,9 @@ public class InternalOrderPosition {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -150,6 +155,9 @@ public class InternalOrderPosition {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -166,6 +174,9 @@ public class InternalOrderPosition {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -189,6 +200,8 @@ public class InternalOrderPosition {
    * @return quantity
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -218,6 +231,8 @@ public class InternalOrderPosition {
    * @return price
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -249,6 +264,8 @@ public class InternalOrderPosition {
    * @return vat
    */
   @javax.annotation.Nullable
+ @Min(0) @Max(100)
+
   @JsonProperty(JSON_PROPERTY_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -278,6 +295,8 @@ public class InternalOrderPosition {
    * @return vatEnabled
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -309,6 +328,9 @@ public class InternalOrderPosition {
    */
   @Deprecated
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -338,6 +360,9 @@ public class InternalOrderPosition {
    * @return pack
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Pack getPack() {

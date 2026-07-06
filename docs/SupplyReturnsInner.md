@@ -45,7 +45,7 @@
 |**salesChannel** | [**SalesChannel**](SalesChannel.md) | Метаданные канала продаж |  [optional] |
 |**demand** | [**Demand**](Demand.md) | Отгрузка, по которой произошел возврат |  [optional] |
 |**losses** | [**List&lt;Loss&gt;**](Loss.md) | Массив ссылок на связанные списания |  [optional] |
-|**payments** | [**List&lt;CustomerOrderPaymentsInner&gt;**](CustomerOrderPaymentsInner.md) | Массив ссылок на связанные платежи |  [optional] |
+|**payments** | [**List&lt;RetailShiftPaymentsInner&gt;**](RetailShiftPaymentsInner.md) | Массив ссылок на связанные платежи |  [optional] |
 |**factureOut** | [**FactureOut**](FactureOut.md) | Счет-фактура выданный, с которым связан этот возврат |  [optional] |
 |**supply** | [**Supply**](Supply.md) | Приемка, по которой произошел возврат |  [optional] |
 |**factureIn** | [**FactureIn**](FactureIn.md) | Счет-фактура полученный, с которым связан этот возврат |  [optional] |

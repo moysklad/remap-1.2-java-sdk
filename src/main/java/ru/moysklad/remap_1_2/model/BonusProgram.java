@@ -31,6 +31,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -56,7 +58,7 @@ import java.util.StringJoiner;
   BonusProgram.JSON_PROPERTY_ALL_AGENTS,
   BonusProgram.JSON_PROPERTY_AGENT_TAGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class BonusProgram {
 
   public static final String JSON_PROPERTY_EARN_RATE_ROUBLES_TO_POINT = "earnRateRoublesToPoint";
@@ -150,6 +152,8 @@ public class BonusProgram {
    * @return earnRateRoublesToPoint
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_EARN_RATE_ROUBLES_TO_POINT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -179,6 +183,8 @@ public class BonusProgram {
    * @return earnWhileRedeeming
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_EARN_WHILE_REDEEMING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -208,6 +214,8 @@ public class BonusProgram {
    * @return postponedBonusesDelayDays
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_POSTPONED_BONUSES_DELAY_DAYS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -237,6 +245,8 @@ public class BonusProgram {
    * @return spendRatePointsToRouble
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SPEND_RATE_POINTS_TO_ROUBLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -266,6 +276,8 @@ public class BonusProgram {
    * @return welcomeBonusesEnabled
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_WELCOME_BONUSES_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -295,6 +307,8 @@ public class BonusProgram {
    * @return welcomeBonusesValue
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_WELCOME_BONUSES_VALUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -324,6 +338,8 @@ public class BonusProgram {
    * @return welcomeBonusesMode
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_WELCOME_BONUSES_MODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -355,6 +371,8 @@ public class BonusProgram {
    * @return maxPaidRatePercents
    */
   @javax.annotation.Nullable
+ @Min(0) @Max(100)
+
   @JsonProperty(JSON_PROPERTY_MAX_PAID_RATE_PERCENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -384,6 +402,8 @@ public class BonusProgram {
    * @return allProducts
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_ALL_PRODUCTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -406,6 +426,9 @@ public class BonusProgram {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -429,6 +452,9 @@ public class BonusProgram {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -451,6 +477,9 @@ public class BonusProgram {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -474,6 +503,8 @@ public class BonusProgram {
    * @return name
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -503,6 +534,8 @@ public class BonusProgram {
    * @return active
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_ACTIVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -532,6 +565,8 @@ public class BonusProgram {
    * @return allAgents
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_ALL_AGENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -573,6 +608,8 @@ public class BonusProgram {
    * @return agentTags
    */
   @javax.annotation.Nullable
+
+
   @JsonIgnore
 
   public List<String> getAgentTags() {

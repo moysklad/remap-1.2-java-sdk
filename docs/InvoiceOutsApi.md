@@ -69,8 +69,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InvoiceOutsApi apiInstance = new InvoiceOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<FileUpload> fileUpload = Arrays.asList(); // List<FileUpload> | 
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid FileUpload> fileUpload = Arrays.asList(); // List<@Valid FileUpload> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -94,7 +94,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **fileUpload** | [**List&lt;FileUpload&gt;**](FileUpload.md)|  | |
+| **fileUpload** | [**List&lt;@Valid FileUpload&gt;**](FileUpload.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -153,7 +153,7 @@ public class Example {
 
         InvoiceOutsApi apiInstance = new InvoiceOutsApi(defaultClient);
         InvoiceOut invoiceOut = new InvoiceOut(); // InvoiceOut | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -235,8 +235,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InvoiceOutsApi apiInstance = new InvoiceOutsApi(defaultClient);
-        List<InvoiceOut> invoiceOut = Arrays.asList(); // List<InvoiceOut> | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        List<@Valid InvoiceOut> invoiceOut = Arrays.asList(); // List<@Valid InvoiceOut> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -259,7 +259,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **invoiceOut** | [**List&lt;InvoiceOut&gt;**](InvoiceOut.md)|  | |
+| **invoiceOut** | [**List&lt;@Valid InvoiceOut&gt;**](InvoiceOut.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -399,9 +399,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InvoiceOutsApi apiInstance = new InvoiceOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         InvoiceOutPosition invoiceOutPosition = new InvoiceOutPosition(); // InvoiceOutPosition | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -484,9 +484,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InvoiceOutsApi apiInstance = new InvoiceOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<InvoiceOutPosition> invoiceOutPosition = Arrays.asList(); // List<InvoiceOutPosition> | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid InvoiceOutPosition> invoiceOutPosition = Arrays.asList(); // List<@Valid InvoiceOutPosition> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -510,7 +510,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **invoiceOutPosition** | [**List&lt;InvoiceOutPosition&gt;**](InvoiceOutPosition.md)|  | |
+| **invoiceOutPosition** | [**List&lt;@Valid InvoiceOutPosition&gt;**](InvoiceOutPosition.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -569,7 +569,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InvoiceOutsApi apiInstance = new InvoiceOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -619,7 +619,7 @@ null (empty response body)
 
 ## deleteInvoiceOutBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteInvoiceOutBatch(invoiceOut, accept, acceptEncoding, contentType)
+> List&lt;DeleteInvoiceOutBatch200ResponseInner&gt; deleteInvoiceOutBatch(invoiceOut, accept, acceptEncoding, contentType)
 
 Массовое удаление Счетов покупателям
 
@@ -649,12 +649,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InvoiceOutsApi apiInstance = new InvoiceOutsApi(defaultClient);
-        List<InvoiceOut> invoiceOut = Arrays.asList(); // List<InvoiceOut> | 
+        List<@Valid InvoiceOut> invoiceOut = Arrays.asList(); // List<@Valid InvoiceOut> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteInvoiceOutBatch(invoiceOut, accept, acceptEncoding, contentType);
+            List<DeleteInvoiceOutBatch200ResponseInner> result = apiInstance.deleteInvoiceOutBatch(invoiceOut, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling InvoiceOutsApi#deleteInvoiceOutBatch");
@@ -672,14 +672,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **invoiceOut** | [**List&lt;InvoiceOut&gt;**](InvoiceOut.md)|  | |
+| **invoiceOut** | [**List&lt;@Valid InvoiceOut&gt;**](InvoiceOut.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteInvoiceOutBatch200ResponseInner&gt;**](DeleteInvoiceOutBatch200ResponseInner.md)
 
 ### Authorization
 
@@ -732,7 +732,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InvoiceOutsApi apiInstance = new InvoiceOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID fileId = UUID.randomUUID(); // UUID | ID файла
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -812,7 +812,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InvoiceOutsApi apiInstance = new InvoiceOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -892,7 +892,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InvoiceOutsApi apiInstance = new InvoiceOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -973,9 +973,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InvoiceOutsApi apiInstance = new InvoiceOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1027,7 +1027,7 @@ null (empty response body)
 
 ## deleteInvoiceOutPositionsBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteInvoiceOutPositionsBatch(id, invoiceOutPosition, accept, acceptEncoding, contentType)
+> List&lt;DeleteInvoiceOutBatch200ResponseInner&gt; deleteInvoiceOutPositionsBatch(id, invoiceOutPosition, accept, acceptEncoding, contentType)
 
 Массовое удаление позиций Счета покупателю
 
@@ -1057,13 +1057,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InvoiceOutsApi apiInstance = new InvoiceOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<InvoiceOutPosition> invoiceOutPosition = Arrays.asList(); // List<InvoiceOutPosition> | 
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid InvoiceOutPosition> invoiceOutPosition = Arrays.asList(); // List<@Valid InvoiceOutPosition> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteInvoiceOutPositionsBatch(id, invoiceOutPosition, accept, acceptEncoding, contentType);
+            List<DeleteInvoiceOutBatch200ResponseInner> result = apiInstance.deleteInvoiceOutPositionsBatch(id, invoiceOutPosition, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling InvoiceOutsApi#deleteInvoiceOutPositionsBatch");
@@ -1082,14 +1082,14 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **invoiceOutPosition** | [**List&lt;InvoiceOutPosition&gt;**](InvoiceOutPosition.md)|  | |
+| **invoiceOutPosition** | [**List&lt;@Valid InvoiceOutPosition&gt;**](InvoiceOutPosition.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteInvoiceOutBatch200ResponseInner&gt;**](DeleteInvoiceOutBatch200ResponseInner.md)
 
 ### Authorization
 
@@ -1140,8 +1140,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InvoiceOutsApi apiInstance = new InvoiceOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1225,7 +1225,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InvoiceOutsApi apiInstance = new InvoiceOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID fileId = UUID.randomUUID(); // UUID | ID файла
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1308,7 +1308,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InvoiceOutsApi apiInstance = new InvoiceOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
         String accept = "application/json"; // String | 
@@ -1393,8 +1393,8 @@ public class Example {
         InvoiceOutsApi apiInstance = new InvoiceOutsApi(defaultClient);
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String search = "name=123"; // String | Контекстный поиск по строковым полям сущностей
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String search = "search_example"; // String | Контекстный поиск по строковым полям сущностей
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1640,7 +1640,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InvoiceOutsApi apiInstance = new InvoiceOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1721,7 +1721,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InvoiceOutsApi apiInstance = new InvoiceOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1802,9 +1802,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InvoiceOutsApi apiInstance = new InvoiceOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1889,10 +1889,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InvoiceOutsApi apiInstance = new InvoiceOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -2061,9 +2061,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InvoiceOutsApi apiInstance = new InvoiceOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         InvoiceOut invoiceOut = new InvoiceOut(); // InvoiceOut | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -2148,7 +2148,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InvoiceOutsApi apiInstance = new InvoiceOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         AttributeMetaInfo attributeMetaInfo = new AttributeMetaInfo(); // AttributeMetaInfo | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -2231,7 +2231,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InvoiceOutsApi apiInstance = new InvoiceOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         State state = new State(); // State | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -2314,10 +2314,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InvoiceOutsApi apiInstance = new InvoiceOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
         InvoiceOutPosition invoiceOutPosition = new InvoiceOutPosition(); // InvoiceOutPosition | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 

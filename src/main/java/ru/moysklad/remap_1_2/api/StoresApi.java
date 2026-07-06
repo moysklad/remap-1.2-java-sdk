@@ -22,10 +22,10 @@ import ru.moysklad.remap_1_2.Pair;
 
 import ru.moysklad.remap_1_2.model.AttributeMetaInfo;
 import ru.moysklad.remap_1_2.model.AttributeMetaInfoList;
+import ru.moysklad.remap_1_2.model.BatchResponseEntity;
 import ru.moysklad.remap_1_2.model.CreateStoreSlotsRequest;
 import ru.moysklad.remap_1_2.model.CreateStoreZonesRequest;
-import ru.moysklad.remap_1_2.model.CreateStoresBatch200ResponseInner;
-import ru.moysklad.remap_1_2.model.DeleteContractsBatch200ResponseInner;
+import ru.moysklad.remap_1_2.model.DeleteRowResult;
 import ru.moysklad.remap_1_2.model.ErrorOrArray;
 import ru.moysklad.remap_1_2.model.Store;
 import ru.moysklad.remap_1_2.model.StoreList;
@@ -44,7 +44,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+import javax.validation.constraints.*;
+import javax.validation.Valid;
+
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class StoresApi extends BaseApi {
 
@@ -438,10 +441,10 @@ if (acceptEncoding != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;CreateStoresBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateStoresBatch200ResponseInner> createStoresBatch(@javax.annotation.Nonnull List<Store> store, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<BatchResponseEntity> createStoresBatch(@javax.annotation.Nonnull List<@Valid Store> store, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createStoresBatch(store, accept, acceptEncoding, expand, contentType, Collections.emptyMap());
   }
 
@@ -456,10 +459,10 @@ if (acceptEncoding != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return List&lt;CreateStoresBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateStoresBatch200ResponseInner> createStoresBatch(@javax.annotation.Nonnull List<Store> store, RequestOptions options) throws ApiException {
+  public List<BatchResponseEntity> createStoresBatch(@javax.annotation.Nonnull List<@Valid Store> store, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createStoresBatch(store, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
@@ -474,10 +477,10 @@ if (acceptEncoding != null)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;CreateStoresBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateStoresBatch200ResponseInner> createStoresBatch(@javax.annotation.Nonnull List<Store> store, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<BatchResponseEntity> createStoresBatch(@javax.annotation.Nonnull List<@Valid Store> store, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = store;
     
     // verify the required parameter 'store' is set
@@ -520,7 +523,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<CreateStoresBatch200ResponseInner>> localVarReturnType = new TypeReference<List<CreateStoresBatch200ResponseInner>>() {};
+    TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
@@ -716,7 +719,7 @@ if (acceptEncoding != null)
    * @param contentType  (optional, default to application/json)
    * @throws ApiException if fails to make API call
    */
-  public void deleteStoreSlotsBatch(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull List<StoreSlot> storeSlot, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public void deleteStoreSlotsBatch(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull List<@Valid StoreSlot> storeSlot, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     this.deleteStoreSlotsBatch(storeId, storeSlot, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -732,7 +735,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteStoreSlotsBatch(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull List<StoreSlot> storeSlot, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public void deleteStoreSlotsBatch(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull List<@Valid StoreSlot> storeSlot, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = storeSlot;
     
     // verify the required parameter 'storeId' is set
@@ -895,7 +898,7 @@ if (acceptEncoding != null)
    * @param contentType  (optional, default to application/json)
    * @throws ApiException if fails to make API call
    */
-  public void deleteStoreZonesBatch(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull List<StoreZone> storeZone, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public void deleteStoreZonesBatch(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull List<@Valid StoreZone> storeZone, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     this.deleteStoreZonesBatch(storeId, storeZone, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -911,7 +914,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteStoreZonesBatch(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull List<StoreZone> storeZone, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public void deleteStoreZonesBatch(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull List<@Valid StoreZone> storeZone, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = storeZone;
     
     // verify the required parameter 'storeId' is set
@@ -983,10 +986,10 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deleteStoresBatch(@javax.annotation.Nonnull List<Store> store, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<DeleteRowResult> deleteStoresBatch(@javax.annotation.Nonnull List<@Valid Store> store, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.deleteStoresBatch(store, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -999,10 +1002,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deleteStoresBatch(@javax.annotation.Nonnull List<Store> store, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<DeleteRowResult> deleteStoresBatch(@javax.annotation.Nonnull List<@Valid Store> store, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = store;
     
     // verify the required parameter 'store' is set
@@ -1044,7 +1047,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<DeleteContractsBatch200ResponseInner>> localVarReturnType = new TypeReference<List<DeleteContractsBatch200ResponseInner>>() {};
+    TypeReference<List<DeleteRowResult>> localVarReturnType = new TypeReference<List<DeleteRowResult>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

@@ -37,6 +37,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -67,8 +69,8 @@ import java.util.StringJoiner;
   EmissionOrder.JSON_PROPERTY_TRACKING_TYPE,
   EmissionOrder.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
-public class EmissionOrder {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
+public class EmissionOrder extends EntityWithMeta {
   public static EmissionOrder createWithMeta(UUID id) {
     EmissionOrder o = new EmissionOrder();
     Meta meta = new Meta();
@@ -146,7 +148,7 @@ public class EmissionOrder {
 
   public static final String JSON_PROPERTY_PRODUCTION_TASKS = "productionTasks";
   @javax.annotation.Nullable
-  private JsonNullable<List<ProductionTask>> productionTasks = JsonNullable.<List<ProductionTask>>undefined();
+  private JsonNullable<List<@Valid ProductionTask>> productionTasks = JsonNullable.<List<@Valid ProductionTask>>undefined();
 
   public static final String JSON_PROPERTY_PUBLISHED = "published";
   @javax.annotation.Nullable
@@ -205,6 +207,9 @@ public class EmissionOrder {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -227,6 +232,9 @@ public class EmissionOrder {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -243,6 +251,9 @@ public class EmissionOrder {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -259,6 +270,8 @@ public class EmissionOrder {
    * @return created
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_CREATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -282,6 +295,8 @@ public class EmissionOrder {
    * @return description
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -304,6 +319,8 @@ public class EmissionOrder {
    * @return documentState
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_DOCUMENT_STATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -327,6 +344,8 @@ public class EmissionOrder {
    * @return emissionType
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_EMISSION_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -356,6 +375,8 @@ public class EmissionOrder {
    * @return externalCode
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -385,6 +406,9 @@ public class EmissionOrder {
    * @return group
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -414,6 +438,8 @@ public class EmissionOrder {
    * @return moment
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -443,6 +469,8 @@ public class EmissionOrder {
    * @return name
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -472,6 +500,9 @@ public class EmissionOrder {
    * @return organization
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -501,6 +532,9 @@ public class EmissionOrder {
    * @return owner
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Employee getOwner() {
@@ -539,6 +573,9 @@ public class EmissionOrder {
    * @return positions
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -561,6 +598,8 @@ public class EmissionOrder {
    * @return printed
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PRINTED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -572,8 +611,8 @@ public class EmissionOrder {
 
 
 
-  public EmissionOrder productionTasks(@javax.annotation.Nullable List<ProductionTask> productionTasks) {
-    this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
+  public EmissionOrder productionTasks(@javax.annotation.Nullable List<@Valid ProductionTask> productionTasks) {
+    this.productionTasks = JsonNullable.<List<@Valid ProductionTask>>of(productionTasks);
     
     return this;
   }
@@ -581,7 +620,7 @@ public class EmissionOrder {
 
   public EmissionOrder addProductionTasksItem(ProductionTask productionTasksItem) {
     if (this.productionTasks == null || !this.productionTasks.isPresent()) {
-      this.productionTasks = JsonNullable.<List<ProductionTask>>of(new ArrayList<>());
+      this.productionTasks = JsonNullable.<List<@Valid ProductionTask>>of(new ArrayList<>());
     }
     try {
       this.productionTasks.get().add(productionTasksItem);
@@ -596,9 +635,12 @@ public class EmissionOrder {
    * @return productionTasks
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
-  public List<ProductionTask> getProductionTasks() {
+  public List<@Valid ProductionTask> getProductionTasks() {
         return productionTasks.orElse(null);
   }
 
@@ -608,17 +650,17 @@ public class EmissionOrder {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<ProductionTask>> getProductionTasks_JsonNullable() {
+  public JsonNullable<List<@Valid ProductionTask>> getProductionTasks_JsonNullable() {
     return productionTasks;
   }
   
   @JsonProperty(value = JSON_PROPERTY_PRODUCTION_TASKS, required = false)
-  public void setProductionTasks_JsonNullable(JsonNullable<List<ProductionTask>> productionTasks) {
+  public void setProductionTasks_JsonNullable(JsonNullable<List<@Valid ProductionTask>> productionTasks) {
     this.productionTasks = productionTasks;
   }
 
-  public void setProductionTasks(@javax.annotation.Nullable List<ProductionTask> productionTasks) {
-    this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
+  public void setProductionTasks(@javax.annotation.Nullable List<@Valid ProductionTask> productionTasks) {
+    this.productionTasks = JsonNullable.<List<@Valid ProductionTask>>of(productionTasks);
   }
 
 
@@ -627,6 +669,8 @@ public class EmissionOrder {
    * @return published
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PUBLISHED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -650,6 +694,8 @@ public class EmissionOrder {
    * @return shared
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -679,6 +725,9 @@ public class EmissionOrder {
    * @return state
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public State getState() {
@@ -717,6 +766,8 @@ public class EmissionOrder {
    * @return trackingType
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_TRACKING_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -739,6 +790,8 @@ public class EmissionOrder {
    * @return updated
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

@@ -36,10 +36,10 @@
 |**prepaymentNoCashSum** | **Double** | Предоплата картой |  [optional] |
 |**prepaymentQrSum** | **Double** | Предоплата по QR-коду |  [optional] |
 |**advancePaymentSum** | **Double** | Оплачено из аванса |  [optional] |
-|**checkNumber** | **String** | Номер чека |  [optional] |
+|**checkNumber** | **Integer** | Номер чека |  [optional] |
 |**checkSum** | **Double** | Сумма чека |  [optional] |
-|**documentNumber** | **String** | Номер документа |  [optional] |
-|**sessionNumber** | **String** | Номер сессии |  [optional] |
+|**documentNumber** | **Integer** | Номер документа |  [optional] |
+|**sessionNumber** | **Integer** | Номер сессии |  [optional] |
 |**taxSystem** | **String** | Код системы налогообложения. Известные значения описаны в TaxSystem |  [optional] |
 |**state** | [**State**](State.md) | Метаданные статуса Розничной продажи |  [optional] |
 |**organization** | [**Organization**](Organization.md) |  |  [optional] |

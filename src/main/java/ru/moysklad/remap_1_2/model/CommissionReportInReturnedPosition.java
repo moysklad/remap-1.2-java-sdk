@@ -25,6 +25,8 @@ import ru.moysklad.remap_1_2.model.Assortment;
 import ru.moysklad.remap_1_2.model.Meta;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -43,7 +45,7 @@ import java.util.StringJoiner;
   CommissionReportInReturnedPosition.JSON_PROPERTY_VAT_ENABLED,
   CommissionReportInReturnedPosition.JSON_PROPERTY_ASSORTMENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class CommissionReportInReturnedPosition {
   public static CommissionReportInReturnedPosition createWithMeta(UUID parentId, UUID id) {
     CommissionReportInReturnedPosition o = new CommissionReportInReturnedPosition();
@@ -123,6 +125,9 @@ public class CommissionReportInReturnedPosition {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -145,6 +150,9 @@ public class CommissionReportInReturnedPosition {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -161,6 +169,9 @@ public class CommissionReportInReturnedPosition {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -184,6 +195,8 @@ public class CommissionReportInReturnedPosition {
    * @return quantity
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -213,6 +226,8 @@ public class CommissionReportInReturnedPosition {
    * @return price
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -242,6 +257,8 @@ public class CommissionReportInReturnedPosition {
    * @return reward
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_REWARD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -273,6 +290,8 @@ public class CommissionReportInReturnedPosition {
    * @return vat
    */
   @javax.annotation.Nullable
+ @Min(0) @Max(100)
+
   @JsonProperty(JSON_PROPERTY_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -302,6 +321,8 @@ public class CommissionReportInReturnedPosition {
    * @return vatEnabled
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -333,6 +354,9 @@ public class CommissionReportInReturnedPosition {
    */
   @Deprecated
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

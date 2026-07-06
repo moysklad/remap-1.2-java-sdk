@@ -9,6 +9,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createInventory**](InventoriesApi.md#createInventory) | **POST** /entity/inventory | Создать Инвентаризацию |
 | [**createInventoryMetadataAttribute**](InventoriesApi.md#createInventoryMetadataAttribute) | **POST** /entity/inventory/metadata/attributes | Создать доп. поле Инвентаризаций |
 | [**createInventoryMetadataState**](InventoriesApi.md#createInventoryMetadataState) | **POST** /entity/inventory/metadata/states | Создать статус Инвентаризации |
+| [**createInventoryMetadataStatesBatch**](InventoriesApi.md#createInventoryMetadataStatesBatch) | **POST** /entity/inventory/metadata/states/batch | Массовое создание и обновление статусов Инвентаризации |
 | [**createInventoryPosition**](InventoriesApi.md#createInventoryPosition) | **POST** /entity/inventory/{id}/positions | Создать и обновить позицию Инвентаризации |
 | [**createInventoryPositions**](InventoriesApi.md#createInventoryPositions) | **POST** /entity/inventory/{id}/positions/batch | Массовое создание и обновление позиций Инвентаризации |
 | [**deleteInventoriesBatch**](InventoriesApi.md#deleteInventoriesBatch) | **POST** /entity/inventory/delete | Массовое удаление Инвентаризации |
@@ -70,8 +71,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InventoriesApi apiInstance = new InventoriesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<FileUpload> fileUpload = Arrays.asList(); // List<FileUpload> | 
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid FileUpload> fileUpload = Arrays.asList(); // List<@Valid FileUpload> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -95,7 +96,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **fileUpload** | [**List&lt;FileUpload&gt;**](FileUpload.md)|  | |
+| **fileUpload** | [**List&lt;@Valid FileUpload&gt;**](FileUpload.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -123,7 +124,7 @@ public class Example {
 
 ## createInventoriesBatch
 
-> List&lt;CreateInventoriesBatch200ResponseInner&gt; createInventoriesBatch(inventory, expand, accept, acceptEncoding, contentType)
+> List&lt;BatchResponseEntity&gt; createInventoriesBatch(inventory, expand, accept, acceptEncoding, contentType)
 
 Массовое создание и обновление Инвентаризации
 
@@ -153,13 +154,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InventoriesApi apiInstance = new InventoriesApi(defaultClient);
-        List<Inventory> inventory = Arrays.asList(); // List<Inventory> | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        List<@Valid Inventory> inventory = Arrays.asList(); // List<@Valid Inventory> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateInventoriesBatch200ResponseInner> result = apiInstance.createInventoriesBatch(inventory, expand, accept, acceptEncoding, contentType);
+            List<BatchResponseEntity> result = apiInstance.createInventoriesBatch(inventory, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling InventoriesApi#createInventoriesBatch");
@@ -177,7 +178,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **inventory** | [**List&lt;Inventory&gt;**](Inventory.md)|  | |
+| **inventory** | [**List&lt;@Valid Inventory&gt;**](Inventory.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -185,7 +186,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreateInventoriesBatch200ResponseInner&gt;**](CreateInventoriesBatch200ResponseInner.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -237,7 +238,7 @@ public class Example {
 
         InventoriesApi apiInstance = new InventoriesApi(defaultClient);
         Inventory inventory = new Inventory(); // Inventory | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -449,6 +450,87 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 
+## createInventoryMetadataStatesBatch
+
+> List&lt;StateRowResult&gt; createInventoryMetadataStatesBatch(state, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление статусов Инвентаризации
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.InventoriesApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        InventoriesApi apiInstance = new InventoriesApi(defaultClient);
+        List<@Valid State> state = Arrays.asList(); // List<@Valid State> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<StateRowResult> result = apiInstance.createInventoryMetadataStatesBatch(state, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling InventoriesApi#createInventoryMetadataStatesBatch");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **state** | [**List&lt;@Valid State&gt;**](State.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;StateRowResult&gt;**](StateRowResult.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+
+
 ## createInventoryPosition
 
 > InventoryPosition createInventoryPosition(id, inventoryPosition, expand, accept, acceptEncoding, contentType)
@@ -481,9 +563,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InventoriesApi apiInstance = new InventoriesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         InventoryPosition inventoryPosition = new InventoryPosition(); // InventoryPosition | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -566,9 +648,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InventoriesApi apiInstance = new InventoriesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<InventoryPosition> inventoryPosition = Arrays.asList(); // List<InventoryPosition> | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid InventoryPosition> inventoryPosition = Arrays.asList(); // List<@Valid InventoryPosition> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -592,7 +674,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **inventoryPosition** | [**List&lt;InventoryPosition&gt;**](InventoryPosition.md)|  | |
+| **inventoryPosition** | [**List&lt;@Valid InventoryPosition&gt;**](InventoryPosition.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -621,7 +703,7 @@ public class Example {
 
 ## deleteInventoriesBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteInventoriesBatch(inventory, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteInventoriesBatch(inventory, accept, acceptEncoding, contentType)
 
 Массовое удаление Инвентаризации
 
@@ -651,12 +733,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InventoriesApi apiInstance = new InventoriesApi(defaultClient);
-        List<Inventory> inventory = Arrays.asList(); // List<Inventory> | 
+        List<@Valid Inventory> inventory = Arrays.asList(); // List<@Valid Inventory> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteInventoriesBatch(inventory, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteInventoriesBatch(inventory, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling InventoriesApi#deleteInventoriesBatch");
@@ -674,14 +756,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **inventory** | [**List&lt;Inventory&gt;**](Inventory.md)|  | |
+| **inventory** | [**List&lt;@Valid Inventory&gt;**](Inventory.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -732,7 +814,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InventoriesApi apiInstance = new InventoriesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -812,7 +894,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InventoriesApi apiInstance = new InventoriesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID fileId = UUID.randomUUID(); // UUID | ID файла
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -892,7 +974,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InventoriesApi apiInstance = new InventoriesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -970,7 +1052,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InventoriesApi apiInstance = new InventoriesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1049,8 +1131,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InventoriesApi apiInstance = new InventoriesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1099,7 +1181,7 @@ null (empty response body)
 
 ## deleteInventoryPositionsBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteInventoryPositionsBatch(id, inventoryPosition, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteInventoryPositionsBatch(id, inventoryPosition, accept, acceptEncoding, contentType)
 
 Массовое удаление позиций Инвентаризации
 
@@ -1129,13 +1211,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InventoriesApi apiInstance = new InventoriesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<InventoryPosition> inventoryPosition = Arrays.asList(); // List<InventoryPosition> | 
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid InventoryPosition> inventoryPosition = Arrays.asList(); // List<@Valid InventoryPosition> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteInventoryPositionsBatch(id, inventoryPosition, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteInventoryPositionsBatch(id, inventoryPosition, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling InventoriesApi#deleteInventoryPositionsBatch");
@@ -1154,14 +1236,14 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **inventoryPosition** | [**List&lt;InventoryPosition&gt;**](InventoryPosition.md)|  | |
+| **inventoryPosition** | [**List&lt;@Valid InventoryPosition&gt;**](InventoryPosition.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -1212,8 +1294,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InventoriesApi apiInstance = new InventoriesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1295,7 +1377,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InventoriesApi apiInstance = new InventoriesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
         String accept = "application/json"; // String | 
@@ -1380,8 +1462,8 @@ public class Example {
         InventoriesApi apiInstance = new InventoriesApi(defaultClient);
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String search = "name=123"; // String | Контекстный поиск по строковым полям сущностей
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String search = "search_example"; // String | Контекстный поиск по строковым полям сущностей
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1463,7 +1545,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InventoriesApi apiInstance = new InventoriesApi(defaultClient);
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1623,7 +1705,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InventoriesApi apiInstance = new InventoriesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1702,7 +1784,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InventoriesApi apiInstance = new InventoriesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1781,9 +1863,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InventoriesApi apiInstance = new InventoriesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1864,10 +1946,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InventoriesApi apiInstance = new InventoriesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -2032,7 +2114,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InventoriesApi apiInstance = new InventoriesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -2112,9 +2194,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InventoriesApi apiInstance = new InventoriesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Inventory inventory = new Inventory(); // Inventory | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -2197,7 +2279,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InventoriesApi apiInstance = new InventoriesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         AttributeMetaInfo attributeMetaInfo = new AttributeMetaInfo(); // AttributeMetaInfo | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -2280,7 +2362,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InventoriesApi apiInstance = new InventoriesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         State state = new State(); // State | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -2363,10 +2445,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InventoriesApi apiInstance = new InventoriesApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
         InventoryPosition inventoryPosition = new InventoryPosition(); // InventoryPosition | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 

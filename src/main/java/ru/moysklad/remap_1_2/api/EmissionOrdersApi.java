@@ -20,8 +20,7 @@ import ru.moysklad.remap_1_2.BaseApi;
 import ru.moysklad.remap_1_2.Configuration;
 import ru.moysklad.remap_1_2.Pair;
 
-import ru.moysklad.remap_1_2.model.CreateEmissionOrderBatch200ResponseInner;
-import ru.moysklad.remap_1_2.model.CreateEmissionOrderPositions200ResponseInner;
+import ru.moysklad.remap_1_2.model.BatchResponseEntity;
 import ru.moysklad.remap_1_2.model.DocumentMetadata;
 import ru.moysklad.remap_1_2.model.EmissionOrder;
 import ru.moysklad.remap_1_2.model.EmissionOrderList;
@@ -39,7 +38,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+import javax.validation.constraints.*;
+import javax.validation.Valid;
+
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class EmissionOrdersApi extends BaseApi {
 
@@ -167,10 +169,10 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;CreateEmissionOrderBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateEmissionOrderBatch200ResponseInner> createEmissionOrderBatch(@javax.annotation.Nonnull List<EmissionOrder> emissionOrder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<BatchResponseEntity> createEmissionOrderBatch(@javax.annotation.Nonnull List<@Valid EmissionOrder> emissionOrder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createEmissionOrderBatch(emissionOrder, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -185,10 +187,10 @@ if (contentType != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return List&lt;CreateEmissionOrderBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateEmissionOrderBatch200ResponseInner> createEmissionOrderBatch(@javax.annotation.Nonnull List<EmissionOrder> emissionOrder, RequestOptions options) throws ApiException {
+  public List<BatchResponseEntity> createEmissionOrderBatch(@javax.annotation.Nonnull List<@Valid EmissionOrder> emissionOrder, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createEmissionOrderBatch(emissionOrder, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -203,10 +205,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;CreateEmissionOrderBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateEmissionOrderBatch200ResponseInner> createEmissionOrderBatch(@javax.annotation.Nonnull List<EmissionOrder> emissionOrder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<BatchResponseEntity> createEmissionOrderBatch(@javax.annotation.Nonnull List<@Valid EmissionOrder> emissionOrder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = emissionOrder;
     
     // verify the required parameter 'emissionOrder' is set
@@ -249,7 +251,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<CreateEmissionOrderBatch200ResponseInner>> localVarReturnType = new TypeReference<List<CreateEmissionOrderBatch200ResponseInner>>() {};
+    TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
@@ -395,10 +397,10 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;CreateEmissionOrderPositions200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateEmissionOrderPositions200ResponseInner> createEmissionOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<EmissionOrderPosition> emissionOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<BatchResponseEntity> createEmissionOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid EmissionOrderPosition> emissionOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createEmissionOrderPositions(id, emissionOrderPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -416,10 +418,10 @@ if (contentType != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return List&lt;CreateEmissionOrderPositions200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateEmissionOrderPositions200ResponseInner> createEmissionOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<EmissionOrderPosition> emissionOrderPosition, RequestOptions options) throws ApiException {
+  public List<BatchResponseEntity> createEmissionOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid EmissionOrderPosition> emissionOrderPosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createEmissionOrderPositions(id, emissionOrderPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -435,10 +437,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;CreateEmissionOrderPositions200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateEmissionOrderPositions200ResponseInner> createEmissionOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<EmissionOrderPosition> emissionOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<BatchResponseEntity> createEmissionOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid EmissionOrderPosition> emissionOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = emissionOrderPosition;
     
     // verify the required parameter 'id' is set
@@ -487,7 +489,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<CreateEmissionOrderPositions200ResponseInner>> localVarReturnType = new TypeReference<List<CreateEmissionOrderPositions200ResponseInner>>() {};
+    TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

@@ -24,6 +24,8 @@ import ru.moysklad.remap_1_2.model.AttributeMetaInfoList;
 import ru.moysklad.remap_1_2.model.Meta;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -36,7 +38,7 @@ import java.util.StringJoiner;
   StoreMetadata.JSON_PROPERTY_ATTRIBUTES,
   StoreMetadata.JSON_PROPERTY_CREATE_SHARED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class StoreMetadata {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -66,6 +68,9 @@ public class StoreMetadata {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -95,6 +100,9 @@ public class StoreMetadata {
    * @return attributes
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -124,6 +132,8 @@ public class StoreMetadata {
    * @return createShared
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_CREATE_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

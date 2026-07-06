@@ -8,6 +8,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createCustomerOrderBatch**](CustomerOrdersApi.md#createCustomerOrderBatch) | **POST** /entity/customerorder/batch | Массовое создание и обновление CustomerOrders |
 | [**createCustomerOrderMetadataAttribute**](CustomerOrdersApi.md#createCustomerOrderMetadataAttribute) | **POST** /entity/customerorder/metadata/attributes | Создать Доп. поле CustomerOrder |
 | [**createCustomerOrderMetadataState**](CustomerOrdersApi.md#createCustomerOrderMetadataState) | **POST** /entity/customerorder/metadata/states | Создать статус CustomerOrder |
+| [**createCustomerOrderMetadataStatesBatch**](CustomerOrdersApi.md#createCustomerOrderMetadataStatesBatch) | **POST** /entity/customerorder/metadata/states/batch | Массовое создание и обновление статусов CustomerOrder |
 | [**createCustomerOrderNote**](CustomerOrdersApi.md#createCustomerOrderNote) | **POST** /entity/customerorder/{id}/notes | Добавить Событие Заказа покупателя |
 | [**createCustomerOrderPosition**](CustomerOrdersApi.md#createCustomerOrderPosition) | **POST** /entity/customerorder/{id}/positions | Создать и обновить позицию Заказа покупателя |
 | [**createCustomerOrderPositions**](CustomerOrdersApi.md#createCustomerOrderPositions) | **POST** /entity/customerorder/{id}/positions/batch | Массовое создание и обновление позиций Заказа покупателя |
@@ -70,7 +71,7 @@ public class Example {
 
         CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
         CustomerOrder customerOrder = new CustomerOrder(); // CustomerOrder | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -122,7 +123,7 @@ public class Example {
 
 ## createCustomerOrderBatch
 
-> List&lt;CreateCustomerOrderBatch200ResponseInner&gt; createCustomerOrderBatch(customerOrder, expand, accept, acceptEncoding, contentType)
+> List&lt;BatchResponseEntity&gt; createCustomerOrderBatch(customerOrder, expand, accept, acceptEncoding, contentType)
 
 Массовое создание и обновление CustomerOrders
 
@@ -152,13 +153,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
-        List<CustomerOrder> customerOrder = Arrays.asList(); // List<CustomerOrder> | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        List<@Valid CustomerOrder> customerOrder = Arrays.asList(); // List<@Valid CustomerOrder> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateCustomerOrderBatch200ResponseInner> result = apiInstance.createCustomerOrderBatch(customerOrder, expand, accept, acceptEncoding, contentType);
+            List<BatchResponseEntity> result = apiInstance.createCustomerOrderBatch(customerOrder, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CustomerOrdersApi#createCustomerOrderBatch");
@@ -176,7 +177,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **customerOrder** | [**List&lt;CustomerOrder&gt;**](CustomerOrder.md)|  | |
+| **customerOrder** | [**List&lt;@Valid CustomerOrder&gt;**](CustomerOrder.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -184,7 +185,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreateCustomerOrderBatch200ResponseInner&gt;**](CreateCustomerOrderBatch200ResponseInner.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -286,7 +287,7 @@ public class Example {
 
 ## createCustomerOrderMetadataState
 
-> CreateInternalOrderMetadataStateRequest createCustomerOrderMetadataState(createInternalOrderMetadataStateRequest, accept, acceptEncoding, contentType)
+> State createCustomerOrderMetadataState(state, accept, acceptEncoding, contentType)
 
 Создать статус CustomerOrder
 
@@ -316,12 +317,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
-        CreateInternalOrderMetadataStateRequest createInternalOrderMetadataStateRequest = new CreateInternalOrderMetadataStateRequest(); // CreateInternalOrderMetadataStateRequest | 
+        State state = new State(); // State | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            CreateInternalOrderMetadataStateRequest result = apiInstance.createCustomerOrderMetadataState(createInternalOrderMetadataStateRequest, accept, acceptEncoding, contentType);
+            State result = apiInstance.createCustomerOrderMetadataState(state, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CustomerOrdersApi#createCustomerOrderMetadataState");
@@ -339,14 +340,95 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **createInternalOrderMetadataStateRequest** | [**CreateInternalOrderMetadataStateRequest**](CreateInternalOrderMetadataStateRequest.md)|  | |
+| **state** | [**State**](State.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**CreateInternalOrderMetadataStateRequest**](CreateInternalOrderMetadataStateRequest.md)
+[**State**](State.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+
+
+## createCustomerOrderMetadataStatesBatch
+
+> List&lt;StateRowResult&gt; createCustomerOrderMetadataStatesBatch(state, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление статусов CustomerOrder
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.CustomerOrdersApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
+        List<@Valid State> state = Arrays.asList(); // List<@Valid State> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<StateRowResult> result = apiInstance.createCustomerOrderMetadataStatesBatch(state, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CustomerOrdersApi#createCustomerOrderMetadataStatesBatch");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **state** | [**List&lt;@Valid State&gt;**](State.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;StateRowResult&gt;**](StateRowResult.md)
 
 ### Authorization
 
@@ -399,7 +481,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         EventNote eventNote = new EventNote(); // EventNote | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -482,9 +564,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         CustomerOrderPosition customerOrderPosition = new CustomerOrderPosition(); // CustomerOrderPosition | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -567,9 +649,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<CustomerOrderPosition> customerOrderPosition = Arrays.asList(); // List<CustomerOrderPosition> | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid CustomerOrderPosition> customerOrderPosition = Arrays.asList(); // List<@Valid CustomerOrderPosition> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -593,7 +675,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **customerOrderPosition** | [**List&lt;CustomerOrderPosition&gt;**](CustomerOrderPosition.md)|  | |
+| **customerOrderPosition** | [**List&lt;@Valid CustomerOrderPosition&gt;**](CustomerOrderPosition.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -652,7 +734,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -702,7 +784,7 @@ null (empty response body)
 
 ## deleteCustomerOrderBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteCustomerOrderBatch(customerOrder, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteCustomerOrderBatch(customerOrder, accept, acceptEncoding, contentType)
 
 Массовое удаление CustomerOrders
 
@@ -732,12 +814,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
-        List<CustomerOrder> customerOrder = Arrays.asList(); // List<CustomerOrder> | 
+        List<@Valid CustomerOrder> customerOrder = Arrays.asList(); // List<@Valid CustomerOrder> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteCustomerOrderBatch(customerOrder, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteCustomerOrderBatch(customerOrder, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CustomerOrdersApi#deleteCustomerOrderBatch");
@@ -755,14 +837,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **customerOrder** | [**List&lt;CustomerOrder&gt;**](CustomerOrder.md)|  | |
+| **customerOrder** | [**List&lt;@Valid CustomerOrder&gt;**](CustomerOrder.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -813,7 +895,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -893,7 +975,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -976,7 +1058,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID noteId = UUID.randomUUID(); // UUID | ID События
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1056,9 +1138,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1110,7 +1192,7 @@ null (empty response body)
 
 ## deleteCustomerOrderPositionsBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteCustomerOrderPositionsBatch(id, customerOrderPosition, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteCustomerOrderPositionsBatch(id, customerOrderPosition, accept, acceptEncoding, contentType)
 
 Массовое удаление позиций CustomerOrders
 
@@ -1140,13 +1222,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<CustomerOrderPosition> customerOrderPosition = Arrays.asList(); // List<CustomerOrderPosition> | 
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid CustomerOrderPosition> customerOrderPosition = Arrays.asList(); // List<@Valid CustomerOrderPosition> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteCustomerOrderPositionsBatch(id, customerOrderPosition, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteCustomerOrderPositionsBatch(id, customerOrderPosition, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CustomerOrdersApi#deleteCustomerOrderPositionsBatch");
@@ -1165,14 +1247,14 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **customerOrderPosition** | [**List&lt;CustomerOrderPosition&gt;**](CustomerOrderPosition.md)|  | |
+| **customerOrderPosition** | [**List&lt;@Valid CustomerOrderPosition&gt;**](CustomerOrderPosition.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -1223,8 +1305,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1308,8 +1390,8 @@ public class Example {
         CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String search = "name=123"; // String | Контекстный поиск по строковым полям сущностей
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String search = "search_example"; // String | Контекстный поиск по строковым полям сущностей
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1557,7 +1639,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1638,7 +1720,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1721,7 +1803,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID noteId = UUID.randomUUID(); // UUID | ID События
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1804,10 +1886,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1889,9 +1971,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1976,10 +2058,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -2144,9 +2226,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         CustomerOrder customerOrder = new CustomerOrder(); // CustomerOrder | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -2231,7 +2313,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         AttributeMetaInfo attributeMetaInfo = new AttributeMetaInfo(); // AttributeMetaInfo | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -2314,7 +2396,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         State state = new State(); // State | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -2399,7 +2481,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID noteId = UUID.randomUUID(); // UUID | ID События
         EventNote eventNote = new EventNote(); // EventNote | 
         String accept = "application/json"; // String | 
@@ -2484,10 +2566,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
         CustomerOrderPosition customerOrderPosition = new CustomerOrderPosition(); // CustomerOrderPosition | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 

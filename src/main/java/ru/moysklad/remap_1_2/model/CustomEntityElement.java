@@ -34,6 +34,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -55,7 +57,7 @@ import java.util.StringJoiner;
   CustomEntityElement.JSON_PROPERTY_SHARED,
   CustomEntityElement.JSON_PROPERTY_GROUP
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class CustomEntityElement {
   public static CustomEntityElement createWithMeta(UUID metadataId, UUID id) {
     CustomEntityElement o = new CustomEntityElement();
@@ -106,7 +108,7 @@ public class CustomEntityElement {
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
-  private List<AttributeAbstract> attributes = new ArrayList<>();
+  private List<@Valid AttributeAbstract> attributes = new ArrayList<>();
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
@@ -149,6 +151,9 @@ public class CustomEntityElement {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -171,6 +176,9 @@ public class CustomEntityElement {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -187,6 +195,9 @@ public class CustomEntityElement {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -203,6 +214,8 @@ public class CustomEntityElement {
    * @return updated
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -226,6 +239,8 @@ public class CustomEntityElement {
    * @return name
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -255,6 +270,8 @@ public class CustomEntityElement {
    * @return code
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -284,6 +301,8 @@ public class CustomEntityElement {
    * @return description
    */
   @javax.annotation.Nullable
+ @Size(max=4096)
+
   @JsonIgnore
 
   public String getDescription() {
@@ -322,6 +341,8 @@ public class CustomEntityElement {
    * @return externalCode
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonIgnore
 
   public String getExternalCode() {
@@ -348,7 +369,7 @@ public class CustomEntityElement {
   }
 
 
-  public CustomEntityElement attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+  public CustomEntityElement attributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
     
     this.attributes = attributes;
     return this;
@@ -368,10 +389,13 @@ public class CustomEntityElement {
    * @return attributes
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<AttributeAbstract> getAttributes() {
+  public List<@Valid AttributeAbstract> getAttributes() {
     return attributes;
   }
 
@@ -380,7 +404,7 @@ public class CustomEntityElement {
 
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+  public void setAttributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
     this.attributes = attributes;
   }
 
@@ -397,6 +421,9 @@ public class CustomEntityElement {
    * @return owner
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_OWNER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -426,6 +453,8 @@ public class CustomEntityElement {
    * @return shared
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -455,6 +484,9 @@ public class CustomEntityElement {
    * @return group
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

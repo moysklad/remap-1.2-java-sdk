@@ -23,6 +23,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.net.URI;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -40,7 +42,7 @@ import java.util.StringJoiner;
   MetaList.JSON_PROPERTY_NEXT_HREF,
   MetaList.JSON_PROPERTY_PREVIOUS_HREF
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class MetaList {
 
   public static final String JSON_PROPERTY_HREF = "href";
@@ -90,6 +92,10 @@ public class MetaList {
    * @return href
    */
   @javax.annotation.Nonnull
+  @NotNull
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_HREF)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -119,6 +125,9 @@ public class MetaList {
    * @return type
    */
   @javax.annotation.Nonnull
+  @NotNull
+
+
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -148,6 +157,9 @@ public class MetaList {
    * @return mediaType
    */
   @javax.annotation.Nonnull
+  @NotNull
+
+
   @JsonProperty(JSON_PROPERTY_MEDIA_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -177,6 +189,8 @@ public class MetaList {
    * @return size
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -206,6 +220,8 @@ public class MetaList {
    * @return limit
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_LIMIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -235,6 +251,8 @@ public class MetaList {
    * @return offset
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_OFFSET)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -264,6 +282,9 @@ public class MetaList {
    * @return nextHref
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_NEXT_HREF)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -293,6 +314,9 @@ public class MetaList {
    * @return previousHref
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_PREVIOUS_HREF)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

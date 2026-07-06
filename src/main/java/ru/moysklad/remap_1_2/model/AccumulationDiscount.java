@@ -33,6 +33,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -53,7 +55,7 @@ import java.util.StringJoiner;
   AccumulationDiscount.JSON_PROPERTY_ALL_AGENTS,
   AccumulationDiscount.JSON_PROPERTY_AGENT_TAGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class AccumulationDiscount {
   public static AccumulationDiscount createWithMeta(UUID id) {
     AccumulationDiscount o = new AccumulationDiscount();
@@ -72,7 +74,7 @@ public class AccumulationDiscount {
 
   public static final String JSON_PROPERTY_ASSORTMENT = "assortment";
   @javax.annotation.Nullable
-  private List<DiscountAssortmentItem> assortment = new ArrayList<>();
+  private List<@Valid DiscountAssortmentItem> assortment = new ArrayList<>();
 
   public static final String JSON_PROPERTY_PRODUCT_FOLDERS = "productFolders";
   @javax.annotation.Nullable
@@ -129,7 +131,7 @@ public class AccumulationDiscount {
     this.accountId = accountId;
   }
 
-  public AccumulationDiscount assortment(@javax.annotation.Nullable List<DiscountAssortmentItem> assortment) {
+  public AccumulationDiscount assortment(@javax.annotation.Nullable List<@Valid DiscountAssortmentItem> assortment) {
     
     this.assortment = assortment;
     return this;
@@ -149,10 +151,13 @@ public class AccumulationDiscount {
    * @return assortment
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<DiscountAssortmentItem> getAssortment() {
+  public List<@Valid DiscountAssortmentItem> getAssortment() {
     return assortment;
   }
 
@@ -161,7 +166,7 @@ public class AccumulationDiscount {
 
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAssortment(@javax.annotation.Nullable List<DiscountAssortmentItem> assortment) {
+  public void setAssortment(@javax.annotation.Nullable List<@Valid DiscountAssortmentItem> assortment) {
     this.assortment = assortment;
   }
 
@@ -186,6 +191,9 @@ public class AccumulationDiscount {
    * @return productFolders
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_PRODUCT_FOLDERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -215,6 +223,8 @@ public class AccumulationDiscount {
    * @return allProducts
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_ALL_PRODUCTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -252,6 +262,8 @@ public class AccumulationDiscount {
    * @return levels
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_LEVELS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -274,6 +286,9 @@ public class AccumulationDiscount {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -297,6 +312,9 @@ public class AccumulationDiscount {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -319,6 +337,9 @@ public class AccumulationDiscount {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -342,6 +363,8 @@ public class AccumulationDiscount {
    * @return name
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -371,6 +394,8 @@ public class AccumulationDiscount {
    * @return active
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_ACTIVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -400,6 +425,8 @@ public class AccumulationDiscount {
    * @return allAgents
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_ALL_AGENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -441,6 +468,8 @@ public class AccumulationDiscount {
    * @return agentTags
    */
   @javax.annotation.Nullable
+
+
   @JsonIgnore
 
   public List<String> getAgentTags() {

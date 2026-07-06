@@ -22,6 +22,8 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -37,7 +39,7 @@ import ru.moysklad.remap_1_2.deserialize.PolymorphicMetaTypeDeserializer;
 @JsonPropertyOrder({
   FinanceOutOperationAbstract.JSON_PROPERTY_LINKED_SUM
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 @OpenApiPolymorphicTypeInfo(path = "meta.type")
 @OpenApiPolymorphicSubTypes({
   @OpenApiPolymorphicSubTypes.Type(value = FinanceOutOperationSalesReturn.class, name = "salesreturn"),
@@ -68,6 +70,9 @@ public class FinanceOutOperationAbstract {
    * @return linkedSum
    */
   @javax.annotation.Nonnull
+  @NotNull
+
+
   @JsonProperty(JSON_PROPERTY_LINKED_SUM)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 

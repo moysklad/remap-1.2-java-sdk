@@ -30,6 +30,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -59,8 +61,8 @@ import java.util.StringJoiner;
   ProductFolder.JSON_PROPERTY_PRODUCT_FOLDER,
   ProductFolder.JSON_PROPERTY_TAX_SYSTEM
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
-public class ProductFolder {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
+public class ProductFolder extends EntityWithMeta {
   public static ProductFolder createWithMeta(UUID id) {
     ProductFolder o = new ProductFolder();
     Meta meta = new Meta();
@@ -191,6 +193,9 @@ public class ProductFolder {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -213,6 +218,9 @@ public class ProductFolder {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -229,6 +237,9 @@ public class ProductFolder {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -252,6 +263,8 @@ public class ProductFolder {
    * @return name
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -281,6 +294,8 @@ public class ProductFolder {
    * @return code
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -310,6 +325,8 @@ public class ProductFolder {
    * @return externalCode
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -339,6 +356,8 @@ public class ProductFolder {
    * @return archived
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -361,6 +380,8 @@ public class ProductFolder {
    * @return pathName
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PATH_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -384,6 +405,8 @@ public class ProductFolder {
    * @return description
    */
   @javax.annotation.Nullable
+ @Size(max=4096)
+
   @JsonIgnore
 
   public String getDescription() {
@@ -424,6 +447,8 @@ public class ProductFolder {
    * @return vat
    */
   @javax.annotation.Nullable
+ @Min(0) @Max(99)
+
   @JsonProperty(JSON_PROPERTY_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -453,6 +478,8 @@ public class ProductFolder {
    * @return vatEnabled
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -475,6 +502,8 @@ public class ProductFolder {
    * @return effectiveVat
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_EFFECTIVE_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -491,6 +520,8 @@ public class ProductFolder {
    * @return effectiveVatEnabled
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_EFFECTIVE_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -514,6 +545,8 @@ public class ProductFolder {
    * @return useParentVat
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_USE_PARENT_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -543,6 +576,8 @@ public class ProductFolder {
    * @return shared
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -572,6 +607,9 @@ public class ProductFolder {
    * @return group
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -601,6 +639,9 @@ public class ProductFolder {
    * @return owner
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Employee getOwner() {
@@ -632,6 +673,8 @@ public class ProductFolder {
    * @return updated
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -655,6 +698,9 @@ public class ProductFolder {
    * @return productFolder
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public ProductFolder getProductFolder() {
@@ -693,6 +739,8 @@ public class ProductFolder {
    * @return taxSystem
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_TAX_SYSTEM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

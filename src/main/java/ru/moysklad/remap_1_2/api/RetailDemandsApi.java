@@ -22,9 +22,10 @@ import ru.moysklad.remap_1_2.Pair;
 
 import ru.moysklad.remap_1_2.model.AttributeMetaInfo;
 import ru.moysklad.remap_1_2.model.AttributeMetaInfoList;
-import ru.moysklad.remap_1_2.model.CreateRetailDemandBatch200ResponseInner;
+import ru.moysklad.remap_1_2.model.BatchResponseEntity;
+import ru.moysklad.remap_1_2.model.CreateRetailDemandMetadataStateRequest;
 import ru.moysklad.remap_1_2.model.CreateRetailDemandPositions200ResponseInner;
-import ru.moysklad.remap_1_2.model.DeleteContractsBatch200ResponseInner;
+import ru.moysklad.remap_1_2.model.DeleteRowResult;
 import ru.moysklad.remap_1_2.model.DocumentMetadata;
 import ru.moysklad.remap_1_2.model.ErrorOrArray;
 import ru.moysklad.remap_1_2.model.RetailDemand;
@@ -42,7 +43,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+import javax.validation.constraints.*;
+import javax.validation.Valid;
+
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class RetailDemandsApi extends BaseApi {
 
@@ -170,10 +174,10 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;CreateRetailDemandBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateRetailDemandBatch200ResponseInner> createRetailDemandBatch(@javax.annotation.Nonnull List<RetailDemand> retailDemand, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<BatchResponseEntity> createRetailDemandBatch(@javax.annotation.Nonnull List<@Valid RetailDemand> retailDemand, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createRetailDemandBatch(retailDemand, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -188,10 +192,10 @@ if (contentType != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return List&lt;CreateRetailDemandBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateRetailDemandBatch200ResponseInner> createRetailDemandBatch(@javax.annotation.Nonnull List<RetailDemand> retailDemand, RequestOptions options) throws ApiException {
+  public List<BatchResponseEntity> createRetailDemandBatch(@javax.annotation.Nonnull List<@Valid RetailDemand> retailDemand, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createRetailDemandBatch(retailDemand, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -206,10 +210,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;CreateRetailDemandBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateRetailDemandBatch200ResponseInner> createRetailDemandBatch(@javax.annotation.Nonnull List<RetailDemand> retailDemand, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<BatchResponseEntity> createRetailDemandBatch(@javax.annotation.Nonnull List<@Valid RetailDemand> retailDemand, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = retailDemand;
     
     // verify the required parameter 'retailDemand' is set
@@ -252,7 +256,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<CreateRetailDemandBatch200ResponseInner>> localVarReturnType = new TypeReference<List<CreateRetailDemandBatch200ResponseInner>>() {};
+    TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
@@ -339,6 +343,92 @@ if (contentType != null)
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
     TypeReference<AttributeMetaInfo> localVarReturnType = new TypeReference<AttributeMetaInfo>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Создать статус Розничной продажи
+   * 
+   * @param createRetailDemandMetadataStateRequest  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @return CreateRetailDemandMetadataStateRequest
+   * @throws ApiException if fails to make API call
+   */
+  public CreateRetailDemandMetadataStateRequest createRetailDemandMetadataState(@javax.annotation.Nonnull CreateRetailDemandMetadataStateRequest createRetailDemandMetadataStateRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+    return this.createRetailDemandMetadataState(createRetailDemandMetadataStateRequest, accept, acceptEncoding, contentType, Collections.emptyMap());
+  }
+
+
+  /**
+   * Создать статус Розничной продажи
+   * 
+   * @param createRetailDemandMetadataStateRequest  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return CreateRetailDemandMetadataStateRequest
+   * @throws ApiException if fails to make API call
+   */
+  public CreateRetailDemandMetadataStateRequest createRetailDemandMetadataState(@javax.annotation.Nonnull CreateRetailDemandMetadataStateRequest createRetailDemandMetadataStateRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = createRetailDemandMetadataStateRequest;
+    
+    // verify the required parameter 'createRetailDemandMetadataStateRequest' is set
+    if (createRetailDemandMetadataStateRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createRetailDemandMetadataStateRequest' when calling createRetailDemandMetadataState");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/retaildemand/metadata/states";
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null)
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+if (acceptEncoding != null)
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+if (contentType != null)
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+
+    localVarHeaderParams.putAll(additionalHeaders);
+
+    
+    
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<CreateRetailDemandMetadataStateRequest> localVarReturnType = new TypeReference<CreateRetailDemandMetadataStateRequest>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
@@ -487,7 +577,7 @@ if (contentType != null)
    * @return List&lt;CreateRetailDemandPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateRetailDemandPositions200ResponseInner> createRetailDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<RetailDemandPosition> retailDemandPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<CreateRetailDemandPositions200ResponseInner> createRetailDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid RetailDemandPosition> retailDemandPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.createRetailDemandPositions(id, retailDemandPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -508,7 +598,7 @@ if (contentType != null)
    * @return List&lt;CreateRetailDemandPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateRetailDemandPositions200ResponseInner> createRetailDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<RetailDemandPosition> retailDemandPosition, RequestOptions options) throws ApiException {
+  public List<CreateRetailDemandPositions200ResponseInner> createRetailDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid RetailDemandPosition> retailDemandPosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createRetailDemandPositions(id, retailDemandPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -527,7 +617,7 @@ if (contentType != null)
    * @return List&lt;CreateRetailDemandPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateRetailDemandPositions200ResponseInner> createRetailDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<RetailDemandPosition> retailDemandPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<CreateRetailDemandPositions200ResponseInner> createRetailDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid RetailDemandPosition> retailDemandPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = retailDemandPosition;
     
     // verify the required parameter 'id' is set
@@ -685,10 +775,10 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deleteRetailDemandBatch(@javax.annotation.Nonnull List<RetailDemand> retailDemand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<DeleteRowResult> deleteRetailDemandBatch(@javax.annotation.Nonnull List<@Valid RetailDemand> retailDemand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.deleteRetailDemandBatch(retailDemand, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -701,10 +791,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deleteRetailDemandBatch(@javax.annotation.Nonnull List<RetailDemand> retailDemand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<DeleteRowResult> deleteRetailDemandBatch(@javax.annotation.Nonnull List<@Valid RetailDemand> retailDemand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = retailDemand;
     
     // verify the required parameter 'retailDemand' is set
@@ -746,7 +836,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<DeleteContractsBatch200ResponseInner>> localVarReturnType = new TypeReference<List<DeleteContractsBatch200ResponseInner>>() {};
+    TypeReference<List<DeleteRowResult>> localVarReturnType = new TypeReference<List<DeleteRowResult>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
@@ -1056,10 +1146,10 @@ if (contentType != null)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deleteRetailDemandPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<RetailDemandPosition> retailDemandPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
+  public List<DeleteRowResult> deleteRetailDemandPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid RetailDemandPosition> retailDemandPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
     return this.deleteRetailDemandPositionsBatch(id, retailDemandPosition, accept, acceptEncoding, contentType, Collections.emptyMap());
   }
 
@@ -1073,10 +1163,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;DeleteContractsBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteContractsBatch200ResponseInner> deleteRetailDemandPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<RetailDemandPosition> retailDemandPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  public List<DeleteRowResult> deleteRetailDemandPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid RetailDemandPosition> retailDemandPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = retailDemandPosition;
     
     // verify the required parameter 'id' is set
@@ -1124,7 +1214,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<DeleteContractsBatch200ResponseInner>> localVarReturnType = new TypeReference<List<DeleteContractsBatch200ResponseInner>>() {};
+    TypeReference<List<DeleteRowResult>> localVarReturnType = new TypeReference<List<DeleteRowResult>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

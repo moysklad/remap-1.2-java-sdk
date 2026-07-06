@@ -33,6 +33,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -52,7 +54,7 @@ import java.util.StringJoiner;
   PersonalDiscount.JSON_PROPERTY_ALL_AGENTS,
   PersonalDiscount.JSON_PROPERTY_AGENT_TAGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class PersonalDiscount {
   public static PersonalDiscount createWithMeta(UUID id) {
     PersonalDiscount o = new PersonalDiscount();
@@ -71,7 +73,7 @@ public class PersonalDiscount {
 
   public static final String JSON_PROPERTY_ASSORTMENT = "assortment";
   @javax.annotation.Nullable
-  private List<DiscountAssortmentItem> assortment = new ArrayList<>();
+  private List<@Valid DiscountAssortmentItem> assortment = new ArrayList<>();
 
   public static final String JSON_PROPERTY_PRODUCT_FOLDERS = "productFolders";
   @javax.annotation.Nullable
@@ -124,7 +126,7 @@ public class PersonalDiscount {
     this.accountId = accountId;
   }
 
-  public PersonalDiscount assortment(@javax.annotation.Nullable List<DiscountAssortmentItem> assortment) {
+  public PersonalDiscount assortment(@javax.annotation.Nullable List<@Valid DiscountAssortmentItem> assortment) {
     
     this.assortment = assortment;
     return this;
@@ -144,10 +146,13 @@ public class PersonalDiscount {
    * @return assortment
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<DiscountAssortmentItem> getAssortment() {
+  public List<@Valid DiscountAssortmentItem> getAssortment() {
     return assortment;
   }
 
@@ -156,7 +161,7 @@ public class PersonalDiscount {
 
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAssortment(@javax.annotation.Nullable List<DiscountAssortmentItem> assortment) {
+  public void setAssortment(@javax.annotation.Nullable List<@Valid DiscountAssortmentItem> assortment) {
     this.assortment = assortment;
   }
 
@@ -181,6 +186,9 @@ public class PersonalDiscount {
    * @return productFolders
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_PRODUCT_FOLDERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -210,6 +218,8 @@ public class PersonalDiscount {
    * @return allProducts
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_ALL_PRODUCTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -232,6 +242,9 @@ public class PersonalDiscount {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -255,6 +268,9 @@ public class PersonalDiscount {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -277,6 +293,9 @@ public class PersonalDiscount {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -300,6 +319,8 @@ public class PersonalDiscount {
    * @return name
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -329,6 +350,8 @@ public class PersonalDiscount {
    * @return active
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_ACTIVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -358,6 +381,8 @@ public class PersonalDiscount {
    * @return allAgents
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_ALL_AGENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -399,6 +424,8 @@ public class PersonalDiscount {
    * @return agentTags
    */
   @javax.annotation.Nullable
+
+
   @JsonIgnore
 
   public List<String> getAgentTags() {

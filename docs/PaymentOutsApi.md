@@ -9,6 +9,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createPaymentOutBatch**](PaymentOutsApi.md#createPaymentOutBatch) | **POST** /entity/paymentout/batch | Массовое создание и обновление PaymentOut |
 | [**createPaymentOutMetadataAttribute**](PaymentOutsApi.md#createPaymentOutMetadataAttribute) | **POST** /entity/paymentout/metadata/attributes | Создать доп. поле PaymentOut |
 | [**createPaymentOutMetadataState**](PaymentOutsApi.md#createPaymentOutMetadataState) | **POST** /entity/paymentout/metadata/states | Создать статус PaymentOut |
+| [**createPaymentOutMetadataStatesBatch**](PaymentOutsApi.md#createPaymentOutMetadataStatesBatch) | **POST** /entity/paymentout/metadata/states/batch | Массовое создание и обновление статусов PaymentOut |
 | [**deletePaymentOut**](PaymentOutsApi.md#deletePaymentOut) | **DELETE** /entity/paymentout/{id} | Удалить PaymentOut |
 | [**deletePaymentOutBatch**](PaymentOutsApi.md#deletePaymentOutBatch) | **POST** /entity/paymentout/delete | Массовое удаление PaymentOut |
 | [**deletePaymentOutFile**](PaymentOutsApi.md#deletePaymentOutFile) | **DELETE** /entity/paymentout/{id}/files/{fileId} | Удалить файл |
@@ -63,8 +64,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PaymentOutsApi apiInstance = new PaymentOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<FileUpload> fileUpload = Arrays.asList(); // List<FileUpload> | 
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid FileUpload> fileUpload = Arrays.asList(); // List<@Valid FileUpload> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -88,7 +89,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **fileUpload** | [**List&lt;FileUpload&gt;**](FileUpload.md)|  | |
+| **fileUpload** | [**List&lt;@Valid FileUpload&gt;**](FileUpload.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -147,7 +148,7 @@ public class Example {
 
         PaymentOutsApi apiInstance = new PaymentOutsApi(defaultClient);
         PaymentOut paymentOut = new PaymentOut(); // PaymentOut | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -199,7 +200,7 @@ public class Example {
 
 ## createPaymentOutBatch
 
-> List&lt;CreatePaymentOutBatch200ResponseInner&gt; createPaymentOutBatch(paymentOut, expand, accept, acceptEncoding, contentType)
+> List&lt;BatchResponseEntity&gt; createPaymentOutBatch(paymentOut, expand, accept, acceptEncoding, contentType)
 
 Массовое создание и обновление PaymentOut
 
@@ -229,13 +230,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PaymentOutsApi apiInstance = new PaymentOutsApi(defaultClient);
-        List<PaymentOut> paymentOut = Arrays.asList(); // List<PaymentOut> | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        List<@Valid PaymentOut> paymentOut = Arrays.asList(); // List<@Valid PaymentOut> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreatePaymentOutBatch200ResponseInner> result = apiInstance.createPaymentOutBatch(paymentOut, expand, accept, acceptEncoding, contentType);
+            List<BatchResponseEntity> result = apiInstance.createPaymentOutBatch(paymentOut, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PaymentOutsApi#createPaymentOutBatch");
@@ -253,7 +254,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **paymentOut** | [**List&lt;PaymentOut&gt;**](PaymentOut.md)|  | |
+| **paymentOut** | [**List&lt;@Valid PaymentOut&gt;**](PaymentOut.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -261,7 +262,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreatePaymentOutBatch200ResponseInner&gt;**](CreatePaymentOutBatch200ResponseInner.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -442,6 +443,87 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 
+## createPaymentOutMetadataStatesBatch
+
+> List&lt;StateRowResult&gt; createPaymentOutMetadataStatesBatch(state, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление статусов PaymentOut
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.PaymentOutsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        PaymentOutsApi apiInstance = new PaymentOutsApi(defaultClient);
+        List<@Valid State> state = Arrays.asList(); // List<@Valid State> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<StateRowResult> result = apiInstance.createPaymentOutMetadataStatesBatch(state, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PaymentOutsApi#createPaymentOutMetadataStatesBatch");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **state** | [**List&lt;@Valid State&gt;**](State.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;StateRowResult&gt;**](StateRowResult.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+
+
 ## deletePaymentOut
 
 > deletePaymentOut(id, accept, acceptEncoding)
@@ -474,7 +556,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PaymentOutsApi apiInstance = new PaymentOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -522,7 +604,7 @@ null (empty response body)
 
 ## deletePaymentOutBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deletePaymentOutBatch(paymentOut, accept, acceptEncoding)
+> List&lt;DeleteRowResult&gt; deletePaymentOutBatch(paymentOut, accept, acceptEncoding)
 
 Массовое удаление PaymentOut
 
@@ -552,11 +634,11 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PaymentOutsApi apiInstance = new PaymentOutsApi(defaultClient);
-        List<PaymentOut> paymentOut = Arrays.asList(); // List<PaymentOut> | 
+        List<@Valid PaymentOut> paymentOut = Arrays.asList(); // List<@Valid PaymentOut> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deletePaymentOutBatch(paymentOut, accept, acceptEncoding);
+            List<DeleteRowResult> result = apiInstance.deletePaymentOutBatch(paymentOut, accept, acceptEncoding);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PaymentOutsApi#deletePaymentOutBatch");
@@ -574,13 +656,13 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **paymentOut** | [**List&lt;PaymentOut&gt;**](PaymentOut.md)|  | |
+| **paymentOut** | [**List&lt;@Valid PaymentOut&gt;**](PaymentOut.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -633,7 +715,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PaymentOutsApi apiInstance = new PaymentOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID fileId = UUID.randomUUID(); // UUID | ID файла
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -713,7 +795,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PaymentOutsApi apiInstance = new PaymentOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -791,7 +873,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PaymentOutsApi apiInstance = new PaymentOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -870,8 +952,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PaymentOutsApi apiInstance = new PaymentOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -953,7 +1035,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PaymentOutsApi apiInstance = new PaymentOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID fileId = UUID.randomUUID(); // UUID | ID файла
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1036,7 +1118,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PaymentOutsApi apiInstance = new PaymentOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
         String accept = "application/json"; // String | 
@@ -1121,8 +1203,8 @@ public class Example {
         PaymentOutsApi apiInstance = new PaymentOutsApi(defaultClient);
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String search = "name=123"; // String | Контекстный поиск по строковым полям сущностей
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String search = "search_example"; // String | Контекстный поиск по строковым полям сущностей
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1362,7 +1444,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PaymentOutsApi apiInstance = new PaymentOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1441,7 +1523,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PaymentOutsApi apiInstance = new PaymentOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1601,9 +1683,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PaymentOutsApi apiInstance = new PaymentOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         PaymentOut paymentOut = new PaymentOut(); // PaymentOut | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1686,7 +1768,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PaymentOutsApi apiInstance = new PaymentOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         AttributeMetaInfo attributeMetaInfo = new AttributeMetaInfo(); // AttributeMetaInfo | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1769,7 +1851,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PaymentOutsApi apiInstance = new PaymentOutsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         State state = new State(); // State | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 

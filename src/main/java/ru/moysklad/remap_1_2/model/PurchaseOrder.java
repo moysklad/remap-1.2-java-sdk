@@ -50,6 +50,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -104,8 +106,8 @@ import java.util.StringJoiner;
   PurchaseOrder.JSON_PROPERTY_PAYMENTS,
   PurchaseOrder.JSON_PROPERTY_PRODUCTION_TASKS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
-public class PurchaseOrder {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
+public class PurchaseOrder extends EntityWithMeta {
   public static PurchaseOrder createWithMeta(UUID id) {
     PurchaseOrder o = new PurchaseOrder();
     Meta meta = new Meta();
@@ -263,7 +265,7 @@ public class PurchaseOrder {
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
-  private JsonNullable<List<AttributeAbstract>> attributes = JsonNullable.<List<AttributeAbstract>>undefined();
+  private JsonNullable<List<@Valid AttributeAbstract>> attributes = JsonNullable.<List<@Valid AttributeAbstract>>undefined();
 
   public static final String JSON_PROPERTY_FILES = "files";
   @javax.annotation.Nullable
@@ -299,7 +301,7 @@ public class PurchaseOrder {
 
   public static final String JSON_PROPERTY_PRODUCTION_TASKS = "productionTasks";
   @javax.annotation.Nullable
-  private JsonNullable<List<ProductionTask>> productionTasks = JsonNullable.<List<ProductionTask>>undefined();
+  private JsonNullable<List<@Valid ProductionTask>> productionTasks = JsonNullable.<List<@Valid ProductionTask>>undefined();
 
   public PurchaseOrder() {
   }
@@ -350,6 +352,9 @@ public class PurchaseOrder {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -372,6 +377,9 @@ public class PurchaseOrder {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -388,6 +396,9 @@ public class PurchaseOrder {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -411,6 +422,8 @@ public class PurchaseOrder {
    * @return name
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -440,6 +453,8 @@ public class PurchaseOrder {
    * @return code
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -469,6 +484,8 @@ public class PurchaseOrder {
    * @return externalCode
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -498,6 +515,9 @@ public class PurchaseOrder {
    * @return syncId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -527,6 +547,8 @@ public class PurchaseOrder {
    * @return description
    */
   @javax.annotation.Nullable
+ @Size(max=4096)
+
   @JsonIgnore
 
   public String getDescription() {
@@ -558,6 +580,8 @@ public class PurchaseOrder {
    * @return created
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_CREATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -574,6 +598,8 @@ public class PurchaseOrder {
    * @return deleted
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_DELETED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -590,6 +616,8 @@ public class PurchaseOrder {
    * @return updated
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -613,6 +641,8 @@ public class PurchaseOrder {
    * @return moment
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -642,6 +672,8 @@ public class PurchaseOrder {
    * @return deliveryPlannedMoment
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_DELIVERY_PLANNED_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -671,6 +703,8 @@ public class PurchaseOrder {
    * @return applicable
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_APPLICABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -693,6 +727,8 @@ public class PurchaseOrder {
    * @return printed
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PRINTED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -709,6 +745,8 @@ public class PurchaseOrder {
    * @return published
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PUBLISHED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -732,6 +770,8 @@ public class PurchaseOrder {
    * @return shared
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -761,6 +801,8 @@ public class PurchaseOrder {
    * @return vatEnabled
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -790,6 +832,8 @@ public class PurchaseOrder {
    * @return vatIncluded
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_VAT_INCLUDED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -812,6 +856,8 @@ public class PurchaseOrder {
    * @return vatSum
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_VAT_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -828,6 +874,8 @@ public class PurchaseOrder {
    * @return sum
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -844,6 +892,8 @@ public class PurchaseOrder {
    * @return payedSum
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PAYED_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -860,6 +910,8 @@ public class PurchaseOrder {
    * @return shippedSum
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SHIPPED_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -876,6 +928,8 @@ public class PurchaseOrder {
    * @return invoicedSum
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_INVOICED_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -892,6 +946,8 @@ public class PurchaseOrder {
    * @return waitSum
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_WAIT_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -915,6 +971,9 @@ public class PurchaseOrder {
    * @return organization
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -944,6 +1003,9 @@ public class PurchaseOrder {
    * @return organizationAccount
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Account getOrganizationAccount() {
@@ -982,6 +1044,9 @@ public class PurchaseOrder {
    * @return agent
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1011,6 +1076,9 @@ public class PurchaseOrder {
    * @return agentAccount
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Account getAgentAccount() {
@@ -1049,6 +1117,9 @@ public class PurchaseOrder {
    * @return store
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Store getStore() {
@@ -1087,6 +1158,9 @@ public class PurchaseOrder {
    * @return state
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public State getState() {
@@ -1125,6 +1199,9 @@ public class PurchaseOrder {
    * @return contract
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Contract getContract() {
@@ -1163,6 +1240,9 @@ public class PurchaseOrder {
    * @return project
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Project getProject() {
@@ -1201,6 +1281,9 @@ public class PurchaseOrder {
    * @return owner
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Employee getOwner() {
@@ -1239,6 +1322,9 @@ public class PurchaseOrder {
    * @return group
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1256,8 +1342,8 @@ public class PurchaseOrder {
   }
 
 
-  public PurchaseOrder attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
+  public PurchaseOrder attributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
     
     return this;
   }
@@ -1265,7 +1351,7 @@ public class PurchaseOrder {
 
   public PurchaseOrder addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
-      this.attributes = JsonNullable.<List<AttributeAbstract>>of(new ArrayList<>());
+      this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(new ArrayList<>());
     }
     try {
       this.attributes.get().add(attributesItem);
@@ -1280,9 +1366,12 @@ public class PurchaseOrder {
    * @return attributes
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
-  public List<AttributeAbstract> getAttributes() {
+  public List<@Valid AttributeAbstract> getAttributes() {
         return attributes.orElse(null);
   }
 
@@ -1292,17 +1381,17 @@ public class PurchaseOrder {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
+  public JsonNullable<List<@Valid AttributeAbstract>> getAttributes_JsonNullable() {
     return attributes;
   }
   
   @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
-  public void setAttributes_JsonNullable(JsonNullable<List<AttributeAbstract>> attributes) {
+  public void setAttributes_JsonNullable(JsonNullable<List<@Valid AttributeAbstract>> attributes) {
     this.attributes = attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
+  public void setAttributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
   }
 
 
@@ -1318,6 +1407,9 @@ public class PurchaseOrder {
    * @return files
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public FileList getFiles() {
@@ -1356,6 +1448,9 @@ public class PurchaseOrder {
    * @return rate
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1385,6 +1480,9 @@ public class PurchaseOrder {
    * @return positions
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1414,6 +1512,9 @@ public class PurchaseOrder {
    * @return internalOrder
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public InternalOrder getInternalOrder() {
@@ -1464,6 +1565,9 @@ public class PurchaseOrder {
    * @return customerOrders
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public List<CustomerOrder> getCustomerOrders() {
@@ -1514,6 +1618,9 @@ public class PurchaseOrder {
    * @return invoicesIn
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public List<InvoiceIn> getInvoicesIn() {
@@ -1564,6 +1671,9 @@ public class PurchaseOrder {
    * @return supplies
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public List<Supply> getSupplies() {
@@ -1614,6 +1724,9 @@ public class PurchaseOrder {
    * @return payments
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public List<SalesReturnPaymentsInner> getPayments() {
@@ -1640,8 +1753,8 @@ public class PurchaseOrder {
   }
 
 
-  public PurchaseOrder productionTasks(@javax.annotation.Nullable List<ProductionTask> productionTasks) {
-    this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
+  public PurchaseOrder productionTasks(@javax.annotation.Nullable List<@Valid ProductionTask> productionTasks) {
+    this.productionTasks = JsonNullable.<List<@Valid ProductionTask>>of(productionTasks);
     
     return this;
   }
@@ -1649,7 +1762,7 @@ public class PurchaseOrder {
 
   public PurchaseOrder addProductionTasksItem(ProductionTask productionTasksItem) {
     if (this.productionTasks == null || !this.productionTasks.isPresent()) {
-      this.productionTasks = JsonNullable.<List<ProductionTask>>of(new ArrayList<>());
+      this.productionTasks = JsonNullable.<List<@Valid ProductionTask>>of(new ArrayList<>());
     }
     try {
       this.productionTasks.get().add(productionTasksItem);
@@ -1664,9 +1777,12 @@ public class PurchaseOrder {
    * @return productionTasks
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
-  public List<ProductionTask> getProductionTasks() {
+  public List<@Valid ProductionTask> getProductionTasks() {
         return productionTasks.orElse(null);
   }
 
@@ -1676,17 +1792,17 @@ public class PurchaseOrder {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<ProductionTask>> getProductionTasks_JsonNullable() {
+  public JsonNullable<List<@Valid ProductionTask>> getProductionTasks_JsonNullable() {
     return productionTasks;
   }
   
   @JsonProperty(value = JSON_PROPERTY_PRODUCTION_TASKS, required = false)
-  public void setProductionTasks_JsonNullable(JsonNullable<List<ProductionTask>> productionTasks) {
+  public void setProductionTasks_JsonNullable(JsonNullable<List<@Valid ProductionTask>> productionTasks) {
     this.productionTasks = productionTasks;
   }
 
-  public void setProductionTasks(@javax.annotation.Nullable List<ProductionTask> productionTasks) {
-    this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
+  public void setProductionTasks(@javax.annotation.Nullable List<@Valid ProductionTask> productionTasks) {
+    this.productionTasks = JsonNullable.<List<@Valid ProductionTask>>of(productionTasks);
   }
 
 

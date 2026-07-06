@@ -37,6 +37,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -62,8 +64,8 @@ import java.util.StringJoiner;
   SupplyPosition.JSON_PROPERTY_VAT,
   SupplyPosition.JSON_PROPERTY_VAT_ENABLED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
-public class SupplyPosition {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
+public class SupplyPosition extends EntityWithMeta {
   public static SupplyPosition createWithMeta(UUID parentId, UUID id) {
     SupplyPosition o = new SupplyPosition();
     Meta meta = new Meta();
@@ -129,7 +131,7 @@ public class SupplyPosition {
 
   public static final String JSON_PROPERTY_TRACKING_CODES = "trackingCodes";
   @javax.annotation.Nullable
-  private List<PositionTrackingCode> trackingCodes = new ArrayList<>();
+  private List<@Valid PositionTrackingCode> trackingCodes = new ArrayList<>();
 
   public static final String JSON_PROPERTY_OVERHEAD = "overhead";
   @javax.annotation.Nullable
@@ -172,6 +174,9 @@ public class SupplyPosition {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -194,6 +199,9 @@ public class SupplyPosition {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -210,6 +218,9 @@ public class SupplyPosition {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -235,6 +246,9 @@ public class SupplyPosition {
    */
   @Deprecated
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -264,6 +278,9 @@ public class SupplyPosition {
    * @return country
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Country getCountry() {
@@ -302,6 +319,8 @@ public class SupplyPosition {
    * @return discount
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_DISCOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -331,6 +350,9 @@ public class SupplyPosition {
    * @return gtd
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Gtd getGtd() {
@@ -369,6 +391,9 @@ public class SupplyPosition {
    * @return pack
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Pack getPack() {
@@ -407,6 +432,8 @@ public class SupplyPosition {
    * @return price
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -437,6 +464,8 @@ public class SupplyPosition {
    * @return quantity
    */
   @javax.annotation.Nullable
+ @DecimalMin(value="0",inclusive=false)
+
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -466,6 +495,9 @@ public class SupplyPosition {
    * @return slot
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public StoreSlot getSlot() {
@@ -512,6 +544,8 @@ public class SupplyPosition {
    * @return things
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_THINGS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -529,7 +563,7 @@ public class SupplyPosition {
   }
 
 
-  public SupplyPosition trackingCodes(@javax.annotation.Nullable List<PositionTrackingCode> trackingCodes) {
+  public SupplyPosition trackingCodes(@javax.annotation.Nullable List<@Valid PositionTrackingCode> trackingCodes) {
     
     this.trackingCodes = trackingCodes;
     return this;
@@ -549,10 +583,13 @@ public class SupplyPosition {
    * @return trackingCodes
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_TRACKING_CODES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<PositionTrackingCode> getTrackingCodes() {
+  public List<@Valid PositionTrackingCode> getTrackingCodes() {
     return trackingCodes;
   }
 
@@ -561,7 +598,7 @@ public class SupplyPosition {
 
   @JsonProperty(JSON_PROPERTY_TRACKING_CODES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrackingCodes(@javax.annotation.Nullable List<PositionTrackingCode> trackingCodes) {
+  public void setTrackingCodes(@javax.annotation.Nullable List<@Valid PositionTrackingCode> trackingCodes) {
     this.trackingCodes = trackingCodes;
   }
 
@@ -571,6 +608,8 @@ public class SupplyPosition {
    * @return overhead
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_OVERHEAD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -594,6 +633,8 @@ public class SupplyPosition {
    * @return vat
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -623,6 +664,8 @@ public class SupplyPosition {
    * @return vatEnabled
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

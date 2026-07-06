@@ -25,6 +25,8 @@ import java.util.Arrays;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -37,7 +39,7 @@ import java.util.StringJoiner;
   DemandPositionTrackingCode1162.JSON_PROPERTY_TYPE,
   DemandPositionTrackingCode1162.JSON_PROPERTY_TRACKING_CODES1162
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class DemandPositionTrackingCode1162 {
 
   public static final String JSON_PROPERTY_CIS1162 = "cis_1162";
@@ -50,7 +52,7 @@ public class DemandPositionTrackingCode1162 {
 
   public static final String JSON_PROPERTY_TRACKING_CODES1162 = "trackingCodes_1162";
   @javax.annotation.Nullable
-  private List<DemandPositionTrackingCode1162> trackingCodes1162 = new ArrayList<>();
+  private List<@Valid DemandPositionTrackingCode1162> trackingCodes1162 = new ArrayList<>();
 
   public DemandPositionTrackingCode1162() {
   }
@@ -61,7 +63,7 @@ public class DemandPositionTrackingCode1162 {
   public DemandPositionTrackingCode1162(
     @JsonProperty(value = JSON_PROPERTY_CIS1162, required = false) String cis1162, 
     @JsonProperty(value = JSON_PROPERTY_TYPE, required = false) String type, 
-    @JsonProperty(value = JSON_PROPERTY_TRACKING_CODES1162, required = false) List<DemandPositionTrackingCode1162> trackingCodes1162
+    @JsonProperty(value = JSON_PROPERTY_TRACKING_CODES1162, required = false) List<@Valid DemandPositionTrackingCode1162> trackingCodes1162
   ) {
     this();
     this.cis1162 = cis1162;
@@ -74,6 +76,8 @@ public class DemandPositionTrackingCode1162 {
    * @return cis1162
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_CIS1162)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -90,6 +94,8 @@ public class DemandPositionTrackingCode1162 {
    * @return type
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -106,10 +112,13 @@ public class DemandPositionTrackingCode1162 {
    * @return trackingCodes1162
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_TRACKING_CODES1162)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<DemandPositionTrackingCode1162> getTrackingCodes1162() {
+  public List<@Valid DemandPositionTrackingCode1162> getTrackingCodes1162() {
     return trackingCodes1162;
   }
 

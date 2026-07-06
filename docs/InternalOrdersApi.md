@@ -8,6 +8,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createInternalOrderBatch**](InternalOrdersApi.md#createInternalOrderBatch) | **POST** /entity/internalorder/batch | Массовое создание и обновление InternalOrder |
 | [**createInternalOrderMetadataAttribute**](InternalOrdersApi.md#createInternalOrderMetadataAttribute) | **POST** /entity/internalorder/metadata/attributes | Создать Доп. поле InternalOrder |
 | [**createInternalOrderMetadataState**](InternalOrdersApi.md#createInternalOrderMetadataState) | **POST** /entity/internalorder/metadata/states | Создать статус InternalOrder |
+| [**createInternalOrderMetadataStatesBatch**](InternalOrdersApi.md#createInternalOrderMetadataStatesBatch) | **POST** /entity/internalorder/metadata/states/batch | Массовое создание и обновление статусов InternalOrder |
 | [**createInternalOrderPosition**](InternalOrdersApi.md#createInternalOrderPosition) | **POST** /entity/internalorder/{id}/positions | Создать и обновить позицию Внутреннего заказа |
 | [**createInternalOrderPositions**](InternalOrdersApi.md#createInternalOrderPositions) | **POST** /entity/internalorder/{id}/positions/batch | Массовое создание и обновление позиций Внутреннего заказа |
 | [**deleteInternalOrder**](InternalOrdersApi.md#deleteInternalOrder) | **DELETE** /entity/internalorder/{id} | Удалить InternalOrder |
@@ -65,7 +66,7 @@ public class Example {
 
         InternalOrdersApi apiInstance = new InternalOrdersApi(defaultClient);
         InternalOrder internalOrder = new InternalOrder(); // InternalOrder | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -117,7 +118,7 @@ public class Example {
 
 ## createInternalOrderBatch
 
-> List&lt;CreateInternalOrderBatch200ResponseInner&gt; createInternalOrderBatch(internalOrder, expand, accept, acceptEncoding, contentType)
+> List&lt;BatchResponseEntity&gt; createInternalOrderBatch(internalOrder, expand, accept, acceptEncoding, contentType)
 
 Массовое создание и обновление InternalOrder
 
@@ -147,13 +148,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InternalOrdersApi apiInstance = new InternalOrdersApi(defaultClient);
-        List<InternalOrder> internalOrder = Arrays.asList(); // List<InternalOrder> | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        List<@Valid InternalOrder> internalOrder = Arrays.asList(); // List<@Valid InternalOrder> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateInternalOrderBatch200ResponseInner> result = apiInstance.createInternalOrderBatch(internalOrder, expand, accept, acceptEncoding, contentType);
+            List<BatchResponseEntity> result = apiInstance.createInternalOrderBatch(internalOrder, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling InternalOrdersApi#createInternalOrderBatch");
@@ -171,7 +172,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **internalOrder** | [**List&lt;InternalOrder&gt;**](InternalOrder.md)|  | |
+| **internalOrder** | [**List&lt;@Valid InternalOrder&gt;**](InternalOrder.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -179,7 +180,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreateInternalOrderBatch200ResponseInner&gt;**](CreateInternalOrderBatch200ResponseInner.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -281,7 +282,7 @@ public class Example {
 
 ## createInternalOrderMetadataState
 
-> CreateInternalOrderMetadataStateRequest createInternalOrderMetadataState(createInternalOrderMetadataStateRequest, accept, acceptEncoding, contentType)
+> State createInternalOrderMetadataState(state, accept, acceptEncoding, contentType)
 
 Создать статус InternalOrder
 
@@ -311,12 +312,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InternalOrdersApi apiInstance = new InternalOrdersApi(defaultClient);
-        CreateInternalOrderMetadataStateRequest createInternalOrderMetadataStateRequest = new CreateInternalOrderMetadataStateRequest(); // CreateInternalOrderMetadataStateRequest | 
+        State state = new State(); // State | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            CreateInternalOrderMetadataStateRequest result = apiInstance.createInternalOrderMetadataState(createInternalOrderMetadataStateRequest, accept, acceptEncoding, contentType);
+            State result = apiInstance.createInternalOrderMetadataState(state, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling InternalOrdersApi#createInternalOrderMetadataState");
@@ -334,14 +335,95 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **createInternalOrderMetadataStateRequest** | [**CreateInternalOrderMetadataStateRequest**](CreateInternalOrderMetadataStateRequest.md)|  | |
+| **state** | [**State**](State.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**CreateInternalOrderMetadataStateRequest**](CreateInternalOrderMetadataStateRequest.md)
+[**State**](State.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+
+
+## createInternalOrderMetadataStatesBatch
+
+> List&lt;StateRowResult&gt; createInternalOrderMetadataStatesBatch(state, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление статусов InternalOrder
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.InternalOrdersApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        InternalOrdersApi apiInstance = new InternalOrdersApi(defaultClient);
+        List<@Valid State> state = Arrays.asList(); // List<@Valid State> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<StateRowResult> result = apiInstance.createInternalOrderMetadataStatesBatch(state, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling InternalOrdersApi#createInternalOrderMetadataStatesBatch");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **state** | [**List&lt;@Valid State&gt;**](State.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;StateRowResult&gt;**](StateRowResult.md)
 
 ### Authorization
 
@@ -392,9 +474,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InternalOrdersApi apiInstance = new InternalOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         InternalOrderPosition internalOrderPosition = new InternalOrderPosition(); // InternalOrderPosition | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -477,9 +559,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InternalOrdersApi apiInstance = new InternalOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<InternalOrderPosition> internalOrderPosition = Arrays.asList(); // List<InternalOrderPosition> | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid InternalOrderPosition> internalOrderPosition = Arrays.asList(); // List<@Valid InternalOrderPosition> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -503,7 +585,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **internalOrderPosition** | [**List&lt;InternalOrderPosition&gt;**](InternalOrderPosition.md)|  | |
+| **internalOrderPosition** | [**List&lt;@Valid InternalOrderPosition&gt;**](InternalOrderPosition.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -562,7 +644,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InternalOrdersApi apiInstance = new InternalOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -612,7 +694,7 @@ null (empty response body)
 
 ## deleteInternalOrderBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteInternalOrderBatch(internalOrder, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteInternalOrderBatch(internalOrder, accept, acceptEncoding, contentType)
 
 Массовое удаление InternalOrder
 
@@ -642,12 +724,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InternalOrdersApi apiInstance = new InternalOrdersApi(defaultClient);
-        List<InternalOrder> internalOrder = Arrays.asList(); // List<InternalOrder> | 
+        List<@Valid InternalOrder> internalOrder = Arrays.asList(); // List<@Valid InternalOrder> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteInternalOrderBatch(internalOrder, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteInternalOrderBatch(internalOrder, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling InternalOrdersApi#deleteInternalOrderBatch");
@@ -665,14 +747,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **internalOrder** | [**List&lt;InternalOrder&gt;**](InternalOrder.md)|  | |
+| **internalOrder** | [**List&lt;@Valid InternalOrder&gt;**](InternalOrder.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -723,7 +805,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InternalOrdersApi apiInstance = new InternalOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -803,7 +885,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InternalOrdersApi apiInstance = new InternalOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -884,9 +966,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InternalOrdersApi apiInstance = new InternalOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -938,7 +1020,7 @@ null (empty response body)
 
 ## deleteInternalOrderPositionsBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteInternalOrderPositionsBatch(id, internalOrderPosition, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteInternalOrderPositionsBatch(id, internalOrderPosition, accept, acceptEncoding, contentType)
 
 Массовое удаление позиций InternalOrder
 
@@ -968,13 +1050,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InternalOrdersApi apiInstance = new InternalOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<InternalOrderPosition> internalOrderPosition = Arrays.asList(); // List<InternalOrderPosition> | 
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid InternalOrderPosition> internalOrderPosition = Arrays.asList(); // List<@Valid InternalOrderPosition> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteInternalOrderPositionsBatch(id, internalOrderPosition, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteInternalOrderPositionsBatch(id, internalOrderPosition, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling InternalOrdersApi#deleteInternalOrderPositionsBatch");
@@ -993,14 +1075,14 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **internalOrderPosition** | [**List&lt;InternalOrderPosition&gt;**](InternalOrderPosition.md)|  | |
+| **internalOrderPosition** | [**List&lt;@Valid InternalOrderPosition&gt;**](InternalOrderPosition.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -1051,8 +1133,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InternalOrdersApi apiInstance = new InternalOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1136,8 +1218,8 @@ public class Example {
         InternalOrdersApi apiInstance = new InternalOrdersApi(defaultClient);
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String search = "name=123"; // String | Контекстный поиск по строковым полям сущностей
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String search = "search_example"; // String | Контекстный поиск по строковым полям сущностей
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1383,7 +1465,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InternalOrdersApi apiInstance = new InternalOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1464,7 +1546,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InternalOrdersApi apiInstance = new InternalOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1545,9 +1627,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InternalOrdersApi apiInstance = new InternalOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1630,10 +1712,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InternalOrdersApi apiInstance = new InternalOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1796,9 +1878,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InternalOrdersApi apiInstance = new InternalOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         InternalOrder internalOrder = new InternalOrder(); // InternalOrder | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1881,7 +1963,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InternalOrdersApi apiInstance = new InternalOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         AttributeMetaInfo attributeMetaInfo = new AttributeMetaInfo(); // AttributeMetaInfo | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1964,7 +2046,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InternalOrdersApi apiInstance = new InternalOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         State state = new State(); // State | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -2047,10 +2129,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         InternalOrdersApi apiInstance = new InternalOrdersApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
         InternalOrderPosition internalOrderPosition = new InternalOrderPosition(); // InternalOrderPosition | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 

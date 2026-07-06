@@ -50,6 +50,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -103,7 +105,7 @@ import java.util.StringJoiner;
   CreateInvoiceInBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createInvoiceInBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateInvoiceInBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -248,7 +250,7 @@ public class CreateInvoiceInBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
-  private JsonNullable<List<AttributeAbstract>> attributes = JsonNullable.<List<AttributeAbstract>>undefined();
+  private JsonNullable<List<@Valid AttributeAbstract>> attributes = JsonNullable.<List<@Valid AttributeAbstract>>undefined();
 
   public static final String JSON_PROPERTY_FILES = "files";
   @javax.annotation.Nullable
@@ -276,7 +278,7 @@ public class CreateInvoiceInBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_ERRORS = "errors";
   @javax.annotation.Nonnull
-  private List<ErrorErrorsInner> errors = new ArrayList<>();
+  private List<@Valid ErrorErrorsInner> errors = new ArrayList<>();
 
   public CreateInvoiceInBatch200ResponseInner() {
   }
@@ -323,6 +325,9 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -345,6 +350,9 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -361,6 +369,9 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -384,6 +395,8 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return name
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -413,6 +426,8 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return code
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -442,6 +457,8 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return externalCode
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -471,6 +488,9 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return syncId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -500,6 +520,8 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return description
    */
   @javax.annotation.Nullable
+ @Size(max=4096)
+
   @JsonIgnore
 
   public String getDescription() {
@@ -531,6 +553,8 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return created
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_CREATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -547,6 +571,8 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return deleted
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_DELETED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -563,6 +589,8 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return updated
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -586,6 +614,8 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return moment
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -615,6 +645,8 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return paymentPlannedMoment
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PAYMENT_PLANNED_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -644,6 +676,8 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return incomingDate
    */
   @javax.annotation.Nullable
+
+
   @JsonIgnore
 
   public String getIncomingDate() {
@@ -682,6 +716,8 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return incomingNumber
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonIgnore
 
   public String getIncomingNumber() {
@@ -720,6 +756,8 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return applicable
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_APPLICABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -742,6 +780,8 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return printed
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PRINTED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -758,6 +798,8 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return published
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PUBLISHED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -781,6 +823,8 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return shared
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -810,6 +854,8 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return vatEnabled
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -839,6 +885,8 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return vatIncluded
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_VAT_INCLUDED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -861,6 +909,8 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return vatSum
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_VAT_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -877,6 +927,8 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return sum
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -893,6 +945,8 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return payedSum
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PAYED_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -909,6 +963,8 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return shippedSum
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SHIPPED_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -932,6 +988,9 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return organization
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -961,6 +1020,9 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return organizationAccount
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Account getOrganizationAccount() {
@@ -999,6 +1061,9 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return agent
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1028,6 +1093,9 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return agentAccount
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Account getAgentAccount() {
@@ -1066,6 +1134,9 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return store
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Store getStore() {
@@ -1104,6 +1175,9 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return state
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public State getState() {
@@ -1142,6 +1216,9 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return contract
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Contract getContract() {
@@ -1180,6 +1257,9 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return project
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Project getProject() {
@@ -1218,6 +1298,9 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return owner
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Employee getOwner() {
@@ -1256,6 +1339,9 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return group
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1273,8 +1359,8 @@ public class CreateInvoiceInBatch200ResponseInner {
   }
 
 
-  public CreateInvoiceInBatch200ResponseInner attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
+  public CreateInvoiceInBatch200ResponseInner attributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
     
     return this;
   }
@@ -1282,7 +1368,7 @@ public class CreateInvoiceInBatch200ResponseInner {
 
   public CreateInvoiceInBatch200ResponseInner addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
-      this.attributes = JsonNullable.<List<AttributeAbstract>>of(new ArrayList<>());
+      this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(new ArrayList<>());
     }
     try {
       this.attributes.get().add(attributesItem);
@@ -1297,9 +1383,12 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return attributes
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
-  public List<AttributeAbstract> getAttributes() {
+  public List<@Valid AttributeAbstract> getAttributes() {
         return attributes.orElse(null);
   }
 
@@ -1309,17 +1398,17 @@ public class CreateInvoiceInBatch200ResponseInner {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
+  public JsonNullable<List<@Valid AttributeAbstract>> getAttributes_JsonNullable() {
     return attributes;
   }
   
   @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
-  public void setAttributes_JsonNullable(JsonNullable<List<AttributeAbstract>> attributes) {
+  public void setAttributes_JsonNullable(JsonNullable<List<@Valid AttributeAbstract>> attributes) {
     this.attributes = attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
+  public void setAttributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
   }
 
 
@@ -1335,6 +1424,9 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return files
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public FileList getFiles() {
@@ -1373,6 +1465,9 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return rate
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1402,6 +1497,9 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return positions
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1431,6 +1529,9 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return purchaseOrder
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public PurchaseOrder getPurchaseOrder() {
@@ -1481,6 +1582,9 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return supplies
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public List<Supply> getSupplies() {
@@ -1531,6 +1635,9 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return payments
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public List<SalesReturnPaymentsInner> getPayments() {
@@ -1557,7 +1664,7 @@ public class CreateInvoiceInBatch200ResponseInner {
   }
 
 
-  public CreateInvoiceInBatch200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
+  public CreateInvoiceInBatch200ResponseInner errors(@javax.annotation.Nonnull List<@Valid ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
@@ -1577,10 +1684,14 @@ public class CreateInvoiceInBatch200ResponseInner {
    * @return errors
    */
   @javax.annotation.Nonnull
+  @NotNull
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ERRORS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public List<ErrorErrorsInner> getErrors() {
+  public List<@Valid ErrorErrorsInner> getErrors() {
     return errors;
   }
 
@@ -1589,7 +1700,7 @@ public class CreateInvoiceInBatch200ResponseInner {
 
   @JsonProperty(JSON_PROPERTY_ERRORS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
+  public void setErrors(@javax.annotation.Nonnull List<@Valid ErrorErrorsInner> errors) {
     this.errors = errors;
   }
 

@@ -10,6 +10,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createProcessingMaterials**](ProcessingsApi.md#createProcessingMaterials) | **POST** /entity/processing/{id}/materials | Создать материалы Processing |
 | [**createProcessingMetadataAttribute**](ProcessingsApi.md#createProcessingMetadataAttribute) | **POST** /entity/processing/metadata/attributes | Создать Доп. поле Processing |
 | [**createProcessingMetadataState**](ProcessingsApi.md#createProcessingMetadataState) | **POST** /entity/processing/metadata/states | Создать статус Processing |
+| [**createProcessingMetadataStatesBatch**](ProcessingsApi.md#createProcessingMetadataStatesBatch) | **POST** /entity/processing/metadata/states/batch | Массовое создание и обновление статусов Processing |
 | [**createProcessingProducts**](ProcessingsApi.md#createProcessingProducts) | **POST** /entity/processing/{id}/products | Создать продукты Processing |
 | [**deleteProcessing**](ProcessingsApi.md#deleteProcessing) | **DELETE** /entity/processing/{id} | Удалить Processing |
 | [**deleteProcessingBatch**](ProcessingsApi.md#deleteProcessingBatch) | **POST** /entity/processing/delete | Массовое удаление Processing |
@@ -75,8 +76,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<FileUpload> fileUpload = Arrays.asList(); // List<FileUpload> | 
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid FileUpload> fileUpload = Arrays.asList(); // List<@Valid FileUpload> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -100,7 +101,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **fileUpload** | [**List&lt;FileUpload&gt;**](FileUpload.md)|  | |
+| **fileUpload** | [**List&lt;@Valid FileUpload&gt;**](FileUpload.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -159,7 +160,7 @@ public class Example {
 
         ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
         Processing processing = new Processing(); // Processing | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -211,7 +212,7 @@ public class Example {
 
 ## createProcessingBatch
 
-> List&lt;CreateProcessingBatch200ResponseInner&gt; createProcessingBatch(processing, expand, accept, acceptEncoding, contentType)
+> List&lt;BatchResponseEntity&gt; createProcessingBatch(processing, expand, accept, acceptEncoding, contentType)
 
 Массовое создание и обновление Processing
 
@@ -241,13 +242,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
-        List<Processing> processing = Arrays.asList(); // List<Processing> | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        List<@Valid Processing> processing = Arrays.asList(); // List<@Valid Processing> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreateProcessingBatch200ResponseInner> result = apiInstance.createProcessingBatch(processing, expand, accept, acceptEncoding, contentType);
+            List<BatchResponseEntity> result = apiInstance.createProcessingBatch(processing, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProcessingsApi#createProcessingBatch");
@@ -265,7 +266,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **processing** | [**List&lt;Processing&gt;**](Processing.md)|  | |
+| **processing** | [**List&lt;@Valid Processing&gt;**](Processing.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -273,7 +274,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;CreateProcessingBatch200ResponseInner&gt;**](CreateProcessingBatch200ResponseInner.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -324,9 +325,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         ProcessingMaterial processingMaterial = new ProcessingMaterial(); // ProcessingMaterial | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -539,6 +540,87 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 
+## createProcessingMetadataStatesBatch
+
+> List&lt;StateRowResult&gt; createProcessingMetadataStatesBatch(state, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление статусов Processing
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.ProcessingsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
+        List<@Valid State> state = Arrays.asList(); // List<@Valid State> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<StateRowResult> result = apiInstance.createProcessingMetadataStatesBatch(state, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProcessingsApi#createProcessingMetadataStatesBatch");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **state** | [**List&lt;@Valid State&gt;**](State.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;StateRowResult&gt;**](StateRowResult.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+
+
 ## createProcessingProducts
 
 > ProcessingProduct createProcessingProducts(id, processingProduct, expand, accept, acceptEncoding, contentType)
@@ -571,9 +653,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         ProcessingProduct processingProduct = new ProcessingProduct(); // ProcessingProduct | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -656,7 +738,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -704,7 +786,7 @@ null (empty response body)
 
 ## deleteProcessingBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteProcessingBatch(processing, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteProcessingBatch(processing, accept, acceptEncoding, contentType)
 
 Массовое удаление Processing
 
@@ -734,12 +816,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
-        List<Processing> processing = Arrays.asList(); // List<Processing> | 
+        List<@Valid Processing> processing = Arrays.asList(); // List<@Valid Processing> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteProcessingBatch(processing, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteProcessingBatch(processing, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProcessingsApi#deleteProcessingBatch");
@@ -757,14 +839,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **processing** | [**List&lt;Processing&gt;**](Processing.md)|  | |
+| **processing** | [**List&lt;@Valid Processing&gt;**](Processing.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -817,7 +899,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID fileId = UUID.randomUUID(); // UUID | ID файла
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -897,8 +979,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -947,7 +1029,7 @@ null (empty response body)
 
 ## deleteProcessingMaterialsBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteProcessingMaterialsBatch(id, processingMaterial, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteProcessingMaterialsBatch(id, processingMaterial, accept, acceptEncoding, contentType)
 
 Массовое удаление материалов Processing
 
@@ -977,13 +1059,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<ProcessingMaterial> processingMaterial = Arrays.asList(); // List<ProcessingMaterial> | 
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid ProcessingMaterial> processingMaterial = Arrays.asList(); // List<@Valid ProcessingMaterial> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteProcessingMaterialsBatch(id, processingMaterial, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteProcessingMaterialsBatch(id, processingMaterial, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProcessingsApi#deleteProcessingMaterialsBatch");
@@ -1002,14 +1084,14 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **processingMaterial** | [**List&lt;ProcessingMaterial&gt;**](ProcessingMaterial.md)|  | |
+| **processingMaterial** | [**List&lt;@Valid ProcessingMaterial&gt;**](ProcessingMaterial.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -1060,7 +1142,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1138,7 +1220,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1216,8 +1298,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1266,7 +1348,7 @@ null (empty response body)
 
 ## deleteProcessingProductsBatch
 
-> List&lt;DeleteContractsBatch200ResponseInner&gt; deleteProcessingProductsBatch(id, processingProduct, accept, acceptEncoding, contentType)
+> List&lt;DeleteRowResult&gt; deleteProcessingProductsBatch(id, processingProduct, accept, acceptEncoding, contentType)
 
 Массовое удаление продуктов Processing
 
@@ -1296,13 +1378,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        List<ProcessingProduct> processingProduct = Arrays.asList(); // List<ProcessingProduct> | 
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<@Valid ProcessingProduct> processingProduct = Arrays.asList(); // List<@Valid ProcessingProduct> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<DeleteContractsBatch200ResponseInner> result = apiInstance.deleteProcessingProductsBatch(id, processingProduct, accept, acceptEncoding, contentType);
+            List<DeleteRowResult> result = apiInstance.deleteProcessingProductsBatch(id, processingProduct, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProcessingsApi#deleteProcessingProductsBatch");
@@ -1321,14 +1403,14 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **processingProduct** | [**List&lt;ProcessingProduct&gt;**](ProcessingProduct.md)|  | |
+| **processingProduct** | [**List&lt;@Valid ProcessingProduct&gt;**](ProcessingProduct.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;DeleteContractsBatch200ResponseInner&gt;**](DeleteContractsBatch200ResponseInner.md)
+[**List&lt;DeleteRowResult&gt;**](DeleteRowResult.md)
 
 ### Authorization
 
@@ -1379,8 +1461,8 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1462,7 +1544,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID fileId = UUID.randomUUID(); // UUID | ID файла
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -1545,7 +1627,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
         String accept = "application/json"; // String | 
@@ -1628,9 +1710,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1711,10 +1793,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -1954,7 +2036,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -2033,7 +2115,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -2112,9 +2194,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -2195,10 +2277,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -2363,8 +2445,8 @@ public class Example {
         ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
-        String search = "name=123"; // String | Контекстный поиск по строковым полям сущностей
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String search = "search_example"; // String | Контекстный поиск по строковым полям сущностей
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
@@ -2446,9 +2528,9 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         Processing processing = new Processing(); // Processing | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -2531,10 +2613,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
         ProcessingMaterial processingMaterial = new ProcessingMaterial(); // ProcessingMaterial | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -2618,7 +2700,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         AttributeMetaInfo attributeMetaInfo = new AttributeMetaInfo(); // AttributeMetaInfo | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -2701,7 +2783,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
         State state = new State(); // State | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -2784,10 +2866,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
-        UUID id = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000053"); // UUID | ID сущности
-        UUID positionId = UUID.fromString("12a8b923-692c-11e6-8a84-bae500000054"); // UUID | ID позиции
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID positionId = UUID.randomUUID(); // UUID | ID позиции
         ProcessingProduct processingProduct = new ProcessingProduct(); // ProcessingProduct | 
-        String expand = "agent,organization"; // String | Замена ссылок объектами с помощью expand
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 

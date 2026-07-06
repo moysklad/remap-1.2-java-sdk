@@ -39,6 +39,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -71,7 +73,7 @@ import java.util.StringJoiner;
   DiscountListRowsInner.JSON_PROPERTY_MAX_PAID_RATE_PERCENTS
 })
 @JsonTypeName("DiscountList_rows_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class DiscountListRowsInner {
 
   public static final String JSON_PROPERTY_ALL_PRODUCTS = "allProducts";
@@ -80,7 +82,7 @@ public class DiscountListRowsInner {
 
   public static final String JSON_PROPERTY_ASSORTMENT = "assortment";
   @javax.annotation.Nullable
-  private List<DiscountAssortmentItem> assortment = new ArrayList<>();
+  private List<@Valid DiscountAssortmentItem> assortment = new ArrayList<>();
 
   public static final String JSON_PROPERTY_PRODUCT_FOLDERS = "productFolders";
   @javax.annotation.Nullable
@@ -189,6 +191,8 @@ public class DiscountListRowsInner {
    * @return allProducts
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_ALL_PRODUCTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -206,7 +210,7 @@ public class DiscountListRowsInner {
   }
 
 
-  public DiscountListRowsInner assortment(@javax.annotation.Nullable List<DiscountAssortmentItem> assortment) {
+  public DiscountListRowsInner assortment(@javax.annotation.Nullable List<@Valid DiscountAssortmentItem> assortment) {
     
     this.assortment = assortment;
     return this;
@@ -226,10 +230,13 @@ public class DiscountListRowsInner {
    * @return assortment
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<DiscountAssortmentItem> getAssortment() {
+  public List<@Valid DiscountAssortmentItem> getAssortment() {
     return assortment;
   }
 
@@ -238,7 +245,7 @@ public class DiscountListRowsInner {
 
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAssortment(@javax.annotation.Nullable List<DiscountAssortmentItem> assortment) {
+  public void setAssortment(@javax.annotation.Nullable List<@Valid DiscountAssortmentItem> assortment) {
     this.assortment = assortment;
   }
 
@@ -263,6 +270,9 @@ public class DiscountListRowsInner {
    * @return productFolders
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_PRODUCT_FOLDERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -285,6 +295,9 @@ public class DiscountListRowsInner {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -308,6 +321,9 @@ public class DiscountListRowsInner {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -330,6 +346,9 @@ public class DiscountListRowsInner {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -353,6 +372,8 @@ public class DiscountListRowsInner {
    * @return name
    */
   @javax.annotation.Nullable
+ @Size(max=255)
+
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -382,6 +403,8 @@ public class DiscountListRowsInner {
    * @return active
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_ACTIVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -411,6 +434,8 @@ public class DiscountListRowsInner {
    * @return allAgents
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_ALL_AGENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -452,6 +477,8 @@ public class DiscountListRowsInner {
    * @return agentTags
    */
   @javax.annotation.Nullable
+
+
   @JsonIgnore
 
   public List<String> getAgentTags() {
@@ -490,6 +517,8 @@ public class DiscountListRowsInner {
    * @return usePriceType
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_USE_PRICE_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -519,6 +548,8 @@ public class DiscountListRowsInner {
    * @return discount
    */
   @javax.annotation.Nullable
+
+
   @JsonIgnore
 
   public Float getDiscount() {
@@ -557,6 +588,8 @@ public class DiscountListRowsInner {
    * @return specialPrice
    */
   @javax.annotation.Nullable
+
+
   @JsonIgnore
 
   public Object getSpecialPrice() {
@@ -603,6 +636,8 @@ public class DiscountListRowsInner {
    * @return levels
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_LEVELS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -632,6 +667,8 @@ public class DiscountListRowsInner {
    * @return earnRateRoublesToPoint
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_EARN_RATE_ROUBLES_TO_POINT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -661,6 +698,8 @@ public class DiscountListRowsInner {
    * @return earnWhileRedeeming
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_EARN_WHILE_REDEEMING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -690,6 +729,8 @@ public class DiscountListRowsInner {
    * @return postponedBonusesDelayDays
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_POSTPONED_BONUSES_DELAY_DAYS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -719,6 +760,8 @@ public class DiscountListRowsInner {
    * @return spendRatePointsToRouble
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_SPEND_RATE_POINTS_TO_ROUBLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -748,6 +791,8 @@ public class DiscountListRowsInner {
    * @return welcomeBonusesEnabled
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_WELCOME_BONUSES_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -777,6 +822,8 @@ public class DiscountListRowsInner {
    * @return welcomeBonusesValue
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_WELCOME_BONUSES_VALUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -806,6 +853,8 @@ public class DiscountListRowsInner {
    * @return welcomeBonusesMode
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_WELCOME_BONUSES_MODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -837,6 +886,8 @@ public class DiscountListRowsInner {
    * @return maxPaidRatePercents
    */
   @javax.annotation.Nullable
+ @Min(0) @Max(100)
+
   @JsonProperty(JSON_PROPERTY_MAX_PAID_RATE_PERCENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

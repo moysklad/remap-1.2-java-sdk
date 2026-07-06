@@ -25,6 +25,8 @@ import ru.moysklad.remap_1_2.model.AssortmentSettingsUniqueCodeRules;
 import ru.moysklad.remap_1_2.model.Meta;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -38,7 +40,7 @@ import java.util.StringJoiner;
   AssortmentSettings.JSON_PROPERTY_UNIQUE_CODE_RULES,
   AssortmentSettings.JSON_PROPERTY_CREATED_SHARED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class AssortmentSettings {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -72,6 +74,9 @@ public class AssortmentSettings {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -101,6 +106,9 @@ public class AssortmentSettings {
    * @return barcodeRules
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_BARCODE_RULES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -130,6 +138,9 @@ public class AssortmentSettings {
    * @return uniqueCodeRules
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_UNIQUE_CODE_RULES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -159,6 +170,8 @@ public class AssortmentSettings {
    * @return createdShared
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_CREATED_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

@@ -36,6 +36,8 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -58,7 +60,7 @@ import java.util.StringJoiner;
   CreateInventoryPositions200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createInventoryPositions_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T09:20:10.487321760Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateInventoryPositions200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -107,7 +109,7 @@ public class CreateInventoryPositions200ResponseInner {
 
   public static final String JSON_PROPERTY_ERRORS = "errors";
   @javax.annotation.Nonnull
-  private List<ErrorErrorsInner> errors = new ArrayList<>();
+  private List<@Valid ErrorErrorsInner> errors = new ArrayList<>();
 
   public CreateInventoryPositions200ResponseInner() {
   }
@@ -140,6 +142,9 @@ public class CreateInventoryPositions200ResponseInner {
    * @return meta
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -162,6 +167,9 @@ public class CreateInventoryPositions200ResponseInner {
    * @return id
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -178,6 +186,9 @@ public class CreateInventoryPositions200ResponseInner {
    * @return accountId
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -203,6 +214,9 @@ public class CreateInventoryPositions200ResponseInner {
    */
   @Deprecated
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -232,6 +246,8 @@ public class CreateInventoryPositions200ResponseInner {
    * @return calculatedQuantity
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_CALCULATED_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -254,6 +270,8 @@ public class CreateInventoryPositions200ResponseInner {
    * @return correctionAmount
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_CORRECTION_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -270,6 +288,8 @@ public class CreateInventoryPositions200ResponseInner {
    * @return correctionSum
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_CORRECTION_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -293,6 +313,9 @@ public class CreateInventoryPositions200ResponseInner {
    * @return pack
    */
   @javax.annotation.Nullable
+  @Valid
+
+
   @JsonIgnore
 
   public Pack getPack() {
@@ -331,6 +354,8 @@ public class CreateInventoryPositions200ResponseInner {
    * @return price
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -368,6 +393,8 @@ public class CreateInventoryPositions200ResponseInner {
    * @return things
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_THINGS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -397,6 +424,8 @@ public class CreateInventoryPositions200ResponseInner {
    * @return quantity
    */
   @javax.annotation.Nullable
+
+
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -414,7 +443,7 @@ public class CreateInventoryPositions200ResponseInner {
   }
 
 
-  public CreateInventoryPositions200ResponseInner errors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
+  public CreateInventoryPositions200ResponseInner errors(@javax.annotation.Nonnull List<@Valid ErrorErrorsInner> errors) {
     
     this.errors = errors;
     return this;
@@ -434,10 +463,14 @@ public class CreateInventoryPositions200ResponseInner {
    * @return errors
    */
   @javax.annotation.Nonnull
+  @NotNull
+  @Valid
+
+
   @JsonProperty(JSON_PROPERTY_ERRORS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public List<ErrorErrorsInner> getErrors() {
+  public List<@Valid ErrorErrorsInner> getErrors() {
     return errors;
   }
 
@@ -446,7 +479,7 @@ public class CreateInventoryPositions200ResponseInner {
 
   @JsonProperty(JSON_PROPERTY_ERRORS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setErrors(@javax.annotation.Nonnull List<ErrorErrorsInner> errors) {
+  public void setErrors(@javax.annotation.Nonnull List<@Valid ErrorErrorsInner> errors) {
     this.errors = errors;
   }
 
