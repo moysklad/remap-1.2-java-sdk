@@ -22,7 +22,7 @@ import java.text.DecimalFormat;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
 public class RFC3339DateFormat extends DateFormat {
   private static final long serialVersionUID = 1L;
   private static final TimeZone TIMEZONE_Z = TimeZone.getTimeZone("UTC");

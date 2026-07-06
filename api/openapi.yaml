@@ -72751,7 +72751,7 @@ components:
         operations:
           description: |
             Связанные операции. Допустимые типы по `meta.type`: customerorder, purchasereturn, demand,
-            invoiceout, commissionreportin, retailshift
+            invoiceout, commissionreportin, retailshift.
           items:
             $ref: "#/components/schemas/FinanceInOperationAbstract"
           nullable: true

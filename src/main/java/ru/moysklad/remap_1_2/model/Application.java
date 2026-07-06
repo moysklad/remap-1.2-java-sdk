@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   Application.JSON_PROPERTY_NAME,
   Application.JSON_PROPERTY_APP_UID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
 public class Application {
   public static Application createWithMeta(UUID id) {
     Application o = new Application();

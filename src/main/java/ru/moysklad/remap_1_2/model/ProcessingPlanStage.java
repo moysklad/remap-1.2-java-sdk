@@ -45,7 +45,7 @@ import java.util.StringJoiner;
   ProcessingPlanStage.JSON_PROPERTY_STANDARD_HOUR_COST,
   ProcessingPlanStage.JSON_PROPERTY_PROCESSING_PROCESS_POSITION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingPlanStage {
   public static ProcessingPlanStage createWithMeta(UUID parentId, UUID id) {
     ProcessingPlanStage o = new ProcessingPlanStage();

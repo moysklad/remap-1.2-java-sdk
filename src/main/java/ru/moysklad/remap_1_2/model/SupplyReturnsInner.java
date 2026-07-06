@@ -118,7 +118,7 @@ import java.util.StringJoiner;
   SupplyReturnsInner.JSON_PROPERTY_TAX_SYSTEM
 })
 @JsonTypeName("Supply_returns_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
 public class SupplyReturnsInner {
 
   public static final String JSON_PROPERTY_META = "meta";

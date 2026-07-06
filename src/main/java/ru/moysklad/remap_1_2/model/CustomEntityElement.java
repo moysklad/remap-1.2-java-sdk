@@ -57,7 +57,7 @@ import java.util.StringJoiner;
   CustomEntityElement.JSON_PROPERTY_SHARED,
   CustomEntityElement.JSON_PROPERTY_GROUP
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
 public class CustomEntityElement {
   public static CustomEntityElement createWithMeta(UUID metadataId, UUID id) {
     CustomEntityElement o = new CustomEntityElement();

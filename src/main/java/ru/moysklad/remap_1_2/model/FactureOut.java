@@ -90,7 +90,7 @@ import java.util.StringJoiner;
   FactureOut.JSON_PROPERTY_PAYMENT_NUMBER,
   FactureOut.JSON_PROPERTY_PAYMENT_DATE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:01:46.826243949Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
 public class FactureOut {
   public static FactureOut createWithMeta(UUID id) {
     FactureOut o = new FactureOut();
