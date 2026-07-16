@@ -41,7 +41,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ProjectsApi extends BaseApi {
 
@@ -57,16 +57,14 @@ public class ProjectsApi extends BaseApi {
    * Создать проект
    * Создание нового проекта
    * @param project  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Project
    * @throws ApiException if fails to make API call
    */
-  public Project createProject(@javax.annotation.Nonnull Project project, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createProject(project, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Project createProject(@javax.annotation.Nonnull Project project) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createProject(project, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать проект
@@ -87,7 +85,6 @@ public class ProjectsApi extends BaseApi {
     return this.createProject(project, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать проект
    * Создание нового проекта
@@ -100,7 +97,7 @@ public class ProjectsApi extends BaseApi {
    * @return Project
    * @throws ApiException if fails to make API call
    */
-  public Project createProject(@javax.annotation.Nonnull Project project, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Project createProject(@javax.annotation.Nonnull Project project, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = project;
     
     // verify the required parameter 'project' is set
@@ -165,16 +162,32 @@ if (contentType != null)
    * Создать доп. поле проекта
    * Создание нового доп. поля для проектов
    * @param attributeMetaInfo  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo createProjectMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createProjectMetadataAttribute(attributeMetaInfo, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public AttributeMetaInfo createProjectMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createProjectMetadataAttribute(attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Создать доп. поле проекта
+   * Создание нового доп. поля для проектов
+   
+   * @param attributeMetaInfo  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo createProjectMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createProjectMetadataAttribute(attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Создать доп. поле проекта
@@ -187,7 +200,7 @@ if (contentType != null)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo createProjectMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfo createProjectMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = attributeMetaInfo;
     
     // verify the required parameter 'attributeMetaInfo' is set
@@ -251,16 +264,14 @@ if (contentType != null)
    * Создать или изменить проекты
    * Создание или изменение нескольких проектов.
    * @param project  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createProjectsBatch(@javax.annotation.Nonnull List<@Valid Project> project, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createProjectsBatch(project, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<BatchResponseEntity> createProjectsBatch(@javax.annotation.Nonnull List<@Valid Project> project) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createProjectsBatch(project, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать или изменить проекты
@@ -281,7 +292,6 @@ if (contentType != null)
     return this.createProjectsBatch(project, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать или изменить проекты
    * Создание или изменение нескольких проектов.
@@ -294,7 +304,7 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createProjectsBatch(@javax.annotation.Nonnull List<@Valid Project> project, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createProjectsBatch(@javax.annotation.Nonnull List<@Valid Project> project, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = project;
     
     // verify the required parameter 'project' is set
@@ -359,14 +369,29 @@ if (contentType != null)
    * Удалить проект
    * Удаление проекта с указанным id
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteProject(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteProject(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteProject(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteProject(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить проект
+   * Удаление проекта с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteProject(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteProject(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить проект
@@ -377,7 +402,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteProject(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteProject(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -439,14 +464,29 @@ if (acceptEncoding != null)
    * Удалить доп. поле проекта
    * Удаление доп. поля
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteProjectMetadataAttribute(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteProjectMetadataAttribute(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteProjectMetadataAttribute(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteProjectMetadataAttribute(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить доп. поле проекта
+   * Удаление доп. поля
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteProjectMetadataAttribute(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteProjectMetadataAttribute(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить доп. поле проекта
@@ -457,7 +497,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteProjectMetadataAttribute(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteProjectMetadataAttribute(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -519,16 +559,32 @@ if (acceptEncoding != null)
    * Удалить проекты
    * Массовое удаление проектов по их мета-объектам.
    * @param project  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteProjectsBatch(@javax.annotation.Nonnull List<@Valid Project> project, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteProjectsBatch(project, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteProjectsBatch(@javax.annotation.Nonnull List<@Valid Project> project) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteProjectsBatch(project, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить проекты
+   * Массовое удаление проектов по их мета-объектам.
+   
+   * @param project  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteProjectsBatch(@javax.annotation.Nonnull List<@Valid Project> project, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteProjectsBatch(project, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить проекты
@@ -541,7 +597,7 @@ if (acceptEncoding != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteProjectsBatch(@javax.annotation.Nonnull List<@Valid Project> project, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteProjectsBatch(@javax.annotation.Nonnull List<@Valid Project> project, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = project;
     
     // verify the required parameter 'project' is set
@@ -605,15 +661,14 @@ if (contentType != null)
    * Получить проект по ID
    * Запрос на получение отдельного проекта с указанным id
    * @param id ID сущности (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return Project
    * @throws ApiException if fails to make API call
    */
-  public Project getProjectById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getProjectById(id, expand, accept, acceptEncoding, Collections.emptyMap());
+  public Project getProjectById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProjectById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить проект по ID
@@ -633,7 +688,6 @@ if (contentType != null)
     return this.getProjectById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить проект по ID
    * Запрос на получение отдельного проекта с указанным id
@@ -645,7 +699,7 @@ if (contentType != null)
    * @return Project
    * @throws ApiException if fails to make API call
    */
-  public Project getProjectById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected Project getProjectById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -708,15 +762,28 @@ if (acceptEncoding != null)
   /**
    * Получить метаданные проектов
    * Запрос на получение метаданных проектов
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return Metadata
    * @throws ApiException if fails to make API call
    */
-  public Metadata getProjectMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getProjectMetadata(accept, acceptEncoding, Collections.emptyMap());
+  public Metadata getProjectMetadata() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProjectMetadata(null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить метаданные проектов
+   * Запрос на получение метаданных проектов
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Metadata
+   * @throws ApiException if fails to make API call
+   */
+  public Metadata getProjectMetadata(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getProjectMetadata(null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить метаданные проектов
@@ -727,7 +794,7 @@ if (acceptEncoding != null)
    * @return Metadata
    * @throws ApiException if fails to make API call
    */
-  public Metadata getProjectMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected Metadata getProjectMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -784,15 +851,31 @@ if (acceptEncoding != null)
    * Получить доп. поле проекта по ID
    * Запрос на получение отдельного доп. поля
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo getProjectMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getProjectMetadataAttributeById(id, accept, acceptEncoding, Collections.emptyMap());
+  public AttributeMetaInfo getProjectMetadataAttributeById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProjectMetadataAttributeById(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить доп. поле проекта по ID
+   * Запрос на получение отдельного доп. поля
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo getProjectMetadataAttributeById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getProjectMetadataAttributeById(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить доп. поле проекта по ID
@@ -804,7 +887,7 @@ if (acceptEncoding != null)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo getProjectMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfo getProjectMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -866,15 +949,28 @@ if (acceptEncoding != null)
   /**
    * Получить доп. поля проектов
    * Запрос на получение всех доп. полей для проектов
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return AttributeMetaInfoList
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfoList getProjectMetadataAttributes(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getProjectMetadataAttributes(accept, acceptEncoding, Collections.emptyMap());
+  public AttributeMetaInfoList getProjectMetadataAttributes() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProjectMetadataAttributes(null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить доп. поля проектов
+   * Запрос на получение всех доп. полей для проектов
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfoList
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfoList getProjectMetadataAttributes(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getProjectMetadataAttributes(null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить доп. поля проектов
@@ -885,7 +981,7 @@ if (acceptEncoding != null)
    * @return AttributeMetaInfoList
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfoList getProjectMetadataAttributes(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfoList getProjectMetadataAttributes(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -941,20 +1037,14 @@ if (acceptEncoding != null)
   /**
    * Получить список проектов
    * Запрос всех проектов на данной учетной записи
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param search Контекстный поиск по строковым полям сущностей (optional)
-   * @param filter Фильтрация выборки (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param order Сортировка (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return ProjectList
    * @throws ApiException if fails to make API call
    */
-  public ProjectList getProjects(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getProjects(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  public ProjectList getProjects() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProjects((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить список проектов
@@ -976,7 +1066,6 @@ if (acceptEncoding != null)
     return this.getProjects((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить список проектов
    * Запрос всех проектов на данной учетной записи
@@ -992,7 +1081,7 @@ if (acceptEncoding != null)
    * @return ProjectList
    * @throws ApiException if fails to make API call
    */
-  public ProjectList getProjects(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected ProjectList getProjects(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1056,16 +1145,14 @@ if (acceptEncoding != null)
    * Обновление проекта с указанным id
    * @param id ID сущности (required)
    * @param project  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Project
    * @throws ApiException if fails to make API call
    */
-  public Project updateProject(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Project project, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateProject(id, project, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Project updateProject(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Project project) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateProject(id, project, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Обновить проект
@@ -1089,7 +1176,6 @@ if (acceptEncoding != null)
     return this.updateProject(id, project, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Обновить проект
    * Обновление проекта с указанным id
@@ -1103,7 +1189,7 @@ if (acceptEncoding != null)
    * @return Project
    * @throws ApiException if fails to make API call
    */
-  public Project updateProject(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Project project, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Project updateProject(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Project project, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = project;
     
     // verify the required parameter 'id' is set
@@ -1175,16 +1261,35 @@ if (contentType != null)
    * Обновление доп. поля для проектов
    * @param id ID сущности (required)
    * @param attributeMetaInfo  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo updateProjectMetadataAttribute(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateProjectMetadataAttribute(id, attributeMetaInfo, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public AttributeMetaInfo updateProjectMetadataAttribute(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateProjectMetadataAttribute(id, attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Обновить доп. поле проекта
+   * Обновление доп. поля для проектов
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param attributeMetaInfo  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo updateProjectMetadataAttribute(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateProjectMetadataAttribute(id, attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Обновить доп. поле проекта
@@ -1198,7 +1303,7 @@ if (contentType != null)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo updateProjectMetadataAttribute(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfo updateProjectMetadataAttribute(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = attributeMetaInfo;
     
     // verify the required parameter 'id' is set

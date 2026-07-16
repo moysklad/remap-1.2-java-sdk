@@ -41,7 +41,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ServicesApi extends BaseApi {
 
@@ -58,16 +58,35 @@ public class ServicesApi extends BaseApi {
    * Добавить новые Файлы к Услуге. В одном запросе можно добавить максимум 10 Файлов. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
    * @param id ID сущности (required)
    * @param fileUpload  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;ModelFile&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<ModelFile> addServiceFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.addServiceFiles(id, fileUpload, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<ModelFile> addServiceFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.addServiceFiles(id, fileUpload, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Добавить файлы к услуге
+   * Добавить новые Файлы к Услуге. В одном запросе можно добавить максимум 10 Файлов. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param fileUpload  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;ModelFile&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<ModelFile> addServiceFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.addServiceFiles(id, fileUpload, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Добавить файлы к услуге
@@ -81,7 +100,7 @@ public class ServicesApi extends BaseApi {
    * @return List&lt;ModelFile&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<ModelFile> addServiceFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<ModelFile> addServiceFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = fileUpload;
     
     // verify the required parameter 'id' is set
@@ -151,16 +170,14 @@ if (contentType != null)
    * Создать услугу
    * Создание новой услуги
    * @param service  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Service
    * @throws ApiException if fails to make API call
    */
-  public Service createService(@javax.annotation.Nonnull Service service, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createService(service, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Service createService(@javax.annotation.Nonnull Service service) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createService(service, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать услугу
@@ -181,7 +198,6 @@ if (contentType != null)
     return this.createService(service, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать услугу
    * Создание новой услуги
@@ -194,7 +210,7 @@ if (contentType != null)
    * @return Service
    * @throws ApiException if fails to make API call
    */
-  public Service createService(@javax.annotation.Nonnull Service service, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Service createService(@javax.annotation.Nonnull Service service, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = service;
     
     // verify the required parameter 'service' is set
@@ -259,16 +275,14 @@ if (contentType != null)
    * Создать или изменить услуги
    * Создание или изменение нескольких услуг.
    * @param service  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createServicesBatch(@javax.annotation.Nonnull List<@Valid Service> service, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createServicesBatch(service, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<BatchResponseEntity> createServicesBatch(@javax.annotation.Nonnull List<@Valid Service> service) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createServicesBatch(service, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать или изменить услуги
@@ -289,7 +303,6 @@ if (contentType != null)
     return this.createServicesBatch(service, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать или изменить услуги
    * Создание или изменение нескольких услуг.
@@ -302,7 +315,7 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createServicesBatch(@javax.annotation.Nonnull List<@Valid Service> service, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createServicesBatch(@javax.annotation.Nonnull List<@Valid Service> service, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = service;
     
     // verify the required parameter 'service' is set
@@ -367,14 +380,29 @@ if (contentType != null)
    * Удалить услугу
    * Удаление услуги с указанным id
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteService(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteService(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteService(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteService(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить услугу
+   * Удаление услуги с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteService(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteService(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить услугу
@@ -385,7 +413,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteService(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteService(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -448,14 +476,32 @@ if (acceptEncoding != null)
    * Удаление Файла Услуги.
    * @param id ID сущности (required)
    * @param fileId ID файла (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteServiceFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID fileId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteServiceFile(id, fileId, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteServiceFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID fileId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteServiceFile(id, fileId, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить файл услуги
+   * Удаление Файла Услуги.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param fileId ID файла (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteServiceFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID fileId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteServiceFile(id, fileId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить файл услуги
@@ -467,7 +513,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteServiceFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID fileId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteServiceFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID fileId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -535,16 +581,32 @@ if (acceptEncoding != null)
    * Удалить услугу
    * Массовое удаление услуг по их мета-объектам.
    * @param service  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteServicesBatch(@javax.annotation.Nonnull List<@Valid Service> service, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteServicesBatch(service, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteServicesBatch(@javax.annotation.Nonnull List<@Valid Service> service) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteServicesBatch(service, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить услугу
+   * Массовое удаление услуг по их мета-объектам.
+   
+   * @param service  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteServicesBatch(@javax.annotation.Nonnull List<@Valid Service> service, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteServicesBatch(service, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить услугу
@@ -557,7 +619,7 @@ if (acceptEncoding != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteServicesBatch(@javax.annotation.Nonnull List<@Valid Service> service, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteServicesBatch(@javax.annotation.Nonnull List<@Valid Service> service, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = service;
     
     // verify the required parameter 'service' is set
@@ -621,15 +683,14 @@ if (contentType != null)
    * Получить услугу по ID
    * Запрос на получение отдельной услуги с указанным id
    * @param id ID сущности (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return Service
    * @throws ApiException if fails to make API call
    */
-  public Service getServiceById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getServiceById(id, expand, accept, acceptEncoding, Collections.emptyMap());
+  public Service getServiceById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getServiceById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить услугу по ID
@@ -649,7 +710,6 @@ if (contentType != null)
     return this.getServiceById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить услугу по ID
    * Запрос на получение отдельной услуги с указанным id
@@ -661,7 +721,7 @@ if (contentType != null)
    * @return Service
    * @throws ApiException if fails to make API call
    */
-  public Service getServiceById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected Service getServiceById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -725,16 +785,14 @@ if (acceptEncoding != null)
    * Получить файлы услуги
    * Запрос на получение списка всех Файлов данной Услуги.
    * @param id ID сущности (required)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return GetProductFiles200Response
    * @throws ApiException if fails to make API call
    */
-  public GetProductFiles200Response getServiceFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getServiceFiles(id, limit, offset, accept, acceptEncoding, Collections.emptyMap());
+  public GetProductFiles200Response getServiceFiles(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getServiceFiles(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить файлы услуги
@@ -755,7 +813,6 @@ if (acceptEncoding != null)
     return this.getServiceFiles(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить файлы услуги
    * Запрос на получение списка всех Файлов данной Услуги.
@@ -768,7 +825,7 @@ if (acceptEncoding != null)
    * @return GetProductFiles200Response
    * @throws ApiException if fails to make API call
    */
-  public GetProductFiles200Response getServiceFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected GetProductFiles200Response getServiceFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -832,20 +889,14 @@ if (acceptEncoding != null)
   /**
    * Получить список товаров
    * Запрос всех товаров на данной учетной записи
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param search Контекстный поиск по строковым полям сущностей (optional)
-   * @param filter Фильтрация выборки (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param order Сортировка (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return ServiceList
    * @throws ApiException if fails to make API call
    */
-  public ServiceList getServices(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getServices(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  public ServiceList getServices() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getServices((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить список товаров
@@ -867,7 +918,6 @@ if (acceptEncoding != null)
     return this.getServices((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить список товаров
    * Запрос всех товаров на данной учетной записи
@@ -883,7 +933,7 @@ if (acceptEncoding != null)
    * @return ServiceList
    * @throws ApiException if fails to make API call
    */
-  public ServiceList getServices(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected ServiceList getServices(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -947,16 +997,14 @@ if (acceptEncoding != null)
    * Обновление услуги с указанным id
    * @param id ID сущности (required)
    * @param service  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Service
    * @throws ApiException if fails to make API call
    */
-  public Service updateService(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Service service, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateService(id, service, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Service updateService(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Service service) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateService(id, service, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Обновить услугу
@@ -980,7 +1028,6 @@ if (acceptEncoding != null)
     return this.updateService(id, service, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Обновить услугу
    * Обновление услуги с указанным id
@@ -994,7 +1041,7 @@ if (acceptEncoding != null)
    * @return Service
    * @throws ApiException if fails to make API call
    */
-  public Service updateService(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Service service, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Service updateService(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Service service, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = service;
     
     // verify the required parameter 'id' is set

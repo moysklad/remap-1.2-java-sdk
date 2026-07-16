@@ -73,7 +73,7 @@ import java.util.StringJoiner;
   Employee.JSON_PROPERTY_IMAGE,
   Employee.JSON_PROPERTY_ATTRIBUTES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 public class Employee extends EntityWithMeta {
   public static Employee createWithMeta(UUID id) {
     Employee o = new Employee();

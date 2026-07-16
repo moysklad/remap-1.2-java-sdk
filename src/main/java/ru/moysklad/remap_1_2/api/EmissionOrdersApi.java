@@ -41,7 +41,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class EmissionOrdersApi extends BaseApi {
 
@@ -57,16 +57,14 @@ public class EmissionOrdersApi extends BaseApi {
    * Создать Заказ кодов маркировки
    * 
    * @param emissionOrder  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return EmissionOrder
    * @throws ApiException if fails to make API call
    */
-  public EmissionOrder createEmissionOrder(@javax.annotation.Nonnull EmissionOrder emissionOrder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createEmissionOrder(emissionOrder, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public EmissionOrder createEmissionOrder(@javax.annotation.Nonnull EmissionOrder emissionOrder) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createEmissionOrder(emissionOrder, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать Заказ кодов маркировки
@@ -87,7 +85,6 @@ public class EmissionOrdersApi extends BaseApi {
     return this.createEmissionOrder(emissionOrder, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать Заказ кодов маркировки
    * 
@@ -100,7 +97,7 @@ public class EmissionOrdersApi extends BaseApi {
    * @return EmissionOrder
    * @throws ApiException if fails to make API call
    */
-  public EmissionOrder createEmissionOrder(@javax.annotation.Nonnull EmissionOrder emissionOrder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected EmissionOrder createEmissionOrder(@javax.annotation.Nonnull EmissionOrder emissionOrder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = emissionOrder;
     
     // verify the required parameter 'emissionOrder' is set
@@ -165,16 +162,14 @@ if (contentType != null)
    * Массовое создание и обновление Заказов кодов маркировки
    * 
    * @param emissionOrder  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createEmissionOrderBatch(@javax.annotation.Nonnull List<@Valid EmissionOrder> emissionOrder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createEmissionOrderBatch(emissionOrder, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<BatchResponseEntity> createEmissionOrderBatch(@javax.annotation.Nonnull List<@Valid EmissionOrder> emissionOrder) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createEmissionOrderBatch(emissionOrder, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Массовое создание и обновление Заказов кодов маркировки
@@ -195,7 +190,6 @@ if (contentType != null)
     return this.createEmissionOrderBatch(emissionOrder, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Массовое создание и обновление Заказов кодов маркировки
    * 
@@ -208,7 +202,7 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createEmissionOrderBatch(@javax.annotation.Nonnull List<@Valid EmissionOrder> emissionOrder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createEmissionOrderBatch(@javax.annotation.Nonnull List<@Valid EmissionOrder> emissionOrder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = emissionOrder;
     
     // verify the required parameter 'emissionOrder' is set
@@ -274,16 +268,14 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param emissionOrderPosition  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return EmissionOrderPosition
    * @throws ApiException if fails to make API call
    */
-  public EmissionOrderPosition createEmissionOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EmissionOrderPosition emissionOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createEmissionOrderPosition(id, emissionOrderPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public EmissionOrderPosition createEmissionOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EmissionOrderPosition emissionOrderPosition) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createEmissionOrderPosition(id, emissionOrderPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать и обновить позицию Заказа кодов маркировки
@@ -307,7 +299,6 @@ if (contentType != null)
     return this.createEmissionOrderPosition(id, emissionOrderPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать и обновить позицию Заказа кодов маркировки
    * 
@@ -321,7 +312,7 @@ if (contentType != null)
    * @return EmissionOrderPosition
    * @throws ApiException if fails to make API call
    */
-  public EmissionOrderPosition createEmissionOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EmissionOrderPosition emissionOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected EmissionOrderPosition createEmissionOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EmissionOrderPosition emissionOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = emissionOrderPosition;
     
     // verify the required parameter 'id' is set
@@ -393,16 +384,14 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param emissionOrderPosition  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createEmissionOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid EmissionOrderPosition> emissionOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createEmissionOrderPositions(id, emissionOrderPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<BatchResponseEntity> createEmissionOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid EmissionOrderPosition> emissionOrderPosition) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createEmissionOrderPositions(id, emissionOrderPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Массовое создание и обновление позиций Заказа кодов маркировки
@@ -426,7 +415,6 @@ if (contentType != null)
     return this.createEmissionOrderPositions(id, emissionOrderPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Массовое создание и обновление позиций Заказа кодов маркировки
    * 
@@ -440,7 +428,7 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createEmissionOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid EmissionOrderPosition> emissionOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createEmissionOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid EmissionOrderPosition> emissionOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = emissionOrderPosition;
     
     // verify the required parameter 'id' is set
@@ -511,15 +499,30 @@ if (contentType != null)
    * Удалить отдельный статус Заказа кодов маркировки
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @throws ApiException if fails to make API call
    */
-  public void deleteEmissionOrderMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    this.deleteEmissionOrderMetadataStateById(id, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public void deleteEmissionOrderMetadataStateById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteEmissionOrderMetadataStateById(id, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить отдельный статус Заказа кодов маркировки
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteEmissionOrderMetadataStateById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteEmissionOrderMetadataStateById(id, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить отдельный статус Заказа кодов маркировки
@@ -531,7 +534,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteEmissionOrderMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteEmissionOrderMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -595,16 +598,14 @@ if (contentType != null)
    * Получить Заказ кодов маркировки
    * 
    * @param id ID сущности (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return EmissionOrder
    * @throws ApiException if fails to make API call
    */
-  public EmissionOrder getEmissionOrderById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getEmissionOrderById(id, expand, fields, accept, acceptEncoding, Collections.emptyMap());
+  public EmissionOrder getEmissionOrderById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getEmissionOrderById(id, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить Заказ кодов маркировки
@@ -625,7 +626,6 @@ if (contentType != null)
     return this.getEmissionOrderById(id, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить Заказ кодов маркировки
    * 
@@ -638,7 +638,7 @@ if (contentType != null)
    * @return EmissionOrder
    * @throws ApiException if fails to make API call
    */
-  public EmissionOrder getEmissionOrderById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected EmissionOrder getEmissionOrderById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -702,18 +702,14 @@ if (acceptEncoding != null)
   /**
    * Получить список Заказов кодов маркировки
    * 
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return EmissionOrderList
    * @throws ApiException if fails to make API call
    */
-  public EmissionOrderList getEmissionOrderList(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getEmissionOrderList(limit, offset, expand, fields, accept, acceptEncoding, Collections.emptyMap());
+  public EmissionOrderList getEmissionOrderList() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getEmissionOrderList((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить список Заказов кодов маркировки
@@ -733,7 +729,6 @@ if (acceptEncoding != null)
     return this.getEmissionOrderList((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить список Заказов кодов маркировки
    * 
@@ -747,7 +742,7 @@ if (acceptEncoding != null)
    * @return EmissionOrderList
    * @throws ApiException if fails to make API call
    */
-  public EmissionOrderList getEmissionOrderList(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected EmissionOrderList getEmissionOrderList(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -807,16 +802,29 @@ if (acceptEncoding != null)
   /**
    * Метаданные Заказов кодов маркировки
    * 
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return DocumentMetadata
    * @throws ApiException if fails to make API call
    */
-  public DocumentMetadata getEmissionOrderMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.getEmissionOrderMetadata(accept, acceptEncoding, contentType, Collections.emptyMap());
+  public DocumentMetadata getEmissionOrderMetadata() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getEmissionOrderMetadata(null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Метаданные Заказов кодов маркировки
+   * 
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return DocumentMetadata
+   * @throws ApiException if fails to make API call
+   */
+  public DocumentMetadata getEmissionOrderMetadata(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getEmissionOrderMetadata(null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Метаданные Заказов кодов маркировки
@@ -828,7 +836,7 @@ if (acceptEncoding != null)
    * @return DocumentMetadata
    * @throws ApiException if fails to make API call
    */
-  public DocumentMetadata getEmissionOrderMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected DocumentMetadata getEmissionOrderMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -887,16 +895,32 @@ if (contentType != null)
    * Отдельный статус Заказа кодов маркировки
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return State
    * @throws ApiException if fails to make API call
    */
-  public State getEmissionOrderMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.getEmissionOrderMetadataStateById(id, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public State getEmissionOrderMetadataStateById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getEmissionOrderMetadataStateById(id, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Отдельный статус Заказа кодов маркировки
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return State
+   * @throws ApiException if fails to make API call
+   */
+  public State getEmissionOrderMetadataStateById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getEmissionOrderMetadataStateById(id, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Отдельный статус Заказа кодов маркировки
@@ -909,7 +933,7 @@ if (contentType != null)
    * @return State
    * @throws ApiException if fails to make API call
    */
-  public State getEmissionOrderMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected State getEmissionOrderMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -975,16 +999,14 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param positionId ID позиции (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return EmissionOrderPosition
    * @throws ApiException if fails to make API call
    */
-  public EmissionOrderPosition getEmissionOrderPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getEmissionOrderPositionById(id, positionId, expand, fields, accept, acceptEncoding, Collections.emptyMap());
+  public EmissionOrderPosition getEmissionOrderPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getEmissionOrderPositionById(id, positionId, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить позицию Заказа кодов маркировки
@@ -1008,7 +1030,6 @@ if (contentType != null)
     return this.getEmissionOrderPositionById(id, positionId, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить позицию Заказа кодов маркировки
    * 
@@ -1022,7 +1043,7 @@ if (contentType != null)
    * @return EmissionOrderPosition
    * @throws ApiException if fails to make API call
    */
-  public EmissionOrderPosition getEmissionOrderPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected EmissionOrderPosition getEmissionOrderPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1093,18 +1114,14 @@ if (acceptEncoding != null)
    * Получить позиции Заказа кодов маркировки
    * 
    * @param id ID сущности (required)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return EmissionOrderPositionList
    * @throws ApiException if fails to make API call
    */
-  public EmissionOrderPositionList getEmissionOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getEmissionOrderPositions(id, limit, offset, expand, fields, accept, acceptEncoding, Collections.emptyMap());
+  public EmissionOrderPositionList getEmissionOrderPositions(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getEmissionOrderPositions(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить позиции Заказа кодов маркировки
@@ -1127,7 +1144,6 @@ if (acceptEncoding != null)
     return this.getEmissionOrderPositions(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить позиции Заказа кодов маркировки
    * 
@@ -1142,7 +1158,7 @@ if (acceptEncoding != null)
    * @return EmissionOrderPositionList
    * @throws ApiException if fails to make API call
    */
-  public EmissionOrderPositionList getEmissionOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected EmissionOrderPositionList getEmissionOrderPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1210,17 +1226,14 @@ if (acceptEncoding != null)
    * 
    * @param id ID сущности (required)
    * @param emissionOrder  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return EmissionOrder
    * @throws ApiException if fails to make API call
    */
-  public EmissionOrder updateEmissionOrder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EmissionOrder emissionOrder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateEmissionOrder(id, emissionOrder, expand, fields, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public EmissionOrder updateEmissionOrder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EmissionOrder emissionOrder) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateEmissionOrder(id, emissionOrder, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Изменить Заказ кодов маркировки
@@ -1245,7 +1258,6 @@ if (acceptEncoding != null)
     return this.updateEmissionOrder(id, emissionOrder, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Изменить Заказ кодов маркировки
    * 
@@ -1260,7 +1272,7 @@ if (acceptEncoding != null)
    * @return EmissionOrder
    * @throws ApiException if fails to make API call
    */
-  public EmissionOrder updateEmissionOrder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EmissionOrder emissionOrder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected EmissionOrder updateEmissionOrder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EmissionOrder emissionOrder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = emissionOrder;
     
     // verify the required parameter 'id' is set
@@ -1333,16 +1345,35 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param state  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return State
    * @throws ApiException if fails to make API call
    */
-  public State updateEmissionOrderMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateEmissionOrderMetadataStateById(id, state, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public State updateEmissionOrderMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull State state) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateEmissionOrderMetadataStateById(id, state, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Обновить отдельный статус Заказа кодов маркировки
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param state  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return State
+   * @throws ApiException if fails to make API call
+   */
+  public State updateEmissionOrderMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull State state, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateEmissionOrderMetadataStateById(id, state, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Обновить отдельный статус Заказа кодов маркировки
@@ -1356,7 +1387,7 @@ if (contentType != null)
    * @return State
    * @throws ApiException if fails to make API call
    */
-  public State updateEmissionOrderMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected State updateEmissionOrderMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = state;
     
     // verify the required parameter 'id' is set
@@ -1428,17 +1459,14 @@ if (contentType != null)
    * @param id ID сущности (required)
    * @param positionId ID позиции (required)
    * @param emissionOrderPosition  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return EmissionOrderPosition
    * @throws ApiException if fails to make API call
    */
-  public EmissionOrderPosition updateEmissionOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull EmissionOrderPosition emissionOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateEmissionOrderPosition(id, positionId, emissionOrderPosition, expand, fields, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public EmissionOrderPosition updateEmissionOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull EmissionOrderPosition emissionOrderPosition) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateEmissionOrderPosition(id, positionId, emissionOrderPosition, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Изменить позицию Заказа кодов маркировки
@@ -1466,7 +1494,6 @@ if (contentType != null)
     return this.updateEmissionOrderPosition(id, positionId, emissionOrderPosition, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Изменить позицию Заказа кодов маркировки
    * 
@@ -1482,7 +1509,7 @@ if (contentType != null)
    * @return EmissionOrderPosition
    * @throws ApiException if fails to make API call
    */
-  public EmissionOrderPosition updateEmissionOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull EmissionOrderPosition emissionOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected EmissionOrderPosition updateEmissionOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull EmissionOrderPosition emissionOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = emissionOrderPosition;
     
     // verify the required parameter 'id' is set

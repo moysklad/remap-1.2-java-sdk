@@ -48,7 +48,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class CounterpartiesApi extends BaseApi {
 
@@ -65,16 +65,35 @@ public class CounterpartiesApi extends BaseApi {
    * Добавить новые Файлы к Контрагенту. В одном запросе можно добавить максимум 10 Файлов. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
    * @param id ID сущности (required)
    * @param fileUpload  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;ModelFile&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<ModelFile> addCounterpartyFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.addCounterpartyFiles(id, fileUpload, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<ModelFile> addCounterpartyFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.addCounterpartyFiles(id, fileUpload, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Добавить файлы к контрагенту
+   * Добавить новые Файлы к Контрагенту. В одном запросе можно добавить максимум 10 Файлов. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param fileUpload  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;ModelFile&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<ModelFile> addCounterpartyFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.addCounterpartyFiles(id, fileUpload, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Добавить файлы к контрагенту
@@ -88,7 +107,7 @@ public class CounterpartiesApi extends BaseApi {
    * @return List&lt;ModelFile&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<ModelFile> addCounterpartyFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<ModelFile> addCounterpartyFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = fileUpload;
     
     // verify the required parameter 'id' is set
@@ -158,16 +177,14 @@ if (contentType != null)
    * Создать или изменить контрагентов
    * Создание или изменение нескольких контрагентов.
    * @param counterparty  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createCounterpartiesBatch(@javax.annotation.Nonnull List<@Valid Counterparty> counterparty, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createCounterpartiesBatch(counterparty, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<BatchResponseEntity> createCounterpartiesBatch(@javax.annotation.Nonnull List<@Valid Counterparty> counterparty) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createCounterpartiesBatch(counterparty, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать или изменить контрагентов
@@ -188,7 +205,6 @@ if (contentType != null)
     return this.createCounterpartiesBatch(counterparty, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать или изменить контрагентов
    * Создание или изменение нескольких контрагентов.
@@ -201,7 +217,7 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createCounterpartiesBatch(@javax.annotation.Nonnull List<@Valid Counterparty> counterparty, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createCounterpartiesBatch(@javax.annotation.Nonnull List<@Valid Counterparty> counterparty, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = counterparty;
     
     // verify the required parameter 'counterparty' is set
@@ -266,16 +282,14 @@ if (contentType != null)
    * Создать контрагента
    * Создание нового контрагента
    * @param counterparty  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Counterparty
    * @throws ApiException if fails to make API call
    */
-  public Counterparty createCounterparty(@javax.annotation.Nonnull Counterparty counterparty, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createCounterparty(counterparty, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Counterparty createCounterparty(@javax.annotation.Nonnull Counterparty counterparty) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createCounterparty(counterparty, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать контрагента
@@ -296,7 +310,6 @@ if (contentType != null)
     return this.createCounterparty(counterparty, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать контрагента
    * Создание нового контрагента
@@ -309,7 +322,7 @@ if (contentType != null)
    * @return Counterparty
    * @throws ApiException if fails to make API call
    */
-  public Counterparty createCounterparty(@javax.annotation.Nonnull Counterparty counterparty, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Counterparty createCounterparty(@javax.annotation.Nonnull Counterparty counterparty, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = counterparty;
     
     // verify the required parameter 'counterparty' is set
@@ -375,16 +388,35 @@ if (contentType != null)
    * Создание нового счёта у данного Контрагента.
    * @param id ID сущности (required)
    * @param account  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Account
    * @throws ApiException if fails to make API call
    */
-  public Account createCounterpartyAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Account account, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createCounterpartyAccount(id, account, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Account createCounterpartyAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Account account) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createCounterpartyAccount(id, account, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Создать счёт контрагента
+   * Создание нового счёта у данного Контрагента.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param account  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Account
+   * @throws ApiException if fails to make API call
+   */
+  public Account createCounterpartyAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Account account, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createCounterpartyAccount(id, account, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Создать счёт контрагента
@@ -398,7 +430,7 @@ if (contentType != null)
    * @return Account
    * @throws ApiException if fails to make API call
    */
-  public Account createCounterpartyAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Account account, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Account createCounterpartyAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Account account, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = account;
     
     // verify the required parameter 'id' is set
@@ -469,16 +501,35 @@ if (contentType != null)
    * Создание нового контактного лица у данного Контрагента.
    * @param id ID сущности (required)
    * @param contactPerson  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return ContactPerson
    * @throws ApiException if fails to make API call
    */
-  public ContactPerson createCounterpartyContactPerson(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ContactPerson contactPerson, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createCounterpartyContactPerson(id, contactPerson, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public ContactPerson createCounterpartyContactPerson(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ContactPerson contactPerson) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createCounterpartyContactPerson(id, contactPerson, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Создать контактное лицо контрагента
+   * Создание нового контактного лица у данного Контрагента.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param contactPerson  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ContactPerson
+   * @throws ApiException if fails to make API call
+   */
+  public ContactPerson createCounterpartyContactPerson(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ContactPerson contactPerson, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createCounterpartyContactPerson(id, contactPerson, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Создать контактное лицо контрагента
@@ -492,7 +543,7 @@ if (contentType != null)
    * @return ContactPerson
    * @throws ApiException if fails to make API call
    */
-  public ContactPerson createCounterpartyContactPerson(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ContactPerson contactPerson, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected ContactPerson createCounterpartyContactPerson(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ContactPerson contactPerson, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = contactPerson;
     
     // verify the required parameter 'id' is set
@@ -563,16 +614,35 @@ if (contentType != null)
    * Создание нового события у данного Контрагента.
    * @param id ID сущности (required)
    * @param note  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Note
    * @throws ApiException if fails to make API call
    */
-  public Note createCounterpartyNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Note note, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createCounterpartyNote(id, note, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Note createCounterpartyNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Note note) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createCounterpartyNote(id, note, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Создать событие контрагента
+   * Создание нового события у данного Контрагента.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param note  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Note
+   * @throws ApiException if fails to make API call
+   */
+  public Note createCounterpartyNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Note note, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createCounterpartyNote(id, note, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Создать событие контрагента
@@ -586,7 +656,7 @@ if (contentType != null)
    * @return Note
    * @throws ApiException if fails to make API call
    */
-  public Note createCounterpartyNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Note note, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Note createCounterpartyNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Note note, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = note;
     
     // verify the required parameter 'id' is set
@@ -656,16 +726,32 @@ if (contentType != null)
    * Удалить контрагентов
    * Массовое удаление контрагентов по их мета-объектам.
    * @param counterparty  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteCounterpartiesBatch(@javax.annotation.Nonnull List<@Valid Counterparty> counterparty, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteCounterpartiesBatch(counterparty, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteCounterpartiesBatch(@javax.annotation.Nonnull List<@Valid Counterparty> counterparty) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteCounterpartiesBatch(counterparty, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить контрагентов
+   * Массовое удаление контрагентов по их мета-объектам.
+   
+   * @param counterparty  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteCounterpartiesBatch(@javax.annotation.Nonnull List<@Valid Counterparty> counterparty, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteCounterpartiesBatch(counterparty, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить контрагентов
@@ -678,7 +764,7 @@ if (contentType != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteCounterpartiesBatch(@javax.annotation.Nonnull List<@Valid Counterparty> counterparty, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteCounterpartiesBatch(@javax.annotation.Nonnull List<@Valid Counterparty> counterparty, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = counterparty;
     
     // verify the required parameter 'counterparty' is set
@@ -742,14 +828,29 @@ if (contentType != null)
    * Удалить контрагента
    * Удаление контрагента с указанным id
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteCounterparty(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteCounterparty(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteCounterparty(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteCounterparty(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить контрагента
+   * Удаление контрагента с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteCounterparty(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteCounterparty(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить контрагента
@@ -760,7 +861,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteCounterparty(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteCounterparty(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -823,14 +924,32 @@ if (acceptEncoding != null)
    * Удаление счёта Контрагента с указанным id.
    * @param id ID сущности (required)
    * @param accountId ID счёта контрагента (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteCounterpartyAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteCounterpartyAccount(id, accountId, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteCounterpartyAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteCounterpartyAccount(id, accountId, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить счёт контрагента
+   * Удаление счёта Контрагента с указанным id.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param accountId ID счёта контрагента (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteCounterpartyAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteCounterpartyAccount(id, accountId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить счёт контрагента
@@ -842,7 +961,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteCounterpartyAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteCounterpartyAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -911,14 +1030,32 @@ if (acceptEncoding != null)
    * Удаление контактного лица Контрагента с указанным id.
    * @param id ID сущности (required)
    * @param contactPersonId ID контактного лица (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteCounterpartyContactPerson(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID contactPersonId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteCounterpartyContactPerson(id, contactPersonId, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteCounterpartyContactPerson(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID contactPersonId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteCounterpartyContactPerson(id, contactPersonId, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить контактное лицо контрагента
+   * Удаление контактного лица Контрагента с указанным id.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param contactPersonId ID контактного лица (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteCounterpartyContactPerson(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID contactPersonId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteCounterpartyContactPerson(id, contactPersonId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить контактное лицо контрагента
@@ -930,7 +1067,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteCounterpartyContactPerson(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID contactPersonId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteCounterpartyContactPerson(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID contactPersonId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -999,14 +1136,32 @@ if (acceptEncoding != null)
    * Удаление Файла Контрагента. При удалении удаляется первый найденный с данным идентификатором Файл у Контрагента. 
    * @param id ID сущности (required)
    * @param fileId ID файла (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteCounterpartyFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID fileId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteCounterpartyFile(id, fileId, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteCounterpartyFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID fileId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteCounterpartyFile(id, fileId, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить файл контрагента
+   * Удаление Файла Контрагента. При удалении удаляется первый найденный с данным идентификатором Файл у Контрагента. 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param fileId ID файла (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteCounterpartyFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID fileId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteCounterpartyFile(id, fileId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить файл контрагента
@@ -1018,7 +1173,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteCounterpartyFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID fileId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteCounterpartyFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID fileId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1087,14 +1242,32 @@ if (acceptEncoding != null)
    * Удаление события Контрагента с указанным id.
    * @param id ID сущности (required)
    * @param noteId ID события контрагента (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteCounterpartyNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID noteId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteCounterpartyNote(id, noteId, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteCounterpartyNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID noteId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteCounterpartyNote(id, noteId, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить событие контрагента
+   * Удаление события Контрагента с указанным id.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param noteId ID события контрагента (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteCounterpartyNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID noteId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteCounterpartyNote(id, noteId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить событие контрагента
@@ -1106,7 +1279,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteCounterpartyNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID noteId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteCounterpartyNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID noteId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1173,20 +1346,14 @@ if (acceptEncoding != null)
   /**
    * Получить список контрагентов
    * Запрос всех контрагентов на данной учетной записи
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param search Контекстный поиск по строковым полям сущностей (optional)
-   * @param filter Фильтрация выборки (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param order Сортировка (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return CounterpartyList
    * @throws ApiException if fails to make API call
    */
-  public CounterpartyList getCounterparties(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getCounterparties(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  public CounterpartyList getCounterparties() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getCounterparties((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить список контрагентов
@@ -1208,7 +1375,6 @@ if (acceptEncoding != null)
     return this.getCounterparties((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить список контрагентов
    * Запрос всех контрагентов на данной учетной записи
@@ -1224,7 +1390,7 @@ if (acceptEncoding != null)
    * @return CounterpartyList
    * @throws ApiException if fails to make API call
    */
-  public CounterpartyList getCounterparties(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected CounterpartyList getCounterparties(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1288,15 +1454,34 @@ if (acceptEncoding != null)
    * Запрос на получение отдельного счёта Контрагента с указанным id.
    * @param id ID сущности (required)
    * @param accountId ID счёта контрагента (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return Account
    * @throws ApiException if fails to make API call
    */
-  public Account getCounterpartyAccountById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getCounterpartyAccountById(id, accountId, accept, acceptEncoding, Collections.emptyMap());
+  public Account getCounterpartyAccountById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getCounterpartyAccountById(id, accountId, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить счёт контрагента по ID
+   * Запрос на получение отдельного счёта Контрагента с указанным id.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param accountId ID счёта контрагента (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Account
+   * @throws ApiException if fails to make API call
+   */
+  public Account getCounterpartyAccountById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getCounterpartyAccountById(id, accountId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить счёт контрагента по ID
@@ -1309,7 +1494,7 @@ if (acceptEncoding != null)
    * @return Account
    * @throws ApiException if fails to make API call
    */
-  public Account getCounterpartyAccountById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected Account getCounterpartyAccountById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1378,16 +1563,14 @@ if (acceptEncoding != null)
    * Получить счета контрагента
    * Запрос на получение списка всех счетов данного Контрагента.
    * @param id ID сущности (required)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return GetCounterpartyAccounts200Response
    * @throws ApiException if fails to make API call
    */
-  public GetCounterpartyAccounts200Response getCounterpartyAccounts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getCounterpartyAccounts(id, limit, offset, accept, acceptEncoding, Collections.emptyMap());
+  public GetCounterpartyAccounts200Response getCounterpartyAccounts(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getCounterpartyAccounts(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить счета контрагента
@@ -1408,7 +1591,6 @@ if (acceptEncoding != null)
     return this.getCounterpartyAccounts(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить счета контрагента
    * Запрос на получение списка всех счетов данного Контрагента.
@@ -1421,7 +1603,7 @@ if (acceptEncoding != null)
    * @return GetCounterpartyAccounts200Response
    * @throws ApiException if fails to make API call
    */
-  public GetCounterpartyAccounts200Response getCounterpartyAccounts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected GetCounterpartyAccounts200Response getCounterpartyAccounts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1486,15 +1668,14 @@ if (acceptEncoding != null)
    * Получить контрагента по ID
    * Запрос на получение отдельного контрагента с указанным id
    * @param id ID сущности (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return Counterparty
    * @throws ApiException if fails to make API call
    */
-  public Counterparty getCounterpartyById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getCounterpartyById(id, expand, accept, acceptEncoding, Collections.emptyMap());
+  public Counterparty getCounterpartyById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getCounterpartyById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить контрагента по ID
@@ -1514,7 +1695,6 @@ if (acceptEncoding != null)
     return this.getCounterpartyById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить контрагента по ID
    * Запрос на получение отдельного контрагента с указанным id
@@ -1526,7 +1706,7 @@ if (acceptEncoding != null)
    * @return Counterparty
    * @throws ApiException if fails to make API call
    */
-  public Counterparty getCounterpartyById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected Counterparty getCounterpartyById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1591,15 +1771,34 @@ if (acceptEncoding != null)
    * Запрос на получение отдельного контактного лица Контрагента с указанным id.
    * @param id ID сущности (required)
    * @param contactPersonId ID контактного лица (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return ContactPerson
    * @throws ApiException if fails to make API call
    */
-  public ContactPerson getCounterpartyContactPersonById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID contactPersonId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getCounterpartyContactPersonById(id, contactPersonId, accept, acceptEncoding, Collections.emptyMap());
+  public ContactPerson getCounterpartyContactPersonById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID contactPersonId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getCounterpartyContactPersonById(id, contactPersonId, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить контактное лицо контрагента по ID
+   * Запрос на получение отдельного контактного лица Контрагента с указанным id.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param contactPersonId ID контактного лица (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ContactPerson
+   * @throws ApiException if fails to make API call
+   */
+  public ContactPerson getCounterpartyContactPersonById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID contactPersonId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getCounterpartyContactPersonById(id, contactPersonId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить контактное лицо контрагента по ID
@@ -1612,7 +1811,7 @@ if (acceptEncoding != null)
    * @return ContactPerson
    * @throws ApiException if fails to make API call
    */
-  public ContactPerson getCounterpartyContactPersonById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID contactPersonId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected ContactPerson getCounterpartyContactPersonById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID contactPersonId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1681,16 +1880,14 @@ if (acceptEncoding != null)
    * Получить контактные лица контрагента
    * Запрос на получение списка всех контактных лиц данного Контрагента.
    * @param id ID сущности (required)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return GetCounterpartyContactPersons200Response
    * @throws ApiException if fails to make API call
    */
-  public GetCounterpartyContactPersons200Response getCounterpartyContactPersons(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getCounterpartyContactPersons(id, limit, offset, accept, acceptEncoding, Collections.emptyMap());
+  public GetCounterpartyContactPersons200Response getCounterpartyContactPersons(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getCounterpartyContactPersons(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить контактные лица контрагента
@@ -1711,7 +1908,6 @@ if (acceptEncoding != null)
     return this.getCounterpartyContactPersons(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить контактные лица контрагента
    * Запрос на получение списка всех контактных лиц данного Контрагента.
@@ -1724,7 +1920,7 @@ if (acceptEncoding != null)
    * @return GetCounterpartyContactPersons200Response
    * @throws ApiException if fails to make API call
    */
-  public GetCounterpartyContactPersons200Response getCounterpartyContactPersons(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected GetCounterpartyContactPersons200Response getCounterpartyContactPersons(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1789,16 +1985,14 @@ if (acceptEncoding != null)
    * Получить файлы контрагента
    * Запрос на получение списка всех Файлов данного Контрагента.
    * @param id ID сущности (required)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return GetProductFiles200Response
    * @throws ApiException if fails to make API call
    */
-  public GetProductFiles200Response getCounterpartyFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getCounterpartyFiles(id, limit, offset, accept, acceptEncoding, Collections.emptyMap());
+  public GetProductFiles200Response getCounterpartyFiles(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getCounterpartyFiles(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить файлы контрагента
@@ -1819,7 +2013,6 @@ if (acceptEncoding != null)
     return this.getCounterpartyFiles(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить файлы контрагента
    * Запрос на получение списка всех Файлов данного Контрагента.
@@ -1832,7 +2025,7 @@ if (acceptEncoding != null)
    * @return GetProductFiles200Response
    * @throws ApiException if fails to make API call
    */
-  public GetProductFiles200Response getCounterpartyFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected GetProductFiles200Response getCounterpartyFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1896,15 +2089,14 @@ if (acceptEncoding != null)
   /**
    * Получить метаданные контрагентов
    * Запрос на получение метаданных контрагентов.
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return CounterpartyMetadata
    * @throws ApiException if fails to make API call
    */
-  public CounterpartyMetadata getCounterpartyMetadata(@javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getCounterpartyMetadata(expand, accept, acceptEncoding, Collections.emptyMap());
+  public CounterpartyMetadata getCounterpartyMetadata() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getCounterpartyMetadata((String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить метаданные контрагентов
@@ -1921,7 +2113,6 @@ if (acceptEncoding != null)
     return this.getCounterpartyMetadata((String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить метаданные контрагентов
    * Запрос на получение метаданных контрагентов.
@@ -1932,7 +2123,7 @@ if (acceptEncoding != null)
    * @return CounterpartyMetadata
    * @throws ApiException if fails to make API call
    */
-  public CounterpartyMetadata getCounterpartyMetadata(@javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected CounterpartyMetadata getCounterpartyMetadata(@javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1991,15 +2182,34 @@ if (acceptEncoding != null)
    * Запрос на получение отдельного события Контрагента с указанным id.
    * @param id ID сущности (required)
    * @param noteId ID события контрагента (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return Note
    * @throws ApiException if fails to make API call
    */
-  public Note getCounterpartyNoteById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID noteId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getCounterpartyNoteById(id, noteId, accept, acceptEncoding, Collections.emptyMap());
+  public Note getCounterpartyNoteById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID noteId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getCounterpartyNoteById(id, noteId, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить событие контрагента по ID
+   * Запрос на получение отдельного события Контрагента с указанным id.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param noteId ID события контрагента (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Note
+   * @throws ApiException if fails to make API call
+   */
+  public Note getCounterpartyNoteById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID noteId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getCounterpartyNoteById(id, noteId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить событие контрагента по ID
@@ -2012,7 +2222,7 @@ if (acceptEncoding != null)
    * @return Note
    * @throws ApiException if fails to make API call
    */
-  public Note getCounterpartyNoteById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID noteId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected Note getCounterpartyNoteById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID noteId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -2081,16 +2291,14 @@ if (acceptEncoding != null)
    * Получить события контрагента
    * Запрос на получение списка всех событий данного Контрагента.
    * @param id ID сущности (required)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return GetCounterpartyNotes200Response
    * @throws ApiException if fails to make API call
    */
-  public GetCounterpartyNotes200Response getCounterpartyNotes(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getCounterpartyNotes(id, limit, offset, accept, acceptEncoding, Collections.emptyMap());
+  public GetCounterpartyNotes200Response getCounterpartyNotes(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getCounterpartyNotes(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить события контрагента
@@ -2111,7 +2319,6 @@ if (acceptEncoding != null)
     return this.getCounterpartyNotes(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить события контрагента
    * Запрос на получение списка всех событий данного Контрагента.
@@ -2124,7 +2331,7 @@ if (acceptEncoding != null)
    * @return GetCounterpartyNotes200Response
    * @throws ApiException if fails to make API call
    */
-  public GetCounterpartyNotes200Response getCounterpartyNotes(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected GetCounterpartyNotes200Response getCounterpartyNotes(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -2190,16 +2397,14 @@ if (acceptEncoding != null)
    * Обновление контрагента с указанным id
    * @param id ID сущности (required)
    * @param counterparty  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Counterparty
    * @throws ApiException if fails to make API call
    */
-  public Counterparty updateCounterparty(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Counterparty counterparty, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateCounterparty(id, counterparty, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Counterparty updateCounterparty(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Counterparty counterparty) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateCounterparty(id, counterparty, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Обновить контрагента
@@ -2223,7 +2428,6 @@ if (acceptEncoding != null)
     return this.updateCounterparty(id, counterparty, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Обновить контрагента
    * Обновление контрагента с указанным id
@@ -2237,7 +2441,7 @@ if (acceptEncoding != null)
    * @return Counterparty
    * @throws ApiException if fails to make API call
    */
-  public Counterparty updateCounterparty(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Counterparty counterparty, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Counterparty updateCounterparty(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Counterparty counterparty, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = counterparty;
     
     // verify the required parameter 'id' is set
@@ -2310,16 +2514,38 @@ if (contentType != null)
    * @param id ID сущности (required)
    * @param accountId ID счёта контрагента (required)
    * @param account  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Account
    * @throws ApiException if fails to make API call
    */
-  public Account updateCounterpartyAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull Account account, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateCounterpartyAccount(id, accountId, account, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Account updateCounterpartyAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull Account account) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateCounterpartyAccount(id, accountId, account, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Обновить счёт контрагента
+   * Обновление счёта Контрагента с указанным id.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param accountId ID счёта контрагента (required)
+   
+   
+   * @param account  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Account
+   * @throws ApiException if fails to make API call
+   */
+  public Account updateCounterpartyAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull Account account, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateCounterpartyAccount(id, accountId, account, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Обновить счёт контрагента
@@ -2334,7 +2560,7 @@ if (contentType != null)
    * @return Account
    * @throws ApiException if fails to make API call
    */
-  public Account updateCounterpartyAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull Account account, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Account updateCounterpartyAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull Account account, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = account;
     
     // verify the required parameter 'id' is set
@@ -2412,16 +2638,38 @@ if (contentType != null)
    * @param id ID сущности (required)
    * @param contactPersonId ID контактного лица (required)
    * @param contactPerson  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return ContactPerson
    * @throws ApiException if fails to make API call
    */
-  public ContactPerson updateCounterpartyContactPerson(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID contactPersonId, @javax.annotation.Nonnull ContactPerson contactPerson, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateCounterpartyContactPerson(id, contactPersonId, contactPerson, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public ContactPerson updateCounterpartyContactPerson(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID contactPersonId, @javax.annotation.Nonnull ContactPerson contactPerson) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateCounterpartyContactPerson(id, contactPersonId, contactPerson, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Обновить контактное лицо контрагента
+   * Обновление контактного лица Контрагента с указанным id.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param contactPersonId ID контактного лица (required)
+   
+   
+   * @param contactPerson  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ContactPerson
+   * @throws ApiException if fails to make API call
+   */
+  public ContactPerson updateCounterpartyContactPerson(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID contactPersonId, @javax.annotation.Nonnull ContactPerson contactPerson, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateCounterpartyContactPerson(id, contactPersonId, contactPerson, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Обновить контактное лицо контрагента
@@ -2436,7 +2684,7 @@ if (contentType != null)
    * @return ContactPerson
    * @throws ApiException if fails to make API call
    */
-  public ContactPerson updateCounterpartyContactPerson(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID contactPersonId, @javax.annotation.Nonnull ContactPerson contactPerson, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected ContactPerson updateCounterpartyContactPerson(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID contactPersonId, @javax.annotation.Nonnull ContactPerson contactPerson, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = contactPerson;
     
     // verify the required parameter 'id' is set
@@ -2514,16 +2762,38 @@ if (contentType != null)
    * @param id ID сущности (required)
    * @param noteId ID события контрагента (required)
    * @param note  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Note
    * @throws ApiException if fails to make API call
    */
-  public Note updateCounterpartyNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID noteId, @javax.annotation.Nonnull Note note, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateCounterpartyNote(id, noteId, note, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Note updateCounterpartyNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID noteId, @javax.annotation.Nonnull Note note) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateCounterpartyNote(id, noteId, note, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Обновить событие контрагента
+   * Обновление события Контрагента с указанным id.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param noteId ID события контрагента (required)
+   
+   
+   * @param note  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Note
+   * @throws ApiException if fails to make API call
+   */
+  public Note updateCounterpartyNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID noteId, @javax.annotation.Nonnull Note note, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateCounterpartyNote(id, noteId, note, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Обновить событие контрагента
@@ -2538,7 +2808,7 @@ if (contentType != null)
    * @return Note
    * @throws ApiException if fails to make API call
    */
-  public Note updateCounterpartyNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID noteId, @javax.annotation.Nonnull Note note, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Note updateCounterpartyNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID noteId, @javax.annotation.Nonnull Note note, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = note;
     
     // verify the required parameter 'id' is set

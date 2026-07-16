@@ -38,7 +38,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class UomsApi extends BaseApi {
 
@@ -54,16 +54,14 @@ public class UomsApi extends BaseApi {
    * Создать единицу измерения
    * Создание новой единицы измерения
    * @param uom  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Uom
    * @throws ApiException if fails to make API call
    */
-  public Uom createUom(@javax.annotation.Nonnull Uom uom, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createUom(uom, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Uom createUom(@javax.annotation.Nonnull Uom uom) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createUom(uom, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать единицу измерения
@@ -84,7 +82,6 @@ public class UomsApi extends BaseApi {
     return this.createUom(uom, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать единицу измерения
    * Создание новой единицы измерения
@@ -97,7 +94,7 @@ public class UomsApi extends BaseApi {
    * @return Uom
    * @throws ApiException if fails to make API call
    */
-  public Uom createUom(@javax.annotation.Nonnull Uom uom, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Uom createUom(@javax.annotation.Nonnull Uom uom, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = uom;
     
     // verify the required parameter 'uom' is set
@@ -162,16 +159,14 @@ if (contentType != null)
    * Создать или изменить единицу измерения
    * Создание или изменение нескольких единиц измерения.
    * @param uom  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createUomsBatch(@javax.annotation.Nonnull List<@Valid Uom> uom, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createUomsBatch(uom, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<BatchResponseEntity> createUomsBatch(@javax.annotation.Nonnull List<@Valid Uom> uom) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createUomsBatch(uom, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать или изменить единицу измерения
@@ -192,7 +187,6 @@ if (contentType != null)
     return this.createUomsBatch(uom, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать или изменить единицу измерения
    * Создание или изменение нескольких единиц измерения.
@@ -205,7 +199,7 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createUomsBatch(@javax.annotation.Nonnull List<@Valid Uom> uom, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createUomsBatch(@javax.annotation.Nonnull List<@Valid Uom> uom, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = uom;
     
     // verify the required parameter 'uom' is set
@@ -270,14 +264,29 @@ if (contentType != null)
    * Удалить единицу измерения
    * Удаление единицы измерения с указанным id
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteUom(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteUom(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteUom(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteUom(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить единицу измерения
+   * Удаление единицы измерения с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteUom(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteUom(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить единицу измерения
@@ -288,7 +297,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteUom(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteUom(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -350,16 +359,32 @@ if (acceptEncoding != null)
    * Удалить единицу измерения
    * Массовое удаление единиц измерения по их мета-объектам.
    * @param uom  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteUomsBatch(@javax.annotation.Nonnull List<@Valid Uom> uom, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteUomsBatch(uom, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteUomsBatch(@javax.annotation.Nonnull List<@Valid Uom> uom) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteUomsBatch(uom, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить единицу измерения
+   * Массовое удаление единиц измерения по их мета-объектам.
+   
+   * @param uom  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteUomsBatch(@javax.annotation.Nonnull List<@Valid Uom> uom, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteUomsBatch(uom, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить единицу измерения
@@ -372,7 +397,7 @@ if (acceptEncoding != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteUomsBatch(@javax.annotation.Nonnull List<@Valid Uom> uom, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteUomsBatch(@javax.annotation.Nonnull List<@Valid Uom> uom, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = uom;
     
     // verify the required parameter 'uom' is set
@@ -436,15 +461,14 @@ if (contentType != null)
    * Получить единицу измерения по ID
    * Запрос на получение отдельной единицы измерения с указанным id
    * @param id ID сущности (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return Uom
    * @throws ApiException if fails to make API call
    */
-  public Uom getUomById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getUomById(id, expand, accept, acceptEncoding, Collections.emptyMap());
+  public Uom getUomById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getUomById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить единицу измерения по ID
@@ -464,7 +488,6 @@ if (contentType != null)
     return this.getUomById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить единицу измерения по ID
    * Запрос на получение отдельной единицы измерения с указанным id
@@ -476,7 +499,7 @@ if (contentType != null)
    * @return Uom
    * @throws ApiException if fails to make API call
    */
-  public Uom getUomById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected Uom getUomById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -539,20 +562,14 @@ if (acceptEncoding != null)
   /**
    * Получить список единиц измерения
    * Запрос всех единиц измерения на данной учетной записи
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param search Контекстный поиск по строковым полям сущностей (optional)
-   * @param filter Фильтрация выборки (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param order Сортировка (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return UomList
    * @throws ApiException if fails to make API call
    */
-  public UomList getUoms(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getUoms(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  public UomList getUoms() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getUoms((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить список единиц измерения
@@ -574,7 +591,6 @@ if (acceptEncoding != null)
     return this.getUoms((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить список единиц измерения
    * Запрос всех единиц измерения на данной учетной записи
@@ -590,7 +606,7 @@ if (acceptEncoding != null)
    * @return UomList
    * @throws ApiException if fails to make API call
    */
-  public UomList getUoms(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected UomList getUoms(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -654,16 +670,14 @@ if (acceptEncoding != null)
    * Обновление единицы измерения с указанным id
    * @param id ID сущности (required)
    * @param uom  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Uom
    * @throws ApiException if fails to make API call
    */
-  public Uom updateUom(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Uom uom, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateUom(id, uom, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Uom updateUom(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Uom uom) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateUom(id, uom, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Обновить единицы измерения
@@ -687,7 +701,6 @@ if (acceptEncoding != null)
     return this.updateUom(id, uom, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Обновить единицы измерения
    * Обновление единицы измерения с указанным id
@@ -701,7 +714,7 @@ if (acceptEncoding != null)
    * @return Uom
    * @throws ApiException if fails to make API call
    */
-  public Uom updateUom(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Uom uom, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Uom updateUom(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Uom uom, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = uom;
     
     // verify the required parameter 'id' is set

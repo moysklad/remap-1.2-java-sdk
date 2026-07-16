@@ -47,7 +47,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class StoresApi extends BaseApi {
 
@@ -63,16 +63,14 @@ public class StoresApi extends BaseApi {
    * Создать Склад
    * 
    * @param store  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param contentType  (optional, default to application/json)
    * @return Store
    * @throws ApiException if fails to make API call
    */
-  public Store createStore(@javax.annotation.Nonnull Store store, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createStore(store, accept, acceptEncoding, expand, contentType, Collections.emptyMap());
+  public Store createStore(@javax.annotation.Nonnull Store store) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createStore(store, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать Склад
@@ -93,7 +91,6 @@ public class StoresApi extends BaseApi {
     return this.createStore(store, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать Склад
    * 
@@ -106,7 +103,7 @@ public class StoresApi extends BaseApi {
    * @return Store
    * @throws ApiException if fails to make API call
    */
-  public Store createStore(@javax.annotation.Nonnull Store store, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Store createStore(@javax.annotation.Nonnull Store store, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = store;
     
     // verify the required parameter 'store' is set
@@ -171,16 +168,32 @@ if (contentType != null)
    * Создать Доп. поле Store
    * 
    * @param attributeMetaInfo  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo createStoreMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createStoreMetadataAttribute(attributeMetaInfo, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public AttributeMetaInfo createStoreMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createStoreMetadataAttribute(attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Создать Доп. поле Store
+   * 
+   
+   * @param attributeMetaInfo  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo createStoreMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createStoreMetadataAttribute(attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Создать Доп. поле Store
@@ -193,7 +206,7 @@ if (contentType != null)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo createStoreMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfo createStoreMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = attributeMetaInfo;
     
     // verify the required parameter 'attributeMetaInfo' is set
@@ -258,15 +271,34 @@ if (contentType != null)
    * 
    * @param storeId  (required)
    * @param createStoreSlotsRequest  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return List&lt;StoreSlot&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<StoreSlot> createStoreSlots(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull CreateStoreSlotsRequest createStoreSlotsRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.createStoreSlots(storeId, createStoreSlotsRequest, accept, acceptEncoding, Collections.emptyMap());
+  public List<StoreSlot> createStoreSlots(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull CreateStoreSlotsRequest createStoreSlotsRequest) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createStoreSlots(storeId, createStoreSlotsRequest, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Создать ячейку склада
+   * 
+   
+   * @param storeId  (required)
+   
+   
+   * @param createStoreSlotsRequest  (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;StoreSlot&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<StoreSlot> createStoreSlots(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull CreateStoreSlotsRequest createStoreSlotsRequest, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createStoreSlots(storeId, createStoreSlotsRequest, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Создать ячейку склада
@@ -279,7 +311,7 @@ if (contentType != null)
    * @return List&lt;StoreSlot&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<StoreSlot> createStoreSlots(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull CreateStoreSlotsRequest createStoreSlotsRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<StoreSlot> createStoreSlots(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull CreateStoreSlotsRequest createStoreSlotsRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = createStoreSlotsRequest;
     
     // verify the required parameter 'storeId' is set
@@ -348,15 +380,34 @@ if (acceptEncoding != null)
    * 
    * @param storeId  (required)
    * @param createStoreZonesRequest  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return List&lt;StoreZone&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<StoreZone> createStoreZones(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull CreateStoreZonesRequest createStoreZonesRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.createStoreZones(storeId, createStoreZonesRequest, accept, acceptEncoding, Collections.emptyMap());
+  public List<StoreZone> createStoreZones(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull CreateStoreZonesRequest createStoreZonesRequest) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createStoreZones(storeId, createStoreZonesRequest, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Создать зону склада
+   * 
+   
+   * @param storeId  (required)
+   
+   
+   * @param createStoreZonesRequest  (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;StoreZone&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<StoreZone> createStoreZones(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull CreateStoreZonesRequest createStoreZonesRequest, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createStoreZones(storeId, createStoreZonesRequest, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Создать зону склада
@@ -369,7 +420,7 @@ if (acceptEncoding != null)
    * @return List&lt;StoreZone&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<StoreZone> createStoreZones(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull CreateStoreZonesRequest createStoreZonesRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<StoreZone> createStoreZones(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull CreateStoreZonesRequest createStoreZonesRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = createStoreZonesRequest;
     
     // verify the required parameter 'storeId' is set
@@ -437,16 +488,14 @@ if (acceptEncoding != null)
    * Массовое создание и обновление Складов
    * 
    * @param store  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createStoresBatch(@javax.annotation.Nonnull List<@Valid Store> store, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createStoresBatch(store, accept, acceptEncoding, expand, contentType, Collections.emptyMap());
+  public List<BatchResponseEntity> createStoresBatch(@javax.annotation.Nonnull List<@Valid Store> store) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createStoresBatch(store, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Массовое создание и обновление Складов
@@ -467,7 +516,6 @@ if (acceptEncoding != null)
     return this.createStoresBatch(store, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Массовое создание и обновление Складов
    * 
@@ -480,7 +528,7 @@ if (acceptEncoding != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createStoresBatch(@javax.annotation.Nonnull List<@Valid Store> store, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createStoresBatch(@javax.annotation.Nonnull List<@Valid Store> store, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = store;
     
     // verify the required parameter 'store' is set
@@ -545,14 +593,29 @@ if (contentType != null)
    * Удалить Склад
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteStore(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteStore(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteStore(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteStore(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить Склад
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteStore(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteStore(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить Склад
@@ -563,7 +626,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteStore(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteStore(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -626,14 +689,32 @@ if (acceptEncoding != null)
    * 
    * @param storeId  (required)
    * @param id  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteStoreSlot(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteStoreSlot(storeId, id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteStoreSlot(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteStoreSlot(storeId, id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить ячейку склада
+   * 
+   
+   * @param storeId  (required)
+   
+   
+   * @param id  (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteStoreSlot(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteStoreSlot(storeId, id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить ячейку склада
@@ -645,7 +726,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteStoreSlot(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteStoreSlot(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'storeId' is set
@@ -714,15 +795,33 @@ if (acceptEncoding != null)
    * 
    * @param storeId  (required)
    * @param storeSlot  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @throws ApiException if fails to make API call
    */
-  public void deleteStoreSlotsBatch(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull List<@Valid StoreSlot> storeSlot, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    this.deleteStoreSlotsBatch(storeId, storeSlot, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public void deleteStoreSlotsBatch(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull List<@Valid StoreSlot> storeSlot) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteStoreSlotsBatch(storeId, storeSlot, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Массовое удаление ячеек склада
+   * 
+   
+   * @param storeId  (required)
+   
+   
+   * @param storeSlot  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteStoreSlotsBatch(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull List<@Valid StoreSlot> storeSlot, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteStoreSlotsBatch(storeId, storeSlot, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Массовое удаление ячеек склада
@@ -735,7 +834,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteStoreSlotsBatch(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull List<@Valid StoreSlot> storeSlot, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteStoreSlotsBatch(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull List<@Valid StoreSlot> storeSlot, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = storeSlot;
     
     // verify the required parameter 'storeId' is set
@@ -805,14 +904,32 @@ if (contentType != null)
    * 
    * @param storeId  (required)
    * @param id  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteStoreZone(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteStoreZone(storeId, id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteStoreZone(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteStoreZone(storeId, id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить зону склада
+   * 
+   
+   * @param storeId  (required)
+   
+   
+   * @param id  (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteStoreZone(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteStoreZone(storeId, id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить зону склада
@@ -824,7 +941,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteStoreZone(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteStoreZone(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'storeId' is set
@@ -893,15 +1010,33 @@ if (acceptEncoding != null)
    * 
    * @param storeId  (required)
    * @param storeZone  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @throws ApiException if fails to make API call
    */
-  public void deleteStoreZonesBatch(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull List<@Valid StoreZone> storeZone, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    this.deleteStoreZonesBatch(storeId, storeZone, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public void deleteStoreZonesBatch(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull List<@Valid StoreZone> storeZone) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteStoreZonesBatch(storeId, storeZone, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Массовое удаление зон склада
+   * 
+   
+   * @param storeId  (required)
+   
+   
+   * @param storeZone  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteStoreZonesBatch(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull List<@Valid StoreZone> storeZone, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteStoreZonesBatch(storeId, storeZone, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Массовое удаление зон склада
@@ -914,7 +1049,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteStoreZonesBatch(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull List<@Valid StoreZone> storeZone, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteStoreZonesBatch(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull List<@Valid StoreZone> storeZone, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = storeZone;
     
     // verify the required parameter 'storeId' is set
@@ -983,16 +1118,32 @@ if (contentType != null)
    * Массовое удаление Складов
    * 
    * @param store  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteStoresBatch(@javax.annotation.Nonnull List<@Valid Store> store, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteStoresBatch(store, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteStoresBatch(@javax.annotation.Nonnull List<@Valid Store> store) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteStoresBatch(store, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Массовое удаление Складов
+   * 
+   
+   * @param store  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteStoresBatch(@javax.annotation.Nonnull List<@Valid Store> store, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteStoresBatch(store, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Массовое удаление Складов
@@ -1005,7 +1156,7 @@ if (contentType != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteStoresBatch(@javax.annotation.Nonnull List<@Valid Store> store, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteStoresBatch(@javax.annotation.Nonnull List<@Valid Store> store, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = store;
     
     // verify the required parameter 'store' is set
@@ -1069,15 +1220,14 @@ if (contentType != null)
    * Получить Склад
    * 
    * @param id ID сущности (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return Store
    * @throws ApiException if fails to make API call
    */
-  public Store getStoreById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getStoreById(id, expand, accept, acceptEncoding, Collections.emptyMap());
+  public Store getStoreById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getStoreById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить Склад
@@ -1097,7 +1247,6 @@ if (contentType != null)
     return this.getStoreById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить Склад
    * 
@@ -1109,7 +1258,7 @@ if (contentType != null)
    * @return Store
    * @throws ApiException if fails to make API call
    */
-  public Store getStoreById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected Store getStoreById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1172,15 +1321,14 @@ if (acceptEncoding != null)
   /**
    * Метаданные Складов
    * 
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return StoreMetadata
    * @throws ApiException if fails to make API call
    */
-  public StoreMetadata getStoreMetadata(@javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getStoreMetadata(expand, accept, acceptEncoding, Collections.emptyMap());
+  public StoreMetadata getStoreMetadata() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getStoreMetadata((String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Метаданные Складов
@@ -1197,7 +1345,6 @@ if (acceptEncoding != null)
     return this.getStoreMetadata((String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Метаданные Складов
    * 
@@ -1208,7 +1355,7 @@ if (acceptEncoding != null)
    * @return StoreMetadata
    * @throws ApiException if fails to make API call
    */
-  public StoreMetadata getStoreMetadata(@javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected StoreMetadata getStoreMetadata(@javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1265,17 +1412,14 @@ if (acceptEncoding != null)
   /**
    * Доп. поля Store
    * 
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return AttributeMetaInfoList
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfoList getStoreMetadataAttribute(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.getStoreMetadataAttribute(offset, limit, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public AttributeMetaInfoList getStoreMetadataAttribute() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getStoreMetadataAttribute((Integer) effectiveOptions.get("offset"), (Integer) effectiveOptions.get("limit"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Доп. поля Store
@@ -1294,7 +1438,6 @@ if (acceptEncoding != null)
     return this.getStoreMetadataAttribute((Integer) effectiveOptions.get("offset"), (Integer) effectiveOptions.get("limit"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Доп. поля Store
    * 
@@ -1307,7 +1450,7 @@ if (acceptEncoding != null)
    * @return AttributeMetaInfoList
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfoList getStoreMetadataAttribute(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfoList getStoreMetadataAttribute(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1368,15 +1511,31 @@ if (contentType != null)
    * Отдельное доп. поле Склада
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return AttributeMetaInfoList
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfoList getStoreMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getStoreMetadataAttributeById(id, accept, acceptEncoding, Collections.emptyMap());
+  public AttributeMetaInfoList getStoreMetadataAttributeById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getStoreMetadataAttributeById(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Отдельное доп. поле Склада
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfoList
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfoList getStoreMetadataAttributeById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getStoreMetadataAttributeById(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Отдельное доп. поле Склада
@@ -1388,7 +1547,7 @@ if (contentType != null)
    * @return AttributeMetaInfoList
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfoList getStoreMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfoList getStoreMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1452,15 +1611,34 @@ if (acceptEncoding != null)
    * 
    * @param storeId  (required)
    * @param id  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return StoreSlot
    * @throws ApiException if fails to make API call
    */
-  public StoreSlot getStoreSlotById(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getStoreSlotById(storeId, id, accept, acceptEncoding, Collections.emptyMap());
+  public StoreSlot getStoreSlotById(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getStoreSlotById(storeId, id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить ячейку склада
+   * 
+   
+   * @param storeId  (required)
+   
+   
+   * @param id  (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return StoreSlot
+   * @throws ApiException if fails to make API call
+   */
+  public StoreSlot getStoreSlotById(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getStoreSlotById(storeId, id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить ячейку склада
@@ -1473,7 +1651,7 @@ if (acceptEncoding != null)
    * @return StoreSlot
    * @throws ApiException if fails to make API call
    */
-  public StoreSlot getStoreSlotById(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected StoreSlot getStoreSlotById(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'storeId' is set
@@ -1542,15 +1720,31 @@ if (acceptEncoding != null)
    * Получить ячейки склада
    * 
    * @param storeId  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return StoreSlotList
    * @throws ApiException if fails to make API call
    */
-  public StoreSlotList getStoreSlots(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getStoreSlots(storeId, accept, acceptEncoding, Collections.emptyMap());
+  public StoreSlotList getStoreSlots(@javax.annotation.Nonnull UUID storeId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getStoreSlots(storeId, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить ячейки склада
+   * 
+   
+   * @param storeId  (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return StoreSlotList
+   * @throws ApiException if fails to make API call
+   */
+  public StoreSlotList getStoreSlots(@javax.annotation.Nonnull UUID storeId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getStoreSlots(storeId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить ячейки склада
@@ -1562,7 +1756,7 @@ if (acceptEncoding != null)
    * @return StoreSlotList
    * @throws ApiException if fails to make API call
    */
-  public StoreSlotList getStoreSlots(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected StoreSlotList getStoreSlots(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'storeId' is set
@@ -1626,15 +1820,34 @@ if (acceptEncoding != null)
    * 
    * @param storeId  (required)
    * @param id  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return StoreZone
    * @throws ApiException if fails to make API call
    */
-  public StoreZone getStoreZoneById(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getStoreZoneById(storeId, id, accept, acceptEncoding, Collections.emptyMap());
+  public StoreZone getStoreZoneById(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getStoreZoneById(storeId, id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить зону склада
+   * 
+   
+   * @param storeId  (required)
+   
+   
+   * @param id  (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return StoreZone
+   * @throws ApiException if fails to make API call
+   */
+  public StoreZone getStoreZoneById(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getStoreZoneById(storeId, id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить зону склада
@@ -1647,7 +1860,7 @@ if (acceptEncoding != null)
    * @return StoreZone
    * @throws ApiException if fails to make API call
    */
-  public StoreZone getStoreZoneById(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected StoreZone getStoreZoneById(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'storeId' is set
@@ -1716,15 +1929,31 @@ if (acceptEncoding != null)
    * Получить зоны склада
    * 
    * @param storeId  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return StoreZoneList
    * @throws ApiException if fails to make API call
    */
-  public StoreZoneList getStoreZones(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getStoreZones(storeId, accept, acceptEncoding, Collections.emptyMap());
+  public StoreZoneList getStoreZones(@javax.annotation.Nonnull UUID storeId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getStoreZones(storeId, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить зоны склада
+   * 
+   
+   * @param storeId  (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return StoreZoneList
+   * @throws ApiException if fails to make API call
+   */
+  public StoreZoneList getStoreZones(@javax.annotation.Nonnull UUID storeId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getStoreZones(storeId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить зоны склада
@@ -1736,7 +1965,7 @@ if (acceptEncoding != null)
    * @return StoreZoneList
    * @throws ApiException if fails to make API call
    */
-  public StoreZoneList getStoreZones(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected StoreZoneList getStoreZones(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'storeId' is set
@@ -1798,20 +2027,14 @@ if (acceptEncoding != null)
   /**
    * Получить Склады
    * 
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param search Контекстный поиск по строковым полям сущностей (optional)
-   * @param filter Фильтрация выборки (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param order Сортировка (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return StoreList
    * @throws ApiException if fails to make API call
    */
-  public StoreList getStores(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getStores(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  public StoreList getStores() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getStores((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить Склады
@@ -1833,7 +2056,6 @@ if (acceptEncoding != null)
     return this.getStores((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить Склады
    * 
@@ -1849,7 +2071,7 @@ if (acceptEncoding != null)
    * @return StoreList
    * @throws ApiException if fails to make API call
    */
-  public StoreList getStores(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected StoreList getStores(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1913,16 +2135,14 @@ if (acceptEncoding != null)
    * 
    * @param id ID сущности (required)
    * @param store  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Store
    * @throws ApiException if fails to make API call
    */
-  public Store updateStore(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Store store, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateStore(id, store, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Store updateStore(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Store store) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateStore(id, store, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Изменить Склад
@@ -1946,7 +2166,6 @@ if (acceptEncoding != null)
     return this.updateStore(id, store, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Изменить Склад
    * 
@@ -1960,7 +2179,7 @@ if (acceptEncoding != null)
    * @return Store
    * @throws ApiException if fails to make API call
    */
-  public Store updateStore(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Store store, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Store updateStore(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Store store, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = store;
     
     // verify the required parameter 'id' is set
@@ -2033,15 +2252,37 @@ if (contentType != null)
    * @param storeId  (required)
    * @param id  (required)
    * @param storeSlot  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return StoreSlot
    * @throws ApiException if fails to make API call
    */
-  public StoreSlot updateStoreSlot(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull StoreSlot storeSlot, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.updateStoreSlot(storeId, id, storeSlot, accept, acceptEncoding, Collections.emptyMap());
+  public StoreSlot updateStoreSlot(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull StoreSlot storeSlot) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateStoreSlot(storeId, id, storeSlot, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Изменить ячейку склада
+   * 
+   
+   * @param storeId  (required)
+   
+   
+   * @param id  (required)
+   
+   
+   * @param storeSlot  (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return StoreSlot
+   * @throws ApiException if fails to make API call
+   */
+  public StoreSlot updateStoreSlot(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull StoreSlot storeSlot, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateStoreSlot(storeId, id, storeSlot, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Изменить ячейку склада
@@ -2055,7 +2296,7 @@ if (contentType != null)
    * @return StoreSlot
    * @throws ApiException if fails to make API call
    */
-  public StoreSlot updateStoreSlot(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull StoreSlot storeSlot, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected StoreSlot updateStoreSlot(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull StoreSlot storeSlot, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = storeSlot;
     
     // verify the required parameter 'storeId' is set
@@ -2131,15 +2372,37 @@ if (acceptEncoding != null)
    * @param storeId  (required)
    * @param id  (required)
    * @param storeZone  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return StoreZone
    * @throws ApiException if fails to make API call
    */
-  public StoreZone updateStoreZone(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull StoreZone storeZone, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.updateStoreZone(storeId, id, storeZone, accept, acceptEncoding, Collections.emptyMap());
+  public StoreZone updateStoreZone(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull StoreZone storeZone) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateStoreZone(storeId, id, storeZone, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Изменить зону склада
+   * 
+   
+   * @param storeId  (required)
+   
+   
+   * @param id  (required)
+   
+   
+   * @param storeZone  (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return StoreZone
+   * @throws ApiException if fails to make API call
+   */
+  public StoreZone updateStoreZone(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull StoreZone storeZone, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateStoreZone(storeId, id, storeZone, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Изменить зону склада
@@ -2153,7 +2416,7 @@ if (acceptEncoding != null)
    * @return StoreZone
    * @throws ApiException if fails to make API call
    */
-  public StoreZone updateStoreZone(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull StoreZone storeZone, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected StoreZone updateStoreZone(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull StoreZone storeZone, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = storeZone;
     
     // verify the required parameter 'storeId' is set

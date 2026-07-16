@@ -34,7 +34,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class NotificationsApi extends BaseApi {
 
@@ -49,15 +49,28 @@ public class NotificationsApi extends BaseApi {
   /**
    * Получить настройки уведомлений
    * Запрос на получение настроек уведомлений текущего пользователя
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return NotificationSettings
    * @throws ApiException if fails to make API call
    */
-  public NotificationSettings getNotificationSettings(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getNotificationSettings(accept, acceptEncoding, Collections.emptyMap());
+  public NotificationSettings getNotificationSettings() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getNotificationSettings(null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить настройки уведомлений
+   * Запрос на получение настроек уведомлений текущего пользователя
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return NotificationSettings
+   * @throws ApiException if fails to make API call
+   */
+  public NotificationSettings getNotificationSettings(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getNotificationSettings(null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить настройки уведомлений
@@ -68,7 +81,7 @@ public class NotificationsApi extends BaseApi {
    * @return NotificationSettings
    * @throws ApiException if fails to make API call
    */
-  public NotificationSettings getNotificationSettings(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected NotificationSettings getNotificationSettings(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -125,16 +138,32 @@ if (acceptEncoding != null)
    * Изменить настройки уведомлений
    * Изменение настроек уведомлений текущего пользователя
    * @param notificationSettings  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return NotificationSettings
    * @throws ApiException if fails to make API call
    */
-  public NotificationSettings updateNotificationSettings(@javax.annotation.Nonnull NotificationSettings notificationSettings, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateNotificationSettings(notificationSettings, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public NotificationSettings updateNotificationSettings(@javax.annotation.Nonnull NotificationSettings notificationSettings) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateNotificationSettings(notificationSettings, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Изменить настройки уведомлений
+   * Изменение настроек уведомлений текущего пользователя
+   
+   * @param notificationSettings  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return NotificationSettings
+   * @throws ApiException if fails to make API call
+   */
+  public NotificationSettings updateNotificationSettings(@javax.annotation.Nonnull NotificationSettings notificationSettings, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateNotificationSettings(notificationSettings, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Изменить настройки уведомлений
@@ -147,7 +176,7 @@ if (acceptEncoding != null)
    * @return NotificationSettings
    * @throws ApiException if fails to make API call
    */
-  public NotificationSettings updateNotificationSettings(@javax.annotation.Nonnull NotificationSettings notificationSettings, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected NotificationSettings updateNotificationSettings(@javax.annotation.Nonnull NotificationSettings notificationSettings, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = notificationSettings;
     
     // verify the required parameter 'notificationSettings' is set

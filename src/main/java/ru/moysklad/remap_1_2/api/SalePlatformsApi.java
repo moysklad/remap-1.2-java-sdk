@@ -36,7 +36,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class SalePlatformsApi extends BaseApi {
 
@@ -52,15 +52,31 @@ public class SalePlatformsApi extends BaseApi {
    * Получить Площадку для продаж по ID
    * Запрос на получение отдельной площадки для продаж с указанным id
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return SalePlatform
    * @throws ApiException if fails to make API call
    */
-  public SalePlatform getSalePlatformById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getSalePlatformById(id, accept, acceptEncoding, Collections.emptyMap());
+  public SalePlatform getSalePlatformById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getSalePlatformById(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить Площадку для продаж по ID
+   * Запрос на получение отдельной площадки для продаж с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return SalePlatform
+   * @throws ApiException if fails to make API call
+   */
+  public SalePlatform getSalePlatformById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getSalePlatformById(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить Площадку для продаж по ID
@@ -72,7 +88,7 @@ public class SalePlatformsApi extends BaseApi {
    * @return SalePlatform
    * @throws ApiException if fails to make API call
    */
-  public SalePlatform getSalePlatformById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected SalePlatform getSalePlatformById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -134,18 +150,14 @@ if (acceptEncoding != null)
   /**
    * Получить список площадок для продаж
    * Запрос всех площадок для продаж на данной учетной записи
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param search Контекстный поиск по строковым полям сущностей (optional)
-   * @param filter Фильтрация выборки (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return SalePlatformList
    * @throws ApiException if fails to make API call
    */
-  public SalePlatformList getSalePlatforms(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getSalePlatforms(limit, offset, search, filter, accept, acceptEncoding, Collections.emptyMap());
+  public SalePlatformList getSalePlatforms() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getSalePlatforms((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить список площадок для продаж
@@ -165,7 +177,6 @@ if (acceptEncoding != null)
     return this.getSalePlatforms((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить список площадок для продаж
    * Запрос всех площадок для продаж на данной учетной записи
@@ -179,7 +190,7 @@ if (acceptEncoding != null)
    * @return SalePlatformList
    * @throws ApiException if fails to make API call
    */
-  public SalePlatformList getSalePlatforms(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected SalePlatformList getSalePlatforms(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables

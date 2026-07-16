@@ -40,7 +40,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class BundlesApi extends BaseApi {
 
@@ -56,16 +56,14 @@ public class BundlesApi extends BaseApi {
    * Создать Комплект
    * 
    * @param bundle  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param contentType  (optional, default to application/json)
    * @return Bundle
    * @throws ApiException if fails to make API call
    */
-  public Bundle createBundle(@javax.annotation.Nonnull Bundle bundle, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createBundle(bundle, accept, acceptEncoding, expand, contentType, Collections.emptyMap());
+  public Bundle createBundle(@javax.annotation.Nonnull Bundle bundle) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createBundle(bundle, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать Комплект
@@ -86,7 +84,6 @@ public class BundlesApi extends BaseApi {
     return this.createBundle(bundle, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать Комплект
    * 
@@ -99,7 +96,7 @@ public class BundlesApi extends BaseApi {
    * @return Bundle
    * @throws ApiException if fails to make API call
    */
-  public Bundle createBundle(@javax.annotation.Nonnull Bundle bundle, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Bundle createBundle(@javax.annotation.Nonnull Bundle bundle, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = bundle;
     
     // verify the required parameter 'bundle' is set
@@ -165,16 +162,14 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param createBundleComponentsRequest  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;BundleComponent&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BundleComponent> createBundleComponents(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CreateBundleComponentsRequest createBundleComponentsRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createBundleComponents(id, createBundleComponentsRequest, accept, acceptEncoding, expand, contentType, Collections.emptyMap());
+  public List<BundleComponent> createBundleComponents(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CreateBundleComponentsRequest createBundleComponentsRequest) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createBundleComponents(id, createBundleComponentsRequest, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Добавить компонент Комплекта
@@ -198,7 +193,6 @@ if (contentType != null)
     return this.createBundleComponents(id, createBundleComponentsRequest, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Добавить компонент Комплекта
    * 
@@ -212,7 +206,7 @@ if (contentType != null)
    * @return List&lt;BundleComponent&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BundleComponent> createBundleComponents(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CreateBundleComponentsRequest createBundleComponentsRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BundleComponent> createBundleComponents(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CreateBundleComponentsRequest createBundleComponentsRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = createBundleComponentsRequest;
     
     // verify the required parameter 'id' is set
@@ -283,16 +277,14 @@ if (contentType != null)
    * Массовое создание и обновление Комплектов
    * 
    * @param bundle  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createBundlesBatch(@javax.annotation.Nonnull List<@Valid Bundle> bundle, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createBundlesBatch(bundle, accept, acceptEncoding, expand, contentType, Collections.emptyMap());
+  public List<BatchResponseEntity> createBundlesBatch(@javax.annotation.Nonnull List<@Valid Bundle> bundle) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createBundlesBatch(bundle, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Массовое создание и обновление Комплектов
@@ -313,7 +305,6 @@ if (contentType != null)
     return this.createBundlesBatch(bundle, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Массовое создание и обновление Комплектов
    * 
@@ -326,7 +317,7 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createBundlesBatch(@javax.annotation.Nonnull List<@Valid Bundle> bundle, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createBundlesBatch(@javax.annotation.Nonnull List<@Valid Bundle> bundle, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = bundle;
     
     // verify the required parameter 'bundle' is set
@@ -391,14 +382,29 @@ if (contentType != null)
    * Удалить Комплект
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteBundle(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteBundle(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteBundle(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteBundle(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить Комплект
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteBundle(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteBundle(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить Комплект
@@ -409,7 +415,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteBundle(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteBundle(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -472,14 +478,32 @@ if (acceptEncoding != null)
    * 
    * @param id ID сущности (required)
    * @param componentId  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteBundleComponent(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID componentId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteBundleComponent(id, componentId, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteBundleComponent(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID componentId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteBundleComponent(id, componentId, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить компонент
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param componentId  (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteBundleComponent(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID componentId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteBundleComponent(id, componentId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить компонент
@@ -491,7 +515,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteBundleComponent(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID componentId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteBundleComponent(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID componentId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -560,15 +584,33 @@ if (acceptEncoding != null)
    * 
    * @param id ID сущности (required)
    * @param bundleComponent  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @throws ApiException if fails to make API call
    */
-  public void deleteBundleComponentsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid BundleComponent> bundleComponent, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    this.deleteBundleComponentsBatch(id, bundleComponent, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public void deleteBundleComponentsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid BundleComponent> bundleComponent) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteBundleComponentsBatch(id, bundleComponent, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Массовое удаление компонентов Комплекта
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param bundleComponent  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteBundleComponentsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid BundleComponent> bundleComponent, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteBundleComponentsBatch(id, bundleComponent, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Массовое удаление компонентов Комплекта
@@ -581,7 +623,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteBundleComponentsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid BundleComponent> bundleComponent, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteBundleComponentsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid BundleComponent> bundleComponent, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = bundleComponent;
     
     // verify the required parameter 'id' is set
@@ -650,16 +692,32 @@ if (contentType != null)
    * Массовое удаление Комплектов
    * 
    * @param bundle  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteBundlesBatch(@javax.annotation.Nonnull List<@Valid Bundle> bundle, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteBundlesBatch(bundle, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteBundlesBatch(@javax.annotation.Nonnull List<@Valid Bundle> bundle) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteBundlesBatch(bundle, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Массовое удаление Комплектов
+   * 
+   
+   * @param bundle  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteBundlesBatch(@javax.annotation.Nonnull List<@Valid Bundle> bundle, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteBundlesBatch(bundle, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Массовое удаление Комплектов
@@ -672,7 +730,7 @@ if (contentType != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteBundlesBatch(@javax.annotation.Nonnull List<@Valid Bundle> bundle, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteBundlesBatch(@javax.annotation.Nonnull List<@Valid Bundle> bundle, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = bundle;
     
     // verify the required parameter 'bundle' is set
@@ -736,15 +794,14 @@ if (contentType != null)
    * Получить Комплект
    * 
    * @param id ID сущности (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return Bundle
    * @throws ApiException if fails to make API call
    */
-  public Bundle getBundleById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getBundleById(id, expand, accept, acceptEncoding, Collections.emptyMap());
+  public Bundle getBundleById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getBundleById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить Комплект
@@ -764,7 +821,6 @@ if (contentType != null)
     return this.getBundleById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить Комплект
    * 
@@ -776,7 +832,7 @@ if (contentType != null)
    * @return Bundle
    * @throws ApiException if fails to make API call
    */
-  public Bundle getBundleById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected Bundle getBundleById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -841,15 +897,14 @@ if (acceptEncoding != null)
    * 
    * @param id ID сущности (required)
    * @param componentId  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return BundleComponent
    * @throws ApiException if fails to make API call
    */
-  public BundleComponent getBundleComponentById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID componentId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getBundleComponentById(id, componentId, expand, accept, acceptEncoding, Collections.emptyMap());
+  public BundleComponent getBundleComponentById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID componentId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getBundleComponentById(id, componentId, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить компонент
@@ -872,7 +927,6 @@ if (acceptEncoding != null)
     return this.getBundleComponentById(id, componentId, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить компонент
    * 
@@ -885,7 +939,7 @@ if (acceptEncoding != null)
    * @return BundleComponent
    * @throws ApiException if fails to make API call
    */
-  public BundleComponent getBundleComponentById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID componentId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected BundleComponent getBundleComponentById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID componentId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -955,20 +1009,14 @@ if (acceptEncoding != null)
    * Получить компоненты Комплекта
    * 
    * @param id ID сущности (required)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param search Контекстный поиск по строковым полям сущностей (optional)
-   * @param filter Фильтрация выборки (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param order Сортировка (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return BundleComponent
    * @throws ApiException if fails to make API call
    */
-  public BundleComponent getBundleComponents(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getBundleComponents(id, limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  public BundleComponent getBundleComponents(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getBundleComponents(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить компоненты Комплекта
@@ -993,7 +1041,6 @@ if (acceptEncoding != null)
     return this.getBundleComponents(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить компоненты Комплекта
    * 
@@ -1010,7 +1057,7 @@ if (acceptEncoding != null)
    * @return BundleComponent
    * @throws ApiException if fails to make API call
    */
-  public BundleComponent getBundleComponents(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected BundleComponent getBundleComponents(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1078,20 +1125,14 @@ if (acceptEncoding != null)
   /**
    * Получить список комплектов
    * 
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param search Контекстный поиск по строковым полям сущностей (optional)
-   * @param filter Фильтрация выборки (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param order Сортировка (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return BundleList
    * @throws ApiException if fails to make API call
    */
-  public BundleList getBundles(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getBundles(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  public BundleList getBundles() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getBundles((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить список комплектов
@@ -1113,7 +1154,6 @@ if (acceptEncoding != null)
     return this.getBundles((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить список комплектов
    * 
@@ -1129,7 +1169,7 @@ if (acceptEncoding != null)
    * @return BundleList
    * @throws ApiException if fails to make API call
    */
-  public BundleList getBundles(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected BundleList getBundles(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1193,16 +1233,14 @@ if (acceptEncoding != null)
    * 
    * @param id ID сущности (required)
    * @param bundle  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Bundle
    * @throws ApiException if fails to make API call
    */
-  public Bundle updateBundle(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Bundle bundle, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateBundle(id, bundle, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Bundle updateBundle(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Bundle bundle) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateBundle(id, bundle, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Изменить Комплект
@@ -1226,7 +1264,6 @@ if (acceptEncoding != null)
     return this.updateBundle(id, bundle, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Изменить Комплект
    * 
@@ -1240,7 +1277,7 @@ if (acceptEncoding != null)
    * @return Bundle
    * @throws ApiException if fails to make API call
    */
-  public Bundle updateBundle(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Bundle bundle, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Bundle updateBundle(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Bundle bundle, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = bundle;
     
     // verify the required parameter 'id' is set
@@ -1313,16 +1350,14 @@ if (contentType != null)
    * @param id ID сущности (required)
    * @param componentId  (required)
    * @param bundleComponent  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return BundleComponent
    * @throws ApiException if fails to make API call
    */
-  public BundleComponent updateBundleComponent(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID componentId, @javax.annotation.Nonnull BundleComponent bundleComponent, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateBundleComponent(id, componentId, bundleComponent, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public BundleComponent updateBundleComponent(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID componentId, @javax.annotation.Nonnull BundleComponent bundleComponent) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateBundleComponent(id, componentId, bundleComponent, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Изменить компонент
@@ -1349,7 +1384,6 @@ if (contentType != null)
     return this.updateBundleComponent(id, componentId, bundleComponent, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Изменить компонент
    * 
@@ -1364,7 +1398,7 @@ if (contentType != null)
    * @return BundleComponent
    * @throws ApiException if fails to make API call
    */
-  public BundleComponent updateBundleComponent(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID componentId, @javax.annotation.Nonnull BundleComponent bundleComponent, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected BundleComponent updateBundleComponent(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID componentId, @javax.annotation.Nonnull BundleComponent bundleComponent, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = bundleComponent;
     
     // verify the required parameter 'id' is set

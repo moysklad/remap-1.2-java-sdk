@@ -41,7 +41,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ConsignmentsApi extends BaseApi {
 
@@ -57,16 +57,14 @@ public class ConsignmentsApi extends BaseApi {
    * Создать партию
    * Создание новой партии
    * @param consignment  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Consignment
    * @throws ApiException if fails to make API call
    */
-  public Consignment createConsignment(@javax.annotation.Nonnull Consignment consignment, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createConsignment(consignment, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Consignment createConsignment(@javax.annotation.Nonnull Consignment consignment) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createConsignment(consignment, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать партию
@@ -87,7 +85,6 @@ public class ConsignmentsApi extends BaseApi {
     return this.createConsignment(consignment, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать партию
    * Создание новой партии
@@ -100,7 +97,7 @@ public class ConsignmentsApi extends BaseApi {
    * @return Consignment
    * @throws ApiException if fails to make API call
    */
-  public Consignment createConsignment(@javax.annotation.Nonnull Consignment consignment, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Consignment createConsignment(@javax.annotation.Nonnull Consignment consignment, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = consignment;
     
     // verify the required parameter 'consignment' is set
@@ -165,16 +162,32 @@ if (contentType != null)
    * Создать доп. поле партии
    * Создание нового доп. поля для партий
    * @param attributeMetaInfo  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo createConsignmentMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createConsignmentMetadataAttribute(attributeMetaInfo, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public AttributeMetaInfo createConsignmentMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createConsignmentMetadataAttribute(attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Создать доп. поле партии
+   * Создание нового доп. поля для партий
+   
+   * @param attributeMetaInfo  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo createConsignmentMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createConsignmentMetadataAttribute(attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Создать доп. поле партии
@@ -187,7 +200,7 @@ if (contentType != null)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo createConsignmentMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfo createConsignmentMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = attributeMetaInfo;
     
     // verify the required parameter 'attributeMetaInfo' is set
@@ -251,16 +264,14 @@ if (contentType != null)
    * Создать или изменить партии
    * Создание или изменение нескольких партий.
    * @param consignment  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createConsignmentsBatch(@javax.annotation.Nonnull List<@Valid Consignment> consignment, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createConsignmentsBatch(consignment, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<BatchResponseEntity> createConsignmentsBatch(@javax.annotation.Nonnull List<@Valid Consignment> consignment) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createConsignmentsBatch(consignment, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать или изменить партии
@@ -281,7 +292,6 @@ if (contentType != null)
     return this.createConsignmentsBatch(consignment, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать или изменить партии
    * Создание или изменение нескольких партий.
@@ -294,7 +304,7 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createConsignmentsBatch(@javax.annotation.Nonnull List<@Valid Consignment> consignment, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createConsignmentsBatch(@javax.annotation.Nonnull List<@Valid Consignment> consignment, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = consignment;
     
     // verify the required parameter 'consignment' is set
@@ -359,14 +369,29 @@ if (contentType != null)
    * Удалить партию
    * Удаление Партии с указанным id
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteConsignment(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteConsignment(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteConsignment(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteConsignment(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить партию
+   * Удаление Партии с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteConsignment(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteConsignment(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить партию
@@ -377,7 +402,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteConsignment(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteConsignment(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -439,14 +464,29 @@ if (acceptEncoding != null)
    * Удалить доп. поле партии
    * Удаление доп. поля
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteConsignmentMetadataAttribute(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteConsignmentMetadataAttribute(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteConsignmentMetadataAttribute(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteConsignmentMetadataAttribute(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить доп. поле партии
+   * Удаление доп. поля
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteConsignmentMetadataAttribute(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteConsignmentMetadataAttribute(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить доп. поле партии
@@ -457,7 +497,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteConsignmentMetadataAttribute(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteConsignmentMetadataAttribute(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -519,16 +559,32 @@ if (acceptEncoding != null)
    * Удалить партии
    * Массовое удаление партий по их мета-объектам.
    * @param consignment  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteConsignmentsBatch(@javax.annotation.Nonnull List<@Valid Consignment> consignment, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteConsignmentsBatch(consignment, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteConsignmentsBatch(@javax.annotation.Nonnull List<@Valid Consignment> consignment) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteConsignmentsBatch(consignment, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить партии
+   * Массовое удаление партий по их мета-объектам.
+   
+   * @param consignment  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteConsignmentsBatch(@javax.annotation.Nonnull List<@Valid Consignment> consignment, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteConsignmentsBatch(consignment, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить партии
@@ -541,7 +597,7 @@ if (acceptEncoding != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteConsignmentsBatch(@javax.annotation.Nonnull List<@Valid Consignment> consignment, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteConsignmentsBatch(@javax.annotation.Nonnull List<@Valid Consignment> consignment, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = consignment;
     
     // verify the required parameter 'consignment' is set
@@ -605,15 +661,14 @@ if (contentType != null)
    * Получить партию по ID
    * Запрос на получение Партии с указанным id
    * @param id ID сущности (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return Consignment
    * @throws ApiException if fails to make API call
    */
-  public Consignment getConsignmentById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getConsignmentById(id, expand, accept, acceptEncoding, Collections.emptyMap());
+  public Consignment getConsignmentById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getConsignmentById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить партию по ID
@@ -633,7 +688,6 @@ if (contentType != null)
     return this.getConsignmentById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить партию по ID
    * Запрос на получение Партии с указанным id
@@ -645,7 +699,7 @@ if (contentType != null)
    * @return Consignment
    * @throws ApiException if fails to make API call
    */
-  public Consignment getConsignmentById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected Consignment getConsignmentById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -708,15 +762,28 @@ if (acceptEncoding != null)
   /**
    * Получить метаданные партий
    * Запрос на получение метаданных партий
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return Metadata
    * @throws ApiException if fails to make API call
    */
-  public Metadata getConsignmentMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getConsignmentMetadata(accept, acceptEncoding, Collections.emptyMap());
+  public Metadata getConsignmentMetadata() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getConsignmentMetadata(null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить метаданные партий
+   * Запрос на получение метаданных партий
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Metadata
+   * @throws ApiException if fails to make API call
+   */
+  public Metadata getConsignmentMetadata(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getConsignmentMetadata(null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить метаданные партий
@@ -727,7 +794,7 @@ if (acceptEncoding != null)
    * @return Metadata
    * @throws ApiException if fails to make API call
    */
-  public Metadata getConsignmentMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected Metadata getConsignmentMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -784,15 +851,31 @@ if (acceptEncoding != null)
    * Получить доп. поле партии по ID
    * Запрос на получение отдельного доп. поля
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo getConsignmentMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getConsignmentMetadataAttributeById(id, accept, acceptEncoding, Collections.emptyMap());
+  public AttributeMetaInfo getConsignmentMetadataAttributeById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getConsignmentMetadataAttributeById(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить доп. поле партии по ID
+   * Запрос на получение отдельного доп. поля
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo getConsignmentMetadataAttributeById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getConsignmentMetadataAttributeById(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить доп. поле партии по ID
@@ -804,7 +887,7 @@ if (acceptEncoding != null)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo getConsignmentMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfo getConsignmentMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -866,15 +949,28 @@ if (acceptEncoding != null)
   /**
    * Получить доп. поля партий
    * Запрос на получение всех доп. полей для партий
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return AttributeMetaInfoList
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfoList getConsignmentMetadataAttributes(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getConsignmentMetadataAttributes(accept, acceptEncoding, Collections.emptyMap());
+  public AttributeMetaInfoList getConsignmentMetadataAttributes() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getConsignmentMetadataAttributes(null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить доп. поля партий
+   * Запрос на получение всех доп. полей для партий
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfoList
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfoList getConsignmentMetadataAttributes(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getConsignmentMetadataAttributes(null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить доп. поля партий
@@ -885,7 +981,7 @@ if (acceptEncoding != null)
    * @return AttributeMetaInfoList
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfoList getConsignmentMetadataAttributes(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfoList getConsignmentMetadataAttributes(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -941,20 +1037,14 @@ if (acceptEncoding != null)
   /**
    * Получить список партий
    * Запрос всех партий на данной учетной записи
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param search Контекстный поиск по строковым полям сущностей (optional)
-   * @param filter Фильтрация выборки (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param order Сортировка (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return ConsignmentList
    * @throws ApiException if fails to make API call
    */
-  public ConsignmentList getConsignments(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getConsignments(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  public ConsignmentList getConsignments() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getConsignments((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить список партий
@@ -976,7 +1066,6 @@ if (acceptEncoding != null)
     return this.getConsignments((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить список партий
    * Запрос всех партий на данной учетной записи
@@ -992,7 +1081,7 @@ if (acceptEncoding != null)
    * @return ConsignmentList
    * @throws ApiException if fails to make API call
    */
-  public ConsignmentList getConsignments(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected ConsignmentList getConsignments(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1056,16 +1145,14 @@ if (acceptEncoding != null)
    * Обновление Партии с указанным id
    * @param id ID сущности (required)
    * @param consignment  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Consignment
    * @throws ApiException if fails to make API call
    */
-  public Consignment updateConsignment(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Consignment consignment, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateConsignment(id, consignment, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Consignment updateConsignment(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Consignment consignment) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateConsignment(id, consignment, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Обновить партию
@@ -1089,7 +1176,6 @@ if (acceptEncoding != null)
     return this.updateConsignment(id, consignment, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Обновить партию
    * Обновление Партии с указанным id
@@ -1103,7 +1189,7 @@ if (acceptEncoding != null)
    * @return Consignment
    * @throws ApiException if fails to make API call
    */
-  public Consignment updateConsignment(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Consignment consignment, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Consignment updateConsignment(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Consignment consignment, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = consignment;
     
     // verify the required parameter 'id' is set
@@ -1175,16 +1261,35 @@ if (contentType != null)
    * Обновление доп. поля для партий
    * @param id ID сущности (required)
    * @param attributeMetaInfo  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo updateConsignmentMetadataAttribute(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateConsignmentMetadataAttribute(id, attributeMetaInfo, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public AttributeMetaInfo updateConsignmentMetadataAttribute(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateConsignmentMetadataAttribute(id, attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Обновить доп. поле партии
+   * Обновление доп. поля для партий
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param attributeMetaInfo  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo updateConsignmentMetadataAttribute(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateConsignmentMetadataAttribute(id, attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Обновить доп. поле партии
@@ -1198,7 +1303,7 @@ if (contentType != null)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo updateConsignmentMetadataAttribute(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfo updateConsignmentMetadataAttribute(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = attributeMetaInfo;
     
     // verify the required parameter 'id' is set

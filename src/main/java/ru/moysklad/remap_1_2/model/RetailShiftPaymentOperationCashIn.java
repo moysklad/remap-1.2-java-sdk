@@ -25,7 +25,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
-import ru.moysklad.remap_1_2.model.Account;
 import ru.moysklad.remap_1_2.model.Agent;
 import ru.moysklad.remap_1_2.model.AttributeAbstract;
 import ru.moysklad.remap_1_2.model.Contract;
@@ -52,50 +51,44 @@ import java.net.URLEncoder;
 import java.util.StringJoiner;
 
 /**
- * Входящий платеж + linkedSum
+ * Приходный ордер + linkedSum
  */
 @JsonPropertyOrder({
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_META,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_ID,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_ACCOUNT_ID,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_NAME,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_CODE,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_EXTERNAL_CODE,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_SYNC_ID,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_DESCRIPTION,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_CREATED,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_DELETED,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_UPDATED,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_MOMENT,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_OWNER,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_GROUP,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_APPLICABLE,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_PRINTED,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_PUBLISHED,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_RATE,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_ORGANIZATION,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_AGENT,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_AGENT_ACCOUNT,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_ORGANIZATION_ACCOUNT,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_ATTRIBUTES,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_CONTRACT,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_FILES,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_PAYMENT_PURPOSE,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_PROJECT,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_SALES_CHANNEL,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_SHARED,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_STATE,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_SUM,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_VAT_SUM,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_INCOMING_NUMBER,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_INCOMING_DATE,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_FACTURE_OUT,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_OPERATIONS,
-  RetailShiftPaymentOperationAnyOf1.JSON_PROPERTY_LINKED_SUM
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_META,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_ID,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_ACCOUNT_ID,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_APPLICABLE,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_NAME,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_CODE,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_EXTERNAL_CODE,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_SYNC_ID,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_DESCRIPTION,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_CREATED,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_DELETED,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_UPDATED,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_MOMENT,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_ATTRIBUTES,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_CONTRACT,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_FILES,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_PAYMENT_PURPOSE,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_PRINTED,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_PROJECT,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_PUBLISHED,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_OWNER,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_GROUP,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_SALES_CHANNEL,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_SHARED,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_STATE,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_RATE,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_ORGANIZATION,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_AGENT,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_SUM,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_VAT_SUM,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_FACTURE_OUT,
+  RetailShiftPaymentOperationCashIn.JSON_PROPERTY_OPERATIONS
 })
-@JsonTypeName("RetailShiftPaymentOperation_anyOf_1")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
-public class RetailShiftPaymentOperationAnyOf1 {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
+public class RetailShiftPaymentOperationCashIn extends RetailShiftPaymentOperation {
 
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
@@ -108,6 +101,10 @@ public class RetailShiftPaymentOperationAnyOf1 {
   public static final String JSON_PROPERTY_ACCOUNT_ID = "accountId";
   @javax.annotation.Nullable
   private UUID accountId;
+
+  public static final String JSON_PROPERTY_APPLICABLE = "applicable";
+  @javax.annotation.Nullable
+  private Boolean applicable;
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nullable
@@ -145,46 +142,6 @@ public class RetailShiftPaymentOperationAnyOf1 {
   @javax.annotation.Nullable
   private String moment;
 
-  public static final String JSON_PROPERTY_OWNER = "owner";
-  @javax.annotation.Nullable
-  private JsonNullable<Employee> owner = JsonNullable.<Employee>undefined();
-
-  public static final String JSON_PROPERTY_GROUP = "group";
-  @javax.annotation.Nullable
-  private Group group;
-
-  public static final String JSON_PROPERTY_APPLICABLE = "applicable";
-  @javax.annotation.Nullable
-  private Boolean applicable;
-
-  public static final String JSON_PROPERTY_PRINTED = "printed";
-  @javax.annotation.Nullable
-  private Boolean printed;
-
-  public static final String JSON_PROPERTY_PUBLISHED = "published";
-  @javax.annotation.Nullable
-  private Boolean published;
-
-  public static final String JSON_PROPERTY_RATE = "rate";
-  @javax.annotation.Nullable
-  private CurrencyRate rate;
-
-  public static final String JSON_PROPERTY_ORGANIZATION = "organization";
-  @javax.annotation.Nullable
-  private Organization organization;
-
-  public static final String JSON_PROPERTY_AGENT = "agent";
-  @javax.annotation.Nullable
-  private Agent agent;
-
-  public static final String JSON_PROPERTY_AGENT_ACCOUNT = "agentAccount";
-  @javax.annotation.Nullable
-  private JsonNullable<Account> agentAccount = JsonNullable.<Account>undefined();
-
-  public static final String JSON_PROPERTY_ORGANIZATION_ACCOUNT = "organizationAccount";
-  @javax.annotation.Nullable
-  private JsonNullable<Account> organizationAccount = JsonNullable.<Account>undefined();
-
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
   private JsonNullable<List<@Valid AttributeAbstract>> attributes = JsonNullable.<List<@Valid AttributeAbstract>>undefined();
@@ -201,9 +158,25 @@ public class RetailShiftPaymentOperationAnyOf1 {
   @javax.annotation.Nullable
   private String paymentPurpose;
 
+  public static final String JSON_PROPERTY_PRINTED = "printed";
+  @javax.annotation.Nullable
+  private Boolean printed;
+
   public static final String JSON_PROPERTY_PROJECT = "project";
   @javax.annotation.Nullable
   private JsonNullable<Project> project = JsonNullable.<Project>undefined();
+
+  public static final String JSON_PROPERTY_PUBLISHED = "published";
+  @javax.annotation.Nullable
+  private Boolean published;
+
+  public static final String JSON_PROPERTY_OWNER = "owner";
+  @javax.annotation.Nullable
+  private JsonNullable<Employee> owner = JsonNullable.<Employee>undefined();
+
+  public static final String JSON_PROPERTY_GROUP = "group";
+  @javax.annotation.Nullable
+  private Group group;
 
   public static final String JSON_PROPERTY_SALES_CHANNEL = "salesChannel";
   @javax.annotation.Nullable
@@ -217,6 +190,18 @@ public class RetailShiftPaymentOperationAnyOf1 {
   @javax.annotation.Nullable
   private JsonNullable<State> state = JsonNullable.<State>undefined();
 
+  public static final String JSON_PROPERTY_RATE = "rate";
+  @javax.annotation.Nullable
+  private CurrencyRate rate;
+
+  public static final String JSON_PROPERTY_ORGANIZATION = "organization";
+  @javax.annotation.Nullable
+  private Organization organization;
+
+  public static final String JSON_PROPERTY_AGENT = "agent";
+  @javax.annotation.Nullable
+  private Agent agent;
+
   public static final String JSON_PROPERTY_SUM = "sum";
   @javax.annotation.Nullable
   private Double sum;
@@ -224,14 +209,6 @@ public class RetailShiftPaymentOperationAnyOf1 {
   public static final String JSON_PROPERTY_VAT_SUM = "vatSum";
   @javax.annotation.Nullable
   private Double vatSum;
-
-  public static final String JSON_PROPERTY_INCOMING_NUMBER = "incomingNumber";
-  @javax.annotation.Nullable
-  private JsonNullable<String> incomingNumber = JsonNullable.<String>undefined();
-
-  public static final String JSON_PROPERTY_INCOMING_DATE = "incomingDate";
-  @javax.annotation.Nullable
-  private JsonNullable<String> incomingDate = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_FACTURE_OUT = "factureOut";
   @javax.annotation.Nullable
@@ -241,17 +218,13 @@ public class RetailShiftPaymentOperationAnyOf1 {
   @javax.annotation.Nullable
   private JsonNullable<List<@Valid FinanceInOperationAbstract>> operations = JsonNullable.<List<@Valid FinanceInOperationAbstract>>undefined();
 
-  public static final String JSON_PROPERTY_LINKED_SUM = "linkedSum";
-  @javax.annotation.Nonnull
-  private Double linkedSum;
-
-  public RetailShiftPaymentOperationAnyOf1() {
+  public RetailShiftPaymentOperationCashIn() {
   }
   /**
    * Constructor with only readonly parameters
    */
   @JsonCreator
-  public RetailShiftPaymentOperationAnyOf1(
+  public RetailShiftPaymentOperationCashIn(
     @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id, 
     @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId, 
     @JsonProperty(value = JSON_PROPERTY_CREATED, required = false) String created, 
@@ -276,7 +249,7 @@ public class RetailShiftPaymentOperationAnyOf1 {
     this.vatSum = vatSum;
   }
 
-  public RetailShiftPaymentOperationAnyOf1 meta(@javax.annotation.Nullable Meta meta) {
+  public RetailShiftPaymentOperationCashIn meta(@javax.annotation.Nullable Meta meta) {
     
     this.meta = meta;
     return this;
@@ -309,7 +282,7 @@ public class RetailShiftPaymentOperationAnyOf1 {
 
 
   /**
-   * ID Входящего платежа
+   * ID Приходного ордера
    * @return id
    */
   @javax.annotation.Nullable
@@ -346,7 +319,38 @@ public class RetailShiftPaymentOperationAnyOf1 {
 
 
 
-  public RetailShiftPaymentOperationAnyOf1 name(@javax.annotation.Nullable String name) {
+  public RetailShiftPaymentOperationCashIn applicable(@javax.annotation.Nullable Boolean applicable) {
+    
+    this.applicable = applicable;
+    return this;
+  }
+
+
+  /**
+   * Отметка о проведении
+   * @return applicable
+   */
+  @javax.annotation.Nullable
+
+
+  @JsonProperty(JSON_PROPERTY_APPLICABLE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getApplicable() {
+    return applicable;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_APPLICABLE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setApplicable(@javax.annotation.Nullable Boolean applicable) {
+    this.applicable = applicable;
+  }
+
+
+  public RetailShiftPaymentOperationCashIn name(@javax.annotation.Nullable String name) {
     
     this.name = name;
     return this;
@@ -354,7 +358,7 @@ public class RetailShiftPaymentOperationAnyOf1 {
 
 
   /**
-   * Наименование Входящего платежа
+   * Наименование Приходного ордера
    * @return name
    */
   @javax.annotation.Nullable
@@ -377,7 +381,7 @@ public class RetailShiftPaymentOperationAnyOf1 {
   }
 
 
-  public RetailShiftPaymentOperationAnyOf1 code(@javax.annotation.Nullable String code) {
+  public RetailShiftPaymentOperationCashIn code(@javax.annotation.Nullable String code) {
     
     this.code = code;
     return this;
@@ -385,7 +389,7 @@ public class RetailShiftPaymentOperationAnyOf1 {
 
 
   /**
-   * Код Входящего платежа
+   * Код Приходного ордера
    * @return code
    */
   @javax.annotation.Nullable
@@ -408,7 +412,7 @@ public class RetailShiftPaymentOperationAnyOf1 {
   }
 
 
-  public RetailShiftPaymentOperationAnyOf1 externalCode(@javax.annotation.Nullable String externalCode) {
+  public RetailShiftPaymentOperationCashIn externalCode(@javax.annotation.Nullable String externalCode) {
     
     this.externalCode = externalCode;
     return this;
@@ -416,7 +420,7 @@ public class RetailShiftPaymentOperationAnyOf1 {
 
 
   /**
-   * Внешний код Входящего платежа
+   * Внешний код Приходного ордера
    * @return externalCode
    */
   @javax.annotation.Nullable
@@ -439,7 +443,7 @@ public class RetailShiftPaymentOperationAnyOf1 {
   }
 
 
-  public RetailShiftPaymentOperationAnyOf1 syncId(@javax.annotation.Nullable UUID syncId) {
+  public RetailShiftPaymentOperationCashIn syncId(@javax.annotation.Nullable UUID syncId) {
     
     this.syncId = syncId;
     return this;
@@ -471,7 +475,7 @@ public class RetailShiftPaymentOperationAnyOf1 {
   }
 
 
-  public RetailShiftPaymentOperationAnyOf1 description(@javax.annotation.Nullable String description) {
+  public RetailShiftPaymentOperationCashIn description(@javax.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -479,7 +483,7 @@ public class RetailShiftPaymentOperationAnyOf1 {
 
 
   /**
-   * Комментарий Входящего платежа
+   * Комментарий Приходного ордера
    * @return description
    */
   @javax.annotation.Nullable
@@ -530,7 +534,7 @@ public class RetailShiftPaymentOperationAnyOf1 {
 
 
   /**
-   * Момент последнего удаления Входящего платежа
+   * Момент последнего удаления Приходного ордера
    * @return deleted
    */
   @javax.annotation.Nullable
@@ -548,7 +552,7 @@ public class RetailShiftPaymentOperationAnyOf1 {
 
 
   /**
-   * Момент последнего обновления Входящего платежа
+   * Момент последнего обновления Приходного ордера
    * @return updated
    */
   @javax.annotation.Nullable
@@ -565,7 +569,7 @@ public class RetailShiftPaymentOperationAnyOf1 {
 
 
 
-  public RetailShiftPaymentOperationAnyOf1 moment(@javax.annotation.Nullable String moment) {
+  public RetailShiftPaymentOperationCashIn moment(@javax.annotation.Nullable String moment) {
     
     this.moment = moment;
     return this;
@@ -596,332 +600,14 @@ public class RetailShiftPaymentOperationAnyOf1 {
   }
 
 
-  public RetailShiftPaymentOperationAnyOf1 owner(@javax.annotation.Nullable Employee owner) {
-    this.owner = JsonNullable.<Employee>of(owner);
-    
-    return this;
-  }
-
-
-  /**
-   * Владелец (Сотрудник)
-   * @return owner
-   */
-  @javax.annotation.Nullable
-  @Valid
-
-
-  @JsonIgnore
-
-  public Employee getOwner() {
-        return owner.orElse(null);
-  }
-
-  
-
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-
-  public JsonNullable<Employee> getOwner_JsonNullable() {
-    return owner;
-  }
-  
-  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
-  public void setOwner_JsonNullable(JsonNullable<Employee> owner) {
-    this.owner = owner;
-  }
-
-  public void setOwner(@javax.annotation.Nullable Employee owner) {
-    this.owner = JsonNullable.<Employee>of(owner);
-  }
-
-
-  public RetailShiftPaymentOperationAnyOf1 group(@javax.annotation.Nullable Group group) {
-    
-    this.group = group;
-    return this;
-  }
-
-
-  /**
-   * Get group
-   * @return group
-   */
-  @javax.annotation.Nullable
-  @Valid
-
-
-  @JsonProperty(JSON_PROPERTY_GROUP)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Group getGroup() {
-    return group;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_GROUP)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setGroup(@javax.annotation.Nullable Group group) {
-    this.group = group;
-  }
-
-
-  public RetailShiftPaymentOperationAnyOf1 applicable(@javax.annotation.Nullable Boolean applicable) {
-    
-    this.applicable = applicable;
-    return this;
-  }
-
-
-  /**
-   * Отметка о проведении
-   * @return applicable
-   */
-  @javax.annotation.Nullable
-
-
-  @JsonProperty(JSON_PROPERTY_APPLICABLE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getApplicable() {
-    return applicable;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_APPLICABLE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setApplicable(@javax.annotation.Nullable Boolean applicable) {
-    this.applicable = applicable;
-  }
-
-
-  /**
-   * Напечатан ли документ
-   * @return printed
-   */
-  @javax.annotation.Nullable
-
-
-  @JsonProperty(JSON_PROPERTY_PRINTED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getPrinted() {
-    return printed;
-  }
-
-  
-
-
-
-  /**
-   * Опубликован ли документ
-   * @return published
-   */
-  @javax.annotation.Nullable
-
-
-  @JsonProperty(JSON_PROPERTY_PUBLISHED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getPublished() {
-    return published;
-  }
-
-  
-
-
-
-  public RetailShiftPaymentOperationAnyOf1 rate(@javax.annotation.Nullable CurrencyRate rate) {
-    
-    this.rate = rate;
-    return this;
-  }
-
-
-  /**
-   * Get rate
-   * @return rate
-   */
-  @javax.annotation.Nullable
-  @Valid
-
-
-  @JsonProperty(JSON_PROPERTY_RATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public CurrencyRate getRate() {
-    return rate;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_RATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRate(@javax.annotation.Nullable CurrencyRate rate) {
-    this.rate = rate;
-  }
-
-
-  public RetailShiftPaymentOperationAnyOf1 organization(@javax.annotation.Nullable Organization organization) {
-    
-    this.organization = organization;
-    return this;
-  }
-
-
-  /**
-   * Get organization
-   * @return organization
-   */
-  @javax.annotation.Nullable
-  @Valid
-
-
-  @JsonProperty(JSON_PROPERTY_ORGANIZATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Organization getOrganization() {
-    return organization;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_ORGANIZATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOrganization(@javax.annotation.Nullable Organization organization) {
-    this.organization = organization;
-  }
-
-
-  public RetailShiftPaymentOperationAnyOf1 agent(@javax.annotation.Nullable Agent agent) {
-    
-    this.agent = agent;
-    return this;
-  }
-
-
-  /**
-   * Метаданные контрагента
-   * @return agent
-   */
-  @javax.annotation.Nullable
-  @Valid
-
-
-  @JsonProperty(JSON_PROPERTY_AGENT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Agent getAgent() {
-    return agent;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_AGENT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAgent(@javax.annotation.Nullable Agent agent) {
-    this.agent = agent;
-  }
-
-
-  public RetailShiftPaymentOperationAnyOf1 agentAccount(@javax.annotation.Nullable Account agentAccount) {
-    this.agentAccount = JsonNullable.<Account>of(agentAccount);
-    
-    return this;
-  }
-
-
-  /**
-   * Метаданные счета контрагента
-   * @return agentAccount
-   */
-  @javax.annotation.Nullable
-  @Valid
-
-
-  @JsonIgnore
-
-  public Account getAgentAccount() {
-        return agentAccount.orElse(null);
-  }
-
-  
-
-  @JsonProperty(JSON_PROPERTY_AGENT_ACCOUNT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-
-  public JsonNullable<Account> getAgentAccount_JsonNullable() {
-    return agentAccount;
-  }
-  
-  @JsonProperty(value = JSON_PROPERTY_AGENT_ACCOUNT, required = false)
-  public void setAgentAccount_JsonNullable(JsonNullable<Account> agentAccount) {
-    this.agentAccount = agentAccount;
-  }
-
-  public void setAgentAccount(@javax.annotation.Nullable Account agentAccount) {
-    this.agentAccount = JsonNullable.<Account>of(agentAccount);
-  }
-
-
-  public RetailShiftPaymentOperationAnyOf1 organizationAccount(@javax.annotation.Nullable Account organizationAccount) {
-    this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
-    
-    return this;
-  }
-
-
-  /**
-   * Метаданные счета юрлица
-   * @return organizationAccount
-   */
-  @javax.annotation.Nullable
-  @Valid
-
-
-  @JsonIgnore
-
-  public Account getOrganizationAccount() {
-        return organizationAccount.orElse(null);
-  }
-
-  
-
-  @JsonProperty(JSON_PROPERTY_ORGANIZATION_ACCOUNT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-
-  public JsonNullable<Account> getOrganizationAccount_JsonNullable() {
-    return organizationAccount;
-  }
-  
-  @JsonProperty(value = JSON_PROPERTY_ORGANIZATION_ACCOUNT, required = false)
-  public void setOrganizationAccount_JsonNullable(JsonNullable<Account> organizationAccount) {
-    this.organizationAccount = organizationAccount;
-  }
-
-  public void setOrganizationAccount(@javax.annotation.Nullable Account organizationAccount) {
-    this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
-  }
-
-
-  public RetailShiftPaymentOperationAnyOf1 attributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
+  public RetailShiftPaymentOperationCashIn attributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
     this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
     
     return this;
   }
 
 
-  public RetailShiftPaymentOperationAnyOf1 addAttributesItem(AttributeAbstract attributesItem) {
+  public RetailShiftPaymentOperationCashIn addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
       this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(new ArrayList<>());
     }
@@ -967,7 +653,7 @@ public class RetailShiftPaymentOperationAnyOf1 {
   }
 
 
-  public RetailShiftPaymentOperationAnyOf1 contract(@javax.annotation.Nullable Contract contract) {
+  public RetailShiftPaymentOperationCashIn contract(@javax.annotation.Nullable Contract contract) {
     this.contract = JsonNullable.<Contract>of(contract);
     
     return this;
@@ -1008,7 +694,7 @@ public class RetailShiftPaymentOperationAnyOf1 {
   }
 
 
-  public RetailShiftPaymentOperationAnyOf1 files(@javax.annotation.Nullable FileList files) {
+  public RetailShiftPaymentOperationCashIn files(@javax.annotation.Nullable FileList files) {
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
@@ -1049,7 +735,7 @@ public class RetailShiftPaymentOperationAnyOf1 {
   }
 
 
-  public RetailShiftPaymentOperationAnyOf1 paymentPurpose(@javax.annotation.Nullable String paymentPurpose) {
+  public RetailShiftPaymentOperationCashIn paymentPurpose(@javax.annotation.Nullable String paymentPurpose) {
     
     this.paymentPurpose = paymentPurpose;
     return this;
@@ -1057,7 +743,7 @@ public class RetailShiftPaymentOperationAnyOf1 {
 
 
   /**
-   * Назначение платежа
+   * Основание
    * @return paymentPurpose
    */
   @javax.annotation.Nullable
@@ -1080,7 +766,25 @@ public class RetailShiftPaymentOperationAnyOf1 {
   }
 
 
-  public RetailShiftPaymentOperationAnyOf1 project(@javax.annotation.Nullable Project project) {
+  /**
+   * Напечатан ли документ
+   * @return printed
+   */
+  @javax.annotation.Nullable
+
+
+  @JsonProperty(JSON_PROPERTY_PRINTED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getPrinted() {
+    return printed;
+  }
+
+  
+
+
+
+  public RetailShiftPaymentOperationCashIn project(@javax.annotation.Nullable Project project) {
     this.project = JsonNullable.<Project>of(project);
     
     return this;
@@ -1121,7 +825,98 @@ public class RetailShiftPaymentOperationAnyOf1 {
   }
 
 
-  public RetailShiftPaymentOperationAnyOf1 salesChannel(@javax.annotation.Nullable SalesChannel salesChannel) {
+  /**
+   * Опубликован ли документ
+   * @return published
+   */
+  @javax.annotation.Nullable
+
+
+  @JsonProperty(JSON_PROPERTY_PUBLISHED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getPublished() {
+    return published;
+  }
+
+  
+
+
+
+  public RetailShiftPaymentOperationCashIn owner(@javax.annotation.Nullable Employee owner) {
+    this.owner = JsonNullable.<Employee>of(owner);
+    
+    return this;
+  }
+
+
+  /**
+   * Владелец (Сотрудник)
+   * @return owner
+   */
+  @javax.annotation.Nullable
+  @Valid
+
+
+  @JsonIgnore
+
+  public Employee getOwner() {
+        return owner.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_OWNER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<Employee> getOwner_JsonNullable() {
+    return owner;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  public void setOwner_JsonNullable(JsonNullable<Employee> owner) {
+    this.owner = owner;
+  }
+
+  public void setOwner(@javax.annotation.Nullable Employee owner) {
+    this.owner = JsonNullable.<Employee>of(owner);
+  }
+
+
+  public RetailShiftPaymentOperationCashIn group(@javax.annotation.Nullable Group group) {
+    
+    this.group = group;
+    return this;
+  }
+
+
+  /**
+   * Get group
+   * @return group
+   */
+  @javax.annotation.Nullable
+  @Valid
+
+
+  @JsonProperty(JSON_PROPERTY_GROUP)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Group getGroup() {
+    return group;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_GROUP)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setGroup(@javax.annotation.Nullable Group group) {
+    this.group = group;
+  }
+
+
+  public RetailShiftPaymentOperationCashIn salesChannel(@javax.annotation.Nullable SalesChannel salesChannel) {
     this.salesChannel = JsonNullable.<SalesChannel>of(salesChannel);
     
     return this;
@@ -1180,7 +975,7 @@ public class RetailShiftPaymentOperationAnyOf1 {
 
 
 
-  public RetailShiftPaymentOperationAnyOf1 state(@javax.annotation.Nullable State state) {
+  public RetailShiftPaymentOperationCashIn state(@javax.annotation.Nullable State state) {
     this.state = JsonNullable.<State>of(state);
     
     return this;
@@ -1188,7 +983,7 @@ public class RetailShiftPaymentOperationAnyOf1 {
 
 
   /**
-   * Метаданные статуса Входящего платежа
+   * Метаданные статуса Приходного ордера
    * @return state
    */
   @javax.annotation.Nullable
@@ -1221,13 +1016,108 @@ public class RetailShiftPaymentOperationAnyOf1 {
   }
 
 
+  public RetailShiftPaymentOperationCashIn rate(@javax.annotation.Nullable CurrencyRate rate) {
+    
+    this.rate = rate;
+    return this;
+  }
+
+
   /**
-   * Сумма Входящего платежа в установленной валюте
-   * minimum: 0
+   * Get rate
+   * @return rate
+   */
+  @javax.annotation.Nullable
+  @Valid
+
+
+  @JsonProperty(JSON_PROPERTY_RATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public CurrencyRate getRate() {
+    return rate;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_RATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRate(@javax.annotation.Nullable CurrencyRate rate) {
+    this.rate = rate;
+  }
+
+
+  public RetailShiftPaymentOperationCashIn organization(@javax.annotation.Nullable Organization organization) {
+    
+    this.organization = organization;
+    return this;
+  }
+
+
+  /**
+   * Get organization
+   * @return organization
+   */
+  @javax.annotation.Nullable
+  @Valid
+
+
+  @JsonProperty(JSON_PROPERTY_ORGANIZATION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Organization getOrganization() {
+    return organization;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_ORGANIZATION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setOrganization(@javax.annotation.Nullable Organization organization) {
+    this.organization = organization;
+  }
+
+
+  public RetailShiftPaymentOperationCashIn agent(@javax.annotation.Nullable Agent agent) {
+    
+    this.agent = agent;
+    return this;
+  }
+
+
+  /**
+   * Метаданные контрагента или юрлица
+   * @return agent
+   */
+  @javax.annotation.Nullable
+  @Valid
+
+
+  @JsonProperty(JSON_PROPERTY_AGENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Agent getAgent() {
+    return agent;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_AGENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAgent(@javax.annotation.Nullable Agent agent) {
+    this.agent = agent;
+  }
+
+
+  /**
+   * Сумма Приходного ордера в установленной валюте
    * @return sum
    */
   @javax.annotation.Nullable
- @DecimalMin("0")
+
 
   @JsonProperty(JSON_PROPERTY_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -1242,11 +1132,10 @@ public class RetailShiftPaymentOperationAnyOf1 {
 
   /**
    * Сумма НДС
-   * minimum: 0
    * @return vatSum
    */
   @javax.annotation.Nullable
- @DecimalMin("0")
+
 
   @JsonProperty(JSON_PROPERTY_VAT_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -1259,87 +1148,7 @@ public class RetailShiftPaymentOperationAnyOf1 {
 
 
 
-  public RetailShiftPaymentOperationAnyOf1 incomingNumber(@javax.annotation.Nullable String incomingNumber) {
-    this.incomingNumber = JsonNullable.<String>of(incomingNumber);
-    
-    return this;
-  }
-
-
-  /**
-   * Входящий номер
-   * @return incomingNumber
-   */
-  @javax.annotation.Nullable
- @Size(max=255)
-
-  @JsonIgnore
-
-  public String getIncomingNumber() {
-        return incomingNumber.orElse(null);
-  }
-
-  
-
-  @JsonProperty(JSON_PROPERTY_INCOMING_NUMBER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-
-  public JsonNullable<String> getIncomingNumber_JsonNullable() {
-    return incomingNumber;
-  }
-  
-  @JsonProperty(value = JSON_PROPERTY_INCOMING_NUMBER, required = false)
-  public void setIncomingNumber_JsonNullable(JsonNullable<String> incomingNumber) {
-    this.incomingNumber = incomingNumber;
-  }
-
-  public void setIncomingNumber(@javax.annotation.Nullable String incomingNumber) {
-    this.incomingNumber = JsonNullable.<String>of(incomingNumber);
-  }
-
-
-  public RetailShiftPaymentOperationAnyOf1 incomingDate(@javax.annotation.Nullable String incomingDate) {
-    this.incomingDate = JsonNullable.<String>of(incomingDate);
-    
-    return this;
-  }
-
-
-  /**
-   * Входящая дата
-   * @return incomingDate
-   */
-  @javax.annotation.Nullable
-
-
-  @JsonIgnore
-
-  public String getIncomingDate() {
-        return incomingDate.orElse(null);
-  }
-
-  
-
-  @JsonProperty(JSON_PROPERTY_INCOMING_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-
-  public JsonNullable<String> getIncomingDate_JsonNullable() {
-    return incomingDate;
-  }
-  
-  @JsonProperty(value = JSON_PROPERTY_INCOMING_DATE, required = false)
-  public void setIncomingDate_JsonNullable(JsonNullable<String> incomingDate) {
-    this.incomingDate = incomingDate;
-  }
-
-  public void setIncomingDate(@javax.annotation.Nullable String incomingDate) {
-    this.incomingDate = JsonNullable.<String>of(incomingDate);
-  }
-
-
-  public RetailShiftPaymentOperationAnyOf1 factureOut(@javax.annotation.Nullable FactureOut factureOut) {
+  public RetailShiftPaymentOperationCashIn factureOut(@javax.annotation.Nullable FactureOut factureOut) {
     this.factureOut = JsonNullable.<FactureOut>of(factureOut);
     
     return this;
@@ -1380,14 +1189,14 @@ public class RetailShiftPaymentOperationAnyOf1 {
   }
 
 
-  public RetailShiftPaymentOperationAnyOf1 operations(@javax.annotation.Nullable List<@Valid FinanceInOperationAbstract> operations) {
+  public RetailShiftPaymentOperationCashIn operations(@javax.annotation.Nullable List<@Valid FinanceInOperationAbstract> operations) {
     this.operations = JsonNullable.<List<@Valid FinanceInOperationAbstract>>of(operations);
     
     return this;
   }
 
 
-  public RetailShiftPaymentOperationAnyOf1 addOperationsItem(FinanceInOperationAbstract operationsItem) {
+  public RetailShiftPaymentOperationCashIn addOperationsItem(FinanceInOperationAbstract operationsItem) {
     if (this.operations == null || !this.operations.isPresent()) {
       this.operations = JsonNullable.<List<@Valid FinanceInOperationAbstract>>of(new ArrayList<>());
     }
@@ -1433,38 +1242,6 @@ public class RetailShiftPaymentOperationAnyOf1 {
   }
 
 
-  public RetailShiftPaymentOperationAnyOf1 linkedSum(@javax.annotation.Nonnull Double linkedSum) {
-    
-    this.linkedSum = linkedSum;
-    return this;
-  }
-
-
-  /**
-   * Сумма, оплаченная по данному документу
-   * @return linkedSum
-   */
-  @javax.annotation.Nonnull
-  @NotNull
-
-
-  @JsonProperty(JSON_PROPERTY_LINKED_SUM)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public Double getLinkedSum() {
-    return linkedSum;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_LINKED_SUM)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLinkedSum(@javax.annotation.Nonnull Double linkedSum) {
-    this.linkedSum = linkedSum;
-  }
-
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -1473,44 +1250,39 @@ public class RetailShiftPaymentOperationAnyOf1 {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    RetailShiftPaymentOperationAnyOf1 retailShiftPaymentOperationAnyOf1 = (RetailShiftPaymentOperationAnyOf1) o;
-    return Objects.equals(this.meta, retailShiftPaymentOperationAnyOf1.meta) &&
-        Objects.equals(this.id, retailShiftPaymentOperationAnyOf1.id) &&
-        Objects.equals(this.accountId, retailShiftPaymentOperationAnyOf1.accountId) &&
-        Objects.equals(this.name, retailShiftPaymentOperationAnyOf1.name) &&
-        Objects.equals(this.code, retailShiftPaymentOperationAnyOf1.code) &&
-        Objects.equals(this.externalCode, retailShiftPaymentOperationAnyOf1.externalCode) &&
-        Objects.equals(this.syncId, retailShiftPaymentOperationAnyOf1.syncId) &&
-        equalsNullable(this.description, retailShiftPaymentOperationAnyOf1.description) &&
-        Objects.equals(this.created, retailShiftPaymentOperationAnyOf1.created) &&
-        Objects.equals(this.deleted, retailShiftPaymentOperationAnyOf1.deleted) &&
-        Objects.equals(this.updated, retailShiftPaymentOperationAnyOf1.updated) &&
-        Objects.equals(this.moment, retailShiftPaymentOperationAnyOf1.moment) &&
-        equalsNullable(this.owner, retailShiftPaymentOperationAnyOf1.owner) &&
-        Objects.equals(this.group, retailShiftPaymentOperationAnyOf1.group) &&
-        Objects.equals(this.applicable, retailShiftPaymentOperationAnyOf1.applicable) &&
-        Objects.equals(this.printed, retailShiftPaymentOperationAnyOf1.printed) &&
-        Objects.equals(this.published, retailShiftPaymentOperationAnyOf1.published) &&
-        Objects.equals(this.rate, retailShiftPaymentOperationAnyOf1.rate) &&
-        Objects.equals(this.organization, retailShiftPaymentOperationAnyOf1.organization) &&
-        Objects.equals(this.agent, retailShiftPaymentOperationAnyOf1.agent) &&
-        equalsNullable(this.agentAccount, retailShiftPaymentOperationAnyOf1.agentAccount) &&
-        equalsNullable(this.organizationAccount, retailShiftPaymentOperationAnyOf1.organizationAccount) &&
-        equalsNullable(this.attributes, retailShiftPaymentOperationAnyOf1.attributes) &&
-        equalsNullable(this.contract, retailShiftPaymentOperationAnyOf1.contract) &&
-        equalsNullable(this.files, retailShiftPaymentOperationAnyOf1.files) &&
-        Objects.equals(this.paymentPurpose, retailShiftPaymentOperationAnyOf1.paymentPurpose) &&
-        equalsNullable(this.project, retailShiftPaymentOperationAnyOf1.project) &&
-        equalsNullable(this.salesChannel, retailShiftPaymentOperationAnyOf1.salesChannel) &&
-        Objects.equals(this.shared, retailShiftPaymentOperationAnyOf1.shared) &&
-        equalsNullable(this.state, retailShiftPaymentOperationAnyOf1.state) &&
-        Objects.equals(this.sum, retailShiftPaymentOperationAnyOf1.sum) &&
-        Objects.equals(this.vatSum, retailShiftPaymentOperationAnyOf1.vatSum) &&
-        equalsNullable(this.incomingNumber, retailShiftPaymentOperationAnyOf1.incomingNumber) &&
-        equalsNullable(this.incomingDate, retailShiftPaymentOperationAnyOf1.incomingDate) &&
-        equalsNullable(this.factureOut, retailShiftPaymentOperationAnyOf1.factureOut) &&
-        equalsNullable(this.operations, retailShiftPaymentOperationAnyOf1.operations) &&
-        Objects.equals(this.linkedSum, retailShiftPaymentOperationAnyOf1.linkedSum);
+    RetailShiftPaymentOperationCashIn retailShiftPaymentOperationCashIn = (RetailShiftPaymentOperationCashIn) o;
+    return Objects.equals(this.meta, retailShiftPaymentOperationCashIn.meta) &&
+        Objects.equals(this.id, retailShiftPaymentOperationCashIn.id) &&
+        Objects.equals(this.accountId, retailShiftPaymentOperationCashIn.accountId) &&
+        Objects.equals(this.applicable, retailShiftPaymentOperationCashIn.applicable) &&
+        Objects.equals(this.name, retailShiftPaymentOperationCashIn.name) &&
+        Objects.equals(this.code, retailShiftPaymentOperationCashIn.code) &&
+        Objects.equals(this.externalCode, retailShiftPaymentOperationCashIn.externalCode) &&
+        Objects.equals(this.syncId, retailShiftPaymentOperationCashIn.syncId) &&
+        equalsNullable(this.description, retailShiftPaymentOperationCashIn.description) &&
+        Objects.equals(this.created, retailShiftPaymentOperationCashIn.created) &&
+        Objects.equals(this.deleted, retailShiftPaymentOperationCashIn.deleted) &&
+        Objects.equals(this.updated, retailShiftPaymentOperationCashIn.updated) &&
+        Objects.equals(this.moment, retailShiftPaymentOperationCashIn.moment) &&
+        equalsNullable(this.attributes, retailShiftPaymentOperationCashIn.attributes) &&
+        equalsNullable(this.contract, retailShiftPaymentOperationCashIn.contract) &&
+        equalsNullable(this.files, retailShiftPaymentOperationCashIn.files) &&
+        Objects.equals(this.paymentPurpose, retailShiftPaymentOperationCashIn.paymentPurpose) &&
+        Objects.equals(this.printed, retailShiftPaymentOperationCashIn.printed) &&
+        equalsNullable(this.project, retailShiftPaymentOperationCashIn.project) &&
+        Objects.equals(this.published, retailShiftPaymentOperationCashIn.published) &&
+        equalsNullable(this.owner, retailShiftPaymentOperationCashIn.owner) &&
+        Objects.equals(this.group, retailShiftPaymentOperationCashIn.group) &&
+        equalsNullable(this.salesChannel, retailShiftPaymentOperationCashIn.salesChannel) &&
+        Objects.equals(this.shared, retailShiftPaymentOperationCashIn.shared) &&
+        equalsNullable(this.state, retailShiftPaymentOperationCashIn.state) &&
+        Objects.equals(this.rate, retailShiftPaymentOperationCashIn.rate) &&
+        Objects.equals(this.organization, retailShiftPaymentOperationCashIn.organization) &&
+        Objects.equals(this.agent, retailShiftPaymentOperationCashIn.agent) &&
+        Objects.equals(this.sum, retailShiftPaymentOperationCashIn.sum) &&
+        Objects.equals(this.vatSum, retailShiftPaymentOperationCashIn.vatSum) &&
+        equalsNullable(this.factureOut, retailShiftPaymentOperationCashIn.factureOut) &&
+        equalsNullable(this.operations, retailShiftPaymentOperationCashIn.operations);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -1519,7 +1291,7 @@ public class RetailShiftPaymentOperationAnyOf1 {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, name, code, externalCode, syncId, hashCodeNullable(description), created, deleted, updated, moment, hashCodeNullable(owner), group, applicable, printed, published, rate, organization, agent, hashCodeNullable(agentAccount), hashCodeNullable(organizationAccount), hashCodeNullable(attributes), hashCodeNullable(contract), hashCodeNullable(files), paymentPurpose, hashCodeNullable(project), hashCodeNullable(salesChannel), shared, hashCodeNullable(state), sum, vatSum, hashCodeNullable(incomingNumber), hashCodeNullable(incomingDate), hashCodeNullable(factureOut), hashCodeNullable(operations), linkedSum);
+    return Objects.hash(meta, id, accountId, applicable, name, code, externalCode, syncId, hashCodeNullable(description), created, deleted, updated, moment, hashCodeNullable(attributes), hashCodeNullable(contract), hashCodeNullable(files), paymentPurpose, printed, hashCodeNullable(project), published, hashCodeNullable(owner), group, hashCodeNullable(salesChannel), shared, hashCodeNullable(state), rate, organization, agent, sum, vatSum, hashCodeNullable(factureOut), hashCodeNullable(operations));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1532,10 +1304,11 @@ public class RetailShiftPaymentOperationAnyOf1 {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class RetailShiftPaymentOperationAnyOf1 {\n");
+    sb.append("class RetailShiftPaymentOperationCashIn {\n");
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
+    sb.append("    applicable: ").append(toIndentedString(applicable)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    externalCode: ").append(toIndentedString(externalCode)).append("\n");
@@ -1545,31 +1318,25 @@ public class RetailShiftPaymentOperationAnyOf1 {
     sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
     sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("    moment: ").append(toIndentedString(moment)).append("\n");
-    sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
-    sb.append("    group: ").append(toIndentedString(group)).append("\n");
-    sb.append("    applicable: ").append(toIndentedString(applicable)).append("\n");
-    sb.append("    printed: ").append(toIndentedString(printed)).append("\n");
-    sb.append("    published: ").append(toIndentedString(published)).append("\n");
-    sb.append("    rate: ").append(toIndentedString(rate)).append("\n");
-    sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
-    sb.append("    agent: ").append(toIndentedString(agent)).append("\n");
-    sb.append("    agentAccount: ").append(toIndentedString(agentAccount)).append("\n");
-    sb.append("    organizationAccount: ").append(toIndentedString(organizationAccount)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
     sb.append("    files: ").append(toIndentedString(files)).append("\n");
     sb.append("    paymentPurpose: ").append(toIndentedString(paymentPurpose)).append("\n");
+    sb.append("    printed: ").append(toIndentedString(printed)).append("\n");
     sb.append("    project: ").append(toIndentedString(project)).append("\n");
+    sb.append("    published: ").append(toIndentedString(published)).append("\n");
+    sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
+    sb.append("    group: ").append(toIndentedString(group)).append("\n");
     sb.append("    salesChannel: ").append(toIndentedString(salesChannel)).append("\n");
     sb.append("    shared: ").append(toIndentedString(shared)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    rate: ").append(toIndentedString(rate)).append("\n");
+    sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
+    sb.append("    agent: ").append(toIndentedString(agent)).append("\n");
     sb.append("    sum: ").append(toIndentedString(sum)).append("\n");
     sb.append("    vatSum: ").append(toIndentedString(vatSum)).append("\n");
-    sb.append("    incomingNumber: ").append(toIndentedString(incomingNumber)).append("\n");
-    sb.append("    incomingDate: ").append(toIndentedString(incomingDate)).append("\n");
     sb.append("    factureOut: ").append(toIndentedString(factureOut)).append("\n");
     sb.append("    operations: ").append(toIndentedString(operations)).append("\n");
-    sb.append("    linkedSum: ").append(toIndentedString(linkedSum)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -1636,6 +1403,16 @@ public class RetailShiftPaymentOperationAnyOf1 {
     if (getAccountId() != null) {
       try {
         joiner.add(String.format(java.util.Locale.ROOT, "%saccountId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAccountId()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `applicable` to the URL query string
+    if (getApplicable() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sapplicable%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getApplicable()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -1732,71 +1509,6 @@ public class RetailShiftPaymentOperationAnyOf1 {
       }
     }
 
-    // add `owner` to the URL query string
-    if (getOwner() != null) {
-      joiner.add(getOwner().toUrlQueryString(prefix + "owner" + suffix));
-    }
-
-    // add `group` to the URL query string
-    if (getGroup() != null) {
-      joiner.add(getGroup().toUrlQueryString(prefix + "group" + suffix));
-    }
-
-    // add `applicable` to the URL query string
-    if (getApplicable() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%sapplicable%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getApplicable()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
-    }
-
-    // add `printed` to the URL query string
-    if (getPrinted() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%sprinted%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getPrinted()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
-    }
-
-    // add `published` to the URL query string
-    if (getPublished() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%spublished%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getPublished()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
-    }
-
-    // add `rate` to the URL query string
-    if (getRate() != null) {
-      joiner.add(getRate().toUrlQueryString(prefix + "rate" + suffix));
-    }
-
-    // add `organization` to the URL query string
-    if (getOrganization() != null) {
-      joiner.add(getOrganization().toUrlQueryString(prefix + "organization" + suffix));
-    }
-
-    // add `agent` to the URL query string
-    if (getAgent() != null) {
-      joiner.add(getAgent().toUrlQueryString(prefix + "agent" + suffix));
-    }
-
-    // add `agentAccount` to the URL query string
-    if (getAgentAccount() != null) {
-      joiner.add(getAgentAccount().toUrlQueryString(prefix + "agentAccount" + suffix));
-    }
-
-    // add `organizationAccount` to the URL query string
-    if (getOrganizationAccount() != null) {
-      joiner.add(getOrganizationAccount().toUrlQueryString(prefix + "organizationAccount" + suffix));
-    }
-
     // add `attributes` to the URL query string
     if (getAttributes() != null) {
       for (int i = 0; i < getAttributes().size(); i++) {
@@ -1827,9 +1539,39 @@ public class RetailShiftPaymentOperationAnyOf1 {
       }
     }
 
+    // add `printed` to the URL query string
+    if (getPrinted() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sprinted%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getPrinted()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
     // add `project` to the URL query string
     if (getProject() != null) {
       joiner.add(getProject().toUrlQueryString(prefix + "project" + suffix));
+    }
+
+    // add `published` to the URL query string
+    if (getPublished() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%spublished%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getPublished()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `owner` to the URL query string
+    if (getOwner() != null) {
+      joiner.add(getOwner().toUrlQueryString(prefix + "owner" + suffix));
+    }
+
+    // add `group` to the URL query string
+    if (getGroup() != null) {
+      joiner.add(getGroup().toUrlQueryString(prefix + "group" + suffix));
     }
 
     // add `salesChannel` to the URL query string
@@ -1852,6 +1594,21 @@ public class RetailShiftPaymentOperationAnyOf1 {
       joiner.add(getState().toUrlQueryString(prefix + "state" + suffix));
     }
 
+    // add `rate` to the URL query string
+    if (getRate() != null) {
+      joiner.add(getRate().toUrlQueryString(prefix + "rate" + suffix));
+    }
+
+    // add `organization` to the URL query string
+    if (getOrganization() != null) {
+      joiner.add(getOrganization().toUrlQueryString(prefix + "organization" + suffix));
+    }
+
+    // add `agent` to the URL query string
+    if (getAgent() != null) {
+      joiner.add(getAgent().toUrlQueryString(prefix + "agent" + suffix));
+    }
+
     // add `sum` to the URL query string
     if (getSum() != null) {
       try {
@@ -1872,26 +1629,6 @@ public class RetailShiftPaymentOperationAnyOf1 {
       }
     }
 
-    // add `incomingNumber` to the URL query string
-    if (getIncomingNumber() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%sincomingNumber%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getIncomingNumber()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
-    }
-
-    // add `incomingDate` to the URL query string
-    if (getIncomingDate() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%sincomingDate%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getIncomingDate()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
-    }
-
     // add `factureOut` to the URL query string
     if (getFactureOut() != null) {
       joiner.add(getFactureOut().toUrlQueryString(prefix + "factureOut" + suffix));
@@ -1904,16 +1641,6 @@ public class RetailShiftPaymentOperationAnyOf1 {
           joiner.add(getOperations().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%soperations%s%s", prefix, suffix,
               "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
-      }
-    }
-
-    // add `linkedSum` to the URL query string
-    if (getLinkedSum() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%slinkedSum%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLinkedSum()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
       }
     }
 

@@ -34,7 +34,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class PrepaymentsApi extends BaseApi {
 
@@ -50,16 +50,32 @@ public class PrepaymentsApi extends BaseApi {
    * Создать доп. поле Предоплаты
    * 
    * @param attributeMetaInfo  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo createPrepaymentMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createPrepaymentMetadataAttribute(attributeMetaInfo, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public AttributeMetaInfo createPrepaymentMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createPrepaymentMetadataAttribute(attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Создать доп. поле Предоплаты
+   * 
+   
+   * @param attributeMetaInfo  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo createPrepaymentMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createPrepaymentMetadataAttribute(attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Создать доп. поле Предоплаты
@@ -72,7 +88,7 @@ public class PrepaymentsApi extends BaseApi {
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo createPrepaymentMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfo createPrepaymentMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = attributeMetaInfo;
     
     // verify the required parameter 'attributeMetaInfo' is set

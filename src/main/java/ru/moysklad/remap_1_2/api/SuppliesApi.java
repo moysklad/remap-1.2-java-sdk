@@ -48,7 +48,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class SuppliesApi extends BaseApi {
 
@@ -65,16 +65,35 @@ public class SuppliesApi extends BaseApi {
    * Добавить новые Файлы к Приемке. В одном запросе можно добавить максимум 10 Файлов. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
    * @param id ID сущности (required)
    * @param fileUpload  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;ModelFile&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<ModelFile> addSupplyFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.addSupplyFiles(id, fileUpload, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<ModelFile> addSupplyFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.addSupplyFiles(id, fileUpload, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Добавить файлы к Приемке
+   * Добавить новые Файлы к Приемке. В одном запросе можно добавить максимум 10 Файлов. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param fileUpload  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;ModelFile&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<ModelFile> addSupplyFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.addSupplyFiles(id, fileUpload, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Добавить файлы к Приемке
@@ -88,7 +107,7 @@ public class SuppliesApi extends BaseApi {
    * @return List&lt;ModelFile&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<ModelFile> addSupplyFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<ModelFile> addSupplyFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = fileUpload;
     
     // verify the required parameter 'id' is set
@@ -158,16 +177,14 @@ if (contentType != null)
    * Создать Приемку
    * 
    * @param supply  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Supply
    * @throws ApiException if fails to make API call
    */
-  public Supply createSupply(@javax.annotation.Nonnull Supply supply, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createSupply(supply, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Supply createSupply(@javax.annotation.Nonnull Supply supply) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createSupply(supply, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать Приемку
@@ -188,7 +205,6 @@ if (contentType != null)
     return this.createSupply(supply, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать Приемку
    * 
@@ -201,7 +217,7 @@ if (contentType != null)
    * @return Supply
    * @throws ApiException if fails to make API call
    */
-  public Supply createSupply(@javax.annotation.Nonnull Supply supply, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Supply createSupply(@javax.annotation.Nonnull Supply supply, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = supply;
     
     // verify the required parameter 'supply' is set
@@ -266,16 +282,14 @@ if (contentType != null)
    * Массовое создание и обновление Приемок
    * 
    * @param supply  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createSupplyBatch(@javax.annotation.Nonnull List<@Valid Supply> supply, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createSupplyBatch(supply, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<BatchResponseEntity> createSupplyBatch(@javax.annotation.Nonnull List<@Valid Supply> supply) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createSupplyBatch(supply, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Массовое создание и обновление Приемок
@@ -296,7 +310,6 @@ if (contentType != null)
     return this.createSupplyBatch(supply, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Массовое создание и обновление Приемок
    * 
@@ -309,7 +322,7 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createSupplyBatch(@javax.annotation.Nonnull List<@Valid Supply> supply, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createSupplyBatch(@javax.annotation.Nonnull List<@Valid Supply> supply, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = supply;
     
     // verify the required parameter 'supply' is set
@@ -374,16 +387,32 @@ if (contentType != null)
    * Создать доп. поле Приемки
    * 
    * @param attributeMetaInfo  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo createSupplyMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createSupplyMetadataAttribute(attributeMetaInfo, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public AttributeMetaInfo createSupplyMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createSupplyMetadataAttribute(attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Создать доп. поле Приемки
+   * 
+   
+   * @param attributeMetaInfo  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo createSupplyMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createSupplyMetadataAttribute(attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Создать доп. поле Приемки
@@ -396,7 +425,7 @@ if (contentType != null)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo createSupplyMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfo createSupplyMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = attributeMetaInfo;
     
     // verify the required parameter 'attributeMetaInfo' is set
@@ -460,16 +489,32 @@ if (contentType != null)
    * Создать статус Приемки
    * 
    * @param state  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return State
    * @throws ApiException if fails to make API call
    */
-  public State createSupplyMetadataState(@javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createSupplyMetadataState(state, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public State createSupplyMetadataState(@javax.annotation.Nonnull State state) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createSupplyMetadataState(state, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Создать статус Приемки
+   * 
+   
+   * @param state  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return State
+   * @throws ApiException if fails to make API call
+   */
+  public State createSupplyMetadataState(@javax.annotation.Nonnull State state, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createSupplyMetadataState(state, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Создать статус Приемки
@@ -482,7 +527,7 @@ if (contentType != null)
    * @return State
    * @throws ApiException if fails to make API call
    */
-  public State createSupplyMetadataState(@javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected State createSupplyMetadataState(@javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = state;
     
     // verify the required parameter 'state' is set
@@ -546,16 +591,32 @@ if (contentType != null)
    * Массовое создание и обновление статусов Приемки
    * 
    * @param state  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;StateRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<StateRowResult> createSupplyMetadataStatesBatch(@javax.annotation.Nonnull List<@Valid State> state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createSupplyMetadataStatesBatch(state, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<StateRowResult> createSupplyMetadataStatesBatch(@javax.annotation.Nonnull List<@Valid State> state) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createSupplyMetadataStatesBatch(state, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Массовое создание и обновление статусов Приемки
+   * 
+   
+   * @param state  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;StateRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<StateRowResult> createSupplyMetadataStatesBatch(@javax.annotation.Nonnull List<@Valid State> state, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createSupplyMetadataStatesBatch(state, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Массовое создание и обновление статусов Приемки
@@ -568,7 +629,7 @@ if (contentType != null)
    * @return List&lt;StateRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<StateRowResult> createSupplyMetadataStatesBatch(@javax.annotation.Nonnull List<@Valid State> state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<StateRowResult> createSupplyMetadataStatesBatch(@javax.annotation.Nonnull List<@Valid State> state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = state;
     
     // verify the required parameter 'state' is set
@@ -633,16 +694,14 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param supplyPosition  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return SupplyPosition
    * @throws ApiException if fails to make API call
    */
-  public SupplyPosition createSupplyPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SupplyPosition supplyPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createSupplyPosition(id, supplyPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public SupplyPosition createSupplyPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SupplyPosition supplyPosition) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createSupplyPosition(id, supplyPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать и обновить позицию Приемки
@@ -666,7 +725,6 @@ if (contentType != null)
     return this.createSupplyPosition(id, supplyPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать и обновить позицию Приемки
    * 
@@ -680,7 +738,7 @@ if (contentType != null)
    * @return SupplyPosition
    * @throws ApiException if fails to make API call
    */
-  public SupplyPosition createSupplyPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SupplyPosition supplyPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected SupplyPosition createSupplyPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SupplyPosition supplyPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = supplyPosition;
     
     // verify the required parameter 'id' is set
@@ -752,16 +810,14 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param supplyPosition  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createSupplyPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid SupplyPosition> supplyPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createSupplyPositions(id, supplyPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<BatchResponseEntity> createSupplyPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid SupplyPosition> supplyPosition) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createSupplyPositions(id, supplyPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Массовое создание и обновление позиций Приемки
@@ -785,7 +841,6 @@ if (contentType != null)
     return this.createSupplyPositions(id, supplyPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Массовое создание и обновление позиций Приемки
    * 
@@ -799,7 +854,7 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createSupplyPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid SupplyPosition> supplyPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createSupplyPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid SupplyPosition> supplyPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = supplyPosition;
     
     // verify the required parameter 'id' is set
@@ -870,14 +925,29 @@ if (contentType != null)
    * Удалить Приемку
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteSupply(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteSupply(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteSupply(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteSupply(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить Приемку
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteSupply(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteSupply(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить Приемку
@@ -888,7 +958,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteSupply(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteSupply(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -950,16 +1020,32 @@ if (acceptEncoding != null)
    * Массовое удаление Приемок
    * 
    * @param supply  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteSupplyBatch(@javax.annotation.Nonnull List<@Valid Supply> supply, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteSupplyBatch(supply, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteSupplyBatch(@javax.annotation.Nonnull List<@Valid Supply> supply) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteSupplyBatch(supply, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Массовое удаление Приемок
+   * 
+   
+   * @param supply  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteSupplyBatch(@javax.annotation.Nonnull List<@Valid Supply> supply, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteSupplyBatch(supply, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Массовое удаление Приемок
@@ -972,7 +1058,7 @@ if (acceptEncoding != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteSupplyBatch(@javax.annotation.Nonnull List<@Valid Supply> supply, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteSupplyBatch(@javax.annotation.Nonnull List<@Valid Supply> supply, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = supply;
     
     // verify the required parameter 'supply' is set
@@ -1037,14 +1123,32 @@ if (contentType != null)
    * Удаление Файла Приемки.
    * @param id ID сущности (required)
    * @param fileId ID файла (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteSupplyFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID fileId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteSupplyFile(id, fileId, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteSupplyFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID fileId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteSupplyFile(id, fileId, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить файл Приемки
+   * Удаление Файла Приемки.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param fileId ID файла (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteSupplyFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID fileId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteSupplyFile(id, fileId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить файл Приемки
@@ -1056,7 +1160,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteSupplyFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID fileId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteSupplyFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID fileId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1124,14 +1228,29 @@ if (acceptEncoding != null)
    * Удалить отдельное доп. поле Приемки
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteSupplyMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteSupplyMetadataAttributeById(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteSupplyMetadataAttributeById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteSupplyMetadataAttributeById(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить отдельное доп. поле Приемки
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteSupplyMetadataAttributeById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteSupplyMetadataAttributeById(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить отдельное доп. поле Приемки
@@ -1142,7 +1261,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteSupplyMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteSupplyMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1204,14 +1323,29 @@ if (acceptEncoding != null)
    * Удалить отдельный статус Приемки
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteSupplyMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteSupplyMetadataStateById(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteSupplyMetadataStateById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteSupplyMetadataStateById(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить отдельный статус Приемки
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteSupplyMetadataStateById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteSupplyMetadataStateById(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить отдельный статус Приемки
@@ -1222,7 +1356,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteSupplyMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteSupplyMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1285,14 +1419,13 @@ if (acceptEncoding != null)
    * 
    * @param id ID сущности (required)
    * @param positionId ID позиции (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteSupplyPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteSupplyPosition(id, positionId, expand, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteSupplyPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteSupplyPosition(id, positionId, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Удалить позицию Приемки
@@ -1314,7 +1447,6 @@ if (acceptEncoding != null)
     this.deleteSupplyPosition(id, positionId, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Удалить позицию Приемки
    * 
@@ -1326,7 +1458,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteSupplyPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteSupplyPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1396,16 +1528,35 @@ if (acceptEncoding != null)
    * 
    * @param id ID сущности (required)
    * @param supplyPosition  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteSupplyPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid SupplyPosition> supplyPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteSupplyPositions(id, supplyPosition, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteSupplyPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid SupplyPosition> supplyPosition) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteSupplyPositions(id, supplyPosition, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Массовое удаление позиций Приемки
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param supplyPosition  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteSupplyPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid SupplyPosition> supplyPosition, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteSupplyPositions(id, supplyPosition, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Массовое удаление позиций Приемки
@@ -1419,7 +1570,7 @@ if (acceptEncoding != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteSupplyPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid SupplyPosition> supplyPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteSupplyPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid SupplyPosition> supplyPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = supplyPosition;
     
     // verify the required parameter 'id' is set
@@ -1489,16 +1640,14 @@ if (contentType != null)
    * Получить Приемку
    * 
    * @param id ID сущности (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return Supply
    * @throws ApiException if fails to make API call
    */
-  public Supply getSupplyById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getSupplyById(id, expand, fields, accept, acceptEncoding, Collections.emptyMap());
+  public Supply getSupplyById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getSupplyById(id, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить Приемку
@@ -1519,7 +1668,6 @@ if (contentType != null)
     return this.getSupplyById(id, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить Приемку
    * 
@@ -1532,7 +1680,7 @@ if (contentType != null)
    * @return Supply
    * @throws ApiException if fails to make API call
    */
-  public Supply getSupplyById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected Supply getSupplyById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1597,16 +1745,14 @@ if (acceptEncoding != null)
    * Получить файлы Приемки
    * Запрос на получение списка всех Файлов данной Приемки.
    * @param id ID сущности (required)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return GetProductFiles200Response
    * @throws ApiException if fails to make API call
    */
-  public GetProductFiles200Response getSupplyFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getSupplyFiles(id, limit, offset, accept, acceptEncoding, Collections.emptyMap());
+  public GetProductFiles200Response getSupplyFiles(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getSupplyFiles(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить файлы Приемки
@@ -1627,7 +1773,6 @@ if (acceptEncoding != null)
     return this.getSupplyFiles(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить файлы Приемки
    * Запрос на получение списка всех Файлов данной Приемки.
@@ -1640,7 +1785,7 @@ if (acceptEncoding != null)
    * @return GetProductFiles200Response
    * @throws ApiException if fails to make API call
    */
-  public GetProductFiles200Response getSupplyFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected GetProductFiles200Response getSupplyFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1704,19 +1849,14 @@ if (acceptEncoding != null)
   /**
    * Получить список Приемок
    * 
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param search Контекстный поиск по строковым полям сущностей (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return SupplyList
    * @throws ApiException if fails to make API call
    */
-  public SupplyList getSupplyList(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getSupplyList(limit, offset, search, expand, fields, accept, acceptEncoding, Collections.emptyMap());
+  public SupplyList getSupplyList() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getSupplyList((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить список Приемок
@@ -1737,7 +1877,6 @@ if (acceptEncoding != null)
     return this.getSupplyList((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить список Приемок
    * 
@@ -1752,7 +1891,7 @@ if (acceptEncoding != null)
    * @return SupplyList
    * @throws ApiException if fails to make API call
    */
-  public SupplyList getSupplyList(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected SupplyList getSupplyList(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1813,15 +1952,14 @@ if (acceptEncoding != null)
   /**
    * Метаданные Приемок
    * 
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
    * @return DocumentMetadata
    * @throws ApiException if fails to make API call
    */
-  public DocumentMetadata getSupplyMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand) throws ApiException {
-    return this.getSupplyMetadata(accept, acceptEncoding, expand, Collections.emptyMap());
+  public DocumentMetadata getSupplyMetadata() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getSupplyMetadata(null, null, (String) effectiveOptions.get("expand"), effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Метаданные Приемок
@@ -1838,7 +1976,6 @@ if (acceptEncoding != null)
     return this.getSupplyMetadata(null, null, (String) effectiveOptions.get("expand"), effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Метаданные Приемок
    * 
@@ -1849,7 +1986,7 @@ if (acceptEncoding != null)
    * @return DocumentMetadata
    * @throws ApiException if fails to make API call
    */
-  public DocumentMetadata getSupplyMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, Map<String, String> additionalHeaders) throws ApiException {
+  protected DocumentMetadata getSupplyMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1906,16 +2043,14 @@ if (acceptEncoding != null)
   /**
    * Доп. поля Приемки
    * 
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return AttributeMetaInfoList
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfoList getSupplyMetadataAttribute(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getSupplyMetadataAttribute(offset, limit, accept, acceptEncoding, Collections.emptyMap());
+  public AttributeMetaInfoList getSupplyMetadataAttribute() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getSupplyMetadataAttribute((Integer) effectiveOptions.get("offset"), (Integer) effectiveOptions.get("limit"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Доп. поля Приемки
@@ -1933,7 +2068,6 @@ if (acceptEncoding != null)
     return this.getSupplyMetadataAttribute((Integer) effectiveOptions.get("offset"), (Integer) effectiveOptions.get("limit"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Доп. поля Приемки
    * 
@@ -1945,7 +2079,7 @@ if (acceptEncoding != null)
    * @return AttributeMetaInfoList
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfoList getSupplyMetadataAttribute(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfoList getSupplyMetadataAttribute(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -2004,16 +2138,32 @@ if (acceptEncoding != null)
    * Отдельное доп. поле Приемки
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo getSupplyMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.getSupplyMetadataAttributeById(id, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public AttributeMetaInfo getSupplyMetadataAttributeById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getSupplyMetadataAttributeById(id, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Отдельное доп. поле Приемки
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo getSupplyMetadataAttributeById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getSupplyMetadataAttributeById(id, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Отдельное доп. поле Приемки
@@ -2026,7 +2176,7 @@ if (acceptEncoding != null)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo getSupplyMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfo getSupplyMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -2091,15 +2241,31 @@ if (contentType != null)
    * Отдельный статус Приемки
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return State
    * @throws ApiException if fails to make API call
    */
-  public State getSupplyMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getSupplyMetadataStateById(id, accept, acceptEncoding, Collections.emptyMap());
+  public State getSupplyMetadataStateById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getSupplyMetadataStateById(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Отдельный статус Приемки
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return State
+   * @throws ApiException if fails to make API call
+   */
+  public State getSupplyMetadataStateById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getSupplyMetadataStateById(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Отдельный статус Приемки
@@ -2111,7 +2277,7 @@ if (contentType != null)
    * @return State
    * @throws ApiException if fails to make API call
    */
-  public State getSupplyMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected State getSupplyMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -2175,16 +2341,14 @@ if (acceptEncoding != null)
    * 
    * @param id ID сущности (required)
    * @param positionId ID позиции (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return SupplyPosition
    * @throws ApiException if fails to make API call
    */
-  public SupplyPosition getSupplyPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getSupplyPositionById(id, positionId, expand, fields, accept, acceptEncoding, Collections.emptyMap());
+  public SupplyPosition getSupplyPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getSupplyPositionById(id, positionId, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить позицию Приемки
@@ -2208,7 +2372,6 @@ if (acceptEncoding != null)
     return this.getSupplyPositionById(id, positionId, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить позицию Приемки
    * 
@@ -2222,7 +2385,7 @@ if (acceptEncoding != null)
    * @return SupplyPosition
    * @throws ApiException if fails to make API call
    */
-  public SupplyPosition getSupplyPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected SupplyPosition getSupplyPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -2293,19 +2456,14 @@ if (acceptEncoding != null)
    * Получить позиции Приемки
    * 
    * @param id ID сущности (required)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return SupplyPositionList
    * @throws ApiException if fails to make API call
    */
-  public SupplyPositionList getSupplyPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.getSupplyPositions(id, limit, offset, expand, fields, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public SupplyPositionList getSupplyPositions(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getSupplyPositions(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить позиции Приемки
@@ -2329,7 +2487,6 @@ if (acceptEncoding != null)
     return this.getSupplyPositions(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить позиции Приемки
    * 
@@ -2345,7 +2502,7 @@ if (acceptEncoding != null)
    * @return SupplyPositionList
    * @throws ApiException if fails to make API call
    */
-  public SupplyPositionList getSupplyPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected SupplyPositionList getSupplyPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -2413,17 +2570,33 @@ if (contentType != null)
   /**
    * Шаблон Приемки
    * Предзаполненный шаблон Приемки. Пустое тело возвращает стандартный шаблон без привязки к документу. В теле можно передать, например, &#x60;purchaseOrder&#x60;, что позволит получить шаблон на основе заказа поставщику. 
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @param body  (optional)
    * @return Supply
    * @throws ApiException if fails to make API call
    */
-  public Supply getSupplyTemplate(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, @javax.annotation.Nullable Object body) throws ApiException {
-    return this.getSupplyTemplate(accept, acceptEncoding, contentType, body, Collections.emptyMap());
+  public Supply getSupplyTemplate(@javax.annotation.Nullable Object body) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getSupplyTemplate(null, null, null, body, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Шаблон Приемки
+   * Предзаполненный шаблон Приемки. Пустое тело возвращает стандартный шаблон без привязки к документу. В теле можно передать, например, &#x60;purchaseOrder&#x60;, что позволит получить шаблон на основе заказа поставщику. 
+   
+   
+   
+   
+   * @param body  (optional)
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Supply
+   * @throws ApiException if fails to make API call
+   */
+  public Supply getSupplyTemplate(@javax.annotation.Nullable Object body, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getSupplyTemplate(null, null, null, body, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Шаблон Приемки
@@ -2436,7 +2609,7 @@ if (contentType != null)
    * @return Supply
    * @throws ApiException if fails to make API call
    */
-  public Supply getSupplyTemplate(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, @javax.annotation.Nullable Object body, Map<String, String> additionalHeaders) throws ApiException {
+  protected Supply getSupplyTemplate(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, @javax.annotation.Nullable Object body, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = body;
     
     // create path and map variables
@@ -2496,17 +2669,14 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param supply  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Supply
    * @throws ApiException if fails to make API call
    */
-  public Supply updateSupply(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Supply supply, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateSupply(id, supply, expand, fields, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Supply updateSupply(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Supply supply) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateSupply(id, supply, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Изменить Приемку
@@ -2531,7 +2701,6 @@ if (contentType != null)
     return this.updateSupply(id, supply, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Изменить Приемку
    * 
@@ -2546,7 +2715,7 @@ if (contentType != null)
    * @return Supply
    * @throws ApiException if fails to make API call
    */
-  public Supply updateSupply(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Supply supply, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Supply updateSupply(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Supply supply, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = supply;
     
     // verify the required parameter 'id' is set
@@ -2619,16 +2788,35 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param attributeMetaInfo  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo updateSupplyMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateSupplyMetadataAttributeById(id, attributeMetaInfo, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public AttributeMetaInfo updateSupplyMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateSupplyMetadataAttributeById(id, attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Обновить отдельное доп. поле Приемки
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param attributeMetaInfo  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo updateSupplyMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateSupplyMetadataAttributeById(id, attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Обновить отдельное доп. поле Приемки
@@ -2642,7 +2830,7 @@ if (contentType != null)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo updateSupplyMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfo updateSupplyMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = attributeMetaInfo;
     
     // verify the required parameter 'id' is set
@@ -2713,16 +2901,35 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param state  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return State
    * @throws ApiException if fails to make API call
    */
-  public State updateSupplyMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateSupplyMetadataStateById(id, state, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public State updateSupplyMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull State state) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateSupplyMetadataStateById(id, state, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Обновить отдельный статус Приемки
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param state  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return State
+   * @throws ApiException if fails to make API call
+   */
+  public State updateSupplyMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull State state, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateSupplyMetadataStateById(id, state, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Обновить отдельный статус Приемки
@@ -2736,7 +2943,7 @@ if (contentType != null)
    * @return State
    * @throws ApiException if fails to make API call
    */
-  public State updateSupplyMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected State updateSupplyMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = state;
     
     // verify the required parameter 'id' is set
@@ -2808,17 +3015,14 @@ if (contentType != null)
    * @param id ID сущности (required)
    * @param positionId ID позиции (required)
    * @param supplyPosition  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return SupplyPosition
    * @throws ApiException if fails to make API call
    */
-  public SupplyPosition updateSupplyPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull SupplyPosition supplyPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateSupplyPosition(id, positionId, supplyPosition, expand, fields, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public SupplyPosition updateSupplyPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull SupplyPosition supplyPosition) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateSupplyPosition(id, positionId, supplyPosition, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Изменить позицию Приемки
@@ -2846,7 +3050,6 @@ if (contentType != null)
     return this.updateSupplyPosition(id, positionId, supplyPosition, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Изменить позицию Приемки
    * 
@@ -2862,7 +3065,7 @@ if (contentType != null)
    * @return SupplyPosition
    * @throws ApiException if fails to make API call
    */
-  public SupplyPosition updateSupplyPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull SupplyPosition supplyPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected SupplyPosition updateSupplyPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull SupplyPosition supplyPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = supplyPosition;
     
     // verify the required parameter 'id' is set

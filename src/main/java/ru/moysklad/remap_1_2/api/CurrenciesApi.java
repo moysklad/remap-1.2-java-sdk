@@ -38,7 +38,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class CurrenciesApi extends BaseApi {
 
@@ -54,16 +54,14 @@ public class CurrenciesApi extends BaseApi {
    * Создать или изменить валюту
    * Создание или изменение нескольких валют.
    * @param currency  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createCurrenciesBatch(@javax.annotation.Nonnull List<@Valid Currency> currency, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createCurrenciesBatch(currency, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<BatchResponseEntity> createCurrenciesBatch(@javax.annotation.Nonnull List<@Valid Currency> currency) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createCurrenciesBatch(currency, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать или изменить валюту
@@ -84,7 +82,6 @@ public class CurrenciesApi extends BaseApi {
     return this.createCurrenciesBatch(currency, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать или изменить валюту
    * Создание или изменение нескольких валют.
@@ -97,7 +94,7 @@ public class CurrenciesApi extends BaseApi {
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createCurrenciesBatch(@javax.annotation.Nonnull List<@Valid Currency> currency, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createCurrenciesBatch(@javax.annotation.Nonnull List<@Valid Currency> currency, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = currency;
     
     // verify the required parameter 'currency' is set
@@ -162,16 +159,14 @@ if (contentType != null)
    * Создать валюту
    * Создание новой валюты
    * @param currency  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Currency
    * @throws ApiException if fails to make API call
    */
-  public Currency createCurrency(@javax.annotation.Nonnull Currency currency, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createCurrency(currency, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Currency createCurrency(@javax.annotation.Nonnull Currency currency) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createCurrency(currency, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать валюту
@@ -192,7 +187,6 @@ if (contentType != null)
     return this.createCurrency(currency, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать валюту
    * Создание новой валюты
@@ -205,7 +199,7 @@ if (contentType != null)
    * @return Currency
    * @throws ApiException if fails to make API call
    */
-  public Currency createCurrency(@javax.annotation.Nonnull Currency currency, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Currency createCurrency(@javax.annotation.Nonnull Currency currency, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = currency;
     
     // verify the required parameter 'currency' is set
@@ -270,16 +264,32 @@ if (contentType != null)
    * Удалить валюту
    * Массовое удаление валют по их мета-объектам.
    * @param currency  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteCurrenciesBatch(@javax.annotation.Nonnull List<@Valid Currency> currency, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteCurrenciesBatch(currency, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteCurrenciesBatch(@javax.annotation.Nonnull List<@Valid Currency> currency) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteCurrenciesBatch(currency, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить валюту
+   * Массовое удаление валют по их мета-объектам.
+   
+   * @param currency  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteCurrenciesBatch(@javax.annotation.Nonnull List<@Valid Currency> currency, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteCurrenciesBatch(currency, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить валюту
@@ -292,7 +302,7 @@ if (contentType != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteCurrenciesBatch(@javax.annotation.Nonnull List<@Valid Currency> currency, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteCurrenciesBatch(@javax.annotation.Nonnull List<@Valid Currency> currency, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = currency;
     
     // verify the required parameter 'currency' is set
@@ -356,14 +366,29 @@ if (contentType != null)
    * Удалить валюту
    * Удаление валюты с указанным id
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteCurrency(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteCurrency(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteCurrency(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteCurrency(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить валюту
+   * Удаление валюты с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteCurrency(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteCurrency(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить валюту
@@ -374,7 +399,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteCurrency(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteCurrency(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -435,20 +460,14 @@ if (acceptEncoding != null)
   /**
    * Получить список валют
    * Запрос всех валют на данной учетной записи
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param search Контекстный поиск по строковым полям сущностей (optional)
-   * @param filter Фильтрация выборки (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param order Сортировка (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return CurrencyList
    * @throws ApiException if fails to make API call
    */
-  public CurrencyList getCurrencies(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getCurrencies(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  public CurrencyList getCurrencies() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getCurrencies((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить список валют
@@ -470,7 +489,6 @@ if (acceptEncoding != null)
     return this.getCurrencies((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить список валют
    * Запрос всех валют на данной учетной записи
@@ -486,7 +504,7 @@ if (acceptEncoding != null)
    * @return CurrencyList
    * @throws ApiException if fails to make API call
    */
-  public CurrencyList getCurrencies(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected CurrencyList getCurrencies(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -549,15 +567,14 @@ if (acceptEncoding != null)
    * Получить валюту по ID
    * Запрос на получение отдельной валюты с указанным id
    * @param id ID сущности (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return Currency
    * @throws ApiException if fails to make API call
    */
-  public Currency getCurrencyById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getCurrencyById(id, expand, accept, acceptEncoding, Collections.emptyMap());
+  public Currency getCurrencyById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getCurrencyById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить валюту по ID
@@ -577,7 +594,6 @@ if (acceptEncoding != null)
     return this.getCurrencyById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить валюту по ID
    * Запрос на получение отдельной валюты с указанным id
@@ -589,7 +605,7 @@ if (acceptEncoding != null)
    * @return Currency
    * @throws ApiException if fails to make API call
    */
-  public Currency getCurrencyById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected Currency getCurrencyById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -654,16 +670,14 @@ if (acceptEncoding != null)
    * Обновление валюты с указанным id
    * @param id ID сущности (required)
    * @param currency  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Currency
    * @throws ApiException if fails to make API call
    */
-  public Currency updateCurrency(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Currency currency, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateCurrency(id, currency, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Currency updateCurrency(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Currency currency) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateCurrency(id, currency, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Обновить валюту
@@ -687,7 +701,6 @@ if (acceptEncoding != null)
     return this.updateCurrency(id, currency, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Обновить валюту
    * Обновление валюты с указанным id
@@ -701,7 +714,7 @@ if (acceptEncoding != null)
    * @return Currency
    * @throws ApiException if fails to make API call
    */
-  public Currency updateCurrency(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Currency currency, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Currency updateCurrency(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Currency currency, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = currency;
     
     // verify the required parameter 'id' is set

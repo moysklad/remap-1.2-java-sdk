@@ -38,7 +38,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class CountriesApi extends BaseApi {
 
@@ -54,16 +54,14 @@ public class CountriesApi extends BaseApi {
    * Создать или изменить страны
    * Создание или изменение нескольких стран.
    * @param country  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createCountriesBatch(@javax.annotation.Nonnull List<@Valid Country> country, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createCountriesBatch(country, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<BatchResponseEntity> createCountriesBatch(@javax.annotation.Nonnull List<@Valid Country> country) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createCountriesBatch(country, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать или изменить страны
@@ -84,7 +82,6 @@ public class CountriesApi extends BaseApi {
     return this.createCountriesBatch(country, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать или изменить страны
    * Создание или изменение нескольких стран.
@@ -97,7 +94,7 @@ public class CountriesApi extends BaseApi {
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createCountriesBatch(@javax.annotation.Nonnull List<@Valid Country> country, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createCountriesBatch(@javax.annotation.Nonnull List<@Valid Country> country, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = country;
     
     // verify the required parameter 'country' is set
@@ -162,16 +159,14 @@ if (contentType != null)
    * Создать страну
    * Создание новой страны
    * @param country  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Country
    * @throws ApiException if fails to make API call
    */
-  public Country createCountry(@javax.annotation.Nonnull Country country, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createCountry(country, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Country createCountry(@javax.annotation.Nonnull Country country) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createCountry(country, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать страну
@@ -192,7 +187,6 @@ if (contentType != null)
     return this.createCountry(country, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать страну
    * Создание новой страны
@@ -205,7 +199,7 @@ if (contentType != null)
    * @return Country
    * @throws ApiException if fails to make API call
    */
-  public Country createCountry(@javax.annotation.Nonnull Country country, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Country createCountry(@javax.annotation.Nonnull Country country, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = country;
     
     // verify the required parameter 'country' is set
@@ -270,16 +264,32 @@ if (contentType != null)
    * Удалить страны
    * Массовое удаление стран по их мета-объектам.
    * @param country  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteCountriesBatch(@javax.annotation.Nonnull List<@Valid Country> country, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteCountriesBatch(country, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteCountriesBatch(@javax.annotation.Nonnull List<@Valid Country> country) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteCountriesBatch(country, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить страны
+   * Массовое удаление стран по их мета-объектам.
+   
+   * @param country  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteCountriesBatch(@javax.annotation.Nonnull List<@Valid Country> country, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteCountriesBatch(country, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить страны
@@ -292,7 +302,7 @@ if (contentType != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteCountriesBatch(@javax.annotation.Nonnull List<@Valid Country> country, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteCountriesBatch(@javax.annotation.Nonnull List<@Valid Country> country, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = country;
     
     // verify the required parameter 'country' is set
@@ -356,14 +366,29 @@ if (contentType != null)
    * Удалить страну
    * Удаление страны с указанным id
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteCountry(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteCountry(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteCountry(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteCountry(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить страну
+   * Удаление страны с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteCountry(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteCountry(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить страну
@@ -374,7 +399,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteCountry(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteCountry(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -435,20 +460,14 @@ if (acceptEncoding != null)
   /**
    * Получить список стран
    * Запрос всех стран на данной учетной записи
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param search Контекстный поиск по строковым полям сущностей (optional)
-   * @param filter Фильтрация выборки (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param order Сортировка (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return CountryList
    * @throws ApiException if fails to make API call
    */
-  public CountryList getCountries(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getCountries(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  public CountryList getCountries() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getCountries((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить список стран
@@ -470,7 +489,6 @@ if (acceptEncoding != null)
     return this.getCountries((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить список стран
    * Запрос всех стран на данной учетной записи
@@ -486,7 +504,7 @@ if (acceptEncoding != null)
    * @return CountryList
    * @throws ApiException if fails to make API call
    */
-  public CountryList getCountries(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected CountryList getCountries(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -549,15 +567,14 @@ if (acceptEncoding != null)
    * Получить страну по id
    * Запрос на получение отдельной страны с указанным id
    * @param id ID сущности (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return Country
    * @throws ApiException if fails to make API call
    */
-  public Country getCountryById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getCountryById(id, expand, accept, acceptEncoding, Collections.emptyMap());
+  public Country getCountryById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getCountryById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить страну по id
@@ -577,7 +594,6 @@ if (acceptEncoding != null)
     return this.getCountryById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить страну по id
    * Запрос на получение отдельной страны с указанным id
@@ -589,7 +605,7 @@ if (acceptEncoding != null)
    * @return Country
    * @throws ApiException if fails to make API call
    */
-  public Country getCountryById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected Country getCountryById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -654,16 +670,14 @@ if (acceptEncoding != null)
    * Обновление страны с указанным id
    * @param id ID сущности (required)
    * @param country  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Country
    * @throws ApiException if fails to make API call
    */
-  public Country updateCountry(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Country country, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateCountry(id, country, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Country updateCountry(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Country country) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateCountry(id, country, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Обновить страну
@@ -687,7 +701,6 @@ if (acceptEncoding != null)
     return this.updateCountry(id, country, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Обновить страну
    * Обновление страны с указанным id
@@ -701,7 +714,7 @@ if (acceptEncoding != null)
    * @return Country
    * @throws ApiException if fails to make API call
    */
-  public Country updateCountry(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Country country, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Country updateCountry(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Country country, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = country;
     
     // verify the required parameter 'id' is set

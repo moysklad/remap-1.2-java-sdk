@@ -47,7 +47,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ProcessingPlansApi extends BaseApi {
 
@@ -63,16 +63,14 @@ public class ProcessingPlansApi extends BaseApi {
    * Создать Техкарту
    * Создание новой Техкарты
    * @param processingPlan  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return ProcessingPlan
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlan createProcessingPlan(@javax.annotation.Nonnull ProcessingPlan processingPlan, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createProcessingPlan(processingPlan, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public ProcessingPlan createProcessingPlan(@javax.annotation.Nonnull ProcessingPlan processingPlan) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createProcessingPlan(processingPlan, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать Техкарту
@@ -93,7 +91,6 @@ public class ProcessingPlansApi extends BaseApi {
     return this.createProcessingPlan(processingPlan, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать Техкарту
    * Создание новой Техкарты
@@ -106,7 +103,7 @@ public class ProcessingPlansApi extends BaseApi {
    * @return ProcessingPlan
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlan createProcessingPlan(@javax.annotation.Nonnull ProcessingPlan processingPlan, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected ProcessingPlan createProcessingPlan(@javax.annotation.Nonnull ProcessingPlan processingPlan, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = processingPlan;
     
     // verify the required parameter 'processingPlan' is set
@@ -171,16 +168,14 @@ if (contentType != null)
    * Создать или изменить Техкарты
    * Создать или изменить Техкарты.
    * @param processingPlan  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createProcessingPlanBatch(@javax.annotation.Nonnull List<@Valid ProcessingPlan> processingPlan, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createProcessingPlanBatch(processingPlan, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<BatchResponseEntity> createProcessingPlanBatch(@javax.annotation.Nonnull List<@Valid ProcessingPlan> processingPlan) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createProcessingPlanBatch(processingPlan, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать или изменить Техкарты
@@ -201,7 +196,6 @@ if (contentType != null)
     return this.createProcessingPlanBatch(processingPlan, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать или изменить Техкарты
    * Создать или изменить Техкарты.
@@ -214,7 +208,7 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createProcessingPlanBatch(@javax.annotation.Nonnull List<@Valid ProcessingPlan> processingPlan, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createProcessingPlanBatch(@javax.annotation.Nonnull List<@Valid ProcessingPlan> processingPlan, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = processingPlan;
     
     // verify the required parameter 'processingPlan' is set
@@ -280,16 +274,14 @@ if (contentType != null)
    * Запрос на создание нового материала в Техкарте
    * @param id ID сущности (required)
    * @param processingPlanMaterial  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return ProcessingPlanMaterial
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlanMaterial createProcessingPlanMaterials(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingPlanMaterial processingPlanMaterial, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createProcessingPlanMaterials(id, processingPlanMaterial, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public ProcessingPlanMaterial createProcessingPlanMaterials(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingPlanMaterial processingPlanMaterial) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createProcessingPlanMaterials(id, processingPlanMaterial, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать материал Техкарты
@@ -313,7 +305,6 @@ if (contentType != null)
     return this.createProcessingPlanMaterials(id, processingPlanMaterial, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать материал Техкарты
    * Запрос на создание нового материала в Техкарте
@@ -327,7 +318,7 @@ if (contentType != null)
    * @return ProcessingPlanMaterial
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlanMaterial createProcessingPlanMaterials(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingPlanMaterial processingPlanMaterial, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected ProcessingPlanMaterial createProcessingPlanMaterials(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingPlanMaterial processingPlanMaterial, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = processingPlanMaterial;
     
     // verify the required parameter 'id' is set
@@ -398,16 +389,32 @@ if (contentType != null)
    * Создать Доп. поле ProcessingPlan
    * 
    * @param attributeMetaInfo  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo createProcessingPlanMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createProcessingPlanMetadataAttribute(attributeMetaInfo, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public AttributeMetaInfo createProcessingPlanMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createProcessingPlanMetadataAttribute(attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Создать Доп. поле ProcessingPlan
+   * 
+   
+   * @param attributeMetaInfo  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo createProcessingPlanMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createProcessingPlanMetadataAttribute(attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Создать Доп. поле ProcessingPlan
@@ -420,7 +427,7 @@ if (contentType != null)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo createProcessingPlanMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfo createProcessingPlanMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = attributeMetaInfo;
     
     // verify the required parameter 'attributeMetaInfo' is set
@@ -485,16 +492,14 @@ if (contentType != null)
    * Запрос на создание нового продукта в Техкарте
    * @param id ID сущности (required)
    * @param processingPlanProduct  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return ProcessingPlanProduct
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlanProduct createProcessingPlanProducts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingPlanProduct processingPlanProduct, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createProcessingPlanProducts(id, processingPlanProduct, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public ProcessingPlanProduct createProcessingPlanProducts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingPlanProduct processingPlanProduct) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createProcessingPlanProducts(id, processingPlanProduct, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать продукт Техкарты
@@ -518,7 +523,6 @@ if (contentType != null)
     return this.createProcessingPlanProducts(id, processingPlanProduct, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать продукт Техкарты
    * Запрос на создание нового продукта в Техкарте
@@ -532,7 +536,7 @@ if (contentType != null)
    * @return ProcessingPlanProduct
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlanProduct createProcessingPlanProducts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingPlanProduct processingPlanProduct, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected ProcessingPlanProduct createProcessingPlanProducts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingPlanProduct processingPlanProduct, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = processingPlanProduct;
     
     // verify the required parameter 'id' is set
@@ -603,15 +607,30 @@ if (contentType != null)
    * Удалить Техкарту
    * Запрос на удаление Техкарты с указанным id
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @throws ApiException if fails to make API call
    */
-  public void deleteProcessingPlan(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    this.deleteProcessingPlan(id, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public void deleteProcessingPlan(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteProcessingPlan(id, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить Техкарту
+   * Запрос на удаление Техкарты с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteProcessingPlan(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteProcessingPlan(id, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить Техкарту
@@ -623,7 +642,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteProcessingPlan(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteProcessingPlan(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -688,14 +707,32 @@ if (contentType != null)
    * Запрос на удаление материала Техкарты с указанным id
    * @param id ID сущности (required)
    * @param positionId ID позиции (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteProcessingPlanMaterial(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteProcessingPlanMaterial(id, positionId, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteProcessingPlanMaterial(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteProcessingPlanMaterial(id, positionId, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить материал Техкарты
+   * Запрос на удаление материала Техкарты с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param positionId ID позиции (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteProcessingPlanMaterial(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteProcessingPlanMaterial(id, positionId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить материал Техкарты
@@ -707,7 +744,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteProcessingPlanMaterial(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteProcessingPlanMaterial(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -776,16 +813,35 @@ if (acceptEncoding != null)
    * Массовое удаление материалов Техкарты по их мета-объектам
    * @param id ID сущности (required)
    * @param processingPlanMaterial  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteProcessingPlanMaterialsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid ProcessingPlanMaterial> processingPlanMaterial, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteProcessingPlanMaterialsBatch(id, processingPlanMaterial, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteProcessingPlanMaterialsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid ProcessingPlanMaterial> processingPlanMaterial) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteProcessingPlanMaterialsBatch(id, processingPlanMaterial, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Массовое удаление материалов Техкарты
+   * Массовое удаление материалов Техкарты по их мета-объектам
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param processingPlanMaterial  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteProcessingPlanMaterialsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid ProcessingPlanMaterial> processingPlanMaterial, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteProcessingPlanMaterialsBatch(id, processingPlanMaterial, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Массовое удаление материалов Техкарты
@@ -799,7 +855,7 @@ if (acceptEncoding != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteProcessingPlanMaterialsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid ProcessingPlanMaterial> processingPlanMaterial, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteProcessingPlanMaterialsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid ProcessingPlanMaterial> processingPlanMaterial, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = processingPlanMaterial;
     
     // verify the required parameter 'id' is set
@@ -869,15 +925,30 @@ if (contentType != null)
    * Удалить отдельное доп. поле ProcessingPlan
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @throws ApiException if fails to make API call
    */
-  public void deleteProcessingPlanMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    this.deleteProcessingPlanMetadataAttributeById(id, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public void deleteProcessingPlanMetadataAttributeById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteProcessingPlanMetadataAttributeById(id, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить отдельное доп. поле ProcessingPlan
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteProcessingPlanMetadataAttributeById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteProcessingPlanMetadataAttributeById(id, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить отдельное доп. поле ProcessingPlan
@@ -889,7 +960,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteProcessingPlanMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteProcessingPlanMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -954,14 +1025,32 @@ if (contentType != null)
    * Запрос на удаление продукта Техкарты с указанным id
    * @param id ID сущности (required)
    * @param positionId ID позиции (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteProcessingPlanProduct(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteProcessingPlanProduct(id, positionId, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteProcessingPlanProduct(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteProcessingPlanProduct(id, positionId, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить продукт Техкарты
+   * Запрос на удаление продукта Техкарты с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param positionId ID позиции (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteProcessingPlanProduct(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteProcessingPlanProduct(id, positionId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить продукт Техкарты
@@ -973,7 +1062,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteProcessingPlanProduct(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteProcessingPlanProduct(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1042,16 +1131,35 @@ if (acceptEncoding != null)
    * Массовое удаление продуктов Техкарты по их мета-объектам
    * @param id ID сущности (required)
    * @param processingPlanProduct  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteProcessingPlanProductsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid ProcessingPlanProduct> processingPlanProduct, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteProcessingPlanProductsBatch(id, processingPlanProduct, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteProcessingPlanProductsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid ProcessingPlanProduct> processingPlanProduct) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteProcessingPlanProductsBatch(id, processingPlanProduct, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Массовое удаление продуктов Техкарты
+   * Массовое удаление продуктов Техкарты по их мета-объектам
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param processingPlanProduct  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteProcessingPlanProductsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid ProcessingPlanProduct> processingPlanProduct, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteProcessingPlanProductsBatch(id, processingPlanProduct, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Массовое удаление продуктов Техкарты
@@ -1065,7 +1173,7 @@ if (acceptEncoding != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteProcessingPlanProductsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid ProcessingPlanProduct> processingPlanProduct, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteProcessingPlanProductsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid ProcessingPlanProduct> processingPlanProduct, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = processingPlanProduct;
     
     // verify the required parameter 'id' is set
@@ -1135,16 +1243,32 @@ if (contentType != null)
    * Массовое удаление Техкарт
    * Массовое удаление Техкарт по их мета-объектам
    * @param processingPlan  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteProcessingPlansBatch(@javax.annotation.Nonnull List<@Valid ProcessingPlan> processingPlan, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteProcessingPlansBatch(processingPlan, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteProcessingPlansBatch(@javax.annotation.Nonnull List<@Valid ProcessingPlan> processingPlan) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteProcessingPlansBatch(processingPlan, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Массовое удаление Техкарт
+   * Массовое удаление Техкарт по их мета-объектам
+   
+   * @param processingPlan  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteProcessingPlansBatch(@javax.annotation.Nonnull List<@Valid ProcessingPlan> processingPlan, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteProcessingPlansBatch(processingPlan, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Массовое удаление Техкарт
@@ -1157,7 +1281,7 @@ if (contentType != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteProcessingPlansBatch(@javax.annotation.Nonnull List<@Valid ProcessingPlan> processingPlan, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteProcessingPlansBatch(@javax.annotation.Nonnull List<@Valid ProcessingPlan> processingPlan, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = processingPlan;
     
     // verify the required parameter 'processingPlan' is set
@@ -1221,16 +1345,14 @@ if (contentType != null)
    * Получить Техкарту
    * Запрос на получение отдельной Техкарты с указанным id
    * @param id ID сущности (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return ProcessingPlan
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlan getProcessingPlanById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.getProcessingPlanById(id, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public ProcessingPlan getProcessingPlanById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProcessingPlanById(id, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить Техкарту
@@ -1251,7 +1373,6 @@ if (contentType != null)
     return this.getProcessingPlanById(id, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить Техкарту
    * Запрос на получение отдельной Техкарты с указанным id
@@ -1264,7 +1385,7 @@ if (contentType != null)
    * @return ProcessingPlan
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlan getProcessingPlanById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected ProcessingPlan getProcessingPlanById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1331,15 +1452,14 @@ if (contentType != null)
    * Запрос на получение отдельного материала Техкарты с указанным id
    * @param id ID сущности (required)
    * @param positionId ID позиции (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return ProcessingPlanMaterial
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlanMaterial getProcessingPlanMaterialById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getProcessingPlanMaterialById(id, positionId, expand, accept, acceptEncoding, Collections.emptyMap());
+  public ProcessingPlanMaterial getProcessingPlanMaterialById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProcessingPlanMaterialById(id, positionId, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить материал Техкарты
@@ -1362,7 +1482,6 @@ if (contentType != null)
     return this.getProcessingPlanMaterialById(id, positionId, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить материал Техкарты
    * Запрос на получение отдельного материала Техкарты с указанным id
@@ -1375,7 +1494,7 @@ if (contentType != null)
    * @return ProcessingPlanMaterial
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlanMaterial getProcessingPlanMaterialById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected ProcessingPlanMaterial getProcessingPlanMaterialById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1445,17 +1564,14 @@ if (acceptEncoding != null)
    * Получить материалы Техкарты
    * Запрос на получение списка всех материалов данной Техкарты
    * @param id ID сущности (required)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return ProcessingPlanMaterialList
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlanMaterialList getProcessingPlanMaterials(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getProcessingPlanMaterials(id, limit, offset, expand, accept, acceptEncoding, Collections.emptyMap());
+  public ProcessingPlanMaterialList getProcessingPlanMaterials(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProcessingPlanMaterials(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить материалы Техкарты
@@ -1477,7 +1593,6 @@ if (acceptEncoding != null)
     return this.getProcessingPlanMaterials(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить материалы Техкарты
    * Запрос на получение списка всех материалов данной Техкарты
@@ -1491,7 +1606,7 @@ if (acceptEncoding != null)
    * @return ProcessingPlanMaterialList
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlanMaterialList getProcessingPlanMaterials(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected ProcessingPlanMaterialList getProcessingPlanMaterials(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1556,15 +1671,14 @@ if (acceptEncoding != null)
   /**
    * Метаданные Складов
    * 
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return Metadata
    * @throws ApiException if fails to make API call
    */
-  public Metadata getProcessingPlanMetadata(@javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getProcessingPlanMetadata(expand, accept, acceptEncoding, Collections.emptyMap());
+  public Metadata getProcessingPlanMetadata() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProcessingPlanMetadata((String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Метаданные Складов
@@ -1581,7 +1695,6 @@ if (acceptEncoding != null)
     return this.getProcessingPlanMetadata((String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Метаданные Складов
    * 
@@ -1592,7 +1705,7 @@ if (acceptEncoding != null)
    * @return Metadata
    * @throws ApiException if fails to make API call
    */
-  public Metadata getProcessingPlanMetadata(@javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected Metadata getProcessingPlanMetadata(@javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1649,17 +1762,14 @@ if (acceptEncoding != null)
   /**
    * Доп. поля ProcessingPlan
    * 
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return AttributeMetaInfoList
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfoList getProcessingPlanMetadataAttribute(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.getProcessingPlanMetadataAttribute(offset, limit, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public AttributeMetaInfoList getProcessingPlanMetadataAttribute() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProcessingPlanMetadataAttribute((Integer) effectiveOptions.get("offset"), (Integer) effectiveOptions.get("limit"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Доп. поля ProcessingPlan
@@ -1678,7 +1788,6 @@ if (acceptEncoding != null)
     return this.getProcessingPlanMetadataAttribute((Integer) effectiveOptions.get("offset"), (Integer) effectiveOptions.get("limit"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Доп. поля ProcessingPlan
    * 
@@ -1691,7 +1800,7 @@ if (acceptEncoding != null)
    * @return AttributeMetaInfoList
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfoList getProcessingPlanMetadataAttribute(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfoList getProcessingPlanMetadataAttribute(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1752,15 +1861,31 @@ if (contentType != null)
    * Отдельное доп. поле Техкарты
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return AttributeMetaInfoList
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfoList getProcessingPlanMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getProcessingPlanMetadataAttributeById(id, accept, acceptEncoding, Collections.emptyMap());
+  public AttributeMetaInfoList getProcessingPlanMetadataAttributeById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProcessingPlanMetadataAttributeById(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Отдельное доп. поле Техкарты
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfoList
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfoList getProcessingPlanMetadataAttributeById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getProcessingPlanMetadataAttributeById(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Отдельное доп. поле Техкарты
@@ -1772,7 +1897,7 @@ if (contentType != null)
    * @return AttributeMetaInfoList
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfoList getProcessingPlanMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfoList getProcessingPlanMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1836,15 +1961,14 @@ if (acceptEncoding != null)
    * Запрос на получение отдельного продукта Техкарты с указанным id
    * @param id ID сущности (required)
    * @param positionId ID позиции (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return List&lt;ProcessingPlanProduct&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<ProcessingPlanProduct> getProcessingPlanProductById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getProcessingPlanProductById(id, positionId, expand, accept, acceptEncoding, Collections.emptyMap());
+  public List<ProcessingPlanProduct> getProcessingPlanProductById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProcessingPlanProductById(id, positionId, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить продукт Техкарты
@@ -1867,7 +1991,6 @@ if (acceptEncoding != null)
     return this.getProcessingPlanProductById(id, positionId, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить продукт Техкарты
    * Запрос на получение отдельного продукта Техкарты с указанным id
@@ -1880,7 +2003,7 @@ if (acceptEncoding != null)
    * @return List&lt;ProcessingPlanProduct&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<ProcessingPlanProduct> getProcessingPlanProductById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<ProcessingPlanProduct> getProcessingPlanProductById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1950,17 +2073,14 @@ if (acceptEncoding != null)
    * Получить продукты Техкарты
    * Запрос на получение списка всех продуктов данной Техкарты
    * @param id ID сущности (required)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return ProcessingPlanProductList
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlanProductList getProcessingPlanProducts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getProcessingPlanProducts(id, limit, offset, expand, accept, acceptEncoding, Collections.emptyMap());
+  public ProcessingPlanProductList getProcessingPlanProducts(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProcessingPlanProducts(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить продукты Техкарты
@@ -1982,7 +2102,6 @@ if (acceptEncoding != null)
     return this.getProcessingPlanProducts(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить продукты Техкарты
    * Запрос на получение списка всех продуктов данной Техкарты
@@ -1996,7 +2115,7 @@ if (acceptEncoding != null)
    * @return ProcessingPlanProductList
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlanProductList getProcessingPlanProducts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected ProcessingPlanProductList getProcessingPlanProducts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -2063,15 +2182,14 @@ if (acceptEncoding != null)
    * Запрос на получение отдельного этапа Техкарты с указанным id
    * @param id ID сущности (required)
    * @param positionId ID позиции (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return ProcessingPlanStage
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlanStage getProcessingPlanStageById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getProcessingPlanStageById(id, positionId, expand, accept, acceptEncoding, Collections.emptyMap());
+  public ProcessingPlanStage getProcessingPlanStageById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProcessingPlanStageById(id, positionId, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить отдельный этап Техкарты
@@ -2094,7 +2212,6 @@ if (acceptEncoding != null)
     return this.getProcessingPlanStageById(id, positionId, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить отдельный этап Техкарты
    * Запрос на получение отдельного этапа Техкарты с указанным id
@@ -2107,7 +2224,7 @@ if (acceptEncoding != null)
    * @return ProcessingPlanStage
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlanStage getProcessingPlanStageById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected ProcessingPlanStage getProcessingPlanStageById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -2177,17 +2294,14 @@ if (acceptEncoding != null)
    * Получить этапы Техкарты
    * Запрос на получение списка всех этапов данной Техкарты
    * @param id ID сущности (required)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return ProcessingPlanStageList
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlanStageList getProcessingPlanStages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getProcessingPlanStages(id, limit, offset, expand, accept, acceptEncoding, Collections.emptyMap());
+  public ProcessingPlanStageList getProcessingPlanStages(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProcessingPlanStages(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить этапы Техкарты
@@ -2209,7 +2323,6 @@ if (acceptEncoding != null)
     return this.getProcessingPlanStages(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить этапы Техкарты
    * Запрос на получение списка всех этапов данной Техкарты
@@ -2223,7 +2336,7 @@ if (acceptEncoding != null)
    * @return ProcessingPlanStageList
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlanStageList getProcessingPlanStages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected ProcessingPlanStageList getProcessingPlanStages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -2288,21 +2401,14 @@ if (acceptEncoding != null)
   /**
    * Получить список Техкарт
    * Запрос всех Техкарт на данной учетной записи
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param search Контекстный поиск по строковым полям сущностей (optional)
-   * @param filter Фильтрация выборки (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param order Сортировка (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return ProcessingPlanList
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlanList getProcessingPlans(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.getProcessingPlans(limit, offset, search, filter, expand, order, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public ProcessingPlanList getProcessingPlans() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProcessingPlans((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить список Техкарт
@@ -2325,7 +2431,6 @@ if (acceptEncoding != null)
     return this.getProcessingPlans((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить список Техкарт
    * Запрос всех Техкарт на данной учетной записи
@@ -2342,7 +2447,7 @@ if (acceptEncoding != null)
    * @return ProcessingPlanList
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlanList getProcessingPlans(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected ProcessingPlanList getProcessingPlans(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -2408,16 +2513,14 @@ if (contentType != null)
    * Запрос на обновление Техкарты с указанным id
    * @param id ID сущности (required)
    * @param processingPlan  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return ProcessingPlan
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlan updateProcessingPlan(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingPlan processingPlan, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateProcessingPlan(id, processingPlan, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public ProcessingPlan updateProcessingPlan(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingPlan processingPlan) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateProcessingPlan(id, processingPlan, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Изменить Техкарту
@@ -2441,7 +2544,6 @@ if (contentType != null)
     return this.updateProcessingPlan(id, processingPlan, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Изменить Техкарту
    * Запрос на обновление Техкарты с указанным id
@@ -2455,7 +2557,7 @@ if (contentType != null)
    * @return ProcessingPlan
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlan updateProcessingPlan(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingPlan processingPlan, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected ProcessingPlan updateProcessingPlan(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingPlan processingPlan, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = processingPlan;
     
     // verify the required parameter 'id' is set
@@ -2528,16 +2630,14 @@ if (contentType != null)
    * @param id ID сущности (required)
    * @param positionId ID позиции (required)
    * @param processingPlanMaterial  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;ProcessingPlanMaterial&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<ProcessingPlanMaterial> updateProcessingPlanMaterial(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull ProcessingPlanMaterial processingPlanMaterial, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateProcessingPlanMaterial(id, positionId, processingPlanMaterial, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<ProcessingPlanMaterial> updateProcessingPlanMaterial(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull ProcessingPlanMaterial processingPlanMaterial) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateProcessingPlanMaterial(id, positionId, processingPlanMaterial, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Изменить материал Техкарты
@@ -2564,7 +2664,6 @@ if (contentType != null)
     return this.updateProcessingPlanMaterial(id, positionId, processingPlanMaterial, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Изменить материал Техкарты
    * Запрос на обновление отдельного материала Техкарты
@@ -2579,7 +2678,7 @@ if (contentType != null)
    * @return List&lt;ProcessingPlanMaterial&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<ProcessingPlanMaterial> updateProcessingPlanMaterial(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull ProcessingPlanMaterial processingPlanMaterial, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<ProcessingPlanMaterial> updateProcessingPlanMaterial(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull ProcessingPlanMaterial processingPlanMaterial, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = processingPlanMaterial;
     
     // verify the required parameter 'id' is set
@@ -2657,16 +2756,35 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param attributeMetaInfo  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo updateProcessingPlanMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateProcessingPlanMetadataAttributeById(id, attributeMetaInfo, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public AttributeMetaInfo updateProcessingPlanMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateProcessingPlanMetadataAttributeById(id, attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Обновить отдельное доп. поле ProcessingPlan
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param attributeMetaInfo  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo updateProcessingPlanMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateProcessingPlanMetadataAttributeById(id, attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Обновить отдельное доп. поле ProcessingPlan
@@ -2680,7 +2798,7 @@ if (contentType != null)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo updateProcessingPlanMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfo updateProcessingPlanMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = attributeMetaInfo;
     
     // verify the required parameter 'id' is set
@@ -2752,16 +2870,14 @@ if (contentType != null)
    * @param id ID сущности (required)
    * @param positionId ID позиции (required)
    * @param processingPlanProduct  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;ProcessingPlanProduct&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<ProcessingPlanProduct> updateProcessingPlanProduct(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull ProcessingPlanProduct processingPlanProduct, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateProcessingPlanProduct(id, positionId, processingPlanProduct, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<ProcessingPlanProduct> updateProcessingPlanProduct(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull ProcessingPlanProduct processingPlanProduct) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateProcessingPlanProduct(id, positionId, processingPlanProduct, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Изменить продукт Техкарты
@@ -2788,7 +2904,6 @@ if (contentType != null)
     return this.updateProcessingPlanProduct(id, positionId, processingPlanProduct, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Изменить продукт Техкарты
    * Запрос на обновление отдельного продукта Техкарты
@@ -2803,7 +2918,7 @@ if (contentType != null)
    * @return List&lt;ProcessingPlanProduct&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<ProcessingPlanProduct> updateProcessingPlanProduct(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull ProcessingPlanProduct processingPlanProduct, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<ProcessingPlanProduct> updateProcessingPlanProduct(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull ProcessingPlanProduct processingPlanProduct, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = processingPlanProduct;
     
     // verify the required parameter 'id' is set
@@ -2882,16 +2997,14 @@ if (contentType != null)
    * @param id ID сущности (required)
    * @param positionId ID позиции (required)
    * @param processingPlanStage  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return ProcessingPlanStage
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlanStage updateProcessingPlanStage(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull ProcessingPlanStage processingPlanStage, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateProcessingPlanStage(id, positionId, processingPlanStage, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public ProcessingPlanStage updateProcessingPlanStage(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull ProcessingPlanStage processingPlanStage) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateProcessingPlanStage(id, positionId, processingPlanStage, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Изменить отдельный этап Техкарты
@@ -2918,7 +3031,6 @@ if (contentType != null)
     return this.updateProcessingPlanStage(id, positionId, processingPlanStage, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Изменить отдельный этап Техкарты
    * Запрос на обновление отдельного этапа Техкарты
@@ -2933,7 +3045,7 @@ if (contentType != null)
    * @return ProcessingPlanStage
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlanStage updateProcessingPlanStage(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull ProcessingPlanStage processingPlanStage, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected ProcessingPlanStage updateProcessingPlanStage(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull ProcessingPlanStage processingPlanStage, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = processingPlanStage;
     
     // verify the required parameter 'id' is set

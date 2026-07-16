@@ -35,7 +35,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class CompanySettingsApi extends BaseApi {
 
@@ -50,15 +50,28 @@ public class CompanySettingsApi extends BaseApi {
   /**
    * Получить настройки компании
    * Запрос на получение настроек компании
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return CompanySettings
    * @throws ApiException if fails to make API call
    */
-  public CompanySettings getCompanySettings(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getCompanySettings(accept, acceptEncoding, Collections.emptyMap());
+  public CompanySettings getCompanySettings() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getCompanySettings(null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить настройки компании
+   * Запрос на получение настроек компании
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return CompanySettings
+   * @throws ApiException if fails to make API call
+   */
+  public CompanySettings getCompanySettings(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getCompanySettings(null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить настройки компании
@@ -69,7 +82,7 @@ public class CompanySettingsApi extends BaseApi {
    * @return CompanySettings
    * @throws ApiException if fails to make API call
    */
-  public CompanySettings getCompanySettings(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected CompanySettings getCompanySettings(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -125,15 +138,28 @@ if (acceptEncoding != null)
   /**
    * Получить метаданные настроек компании
    * Запрос на получение метаданных настроек компании
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return CompanySettingsMetadata
    * @throws ApiException if fails to make API call
    */
-  public CompanySettingsMetadata getCompanySettingsMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getCompanySettingsMetadata(accept, acceptEncoding, Collections.emptyMap());
+  public CompanySettingsMetadata getCompanySettingsMetadata() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getCompanySettingsMetadata(null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить метаданные настроек компании
+   * Запрос на получение метаданных настроек компании
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return CompanySettingsMetadata
+   * @throws ApiException if fails to make API call
+   */
+  public CompanySettingsMetadata getCompanySettingsMetadata(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getCompanySettingsMetadata(null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить метаданные настроек компании
@@ -144,7 +170,7 @@ if (acceptEncoding != null)
    * @return CompanySettingsMetadata
    * @throws ApiException if fails to make API call
    */
-  public CompanySettingsMetadata getCompanySettingsMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected CompanySettingsMetadata getCompanySettingsMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -201,16 +227,32 @@ if (acceptEncoding != null)
    * Изменить настройки компании
    * Запрос на изменение настроек компании
    * @param companySettings  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return CompanySettings
    * @throws ApiException if fails to make API call
    */
-  public CompanySettings updateCompanySettings(@javax.annotation.Nonnull CompanySettings companySettings, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateCompanySettings(companySettings, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public CompanySettings updateCompanySettings(@javax.annotation.Nonnull CompanySettings companySettings) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateCompanySettings(companySettings, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Изменить настройки компании
+   * Запрос на изменение настроек компании
+   
+   * @param companySettings  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return CompanySettings
+   * @throws ApiException if fails to make API call
+   */
+  public CompanySettings updateCompanySettings(@javax.annotation.Nonnull CompanySettings companySettings, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateCompanySettings(companySettings, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Изменить настройки компании
@@ -223,7 +265,7 @@ if (acceptEncoding != null)
    * @return CompanySettings
    * @throws ApiException if fails to make API call
    */
-  public CompanySettings updateCompanySettings(@javax.annotation.Nonnull CompanySettings companySettings, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected CompanySettings updateCompanySettings(@javax.annotation.Nonnull CompanySettings companySettings, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = companySettings;
     
     // verify the required parameter 'companySettings' is set

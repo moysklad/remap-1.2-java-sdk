@@ -1,6 +1,6 @@
 
 
-# RetailShiftPaymentOperationAnyOf1
+# RetailShiftPaymentOperationPaymentIn
 
 Входящий платеж + linkedSum
 
@@ -44,7 +44,6 @@
 |**incomingDate** | **String** | Входящая дата |  [optional] |
 |**factureOut** | [**FactureOut**](FactureOut.md) | Счет-фактура выданный, с которым связан этот платеж |  [optional] |
 |**operations** | [**List&lt;FinanceInOperationAbstract&gt;**](FinanceInOperationAbstract.md) | Связанные операции. Допустимые типы по &#x60;meta.type&#x60;: customerorder, purchasereturn, demand, invoiceout, commissionreportin, retailshift.  |  [optional] |
-|**linkedSum** | **Double** | Сумма, оплаченная по данному документу |  |
 
 
 

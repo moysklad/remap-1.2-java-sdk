@@ -34,7 +34,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class UserSettingsApi extends BaseApi {
 
@@ -49,15 +49,28 @@ public class UserSettingsApi extends BaseApi {
   /**
    * Получить настройки пользователя
    * Запрос на получение настроек пользователя
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return UserSettings
    * @throws ApiException if fails to make API call
    */
-  public UserSettings getUserSettings(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getUserSettings(accept, acceptEncoding, Collections.emptyMap());
+  public UserSettings getUserSettings() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getUserSettings(null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить настройки пользователя
+   * Запрос на получение настроек пользователя
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return UserSettings
+   * @throws ApiException if fails to make API call
+   */
+  public UserSettings getUserSettings(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getUserSettings(null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить настройки пользователя
@@ -68,7 +81,7 @@ public class UserSettingsApi extends BaseApi {
    * @return UserSettings
    * @throws ApiException if fails to make API call
    */
-  public UserSettings getUserSettings(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected UserSettings getUserSettings(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -125,16 +138,32 @@ if (acceptEncoding != null)
    * Изменить настройки пользователя
    * Запрос на изменение настроек пользователя
    * @param userSettings  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return UserSettings
    * @throws ApiException if fails to make API call
    */
-  public UserSettings updateUserSettings(@javax.annotation.Nonnull UserSettings userSettings, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateUserSettings(userSettings, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public UserSettings updateUserSettings(@javax.annotation.Nonnull UserSettings userSettings) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateUserSettings(userSettings, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Изменить настройки пользователя
+   * Запрос на изменение настроек пользователя
+   
+   * @param userSettings  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return UserSettings
+   * @throws ApiException if fails to make API call
+   */
+  public UserSettings updateUserSettings(@javax.annotation.Nonnull UserSettings userSettings, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateUserSettings(userSettings, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Изменить настройки пользователя
@@ -147,7 +176,7 @@ if (acceptEncoding != null)
    * @return UserSettings
    * @throws ApiException if fails to make API call
    */
-  public UserSettings updateUserSettings(@javax.annotation.Nonnull UserSettings userSettings, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected UserSettings updateUserSettings(@javax.annotation.Nonnull UserSettings userSettings, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = userSettings;
     
     // verify the required parameter 'userSettings' is set

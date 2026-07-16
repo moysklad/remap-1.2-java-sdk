@@ -46,7 +46,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class RetailDemandsApi extends BaseApi {
 
@@ -62,16 +62,14 @@ public class RetailDemandsApi extends BaseApi {
    * Создать Розничную продажу
    * 
    * @param retailDemand  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return RetailDemand
    * @throws ApiException if fails to make API call
    */
-  public RetailDemand createRetailDemand(@javax.annotation.Nonnull RetailDemand retailDemand, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createRetailDemand(retailDemand, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public RetailDemand createRetailDemand(@javax.annotation.Nonnull RetailDemand retailDemand) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createRetailDemand(retailDemand, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать Розничную продажу
@@ -92,7 +90,6 @@ public class RetailDemandsApi extends BaseApi {
     return this.createRetailDemand(retailDemand, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать Розничную продажу
    * 
@@ -105,7 +102,7 @@ public class RetailDemandsApi extends BaseApi {
    * @return RetailDemand
    * @throws ApiException if fails to make API call
    */
-  public RetailDemand createRetailDemand(@javax.annotation.Nonnull RetailDemand retailDemand, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected RetailDemand createRetailDemand(@javax.annotation.Nonnull RetailDemand retailDemand, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = retailDemand;
     
     // verify the required parameter 'retailDemand' is set
@@ -170,16 +167,14 @@ if (contentType != null)
    * Массовое создание и обновление Розничных продаж
    * 
    * @param retailDemand  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createRetailDemandBatch(@javax.annotation.Nonnull List<@Valid RetailDemand> retailDemand, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createRetailDemandBatch(retailDemand, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<BatchResponseEntity> createRetailDemandBatch(@javax.annotation.Nonnull List<@Valid RetailDemand> retailDemand) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createRetailDemandBatch(retailDemand, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Массовое создание и обновление Розничных продаж
@@ -200,7 +195,6 @@ if (contentType != null)
     return this.createRetailDemandBatch(retailDemand, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Массовое создание и обновление Розничных продаж
    * 
@@ -213,7 +207,7 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createRetailDemandBatch(@javax.annotation.Nonnull List<@Valid RetailDemand> retailDemand, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createRetailDemandBatch(@javax.annotation.Nonnull List<@Valid RetailDemand> retailDemand, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = retailDemand;
     
     // verify the required parameter 'retailDemand' is set
@@ -278,16 +272,32 @@ if (contentType != null)
    * Создать доп. поле Розничной продажи
    * 
    * @param attributeMetaInfo  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo createRetailDemandMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createRetailDemandMetadataAttribute(attributeMetaInfo, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public AttributeMetaInfo createRetailDemandMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createRetailDemandMetadataAttribute(attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Создать доп. поле Розничной продажи
+   * 
+   
+   * @param attributeMetaInfo  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo createRetailDemandMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createRetailDemandMetadataAttribute(attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Создать доп. поле Розничной продажи
@@ -300,7 +310,7 @@ if (contentType != null)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo createRetailDemandMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfo createRetailDemandMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = attributeMetaInfo;
     
     // verify the required parameter 'attributeMetaInfo' is set
@@ -364,16 +374,32 @@ if (contentType != null)
    * Создать статус Розничной продажи
    * 
    * @param createRetailDemandMetadataStateRequest  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return CreateRetailDemandMetadataStateRequest
    * @throws ApiException if fails to make API call
    */
-  public CreateRetailDemandMetadataStateRequest createRetailDemandMetadataState(@javax.annotation.Nonnull CreateRetailDemandMetadataStateRequest createRetailDemandMetadataStateRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createRetailDemandMetadataState(createRetailDemandMetadataStateRequest, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public CreateRetailDemandMetadataStateRequest createRetailDemandMetadataState(@javax.annotation.Nonnull CreateRetailDemandMetadataStateRequest createRetailDemandMetadataStateRequest) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createRetailDemandMetadataState(createRetailDemandMetadataStateRequest, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Создать статус Розничной продажи
+   * 
+   
+   * @param createRetailDemandMetadataStateRequest  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return CreateRetailDemandMetadataStateRequest
+   * @throws ApiException if fails to make API call
+   */
+  public CreateRetailDemandMetadataStateRequest createRetailDemandMetadataState(@javax.annotation.Nonnull CreateRetailDemandMetadataStateRequest createRetailDemandMetadataStateRequest, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createRetailDemandMetadataState(createRetailDemandMetadataStateRequest, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Создать статус Розничной продажи
@@ -386,7 +412,7 @@ if (contentType != null)
    * @return CreateRetailDemandMetadataStateRequest
    * @throws ApiException if fails to make API call
    */
-  public CreateRetailDemandMetadataStateRequest createRetailDemandMetadataState(@javax.annotation.Nonnull CreateRetailDemandMetadataStateRequest createRetailDemandMetadataStateRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected CreateRetailDemandMetadataStateRequest createRetailDemandMetadataState(@javax.annotation.Nonnull CreateRetailDemandMetadataStateRequest createRetailDemandMetadataStateRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = createRetailDemandMetadataStateRequest;
     
     // verify the required parameter 'createRetailDemandMetadataStateRequest' is set
@@ -451,16 +477,14 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param retailDemandPosition  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return RetailDemandPosition
    * @throws ApiException if fails to make API call
    */
-  public RetailDemandPosition createRetailDemandPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailDemandPosition retailDemandPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createRetailDemandPosition(id, retailDemandPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public RetailDemandPosition createRetailDemandPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailDemandPosition retailDemandPosition) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createRetailDemandPosition(id, retailDemandPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать и обновить позицию Розничной продажи
@@ -484,7 +508,6 @@ if (contentType != null)
     return this.createRetailDemandPosition(id, retailDemandPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать и обновить позицию Розничной продажи
    * 
@@ -498,7 +521,7 @@ if (contentType != null)
    * @return RetailDemandPosition
    * @throws ApiException if fails to make API call
    */
-  public RetailDemandPosition createRetailDemandPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailDemandPosition retailDemandPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected RetailDemandPosition createRetailDemandPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailDemandPosition retailDemandPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = retailDemandPosition;
     
     // verify the required parameter 'id' is set
@@ -570,16 +593,14 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param retailDemandPosition  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;CreateRetailDemandPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateRetailDemandPositions200ResponseInner> createRetailDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid RetailDemandPosition> retailDemandPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createRetailDemandPositions(id, retailDemandPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<CreateRetailDemandPositions200ResponseInner> createRetailDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid RetailDemandPosition> retailDemandPosition) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createRetailDemandPositions(id, retailDemandPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Массовое создание и обновление позиций Розничной продажи
@@ -603,7 +624,6 @@ if (contentType != null)
     return this.createRetailDemandPositions(id, retailDemandPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Массовое создание и обновление позиций Розничной продажи
    * 
@@ -617,7 +637,7 @@ if (contentType != null)
    * @return List&lt;CreateRetailDemandPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateRetailDemandPositions200ResponseInner> createRetailDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid RetailDemandPosition> retailDemandPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<CreateRetailDemandPositions200ResponseInner> createRetailDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid RetailDemandPosition> retailDemandPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = retailDemandPosition;
     
     // verify the required parameter 'id' is set
@@ -688,15 +708,30 @@ if (contentType != null)
    * Удалить Розничную продажу
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @throws ApiException if fails to make API call
    */
-  public void deleteRetailDemand(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    this.deleteRetailDemand(id, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public void deleteRetailDemand(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteRetailDemand(id, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить Розничную продажу
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteRetailDemand(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteRetailDemand(id, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить Розничную продажу
@@ -708,7 +743,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteRetailDemand(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteRetailDemand(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -772,16 +807,32 @@ if (contentType != null)
    * Массовое удаление Розничных продаж
    * 
    * @param retailDemand  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteRetailDemandBatch(@javax.annotation.Nonnull List<@Valid RetailDemand> retailDemand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteRetailDemandBatch(retailDemand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteRetailDemandBatch(@javax.annotation.Nonnull List<@Valid RetailDemand> retailDemand) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteRetailDemandBatch(retailDemand, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Массовое удаление Розничных продаж
+   * 
+   
+   * @param retailDemand  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteRetailDemandBatch(@javax.annotation.Nonnull List<@Valid RetailDemand> retailDemand, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteRetailDemandBatch(retailDemand, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Массовое удаление Розничных продаж
@@ -794,7 +845,7 @@ if (contentType != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteRetailDemandBatch(@javax.annotation.Nonnull List<@Valid RetailDemand> retailDemand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteRetailDemandBatch(@javax.annotation.Nonnull List<@Valid RetailDemand> retailDemand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = retailDemand;
     
     // verify the required parameter 'retailDemand' is set
@@ -858,15 +909,30 @@ if (contentType != null)
    * Удалить отдельное доп. поле Розничной продажи
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @throws ApiException if fails to make API call
    */
-  public void deleteRetailDemandMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    this.deleteRetailDemandMetadataAttributeById(id, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public void deleteRetailDemandMetadataAttributeById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteRetailDemandMetadataAttributeById(id, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить отдельное доп. поле Розничной продажи
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteRetailDemandMetadataAttributeById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteRetailDemandMetadataAttributeById(id, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить отдельное доп. поле Розничной продажи
@@ -878,7 +944,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteRetailDemandMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteRetailDemandMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -942,15 +1008,30 @@ if (contentType != null)
    * Удалить отдельный статус Розничной продажи
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @throws ApiException if fails to make API call
    */
-  public void deleteRetailDemandMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    this.deleteRetailDemandMetadataStateById(id, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public void deleteRetailDemandMetadataStateById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteRetailDemandMetadataStateById(id, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить отдельный статус Розничной продажи
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteRetailDemandMetadataStateById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteRetailDemandMetadataStateById(id, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить отдельный статус Розничной продажи
@@ -962,7 +1043,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteRetailDemandMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteRetailDemandMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1027,15 +1108,13 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param positionId ID позиции (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @throws ApiException if fails to make API call
    */
-  public void deleteRetailDemandPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    this.deleteRetailDemandPosition(id, positionId, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public void deleteRetailDemandPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteRetailDemandPosition(id, positionId, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Удалить позицию Розничной продажи
@@ -1058,7 +1137,6 @@ if (contentType != null)
     this.deleteRetailDemandPosition(id, positionId, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Удалить позицию Розничной продажи
    * 
@@ -1071,7 +1149,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteRetailDemandPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteRetailDemandPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1143,16 +1221,35 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param retailDemandPosition  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteRetailDemandPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid RetailDemandPosition> retailDemandPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteRetailDemandPositionsBatch(id, retailDemandPosition, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteRetailDemandPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid RetailDemandPosition> retailDemandPosition) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteRetailDemandPositionsBatch(id, retailDemandPosition, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Массовое удаление позиций Розничной продажи
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param retailDemandPosition  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteRetailDemandPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid RetailDemandPosition> retailDemandPosition, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteRetailDemandPositionsBatch(id, retailDemandPosition, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Массовое удаление позиций Розничной продажи
@@ -1166,7 +1263,7 @@ if (contentType != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteRetailDemandPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid RetailDemandPosition> retailDemandPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteRetailDemandPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid RetailDemandPosition> retailDemandPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = retailDemandPosition;
     
     // verify the required parameter 'id' is set
@@ -1236,16 +1333,14 @@ if (contentType != null)
    * Получить Розничную продажу
    * 
    * @param id ID сущности (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return RetailDemand
    * @throws ApiException if fails to make API call
    */
-  public RetailDemand getRetailDemandById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getRetailDemandById(id, expand, fields, accept, acceptEncoding, Collections.emptyMap());
+  public RetailDemand getRetailDemandById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getRetailDemandById(id, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить Розничную продажу
@@ -1266,7 +1361,6 @@ if (contentType != null)
     return this.getRetailDemandById(id, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить Розничную продажу
    * 
@@ -1279,7 +1373,7 @@ if (contentType != null)
    * @return RetailDemand
    * @throws ApiException if fails to make API call
    */
-  public RetailDemand getRetailDemandById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected RetailDemand getRetailDemandById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1343,20 +1437,14 @@ if (acceptEncoding != null)
   /**
    * Получить список Розничных продаж
    * 
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param search Контекстный поиск по строковым полям сущностей (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return RetailDemandList
    * @throws ApiException if fails to make API call
    */
-  public RetailDemandList getRetailDemandList(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.getRetailDemandList(limit, offset, search, expand, fields, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public RetailDemandList getRetailDemandList() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getRetailDemandList((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить список Розничных продаж
@@ -1378,7 +1466,6 @@ if (acceptEncoding != null)
     return this.getRetailDemandList((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить список Розничных продаж
    * 
@@ -1394,7 +1481,7 @@ if (acceptEncoding != null)
    * @return RetailDemandList
    * @throws ApiException if fails to make API call
    */
-  public RetailDemandList getRetailDemandList(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected RetailDemandList getRetailDemandList(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1457,16 +1544,29 @@ if (contentType != null)
   /**
    * Метаданные Розничных продаж
    * 
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return DocumentMetadata
    * @throws ApiException if fails to make API call
    */
-  public DocumentMetadata getRetailDemandMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.getRetailDemandMetadata(accept, acceptEncoding, contentType, Collections.emptyMap());
+  public DocumentMetadata getRetailDemandMetadata() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getRetailDemandMetadata(null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Метаданные Розничных продаж
+   * 
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return DocumentMetadata
+   * @throws ApiException if fails to make API call
+   */
+  public DocumentMetadata getRetailDemandMetadata(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getRetailDemandMetadata(null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Метаданные Розничных продаж
@@ -1478,7 +1578,7 @@ if (contentType != null)
    * @return DocumentMetadata
    * @throws ApiException if fails to make API call
    */
-  public DocumentMetadata getRetailDemandMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected DocumentMetadata getRetailDemandMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1536,17 +1636,14 @@ if (contentType != null)
   /**
    * Доп. поля Розничной продажи
    * 
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return AttributeMetaInfoList
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfoList getRetailDemandMetadataAttribute(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.getRetailDemandMetadataAttribute(offset, limit, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public AttributeMetaInfoList getRetailDemandMetadataAttribute() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getRetailDemandMetadataAttribute((Integer) effectiveOptions.get("offset"), (Integer) effectiveOptions.get("limit"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Доп. поля Розничной продажи
@@ -1565,7 +1662,6 @@ if (contentType != null)
     return this.getRetailDemandMetadataAttribute((Integer) effectiveOptions.get("offset"), (Integer) effectiveOptions.get("limit"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Доп. поля Розничной продажи
    * 
@@ -1578,7 +1674,7 @@ if (contentType != null)
    * @return AttributeMetaInfoList
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfoList getRetailDemandMetadataAttribute(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfoList getRetailDemandMetadataAttribute(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1639,16 +1735,32 @@ if (contentType != null)
    * Отдельное доп. поле Розничной продажи
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo getRetailDemandMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.getRetailDemandMetadataAttributeById(id, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public AttributeMetaInfo getRetailDemandMetadataAttributeById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getRetailDemandMetadataAttributeById(id, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Отдельное доп. поле Розничной продажи
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo getRetailDemandMetadataAttributeById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getRetailDemandMetadataAttributeById(id, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Отдельное доп. поле Розничной продажи
@@ -1661,7 +1773,7 @@ if (contentType != null)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo getRetailDemandMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfo getRetailDemandMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1726,16 +1838,32 @@ if (contentType != null)
    * Отдельный статус Розничной продажи
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return State
    * @throws ApiException if fails to make API call
    */
-  public State getRetailDemandMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.getRetailDemandMetadataStateById(id, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public State getRetailDemandMetadataStateById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getRetailDemandMetadataStateById(id, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Отдельный статус Розничной продажи
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return State
+   * @throws ApiException if fails to make API call
+   */
+  public State getRetailDemandMetadataStateById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getRetailDemandMetadataStateById(id, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Отдельный статус Розничной продажи
@@ -1748,7 +1876,7 @@ if (contentType != null)
    * @return State
    * @throws ApiException if fails to make API call
    */
-  public State getRetailDemandMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected State getRetailDemandMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1814,17 +1942,14 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param positionId ID позиции (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return RetailDemandPosition
    * @throws ApiException if fails to make API call
    */
-  public RetailDemandPosition getRetailDemandPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.getRetailDemandPositionById(id, positionId, expand, fields, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public RetailDemandPosition getRetailDemandPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getRetailDemandPositionById(id, positionId, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить позицию Розничной продажи
@@ -1849,7 +1974,6 @@ if (contentType != null)
     return this.getRetailDemandPositionById(id, positionId, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить позицию Розничной продажи
    * 
@@ -1864,7 +1988,7 @@ if (contentType != null)
    * @return RetailDemandPosition
    * @throws ApiException if fails to make API call
    */
-  public RetailDemandPosition getRetailDemandPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected RetailDemandPosition getRetailDemandPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1937,18 +2061,14 @@ if (contentType != null)
    * Получить позиции Розничной продажи
    * 
    * @param id ID сущности (required)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return RetailDemandPositionList
    * @throws ApiException if fails to make API call
    */
-  public RetailDemandPositionList getRetailDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getRetailDemandPositions(id, limit, offset, expand, fields, accept, acceptEncoding, Collections.emptyMap());
+  public RetailDemandPositionList getRetailDemandPositions(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getRetailDemandPositions(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить позиции Розничной продажи
@@ -1971,7 +2091,6 @@ if (contentType != null)
     return this.getRetailDemandPositions(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить позиции Розничной продажи
    * 
@@ -1986,7 +2105,7 @@ if (contentType != null)
    * @return RetailDemandPositionList
    * @throws ApiException if fails to make API call
    */
-  public RetailDemandPositionList getRetailDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected RetailDemandPositionList getRetailDemandPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -2053,16 +2172,32 @@ if (acceptEncoding != null)
    * Шаблон Розничной продажи
    * Предзаполненный шаблон Розничной продажи. В теле запроса необходимо передать ссылку на активную розничную смену (&#x60;retailShift&#x60;). 
    * @param body  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return RetailDemand
    * @throws ApiException if fails to make API call
    */
-  public RetailDemand getRetailDemandTemplate(@javax.annotation.Nonnull Object body, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.getRetailDemandTemplate(body, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public RetailDemand getRetailDemandTemplate(@javax.annotation.Nonnull Object body) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getRetailDemandTemplate(body, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Шаблон Розничной продажи
+   * Предзаполненный шаблон Розничной продажи. В теле запроса необходимо передать ссылку на активную розничную смену (&#x60;retailShift&#x60;). 
+   
+   * @param body  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return RetailDemand
+   * @throws ApiException if fails to make API call
+   */
+  public RetailDemand getRetailDemandTemplate(@javax.annotation.Nonnull Object body, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getRetailDemandTemplate(body, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Шаблон Розничной продажи
@@ -2075,7 +2210,7 @@ if (acceptEncoding != null)
    * @return RetailDemand
    * @throws ApiException if fails to make API call
    */
-  public RetailDemand getRetailDemandTemplate(@javax.annotation.Nonnull Object body, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected RetailDemand getRetailDemandTemplate(@javax.annotation.Nonnull Object body, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = body;
     
     // verify the required parameter 'body' is set
@@ -2140,17 +2275,14 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param retailDemand  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return RetailDemand
    * @throws ApiException if fails to make API call
    */
-  public RetailDemand updateRetailDemand(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailDemand retailDemand, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateRetailDemand(id, retailDemand, expand, fields, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public RetailDemand updateRetailDemand(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailDemand retailDemand) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateRetailDemand(id, retailDemand, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Изменить Розничную продажу
@@ -2175,7 +2307,6 @@ if (contentType != null)
     return this.updateRetailDemand(id, retailDemand, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Изменить Розничную продажу
    * 
@@ -2190,7 +2321,7 @@ if (contentType != null)
    * @return RetailDemand
    * @throws ApiException if fails to make API call
    */
-  public RetailDemand updateRetailDemand(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailDemand retailDemand, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected RetailDemand updateRetailDemand(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailDemand retailDemand, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = retailDemand;
     
     // verify the required parameter 'id' is set
@@ -2263,16 +2394,35 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param attributeMetaInfo  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo updateRetailDemandMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateRetailDemandMetadataAttributeById(id, attributeMetaInfo, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public AttributeMetaInfo updateRetailDemandMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateRetailDemandMetadataAttributeById(id, attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Обновить отдельное доп. поле Розничной продажи
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param attributeMetaInfo  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo updateRetailDemandMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateRetailDemandMetadataAttributeById(id, attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Обновить отдельное доп. поле Розничной продажи
@@ -2286,7 +2436,7 @@ if (contentType != null)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo updateRetailDemandMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfo updateRetailDemandMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = attributeMetaInfo;
     
     // verify the required parameter 'id' is set
@@ -2357,16 +2507,35 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param state  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return State
    * @throws ApiException if fails to make API call
    */
-  public State updateRetailDemandMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateRetailDemandMetadataStateById(id, state, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public State updateRetailDemandMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull State state) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateRetailDemandMetadataStateById(id, state, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Обновить отдельный статус Розничной продажи
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param state  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return State
+   * @throws ApiException if fails to make API call
+   */
+  public State updateRetailDemandMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull State state, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateRetailDemandMetadataStateById(id, state, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Обновить отдельный статус Розничной продажи
@@ -2380,7 +2549,7 @@ if (contentType != null)
    * @return State
    * @throws ApiException if fails to make API call
    */
-  public State updateRetailDemandMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected State updateRetailDemandMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = state;
     
     // verify the required parameter 'id' is set
@@ -2452,17 +2621,14 @@ if (contentType != null)
    * @param id ID сущности (required)
    * @param positionId ID позиции (required)
    * @param retailDemandPosition  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return RetailDemandPosition
    * @throws ApiException if fails to make API call
    */
-  public RetailDemandPosition updateRetailDemandPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull RetailDemandPosition retailDemandPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateRetailDemandPosition(id, positionId, retailDemandPosition, expand, fields, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public RetailDemandPosition updateRetailDemandPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull RetailDemandPosition retailDemandPosition) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateRetailDemandPosition(id, positionId, retailDemandPosition, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Изменить позицию Розничной продажи
@@ -2490,7 +2656,6 @@ if (contentType != null)
     return this.updateRetailDemandPosition(id, positionId, retailDemandPosition, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Изменить позицию Розничной продажи
    * 
@@ -2506,7 +2671,7 @@ if (contentType != null)
    * @return RetailDemandPosition
    * @throws ApiException if fails to make API call
    */
-  public RetailDemandPosition updateRetailDemandPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull RetailDemandPosition retailDemandPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected RetailDemandPosition updateRetailDemandPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull RetailDemandPosition retailDemandPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = retailDemandPosition;
     
     // verify the required parameter 'id' is set

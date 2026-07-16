@@ -36,7 +36,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class PriceTypesApi extends BaseApi {
 
@@ -52,16 +52,32 @@ public class PriceTypesApi extends BaseApi {
    * Создать или изменить типы цен
    * Создание или изменение нескольких типов цен.
    * @param priceType  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createPriceTypesBatch(@javax.annotation.Nonnull List<@Valid PriceType> priceType, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createPriceTypesBatch(priceType, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<BatchResponseEntity> createPriceTypesBatch(@javax.annotation.Nonnull List<@Valid PriceType> priceType) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createPriceTypesBatch(priceType, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Создать или изменить типы цен
+   * Создание или изменение нескольких типов цен.
+   
+   * @param priceType  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<BatchResponseEntity> createPriceTypesBatch(@javax.annotation.Nonnull List<@Valid PriceType> priceType, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createPriceTypesBatch(priceType, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Создать или изменить типы цен
@@ -74,7 +90,7 @@ public class PriceTypesApi extends BaseApi {
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createPriceTypesBatch(@javax.annotation.Nonnull List<@Valid PriceType> priceType, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createPriceTypesBatch(@javax.annotation.Nonnull List<@Valid PriceType> priceType, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = priceType;
     
     // verify the required parameter 'priceType' is set
@@ -137,15 +153,28 @@ if (contentType != null)
   /**
    * Получить тип цены по умолчанию
    * Запрос на получение отдельного типа цен по умолчанию
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return PriceType
    * @throws ApiException if fails to make API call
    */
-  public PriceType getDefaultPriceType(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getDefaultPriceType(accept, acceptEncoding, Collections.emptyMap());
+  public PriceType getDefaultPriceType() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getDefaultPriceType(null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить тип цены по умолчанию
+   * Запрос на получение отдельного типа цен по умолчанию
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return PriceType
+   * @throws ApiException if fails to make API call
+   */
+  public PriceType getDefaultPriceType(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getDefaultPriceType(null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить тип цены по умолчанию
@@ -156,7 +185,7 @@ if (contentType != null)
    * @return PriceType
    * @throws ApiException if fails to make API call
    */
-  public PriceType getDefaultPriceType(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected PriceType getDefaultPriceType(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -213,15 +242,31 @@ if (acceptEncoding != null)
    * Получить тип цены по ID
    * Запрос на получение отдельного типа цен с указанным id
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return PriceType
    * @throws ApiException if fails to make API call
    */
-  public PriceType getPriceTypeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getPriceTypeById(id, accept, acceptEncoding, Collections.emptyMap());
+  public PriceType getPriceTypeById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getPriceTypeById(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить тип цены по ID
+   * Запрос на получение отдельного типа цен с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return PriceType
+   * @throws ApiException if fails to make API call
+   */
+  public PriceType getPriceTypeById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getPriceTypeById(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить тип цены по ID
@@ -233,7 +278,7 @@ if (acceptEncoding != null)
    * @return PriceType
    * @throws ApiException if fails to make API call
    */
-  public PriceType getPriceTypeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected PriceType getPriceTypeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -295,15 +340,28 @@ if (acceptEncoding != null)
   /**
    * Получить список типов цен
    * Запрос всех тип цен на данной учетной записи
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return List&lt;PriceType&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<PriceType> getPriceTypes(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getPriceTypes(accept, acceptEncoding, Collections.emptyMap());
+  public List<PriceType> getPriceTypes() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getPriceTypes(null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить список типов цен
+   * Запрос всех тип цен на данной учетной записи
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;PriceType&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<PriceType> getPriceTypes(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getPriceTypes(null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить список типов цен
@@ -314,7 +372,7 @@ if (acceptEncoding != null)
    * @return List&lt;PriceType&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<PriceType> getPriceTypes(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<PriceType> getPriceTypes(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables

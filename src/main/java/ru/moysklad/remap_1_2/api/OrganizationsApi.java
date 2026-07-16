@@ -43,7 +43,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class OrganizationsApi extends BaseApi {
 
@@ -59,16 +59,14 @@ public class OrganizationsApi extends BaseApi {
    * Создать юрлицо
    * Создание нового юрлица
    * @param organization  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Organization
    * @throws ApiException if fails to make API call
    */
-  public Organization createOrganization(@javax.annotation.Nonnull Organization organization, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createOrganization(organization, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Organization createOrganization(@javax.annotation.Nonnull Organization organization) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createOrganization(organization, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать юрлицо
@@ -89,7 +87,6 @@ public class OrganizationsApi extends BaseApi {
     return this.createOrganization(organization, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать юрлицо
    * Создание нового юрлица
@@ -102,7 +99,7 @@ public class OrganizationsApi extends BaseApi {
    * @return Organization
    * @throws ApiException if fails to make API call
    */
-  public Organization createOrganization(@javax.annotation.Nonnull Organization organization, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Organization createOrganization(@javax.annotation.Nonnull Organization organization, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = organization;
     
     // verify the required parameter 'organization' is set
@@ -167,16 +164,32 @@ if (contentType != null)
    * Создать доп. поле юрлица
    * Создание нового доп. поля для юрлиц
    * @param attributeMetaInfo  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo createOrganizationMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createOrganizationMetadataAttribute(attributeMetaInfo, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public AttributeMetaInfo createOrganizationMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createOrganizationMetadataAttribute(attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Создать доп. поле юрлица
+   * Создание нового доп. поля для юрлиц
+   
+   * @param attributeMetaInfo  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo createOrganizationMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createOrganizationMetadataAttribute(attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Создать доп. поле юрлица
@@ -189,7 +202,7 @@ if (contentType != null)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo createOrganizationMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfo createOrganizationMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = attributeMetaInfo;
     
     // verify the required parameter 'attributeMetaInfo' is set
@@ -253,16 +266,14 @@ if (contentType != null)
    * Создать или изменить юрлица
    * Массовое создание и обновление юрлиц
    * @param organization  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createOrganizationsBatch(@javax.annotation.Nonnull List<@Valid Organization> organization, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createOrganizationsBatch(organization, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<BatchResponseEntity> createOrganizationsBatch(@javax.annotation.Nonnull List<@Valid Organization> organization) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createOrganizationsBatch(organization, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать или изменить юрлица
@@ -283,7 +294,6 @@ if (contentType != null)
     return this.createOrganizationsBatch(organization, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать или изменить юрлица
    * Массовое создание и обновление юрлиц
@@ -296,7 +306,7 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createOrganizationsBatch(@javax.annotation.Nonnull List<@Valid Organization> organization, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createOrganizationsBatch(@javax.annotation.Nonnull List<@Valid Organization> organization, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = organization;
     
     // verify the required parameter 'organization' is set
@@ -361,14 +371,29 @@ if (contentType != null)
    * Удалить юрлицо
    * Удаление юрлица с указанным id
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteOrganization(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteOrganization(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteOrganization(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteOrganization(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить юрлицо
+   * Удаление юрлица с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteOrganization(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteOrganization(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить юрлицо
@@ -379,7 +404,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteOrganization(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteOrganization(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -442,14 +467,32 @@ if (acceptEncoding != null)
    * Запрос на удаление счета юрлица с указанным id.
    * @param id ID сущности (required)
    * @param accountId ID счёта юрлица (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteOrganizationAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteOrganizationAccount(id, accountId, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteOrganizationAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteOrganizationAccount(id, accountId, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить счёт юрлица
+   * Запрос на удаление счета юрлица с указанным id.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param accountId ID счёта юрлица (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteOrganizationAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteOrganizationAccount(id, accountId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить счёт юрлица
@@ -461,7 +504,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteOrganizationAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteOrganizationAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -530,16 +573,35 @@ if (acceptEncoding != null)
    * Массовое удаление счётов у данного юрлица
    * @param id ID сущности (required)
    * @param account  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteOrganizationAccountsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid Account> account, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteOrganizationAccountsBatch(id, account, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteOrganizationAccountsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid Account> account) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteOrganizationAccountsBatch(id, account, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить счета юрлица
+   * Массовое удаление счётов у данного юрлица
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param account  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteOrganizationAccountsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid Account> account, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteOrganizationAccountsBatch(id, account, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить счета юрлица
@@ -553,7 +615,7 @@ if (acceptEncoding != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteOrganizationAccountsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid Account> account, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteOrganizationAccountsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid Account> account, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = account;
     
     // verify the required parameter 'id' is set
@@ -623,14 +685,29 @@ if (contentType != null)
    * Удалить отдельное доп. поле юрлица
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteOrganizationMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteOrganizationMetadataAttributeById(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteOrganizationMetadataAttributeById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteOrganizationMetadataAttributeById(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить отдельное доп. поле юрлица
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteOrganizationMetadataAttributeById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteOrganizationMetadataAttributeById(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить отдельное доп. поле юрлица
@@ -641,7 +718,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteOrganizationMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteOrganizationMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -703,16 +780,32 @@ if (acceptEncoding != null)
    * Удалить юрлица
    * Массовое удаление юрлиц по их мета-объектам
    * @param organization  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteOrganizationsBatch(@javax.annotation.Nonnull List<@Valid Organization> organization, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteOrganizationsBatch(organization, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteOrganizationsBatch(@javax.annotation.Nonnull List<@Valid Organization> organization) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteOrganizationsBatch(organization, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить юрлица
+   * Массовое удаление юрлиц по их мета-объектам
+   
+   * @param organization  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteOrganizationsBatch(@javax.annotation.Nonnull List<@Valid Organization> organization, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteOrganizationsBatch(organization, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить юрлица
@@ -725,7 +818,7 @@ if (acceptEncoding != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteOrganizationsBatch(@javax.annotation.Nonnull List<@Valid Organization> organization, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteOrganizationsBatch(@javax.annotation.Nonnull List<@Valid Organization> organization, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = organization;
     
     // verify the required parameter 'organization' is set
@@ -790,15 +883,14 @@ if (contentType != null)
    * Запрос на получение отдельного счета юрлица
    * @param id ID сущности (required)
    * @param accountId ID счёта юрлица (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return Account
    * @throws ApiException if fails to make API call
    */
-  public Account getOrganizationAccountById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getOrganizationAccountById(id, accountId, expand, accept, acceptEncoding, Collections.emptyMap());
+  public Account getOrganizationAccountById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getOrganizationAccountById(id, accountId, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить счёт юрлица по ID
@@ -821,7 +913,6 @@ if (contentType != null)
     return this.getOrganizationAccountById(id, accountId, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить счёт юрлица по ID
    * Запрос на получение отдельного счета юрлица
@@ -834,7 +925,7 @@ if (contentType != null)
    * @return Account
    * @throws ApiException if fails to make API call
    */
-  public Account getOrganizationAccountById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected Account getOrganizationAccountById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -904,16 +995,14 @@ if (acceptEncoding != null)
    * Получить счета юрлица
    * Запрос на получение списка счетов юрлица
    * @param id ID сущности (required)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return GetOrganizationAccounts200Response
    * @throws ApiException if fails to make API call
    */
-  public GetOrganizationAccounts200Response getOrganizationAccounts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getOrganizationAccounts(id, limit, offset, accept, acceptEncoding, Collections.emptyMap());
+  public GetOrganizationAccounts200Response getOrganizationAccounts(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getOrganizationAccounts(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить счета юрлица
@@ -934,7 +1023,6 @@ if (acceptEncoding != null)
     return this.getOrganizationAccounts(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить счета юрлица
    * Запрос на получение списка счетов юрлица
@@ -947,7 +1035,7 @@ if (acceptEncoding != null)
    * @return GetOrganizationAccounts200Response
    * @throws ApiException if fails to make API call
    */
-  public GetOrganizationAccounts200Response getOrganizationAccounts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected GetOrganizationAccounts200Response getOrganizationAccounts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1012,15 +1100,14 @@ if (acceptEncoding != null)
    * Получить юрлицо по ID
    * Запрос на получение юрлица с указанным id
    * @param id ID сущности (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return Organization
    * @throws ApiException if fails to make API call
    */
-  public Organization getOrganizationById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getOrganizationById(id, expand, accept, acceptEncoding, Collections.emptyMap());
+  public Organization getOrganizationById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getOrganizationById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить юрлицо по ID
@@ -1040,7 +1127,6 @@ if (acceptEncoding != null)
     return this.getOrganizationById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить юрлицо по ID
    * Запрос на получение юрлица с указанным id
@@ -1052,7 +1138,7 @@ if (acceptEncoding != null)
    * @return Organization
    * @throws ApiException if fails to make API call
    */
-  public Organization getOrganizationById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected Organization getOrganizationById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1115,15 +1201,14 @@ if (acceptEncoding != null)
   /**
    * Получить метаданные юрлиц
    * Запрос на получение метаданных юрлиц
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return Metadata
    * @throws ApiException if fails to make API call
    */
-  public Metadata getOrganizationMetadata(@javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getOrganizationMetadata(expand, accept, acceptEncoding, Collections.emptyMap());
+  public Metadata getOrganizationMetadata() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getOrganizationMetadata((String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить метаданные юрлиц
@@ -1140,7 +1225,6 @@ if (acceptEncoding != null)
     return this.getOrganizationMetadata((String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить метаданные юрлиц
    * Запрос на получение метаданных юрлиц
@@ -1151,7 +1235,7 @@ if (acceptEncoding != null)
    * @return Metadata
    * @throws ApiException if fails to make API call
    */
-  public Metadata getOrganizationMetadata(@javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected Metadata getOrganizationMetadata(@javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1209,15 +1293,31 @@ if (acceptEncoding != null)
    * Получить доп. поле юрлица по ID
    * Запрос на получение информации по отдельному дополнительному полю
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo getOrganizationMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getOrganizationMetadataAttributeById(id, accept, acceptEncoding, Collections.emptyMap());
+  public AttributeMetaInfo getOrganizationMetadataAttributeById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getOrganizationMetadataAttributeById(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить доп. поле юрлица по ID
+   * Запрос на получение информации по отдельному дополнительному полю
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo getOrganizationMetadataAttributeById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getOrganizationMetadataAttributeById(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить доп. поле юрлица по ID
@@ -1229,7 +1329,7 @@ if (acceptEncoding != null)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo getOrganizationMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfo getOrganizationMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1291,16 +1391,14 @@ if (acceptEncoding != null)
   /**
    * Получить доп. поля юрлиц
    * Запрос на получение всех доп. полей для юрлиц
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return AttributeMetaInfoList
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfoList getOrganizationMetadataAttributes(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getOrganizationMetadataAttributes(offset, limit, accept, acceptEncoding, Collections.emptyMap());
+  public AttributeMetaInfoList getOrganizationMetadataAttributes() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getOrganizationMetadataAttributes((Integer) effectiveOptions.get("offset"), (Integer) effectiveOptions.get("limit"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить доп. поля юрлиц
@@ -1318,7 +1416,6 @@ if (acceptEncoding != null)
     return this.getOrganizationMetadataAttributes((Integer) effectiveOptions.get("offset"), (Integer) effectiveOptions.get("limit"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить доп. поля юрлиц
    * Запрос на получение всех доп. полей для юрлиц
@@ -1330,7 +1427,7 @@ if (acceptEncoding != null)
    * @return AttributeMetaInfoList
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfoList getOrganizationMetadataAttributes(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfoList getOrganizationMetadataAttributes(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1388,20 +1485,14 @@ if (acceptEncoding != null)
   /**
    * Получить список юрлиц
    * Запрос на получение списка юрлиц на данной учетной записи
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param search Контекстный поиск по строковым полям сущностей (optional)
-   * @param filter Фильтрация выборки (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param order Сортировка (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return OrganizationList
    * @throws ApiException if fails to make API call
    */
-  public OrganizationList getOrganizations(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getOrganizations(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  public OrganizationList getOrganizations() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getOrganizations((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить список юрлиц
@@ -1423,7 +1514,6 @@ if (acceptEncoding != null)
     return this.getOrganizations((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить список юрлиц
    * Запрос на получение списка юрлиц на данной учетной записи
@@ -1439,7 +1529,7 @@ if (acceptEncoding != null)
    * @return OrganizationList
    * @throws ApiException if fails to make API call
    */
-  public OrganizationList getOrganizations(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected OrganizationList getOrganizations(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1503,16 +1593,14 @@ if (acceptEncoding != null)
    * Обновление юрлица с указанным id
    * @param id ID сущности (required)
    * @param organization  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Organization
    * @throws ApiException if fails to make API call
    */
-  public Organization updateOrganization(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Organization organization, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateOrganization(id, organization, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Organization updateOrganization(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Organization organization) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateOrganization(id, organization, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Обновить юрлицо
@@ -1536,7 +1624,6 @@ if (acceptEncoding != null)
     return this.updateOrganization(id, organization, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Обновить юрлицо
    * Обновление юрлица с указанным id
@@ -1550,7 +1637,7 @@ if (acceptEncoding != null)
    * @return Organization
    * @throws ApiException if fails to make API call
    */
-  public Organization updateOrganization(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Organization organization, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Organization updateOrganization(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Organization organization, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = organization;
     
     // verify the required parameter 'id' is set
@@ -1623,16 +1710,14 @@ if (contentType != null)
    * @param id ID сущности (required)
    * @param accountId ID счёта юрлица (required)
    * @param account  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Account
    * @throws ApiException if fails to make API call
    */
-  public Account updateOrganizationAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull Account account, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateOrganizationAccount(id, accountId, account, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Account updateOrganizationAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull Account account) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateOrganizationAccount(id, accountId, account, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Обновить счёт юрлица
@@ -1659,7 +1744,6 @@ if (contentType != null)
     return this.updateOrganizationAccount(id, accountId, account, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Обновить счёт юрлица
    * Обновление отдельного счета юрлица с указанным id
@@ -1674,7 +1758,7 @@ if (contentType != null)
    * @return Account
    * @throws ApiException if fails to make API call
    */
-  public Account updateOrganizationAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull Account account, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Account updateOrganizationAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull Account account, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = account;
     
     // verify the required parameter 'id' is set
@@ -1752,16 +1836,35 @@ if (contentType != null)
    * Создание нового счёта у данного юрлица
    * @param id ID сущности (required)
    * @param account  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Account
    * @throws ApiException if fails to make API call
    */
-  public Account updateOrganizationAccounts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Account account, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateOrganizationAccounts(id, account, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Account updateOrganizationAccounts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Account account) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateOrganizationAccounts(id, account, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Изменить счета юрлица
+   * Создание нового счёта у данного юрлица
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param account  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Account
+   * @throws ApiException if fails to make API call
+   */
+  public Account updateOrganizationAccounts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Account account, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateOrganizationAccounts(id, account, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Изменить счета юрлица
@@ -1775,7 +1878,7 @@ if (contentType != null)
    * @return Account
    * @throws ApiException if fails to make API call
    */
-  public Account updateOrganizationAccounts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Account account, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Account updateOrganizationAccounts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Account account, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = account;
     
     // verify the required parameter 'id' is set
@@ -1846,16 +1949,35 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param attributeMetaInfo  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo updateOrganizationMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateOrganizationMetadataAttributeById(id, attributeMetaInfo, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public AttributeMetaInfo updateOrganizationMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateOrganizationMetadataAttributeById(id, attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Обновить отдельное доп. поле юрлица
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param attributeMetaInfo  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo updateOrganizationMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateOrganizationMetadataAttributeById(id, attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Обновить отдельное доп. поле юрлица
@@ -1869,7 +1991,7 @@ if (contentType != null)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo updateOrganizationMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfo updateOrganizationMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = attributeMetaInfo;
     
     // verify the required parameter 'id' is set

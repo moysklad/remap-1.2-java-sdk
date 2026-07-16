@@ -41,7 +41,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ProcessingProcessesApi extends BaseApi {
 
@@ -57,16 +57,14 @@ public class ProcessingProcessesApi extends BaseApi {
    * Создать Техпроцесс
    * Создание нового Техпроцесса
    * @param processingProcess  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return ProcessingProcess
    * @throws ApiException if fails to make API call
    */
-  public ProcessingProcess createProcessingProcess(@javax.annotation.Nonnull ProcessingProcess processingProcess, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createProcessingProcess(processingProcess, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public ProcessingProcess createProcessingProcess(@javax.annotation.Nonnull ProcessingProcess processingProcess) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createProcessingProcess(processingProcess, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать Техпроцесс
@@ -87,7 +85,6 @@ public class ProcessingProcessesApi extends BaseApi {
     return this.createProcessingProcess(processingProcess, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать Техпроцесс
    * Создание нового Техпроцесса
@@ -100,7 +97,7 @@ public class ProcessingProcessesApi extends BaseApi {
    * @return ProcessingProcess
    * @throws ApiException if fails to make API call
    */
-  public ProcessingProcess createProcessingProcess(@javax.annotation.Nonnull ProcessingProcess processingProcess, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected ProcessingProcess createProcessingProcess(@javax.annotation.Nonnull ProcessingProcess processingProcess, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = processingProcess;
     
     // verify the required parameter 'processingProcess' is set
@@ -166,16 +163,14 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param processingProcessPosition  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return ProcessingProcessPosition
    * @throws ApiException if fails to make API call
    */
-  public ProcessingProcessPosition createProcessingProcessPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingProcessPosition processingProcessPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createProcessingProcessPosition(id, processingProcessPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public ProcessingProcessPosition createProcessingProcessPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingProcessPosition processingProcessPosition) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createProcessingProcessPosition(id, processingProcessPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать и обновить позицию Техпроцесса
@@ -199,7 +194,6 @@ if (contentType != null)
     return this.createProcessingProcessPosition(id, processingProcessPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать и обновить позицию Техпроцесса
    * 
@@ -213,7 +207,7 @@ if (contentType != null)
    * @return ProcessingProcessPosition
    * @throws ApiException if fails to make API call
    */
-  public ProcessingProcessPosition createProcessingProcessPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingProcessPosition processingProcessPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected ProcessingProcessPosition createProcessingProcessPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingProcessPosition processingProcessPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = processingProcessPosition;
     
     // verify the required parameter 'id' is set
@@ -285,16 +279,14 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param processingProcessPosition  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;CreateProcessingProcessPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateProcessingProcessPositions200ResponseInner> createProcessingProcessPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid ProcessingProcessPosition> processingProcessPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createProcessingProcessPositions(id, processingProcessPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<CreateProcessingProcessPositions200ResponseInner> createProcessingProcessPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid ProcessingProcessPosition> processingProcessPosition) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createProcessingProcessPositions(id, processingProcessPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Массовое создание и обновление позиций Техпроцесса
@@ -318,7 +310,6 @@ if (contentType != null)
     return this.createProcessingProcessPositions(id, processingProcessPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Массовое создание и обновление позиций Техпроцесса
    * 
@@ -332,7 +323,7 @@ if (contentType != null)
    * @return List&lt;CreateProcessingProcessPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateProcessingProcessPositions200ResponseInner> createProcessingProcessPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid ProcessingProcessPosition> processingProcessPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<CreateProcessingProcessPositions200ResponseInner> createProcessingProcessPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid ProcessingProcessPosition> processingProcessPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = processingProcessPosition;
     
     // verify the required parameter 'id' is set
@@ -403,16 +394,14 @@ if (contentType != null)
    * Создать или изменить Техпроцессы
    * Создание или изменение нескольких Техпроцессов.
    * @param processingProcess  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createProcessingProcessesBatch(@javax.annotation.Nonnull List<@Valid ProcessingProcess> processingProcess, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createProcessingProcessesBatch(processingProcess, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<BatchResponseEntity> createProcessingProcessesBatch(@javax.annotation.Nonnull List<@Valid ProcessingProcess> processingProcess) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createProcessingProcessesBatch(processingProcess, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать или изменить Техпроцессы
@@ -433,7 +422,6 @@ if (contentType != null)
     return this.createProcessingProcessesBatch(processingProcess, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать или изменить Техпроцессы
    * Создание или изменение нескольких Техпроцессов.
@@ -446,7 +434,7 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createProcessingProcessesBatch(@javax.annotation.Nonnull List<@Valid ProcessingProcess> processingProcess, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createProcessingProcessesBatch(@javax.annotation.Nonnull List<@Valid ProcessingProcess> processingProcess, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = processingProcess;
     
     // verify the required parameter 'processingProcess' is set
@@ -511,14 +499,29 @@ if (contentType != null)
    * Удалить Техпроцесс
    * Удаление Техпроцесса с указанным id
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteProcessingProcess(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteProcessingProcess(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteProcessingProcess(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteProcessingProcess(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить Техпроцесс
+   * Удаление Техпроцесса с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteProcessingProcess(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteProcessingProcess(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить Техпроцесс
@@ -529,7 +532,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteProcessingProcess(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteProcessingProcess(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -592,14 +595,32 @@ if (acceptEncoding != null)
    * Удаление позиции Техпроцесса с указанным id
    * @param id ID сущности (required)
    * @param positionId ID позиции (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteProcessingProcessPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteProcessingProcessPosition(id, positionId, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteProcessingProcessPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteProcessingProcessPosition(id, positionId, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить позицию Техпроцесса
+   * Удаление позиции Техпроцесса с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param positionId ID позиции (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteProcessingProcessPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteProcessingProcessPosition(id, positionId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить позицию Техпроцесса
@@ -611,7 +632,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteProcessingProcessPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteProcessingProcessPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -680,16 +701,35 @@ if (acceptEncoding != null)
    * Массовое удаление позиций Техпроцесса по их мета-объектам.
    * @param id ID сущности (required)
    * @param processingProcessPosition  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteProcessingProcessPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid ProcessingProcessPosition> processingProcessPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteProcessingProcessPositionsBatch(id, processingProcessPosition, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteProcessingProcessPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid ProcessingProcessPosition> processingProcessPosition) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteProcessingProcessPositionsBatch(id, processingProcessPosition, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Массовое удаление позиций Техпроцесса
+   * Массовое удаление позиций Техпроцесса по их мета-объектам.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param processingProcessPosition  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteProcessingProcessPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid ProcessingProcessPosition> processingProcessPosition, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteProcessingProcessPositionsBatch(id, processingProcessPosition, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Массовое удаление позиций Техпроцесса
@@ -703,7 +743,7 @@ if (acceptEncoding != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteProcessingProcessPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid ProcessingProcessPosition> processingProcessPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteProcessingProcessPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid ProcessingProcessPosition> processingProcessPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = processingProcessPosition;
     
     // verify the required parameter 'id' is set
@@ -773,16 +813,32 @@ if (contentType != null)
    * Удалить Техпроцессы
    * Массовое удаление Техпроцессов по их мета-объектам.
    * @param processingProcess  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteProcessingProcessesBatch(@javax.annotation.Nonnull List<@Valid ProcessingProcess> processingProcess, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteProcessingProcessesBatch(processingProcess, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteProcessingProcessesBatch(@javax.annotation.Nonnull List<@Valid ProcessingProcess> processingProcess) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteProcessingProcessesBatch(processingProcess, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить Техпроцессы
+   * Массовое удаление Техпроцессов по их мета-объектам.
+   
+   * @param processingProcess  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteProcessingProcessesBatch(@javax.annotation.Nonnull List<@Valid ProcessingProcess> processingProcess, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteProcessingProcessesBatch(processingProcess, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить Техпроцессы
@@ -795,7 +851,7 @@ if (contentType != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteProcessingProcessesBatch(@javax.annotation.Nonnull List<@Valid ProcessingProcess> processingProcess, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteProcessingProcessesBatch(@javax.annotation.Nonnull List<@Valid ProcessingProcess> processingProcess, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = processingProcess;
     
     // verify the required parameter 'processingProcess' is set
@@ -859,15 +915,14 @@ if (contentType != null)
    * Получить Техпроцесс по ID
    * Запрос на получение отдельного Техпроцесса с указанным id
    * @param id ID сущности (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return ProcessingProcess
    * @throws ApiException if fails to make API call
    */
-  public ProcessingProcess getProcessingProcessById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getProcessingProcessById(id, expand, accept, acceptEncoding, Collections.emptyMap());
+  public ProcessingProcess getProcessingProcessById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProcessingProcessById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить Техпроцесс по ID
@@ -887,7 +942,6 @@ if (contentType != null)
     return this.getProcessingProcessById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить Техпроцесс по ID
    * Запрос на получение отдельного Техпроцесса с указанным id
@@ -899,7 +953,7 @@ if (contentType != null)
    * @return ProcessingProcess
    * @throws ApiException if fails to make API call
    */
-  public ProcessingProcess getProcessingProcessById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected ProcessingProcess getProcessingProcessById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -964,15 +1018,14 @@ if (acceptEncoding != null)
    * Запрос на получение отдельной позиции Техпроцесса с указанным id
    * @param id ID сущности (required)
    * @param positionId ID позиции (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return ProcessingProcessPosition
    * @throws ApiException if fails to make API call
    */
-  public ProcessingProcessPosition getProcessingProcessPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getProcessingProcessPositionById(id, positionId, expand, accept, acceptEncoding, Collections.emptyMap());
+  public ProcessingProcessPosition getProcessingProcessPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProcessingProcessPositionById(id, positionId, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить позицию Техпроцесса
@@ -995,7 +1048,6 @@ if (acceptEncoding != null)
     return this.getProcessingProcessPositionById(id, positionId, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить позицию Техпроцесса
    * Запрос на получение отдельной позиции Техпроцесса с указанным id
@@ -1008,7 +1060,7 @@ if (acceptEncoding != null)
    * @return ProcessingProcessPosition
    * @throws ApiException if fails to make API call
    */
-  public ProcessingProcessPosition getProcessingProcessPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected ProcessingProcessPosition getProcessingProcessPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1078,17 +1130,14 @@ if (acceptEncoding != null)
    * Получить позиции Техпроцесса
    * Запрос на получение списка всех позиций данного Техпроцесса
    * @param id ID сущности (required)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return ProcessingProcessPositionList
    * @throws ApiException if fails to make API call
    */
-  public ProcessingProcessPositionList getProcessingProcessPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getProcessingProcessPositions(id, limit, offset, expand, accept, acceptEncoding, Collections.emptyMap());
+  public ProcessingProcessPositionList getProcessingProcessPositions(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProcessingProcessPositions(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить позиции Техпроцесса
@@ -1110,7 +1159,6 @@ if (acceptEncoding != null)
     return this.getProcessingProcessPositions(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить позиции Техпроцесса
    * Запрос на получение списка всех позиций данного Техпроцесса
@@ -1124,7 +1172,7 @@ if (acceptEncoding != null)
    * @return ProcessingProcessPositionList
    * @throws ApiException if fails to make API call
    */
-  public ProcessingProcessPositionList getProcessingProcessPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected ProcessingProcessPositionList getProcessingProcessPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1189,19 +1237,14 @@ if (acceptEncoding != null)
   /**
    * Получить список Техпроцессов
    * Запрос всех Техпроцессов на данной учетной записи
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param filter Фильтрация выборки (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param order Сортировка (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return ProcessingProcessList
    * @throws ApiException if fails to make API call
    */
-  public ProcessingProcessList getProcessingProcesses(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getProcessingProcesses(limit, offset, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  public ProcessingProcessList getProcessingProcesses() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProcessingProcesses((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить список Техпроцессов
@@ -1222,7 +1265,6 @@ if (acceptEncoding != null)
     return this.getProcessingProcesses((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить список Техпроцессов
    * Запрос всех Техпроцессов на данной учетной записи
@@ -1237,7 +1279,7 @@ if (acceptEncoding != null)
    * @return ProcessingProcessList
    * @throws ApiException if fails to make API call
    */
-  public ProcessingProcessList getProcessingProcesses(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected ProcessingProcessList getProcessingProcesses(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1300,16 +1342,14 @@ if (acceptEncoding != null)
    * Обновление Техпроцесса с указанным id
    * @param id ID сущности (required)
    * @param processingProcess  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return ProcessingProcess
    * @throws ApiException if fails to make API call
    */
-  public ProcessingProcess updateProcessingProcess(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingProcess processingProcess, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateProcessingProcess(id, processingProcess, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public ProcessingProcess updateProcessingProcess(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingProcess processingProcess) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateProcessingProcess(id, processingProcess, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Обновить Техпроцесс
@@ -1333,7 +1373,6 @@ if (acceptEncoding != null)
     return this.updateProcessingProcess(id, processingProcess, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Обновить Техпроцесс
    * Обновление Техпроцесса с указанным id
@@ -1347,7 +1386,7 @@ if (acceptEncoding != null)
    * @return ProcessingProcess
    * @throws ApiException if fails to make API call
    */
-  public ProcessingProcess updateProcessingProcess(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingProcess processingProcess, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected ProcessingProcess updateProcessingProcess(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingProcess processingProcess, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = processingProcess;
     
     // verify the required parameter 'id' is set
@@ -1420,16 +1459,14 @@ if (contentType != null)
    * @param id ID сущности (required)
    * @param positionId ID позиции (required)
    * @param processingProcessPosition  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return ProcessingProcessPosition
    * @throws ApiException if fails to make API call
    */
-  public ProcessingProcessPosition updateProcessingProcessPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull ProcessingProcessPosition processingProcessPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateProcessingProcessPosition(id, positionId, processingProcessPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public ProcessingProcessPosition updateProcessingProcessPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull ProcessingProcessPosition processingProcessPosition) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateProcessingProcessPosition(id, positionId, processingProcessPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Изменить позицию Техпроцесса
@@ -1456,7 +1493,6 @@ if (contentType != null)
     return this.updateProcessingProcessPosition(id, positionId, processingProcessPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Изменить позицию Техпроцесса
    * Обновление позиции Техпроцесса с указанным id
@@ -1471,7 +1507,7 @@ if (contentType != null)
    * @return ProcessingProcessPosition
    * @throws ApiException if fails to make API call
    */
-  public ProcessingProcessPosition updateProcessingProcessPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull ProcessingProcessPosition processingProcessPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected ProcessingProcessPosition updateProcessingProcessPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull ProcessingProcessPosition processingProcessPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = processingProcessPosition;
     
     // verify the required parameter 'id' is set

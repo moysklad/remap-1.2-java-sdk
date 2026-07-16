@@ -45,7 +45,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class RetailSalesReturnsApi extends BaseApi {
 
@@ -61,16 +61,14 @@ public class RetailSalesReturnsApi extends BaseApi {
    * Создать Розничный возврат
    * 
    * @param retailSalesReturn  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return RetailSalesReturn
    * @throws ApiException if fails to make API call
    */
-  public RetailSalesReturn createRetailSalesReturn(@javax.annotation.Nonnull RetailSalesReturn retailSalesReturn, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createRetailSalesReturn(retailSalesReturn, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public RetailSalesReturn createRetailSalesReturn(@javax.annotation.Nonnull RetailSalesReturn retailSalesReturn) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createRetailSalesReturn(retailSalesReturn, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать Розничный возврат
@@ -91,7 +89,6 @@ public class RetailSalesReturnsApi extends BaseApi {
     return this.createRetailSalesReturn(retailSalesReturn, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать Розничный возврат
    * 
@@ -104,7 +101,7 @@ public class RetailSalesReturnsApi extends BaseApi {
    * @return RetailSalesReturn
    * @throws ApiException if fails to make API call
    */
-  public RetailSalesReturn createRetailSalesReturn(@javax.annotation.Nonnull RetailSalesReturn retailSalesReturn, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected RetailSalesReturn createRetailSalesReturn(@javax.annotation.Nonnull RetailSalesReturn retailSalesReturn, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = retailSalesReturn;
     
     // verify the required parameter 'retailSalesReturn' is set
@@ -169,16 +166,32 @@ if (contentType != null)
    * Создать доп. поле Розничного возврата
    * 
    * @param attributeMetaInfo  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo createRetailSalesReturnMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createRetailSalesReturnMetadataAttribute(attributeMetaInfo, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public AttributeMetaInfo createRetailSalesReturnMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createRetailSalesReturnMetadataAttribute(attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Создать доп. поле Розничного возврата
+   * 
+   
+   * @param attributeMetaInfo  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo createRetailSalesReturnMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createRetailSalesReturnMetadataAttribute(attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Создать доп. поле Розничного возврата
@@ -191,7 +204,7 @@ if (contentType != null)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo createRetailSalesReturnMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfo createRetailSalesReturnMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = attributeMetaInfo;
     
     // verify the required parameter 'attributeMetaInfo' is set
@@ -256,16 +269,14 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param retailSalesReturnPosition  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return RetailSalesReturnPosition
    * @throws ApiException if fails to make API call
    */
-  public RetailSalesReturnPosition createRetailSalesReturnPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailSalesReturnPosition retailSalesReturnPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createRetailSalesReturnPosition(id, retailSalesReturnPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public RetailSalesReturnPosition createRetailSalesReturnPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailSalesReturnPosition retailSalesReturnPosition) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createRetailSalesReturnPosition(id, retailSalesReturnPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать и обновить позицию Розничного возврата
@@ -289,7 +300,6 @@ if (contentType != null)
     return this.createRetailSalesReturnPosition(id, retailSalesReturnPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать и обновить позицию Розничного возврата
    * 
@@ -303,7 +313,7 @@ if (contentType != null)
    * @return RetailSalesReturnPosition
    * @throws ApiException if fails to make API call
    */
-  public RetailSalesReturnPosition createRetailSalesReturnPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailSalesReturnPosition retailSalesReturnPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected RetailSalesReturnPosition createRetailSalesReturnPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailSalesReturnPosition retailSalesReturnPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = retailSalesReturnPosition;
     
     // verify the required parameter 'id' is set
@@ -375,16 +385,14 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param retailSalesReturnPosition  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;CreateRetailSalesReturnPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateRetailSalesReturnPositions200ResponseInner> createRetailSalesReturnPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid RetailSalesReturnPosition> retailSalesReturnPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createRetailSalesReturnPositions(id, retailSalesReturnPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<CreateRetailSalesReturnPositions200ResponseInner> createRetailSalesReturnPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid RetailSalesReturnPosition> retailSalesReturnPosition) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createRetailSalesReturnPositions(id, retailSalesReturnPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Массовое создание и обновление позиций Розничного возврата
@@ -408,7 +416,6 @@ if (contentType != null)
     return this.createRetailSalesReturnPositions(id, retailSalesReturnPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Массовое создание и обновление позиций Розничного возврата
    * 
@@ -422,7 +429,7 @@ if (contentType != null)
    * @return List&lt;CreateRetailSalesReturnPositions200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateRetailSalesReturnPositions200ResponseInner> createRetailSalesReturnPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid RetailSalesReturnPosition> retailSalesReturnPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<CreateRetailSalesReturnPositions200ResponseInner> createRetailSalesReturnPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid RetailSalesReturnPosition> retailSalesReturnPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = retailSalesReturnPosition;
     
     // verify the required parameter 'id' is set
@@ -493,16 +500,14 @@ if (contentType != null)
    * Создать или изменить Розничные возвраты
    * Создание или изменение нескольких Розничных возвратов.
    * @param retailSalesReturn  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;CreateRetailSalesReturnsBatch200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateRetailSalesReturnsBatch200ResponseInner> createRetailSalesReturnsBatch(@javax.annotation.Nonnull List<@Valid RetailSalesReturn> retailSalesReturn, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createRetailSalesReturnsBatch(retailSalesReturn, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<CreateRetailSalesReturnsBatch200ResponseInner> createRetailSalesReturnsBatch(@javax.annotation.Nonnull List<@Valid RetailSalesReturn> retailSalesReturn) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createRetailSalesReturnsBatch(retailSalesReturn, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать или изменить Розничные возвраты
@@ -523,7 +528,6 @@ if (contentType != null)
     return this.createRetailSalesReturnsBatch(retailSalesReturn, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать или изменить Розничные возвраты
    * Создание или изменение нескольких Розничных возвратов.
@@ -536,7 +540,7 @@ if (contentType != null)
    * @return List&lt;CreateRetailSalesReturnsBatch200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateRetailSalesReturnsBatch200ResponseInner> createRetailSalesReturnsBatch(@javax.annotation.Nonnull List<@Valid RetailSalesReturn> retailSalesReturn, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<CreateRetailSalesReturnsBatch200ResponseInner> createRetailSalesReturnsBatch(@javax.annotation.Nonnull List<@Valid RetailSalesReturn> retailSalesReturn, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = retailSalesReturn;
     
     // verify the required parameter 'retailSalesReturn' is set
@@ -601,14 +605,29 @@ if (contentType != null)
    * Удалить Розничный возврат
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteRetailSalesReturn(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteRetailSalesReturn(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteRetailSalesReturn(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteRetailSalesReturn(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить Розничный возврат
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteRetailSalesReturn(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteRetailSalesReturn(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить Розничный возврат
@@ -619,7 +638,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteRetailSalesReturn(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteRetailSalesReturn(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -681,14 +700,29 @@ if (acceptEncoding != null)
    * Удалить отдельное доп. поле Розничного возврата
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteRetailSalesReturnMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteRetailSalesReturnMetadataAttributeById(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteRetailSalesReturnMetadataAttributeById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteRetailSalesReturnMetadataAttributeById(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить отдельное доп. поле Розничного возврата
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteRetailSalesReturnMetadataAttributeById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteRetailSalesReturnMetadataAttributeById(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить отдельное доп. поле Розничного возврата
@@ -699,7 +733,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteRetailSalesReturnMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteRetailSalesReturnMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -761,14 +795,29 @@ if (acceptEncoding != null)
    * Удалить отдельный статус Розничного возврата
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteRetailSalesReturnMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteRetailSalesReturnMetadataStateById(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteRetailSalesReturnMetadataStateById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteRetailSalesReturnMetadataStateById(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить отдельный статус Розничного возврата
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteRetailSalesReturnMetadataStateById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteRetailSalesReturnMetadataStateById(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить отдельный статус Розничного возврата
@@ -779,7 +828,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteRetailSalesReturnMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteRetailSalesReturnMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -842,14 +891,13 @@ if (acceptEncoding != null)
    * 
    * @param id ID сущности (required)
    * @param positionId ID позиции (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteRetailSalesReturnPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteRetailSalesReturnPosition(id, positionId, expand, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteRetailSalesReturnPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteRetailSalesReturnPosition(id, positionId, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Удалить позицию Розничного возврата
@@ -871,7 +919,6 @@ if (acceptEncoding != null)
     this.deleteRetailSalesReturnPosition(id, positionId, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Удалить позицию Розничного возврата
    * 
@@ -883,7 +930,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteRetailSalesReturnPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteRetailSalesReturnPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -953,16 +1000,35 @@ if (acceptEncoding != null)
    * 
    * @param id ID сущности (required)
    * @param retailSalesReturnPosition  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteInvoiceOutBatch200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteInvoiceOutBatch200ResponseInner> deleteRetailSalesReturnPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid RetailSalesReturnPosition> retailSalesReturnPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteRetailSalesReturnPositionsBatch(id, retailSalesReturnPosition, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteInvoiceOutBatch200ResponseInner> deleteRetailSalesReturnPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid RetailSalesReturnPosition> retailSalesReturnPosition) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteRetailSalesReturnPositionsBatch(id, retailSalesReturnPosition, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Массовое удаление позиций Розничного возврата
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param retailSalesReturnPosition  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteInvoiceOutBatch200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteInvoiceOutBatch200ResponseInner> deleteRetailSalesReturnPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid RetailSalesReturnPosition> retailSalesReturnPosition, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteRetailSalesReturnPositionsBatch(id, retailSalesReturnPosition, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Массовое удаление позиций Розничного возврата
@@ -976,7 +1042,7 @@ if (acceptEncoding != null)
    * @return List&lt;DeleteInvoiceOutBatch200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteInvoiceOutBatch200ResponseInner> deleteRetailSalesReturnPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid RetailSalesReturnPosition> retailSalesReturnPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteInvoiceOutBatch200ResponseInner> deleteRetailSalesReturnPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid RetailSalesReturnPosition> retailSalesReturnPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = retailSalesReturnPosition;
     
     // verify the required parameter 'id' is set
@@ -1046,16 +1112,14 @@ if (contentType != null)
    * Получить Розничный возврат
    * 
    * @param id ID сущности (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return RetailSalesReturn
    * @throws ApiException if fails to make API call
    */
-  public RetailSalesReturn getRetailSalesReturnById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getRetailSalesReturnById(id, expand, fields, accept, acceptEncoding, Collections.emptyMap());
+  public RetailSalesReturn getRetailSalesReturnById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getRetailSalesReturnById(id, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить Розничный возврат
@@ -1076,7 +1140,6 @@ if (contentType != null)
     return this.getRetailSalesReturnById(id, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить Розничный возврат
    * 
@@ -1089,7 +1152,7 @@ if (contentType != null)
    * @return RetailSalesReturn
    * @throws ApiException if fails to make API call
    */
-  public RetailSalesReturn getRetailSalesReturnById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected RetailSalesReturn getRetailSalesReturnById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1153,16 +1216,29 @@ if (acceptEncoding != null)
   /**
    * Метаданные Розничных возвратов
    * 
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return DocumentMetadata
    * @throws ApiException if fails to make API call
    */
-  public DocumentMetadata getRetailSalesReturnMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.getRetailSalesReturnMetadata(accept, acceptEncoding, contentType, Collections.emptyMap());
+  public DocumentMetadata getRetailSalesReturnMetadata() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getRetailSalesReturnMetadata(null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Метаданные Розничных возвратов
+   * 
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return DocumentMetadata
+   * @throws ApiException if fails to make API call
+   */
+  public DocumentMetadata getRetailSalesReturnMetadata(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getRetailSalesReturnMetadata(null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Метаданные Розничных возвратов
@@ -1174,7 +1250,7 @@ if (acceptEncoding != null)
    * @return DocumentMetadata
    * @throws ApiException if fails to make API call
    */
-  public DocumentMetadata getRetailSalesReturnMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected DocumentMetadata getRetailSalesReturnMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1232,16 +1308,14 @@ if (contentType != null)
   /**
    * Доп. поля Розничного возврата
    * 
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return AttributeMetaInfoList
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfoList getRetailSalesReturnMetadataAttribute(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getRetailSalesReturnMetadataAttribute(offset, limit, accept, acceptEncoding, Collections.emptyMap());
+  public AttributeMetaInfoList getRetailSalesReturnMetadataAttribute() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getRetailSalesReturnMetadataAttribute((Integer) effectiveOptions.get("offset"), (Integer) effectiveOptions.get("limit"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Доп. поля Розничного возврата
@@ -1259,7 +1333,6 @@ if (contentType != null)
     return this.getRetailSalesReturnMetadataAttribute((Integer) effectiveOptions.get("offset"), (Integer) effectiveOptions.get("limit"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Доп. поля Розничного возврата
    * 
@@ -1271,7 +1344,7 @@ if (contentType != null)
    * @return AttributeMetaInfoList
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfoList getRetailSalesReturnMetadataAttribute(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfoList getRetailSalesReturnMetadataAttribute(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1330,15 +1403,31 @@ if (acceptEncoding != null)
    * Отдельное доп. поле Розничного возврата
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo getRetailSalesReturnMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getRetailSalesReturnMetadataAttributeById(id, accept, acceptEncoding, Collections.emptyMap());
+  public AttributeMetaInfo getRetailSalesReturnMetadataAttributeById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getRetailSalesReturnMetadataAttributeById(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Отдельное доп. поле Розничного возврата
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo getRetailSalesReturnMetadataAttributeById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getRetailSalesReturnMetadataAttributeById(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Отдельное доп. поле Розничного возврата
@@ -1350,7 +1439,7 @@ if (acceptEncoding != null)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo getRetailSalesReturnMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfo getRetailSalesReturnMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1413,15 +1502,31 @@ if (acceptEncoding != null)
    * Отдельный статус Розничного возврата
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return State
    * @throws ApiException if fails to make API call
    */
-  public State getRetailSalesReturnMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getRetailSalesReturnMetadataStateById(id, accept, acceptEncoding, Collections.emptyMap());
+  public State getRetailSalesReturnMetadataStateById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getRetailSalesReturnMetadataStateById(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Отдельный статус Розничного возврата
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return State
+   * @throws ApiException if fails to make API call
+   */
+  public State getRetailSalesReturnMetadataStateById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getRetailSalesReturnMetadataStateById(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Отдельный статус Розничного возврата
@@ -1433,7 +1538,7 @@ if (acceptEncoding != null)
    * @return State
    * @throws ApiException if fails to make API call
    */
-  public State getRetailSalesReturnMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected State getRetailSalesReturnMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1497,16 +1602,14 @@ if (acceptEncoding != null)
    * 
    * @param id ID сущности (required)
    * @param positionId ID позиции (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return RetailSalesReturnPosition
    * @throws ApiException if fails to make API call
    */
-  public RetailSalesReturnPosition getRetailSalesReturnPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getRetailSalesReturnPositionById(id, positionId, expand, fields, accept, acceptEncoding, Collections.emptyMap());
+  public RetailSalesReturnPosition getRetailSalesReturnPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getRetailSalesReturnPositionById(id, positionId, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить позицию Розничного возврата
@@ -1530,7 +1633,6 @@ if (acceptEncoding != null)
     return this.getRetailSalesReturnPositionById(id, positionId, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить позицию Розничного возврата
    * 
@@ -1544,7 +1646,7 @@ if (acceptEncoding != null)
    * @return RetailSalesReturnPosition
    * @throws ApiException if fails to make API call
    */
-  public RetailSalesReturnPosition getRetailSalesReturnPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected RetailSalesReturnPosition getRetailSalesReturnPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1615,18 +1717,14 @@ if (acceptEncoding != null)
    * Получить позиции Розничного возврата
    * 
    * @param id ID сущности (required)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return RetailSalesReturnPositionList
    * @throws ApiException if fails to make API call
    */
-  public RetailSalesReturnPositionList getRetailSalesReturnPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getRetailSalesReturnPositions(id, limit, offset, expand, fields, accept, acceptEncoding, Collections.emptyMap());
+  public RetailSalesReturnPositionList getRetailSalesReturnPositions(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getRetailSalesReturnPositions(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить позиции Розничного возврата
@@ -1649,7 +1747,6 @@ if (acceptEncoding != null)
     return this.getRetailSalesReturnPositions(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить позиции Розничного возврата
    * 
@@ -1664,7 +1761,7 @@ if (acceptEncoding != null)
    * @return RetailSalesReturnPositionList
    * @throws ApiException if fails to make API call
    */
-  public RetailSalesReturnPositionList getRetailSalesReturnPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected RetailSalesReturnPositionList getRetailSalesReturnPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1730,17 +1827,33 @@ if (acceptEncoding != null)
   /**
    * Шаблон Розничного возврата
    * Предзаполненный шаблон Розничного возврата. В теле запроса можно передать &#x60;retailShift&#x60; для шаблона без основания или &#x60;demand&#x60; для шаблона на основе Розничной продажи. 
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @param body  (optional)
    * @return RetailSalesReturn
    * @throws ApiException if fails to make API call
    */
-  public RetailSalesReturn getRetailSalesReturnTemplate(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, @javax.annotation.Nullable Object body) throws ApiException {
-    return this.getRetailSalesReturnTemplate(accept, acceptEncoding, contentType, body, Collections.emptyMap());
+  public RetailSalesReturn getRetailSalesReturnTemplate(@javax.annotation.Nullable Object body) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getRetailSalesReturnTemplate(null, null, null, body, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Шаблон Розничного возврата
+   * Предзаполненный шаблон Розничного возврата. В теле запроса можно передать &#x60;retailShift&#x60; для шаблона без основания или &#x60;demand&#x60; для шаблона на основе Розничной продажи. 
+   
+   
+   
+   
+   * @param body  (optional)
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return RetailSalesReturn
+   * @throws ApiException if fails to make API call
+   */
+  public RetailSalesReturn getRetailSalesReturnTemplate(@javax.annotation.Nullable Object body, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getRetailSalesReturnTemplate(null, null, null, body, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Шаблон Розничного возврата
@@ -1753,7 +1866,7 @@ if (acceptEncoding != null)
    * @return RetailSalesReturn
    * @throws ApiException if fails to make API call
    */
-  public RetailSalesReturn getRetailSalesReturnTemplate(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, @javax.annotation.Nullable Object body, Map<String, String> additionalHeaders) throws ApiException {
+  protected RetailSalesReturn getRetailSalesReturnTemplate(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, @javax.annotation.Nullable Object body, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = body;
     
     // create path and map variables
@@ -1811,19 +1924,14 @@ if (contentType != null)
   /**
    * Получить список Розничных возвратов
    * 
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param search Контекстный поиск по строковым полям сущностей (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return RetailSalesReturnList
    * @throws ApiException if fails to make API call
    */
-  public RetailSalesReturnList getRetailSalesReturns(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getRetailSalesReturns(limit, offset, search, expand, fields, accept, acceptEncoding, Collections.emptyMap());
+  public RetailSalesReturnList getRetailSalesReturns() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getRetailSalesReturns((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить список Розничных возвратов
@@ -1844,7 +1952,6 @@ if (contentType != null)
     return this.getRetailSalesReturns((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить список Розничных возвратов
    * 
@@ -1859,7 +1966,7 @@ if (contentType != null)
    * @return RetailSalesReturnList
    * @throws ApiException if fails to make API call
    */
-  public RetailSalesReturnList getRetailSalesReturns(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected RetailSalesReturnList getRetailSalesReturns(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1922,17 +2029,14 @@ if (acceptEncoding != null)
    * 
    * @param id ID сущности (required)
    * @param retailSalesReturn  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return RetailSalesReturn
    * @throws ApiException if fails to make API call
    */
-  public RetailSalesReturn updateRetailSalesReturn(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailSalesReturn retailSalesReturn, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateRetailSalesReturn(id, retailSalesReturn, expand, fields, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public RetailSalesReturn updateRetailSalesReturn(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailSalesReturn retailSalesReturn) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateRetailSalesReturn(id, retailSalesReturn, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Изменить Розничный возврат
@@ -1957,7 +2061,6 @@ if (acceptEncoding != null)
     return this.updateRetailSalesReturn(id, retailSalesReturn, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Изменить Розничный возврат
    * 
@@ -1972,7 +2075,7 @@ if (acceptEncoding != null)
    * @return RetailSalesReturn
    * @throws ApiException if fails to make API call
    */
-  public RetailSalesReturn updateRetailSalesReturn(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailSalesReturn retailSalesReturn, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected RetailSalesReturn updateRetailSalesReturn(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailSalesReturn retailSalesReturn, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = retailSalesReturn;
     
     // verify the required parameter 'id' is set
@@ -2045,16 +2148,35 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param attributeMetaInfo  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo updateRetailSalesReturnMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateRetailSalesReturnMetadataAttributeById(id, attributeMetaInfo, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public AttributeMetaInfo updateRetailSalesReturnMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateRetailSalesReturnMetadataAttributeById(id, attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Обновить отдельное доп. поле Розничного возврата
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param attributeMetaInfo  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo updateRetailSalesReturnMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateRetailSalesReturnMetadataAttributeById(id, attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Обновить отдельное доп. поле Розничного возврата
@@ -2068,7 +2190,7 @@ if (contentType != null)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo updateRetailSalesReturnMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfo updateRetailSalesReturnMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = attributeMetaInfo;
     
     // verify the required parameter 'id' is set
@@ -2139,16 +2261,35 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param state  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return State
    * @throws ApiException if fails to make API call
    */
-  public State updateRetailSalesReturnMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateRetailSalesReturnMetadataStateById(id, state, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public State updateRetailSalesReturnMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull State state) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateRetailSalesReturnMetadataStateById(id, state, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Обновить отдельный статус Розничного возврата
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param state  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return State
+   * @throws ApiException if fails to make API call
+   */
+  public State updateRetailSalesReturnMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull State state, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateRetailSalesReturnMetadataStateById(id, state, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Обновить отдельный статус Розничного возврата
@@ -2162,7 +2303,7 @@ if (contentType != null)
    * @return State
    * @throws ApiException if fails to make API call
    */
-  public State updateRetailSalesReturnMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected State updateRetailSalesReturnMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = state;
     
     // verify the required parameter 'id' is set
@@ -2234,17 +2375,14 @@ if (contentType != null)
    * @param id ID сущности (required)
    * @param positionId ID позиции (required)
    * @param retailSalesReturnPosition  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return RetailSalesReturnPosition
    * @throws ApiException if fails to make API call
    */
-  public RetailSalesReturnPosition updateRetailSalesReturnPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull RetailSalesReturnPosition retailSalesReturnPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateRetailSalesReturnPosition(id, positionId, retailSalesReturnPosition, expand, fields, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public RetailSalesReturnPosition updateRetailSalesReturnPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull RetailSalesReturnPosition retailSalesReturnPosition) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateRetailSalesReturnPosition(id, positionId, retailSalesReturnPosition, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Изменить позицию Розничного возврата
@@ -2272,7 +2410,6 @@ if (contentType != null)
     return this.updateRetailSalesReturnPosition(id, positionId, retailSalesReturnPosition, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Изменить позицию Розничного возврата
    * 
@@ -2288,7 +2425,7 @@ if (contentType != null)
    * @return RetailSalesReturnPosition
    * @throws ApiException if fails to make API call
    */
-  public RetailSalesReturnPosition updateRetailSalesReturnPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull RetailSalesReturnPosition retailSalesReturnPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected RetailSalesReturnPosition updateRetailSalesReturnPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull RetailSalesReturnPosition retailSalesReturnPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = retailSalesReturnPosition;
     
     // verify the required parameter 'id' is set

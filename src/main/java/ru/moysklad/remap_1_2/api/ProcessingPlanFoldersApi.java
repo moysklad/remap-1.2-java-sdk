@@ -39,7 +39,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ProcessingPlanFoldersApi extends BaseApi {
 
@@ -55,16 +55,32 @@ public class ProcessingPlanFoldersApi extends BaseApi {
    * Создать группу техкарт
    * 
    * @param processingPlanFolder  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return ProcessingPlanFolder
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlanFolder createProcessingPlanFolder(@javax.annotation.Nonnull ProcessingPlanFolder processingPlanFolder, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createProcessingPlanFolder(processingPlanFolder, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public ProcessingPlanFolder createProcessingPlanFolder(@javax.annotation.Nonnull ProcessingPlanFolder processingPlanFolder) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createProcessingPlanFolder(processingPlanFolder, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Создать группу техкарт
+   * 
+   
+   * @param processingPlanFolder  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ProcessingPlanFolder
+   * @throws ApiException if fails to make API call
+   */
+  public ProcessingPlanFolder createProcessingPlanFolder(@javax.annotation.Nonnull ProcessingPlanFolder processingPlanFolder, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createProcessingPlanFolder(processingPlanFolder, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Создать группу техкарт
@@ -77,7 +93,7 @@ public class ProcessingPlanFoldersApi extends BaseApi {
    * @return ProcessingPlanFolder
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlanFolder createProcessingPlanFolder(@javax.annotation.Nonnull ProcessingPlanFolder processingPlanFolder, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected ProcessingPlanFolder createProcessingPlanFolder(@javax.annotation.Nonnull ProcessingPlanFolder processingPlanFolder, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = processingPlanFolder;
     
     // verify the required parameter 'processingPlanFolder' is set
@@ -141,16 +157,32 @@ if (contentType != null)
    * Массовое создание и обновление групп техкарт
    * 
    * @param processingPlanFolder  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createProcessingPlanFoldersBatch(@javax.annotation.Nonnull List<@Valid ProcessingPlanFolder> processingPlanFolder, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createProcessingPlanFoldersBatch(processingPlanFolder, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<BatchResponseEntity> createProcessingPlanFoldersBatch(@javax.annotation.Nonnull List<@Valid ProcessingPlanFolder> processingPlanFolder) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createProcessingPlanFoldersBatch(processingPlanFolder, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Массовое создание и обновление групп техкарт
+   * 
+   
+   * @param processingPlanFolder  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<BatchResponseEntity> createProcessingPlanFoldersBatch(@javax.annotation.Nonnull List<@Valid ProcessingPlanFolder> processingPlanFolder, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createProcessingPlanFoldersBatch(processingPlanFolder, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Массовое создание и обновление групп техкарт
@@ -163,7 +195,7 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createProcessingPlanFoldersBatch(@javax.annotation.Nonnull List<@Valid ProcessingPlanFolder> processingPlanFolder, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createProcessingPlanFoldersBatch(@javax.annotation.Nonnull List<@Valid ProcessingPlanFolder> processingPlanFolder, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = processingPlanFolder;
     
     // verify the required parameter 'processingPlanFolder' is set
@@ -227,15 +259,30 @@ if (contentType != null)
    * Удалить группу техкарт
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @throws ApiException if fails to make API call
    */
-  public void deleteProcessingPlanFolder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    this.deleteProcessingPlanFolder(id, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public void deleteProcessingPlanFolder(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteProcessingPlanFolder(id, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить группу техкарт
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteProcessingPlanFolder(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteProcessingPlanFolder(id, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить группу техкарт
@@ -247,7 +294,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteProcessingPlanFolder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteProcessingPlanFolder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -311,16 +358,32 @@ if (contentType != null)
    * Массовое удаление групп техкарт
    * 
    * @param processingPlanFolder  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteProcessingPlanFoldersBatch(@javax.annotation.Nonnull List<@Valid ProcessingPlanFolder> processingPlanFolder, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteProcessingPlanFoldersBatch(processingPlanFolder, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteProcessingPlanFoldersBatch(@javax.annotation.Nonnull List<@Valid ProcessingPlanFolder> processingPlanFolder) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteProcessingPlanFoldersBatch(processingPlanFolder, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Массовое удаление групп техкарт
+   * 
+   
+   * @param processingPlanFolder  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteProcessingPlanFoldersBatch(@javax.annotation.Nonnull List<@Valid ProcessingPlanFolder> processingPlanFolder, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteProcessingPlanFoldersBatch(processingPlanFolder, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Массовое удаление групп техкарт
@@ -333,7 +396,7 @@ if (contentType != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteProcessingPlanFoldersBatch(@javax.annotation.Nonnull List<@Valid ProcessingPlanFolder> processingPlanFolder, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteProcessingPlanFoldersBatch(@javax.annotation.Nonnull List<@Valid ProcessingPlanFolder> processingPlanFolder, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = processingPlanFolder;
     
     // verify the required parameter 'processingPlanFolder' is set
@@ -397,15 +460,31 @@ if (contentType != null)
    * Получить группу техкарт
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return ProcessingPlanFolder
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlanFolder getProcessingPlanFolderById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getProcessingPlanFolderById(id, accept, acceptEncoding, Collections.emptyMap());
+  public ProcessingPlanFolder getProcessingPlanFolderById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProcessingPlanFolderById(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить группу техкарт
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ProcessingPlanFolder
+   * @throws ApiException if fails to make API call
+   */
+  public ProcessingPlanFolder getProcessingPlanFolderById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getProcessingPlanFolderById(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить группу техкарт
@@ -417,7 +496,7 @@ if (contentType != null)
    * @return ProcessingPlanFolder
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlanFolder getProcessingPlanFolderById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected ProcessingPlanFolder getProcessingPlanFolderById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -479,16 +558,29 @@ if (acceptEncoding != null)
   /**
    * Метаданные групп техкарт
    * 
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Metadata
    * @throws ApiException if fails to make API call
    */
-  public Metadata getProcessingPlanFolderMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.getProcessingPlanFolderMetadata(accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Metadata getProcessingPlanFolderMetadata() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProcessingPlanFolderMetadata(null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Метаданные групп техкарт
+   * 
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Metadata
+   * @throws ApiException if fails to make API call
+   */
+  public Metadata getProcessingPlanFolderMetadata(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getProcessingPlanFolderMetadata(null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Метаданные групп техкарт
@@ -500,7 +592,7 @@ if (acceptEncoding != null)
    * @return Metadata
    * @throws ApiException if fails to make API call
    */
-  public Metadata getProcessingPlanFolderMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Metadata getProcessingPlanFolderMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -558,17 +650,14 @@ if (contentType != null)
   /**
    * Получить список групп техкарт
    * 
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return ProcessingPlanFolderList
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlanFolderList getProcessingPlanFolders(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.getProcessingPlanFolders(limit, offset, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public ProcessingPlanFolderList getProcessingPlanFolders() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProcessingPlanFolders((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить список групп техкарт
@@ -587,7 +676,6 @@ if (contentType != null)
     return this.getProcessingPlanFolders((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить список групп техкарт
    * 
@@ -600,7 +688,7 @@ if (contentType != null)
    * @return ProcessingPlanFolderList
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlanFolderList getProcessingPlanFolders(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected ProcessingPlanFolderList getProcessingPlanFolders(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -662,16 +750,35 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param processingPlanFolder  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return ProcessingPlanFolder
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlanFolder updateProcessingPlanFolder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingPlanFolder processingPlanFolder, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateProcessingPlanFolder(id, processingPlanFolder, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public ProcessingPlanFolder updateProcessingPlanFolder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingPlanFolder processingPlanFolder) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateProcessingPlanFolder(id, processingPlanFolder, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Изменить группу техкарт
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param processingPlanFolder  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ProcessingPlanFolder
+   * @throws ApiException if fails to make API call
+   */
+  public ProcessingPlanFolder updateProcessingPlanFolder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingPlanFolder processingPlanFolder, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateProcessingPlanFolder(id, processingPlanFolder, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Изменить группу техкарт
@@ -685,7 +792,7 @@ if (contentType != null)
    * @return ProcessingPlanFolder
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlanFolder updateProcessingPlanFolder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingPlanFolder processingPlanFolder, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected ProcessingPlanFolder updateProcessingPlanFolder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingPlanFolder processingPlanFolder, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = processingPlanFolder;
     
     // verify the required parameter 'id' is set

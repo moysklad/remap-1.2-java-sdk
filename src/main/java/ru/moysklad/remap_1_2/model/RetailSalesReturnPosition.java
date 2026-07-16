@@ -56,7 +56,7 @@ import java.util.StringJoiner;
   RetailSalesReturnPosition.JSON_PROPERTY_VAT,
   RetailSalesReturnPosition.JSON_PROPERTY_VAT_ENABLED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailSalesReturnPosition {
   public static RetailSalesReturnPosition createWithMeta(UUID parentId, UUID id) {
     RetailSalesReturnPosition o = new RetailSalesReturnPosition();

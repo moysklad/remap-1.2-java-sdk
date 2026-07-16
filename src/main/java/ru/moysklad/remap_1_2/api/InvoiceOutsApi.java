@@ -48,7 +48,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class InvoiceOutsApi extends BaseApi {
 
@@ -65,16 +65,35 @@ public class InvoiceOutsApi extends BaseApi {
    * Добавить новые Файлы к Счету покупателю. В одном запросе можно добавить максимум 10 Файлов. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
    * @param id ID сущности (required)
    * @param fileUpload  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;ModelFile&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<ModelFile> addInvoiceOutFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.addInvoiceOutFiles(id, fileUpload, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<ModelFile> addInvoiceOutFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.addInvoiceOutFiles(id, fileUpload, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Добавить файлы к Счету покупателю
+   * Добавить новые Файлы к Счету покупателю. В одном запросе можно добавить максимум 10 Файлов. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param fileUpload  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;ModelFile&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<ModelFile> addInvoiceOutFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.addInvoiceOutFiles(id, fileUpload, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Добавить файлы к Счету покупателю
@@ -88,7 +107,7 @@ public class InvoiceOutsApi extends BaseApi {
    * @return List&lt;ModelFile&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<ModelFile> addInvoiceOutFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<ModelFile> addInvoiceOutFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = fileUpload;
     
     // verify the required parameter 'id' is set
@@ -158,16 +177,14 @@ if (contentType != null)
    * Создать Счет покупателю
    * 
    * @param invoiceOut  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return InvoiceOut
    * @throws ApiException if fails to make API call
    */
-  public InvoiceOut createInvoiceOut(@javax.annotation.Nonnull InvoiceOut invoiceOut, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createInvoiceOut(invoiceOut, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public InvoiceOut createInvoiceOut(@javax.annotation.Nonnull InvoiceOut invoiceOut) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createInvoiceOut(invoiceOut, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать Счет покупателю
@@ -188,7 +205,6 @@ if (contentType != null)
     return this.createInvoiceOut(invoiceOut, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать Счет покупателю
    * 
@@ -201,7 +217,7 @@ if (contentType != null)
    * @return InvoiceOut
    * @throws ApiException if fails to make API call
    */
-  public InvoiceOut createInvoiceOut(@javax.annotation.Nonnull InvoiceOut invoiceOut, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected InvoiceOut createInvoiceOut(@javax.annotation.Nonnull InvoiceOut invoiceOut, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = invoiceOut;
     
     // verify the required parameter 'invoiceOut' is set
@@ -266,16 +282,14 @@ if (contentType != null)
    * Массовое создание и обновление Счетов покупателям
    * 
    * @param invoiceOut  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;CreateInvoiceOutBatch200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateInvoiceOutBatch200ResponseInner> createInvoiceOutBatch(@javax.annotation.Nonnull List<@Valid InvoiceOut> invoiceOut, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createInvoiceOutBatch(invoiceOut, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<CreateInvoiceOutBatch200ResponseInner> createInvoiceOutBatch(@javax.annotation.Nonnull List<@Valid InvoiceOut> invoiceOut) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createInvoiceOutBatch(invoiceOut, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Массовое создание и обновление Счетов покупателям
@@ -296,7 +310,6 @@ if (contentType != null)
     return this.createInvoiceOutBatch(invoiceOut, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Массовое создание и обновление Счетов покупателям
    * 
@@ -309,7 +322,7 @@ if (contentType != null)
    * @return List&lt;CreateInvoiceOutBatch200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateInvoiceOutBatch200ResponseInner> createInvoiceOutBatch(@javax.annotation.Nonnull List<@Valid InvoiceOut> invoiceOut, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<CreateInvoiceOutBatch200ResponseInner> createInvoiceOutBatch(@javax.annotation.Nonnull List<@Valid InvoiceOut> invoiceOut, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = invoiceOut;
     
     // verify the required parameter 'invoiceOut' is set
@@ -374,16 +387,32 @@ if (contentType != null)
    * Создать Доп. поле InvoiceOut
    * 
    * @param attributeMetaInfo  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo createInvoiceOutMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createInvoiceOutMetadataAttribute(attributeMetaInfo, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public AttributeMetaInfo createInvoiceOutMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createInvoiceOutMetadataAttribute(attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Создать Доп. поле InvoiceOut
+   * 
+   
+   * @param attributeMetaInfo  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo createInvoiceOutMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createInvoiceOutMetadataAttribute(attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Создать Доп. поле InvoiceOut
@@ -396,7 +425,7 @@ if (contentType != null)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo createInvoiceOutMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfo createInvoiceOutMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = attributeMetaInfo;
     
     // verify the required parameter 'attributeMetaInfo' is set
@@ -461,16 +490,14 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param invoiceOutPosition  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return InvoiceOutPosition
    * @throws ApiException if fails to make API call
    */
-  public InvoiceOutPosition createInvoiceOutPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull InvoiceOutPosition invoiceOutPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createInvoiceOutPositions(id, invoiceOutPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public InvoiceOutPosition createInvoiceOutPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull InvoiceOutPosition invoiceOutPosition) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createInvoiceOutPositions(id, invoiceOutPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать позицию Счета покупателю
@@ -494,7 +521,6 @@ if (contentType != null)
     return this.createInvoiceOutPositions(id, invoiceOutPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать позицию Счета покупателю
    * 
@@ -508,7 +534,7 @@ if (contentType != null)
    * @return InvoiceOutPosition
    * @throws ApiException if fails to make API call
    */
-  public InvoiceOutPosition createInvoiceOutPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull InvoiceOutPosition invoiceOutPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected InvoiceOutPosition createInvoiceOutPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull InvoiceOutPosition invoiceOutPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = invoiceOutPosition;
     
     // verify the required parameter 'id' is set
@@ -580,16 +606,14 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param invoiceOutPosition  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;CreateInvoiceOutPositionsBatch200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateInvoiceOutPositionsBatch200ResponseInner> createInvoiceOutPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid InvoiceOutPosition> invoiceOutPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createInvoiceOutPositionsBatch(id, invoiceOutPosition, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<CreateInvoiceOutPositionsBatch200ResponseInner> createInvoiceOutPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid InvoiceOutPosition> invoiceOutPosition) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createInvoiceOutPositionsBatch(id, invoiceOutPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать позиции Счета покупателю
@@ -613,7 +637,6 @@ if (contentType != null)
     return this.createInvoiceOutPositionsBatch(id, invoiceOutPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать позиции Счета покупателю
    * 
@@ -627,7 +650,7 @@ if (contentType != null)
    * @return List&lt;CreateInvoiceOutPositionsBatch200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateInvoiceOutPositionsBatch200ResponseInner> createInvoiceOutPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid InvoiceOutPosition> invoiceOutPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<CreateInvoiceOutPositionsBatch200ResponseInner> createInvoiceOutPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid InvoiceOutPosition> invoiceOutPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = invoiceOutPosition;
     
     // verify the required parameter 'id' is set
@@ -698,15 +721,30 @@ if (contentType != null)
    * Удалить Счет покупателю
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @throws ApiException if fails to make API call
    */
-  public void deleteInvoiceOut(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    this.deleteInvoiceOut(id, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public void deleteInvoiceOut(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteInvoiceOut(id, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить Счет покупателю
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteInvoiceOut(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteInvoiceOut(id, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить Счет покупателю
@@ -718,7 +756,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteInvoiceOut(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteInvoiceOut(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -782,16 +820,32 @@ if (contentType != null)
    * Массовое удаление Счетов покупателям
    * 
    * @param invoiceOut  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteInvoiceOutBatch200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteInvoiceOutBatch200ResponseInner> deleteInvoiceOutBatch(@javax.annotation.Nonnull List<@Valid InvoiceOut> invoiceOut, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteInvoiceOutBatch(invoiceOut, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteInvoiceOutBatch200ResponseInner> deleteInvoiceOutBatch(@javax.annotation.Nonnull List<@Valid InvoiceOut> invoiceOut) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteInvoiceOutBatch(invoiceOut, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Массовое удаление Счетов покупателям
+   * 
+   
+   * @param invoiceOut  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteInvoiceOutBatch200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteInvoiceOutBatch200ResponseInner> deleteInvoiceOutBatch(@javax.annotation.Nonnull List<@Valid InvoiceOut> invoiceOut, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteInvoiceOutBatch(invoiceOut, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Массовое удаление Счетов покупателям
@@ -804,7 +858,7 @@ if (contentType != null)
    * @return List&lt;DeleteInvoiceOutBatch200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteInvoiceOutBatch200ResponseInner> deleteInvoiceOutBatch(@javax.annotation.Nonnull List<@Valid InvoiceOut> invoiceOut, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteInvoiceOutBatch200ResponseInner> deleteInvoiceOutBatch(@javax.annotation.Nonnull List<@Valid InvoiceOut> invoiceOut, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = invoiceOut;
     
     // verify the required parameter 'invoiceOut' is set
@@ -869,14 +923,32 @@ if (contentType != null)
    * Удаление Файла Счета покупателю.
    * @param id ID сущности (required)
    * @param fileId ID файла (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteInvoiceOutFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID fileId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteInvoiceOutFile(id, fileId, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteInvoiceOutFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID fileId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteInvoiceOutFile(id, fileId, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить файл Счета покупателю
+   * Удаление Файла Счета покупателю.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param fileId ID файла (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteInvoiceOutFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID fileId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteInvoiceOutFile(id, fileId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить файл Счета покупателю
@@ -888,7 +960,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteInvoiceOutFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID fileId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteInvoiceOutFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID fileId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -956,15 +1028,30 @@ if (acceptEncoding != null)
    * Удалить отдельное доп. поле InvoiceOut
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @throws ApiException if fails to make API call
    */
-  public void deleteInvoiceOutMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    this.deleteInvoiceOutMetadataAttributeById(id, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public void deleteInvoiceOutMetadataAttributeById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteInvoiceOutMetadataAttributeById(id, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить отдельное доп. поле InvoiceOut
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteInvoiceOutMetadataAttributeById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteInvoiceOutMetadataAttributeById(id, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить отдельное доп. поле InvoiceOut
@@ -976,7 +1063,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteInvoiceOutMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteInvoiceOutMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1040,15 +1127,30 @@ if (contentType != null)
    * Удалить отдельный статус InvoiceOut
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @throws ApiException if fails to make API call
    */
-  public void deleteInvoiceOutMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    this.deleteInvoiceOutMetadataStateById(id, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public void deleteInvoiceOutMetadataStateById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteInvoiceOutMetadataStateById(id, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить отдельный статус InvoiceOut
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteInvoiceOutMetadataStateById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteInvoiceOutMetadataStateById(id, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить отдельный статус InvoiceOut
@@ -1060,7 +1162,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteInvoiceOutMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteInvoiceOutMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1125,15 +1227,13 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param positionId ID позиции (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @throws ApiException if fails to make API call
    */
-  public void deleteInvoiceOutPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    this.deleteInvoiceOutPosition(id, positionId, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public void deleteInvoiceOutPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteInvoiceOutPosition(id, positionId, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Удалить позицию Счета покупателю
@@ -1156,7 +1256,6 @@ if (contentType != null)
     this.deleteInvoiceOutPosition(id, positionId, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Удалить позицию Счета покупателю
    * 
@@ -1169,7 +1268,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteInvoiceOutPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteInvoiceOutPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1241,16 +1340,35 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param invoiceOutPosition  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteInvoiceOutBatch200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteInvoiceOutBatch200ResponseInner> deleteInvoiceOutPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid InvoiceOutPosition> invoiceOutPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteInvoiceOutPositionsBatch(id, invoiceOutPosition, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteInvoiceOutBatch200ResponseInner> deleteInvoiceOutPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid InvoiceOutPosition> invoiceOutPosition) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteInvoiceOutPositionsBatch(id, invoiceOutPosition, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Массовое удаление позиций Счета покупателю
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param invoiceOutPosition  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteInvoiceOutBatch200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteInvoiceOutBatch200ResponseInner> deleteInvoiceOutPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid InvoiceOutPosition> invoiceOutPosition, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteInvoiceOutPositionsBatch(id, invoiceOutPosition, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Массовое удаление позиций Счета покупателю
@@ -1264,7 +1382,7 @@ if (contentType != null)
    * @return List&lt;DeleteInvoiceOutBatch200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteInvoiceOutBatch200ResponseInner> deleteInvoiceOutPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid InvoiceOutPosition> invoiceOutPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteInvoiceOutBatch200ResponseInner> deleteInvoiceOutPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid InvoiceOutPosition> invoiceOutPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = invoiceOutPosition;
     
     // verify the required parameter 'id' is set
@@ -1334,16 +1452,14 @@ if (contentType != null)
    * Получить Счет покупателю
    * 
    * @param id ID сущности (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return InvoiceOut
    * @throws ApiException if fails to make API call
    */
-  public InvoiceOut getInvoiceOutById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getInvoiceOutById(id, expand, fields, accept, acceptEncoding, Collections.emptyMap());
+  public InvoiceOut getInvoiceOutById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getInvoiceOutById(id, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить Счет покупателю
@@ -1364,7 +1480,6 @@ if (contentType != null)
     return this.getInvoiceOutById(id, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить Счет покупателю
    * 
@@ -1377,7 +1492,7 @@ if (contentType != null)
    * @return InvoiceOut
    * @throws ApiException if fails to make API call
    */
-  public InvoiceOut getInvoiceOutById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected InvoiceOut getInvoiceOutById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1443,15 +1558,34 @@ if (acceptEncoding != null)
    * Получение Файла Счета покупателю.
    * @param id ID сущности (required)
    * @param fileId ID файла (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return ModelFile
    * @throws ApiException if fails to make API call
    */
-  public ModelFile getInvoiceOutFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID fileId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getInvoiceOutFile(id, fileId, accept, acceptEncoding, Collections.emptyMap());
+  public ModelFile getInvoiceOutFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID fileId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getInvoiceOutFile(id, fileId, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить файл Счета покупателю
+   * Получение Файла Счета покупателю.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param fileId ID файла (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ModelFile
+   * @throws ApiException if fails to make API call
+   */
+  public ModelFile getInvoiceOutFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID fileId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getInvoiceOutFile(id, fileId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить файл Счета покупателю
@@ -1464,7 +1598,7 @@ if (acceptEncoding != null)
    * @return ModelFile
    * @throws ApiException if fails to make API call
    */
-  public ModelFile getInvoiceOutFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID fileId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected ModelFile getInvoiceOutFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID fileId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1533,16 +1667,14 @@ if (acceptEncoding != null)
    * Получить файлы Счета покупателю
    * Запрос на получение списка всех Файлов данного Счета покупателю.
    * @param id ID сущности (required)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return GetProductFiles200Response
    * @throws ApiException if fails to make API call
    */
-  public GetProductFiles200Response getInvoiceOutFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getInvoiceOutFiles(id, limit, offset, accept, acceptEncoding, Collections.emptyMap());
+  public GetProductFiles200Response getInvoiceOutFiles(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getInvoiceOutFiles(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить файлы Счета покупателю
@@ -1563,7 +1695,6 @@ if (acceptEncoding != null)
     return this.getInvoiceOutFiles(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить файлы Счета покупателю
    * Запрос на получение списка всех Файлов данного Счета покупателю.
@@ -1576,7 +1707,7 @@ if (acceptEncoding != null)
    * @return GetProductFiles200Response
    * @throws ApiException if fails to make API call
    */
-  public GetProductFiles200Response getInvoiceOutFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected GetProductFiles200Response getInvoiceOutFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1640,19 +1771,14 @@ if (acceptEncoding != null)
   /**
    * Получить список Счетов покупателям
    * 
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param search Контекстный поиск по строковым полям сущностей (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return InvoiceOutList
    * @throws ApiException if fails to make API call
    */
-  public InvoiceOutList getInvoiceOutList(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getInvoiceOutList(limit, offset, search, expand, fields, accept, acceptEncoding, Collections.emptyMap());
+  public InvoiceOutList getInvoiceOutList() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getInvoiceOutList((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить список Счетов покупателям
@@ -1673,7 +1799,6 @@ if (acceptEncoding != null)
     return this.getInvoiceOutList((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить список Счетов покупателям
    * 
@@ -1688,7 +1813,7 @@ if (acceptEncoding != null)
    * @return InvoiceOutList
    * @throws ApiException if fails to make API call
    */
-  public InvoiceOutList getInvoiceOutList(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected InvoiceOutList getInvoiceOutList(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1749,16 +1874,29 @@ if (acceptEncoding != null)
   /**
    * Метаданные Счетов покупателям
    * 
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return DocumentMetadata
    * @throws ApiException if fails to make API call
    */
-  public DocumentMetadata getInvoiceOutMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.getInvoiceOutMetadata(accept, acceptEncoding, contentType, Collections.emptyMap());
+  public DocumentMetadata getInvoiceOutMetadata() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getInvoiceOutMetadata(null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Метаданные Счетов покупателям
+   * 
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return DocumentMetadata
+   * @throws ApiException if fails to make API call
+   */
+  public DocumentMetadata getInvoiceOutMetadata(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getInvoiceOutMetadata(null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Метаданные Счетов покупателям
@@ -1770,7 +1908,7 @@ if (acceptEncoding != null)
    * @return DocumentMetadata
    * @throws ApiException if fails to make API call
    */
-  public DocumentMetadata getInvoiceOutMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected DocumentMetadata getInvoiceOutMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1828,17 +1966,14 @@ if (contentType != null)
   /**
    * Доп. поля InvoiceOut
    * 
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return AttributeMetaInfoList
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfoList getInvoiceOutMetadataAttribute(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.getInvoiceOutMetadataAttribute(offset, limit, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public AttributeMetaInfoList getInvoiceOutMetadataAttribute() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getInvoiceOutMetadataAttribute((Integer) effectiveOptions.get("offset"), (Integer) effectiveOptions.get("limit"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Доп. поля InvoiceOut
@@ -1857,7 +1992,6 @@ if (contentType != null)
     return this.getInvoiceOutMetadataAttribute((Integer) effectiveOptions.get("offset"), (Integer) effectiveOptions.get("limit"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Доп. поля InvoiceOut
    * 
@@ -1870,7 +2004,7 @@ if (contentType != null)
    * @return AttributeMetaInfoList
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfoList getInvoiceOutMetadataAttribute(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfoList getInvoiceOutMetadataAttribute(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1931,16 +2065,32 @@ if (contentType != null)
    * Отдельное доп. поле InvoiceOut
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo getInvoiceOutMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.getInvoiceOutMetadataAttributeById(id, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public AttributeMetaInfo getInvoiceOutMetadataAttributeById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getInvoiceOutMetadataAttributeById(id, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Отдельное доп. поле InvoiceOut
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo getInvoiceOutMetadataAttributeById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getInvoiceOutMetadataAttributeById(id, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Отдельное доп. поле InvoiceOut
@@ -1953,7 +2103,7 @@ if (contentType != null)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo getInvoiceOutMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfo getInvoiceOutMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -2018,16 +2168,32 @@ if (contentType != null)
    * Отдельный статус InvoiceOut
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return State
    * @throws ApiException if fails to make API call
    */
-  public State getInvoiceOutMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.getInvoiceOutMetadataStateById(id, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public State getInvoiceOutMetadataStateById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getInvoiceOutMetadataStateById(id, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Отдельный статус InvoiceOut
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return State
+   * @throws ApiException if fails to make API call
+   */
+  public State getInvoiceOutMetadataStateById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getInvoiceOutMetadataStateById(id, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Отдельный статус InvoiceOut
@@ -2040,7 +2206,7 @@ if (contentType != null)
    * @return State
    * @throws ApiException if fails to make API call
    */
-  public State getInvoiceOutMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected State getInvoiceOutMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -2106,17 +2272,14 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param positionId ID позиции (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return InvoiceOutPosition
    * @throws ApiException if fails to make API call
    */
-  public InvoiceOutPosition getInvoiceOutPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.getInvoiceOutPositionById(id, positionId, expand, fields, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public InvoiceOutPosition getInvoiceOutPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getInvoiceOutPositionById(id, positionId, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить позицию Счета покупателю
@@ -2141,7 +2304,6 @@ if (contentType != null)
     return this.getInvoiceOutPositionById(id, positionId, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить позицию Счета покупателю
    * 
@@ -2156,7 +2318,7 @@ if (contentType != null)
    * @return InvoiceOutPosition
    * @throws ApiException if fails to make API call
    */
-  public InvoiceOutPosition getInvoiceOutPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected InvoiceOutPosition getInvoiceOutPositionById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -2229,19 +2391,14 @@ if (contentType != null)
    * Получить позиции Счета покупателю
    * 
    * @param id ID сущности (required)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return InvoiceOutPositionList
    * @throws ApiException if fails to make API call
    */
-  public InvoiceOutPositionList getInvoiceOutPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.getInvoiceOutPositions(id, limit, offset, expand, fields, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public InvoiceOutPositionList getInvoiceOutPositions(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getInvoiceOutPositions(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить позиции Счета покупателю
@@ -2265,7 +2422,6 @@ if (contentType != null)
     return this.getInvoiceOutPositions(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить позиции Счета покупателю
    * 
@@ -2281,7 +2437,7 @@ if (contentType != null)
    * @return InvoiceOutPositionList
    * @throws ApiException if fails to make API call
    */
-  public InvoiceOutPositionList getInvoiceOutPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected InvoiceOutPositionList getInvoiceOutPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -2349,17 +2505,33 @@ if (contentType != null)
   /**
    * Шаблон Счета покупателю
    * Предзаполненный шаблон Счета покупателю. Пустое тело — стандартные значения без привязки к документу; в теле можно передать, например, &#x60;customerOrder&#x60; или &#x60;demands&#x60; для шаблона на основе документа. 
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @param body  (optional)
    * @return InvoiceOut
    * @throws ApiException if fails to make API call
    */
-  public InvoiceOut getInvoiceOutTemplate(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, @javax.annotation.Nullable Object body) throws ApiException {
-    return this.getInvoiceOutTemplate(accept, acceptEncoding, contentType, body, Collections.emptyMap());
+  public InvoiceOut getInvoiceOutTemplate(@javax.annotation.Nullable Object body) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getInvoiceOutTemplate(null, null, null, body, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Шаблон Счета покупателю
+   * Предзаполненный шаблон Счета покупателю. Пустое тело — стандартные значения без привязки к документу; в теле можно передать, например, &#x60;customerOrder&#x60; или &#x60;demands&#x60; для шаблона на основе документа. 
+   
+   
+   
+   
+   * @param body  (optional)
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return InvoiceOut
+   * @throws ApiException if fails to make API call
+   */
+  public InvoiceOut getInvoiceOutTemplate(@javax.annotation.Nullable Object body, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getInvoiceOutTemplate(null, null, null, body, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Шаблон Счета покупателю
@@ -2372,7 +2544,7 @@ if (contentType != null)
    * @return InvoiceOut
    * @throws ApiException if fails to make API call
    */
-  public InvoiceOut getInvoiceOutTemplate(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, @javax.annotation.Nullable Object body, Map<String, String> additionalHeaders) throws ApiException {
+  protected InvoiceOut getInvoiceOutTemplate(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, @javax.annotation.Nullable Object body, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = body;
     
     // create path and map variables
@@ -2432,17 +2604,14 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param invoiceOut  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return InvoiceOut
    * @throws ApiException if fails to make API call
    */
-  public InvoiceOut updateInvoiceOut(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull InvoiceOut invoiceOut, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateInvoiceOut(id, invoiceOut, expand, fields, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public InvoiceOut updateInvoiceOut(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull InvoiceOut invoiceOut) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateInvoiceOut(id, invoiceOut, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Изменить Счет покупателю
@@ -2467,7 +2636,6 @@ if (contentType != null)
     return this.updateInvoiceOut(id, invoiceOut, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Изменить Счет покупателю
    * 
@@ -2482,7 +2650,7 @@ if (contentType != null)
    * @return InvoiceOut
    * @throws ApiException if fails to make API call
    */
-  public InvoiceOut updateInvoiceOut(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull InvoiceOut invoiceOut, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected InvoiceOut updateInvoiceOut(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull InvoiceOut invoiceOut, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = invoiceOut;
     
     // verify the required parameter 'id' is set
@@ -2555,16 +2723,35 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param attributeMetaInfo  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo updateInvoiceOutMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateInvoiceOutMetadataAttributeById(id, attributeMetaInfo, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public AttributeMetaInfo updateInvoiceOutMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateInvoiceOutMetadataAttributeById(id, attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Обновить отдельное доп. поле InvoiceOut
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param attributeMetaInfo  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo updateInvoiceOutMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateInvoiceOutMetadataAttributeById(id, attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Обновить отдельное доп. поле InvoiceOut
@@ -2578,7 +2765,7 @@ if (contentType != null)
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
    */
-  public AttributeMetaInfo updateInvoiceOutMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected AttributeMetaInfo updateInvoiceOutMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = attributeMetaInfo;
     
     // verify the required parameter 'id' is set
@@ -2649,16 +2836,35 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param state  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return State
    * @throws ApiException if fails to make API call
    */
-  public State updateInvoiceOutMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateInvoiceOutMetadataStateById(id, state, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public State updateInvoiceOutMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull State state) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateInvoiceOutMetadataStateById(id, state, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Обновить отдельный статус InvoiceOut
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param state  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return State
+   * @throws ApiException if fails to make API call
+   */
+  public State updateInvoiceOutMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull State state, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateInvoiceOutMetadataStateById(id, state, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Обновить отдельный статус InvoiceOut
@@ -2672,7 +2878,7 @@ if (contentType != null)
    * @return State
    * @throws ApiException if fails to make API call
    */
-  public State updateInvoiceOutMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected State updateInvoiceOutMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = state;
     
     // verify the required parameter 'id' is set
@@ -2744,17 +2950,14 @@ if (contentType != null)
    * @param id ID сущности (required)
    * @param positionId ID позиции (required)
    * @param invoiceOutPosition  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return InvoiceOutPosition
    * @throws ApiException if fails to make API call
    */
-  public InvoiceOutPosition updateInvoiceOutPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull InvoiceOutPosition invoiceOutPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateInvoiceOutPosition(id, positionId, invoiceOutPosition, expand, fields, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public InvoiceOutPosition updateInvoiceOutPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull InvoiceOutPosition invoiceOutPosition) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateInvoiceOutPosition(id, positionId, invoiceOutPosition, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Изменить позицию Счета покупателю
@@ -2782,7 +2985,6 @@ if (contentType != null)
     return this.updateInvoiceOutPosition(id, positionId, invoiceOutPosition, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Изменить позицию Счета покупателю
    * 
@@ -2798,7 +3000,7 @@ if (contentType != null)
    * @return InvoiceOutPosition
    * @throws ApiException if fails to make API call
    */
-  public InvoiceOutPosition updateInvoiceOutPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull InvoiceOutPosition invoiceOutPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected InvoiceOutPosition updateInvoiceOutPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID positionId, @javax.annotation.Nonnull InvoiceOutPosition invoiceOutPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = invoiceOutPosition;
     
     // verify the required parameter 'id' is set

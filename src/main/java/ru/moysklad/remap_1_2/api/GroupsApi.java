@@ -36,7 +36,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class GroupsApi extends BaseApi {
 
@@ -52,16 +52,14 @@ public class GroupsApi extends BaseApi {
    * Создать группу
    * Создание новой группы
    * @param group  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Group
    * @throws ApiException if fails to make API call
    */
-  public Group createGroup(@javax.annotation.Nonnull Group group, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createGroup(group, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Group createGroup(@javax.annotation.Nonnull Group group) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createGroup(group, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать группу
@@ -82,7 +80,6 @@ public class GroupsApi extends BaseApi {
     return this.createGroup(group, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать группу
    * Создание новой группы
@@ -95,7 +92,7 @@ public class GroupsApi extends BaseApi {
    * @return Group
    * @throws ApiException if fails to make API call
    */
-  public Group createGroup(@javax.annotation.Nonnull Group group, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Group createGroup(@javax.annotation.Nonnull Group group, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = group;
     
     // verify the required parameter 'group' is set
@@ -160,14 +157,29 @@ if (contentType != null)
    * Удалить группу
    * Удаление группы с указанным id
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteGroup(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteGroup(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteGroup(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteGroup(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить группу
+   * Удаление группы с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteGroup(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteGroup(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить группу
@@ -178,7 +190,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteGroup(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteGroup(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -240,15 +252,14 @@ if (acceptEncoding != null)
    * Получить группу по ID
    * Запрос на получение отдельной группы с указанным id
    * @param id ID сущности (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return Group
    * @throws ApiException if fails to make API call
    */
-  public Group getGroupById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getGroupById(id, expand, accept, acceptEncoding, Collections.emptyMap());
+  public Group getGroupById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getGroupById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить группу по ID
@@ -268,7 +279,6 @@ if (acceptEncoding != null)
     return this.getGroupById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить группу по ID
    * Запрос на получение отдельной группы с указанным id
@@ -280,7 +290,7 @@ if (acceptEncoding != null)
    * @return Group
    * @throws ApiException if fails to make API call
    */
-  public Group getGroupById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected Group getGroupById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -343,20 +353,14 @@ if (acceptEncoding != null)
   /**
    * Получить список групп
    * Запрос всех групп на данной учетной записи
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param search Контекстный поиск по строковым полям сущностей (optional)
-   * @param filter Фильтрация выборки (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param order Сортировка (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return GroupList
    * @throws ApiException if fails to make API call
    */
-  public GroupList getGroups(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getGroups(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  public GroupList getGroups() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getGroups((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить список групп
@@ -378,7 +382,6 @@ if (acceptEncoding != null)
     return this.getGroups((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить список групп
    * Запрос всех групп на данной учетной записи
@@ -394,7 +397,7 @@ if (acceptEncoding != null)
    * @return GroupList
    * @throws ApiException if fails to make API call
    */
-  public GroupList getGroups(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected GroupList getGroups(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -458,16 +461,14 @@ if (acceptEncoding != null)
    * Обновление группы с указанным id
    * @param id ID сущности (required)
    * @param group  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Group
    * @throws ApiException if fails to make API call
    */
-  public Group updateGroup(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Group group, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateGroup(id, group, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Group updateGroup(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Group group) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateGroup(id, group, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Обновить группу
@@ -491,7 +492,6 @@ if (acceptEncoding != null)
     return this.updateGroup(id, group, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Обновить группу
    * Обновление группы с указанным id
@@ -505,7 +505,7 @@ if (acceptEncoding != null)
    * @return Group
    * @throws ApiException if fails to make API call
    */
-  public Group updateGroup(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Group group, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Group updateGroup(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Group group, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = group;
     
     // verify the required parameter 'id' is set

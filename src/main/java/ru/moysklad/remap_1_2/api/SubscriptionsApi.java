@@ -34,7 +34,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class SubscriptionsApi extends BaseApi {
 
@@ -49,15 +49,28 @@ public class SubscriptionsApi extends BaseApi {
   /**
    * Получить Подписку компании
    * Запрос на получение действующей подписки компании
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return Subscription
    * @throws ApiException if fails to make API call
    */
-  public Subscription getSubscription(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getSubscription(accept, acceptEncoding, Collections.emptyMap());
+  public Subscription getSubscription() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getSubscription(null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить Подписку компании
+   * Запрос на получение действующей подписки компании
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Subscription
+   * @throws ApiException if fails to make API call
+   */
+  public Subscription getSubscription(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getSubscription(null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить Подписку компании
@@ -68,7 +81,7 @@ public class SubscriptionsApi extends BaseApi {
    * @return Subscription
    * @throws ApiException if fails to make API call
    */
-  public Subscription getSubscription(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected Subscription getSubscription(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables

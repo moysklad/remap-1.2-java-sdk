@@ -38,7 +38,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ExpenseItemsApi extends BaseApi {
 
@@ -54,16 +54,14 @@ public class ExpenseItemsApi extends BaseApi {
    * Создать статью расходов
    * Создание новой статьи расходов
    * @param expenseItem  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return ExpenseItem
    * @throws ApiException if fails to make API call
    */
-  public ExpenseItem createExpenseItem(@javax.annotation.Nonnull ExpenseItem expenseItem, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createExpenseItem(expenseItem, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public ExpenseItem createExpenseItem(@javax.annotation.Nonnull ExpenseItem expenseItem) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createExpenseItem(expenseItem, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать статью расходов
@@ -84,7 +82,6 @@ public class ExpenseItemsApi extends BaseApi {
     return this.createExpenseItem(expenseItem, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать статью расходов
    * Создание новой статьи расходов
@@ -97,7 +94,7 @@ public class ExpenseItemsApi extends BaseApi {
    * @return ExpenseItem
    * @throws ApiException if fails to make API call
    */
-  public ExpenseItem createExpenseItem(@javax.annotation.Nonnull ExpenseItem expenseItem, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected ExpenseItem createExpenseItem(@javax.annotation.Nonnull ExpenseItem expenseItem, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = expenseItem;
     
     // verify the required parameter 'expenseItem' is set
@@ -162,16 +159,14 @@ if (contentType != null)
    * Создать или изменить статьи расходов
    * Создание или изменение нескольких статей расходов.
    * @param expenseItem  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createExpenseItemsBatch(@javax.annotation.Nonnull List<@Valid ExpenseItem> expenseItem, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createExpenseItemsBatch(expenseItem, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<BatchResponseEntity> createExpenseItemsBatch(@javax.annotation.Nonnull List<@Valid ExpenseItem> expenseItem) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createExpenseItemsBatch(expenseItem, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать или изменить статьи расходов
@@ -192,7 +187,6 @@ if (contentType != null)
     return this.createExpenseItemsBatch(expenseItem, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать или изменить статьи расходов
    * Создание или изменение нескольких статей расходов.
@@ -205,7 +199,7 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createExpenseItemsBatch(@javax.annotation.Nonnull List<@Valid ExpenseItem> expenseItem, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createExpenseItemsBatch(@javax.annotation.Nonnull List<@Valid ExpenseItem> expenseItem, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = expenseItem;
     
     // verify the required parameter 'expenseItem' is set
@@ -270,14 +264,29 @@ if (contentType != null)
    * Удалить статью расходов
    * Удаление Статьи расходов с указанным id
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteExpenseItem(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteExpenseItem(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteExpenseItem(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteExpenseItem(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить статью расходов
+   * Удаление Статьи расходов с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteExpenseItem(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteExpenseItem(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить статью расходов
@@ -288,7 +297,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteExpenseItem(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteExpenseItem(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -350,16 +359,32 @@ if (acceptEncoding != null)
    * Удалить статьи расходов
    * Массовое удаление статей расходов по их мета-объектам.
    * @param expenseItem  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteExpenseItemsBatch(@javax.annotation.Nonnull List<@Valid ExpenseItem> expenseItem, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteExpenseItemsBatch(expenseItem, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteExpenseItemsBatch(@javax.annotation.Nonnull List<@Valid ExpenseItem> expenseItem) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteExpenseItemsBatch(expenseItem, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить статьи расходов
+   * Массовое удаление статей расходов по их мета-объектам.
+   
+   * @param expenseItem  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteExpenseItemsBatch(@javax.annotation.Nonnull List<@Valid ExpenseItem> expenseItem, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteExpenseItemsBatch(expenseItem, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить статьи расходов
@@ -372,7 +397,7 @@ if (acceptEncoding != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteExpenseItemsBatch(@javax.annotation.Nonnull List<@Valid ExpenseItem> expenseItem, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteExpenseItemsBatch(@javax.annotation.Nonnull List<@Valid ExpenseItem> expenseItem, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = expenseItem;
     
     // verify the required parameter 'expenseItem' is set
@@ -436,15 +461,14 @@ if (contentType != null)
    * Получить статью расходов по ID
    * Запрос на получение Статьи расходов с указанным id
    * @param id ID сущности (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return ExpenseItem
    * @throws ApiException if fails to make API call
    */
-  public ExpenseItem getExpenseItemById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getExpenseItemById(id, expand, accept, acceptEncoding, Collections.emptyMap());
+  public ExpenseItem getExpenseItemById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getExpenseItemById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить статью расходов по ID
@@ -464,7 +488,6 @@ if (contentType != null)
     return this.getExpenseItemById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить статью расходов по ID
    * Запрос на получение Статьи расходов с указанным id
@@ -476,7 +499,7 @@ if (contentType != null)
    * @return ExpenseItem
    * @throws ApiException if fails to make API call
    */
-  public ExpenseItem getExpenseItemById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected ExpenseItem getExpenseItemById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -539,20 +562,14 @@ if (acceptEncoding != null)
   /**
    * Получить список статей расходов
    * Запрос всех статей расходов на данной учетной записи
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param search Контекстный поиск по строковым полям сущностей (optional)
-   * @param filter Фильтрация выборки (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param order Сортировка (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return ExpenseItemList
    * @throws ApiException if fails to make API call
    */
-  public ExpenseItemList getExpenseItems(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getExpenseItems(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  public ExpenseItemList getExpenseItems() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getExpenseItems((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить список статей расходов
@@ -574,7 +591,6 @@ if (acceptEncoding != null)
     return this.getExpenseItems((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить список статей расходов
    * Запрос всех статей расходов на данной учетной записи
@@ -590,7 +606,7 @@ if (acceptEncoding != null)
    * @return ExpenseItemList
    * @throws ApiException if fails to make API call
    */
-  public ExpenseItemList getExpenseItems(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected ExpenseItemList getExpenseItems(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -654,16 +670,14 @@ if (acceptEncoding != null)
    * Обновление Статьи расходов с указанным id
    * @param id ID сущности (required)
    * @param expenseItem  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return ExpenseItem
    * @throws ApiException if fails to make API call
    */
-  public ExpenseItem updateExpenseItem(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ExpenseItem expenseItem, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateExpenseItem(id, expenseItem, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public ExpenseItem updateExpenseItem(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ExpenseItem expenseItem) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateExpenseItem(id, expenseItem, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Обновить статью расходов
@@ -687,7 +701,6 @@ if (acceptEncoding != null)
     return this.updateExpenseItem(id, expenseItem, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Обновить статью расходов
    * Обновление Статьи расходов с указанным id
@@ -701,7 +714,7 @@ if (acceptEncoding != null)
    * @return ExpenseItem
    * @throws ApiException if fails to make API call
    */
-  public ExpenseItem updateExpenseItem(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ExpenseItem expenseItem, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected ExpenseItem updateExpenseItem(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ExpenseItem expenseItem, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = expenseItem;
     
     // verify the required parameter 'id' is set

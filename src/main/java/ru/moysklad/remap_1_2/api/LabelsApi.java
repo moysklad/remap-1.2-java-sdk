@@ -35,7 +35,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class LabelsApi extends BaseApi {
 
@@ -53,15 +53,36 @@ public class LabelsApi extends BaseApi {
    * @param id ID сущности (required)
    * @param type Тип сущности, для которой запрашивается печать (required)
    * @param labelPrintRequest  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @throws ApiException if fails to make API call
    */
-  public void printLabels(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull String type, @javax.annotation.Nonnull LabelPrintRequest labelPrintRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    this.printLabels(id, type, labelPrintRequest, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public void printLabels(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull String type, @javax.annotation.Nonnull LabelPrintRequest labelPrintRequest) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.printLabels(id, type, labelPrintRequest, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Запрос на печать этикеток и ценников
+   * Запрос на формирование печатной формы с этикетками и ценниками. В случае готовности сервер возвращает пустой ответ с кодом 303 и заголовком Location. 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param type Тип сущности, для которой запрашивается печать (required)
+   
+   
+   * @param labelPrintRequest  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void printLabels(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull String type, @javax.annotation.Nonnull LabelPrintRequest labelPrintRequest, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.printLabels(id, type, labelPrintRequest, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Запрос на печать этикеток и ценников
@@ -75,7 +96,7 @@ public class LabelsApi extends BaseApi {
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void printLabels(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull String type, @javax.annotation.Nonnull LabelPrintRequest labelPrintRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected void printLabels(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull String type, @javax.annotation.Nonnull LabelPrintRequest labelPrintRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = labelPrintRequest;
     
     // verify the required parameter 'id' is set

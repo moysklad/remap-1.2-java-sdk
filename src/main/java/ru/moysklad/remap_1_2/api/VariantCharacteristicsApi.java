@@ -36,7 +36,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class VariantCharacteristicsApi extends BaseApi {
 
@@ -52,15 +52,31 @@ public class VariantCharacteristicsApi extends BaseApi {
    * Создать Характеристику модификаций
    * 
    * @param variantCharacteristic  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return VariantCharacteristic
    * @throws ApiException if fails to make API call
    */
-  public VariantCharacteristic createVariantCharacteristic(@javax.annotation.Nonnull VariantCharacteristic variantCharacteristic, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.createVariantCharacteristic(variantCharacteristic, accept, acceptEncoding, Collections.emptyMap());
+  public VariantCharacteristic createVariantCharacteristic(@javax.annotation.Nonnull VariantCharacteristic variantCharacteristic) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createVariantCharacteristic(variantCharacteristic, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Создать Характеристику модификаций
+   * 
+   
+   * @param variantCharacteristic  (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return VariantCharacteristic
+   * @throws ApiException if fails to make API call
+   */
+  public VariantCharacteristic createVariantCharacteristic(@javax.annotation.Nonnull VariantCharacteristic variantCharacteristic, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createVariantCharacteristic(variantCharacteristic, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Создать Характеристику модификаций
@@ -72,7 +88,7 @@ public class VariantCharacteristicsApi extends BaseApi {
    * @return VariantCharacteristic
    * @throws ApiException if fails to make API call
    */
-  public VariantCharacteristic createVariantCharacteristic(@javax.annotation.Nonnull VariantCharacteristic variantCharacteristic, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected VariantCharacteristic createVariantCharacteristic(@javax.annotation.Nonnull VariantCharacteristic variantCharacteristic, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = variantCharacteristic;
     
     // verify the required parameter 'variantCharacteristic' is set
@@ -134,15 +150,31 @@ if (acceptEncoding != null)
    * Получить Характеристику модификаций
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return VariantCharacteristic
    * @throws ApiException if fails to make API call
    */
-  public VariantCharacteristic getVariantCharacteristicById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getVariantCharacteristicById(id, accept, acceptEncoding, Collections.emptyMap());
+  public VariantCharacteristic getVariantCharacteristicById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getVariantCharacteristicById(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить Характеристику модификаций
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return VariantCharacteristic
+   * @throws ApiException if fails to make API call
+   */
+  public VariantCharacteristic getVariantCharacteristicById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getVariantCharacteristicById(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить Характеристику модификаций
@@ -154,7 +186,7 @@ if (acceptEncoding != null)
    * @return VariantCharacteristic
    * @throws ApiException if fails to make API call
    */
-  public VariantCharacteristic getVariantCharacteristicById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected VariantCharacteristic getVariantCharacteristicById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -216,15 +248,28 @@ if (acceptEncoding != null)
   /**
    * Получить список Характеристики модификаций
    * 
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return GetVariantCharacteristics200Response
    * @throws ApiException if fails to make API call
    */
-  public GetVariantCharacteristics200Response getVariantCharacteristics(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getVariantCharacteristics(accept, acceptEncoding, Collections.emptyMap());
+  public GetVariantCharacteristics200Response getVariantCharacteristics() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getVariantCharacteristics(null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить список Характеристики модификаций
+   * 
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return GetVariantCharacteristics200Response
+   * @throws ApiException if fails to make API call
+   */
+  public GetVariantCharacteristics200Response getVariantCharacteristics(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getVariantCharacteristics(null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить список Характеристики модификаций
@@ -235,7 +280,7 @@ if (acceptEncoding != null)
    * @return GetVariantCharacteristics200Response
    * @throws ApiException if fails to make API call
    */
-  public GetVariantCharacteristics200Response getVariantCharacteristics(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected GetVariantCharacteristics200Response getVariantCharacteristics(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables

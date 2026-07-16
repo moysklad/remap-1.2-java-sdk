@@ -4,7 +4,7 @@
 
 - API version: 1.0.0
 
-- Build date: 2026-07-06T15:03:48.760568729Z[GMT]
+- Build date: 2026-07-16T11:58:06.724471822Z[GMT]
 
 - Generator version: 7.14.0
 
@@ -1618,9 +1618,15 @@ Class | Method | HTTP request | Description
  - [RetailShiftChequeStart](docs/RetailShiftChequeStart.md)
  - [RetailShiftList](docs/RetailShiftList.md)
  - [RetailShiftOperation](docs/RetailShiftOperation.md)
+ - [RetailShiftOperationPrepayment](docs/RetailShiftOperationPrepayment.md)
+ - [RetailShiftOperationPrepaymentReturn](docs/RetailShiftOperationPrepaymentReturn.md)
+ - [RetailShiftOperationRetailDemand](docs/RetailShiftOperationRetailDemand.md)
+ - [RetailShiftOperationRetailDrawerCashIn](docs/RetailShiftOperationRetailDrawerCashIn.md)
+ - [RetailShiftOperationRetailDrawerCashOut](docs/RetailShiftOperationRetailDrawerCashOut.md)
+ - [RetailShiftOperationRetailSalesReturn](docs/RetailShiftOperationRetailSalesReturn.md)
  - [RetailShiftPaymentOperation](docs/RetailShiftPaymentOperation.md)
- - [RetailShiftPaymentOperationAnyOf](docs/RetailShiftPaymentOperationAnyOf.md)
- - [RetailShiftPaymentOperationAnyOf1](docs/RetailShiftPaymentOperationAnyOf1.md)
+ - [RetailShiftPaymentOperationCashIn](docs/RetailShiftPaymentOperationCashIn.md)
+ - [RetailShiftPaymentOperationPaymentIn](docs/RetailShiftPaymentOperationPaymentIn.md)
  - [RetailShiftPaymentsInner](docs/RetailShiftPaymentsInner.md)
  - [RetailStore](docs/RetailStore.md)
  - [RetailStoreEnvironment](docs/RetailStoreEnvironment.md)

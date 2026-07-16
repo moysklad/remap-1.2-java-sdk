@@ -38,7 +38,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ProductFoldersApi extends BaseApi {
 
@@ -54,16 +54,14 @@ public class ProductFoldersApi extends BaseApi {
    * Создать группу товаров
    * Создание новой группы товаров
    * @param productFolder  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return ProductFolder
    * @throws ApiException if fails to make API call
    */
-  public ProductFolder createProductFolder(@javax.annotation.Nonnull ProductFolder productFolder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createProductFolder(productFolder, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public ProductFolder createProductFolder(@javax.annotation.Nonnull ProductFolder productFolder) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createProductFolder(productFolder, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать группу товаров
@@ -84,7 +82,6 @@ public class ProductFoldersApi extends BaseApi {
     return this.createProductFolder(productFolder, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать группу товаров
    * Создание новой группы товаров
@@ -97,7 +94,7 @@ public class ProductFoldersApi extends BaseApi {
    * @return ProductFolder
    * @throws ApiException if fails to make API call
    */
-  public ProductFolder createProductFolder(@javax.annotation.Nonnull ProductFolder productFolder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected ProductFolder createProductFolder(@javax.annotation.Nonnull ProductFolder productFolder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = productFolder;
     
     // verify the required parameter 'productFolder' is set
@@ -162,16 +159,14 @@ if (contentType != null)
    * Создать или изменить группы товаров
    * Создание или изменение нескольких групп товаров.
    * @param productFolder  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createProductFoldersBatch(@javax.annotation.Nonnull List<@Valid ProductFolder> productFolder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createProductFoldersBatch(productFolder, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<BatchResponseEntity> createProductFoldersBatch(@javax.annotation.Nonnull List<@Valid ProductFolder> productFolder) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createProductFoldersBatch(productFolder, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать или изменить группы товаров
@@ -192,7 +187,6 @@ if (contentType != null)
     return this.createProductFoldersBatch(productFolder, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать или изменить группы товаров
    * Создание или изменение нескольких групп товаров.
@@ -205,7 +199,7 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createProductFoldersBatch(@javax.annotation.Nonnull List<@Valid ProductFolder> productFolder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createProductFoldersBatch(@javax.annotation.Nonnull List<@Valid ProductFolder> productFolder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = productFolder;
     
     // verify the required parameter 'productFolder' is set
@@ -270,14 +264,29 @@ if (contentType != null)
    * Удалить группу товаров
    * Удаление группы товаров с указанным id
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteProductFolder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteProductFolder(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteProductFolder(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteProductFolder(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить группу товаров
+   * Удаление группы товаров с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteProductFolder(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteProductFolder(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить группу товаров
@@ -288,7 +297,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteProductFolder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteProductFolder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -350,16 +359,32 @@ if (acceptEncoding != null)
    * Удалить группы товаров
    * Массовое удаление групп товаров по их мета-объектам.
    * @param productFolder  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteProductFoldersBatch(@javax.annotation.Nonnull List<@Valid ProductFolder> productFolder, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteProductFoldersBatch(productFolder, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteProductFoldersBatch(@javax.annotation.Nonnull List<@Valid ProductFolder> productFolder) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteProductFoldersBatch(productFolder, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить группы товаров
+   * Массовое удаление групп товаров по их мета-объектам.
+   
+   * @param productFolder  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteProductFoldersBatch(@javax.annotation.Nonnull List<@Valid ProductFolder> productFolder, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteProductFoldersBatch(productFolder, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить группы товаров
@@ -372,7 +397,7 @@ if (acceptEncoding != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteProductFoldersBatch(@javax.annotation.Nonnull List<@Valid ProductFolder> productFolder, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteProductFoldersBatch(@javax.annotation.Nonnull List<@Valid ProductFolder> productFolder, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = productFolder;
     
     // verify the required parameter 'productFolder' is set
@@ -436,15 +461,14 @@ if (contentType != null)
    * Получить группу товаров по ID
    * Запрос на получение отдельной группы товаров с указанным id
    * @param id ID сущности (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return ProductFolder
    * @throws ApiException if fails to make API call
    */
-  public ProductFolder getProductFolderById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getProductFolderById(id, expand, accept, acceptEncoding, Collections.emptyMap());
+  public ProductFolder getProductFolderById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProductFolderById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить группу товаров по ID
@@ -464,7 +488,6 @@ if (contentType != null)
     return this.getProductFolderById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить группу товаров по ID
    * Запрос на получение отдельной группы товаров с указанным id
@@ -476,7 +499,7 @@ if (contentType != null)
    * @return ProductFolder
    * @throws ApiException if fails to make API call
    */
-  public ProductFolder getProductFolderById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected ProductFolder getProductFolderById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -539,20 +562,14 @@ if (acceptEncoding != null)
   /**
    * Получить список групп товаров
    * Запрос всех групп товаров на данной учетной записи
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param search Контекстный поиск по строковым полям сущностей (optional)
-   * @param filter Фильтрация выборки (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param order Сортировка (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return ProductFolderList
    * @throws ApiException if fails to make API call
    */
-  public ProductFolderList getProductFolders(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getProductFolders(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  public ProductFolderList getProductFolders() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProductFolders((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить список групп товаров
@@ -574,7 +591,6 @@ if (acceptEncoding != null)
     return this.getProductFolders((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить список групп товаров
    * Запрос всех групп товаров на данной учетной записи
@@ -590,7 +606,7 @@ if (acceptEncoding != null)
    * @return ProductFolderList
    * @throws ApiException if fails to make API call
    */
-  public ProductFolderList getProductFolders(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected ProductFolderList getProductFolders(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -654,16 +670,14 @@ if (acceptEncoding != null)
    * Обновление группы товаров с указанным id
    * @param id ID сущности (required)
    * @param productFolder  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return ProductFolder
    * @throws ApiException if fails to make API call
    */
-  public ProductFolder updateProductFolder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProductFolder productFolder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateProductFolder(id, productFolder, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public ProductFolder updateProductFolder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProductFolder productFolder) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateProductFolder(id, productFolder, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Обновить группу товаров
@@ -687,7 +701,6 @@ if (acceptEncoding != null)
     return this.updateProductFolder(id, productFolder, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Обновить группу товаров
    * Обновление группы товаров с указанным id
@@ -701,7 +714,7 @@ if (acceptEncoding != null)
    * @return ProductFolder
    * @throws ApiException if fails to make API call
    */
-  public ProductFolder updateProductFolder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProductFolder productFolder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected ProductFolder updateProductFolder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProductFolder productFolder, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = productFolder;
     
     // verify the required parameter 'id' is set

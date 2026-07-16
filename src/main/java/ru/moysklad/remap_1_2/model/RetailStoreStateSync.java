@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   RetailStoreStateSync.JSON_PROPERTY_LAST_ATTEMP_MOMENT
 })
 @JsonTypeName("RetailStore_state_sync")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStoreStateSync {
 
   public static final String JSON_PROPERTY_MESSAGE = "message";

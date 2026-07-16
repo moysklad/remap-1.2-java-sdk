@@ -38,7 +38,7 @@ import java.util.StringJoiner;
   EmbeddedTemplate.JSON_PROPERTY_ID,
   EmbeddedTemplate.JSON_PROPERTY_ACCOUNT_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 public class EmbeddedTemplate {
   public static EmbeddedTemplate createWithMeta(UUID id) {
     EmbeddedTemplate o = new EmbeddedTemplate();

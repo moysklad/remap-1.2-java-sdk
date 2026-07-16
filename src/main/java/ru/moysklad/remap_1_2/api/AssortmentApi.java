@@ -37,7 +37,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class AssortmentApi extends BaseApi {
 
@@ -53,16 +53,32 @@ public class AssortmentApi extends BaseApi {
    * Удалить позиции ассортимента
    * Массовое удаление позиций в Ассортименте
    * @param assortment  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteAssortmentPositionsBatch(@javax.annotation.Nonnull List<@Valid Assortment> assortment, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteAssortmentPositionsBatch(assortment, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteAssortmentPositionsBatch(@javax.annotation.Nonnull List<@Valid Assortment> assortment) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteAssortmentPositionsBatch(assortment, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить позиции ассортимента
+   * Массовое удаление позиций в Ассортименте
+   
+   * @param assortment  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteAssortmentPositionsBatch(@javax.annotation.Nonnull List<@Valid Assortment> assortment, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteAssortmentPositionsBatch(assortment, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить позиции ассортимента
@@ -75,7 +91,7 @@ public class AssortmentApi extends BaseApi {
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteAssortmentPositionsBatch(@javax.annotation.Nonnull List<@Valid Assortment> assortment, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteAssortmentPositionsBatch(@javax.annotation.Nonnull List<@Valid Assortment> assortment, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = assortment;
     
     // verify the required parameter 'assortment' is set
@@ -138,23 +154,14 @@ if (contentType != null)
   /**
    * Получить список ассортимента
    * Запрос всех товаров, услуг, комплектов, модификаций и партий в виде списка
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param search Контекстный поиск по строковым полям сущностей (optional)
-   * @param filter Фильтрация выборки (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param order Сортировка (optional)
-   * @param groupBy Параметр группировки (product, variant, consignment) (optional)
-   * @param stockMode Фильтрация по значению остатка (optional)
-   * @param quantityMode Фильтрация по значению доступно (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return AssortmentList
    * @throws ApiException if fails to make API call
    */
-  public AssortmentList getAssortment(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String stockMode, @javax.annotation.Nullable String quantityMode, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getAssortment(limit, offset, search, filter, expand, order, groupBy, stockMode, quantityMode, accept, acceptEncoding, Collections.emptyMap());
+  public AssortmentList getAssortment() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getAssortment((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), (String) effectiveOptions.get("groupBy"), (String) effectiveOptions.get("stockMode"), (String) effectiveOptions.get("quantityMode"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить список ассортимента
@@ -179,7 +186,6 @@ if (contentType != null)
     return this.getAssortment((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), (String) effectiveOptions.get("groupBy"), (String) effectiveOptions.get("stockMode"), (String) effectiveOptions.get("quantityMode"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить список ассортимента
    * Запрос всех товаров, услуг, комплектов, модификаций и партий в виде списка
@@ -198,7 +204,7 @@ if (contentType != null)
    * @return AssortmentList
    * @throws ApiException if fails to make API call
    */
-  public AssortmentList getAssortment(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String stockMode, @javax.annotation.Nullable String quantityMode, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected AssortmentList getAssortment(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String stockMode, @javax.annotation.Nullable String quantityMode, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -263,15 +269,28 @@ if (acceptEncoding != null)
   /**
    * Получить настройки ассортимента
    * Запрос на получение настроек справочника товаров
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return AssortmentSettings
    * @throws ApiException if fails to make API call
    */
-  public AssortmentSettings getAssortmentSettings(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getAssortmentSettings(accept, acceptEncoding, Collections.emptyMap());
+  public AssortmentSettings getAssortmentSettings() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getAssortmentSettings(null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить настройки ассортимента
+   * Запрос на получение настроек справочника товаров
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AssortmentSettings
+   * @throws ApiException if fails to make API call
+   */
+  public AssortmentSettings getAssortmentSettings(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getAssortmentSettings(null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить настройки ассортимента
@@ -282,7 +301,7 @@ if (acceptEncoding != null)
    * @return AssortmentSettings
    * @throws ApiException if fails to make API call
    */
-  public AssortmentSettings getAssortmentSettings(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected AssortmentSettings getAssortmentSettings(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -339,16 +358,32 @@ if (acceptEncoding != null)
    * Изменить настройки ассортимента
    * Запрос на изменение настроек справочника товаров
    * @param assortmentSettings  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return AssortmentSettings
    * @throws ApiException if fails to make API call
    */
-  public AssortmentSettings updateAssortmentSettings(@javax.annotation.Nonnull AssortmentSettings assortmentSettings, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateAssortmentSettings(assortmentSettings, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public AssortmentSettings updateAssortmentSettings(@javax.annotation.Nonnull AssortmentSettings assortmentSettings) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateAssortmentSettings(assortmentSettings, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Изменить настройки ассортимента
+   * Запрос на изменение настроек справочника товаров
+   
+   * @param assortmentSettings  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AssortmentSettings
+   * @throws ApiException if fails to make API call
+   */
+  public AssortmentSettings updateAssortmentSettings(@javax.annotation.Nonnull AssortmentSettings assortmentSettings, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateAssortmentSettings(assortmentSettings, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Изменить настройки ассортимента
@@ -361,7 +396,7 @@ if (acceptEncoding != null)
    * @return AssortmentSettings
    * @throws ApiException if fails to make API call
    */
-  public AssortmentSettings updateAssortmentSettings(@javax.annotation.Nonnull AssortmentSettings assortmentSettings, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected AssortmentSettings updateAssortmentSettings(@javax.annotation.Nonnull AssortmentSettings assortmentSettings, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = assortmentSettings;
     
     // verify the required parameter 'assortmentSettings' is set

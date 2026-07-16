@@ -43,7 +43,7 @@ import java.util.StringJoiner;
   ExpenseItem.JSON_PROPERTY_NAME,
   ExpenseItem.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 public class ExpenseItem extends EntityWithMeta {
   public static ExpenseItem createWithMeta(UUID id) {
     ExpenseItem o = new ExpenseItem();

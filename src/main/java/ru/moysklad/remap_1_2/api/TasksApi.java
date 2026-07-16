@@ -43,7 +43,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class TasksApi extends BaseApi {
 
@@ -59,16 +59,14 @@ public class TasksApi extends BaseApi {
    * Создать задачу
    * Создание новой задачи
    * @param task  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Task
    * @throws ApiException if fails to make API call
    */
-  public Task createTask(@javax.annotation.Nonnull Task task, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createTask(task, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Task createTask(@javax.annotation.Nonnull Task task) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createTask(task, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать задачу
@@ -89,7 +87,6 @@ public class TasksApi extends BaseApi {
     return this.createTask(task, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать задачу
    * Создание новой задачи
@@ -102,7 +99,7 @@ public class TasksApi extends BaseApi {
    * @return Task
    * @throws ApiException if fails to make API call
    */
-  public Task createTask(@javax.annotation.Nonnull Task task, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Task createTask(@javax.annotation.Nonnull Task task, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = task;
     
     // verify the required parameter 'task' is set
@@ -167,16 +164,32 @@ if (contentType != null)
    * Создать или изменить типы задач
    * Создание одного или нескольких типов задач
    * @param state  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return State
    * @throws ApiException if fails to make API call
    */
-  public State createTaskMetadataStates(@javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createTaskMetadataStates(state, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public State createTaskMetadataStates(@javax.annotation.Nonnull State state) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createTaskMetadataStates(state, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Создать или изменить типы задач
+   * Создание одного или нескольких типов задач
+   
+   * @param state  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return State
+   * @throws ApiException if fails to make API call
+   */
+  public State createTaskMetadataStates(@javax.annotation.Nonnull State state, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createTaskMetadataStates(state, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Создать или изменить типы задач
@@ -189,7 +202,7 @@ if (contentType != null)
    * @return State
    * @throws ApiException if fails to make API call
    */
-  public State createTaskMetadataStates(@javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected State createTaskMetadataStates(@javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = state;
     
     // verify the required parameter 'state' is set
@@ -253,16 +266,32 @@ if (contentType != null)
    * Массовое создание и обновление типов задач
    * 
    * @param state  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;StateRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<StateRowResult> createTaskMetadataStatesBatch(@javax.annotation.Nonnull List<@Valid State> state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createTaskMetadataStatesBatch(state, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<StateRowResult> createTaskMetadataStatesBatch(@javax.annotation.Nonnull List<@Valid State> state) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createTaskMetadataStatesBatch(state, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Массовое создание и обновление типов задач
+   * 
+   
+   * @param state  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;StateRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<StateRowResult> createTaskMetadataStatesBatch(@javax.annotation.Nonnull List<@Valid State> state, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createTaskMetadataStatesBatch(state, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Массовое создание и обновление типов задач
@@ -275,7 +304,7 @@ if (contentType != null)
    * @return List&lt;StateRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<StateRowResult> createTaskMetadataStatesBatch(@javax.annotation.Nonnull List<@Valid State> state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<StateRowResult> createTaskMetadataStatesBatch(@javax.annotation.Nonnull List<@Valid State> state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = state;
     
     // verify the required parameter 'state' is set
@@ -340,16 +369,35 @@ if (contentType != null)
    * Создание комментария к Задаче
    * @param id ID сущности (required)
    * @param taskNote  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return TaskNote
    * @throws ApiException if fails to make API call
    */
-  public TaskNote createTaskNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull TaskNote taskNote, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createTaskNote(id, taskNote, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public TaskNote createTaskNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull TaskNote taskNote) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createTaskNote(id, taskNote, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Создать комментарий Задачи
+   * Создание комментария к Задаче
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param taskNote  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return TaskNote
+   * @throws ApiException if fails to make API call
+   */
+  public TaskNote createTaskNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull TaskNote taskNote, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createTaskNote(id, taskNote, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Создать комментарий Задачи
@@ -363,7 +411,7 @@ if (contentType != null)
    * @return TaskNote
    * @throws ApiException if fails to make API call
    */
-  public TaskNote createTaskNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull TaskNote taskNote, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected TaskNote createTaskNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull TaskNote taskNote, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = taskNote;
     
     // verify the required parameter 'id' is set
@@ -434,16 +482,35 @@ if (contentType != null)
    * Создание нескольких комментариев к Задаче.
    * @param id ID сущности (required)
    * @param taskNote  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createTaskNotesBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid TaskNote> taskNote, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createTaskNotesBatch(id, taskNote, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<BatchResponseEntity> createTaskNotesBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid TaskNote> taskNote) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createTaskNotesBatch(id, taskNote, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Создать комментарии Задачи
+   * Создание нескольких комментариев к Задаче.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param taskNote  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<BatchResponseEntity> createTaskNotesBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid TaskNote> taskNote, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createTaskNotesBatch(id, taskNote, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Создать комментарии Задачи
@@ -457,7 +524,7 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createTaskNotesBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid TaskNote> taskNote, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createTaskNotesBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid TaskNote> taskNote, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = taskNote;
     
     // verify the required parameter 'id' is set
@@ -527,16 +594,14 @@ if (contentType != null)
    * Создать или изменить задачи
    * Создание или изменение нескольких задач.
    * @param task  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createTasksBatch(@javax.annotation.Nonnull List<@Valid Task> task, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createTasksBatch(task, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<BatchResponseEntity> createTasksBatch(@javax.annotation.Nonnull List<@Valid Task> task) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createTasksBatch(task, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать или изменить задачи
@@ -557,7 +622,6 @@ if (contentType != null)
     return this.createTasksBatch(task, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать или изменить задачи
    * Создание или изменение нескольких задач.
@@ -570,7 +634,7 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createTasksBatch(@javax.annotation.Nonnull List<@Valid Task> task, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createTasksBatch(@javax.annotation.Nonnull List<@Valid Task> task, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = task;
     
     // verify the required parameter 'task' is set
@@ -635,14 +699,29 @@ if (contentType != null)
    * Удалить задачу
    * Удаление задачи с указанным id
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteTask(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteTask(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteTask(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteTask(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить задачу
+   * Удаление задачи с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteTask(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteTask(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить задачу
@@ -653,7 +732,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteTask(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteTask(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -715,15 +794,30 @@ if (acceptEncoding != null)
    * Удалить тип задачи
    * Удаление типа задачи с указанным id
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @throws ApiException if fails to make API call
    */
-  public void deleteTaskMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    this.deleteTaskMetadataStateById(id, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public void deleteTaskMetadataStateById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteTaskMetadataStateById(id, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить тип задачи
+   * Удаление типа задачи с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteTaskMetadataStateById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteTaskMetadataStateById(id, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить тип задачи
@@ -735,7 +829,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteTaskMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteTaskMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -800,14 +894,32 @@ if (contentType != null)
    * Удаление комментария к Задаче с указанным id
    * @param id ID сущности (required)
    * @param noteId ID комментария к Задаче (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteTaskNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID noteId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteTaskNote(id, noteId, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteTaskNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID noteId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteTaskNote(id, noteId, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить комментарий к Задаче
+   * Удаление комментария к Задаче с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param noteId ID комментария к Задаче (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteTaskNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID noteId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteTaskNote(id, noteId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить комментарий к Задаче
@@ -819,7 +931,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteTaskNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID noteId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteTaskNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID noteId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -888,15 +1000,33 @@ if (acceptEncoding != null)
    * Массовое удаление комментариев к Задаче по их мета-объектам
    * @param id ID сущности (required)
    * @param taskNote  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @throws ApiException if fails to make API call
    */
-  public void deleteTaskNotesBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid TaskNote> taskNote, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    this.deleteTaskNotesBatch(id, taskNote, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public void deleteTaskNotesBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid TaskNote> taskNote) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteTaskNotesBatch(id, taskNote, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить комментарии к Задаче
+   * Массовое удаление комментариев к Задаче по их мета-объектам
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param taskNote  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteTaskNotesBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid TaskNote> taskNote, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteTaskNotesBatch(id, taskNote, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить комментарии к Задаче
@@ -909,7 +1039,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteTaskNotesBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid TaskNote> taskNote, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteTaskNotesBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid TaskNote> taskNote, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = taskNote;
     
     // verify the required parameter 'id' is set
@@ -978,16 +1108,32 @@ if (contentType != null)
    * Удалить задачи
    * Массовое удаление задач по их мета-объектам
    * @param task  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteTasksBatch(@javax.annotation.Nonnull List<@Valid Task> task, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteTasksBatch(task, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteTasksBatch(@javax.annotation.Nonnull List<@Valid Task> task) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteTasksBatch(task, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить задачи
+   * Массовое удаление задач по их мета-объектам
+   
+   * @param task  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteTasksBatch(@javax.annotation.Nonnull List<@Valid Task> task, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteTasksBatch(task, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить задачи
@@ -1000,7 +1146,7 @@ if (contentType != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteTasksBatch(@javax.annotation.Nonnull List<@Valid Task> task, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteTasksBatch(@javax.annotation.Nonnull List<@Valid Task> task, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = task;
     
     // verify the required parameter 'task' is set
@@ -1064,15 +1210,14 @@ if (contentType != null)
    * Получить задачу по ID
    * Запрос задачи с указанным id
    * @param id ID сущности (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return Task
    * @throws ApiException if fails to make API call
    */
-  public Task getTaskById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getTaskById(id, expand, accept, acceptEncoding, Collections.emptyMap());
+  public Task getTaskById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getTaskById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить задачу по ID
@@ -1092,7 +1237,6 @@ if (contentType != null)
     return this.getTaskById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить задачу по ID
    * Запрос задачи с указанным id
@@ -1104,7 +1248,7 @@ if (contentType != null)
    * @return Task
    * @throws ApiException if fails to make API call
    */
-  public Task getTaskById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected Task getTaskById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1167,15 +1311,28 @@ if (acceptEncoding != null)
   /**
    * Получить метаданные задач
    * Запрос на получение метаданных задач
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return DocumentMetadata
    * @throws ApiException if fails to make API call
    */
-  public DocumentMetadata getTaskMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getTaskMetadata(accept, acceptEncoding, Collections.emptyMap());
+  public DocumentMetadata getTaskMetadata() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getTaskMetadata(null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить метаданные задач
+   * Запрос на получение метаданных задач
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return DocumentMetadata
+   * @throws ApiException if fails to make API call
+   */
+  public DocumentMetadata getTaskMetadata(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getTaskMetadata(null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить метаданные задач
@@ -1186,7 +1343,7 @@ if (acceptEncoding != null)
    * @return DocumentMetadata
    * @throws ApiException if fails to make API call
    */
-  public DocumentMetadata getTaskMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected DocumentMetadata getTaskMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1244,15 +1401,34 @@ if (acceptEncoding != null)
    * Запрос на получение отдельного комментария к Задаче с указанным id
    * @param id ID сущности (required)
    * @param noteId ID комментария к Задаче (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return TaskNote
    * @throws ApiException if fails to make API call
    */
-  public TaskNote getTaskNoteById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID noteId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getTaskNoteById(id, noteId, accept, acceptEncoding, Collections.emptyMap());
+  public TaskNote getTaskNoteById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID noteId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getTaskNoteById(id, noteId, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить комментарий к Задаче по ID
+   * Запрос на получение отдельного комментария к Задаче с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param noteId ID комментария к Задаче (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return TaskNote
+   * @throws ApiException if fails to make API call
+   */
+  public TaskNote getTaskNoteById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID noteId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getTaskNoteById(id, noteId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить комментарий к Задаче по ID
@@ -1265,7 +1441,7 @@ if (acceptEncoding != null)
    * @return TaskNote
    * @throws ApiException if fails to make API call
    */
-  public TaskNote getTaskNoteById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID noteId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected TaskNote getTaskNoteById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID noteId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1334,19 +1510,14 @@ if (acceptEncoding != null)
    * Получить комментарии Задачи
    * Запрос на получение списка всех комментариев данной Задачи
    * @param id ID сущности (required)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param updatedBy Автор последнего обновления (uid, используется для фильтрации) (optional)
-   * @param updatedFrom Нижняя граница даты обновления в формате YYYY-MM-DD HH:MM:SS[.mmm] (optional)
-   * @param updatedTo Верхняя граница даты обновления в формате YYYY-MM-DD HH:MM:SS[.mmm] (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return TaskNoteList
    * @throws ApiException if fails to make API call
    */
-  public TaskNoteList getTaskNotes(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String updatedBy, @javax.annotation.Nullable String updatedFrom, @javax.annotation.Nullable String updatedTo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getTaskNotes(id, limit, offset, updatedBy, updatedFrom, updatedTo, accept, acceptEncoding, Collections.emptyMap());
+  public TaskNoteList getTaskNotes(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getTaskNotes(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("updatedBy"), (String) effectiveOptions.get("updatedFrom"), (String) effectiveOptions.get("updatedTo"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить комментарии Задачи
@@ -1370,7 +1541,6 @@ if (acceptEncoding != null)
     return this.getTaskNotes(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("updatedBy"), (String) effectiveOptions.get("updatedFrom"), (String) effectiveOptions.get("updatedTo"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить комментарии Задачи
    * Запрос на получение списка всех комментариев данной Задачи
@@ -1386,7 +1556,7 @@ if (acceptEncoding != null)
    * @return TaskNoteList
    * @throws ApiException if fails to make API call
    */
-  public TaskNoteList getTaskNotes(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String updatedBy, @javax.annotation.Nullable String updatedFrom, @javax.annotation.Nullable String updatedTo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected TaskNoteList getTaskNotes(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String updatedBy, @javax.annotation.Nullable String updatedFrom, @javax.annotation.Nullable String updatedTo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1453,19 +1623,14 @@ if (acceptEncoding != null)
   /**
    * Получить список задач
    * Запрос всех задач на данной учетной записи
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param filter Фильтрация выборки (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param order Сортировка (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return TaskList
    * @throws ApiException if fails to make API call
    */
-  public TaskList getTasks(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getTasks(limit, offset, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  public TaskList getTasks() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getTasks((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить список задач
@@ -1486,7 +1651,6 @@ if (acceptEncoding != null)
     return this.getTasks((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить список задач
    * Запрос всех задач на данной учетной записи
@@ -1501,7 +1665,7 @@ if (acceptEncoding != null)
    * @return TaskList
    * @throws ApiException if fails to make API call
    */
-  public TaskList getTasks(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected TaskList getTasks(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1564,16 +1728,14 @@ if (acceptEncoding != null)
    * Обновление задачи с указанным id
    * @param id ID сущности (required)
    * @param task  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Task
    * @throws ApiException if fails to make API call
    */
-  public Task updateTask(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Task task, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateTask(id, task, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Task updateTask(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Task task) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateTask(id, task, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Обновить задачу
@@ -1597,7 +1759,6 @@ if (acceptEncoding != null)
     return this.updateTask(id, task, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Обновить задачу
    * Обновление задачи с указанным id
@@ -1611,7 +1772,7 @@ if (acceptEncoding != null)
    * @return Task
    * @throws ApiException if fails to make API call
    */
-  public Task updateTask(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Task task, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Task updateTask(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Task task, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = task;
     
     // verify the required parameter 'id' is set
@@ -1683,16 +1844,35 @@ if (contentType != null)
    * Обновление типа задачи с указанным id
    * @param id ID сущности (required)
    * @param state  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return State
    * @throws ApiException if fails to make API call
    */
-  public State updateTaskMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateTaskMetadataStateById(id, state, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public State updateTaskMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull State state) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateTaskMetadataStateById(id, state, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Обновить тип задачи
+   * Обновление типа задачи с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param state  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return State
+   * @throws ApiException if fails to make API call
+   */
+  public State updateTaskMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull State state, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateTaskMetadataStateById(id, state, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Обновить тип задачи
@@ -1706,7 +1886,7 @@ if (contentType != null)
    * @return State
    * @throws ApiException if fails to make API call
    */
-  public State updateTaskMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected State updateTaskMetadataStateById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull State state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = state;
     
     // verify the required parameter 'id' is set
@@ -1778,16 +1958,38 @@ if (contentType != null)
    * @param id ID сущности (required)
    * @param noteId ID комментария к Задаче (required)
    * @param taskNote  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return TaskNote
    * @throws ApiException if fails to make API call
    */
-  public TaskNote updateTaskNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID noteId, @javax.annotation.Nonnull TaskNote taskNote, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateTaskNote(id, noteId, taskNote, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public TaskNote updateTaskNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID noteId, @javax.annotation.Nonnull TaskNote taskNote) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateTaskNote(id, noteId, taskNote, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Обновить комментарий к Задаче
+   * Обновление комментария к Задаче с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param noteId ID комментария к Задаче (required)
+   
+   
+   * @param taskNote  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return TaskNote
+   * @throws ApiException if fails to make API call
+   */
+  public TaskNote updateTaskNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID noteId, @javax.annotation.Nonnull TaskNote taskNote, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateTaskNote(id, noteId, taskNote, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Обновить комментарий к Задаче
@@ -1802,7 +2004,7 @@ if (contentType != null)
    * @return TaskNote
    * @throws ApiException if fails to make API call
    */
-  public TaskNote updateTaskNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID noteId, @javax.annotation.Nonnull TaskNote taskNote, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected TaskNote updateTaskNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID noteId, @javax.annotation.Nonnull TaskNote taskNote, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = taskNote;
     
     // verify the required parameter 'id' is set

@@ -36,7 +36,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class CashiersApi extends BaseApi {
 
@@ -53,15 +53,14 @@ public class CashiersApi extends BaseApi {
    * 
    * @param retailStoreId  (required)
    * @param id ID сущности (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return Cashier
    * @throws ApiException if fails to make API call
    */
-  public Cashier getCashierById(@javax.annotation.Nonnull UUID retailStoreId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getCashierById(retailStoreId, id, expand, accept, acceptEncoding, Collections.emptyMap());
+  public Cashier getCashierById(@javax.annotation.Nonnull UUID retailStoreId, @javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getCashierById(retailStoreId, id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить Кассира
@@ -84,7 +83,6 @@ public class CashiersApi extends BaseApi {
     return this.getCashierById(retailStoreId, id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить Кассира
    * 
@@ -97,7 +95,7 @@ public class CashiersApi extends BaseApi {
    * @return Cashier
    * @throws ApiException if fails to make API call
    */
-  public Cashier getCashierById(@javax.annotation.Nonnull UUID retailStoreId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected Cashier getCashierById(@javax.annotation.Nonnull UUID retailStoreId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'retailStoreId' is set
@@ -167,20 +165,14 @@ if (acceptEncoding != null)
    * Получить Кассиров
    * 
    * @param retailStoreId  (required)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param search Контекстный поиск по строковым полям сущностей (optional)
-   * @param filter Фильтрация выборки (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param order Сортировка (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return CashierList
    * @throws ApiException if fails to make API call
    */
-  public CashierList getCashiers(@javax.annotation.Nonnull UUID retailStoreId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getCashiers(retailStoreId, limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  public CashierList getCashiers(@javax.annotation.Nonnull UUID retailStoreId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getCashiers(retailStoreId, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить Кассиров
@@ -205,7 +197,6 @@ if (acceptEncoding != null)
     return this.getCashiers(retailStoreId, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить Кассиров
    * 
@@ -222,7 +213,7 @@ if (acceptEncoding != null)
    * @return CashierList
    * @throws ApiException if fails to make API call
    */
-  public CashierList getCashiers(@javax.annotation.Nonnull UUID retailStoreId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected CashierList getCashiers(@javax.annotation.Nonnull UUID retailStoreId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'retailStoreId' is set

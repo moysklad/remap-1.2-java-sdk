@@ -38,7 +38,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class CustomEntitiesApi extends BaseApi {
 
@@ -54,16 +54,32 @@ public class CustomEntitiesApi extends BaseApi {
    * Создать пользовательский справочник
    * Создание нового пользовательского справочника
    * @param customEntity  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return CustomEntity
    * @throws ApiException if fails to make API call
    */
-  public CustomEntity createCustomEntity(@javax.annotation.Nonnull CustomEntity customEntity, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createCustomEntity(customEntity, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public CustomEntity createCustomEntity(@javax.annotation.Nonnull CustomEntity customEntity) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createCustomEntity(customEntity, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Создать пользовательский справочник
+   * Создание нового пользовательского справочника
+   
+   * @param customEntity  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return CustomEntity
+   * @throws ApiException if fails to make API call
+   */
+  public CustomEntity createCustomEntity(@javax.annotation.Nonnull CustomEntity customEntity, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createCustomEntity(customEntity, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Создать пользовательский справочник
@@ -76,7 +92,7 @@ public class CustomEntitiesApi extends BaseApi {
    * @return CustomEntity
    * @throws ApiException if fails to make API call
    */
-  public CustomEntity createCustomEntity(@javax.annotation.Nonnull CustomEntity customEntity, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected CustomEntity createCustomEntity(@javax.annotation.Nonnull CustomEntity customEntity, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = customEntity;
     
     // verify the required parameter 'customEntity' is set
@@ -141,16 +157,14 @@ if (contentType != null)
    * Создание нового элемента пользовательского справочника
    * @param id ID сущности (required)
    * @param customEntityElement  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return CustomEntityElement
    * @throws ApiException if fails to make API call
    */
-  public CustomEntityElement createCustomEntityElement(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CustomEntityElement customEntityElement, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createCustomEntityElement(id, customEntityElement, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public CustomEntityElement createCustomEntityElement(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CustomEntityElement customEntityElement) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createCustomEntityElement(id, customEntityElement, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать элемент пользовательского справочника
@@ -174,7 +188,6 @@ if (contentType != null)
     return this.createCustomEntityElement(id, customEntityElement, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать элемент пользовательского справочника
    * Создание нового элемента пользовательского справочника
@@ -188,7 +201,7 @@ if (contentType != null)
    * @return CustomEntityElement
    * @throws ApiException if fails to make API call
    */
-  public CustomEntityElement createCustomEntityElement(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CustomEntityElement customEntityElement, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected CustomEntityElement createCustomEntityElement(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CustomEntityElement customEntityElement, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = customEntityElement;
     
     // verify the required parameter 'id' is set
@@ -259,14 +272,29 @@ if (contentType != null)
    * Удалить пользовательский справочник
    * Удаление пользовательского справочника с указанным id
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteCustomEntity(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteCustomEntity(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteCustomEntity(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteCustomEntity(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить пользовательский справочник
+   * Удаление пользовательского справочника с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteCustomEntity(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteCustomEntity(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить пользовательский справочник
@@ -277,7 +305,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteCustomEntity(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteCustomEntity(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -340,14 +368,32 @@ if (acceptEncoding != null)
    * Удаление элемента пользовательского справочника с указанным id
    * @param metadataId  (required)
    * @param id  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteCustomEntityElement(@javax.annotation.Nonnull UUID metadataId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteCustomEntityElement(metadataId, id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteCustomEntityElement(@javax.annotation.Nonnull UUID metadataId, @javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteCustomEntityElement(metadataId, id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить элемент пользовательского справочника
+   * Удаление элемента пользовательского справочника с указанным id
+   
+   * @param metadataId  (required)
+   
+   
+   * @param id  (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteCustomEntityElement(@javax.annotation.Nonnull UUID metadataId, @javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteCustomEntityElement(metadataId, id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить элемент пользовательского справочника
@@ -359,7 +405,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteCustomEntityElement(@javax.annotation.Nonnull UUID metadataId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteCustomEntityElement(@javax.annotation.Nonnull UUID metadataId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'metadataId' is set
@@ -428,15 +474,14 @@ if (acceptEncoding != null)
    * Получить элемент пользовательского справочника с указанным id
    * @param metadataId  (required)
    * @param id  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
    * @return CustomEntityElement
    * @throws ApiException if fails to make API call
    */
-  public CustomEntityElement getCustomEntityElementById(@javax.annotation.Nonnull UUID metadataId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand) throws ApiException {
-    return this.getCustomEntityElementById(metadataId, id, accept, acceptEncoding, expand, Collections.emptyMap());
+  public CustomEntityElement getCustomEntityElementById(@javax.annotation.Nonnull UUID metadataId, @javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getCustomEntityElementById(metadataId, id, null, null, (String) effectiveOptions.get("expand"), effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить элемент пользовательского справочника
@@ -459,7 +504,6 @@ if (acceptEncoding != null)
     return this.getCustomEntityElementById(metadataId, id, null, null, (String) effectiveOptions.get("expand"), effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить элемент пользовательского справочника
    * Получить элемент пользовательского справочника с указанным id
@@ -472,7 +516,7 @@ if (acceptEncoding != null)
    * @return CustomEntityElement
    * @throws ApiException if fails to make API call
    */
-  public CustomEntityElement getCustomEntityElementById(@javax.annotation.Nonnull UUID metadataId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, Map<String, String> additionalHeaders) throws ApiException {
+  protected CustomEntityElement getCustomEntityElementById(@javax.annotation.Nonnull UUID metadataId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'metadataId' is set
@@ -542,15 +586,14 @@ if (acceptEncoding != null)
    * Получить элементы пользовательского справочника
    * Получить все элементы пользовательского справочника
    * @param id ID сущности (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return CustomEntityElementList
    * @throws ApiException if fails to make API call
    */
-  public CustomEntityElementList getCustomEntityElements(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getCustomEntityElements(id, expand, accept, acceptEncoding, Collections.emptyMap());
+  public CustomEntityElementList getCustomEntityElements(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getCustomEntityElements(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить элементы пользовательского справочника
@@ -570,7 +613,6 @@ if (acceptEncoding != null)
     return this.getCustomEntityElements(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить элементы пользовательского справочника
    * Получить все элементы пользовательского справочника
@@ -582,7 +624,7 @@ if (acceptEncoding != null)
    * @return CustomEntityElementList
    * @throws ApiException if fails to make API call
    */
-  public CustomEntityElementList getCustomEntityElements(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected CustomEntityElementList getCustomEntityElements(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -646,15 +688,14 @@ if (acceptEncoding != null)
    * Метаданные пользовательского справочника
    * Запрос метаданных пользовательского справочника
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
    * @return CustomEntityMetadata
    * @throws ApiException if fails to make API call
    */
-  public CustomEntityMetadata getCustomEntityMetadata(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand) throws ApiException {
-    return this.getCustomEntityMetadata(id, accept, acceptEncoding, expand, Collections.emptyMap());
+  public CustomEntityMetadata getCustomEntityMetadata(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getCustomEntityMetadata(id, null, null, (String) effectiveOptions.get("expand"), effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Метаданные пользовательского справочника
@@ -674,7 +715,6 @@ if (acceptEncoding != null)
     return this.getCustomEntityMetadata(id, null, null, (String) effectiveOptions.get("expand"), effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Метаданные пользовательского справочника
    * Запрос метаданных пользовательского справочника
@@ -686,7 +726,7 @@ if (acceptEncoding != null)
    * @return CustomEntityMetadata
    * @throws ApiException if fails to make API call
    */
-  public CustomEntityMetadata getCustomEntityMetadata(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, Map<String, String> additionalHeaders) throws ApiException {
+  protected CustomEntityMetadata getCustomEntityMetadata(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -751,16 +791,14 @@ if (acceptEncoding != null)
    * Обновление пользовательского справочника с указанным id
    * @param id ID сущности (required)
    * @param customEntity  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return CustomEntity
    * @throws ApiException if fails to make API call
    */
-  public CustomEntity updateCustomEntity(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CustomEntity customEntity, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateCustomEntity(id, customEntity, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public CustomEntity updateCustomEntity(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CustomEntity customEntity) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateCustomEntity(id, customEntity, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Изменить пользовательский справочник
@@ -784,7 +822,6 @@ if (acceptEncoding != null)
     return this.updateCustomEntity(id, customEntity, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Изменить пользовательский справочник
    * Обновление пользовательского справочника с указанным id
@@ -798,7 +835,7 @@ if (acceptEncoding != null)
    * @return CustomEntity
    * @throws ApiException if fails to make API call
    */
-  public CustomEntity updateCustomEntity(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CustomEntity customEntity, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected CustomEntity updateCustomEntity(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CustomEntity customEntity, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = customEntity;
     
     // verify the required parameter 'id' is set
@@ -871,16 +908,14 @@ if (contentType != null)
    * @param metadataId  (required)
    * @param id  (required)
    * @param customEntityElement  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
    * @return CustomEntityElement
    * @throws ApiException if fails to make API call
    */
-  public CustomEntityElement updateCustomEntityElement(@javax.annotation.Nonnull UUID metadataId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CustomEntityElement customEntityElement, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, @javax.annotation.Nullable String expand) throws ApiException {
-    return this.updateCustomEntityElement(metadataId, id, customEntityElement, accept, acceptEncoding, contentType, expand, Collections.emptyMap());
+  public CustomEntityElement updateCustomEntityElement(@javax.annotation.Nonnull UUID metadataId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CustomEntityElement customEntityElement) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateCustomEntityElement(metadataId, id, customEntityElement, null, null, null, (String) effectiveOptions.get("expand"), effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Изменить элемент пользовательского справочника
@@ -907,7 +942,6 @@ if (contentType != null)
     return this.updateCustomEntityElement(metadataId, id, customEntityElement, null, null, null, (String) effectiveOptions.get("expand"), effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Изменить элемент пользовательского справочника
    * Обновление элемента пользовательского справочника с указанным id
@@ -922,7 +956,7 @@ if (contentType != null)
    * @return CustomEntityElement
    * @throws ApiException if fails to make API call
    */
-  public CustomEntityElement updateCustomEntityElement(@javax.annotation.Nonnull UUID metadataId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CustomEntityElement customEntityElement, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, @javax.annotation.Nullable String expand, Map<String, String> additionalHeaders) throws ApiException {
+  protected CustomEntityElement updateCustomEntityElement(@javax.annotation.Nonnull UUID metadataId, @javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CustomEntityElement customEntityElement, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, @javax.annotation.Nullable String expand, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = customEntityElement;
     
     // verify the required parameter 'metadataId' is set

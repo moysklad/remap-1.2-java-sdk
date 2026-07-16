@@ -38,7 +38,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class WebhooksApi extends BaseApi {
 
@@ -54,16 +54,14 @@ public class WebhooksApi extends BaseApi {
    * Массовое создание и обновление вебхуков
    * Массовое создание и обновление вебхуков. Обновляемые вебхуки должны содержать идентификатор в виде метаданных. 
    * @param webhook  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createOrUpdateWebhooksBatch(@javax.annotation.Nonnull List<@Valid Webhook> webhook, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createOrUpdateWebhooksBatch(webhook, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<BatchResponseEntity> createOrUpdateWebhooksBatch(@javax.annotation.Nonnull List<@Valid Webhook> webhook) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createOrUpdateWebhooksBatch(webhook, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Массовое создание и обновление вебхуков
@@ -84,7 +82,6 @@ public class WebhooksApi extends BaseApi {
     return this.createOrUpdateWebhooksBatch(webhook, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Массовое создание и обновление вебхуков
    * Массовое создание и обновление вебхуков. Обновляемые вебхуки должны содержать идентификатор в виде метаданных. 
@@ -97,7 +94,7 @@ public class WebhooksApi extends BaseApi {
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createOrUpdateWebhooksBatch(@javax.annotation.Nonnull List<@Valid Webhook> webhook, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createOrUpdateWebhooksBatch(@javax.annotation.Nonnull List<@Valid Webhook> webhook, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = webhook;
     
     // verify the required parameter 'webhook' is set
@@ -162,16 +159,14 @@ if (contentType != null)
    * Создать вебхук
    * Создание вебхука. Сочетание entityType, action, url должно быть уникальным. 
    * @param webhook  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Webhook
    * @throws ApiException if fails to make API call
    */
-  public Webhook createWebhook(@javax.annotation.Nonnull Webhook webhook, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createWebhook(webhook, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Webhook createWebhook(@javax.annotation.Nonnull Webhook webhook) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createWebhook(webhook, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать вебхук
@@ -192,7 +187,6 @@ if (contentType != null)
     return this.createWebhook(webhook, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать вебхук
    * Создание вебхука. Сочетание entityType, action, url должно быть уникальным. 
@@ -205,7 +199,7 @@ if (contentType != null)
    * @return Webhook
    * @throws ApiException if fails to make API call
    */
-  public Webhook createWebhook(@javax.annotation.Nonnull Webhook webhook, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Webhook createWebhook(@javax.annotation.Nonnull Webhook webhook, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = webhook;
     
     // verify the required parameter 'webhook' is set
@@ -270,14 +264,29 @@ if (contentType != null)
    * Удалить вебхук
    * Удаление вебхука с указанным id
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteWebhook(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteWebhook(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteWebhook(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteWebhook(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить вебхук
+   * Удаление вебхука с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteWebhook(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteWebhook(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить вебхук
@@ -288,7 +297,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteWebhook(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteWebhook(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -350,16 +359,32 @@ if (acceptEncoding != null)
    * Массовое удаление вебхуков
    * Массовое удаление вебхуков по массиву метаданных
    * @param webhook  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteWebhooksBatch(@javax.annotation.Nonnull List<@Valid Webhook> webhook, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteWebhooksBatch(webhook, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteWebhooksBatch(@javax.annotation.Nonnull List<@Valid Webhook> webhook) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteWebhooksBatch(webhook, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Массовое удаление вебхуков
+   * Массовое удаление вебхуков по массиву метаданных
+   
+   * @param webhook  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteWebhooksBatch(@javax.annotation.Nonnull List<@Valid Webhook> webhook, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteWebhooksBatch(webhook, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Массовое удаление вебхуков
@@ -372,7 +397,7 @@ if (acceptEncoding != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteWebhooksBatch(@javax.annotation.Nonnull List<@Valid Webhook> webhook, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteWebhooksBatch(@javax.annotation.Nonnull List<@Valid Webhook> webhook, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = webhook;
     
     // verify the required parameter 'webhook' is set
@@ -436,15 +461,14 @@ if (contentType != null)
    * Получить вебхук по ID
    * Запрос на получение отдельного вебхука с указанным id
    * @param id ID сущности (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return Webhook
    * @throws ApiException if fails to make API call
    */
-  public Webhook getWebhookById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getWebhookById(id, expand, accept, acceptEncoding, Collections.emptyMap());
+  public Webhook getWebhookById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getWebhookById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить вебхук по ID
@@ -464,7 +488,6 @@ if (contentType != null)
     return this.getWebhookById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить вебхук по ID
    * Запрос на получение отдельного вебхука с указанным id
@@ -476,7 +499,7 @@ if (contentType != null)
    * @return Webhook
    * @throws ApiException if fails to make API call
    */
-  public Webhook getWebhookById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected Webhook getWebhookById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -539,20 +562,14 @@ if (acceptEncoding != null)
   /**
    * Получить список вебхуков
    * Запрос на получение всех вебхуков на данной учетной записи
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param search Контекстный поиск по строковым полям сущностей (optional)
-   * @param filter Фильтрация выборки (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param order Сортировка (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return WebhookList
    * @throws ApiException if fails to make API call
    */
-  public WebhookList getWebhooks(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getWebhooks(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  public WebhookList getWebhooks() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getWebhooks((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить список вебхуков
@@ -574,7 +591,6 @@ if (acceptEncoding != null)
     return this.getWebhooks((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить список вебхуков
    * Запрос на получение всех вебхуков на данной учетной записи
@@ -590,7 +606,7 @@ if (acceptEncoding != null)
    * @return WebhookList
    * @throws ApiException if fails to make API call
    */
-  public WebhookList getWebhooks(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected WebhookList getWebhooks(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -654,16 +670,14 @@ if (acceptEncoding != null)
    * Изменение сведений о вебхуке (включая отключение через enabled)
    * @param id ID сущности (required)
    * @param webhook  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Webhook
    * @throws ApiException if fails to make API call
    */
-  public Webhook updateWebhook(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Webhook webhook, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateWebhook(id, webhook, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Webhook updateWebhook(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Webhook webhook) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateWebhook(id, webhook, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Изменить вебхук
@@ -687,7 +701,6 @@ if (acceptEncoding != null)
     return this.updateWebhook(id, webhook, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Изменить вебхук
    * Изменение сведений о вебхуке (включая отключение через enabled)
@@ -701,7 +714,7 @@ if (acceptEncoding != null)
    * @return Webhook
    * @throws ApiException if fails to make API call
    */
-  public Webhook updateWebhook(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Webhook webhook, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Webhook updateWebhook(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Webhook webhook, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = webhook;
     
     // verify the required parameter 'id' is set

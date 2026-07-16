@@ -38,7 +38,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class SalesChannelsApi extends BaseApi {
 
@@ -54,16 +54,14 @@ public class SalesChannelsApi extends BaseApi {
    * Создать Канал продаж
    * Создание нового Канала продаж
    * @param salesChannel  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return SalesChannel
    * @throws ApiException if fails to make API call
    */
-  public SalesChannel createSalesChannel(@javax.annotation.Nonnull SalesChannel salesChannel, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createSalesChannel(salesChannel, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public SalesChannel createSalesChannel(@javax.annotation.Nonnull SalesChannel salesChannel) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createSalesChannel(salesChannel, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать Канал продаж
@@ -84,7 +82,6 @@ public class SalesChannelsApi extends BaseApi {
     return this.createSalesChannel(salesChannel, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать Канал продаж
    * Создание нового Канала продаж
@@ -97,7 +94,7 @@ public class SalesChannelsApi extends BaseApi {
    * @return SalesChannel
    * @throws ApiException if fails to make API call
    */
-  public SalesChannel createSalesChannel(@javax.annotation.Nonnull SalesChannel salesChannel, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected SalesChannel createSalesChannel(@javax.annotation.Nonnull SalesChannel salesChannel, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = salesChannel;
     
     // verify the required parameter 'salesChannel' is set
@@ -162,16 +159,14 @@ if (contentType != null)
    * Создать или изменить Каналы продаж
    * Создание или изменение нескольких Каналов продаж.
    * @param salesChannel  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createSalesChannelsBatch(@javax.annotation.Nonnull List<@Valid SalesChannel> salesChannel, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createSalesChannelsBatch(salesChannel, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<BatchResponseEntity> createSalesChannelsBatch(@javax.annotation.Nonnull List<@Valid SalesChannel> salesChannel) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createSalesChannelsBatch(salesChannel, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать или изменить Каналы продаж
@@ -192,7 +187,6 @@ if (contentType != null)
     return this.createSalesChannelsBatch(salesChannel, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать или изменить Каналы продаж
    * Создание или изменение нескольких Каналов продаж.
@@ -205,7 +199,7 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createSalesChannelsBatch(@javax.annotation.Nonnull List<@Valid SalesChannel> salesChannel, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createSalesChannelsBatch(@javax.annotation.Nonnull List<@Valid SalesChannel> salesChannel, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = salesChannel;
     
     // verify the required parameter 'salesChannel' is set
@@ -270,14 +264,29 @@ if (contentType != null)
    * Удалить Канал продаж
    * Удаление Канала продаж с указанным id
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteSalesChannel(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteSalesChannel(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteSalesChannel(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteSalesChannel(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить Канал продаж
+   * Удаление Канала продаж с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteSalesChannel(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteSalesChannel(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить Канал продаж
@@ -288,7 +297,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteSalesChannel(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteSalesChannel(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -350,16 +359,32 @@ if (acceptEncoding != null)
    * Удалить Каналы продаж
    * Массовое удаление Каналов продаж по их мета-объектам
    * @param salesChannel  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteSalesChannelsBatch(@javax.annotation.Nonnull List<@Valid SalesChannel> salesChannel, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteSalesChannelsBatch(salesChannel, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteSalesChannelsBatch(@javax.annotation.Nonnull List<@Valid SalesChannel> salesChannel) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteSalesChannelsBatch(salesChannel, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить Каналы продаж
+   * Массовое удаление Каналов продаж по их мета-объектам
+   
+   * @param salesChannel  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteSalesChannelsBatch(@javax.annotation.Nonnull List<@Valid SalesChannel> salesChannel, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteSalesChannelsBatch(salesChannel, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить Каналы продаж
@@ -372,7 +397,7 @@ if (acceptEncoding != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteSalesChannelsBatch(@javax.annotation.Nonnull List<@Valid SalesChannel> salesChannel, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteSalesChannelsBatch(@javax.annotation.Nonnull List<@Valid SalesChannel> salesChannel, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = salesChannel;
     
     // verify the required parameter 'salesChannel' is set
@@ -436,15 +461,14 @@ if (contentType != null)
    * Получить Канал продаж по ID
    * Запрос на получение отдельного Канала продаж с указанным id
    * @param id ID сущности (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return SalesChannel
    * @throws ApiException if fails to make API call
    */
-  public SalesChannel getSalesChannelById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getSalesChannelById(id, expand, accept, acceptEncoding, Collections.emptyMap());
+  public SalesChannel getSalesChannelById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getSalesChannelById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить Канал продаж по ID
@@ -464,7 +488,6 @@ if (contentType != null)
     return this.getSalesChannelById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить Канал продаж по ID
    * Запрос на получение отдельного Канала продаж с указанным id
@@ -476,7 +499,7 @@ if (contentType != null)
    * @return SalesChannel
    * @throws ApiException if fails to make API call
    */
-  public SalesChannel getSalesChannelById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected SalesChannel getSalesChannelById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -539,20 +562,14 @@ if (acceptEncoding != null)
   /**
    * Получить Каналы продаж
    * Запрос на получение списка всех каналов продаж на данной учетной записи
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param search Контекстный поиск по строковым полям сущностей (optional)
-   * @param filter Фильтрация выборки (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param order Сортировка (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return SalesChannelList
    * @throws ApiException if fails to make API call
    */
-  public SalesChannelList getSalesChannels(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getSalesChannels(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  public SalesChannelList getSalesChannels() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getSalesChannels((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить Каналы продаж
@@ -574,7 +591,6 @@ if (acceptEncoding != null)
     return this.getSalesChannels((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить Каналы продаж
    * Запрос на получение списка всех каналов продаж на данной учетной записи
@@ -590,7 +606,7 @@ if (acceptEncoding != null)
    * @return SalesChannelList
    * @throws ApiException if fails to make API call
    */
-  public SalesChannelList getSalesChannels(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected SalesChannelList getSalesChannels(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -654,16 +670,14 @@ if (acceptEncoding != null)
    * Обновление Канала продаж с указанным id
    * @param id ID сущности (required)
    * @param salesChannel  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return SalesChannel
    * @throws ApiException if fails to make API call
    */
-  public SalesChannel updateSalesChannel(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SalesChannel salesChannel, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateSalesChannel(id, salesChannel, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public SalesChannel updateSalesChannel(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SalesChannel salesChannel) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateSalesChannel(id, salesChannel, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Обновить Канал продаж
@@ -687,7 +701,6 @@ if (acceptEncoding != null)
     return this.updateSalesChannel(id, salesChannel, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Обновить Канал продаж
    * Обновление Канала продаж с указанным id
@@ -701,7 +714,7 @@ if (acceptEncoding != null)
    * @return SalesChannel
    * @throws ApiException if fails to make API call
    */
-  public SalesChannel updateSalesChannel(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SalesChannel salesChannel, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected SalesChannel updateSalesChannel(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SalesChannel salesChannel, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = salesChannel;
     
     // verify the required parameter 'id' is set

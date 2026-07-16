@@ -37,7 +37,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class BonusProgramsApi extends BaseApi {
 
@@ -53,16 +53,14 @@ public class BonusProgramsApi extends BaseApi {
    * Создать бонусную программу
    * Создание новой бонусной программы
    * @param bonusProgram  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return BonusProgram
    * @throws ApiException if fails to make API call
    */
-  public BonusProgram createBonusProgram(@javax.annotation.Nonnull BonusProgram bonusProgram, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createBonusProgram(bonusProgram, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public BonusProgram createBonusProgram(@javax.annotation.Nonnull BonusProgram bonusProgram) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createBonusProgram(bonusProgram, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать бонусную программу
@@ -83,7 +81,6 @@ public class BonusProgramsApi extends BaseApi {
     return this.createBonusProgram(bonusProgram, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать бонусную программу
    * Создание новой бонусной программы
@@ -96,7 +93,7 @@ public class BonusProgramsApi extends BaseApi {
    * @return BonusProgram
    * @throws ApiException if fails to make API call
    */
-  public BonusProgram createBonusProgram(@javax.annotation.Nonnull BonusProgram bonusProgram, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected BonusProgram createBonusProgram(@javax.annotation.Nonnull BonusProgram bonusProgram, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = bonusProgram;
     
     // verify the required parameter 'bonusProgram' is set
@@ -161,14 +158,29 @@ if (contentType != null)
    * Удалить бонусную программу
    * Удаление бонусной программы с указанным id
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteBonusProgram(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteBonusProgram(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteBonusProgram(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteBonusProgram(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить бонусную программу
+   * Удаление бонусной программы с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteBonusProgram(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteBonusProgram(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить бонусную программу
@@ -179,7 +191,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteBonusProgram(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteBonusProgram(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -241,16 +253,32 @@ if (acceptEncoding != null)
    * Удалить бонусные программы
    * Массовое удаление бонусных программ по их мета-объектам.
    * @param bonusProgram  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteBonusProgramsBatch(@javax.annotation.Nonnull List<@Valid BonusProgram> bonusProgram, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteBonusProgramsBatch(bonusProgram, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteBonusProgramsBatch(@javax.annotation.Nonnull List<@Valid BonusProgram> bonusProgram) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteBonusProgramsBatch(bonusProgram, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить бонусные программы
+   * Массовое удаление бонусных программ по их мета-объектам.
+   
+   * @param bonusProgram  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteBonusProgramsBatch(@javax.annotation.Nonnull List<@Valid BonusProgram> bonusProgram, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteBonusProgramsBatch(bonusProgram, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить бонусные программы
@@ -263,7 +291,7 @@ if (acceptEncoding != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteBonusProgramsBatch(@javax.annotation.Nonnull List<@Valid BonusProgram> bonusProgram, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteBonusProgramsBatch(@javax.annotation.Nonnull List<@Valid BonusProgram> bonusProgram, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = bonusProgram;
     
     // verify the required parameter 'bonusProgram' is set
@@ -327,15 +355,14 @@ if (contentType != null)
    * Получить бонусную программу по ID
    * Запрос бонусной программы с указанным id
    * @param id ID сущности (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return BonusProgram
    * @throws ApiException if fails to make API call
    */
-  public BonusProgram getBonusProgramById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getBonusProgramById(id, expand, accept, acceptEncoding, Collections.emptyMap());
+  public BonusProgram getBonusProgramById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getBonusProgramById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить бонусную программу по ID
@@ -355,7 +382,6 @@ if (contentType != null)
     return this.getBonusProgramById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить бонусную программу по ID
    * Запрос бонусной программы с указанным id
@@ -367,7 +393,7 @@ if (contentType != null)
    * @return BonusProgram
    * @throws ApiException if fails to make API call
    */
-  public BonusProgram getBonusProgramById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected BonusProgram getBonusProgramById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -430,20 +456,14 @@ if (acceptEncoding != null)
   /**
    * Получить список бонусных программ
    * Запрос всех бонусных программ на данной учетной записи
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param search Контекстный поиск по строковым полям сущностей (optional)
-   * @param filter Фильтрация выборки (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param order Сортировка (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return BonusProgramList
    * @throws ApiException if fails to make API call
    */
-  public BonusProgramList getBonusPrograms(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getBonusPrograms(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  public BonusProgramList getBonusPrograms() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getBonusPrograms((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить список бонусных программ
@@ -465,7 +485,6 @@ if (acceptEncoding != null)
     return this.getBonusPrograms((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить список бонусных программ
    * Запрос всех бонусных программ на данной учетной записи
@@ -481,7 +500,7 @@ if (acceptEncoding != null)
    * @return BonusProgramList
    * @throws ApiException if fails to make API call
    */
-  public BonusProgramList getBonusPrograms(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected BonusProgramList getBonusPrograms(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -545,16 +564,14 @@ if (acceptEncoding != null)
    * Запрос на изменение бонусной программы с указанным id
    * @param id ID сущности (required)
    * @param bonusProgram  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return BonusProgram
    * @throws ApiException if fails to make API call
    */
-  public BonusProgram updateBonusProgram(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull BonusProgram bonusProgram, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateBonusProgram(id, bonusProgram, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public BonusProgram updateBonusProgram(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull BonusProgram bonusProgram) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateBonusProgram(id, bonusProgram, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Изменить бонусную программу
@@ -578,7 +595,6 @@ if (acceptEncoding != null)
     return this.updateBonusProgram(id, bonusProgram, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Изменить бонусную программу
    * Запрос на изменение бонусной программы с указанным id
@@ -592,7 +608,7 @@ if (acceptEncoding != null)
    * @return BonusProgram
    * @throws ApiException if fails to make API call
    */
-  public BonusProgram updateBonusProgram(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull BonusProgram bonusProgram, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected BonusProgram updateBonusProgram(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull BonusProgram bonusProgram, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = bonusProgram;
     
     // verify the required parameter 'id' is set

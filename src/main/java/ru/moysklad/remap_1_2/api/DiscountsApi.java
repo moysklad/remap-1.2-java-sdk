@@ -39,7 +39,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class DiscountsApi extends BaseApi {
 
@@ -55,16 +55,32 @@ public class DiscountsApi extends BaseApi {
    * Создать накопительную скидку
    * Запрос на создание накопительной скидки
    * @param accumulationDiscount  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return AccumulationDiscount
    * @throws ApiException if fails to make API call
    */
-  public AccumulationDiscount createAccumulationDiscount(@javax.annotation.Nonnull AccumulationDiscount accumulationDiscount, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createAccumulationDiscount(accumulationDiscount, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public AccumulationDiscount createAccumulationDiscount(@javax.annotation.Nonnull AccumulationDiscount accumulationDiscount) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createAccumulationDiscount(accumulationDiscount, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Создать накопительную скидку
+   * Запрос на создание накопительной скидки
+   
+   * @param accumulationDiscount  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AccumulationDiscount
+   * @throws ApiException if fails to make API call
+   */
+  public AccumulationDiscount createAccumulationDiscount(@javax.annotation.Nonnull AccumulationDiscount accumulationDiscount, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createAccumulationDiscount(accumulationDiscount, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Создать накопительную скидку
@@ -77,7 +93,7 @@ public class DiscountsApi extends BaseApi {
    * @return AccumulationDiscount
    * @throws ApiException if fails to make API call
    */
-  public AccumulationDiscount createAccumulationDiscount(@javax.annotation.Nonnull AccumulationDiscount accumulationDiscount, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected AccumulationDiscount createAccumulationDiscount(@javax.annotation.Nonnull AccumulationDiscount accumulationDiscount, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = accumulationDiscount;
     
     // verify the required parameter 'accumulationDiscount' is set
@@ -141,16 +157,32 @@ if (contentType != null)
    * Создать персональную скидку
    * Запрос на создание персональной скидки
    * @param personalDiscount  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return PersonalDiscount
    * @throws ApiException if fails to make API call
    */
-  public PersonalDiscount createPersonalDiscount(@javax.annotation.Nonnull PersonalDiscount personalDiscount, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createPersonalDiscount(personalDiscount, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public PersonalDiscount createPersonalDiscount(@javax.annotation.Nonnull PersonalDiscount personalDiscount) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createPersonalDiscount(personalDiscount, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Создать персональную скидку
+   * Запрос на создание персональной скидки
+   
+   * @param personalDiscount  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return PersonalDiscount
+   * @throws ApiException if fails to make API call
+   */
+  public PersonalDiscount createPersonalDiscount(@javax.annotation.Nonnull PersonalDiscount personalDiscount, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createPersonalDiscount(personalDiscount, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Создать персональную скидку
@@ -163,7 +195,7 @@ if (contentType != null)
    * @return PersonalDiscount
    * @throws ApiException if fails to make API call
    */
-  public PersonalDiscount createPersonalDiscount(@javax.annotation.Nonnull PersonalDiscount personalDiscount, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected PersonalDiscount createPersonalDiscount(@javax.annotation.Nonnull PersonalDiscount personalDiscount, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = personalDiscount;
     
     // verify the required parameter 'personalDiscount' is set
@@ -227,16 +259,32 @@ if (contentType != null)
    * Создать специальную цену (specialpricediscount)
    * Запрос на создание специальной цены
    * @param specialPriceDiscount  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return SpecialPriceDiscount
    * @throws ApiException if fails to make API call
    */
-  public SpecialPriceDiscount createSpecialPriceDiscount(@javax.annotation.Nonnull SpecialPriceDiscount specialPriceDiscount, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createSpecialPriceDiscount(specialPriceDiscount, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public SpecialPriceDiscount createSpecialPriceDiscount(@javax.annotation.Nonnull SpecialPriceDiscount specialPriceDiscount) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createSpecialPriceDiscount(specialPriceDiscount, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Создать специальную цену (specialpricediscount)
+   * Запрос на создание специальной цены
+   
+   * @param specialPriceDiscount  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return SpecialPriceDiscount
+   * @throws ApiException if fails to make API call
+   */
+  public SpecialPriceDiscount createSpecialPriceDiscount(@javax.annotation.Nonnull SpecialPriceDiscount specialPriceDiscount, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createSpecialPriceDiscount(specialPriceDiscount, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Создать специальную цену (specialpricediscount)
@@ -249,7 +297,7 @@ if (contentType != null)
    * @return SpecialPriceDiscount
    * @throws ApiException if fails to make API call
    */
-  public SpecialPriceDiscount createSpecialPriceDiscount(@javax.annotation.Nonnull SpecialPriceDiscount specialPriceDiscount, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected SpecialPriceDiscount createSpecialPriceDiscount(@javax.annotation.Nonnull SpecialPriceDiscount specialPriceDiscount, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = specialPriceDiscount;
     
     // verify the required parameter 'specialPriceDiscount' is set
@@ -313,14 +361,29 @@ if (contentType != null)
    * Удалить накопительную скидку
    * Удаление накопительной скидки с указанным id
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteAccumulationDiscount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteAccumulationDiscount(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteAccumulationDiscount(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteAccumulationDiscount(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить накопительную скидку
+   * Удаление накопительной скидки с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteAccumulationDiscount(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteAccumulationDiscount(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить накопительную скидку
@@ -331,7 +394,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteAccumulationDiscount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteAccumulationDiscount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -393,14 +456,29 @@ if (acceptEncoding != null)
    * Удалить персональную скидку
    * Удаление персональной скидки с указанным id
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deletePersonalDiscount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deletePersonalDiscount(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deletePersonalDiscount(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deletePersonalDiscount(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить персональную скидку
+   * Удаление персональной скидки с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deletePersonalDiscount(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deletePersonalDiscount(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить персональную скидку
@@ -411,7 +489,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deletePersonalDiscount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deletePersonalDiscount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -473,14 +551,29 @@ if (acceptEncoding != null)
    * Удалить специальную цену
    * Удаление специальной цены с указанным id
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteSpecialPriceDiscount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteSpecialPriceDiscount(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteSpecialPriceDiscount(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteSpecialPriceDiscount(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить специальную цену
+   * Удаление специальной цены с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteSpecialPriceDiscount(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteSpecialPriceDiscount(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить специальную цену
@@ -491,7 +584,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteSpecialPriceDiscount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteSpecialPriceDiscount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -553,15 +646,31 @@ if (acceptEncoding != null)
    * Получить накопительную скидку по ID
    * Запрос накопительной скидки с указанным id
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return AccumulationDiscount
    * @throws ApiException if fails to make API call
    */
-  public AccumulationDiscount getAccumulationDiscountById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getAccumulationDiscountById(id, accept, acceptEncoding, Collections.emptyMap());
+  public AccumulationDiscount getAccumulationDiscountById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getAccumulationDiscountById(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить накопительную скидку по ID
+   * Запрос накопительной скидки с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AccumulationDiscount
+   * @throws ApiException if fails to make API call
+   */
+  public AccumulationDiscount getAccumulationDiscountById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getAccumulationDiscountById(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить накопительную скидку по ID
@@ -573,7 +682,7 @@ if (acceptEncoding != null)
    * @return AccumulationDiscount
    * @throws ApiException if fails to make API call
    */
-  public AccumulationDiscount getAccumulationDiscountById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected AccumulationDiscount getAccumulationDiscountById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -635,17 +744,14 @@ if (acceptEncoding != null)
   /**
    * Получить список скидок
    * Запрос на получение всех скидок учетной записи
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
    * @return DiscountList
    * @throws ApiException if fails to make API call
    */
-  public DiscountList getDiscounts(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand) throws ApiException {
-    return this.getDiscounts(limit, offset, accept, acceptEncoding, expand, Collections.emptyMap());
+  public DiscountList getDiscounts() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getDiscounts((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, (String) effectiveOptions.get("expand"), effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить список скидок
@@ -664,7 +770,6 @@ if (acceptEncoding != null)
     return this.getDiscounts((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, (String) effectiveOptions.get("expand"), effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить список скидок
    * Запрос на получение всех скидок учетной записи
@@ -677,7 +782,7 @@ if (acceptEncoding != null)
    * @return DiscountList
    * @throws ApiException if fails to make API call
    */
-  public DiscountList getDiscounts(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, Map<String, String> additionalHeaders) throws ApiException {
+  protected DiscountList getDiscounts(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -737,15 +842,31 @@ if (acceptEncoding != null)
    * Получить персональную скидку по ID
    * Запрос персональной скидки с указанным id
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return PersonalDiscount
    * @throws ApiException if fails to make API call
    */
-  public PersonalDiscount getPersonalDiscountById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getPersonalDiscountById(id, accept, acceptEncoding, Collections.emptyMap());
+  public PersonalDiscount getPersonalDiscountById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getPersonalDiscountById(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить персональную скидку по ID
+   * Запрос персональной скидки с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return PersonalDiscount
+   * @throws ApiException if fails to make API call
+   */
+  public PersonalDiscount getPersonalDiscountById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getPersonalDiscountById(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить персональную скидку по ID
@@ -757,7 +878,7 @@ if (acceptEncoding != null)
    * @return PersonalDiscount
    * @throws ApiException if fails to make API call
    */
-  public PersonalDiscount getPersonalDiscountById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected PersonalDiscount getPersonalDiscountById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -820,15 +941,31 @@ if (acceptEncoding != null)
    * Получить специальную цену по ID
    * Запрос специальной цены с указанным id
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return SpecialPriceDiscount
    * @throws ApiException if fails to make API call
    */
-  public SpecialPriceDiscount getSpecialPriceDiscountById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getSpecialPriceDiscountById(id, accept, acceptEncoding, Collections.emptyMap());
+  public SpecialPriceDiscount getSpecialPriceDiscountById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getSpecialPriceDiscountById(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить специальную цену по ID
+   * Запрос специальной цены с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return SpecialPriceDiscount
+   * @throws ApiException if fails to make API call
+   */
+  public SpecialPriceDiscount getSpecialPriceDiscountById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getSpecialPriceDiscountById(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить специальную цену по ID
@@ -840,7 +977,7 @@ if (acceptEncoding != null)
    * @return SpecialPriceDiscount
    * @throws ApiException if fails to make API call
    */
-  public SpecialPriceDiscount getSpecialPriceDiscountById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected SpecialPriceDiscount getSpecialPriceDiscountById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -904,16 +1041,35 @@ if (acceptEncoding != null)
    * Запрос на изменение накопительной скидки
    * @param id ID сущности (required)
    * @param accumulationDiscount  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return AccumulationDiscount
    * @throws ApiException if fails to make API call
    */
-  public AccumulationDiscount updateAccumulationDiscount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AccumulationDiscount accumulationDiscount, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateAccumulationDiscount(id, accumulationDiscount, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public AccumulationDiscount updateAccumulationDiscount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AccumulationDiscount accumulationDiscount) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateAccumulationDiscount(id, accumulationDiscount, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Изменить накопительную скидку
+   * Запрос на изменение накопительной скидки
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param accumulationDiscount  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AccumulationDiscount
+   * @throws ApiException if fails to make API call
+   */
+  public AccumulationDiscount updateAccumulationDiscount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AccumulationDiscount accumulationDiscount, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateAccumulationDiscount(id, accumulationDiscount, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Изменить накопительную скидку
@@ -927,7 +1083,7 @@ if (acceptEncoding != null)
    * @return AccumulationDiscount
    * @throws ApiException if fails to make API call
    */
-  public AccumulationDiscount updateAccumulationDiscount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AccumulationDiscount accumulationDiscount, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected AccumulationDiscount updateAccumulationDiscount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AccumulationDiscount accumulationDiscount, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = accumulationDiscount;
     
     // verify the required parameter 'id' is set
@@ -998,16 +1154,35 @@ if (contentType != null)
    * Запрос на изменение округления копеек
    * @param id ID сущности (required)
    * @param discount  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Discount
    * @throws ApiException if fails to make API call
    */
-  public Discount updateDiscountRoundingById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Discount discount, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateDiscountRoundingById(id, discount, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Discount updateDiscountRoundingById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Discount discount) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateDiscountRoundingById(id, discount, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Изменить округление копеек
+   * Запрос на изменение округления копеек
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param discount  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Discount
+   * @throws ApiException if fails to make API call
+   */
+  public Discount updateDiscountRoundingById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Discount discount, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateDiscountRoundingById(id, discount, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Изменить округление копеек
@@ -1021,7 +1196,7 @@ if (contentType != null)
    * @return Discount
    * @throws ApiException if fails to make API call
    */
-  public Discount updateDiscountRoundingById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Discount discount, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Discount updateDiscountRoundingById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Discount discount, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = discount;
     
     // verify the required parameter 'id' is set
@@ -1092,16 +1267,35 @@ if (contentType != null)
    * Запрос на изменение персональной скидки
    * @param id ID сущности (required)
    * @param personalDiscount  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return PersonalDiscount
    * @throws ApiException if fails to make API call
    */
-  public PersonalDiscount updatePersonalDiscount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull PersonalDiscount personalDiscount, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updatePersonalDiscount(id, personalDiscount, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public PersonalDiscount updatePersonalDiscount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull PersonalDiscount personalDiscount) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updatePersonalDiscount(id, personalDiscount, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Изменить персональную скидку
+   * Запрос на изменение персональной скидки
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param personalDiscount  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return PersonalDiscount
+   * @throws ApiException if fails to make API call
+   */
+  public PersonalDiscount updatePersonalDiscount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull PersonalDiscount personalDiscount, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updatePersonalDiscount(id, personalDiscount, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Изменить персональную скидку
@@ -1115,7 +1309,7 @@ if (contentType != null)
    * @return PersonalDiscount
    * @throws ApiException if fails to make API call
    */
-  public PersonalDiscount updatePersonalDiscount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull PersonalDiscount personalDiscount, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected PersonalDiscount updatePersonalDiscount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull PersonalDiscount personalDiscount, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = personalDiscount;
     
     // verify the required parameter 'id' is set
@@ -1186,16 +1380,35 @@ if (contentType != null)
    * Запрос на изменение специальной цены
    * @param id ID сущности (required)
    * @param specialPriceDiscount  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return SpecialPriceDiscount
    * @throws ApiException if fails to make API call
    */
-  public SpecialPriceDiscount updateSpecialPriceDiscount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SpecialPriceDiscount specialPriceDiscount, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateSpecialPriceDiscount(id, specialPriceDiscount, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public SpecialPriceDiscount updateSpecialPriceDiscount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SpecialPriceDiscount specialPriceDiscount) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateSpecialPriceDiscount(id, specialPriceDiscount, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Изменить специальную цену
+   * Запрос на изменение специальной цены
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param specialPriceDiscount  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return SpecialPriceDiscount
+   * @throws ApiException if fails to make API call
+   */
+  public SpecialPriceDiscount updateSpecialPriceDiscount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SpecialPriceDiscount specialPriceDiscount, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateSpecialPriceDiscount(id, specialPriceDiscount, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Изменить специальную цену
@@ -1209,7 +1422,7 @@ if (contentType != null)
    * @return SpecialPriceDiscount
    * @throws ApiException if fails to make API call
    */
-  public SpecialPriceDiscount updateSpecialPriceDiscount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SpecialPriceDiscount specialPriceDiscount, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected SpecialPriceDiscount updateSpecialPriceDiscount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SpecialPriceDiscount specialPriceDiscount, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = specialPriceDiscount;
     
     // verify the required parameter 'id' is set

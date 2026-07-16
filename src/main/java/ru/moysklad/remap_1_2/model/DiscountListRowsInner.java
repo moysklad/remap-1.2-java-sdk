@@ -73,7 +73,7 @@ import java.util.StringJoiner;
   DiscountListRowsInner.JSON_PROPERTY_MAX_PAID_RATE_PERCENTS
 })
 @JsonTypeName("DiscountList_rows_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 public class DiscountListRowsInner {
 
   public static final String JSON_PROPERTY_ALL_PRODUCTS = "allProducts";

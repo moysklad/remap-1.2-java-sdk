@@ -72885,27 +72885,97 @@ components:
       type: object
       x-polymorphic-parent: FinanceInOperationAbstract
     RetailShiftOperation:
-      anyOf:
-      - $ref: "#/components/schemas/RetailDemand"
-      - $ref: "#/components/schemas/RetailSalesReturn"
-      - $ref: "#/components/schemas/RetailDrawerCashIn"
-      - $ref: "#/components/schemas/RetailDrawerCashOut"
-      - $ref: "#/components/schemas/Prepayment"
-      - $ref: "#/components/schemas/PrepaymentReturn"
       description: |
         Элемент массива `operations` розничной смены.
         Допустимые `meta.type`: retaildemand, retailsalesreturn, retaildrawercashin,
         retaildrawercashout, prepayment, prepaymentreturn.
+      properties:
+        meta:
+          $ref: "#/components/schemas/Meta"
+      required:
+      - meta
       type: object
+      x-polymorphic-discriminator:
+        path: meta.type
+        mappings:
+        - type: retaildemand
+          componentName: RetailShiftOperationRetailDemand
+        - type: retailsalesreturn
+          componentName: RetailShiftOperationRetailSalesReturn
+        - type: retaildrawercashin
+          componentName: RetailShiftOperationRetailDrawerCashIn
+        - type: retaildrawercashout
+          componentName: RetailShiftOperationRetailDrawerCashOut
+        - type: prepayment
+          componentName: RetailShiftOperationPrepayment
+        - type: prepaymentreturn
+          componentName: RetailShiftOperationPrepaymentReturn
+    RetailShiftOperationRetailDemand:
+      allOf:
+      - $ref: "#/components/schemas/RetailDemand"
+      description: Розничная продажа
+      type: object
+      x-polymorphic-parent: RetailShiftOperation
+    RetailShiftOperationRetailSalesReturn:
+      allOf:
+      - $ref: "#/components/schemas/RetailSalesReturn"
+      description: Розничный возврат
+      type: object
+      x-polymorphic-parent: RetailShiftOperation
+    RetailShiftOperationRetailDrawerCashIn:
+      allOf:
+      - $ref: "#/components/schemas/RetailDrawerCashIn"
+      description: Внесение денег
+      type: object
+      x-polymorphic-parent: RetailShiftOperation
+    RetailShiftOperationRetailDrawerCashOut:
+      allOf:
+      - $ref: "#/components/schemas/RetailDrawerCashOut"
+      description: Выплата денег
+      type: object
+      x-polymorphic-parent: RetailShiftOperation
+    RetailShiftOperationPrepayment:
+      allOf:
+      - $ref: "#/components/schemas/Prepayment"
+      description: Предоплата
+      type: object
+      x-polymorphic-parent: RetailShiftOperation
+    RetailShiftOperationPrepaymentReturn:
+      allOf:
+      - $ref: "#/components/schemas/PrepaymentReturn"
+      description: Возврат предоплаты
+      type: object
+      x-polymorphic-parent: RetailShiftOperation
     RetailShiftPaymentOperation:
-      anyOf:
-      - $ref: "#/components/schemas/RetailShiftPaymentOperation_anyOf"
-      - $ref: "#/components/schemas/RetailShiftPaymentOperation_anyOf_1"
+      allOf:
+      - $ref: "#/components/schemas/OperationLinkedSum"
       description: |
         Элемент массива `paymentOperations` розничной смены.
 
         Допустимые `meta.type`: cashin, paymentin.
+      required:
+      - linkedSum
+      - meta
       type: object
+      x-polymorphic-discriminator:
+        path: meta.type
+        mappings:
+        - type: cashin
+          componentName: RetailShiftPaymentOperationCashIn
+        - type: paymentin
+          componentName: RetailShiftPaymentOperationPaymentIn
+    RetailShiftPaymentOperationCashIn:
+      allOf:
+      - $ref: "#/components/schemas/CashIn"
+      description: Приходный ордер + linkedSum
+      type: object
+      x-polymorphic-parent: RetailShiftPaymentOperation
+    RetailShiftPaymentOperationPaymentIn:
+      allOf:
+      - $ref: "#/components/schemas/PaymentIn"
+      description: Входящий платеж + linkedSum
+      type: object
+      x-polymorphic-parent: RetailShiftPaymentOperation
     OperationLinkedSum:
       description: |
         Поле суммы по связанной операции. Комбинируется через `allOf` с телом документа в элементах
@@ -77610,16 +77680,6 @@ components:
       - $ref: "#/components/schemas/SalesReturn_1"
       - $ref: "#/components/schemas/PurchaseReturn_1"
       - $ref: "#/components/schemas/PrepaymentReturn_1"
-    RetailShiftPaymentOperation_anyOf:
-      allOf:
-      - $ref: "#/components/schemas/CashIn"
-      - $ref: "#/components/schemas/OperationLinkedSum"
-      description: Приходный ордер + linkedSum
-    RetailShiftPaymentOperation_anyOf_1:
-      allOf:
-      - $ref: "#/components/schemas/PaymentIn"
-      - $ref: "#/components/schemas/OperationLinkedSum"
-      description: Входящий платеж + linkedSum
     CommissionReportIn_commissionOverhead:
       description: Прочие расходы
       properties:

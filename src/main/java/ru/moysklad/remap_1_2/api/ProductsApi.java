@@ -48,7 +48,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ProductsApi extends BaseApi {
 
@@ -65,16 +65,35 @@ public class ProductsApi extends BaseApi {
    * Добавить новые Файлы к Товару. В одном запросе можно добавить максимум 10 Файлов. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
    * @param id ID сущности (required)
    * @param fileUpload  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;ModelFile&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<ModelFile> addProductFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.addProductFiles(id, fileUpload, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<ModelFile> addProductFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.addProductFiles(id, fileUpload, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Добавить файлы к товару
+   * Добавить новые Файлы к Товару. В одном запросе можно добавить максимум 10 Файлов. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param fileUpload  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;ModelFile&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<ModelFile> addProductFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.addProductFiles(id, fileUpload, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Добавить файлы к товару
@@ -88,7 +107,7 @@ public class ProductsApi extends BaseApi {
    * @return List&lt;ModelFile&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<ModelFile> addProductFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<ModelFile> addProductFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = fileUpload;
     
     // verify the required parameter 'id' is set
@@ -159,16 +178,35 @@ if (contentType != null)
    * Добавить новые Изображения к Товару или изменить список Изображений. В поле &#x60;content&#x60; нужно указать изображение, закодированное в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. У Товара может быть не более 10 Изображений. 
    * @param id ID сущности (required)
    * @param addProductImagesRequest  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;Image&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<Image> addProductImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AddProductImagesRequest addProductImagesRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.addProductImages(id, addProductImagesRequest, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<Image> addProductImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AddProductImagesRequest addProductImagesRequest) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.addProductImages(id, addProductImagesRequest, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Добавить изображения к товару
+   * Добавить новые Изображения к Товару или изменить список Изображений. В поле &#x60;content&#x60; нужно указать изображение, закодированное в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. У Товара может быть не более 10 Изображений. 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param addProductImagesRequest  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;Image&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<Image> addProductImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AddProductImagesRequest addProductImagesRequest, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.addProductImages(id, addProductImagesRequest, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Добавить изображения к товару
@@ -182,7 +220,7 @@ if (contentType != null)
    * @return List&lt;Image&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<Image> addProductImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AddProductImagesRequest addProductImagesRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<Image> addProductImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AddProductImagesRequest addProductImagesRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = addProductImagesRequest;
     
     // verify the required parameter 'id' is set
@@ -252,16 +290,14 @@ if (contentType != null)
    * Создать товар
    * Создание нового товара
    * @param product  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Product
    * @throws ApiException if fails to make API call
    */
-  public Product createProduct(@javax.annotation.Nonnull Product product, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createProduct(product, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Product createProduct(@javax.annotation.Nonnull Product product) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createProduct(product, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать товар
@@ -282,7 +318,6 @@ if (contentType != null)
     return this.createProduct(product, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать товар
    * Создание нового товара
@@ -295,7 +330,7 @@ if (contentType != null)
    * @return Product
    * @throws ApiException if fails to make API call
    */
-  public Product createProduct(@javax.annotation.Nonnull Product product, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Product createProduct(@javax.annotation.Nonnull Product product, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = product;
     
     // verify the required parameter 'product' is set
@@ -361,16 +396,35 @@ if (contentType != null)
    * Создание нового Неснижаемого остатка Товара для склада.
    * @param id ID сущности (required)
    * @param storeBalance  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return StoreBalance
    * @throws ApiException if fails to make API call
    */
-  public StoreBalance createProductStoreBalance(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull StoreBalance storeBalance, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createProductStoreBalance(id, storeBalance, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public StoreBalance createProductStoreBalance(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull StoreBalance storeBalance) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createProductStoreBalance(id, storeBalance, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Создать НСО товара для склада
+   * Создание нового Неснижаемого остатка Товара для склада.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param storeBalance  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return StoreBalance
+   * @throws ApiException if fails to make API call
+   */
+  public StoreBalance createProductStoreBalance(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull StoreBalance storeBalance, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createProductStoreBalance(id, storeBalance, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Создать НСО товара для склада
@@ -384,7 +438,7 @@ if (contentType != null)
    * @return StoreBalance
    * @throws ApiException if fails to make API call
    */
-  public StoreBalance createProductStoreBalance(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull StoreBalance storeBalance, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected StoreBalance createProductStoreBalance(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull StoreBalance storeBalance, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = storeBalance;
     
     // verify the required parameter 'id' is set
@@ -454,16 +508,14 @@ if (contentType != null)
    * Создать или изменить товары
    * Создание или изменение нескольких товаров.
    * @param product  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createProductsBatch(@javax.annotation.Nonnull List<@Valid Product> product, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createProductsBatch(product, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<BatchResponseEntity> createProductsBatch(@javax.annotation.Nonnull List<@Valid Product> product) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createProductsBatch(product, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать или изменить товары
@@ -484,7 +536,6 @@ if (contentType != null)
     return this.createProductsBatch(product, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать или изменить товары
    * Создание или изменение нескольких товаров.
@@ -497,7 +548,7 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createProductsBatch(@javax.annotation.Nonnull List<@Valid Product> product, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createProductsBatch(@javax.annotation.Nonnull List<@Valid Product> product, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = product;
     
     // verify the required parameter 'product' is set
@@ -562,14 +613,29 @@ if (contentType != null)
    * Удалить товар
    * Удаление товара с указанным id
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteProduct(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteProduct(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteProduct(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteProduct(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить товар
+   * Удаление товара с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteProduct(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteProduct(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить товар
@@ -580,7 +646,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteProduct(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteProduct(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -643,14 +709,32 @@ if (acceptEncoding != null)
    * Удаление Файла Товара
    * @param id ID сущности (required)
    * @param fileId ID файла (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteProductFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID fileId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteProductFile(id, fileId, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteProductFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID fileId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteProductFile(id, fileId, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить файл товара
+   * Удаление Файла Товара
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param fileId ID файла (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteProductFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID fileId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteProductFile(id, fileId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить файл товара
@@ -662,7 +746,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteProductFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID fileId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteProductFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID fileId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -731,14 +815,32 @@ if (acceptEncoding != null)
    * Удаление Изображения Товара
    * @param id ID сущности (required)
    * @param imageId ID изображения (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteProductImage(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID imageId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteProductImage(id, imageId, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteProductImage(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID imageId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteProductImage(id, imageId, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить изображение товара
+   * Удаление Изображения Товара
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param imageId ID изображения (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteProductImage(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID imageId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteProductImage(id, imageId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить изображение товара
@@ -750,7 +852,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteProductImage(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID imageId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteProductImage(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID imageId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -819,15 +921,33 @@ if (acceptEncoding != null)
    * Массовое удаление Изображений Товара
    * @param id ID сущности (required)
    * @param deleteProductImagesRequestInner  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @throws ApiException if fails to make API call
    */
-  public void deleteProductImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid DeleteProductImagesRequestInner> deleteProductImagesRequestInner, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    this.deleteProductImages(id, deleteProductImagesRequestInner, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public void deleteProductImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid DeleteProductImagesRequestInner> deleteProductImagesRequestInner) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteProductImages(id, deleteProductImagesRequestInner, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Массовое удаление изображений товара
+   * Массовое удаление Изображений Товара
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param deleteProductImagesRequestInner  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteProductImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid DeleteProductImagesRequestInner> deleteProductImagesRequestInner, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteProductImages(id, deleteProductImagesRequestInner, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Массовое удаление изображений товара
@@ -840,7 +960,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteProductImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid DeleteProductImagesRequestInner> deleteProductImagesRequestInner, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteProductImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid DeleteProductImagesRequestInner> deleteProductImagesRequestInner, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = deleteProductImagesRequestInner;
     
     // verify the required parameter 'id' is set
@@ -910,14 +1030,32 @@ if (contentType != null)
    * Удаление Неснижаемого остатка Товара для склада.
    * @param id ID сущности (required)
    * @param storeBalanceId ID неснижаемого остатка (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteProductStoreBalance(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID storeBalanceId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteProductStoreBalance(id, storeBalanceId, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteProductStoreBalance(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID storeBalanceId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteProductStoreBalance(id, storeBalanceId, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить НСО товара по складу
+   * Удаление Неснижаемого остатка Товара для склада.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param storeBalanceId ID неснижаемого остатка (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteProductStoreBalance(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID storeBalanceId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteProductStoreBalance(id, storeBalanceId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить НСО товара по складу
@@ -929,7 +1067,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteProductStoreBalance(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID storeBalanceId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteProductStoreBalance(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID storeBalanceId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -998,15 +1136,33 @@ if (acceptEncoding != null)
    * Массовое удаление Неснижаемых остатков Товара по складам.
    * @param id ID сущности (required)
    * @param deleteProductImagesRequestInner  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @throws ApiException if fails to make API call
    */
-  public void deleteProductStoreBalances(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid DeleteProductImagesRequestInner> deleteProductImagesRequestInner, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    this.deleteProductStoreBalances(id, deleteProductImagesRequestInner, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public void deleteProductStoreBalances(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid DeleteProductImagesRequestInner> deleteProductImagesRequestInner) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteProductStoreBalances(id, deleteProductImagesRequestInner, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Массовое удаление НСО товара по складам
+   * Массовое удаление Неснижаемых остатков Товара по складам.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param deleteProductImagesRequestInner  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteProductStoreBalances(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid DeleteProductImagesRequestInner> deleteProductImagesRequestInner, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteProductStoreBalances(id, deleteProductImagesRequestInner, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Массовое удаление НСО товара по складам
@@ -1019,7 +1175,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteProductStoreBalances(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid DeleteProductImagesRequestInner> deleteProductImagesRequestInner, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteProductStoreBalances(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid DeleteProductImagesRequestInner> deleteProductImagesRequestInner, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = deleteProductImagesRequestInner;
     
     // verify the required parameter 'id' is set
@@ -1088,16 +1244,32 @@ if (contentType != null)
    * Удалить товары
    * Массовое удаление товаров по их мета-объектам.
    * @param product  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteProductsBatch(@javax.annotation.Nonnull List<@Valid Product> product, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteProductsBatch(product, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteProductsBatch(@javax.annotation.Nonnull List<@Valid Product> product) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteProductsBatch(product, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить товары
+   * Массовое удаление товаров по их мета-объектам.
+   
+   * @param product  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteProductsBatch(@javax.annotation.Nonnull List<@Valid Product> product, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteProductsBatch(product, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить товары
@@ -1110,7 +1282,7 @@ if (contentType != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteProductsBatch(@javax.annotation.Nonnull List<@Valid Product> product, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteProductsBatch(@javax.annotation.Nonnull List<@Valid Product> product, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = product;
     
     // verify the required parameter 'product' is set
@@ -1173,15 +1345,28 @@ if (contentType != null)
   /**
    * Получить метаданные товаров
    * Запрос на получение метаданных товаров
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return Metadata
    * @throws ApiException if fails to make API call
    */
-  public Metadata getMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getMetadata(accept, acceptEncoding, Collections.emptyMap());
+  public Metadata getMetadata() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getMetadata(null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить метаданные товаров
+   * Запрос на получение метаданных товаров
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Metadata
+   * @throws ApiException if fails to make API call
+   */
+  public Metadata getMetadata(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getMetadata(null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить метаданные товаров
@@ -1192,7 +1377,7 @@ if (contentType != null)
    * @return Metadata
    * @throws ApiException if fails to make API call
    */
-  public Metadata getMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected Metadata getMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1249,16 +1434,14 @@ if (acceptEncoding != null)
    * Получить товар по ID
    * Запрос на получение отдельного товара с указанным id
    * @param id ID сущности (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return Product
    * @throws ApiException if fails to make API call
    */
-  public Product getProductById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getProductById(id, expand, fields, accept, acceptEncoding, Collections.emptyMap());
+  public Product getProductById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProductById(id, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить товар по ID
@@ -1279,7 +1462,6 @@ if (acceptEncoding != null)
     return this.getProductById(id, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить товар по ID
    * Запрос на получение отдельного товара с указанным id
@@ -1292,7 +1474,7 @@ if (acceptEncoding != null)
    * @return Product
    * @throws ApiException if fails to make API call
    */
-  public Product getProductById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected Product getProductById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1357,16 +1539,14 @@ if (acceptEncoding != null)
    * Получить файлы товара
    * Запрос на получение списка всех Файлов данного Товара.
    * @param id ID сущности (required)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return GetProductFiles200Response
    * @throws ApiException if fails to make API call
    */
-  public GetProductFiles200Response getProductFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getProductFiles(id, limit, offset, accept, acceptEncoding, Collections.emptyMap());
+  public GetProductFiles200Response getProductFiles(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProductFiles(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить файлы товара
@@ -1387,7 +1567,6 @@ if (acceptEncoding != null)
     return this.getProductFiles(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить файлы товара
    * Запрос на получение списка всех Файлов данного Товара.
@@ -1400,7 +1579,7 @@ if (acceptEncoding != null)
    * @return GetProductFiles200Response
    * @throws ApiException if fails to make API call
    */
-  public GetProductFiles200Response getProductFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected GetProductFiles200Response getProductFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1465,17 +1644,14 @@ if (acceptEncoding != null)
    * Получить изображения товара
    * Запрос на получение всех Изображений Товара.
    * @param id ID сущности (required)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return GetProductImages200Response
    * @throws ApiException if fails to make API call
    */
-  public GetProductImages200Response getProductImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getProductImages(id, limit, offset, fields, accept, acceptEncoding, Collections.emptyMap());
+  public GetProductImages200Response getProductImages(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProductImages(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить изображения товара
@@ -1497,7 +1673,6 @@ if (acceptEncoding != null)
     return this.getProductImages(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить изображения товара
    * Запрос на получение всех Изображений Товара.
@@ -1511,7 +1686,7 @@ if (acceptEncoding != null)
    * @return GetProductImages200Response
    * @throws ApiException if fails to make API call
    */
-  public GetProductImages200Response getProductImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected GetProductImages200Response getProductImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1578,15 +1753,34 @@ if (acceptEncoding != null)
    * Запрос на получение отдельного Неснижаемого остатка Товара по складу.
    * @param id ID сущности (required)
    * @param storeBalanceId ID неснижаемого остатка (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return StoreBalance
    * @throws ApiException if fails to make API call
    */
-  public StoreBalance getProductStoreBalanceById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID storeBalanceId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getProductStoreBalanceById(id, storeBalanceId, accept, acceptEncoding, Collections.emptyMap());
+  public StoreBalance getProductStoreBalanceById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID storeBalanceId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProductStoreBalanceById(id, storeBalanceId, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить НСО товара по складу
+   * Запрос на получение отдельного Неснижаемого остатка Товара по складу.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param storeBalanceId ID неснижаемого остатка (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return StoreBalance
+   * @throws ApiException if fails to make API call
+   */
+  public StoreBalance getProductStoreBalanceById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID storeBalanceId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getProductStoreBalanceById(id, storeBalanceId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить НСО товара по складу
@@ -1599,7 +1793,7 @@ if (acceptEncoding != null)
    * @return StoreBalance
    * @throws ApiException if fails to make API call
    */
-  public StoreBalance getProductStoreBalanceById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID storeBalanceId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected StoreBalance getProductStoreBalanceById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID storeBalanceId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1668,16 +1862,14 @@ if (acceptEncoding != null)
    * Получить НСО товара по складам
    * Запрос на получение списка Неснижаемых остатков Товара по складам.
    * @param id ID сущности (required)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return StoreBalanceList
    * @throws ApiException if fails to make API call
    */
-  public StoreBalanceList getProductStoreBalances(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getProductStoreBalances(id, limit, offset, accept, acceptEncoding, Collections.emptyMap());
+  public StoreBalanceList getProductStoreBalances(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProductStoreBalances(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить НСО товара по складам
@@ -1698,7 +1890,6 @@ if (acceptEncoding != null)
     return this.getProductStoreBalances(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить НСО товара по складам
    * Запрос на получение списка Неснижаемых остатков Товара по складам.
@@ -1711,7 +1902,7 @@ if (acceptEncoding != null)
    * @return StoreBalanceList
    * @throws ApiException if fails to make API call
    */
-  public StoreBalanceList getProductStoreBalances(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected StoreBalanceList getProductStoreBalances(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1775,21 +1966,14 @@ if (acceptEncoding != null)
   /**
    * Получить список товаров
    * Запрос всех товаров на данной учетной записи
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param search Контекстный поиск по строковым полям сущностей (optional)
-   * @param filter Фильтрация выборки (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param order Сортировка (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return ProductList
    * @throws ApiException if fails to make API call
    */
-  public ProductList getProducts(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getProducts(limit, offset, search, filter, expand, order, fields, accept, acceptEncoding, Collections.emptyMap());
+  public ProductList getProducts() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getProducts((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить список товаров
@@ -1812,7 +1996,6 @@ if (acceptEncoding != null)
     return this.getProducts((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить список товаров
    * Запрос всех товаров на данной учетной записи
@@ -1829,7 +2012,7 @@ if (acceptEncoding != null)
    * @return ProductList
    * @throws ApiException if fails to make API call
    */
-  public ProductList getProducts(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected ProductList getProducts(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1894,16 +2077,14 @@ if (acceptEncoding != null)
    * Обновление товара с указанным id
    * @param id ID сущности (required)
    * @param product  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Product
    * @throws ApiException if fails to make API call
    */
-  public Product updateProduct(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Product product, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateProduct(id, product, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Product updateProduct(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Product product) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateProduct(id, product, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Обновить товар
@@ -1927,7 +2108,6 @@ if (acceptEncoding != null)
     return this.updateProduct(id, product, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Обновить товар
    * Обновление товара с указанным id
@@ -1941,7 +2121,7 @@ if (acceptEncoding != null)
    * @return Product
    * @throws ApiException if fails to make API call
    */
-  public Product updateProduct(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Product product, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Product updateProduct(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Product product, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = product;
     
     // verify the required parameter 'id' is set
@@ -2014,16 +2194,38 @@ if (contentType != null)
    * @param id ID сущности (required)
    * @param storeBalanceId ID неснижаемого остатка (required)
    * @param storeBalance  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return StoreBalance
    * @throws ApiException if fails to make API call
    */
-  public StoreBalance updateProductStoreBalance(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID storeBalanceId, @javax.annotation.Nonnull StoreBalance storeBalance, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateProductStoreBalance(id, storeBalanceId, storeBalance, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public StoreBalance updateProductStoreBalance(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID storeBalanceId, @javax.annotation.Nonnull StoreBalance storeBalance) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateProductStoreBalance(id, storeBalanceId, storeBalance, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Изменить НСО товара по складу
+   * Обновление Неснижаемого остатка Товара для склада.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param storeBalanceId ID неснижаемого остатка (required)
+   
+   
+   * @param storeBalance  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return StoreBalance
+   * @throws ApiException if fails to make API call
+   */
+  public StoreBalance updateProductStoreBalance(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID storeBalanceId, @javax.annotation.Nonnull StoreBalance storeBalance, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateProductStoreBalance(id, storeBalanceId, storeBalance, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Изменить НСО товара по складу
@@ -2038,7 +2240,7 @@ if (contentType != null)
    * @return StoreBalance
    * @throws ApiException if fails to make API call
    */
-  public StoreBalance updateProductStoreBalance(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID storeBalanceId, @javax.annotation.Nonnull StoreBalance storeBalance, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected StoreBalance updateProductStoreBalance(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID storeBalanceId, @javax.annotation.Nonnull StoreBalance storeBalance, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = storeBalance;
     
     // verify the required parameter 'id' is set

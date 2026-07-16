@@ -39,7 +39,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class VariantsApi extends BaseApi {
 
@@ -55,16 +55,14 @@ public class VariantsApi extends BaseApi {
    * Создать Модификацию
    * 
    * @param variant  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param contentType  (optional, default to application/json)
    * @return Variant
    * @throws ApiException if fails to make API call
    */
-  public Variant createVariant(@javax.annotation.Nonnull Variant variant, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createVariant(variant, accept, acceptEncoding, expand, contentType, Collections.emptyMap());
+  public Variant createVariant(@javax.annotation.Nonnull Variant variant) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createVariant(variant, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать Модификацию
@@ -85,7 +83,6 @@ public class VariantsApi extends BaseApi {
     return this.createVariant(variant, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать Модификацию
    * 
@@ -98,7 +95,7 @@ public class VariantsApi extends BaseApi {
    * @return Variant
    * @throws ApiException if fails to make API call
    */
-  public Variant createVariant(@javax.annotation.Nonnull Variant variant, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Variant createVariant(@javax.annotation.Nonnull Variant variant, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = variant;
     
     // verify the required parameter 'variant' is set
@@ -163,16 +160,14 @@ if (contentType != null)
    * Массовое создание и обновление Модификаций
    * 
    * @param variant  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createVariantsBatch(@javax.annotation.Nonnull List<@Valid Variant> variant, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createVariantsBatch(variant, accept, acceptEncoding, expand, contentType, Collections.emptyMap());
+  public List<BatchResponseEntity> createVariantsBatch(@javax.annotation.Nonnull List<@Valid Variant> variant) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createVariantsBatch(variant, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Массовое создание и обновление Модификаций
@@ -193,7 +188,6 @@ if (contentType != null)
     return this.createVariantsBatch(variant, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Массовое создание и обновление Модификаций
    * 
@@ -206,7 +200,7 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createVariantsBatch(@javax.annotation.Nonnull List<@Valid Variant> variant, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createVariantsBatch(@javax.annotation.Nonnull List<@Valid Variant> variant, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = variant;
     
     // verify the required parameter 'variant' is set
@@ -271,14 +265,29 @@ if (contentType != null)
    * Удалить Модификацию
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteVariant(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteVariant(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteVariant(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteVariant(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить Модификацию
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteVariant(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteVariant(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить Модификацию
@@ -289,7 +298,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteVariant(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteVariant(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -351,16 +360,32 @@ if (acceptEncoding != null)
    * Массовое удаление Модификаций
    * 
    * @param variant  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteVariantsBatch(@javax.annotation.Nonnull List<@Valid Variant> variant, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteVariantsBatch(variant, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteVariantsBatch(@javax.annotation.Nonnull List<@Valid Variant> variant) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteVariantsBatch(variant, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Массовое удаление Модификаций
+   * 
+   
+   * @param variant  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteVariantsBatch(@javax.annotation.Nonnull List<@Valid Variant> variant, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteVariantsBatch(variant, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Массовое удаление Модификаций
@@ -373,7 +398,7 @@ if (acceptEncoding != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteVariantsBatch(@javax.annotation.Nonnull List<@Valid Variant> variant, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteVariantsBatch(@javax.annotation.Nonnull List<@Valid Variant> variant, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = variant;
     
     // verify the required parameter 'variant' is set
@@ -437,16 +462,14 @@ if (contentType != null)
    * Получить Модификацию
    * 
    * @param id ID сущности (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return Variant
    * @throws ApiException if fails to make API call
    */
-  public Variant getVariantById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getVariantById(id, expand, fields, accept, acceptEncoding, Collections.emptyMap());
+  public Variant getVariantById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getVariantById(id, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить Модификацию
@@ -467,7 +490,6 @@ if (contentType != null)
     return this.getVariantById(id, (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить Модификацию
    * 
@@ -480,7 +502,7 @@ if (contentType != null)
    * @return Variant
    * @throws ApiException if fails to make API call
    */
-  public Variant getVariantById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected Variant getVariantById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -544,15 +566,28 @@ if (acceptEncoding != null)
   /**
    * Метаданные Модификаций
    * 
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return VariantMetadata
    * @throws ApiException if fails to make API call
    */
-  public VariantMetadata getVariantMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getVariantMetadata(accept, acceptEncoding, Collections.emptyMap());
+  public VariantMetadata getVariantMetadata() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getVariantMetadata(null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Метаданные Модификаций
+   * 
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return VariantMetadata
+   * @throws ApiException if fails to make API call
+   */
+  public VariantMetadata getVariantMetadata(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getVariantMetadata(null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Метаданные Модификаций
@@ -563,7 +598,7 @@ if (acceptEncoding != null)
    * @return VariantMetadata
    * @throws ApiException if fails to make API call
    */
-  public VariantMetadata getVariantMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected VariantMetadata getVariantMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -619,21 +654,14 @@ if (acceptEncoding != null)
   /**
    * Получить список Модификаций
    * 
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param search Контекстный поиск по строковым полям сущностей (optional)
-   * @param filter Фильтрация выборки (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
-   * @param order Сортировка (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return VariantList
    * @throws ApiException if fails to make API call
    */
-  public VariantList getVariants(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getVariants(limit, offset, search, filter, expand, fields, order, accept, acceptEncoding, Collections.emptyMap());
+  public VariantList getVariants() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getVariants((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить список Модификаций
@@ -656,7 +684,6 @@ if (acceptEncoding != null)
     return this.getVariants((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("fields"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить список Модификаций
    * 
@@ -673,7 +700,7 @@ if (acceptEncoding != null)
    * @return VariantList
    * @throws ApiException if fails to make API call
    */
-  public VariantList getVariants(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected VariantList getVariants(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -738,16 +765,14 @@ if (acceptEncoding != null)
    * 
    * @param id ID сущности (required)
    * @param variant  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Variant
    * @throws ApiException if fails to make API call
    */
-  public Variant updateVariant(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Variant variant, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateVariant(id, variant, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Variant updateVariant(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Variant variant) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateVariant(id, variant, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Изменить Модификацию
@@ -771,7 +796,6 @@ if (acceptEncoding != null)
     return this.updateVariant(id, variant, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Изменить Модификацию
    * 
@@ -785,7 +809,7 @@ if (acceptEncoding != null)
    * @return Variant
    * @throws ApiException if fails to make API call
    */
-  public Variant updateVariant(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Variant variant, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Variant updateVariant(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Variant variant, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = variant;
     
     // verify the required parameter 'id' is set

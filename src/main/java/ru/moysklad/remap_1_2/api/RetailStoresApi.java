@@ -38,7 +38,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class RetailStoresApi extends BaseApi {
 
@@ -55,16 +55,14 @@ public class RetailStoresApi extends BaseApi {
    * 
    * @param retailStoreId  (required)
    * @param retailStore  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param contentType  (optional, default to application/json)
    * @return RetailStore
    * @throws ApiException if fails to make API call
    */
-  public RetailStore addMasterRetailStore(@javax.annotation.Nonnull UUID retailStoreId, @javax.annotation.Nonnull RetailStore retailStore, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.addMasterRetailStore(retailStoreId, retailStore, accept, acceptEncoding, expand, contentType, Collections.emptyMap());
+  public RetailStore addMasterRetailStore(@javax.annotation.Nonnull UUID retailStoreId, @javax.annotation.Nonnull RetailStore retailStore) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.addMasterRetailStore(retailStoreId, retailStore, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Добавить мастер точку продаж
@@ -88,7 +86,6 @@ public class RetailStoresApi extends BaseApi {
     return this.addMasterRetailStore(retailStoreId, retailStore, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Добавить мастер точку продаж
    * 
@@ -102,7 +99,7 @@ public class RetailStoresApi extends BaseApi {
    * @return RetailStore
    * @throws ApiException if fails to make API call
    */
-  public RetailStore addMasterRetailStore(@javax.annotation.Nonnull UUID retailStoreId, @javax.annotation.Nonnull RetailStore retailStore, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected RetailStore addMasterRetailStore(@javax.annotation.Nonnull UUID retailStoreId, @javax.annotation.Nonnull RetailStore retailStore, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = retailStore;
     
     // verify the required parameter 'retailStoreId' is set
@@ -173,16 +170,14 @@ if (contentType != null)
    * Создать точку продаж
    * 
    * @param retailStore  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param contentType  (optional, default to application/json)
    * @return RetailStore
    * @throws ApiException if fails to make API call
    */
-  public RetailStore createRetailStore(@javax.annotation.Nonnull RetailStore retailStore, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createRetailStore(retailStore, accept, acceptEncoding, expand, contentType, Collections.emptyMap());
+  public RetailStore createRetailStore(@javax.annotation.Nonnull RetailStore retailStore) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createRetailStore(retailStore, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать точку продаж
@@ -203,7 +198,6 @@ if (contentType != null)
     return this.createRetailStore(retailStore, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать точку продаж
    * 
@@ -216,7 +210,7 @@ if (contentType != null)
    * @return RetailStore
    * @throws ApiException if fails to make API call
    */
-  public RetailStore createRetailStore(@javax.annotation.Nonnull RetailStore retailStore, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected RetailStore createRetailStore(@javax.annotation.Nonnull RetailStore retailStore, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = retailStore;
     
     // verify the required parameter 'retailStore' is set
@@ -281,16 +275,14 @@ if (contentType != null)
    * Массовое создание и обновление точек продаж
    * 
    * @param retailStore  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createRetailStoresBatch(@javax.annotation.Nonnull List<@Valid RetailStore> retailStore, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createRetailStoresBatch(retailStore, accept, acceptEncoding, expand, contentType, Collections.emptyMap());
+  public List<BatchResponseEntity> createRetailStoresBatch(@javax.annotation.Nonnull List<@Valid RetailStore> retailStore) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createRetailStoresBatch(retailStore, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Массовое создание и обновление точек продаж
@@ -311,7 +303,6 @@ if (contentType != null)
     return this.createRetailStoresBatch(retailStore, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Массовое создание и обновление точек продаж
    * 
@@ -324,7 +315,7 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createRetailStoresBatch(@javax.annotation.Nonnull List<@Valid RetailStore> retailStore, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createRetailStoresBatch(@javax.annotation.Nonnull List<@Valid RetailStore> retailStore, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = retailStore;
     
     // verify the required parameter 'retailStore' is set
@@ -389,14 +380,29 @@ if (contentType != null)
    * Удалить точку продаж
    * 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteRetailStore(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteRetailStore(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteRetailStore(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteRetailStore(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить точку продаж
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteRetailStore(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteRetailStore(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить точку продаж
@@ -407,7 +413,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteRetailStore(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteRetailStore(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -469,16 +475,32 @@ if (acceptEncoding != null)
    * Массовое удаление точек продаж
    * 
    * @param retailStore  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteRetailStoresBatch(@javax.annotation.Nonnull List<@Valid RetailStore> retailStore, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteRetailStoresBatch(retailStore, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteRetailStoresBatch(@javax.annotation.Nonnull List<@Valid RetailStore> retailStore) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteRetailStoresBatch(retailStore, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Массовое удаление точек продаж
+   * 
+   
+   * @param retailStore  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteRetailStoresBatch(@javax.annotation.Nonnull List<@Valid RetailStore> retailStore, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteRetailStoresBatch(retailStore, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Массовое удаление точек продаж
@@ -491,7 +513,7 @@ if (acceptEncoding != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteRetailStoresBatch(@javax.annotation.Nonnull List<@Valid RetailStore> retailStore, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteRetailStoresBatch(@javax.annotation.Nonnull List<@Valid RetailStore> retailStore, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = retailStore;
     
     // verify the required parameter 'retailStore' is set
@@ -555,20 +577,14 @@ if (contentType != null)
    * Получить мастер точки продаж
    * 
    * @param retailStoreId  (required)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param search Контекстный поиск по строковым полям сущностей (optional)
-   * @param filter Фильтрация выборки (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param order Сортировка (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return RetailStoreList
    * @throws ApiException if fails to make API call
    */
-  public RetailStoreList getMasterRetailStores(@javax.annotation.Nonnull UUID retailStoreId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getMasterRetailStores(retailStoreId, limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  public RetailStoreList getMasterRetailStores(@javax.annotation.Nonnull UUID retailStoreId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getMasterRetailStores(retailStoreId, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить мастер точки продаж
@@ -593,7 +609,6 @@ if (contentType != null)
     return this.getMasterRetailStores(retailStoreId, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить мастер точки продаж
    * 
@@ -610,7 +625,7 @@ if (contentType != null)
    * @return RetailStoreList
    * @throws ApiException if fails to make API call
    */
-  public RetailStoreList getMasterRetailStores(@javax.annotation.Nonnull UUID retailStoreId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected RetailStoreList getMasterRetailStores(@javax.annotation.Nonnull UUID retailStoreId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'retailStoreId' is set
@@ -679,15 +694,14 @@ if (acceptEncoding != null)
    * Получить точку продаж
    * 
    * @param id ID сущности (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return RetailStore
    * @throws ApiException if fails to make API call
    */
-  public RetailStore getRetailStoreById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getRetailStoreById(id, expand, accept, acceptEncoding, Collections.emptyMap());
+  public RetailStore getRetailStoreById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getRetailStoreById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить точку продаж
@@ -707,7 +721,6 @@ if (acceptEncoding != null)
     return this.getRetailStoreById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить точку продаж
    * 
@@ -719,7 +732,7 @@ if (acceptEncoding != null)
    * @return RetailStore
    * @throws ApiException if fails to make API call
    */
-  public RetailStore getRetailStoreById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected RetailStore getRetailStoreById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -782,20 +795,14 @@ if (acceptEncoding != null)
   /**
    * Получить точки продаж
    * 
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param search Контекстный поиск по строковым полям сущностей (optional)
-   * @param filter Фильтрация выборки (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param order Сортировка (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return RetailStoreList
    * @throws ApiException if fails to make API call
    */
-  public RetailStoreList getRetailStores(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getRetailStores(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  public RetailStoreList getRetailStores() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getRetailStores((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить точки продаж
@@ -817,7 +824,6 @@ if (acceptEncoding != null)
     return this.getRetailStores((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить точки продаж
    * 
@@ -833,7 +839,7 @@ if (acceptEncoding != null)
    * @return RetailStoreList
    * @throws ApiException if fails to make API call
    */
-  public RetailStoreList getRetailStores(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected RetailStoreList getRetailStores(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -897,16 +903,14 @@ if (acceptEncoding != null)
    * 
    * @param id ID сущности (required)
    * @param retailStore  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return RetailStore
    * @throws ApiException if fails to make API call
    */
-  public RetailStore updateRetailStore(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailStore retailStore, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateRetailStore(id, retailStore, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public RetailStore updateRetailStore(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailStore retailStore) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateRetailStore(id, retailStore, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Изменить точку продаж
@@ -930,7 +934,6 @@ if (acceptEncoding != null)
     return this.updateRetailStore(id, retailStore, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Изменить точку продаж
    * 
@@ -944,7 +947,7 @@ if (acceptEncoding != null)
    * @return RetailStore
    * @throws ApiException if fails to make API call
    */
-  public RetailStore updateRetailStore(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailStore retailStore, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected RetailStore updateRetailStore(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailStore retailStore, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = retailStore;
     
     // verify the required parameter 'id' is set

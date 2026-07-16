@@ -44,7 +44,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T15:03:48.760568729Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class EmployeesApi extends BaseApi {
 
@@ -60,17 +60,36 @@ public class EmployeesApi extends BaseApi {
    * Активировать сотрудника
    * Запрос на активацию Сотрудника в сервисе МойСклад. Если пользователь ранее не был активным, необходимо указать поле &#x60;login&#x60;. Успешным результатом будет json с полем &#x60;mailActivationRequired&#x60;: если &#x60;true&#x60; — на почту сотрудника выслано письмо со ссылкой для входа. 
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @param activateEmployeeRequest  (optional)
    * @return ActivateEmployee200Response
    * @throws ApiException if fails to make API call
    */
-  public ActivateEmployee200Response activateEmployee(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, @javax.annotation.Nullable ActivateEmployeeRequest activateEmployeeRequest) throws ApiException {
-    return this.activateEmployee(id, accept, acceptEncoding, contentType, activateEmployeeRequest, Collections.emptyMap());
+  public ActivateEmployee200Response activateEmployee(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable ActivateEmployeeRequest activateEmployeeRequest) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.activateEmployee(id, null, null, null, activateEmployeeRequest, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Активировать сотрудника
+   * Запрос на активацию Сотрудника в сервисе МойСклад. Если пользователь ранее не был активным, необходимо указать поле &#x60;login&#x60;. Успешным результатом будет json с полем &#x60;mailActivationRequired&#x60;: если &#x60;true&#x60; — на почту сотрудника выслано письмо со ссылкой для входа. 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   * @param activateEmployeeRequest  (optional)
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ActivateEmployee200Response
+   * @throws ApiException if fails to make API call
+   */
+  public ActivateEmployee200Response activateEmployee(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable ActivateEmployeeRequest activateEmployeeRequest, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.activateEmployee(id, null, null, null, activateEmployeeRequest, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Активировать сотрудника
@@ -84,7 +103,7 @@ public class EmployeesApi extends BaseApi {
    * @return ActivateEmployee200Response
    * @throws ApiException if fails to make API call
    */
-  public ActivateEmployee200Response activateEmployee(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, @javax.annotation.Nullable ActivateEmployeeRequest activateEmployeeRequest, Map<String, String> additionalHeaders) throws ApiException {
+  protected ActivateEmployee200Response activateEmployee(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, @javax.annotation.Nullable ActivateEmployeeRequest activateEmployeeRequest, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = activateEmployeeRequest;
     
     // verify the required parameter 'id' is set
@@ -149,16 +168,14 @@ if (contentType != null)
    * Создать сотрудника
    * Создание нового сотрудника
    * @param employee  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Employee
    * @throws ApiException if fails to make API call
    */
-  public Employee createEmployee(@javax.annotation.Nonnull Employee employee, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createEmployee(employee, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Employee createEmployee(@javax.annotation.Nonnull Employee employee) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createEmployee(employee, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать сотрудника
@@ -179,7 +196,6 @@ if (contentType != null)
     return this.createEmployee(employee, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать сотрудника
    * Создание нового сотрудника
@@ -192,7 +208,7 @@ if (contentType != null)
    * @return Employee
    * @throws ApiException if fails to make API call
    */
-  public Employee createEmployee(@javax.annotation.Nonnull Employee employee, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Employee createEmployee(@javax.annotation.Nonnull Employee employee, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = employee;
     
     // verify the required parameter 'employee' is set
@@ -257,16 +273,14 @@ if (contentType != null)
    * Создать или изменить сотрудников
    * Создание или изменение нескольких сотрудников.
    * @param employee  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createEmployeesBatch(@javax.annotation.Nonnull List<@Valid Employee> employee, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.createEmployeesBatch(employee, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<BatchResponseEntity> createEmployeesBatch(@javax.annotation.Nonnull List<@Valid Employee> employee) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createEmployeesBatch(employee, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Создать или изменить сотрудников
@@ -287,7 +301,6 @@ if (contentType != null)
     return this.createEmployeesBatch(employee, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Создать или изменить сотрудников
    * Создание или изменение нескольких сотрудников.
@@ -300,7 +313,7 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createEmployeesBatch(@javax.annotation.Nonnull List<@Valid Employee> employee, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createEmployeesBatch(@javax.annotation.Nonnull List<@Valid Employee> employee, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = employee;
     
     // verify the required parameter 'employee' is set
@@ -365,14 +378,29 @@ if (contentType != null)
    * Деактивировать сотрудника
    * Запрос на деактивацию Сотрудника в сервисе МойСклад.
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deactivateEmployee(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deactivateEmployee(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deactivateEmployee(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deactivateEmployee(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Деактивировать сотрудника
+   * Запрос на деактивацию Сотрудника в сервисе МойСклад.
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deactivateEmployee(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deactivateEmployee(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Деактивировать сотрудника
@@ -383,7 +411,7 @@ if (contentType != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deactivateEmployee(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deactivateEmployee(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -445,14 +473,29 @@ if (acceptEncoding != null)
    * Удалить сотрудника
    * Удаление сотрудника с указанным id
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void deleteEmployee(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.deleteEmployee(id, accept, acceptEncoding, Collections.emptyMap());
+  public void deleteEmployee(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteEmployee(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить сотрудника
+   * Удаление сотрудника с указанным id
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteEmployee(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteEmployee(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить сотрудника
@@ -463,7 +506,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void deleteEmployee(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteEmployee(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -525,16 +568,32 @@ if (acceptEncoding != null)
    * Удалить сотрудников
    * Массовое удаление сотрудников по их мета-объектам.
    * @param employee  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteEmployeesBatch(@javax.annotation.Nonnull List<@Valid Employee> employee, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.deleteEmployeesBatch(employee, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public List<DeleteRowResult> deleteEmployeesBatch(@javax.annotation.Nonnull List<@Valid Employee> employee) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.deleteEmployeesBatch(employee, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Удалить сотрудников
+   * Массовое удаление сотрудников по их мета-объектам.
+   
+   * @param employee  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<DeleteRowResult> deleteEmployeesBatch(@javax.annotation.Nonnull List<@Valid Employee> employee, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.deleteEmployeesBatch(employee, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Удалить сотрудников
@@ -547,7 +606,7 @@ if (acceptEncoding != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteEmployeesBatch(@javax.annotation.Nonnull List<@Valid Employee> employee, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteEmployeesBatch(@javax.annotation.Nonnull List<@Valid Employee> employee, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = employee;
     
     // verify the required parameter 'employee' is set
@@ -611,15 +670,14 @@ if (contentType != null)
    * Получить сотрудника по ID
    * Запрос на получение отдельного сотрудника с указанным id
    * @param id ID сущности (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return Employee
    * @throws ApiException if fails to make API call
    */
-  public Employee getEmployeeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getEmployeeById(id, expand, accept, acceptEncoding, Collections.emptyMap());
+  public Employee getEmployeeById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getEmployeeById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить сотрудника по ID
@@ -639,7 +697,6 @@ if (contentType != null)
     return this.getEmployeeById(id, (String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить сотрудника по ID
    * Запрос на получение отдельного сотрудника с указанным id
@@ -651,7 +708,7 @@ if (contentType != null)
    * @return Employee
    * @throws ApiException if fails to make API call
    */
-  public Employee getEmployeeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected Employee getEmployeeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -714,15 +771,28 @@ if (acceptEncoding != null)
   /**
    * Получить метаданные товаров
    * Запрос на получение метаданных товаров
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return Metadata
    * @throws ApiException if fails to make API call
    */
-  public Metadata getEmployeeMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getEmployeeMetadata(accept, acceptEncoding, Collections.emptyMap());
+  public Metadata getEmployeeMetadata() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getEmployeeMetadata(null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить метаданные товаров
+   * Запрос на получение метаданных товаров
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Metadata
+   * @throws ApiException if fails to make API call
+   */
+  public Metadata getEmployeeMetadata(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getEmployeeMetadata(null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить метаданные товаров
@@ -733,7 +803,7 @@ if (acceptEncoding != null)
    * @return Metadata
    * @throws ApiException if fails to make API call
    */
-  public Metadata getEmployeeMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected Metadata getEmployeeMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -790,15 +860,31 @@ if (acceptEncoding != null)
    * Получить права сотрудника
    * Запрос на получение информации о правах Сотрудника. Получать права может только сотрудник с правами Системный администратор.
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return EmployeeSecurity
    * @throws ApiException if fails to make API call
    */
-  public EmployeeSecurity getEmployeeSecurity(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getEmployeeSecurity(id, accept, acceptEncoding, Collections.emptyMap());
+  public EmployeeSecurity getEmployeeSecurity(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getEmployeeSecurity(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить права сотрудника
+   * Запрос на получение информации о правах Сотрудника. Получать права может только сотрудник с правами Системный администратор.
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return EmployeeSecurity
+   * @throws ApiException if fails to make API call
+   */
+  public EmployeeSecurity getEmployeeSecurity(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getEmployeeSecurity(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить права сотрудника
@@ -810,7 +896,7 @@ if (acceptEncoding != null)
    * @return EmployeeSecurity
    * @throws ApiException if fails to make API call
    */
-  public EmployeeSecurity getEmployeeSecurity(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected EmployeeSecurity getEmployeeSecurity(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -872,20 +958,14 @@ if (acceptEncoding != null)
   /**
    * Получить список сотрудников
    * Запрос всех сотрудников на данной учетной записи
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
-   * @param offset Отступ в выданном списке (optional, default to 0)
-   * @param search Контекстный поиск по строковым полям сущностей (optional)
-   * @param filter Фильтрация выборки (optional)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param order Сортировка (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return EmployeeList
    * @throws ApiException if fails to make API call
    */
-  public EmployeeList getEmployees(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getEmployees(limit, offset, search, filter, expand, order, accept, acceptEncoding, Collections.emptyMap());
+  public EmployeeList getEmployees() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getEmployees((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Получить список сотрудников
@@ -907,7 +987,6 @@ if (acceptEncoding != null)
     return this.getEmployees((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Получить список сотрудников
    * Запрос всех сотрудников на данной учетной записи
@@ -923,7 +1002,7 @@ if (acceptEncoding != null)
    * @return EmployeeList
    * @throws ApiException if fails to make API call
    */
-  public EmployeeList getEmployees(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected EmployeeList getEmployees(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -985,15 +1064,28 @@ if (acceptEncoding != null)
   /**
    * Получить роль администратора
    * Запрос на получение роли системного администратора.
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return EmployeeRole
    * @throws ApiException if fails to make API call
    */
-  public EmployeeRole getRoleAdmin(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getRoleAdmin(accept, acceptEncoding, Collections.emptyMap());
+  public EmployeeRole getRoleAdmin() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getRoleAdmin(null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить роль администратора
+   * Запрос на получение роли системного администратора.
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return EmployeeRole
+   * @throws ApiException if fails to make API call
+   */
+  public EmployeeRole getRoleAdmin(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getRoleAdmin(null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить роль администратора
@@ -1004,7 +1096,7 @@ if (acceptEncoding != null)
    * @return EmployeeRole
    * @throws ApiException if fails to make API call
    */
-  public EmployeeRole getRoleAdmin(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected EmployeeRole getRoleAdmin(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1060,15 +1152,28 @@ if (acceptEncoding != null)
   /**
    * Получить роль кассира
    * Запрос на получение роли кассира.
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return EmployeeRole
    * @throws ApiException if fails to make API call
    */
-  public EmployeeRole getRoleCashier(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getRoleCashier(accept, acceptEncoding, Collections.emptyMap());
+  public EmployeeRole getRoleCashier() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getRoleCashier(null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить роль кассира
+   * Запрос на получение роли кассира.
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return EmployeeRole
+   * @throws ApiException if fails to make API call
+   */
+  public EmployeeRole getRoleCashier(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getRoleCashier(null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить роль кассира
@@ -1079,7 +1184,7 @@ if (acceptEncoding != null)
    * @return EmployeeRole
    * @throws ApiException if fails to make API call
    */
-  public EmployeeRole getRoleCashier(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected EmployeeRole getRoleCashier(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1135,15 +1240,28 @@ if (acceptEncoding != null)
   /**
    * Получить индивидуальную роль
    * Запрос на получение индивидуальной роли.
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return EmployeeRole
    * @throws ApiException if fails to make API call
    */
-  public EmployeeRole getRoleIndividual(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getRoleIndividual(accept, acceptEncoding, Collections.emptyMap());
+  public EmployeeRole getRoleIndividual() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getRoleIndividual(null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить индивидуальную роль
+   * Запрос на получение индивидуальной роли.
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return EmployeeRole
+   * @throws ApiException if fails to make API call
+   */
+  public EmployeeRole getRoleIndividual(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getRoleIndividual(null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить индивидуальную роль
@@ -1154,7 +1272,7 @@ if (acceptEncoding != null)
    * @return EmployeeRole
    * @throws ApiException if fails to make API call
    */
-  public EmployeeRole getRoleIndividual(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected EmployeeRole getRoleIndividual(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1210,15 +1328,28 @@ if (acceptEncoding != null)
   /**
    * Получить роль владельца аккаунта
    * Запрос на получение роли владельца аккаунта.
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return EmployeeRole
    * @throws ApiException if fails to make API call
    */
-  public EmployeeRole getRoleOwner(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getRoleOwner(accept, acceptEncoding, Collections.emptyMap());
+  public EmployeeRole getRoleOwner() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getRoleOwner(null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить роль владельца аккаунта
+   * Запрос на получение роли владельца аккаунта.
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return EmployeeRole
+   * @throws ApiException if fails to make API call
+   */
+  public EmployeeRole getRoleOwner(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getRoleOwner(null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить роль владельца аккаунта
@@ -1229,7 +1360,7 @@ if (acceptEncoding != null)
    * @return EmployeeRole
    * @throws ApiException if fails to make API call
    */
-  public EmployeeRole getRoleOwner(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected EmployeeRole getRoleOwner(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1285,15 +1416,28 @@ if (acceptEncoding != null)
   /**
    * Получить роль сотрудника производства
    * Запрос на получение роли сотрудника производства. Роль доступна только при подключенной опции Управление производством.
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @return EmployeeRole
    * @throws ApiException if fails to make API call
    */
-  public EmployeeRole getRoleWorker(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    return this.getRoleWorker(accept, acceptEncoding, Collections.emptyMap());
+  public EmployeeRole getRoleWorker() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getRoleWorker(null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Получить роль сотрудника производства
+   * Запрос на получение роли сотрудника производства. Роль доступна только при подключенной опции Управление производством.
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return EmployeeRole
+   * @throws ApiException if fails to make API call
+   */
+  public EmployeeRole getRoleWorker(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getRoleWorker(null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Получить роль сотрудника производства
@@ -1304,7 +1448,7 @@ if (acceptEncoding != null)
    * @return EmployeeRole
    * @throws ApiException if fails to make API call
    */
-  public EmployeeRole getRoleWorker(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected EmployeeRole getRoleWorker(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1361,14 +1505,29 @@ if (acceptEncoding != null)
    * Сбросить пароль сотрудника
    * Запрос на сброс пароля Сотрудника в сервисе МойСклад. Новый пароль будет выслан на почту, указанную у данного сотрудника.
    * @param id ID сущности (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @throws ApiException if fails to make API call
    */
-  public void resetEmployeePassword(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding) throws ApiException {
-    this.resetEmployeePassword(id, accept, acceptEncoding, Collections.emptyMap());
+  public void resetEmployeePassword(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.resetEmployeePassword(id, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Сбросить пароль сотрудника
+   * Запрос на сброс пароля Сотрудника в сервисе МойСклад. Новый пароль будет выслан на почту, указанную у данного сотрудника.
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void resetEmployeePassword(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.resetEmployeePassword(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Сбросить пароль сотрудника
@@ -1379,7 +1538,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  public void resetEmployeePassword(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void resetEmployeePassword(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1442,16 +1601,14 @@ if (acceptEncoding != null)
    * Обновление сотрудника с указанным id
    * @param id ID сущности (required)
    * @param employee  (required)
-   * @param expand Замена ссылок объектами с помощью expand (optional)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return Employee
    * @throws ApiException if fails to make API call
    */
-  public Employee updateEmployee(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Employee employee, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateEmployee(id, employee, expand, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public Employee updateEmployee(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Employee employee) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateEmployee(id, employee, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
+
 
   /**
    * Обновить сотрудника
@@ -1475,7 +1632,6 @@ if (acceptEncoding != null)
     return this.updateEmployee(id, employee, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
-
   /**
    * Обновить сотрудника
    * Обновление сотрудника с указанным id
@@ -1489,7 +1645,7 @@ if (acceptEncoding != null)
    * @return Employee
    * @throws ApiException if fails to make API call
    */
-  public Employee updateEmployee(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Employee employee, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected Employee updateEmployee(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Employee employee, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = employee;
     
     // verify the required parameter 'id' is set
@@ -1561,16 +1717,35 @@ if (contentType != null)
    * Запрос на изменение информации о правах Сотрудника. Изменять права может только сотрудник с правами Системный администратор.
    * @param id ID сущности (required)
    * @param employeeSecurity  (required)
-   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
-   * @param contentType  (optional, default to application/json)
    * @return EmployeeSecurity
    * @throws ApiException if fails to make API call
    */
-  public EmployeeSecurity updateEmployeeSecurity(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EmployeeSecurity employeeSecurity, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType) throws ApiException {
-    return this.updateEmployeeSecurity(id, employeeSecurity, accept, acceptEncoding, contentType, Collections.emptyMap());
+  public EmployeeSecurity updateEmployeeSecurity(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EmployeeSecurity employeeSecurity) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateEmployeeSecurity(id, employeeSecurity, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
+
+  /**
+   * Изменить права сотрудника
+   * Запрос на изменение информации о правах Сотрудника. Изменять права может только сотрудник с правами Системный администратор.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param employeeSecurity  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return EmployeeSecurity
+   * @throws ApiException if fails to make API call
+   */
+  public EmployeeSecurity updateEmployeeSecurity(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EmployeeSecurity employeeSecurity, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateEmployeeSecurity(id, employeeSecurity, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
 
   /**
    * Изменить права сотрудника
@@ -1584,7 +1759,7 @@ if (contentType != null)
    * @return EmployeeSecurity
    * @throws ApiException if fails to make API call
    */
-  public EmployeeSecurity updateEmployeeSecurity(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EmployeeSecurity employeeSecurity, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected EmployeeSecurity updateEmployeeSecurity(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EmployeeSecurity employeeSecurity, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = employeeSecurity;
     
     // verify the required parameter 'id' is set
