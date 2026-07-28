@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import ru.moysklad.remap_1_2.model.Currency;
+import ru.moysklad.remap_1_2.model.EmbeddedTemplate;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import javax.validation.constraints.*;
@@ -30,87 +30,90 @@ import java.net.URLEncoder;
 import java.util.StringJoiner;
 
 /**
- * Закупочная цена
+ * TemplateComposition
  */
 @JsonPropertyOrder({
-  BuyPrice.JSON_PROPERTY_VALUE,
-  BuyPrice.JSON_PROPERTY_CURRENCY
+  TemplateComposition.JSON_PROPERTY_TEMPLATE,
+  TemplateComposition.JSON_PROPERTY_COUNT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
-public class BuyPrice {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
+public class TemplateComposition {
 
-  public static final String JSON_PROPERTY_VALUE = "value";
-  @javax.annotation.Nullable
-  private Float value;
+  public static final String JSON_PROPERTY_TEMPLATE = "template";
+  @javax.annotation.Nonnull
+  private EmbeddedTemplate template;
 
-  public static final String JSON_PROPERTY_CURRENCY = "currency";
-  @javax.annotation.Nullable
-  private Currency currency;
+  public static final String JSON_PROPERTY_COUNT = "count";
+  @javax.annotation.Nonnull
+  private Integer count;
 
-  public BuyPrice() {
+  public TemplateComposition() {
   }
 
-  public BuyPrice value(@javax.annotation.Nullable Float value) {
+  public TemplateComposition template(@javax.annotation.Nonnull EmbeddedTemplate template) {
     
-    this.value = value;
+    this.template = template;
     return this;
   }
 
 
   /**
-   * Значение цены
-   * minimum: 0
-   * @return value
+   * Get template
+   * @return template
    */
-  @javax.annotation.Nullable
- @DecimalMin("0")
-
-  @JsonProperty(JSON_PROPERTY_VALUE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Float getValue() {
-    return value;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_VALUE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setValue(@javax.annotation.Nullable Float value) {
-    this.value = value;
-  }
-
-
-  public BuyPrice currency(@javax.annotation.Nullable Currency currency) {
-    
-    this.currency = currency;
-    return this;
-  }
-
-
-  /**
-   * Get currency
-   * @return currency
-   */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
+  @NotNull
   @Valid
 
 
-  @JsonProperty(JSON_PROPERTY_CURRENCY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonProperty(JSON_PROPERTY_TEMPLATE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public Currency getCurrency() {
-    return currency;
+  public EmbeddedTemplate getTemplate() {
+    return template;
   }
 
   
 
 
-  @JsonProperty(JSON_PROPERTY_CURRENCY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCurrency(@javax.annotation.Nullable Currency currency) {
-    this.currency = currency;
+  @JsonProperty(JSON_PROPERTY_TEMPLATE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setTemplate(@javax.annotation.Nonnull EmbeddedTemplate template) {
+    this.template = template;
+  }
+
+
+  public TemplateComposition count(@javax.annotation.Nonnull Integer count) {
+    
+    this.count = count;
+    return this;
+  }
+
+
+  /**
+   * Количество копий печатной формы
+   * minimum: 1
+   * maximum: 10
+   * @return count
+   */
+  @javax.annotation.Nonnull
+  @NotNull
+ @Min(1) @Max(10)
+
+  @JsonProperty(JSON_PROPERTY_COUNT)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public Integer getCount() {
+    return count;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_COUNT)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setCount(@javax.annotation.Nonnull Integer count) {
+    this.count = count;
   }
 
 
@@ -122,22 +125,22 @@ public class BuyPrice {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    BuyPrice buyPrice = (BuyPrice) o;
-    return Objects.equals(this.value, buyPrice.value) &&
-        Objects.equals(this.currency, buyPrice.currency);
+    TemplateComposition templateComposition = (TemplateComposition) o;
+    return Objects.equals(this.template, templateComposition.template) &&
+        Objects.equals(this.count, templateComposition.count);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(value, currency);
+    return Objects.hash(template, count);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class BuyPrice {\n");
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    sb.append("class TemplateComposition {\n");
+    sb.append("    template: ").append(toIndentedString(template)).append("\n");
+    sb.append("    count: ").append(toIndentedString(count)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -185,19 +188,19 @@ public class BuyPrice {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `value` to the URL query string
-    if (getValue() != null) {
+    // add `template` to the URL query string
+    if (getTemplate() != null) {
+      joiner.add(getTemplate().toUrlQueryString(prefix + "template" + suffix));
+    }
+
+    // add `count` to the URL query string
+    if (getCount() != null) {
       try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%svalue%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getValue()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%scount%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCount()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
       }
-    }
-
-    // add `currency` to the URL query string
-    if (getCurrency() != null) {
-      joiner.add(getCurrency().toUrlQueryString(prefix + "currency" + suffix));
     }
 
     return joiner.toString();

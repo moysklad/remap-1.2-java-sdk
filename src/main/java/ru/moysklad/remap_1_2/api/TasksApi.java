@@ -43,7 +43,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class TasksApi extends BaseApi {
 
@@ -369,10 +369,10 @@ if (contentType != null)
    * Создание комментария к Задаче
    * @param id ID сущности (required)
    * @param taskNote  (required)
-   * @return TaskNote
+   * @return List&lt;TaskNote&gt;
    * @throws ApiException if fails to make API call
    */
-  public TaskNote createTaskNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull TaskNote taskNote) throws ApiException {
+  public List<TaskNote> createTaskNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull TaskNote taskNote) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.createTaskNote(id, taskNote, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -391,10 +391,10 @@ if (contentType != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return TaskNote
+   * @return List&lt;TaskNote&gt;
    * @throws ApiException if fails to make API call
    */
-  public TaskNote createTaskNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull TaskNote taskNote, RequestOptions options) throws ApiException {
+  public List<TaskNote> createTaskNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull TaskNote taskNote, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createTaskNote(id, taskNote, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -408,10 +408,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return TaskNote
+   * @return List&lt;TaskNote&gt;
    * @throws ApiException if fails to make API call
    */
-  protected TaskNote createTaskNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull TaskNote taskNote, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<TaskNote> createTaskNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull TaskNote taskNote, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = taskNote;
     
     // verify the required parameter 'id' is set
@@ -459,7 +459,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<TaskNote> localVarReturnType = new TypeReference<TaskNote>() {};
+    TypeReference<List<TaskNote>> localVarReturnType = new TypeReference<List<TaskNote>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

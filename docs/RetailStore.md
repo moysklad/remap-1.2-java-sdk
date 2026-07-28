@@ -36,7 +36,7 @@
 |**marksCheckMode** | **String** | Режим проверки кодов маркировки. Известные значения описаны в MarksCheckMode |  [optional] |
 |**priorityOfdSend** | **String** | Приоритетный способ отправки чека покупателю. Известные значения описаны в PriorityOfdSend |  [optional] |
 |**allowCreateProducts** | **Boolean** | Признак разрешения создания новых товаров при продаже |  [optional] |
-|**allowCustomPrice** | **Boolean** | Признак разрешения устанавливать произвольные цены |  [optional] [readonly] |
+|**allowCustomPrice** | **Boolean** | Признак разрешения устанавливать произвольные цены |  [optional] |
 |**allowDeleteReceiptPositions** | **Boolean** | Признак разрешения удалять позиции из чека |  [optional] |
 |**allowSellTobaccoWithoutMRC** | **Boolean** | Признак разрешения продажи табачной продукции без проверки МРЦ |  [optional] |
 |**authTokenAttached** | **Boolean** | Признак подключения авторизационного токена |  [optional] [readonly] |
@@ -79,9 +79,9 @@
 |**demandPrefix** | **String** | Префикс номера заказа |  [optional] |
 |**qrTerminalId** | **String** | Идентификатор QR-терминала |  [optional] |
 |**idQR** | **String** | Идентификатор QR |  [optional] |
-|**acquire** | [**Counterparty**](Counterparty.md) |  |  [optional] |
+|**acquire** | [**Agent**](Agent.md) | Эквайер |  [optional] |
 |**cashiers** | [**CashierList**](CashierList.md) | Кассиры, работающие на точке продаж |  [optional] |
-|**qrAcquire** | [**Counterparty**](Counterparty.md) | Эквайер для QR-платежей |  [optional] |
+|**qrAcquire** | [**Agent**](Agent.md) | Эквайер для QR-платежей |  [optional] |
 
 
 

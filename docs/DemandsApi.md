@@ -280,7 +280,7 @@ public class Example {
 
 ## createDemandPosition
 
-> DemandPosition createDemandPosition(id, demandPosition, expand, accept, acceptEncoding, contentType)
+> List&lt;DemandPosition&gt; createDemandPosition(id, demandPosition, expand, accept, acceptEncoding, contentType)
 
 Создать и обновить позицию Отгрузки
 
@@ -317,7 +317,7 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            DemandPosition result = apiInstance.createDemandPosition(id, demandPosition, expand, accept, acceptEncoding, contentType);
+            List<DemandPosition> result = apiInstance.createDemandPosition(id, demandPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DemandsApi#createDemandPosition");
@@ -344,7 +344,7 @@ public class Example {
 
 ### Return type
 
-[**DemandPosition**](DemandPosition.md)
+[**List&lt;DemandPosition&gt;**](DemandPosition.md)
 
 ### Authorization
 

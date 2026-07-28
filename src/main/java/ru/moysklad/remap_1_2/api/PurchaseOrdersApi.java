@@ -48,7 +48,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class PurchaseOrdersApi extends BaseApi {
 
@@ -581,10 +581,10 @@ if (contentType != null)
    * Запрос на добавление одного События Заказа поставщику
    * @param id ID сущности (required)
    * @param eventNote  (required)
-   * @return EventNote
+   * @return List&lt;EventNote&gt;
    * @throws ApiException if fails to make API call
    */
-  public EventNote createPurchaseOrderNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EventNote eventNote) throws ApiException {
+  public List<EventNote> createPurchaseOrderNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EventNote eventNote) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.createPurchaseOrderNote(id, eventNote, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -603,10 +603,10 @@ if (contentType != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return EventNote
+   * @return List&lt;EventNote&gt;
    * @throws ApiException if fails to make API call
    */
-  public EventNote createPurchaseOrderNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EventNote eventNote, RequestOptions options) throws ApiException {
+  public List<EventNote> createPurchaseOrderNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EventNote eventNote, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createPurchaseOrderNote(id, eventNote, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -620,10 +620,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return EventNote
+   * @return List&lt;EventNote&gt;
    * @throws ApiException if fails to make API call
    */
-  protected EventNote createPurchaseOrderNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EventNote eventNote, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<EventNote> createPurchaseOrderNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EventNote eventNote, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = eventNote;
     
     // verify the required parameter 'id' is set
@@ -671,7 +671,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<EventNote> localVarReturnType = new TypeReference<EventNote>() {};
+    TypeReference<List<EventNote>> localVarReturnType = new TypeReference<List<EventNote>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

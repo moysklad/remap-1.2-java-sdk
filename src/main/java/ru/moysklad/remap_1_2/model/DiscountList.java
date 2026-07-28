@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import ru.moysklad.remap_1_2.model.Context;
-import ru.moysklad.remap_1_2.model.DiscountListRowsInner;
+import ru.moysklad.remap_1_2.model.DiscountAbstract;
 import ru.moysklad.remap_1_2.model.MetaList;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -42,7 +42,7 @@ import java.util.StringJoiner;
   DiscountList.JSON_PROPERTY_META,
   DiscountList.JSON_PROPERTY_ROWS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
 public class DiscountList {
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
@@ -55,7 +55,7 @@ public class DiscountList {
 
   public static final String JSON_PROPERTY_ROWS = "rows";
   @javax.annotation.Nullable
-  private List<DiscountListRowsInner> rows = new ArrayList<>();
+  private List<@Valid DiscountAbstract> rows = new ArrayList<>();
 
   public DiscountList() {
   }
@@ -124,14 +124,14 @@ public class DiscountList {
   }
 
 
-  public DiscountList rows(@javax.annotation.Nullable List<DiscountListRowsInner> rows) {
+  public DiscountList rows(@javax.annotation.Nullable List<@Valid DiscountAbstract> rows) {
     
     this.rows = rows;
     return this;
   }
 
 
-  public DiscountList addRowsItem(DiscountListRowsInner rowsItem) {
+  public DiscountList addRowsItem(DiscountAbstract rowsItem) {
     if (this.rows == null) {
       this.rows = new ArrayList<>();
     }
@@ -150,7 +150,7 @@ public class DiscountList {
   @JsonProperty(JSON_PROPERTY_ROWS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<DiscountListRowsInner> getRows() {
+  public List<@Valid DiscountAbstract> getRows() {
     return rows;
   }
 
@@ -159,7 +159,7 @@ public class DiscountList {
 
   @JsonProperty(JSON_PROPERTY_ROWS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRows(@javax.annotation.Nullable List<DiscountListRowsInner> rows) {
+  public void setRows(@javax.annotation.Nullable List<@Valid DiscountAbstract> rows) {
     this.rows = rows;
   }
 

@@ -21,8 +21,8 @@
 |**product** | [**Product**](Product.md) |  |  [optional] |
 |**characteristics** | [**List&lt;VariantCharacteristicValue&gt;**](VariantCharacteristicValue.md) | Характеристики Модификации |  [optional] |
 |**salePrices** | [**List&lt;SalePrice&gt;**](SalePrice.md) | Цены продажи |  [optional] |
-|**buyPrice** | [**BuyPrice**](BuyPrice.md) | Закупочная цена |  [optional] |
-|**minPrice** | [**MinPrice**](MinPrice.md) |  |  [optional] |
+|**buyPrice** | [**Price**](Price.md) | Закупочная цена |  [optional] |
+|**minPrice** | [**Price**](Price.md) |  |  [optional] |
 |**barcodes** | [**List&lt;Barcode&gt;**](Barcode.md) | Штрихкоды Модификации |  [optional] |
 |**packs** | [**List&lt;VariantPack&gt;**](VariantPack.md) | Упаковки Модификации |  [optional] |
 |**images** | [**ImageList**](ImageList.md) | Массив метаданных Изображений |  [optional] |

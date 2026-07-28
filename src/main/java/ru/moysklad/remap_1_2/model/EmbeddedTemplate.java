@@ -20,6 +20,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.net.URI;
 import java.util.UUID;
 import ru.moysklad.remap_1_2.model.Meta;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -36,15 +37,18 @@ import java.util.StringJoiner;
 @JsonPropertyOrder({
   EmbeddedTemplate.JSON_PROPERTY_META,
   EmbeddedTemplate.JSON_PROPERTY_ID,
-  EmbeddedTemplate.JSON_PROPERTY_ACCOUNT_ID
+  EmbeddedTemplate.JSON_PROPERTY_ACCOUNT_ID,
+  EmbeddedTemplate.JSON_PROPERTY_NAME,
+  EmbeddedTemplate.JSON_PROPERTY_TYPE,
+  EmbeddedTemplate.JSON_PROPERTY_CONTENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
 public class EmbeddedTemplate {
-  public static EmbeddedTemplate createWithMeta(UUID id) {
+  public static EmbeddedTemplate createWithMeta(UUID type, UUID id) {
     EmbeddedTemplate o = new EmbeddedTemplate();
     Meta meta = new Meta();
     meta.setType("embeddedtemplate");
-    String href = ru.moysklad.remap_1_2.Configuration.getDefaultApiClient().getBaseURL() + "/" + "entity" + "/" + "assortment" + "/" + "metadata" + "/" + "embeddedtemplate" + "/" + id;
+    String href = ru.moysklad.remap_1_2.Configuration.getDefaultApiClient().getBaseURL() + "/" + "entity" + "/" + type + "/" + "metadata" + "/" + "embeddedtemplate" + "/" + id;
     try {
         meta.setHref(new java.net.URI(href));
     } catch (java.net.URISyntaxException e) {
@@ -67,6 +71,18 @@ public class EmbeddedTemplate {
   @javax.annotation.Nullable
   private UUID accountId;
 
+  public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
+  private String name;
+
+  public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nullable
+  private String type;
+
+  public static final String JSON_PROPERTY_CONTENT = "content";
+  @javax.annotation.Nullable
+  private URI content;
+
   public EmbeddedTemplate() {
   }
   /**
@@ -75,11 +91,17 @@ public class EmbeddedTemplate {
   @JsonCreator
   public EmbeddedTemplate(
     @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id, 
-    @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId
+    @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId, 
+    @JsonProperty(value = JSON_PROPERTY_NAME, required = false) String name, 
+    @JsonProperty(value = JSON_PROPERTY_TYPE, required = false) String type, 
+    @JsonProperty(value = JSON_PROPERTY_CONTENT, required = false) URI content
   ) {
     this();
     this.id = id;
     this.accountId = accountId;
+    this.name = name;
+    this.type = type;
+    this.content = content;
   }
 
   public EmbeddedTemplate meta(@javax.annotation.Nullable Meta meta) {
@@ -152,6 +174,61 @@ public class EmbeddedTemplate {
 
 
 
+  /**
+   * Наименование шаблона
+   * @return name
+   */
+  @javax.annotation.Nullable
+ @Size(max=255)
+
+  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getName() {
+    return name;
+  }
+
+  
+
+
+
+  /**
+   * Тип шаблона
+   * @return type
+   */
+  @javax.annotation.Nullable
+ @Size(max=255)
+
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getType() {
+    return type;
+  }
+
+  
+
+
+
+  /**
+   * Ссылка на скачивание шаблона
+   * @return content
+   */
+  @javax.annotation.Nullable
+  @Valid
+
+
+  @JsonProperty(JSON_PROPERTY_CONTENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public URI getContent() {
+    return content;
+  }
+
+  
+
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -163,12 +240,15 @@ public class EmbeddedTemplate {
     EmbeddedTemplate embeddedTemplate = (EmbeddedTemplate) o;
     return Objects.equals(this.meta, embeddedTemplate.meta) &&
         Objects.equals(this.id, embeddedTemplate.id) &&
-        Objects.equals(this.accountId, embeddedTemplate.accountId);
+        Objects.equals(this.accountId, embeddedTemplate.accountId) &&
+        Objects.equals(this.name, embeddedTemplate.name) &&
+        Objects.equals(this.type, embeddedTemplate.type) &&
+        Objects.equals(this.content, embeddedTemplate.content);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId);
+    return Objects.hash(meta, id, accountId, name, type, content);
   }
 
   @Override
@@ -178,6 +258,9 @@ public class EmbeddedTemplate {
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -244,6 +327,36 @@ public class EmbeddedTemplate {
     if (getAccountId() != null) {
       try {
         joiner.add(String.format(java.util.Locale.ROOT, "%saccountId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAccountId()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `name` to the URL query string
+    if (getName() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sname%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getName()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `type` to the URL query string
+    if (getType() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%stype%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getType()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `content` to the URL query string
+    if (getContent() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%scontent%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getContent()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);

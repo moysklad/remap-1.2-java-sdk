@@ -96,7 +96,7 @@ import java.util.StringJoiner;
   SalesReturnPaymentsInner.JSON_PROPERTY_OPERATIONS
 })
 @JsonTypeName("SalesReturn_payments_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
 public class SalesReturnPaymentsInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -257,9 +257,7 @@ public class SalesReturnPaymentsInner {
     @JsonProperty(value = JSON_PROPERTY_UPDATED, required = false) String updated, 
     @JsonProperty(value = JSON_PROPERTY_PRINTED, required = false) Boolean printed, 
     @JsonProperty(value = JSON_PROPERTY_PUBLISHED, required = false) Boolean published, 
-    @JsonProperty(value = JSON_PROPERTY_SHARED, required = false) Boolean shared, 
-    @JsonProperty(value = JSON_PROPERTY_SUM, required = false) Double sum, 
-    @JsonProperty(value = JSON_PROPERTY_VAT_SUM, required = false) Double vatSum
+    @JsonProperty(value = JSON_PROPERTY_SHARED, required = false) Boolean shared
   ) {
     this();
     this.id = id;
@@ -270,8 +268,6 @@ public class SalesReturnPaymentsInner {
     this.printed = printed;
     this.published = published;
     this.shared = shared;
-    this.sum = sum;
-    this.vatSum = vatSum;
   }
 
   public SalesReturnPaymentsInner meta(@javax.annotation.Nullable Meta meta) {
@@ -1209,6 +1205,13 @@ public class SalesReturnPaymentsInner {
   }
 
 
+  public SalesReturnPaymentsInner sum(@javax.annotation.Nullable Double sum) {
+    
+    this.sum = sum;
+    return this;
+  }
+
+
   /**
    * Сумма расходного ордера в установленной валюте
    * @return sum
@@ -1225,6 +1228,19 @@ public class SalesReturnPaymentsInner {
 
   
 
+
+  @JsonProperty(JSON_PROPERTY_SUM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSum(@javax.annotation.Nullable Double sum) {
+    this.sum = sum;
+  }
+
+
+  public SalesReturnPaymentsInner vatSum(@javax.annotation.Nullable Double vatSum) {
+    
+    this.vatSum = vatSum;
+    return this;
+  }
 
 
   /**
@@ -1243,6 +1259,12 @@ public class SalesReturnPaymentsInner {
 
   
 
+
+  @JsonProperty(JSON_PROPERTY_VAT_SUM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setVatSum(@javax.annotation.Nullable Double vatSum) {
+    this.vatSum = vatSum;
+  }
 
 
   public SalesReturnPaymentsInner factureIn(@javax.annotation.Nullable FactureIn factureIn) {

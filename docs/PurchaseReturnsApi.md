@@ -10,6 +10,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createPurchaseReturnMetadataAttribute**](PurchaseReturnsApi.md#createPurchaseReturnMetadataAttribute) | **POST** /entity/purchasereturn/metadata/attributes | Создать доп. поле Возврата поставщику |
 | [**createPurchaseReturnMetadataState**](PurchaseReturnsApi.md#createPurchaseReturnMetadataState) | **POST** /entity/purchasereturn/metadata/states | Создать статус Возврата поставщику |
 | [**createPurchaseReturnMetadataStatesBatch**](PurchaseReturnsApi.md#createPurchaseReturnMetadataStatesBatch) | **POST** /entity/purchasereturn/metadata/states/batch | Массовое создание и обновление статусов Возврата поставщику |
+| [**createPurchaseReturnNote**](PurchaseReturnsApi.md#createPurchaseReturnNote) | **POST** /entity/purchasereturn/{id}/notes | Добавить Событие Возврата поставщику |
 | [**createPurchaseReturnPosition**](PurchaseReturnsApi.md#createPurchaseReturnPosition) | **POST** /entity/purchasereturn/{id}/positions | Создать и обновить позицию Возврата поставщику |
 | [**createPurchaseReturnPositions**](PurchaseReturnsApi.md#createPurchaseReturnPositions) | **POST** /entity/purchasereturn/{id}/positions/batch | Массовое создание и обновление позиций Возврата поставщику |
 | [**deletePurchaseReturn**](PurchaseReturnsApi.md#deletePurchaseReturn) | **DELETE** /entity/purchasereturn/{id} | Удалить Возврат поставщику |
@@ -17,6 +18,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**deletePurchaseReturnFile**](PurchaseReturnsApi.md#deletePurchaseReturnFile) | **DELETE** /entity/purchasereturn/{id}/files/{fileId} | Удалить файл возврата поставщику |
 | [**deletePurchaseReturnMetadataAttributeById**](PurchaseReturnsApi.md#deletePurchaseReturnMetadataAttributeById) | **DELETE** /entity/purchasereturn/metadata/attributes/{id} | Удалить отдельное доп. поле Возврата поставщику |
 | [**deletePurchaseReturnMetadataStateById**](PurchaseReturnsApi.md#deletePurchaseReturnMetadataStateById) | **DELETE** /entity/purchasereturn/metadata/states/{id} | Удалить отдельный статус Возврата поставщику |
+| [**deletePurchaseReturnNote**](PurchaseReturnsApi.md#deletePurchaseReturnNote) | **DELETE** /entity/purchasereturn/{id}/notes/{noteId} | Удалить Событие Возврата поставщику |
 | [**deletePurchaseReturnPosition**](PurchaseReturnsApi.md#deletePurchaseReturnPosition) | **DELETE** /entity/purchasereturn/{id}/positions/{positionId} | Удалить позицию Возврата поставщику |
 | [**deletePurchaseReturnPositions**](PurchaseReturnsApi.md#deletePurchaseReturnPositions) | **POST** /entity/purchasereturn/{id}/positions/delete | Массовое удаление позиций Возврата поставщику |
 | [**getPurchaseReturnById**](PurchaseReturnsApi.md#getPurchaseReturnById) | **GET** /entity/purchasereturn/{id} | Получить Возврат поставщику |
@@ -26,12 +28,15 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**getPurchaseReturnMetadataAttribute**](PurchaseReturnsApi.md#getPurchaseReturnMetadataAttribute) | **GET** /entity/purchasereturn/metadata/attributes | Доп. поля Возврата поставщику |
 | [**getPurchaseReturnMetadataAttributeById**](PurchaseReturnsApi.md#getPurchaseReturnMetadataAttributeById) | **GET** /entity/purchasereturn/metadata/attributes/{id} | Отдельное доп. поле Возврата поставщику |
 | [**getPurchaseReturnMetadataStateById**](PurchaseReturnsApi.md#getPurchaseReturnMetadataStateById) | **GET** /entity/purchasereturn/metadata/states/{id} | Отдельный статус Возврата поставщику |
+| [**getPurchaseReturnNoteById**](PurchaseReturnsApi.md#getPurchaseReturnNoteById) | **GET** /entity/purchasereturn/{id}/notes/{noteId} | Получить Событие Возврата поставщику по ID |
+| [**getPurchaseReturnNotes**](PurchaseReturnsApi.md#getPurchaseReturnNotes) | **GET** /entity/purchasereturn/{id}/notes | Получить список Событий Возврата поставщику |
 | [**getPurchaseReturnPositionById**](PurchaseReturnsApi.md#getPurchaseReturnPositionById) | **GET** /entity/purchasereturn/{id}/positions/{positionId} | Получить позицию Возврата поставщику |
 | [**getPurchaseReturnPositions**](PurchaseReturnsApi.md#getPurchaseReturnPositions) | **GET** /entity/purchasereturn/{id}/positions | Получить позиции Возврата поставщику |
 | [**getPurchaseReturnTemplate**](PurchaseReturnsApi.md#getPurchaseReturnTemplate) | **PUT** /entity/purchasereturn/new | Шаблон Возврата поставщику |
 | [**updatePurchaseReturn**](PurchaseReturnsApi.md#updatePurchaseReturn) | **PUT** /entity/purchasereturn/{id} | Изменить Возврат поставщику |
 | [**updatePurchaseReturnMetadataAttributeById**](PurchaseReturnsApi.md#updatePurchaseReturnMetadataAttributeById) | **PUT** /entity/purchasereturn/metadata/attributes/{id} | Обновить отдельное доп. поле Возврата поставщику |
 | [**updatePurchaseReturnMetadataStateById**](PurchaseReturnsApi.md#updatePurchaseReturnMetadataStateById) | **PUT** /entity/purchasereturn/metadata/states/{id} | Обновить отдельный статус Возврата поставщику |
+| [**updatePurchaseReturnNote**](PurchaseReturnsApi.md#updatePurchaseReturnNote) | **PUT** /entity/purchasereturn/{id}/notes/{noteId} | Обновить Событие Возврата поставщику |
 | [**updatePurchaseReturnPosition**](PurchaseReturnsApi.md#updatePurchaseReturnPosition) | **PUT** /entity/purchasereturn/{id}/positions/{positionId} | Изменить позицию Возврата поставщику |
 
 
@@ -527,6 +532,91 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+
+
+## createPurchaseReturnNote
+
+> List&lt;EventNote&gt; createPurchaseReturnNote(id, eventNote, accept, acceptEncoding, contentType)
+
+Добавить Событие Возврата поставщику
+
+Запрос на добавление одного События Возврата поставщику
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.PurchaseReturnsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        PurchaseReturnsApi apiInstance = new PurchaseReturnsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        EventNote eventNote = new EventNote(); // EventNote | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<EventNote> result = apiInstance.createPurchaseReturnNote(id, eventNote, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PurchaseReturnsApi#createPurchaseReturnNote");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **eventNote** | [**EventNote**](EventNote.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;EventNote&gt;**](EventNote.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Событие успешно создано |  -  |
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 
@@ -1095,6 +1185,88 @@ null (empty response body)
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
 | **404** | Запрошенный ресурс не существует (тело ответа отсутствует) |  -  |
+| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+
+
+## deletePurchaseReturnNote
+
+> deletePurchaseReturnNote(id, noteId, accept, acceptEncoding)
+
+Удалить Событие Возврата поставщику
+
+Запрос на удаление одного События Возврата поставщику
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.PurchaseReturnsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        PurchaseReturnsApi apiInstance = new PurchaseReturnsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID noteId = UUID.randomUUID(); // UUID | ID События
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            apiInstance.deletePurchaseReturnNote(id, noteId, accept, acceptEncoding);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PurchaseReturnsApi#deletePurchaseReturnNote");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **noteId** | **UUID**| ID События | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | Событие успешно удалено |  -  |
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 
@@ -1838,6 +2010,176 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 
+## getPurchaseReturnNoteById
+
+> EventNote getPurchaseReturnNoteById(id, noteId, accept, acceptEncoding)
+
+Получить Событие Возврата поставщику по ID
+
+Запрос на получение одного События Возврата поставщику
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.PurchaseReturnsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        PurchaseReturnsApi apiInstance = new PurchaseReturnsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID noteId = UUID.randomUUID(); // UUID | ID События
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            EventNote result = apiInstance.getPurchaseReturnNoteById(id, noteId, accept, acceptEncoding);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PurchaseReturnsApi#getPurchaseReturnNoteById");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **noteId** | **UUID**| ID События | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+[**EventNote**](EventNote.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+
+
+## getPurchaseReturnNotes
+
+> EventNoteList getPurchaseReturnNotes(id, limit, offset, expand, accept, acceptEncoding)
+
+Получить список Событий Возврата поставщику
+
+Запрос на получение всех Событий Возврата поставщику для данной учетной записи
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.PurchaseReturnsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        PurchaseReturnsApi apiInstance = new PurchaseReturnsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
+        Integer offset = 0; // Integer | Отступ в выданном списке
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            EventNoteList result = apiInstance.getPurchaseReturnNotes(id, limit, offset, expand, accept, acceptEncoding);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PurchaseReturnsApi#getPurchaseReturnNotes");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **limit** | **Integer**| Максимальное количество элементов в выданном списке (максимум 1000) | [optional] [default to 1000] |
+| **offset** | **Integer**| Отступ в выданном списке | [optional] [default to 0] |
+| **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+[**EventNoteList**](EventNoteList.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+
+
 ## getPurchaseReturnPositionById
 
 > PurchaseReturnPosition getPurchaseReturnPositionById(id, positionId, expand, fields, accept, acceptEncoding)
@@ -2343,6 +2685,93 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+
+
+## updatePurchaseReturnNote
+
+> EventNote updatePurchaseReturnNote(id, noteId, eventNote, accept, acceptEncoding, contentType)
+
+Обновить Событие Возврата поставщику
+
+Запрос на обновление одного События Возврата поставщику
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.PurchaseReturnsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        PurchaseReturnsApi apiInstance = new PurchaseReturnsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID noteId = UUID.randomUUID(); // UUID | ID События
+        EventNote eventNote = new EventNote(); // EventNote | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            EventNote result = apiInstance.updatePurchaseReturnNote(id, noteId, eventNote, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PurchaseReturnsApi#updatePurchaseReturnNote");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **noteId** | **UUID**| ID События | |
+| **eventNote** | [**EventNote**](EventNote.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**EventNote**](EventNote.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Событие успешно обновлено |  -  |
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 

@@ -13,6 +13,7 @@
 |**accountId** | **UUID** | ID учетной записи |  [optional] [readonly] |
 |**archived** | **Boolean** | Добавлена ли Техкарта в архив |  [optional] |
 |**code** | **String** | Код Техкарты |  [optional] |
+|**description** | **String** | Описание Техкарт |  [optional] |
 |**cost** | **Double** | Стоимость производства |  [optional] |
 |**costDistributionType** | **String** | Тип распределения себестоимости. Возможные значения описаны в CostDistributionType |  [optional] [readonly] |
 |**externalCode** | **String** | Внешний код Техкарты |  [optional] |

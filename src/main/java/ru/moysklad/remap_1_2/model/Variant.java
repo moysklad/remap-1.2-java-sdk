@@ -26,11 +26,10 @@ import java.util.List;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import ru.moysklad.remap_1_2.model.Barcode;
-import ru.moysklad.remap_1_2.model.BuyPrice;
 import ru.moysklad.remap_1_2.model.ImageList;
 import ru.moysklad.remap_1_2.model.Meta;
-import ru.moysklad.remap_1_2.model.MinPrice;
 import ru.moysklad.remap_1_2.model.MinimumStockAbstract;
+import ru.moysklad.remap_1_2.model.Price;
 import ru.moysklad.remap_1_2.model.Product;
 import ru.moysklad.remap_1_2.model.SalePrice;
 import ru.moysklad.remap_1_2.model.VariantCharacteristicValue;
@@ -71,8 +70,8 @@ import java.util.StringJoiner;
   Variant.JSON_PROPERTY_MINIMUM_STOCK,
   Variant.JSON_PROPERTY_THINGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
-public class Variant extends EntityWithMeta {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
+public class Variant extends ProductMarker {
   public static Variant createWithMeta(UUID id) {
     Variant o = new Variant();
     Meta meta = new Meta();
@@ -142,11 +141,11 @@ public class Variant extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_BUY_PRICE = "buyPrice";
   @javax.annotation.Nullable
-  private JsonNullable<BuyPrice> buyPrice = JsonNullable.<BuyPrice>undefined();
+  private JsonNullable<Price> buyPrice = JsonNullable.<Price>undefined();
 
   public static final String JSON_PROPERTY_MIN_PRICE = "minPrice";
   @javax.annotation.Nullable
-  private MinPrice minPrice;
+  private Price minPrice;
 
   public static final String JSON_PROPERTY_BARCODES = "barcodes";
   @javax.annotation.Nullable
@@ -606,8 +605,8 @@ public class Variant extends EntityWithMeta {
   }
 
 
-  public Variant buyPrice(@javax.annotation.Nullable BuyPrice buyPrice) {
-    this.buyPrice = JsonNullable.<BuyPrice>of(buyPrice);
+  public Variant buyPrice(@javax.annotation.Nullable Price buyPrice) {
+    this.buyPrice = JsonNullable.<Price>of(buyPrice);
     
     return this;
   }
@@ -623,7 +622,7 @@ public class Variant extends EntityWithMeta {
 
   @JsonIgnore
 
-  public BuyPrice getBuyPrice() {
+  public Price getBuyPrice() {
         return buyPrice.orElse(null);
   }
 
@@ -633,21 +632,21 @@ public class Variant extends EntityWithMeta {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<BuyPrice> getBuyPrice_JsonNullable() {
+  public JsonNullable<Price> getBuyPrice_JsonNullable() {
     return buyPrice;
   }
   
   @JsonProperty(value = JSON_PROPERTY_BUY_PRICE, required = false)
-  public void setBuyPrice_JsonNullable(JsonNullable<BuyPrice> buyPrice) {
+  public void setBuyPrice_JsonNullable(JsonNullable<Price> buyPrice) {
     this.buyPrice = buyPrice;
   }
 
-  public void setBuyPrice(@javax.annotation.Nullable BuyPrice buyPrice) {
-    this.buyPrice = JsonNullable.<BuyPrice>of(buyPrice);
+  public void setBuyPrice(@javax.annotation.Nullable Price buyPrice) {
+    this.buyPrice = JsonNullable.<Price>of(buyPrice);
   }
 
 
-  public Variant minPrice(@javax.annotation.Nullable MinPrice minPrice) {
+  public Variant minPrice(@javax.annotation.Nullable Price minPrice) {
     
     this.minPrice = minPrice;
     return this;
@@ -665,7 +664,7 @@ public class Variant extends EntityWithMeta {
   @JsonProperty(JSON_PROPERTY_MIN_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public MinPrice getMinPrice() {
+  public Price getMinPrice() {
     return minPrice;
   }
 
@@ -674,7 +673,7 @@ public class Variant extends EntityWithMeta {
 
   @JsonProperty(JSON_PROPERTY_MIN_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMinPrice(@javax.annotation.Nullable MinPrice minPrice) {
+  public void setMinPrice(@javax.annotation.Nullable Price minPrice) {
     this.minPrice = minPrice;
   }
 

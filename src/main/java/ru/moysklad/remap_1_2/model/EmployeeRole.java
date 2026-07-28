@@ -20,9 +20,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.HashMap;
-import java.util.Map;
 import org.openapitools.jackson.nullable.JsonNullable;
+import ru.moysklad.remap_1_2.model.EmployeeRolePermissions;
 import ru.moysklad.remap_1_2.model.Meta;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -42,7 +41,7 @@ import java.util.StringJoiner;
   EmployeeRole.JSON_PROPERTY_META,
   EmployeeRole.JSON_PROPERTY_PERMISSIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
 public class EmployeeRole {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -51,7 +50,7 @@ public class EmployeeRole {
 
   public static final String JSON_PROPERTY_PERMISSIONS = "permissions";
   @javax.annotation.Nullable
-  private JsonNullable<Map<String, Object>> permissions = JsonNullable.<Map<String, Object>>undefined();
+  private JsonNullable<EmployeeRolePermissions> permissions = JsonNullable.<EmployeeRolePermissions>undefined();
 
   public EmployeeRole() {
   }
@@ -88,55 +87,44 @@ public class EmployeeRole {
   }
 
 
-  public EmployeeRole permissions(@javax.annotation.Nullable Map<String, Object> permissions) {
-    this.permissions = JsonNullable.<Map<String, Object>>of(permissions);
+  public EmployeeRole permissions(@javax.annotation.Nullable EmployeeRolePermissions permissions) {
+    this.permissions = JsonNullable.<EmployeeRolePermissions>of(permissions);
     
     return this;
   }
 
 
-  public EmployeeRole putPermissionsItem(String key, Object permissionsItem) {
-    if (this.permissions == null || !this.permissions.isPresent()) {
-      this.permissions = JsonNullable.<Map<String, Object>>of(new HashMap<>());
-    }
-    try {
-      this.permissions.get().put(key, permissionsItem);
-    } catch (java.util.NoSuchElementException e) {
-      // this can never happen, as we make sure above that the value is present
-    }
-    return this;
-  }
-
   /**
-   * Список пермиссий (только для индивидуальной роли)
+   * Get permissions
    * @return permissions
    */
   @javax.annotation.Nullable
+  @Valid
 
 
   @JsonIgnore
 
-  public Map<String, Object> getPermissions() {
+  public EmployeeRolePermissions getPermissions() {
         return permissions.orElse(null);
   }
 
   
 
   @JsonProperty(JSON_PROPERTY_PERMISSIONS)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<Map<String, Object>> getPermissions_JsonNullable() {
+  public JsonNullable<EmployeeRolePermissions> getPermissions_JsonNullable() {
     return permissions;
   }
   
   @JsonProperty(value = JSON_PROPERTY_PERMISSIONS, required = false)
-  public void setPermissions_JsonNullable(JsonNullable<Map<String, Object>> permissions) {
+  public void setPermissions_JsonNullable(JsonNullable<EmployeeRolePermissions> permissions) {
     this.permissions = permissions;
   }
 
-  public void setPermissions(@javax.annotation.Nullable Map<String, Object> permissions) {
-    this.permissions = JsonNullable.<Map<String, Object>>of(permissions);
+  public void setPermissions(@javax.annotation.Nullable EmployeeRolePermissions permissions) {
+    this.permissions = JsonNullable.<EmployeeRolePermissions>of(permissions);
   }
 
 
@@ -229,16 +217,7 @@ public class EmployeeRole {
 
     // add `permissions` to the URL query string
     if (getPermissions() != null) {
-      for (String _key : getPermissions().keySet()) {
-        try {
-          joiner.add(String.format(java.util.Locale.ROOT, "%spermissions%s%s=%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, _key, containerSuffix),
-              getPermissions().get(_key), URLEncoder.encode(String.valueOf(getPermissions().get(_key)), "UTF-8").replaceAll("\\+", "%20")));
-        } catch (UnsupportedEncodingException e) {
-          // Should never happen, UTF-8 is always supported
-          throw new RuntimeException(e);
-        }
-      }
+      joiner.add(getPermissions().toUrlQueryString(prefix + "permissions" + suffix));
     }
 
     return joiner.toString();

@@ -7,12 +7,14 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**addProductFiles**](ProductsApi.md#addProductFiles) | **POST** /entity/product/{id}/files | Добавить файлы к товару |
 | [**addProductImages**](ProductsApi.md#addProductImages) | **POST** /entity/product/{id}/images | Добавить изображения к товару |
 | [**createProduct**](ProductsApi.md#createProduct) | **POST** /entity/product | Создать товар |
+| [**createProductMetadataAttribute**](ProductsApi.md#createProductMetadataAttribute) | **POST** /entity/product/metadata/attributes | Создать доп. поле товара |
 | [**createProductStoreBalance**](ProductsApi.md#createProductStoreBalance) | **POST** /entity/product/{id}/storebalances | Создать НСО товара для склада |
 | [**createProductsBatch**](ProductsApi.md#createProductsBatch) | **POST** /entity/product/batch | Создать или изменить товары |
 | [**deleteProduct**](ProductsApi.md#deleteProduct) | **DELETE** /entity/product/{id} | Удалить товар |
 | [**deleteProductFile**](ProductsApi.md#deleteProductFile) | **DELETE** /entity/product/{id}/files/{fileId} | Удалить файл товара |
 | [**deleteProductImage**](ProductsApi.md#deleteProductImage) | **DELETE** /entity/product/{id}/images/{imageId} | Удалить изображение товара |
 | [**deleteProductImages**](ProductsApi.md#deleteProductImages) | **POST** /entity/product/{id}/images/delete | Массовое удаление изображений товара |
+| [**deleteProductMetadataAttributeById**](ProductsApi.md#deleteProductMetadataAttributeById) | **DELETE** /entity/product/metadata/attributes/{id} | Удалить отдельное доп. поле товара |
 | [**deleteProductStoreBalance**](ProductsApi.md#deleteProductStoreBalance) | **DELETE** /entity/product/{id}/storebalances/{storeBalanceId} | Удалить НСО товара по складу |
 | [**deleteProductStoreBalances**](ProductsApi.md#deleteProductStoreBalances) | **POST** /entity/product/{id}/storebalances/delete | Массовое удаление НСО товара по складам |
 | [**deleteProductsBatch**](ProductsApi.md#deleteProductsBatch) | **POST** /entity/product/delete | Удалить товары |
@@ -20,10 +22,13 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**getProductById**](ProductsApi.md#getProductById) | **GET** /entity/product/{id} | Получить товар по ID |
 | [**getProductFiles**](ProductsApi.md#getProductFiles) | **GET** /entity/product/{id}/files | Получить файлы товара |
 | [**getProductImages**](ProductsApi.md#getProductImages) | **GET** /entity/product/{id}/images | Получить изображения товара |
+| [**getProductMetadataAttributeById**](ProductsApi.md#getProductMetadataAttributeById) | **GET** /entity/product/metadata/attributes/{id} | Получить доп. поле товара по ID |
+| [**getProductMetadataAttributes**](ProductsApi.md#getProductMetadataAttributes) | **GET** /entity/product/metadata/attributes | Получить доп. поля товаров |
 | [**getProductStoreBalanceById**](ProductsApi.md#getProductStoreBalanceById) | **GET** /entity/product/{id}/storebalances/{storeBalanceId} | Получить НСО товара по складу |
 | [**getProductStoreBalances**](ProductsApi.md#getProductStoreBalances) | **GET** /entity/product/{id}/storebalances | Получить НСО товара по складам |
 | [**getProducts**](ProductsApi.md#getProducts) | **GET** /entity/product | Получить список товаров |
 | [**updateProduct**](ProductsApi.md#updateProduct) | **PUT** /entity/product/{id} | Обновить товар |
+| [**updateProductMetadataAttributeById**](ProductsApi.md#updateProductMetadataAttributeById) | **PUT** /entity/product/metadata/attributes/{id} | Обновить отдельное доп. поле товара |
 | [**updateProductStoreBalance**](ProductsApi.md#updateProductStoreBalance) | **PUT** /entity/product/{id}/storebalances/{storeBalanceId} | Изменить НСО товара по складу |
 
 
@@ -280,6 +285,89 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Товар успешно создан |  -  |
+| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+
+
+## createProductMetadataAttribute
+
+> AttributeMetaInfo createProductMetadataAttribute(attributeMetaInfo, accept, acceptEncoding, contentType)
+
+Создать доп. поле товара
+
+Создание нового доп. поля для товаров
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.ProductsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        ProductsApi apiInstance = new ProductsApi(defaultClient);
+        AttributeMetaInfo attributeMetaInfo = new AttributeMetaInfo(); // AttributeMetaInfo | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            AttributeMetaInfo result = apiInstance.createProductMetadataAttribute(attributeMetaInfo, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProductsApi#createProductMetadataAttribute");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **attributeMetaInfo** | [**AttributeMetaInfo**](AttributeMetaInfo.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**AttributeMetaInfo**](AttributeMetaInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Доп. поле успешно создано |  -  |
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 
@@ -778,6 +866,84 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Изображения успешно удалены |  -  |
+| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+
+
+## deleteProductMetadataAttributeById
+
+> deleteProductMetadataAttributeById(id, accept, acceptEncoding)
+
+Удалить отдельное доп. поле товара
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.ProductsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        ProductsApi apiInstance = new ProductsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            apiInstance.deleteProductMetadataAttributeById(id, accept, acceptEncoding);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProductsApi#deleteProductMetadataAttributeById");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 
@@ -1366,6 +1532,170 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 
+## getProductMetadataAttributeById
+
+> AttributeMetaInfo getProductMetadataAttributeById(id, accept, acceptEncoding)
+
+Получить доп. поле товара по ID
+
+Запрос на получение информации по отдельному дополнительному полю товара
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.ProductsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        ProductsApi apiInstance = new ProductsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            AttributeMetaInfo result = apiInstance.getProductMetadataAttributeById(id, accept, acceptEncoding);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProductsApi#getProductMetadataAttributeById");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+[**AttributeMetaInfo**](AttributeMetaInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+
+
+## getProductMetadataAttributes
+
+> AttributeMetaInfoList getProductMetadataAttributes(offset, limit, accept, acceptEncoding)
+
+Получить доп. поля товаров
+
+Запрос на получение всех доп. полей для товаров
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.ProductsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        ProductsApi apiInstance = new ProductsApi(defaultClient);
+        Integer offset = 0; // Integer | Отступ в выданном списке
+        Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            AttributeMetaInfoList result = apiInstance.getProductMetadataAttributes(offset, limit, accept, acceptEncoding);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProductsApi#getProductMetadataAttributes");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **offset** | **Integer**| Отступ в выданном списке | [optional] [default to 0] |
+| **limit** | **Integer**| Максимальное количество элементов в выданном списке (максимум 1000) | [optional] [default to 1000] |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+[**AttributeMetaInfoList**](AttributeMetaInfoList.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+
+
 ## getProductStoreBalanceById
 
 > StoreBalance getProductStoreBalanceById(id, storeBalanceId, accept, acceptEncoding)
@@ -1711,6 +2041,89 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Товар успешно обновлен |  -  |
+| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+
+
+## updateProductMetadataAttributeById
+
+> AttributeMetaInfo updateProductMetadataAttributeById(id, attributeMetaInfo, accept, acceptEncoding, contentType)
+
+Обновить отдельное доп. поле товара
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.ProductsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        ProductsApi apiInstance = new ProductsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        AttributeMetaInfo attributeMetaInfo = new AttributeMetaInfo(); // AttributeMetaInfo | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            AttributeMetaInfo result = apiInstance.updateProductMetadataAttributeById(id, attributeMetaInfo, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProductsApi#updateProductMetadataAttributeById");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **attributeMetaInfo** | [**AttributeMetaInfo**](AttributeMetaInfo.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**AttributeMetaInfo**](AttributeMetaInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 

@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
-import ru.moysklad.remap_1_2.model.AssortmentWithoutBundle;
 import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.Pack;
 import ru.moysklad.remap_1_2.model.PositionStock;
+import ru.moysklad.remap_1_2.model.ProductMarker;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
@@ -55,8 +55,8 @@ import java.util.StringJoiner;
   PurchaseOrderPosition.JSON_PROPERTY_PACK,
   PurchaseOrderPosition.JSON_PROPERTY_STOCK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
-public class PurchaseOrderPosition {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
+public class PurchaseOrderPosition extends EntityWithMeta {
   public static PurchaseOrderPosition createWithMeta(UUID parentId, UUID id) {
     PurchaseOrderPosition o = new PurchaseOrderPosition();
     Meta meta = new Meta();
@@ -114,7 +114,7 @@ public class PurchaseOrderPosition {
 
   public static final String JSON_PROPERTY_ASSORTMENT = "assortment";
   @javax.annotation.Nullable
-  private AssortmentWithoutBundle assortment;
+  private ProductMarker assortment;
 
   public static final String JSON_PROPERTY_PACK = "pack";
   @javax.annotation.Nullable
@@ -406,7 +406,7 @@ public class PurchaseOrderPosition {
   }
 
 
-  public PurchaseOrderPosition assortment(@javax.annotation.Nullable AssortmentWithoutBundle assortment) {
+  public PurchaseOrderPosition assortment(@javax.annotation.Nullable ProductMarker assortment) {
     
     this.assortment = assortment;
     return this;
@@ -414,7 +414,7 @@ public class PurchaseOrderPosition {
 
 
   /**
-   * Get assortment
+   * Метаданные товара/услуги/модификации/партии, которую представляет собой позиция
    * @return assortment
    */
   @javax.annotation.Nullable
@@ -424,7 +424,7 @@ public class PurchaseOrderPosition {
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public AssortmentWithoutBundle getAssortment() {
+  public ProductMarker getAssortment() {
     return assortment;
   }
 
@@ -433,7 +433,7 @@ public class PurchaseOrderPosition {
 
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAssortment(@javax.annotation.Nullable AssortmentWithoutBundle assortment) {
+  public void setAssortment(@javax.annotation.Nullable ProductMarker assortment) {
     this.assortment = assortment;
   }
 

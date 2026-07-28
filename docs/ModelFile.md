@@ -11,6 +11,7 @@
 |**meta** | [**Meta**](Meta.md) |  |  [optional] |
 |**title** | **String** | Название файла |  [optional] |
 |**filename** | **String** | Имя файла |  [optional] |
+|**content** | **String** | Файл, закодированный в Base64 |  [optional] |
 |**size** | **Integer** | Размер файла в байтах |  [optional] [readonly] |
 |**created** | **String** | Время создания объекта |  [optional] [readonly] |
 |**createdBy** | [**Employee**](Employee.md) |  |  [optional] |

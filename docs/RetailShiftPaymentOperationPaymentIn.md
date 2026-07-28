@@ -39,7 +39,7 @@
 |**shared** | **Boolean** | Общий доступ |  [optional] [readonly] |
 |**state** | [**State**](State.md) | Метаданные статуса Входящего платежа |  [optional] |
 |**sum** | **Double** | Сумма Входящего платежа в установленной валюте |  [optional] [readonly] |
-|**vatSum** | **Double** | Сумма НДС |  [optional] [readonly] |
+|**vatSum** | **Double** | Сумма НДС |  [optional] |
 |**incomingNumber** | **String** | Входящий номер |  [optional] |
 |**incomingDate** | **String** | Входящая дата |  [optional] |
 |**factureOut** | [**FactureOut**](FactureOut.md) | Счет-фактура выданный, с которым связан этот платеж |  [optional] |

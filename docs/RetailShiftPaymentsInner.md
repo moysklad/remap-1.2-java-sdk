@@ -37,8 +37,8 @@
 |**salesChannel** | [**SalesChannel**](SalesChannel.md) | Метаданные канала продаж |  [optional] |
 |**shared** | **Boolean** | Общий доступ |  [optional] [readonly] |
 |**state** | [**State**](State.md) | Метаданные статуса Приходного ордера |  [optional] |
-|**sum** | **Double** | Сумма Приходного ордера в установленной валюте |  [optional] [readonly] |
-|**vatSum** | **Double** | Сумма НДС |  [optional] [readonly] |
+|**sum** | **Double** | Сумма Приходного ордера в установленной валюте |  [optional] |
+|**vatSum** | **Double** | Сумма НДС |  [optional] |
 |**incomingNumber** | **String** | Входящий номер |  [optional] |
 |**incomingDate** | **String** | Входящая дата |  [optional] |
 |**factureOut** | [**FactureOut**](FactureOut.md) | Счет-фактура выданный, с которым связан этот платеж |  [optional] |

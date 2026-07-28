@@ -106,7 +106,7 @@ import java.util.StringJoiner;
   FinanceOutOperationPurchaseOrder.JSON_PROPERTY_PAYMENTS,
   FinanceOutOperationPurchaseOrder.JSON_PROPERTY_PRODUCTION_TASKS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
 public class FinanceOutOperationPurchaseOrder extends FinanceOutOperationAbstract {
 
   public static final String JSON_PROPERTY_META = "meta";

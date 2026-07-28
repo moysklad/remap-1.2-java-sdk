@@ -39,13 +39,14 @@ import java.util.StringJoiner;
   TaskNoteFile.JSON_PROPERTY_ID,
   TaskNoteFile.JSON_PROPERTY_TITLE,
   TaskNoteFile.JSON_PROPERTY_FILENAME,
+  TaskNoteFile.JSON_PROPERTY_CONTENT,
   TaskNoteFile.JSON_PROPERTY_SIZE,
   TaskNoteFile.JSON_PROPERTY_CREATED,
   TaskNoteFile.JSON_PROPERTY_CREATED_BY,
   TaskNoteFile.JSON_PROPERTY_TINY,
   TaskNoteFile.JSON_PROPERTY_MINIATURE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
 public class TaskNoteFile {
   public static TaskNoteFile createWithMeta(UUID parentId, UUID noteId, UUID id) {
     TaskNoteFile o = new TaskNoteFile();
@@ -77,6 +78,10 @@ public class TaskNoteFile {
   public static final String JSON_PROPERTY_FILENAME = "filename";
   @javax.annotation.Nullable
   private String filename;
+
+  public static final String JSON_PROPERTY_CONTENT = "content";
+  @javax.annotation.Nullable
+  private String content;
 
   public static final String JSON_PROPERTY_SIZE = "size";
   @javax.annotation.Nullable
@@ -228,6 +233,37 @@ public class TaskNoteFile {
   }
 
 
+  public TaskNoteFile content(@javax.annotation.Nullable String content) {
+    
+    this.content = content;
+    return this;
+  }
+
+
+  /**
+   * Файл, закодированный в Base64
+   * @return content
+   */
+  @javax.annotation.Nullable
+
+
+  @JsonProperty(JSON_PROPERTY_CONTENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getContent() {
+    return content;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_CONTENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setContent(@javax.annotation.Nullable String content) {
+    this.content = content;
+  }
+
+
   /**
    * Размер файла в байтах
    * @return size
@@ -373,6 +409,7 @@ public class TaskNoteFile {
         Objects.equals(this.id, taskNoteFile.id) &&
         Objects.equals(this.title, taskNoteFile.title) &&
         Objects.equals(this.filename, taskNoteFile.filename) &&
+        Objects.equals(this.content, taskNoteFile.content) &&
         Objects.equals(this.size, taskNoteFile.size) &&
         Objects.equals(this.created, taskNoteFile.created) &&
         Objects.equals(this.createdBy, taskNoteFile.createdBy) &&
@@ -382,7 +419,7 @@ public class TaskNoteFile {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, title, filename, size, created, createdBy, tiny, miniature);
+    return Objects.hash(meta, id, title, filename, content, size, created, createdBy, tiny, miniature);
   }
 
   @Override
@@ -393,6 +430,7 @@ public class TaskNoteFile {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    filename: ").append(toIndentedString(filename)).append("\n");
+    sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("    size: ").append(toIndentedString(size)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
@@ -474,6 +512,16 @@ public class TaskNoteFile {
     if (getFilename() != null) {
       try {
         joiner.add(String.format(java.util.Locale.ROOT, "%sfilename%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getFilename()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `content` to the URL query string
+    if (getContent() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%scontent%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getContent()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);

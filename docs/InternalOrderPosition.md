@@ -15,7 +15,7 @@
 |**price** | **Double** | Цена товара/услуги в копейках |  [optional] |
 |**vat** | **Integer** | НДС, которым облагается текущая позиция |  [optional] |
 |**vatEnabled** | **Boolean** | Включен ли НДС для позиции |  [optional] |
-|**assortment** | [**Assortment**](Assortment.md) |  |  [optional] |
+|**assortment** | [**ProductMarker**](ProductMarker.md) | Метаданные товара/услуги/модификации/комплекта, которую представляет собой позиция |  [optional] |
 |**pack** | [**Pack**](Pack.md) | Упаковка Товара |  [optional] |
 
 

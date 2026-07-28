@@ -25,11 +25,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
-import ru.moysklad.remap_1_2.model.Assortment;
 import ru.moysklad.remap_1_2.model.AttributeAbstract;
 import ru.moysklad.remap_1_2.model.Barcode;
 import ru.moysklad.remap_1_2.model.ImageList;
 import ru.moysklad.remap_1_2.model.Meta;
+import ru.moysklad.remap_1_2.model.ProductMarker;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
@@ -61,8 +61,8 @@ import java.util.StringJoiner;
   Consignment.JSON_PROPERTY_NAME,
   Consignment.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
-public class Consignment extends EntityWithMeta {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
+public class Consignment extends ProductMarker {
   public static Consignment createWithMeta(UUID id) {
     Consignment o = new Consignment();
     Meta meta = new Meta();
@@ -100,7 +100,7 @@ public class Consignment extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_ASSORTMENT = "assortment";
   @javax.annotation.Nullable
-  private Assortment assortment;
+  private ProductMarker assortment;
 
   public static final String JSON_PROPERTY_BARCODES = "barcodes";
   @javax.annotation.Nullable
@@ -313,7 +313,7 @@ public class Consignment extends EntityWithMeta {
   }
 
 
-  public Consignment assortment(@javax.annotation.Nullable Assortment assortment) {
+  public Consignment assortment(@javax.annotation.Nullable ProductMarker assortment) {
     
     this.assortment = assortment;
     return this;
@@ -321,11 +321,9 @@ public class Consignment extends EntityWithMeta {
 
 
   /**
-   * Get assortment
+   * Метаданные товара/услуги/комплекта/модификации, к которой относится Партия
    * @return assortment
-   * @deprecated
    */
-  @Deprecated
   @javax.annotation.Nullable
   @Valid
 
@@ -333,7 +331,7 @@ public class Consignment extends EntityWithMeta {
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Assortment getAssortment() {
+  public ProductMarker getAssortment() {
     return assortment;
   }
 
@@ -342,7 +340,7 @@ public class Consignment extends EntityWithMeta {
 
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAssortment(@javax.annotation.Nullable Assortment assortment) {
+  public void setAssortment(@javax.annotation.Nullable ProductMarker assortment) {
     this.assortment = assortment;
   }
 

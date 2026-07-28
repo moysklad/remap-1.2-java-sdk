@@ -10,7 +10,7 @@
 |**meta** | [**Meta**](Meta.md) |  |  [optional] |
 |**id** | **UUID** | ID позиции |  [optional] [readonly] |
 |**accountId** | **UUID** | ID учетной записи |  [optional] [readonly] |
-|**assortment** | [**Assortment**](Assortment.md) |  |  [optional] |
+|**assortment** | [**ProductMarker**](ProductMarker.md) | Метаданные товара/услуги/партии/модификации, которую представляет собой позиция |  [optional] |
 |**discount** | **Double** | Процент скидки или наценки |  [optional] [readonly] |
 |**pack** | [**Pack**](Pack.md) | Упаковка Товара |  [optional] |
 |**price** | **Double** | Цена товара/услуги в копейках |  [optional] |

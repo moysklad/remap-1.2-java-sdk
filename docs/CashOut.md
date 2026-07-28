@@ -38,8 +38,8 @@
 |**salesChannel** | [**SalesChannel**](SalesChannel.md) | Метаданные канала продаж |  [optional] |
 |**shared** | **Boolean** | Общий доступ |  [optional] [readonly] |
 |**state** | [**State**](State.md) | Метаданные статуса Расходного ордера |  [optional] |
-|**sum** | **Double** | Сумма расходного ордера в установленной валюте |  [optional] [readonly] |
-|**vatSum** | **Double** | Сумма НДС |  [optional] [readonly] |
+|**sum** | **Double** | Сумма расходного ордера в установленной валюте |  [optional] |
+|**vatSum** | **Double** | Сумма НДС |  [optional] |
 |**factureIn** | [**FactureIn**](FactureIn.md) | Счет-фактура полученный, с которым связан этот платеж |  [optional] |
 |**operations** | [**List&lt;FinanceOutOperationAbstract&gt;**](FinanceOutOperationAbstract.md) | Связанные операции: полное тело документа плюс &#x60;linkedSum&#x60;. Допустимые типы по &#x60;meta.type&#x60;: salesreturn, supply, invoicein, purchaseorder, commissionreportout  |  [optional] |
 

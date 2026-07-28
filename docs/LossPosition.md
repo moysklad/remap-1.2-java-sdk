@@ -11,7 +11,7 @@
 |**meta** | [**Meta**](Meta.md) |  |  [optional] |
 |**id** | **UUID** | ID позиции |  [optional] [readonly] |
 |**accountId** | **UUID** | ID учетной записи |  [optional] [readonly] |
-|**assortment** | [**Assortment**](Assortment.md) |  |  [optional] |
+|**assortment** | [**ProductMarker**](ProductMarker.md) | Метаданные товара/услуги/партии/модификации, которую представляет собой позиция |  [optional] |
 |**declaration** | [**List&lt;DeclarationInner&gt;**](DeclarationInner.md) | Информация о прослеживаемости импортных товаров. Не входит в ответ по умолчанию; может быть возвращена только при явном запросе &#x60;fields&#x3D;declaration&#x60;. Только для чтения.  |  [optional] [readonly] |
 |**pack** | [**Pack**](Pack.md) | Упаковка Товара |  [optional] |
 |**price** | **Double** | Цена товара/услуги в копейках |  [optional] |

@@ -102,8 +102,8 @@ import java.util.StringJoiner;
   Counterparty.JSON_PROPERTY_TAGS,
   Counterparty.JSON_PROPERTY_ATTRIBUTES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
-public class Counterparty extends EntityWithMeta {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
+public class Counterparty extends Agent {
   public static Counterparty createWithMeta(UUID id) {
     Counterparty o = new Counterparty();
     Meta meta = new Meta();
@@ -249,7 +249,7 @@ public class Counterparty extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_DISCOUNT_CARD_NUMBER = "discountCardNumber";
   @javax.annotation.Nullable
-  private JsonNullable<String> discountCardNumber = JsonNullable.<String>undefined();
+  private String discountCardNumber;
 
   public static final String JSON_PROPERTY_DISCOUNTS = "discounts";
   @javax.annotation.Nullable
@@ -1299,8 +1299,8 @@ public class Counterparty extends EntityWithMeta {
 
 
   public Counterparty discountCardNumber(@javax.annotation.Nullable String discountCardNumber) {
-    this.discountCardNumber = JsonNullable.<String>of(discountCardNumber);
     
+    this.discountCardNumber = discountCardNumber;
     return this;
   }
 
@@ -1312,29 +1312,20 @@ public class Counterparty extends EntityWithMeta {
   @javax.annotation.Nullable
  @Size(max=255)
 
-  @JsonIgnore
-
-  public String getDiscountCardNumber() {
-        return discountCardNumber.orElse(null);
-  }
-
-  
-
   @JsonProperty(JSON_PROPERTY_DISCOUNT_CARD_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-
-  public JsonNullable<String> getDiscountCardNumber_JsonNullable() {
+  public String getDiscountCardNumber() {
     return discountCardNumber;
   }
-  
-  @JsonProperty(value = JSON_PROPERTY_DISCOUNT_CARD_NUMBER, required = false)
-  public void setDiscountCardNumber_JsonNullable(JsonNullable<String> discountCardNumber) {
-    this.discountCardNumber = discountCardNumber;
-  }
 
+  
+
+
+  @JsonProperty(JSON_PROPERTY_DISCOUNT_CARD_NUMBER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDiscountCardNumber(@javax.annotation.Nullable String discountCardNumber) {
-    this.discountCardNumber = JsonNullable.<String>of(discountCardNumber);
+    this.discountCardNumber = discountCardNumber;
   }
 
 
@@ -1919,7 +1910,7 @@ public class Counterparty extends EntityWithMeta {
         Objects.equals(this.legalMiddleName, counterparty.legalMiddleName) &&
         Objects.equals(this.birthDate, counterparty.birthDate) &&
         Objects.equals(this.sex, counterparty.sex) &&
-        equalsNullable(this.discountCardNumber, counterparty.discountCardNumber) &&
+        Objects.equals(this.discountCardNumber, counterparty.discountCardNumber) &&
         equalsNullable(this.discounts, counterparty.discounts) &&
         Objects.equals(this.shared, counterparty.shared) &&
         Objects.equals(this.group, counterparty.group) &&
@@ -1943,7 +1934,7 @@ public class Counterparty extends EntityWithMeta {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, syncId, accountId, name, code, externalCode, archived, created, updated, description, companyType, email, phone, fax, actualAddress, hashCodeNullable(actualAddressFull), legalAddress, hashCodeNullable(legalAddressFull), inn, kpp, ogrn, ogrnip, okpo, certificateNumber, certificateDate, legalTitle, legalFirstName, legalLastName, legalMiddleName, birthDate, sex, hashCodeNullable(discountCardNumber), hashCodeNullable(discounts), shared, group, hashCodeNullable(owner), salesAmount, bonusPoints, hashCodeNullable(bonusProgram), hashCodeNullable(priceType), state, accounts, contactpersons, notes, files, hashCodeNullable(tags), hashCodeNullable(attributes));
+    return Objects.hash(meta, id, syncId, accountId, name, code, externalCode, archived, created, updated, description, companyType, email, phone, fax, actualAddress, hashCodeNullable(actualAddressFull), legalAddress, hashCodeNullable(legalAddressFull), inn, kpp, ogrn, ogrnip, okpo, certificateNumber, certificateDate, legalTitle, legalFirstName, legalLastName, legalMiddleName, birthDate, sex, discountCardNumber, hashCodeNullable(discounts), shared, group, hashCodeNullable(owner), salesAmount, bonusPoints, hashCodeNullable(bonusProgram), hashCodeNullable(priceType), state, accounts, contactpersons, notes, files, hashCodeNullable(tags), hashCodeNullable(attributes));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

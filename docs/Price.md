@@ -1,8 +1,8 @@
 
 
-# MinPrice
+# Price
 
-Минимальная цена
+Цена
 
 ## Properties
 

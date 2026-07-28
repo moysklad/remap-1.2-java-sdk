@@ -449,7 +449,7 @@ public class Example {
 
 ## createPurchaseOrderNote
 
-> EventNote createPurchaseOrderNote(id, eventNote, accept, acceptEncoding, contentType)
+> List&lt;EventNote&gt; createPurchaseOrderNote(id, eventNote, accept, acceptEncoding, contentType)
 
 Добавить Событие Заказа поставщику
 
@@ -487,7 +487,7 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            EventNote result = apiInstance.createPurchaseOrderNote(id, eventNote, accept, acceptEncoding, contentType);
+            List<EventNote> result = apiInstance.createPurchaseOrderNote(id, eventNote, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PurchaseOrdersApi#createPurchaseOrderNote");
@@ -513,7 +513,7 @@ public class Example {
 
 ### Return type
 
-[**EventNote**](EventNote.md)
+[**List&lt;EventNote&gt;**](EventNote.md)
 
 ### Authorization
 

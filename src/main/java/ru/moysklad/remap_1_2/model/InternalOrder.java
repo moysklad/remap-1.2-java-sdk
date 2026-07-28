@@ -91,7 +91,7 @@ import java.util.StringJoiner;
   InternalOrder.JSON_PROPERTY_MOVES,
   InternalOrder.JSON_PROPERTY_PROCESSING_ORDER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
 public class InternalOrder extends EntityWithMeta {
   public static InternalOrder createWithMeta(UUID id) {
     InternalOrder o = new InternalOrder();

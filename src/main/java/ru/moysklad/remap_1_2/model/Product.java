@@ -25,19 +25,18 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
+import ru.moysklad.remap_1_2.model.Agent;
 import ru.moysklad.remap_1_2.model.AttributeAbstract;
 import ru.moysklad.remap_1_2.model.Barcode;
-import ru.moysklad.remap_1_2.model.BuyPrice;
-import ru.moysklad.remap_1_2.model.Counterparty;
 import ru.moysklad.remap_1_2.model.Country;
 import ru.moysklad.remap_1_2.model.Employee;
 import ru.moysklad.remap_1_2.model.FileList;
 import ru.moysklad.remap_1_2.model.Group;
 import ru.moysklad.remap_1_2.model.ImageList;
 import ru.moysklad.remap_1_2.model.Meta;
-import ru.moysklad.remap_1_2.model.MinPrice;
 import ru.moysklad.remap_1_2.model.MinimumStockAbstract;
 import ru.moysklad.remap_1_2.model.Pack;
+import ru.moysklad.remap_1_2.model.Price;
 import ru.moysklad.remap_1_2.model.ProductAlcoholic;
 import ru.moysklad.remap_1_2.model.ProductFolder;
 import ru.moysklad.remap_1_2.model.SalePrice;
@@ -107,8 +106,8 @@ import java.util.StringJoiner;
   Product.JSON_PROPERTY_SYNC_ID,
   Product.JSON_PROPERTY_PPE_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
-public class Product extends EntityWithMeta {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
+public class Product extends ProductMarker {
   public static Product createWithMeta(UUID id) {
     Product o = new Product();
     Meta meta = new Meta();
@@ -230,7 +229,7 @@ public class Product extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_BUY_PRICE = "buyPrice";
   @javax.annotation.Nullable
-  private BuyPrice buyPrice;
+  private Price buyPrice;
 
   public static final String JSON_PROPERTY_SALE_PRICES = "salePrices";
   @javax.annotation.Nullable
@@ -238,7 +237,7 @@ public class Product extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_SUPPLIER = "supplier";
   @javax.annotation.Nullable
-  private JsonNullable<Counterparty> supplier = JsonNullable.<Counterparty>undefined();
+  private Agent supplier;
 
   public static final String JSON_PROPERTY_COUNTRY = "country";
   @javax.annotation.Nullable
@@ -294,7 +293,7 @@ public class Product extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_MIN_PRICE = "minPrice";
   @javax.annotation.Nullable
-  private MinPrice minPrice;
+  private Price minPrice;
 
   public static final String JSON_PROPERTY_WEIGHED = "weighed";
   @javax.annotation.Nullable
@@ -1077,7 +1076,7 @@ public class Product extends EntityWithMeta {
   }
 
 
-  public Product buyPrice(@javax.annotation.Nullable BuyPrice buyPrice) {
+  public Product buyPrice(@javax.annotation.Nullable Price buyPrice) {
     
     this.buyPrice = buyPrice;
     return this;
@@ -1095,7 +1094,7 @@ public class Product extends EntityWithMeta {
   @JsonProperty(JSON_PROPERTY_BUY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BuyPrice getBuyPrice() {
+  public Price getBuyPrice() {
     return buyPrice;
   }
 
@@ -1104,7 +1103,7 @@ public class Product extends EntityWithMeta {
 
   @JsonProperty(JSON_PROPERTY_BUY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBuyPrice(@javax.annotation.Nullable BuyPrice buyPrice) {
+  public void setBuyPrice(@javax.annotation.Nullable Price buyPrice) {
     this.buyPrice = buyPrice;
   }
 
@@ -1162,44 +1161,35 @@ public class Product extends EntityWithMeta {
   }
 
 
-  public Product supplier(@javax.annotation.Nullable Counterparty supplier) {
-    this.supplier = JsonNullable.<Counterparty>of(supplier);
+  public Product supplier(@javax.annotation.Nullable Agent supplier) {
     
+    this.supplier = supplier;
     return this;
   }
 
 
   /**
-   * Метаданные контрагента-поставщика
+   * Метаданные контрагента или юрлица
    * @return supplier
    */
   @javax.annotation.Nullable
   @Valid
 
 
-  @JsonIgnore
-
-  public Counterparty getSupplier() {
-        return supplier.orElse(null);
-  }
-
-  
-
   @JsonProperty(JSON_PROPERTY_SUPPLIER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-
-  public JsonNullable<Counterparty> getSupplier_JsonNullable() {
+  public Agent getSupplier() {
     return supplier;
   }
-  
-  @JsonProperty(value = JSON_PROPERTY_SUPPLIER, required = false)
-  public void setSupplier_JsonNullable(JsonNullable<Counterparty> supplier) {
-    this.supplier = supplier;
-  }
 
-  public void setSupplier(@javax.annotation.Nullable Counterparty supplier) {
-    this.supplier = JsonNullable.<Counterparty>of(supplier);
+  
+
+
+  @JsonProperty(JSON_PROPERTY_SUPPLIER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSupplier(@javax.annotation.Nullable Agent supplier) {
+    this.supplier = supplier;
   }
 
 
@@ -1723,7 +1713,7 @@ public class Product extends EntityWithMeta {
   }
 
 
-  public Product minPrice(@javax.annotation.Nullable MinPrice minPrice) {
+  public Product minPrice(@javax.annotation.Nullable Price minPrice) {
     
     this.minPrice = minPrice;
     return this;
@@ -1741,7 +1731,7 @@ public class Product extends EntityWithMeta {
   @JsonProperty(JSON_PROPERTY_MIN_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public MinPrice getMinPrice() {
+  public Price getMinPrice() {
     return minPrice;
   }
 
@@ -1750,7 +1740,7 @@ public class Product extends EntityWithMeta {
 
   @JsonProperty(JSON_PROPERTY_MIN_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMinPrice(@javax.annotation.Nullable MinPrice minPrice) {
+  public void setMinPrice(@javax.annotation.Nullable Price minPrice) {
     this.minPrice = minPrice;
   }
 
@@ -2000,7 +1990,7 @@ public class Product extends EntityWithMeta {
         Objects.equals(this.volume, product.volume) &&
         Objects.equals(this.buyPrice, product.buyPrice) &&
         equalsNullable(this.salePrices, product.salePrices) &&
-        equalsNullable(this.supplier, product.supplier) &&
+        Objects.equals(this.supplier, product.supplier) &&
         equalsNullable(this.country, product.country) &&
         equalsNullable(this.uom, product.uom) &&
         equalsNullable(this.productFolder, product.productFolder) &&
@@ -2029,7 +2019,7 @@ public class Product extends EntityWithMeta {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, alcoholic, archived, tobacco, name, code, externalCode, pathName, article, hashCodeNullable(description), vat, vatEnabled, useParentVat, effectiveVat, effectiveVatEnabled, discountProhibited, variantsCount, isSerialTrackable, shared, group, hashCodeNullable(owner), updated, weight, volume, buyPrice, hashCodeNullable(salePrices), hashCodeNullable(supplier), hashCodeNullable(country), hashCodeNullable(uom), hashCodeNullable(productFolder), hashCodeNullable(images), files, hashCodeNullable(barcodes), hashCodeNullable(packs), trackingType, tnved, paymentItemType, taxSystem, hashCodeNullable(attributes), hashCodeNullable(minimumStock), minPrice, weighed, onTap, partialDisposal, hashCodeNullable(things), syncId, ppeType);
+    return Objects.hash(meta, id, accountId, alcoholic, archived, tobacco, name, code, externalCode, pathName, article, hashCodeNullable(description), vat, vatEnabled, useParentVat, effectiveVat, effectiveVatEnabled, discountProhibited, variantsCount, isSerialTrackable, shared, group, hashCodeNullable(owner), updated, weight, volume, buyPrice, hashCodeNullable(salePrices), supplier, hashCodeNullable(country), hashCodeNullable(uom), hashCodeNullable(productFolder), hashCodeNullable(images), files, hashCodeNullable(barcodes), hashCodeNullable(packs), trackingType, tnved, paymentItemType, taxSystem, hashCodeNullable(attributes), hashCodeNullable(minimumStock), minPrice, weighed, onTap, partialDisposal, hashCodeNullable(things), syncId, ppeType);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

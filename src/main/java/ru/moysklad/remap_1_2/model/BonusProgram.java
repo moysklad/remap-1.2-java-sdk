@@ -20,15 +20,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.UUID;
-import org.openapitools.jackson.nullable.JsonNullable;
-import ru.moysklad.remap_1_2.model.Meta;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import javax.validation.constraints.*;
@@ -48,18 +39,10 @@ import java.util.StringJoiner;
   BonusProgram.JSON_PROPERTY_WELCOME_BONUSES_ENABLED,
   BonusProgram.JSON_PROPERTY_WELCOME_BONUSES_VALUE,
   BonusProgram.JSON_PROPERTY_WELCOME_BONUSES_MODE,
-  BonusProgram.JSON_PROPERTY_MAX_PAID_RATE_PERCENTS,
-  BonusProgram.JSON_PROPERTY_ALL_PRODUCTS,
-  BonusProgram.JSON_PROPERTY_ID,
-  BonusProgram.JSON_PROPERTY_META,
-  BonusProgram.JSON_PROPERTY_ACCOUNT_ID,
-  BonusProgram.JSON_PROPERTY_NAME,
-  BonusProgram.JSON_PROPERTY_ACTIVE,
-  BonusProgram.JSON_PROPERTY_ALL_AGENTS,
-  BonusProgram.JSON_PROPERTY_AGENT_TAGS
+  BonusProgram.JSON_PROPERTY_MAX_PAID_RATE_PERCENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
-public class BonusProgram {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
+public class BonusProgram extends DiscountAbstract {
 
   public static final String JSON_PROPERTY_EARN_RATE_ROUBLES_TO_POINT = "earnRateRoublesToPoint";
   @javax.annotation.Nullable
@@ -93,51 +76,7 @@ public class BonusProgram {
   @javax.annotation.Nullable
   private Integer maxPaidRatePercents;
 
-  public static final String JSON_PROPERTY_ALL_PRODUCTS = "allProducts";
-  @javax.annotation.Nullable
-  private Boolean allProducts;
-
-  public static final String JSON_PROPERTY_ID = "id";
-  @javax.annotation.Nullable
-  private UUID id;
-
-  public static final String JSON_PROPERTY_META = "meta";
-  @javax.annotation.Nullable
-  private Meta meta;
-
-  public static final String JSON_PROPERTY_ACCOUNT_ID = "accountId";
-  @javax.annotation.Nullable
-  private UUID accountId;
-
-  public static final String JSON_PROPERTY_NAME = "name";
-  @javax.annotation.Nullable
-  private String name;
-
-  public static final String JSON_PROPERTY_ACTIVE = "active";
-  @javax.annotation.Nullable
-  private Boolean active;
-
-  public static final String JSON_PROPERTY_ALL_AGENTS = "allAgents";
-  @javax.annotation.Nullable
-  private Boolean allAgents;
-
-  public static final String JSON_PROPERTY_AGENT_TAGS = "agentTags";
-  @javax.annotation.Nullable
-  private JsonNullable<List<String>> agentTags = JsonNullable.<List<String>>undefined();
-
   public BonusProgram() {
-  }
-  /**
-   * Constructor with only readonly parameters
-   */
-  @JsonCreator
-  public BonusProgram(
-    @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id, 
-    @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId
-  ) {
-    this();
-    this.id = id;
-    this.accountId = accountId;
   }
 
   public BonusProgram earnRateRoublesToPoint(@javax.annotation.Nullable Integer earnRateRoublesToPoint) {
@@ -390,252 +329,6 @@ public class BonusProgram {
   }
 
 
-  public BonusProgram allProducts(@javax.annotation.Nullable Boolean allProducts) {
-    
-    this.allProducts = allProducts;
-    return this;
-  }
-
-
-  /**
-   * Для всех ли товаров скидка
-   * @return allProducts
-   */
-  @javax.annotation.Nullable
-
-
-  @JsonProperty(JSON_PROPERTY_ALL_PRODUCTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getAllProducts() {
-    return allProducts;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_ALL_PRODUCTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAllProducts(@javax.annotation.Nullable Boolean allProducts) {
-    this.allProducts = allProducts;
-  }
-
-
-  /**
-   * ID дополнительного поля
-   * @return id
-   */
-  @javax.annotation.Nullable
-  @Valid
-
-
-  @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public UUID getId() {
-    return id;
-  }
-
-  
-
-
-
-  public BonusProgram meta(@javax.annotation.Nullable Meta meta) {
-    
-    this.meta = meta;
-    return this;
-  }
-
-
-  /**
-   * Get meta
-   * @return meta
-   */
-  @javax.annotation.Nullable
-  @Valid
-
-
-  @JsonProperty(JSON_PROPERTY_META)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Meta getMeta() {
-    return meta;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_META)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMeta(@javax.annotation.Nullable Meta meta) {
-    this.meta = meta;
-  }
-
-
-  /**
-   * ID учетной записи
-   * @return accountId
-   */
-  @javax.annotation.Nullable
-  @Valid
-
-
-  @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public UUID getAccountId() {
-    return accountId;
-  }
-
-  
-
-
-
-  public BonusProgram name(@javax.annotation.Nullable String name) {
-    
-    this.name = name;
-    return this;
-  }
-
-
-  /**
-   * Наименование товара
-   * @return name
-   */
-  @javax.annotation.Nullable
- @Size(max=255)
-
-  @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getName() {
-    return name;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(@javax.annotation.Nullable String name) {
-    this.name = name;
-  }
-
-
-  public BonusProgram active(@javax.annotation.Nullable Boolean active) {
-    
-    this.active = active;
-    return this;
-  }
-
-
-  /**
-   * Включена ли скидка
-   * @return active
-   */
-  @javax.annotation.Nullable
-
-
-  @JsonProperty(JSON_PROPERTY_ACTIVE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getActive() {
-    return active;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_ACTIVE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setActive(@javax.annotation.Nullable Boolean active) {
-    this.active = active;
-  }
-
-
-  public BonusProgram allAgents(@javax.annotation.Nullable Boolean allAgents) {
-    
-    this.allAgents = allAgents;
-    return this;
-  }
-
-
-  /**
-   * Для всех ли агентов скидка
-   * @return allAgents
-   */
-  @javax.annotation.Nullable
-
-
-  @JsonProperty(JSON_PROPERTY_ALL_AGENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getAllAgents() {
-    return allAgents;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_ALL_AGENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAllAgents(@javax.annotation.Nullable Boolean allAgents) {
-    this.allAgents = allAgents;
-  }
-
-
-  public BonusProgram agentTags(@javax.annotation.Nullable List<String> agentTags) {
-    this.agentTags = JsonNullable.<List<String>>of(agentTags);
-    
-    return this;
-  }
-
-
-  public BonusProgram addAgentTagsItem(String agentTagsItem) {
-    if (this.agentTags == null || !this.agentTags.isPresent()) {
-      this.agentTags = JsonNullable.<List<String>>of(new ArrayList<>());
-    }
-    try {
-      this.agentTags.get().add(agentTagsItem);
-    } catch (java.util.NoSuchElementException e) {
-      // this can never happen, as we make sure above that the value is present
-    }
-    return this;
-  }
-
-  /**
-   * Тэги агентов
-   * @return agentTags
-   */
-  @javax.annotation.Nullable
-
-
-  @JsonIgnore
-
-  public List<String> getAgentTags() {
-        return agentTags.orElse(null);
-  }
-
-  
-
-  @JsonProperty(JSON_PROPERTY_AGENT_TAGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-
-  public JsonNullable<List<String>> getAgentTags_JsonNullable() {
-    return agentTags;
-  }
-  
-  @JsonProperty(value = JSON_PROPERTY_AGENT_TAGS, required = false)
-  public void setAgentTags_JsonNullable(JsonNullable<List<String>> agentTags) {
-    this.agentTags = agentTags;
-  }
-
-  public void setAgentTags(@javax.annotation.Nullable List<String> agentTags) {
-    this.agentTags = JsonNullable.<List<String>>of(agentTags);
-  }
-
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -652,31 +345,12 @@ public class BonusProgram {
         Objects.equals(this.welcomeBonusesEnabled, bonusProgram.welcomeBonusesEnabled) &&
         Objects.equals(this.welcomeBonusesValue, bonusProgram.welcomeBonusesValue) &&
         Objects.equals(this.welcomeBonusesMode, bonusProgram.welcomeBonusesMode) &&
-        Objects.equals(this.maxPaidRatePercents, bonusProgram.maxPaidRatePercents) &&
-        Objects.equals(this.allProducts, bonusProgram.allProducts) &&
-        Objects.equals(this.id, bonusProgram.id) &&
-        Objects.equals(this.meta, bonusProgram.meta) &&
-        Objects.equals(this.accountId, bonusProgram.accountId) &&
-        Objects.equals(this.name, bonusProgram.name) &&
-        Objects.equals(this.active, bonusProgram.active) &&
-        Objects.equals(this.allAgents, bonusProgram.allAgents) &&
-        equalsNullable(this.agentTags, bonusProgram.agentTags);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+        Objects.equals(this.maxPaidRatePercents, bonusProgram.maxPaidRatePercents);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(earnRateRoublesToPoint, earnWhileRedeeming, postponedBonusesDelayDays, spendRatePointsToRouble, welcomeBonusesEnabled, welcomeBonusesValue, welcomeBonusesMode, maxPaidRatePercents, allProducts, id, meta, accountId, name, active, allAgents, hashCodeNullable(agentTags));
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(earnRateRoublesToPoint, earnWhileRedeeming, postponedBonusesDelayDays, spendRatePointsToRouble, welcomeBonusesEnabled, welcomeBonusesValue, welcomeBonusesMode, maxPaidRatePercents);
   }
 
   @Override
@@ -691,14 +365,6 @@ public class BonusProgram {
     sb.append("    welcomeBonusesValue: ").append(toIndentedString(welcomeBonusesValue)).append("\n");
     sb.append("    welcomeBonusesMode: ").append(toIndentedString(welcomeBonusesMode)).append("\n");
     sb.append("    maxPaidRatePercents: ").append(toIndentedString(maxPaidRatePercents)).append("\n");
-    sb.append("    allProducts: ").append(toIndentedString(allProducts)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
-    sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    active: ").append(toIndentedString(active)).append("\n");
-    sb.append("    allAgents: ").append(toIndentedString(allAgents)).append("\n");
-    sb.append("    agentTags: ").append(toIndentedString(agentTags)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -746,72 +412,83 @@ public class BonusProgram {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `id` to the URL query string
-    if (getId() != null) {
+    // add `earnRateRoublesToPoint` to the URL query string
+    if (getEarnRateRoublesToPoint() != null) {
       try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%searnRateRoublesToPoint%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEarnRateRoublesToPoint()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
       }
     }
 
-    // add `meta` to the URL query string
-    if (getMeta() != null) {
-      joiner.add(getMeta().toUrlQueryString(prefix + "meta" + suffix));
-    }
-
-    // add `accountId` to the URL query string
-    if (getAccountId() != null) {
+    // add `earnWhileRedeeming` to the URL query string
+    if (getEarnWhileRedeeming() != null) {
       try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%saccountId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAccountId()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%searnWhileRedeeming%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEarnWhileRedeeming()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
       }
     }
 
-    // add `name` to the URL query string
-    if (getName() != null) {
+    // add `postponedBonusesDelayDays` to the URL query string
+    if (getPostponedBonusesDelayDays() != null) {
       try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%sname%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getName()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%spostponedBonusesDelayDays%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getPostponedBonusesDelayDays()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
       }
     }
 
-    // add `active` to the URL query string
-    if (getActive() != null) {
+    // add `spendRatePointsToRouble` to the URL query string
+    if (getSpendRatePointsToRouble() != null) {
       try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%sactive%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getActive()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sspendRatePointsToRouble%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSpendRatePointsToRouble()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
       }
     }
 
-    // add `allAgents` to the URL query string
-    if (getAllAgents() != null) {
+    // add `welcomeBonusesEnabled` to the URL query string
+    if (getWelcomeBonusesEnabled() != null) {
       try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%sallAgents%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAllAgents()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%swelcomeBonusesEnabled%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getWelcomeBonusesEnabled()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
       }
     }
 
-    // add `agentTags` to the URL query string
-    if (getAgentTags() != null) {
-      for (int i = 0; i < getAgentTags().size(); i++) {
-        try {
-          joiner.add(String.format(java.util.Locale.ROOT, "%sagentTags%s%s=%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
-              URLEncoder.encode(String.valueOf(getAgentTags().get(i)), "UTF-8").replaceAll("\\+", "%20")));
-        } catch (UnsupportedEncodingException e) {
-          // Should never happen, UTF-8 is always supported
-          throw new RuntimeException(e);
-        }
+    // add `welcomeBonusesValue` to the URL query string
+    if (getWelcomeBonusesValue() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%swelcomeBonusesValue%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getWelcomeBonusesValue()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `welcomeBonusesMode` to the URL query string
+    if (getWelcomeBonusesMode() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%swelcomeBonusesMode%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getWelcomeBonusesMode()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `maxPaidRatePercents` to the URL query string
+    if (getMaxPaidRatePercents() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%smaxPaidRatePercents%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getMaxPaidRatePercents()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
       }
     }
 

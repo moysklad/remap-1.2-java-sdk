@@ -8,9 +8,9 @@ build.gradle
 build.sbt
 docs/Account.md
 docs/AccumulationDiscount.md
+docs/AccumulationDiscountLevelsInner.md
 docs/ActivateEmployee200Response.md
 docs/ActivateEmployeeRequest.md
-docs/ActivateEmployeeRequestGroup.md
 docs/AddProductImagesRequest.md
 docs/Address.md
 docs/Agent.md
@@ -52,7 +52,6 @@ docs/BundleComponentList.md
 docs/BundleList.md
 docs/BundleOverhead.md
 docs/BundlesApi.md
-docs/BuyPrice.md
 docs/CashIn.md
 docs/CashInList.md
 docs/CashInsApi.md
@@ -100,8 +99,6 @@ docs/CounterpartyNotes.md
 docs/CountriesApi.md
 docs/Country.md
 docs/CountryList.md
-docs/CreateBonusTransaction200Response.md
-docs/CreateBonusTransactionRequest.md
 docs/CreateBundleComponentsRequest.md
 docs/CreateCommissionReportInPositions200ResponseInner.md
 docs/CreateCommissionReportInReturnedPositions200ResponseInner.md
@@ -141,6 +138,9 @@ docs/CustomEntity.md
 docs/CustomEntityElement.md
 docs/CustomEntityElementList.md
 docs/CustomEntityMetadata.md
+docs/CustomRole.md
+docs/CustomRoleList.md
+docs/CustomRolesApi.md
 docs/CustomerOrder.md
 docs/CustomerOrderList.md
 docs/CustomerOrderPosition.md
@@ -159,14 +159,15 @@ docs/DemandPositionList.md
 docs/DemandPositionTrackingCode1162.md
 docs/DemandsApi.md
 docs/Discount.md
+docs/DiscountAbstract.md
 docs/DiscountAssortmentItem.md
 docs/DiscountBase.md
 docs/DiscountList.md
-docs/DiscountListRowsInner.md
 docs/DiscountStrategy.md
 docs/DiscountsApi.md
 docs/DocumentMetadata.md
 docs/EmbeddedTemplate.md
+docs/EmbeddedTemplateList.md
 docs/EmissionOrder.md
 docs/EmissionOrderDocumentState.md
 docs/EmissionOrderEmissionType.md
@@ -178,6 +179,7 @@ docs/EmissionOrdersApi.md
 docs/Employee.md
 docs/EmployeeList.md
 docs/EmployeeRole.md
+docs/EmployeeRolePermissions.md
 docs/EmployeeSalary.md
 docs/EmployeeSecurity.md
 docs/EmployeeSecurityGroup.md
@@ -196,6 +198,7 @@ docs/EventNoteList.md
 docs/ExpenseItem.md
 docs/ExpenseItemList.md
 docs/ExpenseItemsApi.md
+docs/ExportRequest.md
 docs/FactureIn.md
 docs/FactureInList.md
 docs/FactureInsApi.md
@@ -265,7 +268,6 @@ docs/MarksCheckMode.md
 docs/Meta.md
 docs/MetaList.md
 docs/Metadata.md
-docs/MinPrice.md
 docs/MinimumStockAbstract.md
 docs/MinimumStockAllWarehouseSame.md
 docs/MinimumStockAllWarehouseSum.md
@@ -297,6 +299,8 @@ docs/PaymentItemType.md
 docs/PaymentOut.md
 docs/PaymentOutList.md
 docs/PaymentOutsApi.md
+docs/PermissionValue.md
+docs/Permissions.md
 docs/PersonalDiscount.md
 docs/PositionStock.md
 docs/PositionTrackingCode.md
@@ -309,6 +313,7 @@ docs/PrepaymentReturnPosition.md
 docs/PrepaymentReturnPositionList.md
 docs/PrepaymentReturnsApi.md
 docs/PrepaymentsApi.md
+docs/Price.md
 docs/PriceType.md
 docs/PriceTypesApi.md
 docs/PrintFormat.md
@@ -353,12 +358,15 @@ docs/ProductFolder.md
 docs/ProductFolderList.md
 docs/ProductFoldersApi.md
 docs/ProductList.md
+docs/ProductMarker.md
 docs/ProductionTask.md
 docs/ProductionTasksApi.md
 docs/ProductsApi.md
 docs/Project.md
 docs/ProjectList.md
 docs/ProjectsApi.md
+docs/Publication.md
+docs/PublicationList.md
 docs/PurchaseOrder.md
 docs/PurchaseOrderList.md
 docs/PurchaseOrderPosition.md
@@ -440,11 +448,15 @@ docs/SalesReturnPaymentsInner.md
 docs/SalesReturnPosition.md
 docs/SalesReturnPositionList.md
 docs/SalesReturnsApi.md
+docs/ScriptPermissionValue.md
+docs/ScriptPermissions.md
+docs/ScriptTemplatePermissions.md
 docs/Service.md
 docs/ServiceList.md
 docs/ServicesApi.md
 docs/Sex.md
 docs/SpecialPriceDiscount.md
+docs/SpecialPriceDiscountSpecialPrice.md
 docs/State.md
 docs/StateRowResult.md
 docs/StateType.md
@@ -480,6 +492,7 @@ docs/TaxRate.md
 docs/TaxRateList.md
 docs/TaxRatesApi.md
 docs/TaxSystem.md
+docs/TemplateComposition.md
 docs/Thing.md
 docs/ThingList.md
 docs/ThingsApi.md
@@ -555,6 +568,7 @@ src/main/java/ru/moysklad/remap_1_2/api/CounterpartiesApi.java
 src/main/java/ru/moysklad/remap_1_2/api/CountriesApi.java
 src/main/java/ru/moysklad/remap_1_2/api/CurrenciesApi.java
 src/main/java/ru/moysklad/remap_1_2/api/CustomEntitiesApi.java
+src/main/java/ru/moysklad/remap_1_2/api/CustomRolesApi.java
 src/main/java/ru/moysklad/remap_1_2/api/CustomerOrdersApi.java
 src/main/java/ru/moysklad/remap_1_2/api/DemandsApi.java
 src/main/java/ru/moysklad/remap_1_2/api/DiscountsApi.java
@@ -628,9 +642,9 @@ src/main/java/ru/moysklad/remap_1_2/deserialize/OpenApiPolymorphicTypeInfo.java
 src/main/java/ru/moysklad/remap_1_2/deserialize/PolymorphicMetaTypeDeserializer.java
 src/main/java/ru/moysklad/remap_1_2/model/Account.java
 src/main/java/ru/moysklad/remap_1_2/model/AccumulationDiscount.java
+src/main/java/ru/moysklad/remap_1_2/model/AccumulationDiscountLevelsInner.java
 src/main/java/ru/moysklad/remap_1_2/model/ActivateEmployee200Response.java
 src/main/java/ru/moysklad/remap_1_2/model/ActivateEmployeeRequest.java
-src/main/java/ru/moysklad/remap_1_2/model/ActivateEmployeeRequestGroup.java
 src/main/java/ru/moysklad/remap_1_2/model/AddProductImagesRequest.java
 src/main/java/ru/moysklad/remap_1_2/model/Address.java
 src/main/java/ru/moysklad/remap_1_2/model/Agent.java
@@ -668,7 +682,6 @@ src/main/java/ru/moysklad/remap_1_2/model/BundleComponent.java
 src/main/java/ru/moysklad/remap_1_2/model/BundleComponentList.java
 src/main/java/ru/moysklad/remap_1_2/model/BundleList.java
 src/main/java/ru/moysklad/remap_1_2/model/BundleOverhead.java
-src/main/java/ru/moysklad/remap_1_2/model/BuyPrice.java
 src/main/java/ru/moysklad/remap_1_2/model/CashIn.java
 src/main/java/ru/moysklad/remap_1_2/model/CashInList.java
 src/main/java/ru/moysklad/remap_1_2/model/CashOut.java
@@ -706,8 +719,6 @@ src/main/java/ru/moysklad/remap_1_2/model/CounterpartyMetadata.java
 src/main/java/ru/moysklad/remap_1_2/model/CounterpartyNotes.java
 src/main/java/ru/moysklad/remap_1_2/model/Country.java
 src/main/java/ru/moysklad/remap_1_2/model/CountryList.java
-src/main/java/ru/moysklad/remap_1_2/model/CreateBonusTransaction200Response.java
-src/main/java/ru/moysklad/remap_1_2/model/CreateBonusTransactionRequest.java
 src/main/java/ru/moysklad/remap_1_2/model/CreateBundleComponentsRequest.java
 src/main/java/ru/moysklad/remap_1_2/model/CreateCommissionReportInPositions200ResponseInner.java
 src/main/java/ru/moysklad/remap_1_2/model/CreateCommissionReportInReturnedPositions200ResponseInner.java
@@ -745,6 +756,8 @@ src/main/java/ru/moysklad/remap_1_2/model/CustomEntity.java
 src/main/java/ru/moysklad/remap_1_2/model/CustomEntityElement.java
 src/main/java/ru/moysklad/remap_1_2/model/CustomEntityElementList.java
 src/main/java/ru/moysklad/remap_1_2/model/CustomEntityMetadata.java
+src/main/java/ru/moysklad/remap_1_2/model/CustomRole.java
+src/main/java/ru/moysklad/remap_1_2/model/CustomRoleList.java
 src/main/java/ru/moysklad/remap_1_2/model/CustomerOrder.java
 src/main/java/ru/moysklad/remap_1_2/model/CustomerOrderList.java
 src/main/java/ru/moysklad/remap_1_2/model/CustomerOrderPosition.java
@@ -761,13 +774,14 @@ src/main/java/ru/moysklad/remap_1_2/model/DemandPosition.java
 src/main/java/ru/moysklad/remap_1_2/model/DemandPositionList.java
 src/main/java/ru/moysklad/remap_1_2/model/DemandPositionTrackingCode1162.java
 src/main/java/ru/moysklad/remap_1_2/model/Discount.java
+src/main/java/ru/moysklad/remap_1_2/model/DiscountAbstract.java
 src/main/java/ru/moysklad/remap_1_2/model/DiscountAssortmentItem.java
 src/main/java/ru/moysklad/remap_1_2/model/DiscountBase.java
 src/main/java/ru/moysklad/remap_1_2/model/DiscountList.java
-src/main/java/ru/moysklad/remap_1_2/model/DiscountListRowsInner.java
 src/main/java/ru/moysklad/remap_1_2/model/DiscountStrategy.java
 src/main/java/ru/moysklad/remap_1_2/model/DocumentMetadata.java
 src/main/java/ru/moysklad/remap_1_2/model/EmbeddedTemplate.java
+src/main/java/ru/moysklad/remap_1_2/model/EmbeddedTemplateList.java
 src/main/java/ru/moysklad/remap_1_2/model/EmissionOrder.java
 src/main/java/ru/moysklad/remap_1_2/model/EmissionOrderDocumentState.java
 src/main/java/ru/moysklad/remap_1_2/model/EmissionOrderEmissionType.java
@@ -778,6 +792,7 @@ src/main/java/ru/moysklad/remap_1_2/model/EmissionOrderPositionStatus.java
 src/main/java/ru/moysklad/remap_1_2/model/Employee.java
 src/main/java/ru/moysklad/remap_1_2/model/EmployeeList.java
 src/main/java/ru/moysklad/remap_1_2/model/EmployeeRole.java
+src/main/java/ru/moysklad/remap_1_2/model/EmployeeRolePermissions.java
 src/main/java/ru/moysklad/remap_1_2/model/EmployeeSalary.java
 src/main/java/ru/moysklad/remap_1_2/model/EmployeeSecurity.java
 src/main/java/ru/moysklad/remap_1_2/model/EmployeeSecurityGroup.java
@@ -793,6 +808,7 @@ src/main/java/ru/moysklad/remap_1_2/model/EventNote.java
 src/main/java/ru/moysklad/remap_1_2/model/EventNoteList.java
 src/main/java/ru/moysklad/remap_1_2/model/ExpenseItem.java
 src/main/java/ru/moysklad/remap_1_2/model/ExpenseItemList.java
+src/main/java/ru/moysklad/remap_1_2/model/ExportRequest.java
 src/main/java/ru/moysklad/remap_1_2/model/FactureIn.java
 src/main/java/ru/moysklad/remap_1_2/model/FactureInList.java
 src/main/java/ru/moysklad/remap_1_2/model/FactureOut.java
@@ -853,7 +869,6 @@ src/main/java/ru/moysklad/remap_1_2/model/MarksCheckMode.java
 src/main/java/ru/moysklad/remap_1_2/model/Meta.java
 src/main/java/ru/moysklad/remap_1_2/model/MetaList.java
 src/main/java/ru/moysklad/remap_1_2/model/Metadata.java
-src/main/java/ru/moysklad/remap_1_2/model/MinPrice.java
 src/main/java/ru/moysklad/remap_1_2/model/MinimumStockAbstract.java
 src/main/java/ru/moysklad/remap_1_2/model/MinimumStockAllWarehouseSame.java
 src/main/java/ru/moysklad/remap_1_2/model/MinimumStockAllWarehouseSum.java
@@ -880,6 +895,8 @@ src/main/java/ru/moysklad/remap_1_2/model/PaymentInList.java
 src/main/java/ru/moysklad/remap_1_2/model/PaymentItemType.java
 src/main/java/ru/moysklad/remap_1_2/model/PaymentOut.java
 src/main/java/ru/moysklad/remap_1_2/model/PaymentOutList.java
+src/main/java/ru/moysklad/remap_1_2/model/PermissionValue.java
+src/main/java/ru/moysklad/remap_1_2/model/Permissions.java
 src/main/java/ru/moysklad/remap_1_2/model/PersonalDiscount.java
 src/main/java/ru/moysklad/remap_1_2/model/PositionStock.java
 src/main/java/ru/moysklad/remap_1_2/model/PositionTrackingCode.java
@@ -890,6 +907,7 @@ src/main/java/ru/moysklad/remap_1_2/model/PrepaymentReturn.java
 src/main/java/ru/moysklad/remap_1_2/model/PrepaymentReturnList.java
 src/main/java/ru/moysklad/remap_1_2/model/PrepaymentReturnPosition.java
 src/main/java/ru/moysklad/remap_1_2/model/PrepaymentReturnPositionList.java
+src/main/java/ru/moysklad/remap_1_2/model/Price.java
 src/main/java/ru/moysklad/remap_1_2/model/PriceType.java
 src/main/java/ru/moysklad/remap_1_2/model/PrintFormat.java
 src/main/java/ru/moysklad/remap_1_2/model/PriorityOfdSend.java
@@ -926,9 +944,12 @@ src/main/java/ru/moysklad/remap_1_2/model/ProductAlcoholic.java
 src/main/java/ru/moysklad/remap_1_2/model/ProductFolder.java
 src/main/java/ru/moysklad/remap_1_2/model/ProductFolderList.java
 src/main/java/ru/moysklad/remap_1_2/model/ProductList.java
+src/main/java/ru/moysklad/remap_1_2/model/ProductMarker.java
 src/main/java/ru/moysklad/remap_1_2/model/ProductionTask.java
 src/main/java/ru/moysklad/remap_1_2/model/Project.java
 src/main/java/ru/moysklad/remap_1_2/model/ProjectList.java
+src/main/java/ru/moysklad/remap_1_2/model/Publication.java
+src/main/java/ru/moysklad/remap_1_2/model/PublicationList.java
 src/main/java/ru/moysklad/remap_1_2/model/PurchaseOrder.java
 src/main/java/ru/moysklad/remap_1_2/model/PurchaseOrderList.java
 src/main/java/ru/moysklad/remap_1_2/model/PurchaseOrderPosition.java
@@ -998,10 +1019,14 @@ src/main/java/ru/moysklad/remap_1_2/model/SalesReturnList.java
 src/main/java/ru/moysklad/remap_1_2/model/SalesReturnPaymentsInner.java
 src/main/java/ru/moysklad/remap_1_2/model/SalesReturnPosition.java
 src/main/java/ru/moysklad/remap_1_2/model/SalesReturnPositionList.java
+src/main/java/ru/moysklad/remap_1_2/model/ScriptPermissionValue.java
+src/main/java/ru/moysklad/remap_1_2/model/ScriptPermissions.java
+src/main/java/ru/moysklad/remap_1_2/model/ScriptTemplatePermissions.java
 src/main/java/ru/moysklad/remap_1_2/model/Service.java
 src/main/java/ru/moysklad/remap_1_2/model/ServiceList.java
 src/main/java/ru/moysklad/remap_1_2/model/Sex.java
 src/main/java/ru/moysklad/remap_1_2/model/SpecialPriceDiscount.java
+src/main/java/ru/moysklad/remap_1_2/model/SpecialPriceDiscountSpecialPrice.java
 src/main/java/ru/moysklad/remap_1_2/model/State.java
 src/main/java/ru/moysklad/remap_1_2/model/StateRowResult.java
 src/main/java/ru/moysklad/remap_1_2/model/StateType.java
@@ -1032,6 +1057,7 @@ src/main/java/ru/moysklad/remap_1_2/model/TaskNotes.java
 src/main/java/ru/moysklad/remap_1_2/model/TaxRate.java
 src/main/java/ru/moysklad/remap_1_2/model/TaxRateList.java
 src/main/java/ru/moysklad/remap_1_2/model/TaxSystem.java
+src/main/java/ru/moysklad/remap_1_2/model/TemplateComposition.java
 src/main/java/ru/moysklad/remap_1_2/model/Thing.java
 src/main/java/ru/moysklad/remap_1_2/model/ThingList.java
 src/main/java/ru/moysklad/remap_1_2/model/TobaccoMrcControlType.java

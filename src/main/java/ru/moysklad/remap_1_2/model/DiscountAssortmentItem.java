@@ -25,18 +25,17 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
+import ru.moysklad.remap_1_2.model.Agent;
 import ru.moysklad.remap_1_2.model.AttributeAbstract;
 import ru.moysklad.remap_1_2.model.Barcode;
-import ru.moysklad.remap_1_2.model.BuyPrice;
-import ru.moysklad.remap_1_2.model.Counterparty;
 import ru.moysklad.remap_1_2.model.Country;
 import ru.moysklad.remap_1_2.model.Employee;
 import ru.moysklad.remap_1_2.model.FileList;
 import ru.moysklad.remap_1_2.model.Group;
 import ru.moysklad.remap_1_2.model.ImageList;
 import ru.moysklad.remap_1_2.model.Meta;
-import ru.moysklad.remap_1_2.model.MinPrice;
 import ru.moysklad.remap_1_2.model.MinimumStockAbstract;
+import ru.moysklad.remap_1_2.model.Price;
 import ru.moysklad.remap_1_2.model.Product;
 import ru.moysklad.remap_1_2.model.ProductAlcoholic;
 import ru.moysklad.remap_1_2.model.ProductFolder;
@@ -113,7 +112,7 @@ import java.util.StringJoiner;
   DiscountAssortmentItem.JSON_PROPERTY_PRODUCT,
   DiscountAssortmentItem.JSON_PROPERTY_CHARACTERISTICS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
 public class DiscountAssortmentItem {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -222,7 +221,7 @@ public class DiscountAssortmentItem {
 
   public static final String JSON_PROPERTY_BUY_PRICE = "buyPrice";
   @javax.annotation.Nullable
-  private JsonNullable<BuyPrice> buyPrice = JsonNullable.<BuyPrice>undefined();
+  private JsonNullable<Price> buyPrice = JsonNullable.<Price>undefined();
 
   public static final String JSON_PROPERTY_SALE_PRICES = "salePrices";
   @javax.annotation.Nullable
@@ -230,7 +229,7 @@ public class DiscountAssortmentItem {
 
   public static final String JSON_PROPERTY_SUPPLIER = "supplier";
   @javax.annotation.Nullable
-  private JsonNullable<Counterparty> supplier = JsonNullable.<Counterparty>undefined();
+  private Agent supplier;
 
   public static final String JSON_PROPERTY_COUNTRY = "country";
   @javax.annotation.Nullable
@@ -286,7 +285,7 @@ public class DiscountAssortmentItem {
 
   public static final String JSON_PROPERTY_MIN_PRICE = "minPrice";
   @javax.annotation.Nullable
-  private MinPrice minPrice;
+  private Price minPrice;
 
   public static final String JSON_PROPERTY_WEIGHED = "weighed";
   @javax.annotation.Nullable
@@ -1077,8 +1076,8 @@ public class DiscountAssortmentItem {
   }
 
 
-  public DiscountAssortmentItem buyPrice(@javax.annotation.Nullable BuyPrice buyPrice) {
-    this.buyPrice = JsonNullable.<BuyPrice>of(buyPrice);
+  public DiscountAssortmentItem buyPrice(@javax.annotation.Nullable Price buyPrice) {
+    this.buyPrice = JsonNullable.<Price>of(buyPrice);
     
     return this;
   }
@@ -1094,7 +1093,7 @@ public class DiscountAssortmentItem {
 
   @JsonIgnore
 
-  public BuyPrice getBuyPrice() {
+  public Price getBuyPrice() {
         return buyPrice.orElse(null);
   }
 
@@ -1104,17 +1103,17 @@ public class DiscountAssortmentItem {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<BuyPrice> getBuyPrice_JsonNullable() {
+  public JsonNullable<Price> getBuyPrice_JsonNullable() {
     return buyPrice;
   }
   
   @JsonProperty(value = JSON_PROPERTY_BUY_PRICE, required = false)
-  public void setBuyPrice_JsonNullable(JsonNullable<BuyPrice> buyPrice) {
+  public void setBuyPrice_JsonNullable(JsonNullable<Price> buyPrice) {
     this.buyPrice = buyPrice;
   }
 
-  public void setBuyPrice(@javax.annotation.Nullable BuyPrice buyPrice) {
-    this.buyPrice = JsonNullable.<BuyPrice>of(buyPrice);
+  public void setBuyPrice(@javax.annotation.Nullable Price buyPrice) {
+    this.buyPrice = JsonNullable.<Price>of(buyPrice);
   }
 
 
@@ -1171,44 +1170,35 @@ public class DiscountAssortmentItem {
   }
 
 
-  public DiscountAssortmentItem supplier(@javax.annotation.Nullable Counterparty supplier) {
-    this.supplier = JsonNullable.<Counterparty>of(supplier);
+  public DiscountAssortmentItem supplier(@javax.annotation.Nullable Agent supplier) {
     
+    this.supplier = supplier;
     return this;
   }
 
 
   /**
-   * Метаданные контрагента-поставщика
+   * Метаданные контрагента или юрлица
    * @return supplier
    */
   @javax.annotation.Nullable
   @Valid
 
 
-  @JsonIgnore
-
-  public Counterparty getSupplier() {
-        return supplier.orElse(null);
-  }
-
-  
-
   @JsonProperty(JSON_PROPERTY_SUPPLIER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-
-  public JsonNullable<Counterparty> getSupplier_JsonNullable() {
+  public Agent getSupplier() {
     return supplier;
   }
-  
-  @JsonProperty(value = JSON_PROPERTY_SUPPLIER, required = false)
-  public void setSupplier_JsonNullable(JsonNullable<Counterparty> supplier) {
-    this.supplier = supplier;
-  }
 
-  public void setSupplier(@javax.annotation.Nullable Counterparty supplier) {
-    this.supplier = JsonNullable.<Counterparty>of(supplier);
+  
+
+
+  @JsonProperty(JSON_PROPERTY_SUPPLIER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSupplier(@javax.annotation.Nullable Agent supplier) {
+    this.supplier = supplier;
   }
 
 
@@ -1741,7 +1731,7 @@ public class DiscountAssortmentItem {
   }
 
 
-  public DiscountAssortmentItem minPrice(@javax.annotation.Nullable MinPrice minPrice) {
+  public DiscountAssortmentItem minPrice(@javax.annotation.Nullable Price minPrice) {
     
     this.minPrice = minPrice;
     return this;
@@ -1759,7 +1749,7 @@ public class DiscountAssortmentItem {
   @JsonProperty(JSON_PROPERTY_MIN_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public MinPrice getMinPrice() {
+  public Price getMinPrice() {
     return minPrice;
   }
 
@@ -1768,7 +1758,7 @@ public class DiscountAssortmentItem {
 
   @JsonProperty(JSON_PROPERTY_MIN_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMinPrice(@javax.annotation.Nullable MinPrice minPrice) {
+  public void setMinPrice(@javax.annotation.Nullable Price minPrice) {
     this.minPrice = minPrice;
   }
 
@@ -2103,7 +2093,7 @@ public class DiscountAssortmentItem {
         Objects.equals(this.volume, discountAssortmentItem.volume) &&
         equalsNullable(this.buyPrice, discountAssortmentItem.buyPrice) &&
         equalsNullable(this.salePrices, discountAssortmentItem.salePrices) &&
-        equalsNullable(this.supplier, discountAssortmentItem.supplier) &&
+        Objects.equals(this.supplier, discountAssortmentItem.supplier) &&
         equalsNullable(this.country, discountAssortmentItem.country) &&
         equalsNullable(this.uom, discountAssortmentItem.uom) &&
         equalsNullable(this.productFolder, discountAssortmentItem.productFolder) &&
@@ -2134,7 +2124,7 @@ public class DiscountAssortmentItem {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, alcoholic, archived, tobacco, name, code, externalCode, pathName, article, hashCodeNullable(description), vat, vatEnabled, useParentVat, effectiveVat, effectiveVatEnabled, discountProhibited, variantsCount, isSerialTrackable, shared, group, hashCodeNullable(owner), updated, weight, volume, hashCodeNullable(buyPrice), hashCodeNullable(salePrices), hashCodeNullable(supplier), hashCodeNullable(country), hashCodeNullable(uom), hashCodeNullable(productFolder), hashCodeNullable(images), hashCodeNullable(files), hashCodeNullable(barcodes), hashCodeNullable(packs), trackingType, tnved, paymentItemType, taxSystem, hashCodeNullable(attributes), hashCodeNullable(minimumStock), minPrice, weighed, onTap, partialDisposal, hashCodeNullable(things), syncId, ppeType, product, hashCodeNullable(characteristics));
+    return Objects.hash(meta, id, accountId, alcoholic, archived, tobacco, name, code, externalCode, pathName, article, hashCodeNullable(description), vat, vatEnabled, useParentVat, effectiveVat, effectiveVatEnabled, discountProhibited, variantsCount, isSerialTrackable, shared, group, hashCodeNullable(owner), updated, weight, volume, hashCodeNullable(buyPrice), hashCodeNullable(salePrices), supplier, hashCodeNullable(country), hashCodeNullable(uom), hashCodeNullable(productFolder), hashCodeNullable(images), hashCodeNullable(files), hashCodeNullable(barcodes), hashCodeNullable(packs), trackingType, tnved, paymentItemType, taxSystem, hashCodeNullable(attributes), hashCodeNullable(minimumStock), minPrice, weighed, onTap, partialDisposal, hashCodeNullable(things), syncId, ppeType, product, hashCodeNullable(characteristics));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

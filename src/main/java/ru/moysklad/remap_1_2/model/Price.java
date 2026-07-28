@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import ru.moysklad.remap_1_2.model.Meta;
+import ru.moysklad.remap_1_2.model.Currency;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import javax.validation.constraints.*;
@@ -30,51 +30,87 @@ import java.net.URLEncoder;
 import java.util.StringJoiner;
 
 /**
- * Метаданные группы
+ * Цена
  */
 @JsonPropertyOrder({
-  ActivateEmployeeRequestGroup.JSON_PROPERTY_META
+  Price.JSON_PROPERTY_VALUE,
+  Price.JSON_PROPERTY_CURRENCY
 })
-@JsonTypeName("activateEmployee_request_group")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
-public class ActivateEmployeeRequestGroup {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
+public class Price {
 
-  public static final String JSON_PROPERTY_META = "meta";
+  public static final String JSON_PROPERTY_VALUE = "value";
   @javax.annotation.Nullable
-  private Meta meta;
+  private Float value;
 
-  public ActivateEmployeeRequestGroup() {
+  public static final String JSON_PROPERTY_CURRENCY = "currency";
+  @javax.annotation.Nullable
+  private Currency currency;
+
+  public Price() {
   }
 
-  public ActivateEmployeeRequestGroup meta(@javax.annotation.Nullable Meta meta) {
+  public Price value(@javax.annotation.Nullable Float value) {
     
-    this.meta = meta;
+    this.value = value;
     return this;
   }
 
 
   /**
-   * Get meta
-   * @return meta
+   * Значение цены
+   * minimum: 0
+   * @return value
    */
   @javax.annotation.Nullable
-  @Valid
+ @DecimalMin("0")
 
-
-  @JsonProperty(JSON_PROPERTY_META)
+  @JsonProperty(JSON_PROPERTY_VALUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Meta getMeta() {
-    return meta;
+  public Float getValue() {
+    return value;
   }
 
   
 
 
-  @JsonProperty(JSON_PROPERTY_META)
+  @JsonProperty(JSON_PROPERTY_VALUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMeta(@javax.annotation.Nullable Meta meta) {
-    this.meta = meta;
+  public void setValue(@javax.annotation.Nullable Float value) {
+    this.value = value;
+  }
+
+
+  public Price currency(@javax.annotation.Nullable Currency currency) {
+    
+    this.currency = currency;
+    return this;
+  }
+
+
+  /**
+   * Get currency
+   * @return currency
+   */
+  @javax.annotation.Nullable
+  @Valid
+
+
+  @JsonProperty(JSON_PROPERTY_CURRENCY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Currency getCurrency() {
+    return currency;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_CURRENCY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCurrency(@javax.annotation.Nullable Currency currency) {
+    this.currency = currency;
   }
 
 
@@ -86,20 +122,22 @@ public class ActivateEmployeeRequestGroup {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ActivateEmployeeRequestGroup activateEmployeeRequestGroup = (ActivateEmployeeRequestGroup) o;
-    return Objects.equals(this.meta, activateEmployeeRequestGroup.meta);
+    Price price = (Price) o;
+    return Objects.equals(this.value, price.value) &&
+        Objects.equals(this.currency, price.currency);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta);
+    return Objects.hash(value, currency);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ActivateEmployeeRequestGroup {\n");
-    sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
+    sb.append("class Price {\n");
+    sb.append("    value: ").append(toIndentedString(value)).append("\n");
+    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -147,9 +185,19 @@ public class ActivateEmployeeRequestGroup {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `meta` to the URL query string
-    if (getMeta() != null) {
-      joiner.add(getMeta().toUrlQueryString(prefix + "meta" + suffix));
+    // add `value` to the URL query string
+    if (getValue() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%svalue%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getValue()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `currency` to the URL query string
+    if (getCurrency() != null) {
+      joiner.add(getCurrency().toUrlQueryString(prefix + "currency" + suffix));
     }
 
     return joiner.toString();

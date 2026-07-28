@@ -34,9 +34,9 @@
 |**updated** | **String** | Момент последнего обновления сущности |  [optional] [readonly] |
 |**weight** | **Float** | Вес |  [optional] |
 |**volume** | **Float** | Объем |  [optional] |
-|**buyPrice** | [**BuyPrice**](BuyPrice.md) |  |  [optional] |
+|**buyPrice** | [**Price**](Price.md) |  |  [optional] |
 |**salePrices** | [**List&lt;SalePrice&gt;**](SalePrice.md) | Цены продажи |  [optional] |
-|**supplier** | [**Counterparty**](Counterparty.md) | Метаданные контрагента-поставщика |  [optional] |
+|**supplier** | [**Agent**](Agent.md) | Метаданные контрагента или юрлица |  [optional] |
 |**country** | [**Country**](Country.md) | Метаданные Страны |  [optional] |
 |**uom** | [**Uom**](Uom.md) | Единицы измерения |  [optional] |
 |**productFolder** | [**ProductFolder**](ProductFolder.md) | Метаданные группы Комплекта |  [optional] |
@@ -50,7 +50,7 @@
 |**taxSystem** | **String** | Код системы налогообложения. Известные значения описаны в TaxSystem |  [optional] |
 |**attributes** | [**List&lt;AttributeAbstract&gt;**](AttributeAbstract.md) | Коллекция доп. полей Партии |  [optional] |
 |**minimumStock** | [**MinimumStockAbstract**](MinimumStockAbstract.md) | Неснижаемый остаток. Не выводится по умолчанию. Для получения передайте параметр &#x60;?fields&#x3D;minimumStock&#x60;.  |  [optional] |
-|**minPrice** | [**MinPrice**](MinPrice.md) |  |  [optional] |
+|**minPrice** | [**Price**](Price.md) |  |  [optional] |
 |**weighed** | **Boolean** | Поле, показывающее является ли товар весовым |  [optional] |
 |**onTap** | **Boolean** | Поле, показывающее является ли товар разливным |  [optional] |
 |**partialDisposal** | **Boolean** | Управление состоянием частичного выбытия маркированного товара |  [optional] |
@@ -61,7 +61,7 @@
 |**characteristics** | [**List&lt;VariantCharacteristicValue&gt;**](VariantCharacteristicValue.md) | Характеристики Модификации |  [optional] |
 |**overhead** | [**BundleOverhead**](BundleOverhead.md) |  |  [optional] |
 |**components** | **BundleComponentList** | Массив компонентов Комплекта |  [optional] |
-|**assortment** | [**Assortment**](Assortment.md) |  |  [optional] |
+|**assortment** | [**ProductMarker**](ProductMarker.md) | Метаданные товара/услуги/комплекта/модификации, к которой относится Партия |  [optional] |
 |**expiryDate** | **String** | Срок годности Партии |  [optional] |
 |**label** | **String** | Метка Партии |  [optional] |
 |**stock** | **Double** | Остаток |  [optional] |

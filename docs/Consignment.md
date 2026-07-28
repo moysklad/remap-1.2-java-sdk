@@ -13,7 +13,7 @@
 |**accountId** | **UUID** | ID учетной записи |  [optional] [readonly] |
 |**archived** | **Boolean** | Добавлена ли Партия в архив |  [optional] |
 |**attributes** | [**List&lt;AttributeAbstract&gt;**](AttributeAbstract.md) | Коллекция доп. полей Партии |  [optional] |
-|**assortment** | [**Assortment**](Assortment.md) |  |  [optional] |
+|**assortment** | [**ProductMarker**](ProductMarker.md) | Метаданные товара/услуги/комплекта/модификации, к которой относится Партия |  [optional] |
 |**barcodes** | [**List&lt;Barcode&gt;**](Barcode.md) | Штрихкоды Партии |  [optional] |
 |**code** | **String** | Код Партии |  [optional] |
 |**description** | **String** | Описание Партии |  [optional] |

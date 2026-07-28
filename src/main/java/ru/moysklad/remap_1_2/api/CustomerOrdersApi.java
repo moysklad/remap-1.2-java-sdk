@@ -33,6 +33,9 @@ import ru.moysklad.remap_1_2.model.DocumentMetadata;
 import ru.moysklad.remap_1_2.model.ErrorOrArray;
 import ru.moysklad.remap_1_2.model.EventNote;
 import ru.moysklad.remap_1_2.model.EventNoteList;
+import ru.moysklad.remap_1_2.model.ExportRequest;
+import ru.moysklad.remap_1_2.model.Publication;
+import ru.moysklad.remap_1_2.model.PublicationList;
 import ru.moysklad.remap_1_2.model.State;
 import ru.moysklad.remap_1_2.model.StateRowResult;
 import java.util.UUID;
@@ -48,7 +51,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class CustomerOrdersApi extends BaseApi {
 
@@ -581,10 +584,10 @@ if (contentType != null)
    * Запрос на добавление одного События Заказа покупателя
    * @param id ID сущности (required)
    * @param eventNote  (required)
-   * @return EventNote
+   * @return List&lt;EventNote&gt;
    * @throws ApiException if fails to make API call
    */
-  public EventNote createCustomerOrderNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EventNote eventNote) throws ApiException {
+  public List<EventNote> createCustomerOrderNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EventNote eventNote) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.createCustomerOrderNote(id, eventNote, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -603,10 +606,10 @@ if (contentType != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return EventNote
+   * @return List&lt;EventNote&gt;
    * @throws ApiException if fails to make API call
    */
-  public EventNote createCustomerOrderNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EventNote eventNote, RequestOptions options) throws ApiException {
+  public List<EventNote> createCustomerOrderNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EventNote eventNote, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createCustomerOrderNote(id, eventNote, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -620,10 +623,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return EventNote
+   * @return List&lt;EventNote&gt;
    * @throws ApiException if fails to make API call
    */
-  protected EventNote createCustomerOrderNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EventNote eventNote, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<EventNote> createCustomerOrderNote(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EventNote eventNote, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = eventNote;
     
     // verify the required parameter 'id' is set
@@ -671,7 +674,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<EventNote> localVarReturnType = new TypeReference<EventNote>() {};
+    TypeReference<List<EventNote>> localVarReturnType = new TypeReference<List<EventNote>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
@@ -904,6 +907,119 @@ if (contentType != null)
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
     TypeReference<List<CreateCustomerOrderPositions200ResponseInner>> localVarReturnType = new TypeReference<List<CreateCustomerOrderPositions200ResponseInner>>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Создать Публикацию Заказа покупателя
+   * Запрос на публикацию Заказа покупателя.
+   * @param id ID сущности (required)
+   * @param publication  (required)
+   * @return Publication
+   * @throws ApiException if fails to make API call
+   */
+  public Publication createCustomerOrderPublication(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Publication publication) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createCustomerOrderPublication(id, publication, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Создать Публикацию Заказа покупателя
+   * Запрос на публикацию Заказа покупателя.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param publication  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Publication
+   * @throws ApiException if fails to make API call
+   */
+  public Publication createCustomerOrderPublication(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Publication publication, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createCustomerOrderPublication(id, publication, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Создать Публикацию Заказа покупателя
+   * Запрос на публикацию Заказа покупателя.
+   * @param id ID сущности (required)
+   * @param publication  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return Publication
+   * @throws ApiException if fails to make API call
+   */
+  protected Publication createCustomerOrderPublication(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Publication publication, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = publication;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling createCustomerOrderPublication");
+    }
+    
+    // verify the required parameter 'publication' is set
+    if (publication == null) {
+      throw new ApiException(400, "Missing the required parameter 'publication' when calling createCustomerOrderPublication");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/customerorder/{id}/publication"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null)
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+if (acceptEncoding != null)
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+if (contentType != null)
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+
+    localVarHeaderParams.putAll(additionalHeaders);
+
+    
+    
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<Publication> localVarReturnType = new TypeReference<Publication>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
@@ -1638,6 +1754,326 @@ if (contentType != null)
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Удалить Публикацию Заказа покупателя
+   * Запрос на удаление Публикации Заказа покупателя по идентификатору.
+   * @param id ID сущности (required)
+   * @param publicationId ID публикации (required)
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteCustomerOrderPublication(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID publicationId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteCustomerOrderPublication(id, publicationId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Удалить Публикацию Заказа покупателя
+   * Запрос на удаление Публикации Заказа покупателя по идентификатору.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param publicationId ID публикации (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteCustomerOrderPublication(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID publicationId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteCustomerOrderPublication(id, publicationId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Удалить Публикацию Заказа покупателя
+   * Запрос на удаление Публикации Заказа покупателя по идентификатору.
+   * @param id ID сущности (required)
+   * @param publicationId ID публикации (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param additionalHeaders additionalHeaders for this call
+   * @throws ApiException if fails to make API call
+   */
+  protected void deleteCustomerOrderPublication(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID publicationId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling deleteCustomerOrderPublication");
+    }
+    
+    // verify the required parameter 'publicationId' is set
+    if (publicationId == null) {
+      throw new ApiException(400, "Missing the required parameter 'publicationId' when calling deleteCustomerOrderPublication");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/customerorder/{id}/publication/{publicationId}"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)))
+      .replaceAll("\\{" + "publicationId" + "\\}", apiClient.escapeString(apiClient.parameterToString(publicationId)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null)
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+if (acceptEncoding != null)
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+
+    localVarHeaderParams.putAll(additionalHeaders);
+
+    
+    
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    apiClient.invokeAPI(
+        localVarPath,
+        "DELETE",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        null
+    );
+  }
+
+  /**
+   * Запрос на печать Заказа покупателя
+   * Запрос на формирование печатной формы для Заказа покупателя. При готовности сервер возвращает пустой ответ с кодом 303 и заголовком Location. 
+   * @param id ID сущности (required)
+   * @param exportRequest  (required)
+   * @throws ApiException if fails to make API call
+   */
+  public void exportCustomerOrder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ExportRequest exportRequest) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.exportCustomerOrder(id, exportRequest, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Запрос на печать Заказа покупателя
+   * Запрос на формирование печатной формы для Заказа покупателя. При готовности сервер возвращает пустой ответ с кодом 303 и заголовком Location. 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param exportRequest  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void exportCustomerOrder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ExportRequest exportRequest, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.exportCustomerOrder(id, exportRequest, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Запрос на печать Заказа покупателя
+   * Запрос на формирование печатной формы для Заказа покупателя. При готовности сервер возвращает пустой ответ с кодом 303 и заголовком Location. 
+   * @param id ID сущности (required)
+   * @param exportRequest  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @throws ApiException if fails to make API call
+   */
+  protected void exportCustomerOrder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ExportRequest exportRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = exportRequest;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling exportCustomerOrder");
+    }
+    
+    // verify the required parameter 'exportRequest' is set
+    if (exportRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'exportRequest' when calling exportCustomerOrder");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/customerorder/{id}/export"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null)
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+if (acceptEncoding != null)
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+if (contentType != null)
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+
+    localVarHeaderParams.putAll(additionalHeaders);
+
+    
+    
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        null
+    );
+  }
+
+  /**
+   * Получить события аудита Заказа покупателя
+   * Возвращает список событий аудита для Заказа покупателя по его ID. 
+   * @param id ID сущности (required)
+   * @return Map&lt;String, Object&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public Map<String, Object> getCustomerOrderAuditEvents(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getCustomerOrderAuditEvents(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Получить события аудита Заказа покупателя
+   * Возвращает список событий аудита для Заказа покупателя по его ID. 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Map&lt;String, Object&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public Map<String, Object> getCustomerOrderAuditEvents(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getCustomerOrderAuditEvents(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Получить события аудита Заказа покупателя
+   * Возвращает список событий аудита для Заказа покупателя по его ID. 
+   * @param id ID сущности (required)
+   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
+   * @param offset Отступ в выданном списке (optional, default to 0)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return Map&lt;String, Object&gt;
+   * @throws ApiException if fails to make API call
+   */
+  protected Map<String, Object> getCustomerOrderAuditEvents(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling getCustomerOrderAuditEvents");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/customerorder/{id}/audit"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
+    localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
+    if (accept != null)
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+if (acceptEncoding != null)
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+
+    localVarHeaderParams.putAll(additionalHeaders);
+
+    
+    
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<Map<String, Object>> localVarReturnType = new TypeReference<Map<String, Object>>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "GET",
         localVarQueryParams,
         localVarCollectionQueryParams,
         localVarQueryStringJoiner.toString(),
@@ -2692,6 +3128,221 @@ if (acceptEncoding != null)
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
     TypeReference<CustomerOrderPositionList> localVarReturnType = new TypeReference<CustomerOrderPositionList>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "GET",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Получить Публикацию Заказа покупателя
+   * Запрос на получение Публикации Заказа покупателя по идентификатору.
+   * @param id ID сущности (required)
+   * @param publicationId ID публикации (required)
+   * @return Publication
+   * @throws ApiException if fails to make API call
+   */
+  public Publication getCustomerOrderPublicationById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID publicationId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getCustomerOrderPublicationById(id, publicationId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Получить Публикацию Заказа покупателя
+   * Запрос на получение Публикации Заказа покупателя по идентификатору.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param publicationId ID публикации (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return Publication
+   * @throws ApiException if fails to make API call
+   */
+  public Publication getCustomerOrderPublicationById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID publicationId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getCustomerOrderPublicationById(id, publicationId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Получить Публикацию Заказа покупателя
+   * Запрос на получение Публикации Заказа покупателя по идентификатору.
+   * @param id ID сущности (required)
+   * @param publicationId ID публикации (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return Publication
+   * @throws ApiException if fails to make API call
+   */
+  protected Publication getCustomerOrderPublicationById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID publicationId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling getCustomerOrderPublicationById");
+    }
+    
+    // verify the required parameter 'publicationId' is set
+    if (publicationId == null) {
+      throw new ApiException(400, "Missing the required parameter 'publicationId' when calling getCustomerOrderPublicationById");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/customerorder/{id}/publication/{publicationId}"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)))
+      .replaceAll("\\{" + "publicationId" + "\\}", apiClient.escapeString(apiClient.parameterToString(publicationId)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null)
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+if (acceptEncoding != null)
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+
+    localVarHeaderParams.putAll(additionalHeaders);
+
+    
+    
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<Publication> localVarReturnType = new TypeReference<Publication>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "GET",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Получить список Публикаций Заказа покупателя
+   * Запрос на получение списка Публикаций по указанному Заказу покупателя.
+   * @param id ID сущности (required)
+   * @return PublicationList
+   * @throws ApiException if fails to make API call
+   */
+  public PublicationList getCustomerOrderPublications(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getCustomerOrderPublications(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Получить список Публикаций Заказа покупателя
+   * Запрос на получение списка Публикаций по указанному Заказу покупателя.
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return PublicationList
+   * @throws ApiException if fails to make API call
+   */
+  public PublicationList getCustomerOrderPublications(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getCustomerOrderPublications(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Получить список Публикаций Заказа покупателя
+   * Запрос на получение списка Публикаций по указанному Заказу покупателя.
+   * @param id ID сущности (required)
+   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
+   * @param offset Отступ в выданном списке (optional, default to 0)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return PublicationList
+   * @throws ApiException if fails to make API call
+   */
+  protected PublicationList getCustomerOrderPublications(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling getCustomerOrderPublications");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/customerorder/{id}/publication"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
+    localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
+    if (accept != null)
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+if (acceptEncoding != null)
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+
+    localVarHeaderParams.putAll(additionalHeaders);
+
+    
+    
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<PublicationList> localVarReturnType = new TypeReference<PublicationList>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "GET",

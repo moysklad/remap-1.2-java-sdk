@@ -25,13 +25,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
-import ru.moysklad.remap_1_2.model.Assortment;
 import ru.moysklad.remap_1_2.model.Country;
 import ru.moysklad.remap_1_2.model.Error;
 import ru.moysklad.remap_1_2.model.ErrorErrorsInner;
 import ru.moysklad.remap_1_2.model.Gtd;
 import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.Pack;
+import ru.moysklad.remap_1_2.model.ProductMarker;
 import ru.moysklad.remap_1_2.model.SalesReturnPosition;
 import ru.moysklad.remap_1_2.model.StoreSlot;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -67,7 +67,7 @@ import java.util.StringJoiner;
   CreateSalesReturnPositions200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createSalesReturnPositions_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateSalesReturnPositions200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -84,7 +84,7 @@ public class CreateSalesReturnPositions200ResponseInner {
 
   public static final String JSON_PROPERTY_ASSORTMENT = "assortment";
   @javax.annotation.Nullable
-  private Assortment assortment;
+  private ProductMarker assortment;
 
   public static final String JSON_PROPERTY_COST = "cost";
   @javax.annotation.Nullable
@@ -219,7 +219,7 @@ public class CreateSalesReturnPositions200ResponseInner {
 
 
 
-  public CreateSalesReturnPositions200ResponseInner assortment(@javax.annotation.Nullable Assortment assortment) {
+  public CreateSalesReturnPositions200ResponseInner assortment(@javax.annotation.Nullable ProductMarker assortment) {
     
     this.assortment = assortment;
     return this;
@@ -227,11 +227,9 @@ public class CreateSalesReturnPositions200ResponseInner {
 
 
   /**
-   * Get assortment
+   * Метаданные товара/услуги/партии/модификации/комплекта, которую представляет собой позиция
    * @return assortment
-   * @deprecated
    */
-  @Deprecated
   @javax.annotation.Nullable
   @Valid
 
@@ -239,7 +237,7 @@ public class CreateSalesReturnPositions200ResponseInner {
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Assortment getAssortment() {
+  public ProductMarker getAssortment() {
     return assortment;
   }
 
@@ -248,7 +246,7 @@ public class CreateSalesReturnPositions200ResponseInner {
 
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAssortment(@javax.annotation.Nullable Assortment assortment) {
+  public void setAssortment(@javax.annotation.Nullable ProductMarker assortment) {
     this.assortment = assortment;
   }
 

@@ -5,6 +5,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**createBonusTransaction**](BonusTransactionsApi.md#createBonusTransaction) | **POST** /entity/bonustransaction | Создать бонусную операцию |
+| [**createBonusTransactionsBatch**](BonusTransactionsApi.md#createBonusTransactionsBatch) | **POST** /entity/bonustransaction/batch | Создать или изменить бонусные операции |
 | [**deleteBonusTransaction**](BonusTransactionsApi.md#deleteBonusTransaction) | **DELETE** /entity/bonustransaction/{id} | Удалить бонусную операцию |
 | [**deleteBonusTransactionsBatch**](BonusTransactionsApi.md#deleteBonusTransactionsBatch) | **POST** /entity/bonustransaction/delete | Удалить бонусные операции |
 | [**getBonusTransactionById**](BonusTransactionsApi.md#getBonusTransactionById) | **GET** /entity/bonustransaction/{id} | Получить бонусную операцию по ID |
@@ -15,11 +16,11 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 
 ## createBonusTransaction
 
-> CreateBonusTransaction200Response createBonusTransaction(createBonusTransactionRequest, expand, accept, acceptEncoding, contentType)
+> BonusTransaction createBonusTransaction(bonusTransaction, expand, accept, acceptEncoding, contentType)
 
 Создать бонусную операцию
 
-Создание бонусной операции и массовое создание/обновление бонусных операций
+Создание новой бонусной операции
 
 ### Example
 
@@ -47,13 +48,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         BonusTransactionsApi apiInstance = new BonusTransactionsApi(defaultClient);
-        CreateBonusTransactionRequest createBonusTransactionRequest = new CreateBonusTransactionRequest(); // CreateBonusTransactionRequest | 
+        BonusTransaction bonusTransaction = new BonusTransaction(); // BonusTransaction | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            CreateBonusTransaction200Response result = apiInstance.createBonusTransaction(createBonusTransactionRequest, expand, accept, acceptEncoding, contentType);
+            BonusTransaction result = apiInstance.createBonusTransaction(bonusTransaction, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling BonusTransactionsApi#createBonusTransaction");
@@ -71,7 +72,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **createBonusTransactionRequest** | [**CreateBonusTransactionRequest**](CreateBonusTransactionRequest.md)|  | |
+| **bonusTransaction** | [**BonusTransaction**](BonusTransaction.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -79,7 +80,7 @@ public class Example {
 
 ### Return type
 
-[**CreateBonusTransaction200Response**](CreateBonusTransaction200Response.md)
+[**BonusTransaction**](BonusTransaction.md)
 
 ### Authorization
 
@@ -95,6 +96,91 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+
+
+## createBonusTransactionsBatch
+
+> List&lt;BatchResponseEntity&gt; createBonusTransactionsBatch(bonusTransaction, expand, accept, acceptEncoding, contentType)
+
+Создать или изменить бонусные операции
+
+Создание или изменение нескольких бонусных операций.
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.BonusTransactionsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        BonusTransactionsApi apiInstance = new BonusTransactionsApi(defaultClient);
+        List<@Valid BonusTransaction> bonusTransaction = Arrays.asList(); // List<@Valid BonusTransaction> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<BatchResponseEntity> result = apiInstance.createBonusTransactionsBatch(bonusTransaction, expand, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling BonusTransactionsApi#createBonusTransactionsBatch");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bonusTransaction** | [**List&lt;@Valid BonusTransaction&gt;**](BonusTransaction.md)|  | |
+| **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Бонусные операции созданы или изменены (элемент — сущность или объект ошибки) |  -  |
 | **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
 
 

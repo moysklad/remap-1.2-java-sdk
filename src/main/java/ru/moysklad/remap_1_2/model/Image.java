@@ -36,12 +36,13 @@ import java.util.StringJoiner;
   Image.JSON_PROPERTY_META,
   Image.JSON_PROPERTY_TITLE,
   Image.JSON_PROPERTY_FILENAME,
+  Image.JSON_PROPERTY_CONTENT,
   Image.JSON_PROPERTY_SIZE,
   Image.JSON_PROPERTY_UPDATED,
   Image.JSON_PROPERTY_TINY,
   Image.JSON_PROPERTY_MINIATURE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
 public class Image {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -55,6 +56,10 @@ public class Image {
   public static final String JSON_PROPERTY_FILENAME = "filename";
   @javax.annotation.Nullable
   private String filename;
+
+  public static final String JSON_PROPERTY_CONTENT = "content";
+  @javax.annotation.Nullable
+  private String content;
 
   public static final String JSON_PROPERTY_SIZE = "size";
   @javax.annotation.Nullable
@@ -181,6 +186,37 @@ public class Image {
   }
 
 
+  public Image content(@javax.annotation.Nullable String content) {
+    
+    this.content = content;
+    return this;
+  }
+
+
+  /**
+   * Изображение, закодированное в Base64
+   * @return content
+   */
+  @javax.annotation.Nullable
+
+
+  @JsonProperty(JSON_PROPERTY_CONTENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getContent() {
+    return content;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_CONTENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setContent(@javax.annotation.Nullable String content) {
+    this.content = content;
+  }
+
+
   /**
    * Размер файла в байтах
    * @return size
@@ -293,6 +329,7 @@ public class Image {
     return Objects.equals(this.meta, image.meta) &&
         Objects.equals(this.title, image.title) &&
         Objects.equals(this.filename, image.filename) &&
+        Objects.equals(this.content, image.content) &&
         Objects.equals(this.size, image.size) &&
         Objects.equals(this.updated, image.updated) &&
         Objects.equals(this.tiny, image.tiny) &&
@@ -301,7 +338,7 @@ public class Image {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, title, filename, size, updated, tiny, miniature);
+    return Objects.hash(meta, title, filename, content, size, updated, tiny, miniature);
   }
 
   @Override
@@ -311,6 +348,7 @@ public class Image {
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    filename: ").append(toIndentedString(filename)).append("\n");
+    sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("    size: ").append(toIndentedString(size)).append("\n");
     sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("    tiny: ").append(toIndentedString(tiny)).append("\n");
@@ -381,6 +419,16 @@ public class Image {
     if (getFilename() != null) {
       try {
         joiner.add(String.format(java.util.Locale.ROOT, "%sfilename%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getFilename()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `content` to the URL query string
+    if (getContent() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%scontent%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getContent()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);

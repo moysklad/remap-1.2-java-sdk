@@ -17,7 +17,7 @@
 |**inTransit** | **Double** | Ожидание |  [optional] [readonly] |
 |**vat** | **Integer** | НДС, которым облагается текущая позиция |  [optional] |
 |**vatEnabled** | **Boolean** | Включен ли НДС для позиции |  [optional] |
-|**assortment** | [**AssortmentWithoutBundle**](AssortmentWithoutBundle.md) |  |  [optional] |
+|**assortment** | [**ProductMarker**](ProductMarker.md) | Метаданные товара/услуги/модификации/партии, которую представляет собой позиция |  [optional] |
 |**pack** | [**Pack**](Pack.md) | Упаковка Товара |  [optional] |
 |**stock** | [**PositionStock**](PositionStock.md) | Остатки и себестоимость позиции. Не выводится по умолчанию. Для получения передайте параметр &#x60;?fields&#x3D;stock&#x60;.  |  [optional] |
 |**errors** | [**List&lt;ErrorErrorsInner&gt;**](ErrorErrorsInner.md) |  |  |

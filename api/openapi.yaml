@@ -47,6 +47,8 @@ tags:
   name: TaxRates
 - description: Операции с сотрудниками
   name: Employees
+- description: Операции с пользовательскими ролями
+  name: CustomRoles
 - description: Операции с договорами
   name: Contracts
 - description: Операции с задачами
@@ -1466,7 +1468,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/TaskNote"
+                items:
+                  $ref: "#/components/schemas/TaskNote"
+                type: array
           description: Комментарий успешно создан
         default:
           $ref: "#/components/responses/CommonError"
@@ -4562,6 +4566,240 @@ paths:
       summary: Получить метаданные товаров
       tags:
       - Products
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/product/metadata/attributes:
+    get:
+      description: Запрос на получение всех доп. полей для товаров
+      operationId: getProductMetadataAttributes
+      parameters:
+      - description: Отступ в выданном списке
+        in: query
+        name: offset
+        schema:
+          default: 0
+          minimum: 0
+          type: integer
+      - description: Максимальное количество элементов в выданном списке (максимум
+          1000)
+        in: query
+        name: limit
+        schema:
+          default: 1000
+          maximum: 1000
+          minimum: 1
+          type: integer
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttributeMetaInfoList"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить доп. поля товаров
+      tags:
+      - Products
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    post:
+      description: Создание нового доп. поля для товаров
+      operationId: createProductMetadataAttribute
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AttributeMetaInfo"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttributeMetaInfo"
+          description: Доп. поле успешно создано
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать доп. поле товара
+      tags:
+      - Products
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/product/metadata/attributes/{id}:
+    delete:
+      operationId: deleteProductMetadataAttributeById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Удалить отдельное доп. поле товара
+      tags:
+      - Products
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    get:
+      description: Запрос на получение информации по отдельному дополнительному полю
+        товара
+      operationId: getProductMetadataAttributeById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttributeMetaInfo"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить доп. поле товара по ID
+      tags:
+      - Products
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    put:
+      operationId: updateProductMetadataAttributeById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AttributeMetaInfo"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttributeMetaInfo"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Обновить отдельное доп. поле товара
+      tags:
+      - Products
+      x-content-type: application/json
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
@@ -11784,6 +12022,261 @@ paths:
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
+  /entity/role:
+    get:
+      description: Запрос всех пользовательских ролей на данной учетной записи
+      operationId: getCustomRoles
+      parameters:
+      - description: Максимальное количество элементов в выданном списке (максимум
+          1000)
+        in: query
+        name: limit
+        schema:
+          default: 1000
+          maximum: 1000
+          minimum: 1
+          type: integer
+      - description: Отступ в выданном списке
+        in: query
+        name: offset
+        schema:
+          default: 0
+          minimum: 0
+          type: integer
+      - description: Контекстный поиск по строковым полям сущностей
+        in: query
+        name: search
+        schema:
+          type: string
+      - description: Фильтрация выборки
+        in: query
+        name: filter
+        schema:
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        in: query
+        name: expand
+        schema:
+          type: string
+      - description: Сортировка
+        in: query
+        name: order
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomRoleList"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить список пользовательских ролей
+      tags:
+      - CustomRoles
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    post:
+      description: Создание новой пользовательской роли
+      operationId: createCustomRole
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CustomRole"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomRole"
+          description: Пользовательская роль успешно создана
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать пользовательскую роль
+      tags:
+      - CustomRoles
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/role/{id}:
+    delete:
+      description: Удаление пользовательской роли с указанным id
+      operationId: deleteCustomRole
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          description: Пользовательская роль успешно удалена
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Удалить пользовательскую роль
+      tags:
+      - CustomRoles
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    get:
+      description: Запрос на получение пользовательской роли с указанным id
+      operationId: getCustomRoleById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomRole"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить пользовательскую роль по ID
+      tags:
+      - CustomRoles
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    put:
+      description: Обновление пользовательской роли с указанным id
+      operationId: updateCustomRole
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CustomRole"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomRole"
+          description: Пользовательская роль успешно обновлена
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Обновить пользовательскую роль
+      tags:
+      - CustomRoles
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
   /entity/counterparty:
     get:
       description: Запрос всех контрагентов на данной учетной записи
@@ -12226,6 +12719,423 @@ paths:
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
+  /entity/counterparty/metadata/attributes:
+    get:
+      description: Запрос на получение всех доп. полей для контрагентов
+      operationId: getCounterpartyMetadataAttributes
+      parameters:
+      - description: Отступ в выданном списке
+        in: query
+        name: offset
+        schema:
+          default: 0
+          minimum: 0
+          type: integer
+      - description: Максимальное количество элементов в выданном списке (максимум
+          1000)
+        in: query
+        name: limit
+        schema:
+          default: 1000
+          maximum: 1000
+          minimum: 1
+          type: integer
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttributeMetaInfoList"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить доп. поля контрагентов
+      tags:
+      - Counterparties
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    post:
+      description: Создание нового доп. поля для контрагентов
+      operationId: createCounterpartyMetadataAttribute
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AttributeMetaInfo"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttributeMetaInfo"
+          description: Доп. поле успешно создано
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать доп. поле контрагента
+      tags:
+      - Counterparties
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/counterparty/metadata/attributes/{id}:
+    delete:
+      operationId: deleteCounterpartyMetadataAttributeById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Удалить отдельное доп. поле контрагента
+      tags:
+      - Counterparties
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    get:
+      description: Запрос на получение информации по отдельному дополнительному полю
+        контрагента
+      operationId: getCounterpartyMetadataAttributeById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttributeMetaInfo"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить доп. поле контрагента по ID
+      tags:
+      - Counterparties
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    put:
+      operationId: updateCounterpartyMetadataAttributeById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AttributeMetaInfo"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttributeMetaInfo"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Обновить отдельное доп. поле контрагента
+      tags:
+      - Counterparties
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/counterparty/metadata/states:
+    post:
+      operationId: createCounterpartyMetadataState
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/State"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/State"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать статус Counterparty
+      tags:
+      - Counterparties
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/counterparty/metadata/states/{id}:
+    delete:
+      operationId: deleteCounterpartyMetadataStateById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          description: Успешный запрос
+        "404":
+          $ref: "#/components/responses/NotFoundEmpty"
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Удалить отдельный статус Контрагента
+      tags:
+      - Counterparties
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    get:
+      operationId: getCounterpartyMetadataStateById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/State"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Отдельный статус Контрагента
+      tags:
+      - Counterparties
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    put:
+      operationId: updateCounterpartyMetadataStateById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/State"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/State"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Обновить отдельный статус Контрагента
+      tags:
+      - Counterparties
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
   /entity/counterparty/{id}/accounts:
     get:
       description: Запрос на получение списка всех счетов данного Контрагента.
@@ -12601,7 +13511,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ContactPerson"
+                items:
+                  $ref: "#/components/schemas/ContactPerson"
+                type: array
           description: Контактное лицо успешно создано
         default:
           $ref: "#/components/responses/CommonError"
@@ -12874,7 +13786,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Note"
+                items:
+                  $ref: "#/components/schemas/Note"
+                type: array
           description: Событие успешно создано
         default:
           $ref: "#/components/responses/CommonError"
@@ -13207,6 +14121,66 @@ paths:
         default:
           $ref: "#/components/responses/CommonError"
       summary: Удалить файл контрагента
+      tags:
+      - Counterparties
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/counterparty/{id}/audit:
+    get:
+      description: |
+        Возвращает список событий аудита для Контрагента по его ID.
+      operationId: getCounterpartyAuditEvents
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - description: Максимальное количество элементов в выданном списке (максимум
+          1000)
+        in: query
+        name: limit
+        schema:
+          default: 1000
+          maximum: 1000
+          minimum: 1
+          type: integer
+      - description: Отступ в выданном списке
+        in: query
+        name: offset
+        schema:
+          default: 0
+          minimum: 0
+          type: integer
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                additionalProperties: true
+                type: object
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить события аудита контрагента
       tags:
       - Counterparties
       x-accepts:
@@ -14981,7 +15955,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: "#/components/schemas/BatchResponseEntity"
+                  $ref: "#/components/schemas/PriceType"
                 minItems: 1
                 type: array
           description: Типы цен созданы или изменены (элемент — сущность или объект
@@ -16728,8 +17702,7 @@ paths:
       - application/json
       - text/html;charset=UTF-8
     post:
-      description: Создание бонусной операции и массовое создание/обновление бонусных
-        операций
+      description: Создание новой бонусной операции
       operationId: createBonusTransaction
       parameters:
       - description: Замена ссылок объектами с помощью expand
@@ -16764,18 +17737,80 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/createBonusTransaction_request"
+              $ref: "#/components/schemas/BonusTransaction"
         required: true
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/createBonusTransaction_200_response"
+                $ref: "#/components/schemas/BonusTransaction"
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
       summary: Создать бонусную операцию
+      tags:
+      - BonusTransactions
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/bonustransaction/batch:
+    post:
+      description: Создание или изменение нескольких бонусных операций.
+      operationId: createBonusTransactionsBatch
+      parameters:
+      - description: Замена ссылок объектами с помощью expand
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: "#/components/schemas/BonusTransaction"
+              maxItems: 1000
+              minItems: 1
+              type: array
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/BatchResponseEntity"
+                type: array
+          description: Бонусные операции созданы или изменены (элемент — сущность
+            или объект ошибки)
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать или изменить бонусные операции
       tags:
       - BonusTransactions
       x-content-type: application/json
@@ -27965,7 +29000,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/EventNote"
+                items:
+                  $ref: "#/components/schemas/EventNote"
+                type: array
           description: Событие успешно создано
         default:
           $ref: "#/components/responses/CommonError"
@@ -28129,6 +29166,355 @@ paths:
       tags:
       - CustomerOrders
       x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/customerorder/{id}/publication:
+    get:
+      description: Запрос на получение списка Публикаций по указанному Заказу покупателя.
+      operationId: getCustomerOrderPublications
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - description: Максимальное количество элементов в выданном списке (максимум
+          1000)
+        in: query
+        name: limit
+        schema:
+          default: 1000
+          maximum: 1000
+          minimum: 1
+          type: integer
+      - description: Отступ в выданном списке
+        in: query
+        name: offset
+        schema:
+          default: 0
+          minimum: 0
+          type: integer
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PublicationList"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить список Публикаций Заказа покупателя
+      tags:
+      - CustomerOrders
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    post:
+      description: Запрос на публикацию Заказа покупателя.
+      operationId: createCustomerOrderPublication
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Publication"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Publication"
+          description: Успешный запрос
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Publication"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать Публикацию Заказа покупателя
+      tags:
+      - CustomerOrders
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/customerorder/{id}/publication/{publicationId}:
+    delete:
+      description: Запрос на удаление Публикации Заказа покупателя по идентификатору.
+      operationId: deleteCustomerOrderPublication
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - description: ID публикации
+        in: path
+        name: publicationId
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "204":
+          description: Публикация успешно удалена
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Удалить Публикацию Заказа покупателя
+      tags:
+      - CustomerOrders
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    get:
+      description: Запрос на получение Публикации Заказа покупателя по идентификатору.
+      operationId: getCustomerOrderPublicationById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - description: ID публикации
+        in: path
+        name: publicationId
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Publication"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить Публикацию Заказа покупателя
+      tags:
+      - CustomerOrders
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/customerorder/{id}/export:
+    post:
+      description: |
+        Запрос на формирование печатной формы для Заказа покупателя.
+        При готовности сервер возвращает пустой ответ с кодом 303 и заголовком Location.
+      operationId: exportCustomerOrder
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ExportRequest"
+        required: true
+      responses:
+        "202":
+          description: "Печатная форма еще не готова, в Location передана ссылка н\
+            а статус печати"
+          headers:
+            Location:
+              description: Ссылка на статус печати
+              schema:
+                type: string
+            Content-Type:
+              description: Тип содержимого ответа
+              schema:
+                type: string
+        "303":
+          description: "Печатная форма готова, в Location передана ссылка на файл"
+          headers:
+            Location:
+              description: Ссылка на готовый файл
+              schema:
+                type: string
+            Content-Type:
+              description: Тип содержимого ответа
+              schema:
+                type: string
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Запрос на печать Заказа покупателя
+      tags:
+      - CustomerOrders
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/customerorder/{id}/audit:
+    get:
+      description: |
+        Возвращает список событий аудита для Заказа покупателя по его ID.
+      operationId: getCustomerOrderAuditEvents
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - description: Максимальное количество элементов в выданном списке (максимум
+          1000)
+        in: query
+        name: limit
+        schema:
+          default: 1000
+          maximum: 1000
+          minimum: 1
+          type: integer
+      - description: Отступ в выданном списке
+        in: query
+        name: offset
+        schema:
+          default: 0
+          minimum: 0
+          type: integer
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                additionalProperties: true
+                type: object
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить события аудита Заказа покупателя
+      tags:
+      - CustomerOrders
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
@@ -29762,6 +31148,284 @@ paths:
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
+  /entity/invoiceout/{id}/notes:
+    get:
+      description: Запрос на получение всех Событий Счета покупателю для данной учетной
+        записи
+      operationId: getInvoiceOutNotes
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - description: Максимальное количество элементов в выданном списке (максимум
+          1000)
+        in: query
+        name: limit
+        schema:
+          default: 1000
+          maximum: 1000
+          minimum: 1
+          type: integer
+      - description: Отступ в выданном списке
+        in: query
+        name: offset
+        schema:
+          default: 0
+          minimum: 0
+          type: integer
+      - description: Замена ссылок объектами с помощью expand
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EventNoteList"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить список Событий Счета покупателю
+      tags:
+      - InvoiceOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    post:
+      description: Запрос на добавление одного События Счета покупателю
+      operationId: createInvoiceOutNote
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EventNote"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/EventNote"
+                type: array
+          description: Событие успешно создано
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Добавить Событие Счета покупателю
+      tags:
+      - InvoiceOuts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoiceout/{id}/notes/{noteId}:
+    delete:
+      description: Запрос на удаление одного События Счета покупателю
+      operationId: deleteInvoiceOutNote
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - description: ID События
+        in: path
+        name: noteId
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "204":
+          description: Событие успешно удалено
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Удалить Событие Счета покупателю
+      tags:
+      - InvoiceOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    get:
+      description: Запрос на получение одного События Счета покупателю
+      operationId: getInvoiceOutNoteById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - description: ID События
+        in: path
+        name: noteId
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EventNote"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить Событие Счета покупателю по ID
+      tags:
+      - InvoiceOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    put:
+      description: Запрос на обновление одного События Счета покупателю
+      operationId: updateInvoiceOutNote
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - description: ID События
+        in: path
+        name: noteId
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EventNote"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EventNote"
+          description: Событие успешно обновлено
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Обновить Событие Счета покупателю
+      tags:
+      - InvoiceOuts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
   /entity/invoicein:
     get:
       operationId: getInvoiceInList
@@ -31392,6 +33056,284 @@ paths:
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
+  /entity/invoicein/{id}/notes:
+    get:
+      description: Запрос на получение всех Событий Счета поставщику для данной учетной
+        записи
+      operationId: getInvoiceInNotes
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - description: Максимальное количество элементов в выданном списке (максимум
+          1000)
+        in: query
+        name: limit
+        schema:
+          default: 1000
+          maximum: 1000
+          minimum: 1
+          type: integer
+      - description: Отступ в выданном списке
+        in: query
+        name: offset
+        schema:
+          default: 0
+          minimum: 0
+          type: integer
+      - description: Замена ссылок объектами с помощью expand
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EventNoteList"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить список Событий Счета поставщику
+      tags:
+      - InvoiceIns
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    post:
+      description: Запрос на добавление одного События Счета поставщику
+      operationId: createInvoiceInNote
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EventNote"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/EventNote"
+                type: array
+          description: Событие успешно создано
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Добавить Событие Счета поставщику
+      tags:
+      - InvoiceIns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoicein/{id}/notes/{noteId}:
+    delete:
+      description: Запрос на удаление одного События Счета поставщику
+      operationId: deleteInvoiceInNote
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - description: ID События
+        in: path
+        name: noteId
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "204":
+          description: Событие успешно удалено
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Удалить Событие Счета поставщику
+      tags:
+      - InvoiceIns
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    get:
+      description: Запрос на получение одного События Счета поставщику
+      operationId: getInvoiceInNoteById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - description: ID События
+        in: path
+        name: noteId
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EventNote"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить Событие Счета поставщику по ID
+      tags:
+      - InvoiceIns
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    put:
+      description: Запрос на обновление одного События Счета поставщику
+      operationId: updateInvoiceInNote
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - description: ID События
+        in: path
+        name: noteId
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EventNote"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EventNote"
+          description: Событие успешно обновлено
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Обновить Событие Счета поставщику
+      tags:
+      - InvoiceIns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
   /entity/demand:
     get:
       operationId: getDemandList
@@ -32459,7 +34401,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/DemandPosition"
+                items:
+                  $ref: "#/components/schemas/DemandPosition"
+                type: array
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
@@ -43007,6 +44951,284 @@ paths:
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
+  /entity/purchasereturn/{id}/notes:
+    get:
+      description: Запрос на получение всех Событий Возврата поставщику для данной
+        учетной записи
+      operationId: getPurchaseReturnNotes
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - description: Максимальное количество элементов в выданном списке (максимум
+          1000)
+        in: query
+        name: limit
+        schema:
+          default: 1000
+          maximum: 1000
+          minimum: 1
+          type: integer
+      - description: Отступ в выданном списке
+        in: query
+        name: offset
+        schema:
+          default: 0
+          minimum: 0
+          type: integer
+      - description: Замена ссылок объектами с помощью expand
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EventNoteList"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить список Событий Возврата поставщику
+      tags:
+      - PurchaseReturns
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    post:
+      description: Запрос на добавление одного События Возврата поставщику
+      operationId: createPurchaseReturnNote
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EventNote"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/EventNote"
+                type: array
+          description: Событие успешно создано
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Добавить Событие Возврата поставщику
+      tags:
+      - PurchaseReturns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/purchasereturn/{id}/notes/{noteId}:
+    delete:
+      description: Запрос на удаление одного События Возврата поставщику
+      operationId: deletePurchaseReturnNote
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - description: ID События
+        in: path
+        name: noteId
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "204":
+          description: Событие успешно удалено
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Удалить Событие Возврата поставщику
+      tags:
+      - PurchaseReturns
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    get:
+      description: Запрос на получение одного События Возврата поставщику
+      operationId: getPurchaseReturnNoteById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - description: ID События
+        in: path
+        name: noteId
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EventNote"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить Событие Возврата поставщику по ID
+      tags:
+      - PurchaseReturns
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    put:
+      description: Запрос на обновление одного События Возврата поставщику
+      operationId: updatePurchaseReturnNote
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - description: ID События
+        in: path
+        name: noteId
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EventNote"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EventNote"
+          description: Событие успешно обновлено
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Обновить Событие Возврата поставщику
+      tags:
+      - PurchaseReturns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
   /entity/supply:
     get:
       operationId: getSupplyList
@@ -43307,6 +45529,43 @@ paths:
       tags:
       - Supplies
       x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/supply/{id}/trash:
+    post:
+      operationId: moveSupplyToTrash
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Удалить Приемку в корзину
+      tags:
+      - Supplies
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
@@ -44631,6 +46890,283 @@ paths:
         default:
           $ref: "#/components/responses/CommonError"
       summary: Массовое удаление позиций Приемки
+      tags:
+      - Supplies
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/supply/{id}/notes:
+    get:
+      description: Запрос на получение всех Событий Приемки для данной учетной записи
+      operationId: getSupplyNotes
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - description: Максимальное количество элементов в выданном списке (максимум
+          1000)
+        in: query
+        name: limit
+        schema:
+          default: 1000
+          maximum: 1000
+          minimum: 1
+          type: integer
+      - description: Отступ в выданном списке
+        in: query
+        name: offset
+        schema:
+          default: 0
+          minimum: 0
+          type: integer
+      - description: Замена ссылок объектами с помощью expand
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EventNoteList"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить список Событий Приемки
+      tags:
+      - Supplies
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    post:
+      description: Запрос на добавление одного События Приемки
+      operationId: createSupplyNote
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EventNote"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/EventNote"
+                type: array
+          description: Событие успешно создано
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Добавить Событие Приемки
+      tags:
+      - Supplies
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/supply/{id}/notes/{noteId}:
+    delete:
+      description: Запрос на удаление одного События Приемки
+      operationId: deleteSupplyNote
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - description: ID События
+        in: path
+        name: noteId
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "204":
+          description: Событие успешно удалено
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Удалить Событие Приемки
+      tags:
+      - Supplies
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    get:
+      description: Запрос на получение одного События Приемки
+      operationId: getSupplyNoteById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - description: ID События
+        in: path
+        name: noteId
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EventNote"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить Событие Приемки по ID
+      tags:
+      - Supplies
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    put:
+      description: Запрос на обновление одного События Приемки
+      operationId: updateSupplyNote
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - description: ID События
+        in: path
+        name: noteId
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EventNote"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EventNote"
+          description: Событие успешно обновлено
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Обновить Событие Приемки
       tags:
       - Supplies
       x-content-type: application/json
@@ -48736,7 +51272,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/EventNote"
+                items:
+                  $ref: "#/components/schemas/EventNote"
+                type: array
           description: Событие успешно создано
         default:
           $ref: "#/components/responses/CommonError"
@@ -53185,6 +55723,284 @@ paths:
       summary: Удалить файл Выданного отчета комиссионера
       tags:
       - CommissionReportOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/commissionreportout/{id}/notes:
+    get:
+      description: Запрос на получение всех Событий Выданного отчета комиссионера
+        для данной учетной записи
+      operationId: getCommissionReportOutNotes
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - description: Максимальное количество элементов в выданном списке (максимум
+          1000)
+        in: query
+        name: limit
+        schema:
+          default: 1000
+          maximum: 1000
+          minimum: 1
+          type: integer
+      - description: Отступ в выданном списке
+        in: query
+        name: offset
+        schema:
+          default: 0
+          minimum: 0
+          type: integer
+      - description: Замена ссылок объектами с помощью expand
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EventNoteList"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить список Событий Выданного отчета комиссионера
+      tags:
+      - CommissionReportOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    post:
+      description: Запрос на добавление одного События Выданного отчета комиссионера
+      operationId: createCommissionReportOutNote
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EventNote"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/EventNote"
+                type: array
+          description: Событие успешно создано
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Добавить Событие Выданного отчета комиссионера
+      tags:
+      - CommissionReportOuts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/commissionreportout/{id}/notes/{noteId}:
+    delete:
+      description: Запрос на удаление одного События Выданного отчета комиссионера
+      operationId: deleteCommissionReportOutNote
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - description: ID События
+        in: path
+        name: noteId
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "204":
+          description: Событие успешно удалено
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Удалить Событие Выданного отчета комиссионера
+      tags:
+      - CommissionReportOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    get:
+      description: Запрос на получение одного События Выданного отчета комиссионера
+      operationId: getCommissionReportOutNoteById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - description: ID События
+        in: path
+        name: noteId
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EventNote"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить Событие Выданного отчета комиссионера по ID
+      tags:
+      - CommissionReportOuts
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    put:
+      description: Запрос на обновление одного События Выданного отчета комиссионера
+      operationId: updateCommissionReportOutNote
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - description: ID События
+        in: path
+        name: noteId
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EventNote"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EventNote"
+          description: Событие успешно обновлено
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Обновить Событие Выданного отчета комиссионера
+      tags:
+      - CommissionReportOuts
+      x-content-type: application/json
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
@@ -62298,6 +65114,14 @@ components:
       schema:
         format: uuid
         type: string
+    publicationId:
+      description: ID публикации
+      in: path
+      name: publicationId
+      required: true
+      schema:
+        format: uuid
+        type: string
   responses:
     CommonError:
       content:
@@ -62411,37 +65235,26 @@ components:
         - param: id
         type: account
     AccumulationDiscount:
-      allOf:
-      - $ref: "#/components/schemas/DiscountBase"
       properties:
-        assortment:
-          description: "Товары, услуги и модификации со скидкой"
-          items:
-            $ref: "#/components/schemas/DiscountAssortmentItem"
-          type: array
+        id:
+          description: ID дополнительного поля
+          format: uuid
+          readOnly: true
+          type: string
+        meta:
+          $ref: "#/components/schemas/Meta"
         productFolders:
           description: Группы товаров со скидкой
           items:
             $ref: "#/components/schemas/ProductFolder_1"
           type: array
-        allProducts:
-          description: Для всех ли товаров скидка
-          type: boolean
         levels:
           description: Проценты скидок при определенной сумме продаж
           items:
-            properties:
-              amount:
-                description: Сумма накоплений в копейках
-                format: int32
-                type: integer
-              discount:
-                description: "Процент скидки, соответствующий данной сумме"
-                format: float
-                type: number
-            type: object
+            $ref: "#/components/schemas/AccumulationDiscount_levels_inner"
           type: array
       type: object
+      x-polymorphic-parent: DiscountAbstract
       x-entity-static-builder:
         methodParams:
         - id
@@ -62833,8 +65646,6 @@ components:
           type: string
       type: object
     BonusProgram:
-      allOf:
-      - $ref: "#/components/schemas/DiscountBase"
       description: Бонусная программа
       properties:
         earnRateRoublesToPoint:
@@ -62870,10 +65681,8 @@ components:
           maximum: 100
           minimum: 0
           type: integer
-        allProducts:
-          description: Для всех ли товаров скидка
-          type: boolean
       type: object
+      x-polymorphic-parent: DiscountAbstract
     BonusProgramList:
       description: Список бонусных программ
       properties:
@@ -63084,8 +65893,8 @@ components:
       - bySum
       - byPriority
       type: string
-    BuyPrice:
-      description: Закупочная цена
+    Price:
+      description: Цена
       properties:
         value:
           description: Значение цены
@@ -63180,14 +65989,28 @@ components:
         - param: id
         type: contactperson
     Agent:
-      anyOf:
-      - $ref: "#/components/schemas/Counterparty"
-      - $ref: "#/components/schemas/Organization"
       description: |
         Метаданные контрагента или юрлица. Используется как тип полей-ссылок,
         которые принимают только meta-ссылку, а в ответе сервера могут вернуться
         как Counterparty, так и Organization. На запись поля `meta` достаточно, остальные поля
         Counterparty/Organization читаются сервером только при создании самих этих сущностей.
+      properties:
+        id:
+          description: ID товара
+          format: uuid
+          readOnly: true
+          type: string
+      type: object
+      x-polymorphic-parent: EntityWithMeta
+      x-polymorphic-discriminator:
+        path: meta.type
+        mappings:
+        - type: counterparty
+          componentName: Counterparty
+        - type: organization
+          componentName: Organization
+        - type: employee
+          componentName: Employee
     Counterparty:
       description: Контрагент
       properties:
@@ -63319,7 +66142,6 @@ components:
         discountCardNumber:
           description: Номер дисконтной карты контрагента
           maxLength: 255
-          nullable: true
           type: string
         discounts:
           description: Массив скидок контрагента
@@ -63380,7 +66202,7 @@ components:
           nullable: true
           type: array
       type: object
-      x-polymorphic-parent: EntityWithMeta
+      x-polymorphic-parent: Agent
       x-entity-static-builder:
         methodParams:
         - id
@@ -63437,6 +66259,10 @@ components:
           componentName: CashOut
         - type: commissionreportin
           componentName: CommissionReportIn
+        - type: commissionreportinposition
+          componentName: CommissionReportInPosition
+        - type: commissionreportinreturnedposition
+          componentName: CommissionReportInReturnedPosition
         - type: commissionreportout
           componentName: CommissionReportOut
         - type: commissionreportoutposition
@@ -63453,8 +66279,12 @@ components:
           componentName: Currency
         - type: customerorder
           componentName: CustomerOrder
+        - type: customerorderposition
+          componentName: CustomerOrderPosition
         - type: demand
           componentName: Demand
+        - type: demandposition
+          componentName: DemandPosition
         - type: emissionorder
           componentName: EmissionOrder
         - type: emissionorderposition
@@ -63463,14 +66293,22 @@ components:
           componentName: Employee
         - type: enter
           componentName: Enter
+        - type: enterposition
+          componentName: EnterPosition
         - type: expenseitem
           componentName: ExpenseItem
         - type: internalorder
           componentName: InternalOrder
+        - type: internalorderposition
+          componentName: InternalOrderPosition
         - type: inventory
           componentName: Inventory
+        - type: inventoryposition
+          componentName: InventoryPosition
         - type: loss
           componentName: Loss
+        - type: lossposition
+          componentName: LossPosition
         - type: move
           componentName: Move
         - type: moveposition
@@ -63481,18 +66319,24 @@ components:
           componentName: PaymentIn
         - type: paymentout
           componentName: PaymentOut
+        - type: prepaymentreturnposition
+          componentName: PrepaymentReturnPosition
         - type: pricetype
           componentName: PriceType
         - type: processing
           componentName: Processing
         - type: processingorder
           componentName: ProcessingOrder
+        - type: processingorderposition
+          componentName: ProcessingOrderPosition
         - type: processingplan
           componentName: ProcessingPlan
         - type: processingplanfolder
           componentName: ProcessingPlanFolder
         - type: processingprocess
           componentName: ProcessingProcess
+        - type: processingprocessposition
+          componentName: ProcessingProcessPosition
         - type: processingstage
           componentName: ProcessingStage
         - type: product
@@ -63503,8 +66347,12 @@ components:
           componentName: Project
         - type: purchaseorder
           componentName: PurchaseOrder
+        - type: purchaseorderposition
+          componentName: PurchaseOrderPosition
         - type: purchasereturn
           componentName: PurchaseReturn
+        - type: purchasereturnposition
+          componentName: PurchaseReturnPosition
         - type: retaildemand
           componentName: RetailDemand
         - type: retaildrawercashin
@@ -63559,6 +66407,10 @@ components:
           componentName: CashOut
         - type: commissionreportin
           componentName: CommissionReportIn
+        - type: commissionreportinposition
+          componentName: CommissionReportInPosition
+        - type: commissionreportinreturnedposition
+          componentName: CommissionReportInReturnedPosition
         - type: commissionreportout
           componentName: CommissionReportOut
         - type: commissionreportoutposition
@@ -63575,8 +66427,12 @@ components:
           componentName: Currency
         - type: customerorder
           componentName: CustomerOrder
+        - type: customerorderposition
+          componentName: CustomerOrderPosition
         - type: demand
           componentName: Demand
+        - type: demandposition
+          componentName: DemandPosition
         - type: emissionorder
           componentName: EmissionOrder
         - type: emissionorderposition
@@ -63585,14 +66441,22 @@ components:
           componentName: Employee
         - type: enter
           componentName: Enter
+        - type: enterposition
+          componentName: EnterPosition
         - type: expenseitem
           componentName: ExpenseItem
         - type: internalorder
           componentName: InternalOrder
+        - type: internalorderposition
+          componentName: InternalOrderPosition
         - type: inventory
           componentName: Inventory
+        - type: inventoryposition
+          componentName: InventoryPosition
         - type: loss
           componentName: Loss
+        - type: lossposition
+          componentName: LossPosition
         - type: move
           componentName: Move
         - type: moveposition
@@ -63603,18 +66467,24 @@ components:
           componentName: PaymentIn
         - type: paymentout
           componentName: PaymentOut
+        - type: prepaymentreturnposition
+          componentName: PrepaymentReturnPosition
         - type: pricetype
           componentName: PriceType
         - type: processing
           componentName: Processing
         - type: processingorder
           componentName: ProcessingOrder
+        - type: processingorderposition
+          componentName: ProcessingOrderPosition
         - type: processingplan
           componentName: ProcessingPlan
         - type: processingplanfolder
           componentName: ProcessingPlanFolder
         - type: processingprocess
           componentName: ProcessingProcess
+        - type: processingprocessposition
+          componentName: ProcessingProcessPosition
         - type: processingstage
           componentName: ProcessingStage
         - type: product
@@ -63625,8 +66495,12 @@ components:
           componentName: Project
         - type: purchaseorder
           componentName: PurchaseOrder
+        - type: purchaseorderposition
+          componentName: PurchaseOrderPosition
         - type: purchasereturn
           componentName: PurchaseReturn
+        - type: purchasereturnposition
+          componentName: PurchaseReturnPosition
         - type: retaildemand
           componentName: RetailDemand
         - type: retaildrawercashin
@@ -63661,6 +66535,31 @@ components:
           componentName: Webhook
         - type: webhookstock
           componentName: WebhookStock
+    ProductMarker:
+      description: |
+        Базовый полиморфный тип для сущностей номенклатуры.
+        Конкретный тип определяется по `meta.type`.
+      properties:
+        id:
+          description: ID товара
+          format: uuid
+          readOnly: true
+          type: string
+      type: object
+      x-polymorphic-parent: EntityWithMeta
+      x-polymorphic-discriminator:
+        path: meta.type
+        mappings:
+        - type: bundle
+          componentName: Bundle
+        - type: consignment
+          componentName: Consignment
+        - type: variant
+          componentName: Variant
+        - type: product
+          componentName: Product
+        - type: service
+          componentName: Service
     Country:
       description: Страна
       properties:
@@ -63725,7 +66624,6 @@ components:
           type: string
         system:
           description: Системная валюта
-          readOnly: true
           type: boolean
         name:
           description: Краткое наименование валюты
@@ -63917,7 +66815,7 @@ components:
           nullable: true
           type: array
       type: object
-      x-polymorphic-parent: EntityWithMeta
+      x-polymorphic-parent: Agent
       x-entity-static-builder:
         methodParams:
         - id
@@ -63976,11 +66874,122 @@ components:
         meta:
           $ref: "#/components/schemas/Meta"
         permissions:
-          additionalProperties: true
-          description: Список пермиссий (только для индивидуальной роли)
-          nullable: true
-          type: object
+          $ref: "#/components/schemas/EmployeeRole_permissions"
       type: object
+    CustomRole:
+      description: Пользовательская роль
+      properties:
+        meta:
+          $ref: "#/components/schemas/Meta"
+        id:
+          description: ID пользовательской роли
+          format: uuid
+          readOnly: true
+          type: string
+        name:
+          description: Наименование пользовательской роли
+          maxLength: 255
+          type: string
+        permissions:
+          $ref: "#/components/schemas/EmployeeRole_permissions"
+      type: object
+      x-entity-static-builder:
+        methodParams:
+        - id
+        href:
+        - path: entity
+        - path: role
+        - param: id
+        type: customrole
+    CustomRoleList:
+      description: Список пользовательских ролей
+      properties:
+        context:
+          $ref: "#/components/schemas/Context"
+        meta:
+          $ref: "#/components/schemas/MetaList"
+        rows:
+          description: Массив пользовательских ролей
+          items:
+            $ref: "#/components/schemas/CustomRole_1"
+          type: array
+      type: object
+    Permissions:
+      properties:
+        view:
+          description: Смотреть. Известные значения описаны в PermissionValue.
+          type: string
+        print:
+          description: Печатать. Известные значения описаны в PermissionValue.
+          type: string
+        create:
+          description: Создавать. Известные значения описаны в PermissionValue.
+          type: string
+        update:
+          description: Редактировать. Известные значения описаны в PermissionValue.
+          type: string
+        delete:
+          description: Удалять. Известные значения описаны в PermissionValue.
+          type: string
+        approve:
+          description: Проводить. Известные значения описаны в PermissionValue.
+          type: string
+      type: object
+    PermissionValue:
+      description: Возможные значения пермиссий
+      enum:
+      - "NO"
+      - OWN
+      - OWN_SHARED
+      - OWN_GROUP
+      - OWN_GROUP_SHARED
+      - ALL
+      type: string
+    ScriptPermissions:
+      properties:
+        view:
+          description: Смотреть. Известные значения описаны в ScriptPermissionValue.
+          type: string
+        create:
+          description: Создавать. Известные значения описаны в ScriptPermissionValue.
+          type: string
+        update:
+          description: Редактировать. Известные значения описаны в ScriptPermissionValue.
+          type: string
+        delete:
+          description: Удалять. Известные значения описаны в ScriptPermissionValue.
+          type: string
+        done:
+          description: Выполнять. Известные значения описаны в ScriptPermissionValue.
+          type: string
+      type: object
+    ScriptTemplatePermissions:
+      properties:
+        view:
+          description: Смотреть. Известные значения описаны в PermissionValue.
+          type: string
+        create:
+          description: Создавать. Известные значения описаны в PermissionValue.
+          type: string
+        update:
+          description: Редактировать. Известные значения описаны в PermissionValue.
+          type: string
+        delete:
+          description: Удалять. Известные значения описаны в PermissionValue.
+          type: string
+        activate:
+          description: Выполнять. Известные значения описаны в PermissionValue.
+          type: string
+      type: object
+    ScriptPermissionValue:
+      description: Возможные значения пермиссий script
+      enum:
+      - "NO"
+      - AUTHOR_OR_ASSIGNEE
+      - ASSIGNEE
+      - AUTHOR
+      - ALL
+      type: string
     EmbeddedTemplate:
       description: Шаблон печатной формы
       properties:
@@ -63996,17 +67005,60 @@ components:
           format: uuid
           readOnly: true
           type: string
+        name:
+          description: Наименование шаблона
+          maxLength: 255
+          readOnly: true
+          type: string
+        type:
+          description: Тип шаблона
+          maxLength: 255
+          readOnly: true
+          type: string
+        content:
+          description: Ссылка на скачивание шаблона
+          format: uri
+          readOnly: true
+          type: string
       type: object
       x-entity-static-builder:
         methodParams:
+        - type
         - id
         href:
         - path: entity
-        - path: assortment
+        - param: type
         - path: metadata
         - path: embeddedtemplate
         - param: id
         type: embeddedtemplate
+    TemplateComposition:
+      properties:
+        template:
+          $ref: "#/components/schemas/EmbeddedTemplate"
+        count:
+          description: Количество копий печатной формы
+          maximum: 10
+          minimum: 1
+          type: integer
+      required:
+      - count
+      - template
+      type: object
+    EmbeddedTemplateList:
+      description: Список стандартных шаблонов печатных форм
+      properties:
+        context:
+          $ref: "#/components/schemas/Context"
+        meta:
+          $ref: "#/components/schemas/MetaList"
+        rows:
+          description: Массив стандартных шаблонов печатных форм
+          items:
+            $ref: "#/components/schemas/EmbeddedTemplate"
+          nullable: true
+          type: array
+      type: object
     File:
       description: Файл
       properties:
@@ -64019,6 +67071,9 @@ components:
         filename:
           description: Имя файла
           maxLength: 255
+          type: string
+        content:
+          description: "Файл, закодированный в Base64"
           type: string
         size:
           description: Размер файла в байтах
@@ -64496,6 +67551,9 @@ components:
           description: Имя файла
           maxLength: 255
           type: string
+        content:
+          description: "Изображение, закодированное в Base64"
+          type: string
         size:
           description: Размер файла в байтах
           readOnly: true
@@ -64794,6 +67852,7 @@ components:
           description: Массив Списаний
           items:
             $ref: "#/components/schemas/Loss_1"
+          nullable: true
           type: array
       type: object
     LossPosition:
@@ -64812,7 +67871,10 @@ components:
           readOnly: true
           type: string
         assortment:
-          $ref: "#/components/schemas/Assortment"
+          allOf:
+          - $ref: "#/components/schemas/ProductMarker"
+          description: "Метаданные товара/услуги/партии/модификации, которую предс\
+            тавляет собой позиция"
         declaration:
           description: |
             Информация о прослеживаемости импортных товаров.
@@ -64852,6 +67914,7 @@ components:
             type: string
           type: array
       type: object
+      x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -64929,17 +67992,6 @@ components:
           $ref: "#/components/schemas/StoreBalanceList"
       required:
       - type
-      type: object
-    MinPrice:
-      description: Минимальная цена
-      properties:
-        value:
-          description: Значение цены
-          format: float
-          minimum: 0
-          type: number
-        currency:
-          $ref: "#/components/schemas/Currency"
       type: object
     Note:
       description: Событие Контрагента
@@ -65079,23 +68131,21 @@ components:
       - ANOTHER_PAYMENT_ITEM
       type: string
     PersonalDiscount:
-      allOf:
-      - $ref: "#/components/schemas/DiscountBase"
       properties:
-        assortment:
-          description: "Товары, услуги и модификации со скидкой"
-          items:
-            $ref: "#/components/schemas/DiscountAssortmentItem"
-          type: array
+        id:
+          description: ID дополнительного поля
+          format: uuid
+          readOnly: true
+          type: string
+        meta:
+          $ref: "#/components/schemas/Meta"
         productFolders:
           description: Группы товаров со скидкой
           items:
             $ref: "#/components/schemas/ProductFolder_1"
           type: array
-        allProducts:
-          description: Для всех ли товаров скидка
-          type: boolean
       type: object
+      x-polymorphic-parent: DiscountAbstract
       x-entity-static-builder:
         methodParams:
         - id
@@ -65313,7 +68363,7 @@ components:
           minimum: 0
           type: number
         buyPrice:
-          $ref: "#/components/schemas/BuyPrice"
+          $ref: "#/components/schemas/Price"
         salePrices:
           description: Цены продажи
           items:
@@ -65322,10 +68372,9 @@ components:
           type: array
         supplier:
           allOf:
-          - $ref: "#/components/schemas/Counterparty_1"
-          description: Метаданные контрагента-поставщика
-          nullable: true
-          type: object
+          - $ref: "#/components/schemas/Agent"
+          description: Метаданные контрагента или юрлица
+          x-agent-reference: true
         country:
           allOf:
           - $ref: "#/components/schemas/Country_1"
@@ -65395,7 +68444,7 @@ components:
           nullable: true
           type: object
         minPrice:
-          $ref: "#/components/schemas/MinPrice"
+          $ref: "#/components/schemas/Price"
         weighed:
           description: "Поле, показывающее является ли товар весовым"
           type: boolean
@@ -65420,7 +68469,7 @@ components:
             защиты. Известные значения описаны в PpeType
           type: string
       type: object
-      x-polymorphic-parent: EntityWithMeta
+      x-polymorphic-parent: ProductMarker
       x-entity-static-builder:
         methodParams:
         - id
@@ -65606,7 +68655,7 @@ components:
         performers:
           description: Метаданные возможных исполнителей
           items:
-            $ref: "#/components/schemas/Employee_1"
+            $ref: "#/components/schemas/Agent"
           nullable: true
           type: array
         materialStore:
@@ -65739,6 +68788,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -65791,6 +68841,11 @@ components:
         code:
           description: Код Техкарты
           maxLength: 255
+          type: string
+        description:
+          description: Описание Техкарт
+          maxLength: 4096
+          nullable: true
           type: string
         cost:
           description: Стоимость производства
@@ -65874,6 +68929,7 @@ components:
           description: Массив Техкарт
           items:
             $ref: "#/components/schemas/ProcessingPlan_1"
+          nullable: true
           type: array
       type: object
     ProcessingPlanStage:
@@ -65958,7 +69014,7 @@ components:
           readOnly: true
           type: string
         assortment:
-          $ref: "#/components/schemas/Assortment"
+          $ref: "#/components/schemas/ProductMarker"
         product:
           $ref: "#/components/schemas/Product"
         quantity:
@@ -66012,7 +69068,7 @@ components:
           readOnly: true
           type: string
         assortment:
-          $ref: "#/components/schemas/Assortment"
+          $ref: "#/components/schemas/ProductMarker"
         product:
           $ref: "#/components/schemas/Product"
         quantity:
@@ -66222,7 +69278,6 @@ components:
           type: boolean
         allowCustomPrice:
           description: Признак разрешения устанавливать произвольные цены
-          readOnly: true
           type: boolean
         allowDeleteReceiptPositions:
           description: Признак разрешения удалять позиции из чека
@@ -66382,7 +69437,11 @@ components:
           maxLength: 255
           type: string
         acquire:
-          $ref: "#/components/schemas/Counterparty"
+          allOf:
+          - $ref: "#/components/schemas/Agent"
+          description: Эквайер
+          type: object
+          x-agent-reference: true
         cashiers:
           allOf:
           - $ref: "#/components/schemas/CashierList_1"
@@ -66391,10 +69450,11 @@ components:
           type: object
         qrAcquire:
           allOf:
-          - $ref: "#/components/schemas/Counterparty_1"
+          - $ref: "#/components/schemas/Agent"
           description: Эквайер для QR-платежей
           nullable: true
           type: object
+          x-agent-reference: true
       type: object
       x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
@@ -66688,7 +69748,10 @@ components:
           readOnly: true
           type: string
         assortment:
-          $ref: "#/components/schemas/Assortment"
+          allOf:
+          - $ref: "#/components/schemas/ProductMarker"
+          description: "Метаданные товара/услуги/партии/модификации/комплекта, кот\
+            орую представляет собой позиция"
         cost:
           description: Себестоимость
           type: integer
@@ -66745,6 +69808,7 @@ components:
           description: Включен ли НДС для позиции
           type: boolean
       type: object
+      x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -66849,7 +69913,7 @@ components:
           readOnly: true
           type: string
         buyPrice:
-          $ref: "#/components/schemas/BuyPrice"
+          $ref: "#/components/schemas/Price"
         salePrices:
           description: Цены продажи
           items:
@@ -66893,13 +69957,13 @@ components:
           nullable: true
           type: array
         minPrice:
-          $ref: "#/components/schemas/MinPrice"
+          $ref: "#/components/schemas/Price"
         syncId:
           description: ID синхронизации
           format: uuid
           type: string
       type: object
-      x-polymorphic-parent: EntityWithMeta
+      x-polymorphic-parent: ProductMarker
       x-entity-static-builder:
         methodParams:
         - id
@@ -67672,7 +70736,7 @@ components:
           nullable: true
           type: array
       type: object
-      x-polymorphic-parent: EntityWithMeta
+      x-polymorphic-parent: Agent
       x-entity-static-builder:
         methodParams:
         - id
@@ -67850,9 +70914,9 @@ components:
           nullable: true
           type: array
         buyPrice:
-          $ref: "#/components/schemas/BuyPrice"
+          $ref: "#/components/schemas/Price"
         minPrice:
-          $ref: "#/components/schemas/MinPrice"
+          $ref: "#/components/schemas/Price"
         overhead:
           $ref: "#/components/schemas/Bundle_overhead"
         attributes:
@@ -67864,7 +70928,7 @@ components:
         components:
           $ref: "#/components/schemas/BundleComponentList"
       type: object
-      x-polymorphic-parent: EntityWithMeta
+      x-polymorphic-parent: ProductMarker
       x-entity-static-builder:
         methodParams:
         - id
@@ -67957,7 +71021,11 @@ components:
           nullable: true
           type: array
         assortment:
-          $ref: "#/components/schemas/Assortment"
+          allOf:
+          - $ref: "#/components/schemas/ProductMarker"
+          description: "Метаданные товара/услуги/комплекта/модификации, к которой\
+            \ относится Партия"
+          type: object
         barcodes:
           description: Штрихкоды Партии
           items:
@@ -68001,7 +71069,7 @@ components:
           readOnly: true
           type: string
       type: object
-      x-polymorphic-parent: EntityWithMeta
+      x-polymorphic-parent: ProductMarker
       x-entity-static-builder:
         methodParams:
         - id
@@ -68081,12 +71149,12 @@ components:
           type: array
         buyPrice:
           allOf:
-          - $ref: "#/components/schemas/BuyPrice"
+          - $ref: "#/components/schemas/Price"
           description: Закупочная цена
           nullable: true
           type: object
         minPrice:
-          $ref: "#/components/schemas/MinPrice"
+          $ref: "#/components/schemas/Price"
         barcodes:
           description: Штрихкоды Модификации
           items:
@@ -68120,7 +71188,7 @@ components:
           nullable: true
           type: array
       type: object
-      x-polymorphic-parent: EntityWithMeta
+      x-polymorphic-parent: ProductMarker
       x-entity-static-builder:
         methodParams:
         - id
@@ -68198,7 +71266,6 @@ components:
         value:
           description: Значение Характеристики
           maxLength: 255
-          readOnly: true
           type: string
       type: object
     VariantPack:
@@ -68931,7 +71998,11 @@ components:
           readOnly: true
           type: string
         assortment:
-          $ref: "#/components/schemas/Assortment"
+          allOf:
+          - $ref: "#/components/schemas/ProductMarker"
+          description: "Метаданные товара/услуги/партии/модификации, которую предс\
+            тавляет собой позиция"
+          type: object
         calculatedQuantity:
           description: Расчетный остаток
           format: double
@@ -68971,6 +72042,7 @@ components:
           format: double
           type: number
       type: object
+      x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -69191,7 +72263,10 @@ components:
           description: Включен ли НДС для позиции
           type: boolean
         assortment:
-          $ref: "#/components/schemas/Assortment"
+          allOf:
+          - $ref: "#/components/schemas/ProductMarker"
+          description: "Метаданные товара/услуги/модификации/комплекта, которую пр\
+            едставляет собой позиция"
         pack:
           allOf:
           - $ref: "#/components/schemas/Pack"
@@ -69199,6 +72274,7 @@ components:
           nullable: true
           type: object
       type: object
+      x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -69534,6 +72610,9 @@ components:
         filename:
           description: Имя файла
           maxLength: 255
+          type: string
+        content:
+          description: "Файл, закодированный в Base64"
           type: string
         size:
           description: Размер файла в байтах
@@ -70021,7 +73100,10 @@ components:
           description: Код системы налогообложения. Известные значения описаны в TaxSystem
           type: string
         assortment:
-          $ref: "#/components/schemas/Assortment"
+          allOf:
+          - $ref: "#/components/schemas/ProductMarker"
+          description: "Метаданные товара/услуги/модификации/комплекта, которую пр\
+            едставляет собой позиция"
         pack:
           allOf:
           - $ref: "#/components/schemas/Pack"
@@ -70035,6 +73117,7 @@ components:
             Остатки и себестоимость позиции. Не выводится по умолчанию.
             Для получения передайте параметр `?fields=stock`.
       type: object
+      x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -70073,6 +73156,57 @@ components:
           description: Массив Заказов покупателей
           items:
             $ref: "#/components/schemas/CustomerOrder_1"
+          type: array
+      type: object
+    Publication:
+      description: Публикация Заказа покупателя
+      properties:
+        meta:
+          $ref: "#/components/schemas/Meta"
+        template:
+          $ref: "#/components/schemas/EmbeddedTemplate"
+        href:
+          description: Ссылка на страницу Публикации
+          format: uri
+          type: string
+      type: object
+    PublicationList:
+      description: Список Публикаций Заказа покупателя
+      properties:
+        context:
+          $ref: "#/components/schemas/Context"
+        meta:
+          $ref: "#/components/schemas/MetaList"
+        rows:
+          description: Список Публикаций Заказа покупателя
+          items:
+            $ref: "#/components/schemas/Publication_1"
+          nullable: true
+          type: array
+      type: object
+    ExportRequest:
+      description: Запрос на печать
+      properties:
+        template:
+          $ref: "#/components/schemas/EmbeddedTemplate"
+        extension:
+          description: |
+            Расширение, в котором нужно напечатать форму.
+            Допустимые значения: xls, pdf, html, ods.
+          enum:
+          - xls
+          - pdf
+          - html
+          - ods
+          type: string
+        templates:
+          description: |
+            Набор шаблонов для печати комплекта документов.
+            При использовании templates поле extension указывать не нужно.
+          items:
+            $ref: "#/components/schemas/TemplateComposition"
+          minItems: 1
+          nullable: true
           type: array
       type: object
     EmissionOrder:
@@ -70185,10 +73319,13 @@ components:
           readOnly: true
           type: string
         assortment:
-          $ref: "#/components/schemas/Assortment"
+          allOf:
+          - $ref: "#/components/schemas/ProductMarker"
+          description: "Метаданные товара/модификации/партии, которую представляет\
+            \ собой позиция"
         quantity:
           description: Количество товаров данного вида в позиции
-          format: float
+          format: double
           maximum: 1000
           minimum: 0
           type: number
@@ -70528,7 +73665,10 @@ components:
           description: Включен ли НДС для позиции
           type: boolean
         assortment:
-          $ref: "#/components/schemas/AssortmentWithoutBundle"
+          allOf:
+          - $ref: "#/components/schemas/ProductMarker"
+          description: "Метаданные товара/услуги/модификации/партии, которую предс\
+            тавляет собой позиция"
         pack:
           allOf:
           - $ref: "#/components/schemas/Pack"
@@ -70542,6 +73682,7 @@ components:
             Остатки и себестоимость позиции. Не выводится по умолчанию.
             Для получения передайте параметр `?fields=stock`.
       type: object
+      x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -70781,6 +73922,7 @@ components:
           description: Массив Возвратов поставщикам
           items:
             $ref: "#/components/schemas/PurchaseReturn_1"
+          nullable: true
           type: array
       type: object
     PurchaseReturnPosition:
@@ -70799,7 +73941,10 @@ components:
           readOnly: true
           type: string
         assortment:
-          $ref: "#/components/schemas/Assortment"
+          allOf:
+          - $ref: "#/components/schemas/ProductMarker"
+          description: "Метаданные товара/услуги/партии/модификации, которую предс\
+            тавляет собой позиция"
         discount:
           description: Процент скидки или наценки
           format: double
@@ -70844,6 +73989,7 @@ components:
             `(vat = 0, vatEnabled = true)` — НДС 0%.
           type: boolean
       type: object
+      x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -71079,6 +74225,7 @@ components:
           description: Массив Счетов поставщикам
           items:
             $ref: "#/components/schemas/InvoiceIn_1"
+          nullable: true
           type: array
       type: object
     InvoiceInPosition:
@@ -71117,7 +74264,10 @@ components:
           description: Включен ли НДС для позиции
           type: boolean
         assortment:
-          $ref: "#/components/schemas/Assortment"
+          allOf:
+          - $ref: "#/components/schemas/ProductMarker"
+          description: "Метаданные товара/услуги/партии/модификации/комплекта, кот\
+            орую представляет собой позиция"
         pack:
           allOf:
           - $ref: "#/components/schemas/Pack"
@@ -71125,6 +74275,7 @@ components:
           nullable: true
           type: object
       type: object
+      x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -71149,6 +74300,7 @@ components:
           description: Массив позиций Счета поставщику
           items:
             $ref: "#/components/schemas/InvoiceInPosition_1"
+          nullable: true
           type: array
       type: object
     InvoiceOut:
@@ -71356,6 +74508,7 @@ components:
           description: Массив Счетов покупателям
           items:
             $ref: "#/components/schemas/InvoiceOut_1"
+          nullable: true
           type: array
       type: object
     InvoiceOutPosition:
@@ -71394,7 +74547,10 @@ components:
           description: Включен ли НДС для позиции
           type: boolean
         assortment:
-          $ref: "#/components/schemas/Assortment"
+          allOf:
+          - $ref: "#/components/schemas/ProductMarker"
+          description: "Метаданные товара/услуги/партии/модификации/комплекта, кот\
+            орую представляет собой позиция"
         pack:
           allOf:
           - $ref: "#/components/schemas/Pack"
@@ -71402,6 +74558,7 @@ components:
           nullable: true
           type: object
       type: object
+      x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -71426,6 +74583,7 @@ components:
           description: Массив позиций Счета покупателю
           items:
             $ref: "#/components/schemas/InvoiceOutPosition_1"
+          nullable: true
           type: array
       type: object
     Supply:
@@ -71669,7 +74827,10 @@ components:
           readOnly: true
           type: string
         assortment:
-          $ref: "#/components/schemas/Assortment"
+          allOf:
+          - $ref: "#/components/schemas/ProductMarker"
+          description: "Метаданные товара/услуги/партии/модификации, которую предс\
+            тавляет собой позиция"
         country:
           allOf:
           - $ref: "#/components/schemas/Country_1"
@@ -71902,13 +75063,11 @@ components:
           description: Сумма Исходящего платежа в установленной валюте
           format: double
           minimum: 0
-          readOnly: true
           type: number
         vatSum:
           description: Сумма НДС
           format: double
           minimum: 0
-          readOnly: true
           type: number
         factureIn:
           allOf:
@@ -72104,7 +75263,6 @@ components:
           description: Сумма НДС
           format: double
           minimum: 0
-          readOnly: true
           type: number
         incomingNumber:
           description: Входящий номер
@@ -72388,7 +75546,10 @@ components:
           readOnly: true
           type: string
         assortment:
-          $ref: "#/components/schemas/Assortment"
+          allOf:
+          - $ref: "#/components/schemas/ProductMarker"
+          description: "Метаданные товара/услуги/партии/модификации, которую предс\
+            тавляет собой позиция"
         discount:
           description: Процент скидки или наценки
           format: double
@@ -72416,6 +75577,7 @@ components:
           description: Включен ли НДС для позиции
           type: boolean
       type: object
+      x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -72578,12 +75740,10 @@ components:
         sum:
           description: Сумма расходного ордера в установленной валюте
           format: double
-          readOnly: true
           type: number
         vatSum:
           description: Сумма НДС
           format: double
-          readOnly: true
           type: number
         factureIn:
           allOf:
@@ -72735,12 +75895,10 @@ components:
         sum:
           description: Сумма Приходного ордера в установленной валюте
           format: double
-          readOnly: true
           type: number
         vatSum:
           description: Сумма НДС
           format: double
-          readOnly: true
           type: number
         factureOut:
           allOf:
@@ -72791,6 +75949,59 @@ components:
           componentName: FinanceOutOperationPurchaseOrder
         - type: commissionreportout
           componentName: FinanceOutOperationCommissionReportOut
+    DiscountAbstract:
+      properties:
+        id:
+          description: ID дополнительного поля
+          format: uuid
+          readOnly: true
+          type: string
+        meta:
+          $ref: "#/components/schemas/Meta"
+        accountId:
+          description: ID учетной записи
+          format: uuid
+          readOnly: true
+          type: string
+        name:
+          description: Наименование товара
+          maxLength: 255
+          type: string
+        active:
+          description: Включена ли скидка
+          type: boolean
+        allAgents:
+          description: Для всех ли агентов скидка
+          type: boolean
+        agentTags:
+          description: Тэги агентов
+          items:
+            type: string
+          nullable: true
+          type: array
+        allProducts:
+          description: Действует ли скидка на все товары
+          type: boolean
+        assortment:
+          description: "Массив метаданных товаров, услуг и модификаций"
+          items:
+            $ref: "#/components/schemas/DiscountAssortmentItem"
+          nullable: true
+          type: array
+      type: object
+      x-polymorphic-discriminator:
+        path: meta.type
+        mappings:
+        - type: accumulationdiscount
+          componentName: AccumulationDiscount
+        - type: personaldiscount
+          componentName: PersonalDiscount
+        - type: specialpricediscount
+          componentName: SpecialPriceDiscount
+        - type: discount
+          componentName: Discount
+        - type: bonusprogram
+          componentName: BonusProgram
     FinanceOutOperationSalesReturn:
       allOf:
       - $ref: "#/components/schemas/SalesReturn"
@@ -73556,6 +76767,7 @@ components:
           description: Массив Перемещений
           items:
             $ref: "#/components/schemas/Move_1"
+          nullable: true
           type: array
       type: object
     MovePosition:
@@ -73574,7 +76786,10 @@ components:
           readOnly: true
           type: string
         assortment:
-          $ref: "#/components/schemas/Assortment"
+          allOf:
+          - $ref: "#/components/schemas/ProductMarker"
+          description: "Метаданные товара/услуги/партии/модификации, которую предс\
+            тавляет собой позиция"
         overhead:
           description: |
             Накладные расходы по позиции.
@@ -73906,12 +77121,19 @@ components:
           readOnly: true
           type: string
         assortment:
-          $ref: "#/components/schemas/Assortment"
+          $ref: "#/components/schemas/ProductMarker"
         quantity:
           description: Количество товаров данного вида в позиции
           format: double
           minimum: 0.00010
           type: number
+        things:
+          description: |
+            Серийные номера. Игнорируется, если товар позиции не на серийном учёте;
+            иначе количество единиц в позиции совпадает с числом переданных серийных номеров.
+          items:
+            type: string
+          type: array
       type: object
       x-entity-static-builder:
         methodParams:
@@ -73954,12 +77176,19 @@ components:
           readOnly: true
           type: string
         assortment:
-          $ref: "#/components/schemas/Assortment"
+          $ref: "#/components/schemas/ProductMarker"
         quantity:
           description: Количество товаров данного вида в позиции
           format: double
           minimum: 0.00010
           type: number
+        things:
+          description: |
+            Серийные номера. Игнорируется, если товар позиции не на серийном учёте;
+            иначе количество единиц в позиции совпадает с числом переданных серийных номеров.
+          items:
+            type: string
+          type: array
       type: object
       x-entity-static-builder:
         methodParams:
@@ -74141,7 +77370,9 @@ components:
           minimum: 0
           type: number
         assortment:
-          $ref: "#/components/schemas/Assortment"
+          allOf:
+          - $ref: "#/components/schemas/ProductMarker"
+          description: Метаданные товара/услуги/партии/модификации позиции
         pack:
           allOf:
           - $ref: "#/components/schemas/Pack"
@@ -74149,6 +77380,7 @@ components:
           nullable: true
           type: object
       type: object
+      x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -74472,7 +77704,10 @@ components:
           readOnly: true
           type: string
         assortment:
-          $ref: "#/components/schemas/Assortment"
+          allOf:
+          - $ref: "#/components/schemas/ProductMarker"
+          description: "Метаданные товара/услуги/партии/модификации/комплекта, кот\
+            орую представляет собой позиция"
         cost:
           description: Себестоимость (только для услуг)
           type: integer
@@ -74549,6 +77784,7 @@ components:
             `(vat = 0, vatEnabled = true)` — НДС 0%.
           type: boolean
       type: object
+      x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -74912,7 +78148,7 @@ components:
           readOnly: true
           type: string
         assortment:
-          $ref: "#/components/schemas/Assortment"
+          $ref: "#/components/schemas/ProductMarker"
         cost:
           description: Себестоимость (только для услуг)
           minimum: 0
@@ -75190,7 +78426,7 @@ components:
           readOnly: true
           type: string
         assortment:
-          $ref: "#/components/schemas/Assortment"
+          $ref: "#/components/schemas/ProductMarker"
         cost:
           description: "Себестоимость (выводится, если документ был создан без осн\
             ования)"
@@ -75238,6 +78474,7 @@ components:
             \ 0%."
           type: boolean
       type: object
+      x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -75420,7 +78657,10 @@ components:
           readOnly: true
           type: string
         assortment:
-          $ref: "#/components/schemas/Assortment"
+          allOf:
+          - $ref: "#/components/schemas/ProductMarker"
+          description: "Метаданные товара/услуги/партии/модификации, которую предс\
+            тавляет собой позиция"
         country:
           allOf:
           - $ref: "#/components/schemas/Country_1"
@@ -75469,6 +78709,7 @@ components:
             type: string
           type: array
       type: object
+      x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -75736,7 +78977,10 @@ components:
           description: Включен ли НДС для позиции
           type: boolean
         assortment:
-          $ref: "#/components/schemas/Assortment"
+          allOf:
+          - $ref: "#/components/schemas/ProductMarker"
+          description: "Метаданные товара/партии/модификации/комплекта, которую пр\
+            едставляет позиция"
         pack:
           allOf:
           - $ref: "#/components/schemas/Pack"
@@ -75744,6 +78988,7 @@ components:
           nullable: true
           type: object
       type: object
+      x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -75805,8 +79050,12 @@ components:
           description: Включен ли НДС для позиции
           type: boolean
         assortment:
-          $ref: "#/components/schemas/Assortment"
+          allOf:
+          - $ref: "#/components/schemas/ProductMarker"
+          description: "Метаданные товара/партии/модификации/комплекта, которую пр\
+            едставляет позиция"
       type: object
+      x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -76071,7 +79320,10 @@ components:
           description: Включен ли НДС для позиции
           type: boolean
         assortment:
-          $ref: "#/components/schemas/Assortment"
+          allOf:
+          - $ref: "#/components/schemas/ProductMarker"
+          description: "Метаданные товара/партии/модификации/комплекта, которую пр\
+            едставляет позиция"
         pack:
           allOf:
           - $ref: "#/components/schemas/Pack"
@@ -76416,19 +79668,15 @@ components:
       - CHOSEN
       type: string
     Discount:
-      allOf:
-      - $ref: "#/components/schemas/DiscountBase"
       description: Скидка (discount)
       properties:
-        allProducts:
-          description: Действует ли скидка на все товары
-          type: boolean
-        assortment:
-          description: "Массив метаданных товаров, услуг и модификаций"
-          items:
-            $ref: "#/components/schemas/DiscountAssortmentItem"
-          nullable: true
-          type: array
+        id:
+          description: ID дополнительного поля
+          format: uuid
+          readOnly: true
+          type: string
+        meta:
+          $ref: "#/components/schemas/Meta"
         productFolders:
           description: Массив метаданных Групп товаров
           items:
@@ -76436,6 +79684,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-polymorphic-parent: DiscountAbstract
       x-entity-static-builder:
         methodParams:
         - id
@@ -76465,7 +79714,7 @@ components:
             Массив скидок всех типов для учётной записи (см. `meta.type`: discount, personaldiscount,
             specialpricediscount, accumulationdiscount, bonusprogram).
           items:
-            $ref: "#/components/schemas/DiscountList_rows_inner"
+            $ref: "#/components/schemas/DiscountAbstract"
           type: array
       type: object
     PriorityOfdSend:
@@ -76482,23 +79731,20 @@ components:
       - FEMALE
       type: string
     SpecialPriceDiscount:
-      allOf:
-      - $ref: "#/components/schemas/DiscountBase"
       description: Специальная цена (specialpricediscount)
       properties:
-        assortment:
-          description: "Товары, услуги и модификации со скидкой"
-          items:
-            $ref: "#/components/schemas/DiscountAssortmentItem"
-          type: array
+        id:
+          description: ID дополнительного поля
+          format: uuid
+          readOnly: true
+          type: string
+        meta:
+          $ref: "#/components/schemas/Meta"
         productFolders:
           description: Группы товаров со скидкой
           items:
             $ref: "#/components/schemas/ProductFolder_1"
           type: array
-        allProducts:
-          description: Для всех ли товаров скидка
-          type: boolean
         usePriceType:
           description: Использовать ли специальную цену
           type: boolean
@@ -76508,17 +79754,9 @@ components:
           nullable: true
           type: number
         specialPrice:
-          description: Спец. цена (используется при usePriceType=true)
-          nullable: true
-          properties:
-            value:
-              description: Значение цены
-              format: int32
-              type: integer
-            priceType:
-              $ref: "#/components/schemas/PriceType_1"
-          type: object
+          $ref: "#/components/schemas/SpecialPriceDiscount_specialPrice"
       type: object
+      x-polymorphic-parent: DiscountAbstract
       x-entity-static-builder:
         methodParams:
         - id
@@ -76716,6 +79954,8 @@ components:
       $ref: "#/components/schemas/Image"
     EmployeeRole_1:
       $ref: "#/components/schemas/EmployeeRole"
+    CustomRole_1:
+      $ref: "#/components/schemas/CustomRole"
     Contract_1:
       $ref: "#/components/schemas/Contract"
     Demand_1:
@@ -76854,6 +80094,8 @@ components:
       $ref: "#/components/schemas/CustomerOrderPosition"
     CustomerOrder_1:
       $ref: "#/components/schemas/CustomerOrder"
+    Publication_1:
+      $ref: "#/components/schemas/Publication"
     EmissionOrderPositionList_1:
       $ref: "#/components/schemas/EmissionOrderPositionList"
     EmissionOrderPosition_1:
@@ -76949,14 +80191,6 @@ components:
       $ref: "#/components/schemas/CommissionReportOut"
     CustomEntityMetadata_1:
       $ref: "#/components/schemas/CustomEntityMetadata"
-    Discount_1:
-      $ref: "#/components/schemas/Discount"
-    PersonalDiscount_1:
-      $ref: "#/components/schemas/PersonalDiscount"
-    SpecialPriceDiscount_1:
-      $ref: "#/components/schemas/SpecialPriceDiscount"
-    AccumulationDiscount_1:
-      $ref: "#/components/schemas/AccumulationDiscount"
     CustomEntityElement_1:
       $ref: "#/components/schemas/CustomEntityElement"
     getProductImages_200_response:
@@ -76992,12 +80226,6 @@ components:
       oneOf:
       - $ref: "#/components/schemas/ProcessingProcessPosition"
       - $ref: "#/components/schemas/Error"
-    activateEmployee_request_group:
-      description: Метаданные группы
-      properties:
-        meta:
-          $ref: "#/components/schemas/Meta"
-      type: object
     activateEmployee_request:
       properties:
         login:
@@ -77005,7 +80233,7 @@ components:
           maxLength: 255
           type: string
         group:
-          $ref: "#/components/schemas/activateEmployee_request_group"
+          $ref: "#/components/schemas/Group"
         role:
           $ref: "#/components/schemas/EmployeeRole"
       type: object
@@ -77054,20 +80282,6 @@ components:
             $ref: "#/components/schemas/Account"
           type: array
       type: object
-    createBonusTransaction_request:
-      oneOf:
-      - $ref: "#/components/schemas/BonusTransaction"
-      - items:
-          $ref: "#/components/schemas/BonusTransaction"
-        maxItems: 1000
-        minItems: 1
-        type: array
-    createBonusTransaction_200_response:
-      oneOf:
-      - $ref: "#/components/schemas/BonusTransaction"
-      - items:
-          $ref: "#/components/schemas/BonusTransaction"
-        type: array
     createStoreZones_request:
       oneOf:
       - $ref: "#/components/schemas/StoreZone"
@@ -77201,6 +80415,17 @@ components:
       oneOf:
       - $ref: "#/components/schemas/RetailShift"
       - $ref: "#/components/schemas/Error"
+    AccumulationDiscount_levels_inner:
+      properties:
+        amount:
+          description: Сумма накоплений в копейках
+          format: int32
+          type: integer
+        discount:
+          description: "Процент скидки, соответствующий данной сумме"
+          format: float
+          type: number
+      type: object
     AssortmentSettings_barcodeRules:
       description: Настройки правил штрихкодов для сущностей ассортимента
       properties:
@@ -77350,6 +80575,244 @@ components:
         name:
           description: Название группы
           type: string
+      type: object
+    EmployeeRole_permissions:
+      description: Список пермиссий (только для индивидуальной роли)
+      nullable: true
+      properties:
+        apiRequest:
+          description: Доступ по АПИ
+          type: boolean
+        accountDelete:
+          description: Удалять аккаунт
+          type: boolean
+        deleteFromRecycleBin:
+          description: Очищать корзину
+          type: boolean
+        editCurrencyRateOfDocument:
+          description: Редактировать курс валюты документа
+          type: boolean
+        editDocumentTemplates:
+          description: Редактировать шаблоны документов и отчетов
+          type: boolean
+        editDocumentsOfRestrictedPeriod:
+          description: Редактировать документы закрытого периода
+          type: boolean
+        exportData:
+          description: Экспортировать данные
+          type: boolean
+        importData:
+          description: Импортировать данные
+          type: boolean
+        listenCalls:
+          description: Прослушивание звонков
+          type: boolean
+        onlineShops:
+          description: Интернет магазины
+          type: boolean
+        ownerAssign:
+          description: Передавать владение аккаунтом
+          type: boolean
+        ownerDataUpdate:
+          description: Редактировать данные владельца
+          type: boolean
+        purchaseControl:
+          description: Управление закупками
+          type: boolean
+        resto$refromRecycleBin:
+          description: Восстанавливать документы
+          type: boolean
+        sendEmail:
+          description: Отправлять почту
+          type: boolean
+        subscriptionControl:
+          description: Управление подпиской
+          type: boolean
+        viewAudit:
+          description: Просматривать аудит
+          type: boolean
+        viewCashFlow:
+          description: Просматривать движение денежных средств
+          type: boolean
+        viewCommissionGoods:
+          description: Просматривать товары на реализации
+          type: boolean
+        viewCompanyCRM:
+          description: Просматривать показатели
+          type: boolean
+        viewCustomerBalanceList:
+          description: Просматривать взаиморасчеты
+          type: boolean
+        viewDashboard:
+          description: Просматривать показатели
+          type: boolean
+        viewMoneyDashboard:
+          description: Видеть остатки денег
+          type: boolean
+        viewProductCostAndProfit:
+          description: "Видеть себестоимость, цену закупки и прибыль товаров"
+          type: boolean
+        viewProfitAndLoss:
+          description: Просматривать прибыль и убытки
+          type: boolean
+        viewPurchaseFunnel:
+          description: Просматривать воронку продаж
+          type: boolean
+        viewRecycleBin:
+          description: Просматривать корзину
+          type: boolean
+        viewSaleProfit:
+          description: Просматривать прибыльность
+          type: boolean
+        viewSerialNumbers:
+          description: Просматривать серийные номера
+          type: boolean
+        viewStockReport:
+          description: Просматривать остатки по товарам
+          type: boolean
+        viewTurnover:
+          description: Просматривать обороты
+          type: boolean
+        GTINList:
+          $ref: "#/components/schemas/Permissions"
+        accountAdjustment:
+          $ref: "#/components/schemas/Permissions"
+        bonusTransaction:
+          $ref: "#/components/schemas/Permissions"
+        cashIn:
+          $ref: "#/components/schemas/Permissions"
+        cashOut:
+          $ref: "#/components/schemas/Permissions"
+        cashboxAdjustment:
+          $ref: "#/components/schemas/Permissions"
+        commissionReportIn:
+          $ref: "#/components/schemas/Permissions"
+        commissionReportOut:
+          $ref: "#/components/schemas/Permissions"
+        company:
+          $ref: "#/components/schemas/Permissions"
+        contract:
+          $ref: "#/components/schemas/Permissions"
+        counterpartyAdjustment:
+          $ref: "#/components/schemas/Permissions"
+        country:
+          $ref: "#/components/schemas/Permissions"
+        crptCancellation:
+          $ref: "#/components/schemas/Permissions"
+        crptPackageCreation:
+          $ref: "#/components/schemas/Permissions"
+        crptPackageDisaggregation:
+          $ref: "#/components/schemas/Permissions"
+        crptPackageItemRemoval:
+          $ref: "#/components/schemas/Permissions"
+        currency:
+          $ref: "#/components/schemas/Permissions"
+        customEntity:
+          $ref: "#/components/schemas/Permissions"
+        customerOrder:
+          $ref: "#/components/schemas/Permissions"
+        demand:
+          $ref: "#/components/schemas/Permissions"
+        emissionOrder:
+          $ref: "#/components/schemas/Permissions"
+        utilizationReport:
+          $ref: "#/components/schemas/Permissions"
+        atkAggregation:
+          $ref: "#/components/schemas/Permissions"
+        retireOrderOSU:
+          $ref: "#/components/schemas/Permissions"
+        employee:
+          $ref: "#/components/schemas/Permissions"
+        enrollOrder:
+          $ref: "#/components/schemas/Permissions"
+        enter:
+          $ref: "#/components/schemas/Permissions"
+        factureIn:
+          $ref: "#/components/schemas/Permissions"
+        factureOut:
+          $ref: "#/components/schemas/Permissions"
+        good:
+          $ref: "#/components/schemas/Permissions"
+        internalOrder:
+          $ref: "#/components/schemas/Permissions"
+        inventory:
+          $ref: "#/components/schemas/Permissions"
+        invoiceIn:
+          $ref: "#/components/schemas/Permissions"
+        invoiceOut:
+          $ref: "#/components/schemas/Permissions"
+        loss:
+          $ref: "#/components/schemas/Permissions"
+        move:
+          $ref: "#/components/schemas/Permissions"
+        myCompany:
+          $ref: "#/components/schemas/Permissions"
+        paymentIn:
+          $ref: "#/components/schemas/Permissions"
+        paymentOut:
+          $ref: "#/components/schemas/Permissions"
+        prepayment:
+          $ref: "#/components/schemas/Permissions"
+        prepaymentReturn:
+          $ref: "#/components/schemas/Permissions"
+        priceList:
+          $ref: "#/components/schemas/Permissions"
+        processing:
+          $ref: "#/components/schemas/Permissions"
+        processingOrder:
+          $ref: "#/components/schemas/Permissions"
+        processingPlan:
+          $ref: "#/components/schemas/Permissions"
+        processingStage:
+          $ref: "#/components/schemas/Permissions"
+        processingProcess:
+          $ref: "#/components/schemas/Permissions"
+        productionTask:
+          $ref: "#/components/schemas/Permissions"
+        productionStageCompletion:
+          $ref: "#/components/schemas/Permissions"
+        project:
+          $ref: "#/components/schemas/Permissions"
+        purchaseOrder:
+          $ref: "#/components/schemas/Permissions"
+        purchaseReturn:
+          $ref: "#/components/schemas/Permissions"
+        remainsOrder:
+          $ref: "#/components/schemas/Permissions"
+        remarkingOrder:
+          $ref: "#/components/schemas/Permissions"
+        retailDemand:
+          $ref: "#/components/schemas/Permissions"
+        retailDrawerCashIn:
+          $ref: "#/components/schemas/Permissions"
+        retailDrawerCashOut:
+          $ref: "#/components/schemas/Permissions"
+        retailSalesReturn:
+          $ref: "#/components/schemas/Permissions"
+        retailShift:
+          $ref: "#/components/schemas/Permissions"
+        retailStore:
+          $ref: "#/components/schemas/Permissions"
+        retireOrder:
+          $ref: "#/components/schemas/Permissions"
+        salesReturn:
+          $ref: "#/components/schemas/Permissions"
+        salesChannel:
+          $ref: "#/components/schemas/Permissions"
+        script:
+          $ref: "#/components/schemas/ScriptPermissions"
+        scriptTemplate:
+          $ref: "#/components/schemas/ScriptTemplatePermissions"
+        supply:
+          $ref: "#/components/schemas/Permissions"
+        taxrate:
+          $ref: "#/components/schemas/Permissions"
+        trackingCodeList:
+          $ref: "#/components/schemas/Permissions"
+        uom:
+          $ref: "#/components/schemas/Permissions"
+        warehouse:
+          $ref: "#/components/schemas/Permissions"
       type: object
     Declaration_inner:
       description: Запись о прослеживаемости импортных товаров
@@ -77688,24 +81151,17 @@ components:
           format: double
           type: number
       type: object
-    DiscountList_rows_inner:
-      anyOf:
-      - $ref: "#/components/schemas/Discount_1"
-      - $ref: "#/components/schemas/PersonalDiscount_1"
-      - $ref: "#/components/schemas/SpecialPriceDiscount_1"
-      - $ref: "#/components/schemas/AccumulationDiscount_1"
-      - $ref: "#/components/schemas/BonusProgram_1"
-      description: |
-        Логический вид строки в JSON задаётся `meta.type` (см. описание массива `rows` выше).
-
-        Здесь `anyOf`, а не `oneOf`: у вариантов общий базис (`DiscountBase`), минимальный объект
-        одновременно удовлетворяет нескольким веткам, и строгие валидаторы (в т.ч. Schemathesis)
-        падают с ошибкой «валидно более чем по одной схеме `oneOf`».
-
-        Сгенерированный PHP SDK для такого `items` обычно выдаёт один **объединённый** тип строки
-        (все поля вариантов в одной модели), а не `Discount` / `PersonalDiscount` на элемент.
-        Отображение в доменные классы по `meta.type` — ответственность приложения (ручной разбор
-        или повторный decode в нужную модель).
+    SpecialPriceDiscount_specialPrice:
+      description: Спец. цена (используется при usePriceType=true)
+      nullable: true
+      properties:
+        value:
+          description: Значение цены
+          format: int32
+          type: integer
+        priceType:
+          $ref: "#/components/schemas/PriceType"
+      type: object
   securitySchemes:
     basicAuth:
       description: Basic аутентификация с логином и паролем

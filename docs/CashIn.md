@@ -36,8 +36,8 @@
 |**rate** | [**CurrencyRate**](CurrencyRate.md) |  |  [optional] |
 |**organization** | [**Organization**](Organization.md) |  |  [optional] |
 |**agent** | [**Agent**](Agent.md) | Метаданные контрагента или юрлица |  [optional] |
-|**sum** | **Double** | Сумма Приходного ордера в установленной валюте |  [optional] [readonly] |
-|**vatSum** | **Double** | Сумма НДС |  [optional] [readonly] |
+|**sum** | **Double** | Сумма Приходного ордера в установленной валюте |  [optional] |
+|**vatSum** | **Double** | Сумма НДС |  [optional] |
 |**factureOut** | [**FactureOut**](FactureOut.md) | Счет-фактура выданный, с которым связан этот платеж |  [optional] |
 |**operations** | [**List&lt;FinanceInOperationAbstract&gt;**](FinanceInOperationAbstract.md) | Связанные операции. Допустимые типы по &#x60;meta.type&#x60;: customerorder, purchasereturn, demand, invoiceout, commissionreportin, retailshift.  |  [optional] |
 

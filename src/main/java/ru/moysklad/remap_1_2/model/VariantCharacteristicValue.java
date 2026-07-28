@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   VariantCharacteristicValue.JSON_PROPERTY_NAME,
   VariantCharacteristicValue.JSON_PROPERTY_VALUE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
 public class VariantCharacteristicValue {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -65,12 +65,10 @@ public class VariantCharacteristicValue {
    */
   @JsonCreator
   public VariantCharacteristicValue(
-    @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id, 
-    @JsonProperty(value = JSON_PROPERTY_VALUE, required = false) String value
+    @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id
   ) {
     this();
     this.id = id;
-    this.value = value;
   }
 
   public VariantCharacteristicValue meta(@javax.annotation.Nullable Meta meta) {
@@ -155,6 +153,13 @@ public class VariantCharacteristicValue {
   }
 
 
+  public VariantCharacteristicValue value(@javax.annotation.Nullable String value) {
+    
+    this.value = value;
+    return this;
+  }
+
+
   /**
    * Значение Характеристики
    * @return value
@@ -171,6 +176,12 @@ public class VariantCharacteristicValue {
 
   
 
+
+  @JsonProperty(JSON_PROPERTY_VALUE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setValue(@javax.annotation.Nullable String value) {
+    this.value = value;
+  }
 
 
   @Override

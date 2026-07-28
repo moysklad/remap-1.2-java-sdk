@@ -87,7 +87,7 @@ import java.util.StringJoiner;
   Processing.JSON_PROPERTY_QUANTITY,
   Processing.JSON_PROPERTY_PROCESSING_SUM
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
 public class Processing extends EntityWithMeta {
   public static Processing createWithMeta(UUID id) {
     Processing o = new Processing();

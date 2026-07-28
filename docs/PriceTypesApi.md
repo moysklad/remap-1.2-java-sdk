@@ -13,7 +13,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 
 ## createPriceTypesBatch
 
-> List&lt;BatchResponseEntity&gt; createPriceTypesBatch(priceType, accept, acceptEncoding, contentType)
+> List&lt;PriceType&gt; createPriceTypesBatch(priceType, accept, acceptEncoding, contentType)
 
 Создать или изменить типы цен
 
@@ -50,7 +50,7 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<BatchResponseEntity> result = apiInstance.createPriceTypesBatch(priceType, accept, acceptEncoding, contentType);
+            List<PriceType> result = apiInstance.createPriceTypesBatch(priceType, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PriceTypesApi#createPriceTypesBatch");
@@ -75,7 +75,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
+[**List&lt;PriceType&gt;**](PriceType.md)
 
 ### Authorization
 

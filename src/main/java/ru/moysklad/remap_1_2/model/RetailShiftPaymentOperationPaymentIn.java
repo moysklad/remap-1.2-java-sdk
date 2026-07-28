@@ -92,7 +92,7 @@ import java.util.StringJoiner;
   RetailShiftPaymentOperationPaymentIn.JSON_PROPERTY_FACTURE_OUT,
   RetailShiftPaymentOperationPaymentIn.JSON_PROPERTY_OPERATIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailShiftPaymentOperationPaymentIn extends RetailShiftPaymentOperation {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -254,8 +254,7 @@ public class RetailShiftPaymentOperationPaymentIn extends RetailShiftPaymentOper
     @JsonProperty(value = JSON_PROPERTY_PRINTED, required = false) Boolean printed, 
     @JsonProperty(value = JSON_PROPERTY_PUBLISHED, required = false) Boolean published, 
     @JsonProperty(value = JSON_PROPERTY_SHARED, required = false) Boolean shared, 
-    @JsonProperty(value = JSON_PROPERTY_SUM, required = false) Double sum, 
-    @JsonProperty(value = JSON_PROPERTY_VAT_SUM, required = false) Double vatSum
+    @JsonProperty(value = JSON_PROPERTY_SUM, required = false) Double sum
   ) {
     this();
     this.id = id;
@@ -267,7 +266,6 @@ public class RetailShiftPaymentOperationPaymentIn extends RetailShiftPaymentOper
     this.published = published;
     this.shared = shared;
     this.sum = sum;
-    this.vatSum = vatSum;
   }
 
   public RetailShiftPaymentOperationPaymentIn meta(@javax.annotation.Nullable Meta meta) {
@@ -1234,6 +1232,13 @@ public class RetailShiftPaymentOperationPaymentIn extends RetailShiftPaymentOper
 
 
 
+  public RetailShiftPaymentOperationPaymentIn vatSum(@javax.annotation.Nullable Double vatSum) {
+    
+    this.vatSum = vatSum;
+    return this;
+  }
+
+
   /**
    * Сумма НДС
    * minimum: 0
@@ -1251,6 +1256,12 @@ public class RetailShiftPaymentOperationPaymentIn extends RetailShiftPaymentOper
 
   
 
+
+  @JsonProperty(JSON_PROPERTY_VAT_SUM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setVatSum(@javax.annotation.Nullable Double vatSum) {
+    this.vatSum = vatSum;
+  }
 
 
   public RetailShiftPaymentOperationPaymentIn incomingNumber(@javax.annotation.Nullable String incomingNumber) {

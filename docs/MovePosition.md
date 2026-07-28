@@ -11,7 +11,7 @@
 |**meta** | [**Meta**](Meta.md) |  |  [optional] |
 |**id** | **UUID** | ID позиции |  [optional] [readonly] |
 |**accountId** | **UUID** | ID учетной записи |  [optional] [readonly] |
-|**assortment** | [**Assortment**](Assortment.md) |  |  [optional] |
+|**assortment** | [**ProductMarker**](ProductMarker.md) | Метаданные товара/услуги/партии/модификации, которую представляет собой позиция |  [optional] |
 |**overhead** | **Integer** | Накладные расходы по позиции. Если позиции Перемещения не заданы, накладные расходы на уровне документа задать нельзя.  |  [optional] [readonly] |
 |**pack** | [**Pack**](Pack.md) | Упаковка Товара |  [optional] |
 |**price** | **Double** | Цена товара/услуги в копейках |  [optional] |

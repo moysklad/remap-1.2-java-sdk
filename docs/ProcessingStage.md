@@ -21,7 +21,7 @@
 |**archived** | **Boolean** | Добавлен ли Этап производства в архив |  [optional] |
 |**allPerformers** | **Boolean** | Признак доступности назначения на этап любого сотрудника |  [optional] |
 |**distributionRequired** | **Boolean** | Признак видимости заданий для исполнителей в веб-приложении МойСклад Производство |  [optional] |
-|**performers** | [**List&lt;Employee&gt;**](Employee.md) | Метаданные возможных исполнителей |  [optional] |
+|**performers** | [**List&lt;Agent&gt;**](Agent.md) | Метаданные возможных исполнителей |  [optional] |
 |**materialStore** | [**Store**](Store.md) | Метаданные склада материалов |  [optional] [readonly] |
 |**standardHourCost** | **Double** | Стоимость нормо-часа |  [optional] |
 

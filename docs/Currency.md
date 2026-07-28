@@ -10,7 +10,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**meta** | [**Meta**](Meta.md) |  |  [optional] |
 |**id** | **UUID** | ID валюты |  [optional] [readonly] |
-|**system** | **Boolean** | Системная валюта |  [optional] [readonly] |
+|**system** | **Boolean** | Системная валюта |  [optional] |
 |**name** | **String** | Краткое наименование валюты |  [optional] |
 |**fullName** | **String** | Полное наименование валюты |  [optional] |
 |**code** | **String** | Цифровой код валюты |  [optional] |

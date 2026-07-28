@@ -24,13 +24,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
-import org.openapitools.jackson.nullable.JsonNullable;
-import ru.moysklad.remap_1_2.model.DiscountAssortmentItem;
 import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.ProductFolder;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import javax.validation.constraints.*;
@@ -43,19 +38,12 @@ import java.util.StringJoiner;
  * PersonalDiscount
  */
 @JsonPropertyOrder({
-  PersonalDiscount.JSON_PROPERTY_ASSORTMENT,
-  PersonalDiscount.JSON_PROPERTY_PRODUCT_FOLDERS,
-  PersonalDiscount.JSON_PROPERTY_ALL_PRODUCTS,
   PersonalDiscount.JSON_PROPERTY_ID,
   PersonalDiscount.JSON_PROPERTY_META,
-  PersonalDiscount.JSON_PROPERTY_ACCOUNT_ID,
-  PersonalDiscount.JSON_PROPERTY_NAME,
-  PersonalDiscount.JSON_PROPERTY_ACTIVE,
-  PersonalDiscount.JSON_PROPERTY_ALL_AGENTS,
-  PersonalDiscount.JSON_PROPERTY_AGENT_TAGS
+  PersonalDiscount.JSON_PROPERTY_PRODUCT_FOLDERS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
-public class PersonalDiscount {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
+public class PersonalDiscount extends DiscountAbstract {
   public static PersonalDiscount createWithMeta(UUID id) {
     PersonalDiscount o = new PersonalDiscount();
     Meta meta = new Meta();
@@ -71,18 +59,6 @@ public class PersonalDiscount {
     return o;
   }
 
-  public static final String JSON_PROPERTY_ASSORTMENT = "assortment";
-  @javax.annotation.Nullable
-  private List<@Valid DiscountAssortmentItem> assortment = new ArrayList<>();
-
-  public static final String JSON_PROPERTY_PRODUCT_FOLDERS = "productFolders";
-  @javax.annotation.Nullable
-  private List<ProductFolder> productFolders = new ArrayList<>();
-
-  public static final String JSON_PROPERTY_ALL_PRODUCTS = "allProducts";
-  @javax.annotation.Nullable
-  private Boolean allProducts;
-
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable
   private UUID id;
@@ -91,25 +67,9 @@ public class PersonalDiscount {
   @javax.annotation.Nullable
   private Meta meta;
 
-  public static final String JSON_PROPERTY_ACCOUNT_ID = "accountId";
+  public static final String JSON_PROPERTY_PRODUCT_FOLDERS = "productFolders";
   @javax.annotation.Nullable
-  private UUID accountId;
-
-  public static final String JSON_PROPERTY_NAME = "name";
-  @javax.annotation.Nullable
-  private String name;
-
-  public static final String JSON_PROPERTY_ACTIVE = "active";
-  @javax.annotation.Nullable
-  private Boolean active;
-
-  public static final String JSON_PROPERTY_ALL_AGENTS = "allAgents";
-  @javax.annotation.Nullable
-  private Boolean allAgents;
-
-  public static final String JSON_PROPERTY_AGENT_TAGS = "agentTags";
-  @javax.annotation.Nullable
-  private JsonNullable<List<String>> agentTags = JsonNullable.<List<String>>undefined();
+  private List<ProductFolder> productFolders = new ArrayList<>();
 
   public PersonalDiscount() {
   }
@@ -118,124 +78,11 @@ public class PersonalDiscount {
    */
   @JsonCreator
   public PersonalDiscount(
-    @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id, 
-    @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId
+    @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id
   ) {
     this();
     this.id = id;
-    this.accountId = accountId;
   }
-
-  public PersonalDiscount assortment(@javax.annotation.Nullable List<@Valid DiscountAssortmentItem> assortment) {
-    
-    this.assortment = assortment;
-    return this;
-  }
-
-
-  public PersonalDiscount addAssortmentItem(DiscountAssortmentItem assortmentItem) {
-    if (this.assortment == null) {
-      this.assortment = new ArrayList<>();
-    }
-    this.assortment.add(assortmentItem);
-    return this;
-  }
-
-  /**
-   * Товары, услуги и модификации со скидкой
-   * @return assortment
-   */
-  @javax.annotation.Nullable
-  @Valid
-
-
-  @JsonProperty(JSON_PROPERTY_ASSORTMENT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public List<@Valid DiscountAssortmentItem> getAssortment() {
-    return assortment;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_ASSORTMENT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAssortment(@javax.annotation.Nullable List<@Valid DiscountAssortmentItem> assortment) {
-    this.assortment = assortment;
-  }
-
-
-  public PersonalDiscount productFolders(@javax.annotation.Nullable List<ProductFolder> productFolders) {
-    
-    this.productFolders = productFolders;
-    return this;
-  }
-
-
-  public PersonalDiscount addProductFoldersItem(ProductFolder productFoldersItem) {
-    if (this.productFolders == null) {
-      this.productFolders = new ArrayList<>();
-    }
-    this.productFolders.add(productFoldersItem);
-    return this;
-  }
-
-  /**
-   * Группы товаров со скидкой
-   * @return productFolders
-   */
-  @javax.annotation.Nullable
-  @Valid
-
-
-  @JsonProperty(JSON_PROPERTY_PRODUCT_FOLDERS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public List<ProductFolder> getProductFolders() {
-    return productFolders;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_PRODUCT_FOLDERS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setProductFolders(@javax.annotation.Nullable List<ProductFolder> productFolders) {
-    this.productFolders = productFolders;
-  }
-
-
-  public PersonalDiscount allProducts(@javax.annotation.Nullable Boolean allProducts) {
-    
-    this.allProducts = allProducts;
-    return this;
-  }
-
-
-  /**
-   * Для всех ли товаров скидка
-   * @return allProducts
-   */
-  @javax.annotation.Nullable
-
-
-  @JsonProperty(JSON_PROPERTY_ALL_PRODUCTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getAllProducts() {
-    return allProducts;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_ALL_PRODUCTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAllProducts(@javax.annotation.Nullable Boolean allProducts) {
-    this.allProducts = allProducts;
-  }
-
 
   /**
    * ID дополнительного поля
@@ -288,167 +135,43 @@ public class PersonalDiscount {
   }
 
 
+  public PersonalDiscount productFolders(@javax.annotation.Nullable List<ProductFolder> productFolders) {
+    
+    this.productFolders = productFolders;
+    return this;
+  }
+
+
+  public PersonalDiscount addProductFoldersItem(ProductFolder productFoldersItem) {
+    if (this.productFolders == null) {
+      this.productFolders = new ArrayList<>();
+    }
+    this.productFolders.add(productFoldersItem);
+    return this;
+  }
+
   /**
-   * ID учетной записи
-   * @return accountId
+   * Группы товаров со скидкой
+   * @return productFolders
    */
   @javax.annotation.Nullable
   @Valid
 
 
-  @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
+  @JsonProperty(JSON_PROPERTY_PRODUCT_FOLDERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public UUID getAccountId() {
-    return accountId;
+  public List<ProductFolder> getProductFolders() {
+    return productFolders;
   }
 
   
 
 
-
-  public PersonalDiscount name(@javax.annotation.Nullable String name) {
-    
-    this.name = name;
-    return this;
-  }
-
-
-  /**
-   * Наименование товара
-   * @return name
-   */
-  @javax.annotation.Nullable
- @Size(max=255)
-
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(JSON_PROPERTY_PRODUCT_FOLDERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getName() {
-    return name;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(@javax.annotation.Nullable String name) {
-    this.name = name;
-  }
-
-
-  public PersonalDiscount active(@javax.annotation.Nullable Boolean active) {
-    
-    this.active = active;
-    return this;
-  }
-
-
-  /**
-   * Включена ли скидка
-   * @return active
-   */
-  @javax.annotation.Nullable
-
-
-  @JsonProperty(JSON_PROPERTY_ACTIVE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getActive() {
-    return active;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_ACTIVE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setActive(@javax.annotation.Nullable Boolean active) {
-    this.active = active;
-  }
-
-
-  public PersonalDiscount allAgents(@javax.annotation.Nullable Boolean allAgents) {
-    
-    this.allAgents = allAgents;
-    return this;
-  }
-
-
-  /**
-   * Для всех ли агентов скидка
-   * @return allAgents
-   */
-  @javax.annotation.Nullable
-
-
-  @JsonProperty(JSON_PROPERTY_ALL_AGENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getAllAgents() {
-    return allAgents;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_ALL_AGENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAllAgents(@javax.annotation.Nullable Boolean allAgents) {
-    this.allAgents = allAgents;
-  }
-
-
-  public PersonalDiscount agentTags(@javax.annotation.Nullable List<String> agentTags) {
-    this.agentTags = JsonNullable.<List<String>>of(agentTags);
-    
-    return this;
-  }
-
-
-  public PersonalDiscount addAgentTagsItem(String agentTagsItem) {
-    if (this.agentTags == null || !this.agentTags.isPresent()) {
-      this.agentTags = JsonNullable.<List<String>>of(new ArrayList<>());
-    }
-    try {
-      this.agentTags.get().add(agentTagsItem);
-    } catch (java.util.NoSuchElementException e) {
-      // this can never happen, as we make sure above that the value is present
-    }
-    return this;
-  }
-
-  /**
-   * Тэги агентов
-   * @return agentTags
-   */
-  @javax.annotation.Nullable
-
-
-  @JsonIgnore
-
-  public List<String> getAgentTags() {
-        return agentTags.orElse(null);
-  }
-
-  
-
-  @JsonProperty(JSON_PROPERTY_AGENT_TAGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-
-  public JsonNullable<List<String>> getAgentTags_JsonNullable() {
-    return agentTags;
-  }
-  
-  @JsonProperty(value = JSON_PROPERTY_AGENT_TAGS, required = false)
-  public void setAgentTags_JsonNullable(JsonNullable<List<String>> agentTags) {
-    this.agentTags = agentTags;
-  }
-
-  public void setAgentTags(@javax.annotation.Nullable List<String> agentTags) {
-    this.agentTags = JsonNullable.<List<String>>of(agentTags);
+  public void setProductFolders(@javax.annotation.Nullable List<ProductFolder> productFolders) {
+    this.productFolders = productFolders;
   }
 
 
@@ -461,48 +184,23 @@ public class PersonalDiscount {
       return false;
     }
     PersonalDiscount personalDiscount = (PersonalDiscount) o;
-    return Objects.equals(this.assortment, personalDiscount.assortment) &&
-        Objects.equals(this.productFolders, personalDiscount.productFolders) &&
-        Objects.equals(this.allProducts, personalDiscount.allProducts) &&
-        Objects.equals(this.id, personalDiscount.id) &&
+    return Objects.equals(this.id, personalDiscount.id) &&
         Objects.equals(this.meta, personalDiscount.meta) &&
-        Objects.equals(this.accountId, personalDiscount.accountId) &&
-        Objects.equals(this.name, personalDiscount.name) &&
-        Objects.equals(this.active, personalDiscount.active) &&
-        Objects.equals(this.allAgents, personalDiscount.allAgents) &&
-        equalsNullable(this.agentTags, personalDiscount.agentTags);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+        Objects.equals(this.productFolders, personalDiscount.productFolders);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(assortment, productFolders, allProducts, id, meta, accountId, name, active, allAgents, hashCodeNullable(agentTags));
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, meta, productFolders);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PersonalDiscount {\n");
-    sb.append("    assortment: ").append(toIndentedString(assortment)).append("\n");
-    sb.append("    productFolders: ").append(toIndentedString(productFolders)).append("\n");
-    sb.append("    allProducts: ").append(toIndentedString(allProducts)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
-    sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    active: ").append(toIndentedString(active)).append("\n");
-    sb.append("    allAgents: ").append(toIndentedString(allAgents)).append("\n");
-    sb.append("    agentTags: ").append(toIndentedString(agentTags)).append("\n");
+    sb.append("    productFolders: ").append(toIndentedString(productFolders)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -565,56 +263,12 @@ public class PersonalDiscount {
       joiner.add(getMeta().toUrlQueryString(prefix + "meta" + suffix));
     }
 
-    // add `accountId` to the URL query string
-    if (getAccountId() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%saccountId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAccountId()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
-    }
-
-    // add `name` to the URL query string
-    if (getName() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%sname%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getName()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
-    }
-
-    // add `active` to the URL query string
-    if (getActive() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%sactive%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getActive()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
-    }
-
-    // add `allAgents` to the URL query string
-    if (getAllAgents() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%sallAgents%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAllAgents()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
-    }
-
-    // add `agentTags` to the URL query string
-    if (getAgentTags() != null) {
-      for (int i = 0; i < getAgentTags().size(); i++) {
-        try {
-          joiner.add(String.format(java.util.Locale.ROOT, "%sagentTags%s%s=%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
-              URLEncoder.encode(String.valueOf(getAgentTags().get(i)), "UTF-8").replaceAll("\\+", "%20")));
-        } catch (UnsupportedEncodingException e) {
-          // Should never happen, UTF-8 is always supported
-          throw new RuntimeException(e);
+    // add `productFolders` to the URL query string
+    if (getProductFolders() != null) {
+      for (int i = 0; i < getProductFolders().size(); i++) {
+        if (getProductFolders().get(i) != null) {
+          joiner.add(getProductFolders().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%sproductFolders%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }

@@ -16,14 +16,6 @@
 |**welcomeBonusesValue** | **Integer** | Количество приветственных баллов, начисляемых участникам бонусной программы |  [optional] |
 |**welcomeBonusesMode** | **String** | Условие начисления приветственных баллов. Известные значения описаны в WelcomeBonusesMode |  [optional] |
 |**maxPaidRatePercents** | **Integer** | Максимальный процент оплаты баллами |  [optional] |
-|**allProducts** | **Boolean** | Для всех ли товаров скидка |  [optional] |
-|**id** | **UUID** | ID дополнительного поля |  [optional] [readonly] |
-|**meta** | [**Meta**](Meta.md) |  |  [optional] |
-|**accountId** | **UUID** | ID учетной записи |  [optional] [readonly] |
-|**name** | **String** | Наименование товара |  [optional] |
-|**active** | **Boolean** | Включена ли скидка |  [optional] |
-|**allAgents** | **Boolean** | Для всех ли агентов скидка |  [optional] |
-|**agentTags** | **List&lt;String&gt;** | Тэги агентов |  [optional] |
 
 
 

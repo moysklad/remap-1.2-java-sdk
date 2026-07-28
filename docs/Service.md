@@ -26,7 +26,7 @@
 |**group** | [**Group**](Group.md) |  |  [optional] |
 |**owner** | [**Employee**](Employee.md) | Метаданные владельца (Сотрудника) |  [optional] |
 |**updated** | **String** | Момент последнего обновления сущности |  [optional] [readonly] |
-|**buyPrice** | [**BuyPrice**](BuyPrice.md) |  |  [optional] |
+|**buyPrice** | [**Price**](Price.md) |  |  [optional] |
 |**salePrices** | [**List&lt;SalePrice&gt;**](SalePrice.md) | Цены продажи |  [optional] |
 |**uom** | [**Uom**](Uom.md) | Метаданные единиц измерения |  [optional] |
 |**productFolder** | [**ProductFolder**](ProductFolder.md) | Метаданные группы Услуги |  [optional] |
@@ -35,7 +35,7 @@
 |**paymentItemType** | **String** | Признак предмета расчета. Известные значения описаны в PaymentItemType |  [optional] |
 |**taxSystem** | **String** | Код системы налогообложения. Известные значения описаны в TaxSystem |  [optional] |
 |**attributes** | [**List&lt;AttributeAbstract&gt;**](AttributeAbstract.md) | Дополнительные поля |  [optional] |
-|**minPrice** | [**MinPrice**](MinPrice.md) |  |  [optional] |
+|**minPrice** | [**Price**](Price.md) |  |  [optional] |
 |**syncId** | **UUID** | ID синхронизации |  [optional] |
 
 

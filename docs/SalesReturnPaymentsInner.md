@@ -37,8 +37,8 @@
 |**salesChannel** | [**SalesChannel**](SalesChannel.md) | Метаданные канала продаж |  [optional] |
 |**shared** | **Boolean** | Общий доступ |  [optional] [readonly] |
 |**state** | [**State**](State.md) | Метаданные статуса Расходного ордера |  [optional] |
-|**sum** | **Double** | Сумма расходного ордера в установленной валюте |  [optional] [readonly] |
-|**vatSum** | **Double** | Сумма НДС |  [optional] [readonly] |
+|**sum** | **Double** | Сумма расходного ордера в установленной валюте |  [optional] |
+|**vatSum** | **Double** | Сумма НДС |  [optional] |
 |**factureIn** | [**FactureIn**](FactureIn.md) | Счет-фактура полученный, с которым связан этот платеж |  [optional] |
 |**agentAccount** | [**Account**](Account.md) | Метаданные счета контрагента или юрлица |  [optional] |
 |**organizationAccount** | [**Account**](Account.md) | Метаданные счета юрлица |  [optional] |

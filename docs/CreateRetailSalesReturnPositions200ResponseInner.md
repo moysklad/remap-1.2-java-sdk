@@ -10,7 +10,7 @@
 |**meta** | [**Meta**](Meta.md) |  |  [optional] |
 |**id** | **UUID** | ID позиции |  [optional] [readonly] |
 |**accountId** | **UUID** | ID учетной записи |  [optional] [readonly] |
-|**assortment** | [**Assortment**](Assortment.md) |  |  [optional] |
+|**assortment** | [**ProductMarker**](ProductMarker.md) |  |  [optional] |
 |**cost** | **Integer** | Себестоимость (выводится, если документ был создан без основания) |  [optional] |
 |**discount** | **Double** | Процент скидки или наценки. Наценка указывается отрицательным числом, например &#x60;-10&#x60; задает наценку 10%. |  [optional] |
 |**pack** | [**Pack**](Pack.md) | Упаковка Товара |  [optional] |

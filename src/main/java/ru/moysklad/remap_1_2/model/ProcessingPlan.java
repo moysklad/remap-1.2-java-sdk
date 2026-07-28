@@ -54,6 +54,7 @@ import java.util.StringJoiner;
   ProcessingPlan.JSON_PROPERTY_ACCOUNT_ID,
   ProcessingPlan.JSON_PROPERTY_ARCHIVED,
   ProcessingPlan.JSON_PROPERTY_CODE,
+  ProcessingPlan.JSON_PROPERTY_DESCRIPTION,
   ProcessingPlan.JSON_PROPERTY_COST,
   ProcessingPlan.JSON_PROPERTY_COST_DISTRIBUTION_TYPE,
   ProcessingPlan.JSON_PROPERTY_EXTERNAL_CODE,
@@ -70,7 +71,7 @@ import java.util.StringJoiner;
   ProcessingPlan.JSON_PROPERTY_PRODUCTS,
   ProcessingPlan.JSON_PROPERTY_ATTRIBUTES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingPlan extends EntityWithMeta {
   public static ProcessingPlan createWithMeta(UUID id) {
     ProcessingPlan o = new ProcessingPlan();
@@ -106,6 +107,10 @@ public class ProcessingPlan extends EntityWithMeta {
   public static final String JSON_PROPERTY_CODE = "code";
   @javax.annotation.Nullable
   private String code;
+
+  public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  @javax.annotation.Nullable
+  private JsonNullable<String> description = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_COST = "cost";
   @javax.annotation.Nullable
@@ -317,6 +322,46 @@ public class ProcessingPlan extends EntityWithMeta {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
     this.code = code;
+  }
+
+
+  public ProcessingPlan description(@javax.annotation.Nullable String description) {
+    this.description = JsonNullable.<String>of(description);
+    
+    return this;
+  }
+
+
+  /**
+   * Описание Техкарт
+   * @return description
+   */
+  @javax.annotation.Nullable
+ @Size(max=4096)
+
+  @JsonIgnore
+
+  public String getDescription() {
+        return description.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<String> getDescription_JsonNullable() {
+    return description;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = false)
+  public void setDescription_JsonNullable(JsonNullable<String> description) {
+    this.description = description;
+  }
+
+  public void setDescription(@javax.annotation.Nullable String description) {
+    this.description = JsonNullable.<String>of(description);
   }
 
 
@@ -798,6 +843,7 @@ public class ProcessingPlan extends EntityWithMeta {
         Objects.equals(this.accountId, processingPlan.accountId) &&
         Objects.equals(this.archived, processingPlan.archived) &&
         Objects.equals(this.code, processingPlan.code) &&
+        equalsNullable(this.description, processingPlan.description) &&
         Objects.equals(this.cost, processingPlan.cost) &&
         Objects.equals(this.costDistributionType, processingPlan.costDistributionType) &&
         Objects.equals(this.externalCode, processingPlan.externalCode) &&
@@ -821,7 +867,7 @@ public class ProcessingPlan extends EntityWithMeta {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, archived, code, cost, costDistributionType, externalCode, group, name, hashCodeNullable(owner), parent, pathName, processingProcess, shared, updated, stages, materials, products, hashCodeNullable(attributes));
+    return Objects.hash(meta, id, accountId, archived, code, hashCodeNullable(description), cost, costDistributionType, externalCode, group, name, hashCodeNullable(owner), parent, pathName, processingProcess, shared, updated, stages, materials, products, hashCodeNullable(attributes));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -840,6 +886,7 @@ public class ProcessingPlan extends EntityWithMeta {
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("    archived: ").append(toIndentedString(archived)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    cost: ").append(toIndentedString(cost)).append("\n");
     sb.append("    costDistributionType: ").append(toIndentedString(costDistributionType)).append("\n");
     sb.append("    externalCode: ").append(toIndentedString(externalCode)).append("\n");
@@ -941,6 +988,16 @@ public class ProcessingPlan extends EntityWithMeta {
     if (getCode() != null) {
       try {
         joiner.add(String.format(java.util.Locale.ROOT, "%scode%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCode()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `description` to the URL query string
+    if (getDescription() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sdescription%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDescription()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);

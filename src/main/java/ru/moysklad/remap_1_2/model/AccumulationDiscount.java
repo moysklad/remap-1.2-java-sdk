@@ -24,13 +24,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
-import org.openapitools.jackson.nullable.JsonNullable;
-import ru.moysklad.remap_1_2.model.DiscountAssortmentItem;
+import ru.moysklad.remap_1_2.model.AccumulationDiscountLevelsInner;
 import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.ProductFolder;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import javax.validation.constraints.*;
@@ -43,20 +39,13 @@ import java.util.StringJoiner;
  * AccumulationDiscount
  */
 @JsonPropertyOrder({
-  AccumulationDiscount.JSON_PROPERTY_ASSORTMENT,
-  AccumulationDiscount.JSON_PROPERTY_PRODUCT_FOLDERS,
-  AccumulationDiscount.JSON_PROPERTY_ALL_PRODUCTS,
-  AccumulationDiscount.JSON_PROPERTY_LEVELS,
   AccumulationDiscount.JSON_PROPERTY_ID,
   AccumulationDiscount.JSON_PROPERTY_META,
-  AccumulationDiscount.JSON_PROPERTY_ACCOUNT_ID,
-  AccumulationDiscount.JSON_PROPERTY_NAME,
-  AccumulationDiscount.JSON_PROPERTY_ACTIVE,
-  AccumulationDiscount.JSON_PROPERTY_ALL_AGENTS,
-  AccumulationDiscount.JSON_PROPERTY_AGENT_TAGS
+  AccumulationDiscount.JSON_PROPERTY_PRODUCT_FOLDERS,
+  AccumulationDiscount.JSON_PROPERTY_LEVELS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
-public class AccumulationDiscount {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
+public class AccumulationDiscount extends DiscountAbstract {
   public static AccumulationDiscount createWithMeta(UUID id) {
     AccumulationDiscount o = new AccumulationDiscount();
     Meta meta = new Meta();
@@ -72,22 +61,6 @@ public class AccumulationDiscount {
     return o;
   }
 
-  public static final String JSON_PROPERTY_ASSORTMENT = "assortment";
-  @javax.annotation.Nullable
-  private List<@Valid DiscountAssortmentItem> assortment = new ArrayList<>();
-
-  public static final String JSON_PROPERTY_PRODUCT_FOLDERS = "productFolders";
-  @javax.annotation.Nullable
-  private List<ProductFolder> productFolders = new ArrayList<>();
-
-  public static final String JSON_PROPERTY_ALL_PRODUCTS = "allProducts";
-  @javax.annotation.Nullable
-  private Boolean allProducts;
-
-  public static final String JSON_PROPERTY_LEVELS = "levels";
-  @javax.annotation.Nullable
-  private List<Object> levels = new ArrayList<>();
-
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable
   private UUID id;
@@ -96,25 +69,13 @@ public class AccumulationDiscount {
   @javax.annotation.Nullable
   private Meta meta;
 
-  public static final String JSON_PROPERTY_ACCOUNT_ID = "accountId";
+  public static final String JSON_PROPERTY_PRODUCT_FOLDERS = "productFolders";
   @javax.annotation.Nullable
-  private UUID accountId;
+  private List<ProductFolder> productFolders = new ArrayList<>();
 
-  public static final String JSON_PROPERTY_NAME = "name";
+  public static final String JSON_PROPERTY_LEVELS = "levels";
   @javax.annotation.Nullable
-  private String name;
-
-  public static final String JSON_PROPERTY_ACTIVE = "active";
-  @javax.annotation.Nullable
-  private Boolean active;
-
-  public static final String JSON_PROPERTY_ALL_AGENTS = "allAgents";
-  @javax.annotation.Nullable
-  private Boolean allAgents;
-
-  public static final String JSON_PROPERTY_AGENT_TAGS = "agentTags";
-  @javax.annotation.Nullable
-  private JsonNullable<List<String>> agentTags = JsonNullable.<List<String>>undefined();
+  private List<@Valid AccumulationDiscountLevelsInner> levels = new ArrayList<>();
 
   public AccumulationDiscount() {
   }
@@ -123,163 +84,11 @@ public class AccumulationDiscount {
    */
   @JsonCreator
   public AccumulationDiscount(
-    @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id, 
-    @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId
+    @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id
   ) {
     this();
     this.id = id;
-    this.accountId = accountId;
   }
-
-  public AccumulationDiscount assortment(@javax.annotation.Nullable List<@Valid DiscountAssortmentItem> assortment) {
-    
-    this.assortment = assortment;
-    return this;
-  }
-
-
-  public AccumulationDiscount addAssortmentItem(DiscountAssortmentItem assortmentItem) {
-    if (this.assortment == null) {
-      this.assortment = new ArrayList<>();
-    }
-    this.assortment.add(assortmentItem);
-    return this;
-  }
-
-  /**
-   * Товары, услуги и модификации со скидкой
-   * @return assortment
-   */
-  @javax.annotation.Nullable
-  @Valid
-
-
-  @JsonProperty(JSON_PROPERTY_ASSORTMENT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public List<@Valid DiscountAssortmentItem> getAssortment() {
-    return assortment;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_ASSORTMENT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAssortment(@javax.annotation.Nullable List<@Valid DiscountAssortmentItem> assortment) {
-    this.assortment = assortment;
-  }
-
-
-  public AccumulationDiscount productFolders(@javax.annotation.Nullable List<ProductFolder> productFolders) {
-    
-    this.productFolders = productFolders;
-    return this;
-  }
-
-
-  public AccumulationDiscount addProductFoldersItem(ProductFolder productFoldersItem) {
-    if (this.productFolders == null) {
-      this.productFolders = new ArrayList<>();
-    }
-    this.productFolders.add(productFoldersItem);
-    return this;
-  }
-
-  /**
-   * Группы товаров со скидкой
-   * @return productFolders
-   */
-  @javax.annotation.Nullable
-  @Valid
-
-
-  @JsonProperty(JSON_PROPERTY_PRODUCT_FOLDERS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public List<ProductFolder> getProductFolders() {
-    return productFolders;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_PRODUCT_FOLDERS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setProductFolders(@javax.annotation.Nullable List<ProductFolder> productFolders) {
-    this.productFolders = productFolders;
-  }
-
-
-  public AccumulationDiscount allProducts(@javax.annotation.Nullable Boolean allProducts) {
-    
-    this.allProducts = allProducts;
-    return this;
-  }
-
-
-  /**
-   * Для всех ли товаров скидка
-   * @return allProducts
-   */
-  @javax.annotation.Nullable
-
-
-  @JsonProperty(JSON_PROPERTY_ALL_PRODUCTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getAllProducts() {
-    return allProducts;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_ALL_PRODUCTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAllProducts(@javax.annotation.Nullable Boolean allProducts) {
-    this.allProducts = allProducts;
-  }
-
-
-  public AccumulationDiscount levels(@javax.annotation.Nullable List<Object> levels) {
-    
-    this.levels = levels;
-    return this;
-  }
-
-
-  public AccumulationDiscount addLevelsItem(Object levelsItem) {
-    if (this.levels == null) {
-      this.levels = new ArrayList<>();
-    }
-    this.levels.add(levelsItem);
-    return this;
-  }
-
-  /**
-   * Проценты скидок при определенной сумме продаж
-   * @return levels
-   */
-  @javax.annotation.Nullable
-
-
-  @JsonProperty(JSON_PROPERTY_LEVELS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public List<Object> getLevels() {
-    return levels;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_LEVELS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLevels(@javax.annotation.Nullable List<Object> levels) {
-    this.levels = levels;
-  }
-
 
   /**
    * ID дополнительного поля
@@ -332,167 +141,83 @@ public class AccumulationDiscount {
   }
 
 
+  public AccumulationDiscount productFolders(@javax.annotation.Nullable List<ProductFolder> productFolders) {
+    
+    this.productFolders = productFolders;
+    return this;
+  }
+
+
+  public AccumulationDiscount addProductFoldersItem(ProductFolder productFoldersItem) {
+    if (this.productFolders == null) {
+      this.productFolders = new ArrayList<>();
+    }
+    this.productFolders.add(productFoldersItem);
+    return this;
+  }
+
   /**
-   * ID учетной записи
-   * @return accountId
+   * Группы товаров со скидкой
+   * @return productFolders
    */
   @javax.annotation.Nullable
   @Valid
 
 
-  @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
+  @JsonProperty(JSON_PROPERTY_PRODUCT_FOLDERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public UUID getAccountId() {
-    return accountId;
+  public List<ProductFolder> getProductFolders() {
+    return productFolders;
   }
 
   
 
 
+  @JsonProperty(JSON_PROPERTY_PRODUCT_FOLDERS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setProductFolders(@javax.annotation.Nullable List<ProductFolder> productFolders) {
+    this.productFolders = productFolders;
+  }
 
-  public AccumulationDiscount name(@javax.annotation.Nullable String name) {
+
+  public AccumulationDiscount levels(@javax.annotation.Nullable List<@Valid AccumulationDiscountLevelsInner> levels) {
     
-    this.name = name;
+    this.levels = levels;
     return this;
   }
 
 
-  /**
-   * Наименование товара
-   * @return name
-   */
-  @javax.annotation.Nullable
- @Size(max=255)
-
-  @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getName() {
-    return name;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(@javax.annotation.Nullable String name) {
-    this.name = name;
-  }
-
-
-  public AccumulationDiscount active(@javax.annotation.Nullable Boolean active) {
-    
-    this.active = active;
-    return this;
-  }
-
-
-  /**
-   * Включена ли скидка
-   * @return active
-   */
-  @javax.annotation.Nullable
-
-
-  @JsonProperty(JSON_PROPERTY_ACTIVE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getActive() {
-    return active;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_ACTIVE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setActive(@javax.annotation.Nullable Boolean active) {
-    this.active = active;
-  }
-
-
-  public AccumulationDiscount allAgents(@javax.annotation.Nullable Boolean allAgents) {
-    
-    this.allAgents = allAgents;
-    return this;
-  }
-
-
-  /**
-   * Для всех ли агентов скидка
-   * @return allAgents
-   */
-  @javax.annotation.Nullable
-
-
-  @JsonProperty(JSON_PROPERTY_ALL_AGENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getAllAgents() {
-    return allAgents;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_ALL_AGENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAllAgents(@javax.annotation.Nullable Boolean allAgents) {
-    this.allAgents = allAgents;
-  }
-
-
-  public AccumulationDiscount agentTags(@javax.annotation.Nullable List<String> agentTags) {
-    this.agentTags = JsonNullable.<List<String>>of(agentTags);
-    
-    return this;
-  }
-
-
-  public AccumulationDiscount addAgentTagsItem(String agentTagsItem) {
-    if (this.agentTags == null || !this.agentTags.isPresent()) {
-      this.agentTags = JsonNullable.<List<String>>of(new ArrayList<>());
+  public AccumulationDiscount addLevelsItem(AccumulationDiscountLevelsInner levelsItem) {
+    if (this.levels == null) {
+      this.levels = new ArrayList<>();
     }
-    try {
-      this.agentTags.get().add(agentTagsItem);
-    } catch (java.util.NoSuchElementException e) {
-      // this can never happen, as we make sure above that the value is present
-    }
+    this.levels.add(levelsItem);
     return this;
   }
 
   /**
-   * Тэги агентов
-   * @return agentTags
+   * Проценты скидок при определенной сумме продаж
+   * @return levels
    */
   @javax.annotation.Nullable
+  @Valid
 
 
-  @JsonIgnore
-
-  public List<String> getAgentTags() {
-        return agentTags.orElse(null);
-  }
-
-  
-
-  @JsonProperty(JSON_PROPERTY_AGENT_TAGS)
+  @JsonProperty(JSON_PROPERTY_LEVELS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-
-  public JsonNullable<List<String>> getAgentTags_JsonNullable() {
-    return agentTags;
+  public List<@Valid AccumulationDiscountLevelsInner> getLevels() {
+    return levels;
   }
+
   
-  @JsonProperty(value = JSON_PROPERTY_AGENT_TAGS, required = false)
-  public void setAgentTags_JsonNullable(JsonNullable<List<String>> agentTags) {
-    this.agentTags = agentTags;
-  }
 
-  public void setAgentTags(@javax.annotation.Nullable List<String> agentTags) {
-    this.agentTags = JsonNullable.<List<String>>of(agentTags);
+
+  @JsonProperty(JSON_PROPERTY_LEVELS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setLevels(@javax.annotation.Nullable List<@Valid AccumulationDiscountLevelsInner> levels) {
+    this.levels = levels;
   }
 
 
@@ -505,50 +230,25 @@ public class AccumulationDiscount {
       return false;
     }
     AccumulationDiscount accumulationDiscount = (AccumulationDiscount) o;
-    return Objects.equals(this.assortment, accumulationDiscount.assortment) &&
-        Objects.equals(this.productFolders, accumulationDiscount.productFolders) &&
-        Objects.equals(this.allProducts, accumulationDiscount.allProducts) &&
-        Objects.equals(this.levels, accumulationDiscount.levels) &&
-        Objects.equals(this.id, accumulationDiscount.id) &&
+    return Objects.equals(this.id, accumulationDiscount.id) &&
         Objects.equals(this.meta, accumulationDiscount.meta) &&
-        Objects.equals(this.accountId, accumulationDiscount.accountId) &&
-        Objects.equals(this.name, accumulationDiscount.name) &&
-        Objects.equals(this.active, accumulationDiscount.active) &&
-        Objects.equals(this.allAgents, accumulationDiscount.allAgents) &&
-        equalsNullable(this.agentTags, accumulationDiscount.agentTags);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+        Objects.equals(this.productFolders, accumulationDiscount.productFolders) &&
+        Objects.equals(this.levels, accumulationDiscount.levels);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(assortment, productFolders, allProducts, levels, id, meta, accountId, name, active, allAgents, hashCodeNullable(agentTags));
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, meta, productFolders, levels);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AccumulationDiscount {\n");
-    sb.append("    assortment: ").append(toIndentedString(assortment)).append("\n");
-    sb.append("    productFolders: ").append(toIndentedString(productFolders)).append("\n");
-    sb.append("    allProducts: ").append(toIndentedString(allProducts)).append("\n");
-    sb.append("    levels: ").append(toIndentedString(levels)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
-    sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    active: ").append(toIndentedString(active)).append("\n");
-    sb.append("    allAgents: ").append(toIndentedString(allAgents)).append("\n");
-    sb.append("    agentTags: ").append(toIndentedString(agentTags)).append("\n");
+    sb.append("    productFolders: ").append(toIndentedString(productFolders)).append("\n");
+    sb.append("    levels: ").append(toIndentedString(levels)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -611,56 +311,22 @@ public class AccumulationDiscount {
       joiner.add(getMeta().toUrlQueryString(prefix + "meta" + suffix));
     }
 
-    // add `accountId` to the URL query string
-    if (getAccountId() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%saccountId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAccountId()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
+    // add `productFolders` to the URL query string
+    if (getProductFolders() != null) {
+      for (int i = 0; i < getProductFolders().size(); i++) {
+        if (getProductFolders().get(i) != null) {
+          joiner.add(getProductFolders().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%sproductFolders%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
+        }
       }
     }
 
-    // add `name` to the URL query string
-    if (getName() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%sname%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getName()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
-    }
-
-    // add `active` to the URL query string
-    if (getActive() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%sactive%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getActive()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
-    }
-
-    // add `allAgents` to the URL query string
-    if (getAllAgents() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%sallAgents%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAllAgents()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
-    }
-
-    // add `agentTags` to the URL query string
-    if (getAgentTags() != null) {
-      for (int i = 0; i < getAgentTags().size(); i++) {
-        try {
-          joiner.add(String.format(java.util.Locale.ROOT, "%sagentTags%s%s=%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
-              URLEncoder.encode(String.valueOf(getAgentTags().get(i)), "UTF-8").replaceAll("\\+", "%20")));
-        } catch (UnsupportedEncodingException e) {
-          // Should never happen, UTF-8 is always supported
-          throw new RuntimeException(e);
+    // add `levels` to the URL query string
+    if (getLevels() != null) {
+      for (int i = 0; i < getLevels().size(); i++) {
+        if (getLevels().get(i) != null) {
+          joiner.add(getLevels().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%slevels%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }

@@ -37,6 +37,7 @@ import java.util.StringJoiner;
   ModelFile.JSON_PROPERTY_META,
   ModelFile.JSON_PROPERTY_TITLE,
   ModelFile.JSON_PROPERTY_FILENAME,
+  ModelFile.JSON_PROPERTY_CONTENT,
   ModelFile.JSON_PROPERTY_SIZE,
   ModelFile.JSON_PROPERTY_CREATED,
   ModelFile.JSON_PROPERTY_CREATED_BY,
@@ -44,7 +45,7 @@ import java.util.StringJoiner;
   ModelFile.JSON_PROPERTY_MINIATURE
 })
 @JsonTypeName("File")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
 public class ModelFile {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -58,6 +59,10 @@ public class ModelFile {
   public static final String JSON_PROPERTY_FILENAME = "filename";
   @javax.annotation.Nullable
   private String filename;
+
+  public static final String JSON_PROPERTY_CONTENT = "content";
+  @javax.annotation.Nullable
+  private String content;
 
   public static final String JSON_PROPERTY_SIZE = "size";
   @javax.annotation.Nullable
@@ -185,6 +190,37 @@ public class ModelFile {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFilename(@javax.annotation.Nullable String filename) {
     this.filename = filename;
+  }
+
+
+  public ModelFile content(@javax.annotation.Nullable String content) {
+    
+    this.content = content;
+    return this;
+  }
+
+
+  /**
+   * Файл, закодированный в Base64
+   * @return content
+   */
+  @javax.annotation.Nullable
+
+
+  @JsonProperty(JSON_PROPERTY_CONTENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getContent() {
+    return content;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_CONTENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setContent(@javax.annotation.Nullable String content) {
+    this.content = content;
   }
 
 
@@ -332,6 +368,7 @@ public class ModelFile {
     return Objects.equals(this.meta, _file.meta) &&
         Objects.equals(this.title, _file.title) &&
         Objects.equals(this.filename, _file.filename) &&
+        Objects.equals(this.content, _file.content) &&
         Objects.equals(this.size, _file.size) &&
         Objects.equals(this.created, _file.created) &&
         Objects.equals(this.createdBy, _file.createdBy) &&
@@ -341,7 +378,7 @@ public class ModelFile {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, title, filename, size, created, createdBy, tiny, miniature);
+    return Objects.hash(meta, title, filename, content, size, created, createdBy, tiny, miniature);
   }
 
   @Override
@@ -351,6 +388,7 @@ public class ModelFile {
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    filename: ").append(toIndentedString(filename)).append("\n");
+    sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("    size: ").append(toIndentedString(size)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
@@ -422,6 +460,16 @@ public class ModelFile {
     if (getFilename() != null) {
       try {
         joiner.add(String.format(java.util.Locale.ROOT, "%sfilename%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getFilename()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `content` to the URL query string
+    if (getContent() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%scontent%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getContent()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);

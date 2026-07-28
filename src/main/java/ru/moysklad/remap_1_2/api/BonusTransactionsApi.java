@@ -20,9 +20,8 @@ import ru.moysklad.remap_1_2.BaseApi;
 import ru.moysklad.remap_1_2.Configuration;
 import ru.moysklad.remap_1_2.Pair;
 
+import ru.moysklad.remap_1_2.model.BatchResponseEntity;
 import ru.moysklad.remap_1_2.model.BonusTransaction;
-import ru.moysklad.remap_1_2.model.CreateBonusTransaction200Response;
-import ru.moysklad.remap_1_2.model.CreateBonusTransactionRequest;
 import ru.moysklad.remap_1_2.model.DeleteRowResult;
 import ru.moysklad.remap_1_2.model.ErrorOrArray;
 import java.util.UUID;
@@ -38,7 +37,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class BonusTransactionsApi extends BaseApi {
 
@@ -52,54 +51,54 @@ public class BonusTransactionsApi extends BaseApi {
 
   /**
    * Создать бонусную операцию
-   * Создание бонусной операции и массовое создание/обновление бонусных операций
-   * @param createBonusTransactionRequest  (required)
-   * @return CreateBonusTransaction200Response
+   * Создание новой бонусной операции
+   * @param bonusTransaction  (required)
+   * @return BonusTransaction
    * @throws ApiException if fails to make API call
    */
-  public CreateBonusTransaction200Response createBonusTransaction(@javax.annotation.Nonnull CreateBonusTransactionRequest createBonusTransactionRequest) throws ApiException {
+  public BonusTransaction createBonusTransaction(@javax.annotation.Nonnull BonusTransaction bonusTransaction) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
-    return this.createBonusTransaction(createBonusTransactionRequest, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.createBonusTransaction(bonusTransaction, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
   /**
    * Создать бонусную операцию
-   * Создание бонусной операции и массовое создание/обновление бонусных операций
+   * Создание новой бонусной операции
    
-   * @param createBonusTransactionRequest  (required)
+   * @param bonusTransaction  (required)
    
    
    
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return CreateBonusTransaction200Response
+   * @return BonusTransaction
    * @throws ApiException if fails to make API call
    */
-  public CreateBonusTransaction200Response createBonusTransaction(@javax.annotation.Nonnull CreateBonusTransactionRequest createBonusTransactionRequest, RequestOptions options) throws ApiException {
+  public BonusTransaction createBonusTransaction(@javax.annotation.Nonnull BonusTransaction bonusTransaction, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
-    return this.createBonusTransaction(createBonusTransactionRequest, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.createBonusTransaction(bonusTransaction, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
   /**
    * Создать бонусную операцию
-   * Создание бонусной операции и массовое создание/обновление бонусных операций
-   * @param createBonusTransactionRequest  (required)
+   * Создание новой бонусной операции
+   * @param bonusTransaction  (required)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return CreateBonusTransaction200Response
+   * @return BonusTransaction
    * @throws ApiException if fails to make API call
    */
-  protected CreateBonusTransaction200Response createBonusTransaction(@javax.annotation.Nonnull CreateBonusTransactionRequest createBonusTransactionRequest, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
-    Object localVarPostBody = createBonusTransactionRequest;
+  protected BonusTransaction createBonusTransaction(@javax.annotation.Nonnull BonusTransaction bonusTransaction, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = bonusTransaction;
     
-    // verify the required parameter 'createBonusTransactionRequest' is set
-    if (createBonusTransactionRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'createBonusTransactionRequest' when calling createBonusTransaction");
+    // verify the required parameter 'bonusTransaction' is set
+    if (bonusTransaction == null) {
+      throw new ApiException(400, "Missing the required parameter 'bonusTransaction' when calling createBonusTransaction");
     }
     
     // create path and map variables
@@ -137,7 +136,112 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<CreateBonusTransaction200Response> localVarReturnType = new TypeReference<CreateBonusTransaction200Response>() {};
+    TypeReference<BonusTransaction> localVarReturnType = new TypeReference<BonusTransaction>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Создать или изменить бонусные операции
+   * Создание или изменение нескольких бонусных операций.
+   * @param bonusTransaction  (required)
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<BatchResponseEntity> createBonusTransactionsBatch(@javax.annotation.Nonnull List<@Valid BonusTransaction> bonusTransaction) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createBonusTransactionsBatch(bonusTransaction, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Создать или изменить бонусные операции
+   * Создание или изменение нескольких бонусных операций.
+   
+   * @param bonusTransaction  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<BatchResponseEntity> createBonusTransactionsBatch(@javax.annotation.Nonnull List<@Valid BonusTransaction> bonusTransaction, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createBonusTransactionsBatch(bonusTransaction, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Создать или изменить бонусные операции
+   * Создание или изменение нескольких бонусных операций.
+   * @param bonusTransaction  (required)
+   * @param expand Замена ссылок объектами с помощью expand (optional)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  protected List<BatchResponseEntity> createBonusTransactionsBatch(@javax.annotation.Nonnull List<@Valid BonusTransaction> bonusTransaction, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = bonusTransaction;
+    
+    // verify the required parameter 'bonusTransaction' is set
+    if (bonusTransaction == null) {
+      throw new ApiException(400, "Missing the required parameter 'bonusTransaction' when calling createBonusTransactionsBatch");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/bonustransaction/batch";
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
+    if (accept != null)
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+if (acceptEncoding != null)
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+if (contentType != null)
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+
+    localVarHeaderParams.putAll(additionalHeaders);
+
+    
+    
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

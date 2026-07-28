@@ -10,7 +10,7 @@
 |**meta** | [**Meta**](Meta.md) |  |  [optional] |
 |**id** | **UUID** | ID позиции |  [optional] [readonly] |
 |**accountId** | **UUID** | ID учетной записи |  [optional] [readonly] |
-|**assortment** | [**Assortment**](Assortment.md) |  |  [optional] |
+|**assortment** | [**ProductMarker**](ProductMarker.md) | Метаданные товара/услуги/партии/модификации, которую представляет собой позиция |  [optional] |
 |**country** | [**Country**](Country.md) | Метаданные страны |  [optional] |
 |**gtd** | [**Gtd**](Gtd.md) |  |  [optional] |
 |**overhead** | **Integer** | Накладные расходы |  [optional] [readonly] |

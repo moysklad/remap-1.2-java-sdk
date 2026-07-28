@@ -20,7 +20,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import ru.moysklad.remap_1_2.model.Currency;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import ru.moysklad.remap_1_2.model.Context;
+import ru.moysklad.remap_1_2.model.CustomRole;
+import ru.moysklad.remap_1_2.model.MetaList;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import javax.validation.constraints.*;
@@ -30,87 +35,132 @@ import java.net.URLEncoder;
 import java.util.StringJoiner;
 
 /**
- * Минимальная цена
+ * Список пользовательских ролей
  */
 @JsonPropertyOrder({
-  MinPrice.JSON_PROPERTY_VALUE,
-  MinPrice.JSON_PROPERTY_CURRENCY
+  CustomRoleList.JSON_PROPERTY_CONTEXT,
+  CustomRoleList.JSON_PROPERTY_META,
+  CustomRoleList.JSON_PROPERTY_ROWS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
-public class MinPrice {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
+public class CustomRoleList {
 
-  public static final String JSON_PROPERTY_VALUE = "value";
+  public static final String JSON_PROPERTY_CONTEXT = "context";
   @javax.annotation.Nullable
-  private Float value;
+  private Context context;
 
-  public static final String JSON_PROPERTY_CURRENCY = "currency";
+  public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
-  private Currency currency;
+  private MetaList meta;
 
-  public MinPrice() {
+  public static final String JSON_PROPERTY_ROWS = "rows";
+  @javax.annotation.Nullable
+  private List<CustomRole> rows = new ArrayList<>();
+
+  public CustomRoleList() {
   }
 
-  public MinPrice value(@javax.annotation.Nullable Float value) {
+  public CustomRoleList context(@javax.annotation.Nullable Context context) {
     
-    this.value = value;
+    this.context = context;
     return this;
   }
 
 
   /**
-   * Значение цены
-   * minimum: 0
-   * @return value
-   */
-  @javax.annotation.Nullable
- @DecimalMin("0")
-
-  @JsonProperty(JSON_PROPERTY_VALUE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Float getValue() {
-    return value;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_VALUE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setValue(@javax.annotation.Nullable Float value) {
-    this.value = value;
-  }
-
-
-  public MinPrice currency(@javax.annotation.Nullable Currency currency) {
-    
-    this.currency = currency;
-    return this;
-  }
-
-
-  /**
-   * Get currency
-   * @return currency
+   * Get context
+   * @return context
    */
   @javax.annotation.Nullable
   @Valid
 
 
-  @JsonProperty(JSON_PROPERTY_CURRENCY)
+  @JsonProperty(JSON_PROPERTY_CONTEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Currency getCurrency() {
-    return currency;
+  public Context getContext() {
+    return context;
   }
 
   
 
 
-  @JsonProperty(JSON_PROPERTY_CURRENCY)
+  @JsonProperty(JSON_PROPERTY_CONTEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCurrency(@javax.annotation.Nullable Currency currency) {
-    this.currency = currency;
+  public void setContext(@javax.annotation.Nullable Context context) {
+    this.context = context;
+  }
+
+
+  public CustomRoleList meta(@javax.annotation.Nullable MetaList meta) {
+    
+    this.meta = meta;
+    return this;
+  }
+
+
+  /**
+   * Get meta
+   * @return meta
+   */
+  @javax.annotation.Nullable
+  @Valid
+
+
+  @JsonProperty(JSON_PROPERTY_META)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public MetaList getMeta() {
+    return meta;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_META)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMeta(@javax.annotation.Nullable MetaList meta) {
+    this.meta = meta;
+  }
+
+
+  public CustomRoleList rows(@javax.annotation.Nullable List<CustomRole> rows) {
+    
+    this.rows = rows;
+    return this;
+  }
+
+
+  public CustomRoleList addRowsItem(CustomRole rowsItem) {
+    if (this.rows == null) {
+      this.rows = new ArrayList<>();
+    }
+    this.rows.add(rowsItem);
+    return this;
+  }
+
+  /**
+   * Массив пользовательских ролей
+   * @return rows
+   */
+  @javax.annotation.Nullable
+  @Valid
+
+
+  @JsonProperty(JSON_PROPERTY_ROWS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public List<CustomRole> getRows() {
+    return rows;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_ROWS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRows(@javax.annotation.Nullable List<CustomRole> rows) {
+    this.rows = rows;
   }
 
 
@@ -122,22 +172,24 @@ public class MinPrice {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    MinPrice minPrice = (MinPrice) o;
-    return Objects.equals(this.value, minPrice.value) &&
-        Objects.equals(this.currency, minPrice.currency);
+    CustomRoleList customRoleList = (CustomRoleList) o;
+    return Objects.equals(this.context, customRoleList.context) &&
+        Objects.equals(this.meta, customRoleList.meta) &&
+        Objects.equals(this.rows, customRoleList.rows);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(value, currency);
+    return Objects.hash(context, meta, rows);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class MinPrice {\n");
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    sb.append("class CustomRoleList {\n");
+    sb.append("    context: ").append(toIndentedString(context)).append("\n");
+    sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
+    sb.append("    rows: ").append(toIndentedString(rows)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -185,19 +237,24 @@ public class MinPrice {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `value` to the URL query string
-    if (getValue() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%svalue%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getValue()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
+    // add `context` to the URL query string
+    if (getContext() != null) {
+      joiner.add(getContext().toUrlQueryString(prefix + "context" + suffix));
     }
 
-    // add `currency` to the URL query string
-    if (getCurrency() != null) {
-      joiner.add(getCurrency().toUrlQueryString(prefix + "currency" + suffix));
+    // add `meta` to the URL query string
+    if (getMeta() != null) {
+      joiner.add(getMeta().toUrlQueryString(prefix + "meta" + suffix));
+    }
+
+    // add `rows` to the URL query string
+    if (getRows() != null) {
+      for (int i = 0; i < getRows().size(); i++) {
+        if (getRows().get(i) != null) {
+          joiner.add(getRows().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%srows%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
     }
 
     return joiner.toString();

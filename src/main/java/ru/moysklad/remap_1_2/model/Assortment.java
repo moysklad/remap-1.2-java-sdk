@@ -25,24 +25,24 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
+import ru.moysklad.remap_1_2.model.Agent;
 import ru.moysklad.remap_1_2.model.AttributeAbstract;
 import ru.moysklad.remap_1_2.model.Barcode;
 import ru.moysklad.remap_1_2.model.BundleComponentList;
 import ru.moysklad.remap_1_2.model.BundleOverhead;
-import ru.moysklad.remap_1_2.model.BuyPrice;
-import ru.moysklad.remap_1_2.model.Counterparty;
 import ru.moysklad.remap_1_2.model.Country;
 import ru.moysklad.remap_1_2.model.Employee;
 import ru.moysklad.remap_1_2.model.FileList;
 import ru.moysklad.remap_1_2.model.Group;
 import ru.moysklad.remap_1_2.model.ImageList;
 import ru.moysklad.remap_1_2.model.Meta;
-import ru.moysklad.remap_1_2.model.MinPrice;
 import ru.moysklad.remap_1_2.model.MinimumStockAbstract;
 import ru.moysklad.remap_1_2.model.Pack;
+import ru.moysklad.remap_1_2.model.Price;
 import ru.moysklad.remap_1_2.model.Product;
 import ru.moysklad.remap_1_2.model.ProductAlcoholic;
 import ru.moysklad.remap_1_2.model.ProductFolder;
+import ru.moysklad.remap_1_2.model.ProductMarker;
 import ru.moysklad.remap_1_2.model.SalePrice;
 import ru.moysklad.remap_1_2.model.Uom;
 import ru.moysklad.remap_1_2.model.VariantCharacteristicValue;
@@ -124,7 +124,7 @@ import java.util.StringJoiner;
   Assortment.JSON_PROPERTY_IN_TRANSIT,
   Assortment.JSON_PROPERTY_QUANTITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
 public class Assortment {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -233,7 +233,7 @@ public class Assortment {
 
   public static final String JSON_PROPERTY_BUY_PRICE = "buyPrice";
   @javax.annotation.Nullable
-  private BuyPrice buyPrice;
+  private Price buyPrice;
 
   public static final String JSON_PROPERTY_SALE_PRICES = "salePrices";
   @javax.annotation.Nullable
@@ -241,7 +241,7 @@ public class Assortment {
 
   public static final String JSON_PROPERTY_SUPPLIER = "supplier";
   @javax.annotation.Nullable
-  private JsonNullable<Counterparty> supplier = JsonNullable.<Counterparty>undefined();
+  private Agent supplier;
 
   public static final String JSON_PROPERTY_COUNTRY = "country";
   @javax.annotation.Nullable
@@ -297,7 +297,7 @@ public class Assortment {
 
   public static final String JSON_PROPERTY_MIN_PRICE = "minPrice";
   @javax.annotation.Nullable
-  private MinPrice minPrice;
+  private Price minPrice;
 
   public static final String JSON_PROPERTY_WEIGHED = "weighed";
   @javax.annotation.Nullable
@@ -341,7 +341,7 @@ public class Assortment {
 
   public static final String JSON_PROPERTY_ASSORTMENT = "assortment";
   @javax.annotation.Nullable
-  private Assortment assortment;
+  private ProductMarker assortment;
 
   public static final String JSON_PROPERTY_EXPIRY_DATE = "expiryDate";
   @javax.annotation.Nullable
@@ -1111,7 +1111,7 @@ public class Assortment {
   }
 
 
-  public Assortment buyPrice(@javax.annotation.Nullable BuyPrice buyPrice) {
+  public Assortment buyPrice(@javax.annotation.Nullable Price buyPrice) {
     
     this.buyPrice = buyPrice;
     return this;
@@ -1129,7 +1129,7 @@ public class Assortment {
   @JsonProperty(JSON_PROPERTY_BUY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BuyPrice getBuyPrice() {
+  public Price getBuyPrice() {
     return buyPrice;
   }
 
@@ -1138,7 +1138,7 @@ public class Assortment {
 
   @JsonProperty(JSON_PROPERTY_BUY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBuyPrice(@javax.annotation.Nullable BuyPrice buyPrice) {
+  public void setBuyPrice(@javax.annotation.Nullable Price buyPrice) {
     this.buyPrice = buyPrice;
   }
 
@@ -1196,44 +1196,35 @@ public class Assortment {
   }
 
 
-  public Assortment supplier(@javax.annotation.Nullable Counterparty supplier) {
-    this.supplier = JsonNullable.<Counterparty>of(supplier);
+  public Assortment supplier(@javax.annotation.Nullable Agent supplier) {
     
+    this.supplier = supplier;
     return this;
   }
 
 
   /**
-   * Метаданные контрагента-поставщика
+   * Метаданные контрагента или юрлица
    * @return supplier
    */
   @javax.annotation.Nullable
   @Valid
 
 
-  @JsonIgnore
-
-  public Counterparty getSupplier() {
-        return supplier.orElse(null);
-  }
-
-  
-
   @JsonProperty(JSON_PROPERTY_SUPPLIER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-
-  public JsonNullable<Counterparty> getSupplier_JsonNullable() {
+  public Agent getSupplier() {
     return supplier;
   }
-  
-  @JsonProperty(value = JSON_PROPERTY_SUPPLIER, required = false)
-  public void setSupplier_JsonNullable(JsonNullable<Counterparty> supplier) {
-    this.supplier = supplier;
-  }
 
-  public void setSupplier(@javax.annotation.Nullable Counterparty supplier) {
-    this.supplier = JsonNullable.<Counterparty>of(supplier);
+  
+
+
+  @JsonProperty(JSON_PROPERTY_SUPPLIER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSupplier(@javax.annotation.Nullable Agent supplier) {
+    this.supplier = supplier;
   }
 
 
@@ -1744,7 +1735,7 @@ public class Assortment {
   }
 
 
-  public Assortment minPrice(@javax.annotation.Nullable MinPrice minPrice) {
+  public Assortment minPrice(@javax.annotation.Nullable Price minPrice) {
     
     this.minPrice = minPrice;
     return this;
@@ -1762,7 +1753,7 @@ public class Assortment {
   @JsonProperty(JSON_PROPERTY_MIN_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public MinPrice getMinPrice() {
+  public Price getMinPrice() {
     return minPrice;
   }
 
@@ -1771,7 +1762,7 @@ public class Assortment {
 
   @JsonProperty(JSON_PROPERTY_MIN_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMinPrice(@javax.annotation.Nullable MinPrice minPrice) {
+  public void setMinPrice(@javax.annotation.Nullable Price minPrice) {
     this.minPrice = minPrice;
   }
 
@@ -2133,7 +2124,7 @@ public class Assortment {
   }
 
 
-  public Assortment assortment(@javax.annotation.Nullable Assortment assortment) {
+  public Assortment assortment(@javax.annotation.Nullable ProductMarker assortment) {
     
     this.assortment = assortment;
     return this;
@@ -2141,11 +2132,9 @@ public class Assortment {
 
 
   /**
-   * Get assortment
+   * Метаданные товара/услуги/комплекта/модификации, к которой относится Партия
    * @return assortment
-   * @deprecated
    */
-  @Deprecated
   @javax.annotation.Nullable
   @Valid
 
@@ -2153,7 +2142,7 @@ public class Assortment {
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Assortment getAssortment() {
+  public ProductMarker getAssortment() {
     return assortment;
   }
 
@@ -2162,7 +2151,7 @@ public class Assortment {
 
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAssortment(@javax.annotation.Nullable Assortment assortment) {
+  public void setAssortment(@javax.annotation.Nullable ProductMarker assortment) {
     this.assortment = assortment;
   }
 
@@ -2390,7 +2379,7 @@ public class Assortment {
         Objects.equals(this.volume, assortment.volume) &&
         Objects.equals(this.buyPrice, assortment.buyPrice) &&
         equalsNullable(this.salePrices, assortment.salePrices) &&
-        equalsNullable(this.supplier, assortment.supplier) &&
+        Objects.equals(this.supplier, assortment.supplier) &&
         equalsNullable(this.country, assortment.country) &&
         equalsNullable(this.uom, assortment.uom) &&
         equalsNullable(this.productFolder, assortment.productFolder) &&
@@ -2430,7 +2419,7 @@ public class Assortment {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, alcoholic, archived, tobacco, name, code, externalCode, pathName, article, hashCodeNullable(description), vat, vatEnabled, useParentVat, effectiveVat, effectiveVatEnabled, discountProhibited, variantsCount, isSerialTrackable, shared, group, hashCodeNullable(owner), updated, weight, volume, buyPrice, hashCodeNullable(salePrices), hashCodeNullable(supplier), hashCodeNullable(country), hashCodeNullable(uom), hashCodeNullable(productFolder), images, hashCodeNullable(files), hashCodeNullable(barcodes), hashCodeNullable(packs), trackingType, tnved, paymentItemType, taxSystem, hashCodeNullable(attributes), hashCodeNullable(minimumStock), minPrice, weighed, onTap, partialDisposal, hashCodeNullable(things), syncId, ppeType, product, hashCodeNullable(characteristics), overhead, components, assortment, expiryDate, label, stock, reserve, inTransit, quantity);
+    return Objects.hash(meta, id, accountId, alcoholic, archived, tobacco, name, code, externalCode, pathName, article, hashCodeNullable(description), vat, vatEnabled, useParentVat, effectiveVat, effectiveVatEnabled, discountProhibited, variantsCount, isSerialTrackable, shared, group, hashCodeNullable(owner), updated, weight, volume, buyPrice, hashCodeNullable(salePrices), supplier, hashCodeNullable(country), hashCodeNullable(uom), hashCodeNullable(productFolder), images, hashCodeNullable(files), hashCodeNullable(barcodes), hashCodeNullable(packs), trackingType, tnved, paymentItemType, taxSystem, hashCodeNullable(attributes), hashCodeNullable(minimumStock), minPrice, weighed, onTap, partialDisposal, hashCodeNullable(things), syncId, ppeType, product, hashCodeNullable(characteristics), overhead, components, assortment, expiryDate, label, stock, reserve, inTransit, quantity);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

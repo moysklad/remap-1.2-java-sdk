@@ -22,9 +22,9 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
-import ru.moysklad.remap_1_2.model.Assortment;
 import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.Pack;
+import ru.moysklad.remap_1_2.model.ProductMarker;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
@@ -51,8 +51,8 @@ import java.util.StringJoiner;
   InvoiceOutPosition.JSON_PROPERTY_ASSORTMENT,
   InvoiceOutPosition.JSON_PROPERTY_PACK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
-public class InvoiceOutPosition {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
+public class InvoiceOutPosition extends EntityWithMeta {
   public static InvoiceOutPosition createWithMeta(UUID parentId, UUID id) {
     InvoiceOutPosition o = new InvoiceOutPosition();
     Meta meta = new Meta();
@@ -102,7 +102,7 @@ public class InvoiceOutPosition {
 
   public static final String JSON_PROPERTY_ASSORTMENT = "assortment";
   @javax.annotation.Nullable
-  private Assortment assortment;
+  private ProductMarker assortment;
 
   public static final String JSON_PROPERTY_PACK = "pack";
   @javax.annotation.Nullable
@@ -349,7 +349,7 @@ public class InvoiceOutPosition {
   }
 
 
-  public InvoiceOutPosition assortment(@javax.annotation.Nullable Assortment assortment) {
+  public InvoiceOutPosition assortment(@javax.annotation.Nullable ProductMarker assortment) {
     
     this.assortment = assortment;
     return this;
@@ -357,11 +357,9 @@ public class InvoiceOutPosition {
 
 
   /**
-   * Get assortment
+   * Метаданные товара/услуги/партии/модификации/комплекта, которую представляет собой позиция
    * @return assortment
-   * @deprecated
    */
-  @Deprecated
   @javax.annotation.Nullable
   @Valid
 
@@ -369,7 +367,7 @@ public class InvoiceOutPosition {
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Assortment getAssortment() {
+  public ProductMarker getAssortment() {
     return assortment;
   }
 
@@ -378,7 +376,7 @@ public class InvoiceOutPosition {
 
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAssortment(@javax.annotation.Nullable Assortment assortment) {
+  public void setAssortment(@javax.annotation.Nullable ProductMarker assortment) {
     this.assortment = assortment;
   }
 

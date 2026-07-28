@@ -23,9 +23,13 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 import ru.moysklad.remap_1_2.model.Context;
 import ru.moysklad.remap_1_2.model.MetaList;
 import ru.moysklad.remap_1_2.model.PurchaseReturn;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import javax.validation.constraints.*;
@@ -42,7 +46,7 @@ import java.util.StringJoiner;
   PurchaseReturnList.JSON_PROPERTY_META,
   PurchaseReturnList.JSON_PROPERTY_ROWS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
 public class PurchaseReturnList {
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
@@ -55,7 +59,7 @@ public class PurchaseReturnList {
 
   public static final String JSON_PROPERTY_ROWS = "rows";
   @javax.annotation.Nullable
-  private List<PurchaseReturn> rows = new ArrayList<>();
+  private JsonNullable<List<PurchaseReturn>> rows = JsonNullable.<List<PurchaseReturn>>undefined();
 
   public PurchaseReturnList() {
   }
@@ -125,17 +129,21 @@ public class PurchaseReturnList {
 
 
   public PurchaseReturnList rows(@javax.annotation.Nullable List<PurchaseReturn> rows) {
+    this.rows = JsonNullable.<List<PurchaseReturn>>of(rows);
     
-    this.rows = rows;
     return this;
   }
 
 
   public PurchaseReturnList addRowsItem(PurchaseReturn rowsItem) {
-    if (this.rows == null) {
-      this.rows = new ArrayList<>();
+    if (this.rows == null || !this.rows.isPresent()) {
+      this.rows = JsonNullable.<List<PurchaseReturn>>of(new ArrayList<>());
     }
-    this.rows.add(rowsItem);
+    try {
+      this.rows.get().add(rowsItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
     return this;
   }
 
@@ -147,20 +155,29 @@ public class PurchaseReturnList {
   @Valid
 
 
-  @JsonProperty(JSON_PROPERTY_ROWS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public List<PurchaseReturn> getRows() {
-    return rows;
+        return rows.orElse(null);
   }
 
   
 
-
   @JsonProperty(JSON_PROPERTY_ROWS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRows(@javax.annotation.Nullable List<PurchaseReturn> rows) {
+
+
+  public JsonNullable<List<PurchaseReturn>> getRows_JsonNullable() {
+    return rows;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_ROWS, required = false)
+  public void setRows_JsonNullable(JsonNullable<List<PurchaseReturn>> rows) {
     this.rows = rows;
+  }
+
+  public void setRows(@javax.annotation.Nullable List<PurchaseReturn> rows) {
+    this.rows = JsonNullable.<List<PurchaseReturn>>of(rows);
   }
 
 
@@ -175,12 +192,23 @@ public class PurchaseReturnList {
     PurchaseReturnList purchaseReturnList = (PurchaseReturnList) o;
     return Objects.equals(this.context, purchaseReturnList.context) &&
         Objects.equals(this.meta, purchaseReturnList.meta) &&
-        Objects.equals(this.rows, purchaseReturnList.rows);
+        equalsNullable(this.rows, purchaseReturnList.rows);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(context, meta, rows);
+    return Objects.hash(context, meta, hashCodeNullable(rows));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

@@ -27,12 +27,11 @@ import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import ru.moysklad.remap_1_2.model.AttributeAbstract;
 import ru.moysklad.remap_1_2.model.Barcode;
-import ru.moysklad.remap_1_2.model.BuyPrice;
 import ru.moysklad.remap_1_2.model.Employee;
 import ru.moysklad.remap_1_2.model.FileList;
 import ru.moysklad.remap_1_2.model.Group;
 import ru.moysklad.remap_1_2.model.Meta;
-import ru.moysklad.remap_1_2.model.MinPrice;
+import ru.moysklad.remap_1_2.model.Price;
 import ru.moysklad.remap_1_2.model.ProductFolder;
 import ru.moysklad.remap_1_2.model.SalePrice;
 import ru.moysklad.remap_1_2.model.Uom;
@@ -82,8 +81,8 @@ import java.util.StringJoiner;
   Service.JSON_PROPERTY_MIN_PRICE,
   Service.JSON_PROPERTY_SYNC_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
-public class Service extends EntityWithMeta {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
+public class Service extends ProductMarker {
   public static Service createWithMeta(UUID id) {
     Service o = new Service();
     Meta meta = new Meta();
@@ -177,7 +176,7 @@ public class Service extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_BUY_PRICE = "buyPrice";
   @javax.annotation.Nullable
-  private BuyPrice buyPrice;
+  private Price buyPrice;
 
   public static final String JSON_PROPERTY_SALE_PRICES = "salePrices";
   @javax.annotation.Nullable
@@ -213,7 +212,7 @@ public class Service extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_MIN_PRICE = "minPrice";
   @javax.annotation.Nullable
-  private MinPrice minPrice;
+  private Price minPrice;
 
   public static final String JSON_PROPERTY_SYNC_ID = "syncId";
   @javax.annotation.Nullable
@@ -778,7 +777,7 @@ public class Service extends EntityWithMeta {
 
 
 
-  public Service buyPrice(@javax.annotation.Nullable BuyPrice buyPrice) {
+  public Service buyPrice(@javax.annotation.Nullable Price buyPrice) {
     
     this.buyPrice = buyPrice;
     return this;
@@ -796,7 +795,7 @@ public class Service extends EntityWithMeta {
   @JsonProperty(JSON_PROPERTY_BUY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BuyPrice getBuyPrice() {
+  public Price getBuyPrice() {
     return buyPrice;
   }
 
@@ -805,7 +804,7 @@ public class Service extends EntityWithMeta {
 
   @JsonProperty(JSON_PROPERTY_BUY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBuyPrice(@javax.annotation.Nullable BuyPrice buyPrice) {
+  public void setBuyPrice(@javax.annotation.Nullable Price buyPrice) {
     this.buyPrice = buyPrice;
   }
 
@@ -1154,7 +1153,7 @@ public class Service extends EntityWithMeta {
   }
 
 
-  public Service minPrice(@javax.annotation.Nullable MinPrice minPrice) {
+  public Service minPrice(@javax.annotation.Nullable Price minPrice) {
     
     this.minPrice = minPrice;
     return this;
@@ -1172,7 +1171,7 @@ public class Service extends EntityWithMeta {
   @JsonProperty(JSON_PROPERTY_MIN_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public MinPrice getMinPrice() {
+  public Price getMinPrice() {
     return minPrice;
   }
 
@@ -1181,7 +1180,7 @@ public class Service extends EntityWithMeta {
 
   @JsonProperty(JSON_PROPERTY_MIN_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMinPrice(@javax.annotation.Nullable MinPrice minPrice) {
+  public void setMinPrice(@javax.annotation.Nullable Price minPrice) {
     this.minPrice = minPrice;
   }
 

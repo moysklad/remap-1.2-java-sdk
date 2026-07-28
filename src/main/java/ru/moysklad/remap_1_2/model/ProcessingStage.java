@@ -25,6 +25,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
+import ru.moysklad.remap_1_2.model.Agent;
 import ru.moysklad.remap_1_2.model.Employee;
 import ru.moysklad.remap_1_2.model.Group;
 import ru.moysklad.remap_1_2.model.Meta;
@@ -61,7 +62,7 @@ import java.util.StringJoiner;
   ProcessingStage.JSON_PROPERTY_MATERIAL_STORE,
   ProcessingStage.JSON_PROPERTY_STANDARD_HOUR_COST
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingStage extends EntityWithMeta {
   public static ProcessingStage createWithMeta(UUID id) {
     ProcessingStage o = new ProcessingStage();
@@ -132,7 +133,7 @@ public class ProcessingStage extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_PERFORMERS = "performers";
   @javax.annotation.Nullable
-  private JsonNullable<List<Employee>> performers = JsonNullable.<List<Employee>>undefined();
+  private JsonNullable<List<@Valid Agent>> performers = JsonNullable.<List<@Valid Agent>>undefined();
 
   public static final String JSON_PROPERTY_MATERIAL_STORE = "materialStore";
   @javax.annotation.Nullable
@@ -548,16 +549,16 @@ public class ProcessingStage extends EntityWithMeta {
   }
 
 
-  public ProcessingStage performers(@javax.annotation.Nullable List<Employee> performers) {
-    this.performers = JsonNullable.<List<Employee>>of(performers);
+  public ProcessingStage performers(@javax.annotation.Nullable List<@Valid Agent> performers) {
+    this.performers = JsonNullable.<List<@Valid Agent>>of(performers);
     
     return this;
   }
 
 
-  public ProcessingStage addPerformersItem(Employee performersItem) {
+  public ProcessingStage addPerformersItem(Agent performersItem) {
     if (this.performers == null || !this.performers.isPresent()) {
-      this.performers = JsonNullable.<List<Employee>>of(new ArrayList<>());
+      this.performers = JsonNullable.<List<@Valid Agent>>of(new ArrayList<>());
     }
     try {
       this.performers.get().add(performersItem);
@@ -577,7 +578,7 @@ public class ProcessingStage extends EntityWithMeta {
 
   @JsonIgnore
 
-  public List<Employee> getPerformers() {
+  public List<@Valid Agent> getPerformers() {
         return performers.orElse(null);
   }
 
@@ -587,17 +588,17 @@ public class ProcessingStage extends EntityWithMeta {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<Employee>> getPerformers_JsonNullable() {
+  public JsonNullable<List<@Valid Agent>> getPerformers_JsonNullable() {
     return performers;
   }
   
   @JsonProperty(value = JSON_PROPERTY_PERFORMERS, required = false)
-  public void setPerformers_JsonNullable(JsonNullable<List<Employee>> performers) {
+  public void setPerformers_JsonNullable(JsonNullable<List<@Valid Agent>> performers) {
     this.performers = performers;
   }
 
-  public void setPerformers(@javax.annotation.Nullable List<Employee> performers) {
-    this.performers = JsonNullable.<List<Employee>>of(performers);
+  public void setPerformers(@javax.annotation.Nullable List<@Valid Agent> performers) {
+    this.performers = JsonNullable.<List<@Valid Agent>>of(performers);
   }
 
 

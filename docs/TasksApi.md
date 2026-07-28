@@ -277,7 +277,7 @@ public class Example {
 
 ## createTaskNote
 
-> TaskNote createTaskNote(id, taskNote, accept, acceptEncoding, contentType)
+> List&lt;TaskNote&gt; createTaskNote(id, taskNote, accept, acceptEncoding, contentType)
 
 Создать комментарий Задачи
 
@@ -315,7 +315,7 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            TaskNote result = apiInstance.createTaskNote(id, taskNote, accept, acceptEncoding, contentType);
+            List<TaskNote> result = apiInstance.createTaskNote(id, taskNote, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling TasksApi#createTaskNote");
@@ -341,7 +341,7 @@ public class Example {
 
 ### Return type
 
-[**TaskNote**](TaskNote.md)
+[**List&lt;TaskNote&gt;**](TaskNote.md)
 
 ### Authorization
 

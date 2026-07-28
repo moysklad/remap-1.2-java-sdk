@@ -38,7 +38,7 @@
 |**shared** | **Boolean** | Общий доступ |  [optional] [readonly] |
 |**state** | [**State**](State.md) | Метаданные статуса Входящего платежа |  [optional] |
 |**sum** | **Double** | Сумма Входящего платежа в установленной валюте |  [optional] [readonly] |
-|**vatSum** | **Double** | Сумма НДС |  [optional] [readonly] |
+|**vatSum** | **Double** | Сумма НДС |  [optional] |
 |**factureIn** | [**FactureIn**](FactureIn.md) | Счет-фактура полученный, с которым связан этот платеж |  [optional] |
 |**agentAccount** | [**Account**](Account.md) | Метаданные счета контрагента |  [optional] |
 |**organizationAccount** | [**Account**](Account.md) | Метаданные счета юрлица |  [optional] |

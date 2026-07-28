@@ -11,8 +11,8 @@
 |**meta** | [**Meta**](Meta.md) |  |  [optional] |
 |**id** | **UUID** | ID позиции |  [optional] [readonly] |
 |**accountId** | **UUID** | ID учетной записи |  [optional] [readonly] |
-|**assortment** | [**Assortment**](Assortment.md) |  |  [optional] |
-|**quantity** | **Float** | Количество товаров данного вида в позиции |  [optional] |
+|**assortment** | [**ProductMarker**](ProductMarker.md) | Метаданные товара/модификации/партии, которую представляет собой позиция |  [optional] |
+|**quantity** | **Double** | Количество товаров данного вида в позиции |  [optional] |
 |**status** | **String** | Статус кодов. Известные значения описаны в EmissionOrderPositionStatus |  [optional] [readonly] |
 
 

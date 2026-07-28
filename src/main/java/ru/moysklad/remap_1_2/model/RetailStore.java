@@ -26,8 +26,8 @@ import java.util.List;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import ru.moysklad.remap_1_2.model.Address;
+import ru.moysklad.remap_1_2.model.Agent;
 import ru.moysklad.remap_1_2.model.CashierList;
-import ru.moysklad.remap_1_2.model.Counterparty;
 import ru.moysklad.remap_1_2.model.Employee;
 import ru.moysklad.remap_1_2.model.Group;
 import ru.moysklad.remap_1_2.model.Meta;
@@ -131,7 +131,7 @@ import java.util.StringJoiner;
   RetailStore.JSON_PROPERTY_CASHIERS,
   RetailStore.JSON_PROPERTY_QR_ACQUIRE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStore extends EntityWithMeta {
   public static RetailStore createWithMeta(UUID id) {
     RetailStore o = new RetailStore();
@@ -434,7 +434,7 @@ public class RetailStore extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_ACQUIRE = "acquire";
   @javax.annotation.Nullable
-  private Counterparty acquire;
+  private Agent acquire;
 
   public static final String JSON_PROPERTY_CASHIERS = "cashiers";
   @javax.annotation.Nullable
@@ -442,7 +442,7 @@ public class RetailStore extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_QR_ACQUIRE = "qrAcquire";
   @javax.annotation.Nullable
-  private JsonNullable<Counterparty> qrAcquire = JsonNullable.<Counterparty>undefined();
+  private JsonNullable<Agent> qrAcquire = JsonNullable.<Agent>undefined();
 
   public RetailStore() {
   }
@@ -455,7 +455,6 @@ public class RetailStore extends EntityWithMeta {
     @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId, 
     @JsonProperty(value = JSON_PROPERTY_EXTERNAL_CODE, required = false) String externalCode, 
     @JsonProperty(value = JSON_PROPERTY_UPDATED, required = false) String updated, 
-    @JsonProperty(value = JSON_PROPERTY_ALLOW_CUSTOM_PRICE, required = false) Boolean allowCustomPrice, 
     @JsonProperty(value = JSON_PROPERTY_AUTH_TOKEN_ATTACHED, required = false) Boolean authTokenAttached, 
     @JsonProperty(value = JSON_PROPERTY_OFD_ENABLED, required = false) Boolean ofdEnabled
   ) {
@@ -464,7 +463,6 @@ public class RetailStore extends EntityWithMeta {
     this.accountId = accountId;
     this.externalCode = externalCode;
     this.updated = updated;
-    this.allowCustomPrice = allowCustomPrice;
     this.authTokenAttached = authTokenAttached;
     this.ofdEnabled = ofdEnabled;
   }
@@ -1305,6 +1303,13 @@ public class RetailStore extends EntityWithMeta {
   }
 
 
+  public RetailStore allowCustomPrice(@javax.annotation.Nullable Boolean allowCustomPrice) {
+    
+    this.allowCustomPrice = allowCustomPrice;
+    return this;
+  }
+
+
   /**
    * Признак разрешения устанавливать произвольные цены
    * @return allowCustomPrice
@@ -1321,6 +1326,12 @@ public class RetailStore extends EntityWithMeta {
 
   
 
+
+  @JsonProperty(JSON_PROPERTY_ALLOW_CUSTOM_PRICE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAllowCustomPrice(@javax.annotation.Nullable Boolean allowCustomPrice) {
+    this.allowCustomPrice = allowCustomPrice;
+  }
 
 
   public RetailStore allowDeleteReceiptPositions(@javax.annotation.Nullable Boolean allowDeleteReceiptPositions) {
@@ -2726,7 +2737,7 @@ public class RetailStore extends EntityWithMeta {
   }
 
 
-  public RetailStore acquire(@javax.annotation.Nullable Counterparty acquire) {
+  public RetailStore acquire(@javax.annotation.Nullable Agent acquire) {
     
     this.acquire = acquire;
     return this;
@@ -2734,7 +2745,7 @@ public class RetailStore extends EntityWithMeta {
 
 
   /**
-   * Get acquire
+   * Эквайер
    * @return acquire
    */
   @javax.annotation.Nullable
@@ -2744,7 +2755,7 @@ public class RetailStore extends EntityWithMeta {
   @JsonProperty(JSON_PROPERTY_ACQUIRE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Counterparty getAcquire() {
+  public Agent getAcquire() {
     return acquire;
   }
 
@@ -2753,7 +2764,7 @@ public class RetailStore extends EntityWithMeta {
 
   @JsonProperty(JSON_PROPERTY_ACQUIRE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAcquire(@javax.annotation.Nullable Counterparty acquire) {
+  public void setAcquire(@javax.annotation.Nullable Agent acquire) {
     this.acquire = acquire;
   }
 
@@ -2799,8 +2810,8 @@ public class RetailStore extends EntityWithMeta {
   }
 
 
-  public RetailStore qrAcquire(@javax.annotation.Nullable Counterparty qrAcquire) {
-    this.qrAcquire = JsonNullable.<Counterparty>of(qrAcquire);
+  public RetailStore qrAcquire(@javax.annotation.Nullable Agent qrAcquire) {
+    this.qrAcquire = JsonNullable.<Agent>of(qrAcquire);
     
     return this;
   }
@@ -2816,7 +2827,7 @@ public class RetailStore extends EntityWithMeta {
 
   @JsonIgnore
 
-  public Counterparty getQrAcquire() {
+  public Agent getQrAcquire() {
         return qrAcquire.orElse(null);
   }
 
@@ -2826,17 +2837,17 @@ public class RetailStore extends EntityWithMeta {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<Counterparty> getQrAcquire_JsonNullable() {
+  public JsonNullable<Agent> getQrAcquire_JsonNullable() {
     return qrAcquire;
   }
   
   @JsonProperty(value = JSON_PROPERTY_QR_ACQUIRE, required = false)
-  public void setQrAcquire_JsonNullable(JsonNullable<Counterparty> qrAcquire) {
+  public void setQrAcquire_JsonNullable(JsonNullable<Agent> qrAcquire) {
     this.qrAcquire = qrAcquire;
   }
 
-  public void setQrAcquire(@javax.annotation.Nullable Counterparty qrAcquire) {
-    this.qrAcquire = JsonNullable.<Counterparty>of(qrAcquire);
+  public void setQrAcquire(@javax.annotation.Nullable Agent qrAcquire) {
+    this.qrAcquire = JsonNullable.<Agent>of(qrAcquire);
   }
 
 

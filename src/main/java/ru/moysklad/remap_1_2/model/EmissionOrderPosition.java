@@ -21,8 +21,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.UUID;
-import ru.moysklad.remap_1_2.model.Assortment;
 import ru.moysklad.remap_1_2.model.Meta;
+import ru.moysklad.remap_1_2.model.ProductMarker;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import javax.validation.constraints.*;
@@ -42,7 +42,7 @@ import java.util.StringJoiner;
   EmissionOrderPosition.JSON_PROPERTY_QUANTITY,
   EmissionOrderPosition.JSON_PROPERTY_STATUS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
 public class EmissionOrderPosition extends EntityWithMeta {
   public static EmissionOrderPosition createWithMeta(UUID parentId, UUID id) {
     EmissionOrderPosition o = new EmissionOrderPosition();
@@ -73,11 +73,11 @@ public class EmissionOrderPosition extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_ASSORTMENT = "assortment";
   @javax.annotation.Nullable
-  private Assortment assortment;
+  private ProductMarker assortment;
 
   public static final String JSON_PROPERTY_QUANTITY = "quantity";
   @javax.annotation.Nullable
-  private Float quantity;
+  private Double quantity;
 
   public static final String JSON_PROPERTY_STATUS = "status";
   @javax.annotation.Nullable
@@ -170,7 +170,7 @@ public class EmissionOrderPosition extends EntityWithMeta {
 
 
 
-  public EmissionOrderPosition assortment(@javax.annotation.Nullable Assortment assortment) {
+  public EmissionOrderPosition assortment(@javax.annotation.Nullable ProductMarker assortment) {
     
     this.assortment = assortment;
     return this;
@@ -178,11 +178,9 @@ public class EmissionOrderPosition extends EntityWithMeta {
 
 
   /**
-   * Get assortment
+   * Метаданные товара/модификации/партии, которую представляет собой позиция
    * @return assortment
-   * @deprecated
    */
-  @Deprecated
   @javax.annotation.Nullable
   @Valid
 
@@ -190,7 +188,7 @@ public class EmissionOrderPosition extends EntityWithMeta {
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Assortment getAssortment() {
+  public ProductMarker getAssortment() {
     return assortment;
   }
 
@@ -199,12 +197,12 @@ public class EmissionOrderPosition extends EntityWithMeta {
 
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAssortment(@javax.annotation.Nullable Assortment assortment) {
+  public void setAssortment(@javax.annotation.Nullable ProductMarker assortment) {
     this.assortment = assortment;
   }
 
 
-  public EmissionOrderPosition quantity(@javax.annotation.Nullable Float quantity) {
+  public EmissionOrderPosition quantity(@javax.annotation.Nullable Double quantity) {
     
     this.quantity = quantity;
     return this;
@@ -223,7 +221,7 @@ public class EmissionOrderPosition extends EntityWithMeta {
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Float getQuantity() {
+  public Double getQuantity() {
     return quantity;
   }
 
@@ -232,7 +230,7 @@ public class EmissionOrderPosition extends EntityWithMeta {
 
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setQuantity(@javax.annotation.Nullable Float quantity) {
+  public void setQuantity(@javax.annotation.Nullable Double quantity) {
     this.quantity = quantity;
   }
 

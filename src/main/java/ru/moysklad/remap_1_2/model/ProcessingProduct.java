@@ -20,9 +20,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.UUID;
-import ru.moysklad.remap_1_2.model.Assortment;
 import ru.moysklad.remap_1_2.model.Meta;
+import ru.moysklad.remap_1_2.model.ProductMarker;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import javax.validation.constraints.*;
@@ -39,9 +42,10 @@ import java.util.StringJoiner;
   ProcessingProduct.JSON_PROPERTY_ID,
   ProcessingProduct.JSON_PROPERTY_ACCOUNT_ID,
   ProcessingProduct.JSON_PROPERTY_ASSORTMENT,
-  ProcessingProduct.JSON_PROPERTY_QUANTITY
+  ProcessingProduct.JSON_PROPERTY_QUANTITY,
+  ProcessingProduct.JSON_PROPERTY_THINGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingProduct {
   public static ProcessingProduct createWithMeta(UUID parentId, UUID id) {
     ProcessingProduct o = new ProcessingProduct();
@@ -72,11 +76,15 @@ public class ProcessingProduct {
 
   public static final String JSON_PROPERTY_ASSORTMENT = "assortment";
   @javax.annotation.Nullable
-  private Assortment assortment;
+  private ProductMarker assortment;
 
   public static final String JSON_PROPERTY_QUANTITY = "quantity";
   @javax.annotation.Nullable
   private Double quantity;
+
+  public static final String JSON_PROPERTY_THINGS = "things";
+  @javax.annotation.Nullable
+  private List<String> things = new ArrayList<>();
 
   public ProcessingProduct() {
   }
@@ -163,7 +171,7 @@ public class ProcessingProduct {
 
 
 
-  public ProcessingProduct assortment(@javax.annotation.Nullable Assortment assortment) {
+  public ProcessingProduct assortment(@javax.annotation.Nullable ProductMarker assortment) {
     
     this.assortment = assortment;
     return this;
@@ -173,9 +181,7 @@ public class ProcessingProduct {
   /**
    * Get assortment
    * @return assortment
-   * @deprecated
    */
-  @Deprecated
   @javax.annotation.Nullable
   @Valid
 
@@ -183,7 +189,7 @@ public class ProcessingProduct {
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Assortment getAssortment() {
+  public ProductMarker getAssortment() {
     return assortment;
   }
 
@@ -192,7 +198,7 @@ public class ProcessingProduct {
 
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAssortment(@javax.annotation.Nullable Assortment assortment) {
+  public void setAssortment(@javax.annotation.Nullable ProductMarker assortment) {
     this.assortment = assortment;
   }
 
@@ -229,6 +235,45 @@ public class ProcessingProduct {
   }
 
 
+  public ProcessingProduct things(@javax.annotation.Nullable List<String> things) {
+    
+    this.things = things;
+    return this;
+  }
+
+
+  public ProcessingProduct addThingsItem(String thingsItem) {
+    if (this.things == null) {
+      this.things = new ArrayList<>();
+    }
+    this.things.add(thingsItem);
+    return this;
+  }
+
+  /**
+   * Серийные номера. Игнорируется, если товар позиции не на серийном учёте; иначе количество единиц в позиции совпадает с числом переданных серийных номеров. 
+   * @return things
+   */
+  @javax.annotation.Nullable
+
+
+  @JsonProperty(JSON_PROPERTY_THINGS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public List<String> getThings() {
+    return things;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_THINGS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setThings(@javax.annotation.Nullable List<String> things) {
+    this.things = things;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -242,12 +287,13 @@ public class ProcessingProduct {
         Objects.equals(this.id, processingProduct.id) &&
         Objects.equals(this.accountId, processingProduct.accountId) &&
         Objects.equals(this.assortment, processingProduct.assortment) &&
-        Objects.equals(this.quantity, processingProduct.quantity);
+        Objects.equals(this.quantity, processingProduct.quantity) &&
+        Objects.equals(this.things, processingProduct.things);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, assortment, quantity);
+    return Objects.hash(meta, id, accountId, assortment, quantity, things);
   }
 
   @Override
@@ -259,6 +305,7 @@ public class ProcessingProduct {
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("    assortment: ").append(toIndentedString(assortment)).append("\n");
     sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
+    sb.append("    things: ").append(toIndentedString(things)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -343,6 +390,20 @@ public class ProcessingProduct {
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
+      }
+    }
+
+    // add `things` to the URL query string
+    if (getThings() != null) {
+      for (int i = 0; i < getThings().size(); i++) {
+        try {
+          joiner.add(String.format(java.util.Locale.ROOT, "%sthings%s%s=%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
+              URLEncoder.encode(String.valueOf(getThings().get(i)), "UTF-8").replaceAll("\\+", "%20")));
+        } catch (UnsupportedEncodingException e) {
+          // Should never happen, UTF-8 is always supported
+          throw new RuntimeException(e);
+        }
       }
     }
 

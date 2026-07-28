@@ -49,8 +49,8 @@ import java.util.StringJoiner;
   ProcessingProcessPosition.JSON_PROPERTY_PROCESSINGSTAGE,
   ProcessingProcessPosition.JSON_PROPERTY_NEXT_POSITIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
-public class ProcessingProcessPosition {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
+public class ProcessingProcessPosition extends EntityWithMeta {
   public static ProcessingProcessPosition createWithMeta(UUID parentId, UUID id) {
     ProcessingProcessPosition o = new ProcessingProcessPosition();
     Meta meta = new Meta();

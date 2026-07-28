@@ -117,7 +117,7 @@ import java.util.StringJoiner;
   FinanceInOperationDemand.JSON_PROPERTY_TRANSPORT_FACILITY,
   FinanceInOperationDemand.JSON_PROPERTY_TRANSPORT_FACILITY_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
 public class FinanceInOperationDemand extends FinanceInOperationAbstract {
 
   public static final String JSON_PROPERTY_META = "meta";

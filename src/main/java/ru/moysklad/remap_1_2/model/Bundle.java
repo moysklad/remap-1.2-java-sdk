@@ -29,15 +29,14 @@ import ru.moysklad.remap_1_2.model.AttributeAbstract;
 import ru.moysklad.remap_1_2.model.Barcode;
 import ru.moysklad.remap_1_2.model.BundleComponentList;
 import ru.moysklad.remap_1_2.model.BundleOverhead;
-import ru.moysklad.remap_1_2.model.BuyPrice;
 import ru.moysklad.remap_1_2.model.Country;
 import ru.moysklad.remap_1_2.model.Employee;
 import ru.moysklad.remap_1_2.model.FileList;
 import ru.moysklad.remap_1_2.model.Group;
 import ru.moysklad.remap_1_2.model.ImageList;
 import ru.moysklad.remap_1_2.model.Meta;
-import ru.moysklad.remap_1_2.model.MinPrice;
 import ru.moysklad.remap_1_2.model.Pack;
+import ru.moysklad.remap_1_2.model.Price;
 import ru.moysklad.remap_1_2.model.ProductFolder;
 import ru.moysklad.remap_1_2.model.SalePrice;
 import ru.moysklad.remap_1_2.model.Uom;
@@ -98,8 +97,8 @@ import java.util.StringJoiner;
   Bundle.JSON_PROPERTY_ATTRIBUTES,
   Bundle.JSON_PROPERTY_COMPONENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T11:58:06.724471822Z[GMT]", comments = "Generator version: 7.14.0")
-public class Bundle extends EntityWithMeta {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
+public class Bundle extends ProductMarker {
   public static Bundle createWithMeta(UUID id) {
     Bundle o = new Bundle();
     Meta meta = new Meta();
@@ -261,11 +260,11 @@ public class Bundle extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_BUY_PRICE = "buyPrice";
   @javax.annotation.Nullable
-  private BuyPrice buyPrice;
+  private Price buyPrice;
 
   public static final String JSON_PROPERTY_MIN_PRICE = "minPrice";
   @javax.annotation.Nullable
-  private MinPrice minPrice;
+  private Price minPrice;
 
   public static final String JSON_PROPERTY_OVERHEAD = "overhead";
   @javax.annotation.Nullable
@@ -1480,7 +1479,7 @@ public class Bundle extends EntityWithMeta {
   }
 
 
-  public Bundle buyPrice(@javax.annotation.Nullable BuyPrice buyPrice) {
+  public Bundle buyPrice(@javax.annotation.Nullable Price buyPrice) {
     
     this.buyPrice = buyPrice;
     return this;
@@ -1498,7 +1497,7 @@ public class Bundle extends EntityWithMeta {
   @JsonProperty(JSON_PROPERTY_BUY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BuyPrice getBuyPrice() {
+  public Price getBuyPrice() {
     return buyPrice;
   }
 
@@ -1507,12 +1506,12 @@ public class Bundle extends EntityWithMeta {
 
   @JsonProperty(JSON_PROPERTY_BUY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBuyPrice(@javax.annotation.Nullable BuyPrice buyPrice) {
+  public void setBuyPrice(@javax.annotation.Nullable Price buyPrice) {
     this.buyPrice = buyPrice;
   }
 
 
-  public Bundle minPrice(@javax.annotation.Nullable MinPrice minPrice) {
+  public Bundle minPrice(@javax.annotation.Nullable Price minPrice) {
     
     this.minPrice = minPrice;
     return this;
@@ -1530,7 +1529,7 @@ public class Bundle extends EntityWithMeta {
   @JsonProperty(JSON_PROPERTY_MIN_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public MinPrice getMinPrice() {
+  public Price getMinPrice() {
     return minPrice;
   }
 
@@ -1539,7 +1538,7 @@ public class Bundle extends EntityWithMeta {
 
   @JsonProperty(JSON_PROPERTY_MIN_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMinPrice(@javax.annotation.Nullable MinPrice minPrice) {
+  public void setMinPrice(@javax.annotation.Nullable Price minPrice) {
     this.minPrice = minPrice;
   }
 
