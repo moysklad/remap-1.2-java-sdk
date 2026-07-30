@@ -75,7 +75,7 @@ import java.util.StringJoiner;
   RetailDrawerCashIn.JSON_PROPERTY_SYNC_ID,
   RetailDrawerCashIn.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-30T07:04:09.963990511Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailDrawerCashIn extends EntityWithMeta {
   public static RetailDrawerCashIn createWithMeta(UUID id) {
     RetailDrawerCashIn o = new RetailDrawerCashIn();

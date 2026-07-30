@@ -4,7 +4,7 @@
 
 - API version: 1.0.0
 
-- Build date: 2026-07-28T10:45:59.629854247Z[GMT]
+- Build date: 2026-07-30T07:04:09.963990511Z[GMT]
 
 - Generator version: 7.14.0
 
@@ -1354,18 +1354,24 @@ Class | Method | HTTP request | Description
  - [AssortmentWithoutBundle](docs/AssortmentWithoutBundle.md)
  - [AttributeAbstract](docs/AttributeAbstract.md)
  - [AttributeBool](docs/AttributeBool.md)
+ - [AttributeContractEntity](docs/AttributeContractEntity.md)
+ - [AttributeCounterpartyEntity](docs/AttributeCounterpartyEntity.md)
  - [AttributeCustomEntity](docs/AttributeCustomEntity.md)
  - [AttributeDateTime](docs/AttributeDateTime.md)
  - [AttributeDouble](docs/AttributeDouble.md)
+ - [AttributeEmployeeEntity](docs/AttributeEmployeeEntity.md)
  - [AttributeFile](docs/AttributeFile.md)
  - [AttributeLink](docs/AttributeLink.md)
  - [AttributeLong](docs/AttributeLong.md)
  - [AttributeMetaField](docs/AttributeMetaField.md)
  - [AttributeMetaInfo](docs/AttributeMetaInfo.md)
  - [AttributeMetaInfoList](docs/AttributeMetaInfoList.md)
- - [AttributeObject](docs/AttributeObject.md)
+ - [AttributeProductEntity](docs/AttributeProductEntity.md)
+ - [AttributeProjectEntity](docs/AttributeProjectEntity.md)
+ - [AttributeStoreEntity](docs/AttributeStoreEntity.md)
  - [AttributeString](docs/AttributeString.md)
  - [AttributeText](docs/AttributeText.md)
+ - [AttributeType](docs/AttributeType.md)
  - [Barcode](docs/Barcode.md)
  - [BatchResponseEntity](docs/BatchResponseEntity.md)
  - [BonusProgram](docs/BonusProgram.md)

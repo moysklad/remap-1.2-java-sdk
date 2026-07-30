@@ -55,7 +55,7 @@ import java.util.StringJoiner;
   PurchaseOrderPosition.JSON_PROPERTY_PACK,
   PurchaseOrderPosition.JSON_PROPERTY_STOCK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-30T07:04:09.963990511Z[GMT]", comments = "Generator version: 7.14.0")
 public class PurchaseOrderPosition extends EntityWithMeta {
   public static PurchaseOrderPosition createWithMeta(UUID parentId, UUID id) {
     PurchaseOrderPosition o = new PurchaseOrderPosition();

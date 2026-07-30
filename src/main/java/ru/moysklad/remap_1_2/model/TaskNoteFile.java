@@ -46,7 +46,7 @@ import java.util.StringJoiner;
   TaskNoteFile.JSON_PROPERTY_TINY,
   TaskNoteFile.JSON_PROPERTY_MINIATURE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-30T07:04:09.963990511Z[GMT]", comments = "Generator version: 7.14.0")
 public class TaskNoteFile {
   public static TaskNoteFile createWithMeta(UUID parentId, UUID noteId, UUID id) {
     TaskNoteFile o = new TaskNoteFile();

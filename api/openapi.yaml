@@ -65444,7 +65444,12 @@ components:
           long: "#/components/schemas/AttributeLong"
           boolean: "#/components/schemas/AttributeBool"
           customentity: "#/components/schemas/AttributeCustomEntity"
-          undefined: "#/components/schemas/AttributeObject"
+          contract: "#/components/schemas/AttributeContractEntity"
+          counterparty: "#/components/schemas/AttributeCounterpartyEntity"
+          employee: "#/components/schemas/AttributeEmployeeEntity"
+          product: "#/components/schemas/AttributeProductEntity"
+          project: "#/components/schemas/AttributeProjectEntity"
+          store: "#/components/schemas/AttributeStoreEntity"
         propertyName: type
       properties:
         id:
@@ -65485,14 +65490,93 @@ components:
           - customentity
           type: string
         value:
-          properties:
-            meta:
-              $ref: "#/components/schemas/Meta"
-            name:
-              description: Наименование элемента кастомного справочника
-              type: string
-          type: object
+          $ref: "#/components/schemas/CustomEntityElement"
       type: object
+    AttributeContractEntity:
+      allOf:
+      - $ref: "#/components/schemas/AttributeAbstract"
+      properties:
+        type:
+          enum:
+          - contract
+          type: string
+        value:
+          $ref: "#/components/schemas/Contract"
+      type: object
+    AttributeCounterpartyEntity:
+      allOf:
+      - $ref: "#/components/schemas/AttributeAbstract"
+      properties:
+        type:
+          enum:
+          - counterparty
+          type: string
+        value:
+          $ref: "#/components/schemas/Agent"
+      type: object
+    AttributeEmployeeEntity:
+      allOf:
+      - $ref: "#/components/schemas/AttributeAbstract"
+      properties:
+        type:
+          enum:
+          - employee
+          type: string
+        value:
+          $ref: "#/components/schemas/Employee"
+      type: object
+    AttributeProductEntity:
+      allOf:
+      - $ref: "#/components/schemas/AttributeAbstract"
+      properties:
+        type:
+          enum:
+          - product
+          type: string
+        value:
+          $ref: "#/components/schemas/ProductMarker"
+      type: object
+    AttributeProjectEntity:
+      allOf:
+      - $ref: "#/components/schemas/AttributeAbstract"
+      properties:
+        type:
+          enum:
+          - project
+          type: string
+        value:
+          $ref: "#/components/schemas/Project"
+      type: object
+    AttributeStoreEntity:
+      allOf:
+      - $ref: "#/components/schemas/AttributeAbstract"
+      properties:
+        type:
+          enum:
+          - store
+          type: string
+        value:
+          $ref: "#/components/schemas/Store"
+      type: object
+    AttributeType:
+      description: "Известные типы, используемые в допполях"
+      enum:
+      - file
+      - string
+      - text
+      - link
+      - time
+      - double
+      - long
+      - boolean
+      - customentity
+      - contract
+      - counterparty
+      - project
+      - store
+      - employee
+      - product
+      type: string
     AttributeDateTime:
       allOf:
       - $ref: "#/components/schemas/AttributeAbstract"
@@ -65568,7 +65652,7 @@ components:
           description: Наименование дополнительного поля
           type: string
         type:
-          description: Тип дополнительного поля
+          description: Тип дополнительного поля. Известные значения описаны в AttributeType
           type: string
         required:
           description: Является ли поле обязательным
@@ -65594,15 +65678,6 @@ components:
             $ref: "#/components/schemas/AttributeMetaInfo_1"
           nullable: true
           type: array
-      type: object
-    AttributeObject:
-      allOf:
-      - $ref: "#/components/schemas/AttributeAbstract"
-      properties:
-        type:
-          type: string
-        value:
-          type: object
       type: object
     AttributeString:
       allOf:
@@ -79868,6 +79943,7 @@ components:
           description: Коллекция метаданных доп. полей
           items:
             $ref: "#/components/schemas/AttributeAbstract"
+          nullable: true
           type: array
         owner:
           $ref: "#/components/schemas/Employee"

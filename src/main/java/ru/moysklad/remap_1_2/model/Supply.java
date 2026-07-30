@@ -106,7 +106,7 @@ import java.util.StringJoiner;
   Supply.JSON_PROPERTY_PRODUCTION_TASK,
   Supply.JSON_PROPERTY_RETURNS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-30T07:04:09.963990511Z[GMT]", comments = "Generator version: 7.14.0")
 public class Supply extends EntityWithMeta {
   public static Supply createWithMeta(UUID id) {
     Supply o = new Supply();

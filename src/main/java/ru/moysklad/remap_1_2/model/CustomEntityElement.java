@@ -57,7 +57,7 @@ import java.util.StringJoiner;
   CustomEntityElement.JSON_PROPERTY_SHARED,
   CustomEntityElement.JSON_PROPERTY_GROUP
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-30T07:04:09.963990511Z[GMT]", comments = "Generator version: 7.14.0")
 public class CustomEntityElement {
   public static CustomEntityElement createWithMeta(UUID metadataId, UUID id) {
     CustomEntityElement o = new CustomEntityElement();
@@ -108,7 +108,7 @@ public class CustomEntityElement {
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
-  private List<@Valid AttributeAbstract> attributes = new ArrayList<>();
+  private JsonNullable<List<@Valid AttributeAbstract>> attributes = JsonNullable.<List<@Valid AttributeAbstract>>undefined();
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
@@ -370,17 +370,21 @@ public class CustomEntityElement {
 
 
   public CustomEntityElement attributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
     
-    this.attributes = attributes;
     return this;
   }
 
 
   public CustomEntityElement addAttributesItem(AttributeAbstract attributesItem) {
-    if (this.attributes == null) {
-      this.attributes = new ArrayList<>();
+    if (this.attributes == null || !this.attributes.isPresent()) {
+      this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(new ArrayList<>());
     }
-    this.attributes.add(attributesItem);
+    try {
+      this.attributes.get().add(attributesItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
     return this;
   }
 
@@ -392,20 +396,29 @@ public class CustomEntityElement {
   @Valid
 
 
-  @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public List<@Valid AttributeAbstract> getAttributes() {
-    return attributes;
+        return attributes.orElse(null);
   }
 
   
 
-
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAttributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
+
+
+  public JsonNullable<List<@Valid AttributeAbstract>> getAttributes_JsonNullable() {
+    return attributes;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
+  public void setAttributes_JsonNullable(JsonNullable<List<@Valid AttributeAbstract>> attributes) {
     this.attributes = attributes;
+  }
+
+  public void setAttributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
   }
 
 
@@ -521,7 +534,7 @@ public class CustomEntityElement {
         Objects.equals(this.code, customEntityElement.code) &&
         equalsNullable(this.description, customEntityElement.description) &&
         equalsNullable(this.externalCode, customEntityElement.externalCode) &&
-        Objects.equals(this.attributes, customEntityElement.attributes) &&
+        equalsNullable(this.attributes, customEntityElement.attributes) &&
         Objects.equals(this.owner, customEntityElement.owner) &&
         Objects.equals(this.shared, customEntityElement.shared) &&
         Objects.equals(this.group, customEntityElement.group);
@@ -533,7 +546,7 @@ public class CustomEntityElement {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, updated, name, code, hashCodeNullable(description), hashCodeNullable(externalCode), attributes, owner, shared, group);
+    return Objects.hash(meta, id, accountId, updated, name, code, hashCodeNullable(description), hashCodeNullable(externalCode), hashCodeNullable(attributes), owner, shared, group);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

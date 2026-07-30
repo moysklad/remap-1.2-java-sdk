@@ -45,7 +45,7 @@ import java.util.StringJoiner;
   WebhookStock.JSON_PROPERTY_ENABLED,
   WebhookStock.JSON_PROPERTY_AUTHOR_APPLICATION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-30T07:04:09.963990511Z[GMT]", comments = "Generator version: 7.14.0")
 public class WebhookStock extends EntityWithMeta {
   public static WebhookStock createWithMeta(UUID id) {
     WebhookStock o = new WebhookStock();

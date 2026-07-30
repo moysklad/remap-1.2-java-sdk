@@ -45,7 +45,7 @@ import java.util.StringJoiner;
   CreateRetailDemandMetadataStateRequest.JSON_PROPERTY_STATE_TYPE
 })
 @JsonTypeName("createRetailDemandMetadataState_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-30T07:04:09.963990511Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateRetailDemandMetadataStateRequest {
 
   public static final String JSON_PROPERTY_META = "meta";

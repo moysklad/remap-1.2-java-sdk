@@ -71,7 +71,7 @@ import java.util.StringJoiner;
   ProcessingPlan.JSON_PROPERTY_PRODUCTS,
   ProcessingPlan.JSON_PROPERTY_ATTRIBUTES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-30T07:04:09.963990511Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingPlan extends EntityWithMeta {
   public static ProcessingPlan createWithMeta(UUID id) {
     ProcessingPlan o = new ProcessingPlan();

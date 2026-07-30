@@ -47,7 +47,7 @@ import java.util.StringJoiner;
   ErrorErrorsInner.JSON_PROPERTY_META
 })
 @JsonTypeName("Error_errors_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T10:45:59.629854247Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-30T07:04:09.963990511Z[GMT]", comments = "Generator version: 7.14.0")
 public class ErrorErrorsInner {
 
   public static final String JSON_PROPERTY_ERROR = "error";
