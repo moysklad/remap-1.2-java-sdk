@@ -46,7 +46,7 @@ import java.util.StringJoiner;
   Discount.JSON_PROPERTY_META,
   Discount.JSON_PROPERTY_PRODUCT_FOLDERS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-30T07:04:09.963990511Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-12T06:20:04.597275673Z[GMT]", comments = "Generator version: 7.14.0")
 public class Discount extends DiscountAbstract {
   public static Discount createWithMeta(UUID id) {
     Discount o = new Discount();

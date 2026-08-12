@@ -153,6 +153,8 @@ tags:
   name: CommissionReportIns
 - description: Операции с выданными отчетами комиссионера
   name: CommissionReportOuts
+- description: Операции с отчетами
+  name: Reports
 - description: Операции с настройками компании
   name: CompanySettings
 - description: Операции с настройками пользователя
@@ -171,7 +173,289 @@ tags:
   name: BonusTransactions
 - description: Операции с пользовательскими справочниками
   name: CustomEntities
+- description: Операции с Расширенным отчетом об остатках
+  name: ReportsStockAll
 paths:
+  /report/dashboard/day:
+    get:
+      description: |
+        Запрос показателей за день.
+        Для доступа к отчету требуется право на просмотр показателей `viewDashboard`.
+      operationId: getReportDashboardDay
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReportDashboard"
+          description: Успешный запрос. JSON представление показателей за день
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить показатели за день
+      tags:
+      - Reports
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /report/dashboard/week:
+    get:
+      description: |
+        Запрос показателей за неделю.
+        Для доступа к отчету требуется право на просмотр показателей `viewDashboard`.
+      operationId: getReportDashboardWeek
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReportDashboard"
+          description: Успешный запрос. JSON представление показателей за неделю
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить показатели за неделю
+      tags:
+      - Reports
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /report/dashboard/month:
+    get:
+      description: |
+        Запрос показателей за месяц.
+        Для доступа к отчету требуется право на просмотр показателей `viewDashboard`.
+      operationId: getReportDashboardMonth
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReportDashboard"
+          description: Успешный запрос. JSON представление показателей за месяц
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить показатели за месяц
+      tags:
+      - Reports
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /report/orders/plotseries:
+    get:
+      description: |
+        Запрос показателей заказов покупателей за период с разбивкой по часам, дням или месяцам.
+        Для доступа к отчету требуется право на просмотр показателей `viewDashboard`.
+      operationId: getReportOrdersPlotSeries
+      parameters:
+      - description: Начало периода отчета в формате YYYY-MM-DD HH:MM:SS
+        in: query
+        name: momentFrom
+        required: true
+        schema:
+          type: string
+      - description: Конец периода отчета в формате YYYY-MM-DD HH:MM:SS
+        in: query
+        name: momentTo
+        required: true
+        schema:
+          type: string
+      - description: Интервал построения отчета
+        in: query
+        name: interval
+        required: true
+        schema:
+          enum:
+          - hour
+          - day
+          - month
+          type: string
+      - description: |
+          Фильтрация показателей заказов. Доступные поля: `organization`, `store`, `project`.
+          Можно указать несколько значений; пустые значения недопустимы.
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - description: |
+          Опциональный заголовок, в котором указана текущая дата на клиенте в RFC 3522.
+          Таймзону обязательно указывать в формате знак и 4 символа.
+          Пример: `Wed, 16 Aug 2017 23:07:01 +0700`.
+          При подсчете показателей даты операций смещаются в таймзону клиента.
+        in: header
+        name: X-Lognex-Accept-Timezone
+        required: false
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReportOrdersPlotSeriesList"
+          description: Успешный запрос. JSON представление отчета показателей заказов
+          headers:
+            X-Lognex-Content-Timezone:
+              description: |
+                Заголовок ответа. В нем указывается (как думает сервер) текущая дата на клиенте в RFC 3522.
+                Пример: `Wed, 16 Aug 2017 23:07:01 +0700`.
+              schema:
+                type: string
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить показатели заказов
+      tags:
+      - Reports
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /report/sales/plotseries:
+    get:
+      description: |
+        Запрос показателей продаж за период с разбивкой по часам, дням или месяцам.
+        В показателях продаж учитываются отгрузки, розничные продажи и полученные отчеты комиссионера.
+        Для доступа к отчету требуется право на просмотр показателей `viewDashboard`.
+      operationId: getReportSalesPlotSeries
+      parameters:
+      - description: Начало периода отчета в формате YYYY-MM-DD HH:MM:SS
+        in: query
+        name: momentFrom
+        required: true
+        schema:
+          type: string
+      - description: Конец периода отчета в формате YYYY-MM-DD HH:MM:SS
+        in: query
+        name: momentTo
+        required: true
+        schema:
+          type: string
+      - description: Интервал построения отчета
+        in: query
+        name: interval
+        required: true
+        schema:
+          enum:
+          - hour
+          - day
+          - month
+          type: string
+      - description: |
+          Фильтрация показателей продаж. Доступные поля: `organization`, `store`, `project`, `retailStore`.
+          Можно указать несколько значений; пустые значения недопустимы.
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - description: |
+          Опциональный заголовок, в котором указана текущая дата на клиенте в RFC 3522.
+          Таймзону обязательно указывать в формате знак и 4 символа.
+          Пример: `Wed, 16 Aug 2017 23:07:01 +0700`.
+          При подсчете показателей даты операций смещаются в таймзону клиента.
+        in: header
+        name: X-Lognex-Accept-Timezone
+        required: false
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReportSalesPlotSeriesList"
+          description: Успешный запрос. JSON представление отчета показателей продаж
+          headers:
+            X-Lognex-Content-Timezone:
+              description: |
+                Заголовок ответа. В нем указывается (как думает сервер) текущая дата на клиенте в RFC 3522.
+                Пример: `Wed, 16 Aug 2017 23:07:01 +0700`.
+              schema:
+                type: string
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить показатели продаж
+      tags:
+      - Reports
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
   /entity/contract:
     get:
       description: Запрос всех договоров на данной учетной записи
@@ -65012,8 +65296,124 @@ paths:
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
+  /report/stock/all:
+    get:
+      description: |
+        Запрос Расширенного отчета об остатках по всей номенклатуре учетной записи.
+        Тип объектов в выдаче задается параметром `groupBy`: товары (product), товары и модификации
+        (variant), товары, модификации и партии (consignment).
+      operationId: getStockAll
+      parameters:
+      - description: Максимальное количество элементов в выданном списке (максимум
+          1000)
+        in: query
+        name: limit
+        schema:
+          default: 1000
+          maximum: 1000
+          minimum: 1
+          type: integer
+      - description: Отступ в выданном списке
+        in: query
+        name: offset
+        schema:
+          default: 0
+          minimum: 0
+          type: integer
+      - description: Фильтрация выборки
+        in: query
+        name: filter
+        schema:
+          type: string
+      - description: Сортировка
+        in: query
+        name: order
+        schema:
+          type: string
+      - description: |
+          Тип, по которому нужно сгруппировать выдачу. Значение по умолчанию `variant`.
+          - `product` — выдает только товары
+          - `variant` — выдает товары и модификации
+          - `consignment` — выдает товары, модификации, партии
+        in: query
+        name: groupBy
+        required: false
+        schema:
+          enum:
+          - product
+          - variant
+          - consignment
+          type: string
+      - description: |
+          Вывод остатков по модификациям и партиям товаров. Обязательное условие применения —
+          наличие фильтрации по товарам или модификациям или их комбинации.
+          При использовании параметра устанавливается группировка `groupBy=consignment`,
+          переданные значения `groupBy` игнорируются.
+        in: query
+        name: includeRelated
+        required: false
+        schema:
+          type: boolean
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StockAllList"
+          description: Успешный запрос. Результат - JSON представление отчета
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить Расширенный отчет об остатках
+      tags:
+      - ReportsStockAll
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
 components:
   parameters:
+    AcceptHeader:
+      in: header
+      name: accept
+      required: false
+      schema:
+        default: application/json;charset=utf-8
+        enum:
+        - application/json
+        - application/json;charset=utf-8
+        type: string
+    AcceptEncoding:
+      in: header
+      name: Accept-Encoding
+      required: false
+      schema:
+        default: "gzip, deflate, br"
+        type: string
+    LognexAcceptTimezone:
+      description: |
+        Опциональный заголовок, в котором указана текущая дата на клиенте в RFC 3522.
+        Таймзону обязательно указывать в формате знак и 4 символа.
+        Пример: `Wed, 16 Aug 2017 23:07:01 +0700`.
+        При подсчете показателей даты операций смещаются в таймзону клиента.
+      in: header
+      name: X-Lognex-Accept-Timezone
+      required: false
+      schema:
+        type: string
     limit:
       description: Максимальное количество элементов в выданном списке (максимум 1000)
       in: query
@@ -65054,23 +65454,6 @@ components:
       in: query
       name: order
       schema:
-        type: string
-    AcceptHeader:
-      in: header
-      name: accept
-      required: false
-      schema:
-        default: application/json;charset=utf-8
-        enum:
-        - application/json
-        - application/json;charset=utf-8
-        type: string
-    AcceptEncoding:
-      in: header
-      name: Accept-Encoding
-      required: false
-      schema:
-        default: "gzip, deflate, br"
         type: string
     ContentTypeJson:
       in: header
@@ -67737,6 +68120,97 @@ components:
       properties:
         employee:
           $ref: "#/components/schemas/Employee"
+      type: object
+    ReportDashboard:
+      description: "Показатели за день, неделю или месяц"
+      properties:
+        sales:
+          $ref: "#/components/schemas/ReportDashboardPeriodMetrics"
+        orders:
+          $ref: "#/components/schemas/ReportDashboardPeriodMetrics"
+        money:
+          $ref: "#/components/schemas/ReportDashboardMoney"
+      type: object
+    ReportDashboardMoney:
+      description: Информация о деньгах за период
+      properties:
+        income:
+          description: Доходы за период
+          format: int32
+          type: integer
+        outcome:
+          description: Расходы за период
+          format: double
+          type: number
+        balance:
+          description: Текущий баланс
+          format: double
+          type: number
+        todayMovement:
+          description: Дельта за сегодня
+          format: double
+          type: number
+        movement:
+          description: Дельта за период
+          format: double
+          type: number
+      type: object
+    ReportDashboardPeriodMetrics:
+      description: Показатели продаж или заказов за период
+      properties:
+        count:
+          description: Количество продаж
+          format: int32
+          type: integer
+        amount:
+          description: Прибыль
+          format: int32
+          type: integer
+        movementAmount:
+          description: Дельта по сравнению с прошлым аналогичным периодом
+          format: int32
+          type: integer
+      type: object
+    ReportOrdersPlotSeriesList:
+      description: Показатели заказов покупателей
+      properties:
+        context:
+          $ref: "#/components/schemas/Context"
+        meta:
+          $ref: "#/components/schemas/Meta"
+        series:
+          description: Массив показателей заказов
+          items:
+            $ref: "#/components/schemas/ReportPlotSeries"
+          type: array
+      type: object
+    ReportPlotSeries:
+      description: Показатель продаж или заказов за период отчета
+      properties:
+        date:
+          description: Дата показателя в формате YYYY-MM-DD HH:MM:SS
+          type: string
+        quantity:
+          description: Количество
+          format: int32
+          type: integer
+        sum:
+          description: Сумма
+          format: double
+          type: number
+      type: object
+    ReportSalesPlotSeriesList:
+      description: Показатели продаж
+      properties:
+        context:
+          $ref: "#/components/schemas/Context"
+        meta:
+          $ref: "#/components/schemas/Meta"
+        series:
+          description: Массив показателей продаж
+          items:
+            $ref: "#/components/schemas/ReportPlotSeries"
+          type: array
       type: object
     Declaration:
       description: |
@@ -79974,6 +80448,82 @@ components:
           description: Массив элементов пользовательского справочника
           items:
             $ref: "#/components/schemas/CustomEntityElement_1"
+          type: array
+      type: object
+    StockAll:
+      description: |
+        Строка Расширенного отчета об остатках.
+
+        Тип каждой строки задается её `meta.type` (product, variant или consignment).
+        Параметр запроса `groupBy` определяет набор возможных типов в выдаче:
+        `product` — только товары; `variant` — товары и модификации;
+        `consignment` — товары, модификации и партии.
+      properties:
+        meta:
+          $ref: "#/components/schemas/Meta"
+        name:
+          description: Наименование
+          maxLength: 255
+          type: string
+        code:
+          description: Код
+          maxLength: 255
+          type: string
+        article:
+          description: Артикул
+          maxLength: 255
+          type: string
+        externalCode:
+          description: "Внешний код сущности, по которой выводится остаток"
+          maxLength: 255
+          type: string
+        folder:
+          $ref: "#/components/schemas/ProductFolder"
+        image:
+          $ref: "#/components/schemas/Image"
+        uom:
+          $ref: "#/components/schemas/Uom"
+        stock:
+          description: Остаток
+          format: double
+          type: number
+        inTransit:
+          description: Ожидание
+          format: double
+          type: number
+        reserve:
+          description: Резерв
+          format: double
+          type: number
+        quantity:
+          description: Доступно
+          format: double
+          type: number
+        stockDays:
+          description: Количество дней на складе
+          type: integer
+        price:
+          description: Себестоимость в копейках
+          format: double
+          type: number
+        salePrice:
+          description: Цена продажи
+          format: double
+          type: number
+      type: object
+    StockAllList:
+      description: Расширенный отчет об остатках
+      properties:
+        context:
+          $ref: "#/components/schemas/Context"
+        meta:
+          $ref: "#/components/schemas/MetaList"
+        rows:
+          description: |
+            Массив строк отчета об остатках. Набор типов строк зависит от параметра запроса `groupBy`
+            (см. `meta.type`: product, variant, consignment).
+          items:
+            $ref: "#/components/schemas/StockAll"
           type: array
       type: object
     errorOrArray:

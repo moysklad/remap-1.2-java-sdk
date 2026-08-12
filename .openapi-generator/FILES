@@ -388,6 +388,14 @@ docs/RateUpdateType.md
 docs/Region.md
 docs/RegionList.md
 docs/RegionsApi.md
+docs/ReportDashboard.md
+docs/ReportDashboardMoney.md
+docs/ReportDashboardPeriodMetrics.md
+docs/ReportOrdersPlotSeriesList.md
+docs/ReportPlotSeries.md
+docs/ReportSalesPlotSeriesList.md
+docs/ReportsApi.md
+docs/ReportsStockAllApi.md
 docs/RetailDemand.md
 docs/RetailDemandCheque.md
 docs/RetailDemandGiftCard.md
@@ -466,6 +474,8 @@ docs/SpecialPriceDiscountSpecialPrice.md
 docs/State.md
 docs/StateRowResult.md
 docs/StateType.md
+docs/StockAll.md
+docs/StockAllList.md
 docs/Store.md
 docs/StoreBalance.md
 docs/StoreBalanceList.md
@@ -616,6 +626,8 @@ src/main/java/ru/moysklad/remap_1_2/api/ProjectsApi.java
 src/main/java/ru/moysklad/remap_1_2/api/PurchaseOrdersApi.java
 src/main/java/ru/moysklad/remap_1_2/api/PurchaseReturnsApi.java
 src/main/java/ru/moysklad/remap_1_2/api/RegionsApi.java
+src/main/java/ru/moysklad/remap_1_2/api/ReportsApi.java
+src/main/java/ru/moysklad/remap_1_2/api/ReportsStockAllApi.java
 src/main/java/ru/moysklad/remap_1_2/api/RequestOptions.java
 src/main/java/ru/moysklad/remap_1_2/api/RetailDemandsApi.java
 src/main/java/ru/moysklad/remap_1_2/api/RetailDrawerCashInsApi.java
@@ -974,6 +986,12 @@ src/main/java/ru/moysklad/remap_1_2/model/PurchaseReturnPositionList.java
 src/main/java/ru/moysklad/remap_1_2/model/RateUpdateType.java
 src/main/java/ru/moysklad/remap_1_2/model/Region.java
 src/main/java/ru/moysklad/remap_1_2/model/RegionList.java
+src/main/java/ru/moysklad/remap_1_2/model/ReportDashboard.java
+src/main/java/ru/moysklad/remap_1_2/model/ReportDashboardMoney.java
+src/main/java/ru/moysklad/remap_1_2/model/ReportDashboardPeriodMetrics.java
+src/main/java/ru/moysklad/remap_1_2/model/ReportOrdersPlotSeriesList.java
+src/main/java/ru/moysklad/remap_1_2/model/ReportPlotSeries.java
+src/main/java/ru/moysklad/remap_1_2/model/ReportSalesPlotSeriesList.java
 src/main/java/ru/moysklad/remap_1_2/model/RetailDemand.java
 src/main/java/ru/moysklad/remap_1_2/model/RetailDemandCheque.java
 src/main/java/ru/moysklad/remap_1_2/model/RetailDemandGiftCard.java
@@ -1042,6 +1060,8 @@ src/main/java/ru/moysklad/remap_1_2/model/SpecialPriceDiscountSpecialPrice.java
 src/main/java/ru/moysklad/remap_1_2/model/State.java
 src/main/java/ru/moysklad/remap_1_2/model/StateRowResult.java
 src/main/java/ru/moysklad/remap_1_2/model/StateType.java
+src/main/java/ru/moysklad/remap_1_2/model/StockAll.java
+src/main/java/ru/moysklad/remap_1_2/model/StockAllList.java
 src/main/java/ru/moysklad/remap_1_2/model/Store.java
 src/main/java/ru/moysklad/remap_1_2/model/StoreBalance.java
 src/main/java/ru/moysklad/remap_1_2/model/StoreBalanceList.java

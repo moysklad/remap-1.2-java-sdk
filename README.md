@@ -4,7 +4,7 @@
 
 - API version: 1.0.0
 
-- Build date: 2026-07-30T07:04:09.963990511Z[GMT]
+- Build date: 2026-08-12T06:20:04.597275673Z[GMT]
 
 - Generator version: 7.14.0
 
@@ -1053,6 +1053,12 @@ Class | Method | HTTP request | Description
 *PurchaseReturnsApi* | [**updatePurchaseReturnPosition**](docs/PurchaseReturnsApi.md#updatePurchaseReturnPosition) | **PUT** /entity/purchasereturn/{id}/positions/{positionId} | Изменить позицию Возврата поставщику
 *RegionsApi* | [**getRegionById**](docs/RegionsApi.md#getRegionById) | **GET** /entity/region/{id} | Получить регион по ID
 *RegionsApi* | [**getRegions**](docs/RegionsApi.md#getRegions) | **GET** /entity/region | Получить список регионов
+*ReportsApi* | [**getReportDashboardDay**](docs/ReportsApi.md#getReportDashboardDay) | **GET** /report/dashboard/day | Получить показатели за день
+*ReportsApi* | [**getReportDashboardMonth**](docs/ReportsApi.md#getReportDashboardMonth) | **GET** /report/dashboard/month | Получить показатели за месяц
+*ReportsApi* | [**getReportDashboardWeek**](docs/ReportsApi.md#getReportDashboardWeek) | **GET** /report/dashboard/week | Получить показатели за неделю
+*ReportsApi* | [**getReportOrdersPlotSeries**](docs/ReportsApi.md#getReportOrdersPlotSeries) | **GET** /report/orders/plotseries | Получить показатели заказов
+*ReportsApi* | [**getReportSalesPlotSeries**](docs/ReportsApi.md#getReportSalesPlotSeries) | **GET** /report/sales/plotseries | Получить показатели продаж
+*ReportsStockAllApi* | [**getStockAll**](docs/ReportsStockAllApi.md#getStockAll) | **GET** /report/stock/all | Получить Расширенный отчет об остатках
 *RetailDemandsApi* | [**createRetailDemand**](docs/RetailDemandsApi.md#createRetailDemand) | **POST** /entity/retaildemand | Создать Розничную продажу
 *RetailDemandsApi* | [**createRetailDemandBatch**](docs/RetailDemandsApi.md#createRetailDemandBatch) | **POST** /entity/retaildemand/batch | Массовое создание и обновление Розничных продаж
 *RetailDemandsApi* | [**createRetailDemandMetadataAttribute**](docs/RetailDemandsApi.md#createRetailDemandMetadataAttribute) | **POST** /entity/retaildemand/metadata/attributes | Создать доп. поле Розничной продажи
@@ -1664,6 +1670,12 @@ Class | Method | HTTP request | Description
  - [RateUpdateType](docs/RateUpdateType.md)
  - [Region](docs/Region.md)
  - [RegionList](docs/RegionList.md)
+ - [ReportDashboard](docs/ReportDashboard.md)
+ - [ReportDashboardMoney](docs/ReportDashboardMoney.md)
+ - [ReportDashboardPeriodMetrics](docs/ReportDashboardPeriodMetrics.md)
+ - [ReportOrdersPlotSeriesList](docs/ReportOrdersPlotSeriesList.md)
+ - [ReportPlotSeries](docs/ReportPlotSeries.md)
+ - [ReportSalesPlotSeriesList](docs/ReportSalesPlotSeriesList.md)
  - [RetailDemand](docs/RetailDemand.md)
  - [RetailDemandCheque](docs/RetailDemandCheque.md)
  - [RetailDemandGiftCard](docs/RetailDemandGiftCard.md)
@@ -1732,6 +1744,8 @@ Class | Method | HTTP request | Description
  - [State](docs/State.md)
  - [StateRowResult](docs/StateRowResult.md)
  - [StateType](docs/StateType.md)
+ - [StockAll](docs/StockAll.md)
+ - [StockAllList](docs/StockAllList.md)
  - [Store](docs/Store.md)
  - [StoreBalance](docs/StoreBalance.md)
  - [StoreBalanceList](docs/StoreBalanceList.md)

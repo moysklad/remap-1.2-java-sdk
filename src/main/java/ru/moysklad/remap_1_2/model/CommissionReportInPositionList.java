@@ -46,7 +46,7 @@ import java.util.StringJoiner;
   CommissionReportInPositionList.JSON_PROPERTY_META,
   CommissionReportInPositionList.JSON_PROPERTY_ROWS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-30T07:04:09.963990511Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-12T06:20:04.597275673Z[GMT]", comments = "Generator version: 7.14.0")
 public class CommissionReportInPositionList {
 
   public static final String JSON_PROPERTY_CONTEXT = "context";

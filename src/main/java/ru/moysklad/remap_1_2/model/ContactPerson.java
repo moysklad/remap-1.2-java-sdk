@@ -47,7 +47,7 @@ import java.util.StringJoiner;
   ContactPerson.JSON_PROPERTY_EXTERNAL_CODE,
   ContactPerson.JSON_PROPERTY_AGENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-30T07:04:09.963990511Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-12T06:20:04.597275673Z[GMT]", comments = "Generator version: 7.14.0")
 public class ContactPerson {
   public static ContactPerson createWithMeta(UUID parentId, UUID id) {
     ContactPerson o = new ContactPerson();

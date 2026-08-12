@@ -138,7 +138,7 @@ import java.util.StringJoiner;
   EmployeeRolePermissions.JSON_PROPERTY_WAREHOUSE
 })
 @JsonTypeName("EmployeeRole_permissions")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-30T07:04:09.963990511Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-12T06:20:04.597275673Z[GMT]", comments = "Generator version: 7.14.0")
 public class EmployeeRolePermissions {
 
   public static final String JSON_PROPERTY_API_REQUEST = "apiRequest";

@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   DeleteProductImagesRequestInner.JSON_PROPERTY_META
 })
 @JsonTypeName("deleteProductImages_request_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-30T07:04:09.963990511Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-12T06:20:04.597275673Z[GMT]", comments = "Generator version: 7.14.0")
 public class DeleteProductImagesRequestInner {
 
   public static final String JSON_PROPERTY_META = "meta";
