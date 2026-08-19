@@ -55,7 +55,7 @@ import java.util.StringJoiner;
   ProcessingPlanFolder.JSON_PROPERTY_OWNER,
   ProcessingPlanFolder.JSON_PROPERTY_PROCESSINGPLANFOLDER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-12T06:20:04.597275673Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T07:12:25.385687983Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingPlanFolder extends EntityWithMeta {
   public static ProcessingPlanFolder createWithMeta(UUID id) {
     ProcessingPlanFolder o = new ProcessingPlanFolder();

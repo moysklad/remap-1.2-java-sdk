@@ -37,7 +37,7 @@ import java.util.StringJoiner;
   SpecialPriceDiscountSpecialPrice.JSON_PROPERTY_PRICE_TYPE
 })
 @JsonTypeName("SpecialPriceDiscount_specialPrice")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-12T06:20:04.597275673Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T07:12:25.385687983Z[GMT]", comments = "Generator version: 7.14.0")
 public class SpecialPriceDiscountSpecialPrice {
 
   public static final String JSON_PROPERTY_VALUE = "value";

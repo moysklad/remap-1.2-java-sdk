@@ -38,7 +38,7 @@ import java.util.StringJoiner;
   ScriptTemplatePermissions.JSON_PROPERTY_DELETE,
   ScriptTemplatePermissions.JSON_PROPERTY_ACTIVATE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-12T06:20:04.597275673Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T07:12:25.385687983Z[GMT]", comments = "Generator version: 7.14.0")
 public class ScriptTemplatePermissions {
 
   public static final String JSON_PROPERTY_VIEW = "view";

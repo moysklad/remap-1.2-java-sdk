@@ -96,7 +96,7 @@ import java.util.StringJoiner;
   Organization.JSON_PROPERTY_ACCOUNTS,
   Organization.JSON_PROPERTY_ATTRIBUTES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-12T06:20:04.597275673Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T07:12:25.385687983Z[GMT]", comments = "Generator version: 7.14.0")
 public class Organization extends Agent {
   public static Organization createWithMeta(UUID id) {
     Organization o = new Organization();

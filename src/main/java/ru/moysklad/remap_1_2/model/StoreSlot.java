@@ -44,7 +44,7 @@ import java.util.StringJoiner;
   StoreSlot.JSON_PROPERTY_BARCODE,
   StoreSlot.JSON_PROPERTY_ZONE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-12T06:20:04.597275673Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T07:12:25.385687983Z[GMT]", comments = "Generator version: 7.14.0")
 public class StoreSlot {
   public static StoreSlot createWithMeta(UUID parentId, UUID id) {
     StoreSlot o = new StoreSlot();

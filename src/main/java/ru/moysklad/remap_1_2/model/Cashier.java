@@ -42,7 +42,7 @@ import java.util.StringJoiner;
   Cashier.JSON_PROPERTY_EMPLOYEE,
   Cashier.JSON_PROPERTY_RETAIL_STORE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-12T06:20:04.597275673Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T07:12:25.385687983Z[GMT]", comments = "Generator version: 7.14.0")
 public class Cashier {
   public static Cashier createWithMeta(UUID parentId, UUID id) {
     Cashier o = new Cashier();

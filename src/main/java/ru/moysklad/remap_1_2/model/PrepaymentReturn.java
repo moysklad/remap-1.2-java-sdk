@@ -90,7 +90,7 @@ import java.util.StringJoiner;
   PrepaymentReturn.JSON_PROPERTY_STATE,
   PrepaymentReturn.JSON_PROPERTY_TAX_SYSTEM
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-12T06:20:04.597275673Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T07:12:25.385687983Z[GMT]", comments = "Generator version: 7.14.0")
 public class PrepaymentReturn {
   public static PrepaymentReturn createWithMeta(UUID id) {
     PrepaymentReturn o = new PrepaymentReturn();
