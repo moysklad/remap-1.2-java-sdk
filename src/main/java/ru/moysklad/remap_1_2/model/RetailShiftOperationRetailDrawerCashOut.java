@@ -76,7 +76,7 @@ import java.util.StringJoiner;
   RetailShiftOperationRetailDrawerCashOut.JSON_PROPERTY_SYNC_ID,
   RetailShiftOperationRetailDrawerCashOut.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T09:44:38.687219894Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T14:17:58.768703697Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailShiftOperationRetailDrawerCashOut extends RetailShiftOperation {
 
   public static final String JSON_PROPERTY_META = "meta";

@@ -106,7 +106,7 @@ import java.util.StringJoiner;
   PurchaseOrder.JSON_PROPERTY_PAYMENTS,
   PurchaseOrder.JSON_PROPERTY_PRODUCTION_TASKS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T09:44:38.687219894Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T14:17:58.768703697Z[GMT]", comments = "Generator version: 7.14.0")
 public class PurchaseOrder extends EntityWithMeta {
   public static PurchaseOrder createWithMeta(UUID id) {
     PurchaseOrder o = new PurchaseOrder();

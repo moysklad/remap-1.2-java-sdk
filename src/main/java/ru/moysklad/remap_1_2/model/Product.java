@@ -106,7 +106,7 @@ import java.util.StringJoiner;
   Product.JSON_PROPERTY_SYNC_ID,
   Product.JSON_PROPERTY_PPE_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T09:44:38.687219894Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T14:17:58.768703697Z[GMT]", comments = "Generator version: 7.14.0")
 public class Product extends ProductMarker {
   public static Product createWithMeta(UUID id) {
     Product o = new Product();
@@ -1409,7 +1409,7 @@ public class Product extends ProductMarker {
   }
 
   /**
-   * Штрихкоды товара
+   * Штрихкоды Товара
    * @return barcodes
    */
   @javax.annotation.Nullable

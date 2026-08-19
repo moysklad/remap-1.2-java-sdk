@@ -68954,7 +68954,7 @@ components:
           description: Метаданные массива Файлов
           type: object
         barcodes:
-          description: Штрихкоды товара
+          description: Штрихкоды Товара
           items:
             $ref: "#/components/schemas/Barcode"
           nullable: true
