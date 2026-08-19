@@ -85,7 +85,7 @@ import java.util.StringJoiner;
   Loss.JSON_PROPERTY_SALES_RETURN,
   Loss.JSON_PROPERTY_INVENTORY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T07:12:25.385687983Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T09:44:38.687219894Z[GMT]", comments = "Generator version: 7.14.0")
 public class Loss extends EntityWithMeta {
   public static Loss createWithMeta(UUID id) {
     Loss o = new Loss();

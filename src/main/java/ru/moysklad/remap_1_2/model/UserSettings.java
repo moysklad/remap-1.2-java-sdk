@@ -50,7 +50,7 @@ import java.util.StringJoiner;
   UserSettings.JSON_PROPERTY_MAIL_FOOTER,
   UserSettings.JSON_PROPERTY_PRINT_FORMAT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T07:12:25.385687983Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T09:44:38.687219894Z[GMT]", comments = "Generator version: 7.14.0")
 public class UserSettings {
 
   public static final String JSON_PROPERTY_META = "meta";

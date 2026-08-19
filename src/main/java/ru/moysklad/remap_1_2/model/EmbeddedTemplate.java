@@ -42,7 +42,7 @@ import java.util.StringJoiner;
   EmbeddedTemplate.JSON_PROPERTY_TYPE,
   EmbeddedTemplate.JSON_PROPERTY_CONTENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T07:12:25.385687983Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T09:44:38.687219894Z[GMT]", comments = "Generator version: 7.14.0")
 public class EmbeddedTemplate {
   public static EmbeddedTemplate createWithMeta(UUID type, UUID id) {
     EmbeddedTemplate o = new EmbeddedTemplate();

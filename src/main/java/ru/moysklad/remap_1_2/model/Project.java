@@ -58,7 +58,7 @@ import java.util.StringJoiner;
   Project.JSON_PROPERTY_SHARED,
   Project.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T07:12:25.385687983Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T09:44:38.687219894Z[GMT]", comments = "Generator version: 7.14.0")
 public class Project extends EntityWithMeta {
   public static Project createWithMeta(UUID id) {
     Project o = new Project();

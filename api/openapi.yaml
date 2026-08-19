@@ -68852,7 +68852,7 @@ components:
           maxLength: 255
           type: string
         description:
-          description: Описание Товара
+          description: Описание товара
           maxLength: 4096
           nullable: true
           type: string

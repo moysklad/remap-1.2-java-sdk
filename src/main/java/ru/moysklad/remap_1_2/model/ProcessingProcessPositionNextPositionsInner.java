@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   ProcessingProcessPositionNextPositionsInner.JSON_PROPERTY_PROCESSINGSTAGE
 })
 @JsonTypeName("ProcessingProcessPosition_nextPositions_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T07:12:25.385687983Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T09:44:38.687219894Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingProcessPositionNextPositionsInner {
 
   public static final String JSON_PROPERTY_PROCESSINGSTAGE = "processingstage";
