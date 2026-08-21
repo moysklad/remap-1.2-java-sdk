@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   Overhead.JSON_PROPERTY_DISTRIBUTION
 })
 @JsonTypeName("overhead")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T14:17:58.768703697Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-21T04:48:18.412930091Z[GMT]", comments = "Generator version: 7.14.0")
 public class Overhead {
 
   public static final String JSON_PROPERTY_SUM = "sum";

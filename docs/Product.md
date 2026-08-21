@@ -18,7 +18,7 @@
 |**externalCode** | **String** | Внешний код товара |  [optional] |
 |**pathName** | **String** | Наименование группы, в которую входит товар |  [optional] [readonly] |
 |**article** | **String** | Артикул |  [optional] |
-|**description** | **String** | Описание товара |  [optional] |
+|**description** | **String** | Описание Товара |  [optional] |
 |**vat** | **Integer** | НДС % |  [optional] |
 |**vatEnabled** | **Boolean** | Включен ли НДС для товара |  [optional] |
 |**useParentVat** | **Boolean** | Используется ли ставка НДС родительской группы |  [optional] |

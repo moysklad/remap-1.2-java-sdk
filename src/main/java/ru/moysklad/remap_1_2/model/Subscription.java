@@ -41,7 +41,7 @@ import java.util.StringJoiner;
   Subscription.JSON_PROPERTY_IS_SUBSCRIPTION_CHANGE_AVAILABLE,
   Subscription.JSON_PROPERTY_SUBSCRIPTION_END_DATE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T14:17:58.768703697Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-21T04:48:18.412930091Z[GMT]", comments = "Generator version: 7.14.0")
 public class Subscription {
 
   public static final String JSON_PROPERTY_ROLE = "role";

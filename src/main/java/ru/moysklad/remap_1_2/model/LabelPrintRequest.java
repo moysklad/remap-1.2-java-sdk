@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   LabelPrintRequest.JSON_PROPERTY_SALE_PRICE,
   LabelPrintRequest.JSON_PROPERTY_TEMPLATE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-19T14:17:58.768703697Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-21T04:48:18.412930091Z[GMT]", comments = "Generator version: 7.14.0")
 public class LabelPrintRequest {
 
   public static final String JSON_PROPERTY_ORGANIZATION = "organization";
