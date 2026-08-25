@@ -189,7 +189,7 @@ public class Example {
 
 ## createEmissionOrderPosition
 
-> EmissionOrderPosition createEmissionOrderPosition(id, emissionOrderPosition, expand, accept, acceptEncoding, contentType)
+> List&lt;EmissionOrderPosition&gt; createEmissionOrderPosition(id, emissionOrderPosition, expand, accept, acceptEncoding, contentType)
 
 Создать и обновить позицию Заказа кодов маркировки
 
@@ -226,7 +226,7 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            EmissionOrderPosition result = apiInstance.createEmissionOrderPosition(id, emissionOrderPosition, expand, accept, acceptEncoding, contentType);
+            List<EmissionOrderPosition> result = apiInstance.createEmissionOrderPosition(id, emissionOrderPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling EmissionOrdersApi#createEmissionOrderPosition");
@@ -253,7 +253,7 @@ public class Example {
 
 ### Return type
 
-[**EmissionOrderPosition**](EmissionOrderPosition.md)
+[**List&lt;EmissionOrderPosition&gt;**](EmissionOrderPosition.md)
 
 ### Authorization
 

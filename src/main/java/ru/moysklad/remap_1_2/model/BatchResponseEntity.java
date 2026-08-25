@@ -40,7 +40,7 @@ import ru.moysklad.remap_1_2.deserialize.PolymorphicMetaTypeDeserializer;
 @JsonPropertyOrder({
   BatchResponseEntity.JSON_PROPERTY_META
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-21T04:48:18.412930091Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
 @OpenApiPolymorphicTypeInfo(path = "meta.type", batchErrorFallback = true)
 @OpenApiPolymorphicSubTypes({
   @OpenApiPolymorphicSubTypes.Type(value = Bundle.class, name = "bundle"),

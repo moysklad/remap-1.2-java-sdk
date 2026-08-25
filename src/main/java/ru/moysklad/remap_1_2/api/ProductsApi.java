@@ -50,7 +50,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-21T04:48:18.412930091Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ProductsApi extends BaseApi {
 
@@ -500,10 +500,10 @@ if (contentType != null)
    * Создание нового Неснижаемого остатка Товара для склада.
    * @param id ID сущности (required)
    * @param storeBalance  (required)
-   * @return StoreBalance
+   * @return List&lt;StoreBalance&gt;
    * @throws ApiException if fails to make API call
    */
-  public StoreBalance createProductStoreBalance(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull StoreBalance storeBalance) throws ApiException {
+  public List<StoreBalance> createProductStoreBalance(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull StoreBalance storeBalance) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.createProductStoreBalance(id, storeBalance, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -522,10 +522,10 @@ if (contentType != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return StoreBalance
+   * @return List&lt;StoreBalance&gt;
    * @throws ApiException if fails to make API call
    */
-  public StoreBalance createProductStoreBalance(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull StoreBalance storeBalance, RequestOptions options) throws ApiException {
+  public List<StoreBalance> createProductStoreBalance(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull StoreBalance storeBalance, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createProductStoreBalance(id, storeBalance, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -539,10 +539,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return StoreBalance
+   * @return List&lt;StoreBalance&gt;
    * @throws ApiException if fails to make API call
    */
-  protected StoreBalance createProductStoreBalance(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull StoreBalance storeBalance, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<StoreBalance> createProductStoreBalance(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull StoreBalance storeBalance, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = storeBalance;
     
     // verify the required parameter 'id' is set
@@ -590,7 +590,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<StoreBalance> localVarReturnType = new TypeReference<StoreBalance>() {};
+    TypeReference<List<StoreBalance>> localVarReturnType = new TypeReference<List<StoreBalance>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

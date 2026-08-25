@@ -51,7 +51,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-21T04:48:18.412930091Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class CustomerOrdersApi extends BaseApi {
 
@@ -697,10 +697,10 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param customerOrderPosition  (required)
-   * @return CustomerOrderPosition
+   * @return List&lt;CustomerOrderPosition&gt;
    * @throws ApiException if fails to make API call
    */
-  public CustomerOrderPosition createCustomerOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CustomerOrderPosition customerOrderPosition) throws ApiException {
+  public List<CustomerOrderPosition> createCustomerOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CustomerOrderPosition customerOrderPosition) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.createCustomerOrderPosition(id, customerOrderPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -720,10 +720,10 @@ if (contentType != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return CustomerOrderPosition
+   * @return List&lt;CustomerOrderPosition&gt;
    * @throws ApiException if fails to make API call
    */
-  public CustomerOrderPosition createCustomerOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CustomerOrderPosition customerOrderPosition, RequestOptions options) throws ApiException {
+  public List<CustomerOrderPosition> createCustomerOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CustomerOrderPosition customerOrderPosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createCustomerOrderPosition(id, customerOrderPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -738,10 +738,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return CustomerOrderPosition
+   * @return List&lt;CustomerOrderPosition&gt;
    * @throws ApiException if fails to make API call
    */
-  protected CustomerOrderPosition createCustomerOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CustomerOrderPosition customerOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<CustomerOrderPosition> createCustomerOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CustomerOrderPosition customerOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = customerOrderPosition;
     
     // verify the required parameter 'id' is set
@@ -790,7 +790,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<CustomerOrderPosition> localVarReturnType = new TypeReference<CustomerOrderPosition>() {};
+    TypeReference<List<CustomerOrderPosition>> localVarReturnType = new TypeReference<List<CustomerOrderPosition>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

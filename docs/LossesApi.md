@@ -280,7 +280,7 @@ public class Example {
 
 ## createLossPosition
 
-> LossPosition createLossPosition(id, lossPosition, expand, accept, acceptEncoding, contentType)
+> List&lt;LossPosition&gt; createLossPosition(id, lossPosition, expand, accept, acceptEncoding, contentType)
 
 Создать и обновить позицию Списания
 
@@ -317,7 +317,7 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            LossPosition result = apiInstance.createLossPosition(id, lossPosition, expand, accept, acceptEncoding, contentType);
+            List<LossPosition> result = apiInstance.createLossPosition(id, lossPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling LossesApi#createLossPosition");
@@ -344,7 +344,7 @@ public class Example {
 
 ### Return type
 
-[**LossPosition**](LossPosition.md)
+[**List&lt;LossPosition&gt;**](LossPosition.md)
 
 ### Authorization
 

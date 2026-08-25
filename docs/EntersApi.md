@@ -532,7 +532,7 @@ public class Example {
 
 ## createEnterPosition
 
-> EnterPosition createEnterPosition(id, enterPosition, expand, accept, acceptEncoding, contentType)
+> List&lt;EnterPosition&gt; createEnterPosition(id, enterPosition, expand, accept, acceptEncoding, contentType)
 
 Создать и обновить позицию Оприходования
 
@@ -569,7 +569,7 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            EnterPosition result = apiInstance.createEnterPosition(id, enterPosition, expand, accept, acceptEncoding, contentType);
+            List<EnterPosition> result = apiInstance.createEnterPosition(id, enterPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling EntersApi#createEnterPosition");
@@ -596,7 +596,7 @@ public class Example {
 
 ### Return type
 
-[**EnterPosition**](EnterPosition.md)
+[**List&lt;EnterPosition&gt;**](EnterPosition.md)
 
 ### Authorization
 

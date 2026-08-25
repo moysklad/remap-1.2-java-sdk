@@ -444,7 +444,7 @@ public class Example {
 
 ## createInternalOrderPosition
 
-> InternalOrderPosition createInternalOrderPosition(id, internalOrderPosition, expand, accept, acceptEncoding, contentType)
+> List&lt;InternalOrderPosition&gt; createInternalOrderPosition(id, internalOrderPosition, expand, accept, acceptEncoding, contentType)
 
 Создать и обновить позицию Внутреннего заказа
 
@@ -481,7 +481,7 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            InternalOrderPosition result = apiInstance.createInternalOrderPosition(id, internalOrderPosition, expand, accept, acceptEncoding, contentType);
+            List<InternalOrderPosition> result = apiInstance.createInternalOrderPosition(id, internalOrderPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling InternalOrdersApi#createInternalOrderPosition");
@@ -508,7 +508,7 @@ public class Example {
 
 ### Return type
 
-[**InternalOrderPosition**](InternalOrderPosition.md)
+[**List&lt;InternalOrderPosition&gt;**](InternalOrderPosition.md)
 
 ### Authorization
 

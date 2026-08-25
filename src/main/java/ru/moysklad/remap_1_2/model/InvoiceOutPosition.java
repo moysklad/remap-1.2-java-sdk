@@ -51,7 +51,7 @@ import java.util.StringJoiner;
   InvoiceOutPosition.JSON_PROPERTY_ASSORTMENT,
   InvoiceOutPosition.JSON_PROPERTY_PACK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-21T04:48:18.412930091Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
 public class InvoiceOutPosition extends EntityWithMeta {
   public static InvoiceOutPosition createWithMeta(UUID parentId, UUID id) {
     InvoiceOutPosition o = new InvoiceOutPosition();

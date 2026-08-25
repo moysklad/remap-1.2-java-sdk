@@ -47,7 +47,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-21T04:48:18.412930091Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class MovesApi extends BaseApi {
 
@@ -489,10 +489,10 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param movePosition  (required)
-   * @return MovePosition
+   * @return List&lt;MovePosition&gt;
    * @throws ApiException if fails to make API call
    */
-  public MovePosition createMovePosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull MovePosition movePosition) throws ApiException {
+  public List<MovePosition> createMovePosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull MovePosition movePosition) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.createMovePosition(id, movePosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -512,10 +512,10 @@ if (contentType != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return MovePosition
+   * @return List&lt;MovePosition&gt;
    * @throws ApiException if fails to make API call
    */
-  public MovePosition createMovePosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull MovePosition movePosition, RequestOptions options) throws ApiException {
+  public List<MovePosition> createMovePosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull MovePosition movePosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createMovePosition(id, movePosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -530,10 +530,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return MovePosition
+   * @return List&lt;MovePosition&gt;
    * @throws ApiException if fails to make API call
    */
-  protected MovePosition createMovePosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull MovePosition movePosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<MovePosition> createMovePosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull MovePosition movePosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = movePosition;
     
     // verify the required parameter 'id' is set
@@ -582,7 +582,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<MovePosition> localVarReturnType = new TypeReference<MovePosition>() {};
+    TypeReference<List<MovePosition>> localVarReturnType = new TypeReference<List<MovePosition>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

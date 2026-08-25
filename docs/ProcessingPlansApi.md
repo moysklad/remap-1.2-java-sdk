@@ -207,7 +207,7 @@ public class Example {
 
 ## createProcessingPlanMaterials
 
-> ProcessingPlanMaterial createProcessingPlanMaterials(id, processingPlanMaterial, expand, accept, acceptEncoding, contentType)
+> List&lt;ProcessingPlanMaterial&gt; createProcessingPlanMaterials(id, processingPlanMaterial, expand, accept, acceptEncoding, contentType)
 
 Создать материал Техкарты
 
@@ -246,7 +246,7 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            ProcessingPlanMaterial result = apiInstance.createProcessingPlanMaterials(id, processingPlanMaterial, expand, accept, acceptEncoding, contentType);
+            List<ProcessingPlanMaterial> result = apiInstance.createProcessingPlanMaterials(id, processingPlanMaterial, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProcessingPlansApi#createProcessingPlanMaterials");
@@ -273,7 +273,7 @@ public class Example {
 
 ### Return type
 
-[**ProcessingPlanMaterial**](ProcessingPlanMaterial.md)
+[**List&lt;ProcessingPlanMaterial&gt;**](ProcessingPlanMaterial.md)
 
 ### Authorization
 

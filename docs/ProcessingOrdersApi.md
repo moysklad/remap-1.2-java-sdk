@@ -533,7 +533,7 @@ public class Example {
 
 ## createProcessingOrderPosition
 
-> ProcessingOrderPosition createProcessingOrderPosition(id, processingOrderPosition, expand, accept, acceptEncoding, contentType)
+> List&lt;ProcessingOrderPosition&gt; createProcessingOrderPosition(id, processingOrderPosition, expand, accept, acceptEncoding, contentType)
 
 Обновить позицию ProcessingOrder
 
@@ -570,7 +570,7 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            ProcessingOrderPosition result = apiInstance.createProcessingOrderPosition(id, processingOrderPosition, expand, accept, acceptEncoding, contentType);
+            List<ProcessingOrderPosition> result = apiInstance.createProcessingOrderPosition(id, processingOrderPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProcessingOrdersApi#createProcessingOrderPosition");
@@ -597,7 +597,7 @@ public class Example {
 
 ### Return type
 
-[**ProcessingOrderPosition**](ProcessingOrderPosition.md)
+[**List&lt;ProcessingOrderPosition&gt;**](ProcessingOrderPosition.md)
 
 ### Authorization
 

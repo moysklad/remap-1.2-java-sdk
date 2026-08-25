@@ -46,7 +46,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-21T04:48:18.412930091Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class InternalOrdersApi extends BaseApi {
 
@@ -579,10 +579,10 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param internalOrderPosition  (required)
-   * @return InternalOrderPosition
+   * @return List&lt;InternalOrderPosition&gt;
    * @throws ApiException if fails to make API call
    */
-  public InternalOrderPosition createInternalOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull InternalOrderPosition internalOrderPosition) throws ApiException {
+  public List<InternalOrderPosition> createInternalOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull InternalOrderPosition internalOrderPosition) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.createInternalOrderPosition(id, internalOrderPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -602,10 +602,10 @@ if (contentType != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return InternalOrderPosition
+   * @return List&lt;InternalOrderPosition&gt;
    * @throws ApiException if fails to make API call
    */
-  public InternalOrderPosition createInternalOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull InternalOrderPosition internalOrderPosition, RequestOptions options) throws ApiException {
+  public List<InternalOrderPosition> createInternalOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull InternalOrderPosition internalOrderPosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createInternalOrderPosition(id, internalOrderPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -620,10 +620,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return InternalOrderPosition
+   * @return List&lt;InternalOrderPosition&gt;
    * @throws ApiException if fails to make API call
    */
-  protected InternalOrderPosition createInternalOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull InternalOrderPosition internalOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<InternalOrderPosition> createInternalOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull InternalOrderPosition internalOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = internalOrderPosition;
     
     // verify the required parameter 'id' is set
@@ -672,7 +672,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<InternalOrderPosition> localVarReturnType = new TypeReference<InternalOrderPosition>() {};
+    TypeReference<List<InternalOrderPosition>> localVarReturnType = new TypeReference<List<InternalOrderPosition>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

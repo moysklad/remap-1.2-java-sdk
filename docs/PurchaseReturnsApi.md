@@ -622,7 +622,7 @@ public class Example {
 
 ## createPurchaseReturnPosition
 
-> PurchaseReturnPosition createPurchaseReturnPosition(id, purchaseReturnPosition, expand, accept, acceptEncoding, contentType)
+> List&lt;PurchaseReturnPosition&gt; createPurchaseReturnPosition(id, purchaseReturnPosition, expand, accept, acceptEncoding, contentType)
 
 Создать и обновить позицию Возврата поставщику
 
@@ -659,7 +659,7 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            PurchaseReturnPosition result = apiInstance.createPurchaseReturnPosition(id, purchaseReturnPosition, expand, accept, acceptEncoding, contentType);
+            List<PurchaseReturnPosition> result = apiInstance.createPurchaseReturnPosition(id, purchaseReturnPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PurchaseReturnsApi#createPurchaseReturnPosition");
@@ -686,7 +686,7 @@ public class Example {
 
 ### Return type
 
-[**PurchaseReturnPosition**](PurchaseReturnPosition.md)
+[**List&lt;PurchaseReturnPosition&gt;**](PurchaseReturnPosition.md)
 
 ### Authorization
 

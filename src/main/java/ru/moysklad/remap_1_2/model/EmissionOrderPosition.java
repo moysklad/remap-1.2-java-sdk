@@ -42,7 +42,7 @@ import java.util.StringJoiner;
   EmissionOrderPosition.JSON_PROPERTY_QUANTITY,
   EmissionOrderPosition.JSON_PROPERTY_STATUS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-21T04:48:18.412930091Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
 public class EmissionOrderPosition extends EntityWithMeta {
   public static EmissionOrderPosition createWithMeta(UUID parentId, UUID id) {
     EmissionOrderPosition o = new EmissionOrderPosition();

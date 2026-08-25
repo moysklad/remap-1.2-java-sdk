@@ -41,7 +41,7 @@ import java.util.StringJoiner;
   StoreBalance.JSON_PROPERTY_STORE,
   StoreBalance.JSON_PROPERTY_QUANTITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-21T04:48:18.412930091Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
 public class StoreBalance {
   public static StoreBalance createWithMeta(UUID parentId, UUID id) {
     StoreBalance o = new StoreBalance();

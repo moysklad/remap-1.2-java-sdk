@@ -373,7 +373,7 @@ public class Example {
 
 ## createProductStoreBalance
 
-> StoreBalance createProductStoreBalance(id, storeBalance, accept, acceptEncoding, contentType)
+> List&lt;StoreBalance&gt; createProductStoreBalance(id, storeBalance, accept, acceptEncoding, contentType)
 
 Создать НСО товара для склада
 
@@ -411,7 +411,7 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            StoreBalance result = apiInstance.createProductStoreBalance(id, storeBalance, accept, acceptEncoding, contentType);
+            List<StoreBalance> result = apiInstance.createProductStoreBalance(id, storeBalance, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProductsApi#createProductStoreBalance");
@@ -437,7 +437,7 @@ public class Example {
 
 ### Return type
 
-[**StoreBalance**](StoreBalance.md)
+[**List&lt;StoreBalance&gt;**](StoreBalance.md)
 
 ### Authorization
 

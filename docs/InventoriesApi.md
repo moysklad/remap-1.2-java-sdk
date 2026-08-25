@@ -533,7 +533,7 @@ public class Example {
 
 ## createInventoryPosition
 
-> InventoryPosition createInventoryPosition(id, inventoryPosition, expand, accept, acceptEncoding, contentType)
+> List&lt;InventoryPosition&gt; createInventoryPosition(id, inventoryPosition, expand, accept, acceptEncoding, contentType)
 
 Создать и обновить позицию Инвентаризации
 
@@ -570,7 +570,7 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            InventoryPosition result = apiInstance.createInventoryPosition(id, inventoryPosition, expand, accept, acceptEncoding, contentType);
+            List<InventoryPosition> result = apiInstance.createInventoryPosition(id, inventoryPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling InventoriesApi#createInventoryPosition");
@@ -597,7 +597,7 @@ public class Example {
 
 ### Return type
 
-[**InventoryPosition**](InventoryPosition.md)
+[**List&lt;InventoryPosition&gt;**](InventoryPosition.md)
 
 ### Authorization
 

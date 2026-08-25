@@ -51,7 +51,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-21T04:48:18.412930091Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class PurchaseReturnsApi extends BaseApi {
 
@@ -810,10 +810,10 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param purchaseReturnPosition  (required)
-   * @return PurchaseReturnPosition
+   * @return List&lt;PurchaseReturnPosition&gt;
    * @throws ApiException if fails to make API call
    */
-  public PurchaseReturnPosition createPurchaseReturnPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull PurchaseReturnPosition purchaseReturnPosition) throws ApiException {
+  public List<PurchaseReturnPosition> createPurchaseReturnPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull PurchaseReturnPosition purchaseReturnPosition) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.createPurchaseReturnPosition(id, purchaseReturnPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -833,10 +833,10 @@ if (contentType != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return PurchaseReturnPosition
+   * @return List&lt;PurchaseReturnPosition&gt;
    * @throws ApiException if fails to make API call
    */
-  public PurchaseReturnPosition createPurchaseReturnPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull PurchaseReturnPosition purchaseReturnPosition, RequestOptions options) throws ApiException {
+  public List<PurchaseReturnPosition> createPurchaseReturnPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull PurchaseReturnPosition purchaseReturnPosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createPurchaseReturnPosition(id, purchaseReturnPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -851,10 +851,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return PurchaseReturnPosition
+   * @return List&lt;PurchaseReturnPosition&gt;
    * @throws ApiException if fails to make API call
    */
-  protected PurchaseReturnPosition createPurchaseReturnPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull PurchaseReturnPosition purchaseReturnPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<PurchaseReturnPosition> createPurchaseReturnPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull PurchaseReturnPosition purchaseReturnPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = purchaseReturnPosition;
     
     // verify the required parameter 'id' is set
@@ -903,7 +903,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<PurchaseReturnPosition> localVarReturnType = new TypeReference<PurchaseReturnPosition>() {};
+    TypeReference<List<PurchaseReturnPosition>> localVarReturnType = new TypeReference<List<PurchaseReturnPosition>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

@@ -1454,7 +1454,7 @@ public class Example {
 
 ## updateOrganizationAccounts
 
-> Account updateOrganizationAccounts(id, account, accept, acceptEncoding, contentType)
+> List&lt;Account&gt; updateOrganizationAccounts(id, account, accept, acceptEncoding, contentType)
 
 Изменить счета юрлица
 
@@ -1492,7 +1492,7 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            Account result = apiInstance.updateOrganizationAccounts(id, account, accept, acceptEncoding, contentType);
+            List<Account> result = apiInstance.updateOrganizationAccounts(id, account, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling OrganizationsApi#updateOrganizationAccounts");
@@ -1518,7 +1518,7 @@ public class Example {
 
 ### Return type
 
-[**Account**](Account.md)
+[**List&lt;Account&gt;**](Account.md)
 
 ### Authorization
 

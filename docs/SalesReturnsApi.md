@@ -280,7 +280,7 @@ public class Example {
 
 ## createSalesReturnPosition
 
-> SalesReturnPosition createSalesReturnPosition(id, salesReturnPosition, expand, accept, acceptEncoding, contentType)
+> List&lt;SalesReturnPosition&gt; createSalesReturnPosition(id, salesReturnPosition, expand, accept, acceptEncoding, contentType)
 
 Создать и обновить позицию Возврата покупателя
 
@@ -317,7 +317,7 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            SalesReturnPosition result = apiInstance.createSalesReturnPosition(id, salesReturnPosition, expand, accept, acceptEncoding, contentType);
+            List<SalesReturnPosition> result = apiInstance.createSalesReturnPosition(id, salesReturnPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling SalesReturnsApi#createSalesReturnPosition");
@@ -344,7 +344,7 @@ public class Example {
 
 ### Return type
 
-[**SalesReturnPosition**](SalesReturnPosition.md)
+[**List&lt;SalesReturnPosition&gt;**](SalesReturnPosition.md)
 
 ### Authorization
 

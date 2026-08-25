@@ -300,7 +300,7 @@ public class Example {
 
 ## createCounterpartyAccount
 
-> Account createCounterpartyAccount(id, account, accept, acceptEncoding, contentType)
+> List&lt;Account&gt; createCounterpartyAccount(id, account, accept, acceptEncoding, contentType)
 
 Создать счёт контрагента
 
@@ -338,7 +338,7 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            Account result = apiInstance.createCounterpartyAccount(id, account, accept, acceptEncoding, contentType);
+            List<Account> result = apiInstance.createCounterpartyAccount(id, account, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CounterpartiesApi#createCounterpartyAccount");
@@ -364,7 +364,7 @@ public class Example {
 
 ### Return type
 
-[**Account**](Account.md)
+[**List&lt;Account&gt;**](Account.md)
 
 ### Authorization
 

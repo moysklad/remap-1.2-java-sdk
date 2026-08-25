@@ -41,7 +41,7 @@ import java.util.StringJoiner;
   RetailStoreEnvironment.JSON_PROPERTY_PAYMENT_TERMINAL
 })
 @JsonTypeName("RetailStore_environment")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-21T04:48:18.412930091Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStoreEnvironment {
 
   public static final String JSON_PROPERTY_DEVICE = "device";

@@ -49,7 +49,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-21T04:48:18.412930091Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class EntersApi extends BaseApi {
 
@@ -695,10 +695,10 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param enterPosition  (required)
-   * @return EnterPosition
+   * @return List&lt;EnterPosition&gt;
    * @throws ApiException if fails to make API call
    */
-  public EnterPosition createEnterPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EnterPosition enterPosition) throws ApiException {
+  public List<EnterPosition> createEnterPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EnterPosition enterPosition) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.createEnterPosition(id, enterPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -718,10 +718,10 @@ if (contentType != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return EnterPosition
+   * @return List&lt;EnterPosition&gt;
    * @throws ApiException if fails to make API call
    */
-  public EnterPosition createEnterPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EnterPosition enterPosition, RequestOptions options) throws ApiException {
+  public List<EnterPosition> createEnterPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EnterPosition enterPosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createEnterPosition(id, enterPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -736,10 +736,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return EnterPosition
+   * @return List&lt;EnterPosition&gt;
    * @throws ApiException if fails to make API call
    */
-  protected EnterPosition createEnterPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EnterPosition enterPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<EnterPosition> createEnterPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull EnterPosition enterPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = enterPosition;
     
     // verify the required parameter 'id' is set
@@ -788,7 +788,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<EnterPosition> localVarReturnType = new TypeReference<EnterPosition>() {};
+    TypeReference<List<EnterPosition>> localVarReturnType = new TypeReference<List<EnterPosition>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

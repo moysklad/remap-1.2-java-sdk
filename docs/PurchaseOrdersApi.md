@@ -534,7 +534,7 @@ public class Example {
 
 ## createPurchaseOrderPosition
 
-> PurchaseOrderPosition createPurchaseOrderPosition(id, purchaseOrderPosition, expand, accept, acceptEncoding, contentType)
+> List&lt;PurchaseOrderPosition&gt; createPurchaseOrderPosition(id, purchaseOrderPosition, expand, accept, acceptEncoding, contentType)
 
 Создать и обновить позицию Заказа поставщику
 
@@ -571,7 +571,7 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            PurchaseOrderPosition result = apiInstance.createPurchaseOrderPosition(id, purchaseOrderPosition, expand, accept, acceptEncoding, contentType);
+            List<PurchaseOrderPosition> result = apiInstance.createPurchaseOrderPosition(id, purchaseOrderPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PurchaseOrdersApi#createPurchaseOrderPosition");
@@ -598,7 +598,7 @@ public class Example {
 
 ### Return type
 
-[**PurchaseOrderPosition**](PurchaseOrderPosition.md)
+[**List&lt;PurchaseOrderPosition&gt;**](PurchaseOrderPosition.md)
 
 ### Authorization
 

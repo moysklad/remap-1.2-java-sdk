@@ -98,7 +98,7 @@ import java.util.StringJoiner;
   PurchaseReturn.JSON_PROPERTY_FACTURE_IN,
   PurchaseReturn.JSON_PROPERTY_PAYMENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-21T04:48:18.412930091Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
 public class PurchaseReturn extends EntityWithMeta {
   public static PurchaseReturn createWithMeta(UUID id) {
     PurchaseReturn o = new PurchaseReturn();

@@ -50,7 +50,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-21T04:48:18.412930091Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class SuppliesApi extends BaseApi {
 
@@ -809,10 +809,10 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param supplyPosition  (required)
-   * @return SupplyPosition
+   * @return List&lt;SupplyPosition&gt;
    * @throws ApiException if fails to make API call
    */
-  public SupplyPosition createSupplyPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SupplyPosition supplyPosition) throws ApiException {
+  public List<SupplyPosition> createSupplyPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SupplyPosition supplyPosition) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.createSupplyPosition(id, supplyPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -832,10 +832,10 @@ if (contentType != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return SupplyPosition
+   * @return List&lt;SupplyPosition&gt;
    * @throws ApiException if fails to make API call
    */
-  public SupplyPosition createSupplyPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SupplyPosition supplyPosition, RequestOptions options) throws ApiException {
+  public List<SupplyPosition> createSupplyPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SupplyPosition supplyPosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createSupplyPosition(id, supplyPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -850,10 +850,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return SupplyPosition
+   * @return List&lt;SupplyPosition&gt;
    * @throws ApiException if fails to make API call
    */
-  protected SupplyPosition createSupplyPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SupplyPosition supplyPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<SupplyPosition> createSupplyPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SupplyPosition supplyPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = supplyPosition;
     
     // verify the required parameter 'id' is set
@@ -902,7 +902,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<SupplyPosition> localVarReturnType = new TypeReference<SupplyPosition>() {};
+    TypeReference<List<SupplyPosition>> localVarReturnType = new TypeReference<List<SupplyPosition>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

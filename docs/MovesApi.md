@@ -368,7 +368,7 @@ public class Example {
 
 ## createMovePosition
 
-> MovePosition createMovePosition(id, movePosition, expand, accept, acceptEncoding, contentType)
+> List&lt;MovePosition&gt; createMovePosition(id, movePosition, expand, accept, acceptEncoding, contentType)
 
 Создать и обновить позицию Перемещения
 
@@ -405,7 +405,7 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            MovePosition result = apiInstance.createMovePosition(id, movePosition, expand, accept, acceptEncoding, contentType);
+            List<MovePosition> result = apiInstance.createMovePosition(id, movePosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MovesApi#createMovePosition");
@@ -432,7 +432,7 @@ public class Example {
 
 ### Return type
 
-[**MovePosition**](MovePosition.md)
+[**List&lt;MovePosition&gt;**](MovePosition.md)
 
 ### Authorization
 

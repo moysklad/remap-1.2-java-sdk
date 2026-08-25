@@ -45,7 +45,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-21T04:48:18.412930091Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class SalesReturnsApi extends BaseApi {
 
@@ -374,10 +374,10 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param salesReturnPosition  (required)
-   * @return SalesReturnPosition
+   * @return List&lt;SalesReturnPosition&gt;
    * @throws ApiException if fails to make API call
    */
-  public SalesReturnPosition createSalesReturnPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SalesReturnPosition salesReturnPosition) throws ApiException {
+  public List<SalesReturnPosition> createSalesReturnPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SalesReturnPosition salesReturnPosition) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.createSalesReturnPosition(id, salesReturnPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -397,10 +397,10 @@ if (contentType != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return SalesReturnPosition
+   * @return List&lt;SalesReturnPosition&gt;
    * @throws ApiException if fails to make API call
    */
-  public SalesReturnPosition createSalesReturnPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SalesReturnPosition salesReturnPosition, RequestOptions options) throws ApiException {
+  public List<SalesReturnPosition> createSalesReturnPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SalesReturnPosition salesReturnPosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createSalesReturnPosition(id, salesReturnPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -415,10 +415,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return SalesReturnPosition
+   * @return List&lt;SalesReturnPosition&gt;
    * @throws ApiException if fails to make API call
    */
-  protected SalesReturnPosition createSalesReturnPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SalesReturnPosition salesReturnPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<SalesReturnPosition> createSalesReturnPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull SalesReturnPosition salesReturnPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = salesReturnPosition;
     
     // verify the required parameter 'id' is set
@@ -467,7 +467,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<SalesReturnPosition> localVarReturnType = new TypeReference<SalesReturnPosition>() {};
+    TypeReference<List<SalesReturnPosition>> localVarReturnType = new TypeReference<List<SalesReturnPosition>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

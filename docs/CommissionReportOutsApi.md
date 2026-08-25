@@ -621,7 +621,7 @@ public class Example {
 
 ## createCommissionReportOutPosition
 
-> CommissionReportOutPosition createCommissionReportOutPosition(id, commissionReportOutPosition, expand, accept, acceptEncoding, contentType)
+> List&lt;CommissionReportOutPosition&gt; createCommissionReportOutPosition(id, commissionReportOutPosition, expand, accept, acceptEncoding, contentType)
 
 Создать и обновить позицию Выданного отчета комиссионера
 
@@ -658,7 +658,7 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            CommissionReportOutPosition result = apiInstance.createCommissionReportOutPosition(id, commissionReportOutPosition, expand, accept, acceptEncoding, contentType);
+            List<CommissionReportOutPosition> result = apiInstance.createCommissionReportOutPosition(id, commissionReportOutPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CommissionReportOutsApi#createCommissionReportOutPosition");
@@ -685,7 +685,7 @@ public class Example {
 
 ### Return type
 
-[**CommissionReportOutPosition**](CommissionReportOutPosition.md)
+[**List&lt;CommissionReportOutPosition&gt;**](CommissionReportOutPosition.md)
 
 ### Authorization
 

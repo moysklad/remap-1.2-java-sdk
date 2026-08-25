@@ -5616,7 +5616,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/StoreBalance"
+                items:
+                  $ref: "#/components/schemas/StoreBalance"
+                type: array
           description: НСО успешно создан
         default:
           $ref: "#/components/responses/CommonError"
@@ -8748,7 +8750,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ProcessingProcessPosition"
+                items:
+                  $ref: "#/components/schemas/ProcessingProcessPosition"
+                type: array
           description: Позиция Техпроцесса успешно создана
         default:
           $ref: "#/components/responses/CommonError"
@@ -10050,7 +10054,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ProcessingPlanMaterial"
+                items:
+                  $ref: "#/components/schemas/ProcessingPlanMaterial"
+                type: array
           description: Материалы Техкарты успешно созданы
         default:
           $ref: "#/components/responses/CommonError"
@@ -13529,7 +13535,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Account"
+                items:
+                  $ref: "#/components/schemas/Account"
+                type: array
           description: Счёт успешно создан
         default:
           $ref: "#/components/responses/CommonError"
@@ -15252,7 +15260,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Account"
+                items:
+                  $ref: "#/components/schemas/Account"
+                type: array
           description: Счета успешно изменены
         default:
           $ref: "#/components/responses/CommonError"
@@ -23954,7 +23964,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/InternalOrderPosition"
+                items:
+                  $ref: "#/components/schemas/InternalOrderPosition"
+                type: array
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
@@ -25316,7 +25328,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ProcessingOrderPosition"
+                items:
+                  $ref: "#/components/schemas/ProcessingOrderPosition"
+                type: array
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
@@ -28825,7 +28839,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/CustomerOrderPosition"
+                items:
+                  $ref: "#/components/schemas/CustomerOrderPosition"
+                type: array
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
@@ -39006,7 +39022,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/EnterPosition"
+                items:
+                  $ref: "#/components/schemas/EnterPosition"
+                type: array
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
@@ -40368,7 +40386,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/SalesReturnPosition"
+                items:
+                  $ref: "#/components/schemas/SalesReturnPosition"
+                type: array
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
@@ -41719,7 +41739,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/LossPosition"
+                items:
+                  $ref: "#/components/schemas/LossPosition"
+                type: array
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
@@ -43270,7 +43292,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/InventoryPosition"
+                items:
+                  $ref: "#/components/schemas/InventoryPosition"
+                type: array
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
@@ -44901,7 +44925,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/PurchaseReturnPosition"
+                items:
+                  $ref: "#/components/schemas/PurchaseReturnPosition"
+                type: array
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
@@ -46846,7 +46872,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/SupplyPosition"
+                items:
+                  $ref: "#/components/schemas/SupplyPosition"
+                type: array
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
@@ -49573,7 +49601,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/MovePosition"
+                items:
+                  $ref: "#/components/schemas/MovePosition"
+                type: array
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
@@ -51097,7 +51127,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/PurchaseOrderPosition"
+                items:
+                  $ref: "#/components/schemas/PurchaseOrderPosition"
+                type: array
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
@@ -52470,7 +52502,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/EmissionOrderPosition"
+                items:
+                  $ref: "#/components/schemas/EmissionOrderPosition"
+                type: array
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
@@ -53755,7 +53789,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/CommissionReportInPosition"
+                items:
+                  $ref: "#/components/schemas/CommissionReportInPosition"
+                type: array
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
@@ -55524,7 +55560,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/CommissionReportOutPosition"
+                items:
+                  $ref: "#/components/schemas/CommissionReportOutPosition"
+                type: array
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"

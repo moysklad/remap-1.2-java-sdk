@@ -49,7 +49,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-21T04:48:18.412930091Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class CommissionReportInsApi extends BaseApi {
 
@@ -582,10 +582,10 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param commissionReportInPosition  (required)
-   * @return CommissionReportInPosition
+   * @return List&lt;CommissionReportInPosition&gt;
    * @throws ApiException if fails to make API call
    */
-  public CommissionReportInPosition createCommissionReportInPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CommissionReportInPosition commissionReportInPosition) throws ApiException {
+  public List<CommissionReportInPosition> createCommissionReportInPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CommissionReportInPosition commissionReportInPosition) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.createCommissionReportInPosition(id, commissionReportInPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -605,10 +605,10 @@ if (contentType != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return CommissionReportInPosition
+   * @return List&lt;CommissionReportInPosition&gt;
    * @throws ApiException if fails to make API call
    */
-  public CommissionReportInPosition createCommissionReportInPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CommissionReportInPosition commissionReportInPosition, RequestOptions options) throws ApiException {
+  public List<CommissionReportInPosition> createCommissionReportInPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CommissionReportInPosition commissionReportInPosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createCommissionReportInPosition(id, commissionReportInPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -623,10 +623,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return CommissionReportInPosition
+   * @return List&lt;CommissionReportInPosition&gt;
    * @throws ApiException if fails to make API call
    */
-  protected CommissionReportInPosition createCommissionReportInPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CommissionReportInPosition commissionReportInPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<CommissionReportInPosition> createCommissionReportInPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull CommissionReportInPosition commissionReportInPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = commissionReportInPosition;
     
     // verify the required parameter 'id' is set
@@ -675,7 +675,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<CommissionReportInPosition> localVarReturnType = new TypeReference<CommissionReportInPosition>() {};
+    TypeReference<List<CommissionReportInPosition>> localVarReturnType = new TypeReference<List<CommissionReportInPosition>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

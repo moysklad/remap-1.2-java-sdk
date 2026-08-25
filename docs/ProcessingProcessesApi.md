@@ -108,7 +108,7 @@ public class Example {
 
 ## createProcessingProcessPosition
 
-> ProcessingProcessPosition createProcessingProcessPosition(id, processingProcessPosition, expand, accept, acceptEncoding, contentType)
+> List&lt;ProcessingProcessPosition&gt; createProcessingProcessPosition(id, processingProcessPosition, expand, accept, acceptEncoding, contentType)
 
 Создать и обновить позицию Техпроцесса
 
@@ -145,7 +145,7 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            ProcessingProcessPosition result = apiInstance.createProcessingProcessPosition(id, processingProcessPosition, expand, accept, acceptEncoding, contentType);
+            List<ProcessingProcessPosition> result = apiInstance.createProcessingProcessPosition(id, processingProcessPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProcessingProcessesApi#createProcessingProcessPosition");
@@ -172,7 +172,7 @@ public class Example {
 
 ### Return type
 
-[**ProcessingProcessPosition**](ProcessingProcessPosition.md)
+[**List&lt;ProcessingProcessPosition&gt;**](ProcessingProcessPosition.md)
 
 ### Authorization
 

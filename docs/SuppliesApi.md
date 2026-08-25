@@ -623,7 +623,7 @@ public class Example {
 
 ## createSupplyPosition
 
-> SupplyPosition createSupplyPosition(id, supplyPosition, expand, accept, acceptEncoding, contentType)
+> List&lt;SupplyPosition&gt; createSupplyPosition(id, supplyPosition, expand, accept, acceptEncoding, contentType)
 
 Создать и обновить позицию Приемки
 
@@ -660,7 +660,7 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            SupplyPosition result = apiInstance.createSupplyPosition(id, supplyPosition, expand, accept, acceptEncoding, contentType);
+            List<SupplyPosition> result = apiInstance.createSupplyPosition(id, supplyPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling SuppliesApi#createSupplyPosition");
@@ -687,7 +687,7 @@ public class Example {
 
 ### Return type
 
-[**SupplyPosition**](SupplyPosition.md)
+[**List&lt;SupplyPosition&gt;**](SupplyPosition.md)
 
 ### Authorization
 

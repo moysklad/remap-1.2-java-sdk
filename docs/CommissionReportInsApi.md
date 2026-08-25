@@ -449,7 +449,7 @@ public class Example {
 
 ## createCommissionReportInPosition
 
-> CommissionReportInPosition createCommissionReportInPosition(id, commissionReportInPosition, expand, accept, acceptEncoding, contentType)
+> List&lt;CommissionReportInPosition&gt; createCommissionReportInPosition(id, commissionReportInPosition, expand, accept, acceptEncoding, contentType)
 
 Создать и обновить позицию Полученного отчета комиссионера
 
@@ -486,7 +486,7 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            CommissionReportInPosition result = apiInstance.createCommissionReportInPosition(id, commissionReportInPosition, expand, accept, acceptEncoding, contentType);
+            List<CommissionReportInPosition> result = apiInstance.createCommissionReportInPosition(id, commissionReportInPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CommissionReportInsApi#createCommissionReportInPosition");
@@ -513,7 +513,7 @@ public class Example {
 
 ### Return type
 
-[**CommissionReportInPosition**](CommissionReportInPosition.md)
+[**List&lt;CommissionReportInPosition&gt;**](CommissionReportInPosition.md)
 
 ### Authorization
 

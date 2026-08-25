@@ -51,7 +51,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-21T04:48:18.412930091Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class CounterpartiesApi extends BaseApi {
 
@@ -391,10 +391,10 @@ if (contentType != null)
    * Создание нового счёта у данного Контрагента.
    * @param id ID сущности (required)
    * @param account  (required)
-   * @return Account
+   * @return List&lt;Account&gt;
    * @throws ApiException if fails to make API call
    */
-  public Account createCounterpartyAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Account account) throws ApiException {
+  public List<Account> createCounterpartyAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Account account) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.createCounterpartyAccount(id, account, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -413,10 +413,10 @@ if (contentType != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return Account
+   * @return List&lt;Account&gt;
    * @throws ApiException if fails to make API call
    */
-  public Account createCounterpartyAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Account account, RequestOptions options) throws ApiException {
+  public List<Account> createCounterpartyAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Account account, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createCounterpartyAccount(id, account, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -430,10 +430,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return Account
+   * @return List&lt;Account&gt;
    * @throws ApiException if fails to make API call
    */
-  protected Account createCounterpartyAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Account account, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<Account> createCounterpartyAccount(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull Account account, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = account;
     
     // verify the required parameter 'id' is set
@@ -481,7 +481,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<Account> localVarReturnType = new TypeReference<Account>() {};
+    TypeReference<List<Account>> localVarReturnType = new TypeReference<List<Account>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",

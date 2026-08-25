@@ -48,7 +48,7 @@ import java.util.StringJoiner;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-21T04:48:18.412930091Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ProcessingOrdersApi extends BaseApi {
 
@@ -694,10 +694,10 @@ if (contentType != null)
    * 
    * @param id ID сущности (required)
    * @param processingOrderPosition  (required)
-   * @return ProcessingOrderPosition
+   * @return List&lt;ProcessingOrderPosition&gt;
    * @throws ApiException if fails to make API call
    */
-  public ProcessingOrderPosition createProcessingOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingOrderPosition processingOrderPosition) throws ApiException {
+  public List<ProcessingOrderPosition> createProcessingOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingOrderPosition processingOrderPosition) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.createProcessingOrderPosition(id, processingOrderPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -717,10 +717,10 @@ if (contentType != null)
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return ProcessingOrderPosition
+   * @return List&lt;ProcessingOrderPosition&gt;
    * @throws ApiException if fails to make API call
    */
-  public ProcessingOrderPosition createProcessingOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingOrderPosition processingOrderPosition, RequestOptions options) throws ApiException {
+  public List<ProcessingOrderPosition> createProcessingOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingOrderPosition processingOrderPosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createProcessingOrderPosition(id, processingOrderPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -735,10 +735,10 @@ if (contentType != null)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return ProcessingOrderPosition
+   * @return List&lt;ProcessingOrderPosition&gt;
    * @throws ApiException if fails to make API call
    */
-  protected ProcessingOrderPosition createProcessingOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingOrderPosition processingOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<ProcessingOrderPosition> createProcessingOrderPosition(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingOrderPosition processingOrderPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = processingOrderPosition;
     
     // verify the required parameter 'id' is set
@@ -787,7 +787,7 @@ if (contentType != null)
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<ProcessingOrderPosition> localVarReturnType = new TypeReference<ProcessingOrderPosition>() {};
+    TypeReference<List<ProcessingOrderPosition>> localVarReturnType = new TypeReference<List<ProcessingOrderPosition>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
