@@ -22,8 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -39,7 +37,7 @@ import java.util.StringJoiner;
   RetailDemandCheque.JSON_PROPERTY_TIME,
   RetailDemandCheque.JSON_PROPERTY_RECEIPT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailDemandCheque {
 
   public static final String JSON_PROPERTY_FN_NUMBER = "fnNumber";
@@ -94,8 +92,6 @@ public class RetailDemandCheque {
    * @return fnNumber
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_FN_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -112,8 +108,6 @@ public class RetailDemandCheque {
    * @return fiscalDocSign
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_FISCAL_DOC_SIGN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -130,8 +124,6 @@ public class RetailDemandCheque {
    * @return fiscalDocNumber
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_FISCAL_DOC_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -148,8 +140,6 @@ public class RetailDemandCheque {
    * @return kktRegNumber
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_KKT_REG_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -166,8 +156,6 @@ public class RetailDemandCheque {
    * @return time
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -184,8 +172,6 @@ public class RetailDemandCheque {
    * @return receipt
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_RECEIPT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -340,4 +326,3 @@ public class RetailDemandCheque {
   }
 
 }
-

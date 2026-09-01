@@ -35,8 +35,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -57,8 +55,8 @@ import java.util.StringJoiner;
   LossPosition.JSON_PROPERTY_SLOT,
   LossPosition.JSON_PROPERTY_THINGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class LossPosition extends EntityWithMeta {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class LossPosition extends EntityWithMeta implements DocumentPosition, MetaEntity {
   public static LossPosition createWithMeta(UUID parentId, UUID id) {
     LossPosition o = new LossPosition();
     Meta meta = new Meta();
@@ -92,7 +90,7 @@ public class LossPosition extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_DECLARATION = "declaration";
   @javax.annotation.Nullable
-  private List<@Valid DeclarationInner> declaration = new ArrayList<>();
+  private List<DeclarationInner> declaration = new ArrayList<>();
 
   public static final String JSON_PROPERTY_PACK = "pack";
   @javax.annotation.Nullable
@@ -125,12 +123,10 @@ public class LossPosition extends EntityWithMeta {
    */
   @JsonCreator
   public LossPosition(
-    @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id, 
     @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId, 
-    @JsonProperty(value = JSON_PROPERTY_DECLARATION, required = false) List<@Valid DeclarationInner> declaration
+    @JsonProperty(value = JSON_PROPERTY_DECLARATION, required = false) List<DeclarationInner> declaration
   ) {
     this();
-    this.id = id;
     this.accountId = accountId;
     this.declaration = declaration;
   }
@@ -147,9 +143,6 @@ public class LossPosition extends EntityWithMeta {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -167,14 +160,18 @@ public class LossPosition extends EntityWithMeta {
   }
 
 
+  public LossPosition id(@javax.annotation.Nullable UUID id) {
+    
+    this.id = id;
+    return this;
+  }
+
+
   /**
    * ID позиции
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -185,15 +182,18 @@ public class LossPosition extends EntityWithMeta {
   
 
 
+  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setId(@javax.annotation.Nullable UUID id) {
+    this.id = id;
+  }
+
 
   /**
    * ID учетной записи
    * @return accountId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -217,9 +217,6 @@ public class LossPosition extends EntityWithMeta {
    * @return assortment
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -242,13 +239,10 @@ public class LossPosition extends EntityWithMeta {
    * @return declaration
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_DECLARATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<@Valid DeclarationInner> getDeclaration() {
+  public List<DeclarationInner> getDeclaration() {
     return declaration;
   }
 
@@ -268,9 +262,6 @@ public class LossPosition extends EntityWithMeta {
    * @return pack
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Pack getPack() {
@@ -309,8 +300,6 @@ public class LossPosition extends EntityWithMeta {
    * @return price
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -340,8 +329,6 @@ public class LossPosition extends EntityWithMeta {
    * @return quantity
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -371,8 +358,6 @@ public class LossPosition extends EntityWithMeta {
    * @return reason
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_REASON)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -402,9 +387,6 @@ public class LossPosition extends EntityWithMeta {
    * @return slot
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public StoreSlot getSlot() {
@@ -451,8 +433,6 @@ public class LossPosition extends EntityWithMeta {
    * @return things
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_THINGS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -668,4 +648,3 @@ public class LossPosition extends EntityWithMeta {
   }
 
 }
-

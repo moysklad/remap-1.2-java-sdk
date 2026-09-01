@@ -6,6 +6,8 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 |------------- | ------------- | -------------|
 | [**createEmissionOrder**](EmissionOrdersApi.md#createEmissionOrder) | **POST** /entity/emissionorder | Создать Заказ кодов маркировки |
 | [**createEmissionOrderBatch**](EmissionOrdersApi.md#createEmissionOrderBatch) | **POST** /entity/emissionorder/batch | Массовое создание и обновление Заказов кодов маркировки |
+| [**createEmissionOrderMetadataState**](EmissionOrdersApi.md#createEmissionOrderMetadataState) | **POST** /entity/emissionorder/metadata/states | Создать статус Заказа кодов маркировки |
+| [**createEmissionOrderMetadataStatesBatch**](EmissionOrdersApi.md#createEmissionOrderMetadataStatesBatch) | **POST** /entity/emissionorder/metadata/states/batch | Массовое создание и обновление статусов Заказа кодов маркировки |
 | [**createEmissionOrderPosition**](EmissionOrdersApi.md#createEmissionOrderPosition) | **POST** /entity/emissionorder/{id}/positions | Создать и обновить позицию Заказа кодов маркировки |
 | [**createEmissionOrderPositions**](EmissionOrdersApi.md#createEmissionOrderPositions) | **POST** /entity/emissionorder/{id}/positions/batch | Массовое создание и обновление позиций Заказа кодов маркировки |
 | [**deleteEmissionOrderMetadataStateById**](EmissionOrdersApi.md#deleteEmissionOrderMetadataStateById) | **DELETE** /entity/emissionorder/metadata/states/{id} | Удалить отдельный статус Заказа кодов маркировки |
@@ -101,7 +103,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createEmissionOrderBatch
@@ -136,7 +138,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         EmissionOrdersApi apiInstance = new EmissionOrdersApi(defaultClient);
-        List<@Valid EmissionOrder> emissionOrder = Arrays.asList(); // List<@Valid EmissionOrder> | 
+        List<EmissionOrder> emissionOrder = Arrays.asList(); // List<EmissionOrder> | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -160,7 +162,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **emissionOrder** | [**List&lt;@Valid EmissionOrder&gt;**](EmissionOrder.md)|  | |
+| **emissionOrder** | [**List&lt;EmissionOrder&gt;**](EmissionOrder.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -184,7 +186,169 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## createEmissionOrderMetadataState
+
+> State createEmissionOrderMetadataState(state, accept, acceptEncoding, contentType)
+
+Создать статус Заказа кодов маркировки
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.EmissionOrdersApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        EmissionOrdersApi apiInstance = new EmissionOrdersApi(defaultClient);
+        State state = new State(); // State | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            State result = apiInstance.createEmissionOrderMetadataState(state, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling EmissionOrdersApi#createEmissionOrderMetadataState");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **state** | [**State**](State.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**State**](State.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## createEmissionOrderMetadataStatesBatch
+
+> List&lt;StateRowResult&gt; createEmissionOrderMetadataStatesBatch(state, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление статусов Заказа кодов маркировки
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.EmissionOrdersApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        EmissionOrdersApi apiInstance = new EmissionOrdersApi(defaultClient);
+        List<State> state = Arrays.asList(); // List<State> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<StateRowResult> result = apiInstance.createEmissionOrderMetadataStatesBatch(state, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling EmissionOrdersApi#createEmissionOrderMetadataStatesBatch");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **state** | [**List&lt;State&gt;**](State.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;StateRowResult&gt;**](StateRowResult.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createEmissionOrderPosition
@@ -269,7 +433,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createEmissionOrderPositions
@@ -305,7 +469,7 @@ public class Example {
 
         EmissionOrdersApi apiInstance = new EmissionOrdersApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
-        List<@Valid EmissionOrderPosition> emissionOrderPosition = Arrays.asList(); // List<@Valid EmissionOrderPosition> | 
+        List<EmissionOrderPosition> emissionOrderPosition = Arrays.asList(); // List<EmissionOrderPosition> | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -330,7 +494,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **emissionOrderPosition** | [**List&lt;@Valid EmissionOrderPosition&gt;**](EmissionOrderPosition.md)|  | |
+| **emissionOrderPosition** | [**List&lt;EmissionOrderPosition&gt;**](EmissionOrderPosition.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -354,7 +518,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteEmissionOrderMetadataStateById
@@ -435,7 +599,7 @@ null (empty response body)
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
 | **404** | Запрошенный ресурс не существует (тело ответа отсутствует) |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getEmissionOrderById
@@ -518,7 +682,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getEmissionOrderList
@@ -603,7 +767,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getEmissionOrderMetadata
@@ -682,7 +846,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getEmissionOrderMetadataStateById
@@ -763,7 +927,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getEmissionOrderPositionById
@@ -848,7 +1012,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getEmissionOrderPositions
@@ -935,7 +1099,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## updateEmissionOrder
@@ -1022,7 +1186,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## updateEmissionOrderMetadataStateById
@@ -1105,7 +1269,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## updateEmissionOrderPosition
@@ -1194,5 +1358,5 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 

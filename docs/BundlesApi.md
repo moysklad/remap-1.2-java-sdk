@@ -100,7 +100,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createBundleComponents
@@ -185,7 +185,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createBundlesBatch
@@ -220,7 +220,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         BundlesApi apiInstance = new BundlesApi(defaultClient);
-        List<@Valid Bundle> bundle = Arrays.asList(); // List<@Valid Bundle> | 
+        List<Bundle> bundle = Arrays.asList(); // List<Bundle> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
@@ -244,7 +244,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **bundle** | [**List&lt;@Valid Bundle&gt;**](Bundle.md)|  | |
+| **bundle** | [**List&lt;Bundle&gt;**](Bundle.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
@@ -268,7 +268,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteBundle
@@ -346,7 +346,7 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteBundleComponent
@@ -426,7 +426,7 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteBundleComponentsBatch
@@ -462,7 +462,7 @@ public class Example {
 
         BundlesApi apiInstance = new BundlesApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
-        List<@Valid BundleComponent> bundleComponent = Arrays.asList(); // List<@Valid BundleComponent> | 
+        List<BundleComponent> bundleComponent = Arrays.asList(); // List<BundleComponent> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -485,7 +485,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **bundleComponent** | [**List&lt;@Valid BundleComponent&gt;**](BundleComponent.md)|  | |
+| **bundleComponent** | [**List&lt;BundleComponent&gt;**](BundleComponent.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -508,7 +508,7 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteBundlesBatch
@@ -543,7 +543,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         BundlesApi apiInstance = new BundlesApi(defaultClient);
-        List<@Valid Bundle> bundle = Arrays.asList(); // List<@Valid Bundle> | 
+        List<Bundle> bundle = Arrays.asList(); // List<Bundle> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -566,7 +566,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **bundle** | [**List&lt;@Valid Bundle&gt;**](Bundle.md)|  | |
+| **bundle** | [**List&lt;Bundle&gt;**](Bundle.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -589,7 +589,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getBundleById
@@ -670,7 +670,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getBundleComponentById
@@ -753,7 +753,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getBundleComponents
@@ -844,7 +844,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getBundles
@@ -933,7 +933,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## updateBundle
@@ -1018,7 +1018,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## updateBundleComponent
@@ -1105,5 +1105,5 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 

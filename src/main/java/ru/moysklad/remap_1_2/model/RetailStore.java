@@ -46,8 +46,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -131,8 +129,8 @@ import java.util.StringJoiner;
   RetailStore.JSON_PROPERTY_CASHIERS,
   RetailStore.JSON_PROPERTY_QR_ACQUIRE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class RetailStore extends EntityWithMeta {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class RetailStore extends EntityWithMeta implements MetaEntity {
   public static RetailStore createWithMeta(UUID id) {
     RetailStore o = new RetailStore();
     Meta meta = new Meta();
@@ -326,7 +324,7 @@ public class RetailStore extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_LAST_OPERATION_NAMES = "lastOperationNames";
   @javax.annotation.Nullable
-  private JsonNullable<List<@Valid RetailStoreLastOperationNamesInner>> lastOperationNames = JsonNullable.<List<@Valid RetailStoreLastOperationNamesInner>>undefined();
+  private JsonNullable<List<RetailStoreLastOperationNamesInner>> lastOperationNames = JsonNullable.<List<RetailStoreLastOperationNamesInner>>undefined();
 
   public static final String JSON_PROPERTY_MASTER_RETAIL_STORES = "masterRetailStores";
   @javax.annotation.Nullable
@@ -472,9 +470,6 @@ public class RetailStore extends EntityWithMeta {
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -491,9 +486,6 @@ public class RetailStore extends EntityWithMeta {
    * @return accountId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -517,8 +509,6 @@ public class RetailStore extends EntityWithMeta {
    * @return name
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -548,8 +538,6 @@ public class RetailStore extends EntityWithMeta {
    * @return description
    */
   @javax.annotation.Nullable
- @Size(max=4096)
-
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -579,8 +567,6 @@ public class RetailStore extends EntityWithMeta {
    * @return active
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_ACTIVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -610,8 +596,6 @@ public class RetailStore extends EntityWithMeta {
    * @return archived
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -641,8 +625,6 @@ public class RetailStore extends EntityWithMeta {
    * @return shared
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -672,8 +654,6 @@ public class RetailStore extends EntityWithMeta {
    * @return address
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -703,9 +683,6 @@ public class RetailStore extends EntityWithMeta {
    * @return addressFull
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ADDRESS_FULL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -728,8 +705,6 @@ public class RetailStore extends EntityWithMeta {
    * @return externalCode
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -746,8 +721,6 @@ public class RetailStore extends EntityWithMeta {
    * @return updated
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -771,9 +744,6 @@ public class RetailStore extends EntityWithMeta {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -803,9 +773,6 @@ public class RetailStore extends EntityWithMeta {
    * @return organization
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -835,9 +802,6 @@ public class RetailStore extends EntityWithMeta {
    * @return store
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -867,9 +831,6 @@ public class RetailStore extends EntityWithMeta {
    * @return group
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -899,9 +860,6 @@ public class RetailStore extends EntityWithMeta {
    * @return owner
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Employee getOwner() {
@@ -940,9 +898,6 @@ public class RetailStore extends EntityWithMeta {
    * @return priceType
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_PRICE_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -972,9 +927,6 @@ public class RetailStore extends EntityWithMeta {
    * @return environment
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ENVIRONMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1004,9 +956,6 @@ public class RetailStore extends EntityWithMeta {
    * @return state
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_STATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1036,8 +985,6 @@ public class RetailStore extends EntityWithMeta {
    * @return fiscalType
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_FISCAL_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1067,8 +1014,6 @@ public class RetailStore extends EntityWithMeta {
    * @return defaultTaxSystem
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_DEFAULT_TAX_SYSTEM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1098,8 +1043,6 @@ public class RetailStore extends EntityWithMeta {
    * @return orderTaxSystem
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_ORDER_TAX_SYSTEM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1129,8 +1072,6 @@ public class RetailStore extends EntityWithMeta {
    * @return minionToMasterType
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_MINION_TO_MASTER_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1160,8 +1101,6 @@ public class RetailStore extends EntityWithMeta {
    * @return tobaccoMrcControlType
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_TOBACCO_MRC_CONTROL_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1191,8 +1130,6 @@ public class RetailStore extends EntityWithMeta {
    * @return markingSellingMode
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_MARKING_SELLING_MODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1222,8 +1159,6 @@ public class RetailStore extends EntityWithMeta {
    * @return marksCheckMode
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_MARKS_CHECK_MODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1253,8 +1188,6 @@ public class RetailStore extends EntityWithMeta {
    * @return priorityOfdSend
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PRIORITY_OFD_SEND)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1284,8 +1217,6 @@ public class RetailStore extends EntityWithMeta {
    * @return allowCreateProducts
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_ALLOW_CREATE_PRODUCTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1315,8 +1246,6 @@ public class RetailStore extends EntityWithMeta {
    * @return allowCustomPrice
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_ALLOW_CUSTOM_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1346,8 +1275,6 @@ public class RetailStore extends EntityWithMeta {
    * @return allowDeleteReceiptPositions
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_ALLOW_DELETE_RECEIPT_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1377,8 +1304,6 @@ public class RetailStore extends EntityWithMeta {
    * @return allowSellTobaccoWithoutMRC
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_ALLOW_SELL_TOBACCO_WITHOUT_M_R_C)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1401,8 +1326,6 @@ public class RetailStore extends EntityWithMeta {
    * @return authTokenAttached
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_AUTH_TOKEN_ATTACHED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1426,8 +1349,6 @@ public class RetailStore extends EntityWithMeta {
    * @return controlCashierChoice
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_CONTROL_CASHIER_CHOICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1457,8 +1378,6 @@ public class RetailStore extends EntityWithMeta {
    * @return controlShippingStock
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_CONTROL_SHIPPING_STOCK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1488,8 +1407,6 @@ public class RetailStore extends EntityWithMeta {
    * @return createCashInOnRetailShiftClosing
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_CREATE_CASH_IN_ON_RETAIL_SHIFT_CLOSING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1519,8 +1436,6 @@ public class RetailStore extends EntityWithMeta {
    * @return createPaymentInOnRetailShiftClosing
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_CREATE_PAYMENT_IN_ON_RETAIL_SHIFT_CLOSING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1562,8 +1477,6 @@ public class RetailStore extends EntityWithMeta {
    * @return createAgentsTags
    */
   @javax.annotation.Nullable
-
-
   @JsonIgnore
 
   public List<String> getCreateAgentsTags() {
@@ -1614,8 +1527,6 @@ public class RetailStore extends EntityWithMeta {
    * @return filterAgentsTags
    */
   @javax.annotation.Nullable
-
-
   @JsonIgnore
 
   public List<String> getFilterAgentsTags() {
@@ -1654,9 +1565,6 @@ public class RetailStore extends EntityWithMeta {
    * @return createOrderWithState
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public State getCreateOrderWithState() {
@@ -1707,9 +1615,6 @@ public class RetailStore extends EntityWithMeta {
    * @return customerOrderStates
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public List<State> getCustomerOrderStates() {
@@ -1748,8 +1653,6 @@ public class RetailStore extends EntityWithMeta {
    * @return discountEnable
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_DISCOUNT_ENABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1779,8 +1682,6 @@ public class RetailStore extends EntityWithMeta {
    * @return discountMaxPercent
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_DISCOUNT_MAX_PERCENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1810,8 +1711,6 @@ public class RetailStore extends EntityWithMeta {
    * @return enableReturnsWithNoReason
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_ENABLE_RETURNS_WITH_NO_REASON)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1841,8 +1740,6 @@ public class RetailStore extends EntityWithMeta {
    * @return issueOrders
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_ISSUE_ORDERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1860,8 +1757,8 @@ public class RetailStore extends EntityWithMeta {
   }
 
 
-  public RetailStore lastOperationNames(@javax.annotation.Nullable List<@Valid RetailStoreLastOperationNamesInner> lastOperationNames) {
-    this.lastOperationNames = JsonNullable.<List<@Valid RetailStoreLastOperationNamesInner>>of(lastOperationNames);
+  public RetailStore lastOperationNames(@javax.annotation.Nullable List<RetailStoreLastOperationNamesInner> lastOperationNames) {
+    this.lastOperationNames = JsonNullable.<List<RetailStoreLastOperationNamesInner>>of(lastOperationNames);
     
     return this;
   }
@@ -1869,7 +1766,7 @@ public class RetailStore extends EntityWithMeta {
 
   public RetailStore addLastOperationNamesItem(RetailStoreLastOperationNamesInner lastOperationNamesItem) {
     if (this.lastOperationNames == null || !this.lastOperationNames.isPresent()) {
-      this.lastOperationNames = JsonNullable.<List<@Valid RetailStoreLastOperationNamesInner>>of(new ArrayList<>());
+      this.lastOperationNames = JsonNullable.<List<RetailStoreLastOperationNamesInner>>of(new ArrayList<>());
     }
     try {
       this.lastOperationNames.get().add(lastOperationNamesItem);
@@ -1884,12 +1781,9 @@ public class RetailStore extends EntityWithMeta {
    * @return lastOperationNames
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
-  public List<@Valid RetailStoreLastOperationNamesInner> getLastOperationNames() {
+  public List<RetailStoreLastOperationNamesInner> getLastOperationNames() {
         return lastOperationNames.orElse(null);
   }
 
@@ -1899,17 +1793,17 @@ public class RetailStore extends EntityWithMeta {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<@Valid RetailStoreLastOperationNamesInner>> getLastOperationNames_JsonNullable() {
+  public JsonNullable<List<RetailStoreLastOperationNamesInner>> getLastOperationNames_JsonNullable() {
     return lastOperationNames;
   }
   
   @JsonProperty(value = JSON_PROPERTY_LAST_OPERATION_NAMES, required = false)
-  public void setLastOperationNames_JsonNullable(JsonNullable<List<@Valid RetailStoreLastOperationNamesInner>> lastOperationNames) {
+  public void setLastOperationNames_JsonNullable(JsonNullable<List<RetailStoreLastOperationNamesInner>> lastOperationNames) {
     this.lastOperationNames = lastOperationNames;
   }
 
-  public void setLastOperationNames(@javax.annotation.Nullable List<@Valid RetailStoreLastOperationNamesInner> lastOperationNames) {
-    this.lastOperationNames = JsonNullable.<List<@Valid RetailStoreLastOperationNamesInner>>of(lastOperationNames);
+  public void setLastOperationNames(@javax.annotation.Nullable List<RetailStoreLastOperationNamesInner> lastOperationNames) {
+    this.lastOperationNames = JsonNullable.<List<RetailStoreLastOperationNamesInner>>of(lastOperationNames);
   }
 
 
@@ -1925,9 +1819,6 @@ public class RetailStore extends EntityWithMeta {
    * @return masterRetailStores
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public RetailStoreList getMasterRetailStores() {
@@ -1959,8 +1850,6 @@ public class RetailStore extends EntityWithMeta {
    * @return ofdEnabled
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_OFD_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1984,8 +1873,6 @@ public class RetailStore extends EntityWithMeta {
    * @return onlyInStock
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_ONLY_IN_STOCK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2015,9 +1902,6 @@ public class RetailStore extends EntityWithMeta {
    * @return orderToState
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public State getOrderToState() {
@@ -2056,8 +1940,6 @@ public class RetailStore extends EntityWithMeta {
    * @return printAlways
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PRINT_ALWAYS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2087,9 +1969,6 @@ public class RetailStore extends EntityWithMeta {
    * @return productFolders
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public ProductFolderList getProductFolders() {
@@ -2128,9 +2007,6 @@ public class RetailStore extends EntityWithMeta {
    * @return receiptTemplate
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_RECEIPT_TEMPLATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2160,8 +2036,6 @@ public class RetailStore extends EntityWithMeta {
    * @return requiredFio
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_REQUIRED_FIO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2191,8 +2065,6 @@ public class RetailStore extends EntityWithMeta {
    * @return requiredPhone
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_REQUIRED_PHONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2222,8 +2094,6 @@ public class RetailStore extends EntityWithMeta {
    * @return requiredEmail
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_REQUIRED_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2253,8 +2123,6 @@ public class RetailStore extends EntityWithMeta {
    * @return requiredBirthdate
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_REQUIRED_BIRTHDATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2284,8 +2152,6 @@ public class RetailStore extends EntityWithMeta {
    * @return requiredSex
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_REQUIRED_SEX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2315,8 +2181,6 @@ public class RetailStore extends EntityWithMeta {
    * @return requiredDiscountCardNumber
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_REQUIRED_DISCOUNT_CARD_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2346,8 +2210,6 @@ public class RetailStore extends EntityWithMeta {
    * @return reservePrepaidGoods
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_RESERVE_PREPAID_GOODS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2377,8 +2239,6 @@ public class RetailStore extends EntityWithMeta {
    * @return returnFromClosedShiftEnabled
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_RETURN_FROM_CLOSED_SHIFT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2408,8 +2268,6 @@ public class RetailStore extends EntityWithMeta {
    * @return sellReserves
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SELL_RESERVES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2439,8 +2297,6 @@ public class RetailStore extends EntityWithMeta {
    * @return sendMarksForCheck
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SEND_MARKS_FOR_CHECK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2470,8 +2326,6 @@ public class RetailStore extends EntityWithMeta {
    * @return sendMarksToChestnyZnakOnCloud
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SEND_MARKS_TO_CHESTNY_ZNAK_ON_CLOUD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2501,8 +2355,6 @@ public class RetailStore extends EntityWithMeta {
    * @return syncAgents
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SYNC_AGENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2532,8 +2384,6 @@ public class RetailStore extends EntityWithMeta {
    * @return showBeerOnTap
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SHOW_BEER_ON_TAP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2563,8 +2413,6 @@ public class RetailStore extends EntityWithMeta {
    * @return qrPayEnabled
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_QR_PAY_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2594,8 +2442,6 @@ public class RetailStore extends EntityWithMeta {
    * @return bankPercent
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_BANK_PERCENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2625,8 +2471,6 @@ public class RetailStore extends EntityWithMeta {
    * @return qrBankPercent
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_QR_BANK_PERCENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2656,8 +2500,6 @@ public class RetailStore extends EntityWithMeta {
    * @return demandPrefix
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_DEMAND_PREFIX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2687,8 +2529,6 @@ public class RetailStore extends EntityWithMeta {
    * @return qrTerminalId
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_QR_TERMINAL_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2718,8 +2558,6 @@ public class RetailStore extends EntityWithMeta {
    * @return idQR
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_ID_Q_R)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2749,9 +2587,6 @@ public class RetailStore extends EntityWithMeta {
    * @return acquire
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACQUIRE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2781,9 +2616,6 @@ public class RetailStore extends EntityWithMeta {
    * @return cashiers
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public CashierList getCashiers() {
@@ -2822,9 +2654,6 @@ public class RetailStore extends EntityWithMeta {
    * @return qrAcquire
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Agent getQrAcquire() {
@@ -3744,4 +3573,3 @@ public class RetailStore extends EntityWithMeta {
   }
 
 }
-

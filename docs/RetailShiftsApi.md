@@ -100,7 +100,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createRetailShiftBatch
@@ -135,7 +135,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         RetailShiftsApi apiInstance = new RetailShiftsApi(defaultClient);
-        List<@Valid RetailShift> retailShift = Arrays.asList(); // List<@Valid RetailShift> | 
+        List<RetailShift> retailShift = Arrays.asList(); // List<RetailShift> | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -159,7 +159,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **retailShift** | [**List&lt;@Valid RetailShift&gt;**](RetailShift.md)|  | |
+| **retailShift** | [**List&lt;RetailShift&gt;**](RetailShift.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -183,7 +183,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createRetailShiftMetadataAttribute
@@ -264,7 +264,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteRetailShift
@@ -342,7 +342,7 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteRetailShiftBatch
@@ -377,7 +377,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         RetailShiftsApi apiInstance = new RetailShiftsApi(defaultClient);
-        List<@Valid RetailShift> retailShift = Arrays.asList(); // List<@Valid RetailShift> | 
+        List<RetailShift> retailShift = Arrays.asList(); // List<RetailShift> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -400,7 +400,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **retailShift** | [**List&lt;@Valid RetailShift&gt;**](RetailShift.md)|  | |
+| **retailShift** | [**List&lt;RetailShift&gt;**](RetailShift.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -423,7 +423,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Результат по каждому элементу (успех или объект ошибки) |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteRetailShiftMetadataAttributeById
@@ -501,7 +501,7 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getRetailShiftById
@@ -582,7 +582,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getRetailShiftMetadata
@@ -659,7 +659,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getRetailShiftMetadataAttribute
@@ -740,7 +740,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getRetailShiftMetadataAttributeById
@@ -819,7 +819,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getRetailShifts
@@ -902,7 +902,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## updateRetailShift
@@ -987,7 +987,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## updateRetailShiftMetadataAttributeById
@@ -1070,5 +1070,5 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 

@@ -41,8 +41,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -78,8 +76,8 @@ import java.util.StringJoiner;
   Inventory.JSON_PROPERTY_ENTERS,
   Inventory.JSON_PROPERTY_LOSSES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class Inventory extends EntityWithMeta {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class Inventory extends EntityWithMeta implements MetaEntity {
   public static Inventory createWithMeta(UUID id) {
     Inventory o = new Inventory();
     Meta meta = new Meta();
@@ -109,7 +107,7 @@ public class Inventory extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
-  private JsonNullable<List<@Valid AttributeAbstract>> attributes = JsonNullable.<List<@Valid AttributeAbstract>>undefined();
+  private JsonNullable<List<AttributeAbstract>> attributes = JsonNullable.<List<AttributeAbstract>>undefined();
 
   public static final String JSON_PROPERTY_CODE = "code";
   @javax.annotation.Nullable
@@ -157,7 +155,7 @@ public class Inventory extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_POSITIONS = "positions";
   @javax.annotation.Nullable
-  private JsonNullable<InventoryPositionList> positions = JsonNullable.<InventoryPositionList>undefined();
+  private InventoryPositionList positions;
 
   public static final String JSON_PROPERTY_PRINTED = "printed";
   @javax.annotation.Nullable
@@ -238,9 +236,6 @@ public class Inventory extends EntityWithMeta {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -263,9 +258,6 @@ public class Inventory extends EntityWithMeta {
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -282,9 +274,6 @@ public class Inventory extends EntityWithMeta {
    * @return accountId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -296,8 +285,8 @@ public class Inventory extends EntityWithMeta {
 
 
 
-  public Inventory attributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
+  public Inventory attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
@@ -305,7 +294,7 @@ public class Inventory extends EntityWithMeta {
 
   public Inventory addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
-      this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(new ArrayList<>());
+      this.attributes = JsonNullable.<List<AttributeAbstract>>of(new ArrayList<>());
     }
     try {
       this.attributes.get().add(attributesItem);
@@ -320,12 +309,9 @@ public class Inventory extends EntityWithMeta {
    * @return attributes
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
-  public List<@Valid AttributeAbstract> getAttributes() {
+  public List<AttributeAbstract> getAttributes() {
         return attributes.orElse(null);
   }
 
@@ -335,17 +321,17 @@ public class Inventory extends EntityWithMeta {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<@Valid AttributeAbstract>> getAttributes_JsonNullable() {
+  public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
     return attributes;
   }
   
   @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
-  public void setAttributes_JsonNullable(JsonNullable<List<@Valid AttributeAbstract>> attributes) {
+  public void setAttributes_JsonNullable(JsonNullable<List<AttributeAbstract>> attributes) {
     this.attributes = attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
+  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
@@ -361,8 +347,6 @@ public class Inventory extends EntityWithMeta {
    * @return code
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -385,8 +369,6 @@ public class Inventory extends EntityWithMeta {
    * @return created
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_CREATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -403,8 +385,6 @@ public class Inventory extends EntityWithMeta {
    * @return deleted
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_DELETED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -428,8 +408,6 @@ public class Inventory extends EntityWithMeta {
    * @return description
    */
   @javax.annotation.Nullable
- @Size(max=4096)
-
   @JsonIgnore
 
   public String getDescription() {
@@ -468,8 +446,6 @@ public class Inventory extends EntityWithMeta {
    * @return externalCode
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -499,9 +475,6 @@ public class Inventory extends EntityWithMeta {
    * @return files
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public FileList getFiles() {
@@ -540,9 +513,6 @@ public class Inventory extends EntityWithMeta {
    * @return group
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -572,8 +542,6 @@ public class Inventory extends EntityWithMeta {
    * @return moment
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -603,8 +571,6 @@ public class Inventory extends EntityWithMeta {
    * @return name
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -634,9 +600,6 @@ public class Inventory extends EntityWithMeta {
    * @return organization
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -666,9 +629,6 @@ public class Inventory extends EntityWithMeta {
    * @return owner
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Employee getOwner() {
@@ -696,8 +656,8 @@ public class Inventory extends EntityWithMeta {
 
 
   public Inventory positions(@javax.annotation.Nullable InventoryPositionList positions) {
-    this.positions = JsonNullable.<InventoryPositionList>of(positions);
     
+    this.positions = positions;
     return this;
   }
 
@@ -707,32 +667,20 @@ public class Inventory extends EntityWithMeta {
    * @return positions
    */
   @javax.annotation.Nullable
-  @Valid
-
-
-  @JsonIgnore
-
-  public InventoryPositionList getPositions() {
-        return positions.orElse(null);
-  }
-
-  
-
   @JsonProperty(JSON_PROPERTY_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-
-  public JsonNullable<InventoryPositionList> getPositions_JsonNullable() {
+  public InventoryPositionList getPositions() {
     return positions;
   }
-  
-  @JsonProperty(value = JSON_PROPERTY_POSITIONS, required = false)
-  public void setPositions_JsonNullable(JsonNullable<InventoryPositionList> positions) {
-    this.positions = positions;
-  }
 
+  
+
+
+  @JsonProperty(JSON_PROPERTY_POSITIONS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPositions(@javax.annotation.Nullable InventoryPositionList positions) {
-    this.positions = JsonNullable.<InventoryPositionList>of(positions);
+    this.positions = positions;
   }
 
 
@@ -741,8 +689,6 @@ public class Inventory extends EntityWithMeta {
    * @return printed
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PRINTED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -759,8 +705,6 @@ public class Inventory extends EntityWithMeta {
    * @return published
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PUBLISHED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -784,8 +728,6 @@ public class Inventory extends EntityWithMeta {
    * @return shared
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -815,9 +757,6 @@ public class Inventory extends EntityWithMeta {
    * @return state
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public State getState() {
@@ -856,9 +795,6 @@ public class Inventory extends EntityWithMeta {
    * @return store
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -881,8 +817,6 @@ public class Inventory extends EntityWithMeta {
    * @return sum
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -906,9 +840,6 @@ public class Inventory extends EntityWithMeta {
    * @return syncId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -931,8 +862,6 @@ public class Inventory extends EntityWithMeta {
    * @return updated
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -968,9 +897,6 @@ public class Inventory extends EntityWithMeta {
    * @return enters
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public List<Enter> getEnters() {
@@ -1021,9 +947,6 @@ public class Inventory extends EntityWithMeta {
    * @return losses
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public List<Loss> getLosses() {
@@ -1074,7 +997,7 @@ public class Inventory extends EntityWithMeta {
         Objects.equals(this.name, inventory.name) &&
         Objects.equals(this.organization, inventory.organization) &&
         equalsNullable(this.owner, inventory.owner) &&
-        equalsNullable(this.positions, inventory.positions) &&
+        Objects.equals(this.positions, inventory.positions) &&
         Objects.equals(this.printed, inventory.printed) &&
         Objects.equals(this.published, inventory.published) &&
         Objects.equals(this.shared, inventory.shared) &&
@@ -1093,7 +1016,7 @@ public class Inventory extends EntityWithMeta {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, hashCodeNullable(attributes), code, created, deleted, hashCodeNullable(description), externalCode, hashCodeNullable(files), group, moment, name, organization, hashCodeNullable(owner), hashCodeNullable(positions), printed, published, shared, hashCodeNullable(state), store, sum, syncId, updated, hashCodeNullable(enters), hashCodeNullable(losses));
+    return Objects.hash(meta, id, accountId, hashCodeNullable(attributes), code, created, deleted, hashCodeNullable(description), externalCode, hashCodeNullable(files), group, moment, name, organization, hashCodeNullable(owner), positions, printed, published, shared, hashCodeNullable(state), store, sum, syncId, updated, hashCodeNullable(enters), hashCodeNullable(losses));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1404,4 +1327,3 @@ public class Inventory extends EntityWithMeta {
   }
 
 }
-

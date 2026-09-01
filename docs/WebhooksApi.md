@@ -48,7 +48,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-        List<@Valid Webhook> webhook = Arrays.asList(); // List<@Valid Webhook> | 
+        List<Webhook> webhook = Arrays.asList(); // List<Webhook> | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -72,7 +72,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **webhook** | [**List&lt;@Valid Webhook&gt;**](Webhook.md)|  | |
+| **webhook** | [**List&lt;Webhook&gt;**](Webhook.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -96,7 +96,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Вебхуки созданы или изменены (элемент — сущность или объект ошибки) |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createWebhook
@@ -181,7 +181,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Вебхук успешно создан |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteWebhook
@@ -261,7 +261,7 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Вебхук успешно удален |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteWebhooksBatch
@@ -298,7 +298,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         WebhooksApi apiInstance = new WebhooksApi(defaultClient);
-        List<@Valid Webhook> webhook = Arrays.asList(); // List<@Valid Webhook> | 
+        List<Webhook> webhook = Arrays.asList(); // List<Webhook> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -321,7 +321,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **webhook** | [**List&lt;@Valid Webhook&gt;**](Webhook.md)|  | |
+| **webhook** | [**List&lt;Webhook&gt;**](Webhook.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -344,7 +344,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Результат по каждому элементу (успех или объект ошибки) |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getWebhookById
@@ -427,7 +427,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getWebhooks
@@ -518,7 +518,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## updateWebhook
@@ -605,5 +605,5 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Вебхук успешно изменен |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 

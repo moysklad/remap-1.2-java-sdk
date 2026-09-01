@@ -72,7 +72,7 @@ public class Example {
 
         ProcessingOrdersApi apiInstance = new ProcessingOrdersApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
-        List<@Valid FileUpload> fileUpload = Arrays.asList(); // List<@Valid FileUpload> | 
+        List<FileUpload> fileUpload = Arrays.asList(); // List<FileUpload> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -96,7 +96,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **fileUpload** | [**List&lt;@Valid FileUpload&gt;**](FileUpload.md)|  | |
+| **fileUpload** | [**List&lt;FileUpload&gt;**](FileUpload.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -119,7 +119,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Файлы успешно добавлены. Результат — массив всех Файлов Заказа на производство. |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createProcessingOrder
@@ -202,7 +202,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createProcessingOrderBatch
@@ -237,7 +237,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingOrdersApi apiInstance = new ProcessingOrdersApi(defaultClient);
-        List<@Valid ProcessingOrder> processingOrder = Arrays.asList(); // List<@Valid ProcessingOrder> | 
+        List<ProcessingOrder> processingOrder = Arrays.asList(); // List<ProcessingOrder> | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -261,7 +261,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **processingOrder** | [**List&lt;@Valid ProcessingOrder&gt;**](ProcessingOrder.md)|  | |
+| **processingOrder** | [**List&lt;ProcessingOrder&gt;**](ProcessingOrder.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -285,7 +285,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createProcessingOrderMetadataAttribute
@@ -366,7 +366,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createProcessingOrderMetadataState
@@ -447,7 +447,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createProcessingOrderMetadataStatesBatch
@@ -482,7 +482,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingOrdersApi apiInstance = new ProcessingOrdersApi(defaultClient);
-        List<@Valid State> state = Arrays.asList(); // List<@Valid State> | 
+        List<State> state = Arrays.asList(); // List<State> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -505,7 +505,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **state** | [**List&lt;@Valid State&gt;**](State.md)|  | |
+| **state** | [**List&lt;State&gt;**](State.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -528,7 +528,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createProcessingOrderPosition
@@ -613,7 +613,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createProcessingOrderPositions
@@ -649,7 +649,7 @@ public class Example {
 
         ProcessingOrdersApi apiInstance = new ProcessingOrdersApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
-        List<@Valid ProcessingOrderPosition> processingOrderPosition = Arrays.asList(); // List<@Valid ProcessingOrderPosition> | 
+        List<ProcessingOrderPosition> processingOrderPosition = Arrays.asList(); // List<ProcessingOrderPosition> | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -674,7 +674,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **processingOrderPosition** | [**List&lt;@Valid ProcessingOrderPosition&gt;**](ProcessingOrderPosition.md)|  | |
+| **processingOrderPosition** | [**List&lt;ProcessingOrderPosition&gt;**](ProcessingOrderPosition.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -698,7 +698,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Результат по каждому элементу (успех или объект ошибки) |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteProcessingOrder
@@ -776,7 +776,7 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteProcessingOrderBatch
@@ -811,7 +811,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingOrdersApi apiInstance = new ProcessingOrdersApi(defaultClient);
-        List<@Valid ProcessingOrder> processingOrder = Arrays.asList(); // List<@Valid ProcessingOrder> | 
+        List<ProcessingOrder> processingOrder = Arrays.asList(); // List<ProcessingOrder> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -834,7 +834,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **processingOrder** | [**List&lt;@Valid ProcessingOrder&gt;**](ProcessingOrder.md)|  | |
+| **processingOrder** | [**List&lt;ProcessingOrder&gt;**](ProcessingOrder.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -857,7 +857,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Результат по каждому элементу (успех или объект ошибки) |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteProcessingOrderFile
@@ -939,7 +939,7 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Файл успешно удалён |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteProcessingOrderMetadataAttributeById
@@ -1017,7 +1017,7 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteProcessingOrderMetadataStateById
@@ -1096,7 +1096,7 @@ null (empty response body)
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
 | **404** | Запрошенный ресурс не существует (тело ответа отсутствует) |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteProcessingOrderPosition
@@ -1176,7 +1176,7 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteProcessingOrderPositionsBatch
@@ -1212,7 +1212,7 @@ public class Example {
 
         ProcessingOrdersApi apiInstance = new ProcessingOrdersApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
-        List<@Valid ProcessingOrderPosition> processingOrderPosition = Arrays.asList(); // List<@Valid ProcessingOrderPosition> | 
+        List<ProcessingOrderPosition> processingOrderPosition = Arrays.asList(); // List<ProcessingOrderPosition> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1236,7 +1236,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **processingOrderPosition** | [**List&lt;@Valid ProcessingOrderPosition&gt;**](ProcessingOrderPosition.md)|  | |
+| **processingOrderPosition** | [**List&lt;ProcessingOrderPosition&gt;**](ProcessingOrderPosition.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -1259,7 +1259,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Результат по каждому элементу (успех или объект ошибки) |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getProcessingOrderById
@@ -1340,7 +1340,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getProcessingOrderFile
@@ -1423,7 +1423,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getProcessingOrderFiles
@@ -1508,7 +1508,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getProcessingOrderList
@@ -1593,7 +1593,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getProcessingOrderMetadata
@@ -1670,7 +1670,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getProcessingOrderMetadataAttribute
@@ -1751,7 +1751,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getProcessingOrderMetadataAttributeById
@@ -1830,7 +1830,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getProcessingOrderMetadataStateById
@@ -1909,7 +1909,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getProcessingOrderPositionById
@@ -1992,7 +1992,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getProcessingOrderPositions
@@ -2077,7 +2077,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getProcessingOrderTemplate
@@ -2158,7 +2158,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## updateProcessingOrder
@@ -2243,7 +2243,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## updateProcessingOrderMetadataAttributeById
@@ -2326,7 +2326,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## updateProcessingOrderMetadataStateById
@@ -2409,7 +2409,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## updateProcessingOrderPosition
@@ -2496,5 +2496,5 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 

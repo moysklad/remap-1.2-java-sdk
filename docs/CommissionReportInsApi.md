@@ -118,7 +118,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createCommissionReportInBatch
@@ -153,7 +153,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CommissionReportInsApi apiInstance = new CommissionReportInsApi(defaultClient);
-        List<@Valid CommissionReportIn> commissionReportIn = Arrays.asList(); // List<@Valid CommissionReportIn> | 
+        List<CommissionReportIn> commissionReportIn = Arrays.asList(); // List<CommissionReportIn> | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -177,7 +177,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **commissionReportIn** | [**List&lt;@Valid CommissionReportIn&gt;**](CommissionReportIn.md)|  | |
+| **commissionReportIn** | [**List&lt;CommissionReportIn&gt;**](CommissionReportIn.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -201,7 +201,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createCommissionReportInMetadataAttribute
@@ -282,7 +282,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createCommissionReportInMetadataState
@@ -363,7 +363,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createCommissionReportInMetadataStatesBatch
@@ -398,7 +398,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CommissionReportInsApi apiInstance = new CommissionReportInsApi(defaultClient);
-        List<@Valid State> state = Arrays.asList(); // List<@Valid State> | 
+        List<State> state = Arrays.asList(); // List<State> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -421,7 +421,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **state** | [**List&lt;@Valid State&gt;**](State.md)|  | |
+| **state** | [**List&lt;State&gt;**](State.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -444,7 +444,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createCommissionReportInPosition
@@ -529,7 +529,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createCommissionReportInPositions
@@ -565,7 +565,7 @@ public class Example {
 
         CommissionReportInsApi apiInstance = new CommissionReportInsApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
-        List<@Valid CommissionReportInPosition> commissionReportInPosition = Arrays.asList(); // List<@Valid CommissionReportInPosition> | 
+        List<CommissionReportInPosition> commissionReportInPosition = Arrays.asList(); // List<CommissionReportInPosition> | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -590,7 +590,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **commissionReportInPosition** | [**List&lt;@Valid CommissionReportInPosition&gt;**](CommissionReportInPosition.md)|  | |
+| **commissionReportInPosition** | [**List&lt;CommissionReportInPosition&gt;**](CommissionReportInPosition.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -614,7 +614,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createCommissionReportInReturnedPositions
@@ -699,7 +699,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteCommissionReportIn
@@ -779,7 +779,7 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteCommissionReportInBatch
@@ -814,7 +814,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         CommissionReportInsApi apiInstance = new CommissionReportInsApi(defaultClient);
-        List<@Valid CommissionReportIn> commissionReportIn = Arrays.asList(); // List<@Valid CommissionReportIn> | 
+        List<CommissionReportIn> commissionReportIn = Arrays.asList(); // List<CommissionReportIn> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -837,7 +837,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **commissionReportIn** | [**List&lt;@Valid CommissionReportIn&gt;**](CommissionReportIn.md)|  | |
+| **commissionReportIn** | [**List&lt;CommissionReportIn&gt;**](CommissionReportIn.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -860,7 +860,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Результат по каждому элементу (успех или объект ошибки) |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteCommissionReportInMetadataAttributeById
@@ -940,7 +940,7 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteCommissionReportInMetadataStateById
@@ -1021,7 +1021,7 @@ null (empty response body)
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
 | **404** | Запрошенный ресурс не существует (тело ответа отсутствует) |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteCommissionReportInPosition
@@ -1105,7 +1105,7 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteCommissionReportInPositionsBatch
@@ -1141,7 +1141,7 @@ public class Example {
 
         CommissionReportInsApi apiInstance = new CommissionReportInsApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
-        List<@Valid CommissionReportInPosition> commissionReportInPosition = Arrays.asList(); // List<@Valid CommissionReportInPosition> | 
+        List<CommissionReportInPosition> commissionReportInPosition = Arrays.asList(); // List<CommissionReportInPosition> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1165,7 +1165,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **commissionReportInPosition** | [**List&lt;@Valid CommissionReportInPosition&gt;**](CommissionReportInPosition.md)|  | |
+| **commissionReportInPosition** | [**List&lt;CommissionReportInPosition&gt;**](CommissionReportInPosition.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -1188,7 +1188,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Результат по каждому элементу (успех или объект ошибки) |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteCommissionReportInReturnedPosition
@@ -1272,7 +1272,7 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteCommissionReportInReturnedPositionsBatch
@@ -1308,7 +1308,7 @@ public class Example {
 
         CommissionReportInsApi apiInstance = new CommissionReportInsApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
-        List<@Valid CommissionReportInReturnedPosition> commissionReportInReturnedPosition = Arrays.asList(); // List<@Valid CommissionReportInReturnedPosition> | 
+        List<CommissionReportInReturnedPosition> commissionReportInReturnedPosition = Arrays.asList(); // List<CommissionReportInReturnedPosition> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -1332,7 +1332,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **commissionReportInReturnedPosition** | [**List&lt;@Valid CommissionReportInReturnedPosition&gt;**](CommissionReportInReturnedPosition.md)|  | |
+| **commissionReportInReturnedPosition** | [**List&lt;CommissionReportInReturnedPosition&gt;**](CommissionReportInReturnedPosition.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -1355,7 +1355,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Результат по каждому элементу (успех или объект ошибки) |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getCommissionReportInById
@@ -1438,7 +1438,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getCommissionReportInList
@@ -1525,7 +1525,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getCommissionReportInMetadata
@@ -1604,7 +1604,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getCommissionReportInMetadataAttribute
@@ -1687,7 +1687,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getCommissionReportInMetadataAttributeById
@@ -1768,7 +1768,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getCommissionReportInMetadataStateById
@@ -1849,7 +1849,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getCommissionReportInPositionById
@@ -1934,7 +1934,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getCommissionReportInPositions
@@ -2019,7 +2019,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getCommissionReportInReturnedPositionById
@@ -2104,7 +2104,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getCommissionReportInReturnedPositions
@@ -2191,7 +2191,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## updateCommissionReportIn
@@ -2276,7 +2276,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## updateCommissionReportInMetadataAttributeById
@@ -2359,7 +2359,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## updateCommissionReportInMetadataStateById
@@ -2442,7 +2442,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## updateCommissionReportInPosition
@@ -2529,7 +2529,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## updateCommissionReportInReturnedPosition
@@ -2616,5 +2616,5 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 

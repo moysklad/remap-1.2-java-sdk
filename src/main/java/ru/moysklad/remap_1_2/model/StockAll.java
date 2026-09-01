@@ -26,8 +26,6 @@ import ru.moysklad.remap_1_2.model.ProductFolder;
 import ru.moysklad.remap_1_2.model.Uom;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -52,7 +50,7 @@ import java.util.StringJoiner;
   StockAll.JSON_PROPERTY_PRICE,
   StockAll.JSON_PROPERTY_SALE_PRICE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class StockAll {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -130,9 +128,6 @@ public class StockAll {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -162,8 +157,6 @@ public class StockAll {
    * @return name
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -193,8 +186,6 @@ public class StockAll {
    * @return code
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -224,8 +215,6 @@ public class StockAll {
    * @return article
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_ARTICLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -255,8 +244,6 @@ public class StockAll {
    * @return externalCode
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -286,9 +273,6 @@ public class StockAll {
    * @return folder
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_FOLDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -318,9 +302,6 @@ public class StockAll {
    * @return image
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_IMAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -350,9 +331,6 @@ public class StockAll {
    * @return uom
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_UOM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -382,8 +360,6 @@ public class StockAll {
    * @return stock
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_STOCK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -413,8 +389,6 @@ public class StockAll {
    * @return inTransit
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_IN_TRANSIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -444,8 +418,6 @@ public class StockAll {
    * @return reserve
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_RESERVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -475,8 +447,6 @@ public class StockAll {
    * @return quantity
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -506,8 +476,6 @@ public class StockAll {
    * @return stockDays
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_STOCK_DAYS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -537,8 +505,6 @@ public class StockAll {
    * @return price
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -568,8 +534,6 @@ public class StockAll {
    * @return salePrice
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SALE_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -818,4 +782,3 @@ public class StockAll {
   }
 
 }
-

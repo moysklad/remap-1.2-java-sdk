@@ -37,7 +37,7 @@
 |**project** | [**Project**](Project.md) | Метаданные проекта |  [optional] |
 |**published** | **Boolean** | Опубликован ли документ |  [optional] [readonly] |
 |**rate** | [**CurrencyRate**](CurrencyRate.md) |  |  [optional] |
-|**rewardPercent** | **Integer** | Процент вознаграждения |  [optional] |
+|**rewardPercent** | **Double** | Процент вознаграждения |  [optional] |
 |**rewardType** | **String** | Тип Вознаграждения. Известные значения описаны в RewardType |  [optional] |
 |**salesChannel** | [**SalesChannel**](SalesChannel.md) | Метаданные канала продаж |  [optional] |
 |**shared** | **Boolean** | Общий доступ |  [optional] |

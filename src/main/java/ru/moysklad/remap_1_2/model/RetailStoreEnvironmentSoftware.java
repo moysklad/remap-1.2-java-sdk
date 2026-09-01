@@ -22,8 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -37,7 +35,7 @@ import java.util.StringJoiner;
   RetailStoreEnvironmentSoftware.JSON_PROPERTY_VERSION
 })
 @JsonTypeName("RetailStore_environment_software")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStoreEnvironmentSoftware {
 
   public static final String JSON_PROPERTY_NAME = "name";
@@ -67,8 +65,6 @@ public class RetailStoreEnvironmentSoftware {
    * @return name
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -98,8 +94,6 @@ public class RetailStoreEnvironmentSoftware {
    * @return vendor
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_VENDOR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -129,8 +123,6 @@ public class RetailStoreEnvironmentSoftware {
    * @return version
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_VERSION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -255,4 +247,3 @@ public class RetailStoreEnvironmentSoftware {
   }
 
 }
-

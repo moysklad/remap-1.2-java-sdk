@@ -96,7 +96,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Ставка НДС успешно создана |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createTaxRatesBatch
@@ -133,7 +133,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         TaxRatesApi apiInstance = new TaxRatesApi(defaultClient);
-        List<@Valid TaxRate> taxRate = Arrays.asList(); // List<@Valid TaxRate> | 
+        List<TaxRate> taxRate = Arrays.asList(); // List<TaxRate> | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -157,7 +157,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **taxRate** | [**List&lt;@Valid TaxRate&gt;**](TaxRate.md)|  | |
+| **taxRate** | [**List&lt;TaxRate&gt;**](TaxRate.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -181,7 +181,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Ставки НДС успешно созданы или изменены |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteTaxRate
@@ -261,7 +261,7 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Ставка НДС успешно удалена |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteTaxRatesBatch
@@ -298,7 +298,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         TaxRatesApi apiInstance = new TaxRatesApi(defaultClient);
-        List<@Valid TaxRate> taxRate = Arrays.asList(); // List<@Valid TaxRate> | 
+        List<TaxRate> taxRate = Arrays.asList(); // List<TaxRate> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -321,7 +321,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **taxRate** | [**List&lt;@Valid TaxRate&gt;**](TaxRate.md)|  | |
+| **taxRate** | [**List&lt;TaxRate&gt;**](TaxRate.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -344,7 +344,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Результат по каждому элементу (успех или объект ошибки) |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getTaxRateById
@@ -427,7 +427,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getTaxRates
@@ -518,7 +518,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## updateTaxRate
@@ -605,5 +605,5 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Ставка НДС успешно обновлена |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 

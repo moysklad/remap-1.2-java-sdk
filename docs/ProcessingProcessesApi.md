@@ -103,7 +103,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Техпроцесс успешно создан |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createProcessingProcessPosition
@@ -188,7 +188,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Позиция Техпроцесса успешно создана |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createProcessingProcessPositions
@@ -224,7 +224,7 @@ public class Example {
 
         ProcessingProcessesApi apiInstance = new ProcessingProcessesApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
-        List<@Valid ProcessingProcessPosition> processingProcessPosition = Arrays.asList(); // List<@Valid ProcessingProcessPosition> | 
+        List<ProcessingProcessPosition> processingProcessPosition = Arrays.asList(); // List<ProcessingProcessPosition> | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -249,7 +249,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **processingProcessPosition** | [**List&lt;@Valid ProcessingProcessPosition&gt;**](ProcessingProcessPosition.md)|  | |
+| **processingProcessPosition** | [**List&lt;ProcessingProcessPosition&gt;**](ProcessingProcessPosition.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -273,7 +273,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createProcessingProcessesBatch
@@ -310,7 +310,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingProcessesApi apiInstance = new ProcessingProcessesApi(defaultClient);
-        List<@Valid ProcessingProcess> processingProcess = Arrays.asList(); // List<@Valid ProcessingProcess> | 
+        List<ProcessingProcess> processingProcess = Arrays.asList(); // List<ProcessingProcess> | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -334,7 +334,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **processingProcess** | [**List&lt;@Valid ProcessingProcess&gt;**](ProcessingProcess.md)|  | |
+| **processingProcess** | [**List&lt;ProcessingProcess&gt;**](ProcessingProcess.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -358,7 +358,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Техпроцессы созданы или изменены (элемент - сущность или объект ошибки) |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteProcessingProcess
@@ -438,7 +438,7 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Техпроцесс успешно удален |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteProcessingProcessPosition
@@ -520,7 +520,7 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Позиция Техпроцесса успешно удалена |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteProcessingProcessPositionsBatch
@@ -558,7 +558,7 @@ public class Example {
 
         ProcessingProcessesApi apiInstance = new ProcessingProcessesApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
-        List<@Valid ProcessingProcessPosition> processingProcessPosition = Arrays.asList(); // List<@Valid ProcessingProcessPosition> | 
+        List<ProcessingProcessPosition> processingProcessPosition = Arrays.asList(); // List<ProcessingProcessPosition> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -582,7 +582,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **processingProcessPosition** | [**List&lt;@Valid ProcessingProcessPosition&gt;**](ProcessingProcessPosition.md)|  | |
+| **processingProcessPosition** | [**List&lt;ProcessingProcessPosition&gt;**](ProcessingProcessPosition.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -605,7 +605,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Результат по каждому элементу (успех или объект ошибки) |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteProcessingProcessesBatch
@@ -642,7 +642,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         ProcessingProcessesApi apiInstance = new ProcessingProcessesApi(defaultClient);
-        List<@Valid ProcessingProcess> processingProcess = Arrays.asList(); // List<@Valid ProcessingProcess> | 
+        List<ProcessingProcess> processingProcess = Arrays.asList(); // List<ProcessingProcess> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -665,7 +665,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **processingProcess** | [**List&lt;@Valid ProcessingProcess&gt;**](ProcessingProcess.md)|  | |
+| **processingProcess** | [**List&lt;ProcessingProcess&gt;**](ProcessingProcess.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -688,7 +688,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Результат по каждому элементу (успех или объект ошибки) |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getProcessingProcessById
@@ -771,7 +771,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getProcessingProcessPositionById
@@ -856,7 +856,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getProcessingProcessPositions
@@ -943,7 +943,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getProcessingProcesses
@@ -1032,7 +1032,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## updateProcessingProcess
@@ -1119,7 +1119,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Техпроцесс успешно обновлен |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## updateProcessingProcessPosition
@@ -1208,5 +1208,5 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Позиция Техпроцесса успешно обновлена |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 

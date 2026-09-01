@@ -9,7 +9,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**meta** | [**Meta**](Meta.md) |  |  [optional] |
-|**id** | **UUID** | ID позиции |  [optional] [readonly] |
+|**id** | **UUID** | ID позиции |  [optional] |
 |**accountId** | **UUID** | ID учетной записи |  [optional] [readonly] |
 |**assortment** | [**ProductMarker**](ProductMarker.md) | Метаданные товара/услуги/партии/модификации/комплекта, которую представляет собой позиция |  [optional] |
 |**cost** | **Integer** | Себестоимость |  [optional] |

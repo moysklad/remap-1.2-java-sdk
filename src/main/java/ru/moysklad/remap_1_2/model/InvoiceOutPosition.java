@@ -30,8 +30,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -51,8 +49,8 @@ import java.util.StringJoiner;
   InvoiceOutPosition.JSON_PROPERTY_ASSORTMENT,
   InvoiceOutPosition.JSON_PROPERTY_PACK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class InvoiceOutPosition extends EntityWithMeta {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class InvoiceOutPosition extends EntityWithMeta implements DocumentPosition, MetaEntity {
   public static InvoiceOutPosition createWithMeta(UUID parentId, UUID id) {
     InvoiceOutPosition o = new InvoiceOutPosition();
     Meta meta = new Meta();
@@ -115,11 +113,9 @@ public class InvoiceOutPosition extends EntityWithMeta {
    */
   @JsonCreator
   public InvoiceOutPosition(
-    @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id, 
     @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId
   ) {
     this();
-    this.id = id;
     this.accountId = accountId;
   }
 
@@ -135,9 +131,6 @@ public class InvoiceOutPosition extends EntityWithMeta {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -155,14 +148,18 @@ public class InvoiceOutPosition extends EntityWithMeta {
   }
 
 
+  public InvoiceOutPosition id(@javax.annotation.Nullable UUID id) {
+    
+    this.id = id;
+    return this;
+  }
+
+
   /**
    * ID позиции
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -173,15 +170,18 @@ public class InvoiceOutPosition extends EntityWithMeta {
   
 
 
+  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setId(@javax.annotation.Nullable UUID id) {
+    this.id = id;
+  }
+
 
   /**
    * ID учетной записи
    * @return accountId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -206,8 +206,6 @@ public class InvoiceOutPosition extends EntityWithMeta {
    * @return quantity
    */
   @javax.annotation.Nullable
- @DecimalMin(value="0",inclusive=false)
-
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -237,8 +235,6 @@ public class InvoiceOutPosition extends EntityWithMeta {
    * @return price
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -268,8 +264,6 @@ public class InvoiceOutPosition extends EntityWithMeta {
    * @return discount
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_DISCOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -299,8 +293,6 @@ public class InvoiceOutPosition extends EntityWithMeta {
    * @return vat
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -330,8 +322,6 @@ public class InvoiceOutPosition extends EntityWithMeta {
    * @return vatEnabled
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -361,9 +351,6 @@ public class InvoiceOutPosition extends EntityWithMeta {
    * @return assortment
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -393,9 +380,6 @@ public class InvoiceOutPosition extends EntityWithMeta {
    * @return pack
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Pack getPack() {
@@ -609,4 +593,3 @@ public class InvoiceOutPosition extends EntityWithMeta {
   }
 
 }
-

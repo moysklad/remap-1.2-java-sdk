@@ -31,8 +31,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -45,7 +43,7 @@ import java.util.StringJoiner;
   ExportRequest.JSON_PROPERTY_EXTENSION,
   ExportRequest.JSON_PROPERTY_TEMPLATES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class ExportRequest {
 
   public static final String JSON_PROPERTY_TEMPLATE = "template";
@@ -98,7 +96,7 @@ public class ExportRequest {
 
   public static final String JSON_PROPERTY_TEMPLATES = "templates";
   @javax.annotation.Nullable
-  private JsonNullable<List<@Valid TemplateComposition>> templates = JsonNullable.<List<@Valid TemplateComposition>>undefined();
+  private JsonNullable<List<TemplateComposition>> templates = JsonNullable.<List<TemplateComposition>>undefined();
 
   public ExportRequest() {
   }
@@ -115,9 +113,6 @@ public class ExportRequest {
    * @return template
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_TEMPLATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -147,8 +142,6 @@ public class ExportRequest {
    * @return extension
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_EXTENSION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -166,8 +159,8 @@ public class ExportRequest {
   }
 
 
-  public ExportRequest templates(@javax.annotation.Nullable List<@Valid TemplateComposition> templates) {
-    this.templates = JsonNullable.<List<@Valid TemplateComposition>>of(templates);
+  public ExportRequest templates(@javax.annotation.Nullable List<TemplateComposition> templates) {
+    this.templates = JsonNullable.<List<TemplateComposition>>of(templates);
     
     return this;
   }
@@ -175,7 +168,7 @@ public class ExportRequest {
 
   public ExportRequest addTemplatesItem(TemplateComposition templatesItem) {
     if (this.templates == null || !this.templates.isPresent()) {
-      this.templates = JsonNullable.<List<@Valid TemplateComposition>>of(new ArrayList<>());
+      this.templates = JsonNullable.<List<TemplateComposition>>of(new ArrayList<>());
     }
     try {
       this.templates.get().add(templatesItem);
@@ -190,12 +183,9 @@ public class ExportRequest {
    * @return templates
    */
   @javax.annotation.Nullable
-  @Valid
- @Size(min=1)
-
   @JsonIgnore
 
-  public List<@Valid TemplateComposition> getTemplates() {
+  public List<TemplateComposition> getTemplates() {
         return templates.orElse(null);
   }
 
@@ -205,17 +195,17 @@ public class ExportRequest {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<@Valid TemplateComposition>> getTemplates_JsonNullable() {
+  public JsonNullable<List<TemplateComposition>> getTemplates_JsonNullable() {
     return templates;
   }
   
   @JsonProperty(value = JSON_PROPERTY_TEMPLATES, required = false)
-  public void setTemplates_JsonNullable(JsonNullable<List<@Valid TemplateComposition>> templates) {
+  public void setTemplates_JsonNullable(JsonNullable<List<TemplateComposition>> templates) {
     this.templates = templates;
   }
 
-  public void setTemplates(@javax.annotation.Nullable List<@Valid TemplateComposition> templates) {
-    this.templates = JsonNullable.<List<@Valid TemplateComposition>>of(templates);
+  public void setTemplates(@javax.annotation.Nullable List<TemplateComposition> templates) {
+    this.templates = JsonNullable.<List<TemplateComposition>>of(templates);
   }
 
 
@@ -332,4 +322,3 @@ public class ExportRequest {
   }
 
 }
-

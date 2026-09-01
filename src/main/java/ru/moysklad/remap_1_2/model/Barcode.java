@@ -22,8 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -38,7 +36,7 @@ import java.util.StringJoiner;
   Barcode.JSON_PROPERTY_GTIN,
   Barcode.JSON_PROPERTY_UPC
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class Barcode {
 
   public static final String JSON_PROPERTY_EAN13 = "ean13";
@@ -76,8 +74,6 @@ public class Barcode {
    * @return ean13
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_EAN13)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -107,8 +103,6 @@ public class Barcode {
    * @return ean8
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_EAN8)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -138,8 +132,6 @@ public class Barcode {
    * @return code128
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_CODE128)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -169,8 +161,6 @@ public class Barcode {
    * @return gtin
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_GTIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -200,8 +190,6 @@ public class Barcode {
    * @return upc
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_UPC)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -350,4 +338,3 @@ public class Barcode {
   }
 
 }
-

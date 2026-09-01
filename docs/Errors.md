@@ -1,13 +1,14 @@
 
 
-# ErrorOrArray
+# Errors
 
+Ответ ошибки: объект { errors }
 
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**errors** | [**List&lt;ErrorErrorsInner&gt;**](ErrorErrorsInner.md) |  |  |
+|**errors** | [**List&lt;Error&gt;**](Error.md) |  |  |
 
 
 

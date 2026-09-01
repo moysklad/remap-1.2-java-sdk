@@ -33,8 +33,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -50,7 +48,7 @@ import java.util.StringJoiner;
   SpecialPriceDiscount.JSON_PROPERTY_DISCOUNT,
   SpecialPriceDiscount.JSON_PROPERTY_SPECIAL_PRICE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class SpecialPriceDiscount extends DiscountAbstract {
   public static SpecialPriceDiscount createWithMeta(UUID id) {
     SpecialPriceDiscount o = new SpecialPriceDiscount();
@@ -85,7 +83,7 @@ public class SpecialPriceDiscount extends DiscountAbstract {
 
   public static final String JSON_PROPERTY_DISCOUNT = "discount";
   @javax.annotation.Nullable
-  private JsonNullable<Float> discount = JsonNullable.<Float>undefined();
+  private JsonNullable<Double> discount = JsonNullable.<Double>undefined();
 
   public static final String JSON_PROPERTY_SPECIAL_PRICE = "specialPrice";
   @javax.annotation.Nullable
@@ -109,9 +107,6 @@ public class SpecialPriceDiscount extends DiscountAbstract {
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -135,9 +130,6 @@ public class SpecialPriceDiscount extends DiscountAbstract {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -175,9 +167,6 @@ public class SpecialPriceDiscount extends DiscountAbstract {
    * @return productFolders
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_PRODUCT_FOLDERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -207,8 +196,6 @@ public class SpecialPriceDiscount extends DiscountAbstract {
    * @return usePriceType
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_USE_PRICE_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -226,8 +213,8 @@ public class SpecialPriceDiscount extends DiscountAbstract {
   }
 
 
-  public SpecialPriceDiscount discount(@javax.annotation.Nullable Float discount) {
-    this.discount = JsonNullable.<Float>of(discount);
+  public SpecialPriceDiscount discount(@javax.annotation.Nullable Double discount) {
+    this.discount = JsonNullable.<Double>of(discount);
     
     return this;
   }
@@ -238,11 +225,9 @@ public class SpecialPriceDiscount extends DiscountAbstract {
    * @return discount
    */
   @javax.annotation.Nullable
-
-
   @JsonIgnore
 
-  public Float getDiscount() {
+  public Double getDiscount() {
         return discount.orElse(null);
   }
 
@@ -252,17 +237,17 @@ public class SpecialPriceDiscount extends DiscountAbstract {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<Float> getDiscount_JsonNullable() {
+  public JsonNullable<Double> getDiscount_JsonNullable() {
     return discount;
   }
   
   @JsonProperty(value = JSON_PROPERTY_DISCOUNT, required = false)
-  public void setDiscount_JsonNullable(JsonNullable<Float> discount) {
+  public void setDiscount_JsonNullable(JsonNullable<Double> discount) {
     this.discount = discount;
   }
 
-  public void setDiscount(@javax.annotation.Nullable Float discount) {
-    this.discount = JsonNullable.<Float>of(discount);
+  public void setDiscount(@javax.annotation.Nullable Double discount) {
+    this.discount = JsonNullable.<Double>of(discount);
   }
 
 
@@ -278,9 +263,6 @@ public class SpecialPriceDiscount extends DiscountAbstract {
    * @return specialPrice
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public SpecialPriceDiscountSpecialPrice getSpecialPrice() {
@@ -451,4 +433,3 @@ public class SpecialPriceDiscount extends DiscountAbstract {
   }
 
 }
-

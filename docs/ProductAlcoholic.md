@@ -10,8 +10,8 @@
 |------------ | ------------- | ------------- | -------------|
 |**excise** | **Boolean** | Содержит акцизную марку |  [optional] |
 |**type** | **Integer** | Код вида продукции |  [optional] |
-|**strength** | **Float** | Крепость |  [optional] |
-|**volume** | **Float** | Объём тары |  [optional] |
+|**strength** | **Double** | Крепость |  [optional] |
+|**volume** | **Double** | Объём тары |  [optional] |
 
 
 

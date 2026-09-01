@@ -20,11 +20,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.PriceType;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -34,15 +33,20 @@ import java.util.StringJoiner;
  */
 @JsonPropertyOrder({
   SpecialPriceDiscountSpecialPrice.JSON_PROPERTY_VALUE,
+  SpecialPriceDiscountSpecialPrice.JSON_PROPERTY_META,
   SpecialPriceDiscountSpecialPrice.JSON_PROPERTY_PRICE_TYPE
 })
 @JsonTypeName("SpecialPriceDiscount_specialPrice")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class SpecialPriceDiscountSpecialPrice {
 
   public static final String JSON_PROPERTY_VALUE = "value";
   @javax.annotation.Nullable
   private Integer value;
+
+  public static final String JSON_PROPERTY_META = "meta";
+  @javax.annotation.Nullable
+  private Meta meta;
 
   public static final String JSON_PROPERTY_PRICE_TYPE = "priceType";
   @javax.annotation.Nullable
@@ -63,8 +67,6 @@ public class SpecialPriceDiscountSpecialPrice {
    * @return value
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VALUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -82,6 +84,35 @@ public class SpecialPriceDiscountSpecialPrice {
   }
 
 
+  public SpecialPriceDiscountSpecialPrice meta(@javax.annotation.Nullable Meta meta) {
+    
+    this.meta = meta;
+    return this;
+  }
+
+
+  /**
+   * Get meta
+   * @return meta
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_META)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Meta getMeta() {
+    return meta;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_META)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMeta(@javax.annotation.Nullable Meta meta) {
+    this.meta = meta;
+  }
+
+
   public SpecialPriceDiscountSpecialPrice priceType(@javax.annotation.Nullable PriceType priceType) {
     
     this.priceType = priceType;
@@ -94,9 +125,6 @@ public class SpecialPriceDiscountSpecialPrice {
    * @return priceType
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_PRICE_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -124,12 +152,13 @@ public class SpecialPriceDiscountSpecialPrice {
     }
     SpecialPriceDiscountSpecialPrice specialPriceDiscountSpecialPrice = (SpecialPriceDiscountSpecialPrice) o;
     return Objects.equals(this.value, specialPriceDiscountSpecialPrice.value) &&
+        Objects.equals(this.meta, specialPriceDiscountSpecialPrice.meta) &&
         Objects.equals(this.priceType, specialPriceDiscountSpecialPrice.priceType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(value, priceType);
+    return Objects.hash(value, meta, priceType);
   }
 
   @Override
@@ -137,6 +166,7 @@ public class SpecialPriceDiscountSpecialPrice {
     StringBuilder sb = new StringBuilder();
     sb.append("class SpecialPriceDiscountSpecialPrice {\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
+    sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("    priceType: ").append(toIndentedString(priceType)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -195,6 +225,11 @@ public class SpecialPriceDiscountSpecialPrice {
       }
     }
 
+    // add `meta` to the URL query string
+    if (getMeta() != null) {
+      joiner.add(getMeta().toUrlQueryString(prefix + "meta" + suffix));
+    }
+
     // add `priceType` to the URL query string
     if (getPriceType() != null) {
       joiner.add(getPriceType().toUrlQueryString(prefix + "priceType" + suffix));
@@ -204,4 +239,3 @@ public class SpecialPriceDiscountSpecialPrice {
   }
 
 }
-

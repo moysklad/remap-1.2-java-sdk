@@ -26,7 +26,7 @@ import ru.moysklad.remap_1_2.model.BundleComponent;
 import ru.moysklad.remap_1_2.model.BundleList;
 import ru.moysklad.remap_1_2.model.CreateBundleComponentsRequest;
 import ru.moysklad.remap_1_2.model.DeleteRowResult;
-import ru.moysklad.remap_1_2.model.ErrorOrArray;
+import ru.moysklad.remap_1_2.model.Errors;
 import java.util.UUID;
 
 
@@ -37,10 +37,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-import javax.validation.constraints.*;
-import javax.validation.Valid;
-
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class BundlesApi extends BaseApi {
 
@@ -116,17 +113,18 @@ public class BundlesApi extends BaseApi {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -232,17 +230,18 @@ if (contentType != null)
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -280,7 +279,7 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createBundlesBatch(@javax.annotation.Nonnull List<@Valid Bundle> bundle) throws ApiException {
+  public List<BatchResponseEntity> createBundlesBatch(@javax.annotation.Nonnull List<Bundle> bundle) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.createBundlesBatch(bundle, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
@@ -300,7 +299,7 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createBundlesBatch(@javax.annotation.Nonnull List<@Valid Bundle> bundle, RequestOptions options) throws ApiException {
+  public List<BatchResponseEntity> createBundlesBatch(@javax.annotation.Nonnull List<Bundle> bundle, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createBundlesBatch(bundle, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
@@ -317,7 +316,7 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  protected List<BatchResponseEntity> createBundlesBatch(@javax.annotation.Nonnull List<@Valid Bundle> bundle, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createBundlesBatch(@javax.annotation.Nonnull List<Bundle> bundle, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = bundle;
     
     // verify the required parameter 'bundle' is set
@@ -337,17 +336,18 @@ if (contentType != null)
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -361,7 +361,7 @@ if (contentType != null)
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
     TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
-    return apiClient.invokeAPI(
+    return apiClient.invokeAPIBatch(
         localVarPath,
         "POST",
         localVarQueryParams,
@@ -435,15 +435,15 @@ if (contentType != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -541,15 +541,15 @@ if (acceptEncoding != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -586,7 +586,7 @@ if (acceptEncoding != null)
    * @param bundleComponent  (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteBundleComponentsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid BundleComponent> bundleComponent) throws ApiException {
+  public void deleteBundleComponentsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<BundleComponent> bundleComponent) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     this.deleteBundleComponentsBatch(id, bundleComponent, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -607,7 +607,7 @@ if (acceptEncoding != null)
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
    * @throws ApiException if fails to make API call
    */
-  public void deleteBundleComponentsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid BundleComponent> bundleComponent, RequestOptions options) throws ApiException {
+  public void deleteBundleComponentsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<BundleComponent> bundleComponent, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     this.deleteBundleComponentsBatch(id, bundleComponent, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -623,7 +623,7 @@ if (acceptEncoding != null)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  protected void deleteBundleComponentsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<@Valid BundleComponent> bundleComponent, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected void deleteBundleComponentsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<BundleComponent> bundleComponent, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = bundleComponent;
     
     // verify the required parameter 'id' is set
@@ -648,17 +648,18 @@ if (acceptEncoding != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -695,7 +696,7 @@ if (contentType != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteBundlesBatch(@javax.annotation.Nonnull List<@Valid Bundle> bundle) throws ApiException {
+  public List<DeleteRowResult> deleteBundlesBatch(@javax.annotation.Nonnull List<Bundle> bundle) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.deleteBundlesBatch(bundle, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -714,7 +715,7 @@ if (contentType != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteBundlesBatch(@javax.annotation.Nonnull List<@Valid Bundle> bundle, RequestOptions options) throws ApiException {
+  public List<DeleteRowResult> deleteBundlesBatch(@javax.annotation.Nonnull List<Bundle> bundle, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.deleteBundlesBatch(bundle, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -730,7 +731,7 @@ if (contentType != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  protected List<DeleteRowResult> deleteBundlesBatch(@javax.annotation.Nonnull List<@Valid Bundle> bundle, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteBundlesBatch(@javax.annotation.Nonnull List<Bundle> bundle, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = bundle;
     
     // verify the required parameter 'bundle' is set
@@ -749,17 +750,18 @@ if (contentType != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -853,15 +855,15 @@ if (contentType != null)
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -966,15 +968,15 @@ if (acceptEncoding != null)
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -1083,15 +1085,15 @@ if (acceptEncoding != null)
     localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
     localVarQueryParams.addAll(apiClient.parameterToPair("order", order));
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -1189,15 +1191,15 @@ if (acceptEncoding != null)
     localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
     localVarQueryParams.addAll(apiClient.parameterToPair("order", order));
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -1303,17 +1305,18 @@ if (acceptEncoding != null)
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -1430,17 +1433,18 @@ if (contentType != null)
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };

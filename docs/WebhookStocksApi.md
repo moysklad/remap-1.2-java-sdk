@@ -48,7 +48,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         WebhookStocksApi apiInstance = new WebhookStocksApi(defaultClient);
-        List<@Valid WebhookStock> webhookStock = Arrays.asList(); // List<@Valid WebhookStock> | 
+        List<WebhookStock> webhookStock = Arrays.asList(); // List<WebhookStock> | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -72,7 +72,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **webhookStock** | [**List&lt;@Valid WebhookStock&gt;**](WebhookStock.md)|  | |
+| **webhookStock** | [**List&lt;WebhookStock&gt;**](WebhookStock.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -96,7 +96,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Один созданный вебхук или массив созданных/изменённых (элемент — сущность или ошибка) |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createWebhookStock
@@ -181,7 +181,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Один созданный вебхук или массив созданных/изменённых (элемент — сущность или ошибка) |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteWebhookStock
@@ -261,7 +261,7 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Вебхук на изменение остатков успешно удалён |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteWebhookStocksBatch
@@ -298,7 +298,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         WebhookStocksApi apiInstance = new WebhookStocksApi(defaultClient);
-        List<@Valid WebhookStock> webhookStock = Arrays.asList(); // List<@Valid WebhookStock> | 
+        List<WebhookStock> webhookStock = Arrays.asList(); // List<WebhookStock> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -321,7 +321,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **webhookStock** | [**List&lt;@Valid WebhookStock&gt;**](WebhookStock.md)|  | |
+| **webhookStock** | [**List&lt;WebhookStock&gt;**](WebhookStock.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -344,7 +344,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Результат по каждому элементу (успех или объект ошибки) |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getWebhookStockById
@@ -427,7 +427,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getWebhookStocks
@@ -518,7 +518,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## updateWebhookStock
@@ -605,5 +605,5 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Вебхук успешно изменён |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 

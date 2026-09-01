@@ -32,8 +32,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -57,7 +55,7 @@ import ru.moysklad.remap_1_2.deserialize.PolymorphicMetaTypeDeserializer;
   DiscountAbstract.JSON_PROPERTY_ALL_PRODUCTS,
   DiscountAbstract.JSON_PROPERTY_ASSORTMENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 @OpenApiPolymorphicTypeInfo(path = "meta.type")
 @OpenApiPolymorphicSubTypes({
   @OpenApiPolymorphicSubTypes.Type(value = AccumulationDiscount.class, name = "accumulationdiscount"),
@@ -67,7 +65,7 @@ import ru.moysklad.remap_1_2.deserialize.PolymorphicMetaTypeDeserializer;
   @OpenApiPolymorphicSubTypes.Type(value = BonusProgram.class, name = "bonusprogram")
 })
 @JsonDeserialize(using = PolymorphicMetaTypeDeserializer.class)
-public class DiscountAbstract {
+public class DiscountAbstract implements MetaEntity {
 
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable
@@ -103,7 +101,7 @@ public class DiscountAbstract {
 
   public static final String JSON_PROPERTY_ASSORTMENT = "assortment";
   @javax.annotation.Nullable
-  private JsonNullable<List<@Valid DiscountAssortmentItem>> assortment = JsonNullable.<List<@Valid DiscountAssortmentItem>>undefined();
+  private JsonNullable<List<DiscountAssortmentItem>> assortment = JsonNullable.<List<DiscountAssortmentItem>>undefined();
 
   public DiscountAbstract() {
   }
@@ -125,9 +123,6 @@ public class DiscountAbstract {
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -151,9 +146,6 @@ public class DiscountAbstract {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -176,9 +168,6 @@ public class DiscountAbstract {
    * @return accountId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -202,8 +191,6 @@ public class DiscountAbstract {
    * @return name
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -233,8 +220,6 @@ public class DiscountAbstract {
    * @return active
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_ACTIVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -264,8 +249,6 @@ public class DiscountAbstract {
    * @return allAgents
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_ALL_AGENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -307,8 +290,6 @@ public class DiscountAbstract {
    * @return agentTags
    */
   @javax.annotation.Nullable
-
-
   @JsonIgnore
 
   public List<String> getAgentTags() {
@@ -347,8 +328,6 @@ public class DiscountAbstract {
    * @return allProducts
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_ALL_PRODUCTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -366,8 +345,8 @@ public class DiscountAbstract {
   }
 
 
-  public DiscountAbstract assortment(@javax.annotation.Nullable List<@Valid DiscountAssortmentItem> assortment) {
-    this.assortment = JsonNullable.<List<@Valid DiscountAssortmentItem>>of(assortment);
+  public DiscountAbstract assortment(@javax.annotation.Nullable List<DiscountAssortmentItem> assortment) {
+    this.assortment = JsonNullable.<List<DiscountAssortmentItem>>of(assortment);
     
     return this;
   }
@@ -375,7 +354,7 @@ public class DiscountAbstract {
 
   public DiscountAbstract addAssortmentItem(DiscountAssortmentItem assortmentItem) {
     if (this.assortment == null || !this.assortment.isPresent()) {
-      this.assortment = JsonNullable.<List<@Valid DiscountAssortmentItem>>of(new ArrayList<>());
+      this.assortment = JsonNullable.<List<DiscountAssortmentItem>>of(new ArrayList<>());
     }
     try {
       this.assortment.get().add(assortmentItem);
@@ -390,12 +369,9 @@ public class DiscountAbstract {
    * @return assortment
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
-  public List<@Valid DiscountAssortmentItem> getAssortment() {
+  public List<DiscountAssortmentItem> getAssortment() {
         return assortment.orElse(null);
   }
 
@@ -405,17 +381,17 @@ public class DiscountAbstract {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<@Valid DiscountAssortmentItem>> getAssortment_JsonNullable() {
+  public JsonNullable<List<DiscountAssortmentItem>> getAssortment_JsonNullable() {
     return assortment;
   }
   
   @JsonProperty(value = JSON_PROPERTY_ASSORTMENT, required = false)
-  public void setAssortment_JsonNullable(JsonNullable<List<@Valid DiscountAssortmentItem>> assortment) {
+  public void setAssortment_JsonNullable(JsonNullable<List<DiscountAssortmentItem>> assortment) {
     this.assortment = assortment;
   }
 
-  public void setAssortment(@javax.annotation.Nullable List<@Valid DiscountAssortmentItem> assortment) {
-    this.assortment = JsonNullable.<List<@Valid DiscountAssortmentItem>>of(assortment);
+  public void setAssortment(@javax.annotation.Nullable List<DiscountAssortmentItem> assortment) {
+    this.assortment = JsonNullable.<List<DiscountAssortmentItem>>of(assortment);
   }
 
 
@@ -608,4 +584,3 @@ public class DiscountAbstract {
   }
 
 }
-

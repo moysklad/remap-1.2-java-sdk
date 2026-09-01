@@ -45,8 +45,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -95,8 +93,8 @@ import java.util.StringJoiner;
   RetailSalesReturn.JSON_PROPERTY_VAT_INCLUDED,
   RetailSalesReturn.JSON_PROPERTY_VAT_SUM
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class RetailSalesReturn {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class RetailSalesReturn implements MetaEntity {
   public static RetailSalesReturn createWithMeta(UUID id) {
     RetailSalesReturn o = new RetailSalesReturn();
     Meta meta = new Meta();
@@ -138,7 +136,7 @@ public class RetailSalesReturn {
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
-  private JsonNullable<List<@Valid AttributeAbstract>> attributes = JsonNullable.<List<@Valid AttributeAbstract>>undefined();
+  private JsonNullable<List<AttributeAbstract>> attributes = JsonNullable.<List<AttributeAbstract>>undefined();
 
   public static final String JSON_PROPERTY_CASH_SUM = "cashSum";
   @javax.annotation.Nullable
@@ -309,9 +307,6 @@ public class RetailSalesReturn {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -334,9 +329,6 @@ public class RetailSalesReturn {
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -353,9 +345,6 @@ public class RetailSalesReturn {
    * @return accountId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -379,9 +368,6 @@ public class RetailSalesReturn {
    * @return agent
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -411,9 +397,6 @@ public class RetailSalesReturn {
    * @return agentAccount
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Account getAgentAccount() {
@@ -452,8 +435,6 @@ public class RetailSalesReturn {
    * @return applicable
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_APPLICABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -471,8 +452,8 @@ public class RetailSalesReturn {
   }
 
 
-  public RetailSalesReturn attributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
+  public RetailSalesReturn attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
@@ -480,7 +461,7 @@ public class RetailSalesReturn {
 
   public RetailSalesReturn addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
-      this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(new ArrayList<>());
+      this.attributes = JsonNullable.<List<AttributeAbstract>>of(new ArrayList<>());
     }
     try {
       this.attributes.get().add(attributesItem);
@@ -495,12 +476,9 @@ public class RetailSalesReturn {
    * @return attributes
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
-  public List<@Valid AttributeAbstract> getAttributes() {
+  public List<AttributeAbstract> getAttributes() {
         return attributes.orElse(null);
   }
 
@@ -510,17 +488,17 @@ public class RetailSalesReturn {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<@Valid AttributeAbstract>> getAttributes_JsonNullable() {
+  public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
     return attributes;
   }
   
   @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
-  public void setAttributes_JsonNullable(JsonNullable<List<@Valid AttributeAbstract>> attributes) {
+  public void setAttributes_JsonNullable(JsonNullable<List<AttributeAbstract>> attributes) {
     this.attributes = attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
+  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
@@ -537,8 +515,6 @@ public class RetailSalesReturn {
    * @return cashSum
    */
   @javax.annotation.Nullable
- @DecimalMin("0")
-
   @JsonProperty(JSON_PROPERTY_CASH_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -568,8 +544,6 @@ public class RetailSalesReturn {
    * @return code
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -599,9 +573,6 @@ public class RetailSalesReturn {
    * @return contract
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Contract getContract() {
@@ -633,8 +604,6 @@ public class RetailSalesReturn {
    * @return created
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_CREATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -651,8 +620,6 @@ public class RetailSalesReturn {
    * @return deleted
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_DELETED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -676,9 +643,6 @@ public class RetailSalesReturn {
    * @return demand
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public RetailDemand getDemand() {
@@ -717,8 +681,6 @@ public class RetailSalesReturn {
    * @return description
    */
   @javax.annotation.Nullable
- @Size(max=4096)
-
   @JsonIgnore
 
   public String getDescription() {
@@ -757,8 +719,6 @@ public class RetailSalesReturn {
    * @return externalCode
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -788,9 +748,6 @@ public class RetailSalesReturn {
    * @return group
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -820,8 +777,6 @@ public class RetailSalesReturn {
    * @return moment
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -851,8 +806,6 @@ public class RetailSalesReturn {
    * @return name
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -883,8 +836,6 @@ public class RetailSalesReturn {
    * @return noCashSum
    */
   @javax.annotation.Nullable
- @DecimalMin("0")
-
   @JsonProperty(JSON_PROPERTY_NO_CASH_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -914,9 +865,6 @@ public class RetailSalesReturn {
    * @return organization
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -946,9 +894,6 @@ public class RetailSalesReturn {
    * @return organizationAccount
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Account getOrganizationAccount() {
@@ -987,9 +932,6 @@ public class RetailSalesReturn {
    * @return owner
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Employee getOwner() {
@@ -1028,9 +970,6 @@ public class RetailSalesReturn {
    * @return positions
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1053,8 +992,6 @@ public class RetailSalesReturn {
    * @return printed
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PRINTED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1071,8 +1008,6 @@ public class RetailSalesReturn {
    * @return published
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PUBLISHED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1097,8 +1032,6 @@ public class RetailSalesReturn {
    * @return qrSum
    */
   @javax.annotation.Nullable
- @DecimalMin("0")
-
   @JsonProperty(JSON_PROPERTY_QR_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1128,9 +1061,6 @@ public class RetailSalesReturn {
    * @return rate
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1160,9 +1090,6 @@ public class RetailSalesReturn {
    * @return retailShift
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_RETAIL_SHIFT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1192,9 +1119,6 @@ public class RetailSalesReturn {
    * @return retailStore
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_RETAIL_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1224,8 +1148,6 @@ public class RetailSalesReturn {
    * @return shared
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1255,9 +1177,6 @@ public class RetailSalesReturn {
    * @return state
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public State getState() {
@@ -1296,9 +1215,6 @@ public class RetailSalesReturn {
    * @return store
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1321,8 +1237,6 @@ public class RetailSalesReturn {
    * @return sum
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1346,9 +1260,6 @@ public class RetailSalesReturn {
    * @return syncId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1378,8 +1289,6 @@ public class RetailSalesReturn {
    * @return taxSystem
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_TAX_SYSTEM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1402,8 +1311,6 @@ public class RetailSalesReturn {
    * @return updated
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1427,8 +1334,6 @@ public class RetailSalesReturn {
    * @return vatEnabled
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1458,8 +1363,6 @@ public class RetailSalesReturn {
    * @return vatIncluded
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VAT_INCLUDED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1482,8 +1385,6 @@ public class RetailSalesReturn {
    * @return vatSum
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VAT_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1975,4 +1876,3 @@ public class RetailSalesReturn {
   }
 
 }
-

@@ -45,8 +45,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -97,8 +95,8 @@ import java.util.StringJoiner;
   CommissionReportOut.JSON_PROPERTY_VAT_SUM,
   CommissionReportOut.JSON_PROPERTY_PAYMENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class CommissionReportOut extends EntityWithMeta {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   public static CommissionReportOut createWithMeta(UUID id) {
     CommissionReportOut o = new CommissionReportOut();
     Meta meta = new Meta();
@@ -140,7 +138,7 @@ public class CommissionReportOut extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
-  private JsonNullable<List<@Valid AttributeAbstract>> attributes = JsonNullable.<List<@Valid AttributeAbstract>>undefined();
+  private JsonNullable<List<AttributeAbstract>> attributes = JsonNullable.<List<AttributeAbstract>>undefined();
 
   public static final String JSON_PROPERTY_CODE = "code";
   @javax.annotation.Nullable
@@ -232,7 +230,7 @@ public class CommissionReportOut extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_REWARD_PERCENT = "rewardPercent";
   @javax.annotation.Nullable
-  private Integer rewardPercent;
+  private Double rewardPercent;
 
   public static final String JSON_PROPERTY_REWARD_TYPE = "rewardType";
   @javax.annotation.Nullable
@@ -319,9 +317,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -344,9 +339,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -363,9 +355,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return accountId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -389,9 +378,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return agent
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -421,9 +407,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return agentAccount
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Account getAgentAccount() {
@@ -462,8 +445,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return applicable
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_APPLICABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -481,8 +462,8 @@ public class CommissionReportOut extends EntityWithMeta {
   }
 
 
-  public CommissionReportOut attributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
+  public CommissionReportOut attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
@@ -490,7 +471,7 @@ public class CommissionReportOut extends EntityWithMeta {
 
   public CommissionReportOut addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
-      this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(new ArrayList<>());
+      this.attributes = JsonNullable.<List<AttributeAbstract>>of(new ArrayList<>());
     }
     try {
       this.attributes.get().add(attributesItem);
@@ -505,12 +486,9 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return attributes
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
-  public List<@Valid AttributeAbstract> getAttributes() {
+  public List<AttributeAbstract> getAttributes() {
         return attributes.orElse(null);
   }
 
@@ -520,17 +498,17 @@ public class CommissionReportOut extends EntityWithMeta {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<@Valid AttributeAbstract>> getAttributes_JsonNullable() {
+  public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
     return attributes;
   }
   
   @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
-  public void setAttributes_JsonNullable(JsonNullable<List<@Valid AttributeAbstract>> attributes) {
+  public void setAttributes_JsonNullable(JsonNullable<List<AttributeAbstract>> attributes) {
     this.attributes = attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
+  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
@@ -546,8 +524,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return code
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -577,8 +553,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return commissionPeriodEnd
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_COMMISSION_PERIOD_END)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -608,8 +582,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return commissionPeriodStart
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_COMMISSION_PERIOD_START)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -632,8 +604,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return commitentSum
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_COMMITENT_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -657,9 +627,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return contract
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Contract getContract() {
@@ -691,8 +658,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return created
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_CREATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -709,8 +674,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return deleted
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_DELETED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -734,8 +697,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return description
    */
   @javax.annotation.Nullable
- @Size(max=4096)
-
   @JsonIgnore
 
   public String getDescription() {
@@ -774,8 +735,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return externalCode
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -805,9 +764,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return files
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public FileList getFiles() {
@@ -846,9 +802,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return group
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -878,8 +831,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return moment
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -909,8 +860,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return name
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -940,9 +889,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return organization
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -972,9 +918,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return organizationAccount
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Account getOrganizationAccount() {
@@ -1013,9 +956,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return owner
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Employee getOwner() {
@@ -1047,8 +987,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return payedSum
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PAYED_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1072,9 +1010,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return positions
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1097,8 +1032,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return printed
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PRINTED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1122,9 +1055,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return project
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Project getProject() {
@@ -1156,8 +1086,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return published
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PUBLISHED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1181,9 +1109,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return rate
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1201,7 +1126,7 @@ public class CommissionReportOut extends EntityWithMeta {
   }
 
 
-  public CommissionReportOut rewardPercent(@javax.annotation.Nullable Integer rewardPercent) {
+  public CommissionReportOut rewardPercent(@javax.annotation.Nullable Double rewardPercent) {
     
     this.rewardPercent = rewardPercent;
     return this;
@@ -1215,12 +1140,10 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return rewardPercent
    */
   @javax.annotation.Nullable
- @Min(0) @Max(100)
-
   @JsonProperty(JSON_PROPERTY_REWARD_PERCENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getRewardPercent() {
+  public Double getRewardPercent() {
     return rewardPercent;
   }
 
@@ -1229,7 +1152,7 @@ public class CommissionReportOut extends EntityWithMeta {
 
   @JsonProperty(JSON_PROPERTY_REWARD_PERCENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRewardPercent(@javax.annotation.Nullable Integer rewardPercent) {
+  public void setRewardPercent(@javax.annotation.Nullable Double rewardPercent) {
     this.rewardPercent = rewardPercent;
   }
 
@@ -1246,8 +1169,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return rewardType
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_REWARD_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1277,9 +1198,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return salesChannel
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public SalesChannel getSalesChannel() {
@@ -1318,8 +1236,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return shared
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1349,9 +1265,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return state
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public State getState() {
@@ -1390,8 +1303,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return sum
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1421,9 +1332,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return syncId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1446,8 +1354,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return updated
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1471,8 +1377,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return vatEnabled
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1502,8 +1406,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return vatIncluded
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VAT_INCLUDED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1533,8 +1435,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return vatSum
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VAT_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1576,9 +1476,6 @@ public class CommissionReportOut extends EntityWithMeta {
    * @return payments
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public List<RetailShiftPaymentsInner> getPayments() {
@@ -2114,4 +2011,3 @@ public class CommissionReportOut extends EntityWithMeta {
   }
 
 }
-

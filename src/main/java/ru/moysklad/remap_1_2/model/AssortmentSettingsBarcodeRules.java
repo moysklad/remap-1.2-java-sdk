@@ -22,8 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -37,7 +35,7 @@ import java.util.StringJoiner;
   AssortmentSettingsBarcodeRules.JSON_PROPERTY_WEIGHT_BARCODE_PREFIX
 })
 @JsonTypeName("AssortmentSettings_barcodeRules")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class AssortmentSettingsBarcodeRules {
 
   public static final String JSON_PROPERTY_FILL_E_A_N13_BARCODE = "fillEAN13Barcode";
@@ -67,8 +65,6 @@ public class AssortmentSettingsBarcodeRules {
    * @return fillEAN13Barcode
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_FILL_E_A_N13_BARCODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -98,8 +94,6 @@ public class AssortmentSettingsBarcodeRules {
    * @return weightBarcode
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_WEIGHT_BARCODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -129,8 +123,6 @@ public class AssortmentSettingsBarcodeRules {
    * @return weightBarcodePrefix
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_WEIGHT_BARCODE_PREFIX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -255,4 +247,3 @@ public class AssortmentSettingsBarcodeRules {
   }
 
 }
-

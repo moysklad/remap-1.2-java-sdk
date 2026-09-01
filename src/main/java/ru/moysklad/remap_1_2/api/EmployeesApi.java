@@ -22,14 +22,15 @@ import ru.moysklad.remap_1_2.Pair;
 
 import ru.moysklad.remap_1_2.model.ActivateEmployee200Response;
 import ru.moysklad.remap_1_2.model.ActivateEmployeeRequest;
+import ru.moysklad.remap_1_2.model.AttributeMetaInfo;
+import ru.moysklad.remap_1_2.model.AttributeMetaInfoList;
 import ru.moysklad.remap_1_2.model.BatchResponseEntity;
 import ru.moysklad.remap_1_2.model.DeleteRowResult;
 import ru.moysklad.remap_1_2.model.Employee;
 import ru.moysklad.remap_1_2.model.EmployeeList;
 import ru.moysklad.remap_1_2.model.EmployeeRole;
 import ru.moysklad.remap_1_2.model.EmployeeSecurity;
-import ru.moysklad.remap_1_2.model.Error;
-import ru.moysklad.remap_1_2.model.ErrorOrArray;
+import ru.moysklad.remap_1_2.model.Errors;
 import ru.moysklad.remap_1_2.model.Metadata;
 import java.util.UUID;
 
@@ -41,10 +42,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-import javax.validation.constraints.*;
-import javax.validation.Valid;
-
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class EmployeesApi extends BaseApi {
 
@@ -123,17 +121,18 @@ public class EmployeesApi extends BaseApi {
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -228,17 +227,18 @@ if (contentType != null)
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -270,13 +270,116 @@ if (contentType != null)
   }
 
   /**
+   * Создать доп. поле сотрудника
+   * Создание нового доп. поля для сотрудников
+   * @param attributeMetaInfo  (required)
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo createEmployeeMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createEmployeeMetadataAttribute(attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Создать доп. поле сотрудника
+   * Создание нового доп. поля для сотрудников
+   
+   * @param attributeMetaInfo  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo createEmployeeMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createEmployeeMetadataAttribute(attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Создать доп. поле сотрудника
+   * Создание нового доп. поля для сотрудников
+   * @param attributeMetaInfo  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  protected AttributeMetaInfo createEmployeeMetadataAttribute(@javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = attributeMetaInfo;
+    
+    // verify the required parameter 'attributeMetaInfo' is set
+    if (attributeMetaInfo == null) {
+      throw new ApiException(400, "Missing the required parameter 'attributeMetaInfo' when calling createEmployeeMetadataAttribute");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/employee/metadata/attributes";
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (contentType != null) {
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<AttributeMetaInfo> localVarReturnType = new TypeReference<AttributeMetaInfo>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
    * Создать или изменить сотрудников
    * Создание или изменение нескольких сотрудников.
    * @param employee  (required)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createEmployeesBatch(@javax.annotation.Nonnull List<@Valid Employee> employee) throws ApiException {
+  public List<BatchResponseEntity> createEmployeesBatch(@javax.annotation.Nonnull List<Employee> employee) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.createEmployeesBatch(employee, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -296,7 +399,7 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createEmployeesBatch(@javax.annotation.Nonnull List<@Valid Employee> employee, RequestOptions options) throws ApiException {
+  public List<BatchResponseEntity> createEmployeesBatch(@javax.annotation.Nonnull List<Employee> employee, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createEmployeesBatch(employee, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -313,7 +416,7 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  protected List<BatchResponseEntity> createEmployeesBatch(@javax.annotation.Nonnull List<@Valid Employee> employee, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createEmployeesBatch(@javax.annotation.Nonnull List<Employee> employee, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = employee;
     
     // verify the required parameter 'employee' is set
@@ -333,17 +436,18 @@ if (contentType != null)
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -357,7 +461,7 @@ if (contentType != null)
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
     TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
-    return apiClient.invokeAPI(
+    return apiClient.invokeAPIBatch(
         localVarPath,
         "POST",
         localVarQueryParams,
@@ -431,15 +535,15 @@ if (contentType != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -526,15 +630,110 @@ if (acceptEncoding != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
 
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    apiClient.invokeAPI(
+        localVarPath,
+        "DELETE",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        null
+    );
+  }
+
+  /**
+   * Удалить доп. поле сотрудника
+   * Удаление доп. поля
+   * @param id ID сущности (required)
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteEmployeeMetadataAttribute(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteEmployeeMetadataAttribute(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Удалить доп. поле сотрудника
+   * Удаление доп. поля
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteEmployeeMetadataAttribute(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteEmployeeMetadataAttribute(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Удалить доп. поле сотрудника
+   * Удаление доп. поля
+   * @param id ID сущности (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param additionalHeaders additionalHeaders for this call
+   * @throws ApiException if fails to make API call
+   */
+  protected void deleteEmployeeMetadataAttribute(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = null;
     
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling deleteEmployeeMetadataAttribute");
+    }
     
+    // create path and map variables
+    String localVarPath = "/entity/employee/metadata/attributes/{id}"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -571,7 +770,7 @@ if (acceptEncoding != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteEmployeesBatch(@javax.annotation.Nonnull List<@Valid Employee> employee) throws ApiException {
+  public List<DeleteRowResult> deleteEmployeesBatch(@javax.annotation.Nonnull List<Employee> employee) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.deleteEmployeesBatch(employee, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -590,7 +789,7 @@ if (acceptEncoding != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteEmployeesBatch(@javax.annotation.Nonnull List<@Valid Employee> employee, RequestOptions options) throws ApiException {
+  public List<DeleteRowResult> deleteEmployeesBatch(@javax.annotation.Nonnull List<Employee> employee, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.deleteEmployeesBatch(employee, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -606,7 +805,7 @@ if (acceptEncoding != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  protected List<DeleteRowResult> deleteEmployeesBatch(@javax.annotation.Nonnull List<@Valid Employee> employee, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteEmployeesBatch(@javax.annotation.Nonnull List<Employee> employee, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = employee;
     
     // verify the required parameter 'employee' is set
@@ -625,17 +824,18 @@ if (acceptEncoding != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -729,15 +929,15 @@ if (contentType != null)
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -769,20 +969,21 @@ if (acceptEncoding != null)
   }
 
   /**
-   * Получить метаданные товаров
-   * Запрос на получение метаданных товаров
+   * Получить метаданные сотрудников
+   * Запрос на получение метаданных сотрудников.
    * @return Metadata
    * @throws ApiException if fails to make API call
    */
   public Metadata getEmployeeMetadata() throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
-    return this.getEmployeeMetadata(null, null, effectiveOptions.getAdditionalHeaders());
+    return this.getEmployeeMetadata((String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
   /**
-   * Получить метаданные товаров
-   * Запрос на получение метаданных товаров
+   * Получить метаданные сотрудников
+   * Запрос на получение метаданных сотрудников.
+   
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
@@ -791,19 +992,20 @@ if (acceptEncoding != null)
    */
   public Metadata getEmployeeMetadata(RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
-    return this.getEmployeeMetadata(null, null, effectiveOptions.getAdditionalHeaders());
+    return this.getEmployeeMetadata((String) effectiveOptions.get("expand"), null, null, effectiveOptions.getAdditionalHeaders());
   }
 
   /**
-   * Получить метаданные товаров
-   * Запрос на получение метаданных товаров
+   * Получить метаданные сотрудников
+   * Запрос на получение метаданных сотрудников.
+   * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param additionalHeaders additionalHeaders for this call
    * @return Metadata
    * @throws ApiException if fails to make API call
    */
-  protected Metadata getEmployeeMetadata(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected Metadata getEmployeeMetadata(@javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -817,15 +1019,16 @@ if (acceptEncoding != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -839,6 +1042,193 @@ if (acceptEncoding != null)
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
     TypeReference<Metadata> localVarReturnType = new TypeReference<Metadata>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "GET",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Получить доп. поле сотрудника по ID
+   * Запрос на получение отдельного доп. поля
+   * @param id ID сущности (required)
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo getEmployeeMetadataAttributeById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getEmployeeMetadataAttributeById(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Получить доп. поле сотрудника по ID
+   * Запрос на получение отдельного доп. поля
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo getEmployeeMetadataAttributeById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getEmployeeMetadataAttributeById(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Получить доп. поле сотрудника по ID
+   * Запрос на получение отдельного доп. поля
+   * @param id ID сущности (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  protected AttributeMetaInfo getEmployeeMetadataAttributeById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling getEmployeeMetadataAttributeById");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/employee/metadata/attributes/{id}"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<AttributeMetaInfo> localVarReturnType = new TypeReference<AttributeMetaInfo>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "GET",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Получить доп. поля сотрудников
+   * Запрос на получение всех доп. полей для сотрудников
+   * @return AttributeMetaInfoList
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfoList getEmployeeMetadataAttributes() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getEmployeeMetadataAttributes(null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Получить доп. поля сотрудников
+   * Запрос на получение всех доп. полей для сотрудников
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfoList
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfoList getEmployeeMetadataAttributes(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getEmployeeMetadataAttributes(null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Получить доп. поля сотрудников
+   * Запрос на получение всех доп. полей для сотрудников
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return AttributeMetaInfoList
+   * @throws ApiException if fails to make API call
+   */
+  protected AttributeMetaInfoList getEmployeeMetadataAttributes(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // create path and map variables
+    String localVarPath = "/entity/employee/metadata/attributes";
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<AttributeMetaInfoList> localVarReturnType = new TypeReference<AttributeMetaInfoList>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "GET",
@@ -916,15 +1306,15 @@ if (acceptEncoding != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -1022,15 +1412,15 @@ if (acceptEncoding != null)
     localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
     localVarQueryParams.addAll(apiClient.parameterToPair("order", order));
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -1110,15 +1500,15 @@ if (acceptEncoding != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -1198,15 +1588,15 @@ if (acceptEncoding != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -1286,15 +1676,15 @@ if (acceptEncoding != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -1374,15 +1764,15 @@ if (acceptEncoding != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -1462,15 +1852,15 @@ if (acceptEncoding != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -1558,15 +1948,15 @@ if (acceptEncoding != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -1671,17 +2061,18 @@ if (acceptEncoding != null)
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -1695,6 +2086,120 @@ if (contentType != null)
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
     TypeReference<Employee> localVarReturnType = new TypeReference<Employee>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "PUT",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Обновить доп. поле сотрудника
+   * Обновление доп. поля для сотрудников
+   * @param id ID сущности (required)
+   * @param attributeMetaInfo  (required)
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo updateEmployeeMetadataAttribute(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateEmployeeMetadataAttribute(id, attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Обновить доп. поле сотрудника
+   * Обновление доп. поля для сотрудников
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param attributeMetaInfo  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  public AttributeMetaInfo updateEmployeeMetadataAttribute(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateEmployeeMetadataAttribute(id, attributeMetaInfo, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Обновить доп. поле сотрудника
+   * Обновление доп. поля для сотрудников
+   * @param id ID сущности (required)
+   * @param attributeMetaInfo  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return AttributeMetaInfo
+   * @throws ApiException if fails to make API call
+   */
+  protected AttributeMetaInfo updateEmployeeMetadataAttribute(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AttributeMetaInfo attributeMetaInfo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = attributeMetaInfo;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling updateEmployeeMetadataAttribute");
+    }
+    
+    // verify the required parameter 'attributeMetaInfo' is set
+    if (attributeMetaInfo == null) {
+      throw new ApiException(400, "Missing the required parameter 'attributeMetaInfo' when calling updateEmployeeMetadataAttribute");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/employee/metadata/attributes/{id}"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (contentType != null) {
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<AttributeMetaInfo> localVarReturnType = new TypeReference<AttributeMetaInfo>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "PUT",
@@ -1784,17 +2289,18 @@ if (contentType != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };

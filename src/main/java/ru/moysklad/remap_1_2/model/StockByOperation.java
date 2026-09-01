@@ -27,8 +27,6 @@ import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.StockByOperationPosition;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -40,7 +38,7 @@ import java.util.StringJoiner;
   StockByOperation.JSON_PROPERTY_META,
   StockByOperation.JSON_PROPERTY_POSITIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class StockByOperation {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -49,7 +47,7 @@ public class StockByOperation {
 
   public static final String JSON_PROPERTY_POSITIONS = "positions";
   @javax.annotation.Nullable
-  private List<@Valid StockByOperationPosition> positions = new ArrayList<>();
+  private List<StockByOperationPosition> positions = new ArrayList<>();
 
   public StockByOperation() {
   }
@@ -66,9 +64,6 @@ public class StockByOperation {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -86,7 +81,7 @@ public class StockByOperation {
   }
 
 
-  public StockByOperation positions(@javax.annotation.Nullable List<@Valid StockByOperationPosition> positions) {
+  public StockByOperation positions(@javax.annotation.Nullable List<StockByOperationPosition> positions) {
     
     this.positions = positions;
     return this;
@@ -106,13 +101,10 @@ public class StockByOperation {
    * @return positions
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<@Valid StockByOperationPosition> getPositions() {
+  public List<StockByOperationPosition> getPositions() {
     return positions;
   }
 
@@ -121,7 +113,7 @@ public class StockByOperation {
 
   @JsonProperty(JSON_PROPERTY_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPositions(@javax.annotation.Nullable List<@Valid StockByOperationPosition> positions) {
+  public void setPositions(@javax.annotation.Nullable List<StockByOperationPosition> positions) {
     this.positions = positions;
   }
 
@@ -216,4 +208,3 @@ public class StockByOperation {
   }
 
 }
-

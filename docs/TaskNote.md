@@ -15,7 +15,7 @@
 |**authorApplication** | [**Application**](Application.md) |  |  [optional] |
 |**moment** | **String** | Момент создания комментария |  [optional] [readonly] |
 |**text** | **String** | Текст комментария |  [optional] |
-|**files** | [**TaskNoteFileList**](TaskNoteFileList.md) | Метаданные массива Файлов |  [optional] |
+|**files** | [**FileList**](FileList.md) | Метаданные массива Файлов |  [optional] |
 
 
 

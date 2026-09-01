@@ -43,8 +43,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -90,8 +88,8 @@ import java.util.StringJoiner;
   FactureOut.JSON_PROPERTY_PAYMENT_NUMBER,
   FactureOut.JSON_PROPERTY_PAYMENT_DATE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class FactureOut {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class FactureOut implements MetaEntity {
   public static FactureOut createWithMeta(UUID id) {
     FactureOut o = new FactureOut();
     Meta meta = new Meta();
@@ -129,7 +127,7 @@ public class FactureOut {
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
-  private JsonNullable<List<@Valid AttributeAbstract>> attributes = JsonNullable.<List<@Valid AttributeAbstract>>undefined();
+  private JsonNullable<List<AttributeAbstract>> attributes = JsonNullable.<List<AttributeAbstract>>undefined();
 
   public static final String JSON_PROPERTY_CODE = "code";
   @javax.annotation.Nullable
@@ -292,9 +290,6 @@ public class FactureOut {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -317,9 +312,6 @@ public class FactureOut {
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -336,9 +328,6 @@ public class FactureOut {
    * @return accountId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -362,9 +351,6 @@ public class FactureOut {
    * @return agent
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -394,8 +380,6 @@ public class FactureOut {
    * @return applicable
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_APPLICABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -413,8 +397,8 @@ public class FactureOut {
   }
 
 
-  public FactureOut attributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
+  public FactureOut attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
@@ -422,7 +406,7 @@ public class FactureOut {
 
   public FactureOut addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
-      this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(new ArrayList<>());
+      this.attributes = JsonNullable.<List<AttributeAbstract>>of(new ArrayList<>());
     }
     try {
       this.attributes.get().add(attributesItem);
@@ -437,12 +421,9 @@ public class FactureOut {
    * @return attributes
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
-  public List<@Valid AttributeAbstract> getAttributes() {
+  public List<AttributeAbstract> getAttributes() {
         return attributes.orElse(null);
   }
 
@@ -452,17 +433,17 @@ public class FactureOut {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<@Valid AttributeAbstract>> getAttributes_JsonNullable() {
+  public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
     return attributes;
   }
   
   @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
-  public void setAttributes_JsonNullable(JsonNullable<List<@Valid AttributeAbstract>> attributes) {
+  public void setAttributes_JsonNullable(JsonNullable<List<AttributeAbstract>> attributes) {
     this.attributes = attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
+  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
@@ -478,8 +459,6 @@ public class FactureOut {
    * @return code
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -509,9 +488,6 @@ public class FactureOut {
    * @return contract
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Contract getContract() {
@@ -543,8 +519,6 @@ public class FactureOut {
    * @return created
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_CREATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -561,8 +535,6 @@ public class FactureOut {
    * @return deleted
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_DELETED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -586,8 +558,6 @@ public class FactureOut {
    * @return description
    */
   @javax.annotation.Nullable
- @Size(max=4096)
-
   @JsonIgnore
 
   public String getDescription() {
@@ -626,8 +596,6 @@ public class FactureOut {
    * @return externalCode
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -657,9 +625,6 @@ public class FactureOut {
    * @return files
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public FileList getFiles() {
@@ -698,9 +663,6 @@ public class FactureOut {
    * @return group
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -730,8 +692,6 @@ public class FactureOut {
    * @return moment
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -761,8 +721,6 @@ public class FactureOut {
    * @return name
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -792,9 +750,6 @@ public class FactureOut {
    * @return organization
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -824,9 +779,6 @@ public class FactureOut {
    * @return owner
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Employee getOwner() {
@@ -858,8 +810,6 @@ public class FactureOut {
    * @return printed
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PRINTED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -876,8 +826,6 @@ public class FactureOut {
    * @return published
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PUBLISHED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -901,9 +849,6 @@ public class FactureOut {
    * @return rate
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -933,8 +878,6 @@ public class FactureOut {
    * @return shared
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -964,9 +907,6 @@ public class FactureOut {
    * @return state
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public State getState() {
@@ -1005,8 +945,6 @@ public class FactureOut {
    * @return stateContractId
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_STATE_CONTRACT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1029,8 +967,6 @@ public class FactureOut {
    * @return sum
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1054,9 +990,6 @@ public class FactureOut {
    * @return syncId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1079,8 +1012,6 @@ public class FactureOut {
    * @return updated
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1104,8 +1035,6 @@ public class FactureOut {
    * @return advancePaymentVat
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_ADVANCE_PAYMENT_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1135,8 +1064,6 @@ public class FactureOut {
    * @return paymentPurpose
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_PAYMENT_PURPOSE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1159,8 +1086,6 @@ public class FactureOut {
    * @return vatSum
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VAT_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1196,9 +1121,6 @@ public class FactureOut {
    * @return demands
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public List<Demand> getDemands() {
@@ -1249,9 +1171,6 @@ public class FactureOut {
    * @return payments
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public List<PaymentIn> getPayments() {
@@ -1302,9 +1221,6 @@ public class FactureOut {
    * @return returns
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public List<PurchaseReturn> getReturns() {
@@ -1343,9 +1259,6 @@ public class FactureOut {
    * @return consignee
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Agent getConsignee() {
@@ -1384,8 +1297,6 @@ public class FactureOut {
    * @return paymentNumber
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_PAYMENT_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1415,8 +1326,6 @@ public class FactureOut {
    * @return paymentDate
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PAYMENT_DATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1903,4 +1812,3 @@ public class FactureOut {
   }
 
 }
-

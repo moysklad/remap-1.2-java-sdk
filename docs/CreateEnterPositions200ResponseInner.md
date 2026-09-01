@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**meta** | [**Meta**](Meta.md) |  |  [optional] |
-|**id** | **UUID** | ID позиции |  [optional] [readonly] |
+|**id** | **UUID** | ID позиции |  [optional] |
 |**accountId** | **UUID** | ID учетной записи |  [optional] [readonly] |
 |**assortment** | [**ProductMarker**](ProductMarker.md) | Метаданные товара/услуги/партии/модификации, которую представляет собой позиция |  [optional] |
 |**country** | [**Country**](Country.md) | Метаданные страны |  [optional] |
@@ -20,7 +20,7 @@
 |**reason** | **String** | Причина оприходования данной позиции |  [optional] |
 |**slot** | [**StoreSlot**](StoreSlot.md) | Ячейка на складе |  [optional] |
 |**things** | **List&lt;String&gt;** | Серийные номера. Игнорируется, если товар позиции не на серийном учёте; иначе количество единиц в позиции совпадает с числом переданных серийных номеров.  |  [optional] |
-|**errors** | [**List&lt;ErrorErrorsInner&gt;**](ErrorErrorsInner.md) |  |  |
+|**errors** | [**List&lt;Error&gt;**](Error.md) |  |  |
 
 
 

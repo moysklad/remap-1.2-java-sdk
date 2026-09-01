@@ -30,8 +30,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -51,8 +49,8 @@ import java.util.StringJoiner;
   TaxRate.JSON_PROPERTY_ARCHIVED,
   TaxRate.JSON_PROPERTY_COMMENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class TaxRate extends EntityWithMeta {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class TaxRate extends EntityWithMeta implements MetaEntity {
   public static TaxRate createWithMeta(UUID id) {
     TaxRate o = new TaxRate();
     Meta meta = new Meta();
@@ -137,9 +135,6 @@ public class TaxRate extends EntityWithMeta {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -162,9 +157,6 @@ public class TaxRate extends EntityWithMeta {
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -181,9 +173,6 @@ public class TaxRate extends EntityWithMeta {
    * @return accountId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -207,9 +196,6 @@ public class TaxRate extends EntityWithMeta {
    * @return owner
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Employee getOwner() {
@@ -248,8 +234,6 @@ public class TaxRate extends EntityWithMeta {
    * @return shared
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -279,9 +263,6 @@ public class TaxRate extends EntityWithMeta {
    * @return group
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -304,8 +285,6 @@ public class TaxRate extends EntityWithMeta {
    * @return updated
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -329,8 +308,6 @@ public class TaxRate extends EntityWithMeta {
    * @return rate
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -360,8 +337,6 @@ public class TaxRate extends EntityWithMeta {
    * @return archived
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -391,8 +366,6 @@ public class TaxRate extends EntityWithMeta {
    * @return comment
    */
   @javax.annotation.Nullable
- @Size(max=32)
-
   @JsonProperty(JSON_PROPERTY_COMMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -597,4 +570,3 @@ public class TaxRate extends EntityWithMeta {
   }
 
 }
-

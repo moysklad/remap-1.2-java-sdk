@@ -25,8 +25,6 @@ import java.util.Arrays;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -39,7 +37,7 @@ import java.util.StringJoiner;
   PositionTrackingCode.JSON_PROPERTY_TYPE,
   PositionTrackingCode.JSON_PROPERTY_TRACKING_CODES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class PositionTrackingCode {
 
   public static final String JSON_PROPERTY_CIS = "cis";
@@ -52,7 +50,7 @@ public class PositionTrackingCode {
 
   public static final String JSON_PROPERTY_TRACKING_CODES = "trackingCodes";
   @javax.annotation.Nullable
-  private List<@Valid PositionTrackingCode> trackingCodes = new ArrayList<>();
+  private List<PositionTrackingCode> trackingCodes = new ArrayList<>();
 
   public PositionTrackingCode() {
   }
@@ -69,8 +67,6 @@ public class PositionTrackingCode {
    * @return cis
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_CIS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -100,8 +96,6 @@ public class PositionTrackingCode {
    * @return type
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -119,7 +113,7 @@ public class PositionTrackingCode {
   }
 
 
-  public PositionTrackingCode trackingCodes(@javax.annotation.Nullable List<@Valid PositionTrackingCode> trackingCodes) {
+  public PositionTrackingCode trackingCodes(@javax.annotation.Nullable List<PositionTrackingCode> trackingCodes) {
     
     this.trackingCodes = trackingCodes;
     return this;
@@ -139,13 +133,10 @@ public class PositionTrackingCode {
    * @return trackingCodes
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_TRACKING_CODES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<@Valid PositionTrackingCode> getTrackingCodes() {
+  public List<PositionTrackingCode> getTrackingCodes() {
     return trackingCodes;
   }
 
@@ -154,7 +145,7 @@ public class PositionTrackingCode {
 
   @JsonProperty(JSON_PROPERTY_TRACKING_CODES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrackingCodes(@javax.annotation.Nullable List<@Valid PositionTrackingCode> trackingCodes) {
+  public void setTrackingCodes(@javax.annotation.Nullable List<PositionTrackingCode> trackingCodes) {
     this.trackingCodes = trackingCodes;
   }
 
@@ -266,4 +257,3 @@ public class PositionTrackingCode {
   }
 
 }
-

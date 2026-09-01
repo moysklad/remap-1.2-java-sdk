@@ -26,8 +26,6 @@ import ru.moysklad.remap_1_2.model.Application;
 import ru.moysklad.remap_1_2.model.Meta;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -45,8 +43,8 @@ import java.util.StringJoiner;
   WebhookStock.JSON_PROPERTY_ENABLED,
   WebhookStock.JSON_PROPERTY_AUTHOR_APPLICATION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class WebhookStock extends EntityWithMeta {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class WebhookStock extends EntityWithMeta implements MetaEntity {
   public static WebhookStock createWithMeta(UUID id) {
     WebhookStock o = new WebhookStock();
     Meta meta = new Meta();
@@ -121,9 +119,6 @@ public class WebhookStock extends EntityWithMeta {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -146,9 +141,6 @@ public class WebhookStock extends EntityWithMeta {
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -165,9 +157,6 @@ public class WebhookStock extends EntityWithMeta {
    * @return accountId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -191,8 +180,6 @@ public class WebhookStock extends EntityWithMeta {
    * @return stockType
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_STOCK_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -222,8 +209,6 @@ public class WebhookStock extends EntityWithMeta {
    * @return reportType
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_REPORT_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -253,9 +238,6 @@ public class WebhookStock extends EntityWithMeta {
    * @return url
    */
   @javax.annotation.Nullable
-  @Valid
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -285,8 +267,6 @@ public class WebhookStock extends EntityWithMeta {
    * @return enabled
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -316,9 +296,6 @@ public class WebhookStock extends EntityWithMeta {
    * @return authorApplication
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_AUTHOR_APPLICATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -493,4 +470,3 @@ public class WebhookStock extends EntityWithMeta {
   }
 
 }
-

@@ -44,8 +44,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -87,8 +85,8 @@ import java.util.StringJoiner;
   CashIn.JSON_PROPERTY_FACTURE_OUT,
   CashIn.JSON_PROPERTY_OPERATIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class CashIn extends EntityWithMeta {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class CashIn extends EntityWithMeta implements MetaEntity {
   public static CashIn createWithMeta(UUID id) {
     CashIn o = new CashIn();
     Meta meta = new Meta();
@@ -158,7 +156,7 @@ public class CashIn extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
-  private JsonNullable<List<@Valid AttributeAbstract>> attributes = JsonNullable.<List<@Valid AttributeAbstract>>undefined();
+  private JsonNullable<List<AttributeAbstract>> attributes = JsonNullable.<List<AttributeAbstract>>undefined();
 
   public static final String JSON_PROPERTY_CONTRACT = "contract";
   @javax.annotation.Nullable
@@ -230,7 +228,7 @@ public class CashIn extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_OPERATIONS = "operations";
   @javax.annotation.Nullable
-  private JsonNullable<List<@Valid FinanceInOperationAbstract>> operations = JsonNullable.<List<@Valid FinanceInOperationAbstract>>undefined();
+  private JsonNullable<List<FinanceInOperationAbstract>> operations = JsonNullable.<List<FinanceInOperationAbstract>>undefined();
 
   public CashIn() {
   }
@@ -271,9 +269,6 @@ public class CashIn extends EntityWithMeta {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -296,9 +291,6 @@ public class CashIn extends EntityWithMeta {
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -315,9 +307,6 @@ public class CashIn extends EntityWithMeta {
    * @return accountId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -341,8 +330,6 @@ public class CashIn extends EntityWithMeta {
    * @return applicable
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_APPLICABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -372,8 +359,6 @@ public class CashIn extends EntityWithMeta {
    * @return name
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -403,8 +388,6 @@ public class CashIn extends EntityWithMeta {
    * @return code
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -434,8 +417,6 @@ public class CashIn extends EntityWithMeta {
    * @return externalCode
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -465,9 +446,6 @@ public class CashIn extends EntityWithMeta {
    * @return syncId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -497,8 +475,6 @@ public class CashIn extends EntityWithMeta {
    * @return description
    */
   @javax.annotation.Nullable
- @Size(max=4096)
-
   @JsonIgnore
 
   public String getDescription() {
@@ -530,8 +506,6 @@ public class CashIn extends EntityWithMeta {
    * @return created
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_CREATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -548,8 +522,6 @@ public class CashIn extends EntityWithMeta {
    * @return deleted
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_DELETED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -566,8 +538,6 @@ public class CashIn extends EntityWithMeta {
    * @return updated
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -591,8 +561,6 @@ public class CashIn extends EntityWithMeta {
    * @return moment
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -610,8 +578,8 @@ public class CashIn extends EntityWithMeta {
   }
 
 
-  public CashIn attributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
+  public CashIn attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
@@ -619,7 +587,7 @@ public class CashIn extends EntityWithMeta {
 
   public CashIn addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
-      this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(new ArrayList<>());
+      this.attributes = JsonNullable.<List<AttributeAbstract>>of(new ArrayList<>());
     }
     try {
       this.attributes.get().add(attributesItem);
@@ -634,12 +602,9 @@ public class CashIn extends EntityWithMeta {
    * @return attributes
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
-  public List<@Valid AttributeAbstract> getAttributes() {
+  public List<AttributeAbstract> getAttributes() {
         return attributes.orElse(null);
   }
 
@@ -649,17 +614,17 @@ public class CashIn extends EntityWithMeta {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<@Valid AttributeAbstract>> getAttributes_JsonNullable() {
+  public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
     return attributes;
   }
   
   @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
-  public void setAttributes_JsonNullable(JsonNullable<List<@Valid AttributeAbstract>> attributes) {
+  public void setAttributes_JsonNullable(JsonNullable<List<AttributeAbstract>> attributes) {
     this.attributes = attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
+  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
@@ -675,9 +640,6 @@ public class CashIn extends EntityWithMeta {
    * @return contract
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Contract getContract() {
@@ -716,9 +678,6 @@ public class CashIn extends EntityWithMeta {
    * @return files
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public FileList getFiles() {
@@ -757,8 +716,6 @@ public class CashIn extends EntityWithMeta {
    * @return paymentPurpose
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_PAYMENT_PURPOSE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -781,8 +738,6 @@ public class CashIn extends EntityWithMeta {
    * @return printed
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PRINTED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -806,9 +761,6 @@ public class CashIn extends EntityWithMeta {
    * @return project
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Project getProject() {
@@ -840,8 +792,6 @@ public class CashIn extends EntityWithMeta {
    * @return published
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PUBLISHED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -865,9 +815,6 @@ public class CashIn extends EntityWithMeta {
    * @return owner
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Employee getOwner() {
@@ -906,9 +853,6 @@ public class CashIn extends EntityWithMeta {
    * @return group
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -938,9 +882,6 @@ public class CashIn extends EntityWithMeta {
    * @return salesChannel
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public SalesChannel getSalesChannel() {
@@ -972,8 +913,6 @@ public class CashIn extends EntityWithMeta {
    * @return shared
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -997,9 +936,6 @@ public class CashIn extends EntityWithMeta {
    * @return state
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public State getState() {
@@ -1038,9 +974,6 @@ public class CashIn extends EntityWithMeta {
    * @return rate
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1070,9 +1003,6 @@ public class CashIn extends EntityWithMeta {
    * @return organization
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1102,9 +1032,6 @@ public class CashIn extends EntityWithMeta {
    * @return agent
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1134,8 +1061,6 @@ public class CashIn extends EntityWithMeta {
    * @return sum
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1165,8 +1090,6 @@ public class CashIn extends EntityWithMeta {
    * @return vatSum
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VAT_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1196,9 +1119,6 @@ public class CashIn extends EntityWithMeta {
    * @return factureOut
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public FactureOut getFactureOut() {
@@ -1225,8 +1145,8 @@ public class CashIn extends EntityWithMeta {
   }
 
 
-  public CashIn operations(@javax.annotation.Nullable List<@Valid FinanceInOperationAbstract> operations) {
-    this.operations = JsonNullable.<List<@Valid FinanceInOperationAbstract>>of(operations);
+  public CashIn operations(@javax.annotation.Nullable List<FinanceInOperationAbstract> operations) {
+    this.operations = JsonNullable.<List<FinanceInOperationAbstract>>of(operations);
     
     return this;
   }
@@ -1234,7 +1154,7 @@ public class CashIn extends EntityWithMeta {
 
   public CashIn addOperationsItem(FinanceInOperationAbstract operationsItem) {
     if (this.operations == null || !this.operations.isPresent()) {
-      this.operations = JsonNullable.<List<@Valid FinanceInOperationAbstract>>of(new ArrayList<>());
+      this.operations = JsonNullable.<List<FinanceInOperationAbstract>>of(new ArrayList<>());
     }
     try {
       this.operations.get().add(operationsItem);
@@ -1249,12 +1169,9 @@ public class CashIn extends EntityWithMeta {
    * @return operations
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
-  public List<@Valid FinanceInOperationAbstract> getOperations() {
+  public List<FinanceInOperationAbstract> getOperations() {
         return operations.orElse(null);
   }
 
@@ -1264,17 +1181,17 @@ public class CashIn extends EntityWithMeta {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<@Valid FinanceInOperationAbstract>> getOperations_JsonNullable() {
+  public JsonNullable<List<FinanceInOperationAbstract>> getOperations_JsonNullable() {
     return operations;
   }
   
   @JsonProperty(value = JSON_PROPERTY_OPERATIONS, required = false)
-  public void setOperations_JsonNullable(JsonNullable<List<@Valid FinanceInOperationAbstract>> operations) {
+  public void setOperations_JsonNullable(JsonNullable<List<FinanceInOperationAbstract>> operations) {
     this.operations = operations;
   }
 
-  public void setOperations(@javax.annotation.Nullable List<@Valid FinanceInOperationAbstract> operations) {
-    this.operations = JsonNullable.<List<@Valid FinanceInOperationAbstract>>of(operations);
+  public void setOperations(@javax.annotation.Nullable List<FinanceInOperationAbstract> operations) {
+    this.operations = JsonNullable.<List<FinanceInOperationAbstract>>of(operations);
   }
 
 
@@ -1684,4 +1601,3 @@ public class CashIn extends EntityWithMeta {
   }
 
 }
-

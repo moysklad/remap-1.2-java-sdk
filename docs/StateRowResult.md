@@ -14,7 +14,7 @@
 |**color** | **Integer** | Цвет Статуса |  [optional] |
 |**entityType** | **String** | Тип сущности, к которой относится Статус (ключевое слово в рамках JSON API) |  [optional] [readonly] |
 |**stateType** | **String** | Тип Статуса. Известные значения описаны в StateType |  [optional] |
-|**errors** | [**List&lt;ErrorErrorsInner&gt;**](ErrorErrorsInner.md) |  |  |
+|**errors** | [**List&lt;Error&gt;**](Error.md) |  |  |
 
 
 

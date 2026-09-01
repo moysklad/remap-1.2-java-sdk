@@ -25,8 +25,6 @@ import ru.moysklad.remap_1_2.model.Organization;
 import ru.moysklad.remap_1_2.model.SalePrice;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -40,7 +38,7 @@ import java.util.StringJoiner;
   LabelPrintRequest.JSON_PROPERTY_SALE_PRICE,
   LabelPrintRequest.JSON_PROPERTY_TEMPLATE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class LabelPrintRequest {
 
   public static final String JSON_PROPERTY_ORGANIZATION = "organization";
@@ -74,10 +72,6 @@ public class LabelPrintRequest {
    * @return organization
    */
   @javax.annotation.Nonnull
-  @NotNull
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -109,9 +103,6 @@ public class LabelPrintRequest {
    * @return count
    */
   @javax.annotation.Nonnull
-  @NotNull
- @Min(1) @Max(1000)
-
   @JsonProperty(JSON_PROPERTY_COUNT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -141,10 +132,6 @@ public class LabelPrintRequest {
    * @return salePrice
    */
   @javax.annotation.Nonnull
-  @NotNull
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_SALE_PRICE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -174,10 +161,6 @@ public class LabelPrintRequest {
    * @return template
    */
   @javax.annotation.Nonnull
-  @NotNull
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_TEMPLATE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -299,4 +282,3 @@ public class LabelPrintRequest {
   }
 
 }
-

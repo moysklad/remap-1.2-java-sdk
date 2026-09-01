@@ -47,8 +47,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -92,8 +90,8 @@ import java.util.StringJoiner;
   Move.JSON_PROPERTY_SUPPLY,
   Move.JSON_PROPERTY_PRODUCTION_TASKS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class Move extends EntityWithMeta {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class Move extends EntityWithMeta implements MetaEntity {
   public static Move createWithMeta(UUID id) {
     Move o = new Move();
     Meta meta = new Meta();
@@ -207,7 +205,7 @@ public class Move extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
-  private JsonNullable<List<@Valid AttributeAbstract>> attributes = JsonNullable.<List<@Valid AttributeAbstract>>undefined();
+  private JsonNullable<List<AttributeAbstract>> attributes = JsonNullable.<List<AttributeAbstract>>undefined();
 
   public static final String JSON_PROPERTY_FILES = "files";
   @javax.annotation.Nullable
@@ -243,7 +241,7 @@ public class Move extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_PRODUCTION_TASKS = "productionTasks";
   @javax.annotation.Nullable
-  private JsonNullable<List<@Valid ProductionTask>> productionTasks = JsonNullable.<List<@Valid ProductionTask>>undefined();
+  private JsonNullable<List<ProductionTask>> productionTasks = JsonNullable.<List<ProductionTask>>undefined();
 
   public Move() {
   }
@@ -288,9 +286,6 @@ public class Move extends EntityWithMeta {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -313,9 +308,6 @@ public class Move extends EntityWithMeta {
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -332,9 +324,6 @@ public class Move extends EntityWithMeta {
    * @return accountId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -358,8 +347,6 @@ public class Move extends EntityWithMeta {
    * @return name
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -389,8 +376,6 @@ public class Move extends EntityWithMeta {
    * @return code
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -420,8 +405,6 @@ public class Move extends EntityWithMeta {
    * @return externalCode
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -451,9 +434,6 @@ public class Move extends EntityWithMeta {
    * @return syncId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -483,8 +463,6 @@ public class Move extends EntityWithMeta {
    * @return description
    */
   @javax.annotation.Nullable
- @Size(max=4096)
-
   @JsonIgnore
 
   public String getDescription() {
@@ -516,8 +494,6 @@ public class Move extends EntityWithMeta {
    * @return created
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_CREATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -534,8 +510,6 @@ public class Move extends EntityWithMeta {
    * @return deleted
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_DELETED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -552,8 +526,6 @@ public class Move extends EntityWithMeta {
    * @return updated
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -577,8 +549,6 @@ public class Move extends EntityWithMeta {
    * @return moment
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -608,8 +578,6 @@ public class Move extends EntityWithMeta {
    * @return applicable
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_APPLICABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -632,8 +600,6 @@ public class Move extends EntityWithMeta {
    * @return printed
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PRINTED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -650,8 +616,6 @@ public class Move extends EntityWithMeta {
    * @return published
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PUBLISHED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -675,8 +639,6 @@ public class Move extends EntityWithMeta {
    * @return shared
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -699,8 +661,6 @@ public class Move extends EntityWithMeta {
    * @return sum
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -724,9 +684,6 @@ public class Move extends EntityWithMeta {
    * @return organization
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -756,9 +713,6 @@ public class Move extends EntityWithMeta {
    * @return sourceStore
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Store getSourceStore() {
@@ -797,9 +751,6 @@ public class Move extends EntityWithMeta {
    * @return targetStore
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Store getTargetStore() {
@@ -838,9 +789,6 @@ public class Move extends EntityWithMeta {
    * @return state
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public State getState() {
@@ -879,9 +827,6 @@ public class Move extends EntityWithMeta {
    * @return project
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Project getProject() {
@@ -920,9 +865,6 @@ public class Move extends EntityWithMeta {
    * @return owner
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Employee getOwner() {
@@ -961,9 +903,6 @@ public class Move extends EntityWithMeta {
    * @return group
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -981,8 +920,8 @@ public class Move extends EntityWithMeta {
   }
 
 
-  public Move attributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
+  public Move attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
@@ -990,7 +929,7 @@ public class Move extends EntityWithMeta {
 
   public Move addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
-      this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(new ArrayList<>());
+      this.attributes = JsonNullable.<List<AttributeAbstract>>of(new ArrayList<>());
     }
     try {
       this.attributes.get().add(attributesItem);
@@ -1005,12 +944,9 @@ public class Move extends EntityWithMeta {
    * @return attributes
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
-  public List<@Valid AttributeAbstract> getAttributes() {
+  public List<AttributeAbstract> getAttributes() {
         return attributes.orElse(null);
   }
 
@@ -1020,17 +956,17 @@ public class Move extends EntityWithMeta {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<@Valid AttributeAbstract>> getAttributes_JsonNullable() {
+  public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
     return attributes;
   }
   
   @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
-  public void setAttributes_JsonNullable(JsonNullable<List<@Valid AttributeAbstract>> attributes) {
+  public void setAttributes_JsonNullable(JsonNullable<List<AttributeAbstract>> attributes) {
     this.attributes = attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
+  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
@@ -1046,9 +982,6 @@ public class Move extends EntityWithMeta {
    * @return files
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public FileList getFiles() {
@@ -1087,9 +1020,6 @@ public class Move extends EntityWithMeta {
    * @return rate
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1119,9 +1049,6 @@ public class Move extends EntityWithMeta {
    * @return positions
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1151,9 +1078,6 @@ public class Move extends EntityWithMeta {
    * @return overhead
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Overhead getOverhead() {
@@ -1192,9 +1116,6 @@ public class Move extends EntityWithMeta {
    * @return internalOrder
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public InternalOrder getInternalOrder() {
@@ -1233,9 +1154,6 @@ public class Move extends EntityWithMeta {
    * @return customerOrder
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public CustomerOrder getCustomerOrder() {
@@ -1267,9 +1185,6 @@ public class Move extends EntityWithMeta {
    * @return demand
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_DEMAND)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1286,9 +1201,6 @@ public class Move extends EntityWithMeta {
    * @return supply
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_SUPPLY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1300,8 +1212,8 @@ public class Move extends EntityWithMeta {
 
 
 
-  public Move productionTasks(@javax.annotation.Nullable List<@Valid ProductionTask> productionTasks) {
-    this.productionTasks = JsonNullable.<List<@Valid ProductionTask>>of(productionTasks);
+  public Move productionTasks(@javax.annotation.Nullable List<ProductionTask> productionTasks) {
+    this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
     
     return this;
   }
@@ -1309,7 +1221,7 @@ public class Move extends EntityWithMeta {
 
   public Move addProductionTasksItem(ProductionTask productionTasksItem) {
     if (this.productionTasks == null || !this.productionTasks.isPresent()) {
-      this.productionTasks = JsonNullable.<List<@Valid ProductionTask>>of(new ArrayList<>());
+      this.productionTasks = JsonNullable.<List<ProductionTask>>of(new ArrayList<>());
     }
     try {
       this.productionTasks.get().add(productionTasksItem);
@@ -1324,12 +1236,9 @@ public class Move extends EntityWithMeta {
    * @return productionTasks
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
-  public List<@Valid ProductionTask> getProductionTasks() {
+  public List<ProductionTask> getProductionTasks() {
         return productionTasks.orElse(null);
   }
 
@@ -1339,17 +1248,17 @@ public class Move extends EntityWithMeta {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<@Valid ProductionTask>> getProductionTasks_JsonNullable() {
+  public JsonNullable<List<ProductionTask>> getProductionTasks_JsonNullable() {
     return productionTasks;
   }
   
   @JsonProperty(value = JSON_PROPERTY_PRODUCTION_TASKS, required = false)
-  public void setProductionTasks_JsonNullable(JsonNullable<List<@Valid ProductionTask>> productionTasks) {
+  public void setProductionTasks_JsonNullable(JsonNullable<List<ProductionTask>> productionTasks) {
     this.productionTasks = productionTasks;
   }
 
-  public void setProductionTasks(@javax.annotation.Nullable List<@Valid ProductionTask> productionTasks) {
-    this.productionTasks = JsonNullable.<List<@Valid ProductionTask>>of(productionTasks);
+  public void setProductionTasks(@javax.annotation.Nullable List<ProductionTask> productionTasks) {
+    this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
   }
 
 
@@ -1763,4 +1672,3 @@ public class Move extends EntityWithMeta {
   }
 
 }
-

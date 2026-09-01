@@ -27,8 +27,6 @@ import ru.moysklad.remap_1_2.model.Project;
 import ru.moysklad.remap_1_2.model.Store;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -50,7 +48,7 @@ import java.util.StringJoiner;
   UserSettings.JSON_PROPERTY_MAIL_FOOTER,
   UserSettings.JSON_PROPERTY_PRINT_FORMAT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class UserSettings {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -116,9 +114,6 @@ public class UserSettings {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -148,8 +143,6 @@ public class UserSettings {
    * @return autoShowReports
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_AUTO_SHOW_REPORTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -179,9 +172,6 @@ public class UserSettings {
    * @return defaultCompany
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_DEFAULT_COMPANY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -211,9 +201,6 @@ public class UserSettings {
    * @return defaultCustomerCounterparty
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_DEFAULT_CUSTOMER_COUNTERPARTY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -243,9 +230,6 @@ public class UserSettings {
    * @return defaultPlace
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_DEFAULT_PLACE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -275,9 +259,6 @@ public class UserSettings {
    * @return defaultProject
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_DEFAULT_PROJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -307,9 +288,6 @@ public class UserSettings {
    * @return defaultPurchaseCounterparty
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_DEFAULT_PURCHASE_COUNTERPARTY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -339,8 +317,6 @@ public class UserSettings {
    * @return defaultScreen
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_DEFAULT_SCREEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -370,8 +346,6 @@ public class UserSettings {
    * @return fieldsPerRow
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_FIELDS_PER_ROW)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -401,8 +375,6 @@ public class UserSettings {
    * @return locale
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_LOCALE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -432,8 +404,6 @@ public class UserSettings {
    * @return mailFooter
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_MAIL_FOOTER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -463,8 +433,6 @@ public class UserSettings {
    * @return printFormat
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PRINT_FORMAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -667,4 +635,3 @@ public class UserSettings {
   }
 
 }
-

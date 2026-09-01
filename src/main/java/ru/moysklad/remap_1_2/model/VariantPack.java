@@ -28,8 +28,6 @@ import ru.moysklad.remap_1_2.model.Barcode;
 import ru.moysklad.remap_1_2.model.Pack;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -42,7 +40,7 @@ import java.util.StringJoiner;
   VariantPack.JSON_PROPERTY_BARCODES,
   VariantPack.JSON_PROPERTY_PARENTPACK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class VariantPack {
 
   public static final String JSON_PROPERTY_ID = "id";
@@ -51,7 +49,7 @@ public class VariantPack {
 
   public static final String JSON_PROPERTY_BARCODES = "barcodes";
   @javax.annotation.Nullable
-  private List<@Valid Barcode> barcodes = new ArrayList<>();
+  private List<Barcode> barcodes = new ArrayList<>();
 
   public static final String JSON_PROPERTY_PARENTPACK = "parentpack";
   @javax.annotation.Nullable
@@ -75,9 +73,6 @@ public class VariantPack {
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -89,7 +84,7 @@ public class VariantPack {
 
 
 
-  public VariantPack barcodes(@javax.annotation.Nullable List<@Valid Barcode> barcodes) {
+  public VariantPack barcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
     
     this.barcodes = barcodes;
     return this;
@@ -109,13 +104,10 @@ public class VariantPack {
    * @return barcodes
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_BARCODES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<@Valid Barcode> getBarcodes() {
+  public List<Barcode> getBarcodes() {
     return barcodes;
   }
 
@@ -124,7 +116,7 @@ public class VariantPack {
 
   @JsonProperty(JSON_PROPERTY_BARCODES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBarcodes(@javax.annotation.Nullable List<@Valid Barcode> barcodes) {
+  public void setBarcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
     this.barcodes = barcodes;
   }
 
@@ -141,9 +133,6 @@ public class VariantPack {
    * @return parentpack
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_PARENTPACK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -263,4 +252,3 @@ public class VariantPack {
   }
 
 }
-

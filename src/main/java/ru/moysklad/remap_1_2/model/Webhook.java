@@ -30,8 +30,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -51,8 +49,8 @@ import java.util.StringJoiner;
   Webhook.JSON_PROPERTY_DIFF_TYPE,
   Webhook.JSON_PROPERTY_AUTHOR_APPLICATION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class Webhook extends EntityWithMeta {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class Webhook extends EntityWithMeta implements MetaEntity {
   public static Webhook createWithMeta(UUID id) {
     Webhook o = new Webhook();
     Meta meta = new Meta();
@@ -135,9 +133,6 @@ public class Webhook extends EntityWithMeta {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -160,9 +155,6 @@ public class Webhook extends EntityWithMeta {
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -179,9 +171,6 @@ public class Webhook extends EntityWithMeta {
    * @return accountId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -205,8 +194,6 @@ public class Webhook extends EntityWithMeta {
    * @return entityType
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_ENTITY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -236,9 +223,6 @@ public class Webhook extends EntityWithMeta {
    * @return url
    */
   @javax.annotation.Nullable
-  @Valid
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -268,8 +252,6 @@ public class Webhook extends EntityWithMeta {
    * @return method
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_METHOD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -299,8 +281,6 @@ public class Webhook extends EntityWithMeta {
    * @return enabled
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -330,8 +310,6 @@ public class Webhook extends EntityWithMeta {
    * @return action
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_ACTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -361,8 +339,6 @@ public class Webhook extends EntityWithMeta {
    * @return diffType
    */
   @javax.annotation.Nullable
-
-
   @JsonIgnore
 
   public String getDiffType() {
@@ -401,9 +377,6 @@ public class Webhook extends EntityWithMeta {
    * @return authorApplication
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_AUTHOR_APPLICATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -613,4 +586,3 @@ public class Webhook extends EntityWithMeta {
   }
 
 }
-

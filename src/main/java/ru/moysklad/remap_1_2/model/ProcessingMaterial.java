@@ -28,8 +28,6 @@ import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.ProductMarker;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -45,8 +43,8 @@ import java.util.StringJoiner;
   ProcessingMaterial.JSON_PROPERTY_QUANTITY,
   ProcessingMaterial.JSON_PROPERTY_THINGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class ProcessingMaterial {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class ProcessingMaterial implements MetaEntity {
   public static ProcessingMaterial createWithMeta(UUID parentId, UUID id) {
     ProcessingMaterial o = new ProcessingMaterial();
     Meta meta = new Meta();
@@ -113,9 +111,6 @@ public class ProcessingMaterial {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -138,9 +133,6 @@ public class ProcessingMaterial {
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -157,9 +149,6 @@ public class ProcessingMaterial {
    * @return accountId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -183,9 +172,6 @@ public class ProcessingMaterial {
    * @return assortment
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -216,8 +202,6 @@ public class ProcessingMaterial {
    * @return quantity
    */
   @javax.annotation.Nullable
- @DecimalMin("0.00010")
-
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -255,8 +239,6 @@ public class ProcessingMaterial {
    * @return things
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_THINGS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -411,4 +393,3 @@ public class ProcessingMaterial {
   }
 
 }
-

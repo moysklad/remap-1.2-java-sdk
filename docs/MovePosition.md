@@ -9,7 +9,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**meta** | [**Meta**](Meta.md) |  |  [optional] |
-|**id** | **UUID** | ID позиции |  [optional] [readonly] |
+|**id** | **UUID** | ID позиции |  [optional] |
 |**accountId** | **UUID** | ID учетной записи |  [optional] [readonly] |
 |**assortment** | [**ProductMarker**](ProductMarker.md) | Метаданные товара/услуги/партии/модификации, которую представляет собой позиция |  [optional] |
 |**overhead** | **Integer** | Накладные расходы по позиции. Если позиции Перемещения не заданы, накладные расходы на уровне документа задать нельзя.  |  [optional] [readonly] |

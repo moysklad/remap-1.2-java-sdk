@@ -36,7 +36,7 @@
 |**paymentPurpose** | **String** | Назначение платежа |  [optional] |
 |**project** | [**Project**](Project.md) | Метаданные проекта |  [optional] |
 |**salesChannel** | [**SalesChannel**](SalesChannel.md) | Метаданные канала продаж |  [optional] |
-|**shared** | **Boolean** | Общий доступ |  [optional] [readonly] |
+|**shared** | **Boolean** | Общий доступ |  [optional] |
 |**state** | [**State**](State.md) | Метаданные статуса Исходящего платежа |  [optional] |
 |**sum** | **Double** | Сумма Исходящего платежа в установленной валюте |  [optional] |
 |**vatSum** | **Double** | Сумма НДС |  [optional] |

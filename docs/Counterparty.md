@@ -9,7 +9,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**meta** | [**Meta**](Meta.md) |  |  [optional] |
-|**id** | **UUID** | ID контрагента |  [optional] [readonly] |
+|**id** | **UUID** | ID контрагента |  [optional] |
 |**syncId** | **UUID** | ID синхронизации |  [optional] |
 |**accountId** | **UUID** | ID учетной записи |  [optional] [readonly] |
 |**name** | **String** | Наименование контрагента |  [optional] |

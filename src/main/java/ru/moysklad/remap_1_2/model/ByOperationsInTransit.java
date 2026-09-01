@@ -25,8 +25,6 @@ import ru.moysklad.remap_1_2.model.ByOperationsStockOperation;
 import ru.moysklad.remap_1_2.model.ByOperationsStockStore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -41,7 +39,7 @@ import java.util.StringJoiner;
   ByOperationsInTransit.JSON_PROPERTY_STORE,
   ByOperationsInTransit.JSON_PROPERTY_IN_TRANSIT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class ByOperationsInTransit {
 
   public static final String JSON_PROPERTY_ASSORTMENT = "assortment";
@@ -79,9 +77,6 @@ public class ByOperationsInTransit {
    * @return assortment
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -111,9 +106,6 @@ public class ByOperationsInTransit {
    * @return operation
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_OPERATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -143,8 +135,6 @@ public class ByOperationsInTransit {
    * @return moment
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -174,9 +164,6 @@ public class ByOperationsInTransit {
    * @return store
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -206,8 +193,6 @@ public class ByOperationsInTransit {
    * @return inTransit
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_IN_TRANSIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -341,4 +326,3 @@ public class ByOperationsInTransit {
   }
 
 }
-

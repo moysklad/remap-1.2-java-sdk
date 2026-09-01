@@ -25,7 +25,7 @@ import ru.moysklad.remap_1_2.model.AttributeMetaInfoList;
 import ru.moysklad.remap_1_2.model.CreateFactureOutsBatch200ResponseInner;
 import ru.moysklad.remap_1_2.model.DeleteInvoiceOutBatch200ResponseInner;
 import ru.moysklad.remap_1_2.model.DocumentMetadata;
-import ru.moysklad.remap_1_2.model.ErrorOrArray;
+import ru.moysklad.remap_1_2.model.Errors;
 import ru.moysklad.remap_1_2.model.FactureOut;
 import ru.moysklad.remap_1_2.model.FactureOutList;
 import ru.moysklad.remap_1_2.model.State;
@@ -40,10 +40,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-import javax.validation.constraints.*;
-import javax.validation.Valid;
-
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class FactureOutsApi extends BaseApi {
 
@@ -119,17 +116,18 @@ public class FactureOutsApi extends BaseApi {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -221,17 +219,18 @@ if (contentType != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -323,17 +322,18 @@ if (contentType != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -371,7 +371,7 @@ if (contentType != null)
    * @return List&lt;StateRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<StateRowResult> createFactureOutMetadataStatesBatch(@javax.annotation.Nonnull List<@Valid State> state) throws ApiException {
+  public List<StateRowResult> createFactureOutMetadataStatesBatch(@javax.annotation.Nonnull List<State> state) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.createFactureOutMetadataStatesBatch(state, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -390,7 +390,7 @@ if (contentType != null)
    * @return List&lt;StateRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<StateRowResult> createFactureOutMetadataStatesBatch(@javax.annotation.Nonnull List<@Valid State> state, RequestOptions options) throws ApiException {
+  public List<StateRowResult> createFactureOutMetadataStatesBatch(@javax.annotation.Nonnull List<State> state, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createFactureOutMetadataStatesBatch(state, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -406,7 +406,7 @@ if (contentType != null)
    * @return List&lt;StateRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  protected List<StateRowResult> createFactureOutMetadataStatesBatch(@javax.annotation.Nonnull List<@Valid State> state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<StateRowResult> createFactureOutMetadataStatesBatch(@javax.annotation.Nonnull List<State> state, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = state;
     
     // verify the required parameter 'state' is set
@@ -425,17 +425,18 @@ if (contentType != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -473,7 +474,7 @@ if (contentType != null)
    * @return List&lt;CreateFactureOutsBatch200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateFactureOutsBatch200ResponseInner> createFactureOutsBatch(@javax.annotation.Nonnull List<@Valid FactureOut> factureOut) throws ApiException {
+  public List<CreateFactureOutsBatch200ResponseInner> createFactureOutsBatch(@javax.annotation.Nonnull List<FactureOut> factureOut) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.createFactureOutsBatch(factureOut, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -493,7 +494,7 @@ if (contentType != null)
    * @return List&lt;CreateFactureOutsBatch200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateFactureOutsBatch200ResponseInner> createFactureOutsBatch(@javax.annotation.Nonnull List<@Valid FactureOut> factureOut, RequestOptions options) throws ApiException {
+  public List<CreateFactureOutsBatch200ResponseInner> createFactureOutsBatch(@javax.annotation.Nonnull List<FactureOut> factureOut, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createFactureOutsBatch(factureOut, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -510,7 +511,7 @@ if (contentType != null)
    * @return List&lt;CreateFactureOutsBatch200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  protected List<CreateFactureOutsBatch200ResponseInner> createFactureOutsBatch(@javax.annotation.Nonnull List<@Valid FactureOut> factureOut, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<CreateFactureOutsBatch200ResponseInner> createFactureOutsBatch(@javax.annotation.Nonnull List<FactureOut> factureOut, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = factureOut;
     
     // verify the required parameter 'factureOut' is set
@@ -530,17 +531,18 @@ if (contentType != null)
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -628,15 +630,15 @@ if (contentType != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -723,15 +725,15 @@ if (acceptEncoding != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -818,15 +820,15 @@ if (acceptEncoding != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -863,7 +865,7 @@ if (acceptEncoding != null)
    * @return List&lt;DeleteInvoiceOutBatch200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteInvoiceOutBatch200ResponseInner> deleteFactureOutsBatch(@javax.annotation.Nonnull List<@Valid FactureOut> factureOut) throws ApiException {
+  public List<DeleteInvoiceOutBatch200ResponseInner> deleteFactureOutsBatch(@javax.annotation.Nonnull List<FactureOut> factureOut) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.deleteFactureOutsBatch(factureOut, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -882,7 +884,7 @@ if (acceptEncoding != null)
    * @return List&lt;DeleteInvoiceOutBatch200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteInvoiceOutBatch200ResponseInner> deleteFactureOutsBatch(@javax.annotation.Nonnull List<@Valid FactureOut> factureOut, RequestOptions options) throws ApiException {
+  public List<DeleteInvoiceOutBatch200ResponseInner> deleteFactureOutsBatch(@javax.annotation.Nonnull List<FactureOut> factureOut, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.deleteFactureOutsBatch(factureOut, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -898,7 +900,7 @@ if (acceptEncoding != null)
    * @return List&lt;DeleteInvoiceOutBatch200ResponseInner&gt;
    * @throws ApiException if fails to make API call
    */
-  protected List<DeleteInvoiceOutBatch200ResponseInner> deleteFactureOutsBatch(@javax.annotation.Nonnull List<@Valid FactureOut> factureOut, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteInvoiceOutBatch200ResponseInner> deleteFactureOutsBatch(@javax.annotation.Nonnull List<FactureOut> factureOut, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = factureOut;
     
     // verify the required parameter 'factureOut' is set
@@ -917,17 +919,18 @@ if (acceptEncoding != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -1021,15 +1024,15 @@ if (contentType != null)
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -1112,15 +1115,15 @@ if (acceptEncoding != null)
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -1211,15 +1214,15 @@ if (acceptEncoding != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -1305,15 +1308,15 @@ if (acceptEncoding != null)
 
     localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
     localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -1404,15 +1407,15 @@ if (acceptEncoding != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -1504,17 +1507,18 @@ if (acceptEncoding != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -1612,15 +1616,15 @@ if (contentType != null)
     localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
     localVarQueryParams.addAll(apiClient.parameterToPair("order", order));
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -1726,17 +1730,18 @@ if (acceptEncoding != null)
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -1839,17 +1844,18 @@ if (contentType != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -1952,17 +1958,18 @@ if (contentType != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };

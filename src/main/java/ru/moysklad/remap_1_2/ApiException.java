@@ -13,16 +13,19 @@
 
 package ru.moysklad.remap_1_2;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import java.util.Map;
 import java.util.List;
+import ru.moysklad.remap_1_2.model.Errors;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class ApiException extends Exception {
     private static final long serialVersionUID = 1L;
 
     private int code = 0;
     private Map<String, List<String>> responseHeaders = null;
     private String responseBody = null;
+    private Errors apiErrors = null;
 
     public ApiException() {}
 
@@ -39,6 +42,15 @@ public class ApiException extends Exception {
         this.code = code;
         this.responseHeaders = responseHeaders;
         this.responseBody = responseBody;
+        if (responseBody != null && !responseBody.isEmpty()) {
+            try {
+                apiErrors = Configuration.getDefaultApiClient()
+                        .getObjectMapper()
+                        .readValue(responseBody, Errors.class);
+            } catch (JsonProcessingException e) {
+                apiErrors = null;
+            }
+        }
     }
 
     public ApiException(String message, int code, Map<String, List<String>> responseHeaders, String responseBody) {
@@ -54,41 +66,44 @@ public class ApiException extends Exception {
     }
 
     public ApiException(int code, String message) {
-        super(message);
-        this.code = code;
-    }
-
-    public ApiException(int code, String message, Map<String, List<String>> responseHeaders, String responseBody) {
-        this(code, message);
-        this.responseHeaders = responseHeaders;
-        this.responseBody = responseBody;
+       super(message);
+       this.code = code;
     }
 
     /**
-     * Get the HTTP status code.
-     *
-     * @return HTTP status code
-     */
+    * Get the HTTP status code.
+    *
+    * @return HTTP status code
+    */
     public int getCode() {
         return code;
     }
 
     /**
-     * Get the HTTP response headers.
-     *
-     * @return A map of list of string
-     */
+    * Get the HTTP response headers.
+    *
+    * @return A map of list of string
+    */
     public Map<String, List<String>> getResponseHeaders() {
         return responseHeaders;
     }
 
     /**
-     * Get the HTTP response body.
-     *
-     * @return Response body in the form of string
-     */
+    * Get the HTTP response body.
+    *
+    * @return Response body in the form of string
+    */
     public String getResponseBody() {
         return responseBody;
+    }
+
+    /**
+    * Get the API errors.
+    *
+    * @return Response body in the form of Errors object
+    */
+    public Errors getApiErrors() {
+        return apiErrors;
     }
 
     @Override
@@ -97,6 +112,6 @@ public class ApiException extends Exception {
                 "code=" + code +
                 ", responseHeaders=" + responseHeaders +
                 ", responseBody='" + responseBody + '\'' +
-                '}';
+            '}';
     }
 }

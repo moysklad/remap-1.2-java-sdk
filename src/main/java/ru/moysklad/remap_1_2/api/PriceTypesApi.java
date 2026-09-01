@@ -20,7 +20,7 @@ import ru.moysklad.remap_1_2.BaseApi;
 import ru.moysklad.remap_1_2.Configuration;
 import ru.moysklad.remap_1_2.Pair;
 
-import ru.moysklad.remap_1_2.model.ErrorOrArray;
+import ru.moysklad.remap_1_2.model.Errors;
 import ru.moysklad.remap_1_2.model.PriceType;
 import java.util.UUID;
 
@@ -32,10 +32,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-import javax.validation.constraints.*;
-import javax.validation.Valid;
-
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class PriceTypesApi extends BaseApi {
 
@@ -54,7 +51,7 @@ public class PriceTypesApi extends BaseApi {
    * @return List&lt;PriceType&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<PriceType> createPriceTypesBatch(@javax.annotation.Nonnull List<@Valid PriceType> priceType) throws ApiException {
+  public List<PriceType> createPriceTypesBatch(@javax.annotation.Nonnull List<PriceType> priceType) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.createPriceTypesBatch(priceType, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -73,7 +70,7 @@ public class PriceTypesApi extends BaseApi {
    * @return List&lt;PriceType&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<PriceType> createPriceTypesBatch(@javax.annotation.Nonnull List<@Valid PriceType> priceType, RequestOptions options) throws ApiException {
+  public List<PriceType> createPriceTypesBatch(@javax.annotation.Nonnull List<PriceType> priceType, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createPriceTypesBatch(priceType, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -89,7 +86,7 @@ public class PriceTypesApi extends BaseApi {
    * @return List&lt;PriceType&gt;
    * @throws ApiException if fails to make API call
    */
-  protected List<PriceType> createPriceTypesBatch(@javax.annotation.Nonnull List<@Valid PriceType> priceType, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<PriceType> createPriceTypesBatch(@javax.annotation.Nonnull List<PriceType> priceType, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = priceType;
     
     // verify the required parameter 'priceType' is set
@@ -108,17 +105,18 @@ public class PriceTypesApi extends BaseApi {
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -198,15 +196,15 @@ if (contentType != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -297,15 +295,15 @@ if (acceptEncoding != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -385,15 +383,15 @@ if (acceptEncoding != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };

@@ -33,8 +33,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -49,8 +47,8 @@ import java.util.StringJoiner;
   ProcessingProcessPosition.JSON_PROPERTY_PROCESSINGSTAGE,
   ProcessingProcessPosition.JSON_PROPERTY_NEXT_POSITIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class ProcessingProcessPosition extends EntityWithMeta {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class ProcessingProcessPosition extends EntityWithMeta implements MetaEntity {
   public static ProcessingProcessPosition createWithMeta(UUID parentId, UUID id) {
     ProcessingProcessPosition o = new ProcessingProcessPosition();
     Meta meta = new Meta();
@@ -84,7 +82,7 @@ public class ProcessingProcessPosition extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_NEXT_POSITIONS = "nextPositions";
   @javax.annotation.Nullable
-  private JsonNullable<List<@Valid ProcessingProcessPositionNextPositionsInner>> nextPositions = JsonNullable.<List<@Valid ProcessingProcessPositionNextPositionsInner>>undefined();
+  private JsonNullable<List<ProcessingProcessPositionNextPositionsInner>> nextPositions = JsonNullable.<List<ProcessingProcessPositionNextPositionsInner>>undefined();
 
   public ProcessingProcessPosition() {
   }
@@ -113,9 +111,6 @@ public class ProcessingProcessPosition extends EntityWithMeta {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -138,9 +133,6 @@ public class ProcessingProcessPosition extends EntityWithMeta {
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -157,9 +149,6 @@ public class ProcessingProcessPosition extends EntityWithMeta {
    * @return accountId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -183,9 +172,6 @@ public class ProcessingProcessPosition extends EntityWithMeta {
    * @return processingstage
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_PROCESSINGSTAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -203,8 +189,8 @@ public class ProcessingProcessPosition extends EntityWithMeta {
   }
 
 
-  public ProcessingProcessPosition nextPositions(@javax.annotation.Nullable List<@Valid ProcessingProcessPositionNextPositionsInner> nextPositions) {
-    this.nextPositions = JsonNullable.<List<@Valid ProcessingProcessPositionNextPositionsInner>>of(nextPositions);
+  public ProcessingProcessPosition nextPositions(@javax.annotation.Nullable List<ProcessingProcessPositionNextPositionsInner> nextPositions) {
+    this.nextPositions = JsonNullable.<List<ProcessingProcessPositionNextPositionsInner>>of(nextPositions);
     
     return this;
   }
@@ -212,7 +198,7 @@ public class ProcessingProcessPosition extends EntityWithMeta {
 
   public ProcessingProcessPosition addNextPositionsItem(ProcessingProcessPositionNextPositionsInner nextPositionsItem) {
     if (this.nextPositions == null || !this.nextPositions.isPresent()) {
-      this.nextPositions = JsonNullable.<List<@Valid ProcessingProcessPositionNextPositionsInner>>of(new ArrayList<>());
+      this.nextPositions = JsonNullable.<List<ProcessingProcessPositionNextPositionsInner>>of(new ArrayList<>());
     }
     try {
       this.nextPositions.get().add(nextPositionsItem);
@@ -227,12 +213,9 @@ public class ProcessingProcessPosition extends EntityWithMeta {
    * @return nextPositions
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
-  public List<@Valid ProcessingProcessPositionNextPositionsInner> getNextPositions() {
+  public List<ProcessingProcessPositionNextPositionsInner> getNextPositions() {
         return nextPositions.orElse(null);
   }
 
@@ -242,17 +225,17 @@ public class ProcessingProcessPosition extends EntityWithMeta {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<@Valid ProcessingProcessPositionNextPositionsInner>> getNextPositions_JsonNullable() {
+  public JsonNullable<List<ProcessingProcessPositionNextPositionsInner>> getNextPositions_JsonNullable() {
     return nextPositions;
   }
   
   @JsonProperty(value = JSON_PROPERTY_NEXT_POSITIONS, required = false)
-  public void setNextPositions_JsonNullable(JsonNullable<List<@Valid ProcessingProcessPositionNextPositionsInner>> nextPositions) {
+  public void setNextPositions_JsonNullable(JsonNullable<List<ProcessingProcessPositionNextPositionsInner>> nextPositions) {
     this.nextPositions = nextPositions;
   }
 
-  public void setNextPositions(@javax.annotation.Nullable List<@Valid ProcessingProcessPositionNextPositionsInner> nextPositions) {
-    this.nextPositions = JsonNullable.<List<@Valid ProcessingProcessPositionNextPositionsInner>>of(nextPositions);
+  public void setNextPositions(@javax.annotation.Nullable List<ProcessingProcessPositionNextPositionsInner> nextPositions) {
+    this.nextPositions = JsonNullable.<List<ProcessingProcessPositionNextPositionsInner>>of(nextPositions);
   }
 
 
@@ -388,4 +371,3 @@ public class ProcessingProcessPosition extends EntityWithMeta {
   }
 
 }
-

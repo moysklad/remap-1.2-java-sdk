@@ -23,29 +23,29 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
+import ru.moysklad.remap_1_2.model.Context;
 import ru.moysklad.remap_1_2.model.MetaList;
-import ru.moysklad.remap_1_2.model.TaskNoteFile;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
+import ru.moysklad.remap_1_2.model.NotificationAbstract;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
 
 /**
- * Файлы комментария к Задаче
+ * Лента уведомлений
  */
 @JsonPropertyOrder({
-  TaskNoteFileList.JSON_PROPERTY_META,
-  TaskNoteFileList.JSON_PROPERTY_ROWS
+  NotificationList.JSON_PROPERTY_CONTEXT,
+  NotificationList.JSON_PROPERTY_META,
+  NotificationList.JSON_PROPERTY_ROWS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class TaskNoteFileList {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class NotificationList implements EntityList {
+
+  public static final String JSON_PROPERTY_CONTEXT = "context";
+  @javax.annotation.Nullable
+  private Context context;
 
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
@@ -53,12 +53,41 @@ public class TaskNoteFileList {
 
   public static final String JSON_PROPERTY_ROWS = "rows";
   @javax.annotation.Nullable
-  private JsonNullable<List<@Valid TaskNoteFile>> rows = JsonNullable.<List<@Valid TaskNoteFile>>undefined();
+  private List<NotificationAbstract> rows = new ArrayList<>();
 
-  public TaskNoteFileList() {
+  public NotificationList() {
   }
 
-  public TaskNoteFileList meta(@javax.annotation.Nullable MetaList meta) {
+  public NotificationList context(@javax.annotation.Nullable Context context) {
+    
+    this.context = context;
+    return this;
+  }
+
+
+  /**
+   * Get context
+   * @return context
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CONTEXT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Context getContext() {
+    return context;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_CONTEXT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setContext(@javax.annotation.Nullable Context context) {
+    this.context = context;
+  }
+
+
+  public NotificationList meta(@javax.annotation.Nullable MetaList meta) {
     
     this.meta = meta;
     return this;
@@ -70,9 +99,6 @@ public class TaskNoteFileList {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -90,56 +116,40 @@ public class TaskNoteFileList {
   }
 
 
-  public TaskNoteFileList rows(@javax.annotation.Nullable List<@Valid TaskNoteFile> rows) {
-    this.rows = JsonNullable.<List<@Valid TaskNoteFile>>of(rows);
+  public NotificationList rows(@javax.annotation.Nullable List<NotificationAbstract> rows) {
     
+    this.rows = rows;
     return this;
   }
 
 
-  public TaskNoteFileList addRowsItem(TaskNoteFile rowsItem) {
-    if (this.rows == null || !this.rows.isPresent()) {
-      this.rows = JsonNullable.<List<@Valid TaskNoteFile>>of(new ArrayList<>());
+  public NotificationList addRowsItem(NotificationAbstract rowsItem) {
+    if (this.rows == null) {
+      this.rows = new ArrayList<>();
     }
-    try {
-      this.rows.get().add(rowsItem);
-    } catch (java.util.NoSuchElementException e) {
-      // this can never happen, as we make sure above that the value is present
-    }
+    this.rows.add(rowsItem);
     return this;
   }
 
   /**
-   * Get rows
+   * Массив уведомлений разных типов, определяемых по meta.type
    * @return rows
    */
   @javax.annotation.Nullable
-  @Valid
-
-
-  @JsonIgnore
-
-  public List<@Valid TaskNoteFile> getRows() {
-        return rows.orElse(null);
-  }
-
-  
-
   @JsonProperty(JSON_PROPERTY_ROWS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-
-  public JsonNullable<List<@Valid TaskNoteFile>> getRows_JsonNullable() {
+  public List<NotificationAbstract> getRows() {
     return rows;
   }
-  
-  @JsonProperty(value = JSON_PROPERTY_ROWS, required = false)
-  public void setRows_JsonNullable(JsonNullable<List<@Valid TaskNoteFile>> rows) {
-    this.rows = rows;
-  }
 
-  public void setRows(@javax.annotation.Nullable List<@Valid TaskNoteFile> rows) {
-    this.rows = JsonNullable.<List<@Valid TaskNoteFile>>of(rows);
+  
+
+
+  @JsonProperty(JSON_PROPERTY_ROWS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRows(@javax.annotation.Nullable List<NotificationAbstract> rows) {
+    this.rows = rows;
   }
 
 
@@ -151,31 +161,22 @@ public class TaskNoteFileList {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TaskNoteFileList taskNoteFileList = (TaskNoteFileList) o;
-    return Objects.equals(this.meta, taskNoteFileList.meta) &&
-        equalsNullable(this.rows, taskNoteFileList.rows);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+    NotificationList notificationList = (NotificationList) o;
+    return Objects.equals(this.context, notificationList.context) &&
+        Objects.equals(this.meta, notificationList.meta) &&
+        Objects.equals(this.rows, notificationList.rows);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, hashCodeNullable(rows));
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(context, meta, rows);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TaskNoteFileList {\n");
+    sb.append("class NotificationList {\n");
+    sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("    rows: ").append(toIndentedString(rows)).append("\n");
     sb.append("}");
@@ -225,6 +226,11 @@ public class TaskNoteFileList {
 
     StringJoiner joiner = new StringJoiner("&");
 
+    // add `context` to the URL query string
+    if (getContext() != null) {
+      joiner.add(getContext().toUrlQueryString(prefix + "context" + suffix));
+    }
+
     // add `meta` to the URL query string
     if (getMeta() != null) {
       joiner.add(getMeta().toUrlQueryString(prefix + "meta" + suffix));
@@ -244,4 +250,3 @@ public class TaskNoteFileList {
   }
 
 }
-

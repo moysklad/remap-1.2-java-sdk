@@ -20,13 +20,13 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.ContextualDeserializer;
-import ru.moysklad.remap_1_2.model.Error;
+import ru.moysklad.remap_1_2.model.Errors;
 
 import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class PolymorphicMetaTypeDeserializer extends JsonDeserializer<Object> implements ContextualDeserializer {
   private final JavaType targetType;
 
@@ -80,7 +80,7 @@ public class PolymorphicMetaTypeDeserializer extends JsonDeserializer<Object> im
     }
 
     if (resolvedClass == null && useBatchErrorFallback(targetClass) && isBatchErrorPayload(node)) {
-      resolvedClass = Error.class;
+      resolvedClass = Errors.class;
     }
 
     if (resolvedClass != null && !targetClass.isAssignableFrom(resolvedClass)) {

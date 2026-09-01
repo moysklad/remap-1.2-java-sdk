@@ -20,7 +20,7 @@
 |**sum** | **Integer** | Сумма Договора |  [optional] |
 |**contractType** | **String** | Тип Договора. Известные значения описаны в ContractType |  [optional] |
 |**rewardType** | **String** | Тип Вознаграждения. Известные значения описаны в RewardType |  [optional] |
-|**rewardPercent** | **Integer** | Вознаграждение в процентах (от 0 до 100) |  [optional] |
+|**rewardPercent** | **Double** | Вознаграждение в процентах (от 0 до 100) |  [optional] |
 |**shared** | **Boolean** | Общий доступ |  [optional] |
 |**printed** | **Boolean** | Напечатан ли документ |  [optional] [readonly] |
 |**published** | **Boolean** | Опубликован ли документ |  [optional] [readonly] |

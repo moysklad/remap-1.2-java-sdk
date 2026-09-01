@@ -181,6 +181,8 @@ tags:
   name: ReportsStockByOperation
 - description: Операции с отчетом по документам номенклатуры
   name: ReportsByOperations
+- description: Операции c мета-датой сущности
+  name: Metadata
 paths:
   /report/dashboard/day:
     get:
@@ -11864,9 +11866,14 @@ paths:
       - text/html;charset=UTF-8
   /entity/employee/metadata:
     get:
-      description: Запрос на получение метаданных товаров
+      description: Запрос на получение метаданных сотрудников.
       operationId: getEmployeeMetadata
       parameters:
+      - description: Замена ссылок объектами с помощью expand
+        in: query
+        name: expand
+        schema:
+          type: string
       - in: header
         name: accept
         required: false
@@ -11889,19 +11896,230 @@ paths:
               schema:
                 $ref: "#/components/schemas/Metadata"
           description: Успешный запрос
-        "400":
-          $ref: "#/components/responses/BadRequest"
-        "401":
-          $ref: "#/components/responses/Unauthorized"
-        "403":
-          $ref: "#/components/responses/Forbidden"
-        "405":
-          $ref: "#/components/responses/MethodNotAllowed"
-        "415":
-          $ref: "#/components/responses/UnsupportedMediaType"
-      summary: Получить метаданные товаров
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить метаданные сотрудников
       tags:
       - Employees
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/employee/metadata/attributes:
+    get:
+      description: Запрос на получение всех доп. полей для сотрудников
+      operationId: getEmployeeMetadataAttributes
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttributeMetaInfoList"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить доп. поля сотрудников
+      tags:
+      - Employees
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    post:
+      description: Создание нового доп. поля для сотрудников
+      operationId: createEmployeeMetadataAttribute
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AttributeMetaInfo"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttributeMetaInfo"
+          description: Доп. поле успешно создано
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать доп. поле сотрудника
+      tags:
+      - Employees
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/employee/metadata/attributes/{id}:
+    delete:
+      description: Удаление доп. поля
+      operationId: deleteEmployeeMetadataAttribute
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          description: Доп. поле успешно удалено
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Удалить доп. поле сотрудника
+      tags:
+      - Employees
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    get:
+      description: Запрос на получение отдельного доп. поля
+      operationId: getEmployeeMetadataAttributeById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttributeMetaInfo"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить доп. поле сотрудника по ID
+      tags:
+      - Employees
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    put:
+      description: Обновление доп. поля для сотрудников
+      operationId: updateEmployeeMetadataAttribute
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AttributeMetaInfo"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttributeMetaInfo"
+          description: Доп. поле успешно обновлено
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Обновить доп. поле сотрудника
+      tags:
+      - Employees
+      x-content-type: application/json
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
@@ -16584,6 +16802,88 @@ paths:
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
+  /notification:
+    get:
+      description: Запрос на получение ленты уведомлений текущего пользователя
+      operationId: getNotifications
+      parameters:
+      - description: Максимальное количество элементов в выданном списке (максимум
+          1000)
+        in: query
+        name: limit
+        schema:
+          default: 1000
+          maximum: 1000
+          minimum: 1
+          type: integer
+      - description: Отступ в выданном списке
+        in: query
+        name: offset
+        schema:
+          default: 0
+          minimum: 0
+          type: integer
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotificationList"
+          description: Успешный запрос. JSON представление списка уведомлений
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить ленту уведомлений
+      tags:
+      - Notifications
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /notification/markasreadall:
+    put:
+      description: Отметить все уведомления текущего пользователя как прочитанные
+      operationId: markAllNotificationsAsRead
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          description: Все уведомления успешно отмечены как прочитанные
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Отметить все уведомления как прочитанные
+      tags:
+      - Notifications
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
   /notification/settings:
     get:
       description: Запрос на получение настроек уведомлений текущего пользователя
@@ -16665,6 +16965,123 @@ paths:
       tags:
       - Notifications
       x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /notification/{id}:
+    delete:
+      description: Удаление уведомления текущего пользователя с указанным id
+      operationId: deleteNotification
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          description: Уведомление успешно удалено
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Удалить уведомление
+      tags:
+      - Notifications
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+    get:
+      description: Запрос на получение уведомления с указанным id
+      operationId: getNotificationById
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotificationAbstract"
+          description: Успешный запрос. JSON представление уведомления
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить уведомление
+      tags:
+      - Notifications
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /notification/{id}/markasread:
+    put:
+      description: Отметить уведомление текущего пользователя с указанным id как прочитанное
+      operationId: markNotificationAsRead
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          description: Уведомление успешно отмечено как прочитанное
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Отметить уведомление как прочитанное
+      tags:
+      - Notifications
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
@@ -20024,7 +20441,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/RetailStore"
+              $ref: "#/components/schemas/RetailStoreUpsert"
         required: true
       responses:
         "200":
@@ -20166,7 +20583,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/RetailStore"
+              $ref: "#/components/schemas/RetailStoreUpsert"
         required: true
       responses:
         "200":
@@ -20276,7 +20693,7 @@ paths:
           application/json:
             schema:
               items:
-                $ref: "#/components/schemas/RetailStore"
+                $ref: "#/components/schemas/RetailStoreUpsert"
               maxItems: 1000
               minItems: 1
               type: array
@@ -30546,6 +30963,55 @@ paths:
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
+  /entity/invoiceout/metadata/states:
+    post:
+      operationId: createInvoiceOutMetadataState
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/State"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/State"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать статус InvoiceOut
+      tags:
+      - InvoiceOuts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
   /entity/invoiceout/metadata/states/{id}:
     delete:
       operationId: deleteInvoiceOutMetadataStateById
@@ -30690,6 +31156,61 @@ paths:
         default:
           $ref: "#/components/responses/CommonError"
       summary: Обновить отдельный статус InvoiceOut
+      tags:
+      - InvoiceOuts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoiceout/metadata/states/batch:
+    post:
+      operationId: createInvoiceOutMetadataStatesBatch
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: "#/components/schemas/State"
+              maxItems: 1000
+              minItems: 1
+              type: array
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/StateRowResult"
+                type: array
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Массовое создание и обновление статусов InvoiceOut
       tags:
       - InvoiceOuts
       x-content-type: application/json
@@ -32454,6 +32975,55 @@ paths:
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
+  /entity/invoicein/metadata/states:
+    post:
+      operationId: createInvoiceInMetadataState
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/State"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/State"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать статус InvoiceIn
+      tags:
+      - InvoiceIns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
   /entity/invoicein/metadata/states/{id}:
     delete:
       operationId: deleteInvoiceInMetadataStateById
@@ -32598,6 +33168,61 @@ paths:
         default:
           $ref: "#/components/responses/CommonError"
       summary: Обновить отдельный статус InvoiceIn
+      tags:
+      - InvoiceIns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/invoicein/metadata/states/batch:
+    post:
+      operationId: createInvoiceInMetadataStatesBatch
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: "#/components/schemas/State"
+              maxItems: 1000
+              minItems: 1
+              type: array
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/StateRowResult"
+                type: array
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Массовое создание и обновление статусов InvoiceIn
       tags:
       - InvoiceIns
       x-content-type: application/json
@@ -34370,6 +34995,55 @@ paths:
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
+  /entity/demand/metadata/states:
+    post:
+      operationId: createDemandMetadataState
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/State"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/State"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать статус Отгрузки
+      tags:
+      - Demands
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
   /entity/demand/metadata/states/{id}:
     delete:
       operationId: deleteDemandMetadataStateById
@@ -34514,6 +35188,61 @@ paths:
         default:
           $ref: "#/components/responses/CommonError"
       summary: Обновить отдельный статус Отгрузки
+      tags:
+      - Demands
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/demand/metadata/states/batch:
+    post:
+      operationId: createDemandMetadataStatesBatch
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: "#/components/schemas/State"
+              maxItems: 1000
+              minItems: 1
+              type: array
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/StateRowResult"
+                type: array
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Массовое создание и обновление статусов Отгрузки
       tags:
       - Demands
       x-content-type: application/json
@@ -41426,6 +42155,55 @@ paths:
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
+  /entity/loss/metadata/states:
+    post:
+      operationId: createLossMetadataState
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/State"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/State"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать статус Списания
+      tags:
+      - Losses
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
   /entity/loss/metadata/states/{id}:
     delete:
       operationId: deleteLossMetadataStateById
@@ -41554,6 +42332,61 @@ paths:
         default:
           $ref: "#/components/responses/CommonError"
       summary: Обновить отдельный статус Списания
+      tags:
+      - Losses
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/loss/metadata/states/batch:
+    post:
+      operationId: createLossMetadataStatesBatch
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: "#/components/schemas/State"
+              maxItems: 1000
+              minItems: 1
+              type: array
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/StateRowResult"
+                type: array
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Массовое создание и обновление статусов Списания
       tags:
       - Losses
       x-content-type: application/json
@@ -49259,6 +50092,55 @@ paths:
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
+  /entity/move/metadata/states:
+    post:
+      operationId: createMoveMetadataState
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/State"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/State"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать статус Перемещения
+      tags:
+      - Moves
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
   /entity/move/metadata/states/{id}:
     delete:
       operationId: deleteMoveMetadataStateById
@@ -49403,6 +50285,61 @@ paths:
         default:
           $ref: "#/components/responses/CommonError"
       summary: Обновить отдельный статус Перемещения
+      tags:
+      - Moves
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/move/metadata/states/batch:
+    post:
+      operationId: createMoveMetadataStatesBatch
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: "#/components/schemas/State"
+              maxItems: 1000
+              minItems: 1
+              type: array
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/StateRowResult"
+                type: array
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Массовое создание и обновление статусов Перемещения
       tags:
       - Moves
       x-content-type: application/json
@@ -52225,6 +53162,55 @@ paths:
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
+  /entity/emissionorder/metadata/states:
+    post:
+      operationId: createEmissionOrderMetadataState
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/State"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/State"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать статус Заказа кодов маркировки
+      tags:
+      - EmissionOrders
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
   /entity/emissionorder/metadata/states/{id}:
     delete:
       operationId: deleteEmissionOrderMetadataStateById
@@ -52369,6 +53355,61 @@ paths:
         default:
           $ref: "#/components/responses/CommonError"
       summary: Обновить отдельный статус Заказа кодов маркировки
+      tags:
+      - EmissionOrders
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/emissionorder/metadata/states/batch:
+    post:
+      operationId: createEmissionOrderMetadataStatesBatch
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: "#/components/schemas/State"
+              maxItems: 1000
+              minItems: 1
+              type: array
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/StateRowResult"
+                type: array
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Массовое создание и обновление статусов Заказа кодов маркировки
       tags:
       - EmissionOrders
       x-content-type: application/json
@@ -65751,6 +66792,151 @@ paths:
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
+  /entity/{type}/metadata:
+    get:
+      operationId: getMetadataForType
+      parameters:
+      - in: path
+        name: type
+        required: true
+        schema:
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DocumentMetadata"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить метаданные сущности
+      tags:
+      - Metadata
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/{type}/metadata/embeddedtemplate:
+    get:
+      operationId: getEmbeddedTemplatesForType
+      parameters:
+      - in: path
+        name: type
+        required: true
+        schema:
+          type: string
+      - description: Максимальное количество элементов в выданном списке (максимум
+          1000)
+        in: query
+        name: limit
+        schema:
+          default: 1000
+          maximum: 1000
+          minimum: 1
+          type: integer
+      - description: Отступ в выданном списке
+        in: query
+        name: offset
+        schema:
+          default: 0
+          minimum: 0
+          type: integer
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EmbeddedTemplateList"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить Стандартные шаблоны печатных форм
+      tags:
+      - Metadata
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/{type}/metadata/embeddedtemplate/{id}:
+    get:
+      operationId: getEmbeddedTemplateByTypeAndId
+      parameters:
+      - in: path
+        name: type
+        required: true
+        schema:
+          type: string
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EmbeddedTemplate"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить Стандартный шаблон печатной формы
+      tags:
+      - Metadata
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
 components:
   parameters:
     AcceptHeader:
@@ -65872,61 +67058,24 @@ components:
       schema:
         format: uuid
         type: string
+    entityType:
+      in: path
+      name: type
+      required: true
+      schema:
+        type: string
   responses:
     CommonError:
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/errorOrArray"
+            $ref: "#/components/schemas/Errors"
         text/html;charset=UTF-8:
           schema:
             type: string
-      description: Ошибка запроса (тело — объект или массив объектов с полем errors)
+      description: Ошибка запроса (тело — объект с полем errors)
     NotFoundEmpty:
       description: Запрошенный ресурс не существует (тело ответа отсутствует)
-    BadRequest:
-      content:
-        application/json:
-          schema:
-            $ref: "#/components/schemas/Error"
-        text/html;charset=UTF-8:
-          schema:
-            type: string
-      description: Ошибка в структуре JSON передаваемого запроса
-    Unauthorized:
-      content:
-        application/json:
-          schema:
-            $ref: "#/components/schemas/Error"
-      description: Имя и/или пароль пользователя указаны неверно или заблокированы
-    Forbidden:
-      content:
-        application/json:
-          schema:
-            $ref: "#/components/schemas/Error"
-      description: У вас нет прав на просмотр данного объекта
-    MethodNotAllowed:
-      content:
-        application/json:
-          schema:
-            $ref: "#/components/schemas/Error"
-      description: Метод не поддерживается для данного ресурса
-      headers:
-        Allow:
-          description: Список поддерживаемых HTTP методов (может отсутствовать в ответах
-            от nginx)
-          required: false
-          schema:
-            type: string
-    UnsupportedMediaType:
-      content:
-        application/json:
-          schema:
-            $ref: "#/components/schemas/Error"
-        text/html;charset=UTF-8:
-          schema:
-            type: string
-      description: Неподдерживаемый тип содержимого (Content-Type)
   schemas:
     Account:
       description: Счета контрагентов/юрлиц
@@ -65972,6 +67121,7 @@ components:
           nullable: true
           type: object
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - entityType
@@ -66089,6 +67239,7 @@ components:
           readOnly: true
           type: string
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -66127,6 +67278,7 @@ components:
       description: "Товар/услуга/модификация/комплект, данная модель уже не поддер\
         живается"
       type: object
+      x-implements: MetaEntity
     AssortmentList:
       description: Список ассортимента
       properties:
@@ -66140,6 +67292,7 @@ components:
             $ref: "#/components/schemas/Assortment_1"
           type: array
       type: object
+      x-implements: EntityList
     AssortmentWithoutBundle:
       allOf:
       - oneOf:
@@ -66167,6 +67320,7 @@ components:
         type: object
       description: Товар/услуга/модификация (без комплекта)
       type: object
+      x-implements: MetaEntity
     AssortmentSettings:
       description: Настройки ассортимента
       properties:
@@ -66231,6 +67385,7 @@ components:
         value:
           type: boolean
       type: object
+      x-implements: Attribute<Boolean>
     AttributeCustomEntity:
       allOf:
       - $ref: "#/components/schemas/AttributeAbstract"
@@ -66242,6 +67397,7 @@ components:
         value:
           $ref: "#/components/schemas/CustomEntityElement"
       type: object
+      x-implements: Attribute<CustomEntityElement>
     AttributeContractEntity:
       allOf:
       - $ref: "#/components/schemas/AttributeAbstract"
@@ -66253,6 +67409,7 @@ components:
         value:
           $ref: "#/components/schemas/Contract"
       type: object
+      x-implements: Attribute<Contract>
     AttributeCounterpartyEntity:
       allOf:
       - $ref: "#/components/schemas/AttributeAbstract"
@@ -66264,6 +67421,7 @@ components:
         value:
           $ref: "#/components/schemas/Agent"
       type: object
+      x-implements: Attribute<Agent>
     AttributeEmployeeEntity:
       allOf:
       - $ref: "#/components/schemas/AttributeAbstract"
@@ -66275,6 +67433,7 @@ components:
         value:
           $ref: "#/components/schemas/Employee"
       type: object
+      x-implements: Attribute<Employee>
     AttributeProductEntity:
       allOf:
       - $ref: "#/components/schemas/AttributeAbstract"
@@ -66284,8 +67443,9 @@ components:
           - product
           type: string
         value:
-          $ref: "#/components/schemas/ProductMarker"
+          $ref: "#/components/schemas/EntityWithMeta"
       type: object
+      x-implements: Attribute<EntityWithMeta>
     AttributeProjectEntity:
       allOf:
       - $ref: "#/components/schemas/AttributeAbstract"
@@ -66297,6 +67457,7 @@ components:
         value:
           $ref: "#/components/schemas/Project"
       type: object
+      x-implements: Attribute<Project>
     AttributeStoreEntity:
       allOf:
       - $ref: "#/components/schemas/AttributeAbstract"
@@ -66308,6 +67469,7 @@ components:
         value:
           $ref: "#/components/schemas/Store"
       type: object
+      x-implements: Attribute<Store>
     AttributeType:
       description: "Известные типы, используемые в допполях"
       enum:
@@ -66338,6 +67500,7 @@ components:
         value:
           type: string
       type: object
+      x-implements: Attribute<String>
     AttributeDouble:
       allOf:
       - $ref: "#/components/schemas/AttributeAbstract"
@@ -66347,9 +67510,10 @@ components:
           - double
           type: string
         value:
-          format: float
+          format: double
           type: number
       type: object
+      x-implements: Attribute<Double>
     AttributeFile:
       allOf:
       - $ref: "#/components/schemas/AttributeAbstract"
@@ -66369,6 +67533,7 @@ components:
               type: string
           type: object
       type: object
+      x-implements: Attribute<String>
     AttributeLink:
       allOf:
       - $ref: "#/components/schemas/AttributeAbstract"
@@ -66380,6 +67545,7 @@ components:
         value:
           type: string
       type: object
+      x-implements: Attribute<String>
     AttributeLong:
       allOf:
       - $ref: "#/components/schemas/AttributeAbstract"
@@ -66391,6 +67557,7 @@ components:
         value:
           type: integer
       type: object
+      x-implements: Attribute<Integer>
     AttributeMetaInfo:
       description: Метаописание дополнительного поля
       properties:
@@ -66440,6 +67607,7 @@ components:
         value:
           type: string
       type: object
+      x-implements: Attribute<String>
     AttributeText:
       allOf:
       - $ref: "#/components/schemas/AttributeAbstract"
@@ -66451,6 +67619,7 @@ components:
         value:
           type: string
       type: object
+      x-implements: Attribute<String>
     Barcode:
       description: Штрихкод
       properties:
@@ -66521,6 +67690,7 @@ components:
             $ref: "#/components/schemas/BonusProgram_1"
           type: array
       type: object
+      x-implements: EntityList
     BonusTransaction:
       description: Бонусная операция (bonustransaction)
       properties:
@@ -66608,6 +67778,7 @@ components:
             ции)"
           type: string
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -66629,6 +67800,7 @@ components:
             $ref: "#/components/schemas/BonusTransaction"
           type: array
       type: object
+      x-implements: EntityList
     CategoryType:
       description: Известные значения категории бонусной операции
       enum:
@@ -66645,7 +67817,7 @@ components:
     DeleteRowResult:
       oneOf:
       - $ref: "#/components/schemas/DeleteInfo"
-      - $ref: "#/components/schemas/Error"
+      - $ref: "#/components/schemas/Errors_1"
     CompanyType:
       description: Известные значения типа контрагента
       enum:
@@ -66671,11 +67843,12 @@ components:
       - RETAIL_SALES
       - OTHER
       type: string
-    Error:
+    Errors:
+      description: "Ответ ошибки: объект { errors }"
       properties:
         errors:
           items:
-            $ref: "#/components/schemas/Error_errors_inner"
+            $ref: "#/components/schemas/error"
           type: array
       required:
       - errors
@@ -66723,7 +67896,7 @@ components:
       properties:
         value:
           description: Значение цены
-          format: float
+          format: double
           minimum: 0
           type: number
         currency:
@@ -66749,6 +67922,7 @@ components:
         retailStore:
           $ref: "#/components/schemas/RetailStore"
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -66802,6 +67976,7 @@ components:
         agent:
           $ref: "#/components/schemas/Counterparty"
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -66827,6 +68002,7 @@ components:
           type: string
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-polymorphic-discriminator:
         path: meta.type
         mappings:
@@ -66844,7 +68020,6 @@ components:
         id:
           description: ID контрагента
           format: uuid
-          readOnly: true
           type: string
         syncId:
           description: ID синхронизации
@@ -67027,6 +68202,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: Named
       x-polymorphic-parent: Agent
       x-entity-static-builder:
         methodParams:
@@ -67049,6 +68225,7 @@ components:
             $ref: "#/components/schemas/Counterparty_1"
           type: array
       type: object
+      x-implements: EntityList
     CountryList:
       description: Список стран
       properties:
@@ -67062,6 +68239,7 @@ components:
             $ref: "#/components/schemas/Country_1"
           type: array
       type: object
+      x-implements: EntityList
     BatchResponseEntity:
       description: |
         Базовый полиморфный тип элемента ответа массовой операции.
@@ -67372,6 +68550,7 @@ components:
           type: string
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-polymorphic-discriminator:
         path: meta.type
         mappings:
@@ -67429,6 +68608,7 @@ components:
           type: boolean
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: "Named, MetaEntity"
       x-entity-static-builder:
         methodParams:
         - id
@@ -67467,7 +68647,7 @@ components:
           type: integer
         rate:
           description: Курс валюты
-          format: float
+          format: double
           type: number
         margin:
           description: Наценка при автоматическом обновлении курса
@@ -67492,6 +68672,7 @@ components:
           $ref: "#/components/schemas/Currency_minorUnit"
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -67513,6 +68694,7 @@ components:
             $ref: "#/components/schemas/Currency_1"
           type: array
       type: object
+      x-implements: EntityList
     CurrencyRate:
       description: Валюта
       properties:
@@ -67641,6 +68823,7 @@ components:
           type: array
       type: object
       x-polymorphic-parent: Agent
+      x-implements: Named
       x-entity-static-builder:
         methodParams:
         - id
@@ -67662,6 +68845,7 @@ components:
             $ref: "#/components/schemas/Employee_1"
           type: array
       type: object
+      x-implements: EntityList
     EmployeeSecurity:
       description: Права сотрудника
       properties:
@@ -67718,6 +68902,7 @@ components:
         permissions:
           $ref: "#/components/schemas/EmployeeRole_permissions"
       type: object
+      x-implements: "Named, MetaEntity"
       x-entity-static-builder:
         methodParams:
         - id
@@ -67739,6 +68924,7 @@ components:
             $ref: "#/components/schemas/CustomRole_1"
           type: array
       type: object
+      x-implements: EntityList
     Permissions:
       properties:
         view:
@@ -67846,6 +69032,7 @@ components:
           readOnly: true
           type: string
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - type
@@ -67880,10 +69067,11 @@ components:
         rows:
           description: Массив стандартных шаблонов печатных форм
           items:
-            $ref: "#/components/schemas/EmbeddedTemplate"
+            $ref: "#/components/schemas/EmbeddedTemplate_1"
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     File:
       description: Файл
       properties:
@@ -68109,6 +69297,7 @@ components:
           description: Дата платежного документа
           type: string
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -68130,6 +69319,7 @@ components:
             $ref: "#/components/schemas/FactureOut_1"
           type: array
       type: object
+      x-implements: EntityList
     FactureIn:
       description: Счет-фактура полученный (facturein)
       properties:
@@ -68264,6 +69454,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -68285,6 +69476,7 @@ components:
             $ref: "#/components/schemas/FactureIn_1"
           type: array
       type: object
+      x-implements: EntityList
     FiscalType:
       description: Известные значения фискального режима работы точки продаж
       enum:
@@ -68322,6 +69514,7 @@ components:
           minimum: 0
           type: integer
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -68343,6 +69536,7 @@ components:
             $ref: "#/components/schemas/Group_1"
           type: array
       type: object
+      x-implements: EntityList
     LabelPrintRequest:
       description: Запрос на печать этикеток и ценников
       properties:
@@ -68749,6 +69943,7 @@ components:
           type: object
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -68771,6 +69966,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     LossPosition:
       description: Позиция Списания
       properties:
@@ -68779,7 +69975,6 @@ components:
         id:
           description: ID позиции
           format: uuid
-          readOnly: true
           type: string
         accountId:
           description: ID учетной записи
@@ -68830,6 +70025,7 @@ components:
             type: string
           type: array
       type: object
+      x-implements: "DocumentPosition, MetaEntity"
       x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
@@ -68858,6 +70054,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     MinimumStockAllWarehouseSame:
       allOf:
       - $ref: "#/components/schemas/MinimumStockAbstract"
@@ -68888,7 +70085,7 @@ components:
           type: string
         quantity:
           description: Количество неснижаемого остатка
-          format: float
+          format: double
           minimum: 0
           type: number
       required:
@@ -68943,6 +70140,7 @@ components:
           maxLength: 4096
           type: string
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -68986,6 +70184,7 @@ components:
           readOnly: true
           type: object
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - documentType
@@ -69011,6 +70210,7 @@ components:
             $ref: "#/components/schemas/EventNote_1"
           type: array
       type: object
+      x-implements: EntityList
     Pack:
       description: Упаковка
       properties:
@@ -69025,7 +70225,7 @@ components:
           $ref: "#/components/schemas/Uom"
         quantity:
           description: Количество товаров в упаковке
-          format: float
+          format: double
           minimum: 0
           type: number
         barcodes:
@@ -69166,6 +70366,7 @@ components:
           type: string
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -69270,7 +70471,7 @@ components:
           type: string
         weight:
           description: Вес
-          format: float
+          format: double
           minimum: 0
           type: number
         volume:
@@ -69386,6 +70587,7 @@ components:
           type: string
       type: object
       x-polymorphic-parent: ProductMarker
+      x-implements: Named
       x-entity-static-builder:
         methodParams:
         - id
@@ -69407,6 +70609,7 @@ components:
             $ref: "#/components/schemas/Product_1"
           type: array
       type: object
+      x-implements: EntityList
     ProductFolder:
       description: Группа товаров
       properties:
@@ -69493,6 +70696,7 @@ components:
           type: string
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: "Named, MetaEntity"
       x-entity-static-builder:
         methodParams:
         - id
@@ -69515,6 +70719,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     ProcessingStage:
       description: Этап производства
       properties:
@@ -69588,6 +70793,7 @@ components:
           type: number
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -69609,6 +70815,7 @@ components:
             $ref: "#/components/schemas/ProcessingStage_1"
           type: array
       type: object
+      x-implements: EntityList
     ProcessingProcess:
       description: Техпроцесс
       properties:
@@ -69659,6 +70866,7 @@ components:
           $ref: "#/components/schemas/ProcessingProcessPositionList"
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -69680,6 +70888,7 @@ components:
             $ref: "#/components/schemas/ProcessingProcess_1"
           type: array
       type: object
+      x-implements: EntityList
     ProcessingProcessPosition:
       description: Позиция Техпроцесса
       properties:
@@ -69705,6 +70914,7 @@ components:
           type: array
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -69730,6 +70940,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     CostDistributionType:
       description: Известные значения типа распределения себестоимости Техкарты
       enum:
@@ -69826,6 +71037,7 @@ components:
           type: array
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -69848,6 +71060,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     ProcessingPlanStage:
       description: Этап Техкарты
       properties:
@@ -69889,6 +71102,7 @@ components:
         processingProcessPosition:
           $ref: "#/components/schemas/ProcessingProcessPosition"
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -69914,6 +71128,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     ProcessingPlanMaterial:
       description: Материал Техкарты
       properties:
@@ -69943,6 +71158,7 @@ components:
         materialProcessingPlan:
           $ref: "#/components/schemas/ProcessingPlan"
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -69968,6 +71184,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     ProcessingPlanProduct:
       description: Продукт Техкарты
       properties:
@@ -69993,6 +71210,7 @@ components:
           minimum: 0.00010
           type: number
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -70018,6 +71236,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     ProcessingPlanMetadata:
       description: Метаданные Техкарты
       properties:
@@ -70065,6 +71284,7 @@ components:
           readOnly: true
           type: integer
       type: object
+      x-implements: "Named, MetaEntity"
       x-entity-static-builder:
         methodParams:
         - id
@@ -70086,6 +71306,7 @@ components:
             $ref: "#/components/schemas/Region_1"
           type: array
       type: object
+      x-implements: EntityList
     RewardType:
       description: Известные значения типа вознаграждения
       enum:
@@ -70373,6 +71594,296 @@ components:
           x-agent-reference: true
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
+      x-entity-static-builder:
+        methodParams:
+        - id
+        href:
+        - path: entity
+        - path: retailstore
+        - param: id
+        type: retailstore
+    RetailStoreUpsert:
+      description: Точка продаж
+      properties:
+        id:
+          description: ID Точки продаж
+          format: uuid
+          type: string
+        accountId:
+          description: ID учетной записи владельца Точки продаж
+          format: uuid
+          readOnly: true
+          type: string
+        name:
+          description: Наименование Точки продаж
+          maxLength: 255
+          type: string
+        description:
+          description: Комментарий к Точке продаж
+          maxLength: 4096
+          type: string
+        active:
+          description: Признак активности Точки продаж
+          type: boolean
+        archived:
+          description: Признак архивности Точки продаж
+          type: boolean
+        shared:
+          description: Общий доступ к Точке продаж
+          type: boolean
+        address:
+          description: Адрес Точки продаж одной строкой
+          maxLength: 255
+          type: string
+        addressFull:
+          $ref: "#/components/schemas/Address"
+        externalCode:
+          description: Внешний код Точки продаж
+          maxLength: 255
+          readOnly: true
+          type: string
+        updated:
+          description: Момент последнего обновления Точки продаж
+          readOnly: true
+          type: string
+        meta:
+          $ref: "#/components/schemas/Meta"
+        organization:
+          $ref: "#/components/schemas/Organization"
+        store:
+          $ref: "#/components/schemas/Store"
+        group:
+          $ref: "#/components/schemas/Group"
+        owner:
+          allOf:
+          - $ref: "#/components/schemas/Employee_1"
+          description: Метаданные владельца (сотрудника)
+          nullable: true
+          type: object
+        priceType:
+          $ref: "#/components/schemas/PriceType"
+        environment:
+          $ref: "#/components/schemas/RetailStore_environment"
+        state:
+          $ref: "#/components/schemas/RetailStore_state"
+        fiscalType:
+          description: Фискальный режим работы Точки продаж. Известные значения описаны
+            в FiscalType
+          type: string
+        defaultTaxSystem:
+          description: Система налогообложения по умолчанию. Известные значения описаны
+            в TaxSystem
+          type: string
+        orderTaxSystem:
+          description: Система налогообложения заказов. Известные значения описаны
+            в TaxSystem
+          type: string
+        minionToMasterType:
+          description: Ограничение связи касс-слуг с кассами-мастерами. Известные
+            значения описаны в MinionToMasterType
+          type: string
+        tobaccoMrcControlType:
+          description: Режим контроля минимальных розничных цен на табак. Известные
+            значения описаны в TobaccoMrcControlType
+          type: string
+        markingSellingMode:
+          description: Режим продажи маркированных товаров. Известные значения описаны
+            в MarkingSellingMode
+          type: string
+        marksCheckMode:
+          description: Режим проверки кодов маркировки. Известные значения описаны
+            в MarksCheckMode
+          type: string
+        priorityOfdSend:
+          description: Приоритетный способ отправки чека покупателю. Известные значения
+            описаны в PriorityOfdSend
+          type: string
+        allowCreateProducts:
+          description: Признак разрешения создания новых товаров при продаже
+          type: boolean
+        allowCustomPrice:
+          description: Признак разрешения устанавливать произвольные цены
+          type: boolean
+        allowDeleteReceiptPositions:
+          description: Признак разрешения удалять позиции из чека
+          type: boolean
+        allowSellTobaccoWithoutMRC:
+          description: Признак разрешения продажи табачной продукции без проверки
+            МРЦ
+          type: boolean
+        authTokenAttached:
+          description: Признак подключения авторизационного токена
+          readOnly: true
+          type: boolean
+        controlCashierChoice:
+          description: Признак контроля выбора кассира
+          type: boolean
+        controlShippingStock:
+          description: Признак контроля отгрузки только из наличия
+          type: boolean
+        createCashInOnRetailShiftClosing:
+          description: Признак создания операции внесения при закрытии смены
+          type: boolean
+        createPaymentInOnRetailShiftClosing:
+          description: Признак создания операции прихода денег при закрытии смены
+          type: boolean
+        createAgentsTags:
+          description: "Теги, создаваемые у агентов"
+          items:
+            type: string
+          nullable: true
+          type: array
+        filterAgentsTags:
+          description: "Группы, по которым фильтруются агенты"
+          items:
+            type: string
+          nullable: true
+          type: array
+        createOrderWithState:
+          allOf:
+          - $ref: "#/components/schemas/State_1"
+          description: "Статус, в котором создаются заказы покупателей"
+          nullable: true
+          type: object
+        customerOrderStates:
+          description: Возможные состояния заказов покупателей
+          items:
+            $ref: "#/components/schemas/State_1"
+          nullable: true
+          type: array
+        discountEnable:
+          description: Признак включения скидок
+          type: boolean
+        discountMaxPercent:
+          description: Максимально допустимый процент скидки
+          type: integer
+        enableReturnsWithNoReason:
+          description: Признак разрешения возвратов без причины
+          type: boolean
+        issueOrders:
+          description: Признак оформления заказов покупателей
+          type: boolean
+        lastOperationNames:
+          description: Последние операции
+          items:
+            $ref: "#/components/schemas/RetailStore_lastOperationNames_inner"
+          nullable: true
+          type: array
+        masterRetailStores:
+          allOf:
+          - $ref: "#/components/schemas/RetailStoreList_1"
+          description: Список касс-мастеров
+          nullable: true
+          type: object
+        ofdEnabled:
+          description: Признак использования ОФД
+          readOnly: true
+          type: boolean
+        onlyInStock:
+          description: Признак продажи только из наличия
+          type: boolean
+        orderToState:
+          allOf:
+          - $ref: "#/components/schemas/State_1"
+          description: Метаданные статуса заказа покупателя
+          nullable: true
+          type: object
+        printAlways:
+          description: Признак обязательной печати чеков
+          type: boolean
+        productFolders:
+          allOf:
+          - $ref: "#/components/schemas/ProductFolderList_1"
+          description: Список групп товаров
+          nullable: true
+          type: object
+        receiptTemplate:
+          $ref: "#/components/schemas/RetailStore_receiptTemplate"
+        requiredFio:
+          description: Признак обязательности ФИО покупателя
+          type: boolean
+        requiredPhone:
+          description: Признак обязательности телефона покупателя
+          type: boolean
+        requiredEmail:
+          description: Признак обязательности email покупателя
+          type: boolean
+        requiredBirthdate:
+          description: Признак обязательности даты рождения покупателя
+          type: boolean
+        requiredSex:
+          description: Признак обязательности пола покупателя
+          type: boolean
+        requiredDiscountCardNumber:
+          description: Признак обязательности номера дисконтной карты покупателя
+          type: boolean
+        reservePrepaidGoods:
+          description: Признак резервирования предоплаченных товаров
+          type: boolean
+        returnFromClosedShiftEnabled:
+          description: Признак разрешения возвратов из закрытой смены
+          type: boolean
+        sellReserves:
+          description: Признак разрешения продажи резервов
+          type: boolean
+        sendMarksForCheck:
+          description: Признак отправки кодов маркировки на проверку
+          type: boolean
+        sendMarksToChestnyZnakOnCloud:
+          description: Признак отправки кодов маркировки в Честный ЗНАК в облаке
+          type: boolean
+        syncAgents:
+          description: Признак синхронизации агентов
+          type: boolean
+        showBeerOnTap:
+          description: Признак отображения разливного пива
+          type: boolean
+        qrPayEnabled:
+          description: Признак включения оплаты через QR
+          type: boolean
+        bankPercent:
+          description: Банковский процент
+          format: double
+          type: number
+        qrBankPercent:
+          description: Банковский процент при оплате по QR
+          format: double
+          type: number
+        demandPrefix:
+          description: Префикс номера заказа
+          maxLength: 255
+          type: string
+        qrTerminalId:
+          description: Идентификатор QR-терминала
+          maxLength: 255
+          type: string
+        idQR:
+          description: Идентификатор QR
+          maxLength: 255
+          type: string
+        acquire:
+          allOf:
+          - $ref: "#/components/schemas/Agent"
+          description: Эквайер
+          type: object
+          x-agent-reference: true
+        cashiers:
+          description: "Кассиры, работающие на точке продаж"
+          items:
+            $ref: "#/components/schemas/Employee_1"
+          nullable: true
+          type: array
+        qrAcquire:
+          allOf:
+          - $ref: "#/components/schemas/Agent"
+          description: Эквайер для QR-платежей
+          nullable: true
+          type: object
+          x-agent-reference: true
+      type: object
+      x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -70386,7 +71897,7 @@ components:
       properties:
         value:
           description: Значение цены
-          format: float
+          format: double
           minimum: 0
           type: number
         currency:
@@ -70414,6 +71925,7 @@ components:
           description: Группа площадок для продаж. Известные значения описаны в SalePlatformGroup
           type: string
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -70435,6 +71947,7 @@ components:
             $ref: "#/components/schemas/SalePlatform_1"
           type: array
       type: object
+      x-implements: EntityList
     SalePlatformGroup:
       description: Известные значения группы площадок для продаж
       enum:
@@ -70627,6 +72140,7 @@ components:
           type: object
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -70648,6 +72162,7 @@ components:
             $ref: "#/components/schemas/SalesReturn_1"
           type: array
       type: object
+      x-implements: EntityList
     SalesReturnPosition:
       description: Позиция Возврата покупателя
       properties:
@@ -70656,7 +72171,6 @@ components:
         id:
           description: ID позиции
           format: uuid
-          readOnly: true
           type: string
         accountId:
           description: ID учетной записи
@@ -70724,6 +72238,7 @@ components:
           description: Включен ли НДС для позиции
           type: boolean
       type: object
+      x-implements: "DocumentPosition, MetaEntity"
       x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
@@ -70752,6 +72267,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     Service:
       properties:
         meta:
@@ -70879,6 +72395,7 @@ components:
           format: uuid
           type: string
       type: object
+      x-implements: Named
       x-polymorphic-parent: ProductMarker
       x-entity-static-builder:
         methodParams:
@@ -70902,6 +72419,7 @@ components:
             $ref: "#/components/schemas/Service_1"
           type: array
       type: object
+      x-implements: EntityList
     State:
       description: Статус
       properties:
@@ -70934,6 +72452,7 @@ components:
           description: Тип Статуса. Известные значения описаны в StateType
           type: string
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - entityType
@@ -70948,7 +72467,7 @@ components:
     StateRowResult:
       oneOf:
       - $ref: "#/components/schemas/State"
-      - $ref: "#/components/schemas/Error"
+      - $ref: "#/components/schemas/Errors_1"
     StateType:
       description: Известные значения типа статуса
       enum:
@@ -71046,6 +72565,7 @@ components:
           type: object
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: "Named, MetaEntity"
       x-entity-static-builder:
         methodParams:
         - id
@@ -71093,6 +72613,7 @@ components:
           maxLength: 255
           type: string
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -71117,6 +72638,7 @@ components:
             $ref: "#/components/schemas/StoreZone_1"
           type: array
       type: object
+      x-implements: EntityList
     StoreSlot:
       description: Ячейка склада
       properties:
@@ -71151,6 +72673,7 @@ components:
         zone:
           $ref: "#/components/schemas/StoreZone"
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -71175,6 +72698,7 @@ components:
             $ref: "#/components/schemas/StoreSlot_1"
           type: array
       type: object
+      x-implements: EntityList
     StoreBalance:
       description: Неснижаемый остаток по складу
       properties:
@@ -71198,6 +72722,7 @@ components:
           minimum: 0
           type: number
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -71264,6 +72789,7 @@ components:
           type: string
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -71285,6 +72811,7 @@ components:
             $ref: "#/components/schemas/TaxRate_1"
           type: array
       type: object
+      x-implements: EntityList
     TaxSystem:
       description: Известные значения кода системы налогообложения
       enum:
@@ -71385,6 +72912,7 @@ components:
           type: string
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: "Named, MetaEntity"
       x-entity-static-builder:
         methodParams:
         - id
@@ -71406,6 +72934,7 @@ components:
             $ref: "#/components/schemas/Uom_1"
           type: array
       type: object
+      x-implements: EntityList
     CounterpartyMetadata:
       description: Метаданные контрагентов
       properties:
@@ -71461,7 +72990,6 @@ components:
         id:
           description: ID юрлица
           format: uuid
-          readOnly: true
           type: string
         syncId:
           description: ID синхронизации
@@ -71653,6 +73181,7 @@ components:
           type: array
       type: object
       x-polymorphic-parent: Agent
+      x-implements: Named
       x-entity-static-builder:
         methodParams:
         - id
@@ -71674,6 +73203,7 @@ components:
             $ref: "#/components/schemas/Organization_1"
           type: array
       type: object
+      x-implements: EntityList
     Bundle:
       description: Комплект
       properties:
@@ -71844,6 +73374,7 @@ components:
         components:
           $ref: "#/components/schemas/BundleComponentList"
       type: object
+      x-implements: Named
       x-polymorphic-parent: ProductMarker
       x-entity-static-builder:
         methodParams:
@@ -71870,11 +73401,12 @@ components:
           type: string
         quantity:
           description: Количество товаров/услуг/модификаций данного вида в компоненте
-          format: float
+          format: double
           type: number
         assortment:
           $ref: "#/components/schemas/AssortmentWithoutBundle"
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -71899,6 +73431,7 @@ components:
             $ref: "#/components/schemas/Bundle_1"
           type: array
       type: object
+      x-implements: EntityList
     BundleComponentList:
       description: Список элементов комплекта
       properties:
@@ -71912,6 +73445,7 @@ components:
             $ref: "#/components/schemas/BundleComponent"
           type: array
       type: object
+      x-implements: EntityList
     Consignment:
       description: Партия
       properties:
@@ -71986,6 +73520,7 @@ components:
           type: string
       type: object
       x-polymorphic-parent: ProductMarker
+      x-implements: Named
       x-entity-static-builder:
         methodParams:
         - id
@@ -72007,6 +73542,7 @@ components:
             $ref: "#/components/schemas/Consignment_1"
           type: array
       type: object
+      x-implements: EntityList
     Variant:
       description: Модификация
       properties:
@@ -72105,6 +73641,7 @@ components:
           type: array
       type: object
       x-polymorphic-parent: ProductMarker
+      x-implements: Named
       x-entity-static-builder:
         methodParams:
         - id
@@ -72126,6 +73663,7 @@ components:
             $ref: "#/components/schemas/Variant_1"
           type: array
       type: object
+      x-implements: EntityList
     VariantCharacteristic:
       description: Характеристики модификаций
       properties:
@@ -72150,6 +73688,7 @@ components:
           readOnly: true
           type: boolean
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -72236,6 +73775,7 @@ components:
           nullable: true
           type: string
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -72257,6 +73797,7 @@ components:
             $ref: "#/components/schemas/Thing_1"
           type: array
       type: object
+      x-implements: EntityList
     Webhook:
       description: Вебхук
       properties:
@@ -72301,6 +73842,7 @@ components:
           $ref: "#/components/schemas/Application"
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -72374,6 +73916,7 @@ components:
             $ref: "#/components/schemas/Webhook_1"
           type: array
       type: object
+      x-implements: EntityList
     WebhookMethod:
       description: HTTP-метод запроса к URL подписчика. Известные значения для поля
         method сущности Webhook
@@ -72426,6 +73969,7 @@ components:
           $ref: "#/components/schemas/Application"
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -72447,6 +73991,7 @@ components:
             $ref: "#/components/schemas/WebhookStock_1"
           type: array
       type: object
+      x-implements: EntityList
     WebhookStockNotificationPayload:
       description: |
         Тело HTTP POST, которое МойСклад отправляет на url вебхука при изменении остатков (уведомления с интервалом 1–5 минут).
@@ -72494,6 +74039,7 @@ components:
             $ref: "#/components/schemas/Store_1"
           type: array
       type: object
+      x-implements: EntityList
     RetailStoreList:
       description: Список точек продаж
       properties:
@@ -72508,6 +74054,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     RetailShift:
       description: Розничная смена
       properties:
@@ -72716,6 +74263,7 @@ components:
           description: Включен ли НДС в цену
           type: boolean
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -72745,6 +74293,7 @@ components:
             $ref: "#/components/schemas/RetailShift_1"
           type: array
       type: object
+      x-implements: EntityList
     CashierList:
       description: Список кассиров
       properties:
@@ -72759,6 +74308,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     Inventory:
       description: Инвентаризация
       properties:
@@ -72829,7 +74379,6 @@ components:
           allOf:
           - $ref: "#/components/schemas/InventoryPositionList_1"
           description: Метаданные позиций Инвентаризации
-          nullable: true
           type: object
         printed:
           description: Напечатан ли документ
@@ -72877,6 +74426,7 @@ components:
           type: array
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -72898,6 +74448,7 @@ components:
             $ref: "#/components/schemas/Inventory_1"
           type: array
       type: object
+      x-implements: EntityList
     InventoryPosition:
       description: Позиция Инвентаризации
       properties:
@@ -72906,7 +74457,6 @@ components:
         id:
           description: ID позиции
           format: uuid
-          readOnly: true
           type: string
         accountId:
           description: ID учетной записи
@@ -72958,6 +74508,7 @@ components:
           format: double
           type: number
       type: object
+      x-implements: "DocumentPosition, MetaEntity"
       x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
@@ -72984,6 +74535,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     InternalOrder:
       description: Внутренний заказ
       properties:
@@ -73139,6 +74691,7 @@ components:
           type: object
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -73155,7 +74708,6 @@ components:
         id:
           description: ID позиции
           format: uuid
-          readOnly: true
           type: string
         accountId:
           description: ID учетной записи
@@ -73190,6 +74742,7 @@ components:
           nullable: true
           type: object
       type: object
+      x-implements: "DocumentPosition, MetaEntity"
       x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
@@ -73216,6 +74769,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     InternalOrderList:
       description: Список Внутренних заказов
       properties:
@@ -73229,6 +74783,7 @@ components:
             $ref: "#/components/schemas/InternalOrder_1"
           type: array
       type: object
+      x-implements: EntityList
     Contract:
       description: Договор
       properties:
@@ -73278,9 +74833,10 @@ components:
           type: string
         rewardPercent:
           description: Вознаграждение в процентах (от 0 до 100)
+          format: double
           maximum: 100
           minimum: 0
-          type: integer
+          type: number
         shared:
           description: Общий доступ
           type: boolean
@@ -73339,6 +74895,7 @@ components:
           type: array
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: "Named, MetaEntity"
       x-entity-static-builder:
         methodParams:
         - id
@@ -73360,6 +74917,7 @@ components:
             $ref: "#/components/schemas/Contract_1"
           type: array
       type: object
+      x-implements: EntityList
     Task:
       description: Задача
       properties:
@@ -73416,7 +74974,7 @@ components:
         notes:
           $ref: "#/components/schemas/Task_notes"
         operation:
-          $ref: "#/components/schemas/DocumentMetadata"
+          $ref: "#/components/schemas/EntityWithMeta"
         state:
           allOf:
           - $ref: "#/components/schemas/State_1"
@@ -73429,6 +74987,7 @@ components:
           type: string
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -73450,6 +75009,7 @@ components:
             $ref: "#/components/schemas/Task_1"
           type: array
       type: object
+      x-implements: EntityList
     TaskNote:
       description: Комментарий к Задаче
       properties:
@@ -73479,12 +75039,13 @@ components:
           type: string
         files:
           allOf:
-          - $ref: "#/components/schemas/TaskNoteFileList"
+          - $ref: "#/components/schemas/FileList"
           description: Метаданные массива Файлов
           nullable: true
           type: object
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -73509,67 +75070,7 @@ components:
             $ref: "#/components/schemas/TaskNote_1"
           type: array
       type: object
-    TaskNoteFile:
-      description: Файл комментария к Задаче
-      properties:
-        meta:
-          $ref: "#/components/schemas/Meta"
-        id:
-          description: ID файла
-          format: uuid
-          readOnly: true
-          type: string
-        title:
-          description: Название файла
-          maxLength: 255
-          type: string
-        filename:
-          description: Имя файла
-          maxLength: 255
-          type: string
-        content:
-          description: "Файл, закодированный в Base64"
-          type: string
-        size:
-          description: Размер файла в байтах
-          readOnly: true
-          type: integer
-        created:
-          description: Время создания объекта
-          readOnly: true
-          type: string
-        createdBy:
-          $ref: "#/components/schemas/Employee"
-        tiny:
-          $ref: "#/components/schemas/Meta"
-        miniature:
-          $ref: "#/components/schemas/Meta"
-      type: object
-      x-entity-static-builder:
-        methodParams:
-        - parentId
-        - noteId
-        - id
-        href:
-        - path: entity
-        - path: task
-        - param: parentId
-        - path: notes
-        - param: noteId
-        - path: files
-        - param: id
-        type: files
-    TaskNoteFileList:
-      description: Файлы комментария к Задаче
-      properties:
-        meta:
-          $ref: "#/components/schemas/MetaList"
-        rows:
-          items:
-            $ref: "#/components/schemas/TaskNoteFile"
-          nullable: true
-          type: array
-      type: object
+      x-implements: EntityList
     Project:
       description: Проект
       properties:
@@ -73627,6 +75128,7 @@ components:
           type: string
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: "Named, MetaEntity"
       x-entity-static-builder:
         methodParams:
         - id
@@ -73648,6 +75150,7 @@ components:
             $ref: "#/components/schemas/Project_1"
           type: array
       type: object
+      x-implements: EntityList
     SalesChannel:
       description: Канал продаж
       properties:
@@ -73703,6 +75206,7 @@ components:
           type: string
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -73724,6 +75228,7 @@ components:
             $ref: "#/components/schemas/SalesChannel_1"
           type: array
       type: object
+      x-implements: EntityList
     CustomerOrder:
       description: Заказ покупателя
       properties:
@@ -73960,6 +75465,7 @@ components:
           type: array
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -73976,7 +75482,6 @@ components:
         id:
           description: ID позиции
           format: uuid
-          readOnly: true
           type: string
         accountId:
           description: ID учетной записи
@@ -74033,6 +75538,7 @@ components:
             Остатки и себестоимость позиции. Не выводится по умолчанию.
             Для получения передайте параметр `?fields=stock`.
       type: object
+      x-implements: "DocumentPosition, MetaEntity"
       x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
@@ -74061,6 +75567,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     CustomerOrderList:
       description: Список Заказов покупателей
       properties:
@@ -74074,6 +75581,7 @@ components:
             $ref: "#/components/schemas/CustomerOrder_1"
           type: array
       type: object
+      x-implements: EntityList
     Publication:
       description: Публикация Заказа покупателя
       properties:
@@ -74100,6 +75608,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     ExportRequest:
       description: Запрос на печать
       properties:
@@ -74211,6 +75720,7 @@ components:
           type: string
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -74241,16 +75751,16 @@ components:
             \ собой позиция"
         quantity:
           description: Количество товаров данного вида в позиции
-          format: double
           maximum: 1000
           minimum: 0
-          type: number
+          type: integer
         status:
           description: Статус кодов. Известные значения описаны в EmissionOrderPositionStatus
           readOnly: true
           type: string
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -74276,6 +75786,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     EmissionOrderList:
       description: Список Заказов кодов маркировки
       properties:
@@ -74289,6 +75800,7 @@ components:
             $ref: "#/components/schemas/EmissionOrder_1"
           type: array
       type: object
+      x-implements: EntityList
     EmissionOrderEmissionType:
       description: Известные значения способа ввода в оборот
       enum:
@@ -74527,6 +76039,7 @@ components:
           type: array
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -74543,7 +76056,6 @@ components:
         id:
           description: ID позиции
           format: uuid
-          readOnly: true
           type: string
         accountId:
           description: ID учетной записи
@@ -74598,6 +76110,7 @@ components:
             Остатки и себестоимость позиции. Не выводится по умолчанию.
             Для получения передайте параметр `?fields=stock`.
       type: object
+      x-implements: "DocumentPosition, MetaEntity"
       x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
@@ -74623,6 +76136,7 @@ components:
             $ref: "#/components/schemas/PurchaseOrder_1"
           type: array
       type: object
+      x-implements: EntityList
     PurchaseOrderPositionList:
       description: Список позиций Заказа поставщику
       properties:
@@ -74639,6 +76153,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     PurchaseReturn:
       description: Возврат поставщику
       properties:
@@ -74791,7 +76306,6 @@ components:
           allOf:
           - $ref: "#/components/schemas/PurchaseReturnPositionList_1"
           description: Позиции Возврата поставщику
-          nullable: true
           type: object
         supply:
           allOf:
@@ -74819,6 +76333,7 @@ components:
           type: array
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -74841,6 +76356,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     PurchaseReturnPosition:
       description: Позиция Возврата поставщику
       properties:
@@ -74849,7 +76365,6 @@ components:
         id:
           description: ID позиции
           format: uuid
-          readOnly: true
           type: string
         accountId:
           description: ID учетной записи
@@ -74905,6 +76420,7 @@ components:
             `(vat = 0, vatEnabled = true)` — НДС 0%.
           type: boolean
       type: object
+      x-implements: "DocumentPosition, MetaEntity"
       x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
@@ -74933,6 +76449,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     InvoiceIn:
       description: Счет поставщика
       properties:
@@ -75122,6 +76639,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -75144,6 +76662,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     InvoiceInPosition:
       description: Позиция Счета поставщику
       properties:
@@ -75152,7 +76671,6 @@ components:
         id:
           description: ID позиции
           format: uuid
-          readOnly: true
           type: string
         accountId:
           description: ID учетной записи
@@ -75191,6 +76709,7 @@ components:
           nullable: true
           type: object
       type: object
+      x-implements: "DocumentPosition, MetaEntity"
       x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
@@ -75219,6 +76738,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     InvoiceOut:
       description: Счет покупателя
       properties:
@@ -75405,6 +76925,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -75427,6 +76948,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     InvoiceOutPosition:
       description: Позиция Счета покупателю
       properties:
@@ -75435,7 +76957,6 @@ components:
         id:
           description: ID позиции
           format: uuid
-          readOnly: true
           type: string
         accountId:
           description: ID учетной записи
@@ -75474,6 +76995,7 @@ components:
           nullable: true
           type: object
       type: object
+      x-implements: "DocumentPosition, MetaEntity"
       x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
@@ -75502,6 +77024,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     Supply:
       description: Приемка
       properties:
@@ -75706,6 +77229,7 @@ components:
           type: array
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -75727,6 +77251,7 @@ components:
             $ref: "#/components/schemas/Supply_1"
           type: array
       type: object
+      x-implements: EntityList
     SupplyPosition:
       description: Позиция Приемки
       properties:
@@ -75735,7 +77260,6 @@ components:
         id:
           description: ID позиции
           format: uuid
-          readOnly: true
           type: string
         accountId:
           description: ID учетной записи
@@ -75815,6 +77339,7 @@ components:
             `(vat = 0, vatEnabled = true)` — НДС 0%.
           type: boolean
       type: object
+      x-implements: "DocumentPosition, MetaEntity"
       x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
@@ -75843,6 +77368,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     PaymentOut:
       description: Исходящий платеж
       properties:
@@ -75967,7 +77493,6 @@ components:
           type: object
         shared:
           description: Общий доступ
-          readOnly: true
           type: boolean
         state:
           allOf:
@@ -76013,6 +77538,7 @@ components:
           type: array
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -76034,6 +77560,7 @@ components:
             $ref: "#/components/schemas/PaymentOut_1"
           type: array
       type: object
+      x-implements: EntityList
     PaymentIn:
       description: Входящий платеж
       properties:
@@ -76173,7 +77700,6 @@ components:
           description: Сумма Входящего платежа в установленной валюте
           format: double
           minimum: 0
-          readOnly: true
           type: number
         vatSum:
           description: Сумма НДС
@@ -76205,6 +77731,7 @@ components:
           type: array
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -76226,6 +77753,7 @@ components:
             $ref: "#/components/schemas/PaymentIn_1"
           type: array
       type: object
+      x-implements: EntityList
     Prepayment:
       description: Предоплата
       properties:
@@ -76278,6 +77806,7 @@ components:
           description: Дата документа
           type: string
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -76425,6 +77954,7 @@ components:
           description: Код системы налогообложения. Известные значения описаны в TaxSystem
           type: string
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -76446,6 +77976,7 @@ components:
             $ref: "#/components/schemas/PrepaymentReturn_1"
           type: array
       type: object
+      x-implements: EntityList
     PrepaymentReturnPosition:
       description: Позиция Возврата предоплаты
       properties:
@@ -76454,7 +77985,6 @@ components:
         id:
           description: ID позиции
           format: uuid
-          readOnly: true
           type: string
         accountId:
           description: ID учетной записи
@@ -76493,6 +78023,7 @@ components:
           description: Включен ли НДС для позиции
           type: boolean
       type: object
+      x-implements: "DocumentPosition, MetaEntity"
       x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
@@ -76521,6 +78052,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     CashOut:
       description: Расходный ордер
       properties:
@@ -76677,6 +78209,7 @@ components:
           type: array
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -76832,6 +78365,7 @@ components:
           type: array
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -76905,6 +78439,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: MetaEntity
       x-polymorphic-discriminator:
         path: meta.type
         mappings:
@@ -77217,6 +78752,7 @@ components:
           type: string
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -77238,6 +78774,7 @@ components:
             $ref: "#/components/schemas/RetailDrawerCashIn_1"
           type: array
       type: object
+      x-implements: EntityList
     RetailDrawerCashOut:
       description: Выплата денег
       properties:
@@ -77345,6 +78882,7 @@ components:
           type: string
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -77366,6 +78904,7 @@ components:
             $ref: "#/components/schemas/RetailDrawerCashOut_1"
           type: array
       type: object
+      x-implements: EntityList
     CashOutList:
       description: Список Расходных ордеров
       properties:
@@ -77379,6 +78918,7 @@ components:
             $ref: "#/components/schemas/CashOut_1"
           type: array
       type: object
+      x-implements: EntityList
     CashInList:
       description: Список Приходных ордеров
       properties:
@@ -77392,6 +78932,7 @@ components:
             $ref: "#/components/schemas/CashIn_1"
           type: array
       type: object
+      x-implements: EntityList
     ExpenseItem:
       description: Статья расходов
       properties:
@@ -77429,6 +78970,7 @@ components:
           type: string
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -77450,6 +78992,7 @@ components:
             $ref: "#/components/schemas/ExpenseItem_1"
           type: array
       type: object
+      x-implements: EntityList
     ProductionTask:
       description: Производственное задание
       properties:
@@ -77502,6 +79045,7 @@ components:
           description: Дата документа
           type: string
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -77664,6 +79208,7 @@ components:
           type: array
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -77686,6 +79231,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     MovePosition:
       description: Позиция Перемещения
       properties:
@@ -77694,7 +79240,6 @@ components:
         id:
           description: ID позиции
           format: uuid
-          readOnly: true
           type: string
         accountId:
           description: ID учетной записи
@@ -77750,6 +79295,7 @@ components:
             type: string
           type: array
       type: object
+      x-implements: "DocumentPosition, MetaEntity"
       x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
@@ -77778,6 +79324,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     ProcessingPlanFolder:
       description: Группа техкарт
       properties:
@@ -77842,6 +79389,7 @@ components:
           type: object
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -77863,6 +79411,7 @@ components:
             $ref: "#/components/schemas/ProcessingPlanFolder_1"
           type: array
       type: object
+      x-implements: EntityList
     Processing:
       description: Техоперация
       properties:
@@ -78000,6 +79549,7 @@ components:
           type: number
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -78021,6 +79571,7 @@ components:
             $ref: "#/components/schemas/Processing_1"
           type: array
       type: object
+      x-implements: EntityList
     ProcessingMaterial:
       description: Материал техоперации
       properties:
@@ -78051,6 +79602,7 @@ components:
             type: string
           type: array
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -78076,6 +79628,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     ProcessingProduct:
       description: Продукт техоперации
       properties:
@@ -78106,6 +79659,7 @@ components:
             type: string
           type: array
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -78131,6 +79685,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     ProcessingOrder:
       description: Заказ на производство
       properties:
@@ -78252,6 +79807,7 @@ components:
           type: array
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -78268,7 +79824,6 @@ components:
         id:
           description: ID позиции
           format: uuid
-          readOnly: true
           type: string
         accountId:
           description: ID учетной записи
@@ -78297,6 +79852,7 @@ components:
           type: object
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: "DocumentPosition, MetaEntity"
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -78322,6 +79878,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     ProcessingOrderList:
       description: Список Заказов на производство
       properties:
@@ -78335,6 +79892,7 @@ components:
             $ref: "#/components/schemas/ProcessingOrder_1"
           type: array
       type: object
+      x-implements: EntityList
     Demand:
       description: Отгрузка
       properties:
@@ -78583,6 +80141,7 @@ components:
           type: string
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -78604,6 +80163,7 @@ components:
             $ref: "#/components/schemas/Demand_1"
           type: array
       type: object
+      x-implements: EntityList
     DemandPosition:
       description: Позиция Отгрузки
       properties:
@@ -78612,7 +80172,6 @@ components:
         id:
           description: ID позиции
           format: uuid
-          readOnly: true
           type: string
         accountId:
           description: ID учетной записи
@@ -78700,6 +80259,7 @@ components:
             `(vat = 0, vatEnabled = true)` — НДС 0%.
           type: boolean
       type: object
+      x-implements: "DocumentPosition, MetaEntity"
       x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
@@ -78728,6 +80288,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     DemandPositionTrackingCode1162:
       description: Код маркировки в формате тега 1162 в позиции Отгрузки
       properties:
@@ -78984,6 +80545,7 @@ components:
           type: object
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -79048,6 +80610,7 @@ components:
             $ref: "#/components/schemas/RetailDemand_1"
           type: array
       type: object
+      x-implements: EntityList
     RetailDemandPosition:
       description: Позиция Розничной продажи
       properties:
@@ -79056,7 +80619,6 @@ components:
         id:
           description: ID позиции
           format: uuid
-          readOnly: true
           type: string
         accountId:
           description: ID учетной записи
@@ -79117,6 +80679,7 @@ components:
           description: Включен ли НДС для позиции
           type: boolean
       type: object
+      x-implements: "DocumentPosition, MetaEntity"
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -79144,6 +80707,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     RetailSalesReturn:
       description: Розничный возврат
       properties:
@@ -79305,6 +80869,7 @@ components:
           readOnly: true
           type: number
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -79326,6 +80891,7 @@ components:
             $ref: "#/components/schemas/RetailSalesReturn_1"
           type: array
       type: object
+      x-implements: EntityList
     RetailSalesReturnPosition:
       description: Позиция Розничного возврата
       properties:
@@ -79334,7 +80900,6 @@ components:
         id:
           description: ID позиции
           format: uuid
-          readOnly: true
           type: string
         accountId:
           description: ID учетной записи
@@ -79390,6 +80955,7 @@ components:
             \ 0%."
           type: boolean
       type: object
+      x-implements: "DocumentPosition, MetaEntity"
       x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
@@ -79418,6 +80984,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     Enter:
       description: Оприходование
       properties:
@@ -79492,7 +81059,6 @@ components:
           allOf:
           - $ref: "#/components/schemas/EnterPositionList_1"
           description: Метаданные позиций Оприходования
-          nullable: true
           type: object
         printed:
           description: Напечатан ли документ
@@ -79536,6 +81102,7 @@ components:
           type: string
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -79557,6 +81124,7 @@ components:
             $ref: "#/components/schemas/Enter_1"
           type: array
       type: object
+      x-implements: EntityList
     EnterPosition:
       description: Позиция Оприходования
       properties:
@@ -79565,7 +81133,6 @@ components:
         id:
           description: ID позиции
           format: uuid
-          readOnly: true
           type: string
         accountId:
           description: ID учетной записи
@@ -79625,6 +81192,7 @@ components:
             type: string
           type: array
       type: object
+      x-implements: "DocumentPosition, MetaEntity"
       x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
@@ -79651,6 +81219,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     CommissionReportIn:
       description: Полученный отчет комиссионера (commissionreportin)
       properties:
@@ -79782,9 +81351,10 @@ components:
           $ref: "#/components/schemas/CommissionReportInReturnedPositionList"
         rewardPercent:
           description: Процент вознаграждения
+          format: double
           maximum: 100
           minimum: 0
-          type: integer
+          type: number
         rewardType:
           description: Тип Вознаграждения. Известные значения описаны в RewardType
           maxLength: 255
@@ -79834,6 +81404,7 @@ components:
           type: array
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -79855,6 +81426,7 @@ components:
             $ref: "#/components/schemas/CommissionReportIn_1"
           type: array
       type: object
+      x-implements: EntityList
     CommissionReportInPosition:
       description: Позиция реализовано комиссионером Полученного отчета комиссионера
       properties:
@@ -79863,7 +81435,6 @@ components:
         id:
           description: ID позиции
           format: uuid
-          readOnly: true
           type: string
         accountId:
           description: ID учетной записи
@@ -79904,6 +81475,7 @@ components:
           nullable: true
           type: object
       type: object
+      x-implements: "DocumentPosition, MetaEntity"
       x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
@@ -79930,6 +81502,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     CommissionReportInReturnedPosition:
       description: Позиция возврата на склад комиссионера Полученного отчета комиссионера
       properties:
@@ -79972,6 +81545,7 @@ components:
             едставляет позиция"
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -79999,6 +81573,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     CommissionReportOut:
       description: Выданный отчет комиссионера (commissionreportout)
       properties:
@@ -80126,9 +81701,10 @@ components:
           $ref: "#/components/schemas/CurrencyRate"
         rewardPercent:
           description: Процент вознаграждения
+          format: double
           maximum: 100
           minimum: 0
-          type: integer
+          type: number
         rewardType:
           description: Тип Вознаграждения. Известные значения описаны в RewardType
           maxLength: 255
@@ -80178,6 +81754,7 @@ components:
           type: array
       type: object
       x-polymorphic-parent: EntityWithMeta
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -80199,6 +81776,7 @@ components:
             $ref: "#/components/schemas/CommissionReportOut_1"
           type: array
       type: object
+      x-implements: EntityList
     CommissionReportOutPosition:
       description: Позиция Выданного отчета комиссионера
       properties:
@@ -80207,7 +81785,6 @@ components:
         id:
           description: ID позиции
           format: uuid
-          readOnly: true
           type: string
         accountId:
           description: ID учетной записи
@@ -80247,6 +81824,7 @@ components:
           nullable: true
           type: object
       type: object
+      x-implements: "DocumentPosition, MetaEntity"
       x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
@@ -80273,6 +81851,7 @@ components:
           nullable: true
           type: array
       type: object
+      x-implements: EntityList
     CompanySettings:
       description: Настройки компании (companysettings)
       properties:
@@ -80361,6 +81940,658 @@ components:
           description: Правила печати документов. Известные значения описаны в PrintFormat
           type: string
       type: object
+    NotificationAbstract:
+      description: Абстрактное уведомление; конкретный тип определяется по meta.type
+      properties:
+        meta:
+          $ref: "#/components/schemas/Meta"
+        id:
+          description: ID уведомления
+          format: uuid
+          readOnly: true
+          type: string
+        accountId:
+          description: ID учетной записи
+          format: uuid
+          readOnly: true
+          type: string
+        created:
+          description: Дата и время формирования уведомления
+          readOnly: true
+          type: string
+        read:
+          description: "Признак того, было ли уведомление прочитано"
+          type: boolean
+        title:
+          description: Краткий текст уведомления
+          maxLength: 255
+          readOnly: true
+          type: string
+        description:
+          description: Описание уведомления
+          maxLength: 4096
+          readOnly: true
+          type: string
+      type: object
+      x-implements: MetaEntity
+      x-polymorphic-discriminator:
+        path: meta.type
+        mappings:
+        - type: AppAsyncButton
+          componentName: AppAsyncButton
+        - type: AppChangePermissions
+          componentName: AppChangePermissions
+        - type: FacebookTokenExpirationNotification
+          componentName: FacebookTokenExpirationNotification
+        - type: NotificationExportCompleted
+          componentName: NotificationExportCompleted
+        - type: NotificationGoodCountTooLow
+          componentName: NotificationGoodCountTooLow
+        - type: NotificationImportCompleted
+          componentName: NotificationImportCompleted
+        - type: NotificationInvoiceOutOverdue
+          componentName: NotificationInvoiceOutOverdue
+        - type: NotificationOrderNew
+          componentName: NotificationOrderNew
+        - type: NotificationOrderOverdue
+          componentName: NotificationOrderOverdue
+        - type: NotificationRetailShiftClosed
+          componentName: NotificationRetailShiftClosed
+        - type: NotificationRetailShiftOpened
+          componentName: NotificationRetailShiftOpened
+        - type: NotificationScript
+          componentName: NotificationScript
+        - type: NotificationSubscribeExpired
+          componentName: NotificationSubscribeExpired
+        - type: NotificationSubscribeTermsExpired
+          componentName: NotificationSubscribeTermsExpired
+        - type: NotificationTaskAssigned
+          componentName: NotificationTaskAssigned
+        - type: NotificationTaskChanged
+          componentName: NotificationTaskChanged
+        - type: NotificationTaskCommentChanged
+          componentName: NotificationTaskCommentChanged
+        - type: NotificationTaskCommentDeleted
+          componentName: NotificationTaskCommentDeleted
+        - type: NotificationTaskCompleted
+          componentName: NotificationTaskCompleted
+        - type: NotificationTaskDeleted
+          componentName: NotificationTaskDeleted
+        - type: NotificationTaskNewComment
+          componentName: NotificationTaskNewComment
+        - type: NotificationTaskOverdue
+          componentName: NotificationTaskOverdue
+        - type: NotificationTaskReopened
+          componentName: NotificationTaskReopened
+        - type: NotificationTaskUnassigned
+          componentName: NotificationTaskUnassigned
+        - type: NotificationBonusMoney
+          componentName: NotificationBonusMoney
+        - type: NewMentionInEvent
+          componentName: NewMentionInEvent
+        - type: NewMentionInTaskNote
+          componentName: NewMentionInTaskNote
+        - type: NewEventInEventFeed
+          componentName: NewEventInEventFeed
+        - type: RetireOrderByDemandNotificationCompleted
+          componentName: RetireOrderByDemandNotificationCompleted
+        - type: SalesManagerChatMessage
+          componentName: SalesManagerChatMessage
+    NotificationList:
+      description: Лента уведомлений
+      properties:
+        context:
+          $ref: "#/components/schemas/Context"
+        meta:
+          $ref: "#/components/schemas/MetaList"
+        rows:
+          description: "Массив уведомлений разных типов, определяемых по meta.type"
+          items:
+            $ref: "#/components/schemas/NotificationAbstract_1"
+          type: array
+      type: object
+      x-implements: EntityList
+    NotificationNamedEntity:
+      description: Краткое представление связанного с уведомлением объекта
+      properties:
+        meta:
+          $ref: "#/components/schemas/Meta"
+        id:
+          description: ID объекта
+          format: uuid
+          type: string
+        name:
+          description: Наименование объекта
+          maxLength: 255
+          type: string
+      type: object
+    NotificationTask:
+      allOf:
+      - $ref: "#/components/schemas/NotificationNamedEntity"
+      - properties:
+          deadline:
+            description: Планируемая дата завершения задачи
+            type: string
+        type: object
+      description: Краткое представление задачи в уведомлении
+      type: object
+    NotificationDeletedTask:
+      description: Краткое представление удаленной задачи
+      properties:
+        name:
+          description: Наименование задачи
+          maxLength: 255
+          type: string
+      type: object
+    NotificationInvoice:
+      allOf:
+      - $ref: "#/components/schemas/NotificationNamedEntity"
+      - properties:
+          paymentPlannedMoment:
+            description: Запланированная дата оплаты
+            type: string
+          sum:
+            description: Сумма счета
+            type: integer
+          customerName:
+            description: Имя покупателя
+            maxLength: 255
+            type: string
+        type: object
+      description: Краткое представление счета покупателю в уведомлении
+      type: object
+    NotificationOrder:
+      allOf:
+      - $ref: "#/components/schemas/NotificationNamedEntity"
+      - properties:
+          agentName:
+            description: Имя контрагента
+            maxLength: 255
+            type: string
+          deliveryPlannedMoment:
+            description: Планируемое время отгрузки
+            type: string
+          sum:
+            description: Сумма заказа
+            type: integer
+        type: object
+      description: Краткое представление заказа покупателя в уведомлении
+      type: object
+    NotificationRetailShift:
+      allOf:
+      - $ref: "#/components/schemas/NotificationNamedEntity"
+      - properties:
+          open:
+            description: Дата открытия смены
+            type: string
+          close:
+            description: Дата закрытия смены
+            type: string
+          proceed:
+            description: Выручка смены
+            type: integer
+        type: object
+      description: Краткое представление розничной смены в уведомлении
+      type: object
+    NotificationDiffValue:
+      description: Изменение поля связанного с уведомлением объекта
+      properties:
+        oldValue:
+          description: Значение поля до изменения
+          maxLength: 255
+          nullable: true
+          readOnly: true
+          type: string
+        newValue:
+          description: Значение поля после изменения
+          maxLength: 255
+          nullable: true
+          readOnly: true
+          type: string
+      type: object
+    NotificationTaskDiff:
+      description: Измененные поля задачи
+      properties:
+        description:
+          $ref: "#/components/schemas/NotificationDiffValue"
+        deadline:
+          $ref: "#/components/schemas/NotificationDiffValue"
+        agentLink:
+          $ref: "#/components/schemas/NotificationDiffValue"
+        documentLink:
+          $ref: "#/components/schemas/NotificationDiffValue"
+        assignee:
+          $ref: "#/components/schemas/NotificationDiffValue"
+      type: object
+    NotificationTaskCommentDiff:
+      description: Изменение текста комментария к задаче
+      properties:
+        noteContent:
+          $ref: "#/components/schemas/NotificationDiffValue"
+      type: object
+    NotificationEventType:
+      description: Известные значения типа события сценария
+      enum:
+      - ADD
+      - MODIFY
+      - CHANGE_STATUS
+      type: string
+    NotificationTaskState:
+      description: Известные значения статуса завершения фоновой операции
+      enum:
+      - completed
+      - interrupted
+      - interrupted_by_user
+      - interrupted_by_timeout
+      - interrupted_by_system
+      type: string
+    NotificationExportType:
+      description: Известные значения типа экспорта
+      enum:
+      - export_csv_good
+      - export_csv_agent
+      - export_ms_xml
+      - export_1c_v2_xml
+      - export_unisender
+      - export_1c_v3_xml
+      - export_subscribepro
+      - export_1c_client_bank
+      - export_alfa_payments
+      - export_tochka_payments
+      - export_modulbank_payments
+      - export_1c_enterprise_data
+      - export_tinkoff_payments
+      - export_good
+      - export_custom_entity
+      type: string
+    NotificationImportType:
+      description: Известные значения типа импорта
+      enum:
+      - importer_csv
+      - importer_yml
+      - importer_csv_agent
+      - importer_csv_customerorder
+      - importer_csv_purchaseorder
+      - importer_csv_pricelist
+      - importer_ms_xml
+      - importer_1c_client_bank
+      - import_alfa_payments
+      - import_alfa_payments_request
+      - import_alfa_payments_save
+      - import_tochka_payments
+      - import_modulbank_payments
+      - import_tochka_payments_save
+      - import_modulbank_payments_save
+      - import_tinkoff_payments
+      - import_tinkoff_payments_save
+      - importer_good
+      - importer_good_in_doc
+      - import_edo_supply
+      - import_union_company
+      - import_sberbank_payments_request
+      - import_sberbank_payments_save
+      - import_update_vat_to_20_percents
+      - import_custom_entity
+      type: string
+    AppAsyncButton:
+      allOf:
+      - $ref: "#/components/schemas/NotificationAbstract"
+      description: Уведомление об окончании обработки нажатия асинхронной кастомной
+        кнопки
+      x-polymorphic-parent: NotificationAbstract
+    AppChangePermissions:
+      allOf:
+      - $ref: "#/components/schemas/NotificationAbstract"
+      description: Уведомление об устаревших правах доступа в решении
+      x-polymorphic-parent: NotificationAbstract
+    FacebookTokenExpirationNotification:
+      description: Уведомление об окончании доступа к аккаунту Facebook
+      properties:
+        connectorName:
+          description: Название коннектора
+          maxLength: 4096
+          type: string
+        daysLeftToExpiration:
+          description: Количество дней до окончания доступа
+          type: integer
+      type: object
+      x-polymorphic-parent: NotificationAbstract
+    NotificationExportCompleted:
+      description: Уведомление о завершении экспорта
+      properties:
+        createdDocumentName:
+          description: Имя экспортированного документа
+          maxLength: 255
+          type: string
+        errorMessage:
+          description: Сообщение об ошибке
+          maxLength: 255
+          type: string
+        message:
+          description: Сообщение о завершении экспорта
+          maxLength: 255
+          type: string
+        taskState:
+          description: Статус завершения. Известные значения описаны в NotificationTaskState
+          type: string
+        taskType:
+          description: Тип экспорта. Известные значения описаны в NotificationExportType
+          type: string
+      type: object
+      x-polymorphic-parent: NotificationAbstract
+    NotificationGoodCountTooLow:
+      description: Уведомление о снижении остатка товара ниже неснижаемого
+      properties:
+        actualBalance:
+          description: Остаток товара
+          format: double
+          type: number
+        good:
+          $ref: "#/components/schemas/NotificationNamedEntity"
+        minimumBalance:
+          description: Неснижаемый остаток товара
+          format: double
+          type: number
+      type: object
+      x-polymorphic-parent: NotificationAbstract
+    NotificationImportCompleted:
+      description: Уведомление о завершении импорта
+      properties:
+        createdDocumentName:
+          description: Имя созданного документа
+          maxLength: 255
+          type: string
+        errorMessage:
+          description: Сообщение об ошибке
+          maxLength: 255
+          type: string
+        message:
+          description: Сообщение о завершении импорта
+          maxLength: 255
+          type: string
+        taskState:
+          description: Статус завершения. Известные значения описаны в NotificationTaskState
+          type: string
+        taskType:
+          description: Тип импорта. Известные значения описаны в NotificationImportType
+          type: string
+      type: object
+      x-polymorphic-parent: NotificationAbstract
+    NotificationInvoiceOutOverdue:
+      description: Уведомление о просроченном счете покупателя
+      properties:
+        agentName:
+          description: Имя контрагента
+          maxLength: 255
+          type: string
+        invoice:
+          $ref: "#/components/schemas/NotificationInvoice"
+        paymentPlannedMoment:
+          description: Запланированная дата оплаты
+          type: string
+        sum:
+          description: Сумма счета
+          type: integer
+      type: object
+      x-polymorphic-parent: NotificationAbstract
+    NotificationOrderNew:
+      description: Уведомление о новом заказе покупателя
+      properties:
+        agentName:
+          description: Имя контрагента
+          maxLength: 255
+          type: string
+        deliveryPlannedMoment:
+          description: Планируемое время отгрузки
+          type: string
+        order:
+          $ref: "#/components/schemas/NotificationOrder"
+        sum:
+          description: Сумма заказа
+          type: integer
+      type: object
+      x-polymorphic-parent: NotificationAbstract
+    NotificationOrderOverdue:
+      description: Уведомление о просроченном заказе покупателя
+      properties:
+        agentName:
+          description: Имя контрагента
+          maxLength: 255
+          type: string
+        deliveryPlannedMoment:
+          description: Планируемое время отгрузки
+          type: string
+        order:
+          $ref: "#/components/schemas/NotificationOrder"
+        sum:
+          description: Сумма заказа
+          type: integer
+      type: object
+      x-polymorphic-parent: NotificationAbstract
+    NotificationRetailShiftClosed:
+      description: Уведомление о закрытии розничной смены
+      properties:
+        user:
+          $ref: "#/components/schemas/NotificationNamedEntity"
+        retailStore:
+          $ref: "#/components/schemas/NotificationNamedEntity"
+        retailShift:
+          $ref: "#/components/schemas/NotificationRetailShift"
+        returns:
+          description: Количество возвратов
+          type: integer
+        sales:
+          description: Количество продаж
+          type: integer
+      type: object
+      x-polymorphic-parent: NotificationAbstract
+    NotificationRetailShiftOpened:
+      description: Уведомление об открытии розничной смены
+      properties:
+        user:
+          $ref: "#/components/schemas/NotificationNamedEntity"
+        retailStore:
+          $ref: "#/components/schemas/NotificationNamedEntity"
+        retailShift:
+          $ref: "#/components/schemas/NotificationRetailShift"
+      type: object
+      x-polymorphic-parent: NotificationAbstract
+    NotificationScript:
+      description: Уведомление из сценария
+      properties:
+        eventType:
+          description: Тип события сценария. Известные значения описаны в NotificationEventType
+          readOnly: true
+          type: string
+        entity:
+          allOf:
+          - $ref: "#/components/schemas/NotificationNamedEntity"
+          description: "Объект, на который сработал сценарий"
+          readOnly: true
+      type: object
+      x-polymorphic-parent: NotificationAbstract
+    NotificationSubscribeExpired:
+      allOf:
+      - $ref: "#/components/schemas/NotificationAbstract"
+      description: Уведомление об окончании подписки
+      x-polymorphic-parent: NotificationAbstract
+    NotificationSubscribeTermsExpired:
+      description: Уведомление об истечении условий подписки
+      properties:
+        daysLeft:
+          description: Количество оставшихся дней подписки
+          type: integer
+      type: object
+      x-polymorphic-parent: NotificationAbstract
+    NotificationTaskAssigned:
+      description: Уведомление о назначении задачи
+      properties:
+        performedBy:
+          $ref: "#/components/schemas/NotificationNamedEntity"
+        task:
+          $ref: "#/components/schemas/NotificationTask"
+      type: object
+      x-polymorphic-parent: NotificationAbstract
+    NotificationTaskChanged:
+      description: Уведомление об изменении задачи
+      properties:
+        diff:
+          $ref: "#/components/schemas/NotificationTaskDiff"
+        performedBy:
+          $ref: "#/components/schemas/NotificationNamedEntity"
+        task:
+          $ref: "#/components/schemas/NotificationTask"
+      type: object
+      x-polymorphic-parent: NotificationAbstract
+    NotificationTaskCommentChanged:
+      description: Уведомление об изменении комментария к задаче
+      properties:
+        diff:
+          $ref: "#/components/schemas/NotificationTaskCommentDiff"
+        noteContent:
+          description: Содержимое комментария
+          maxLength: 4096
+          type: string
+        performedBy:
+          $ref: "#/components/schemas/NotificationNamedEntity"
+        task:
+          $ref: "#/components/schemas/NotificationTask"
+      type: object
+      x-polymorphic-parent: NotificationAbstract
+    NotificationTaskCommentDeleted:
+      description: Уведомление об удалении комментария к задаче
+      properties:
+        noteContent:
+          description: Содержимое удаленного комментария
+          maxLength: 4096
+          type: string
+        performedBy:
+          $ref: "#/components/schemas/NotificationNamedEntity"
+        task:
+          $ref: "#/components/schemas/NotificationTask"
+      type: object
+      x-polymorphic-parent: NotificationAbstract
+    NotificationTaskCompleted:
+      description: Уведомление о выполнении задачи
+      properties:
+        performedBy:
+          $ref: "#/components/schemas/NotificationNamedEntity"
+        task:
+          $ref: "#/components/schemas/NotificationTask"
+      type: object
+      x-polymorphic-parent: NotificationAbstract
+    NotificationTaskDeleted:
+      description: Уведомление об удалении задачи
+      properties:
+        performedBy:
+          $ref: "#/components/schemas/NotificationNamedEntity"
+        task:
+          $ref: "#/components/schemas/NotificationDeletedTask"
+      type: object
+      x-polymorphic-parent: NotificationAbstract
+    NotificationTaskNewComment:
+      description: Уведомление о новом комментарии к задаче
+      properties:
+        noteContent:
+          description: Содержимое комментария
+          maxLength: 4096
+          type: string
+        performedBy:
+          $ref: "#/components/schemas/NotificationNamedEntity"
+        task:
+          $ref: "#/components/schemas/NotificationTask"
+      type: object
+      x-polymorphic-parent: NotificationAbstract
+    NotificationTaskOverdue:
+      description: Уведомление о просроченной задаче
+      properties:
+        task:
+          $ref: "#/components/schemas/NotificationTask"
+      type: object
+      x-polymorphic-parent: NotificationAbstract
+    NotificationTaskReopened:
+      description: Уведомление о повторном открытии задачи
+      properties:
+        performedBy:
+          $ref: "#/components/schemas/NotificationNamedEntity"
+        task:
+          $ref: "#/components/schemas/NotificationTask"
+      type: object
+      x-polymorphic-parent: NotificationAbstract
+    NotificationTaskUnassigned:
+      description: Уведомление о снятии задачи
+      properties:
+        performedBy:
+          $ref: "#/components/schemas/NotificationNamedEntity"
+        task:
+          $ref: "#/components/schemas/NotificationTask"
+      type: object
+      x-polymorphic-parent: NotificationAbstract
+    NotificationBonusMoney:
+      allOf:
+      - $ref: "#/components/schemas/NotificationAbstract"
+      description: Уведомление о зачислении бонусных денег
+      x-polymorphic-parent: NotificationAbstract
+    NewMentionInEvent:
+      description: Уведомление о новом упоминании в ленте событий
+      properties:
+        operation:
+          allOf:
+          - $ref: "#/components/schemas/NotificationNamedEntity"
+          description: "Объект, в ленте которого добавлено событие с упоминанием"
+          readOnly: true
+      type: object
+      x-polymorphic-parent: NotificationAbstract
+    NewMentionInTaskNote:
+      description: Уведомление о новом упоминании в комментарии задачи
+      properties:
+        task:
+          allOf:
+          - $ref: "#/components/schemas/NotificationNamedEntity"
+          description: "Задача с комментарием, содержащим упоминание"
+          readOnly: true
+      type: object
+      x-polymorphic-parent: NotificationAbstract
+    NewEventInEventFeed:
+      description: Уведомление о новом событии в отслеживаемом объекте
+      properties:
+        entity:
+          allOf:
+          - $ref: "#/components/schemas/NotificationNamedEntity"
+          description: "Объект, в ленте которого добавлено событие"
+          readOnly: true
+      type: object
+      x-polymorphic-parent: NotificationAbstract
+    RetireOrderByDemandNotificationCompleted:
+      description: Уведомление о завершении создания выводов из оборота по отгрузкам
+      properties:
+        createdDocsCount:
+          description: Количество созданных документов
+          type: integer
+        errorMessage:
+          description: Сообщение об ошибке
+          maxLength: 255
+          type: string
+        message:
+          description: Сообщение о завершении операции
+          maxLength: 255
+          type: string
+        taskState:
+          description: Статус завершения. Известные значения описаны в NotificationTaskState
+          type: string
+        startMoment:
+          description: Дата и время начала создания документов
+          type: string
+        endMoment:
+          description: Дата и время окончания создания документов
+          type: string
+      type: object
+      x-polymorphic-parent: NotificationAbstract
+    SalesManagerChatMessage:
+      allOf:
+      - $ref: "#/components/schemas/NotificationAbstract"
+      description: Уведомление о новом сообщении от менеджера отдела продаж
+      x-polymorphic-parent: NotificationAbstract
     NotificationSettings:
       description: Настройки уведомлений текущего пользователя
       properties:
@@ -80633,6 +82864,7 @@ components:
             $ref: "#/components/schemas/DiscountAbstract"
           type: array
       type: object
+      x-implements: EntityList
     PriorityOfdSend:
       description: Известные значения приоритетного способа отправки чека покупателю
       enum:
@@ -80666,7 +82898,7 @@ components:
           type: boolean
         discount:
           description: Процент скидки (используется при usePriceType=false)
-          format: float
+          format: double
           nullable: true
           type: number
         specialPrice:
@@ -80710,6 +82942,7 @@ components:
           maxLength: 255
           type: string
       type: object
+      x-implements: MetaEntity
       x-entity-static-builder:
         methodParams:
         - id
@@ -80794,6 +83027,7 @@ components:
         group:
           $ref: "#/components/schemas/Group"
       type: object
+      x-implements: "Named, MetaEntity"
       x-entity-static-builder:
         methodParams:
         - metadataId
@@ -80817,6 +83051,7 @@ components:
             $ref: "#/components/schemas/CustomEntityElement_1"
           type: array
       type: object
+      x-implements: EntityList
     StockAll:
       description: |
         Строка Расширенного отчета об остатках.
@@ -81117,12 +83352,6 @@ components:
             $ref: "#/components/schemas/ByOperationsInTransit"
           type: array
       type: object
-    errorOrArray:
-      oneOf:
-      - $ref: "#/components/schemas/Error"
-      - items:
-          $ref: "#/components/schemas/Error"
-        type: array
     Currency_1:
       $ref: "#/components/schemas/Currency"
     ProductFolder_1:
@@ -81149,6 +83378,42 @@ components:
       $ref: "#/components/schemas/Group"
     Organization_1:
       $ref: "#/components/schemas/Organization"
+    Errors_1:
+      $ref: "#/components/schemas/Errors"
+    error:
+      properties:
+        error:
+          description: Заголовок ошибки
+          type: string
+        parameter:
+          description: "Параметр, на котором произошла ошибка"
+          type: string
+        code:
+          description: Код ошибки
+          type: integer
+        error_message:
+          description: "Сообщение, прилагаемое к ошибке"
+          type: string
+        moreInfo:
+          description: Ссылка на документацию с описанием ошибки
+          format: uri-reference
+          type: string
+        line:
+          description: "Строка JSON, на которой произошла ошибка"
+          type: integer
+        column:
+          description: "Координата элемента в строке, на котором произошла ошибка"
+          type: integer
+        dependencies:
+          description: Список метаданных зависимых сущностей
+          items:
+            $ref: "#/components/schemas/Meta"
+          type: array
+        meta:
+          $ref: "#/components/schemas/Meta"
+      required:
+      - error
+      type: object
     RetailStore_1:
       $ref: "#/components/schemas/RetailStore"
     Counterparty_1:
@@ -81173,6 +83438,8 @@ components:
       $ref: "#/components/schemas/EmployeeRole"
     CustomRole_1:
       $ref: "#/components/schemas/CustomRole"
+    EmbeddedTemplate_1:
+      $ref: "#/components/schemas/EmbeddedTemplate"
     Contract_1:
       $ref: "#/components/schemas/Contract"
     Demand_1:
@@ -81299,8 +83566,6 @@ components:
       $ref: "#/components/schemas/InternalOrder"
     TaskNote_1:
       $ref: "#/components/schemas/TaskNote"
-    DocumentMetadata_1:
-      $ref: "#/components/schemas/DocumentMetadata"
     Task_1:
       $ref: "#/components/schemas/Task"
     CustomerOrderPositionList_1:
@@ -81408,6 +83673,13 @@ components:
       $ref: "#/components/schemas/CommissionReportOut"
     CustomEntityMetadata_1:
       $ref: "#/components/schemas/CustomEntityMetadata"
+    NotificationAbstract_1:
+      $ref: "#/components/schemas/NotificationAbstract"
+    notificationSalesManagerChatMessage:
+      allOf:
+      - $ref: "#/components/schemas/NotificationAbstract"
+      description: Уведомление о новом сообщении от менеджера отдела продаж
+      x-polymorphic-parent: NotificationAbstract
     CustomEntityElement_1:
       $ref: "#/components/schemas/CustomEntityElement"
     getProductImages_200_response:
@@ -81442,7 +83714,7 @@ components:
     createProcessingProcessPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/ProcessingProcessPosition"
-      - $ref: "#/components/schemas/Error"
+      - $ref: "#/components/schemas/Errors"
     activateEmployee_request:
       properties:
         login:
@@ -81529,39 +83801,39 @@ components:
     createInternalOrderPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/InternalOrderPosition"
-      - $ref: "#/components/schemas/Error"
+      - $ref: "#/components/schemas/Errors"
     createProcessingOrderPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/ProcessingOrderPosition"
-      - $ref: "#/components/schemas/Error"
+      - $ref: "#/components/schemas/Errors"
     createCustomerOrderPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/CustomerOrderPosition"
-      - $ref: "#/components/schemas/Error"
+      - $ref: "#/components/schemas/Errors"
     deleteInvoiceOutBatch_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/DeleteInfo"
-      - $ref: "#/components/schemas/Error"
+      - $ref: "#/components/schemas/Errors"
     createInvoiceOutBatch_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/InvoiceOut"
-      - $ref: "#/components/schemas/Error"
+      - $ref: "#/components/schemas/Errors"
     createInvoiceOutPositionsBatch_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/InvoiceOutPosition"
-      - $ref: "#/components/schemas/Error"
+      - $ref: "#/components/schemas/Errors"
     createInvoiceInBatch_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/InvoiceIn"
-      - $ref: "#/components/schemas/Error"
+      - $ref: "#/components/schemas/Errors"
     createInvoiceInPositionsBatch_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/InvoiceInPosition"
-      - $ref: "#/components/schemas/Error"
+      - $ref: "#/components/schemas/Errors"
     createDemandPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/DemandPosition"
-      - $ref: "#/components/schemas/Error"
+      - $ref: "#/components/schemas/Errors"
     createRetailDemandMetadataState_request:
       oneOf:
       - $ref: "#/components/schemas/State"
@@ -81571,43 +83843,43 @@ components:
     createRetailDemandPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/RetailDemandPosition"
-      - $ref: "#/components/schemas/Error"
+      - $ref: "#/components/schemas/Errors"
     createRetailSalesReturnsBatch_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/RetailSalesReturn"
-      - $ref: "#/components/schemas/Error"
+      - $ref: "#/components/schemas/Errors"
     createRetailSalesReturnPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/RetailSalesReturnPosition"
-      - $ref: "#/components/schemas/Error"
+      - $ref: "#/components/schemas/Errors"
     createEnterPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/EnterPosition"
-      - $ref: "#/components/schemas/Error"
+      - $ref: "#/components/schemas/Errors"
     createSalesReturnPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/SalesReturnPosition"
-      - $ref: "#/components/schemas/Error"
+      - $ref: "#/components/schemas/Errors"
     createLossPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/LossPosition"
-      - $ref: "#/components/schemas/Error"
+      - $ref: "#/components/schemas/Errors"
     createInventoryPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/InventoryPosition"
-      - $ref: "#/components/schemas/Error"
+      - $ref: "#/components/schemas/Errors"
     createPurchaseReturnPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/PurchaseReturnPosition"
-      - $ref: "#/components/schemas/Error"
+      - $ref: "#/components/schemas/Errors"
     createPurchaseOrderPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/PurchaseOrderPosition"
-      - $ref: "#/components/schemas/Error"
+      - $ref: "#/components/schemas/Errors"
     createCommissionReportInPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/CommissionReportInPosition"
-      - $ref: "#/components/schemas/Error"
+      - $ref: "#/components/schemas/Errors"
     createCommissionReportInReturnedPositions_request:
       maxItems: 1000
       minItems: 1
@@ -81619,28 +83891,28 @@ components:
     createCommissionReportInReturnedPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/CommissionReportInReturnedPosition"
-      - $ref: "#/components/schemas/Error"
+      - $ref: "#/components/schemas/Errors"
     createFactureInsBatch_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/FactureIn"
-      - $ref: "#/components/schemas/Error"
+      - $ref: "#/components/schemas/Errors"
     createFactureOutsBatch_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/FactureOut"
-      - $ref: "#/components/schemas/Error"
+      - $ref: "#/components/schemas/Errors"
     createRetailShiftBatch_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/RetailShift"
-      - $ref: "#/components/schemas/Error"
+      - $ref: "#/components/schemas/Errors"
     AccumulationDiscount_levels_inner:
       properties:
         amount:
           description: Сумма накоплений в копейках
-          format: int32
-          type: integer
+          format: double
+          type: number
         discount:
           description: "Процент скидки, соответствующий данной сумме"
-          format: float
+          format: double
           type: number
       type: object
     AssortmentSettings_barcodeRules:
@@ -81673,40 +83945,6 @@ components:
       properties:
         meta:
           $ref: "#/components/schemas/Meta"
-      type: object
-    Error_errors_inner:
-      properties:
-        error:
-          description: Заголовок ошибки
-          type: string
-        parameter:
-          description: "Параметр, на котором произошла ошибка"
-          type: string
-        code:
-          description: Код ошибки
-          type: integer
-        error_message:
-          description: "Сообщение, прилагаемое к ошибке"
-          type: string
-        moreInfo:
-          description: Ссылка на документацию с описанием ошибки
-          format: uri-reference
-          type: string
-        line:
-          description: "Строка JSON, на которой произошла ошибка"
-          type: integer
-        column:
-          description: "Координата элемента в строке, на котором произошла ошибка"
-          type: integer
-        dependencies:
-          description: Список метаданных зависимых сущностей
-          items:
-            $ref: "#/components/schemas/Meta"
-          type: array
-        meta:
-          $ref: "#/components/schemas/Meta"
-      required:
-      - error
       type: object
     Counterparty_accounts:
       description: Массив счетов контрагента
@@ -82068,13 +84306,13 @@ components:
           type: integer
         strength:
           description: Крепость
-          format: float
+          format: double
           minimum: 0
           nullable: true
           type: number
         volume:
           description: Объём тары
-          format: float
+          format: double
           minimum: 0
           nullable: true
           type: number
@@ -82376,6 +84614,8 @@ components:
           description: Значение цены
           format: int32
           type: integer
+        meta:
+          $ref: "#/components/schemas/Meta"
         priceType:
           $ref: "#/components/schemas/PriceType"
       type: object

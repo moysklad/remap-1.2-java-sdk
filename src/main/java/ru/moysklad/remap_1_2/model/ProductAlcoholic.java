@@ -26,8 +26,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -42,7 +40,7 @@ import java.util.StringJoiner;
   ProductAlcoholic.JSON_PROPERTY_VOLUME
 })
 @JsonTypeName("Product_alcoholic")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProductAlcoholic {
 
   public static final String JSON_PROPERTY_EXCISE = "excise";
@@ -55,11 +53,11 @@ public class ProductAlcoholic {
 
   public static final String JSON_PROPERTY_STRENGTH = "strength";
   @javax.annotation.Nullable
-  private JsonNullable<Float> strength = JsonNullable.<Float>undefined();
+  private JsonNullable<Double> strength = JsonNullable.<Double>undefined();
 
   public static final String JSON_PROPERTY_VOLUME = "volume";
   @javax.annotation.Nullable
-  private JsonNullable<Float> volume = JsonNullable.<Float>undefined();
+  private JsonNullable<Double> volume = JsonNullable.<Double>undefined();
 
   public ProductAlcoholic() {
   }
@@ -76,8 +74,6 @@ public class ProductAlcoholic {
    * @return excise
    */
   @javax.annotation.Nullable
-
-
   @JsonIgnore
 
   public Boolean getExcise() {
@@ -117,8 +113,6 @@ public class ProductAlcoholic {
    * @return type
    */
   @javax.annotation.Nullable
- @Min(0)
-
   @JsonIgnore
 
   public Integer getType() {
@@ -145,8 +139,8 @@ public class ProductAlcoholic {
   }
 
 
-  public ProductAlcoholic strength(@javax.annotation.Nullable Float strength) {
-    this.strength = JsonNullable.<Float>of(strength);
+  public ProductAlcoholic strength(@javax.annotation.Nullable Double strength) {
+    this.strength = JsonNullable.<Double>of(strength);
     
     return this;
   }
@@ -158,11 +152,9 @@ public class ProductAlcoholic {
    * @return strength
    */
   @javax.annotation.Nullable
- @DecimalMin("0")
-
   @JsonIgnore
 
-  public Float getStrength() {
+  public Double getStrength() {
         return strength.orElse(null);
   }
 
@@ -172,22 +164,22 @@ public class ProductAlcoholic {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<Float> getStrength_JsonNullable() {
+  public JsonNullable<Double> getStrength_JsonNullable() {
     return strength;
   }
   
   @JsonProperty(value = JSON_PROPERTY_STRENGTH, required = false)
-  public void setStrength_JsonNullable(JsonNullable<Float> strength) {
+  public void setStrength_JsonNullable(JsonNullable<Double> strength) {
     this.strength = strength;
   }
 
-  public void setStrength(@javax.annotation.Nullable Float strength) {
-    this.strength = JsonNullable.<Float>of(strength);
+  public void setStrength(@javax.annotation.Nullable Double strength) {
+    this.strength = JsonNullable.<Double>of(strength);
   }
 
 
-  public ProductAlcoholic volume(@javax.annotation.Nullable Float volume) {
-    this.volume = JsonNullable.<Float>of(volume);
+  public ProductAlcoholic volume(@javax.annotation.Nullable Double volume) {
+    this.volume = JsonNullable.<Double>of(volume);
     
     return this;
   }
@@ -199,11 +191,9 @@ public class ProductAlcoholic {
    * @return volume
    */
   @javax.annotation.Nullable
- @DecimalMin("0")
-
   @JsonIgnore
 
-  public Float getVolume() {
+  public Double getVolume() {
         return volume.orElse(null);
   }
 
@@ -213,17 +203,17 @@ public class ProductAlcoholic {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<Float> getVolume_JsonNullable() {
+  public JsonNullable<Double> getVolume_JsonNullable() {
     return volume;
   }
   
   @JsonProperty(value = JSON_PROPERTY_VOLUME, required = false)
-  public void setVolume_JsonNullable(JsonNullable<Float> volume) {
+  public void setVolume_JsonNullable(JsonNullable<Double> volume) {
     this.volume = volume;
   }
 
-  public void setVolume(@javax.annotation.Nullable Float volume) {
-    this.volume = JsonNullable.<Float>of(volume);
+  public void setVolume(@javax.annotation.Nullable Double volume) {
+    this.volume = JsonNullable.<Double>of(volume);
   }
 
 
@@ -357,4 +347,3 @@ public class ProductAlcoholic {
   }
 
 }
-

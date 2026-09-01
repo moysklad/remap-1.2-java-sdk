@@ -29,8 +29,6 @@ import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.ProductFolder;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -44,7 +42,7 @@ import java.util.StringJoiner;
   AccumulationDiscount.JSON_PROPERTY_PRODUCT_FOLDERS,
   AccumulationDiscount.JSON_PROPERTY_LEVELS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class AccumulationDiscount extends DiscountAbstract {
   public static AccumulationDiscount createWithMeta(UUID id) {
     AccumulationDiscount o = new AccumulationDiscount();
@@ -75,7 +73,7 @@ public class AccumulationDiscount extends DiscountAbstract {
 
   public static final String JSON_PROPERTY_LEVELS = "levels";
   @javax.annotation.Nullable
-  private List<@Valid AccumulationDiscountLevelsInner> levels = new ArrayList<>();
+  private List<AccumulationDiscountLevelsInner> levels = new ArrayList<>();
 
   public AccumulationDiscount() {
   }
@@ -95,9 +93,6 @@ public class AccumulationDiscount extends DiscountAbstract {
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -121,9 +116,6 @@ public class AccumulationDiscount extends DiscountAbstract {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -161,9 +153,6 @@ public class AccumulationDiscount extends DiscountAbstract {
    * @return productFolders
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_PRODUCT_FOLDERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -181,7 +170,7 @@ public class AccumulationDiscount extends DiscountAbstract {
   }
 
 
-  public AccumulationDiscount levels(@javax.annotation.Nullable List<@Valid AccumulationDiscountLevelsInner> levels) {
+  public AccumulationDiscount levels(@javax.annotation.Nullable List<AccumulationDiscountLevelsInner> levels) {
     
     this.levels = levels;
     return this;
@@ -201,13 +190,10 @@ public class AccumulationDiscount extends DiscountAbstract {
    * @return levels
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_LEVELS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<@Valid AccumulationDiscountLevelsInner> getLevels() {
+  public List<AccumulationDiscountLevelsInner> getLevels() {
     return levels;
   }
 
@@ -216,7 +202,7 @@ public class AccumulationDiscount extends DiscountAbstract {
 
   @JsonProperty(JSON_PROPERTY_LEVELS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLevels(@javax.annotation.Nullable List<@Valid AccumulationDiscountLevelsInner> levels) {
+  public void setLevels(@javax.annotation.Nullable List<AccumulationDiscountLevelsInner> levels) {
     this.levels = levels;
   }
 
@@ -335,4 +321,3 @@ public class AccumulationDiscount extends DiscountAbstract {
   }
 
 }
-

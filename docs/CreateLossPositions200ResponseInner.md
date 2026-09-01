@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**meta** | [**Meta**](Meta.md) |  |  [optional] |
-|**id** | **UUID** | ID позиции |  [optional] [readonly] |
+|**id** | **UUID** | ID позиции |  [optional] |
 |**accountId** | **UUID** | ID учетной записи |  [optional] [readonly] |
 |**assortment** | [**ProductMarker**](ProductMarker.md) | Метаданные товара/услуги/партии/модификации, которую представляет собой позиция |  [optional] |
 |**declaration** | [**List&lt;DeclarationInner&gt;**](DeclarationInner.md) | Информация о прослеживаемости импортных товаров. Не входит в ответ по умолчанию; может быть возвращена только при явном запросе &#x60;fields&#x3D;declaration&#x60;. Только для чтения.  |  [optional] [readonly] |
@@ -18,7 +18,7 @@
 |**reason** | **String** | Причина списания данной позиции |  [optional] |
 |**slot** | [**StoreSlot**](StoreSlot.md) | Ячейка на складе |  [optional] |
 |**things** | **List&lt;String&gt;** | Серийные номера |  [optional] |
-|**errors** | [**List&lt;ErrorErrorsInner&gt;**](ErrorErrorsInner.md) |  |  |
+|**errors** | [**List&lt;Error&gt;**](Error.md) |  |  |
 
 
 

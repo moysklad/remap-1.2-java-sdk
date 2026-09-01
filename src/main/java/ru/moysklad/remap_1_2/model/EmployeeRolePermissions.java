@@ -25,8 +25,6 @@ import ru.moysklad.remap_1_2.model.ScriptPermissions;
 import ru.moysklad.remap_1_2.model.ScriptTemplatePermissions;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -138,7 +136,7 @@ import java.util.StringJoiner;
   EmployeeRolePermissions.JSON_PROPERTY_WAREHOUSE
 })
 @JsonTypeName("EmployeeRole_permissions")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class EmployeeRolePermissions {
 
   public static final String JSON_PROPERTY_API_REQUEST = "apiRequest";
@@ -560,8 +558,6 @@ public class EmployeeRolePermissions {
    * @return apiRequest
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_API_REQUEST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -591,8 +587,6 @@ public class EmployeeRolePermissions {
    * @return accountDelete
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_DELETE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -622,8 +616,6 @@ public class EmployeeRolePermissions {
    * @return deleteFromRecycleBin
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_DELETE_FROM_RECYCLE_BIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -653,8 +645,6 @@ public class EmployeeRolePermissions {
    * @return editCurrencyRateOfDocument
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_EDIT_CURRENCY_RATE_OF_DOCUMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -684,8 +674,6 @@ public class EmployeeRolePermissions {
    * @return editDocumentTemplates
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_EDIT_DOCUMENT_TEMPLATES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -715,8 +703,6 @@ public class EmployeeRolePermissions {
    * @return editDocumentsOfRestrictedPeriod
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_EDIT_DOCUMENTS_OF_RESTRICTED_PERIOD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -746,8 +732,6 @@ public class EmployeeRolePermissions {
    * @return exportData
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_EXPORT_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -777,8 +761,6 @@ public class EmployeeRolePermissions {
    * @return importData
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_IMPORT_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -808,8 +790,6 @@ public class EmployeeRolePermissions {
    * @return listenCalls
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_LISTEN_CALLS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -839,8 +819,6 @@ public class EmployeeRolePermissions {
    * @return onlineShops
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_ONLINE_SHOPS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -870,8 +848,6 @@ public class EmployeeRolePermissions {
    * @return ownerAssign
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_OWNER_ASSIGN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -901,8 +877,6 @@ public class EmployeeRolePermissions {
    * @return ownerDataUpdate
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_OWNER_DATA_UPDATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -932,8 +906,6 @@ public class EmployeeRolePermissions {
    * @return purchaseControl
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PURCHASE_CONTROL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -963,8 +935,6 @@ public class EmployeeRolePermissions {
    * @return resto$refromRecycleBin
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_RESTO$REFROM_RECYCLE_BIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -994,8 +964,6 @@ public class EmployeeRolePermissions {
    * @return sendEmail
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SEND_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1025,8 +993,6 @@ public class EmployeeRolePermissions {
    * @return subscriptionControl
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SUBSCRIPTION_CONTROL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1056,8 +1022,6 @@ public class EmployeeRolePermissions {
    * @return viewAudit
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VIEW_AUDIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1087,8 +1051,6 @@ public class EmployeeRolePermissions {
    * @return viewCashFlow
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VIEW_CASH_FLOW)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1118,8 +1080,6 @@ public class EmployeeRolePermissions {
    * @return viewCommissionGoods
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VIEW_COMMISSION_GOODS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1149,8 +1109,6 @@ public class EmployeeRolePermissions {
    * @return viewCompanyCRM
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VIEW_COMPANY_C_R_M)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1180,8 +1138,6 @@ public class EmployeeRolePermissions {
    * @return viewCustomerBalanceList
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VIEW_CUSTOMER_BALANCE_LIST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1211,8 +1167,6 @@ public class EmployeeRolePermissions {
    * @return viewDashboard
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VIEW_DASHBOARD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1242,8 +1196,6 @@ public class EmployeeRolePermissions {
    * @return viewMoneyDashboard
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VIEW_MONEY_DASHBOARD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1273,8 +1225,6 @@ public class EmployeeRolePermissions {
    * @return viewProductCostAndProfit
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VIEW_PRODUCT_COST_AND_PROFIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1304,8 +1254,6 @@ public class EmployeeRolePermissions {
    * @return viewProfitAndLoss
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VIEW_PROFIT_AND_LOSS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1335,8 +1283,6 @@ public class EmployeeRolePermissions {
    * @return viewPurchaseFunnel
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VIEW_PURCHASE_FUNNEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1366,8 +1312,6 @@ public class EmployeeRolePermissions {
    * @return viewRecycleBin
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VIEW_RECYCLE_BIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1397,8 +1341,6 @@ public class EmployeeRolePermissions {
    * @return viewSaleProfit
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VIEW_SALE_PROFIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1428,8 +1370,6 @@ public class EmployeeRolePermissions {
    * @return viewSerialNumbers
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VIEW_SERIAL_NUMBERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1459,8 +1399,6 @@ public class EmployeeRolePermissions {
    * @return viewStockReport
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VIEW_STOCK_REPORT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1490,8 +1428,6 @@ public class EmployeeRolePermissions {
    * @return viewTurnover
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VIEW_TURNOVER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1521,9 +1457,6 @@ public class EmployeeRolePermissions {
    * @return gtINList
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_GT_I_N_LIST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1553,9 +1486,6 @@ public class EmployeeRolePermissions {
    * @return accountAdjustment
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ADJUSTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1585,9 +1515,6 @@ public class EmployeeRolePermissions {
    * @return bonusTransaction
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_BONUS_TRANSACTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1617,9 +1544,6 @@ public class EmployeeRolePermissions {
    * @return cashIn
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_CASH_IN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1649,9 +1573,6 @@ public class EmployeeRolePermissions {
    * @return cashOut
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_CASH_OUT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1681,9 +1602,6 @@ public class EmployeeRolePermissions {
    * @return cashboxAdjustment
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_CASHBOX_ADJUSTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1713,9 +1631,6 @@ public class EmployeeRolePermissions {
    * @return commissionReportIn
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_COMMISSION_REPORT_IN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1745,9 +1660,6 @@ public class EmployeeRolePermissions {
    * @return commissionReportOut
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_COMMISSION_REPORT_OUT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1777,9 +1689,6 @@ public class EmployeeRolePermissions {
    * @return company
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_COMPANY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1809,9 +1718,6 @@ public class EmployeeRolePermissions {
    * @return contract
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_CONTRACT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1841,9 +1747,6 @@ public class EmployeeRolePermissions {
    * @return counterpartyAdjustment
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_COUNTERPARTY_ADJUSTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1873,9 +1776,6 @@ public class EmployeeRolePermissions {
    * @return country
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_COUNTRY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1905,9 +1805,6 @@ public class EmployeeRolePermissions {
    * @return crptCancellation
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_CRPT_CANCELLATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1937,9 +1834,6 @@ public class EmployeeRolePermissions {
    * @return crptPackageCreation
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_CRPT_PACKAGE_CREATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1969,9 +1863,6 @@ public class EmployeeRolePermissions {
    * @return crptPackageDisaggregation
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_CRPT_PACKAGE_DISAGGREGATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2001,9 +1892,6 @@ public class EmployeeRolePermissions {
    * @return crptPackageItemRemoval
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_CRPT_PACKAGE_ITEM_REMOVAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2033,9 +1921,6 @@ public class EmployeeRolePermissions {
    * @return currency
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2065,9 +1950,6 @@ public class EmployeeRolePermissions {
    * @return customEntity
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_CUSTOM_ENTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2097,9 +1979,6 @@ public class EmployeeRolePermissions {
    * @return customerOrder
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_CUSTOMER_ORDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2129,9 +2008,6 @@ public class EmployeeRolePermissions {
    * @return demand
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_DEMAND)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2161,9 +2037,6 @@ public class EmployeeRolePermissions {
    * @return emissionOrder
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_EMISSION_ORDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2193,9 +2066,6 @@ public class EmployeeRolePermissions {
    * @return utilizationReport
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_UTILIZATION_REPORT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2225,9 +2095,6 @@ public class EmployeeRolePermissions {
    * @return atkAggregation
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ATK_AGGREGATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2257,9 +2124,6 @@ public class EmployeeRolePermissions {
    * @return retireOrderOSU
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_RETIRE_ORDER_O_S_U)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2289,9 +2153,6 @@ public class EmployeeRolePermissions {
    * @return employee
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_EMPLOYEE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2321,9 +2182,6 @@ public class EmployeeRolePermissions {
    * @return enrollOrder
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ENROLL_ORDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2353,9 +2211,6 @@ public class EmployeeRolePermissions {
    * @return enter
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ENTER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2385,9 +2240,6 @@ public class EmployeeRolePermissions {
    * @return factureIn
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_FACTURE_IN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2417,9 +2269,6 @@ public class EmployeeRolePermissions {
    * @return factureOut
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_FACTURE_OUT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2449,9 +2298,6 @@ public class EmployeeRolePermissions {
    * @return good
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_GOOD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2481,9 +2327,6 @@ public class EmployeeRolePermissions {
    * @return internalOrder
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_INTERNAL_ORDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2513,9 +2356,6 @@ public class EmployeeRolePermissions {
    * @return inventory
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_INVENTORY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2545,9 +2385,6 @@ public class EmployeeRolePermissions {
    * @return invoiceIn
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_INVOICE_IN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2577,9 +2414,6 @@ public class EmployeeRolePermissions {
    * @return invoiceOut
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_INVOICE_OUT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2609,9 +2443,6 @@ public class EmployeeRolePermissions {
    * @return loss
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_LOSS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2641,9 +2472,6 @@ public class EmployeeRolePermissions {
    * @return move
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_MOVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2673,9 +2501,6 @@ public class EmployeeRolePermissions {
    * @return myCompany
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_MY_COMPANY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2705,9 +2530,6 @@ public class EmployeeRolePermissions {
    * @return paymentIn
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_PAYMENT_IN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2737,9 +2559,6 @@ public class EmployeeRolePermissions {
    * @return paymentOut
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_PAYMENT_OUT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2769,9 +2588,6 @@ public class EmployeeRolePermissions {
    * @return prepayment
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_PREPAYMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2801,9 +2617,6 @@ public class EmployeeRolePermissions {
    * @return prepaymentReturn
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_PREPAYMENT_RETURN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2833,9 +2646,6 @@ public class EmployeeRolePermissions {
    * @return priceList
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_PRICE_LIST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2865,9 +2675,6 @@ public class EmployeeRolePermissions {
    * @return processing
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_PROCESSING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2897,9 +2704,6 @@ public class EmployeeRolePermissions {
    * @return processingOrder
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_PROCESSING_ORDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2929,9 +2733,6 @@ public class EmployeeRolePermissions {
    * @return processingPlan
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_PROCESSING_PLAN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2961,9 +2762,6 @@ public class EmployeeRolePermissions {
    * @return processingStage
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_PROCESSING_STAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2993,9 +2791,6 @@ public class EmployeeRolePermissions {
    * @return processingProcess
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_PROCESSING_PROCESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -3025,9 +2820,6 @@ public class EmployeeRolePermissions {
    * @return productionTask
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_PRODUCTION_TASK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -3057,9 +2849,6 @@ public class EmployeeRolePermissions {
    * @return productionStageCompletion
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_PRODUCTION_STAGE_COMPLETION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -3089,9 +2878,6 @@ public class EmployeeRolePermissions {
    * @return project
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_PROJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -3121,9 +2907,6 @@ public class EmployeeRolePermissions {
    * @return purchaseOrder
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_PURCHASE_ORDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -3153,9 +2936,6 @@ public class EmployeeRolePermissions {
    * @return purchaseReturn
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_PURCHASE_RETURN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -3185,9 +2965,6 @@ public class EmployeeRolePermissions {
    * @return remainsOrder
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_REMAINS_ORDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -3217,9 +2994,6 @@ public class EmployeeRolePermissions {
    * @return remarkingOrder
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_REMARKING_ORDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -3249,9 +3023,6 @@ public class EmployeeRolePermissions {
    * @return retailDemand
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_RETAIL_DEMAND)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -3281,9 +3052,6 @@ public class EmployeeRolePermissions {
    * @return retailDrawerCashIn
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_RETAIL_DRAWER_CASH_IN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -3313,9 +3081,6 @@ public class EmployeeRolePermissions {
    * @return retailDrawerCashOut
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_RETAIL_DRAWER_CASH_OUT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -3345,9 +3110,6 @@ public class EmployeeRolePermissions {
    * @return retailSalesReturn
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_RETAIL_SALES_RETURN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -3377,9 +3139,6 @@ public class EmployeeRolePermissions {
    * @return retailShift
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_RETAIL_SHIFT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -3409,9 +3168,6 @@ public class EmployeeRolePermissions {
    * @return retailStore
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_RETAIL_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -3441,9 +3197,6 @@ public class EmployeeRolePermissions {
    * @return retireOrder
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_RETIRE_ORDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -3473,9 +3226,6 @@ public class EmployeeRolePermissions {
    * @return salesReturn
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_SALES_RETURN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -3505,9 +3255,6 @@ public class EmployeeRolePermissions {
    * @return salesChannel
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_SALES_CHANNEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -3537,9 +3284,6 @@ public class EmployeeRolePermissions {
    * @return script
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_SCRIPT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -3569,9 +3313,6 @@ public class EmployeeRolePermissions {
    * @return scriptTemplate
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_SCRIPT_TEMPLATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -3601,9 +3342,6 @@ public class EmployeeRolePermissions {
    * @return supply
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_SUPPLY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -3633,9 +3371,6 @@ public class EmployeeRolePermissions {
    * @return taxrate
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_TAXRATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -3665,9 +3400,6 @@ public class EmployeeRolePermissions {
    * @return trackingCodeList
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_TRACKING_CODE_LIST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -3697,9 +3429,6 @@ public class EmployeeRolePermissions {
    * @return uom
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_UOM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -3729,9 +3458,6 @@ public class EmployeeRolePermissions {
    * @return warehouse
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_WAREHOUSE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -4682,4 +4408,3 @@ public class EmployeeRolePermissions {
   }
 
 }
-

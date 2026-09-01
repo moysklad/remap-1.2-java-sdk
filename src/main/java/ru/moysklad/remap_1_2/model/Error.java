@@ -23,11 +23,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import ru.moysklad.remap_1_2.model.ErrorErrorsInner;
+import ru.moysklad.remap_1_2.model.Meta;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -36,56 +34,325 @@ import java.util.StringJoiner;
  * Error
  */
 @JsonPropertyOrder({
-  Error.JSON_PROPERTY_ERRORS
+  Error.JSON_PROPERTY_ERROR,
+  Error.JSON_PROPERTY_PARAMETER,
+  Error.JSON_PROPERTY_CODE,
+  Error.JSON_PROPERTY_ERROR_MESSAGE,
+  Error.JSON_PROPERTY_MORE_INFO,
+  Error.JSON_PROPERTY_LINE,
+  Error.JSON_PROPERTY_COLUMN,
+  Error.JSON_PROPERTY_DEPENDENCIES,
+  Error.JSON_PROPERTY_META
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class Error extends BatchResponseEntity {
+@JsonTypeName("error")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class Error {
 
-  public static final String JSON_PROPERTY_ERRORS = "errors";
+  public static final String JSON_PROPERTY_ERROR = "error";
   @javax.annotation.Nonnull
-  private List<@Valid ErrorErrorsInner> errors = new ArrayList<>();
+  private String error;
+
+  public static final String JSON_PROPERTY_PARAMETER = "parameter";
+  @javax.annotation.Nullable
+  private String parameter;
+
+  public static final String JSON_PROPERTY_CODE = "code";
+  @javax.annotation.Nullable
+  private Integer code;
+
+  public static final String JSON_PROPERTY_ERROR_MESSAGE = "error_message";
+  @javax.annotation.Nullable
+  private String errorMessage;
+
+  public static final String JSON_PROPERTY_MORE_INFO = "moreInfo";
+  @javax.annotation.Nullable
+  private String moreInfo;
+
+  public static final String JSON_PROPERTY_LINE = "line";
+  @javax.annotation.Nullable
+  private Integer line;
+
+  public static final String JSON_PROPERTY_COLUMN = "column";
+  @javax.annotation.Nullable
+  private Integer column;
+
+  public static final String JSON_PROPERTY_DEPENDENCIES = "dependencies";
+  @javax.annotation.Nullable
+  private List<Meta> dependencies = new ArrayList<>();
+
+  public static final String JSON_PROPERTY_META = "meta";
+  @javax.annotation.Nullable
+  private Meta meta;
 
   public Error() {
   }
 
-  public Error errors(@javax.annotation.Nonnull List<@Valid ErrorErrorsInner> errors) {
+  public Error error(@javax.annotation.Nonnull String error) {
     
-    this.errors = errors;
+    this.error = error;
     return this;
   }
 
-
-  public Error addErrorsItem(ErrorErrorsInner errorsItem) {
-    if (this.errors == null) {
-      this.errors = new ArrayList<>();
-    }
-    this.errors.add(errorsItem);
-    return this;
-  }
 
   /**
-   * Get errors
-   * @return errors
+   * Заголовок ошибки
+   * @return error
    */
   @javax.annotation.Nonnull
-  @NotNull
-  @Valid
-
-
-  @JsonProperty(JSON_PROPERTY_ERRORS)
+  @JsonProperty(JSON_PROPERTY_ERROR)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public List<@Valid ErrorErrorsInner> getErrors() {
-    return errors;
+  public String getError() {
+    return error;
   }
 
   
 
 
-  @JsonProperty(JSON_PROPERTY_ERRORS)
+  @JsonProperty(JSON_PROPERTY_ERROR)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setErrors(@javax.annotation.Nonnull List<@Valid ErrorErrorsInner> errors) {
-    this.errors = errors;
+  public void setError(@javax.annotation.Nonnull String error) {
+    this.error = error;
+  }
+
+
+  public Error parameter(@javax.annotation.Nullable String parameter) {
+    
+    this.parameter = parameter;
+    return this;
+  }
+
+
+  /**
+   * Параметр, на котором произошла ошибка
+   * @return parameter
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PARAMETER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getParameter() {
+    return parameter;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_PARAMETER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setParameter(@javax.annotation.Nullable String parameter) {
+    this.parameter = parameter;
+  }
+
+
+  public Error code(@javax.annotation.Nullable Integer code) {
+    
+    this.code = code;
+    return this;
+  }
+
+
+  /**
+   * Код ошибки
+   * @return code
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getCode() {
+    return code;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCode(@javax.annotation.Nullable Integer code) {
+    this.code = code;
+  }
+
+
+  public Error errorMessage(@javax.annotation.Nullable String errorMessage) {
+    
+    this.errorMessage = errorMessage;
+    return this;
+  }
+
+
+  /**
+   * Сообщение, прилагаемое к ошибке
+   * @return errorMessage
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ERROR_MESSAGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getErrorMessage() {
+    return errorMessage;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_ERROR_MESSAGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setErrorMessage(@javax.annotation.Nullable String errorMessage) {
+    this.errorMessage = errorMessage;
+  }
+
+
+  public Error moreInfo(@javax.annotation.Nullable String moreInfo) {
+    
+    this.moreInfo = moreInfo;
+    return this;
+  }
+
+
+  /**
+   * Ссылка на документацию с описанием ошибки
+   * @return moreInfo
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_MORE_INFO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getMoreInfo() {
+    return moreInfo;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_MORE_INFO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMoreInfo(@javax.annotation.Nullable String moreInfo) {
+    this.moreInfo = moreInfo;
+  }
+
+
+  public Error line(@javax.annotation.Nullable Integer line) {
+    
+    this.line = line;
+    return this;
+  }
+
+
+  /**
+   * Строка JSON, на которой произошла ошибка
+   * @return line
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_LINE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getLine() {
+    return line;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_LINE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setLine(@javax.annotation.Nullable Integer line) {
+    this.line = line;
+  }
+
+
+  public Error column(@javax.annotation.Nullable Integer column) {
+    
+    this.column = column;
+    return this;
+  }
+
+
+  /**
+   * Координата элемента в строке, на котором произошла ошибка
+   * @return column
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_COLUMN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getColumn() {
+    return column;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_COLUMN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setColumn(@javax.annotation.Nullable Integer column) {
+    this.column = column;
+  }
+
+
+  public Error dependencies(@javax.annotation.Nullable List<Meta> dependencies) {
+    
+    this.dependencies = dependencies;
+    return this;
+  }
+
+
+  public Error addDependenciesItem(Meta dependenciesItem) {
+    if (this.dependencies == null) {
+      this.dependencies = new ArrayList<>();
+    }
+    this.dependencies.add(dependenciesItem);
+    return this;
+  }
+
+  /**
+   * Список метаданных зависимых сущностей
+   * @return dependencies
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_DEPENDENCIES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public List<Meta> getDependencies() {
+    return dependencies;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_DEPENDENCIES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDependencies(@javax.annotation.Nullable List<Meta> dependencies) {
+    this.dependencies = dependencies;
+  }
+
+
+  public Error meta(@javax.annotation.Nullable Meta meta) {
+    
+    this.meta = meta;
+    return this;
+  }
+
+
+  /**
+   * Get meta
+   * @return meta
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_META)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Meta getMeta() {
+    return meta;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_META)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMeta(@javax.annotation.Nullable Meta meta) {
+    this.meta = meta;
   }
 
 
@@ -98,19 +365,35 @@ public class Error extends BatchResponseEntity {
       return false;
     }
     Error error = (Error) o;
-    return Objects.equals(this.errors, error.errors);
+    return Objects.equals(this.error, error.error) &&
+        Objects.equals(this.parameter, error.parameter) &&
+        Objects.equals(this.code, error.code) &&
+        Objects.equals(this.errorMessage, error.errorMessage) &&
+        Objects.equals(this.moreInfo, error.moreInfo) &&
+        Objects.equals(this.line, error.line) &&
+        Objects.equals(this.column, error.column) &&
+        Objects.equals(this.dependencies, error.dependencies) &&
+        Objects.equals(this.meta, error.meta);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errors);
+    return Objects.hash(error, parameter, code, errorMessage, moreInfo, line, column, dependencies, meta);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Error {\n");
-    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("    error: ").append(toIndentedString(error)).append("\n");
+    sb.append("    parameter: ").append(toIndentedString(parameter)).append("\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
+    sb.append("    moreInfo: ").append(toIndentedString(moreInfo)).append("\n");
+    sb.append("    line: ").append(toIndentedString(line)).append("\n");
+    sb.append("    column: ").append(toIndentedString(column)).append("\n");
+    sb.append("    dependencies: ").append(toIndentedString(dependencies)).append("\n");
+    sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -158,18 +441,92 @@ public class Error extends BatchResponseEntity {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `errors` to the URL query string
-    if (getErrors() != null) {
-      for (int i = 0; i < getErrors().size(); i++) {
-        if (getErrors().get(i) != null) {
-          joiner.add(getErrors().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%serrors%s%s", prefix, suffix,
+    // add `error` to the URL query string
+    if (getError() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%serror%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getError()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `parameter` to the URL query string
+    if (getParameter() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sparameter%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getParameter()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `code` to the URL query string
+    if (getCode() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%scode%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCode()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `error_message` to the URL query string
+    if (getErrorMessage() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%serror_message%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getErrorMessage()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `moreInfo` to the URL query string
+    if (getMoreInfo() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%smoreInfo%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getMoreInfo()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `line` to the URL query string
+    if (getLine() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sline%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLine()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `column` to the URL query string
+    if (getColumn() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%scolumn%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getColumn()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `dependencies` to the URL query string
+    if (getDependencies() != null) {
+      for (int i = 0; i < getDependencies().size(); i++) {
+        if (getDependencies().get(i) != null) {
+          joiner.add(getDependencies().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%sdependencies%s%s", prefix, suffix,
               "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
+    }
+
+    // add `meta` to the URL query string
+    if (getMeta() != null) {
+      joiner.add(getMeta().toUrlQueryString(prefix + "meta" + suffix));
     }
 
     return joiner.toString();
   }
 
 }
-

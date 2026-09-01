@@ -31,7 +31,7 @@ import ru.moysklad.remap_1_2.model.AttributeAbstract;
 import ru.moysklad.remap_1_2.model.Contract;
 import ru.moysklad.remap_1_2.model.Employee;
 import ru.moysklad.remap_1_2.model.Error;
-import ru.moysklad.remap_1_2.model.ErrorErrorsInner;
+import ru.moysklad.remap_1_2.model.Errors;
 import ru.moysklad.remap_1_2.model.FileList;
 import ru.moysklad.remap_1_2.model.Group;
 import ru.moysklad.remap_1_2.model.Meta;
@@ -48,8 +48,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -102,7 +100,7 @@ import java.util.StringJoiner;
   CreateRetailShiftBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createRetailShiftBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateRetailShiftBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -143,7 +141,7 @@ public class CreateRetailShiftBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
-  private JsonNullable<List<@Valid AttributeAbstract>> attributes = JsonNullable.<List<@Valid AttributeAbstract>>undefined();
+  private JsonNullable<List<AttributeAbstract>> attributes = JsonNullable.<List<AttributeAbstract>>undefined();
 
   public static final String JSON_PROPERTY_BANK_COMISSION = "bankComission";
   @javax.annotation.Nullable
@@ -191,7 +189,7 @@ public class CreateRetailShiftBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_OPERATIONS = "operations";
   @javax.annotation.Nullable
-  private JsonNullable<List<@Valid RetailShiftOperation>> operations = JsonNullable.<List<@Valid RetailShiftOperation>>undefined();
+  private JsonNullable<List<RetailShiftOperation>> operations = JsonNullable.<List<RetailShiftOperation>>undefined();
 
   public static final String JSON_PROPERTY_ORGANIZATION = "organization";
   @javax.annotation.Nullable
@@ -207,7 +205,7 @@ public class CreateRetailShiftBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_PAYMENT_OPERATIONS = "paymentOperations";
   @javax.annotation.Nullable
-  private JsonNullable<List<@Valid RetailShiftPaymentOperation>> paymentOperations = JsonNullable.<List<@Valid RetailShiftPaymentOperation>>undefined();
+  private JsonNullable<List<RetailShiftPaymentOperation>> paymentOperations = JsonNullable.<List<RetailShiftPaymentOperation>>undefined();
 
   public static final String JSON_PROPERTY_PRINTED = "printed";
   @javax.annotation.Nullable
@@ -271,7 +269,7 @@ public class CreateRetailShiftBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_ERRORS = "errors";
   @javax.annotation.Nonnull
-  private List<@Valid ErrorErrorsInner> errors = new ArrayList<>();
+  private List<Error> errors = new ArrayList<>();
 
   public CreateRetailShiftBatch200ResponseInner() {
   }
@@ -286,8 +284,8 @@ public class CreateRetailShiftBatch200ResponseInner {
     @JsonProperty(value = JSON_PROPERTY_CONTRACT, required = false) Contract contract, 
     @JsonProperty(value = JSON_PROPERTY_CREATED, required = false) String created, 
     @JsonProperty(value = JSON_PROPERTY_DELETED, required = false) String deleted, 
-    @JsonProperty(value = JSON_PROPERTY_OPERATIONS, required = false) List<@Valid RetailShiftOperation> operations, 
-    @JsonProperty(value = JSON_PROPERTY_PAYMENT_OPERATIONS, required = false) List<@Valid RetailShiftPaymentOperation> paymentOperations, 
+    @JsonProperty(value = JSON_PROPERTY_OPERATIONS, required = false) List<RetailShiftOperation> operations, 
+    @JsonProperty(value = JSON_PROPERTY_PAYMENT_OPERATIONS, required = false) List<RetailShiftPaymentOperation> paymentOperations, 
     @JsonProperty(value = JSON_PROPERTY_PRINTED, required = false) Boolean printed, 
     @JsonProperty(value = JSON_PROPERTY_PROCEEDS_CASH, required = false) Double proceedsCash, 
     @JsonProperty(value = JSON_PROPERTY_PROCEEDS_NO_CASH, required = false) Double proceedsNoCash, 
@@ -304,8 +302,8 @@ public class CreateRetailShiftBatch200ResponseInner {
     this.contract = contract == null ? JsonNullable.<Contract>undefined() : JsonNullable.of(contract);
     this.created = created;
     this.deleted = deleted == null ? JsonNullable.<String>undefined() : JsonNullable.of(deleted);
-    this.operations = operations == null ? JsonNullable.<List<@Valid RetailShiftOperation>>undefined() : JsonNullable.of(operations);
-    this.paymentOperations = paymentOperations == null ? JsonNullable.<List<@Valid RetailShiftPaymentOperation>>undefined() : JsonNullable.of(paymentOperations);
+    this.operations = operations == null ? JsonNullable.<List<RetailShiftOperation>>undefined() : JsonNullable.of(operations);
+    this.paymentOperations = paymentOperations == null ? JsonNullable.<List<RetailShiftPaymentOperation>>undefined() : JsonNullable.of(paymentOperations);
     this.printed = printed;
     this.proceedsCash = proceedsCash;
     this.proceedsNoCash = proceedsNoCash;
@@ -328,9 +326,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -353,9 +348,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -372,9 +364,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return accountId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -398,8 +387,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return name
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -429,8 +416,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return moment
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -460,9 +445,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return retailStore
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public RetailStore getRetailStore() {
@@ -513,9 +495,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return payments
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public List<RetailShiftPaymentsInner> getPayments() {
@@ -554,9 +533,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return acquire
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Agent getAcquire() {
@@ -588,9 +564,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return agentAccount
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Account getAgentAccount() {
@@ -617,8 +590,8 @@ public class CreateRetailShiftBatch200ResponseInner {
   }
 
 
-  public CreateRetailShiftBatch200ResponseInner attributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
+  public CreateRetailShiftBatch200ResponseInner attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
@@ -626,7 +599,7 @@ public class CreateRetailShiftBatch200ResponseInner {
 
   public CreateRetailShiftBatch200ResponseInner addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
-      this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(new ArrayList<>());
+      this.attributes = JsonNullable.<List<AttributeAbstract>>of(new ArrayList<>());
     }
     try {
       this.attributes.get().add(attributesItem);
@@ -641,12 +614,9 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return attributes
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
-  public List<@Valid AttributeAbstract> getAttributes() {
+  public List<AttributeAbstract> getAttributes() {
         return attributes.orElse(null);
   }
 
@@ -656,17 +626,17 @@ public class CreateRetailShiftBatch200ResponseInner {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<@Valid AttributeAbstract>> getAttributes_JsonNullable() {
+  public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
     return attributes;
   }
   
   @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
-  public void setAttributes_JsonNullable(JsonNullable<List<@Valid AttributeAbstract>> attributes) {
+  public void setAttributes_JsonNullable(JsonNullable<List<AttributeAbstract>> attributes) {
     this.attributes = attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
+  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
@@ -682,8 +652,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return bankComission
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_BANK_COMISSION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -715,8 +683,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return bankPercent
    */
   @javax.annotation.Nullable
- @DecimalMin("0") @DecimalMax("100")
-
   @JsonProperty(JSON_PROPERTY_BANK_PERCENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -746,9 +712,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return cheque
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public RetailShiftCheque getCheque() {
@@ -787,8 +750,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return closeDate
    */
   @javax.annotation.Nullable
-
-
   @JsonIgnore
 
   public String getCloseDate() {
@@ -820,9 +781,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return contract
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Contract getContract() {
@@ -854,8 +812,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return created
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_CREATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -872,8 +828,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return deleted
    */
   @javax.annotation.Nullable
-
-
   @JsonIgnore
 
   public String getDeleted() {
@@ -912,8 +866,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return description
    */
   @javax.annotation.Nullable
- @Size(max=4096)
-
   @JsonIgnore
 
   public String getDescription() {
@@ -952,8 +904,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return externalCode
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -983,9 +933,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return files
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public FileList getFiles() {
@@ -1024,9 +971,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return group
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1049,15 +993,12 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return operations
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
-  public List<@Valid RetailShiftOperation> getOperations() {
+  public List<RetailShiftOperation> getOperations() {
     
     if (operations == null) {
-      operations = JsonNullable.<List<@Valid RetailShiftOperation>>undefined();
+      operations = JsonNullable.<List<RetailShiftOperation>>undefined();
     }
     return operations.orElse(null);
   }
@@ -1068,12 +1009,12 @@ public class CreateRetailShiftBatch200ResponseInner {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<@Valid RetailShiftOperation>> getOperations_JsonNullable() {
+  public JsonNullable<List<RetailShiftOperation>> getOperations_JsonNullable() {
     return operations;
   }
   
   @JsonProperty(value = JSON_PROPERTY_OPERATIONS, required = false)
-  private void setOperations_JsonNullable(JsonNullable<List<@Valid RetailShiftOperation>> operations) {
+  private void setOperations_JsonNullable(JsonNullable<List<RetailShiftOperation>> operations) {
     this.operations = operations;
   }
 
@@ -1090,9 +1031,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return organization
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1122,9 +1060,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return organizationAccount
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Account getOrganizationAccount() {
@@ -1163,9 +1098,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return owner
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Employee getOwner() {
@@ -1197,15 +1129,12 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return paymentOperations
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
-  public List<@Valid RetailShiftPaymentOperation> getPaymentOperations() {
+  public List<RetailShiftPaymentOperation> getPaymentOperations() {
     
     if (paymentOperations == null) {
-      paymentOperations = JsonNullable.<List<@Valid RetailShiftPaymentOperation>>undefined();
+      paymentOperations = JsonNullable.<List<RetailShiftPaymentOperation>>undefined();
     }
     return paymentOperations.orElse(null);
   }
@@ -1216,12 +1145,12 @@ public class CreateRetailShiftBatch200ResponseInner {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<@Valid RetailShiftPaymentOperation>> getPaymentOperations_JsonNullable() {
+  public JsonNullable<List<RetailShiftPaymentOperation>> getPaymentOperations_JsonNullable() {
     return paymentOperations;
   }
   
   @JsonProperty(value = JSON_PROPERTY_PAYMENT_OPERATIONS, required = false)
-  private void setPaymentOperations_JsonNullable(JsonNullable<List<@Valid RetailShiftPaymentOperation>> paymentOperations) {
+  private void setPaymentOperations_JsonNullable(JsonNullable<List<RetailShiftPaymentOperation>> paymentOperations) {
     this.paymentOperations = paymentOperations;
   }
 
@@ -1231,8 +1160,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return printed
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PRINTED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1249,8 +1176,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return proceedsCash
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PROCEEDS_CASH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1267,8 +1192,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return proceedsNoCash
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PROCEEDS_NO_CASH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1285,8 +1208,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return published
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PUBLISHED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1310,9 +1231,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return qrAcquire
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Agent getQrAcquire() {
@@ -1351,8 +1269,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return qrBankComission
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_QR_BANK_COMISSION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1384,8 +1300,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return qrBankPercent
    */
   @javax.annotation.Nullable
- @DecimalMin("0") @DecimalMax("100")
-
   @JsonProperty(JSON_PROPERTY_QR_BANK_PERCENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1408,8 +1322,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return receivedCash
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_RECEIVED_CASH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1426,8 +1338,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return receivedNoCash
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_RECEIVED_NO_CASH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1451,8 +1361,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return shared
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1482,9 +1390,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return store
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1514,9 +1419,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return syncId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1539,8 +1441,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return updated
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1557,8 +1457,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return vatEnabled
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1582,8 +1480,6 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return vatIncluded
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VAT_INCLUDED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1601,14 +1497,14 @@ public class CreateRetailShiftBatch200ResponseInner {
   }
 
 
-  public CreateRetailShiftBatch200ResponseInner errors(@javax.annotation.Nonnull List<@Valid ErrorErrorsInner> errors) {
+  public CreateRetailShiftBatch200ResponseInner errors(@javax.annotation.Nonnull List<Error> errors) {
     
     this.errors = errors;
     return this;
   }
 
 
-  public CreateRetailShiftBatch200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
+  public CreateRetailShiftBatch200ResponseInner addErrorsItem(Error errorsItem) {
     if (this.errors == null) {
       this.errors = new ArrayList<>();
     }
@@ -1621,14 +1517,10 @@ public class CreateRetailShiftBatch200ResponseInner {
    * @return errors
    */
   @javax.annotation.Nonnull
-  @NotNull
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ERRORS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public List<@Valid ErrorErrorsInner> getErrors() {
+  public List<Error> getErrors() {
     return errors;
   }
 
@@ -1637,7 +1529,7 @@ public class CreateRetailShiftBatch200ResponseInner {
 
   @JsonProperty(JSON_PROPERTY_ERRORS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setErrors(@javax.annotation.Nonnull List<@Valid ErrorErrorsInner> errors) {
+  public void setErrors(@javax.annotation.Nonnull List<Error> errors) {
     this.errors = errors;
   }
 
@@ -2163,4 +2055,3 @@ public class CreateRetailShiftBatch200ResponseInner {
   }
 
 }
-

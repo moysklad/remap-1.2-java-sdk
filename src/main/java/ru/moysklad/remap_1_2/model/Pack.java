@@ -33,8 +33,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -49,7 +47,7 @@ import java.util.StringJoiner;
   Pack.JSON_PROPERTY_QUANTITY,
   Pack.JSON_PROPERTY_BARCODES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class Pack {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -66,11 +64,11 @@ public class Pack {
 
   public static final String JSON_PROPERTY_QUANTITY = "quantity";
   @javax.annotation.Nullable
-  private Float quantity;
+  private Double quantity;
 
   public static final String JSON_PROPERTY_BARCODES = "barcodes";
   @javax.annotation.Nullable
-  private JsonNullable<List<@Valid Barcode>> barcodes = JsonNullable.<List<@Valid Barcode>>undefined();
+  private JsonNullable<List<Barcode>> barcodes = JsonNullable.<List<Barcode>>undefined();
 
   public Pack() {
   }
@@ -97,9 +95,6 @@ public class Pack {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -122,9 +117,6 @@ public class Pack {
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -148,9 +140,6 @@ public class Pack {
    * @return uom
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_UOM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -168,7 +157,7 @@ public class Pack {
   }
 
 
-  public Pack quantity(@javax.annotation.Nullable Float quantity) {
+  public Pack quantity(@javax.annotation.Nullable Double quantity) {
     
     this.quantity = quantity;
     return this;
@@ -181,12 +170,10 @@ public class Pack {
    * @return quantity
    */
   @javax.annotation.Nullable
- @DecimalMin("0")
-
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Float getQuantity() {
+  public Double getQuantity() {
     return quantity;
   }
 
@@ -195,13 +182,13 @@ public class Pack {
 
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setQuantity(@javax.annotation.Nullable Float quantity) {
+  public void setQuantity(@javax.annotation.Nullable Double quantity) {
     this.quantity = quantity;
   }
 
 
-  public Pack barcodes(@javax.annotation.Nullable List<@Valid Barcode> barcodes) {
-    this.barcodes = JsonNullable.<List<@Valid Barcode>>of(barcodes);
+  public Pack barcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
+    this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
     
     return this;
   }
@@ -209,7 +196,7 @@ public class Pack {
 
   public Pack addBarcodesItem(Barcode barcodesItem) {
     if (this.barcodes == null || !this.barcodes.isPresent()) {
-      this.barcodes = JsonNullable.<List<@Valid Barcode>>of(new ArrayList<>());
+      this.barcodes = JsonNullable.<List<Barcode>>of(new ArrayList<>());
     }
     try {
       this.barcodes.get().add(barcodesItem);
@@ -224,12 +211,9 @@ public class Pack {
    * @return barcodes
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
-  public List<@Valid Barcode> getBarcodes() {
+  public List<Barcode> getBarcodes() {
         return barcodes.orElse(null);
   }
 
@@ -239,17 +223,17 @@ public class Pack {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<@Valid Barcode>> getBarcodes_JsonNullable() {
+  public JsonNullable<List<Barcode>> getBarcodes_JsonNullable() {
     return barcodes;
   }
   
   @JsonProperty(value = JSON_PROPERTY_BARCODES, required = false)
-  public void setBarcodes_JsonNullable(JsonNullable<List<@Valid Barcode>> barcodes) {
+  public void setBarcodes_JsonNullable(JsonNullable<List<Barcode>> barcodes) {
     this.barcodes = barcodes;
   }
 
-  public void setBarcodes(@javax.annotation.Nullable List<@Valid Barcode> barcodes) {
-    this.barcodes = JsonNullable.<List<@Valid Barcode>>of(barcodes);
+  public void setBarcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
+    this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
   }
 
 
@@ -385,4 +369,3 @@ public class Pack {
   }
 
 }
-

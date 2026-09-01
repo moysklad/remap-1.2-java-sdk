@@ -45,8 +45,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -97,8 +95,8 @@ import java.util.StringJoiner;
   RetailShift.JSON_PROPERTY_VAT_ENABLED,
   RetailShift.JSON_PROPERTY_VAT_INCLUDED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class RetailShift {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class RetailShift implements MetaEntity {
   public static RetailShift createWithMeta(UUID id) {
     RetailShift o = new RetailShift();
     Meta meta = new Meta();
@@ -152,7 +150,7 @@ public class RetailShift {
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
-  private JsonNullable<List<@Valid AttributeAbstract>> attributes = JsonNullable.<List<@Valid AttributeAbstract>>undefined();
+  private JsonNullable<List<AttributeAbstract>> attributes = JsonNullable.<List<AttributeAbstract>>undefined();
 
   public static final String JSON_PROPERTY_BANK_COMISSION = "bankComission";
   @javax.annotation.Nullable
@@ -200,7 +198,7 @@ public class RetailShift {
 
   public static final String JSON_PROPERTY_OPERATIONS = "operations";
   @javax.annotation.Nullable
-  private JsonNullable<List<@Valid RetailShiftOperation>> operations = JsonNullable.<List<@Valid RetailShiftOperation>>undefined();
+  private JsonNullable<List<RetailShiftOperation>> operations = JsonNullable.<List<RetailShiftOperation>>undefined();
 
   public static final String JSON_PROPERTY_ORGANIZATION = "organization";
   @javax.annotation.Nullable
@@ -216,7 +214,7 @@ public class RetailShift {
 
   public static final String JSON_PROPERTY_PAYMENT_OPERATIONS = "paymentOperations";
   @javax.annotation.Nullable
-  private JsonNullable<List<@Valid RetailShiftPaymentOperation>> paymentOperations = JsonNullable.<List<@Valid RetailShiftPaymentOperation>>undefined();
+  private JsonNullable<List<RetailShiftPaymentOperation>> paymentOperations = JsonNullable.<List<RetailShiftPaymentOperation>>undefined();
 
   public static final String JSON_PROPERTY_PRINTED = "printed";
   @javax.annotation.Nullable
@@ -291,8 +289,8 @@ public class RetailShift {
     @JsonProperty(value = JSON_PROPERTY_CONTRACT, required = false) Contract contract, 
     @JsonProperty(value = JSON_PROPERTY_CREATED, required = false) String created, 
     @JsonProperty(value = JSON_PROPERTY_DELETED, required = false) String deleted, 
-    @JsonProperty(value = JSON_PROPERTY_OPERATIONS, required = false) List<@Valid RetailShiftOperation> operations, 
-    @JsonProperty(value = JSON_PROPERTY_PAYMENT_OPERATIONS, required = false) List<@Valid RetailShiftPaymentOperation> paymentOperations, 
+    @JsonProperty(value = JSON_PROPERTY_OPERATIONS, required = false) List<RetailShiftOperation> operations, 
+    @JsonProperty(value = JSON_PROPERTY_PAYMENT_OPERATIONS, required = false) List<RetailShiftPaymentOperation> paymentOperations, 
     @JsonProperty(value = JSON_PROPERTY_PRINTED, required = false) Boolean printed, 
     @JsonProperty(value = JSON_PROPERTY_PROCEEDS_CASH, required = false) Double proceedsCash, 
     @JsonProperty(value = JSON_PROPERTY_PROCEEDS_NO_CASH, required = false) Double proceedsNoCash, 
@@ -309,8 +307,8 @@ public class RetailShift {
     this.contract = contract == null ? JsonNullable.<Contract>undefined() : JsonNullable.of(contract);
     this.created = created;
     this.deleted = deleted == null ? JsonNullable.<String>undefined() : JsonNullable.of(deleted);
-    this.operations = operations == null ? JsonNullable.<List<@Valid RetailShiftOperation>>undefined() : JsonNullable.of(operations);
-    this.paymentOperations = paymentOperations == null ? JsonNullable.<List<@Valid RetailShiftPaymentOperation>>undefined() : JsonNullable.of(paymentOperations);
+    this.operations = operations == null ? JsonNullable.<List<RetailShiftOperation>>undefined() : JsonNullable.of(operations);
+    this.paymentOperations = paymentOperations == null ? JsonNullable.<List<RetailShiftPaymentOperation>>undefined() : JsonNullable.of(paymentOperations);
     this.printed = printed;
     this.proceedsCash = proceedsCash;
     this.proceedsNoCash = proceedsNoCash;
@@ -333,9 +331,6 @@ public class RetailShift {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -358,9 +353,6 @@ public class RetailShift {
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -377,9 +369,6 @@ public class RetailShift {
    * @return accountId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -403,8 +392,6 @@ public class RetailShift {
    * @return name
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -434,8 +421,6 @@ public class RetailShift {
    * @return moment
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -465,9 +450,6 @@ public class RetailShift {
    * @return retailStore
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public RetailStore getRetailStore() {
@@ -518,9 +500,6 @@ public class RetailShift {
    * @return payments
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public List<RetailShiftPaymentsInner> getPayments() {
@@ -559,9 +538,6 @@ public class RetailShift {
    * @return acquire
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Agent getAcquire() {
@@ -593,9 +569,6 @@ public class RetailShift {
    * @return agentAccount
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Account getAgentAccount() {
@@ -622,8 +595,8 @@ public class RetailShift {
   }
 
 
-  public RetailShift attributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
+  public RetailShift attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
@@ -631,7 +604,7 @@ public class RetailShift {
 
   public RetailShift addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
-      this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(new ArrayList<>());
+      this.attributes = JsonNullable.<List<AttributeAbstract>>of(new ArrayList<>());
     }
     try {
       this.attributes.get().add(attributesItem);
@@ -646,12 +619,9 @@ public class RetailShift {
    * @return attributes
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
-  public List<@Valid AttributeAbstract> getAttributes() {
+  public List<AttributeAbstract> getAttributes() {
         return attributes.orElse(null);
   }
 
@@ -661,17 +631,17 @@ public class RetailShift {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<@Valid AttributeAbstract>> getAttributes_JsonNullable() {
+  public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
     return attributes;
   }
   
   @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
-  public void setAttributes_JsonNullable(JsonNullable<List<@Valid AttributeAbstract>> attributes) {
+  public void setAttributes_JsonNullable(JsonNullable<List<AttributeAbstract>> attributes) {
     this.attributes = attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
+  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
@@ -687,8 +657,6 @@ public class RetailShift {
    * @return bankComission
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_BANK_COMISSION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -720,8 +688,6 @@ public class RetailShift {
    * @return bankPercent
    */
   @javax.annotation.Nullable
- @DecimalMin("0") @DecimalMax("100")
-
   @JsonProperty(JSON_PROPERTY_BANK_PERCENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -751,9 +717,6 @@ public class RetailShift {
    * @return cheque
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public RetailShiftCheque getCheque() {
@@ -792,8 +755,6 @@ public class RetailShift {
    * @return closeDate
    */
   @javax.annotation.Nullable
-
-
   @JsonIgnore
 
   public String getCloseDate() {
@@ -825,9 +786,6 @@ public class RetailShift {
    * @return contract
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Contract getContract() {
@@ -859,8 +817,6 @@ public class RetailShift {
    * @return created
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_CREATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -877,8 +833,6 @@ public class RetailShift {
    * @return deleted
    */
   @javax.annotation.Nullable
-
-
   @JsonIgnore
 
   public String getDeleted() {
@@ -917,8 +871,6 @@ public class RetailShift {
    * @return description
    */
   @javax.annotation.Nullable
- @Size(max=4096)
-
   @JsonIgnore
 
   public String getDescription() {
@@ -957,8 +909,6 @@ public class RetailShift {
    * @return externalCode
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -988,9 +938,6 @@ public class RetailShift {
    * @return files
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public FileList getFiles() {
@@ -1029,9 +976,6 @@ public class RetailShift {
    * @return group
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1054,15 +998,12 @@ public class RetailShift {
    * @return operations
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
-  public List<@Valid RetailShiftOperation> getOperations() {
+  public List<RetailShiftOperation> getOperations() {
     
     if (operations == null) {
-      operations = JsonNullable.<List<@Valid RetailShiftOperation>>undefined();
+      operations = JsonNullable.<List<RetailShiftOperation>>undefined();
     }
     return operations.orElse(null);
   }
@@ -1073,12 +1014,12 @@ public class RetailShift {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<@Valid RetailShiftOperation>> getOperations_JsonNullable() {
+  public JsonNullable<List<RetailShiftOperation>> getOperations_JsonNullable() {
     return operations;
   }
   
   @JsonProperty(value = JSON_PROPERTY_OPERATIONS, required = false)
-  private void setOperations_JsonNullable(JsonNullable<List<@Valid RetailShiftOperation>> operations) {
+  private void setOperations_JsonNullable(JsonNullable<List<RetailShiftOperation>> operations) {
     this.operations = operations;
   }
 
@@ -1095,9 +1036,6 @@ public class RetailShift {
    * @return organization
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1127,9 +1065,6 @@ public class RetailShift {
    * @return organizationAccount
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Account getOrganizationAccount() {
@@ -1168,9 +1103,6 @@ public class RetailShift {
    * @return owner
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Employee getOwner() {
@@ -1202,15 +1134,12 @@ public class RetailShift {
    * @return paymentOperations
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
-  public List<@Valid RetailShiftPaymentOperation> getPaymentOperations() {
+  public List<RetailShiftPaymentOperation> getPaymentOperations() {
     
     if (paymentOperations == null) {
-      paymentOperations = JsonNullable.<List<@Valid RetailShiftPaymentOperation>>undefined();
+      paymentOperations = JsonNullable.<List<RetailShiftPaymentOperation>>undefined();
     }
     return paymentOperations.orElse(null);
   }
@@ -1221,12 +1150,12 @@ public class RetailShift {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<@Valid RetailShiftPaymentOperation>> getPaymentOperations_JsonNullable() {
+  public JsonNullable<List<RetailShiftPaymentOperation>> getPaymentOperations_JsonNullable() {
     return paymentOperations;
   }
   
   @JsonProperty(value = JSON_PROPERTY_PAYMENT_OPERATIONS, required = false)
-  private void setPaymentOperations_JsonNullable(JsonNullable<List<@Valid RetailShiftPaymentOperation>> paymentOperations) {
+  private void setPaymentOperations_JsonNullable(JsonNullable<List<RetailShiftPaymentOperation>> paymentOperations) {
     this.paymentOperations = paymentOperations;
   }
 
@@ -1236,8 +1165,6 @@ public class RetailShift {
    * @return printed
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PRINTED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1254,8 +1181,6 @@ public class RetailShift {
    * @return proceedsCash
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PROCEEDS_CASH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1272,8 +1197,6 @@ public class RetailShift {
    * @return proceedsNoCash
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PROCEEDS_NO_CASH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1290,8 +1213,6 @@ public class RetailShift {
    * @return published
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PUBLISHED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1315,9 +1236,6 @@ public class RetailShift {
    * @return qrAcquire
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Agent getQrAcquire() {
@@ -1356,8 +1274,6 @@ public class RetailShift {
    * @return qrBankComission
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_QR_BANK_COMISSION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1389,8 +1305,6 @@ public class RetailShift {
    * @return qrBankPercent
    */
   @javax.annotation.Nullable
- @DecimalMin("0") @DecimalMax("100")
-
   @JsonProperty(JSON_PROPERTY_QR_BANK_PERCENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1413,8 +1327,6 @@ public class RetailShift {
    * @return receivedCash
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_RECEIVED_CASH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1431,8 +1343,6 @@ public class RetailShift {
    * @return receivedNoCash
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_RECEIVED_NO_CASH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1456,8 +1366,6 @@ public class RetailShift {
    * @return shared
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1487,9 +1395,6 @@ public class RetailShift {
    * @return store
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1519,9 +1424,6 @@ public class RetailShift {
    * @return syncId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1544,8 +1446,6 @@ public class RetailShift {
    * @return updated
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1562,8 +1462,6 @@ public class RetailShift {
    * @return vatEnabled
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1587,8 +1485,6 @@ public class RetailShift {
    * @return vatIncluded
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VAT_INCLUDED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2115,4 +2011,3 @@ public class RetailShift {
   }
 
 }
-

@@ -32,8 +32,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -48,7 +46,7 @@ import java.util.StringJoiner;
   CounterpartyMetadata.JSON_PROPERTY_TAGS,
   CounterpartyMetadata.JSON_PROPERTY_CREATE_SHARED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class CounterpartyMetadata {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -61,7 +59,7 @@ public class CounterpartyMetadata {
 
   public static final String JSON_PROPERTY_STATES = "states";
   @javax.annotation.Nullable
-  private JsonNullable<List<@Valid State>> states = JsonNullable.<List<@Valid State>>undefined();
+  private JsonNullable<List<State>> states = JsonNullable.<List<State>>undefined();
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @javax.annotation.Nullable
@@ -86,9 +84,6 @@ public class CounterpartyMetadata {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -118,9 +113,6 @@ public class CounterpartyMetadata {
    * @return attributes
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -138,8 +130,8 @@ public class CounterpartyMetadata {
   }
 
 
-  public CounterpartyMetadata states(@javax.annotation.Nullable List<@Valid State> states) {
-    this.states = JsonNullable.<List<@Valid State>>of(states);
+  public CounterpartyMetadata states(@javax.annotation.Nullable List<State> states) {
+    this.states = JsonNullable.<List<State>>of(states);
     
     return this;
   }
@@ -147,7 +139,7 @@ public class CounterpartyMetadata {
 
   public CounterpartyMetadata addStatesItem(State statesItem) {
     if (this.states == null || !this.states.isPresent()) {
-      this.states = JsonNullable.<List<@Valid State>>of(new ArrayList<>());
+      this.states = JsonNullable.<List<State>>of(new ArrayList<>());
     }
     try {
       this.states.get().add(statesItem);
@@ -162,12 +154,9 @@ public class CounterpartyMetadata {
    * @return states
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
-  public List<@Valid State> getStates() {
+  public List<State> getStates() {
         return states.orElse(null);
   }
 
@@ -177,17 +166,17 @@ public class CounterpartyMetadata {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<@Valid State>> getStates_JsonNullable() {
+  public JsonNullable<List<State>> getStates_JsonNullable() {
     return states;
   }
   
   @JsonProperty(value = JSON_PROPERTY_STATES, required = false)
-  public void setStates_JsonNullable(JsonNullable<List<@Valid State>> states) {
+  public void setStates_JsonNullable(JsonNullable<List<State>> states) {
     this.states = states;
   }
 
-  public void setStates(@javax.annotation.Nullable List<@Valid State> states) {
-    this.states = JsonNullable.<List<@Valid State>>of(states);
+  public void setStates(@javax.annotation.Nullable List<State> states) {
+    this.states = JsonNullable.<List<State>>of(states);
   }
 
 
@@ -215,8 +204,6 @@ public class CounterpartyMetadata {
    * @return tags
    */
   @javax.annotation.Nullable
-
-
   @JsonIgnore
 
   public List<String> getTags() {
@@ -255,8 +242,6 @@ public class CounterpartyMetadata {
    * @return createShared
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_CREATE_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -410,4 +395,3 @@ public class CounterpartyMetadata {
   }
 
 }
-

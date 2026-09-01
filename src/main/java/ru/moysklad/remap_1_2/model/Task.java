@@ -24,8 +24,8 @@ import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import ru.moysklad.remap_1_2.model.Agent;
 import ru.moysklad.remap_1_2.model.Application;
-import ru.moysklad.remap_1_2.model.DocumentMetadata;
 import ru.moysklad.remap_1_2.model.Employee;
+import ru.moysklad.remap_1_2.model.EntityWithMeta;
 import ru.moysklad.remap_1_2.model.FileList;
 import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.State;
@@ -35,8 +35,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -64,8 +62,8 @@ import java.util.StringJoiner;
   Task.JSON_PROPERTY_STATE,
   Task.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class Task extends EntityWithMeta {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class Task extends EntityWithMeta implements MetaEntity {
   public static Task createWithMeta(UUID id) {
     Task o = new Task();
     Meta meta = new Meta();
@@ -143,7 +141,7 @@ public class Task extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_OPERATION = "operation";
   @javax.annotation.Nullable
-  private DocumentMetadata operation;
+  private EntityWithMeta operation;
 
   public static final String JSON_PROPERTY_STATE = "state";
   @javax.annotation.Nullable
@@ -186,9 +184,6 @@ public class Task extends EntityWithMeta {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -211,9 +206,6 @@ public class Task extends EntityWithMeta {
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -230,9 +222,6 @@ public class Task extends EntityWithMeta {
    * @return accountId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -256,9 +245,6 @@ public class Task extends EntityWithMeta {
    * @return agent
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -288,9 +274,6 @@ public class Task extends EntityWithMeta {
    * @return assignee
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ASSIGNEE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -320,9 +303,6 @@ public class Task extends EntityWithMeta {
    * @return author
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_AUTHOR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -352,9 +332,6 @@ public class Task extends EntityWithMeta {
    * @return authorApplication
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_AUTHOR_APPLICATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -377,8 +354,6 @@ public class Task extends EntityWithMeta {
    * @return completed
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_COMPLETED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -395,8 +370,6 @@ public class Task extends EntityWithMeta {
    * @return created
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_CREATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -420,8 +393,6 @@ public class Task extends EntityWithMeta {
    * @return description
    */
   @javax.annotation.Nullable
- @Size(max=4096)
-
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -451,8 +422,6 @@ public class Task extends EntityWithMeta {
    * @return done
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_DONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -482,8 +451,6 @@ public class Task extends EntityWithMeta {
    * @return dueToDate
    */
   @javax.annotation.Nullable
-
-
   @JsonIgnore
 
   public String getDueToDate() {
@@ -522,9 +489,6 @@ public class Task extends EntityWithMeta {
    * @return files
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public FileList getFiles() {
@@ -563,9 +527,6 @@ public class Task extends EntityWithMeta {
    * @return implementer
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_IMPLEMENTER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -595,9 +556,6 @@ public class Task extends EntityWithMeta {
    * @return notes
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_NOTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -615,7 +573,7 @@ public class Task extends EntityWithMeta {
   }
 
 
-  public Task operation(@javax.annotation.Nullable DocumentMetadata operation) {
+  public Task operation(@javax.annotation.Nullable EntityWithMeta operation) {
     
     this.operation = operation;
     return this;
@@ -627,13 +585,10 @@ public class Task extends EntityWithMeta {
    * @return operation
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_OPERATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public DocumentMetadata getOperation() {
+  public EntityWithMeta getOperation() {
     return operation;
   }
 
@@ -642,7 +597,7 @@ public class Task extends EntityWithMeta {
 
   @JsonProperty(JSON_PROPERTY_OPERATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOperation(@javax.annotation.Nullable DocumentMetadata operation) {
+  public void setOperation(@javax.annotation.Nullable EntityWithMeta operation) {
     this.operation = operation;
   }
 
@@ -659,9 +614,6 @@ public class Task extends EntityWithMeta {
    * @return state
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public State getState() {
@@ -693,8 +645,6 @@ public class Task extends EntityWithMeta {
    * @return updated
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -954,4 +904,3 @@ public class Task extends EntityWithMeta {
   }
 
 }
-

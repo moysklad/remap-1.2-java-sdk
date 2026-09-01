@@ -48,7 +48,7 @@
 |**updated** | **String** | Момент последнего обновления Розничной смены |  [optional] [readonly] |
 |**vatEnabled** | **Boolean** | Учитывается ли НДС |  [optional] [readonly] |
 |**vatIncluded** | **Boolean** | Включен ли НДС в цену |  [optional] |
-|**errors** | [**List&lt;ErrorErrorsInner&gt;**](ErrorErrorsInner.md) |  |  |
+|**errors** | [**List&lt;Error&gt;**](Error.md) |  |  |
 
 
 

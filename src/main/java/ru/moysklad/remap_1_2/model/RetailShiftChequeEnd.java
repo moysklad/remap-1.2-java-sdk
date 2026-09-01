@@ -22,8 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -42,7 +40,7 @@ import java.util.StringJoiner;
   RetailShiftChequeEnd.JSON_PROPERTY_TIME
 })
 @JsonTypeName("RetailShiftCheque_end")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailShiftChequeEnd {
 
   public static final String JSON_PROPERTY_CHEQUES_TOTAL = "chequesTotal";
@@ -92,8 +90,6 @@ public class RetailShiftChequeEnd {
    * @return chequesTotal
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_CHEQUES_TOTAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -123,8 +119,6 @@ public class RetailShiftChequeEnd {
    * @return fiscalDocNumber
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_FISCAL_DOC_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -154,8 +148,6 @@ public class RetailShiftChequeEnd {
    * @return fiscalDocSign
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_FISCAL_DOC_SIGN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -185,8 +177,6 @@ public class RetailShiftChequeEnd {
    * @return fiscalDocsTotal
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_FISCAL_DOCS_TOTAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -216,8 +206,6 @@ public class RetailShiftChequeEnd {
    * @return fnNumber
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_FN_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -247,8 +235,6 @@ public class RetailShiftChequeEnd {
    * @return kktRegNumber
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_KKT_REG_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -278,8 +264,6 @@ public class RetailShiftChequeEnd {
    * @return shiftNumber
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SHIFT_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -309,8 +293,6 @@ public class RetailShiftChequeEnd {
    * @return time
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -495,4 +477,3 @@ public class RetailShiftChequeEnd {
   }
 
 }
-

@@ -28,7 +28,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import ru.moysklad.remap_1_2.model.Country;
 import ru.moysklad.remap_1_2.model.EnterPosition;
 import ru.moysklad.remap_1_2.model.Error;
-import ru.moysklad.remap_1_2.model.ErrorErrorsInner;
+import ru.moysklad.remap_1_2.model.Errors;
 import ru.moysklad.remap_1_2.model.Gtd;
 import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.Pack;
@@ -39,8 +39,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -65,7 +63,7 @@ import java.util.StringJoiner;
   CreateEnterPositions200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createEnterPositions_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateEnterPositions200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -122,7 +120,7 @@ public class CreateEnterPositions200ResponseInner {
 
   public static final String JSON_PROPERTY_ERRORS = "errors";
   @javax.annotation.Nonnull
-  private List<@Valid ErrorErrorsInner> errors = new ArrayList<>();
+  private List<Error> errors = new ArrayList<>();
 
   public CreateEnterPositions200ResponseInner() {
   }
@@ -131,12 +129,10 @@ public class CreateEnterPositions200ResponseInner {
    */
   @JsonCreator
   public CreateEnterPositions200ResponseInner(
-    @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id, 
     @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId, 
     @JsonProperty(value = JSON_PROPERTY_OVERHEAD, required = false) Integer overhead
   ) {
     this();
-    this.id = id;
     this.accountId = accountId;
     this.overhead = overhead;
   }
@@ -153,9 +149,6 @@ public class CreateEnterPositions200ResponseInner {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -173,14 +166,18 @@ public class CreateEnterPositions200ResponseInner {
   }
 
 
+  public CreateEnterPositions200ResponseInner id(@javax.annotation.Nullable UUID id) {
+    
+    this.id = id;
+    return this;
+  }
+
+
   /**
    * ID позиции
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -191,15 +188,18 @@ public class CreateEnterPositions200ResponseInner {
   
 
 
+  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setId(@javax.annotation.Nullable UUID id) {
+    this.id = id;
+  }
+
 
   /**
    * ID учетной записи
    * @return accountId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -223,9 +223,6 @@ public class CreateEnterPositions200ResponseInner {
    * @return assortment
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -255,9 +252,6 @@ public class CreateEnterPositions200ResponseInner {
    * @return country
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Country getCountry() {
@@ -296,9 +290,6 @@ public class CreateEnterPositions200ResponseInner {
    * @return gtd
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Gtd getGtd() {
@@ -330,8 +321,6 @@ public class CreateEnterPositions200ResponseInner {
    * @return overhead
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_OVERHEAD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -355,9 +344,6 @@ public class CreateEnterPositions200ResponseInner {
    * @return pack
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Pack getPack() {
@@ -396,8 +382,6 @@ public class CreateEnterPositions200ResponseInner {
    * @return price
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -427,8 +411,6 @@ public class CreateEnterPositions200ResponseInner {
    * @return quantity
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -458,8 +440,6 @@ public class CreateEnterPositions200ResponseInner {
    * @return reason
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonIgnore
 
   public String getReason() {
@@ -498,9 +478,6 @@ public class CreateEnterPositions200ResponseInner {
    * @return slot
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public StoreSlot getSlot() {
@@ -547,8 +524,6 @@ public class CreateEnterPositions200ResponseInner {
    * @return things
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_THINGS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -566,14 +541,14 @@ public class CreateEnterPositions200ResponseInner {
   }
 
 
-  public CreateEnterPositions200ResponseInner errors(@javax.annotation.Nonnull List<@Valid ErrorErrorsInner> errors) {
+  public CreateEnterPositions200ResponseInner errors(@javax.annotation.Nonnull List<Error> errors) {
     
     this.errors = errors;
     return this;
   }
 
 
-  public CreateEnterPositions200ResponseInner addErrorsItem(ErrorErrorsInner errorsItem) {
+  public CreateEnterPositions200ResponseInner addErrorsItem(Error errorsItem) {
     if (this.errors == null) {
       this.errors = new ArrayList<>();
     }
@@ -586,14 +561,10 @@ public class CreateEnterPositions200ResponseInner {
    * @return errors
    */
   @javax.annotation.Nonnull
-  @NotNull
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ERRORS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public List<@Valid ErrorErrorsInner> getErrors() {
+  public List<Error> getErrors() {
     return errors;
   }
 
@@ -602,7 +573,7 @@ public class CreateEnterPositions200ResponseInner {
 
   @JsonProperty(JSON_PROPERTY_ERRORS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setErrors(@javax.annotation.Nonnull List<@Valid ErrorErrorsInner> errors) {
+  public void setErrors(@javax.annotation.Nonnull List<Error> errors) {
     this.errors = errors;
   }
 
@@ -831,4 +802,3 @@ public class CreateEnterPositions200ResponseInner {
   }
 
 }
-

@@ -43,8 +43,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -102,8 +100,8 @@ import java.util.StringJoiner;
   Counterparty.JSON_PROPERTY_TAGS,
   Counterparty.JSON_PROPERTY_ATTRIBUTES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class Counterparty extends Agent {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class Counterparty extends Agent implements Named {
   public static Counterparty createWithMeta(UUID id) {
     Counterparty o = new Counterparty();
     Meta meta = new Meta();
@@ -253,7 +251,7 @@ public class Counterparty extends Agent {
 
   public static final String JSON_PROPERTY_DISCOUNTS = "discounts";
   @javax.annotation.Nullable
-  private JsonNullable<List<@Valid AgentDiscount>> discounts = JsonNullable.<List<@Valid AgentDiscount>>undefined();
+  private JsonNullable<List<AgentDiscount>> discounts = JsonNullable.<List<AgentDiscount>>undefined();
 
   public static final String JSON_PROPERTY_SHARED = "shared";
   @javax.annotation.Nullable
@@ -309,7 +307,7 @@ public class Counterparty extends Agent {
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
-  private JsonNullable<List<@Valid AttributeAbstract>> attributes = JsonNullable.<List<@Valid AttributeAbstract>>undefined();
+  private JsonNullable<List<AttributeAbstract>> attributes = JsonNullable.<List<AttributeAbstract>>undefined();
 
   public Counterparty() {
   }
@@ -318,7 +316,6 @@ public class Counterparty extends Agent {
    */
   @JsonCreator
   public Counterparty(
-    @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id, 
     @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId, 
     @JsonProperty(value = JSON_PROPERTY_CREATED, required = false) String created, 
     @JsonProperty(value = JSON_PROPERTY_UPDATED, required = false) String updated, 
@@ -326,7 +323,6 @@ public class Counterparty extends Agent {
     @JsonProperty(value = JSON_PROPERTY_BONUS_POINTS, required = false) Integer bonusPoints
   ) {
     this();
-    this.id = id;
     this.accountId = accountId;
     this.created = created;
     this.updated = updated;
@@ -346,9 +342,6 @@ public class Counterparty extends Agent {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -366,14 +359,18 @@ public class Counterparty extends Agent {
   }
 
 
+  public Counterparty id(@javax.annotation.Nullable UUID id) {
+    
+    this.id = id;
+    return this;
+  }
+
+
   /**
    * ID контрагента
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -383,6 +380,12 @@ public class Counterparty extends Agent {
 
   
 
+
+  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setId(@javax.annotation.Nullable UUID id) {
+    this.id = id;
+  }
 
 
   public Counterparty syncId(@javax.annotation.Nullable UUID syncId) {
@@ -397,9 +400,6 @@ public class Counterparty extends Agent {
    * @return syncId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -422,9 +422,6 @@ public class Counterparty extends Agent {
    * @return accountId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -448,8 +445,6 @@ public class Counterparty extends Agent {
    * @return name
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -479,8 +474,6 @@ public class Counterparty extends Agent {
    * @return code
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -510,8 +503,6 @@ public class Counterparty extends Agent {
    * @return externalCode
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -541,8 +532,6 @@ public class Counterparty extends Agent {
    * @return archived
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -565,8 +554,6 @@ public class Counterparty extends Agent {
    * @return created
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_CREATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -583,8 +570,6 @@ public class Counterparty extends Agent {
    * @return updated
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -608,8 +593,6 @@ public class Counterparty extends Agent {
    * @return description
    */
   @javax.annotation.Nullable
- @Size(max=4096)
-
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -639,8 +622,6 @@ public class Counterparty extends Agent {
    * @return companyType
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_COMPANY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -670,8 +651,6 @@ public class Counterparty extends Agent {
    * @return email
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -701,8 +680,6 @@ public class Counterparty extends Agent {
    * @return phone
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PHONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -732,8 +709,6 @@ public class Counterparty extends Agent {
    * @return fax
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_FAX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -763,8 +738,6 @@ public class Counterparty extends Agent {
    * @return actualAddress
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_ACTUAL_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -794,9 +767,6 @@ public class Counterparty extends Agent {
    * @return actualAddressFull
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Address getActualAddressFull() {
@@ -835,8 +805,6 @@ public class Counterparty extends Agent {
    * @return legalAddress
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_LEGAL_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -866,9 +834,6 @@ public class Counterparty extends Agent {
    * @return legalAddressFull
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Address getLegalAddressFull() {
@@ -907,8 +872,6 @@ public class Counterparty extends Agent {
    * @return inn
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_INN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -938,8 +901,6 @@ public class Counterparty extends Agent {
    * @return kpp
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_KPP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -969,8 +930,6 @@ public class Counterparty extends Agent {
    * @return ogrn
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_OGRN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1000,8 +959,6 @@ public class Counterparty extends Agent {
    * @return ogrnip
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_OGRNIP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1031,8 +988,6 @@ public class Counterparty extends Agent {
    * @return okpo
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_OKPO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1062,8 +1017,6 @@ public class Counterparty extends Agent {
    * @return certificateNumber
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_CERTIFICATE_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1093,8 +1046,6 @@ public class Counterparty extends Agent {
    * @return certificateDate
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_CERTIFICATE_DATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1124,8 +1075,6 @@ public class Counterparty extends Agent {
    * @return legalTitle
    */
   @javax.annotation.Nullable
- @Size(max=4096)
-
   @JsonProperty(JSON_PROPERTY_LEGAL_TITLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1155,8 +1104,6 @@ public class Counterparty extends Agent {
    * @return legalFirstName
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_LEGAL_FIRST_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1186,8 +1133,6 @@ public class Counterparty extends Agent {
    * @return legalLastName
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_LEGAL_LAST_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1217,8 +1162,6 @@ public class Counterparty extends Agent {
    * @return legalMiddleName
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_LEGAL_MIDDLE_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1248,8 +1191,6 @@ public class Counterparty extends Agent {
    * @return birthDate
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_BIRTH_DATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1279,8 +1220,6 @@ public class Counterparty extends Agent {
    * @return sex
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SEX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1310,8 +1249,6 @@ public class Counterparty extends Agent {
    * @return discountCardNumber
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_DISCOUNT_CARD_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1329,8 +1266,8 @@ public class Counterparty extends Agent {
   }
 
 
-  public Counterparty discounts(@javax.annotation.Nullable List<@Valid AgentDiscount> discounts) {
-    this.discounts = JsonNullable.<List<@Valid AgentDiscount>>of(discounts);
+  public Counterparty discounts(@javax.annotation.Nullable List<AgentDiscount> discounts) {
+    this.discounts = JsonNullable.<List<AgentDiscount>>of(discounts);
     
     return this;
   }
@@ -1338,7 +1275,7 @@ public class Counterparty extends Agent {
 
   public Counterparty addDiscountsItem(AgentDiscount discountsItem) {
     if (this.discounts == null || !this.discounts.isPresent()) {
-      this.discounts = JsonNullable.<List<@Valid AgentDiscount>>of(new ArrayList<>());
+      this.discounts = JsonNullable.<List<AgentDiscount>>of(new ArrayList<>());
     }
     try {
       this.discounts.get().add(discountsItem);
@@ -1353,12 +1290,9 @@ public class Counterparty extends Agent {
    * @return discounts
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
-  public List<@Valid AgentDiscount> getDiscounts() {
+  public List<AgentDiscount> getDiscounts() {
         return discounts.orElse(null);
   }
 
@@ -1368,17 +1302,17 @@ public class Counterparty extends Agent {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<@Valid AgentDiscount>> getDiscounts_JsonNullable() {
+  public JsonNullable<List<AgentDiscount>> getDiscounts_JsonNullable() {
     return discounts;
   }
   
   @JsonProperty(value = JSON_PROPERTY_DISCOUNTS, required = false)
-  public void setDiscounts_JsonNullable(JsonNullable<List<@Valid AgentDiscount>> discounts) {
+  public void setDiscounts_JsonNullable(JsonNullable<List<AgentDiscount>> discounts) {
     this.discounts = discounts;
   }
 
-  public void setDiscounts(@javax.annotation.Nullable List<@Valid AgentDiscount> discounts) {
-    this.discounts = JsonNullable.<List<@Valid AgentDiscount>>of(discounts);
+  public void setDiscounts(@javax.annotation.Nullable List<AgentDiscount> discounts) {
+    this.discounts = JsonNullable.<List<AgentDiscount>>of(discounts);
   }
 
 
@@ -1394,8 +1328,6 @@ public class Counterparty extends Agent {
    * @return shared
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1425,9 +1357,6 @@ public class Counterparty extends Agent {
    * @return group
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1457,9 +1386,6 @@ public class Counterparty extends Agent {
    * @return owner
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Employee getOwner() {
@@ -1491,8 +1417,6 @@ public class Counterparty extends Agent {
    * @return salesAmount
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SALES_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1509,8 +1433,6 @@ public class Counterparty extends Agent {
    * @return bonusPoints
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_BONUS_POINTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1534,9 +1456,6 @@ public class Counterparty extends Agent {
    * @return bonusProgram
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public BonusProgram getBonusProgram() {
@@ -1575,9 +1494,6 @@ public class Counterparty extends Agent {
    * @return priceType
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public PriceType getPriceType() {
@@ -1616,9 +1532,6 @@ public class Counterparty extends Agent {
    * @return state
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_STATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1648,9 +1561,6 @@ public class Counterparty extends Agent {
    * @return accounts
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1680,9 +1590,6 @@ public class Counterparty extends Agent {
    * @return contactpersons
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_CONTACTPERSONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1712,9 +1619,6 @@ public class Counterparty extends Agent {
    * @return notes
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_NOTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1744,9 +1648,6 @@ public class Counterparty extends Agent {
    * @return files
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_FILES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1788,8 +1689,6 @@ public class Counterparty extends Agent {
    * @return tags
    */
   @javax.annotation.Nullable
-
-
   @JsonIgnore
 
   public List<String> getTags() {
@@ -1816,8 +1715,8 @@ public class Counterparty extends Agent {
   }
 
 
-  public Counterparty attributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
+  public Counterparty attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
@@ -1825,7 +1724,7 @@ public class Counterparty extends Agent {
 
   public Counterparty addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
-      this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(new ArrayList<>());
+      this.attributes = JsonNullable.<List<AttributeAbstract>>of(new ArrayList<>());
     }
     try {
       this.attributes.get().add(attributesItem);
@@ -1840,12 +1739,9 @@ public class Counterparty extends Agent {
    * @return attributes
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
-  public List<@Valid AttributeAbstract> getAttributes() {
+  public List<AttributeAbstract> getAttributes() {
         return attributes.orElse(null);
   }
 
@@ -1855,17 +1751,17 @@ public class Counterparty extends Agent {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<@Valid AttributeAbstract>> getAttributes_JsonNullable() {
+  public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
     return attributes;
   }
   
   @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
-  public void setAttributes_JsonNullable(JsonNullable<List<@Valid AttributeAbstract>> attributes) {
+  public void setAttributes_JsonNullable(JsonNullable<List<AttributeAbstract>> attributes) {
     this.attributes = attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
+  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
@@ -2471,4 +2367,3 @@ public class Counterparty extends Agent {
   }
 
 }
-

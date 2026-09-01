@@ -26,8 +26,6 @@ import ru.moysklad.remap_1_2.model.CurrencyMinorUnit;
 import ru.moysklad.remap_1_2.model.Meta;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -53,8 +51,8 @@ import java.util.StringJoiner;
   Currency.JSON_PROPERTY_MAJOR_UNIT,
   Currency.JSON_PROPERTY_MINOR_UNIT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class Currency extends EntityWithMeta {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class Currency extends EntityWithMeta implements MetaEntity {
   public static Currency createWithMeta(UUID id) {
     Currency o = new Currency();
     Meta meta = new Meta();
@@ -104,7 +102,7 @@ public class Currency extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_RATE = "rate";
   @javax.annotation.Nullable
-  private Float rate;
+  private Double rate;
 
   public static final String JSON_PROPERTY_MARGIN = "margin";
   @javax.annotation.Nullable
@@ -159,9 +157,6 @@ public class Currency extends EntityWithMeta {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -184,9 +179,6 @@ public class Currency extends EntityWithMeta {
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -210,8 +202,6 @@ public class Currency extends EntityWithMeta {
    * @return system
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SYSTEM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -241,8 +231,6 @@ public class Currency extends EntityWithMeta {
    * @return name
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -272,8 +260,6 @@ public class Currency extends EntityWithMeta {
    * @return fullName
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_FULL_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -303,8 +289,6 @@ public class Currency extends EntityWithMeta {
    * @return code
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -334,8 +318,6 @@ public class Currency extends EntityWithMeta {
    * @return isoCode
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_ISO_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -365,8 +347,6 @@ public class Currency extends EntityWithMeta {
    * @return multiplicity
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_MULTIPLICITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -384,7 +364,7 @@ public class Currency extends EntityWithMeta {
   }
 
 
-  public Currency rate(@javax.annotation.Nullable Float rate) {
+  public Currency rate(@javax.annotation.Nullable Double rate) {
     
     this.rate = rate;
     return this;
@@ -396,12 +376,10 @@ public class Currency extends EntityWithMeta {
    * @return rate
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Float getRate() {
+  public Double getRate() {
     return rate;
   }
 
@@ -410,7 +388,7 @@ public class Currency extends EntityWithMeta {
 
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRate(@javax.annotation.Nullable Float rate) {
+  public void setRate(@javax.annotation.Nullable Double rate) {
     this.rate = rate;
   }
 
@@ -427,8 +405,6 @@ public class Currency extends EntityWithMeta {
    * @return margin
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_MARGIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -458,8 +434,6 @@ public class Currency extends EntityWithMeta {
    * @return indirect
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_INDIRECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -489,8 +463,6 @@ public class Currency extends EntityWithMeta {
    * @return rateUpdateType
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_RATE_UPDATE_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -520,8 +492,6 @@ public class Currency extends EntityWithMeta {
    * @return archived
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -551,8 +521,6 @@ public class Currency extends EntityWithMeta {
    * @return _default
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_DEFAULT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -582,9 +550,6 @@ public class Currency extends EntityWithMeta {
    * @return majorUnit
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_MAJOR_UNIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -614,9 +579,6 @@ public class Currency extends EntityWithMeta {
    * @return minorUnit
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_MINOR_UNIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -882,4 +844,3 @@ public class Currency extends EntityWithMeta {
   }
 
 }
-

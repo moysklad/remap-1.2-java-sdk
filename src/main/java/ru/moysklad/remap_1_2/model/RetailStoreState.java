@@ -25,8 +25,6 @@ import ru.moysklad.remap_1_2.model.RetailStoreStatePaymentTerminal;
 import ru.moysklad.remap_1_2.model.RetailStoreStateSync;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -41,7 +39,7 @@ import java.util.StringJoiner;
   RetailStoreState.JSON_PROPERTY_PAYMENT_TERMINAL
 })
 @JsonTypeName("RetailStore_state")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStoreState {
 
   public static final String JSON_PROPERTY_SYNC = "sync";
@@ -75,9 +73,6 @@ public class RetailStoreState {
    * @return sync
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_SYNC)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -107,8 +102,6 @@ public class RetailStoreState {
    * @return lastCheckMoment
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_LAST_CHECK_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -138,9 +131,6 @@ public class RetailStoreState {
    * @return fiscalMemory
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_FISCAL_MEMORY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -170,9 +160,6 @@ public class RetailStoreState {
    * @return paymentTerminal
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_PAYMENT_TERMINAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -294,4 +281,3 @@ public class RetailStoreState {
   }
 
 }
-

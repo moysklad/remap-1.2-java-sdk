@@ -23,8 +23,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import ru.moysklad.remap_1_2.model.DiscountBase;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -37,7 +35,7 @@ import java.util.StringJoiner;
   AgentDiscount.JSON_PROPERTY_PERSONAL_DISCOUNT,
   AgentDiscount.JSON_PROPERTY_DEMAND_SUM_CORRECTION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class AgentDiscount {
 
   public static final String JSON_PROPERTY_DISCOUNT = "discount";
@@ -67,9 +65,6 @@ public class AgentDiscount {
    * @return discount
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_DISCOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -99,8 +94,6 @@ public class AgentDiscount {
    * @return personalDiscount
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PERSONAL_DISCOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -130,8 +123,6 @@ public class AgentDiscount {
    * @return demandSumCorrection
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_DEMAND_SUM_CORRECTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -251,4 +242,3 @@ public class AgentDiscount {
   }
 
 }
-

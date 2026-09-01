@@ -37,7 +37,7 @@
 |**salesChannel** | [**SalesChannel**](SalesChannel.md) | Метаданные канала продаж |  [optional] |
 |**shared** | **Boolean** | Общий доступ |  [optional] [readonly] |
 |**state** | [**State**](State.md) | Метаданные статуса Входящего платежа |  [optional] |
-|**sum** | **Double** | Сумма Входящего платежа в установленной валюте |  [optional] [readonly] |
+|**sum** | **Double** | Сумма Входящего платежа в установленной валюте |  [optional] |
 |**vatSum** | **Double** | Сумма НДС |  [optional] |
 |**factureIn** | [**FactureIn**](FactureIn.md) | Счет-фактура полученный, с которым связан этот платеж |  [optional] |
 |**agentAccount** | [**Account**](Account.md) | Метаданные счета контрагента |  [optional] |

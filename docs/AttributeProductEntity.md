@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
-|**value** | [**ProductMarker**](ProductMarker.md) |  |  [optional] |
+|**value** | [**EntityWithMeta**](EntityWithMeta.md) |  |  [optional] |
 
 
 

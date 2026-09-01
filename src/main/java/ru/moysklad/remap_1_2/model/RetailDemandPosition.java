@@ -34,8 +34,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -58,8 +56,8 @@ import java.util.StringJoiner;
   RetailDemandPosition.JSON_PROPERTY_VAT,
   RetailDemandPosition.JSON_PROPERTY_VAT_ENABLED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class RetailDemandPosition {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class RetailDemandPosition implements DocumentPosition, MetaEntity {
   public static RetailDemandPosition createWithMeta(UUID parentId, UUID id) {
     RetailDemandPosition o = new RetailDemandPosition();
     Meta meta = new Meta();
@@ -97,7 +95,7 @@ public class RetailDemandPosition {
 
   public static final String JSON_PROPERTY_DECLARATION = "declaration";
   @javax.annotation.Nullable
-  private List<@Valid DeclarationInner> declaration = new ArrayList<>();
+  private List<DeclarationInner> declaration = new ArrayList<>();
 
   public static final String JSON_PROPERTY_DISCOUNT = "discount";
   @javax.annotation.Nullable
@@ -134,12 +132,10 @@ public class RetailDemandPosition {
    */
   @JsonCreator
   public RetailDemandPosition(
-    @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id, 
     @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId, 
-    @JsonProperty(value = JSON_PROPERTY_DECLARATION, required = false) List<@Valid DeclarationInner> declaration
+    @JsonProperty(value = JSON_PROPERTY_DECLARATION, required = false) List<DeclarationInner> declaration
   ) {
     this();
-    this.id = id;
     this.accountId = accountId;
     this.declaration = declaration;
   }
@@ -156,9 +152,6 @@ public class RetailDemandPosition {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -176,14 +169,18 @@ public class RetailDemandPosition {
   }
 
 
+  public RetailDemandPosition id(@javax.annotation.Nullable UUID id) {
+    
+    this.id = id;
+    return this;
+  }
+
+
   /**
    * ID позиции
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -194,15 +191,18 @@ public class RetailDemandPosition {
   
 
 
+  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setId(@javax.annotation.Nullable UUID id) {
+    this.id = id;
+  }
+
 
   /**
    * ID учетной записи
    * @return accountId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -226,9 +226,6 @@ public class RetailDemandPosition {
    * @return assortment
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -259,8 +256,6 @@ public class RetailDemandPosition {
    * @return cost
    */
   @javax.annotation.Nullable
- @Min(0)
-
   @JsonProperty(JSON_PROPERTY_COST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -283,13 +278,10 @@ public class RetailDemandPosition {
    * @return declaration
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_DECLARATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<@Valid DeclarationInner> getDeclaration() {
+  public List<DeclarationInner> getDeclaration() {
     return declaration;
   }
 
@@ -310,8 +302,6 @@ public class RetailDemandPosition {
    * @return discount
    */
   @javax.annotation.Nullable
- @DecimalMax("100")
-
   @JsonProperty(JSON_PROPERTY_DISCOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -341,9 +331,6 @@ public class RetailDemandPosition {
    * @return pack
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Pack getPack() {
@@ -383,8 +370,6 @@ public class RetailDemandPosition {
    * @return price
    */
   @javax.annotation.Nullable
- @DecimalMin("0")
-
   @JsonProperty(JSON_PROPERTY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -415,8 +400,6 @@ public class RetailDemandPosition {
    * @return quantity
    */
   @javax.annotation.Nullable
- @DecimalMin(value="0.00010",inclusive=false)
-
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -454,8 +437,6 @@ public class RetailDemandPosition {
    * @return things
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_THINGS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -485,8 +466,6 @@ public class RetailDemandPosition {
    * @return vat
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -516,8 +495,6 @@ public class RetailDemandPosition {
    * @return vatEnabled
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -762,4 +739,3 @@ public class RetailDemandPosition {
   }
 
 }
-

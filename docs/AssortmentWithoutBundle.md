@@ -32,7 +32,7 @@
 |**group** | [**Group**](Group.md) |  |  [optional] |
 |**owner** | [**Employee**](Employee.md) | Метаданные владельца (Сотрудника) |  [optional] |
 |**updated** | **String** | Момент последнего обновления сущности |  [optional] [readonly] |
-|**weight** | **Float** | Вес |  [optional] |
+|**weight** | **Double** | Вес |  [optional] |
 |**volume** | **Double** | Объем |  [optional] |
 |**buyPrice** | [**Price**](Price.md) | Закупочная цена |  [optional] |
 |**salePrices** | [**List&lt;SalePrice&gt;**](SalePrice.md) | Цены продажи |  [optional] |

@@ -23,8 +23,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import ru.moysklad.remap_1_2.model.EmbeddedTemplate;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -36,7 +34,7 @@ import java.util.StringJoiner;
   TemplateComposition.JSON_PROPERTY_TEMPLATE,
   TemplateComposition.JSON_PROPERTY_COUNT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class TemplateComposition {
 
   public static final String JSON_PROPERTY_TEMPLATE = "template";
@@ -62,10 +60,6 @@ public class TemplateComposition {
    * @return template
    */
   @javax.annotation.Nonnull
-  @NotNull
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_TEMPLATE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -97,9 +91,6 @@ public class TemplateComposition {
    * @return count
    */
   @javax.annotation.Nonnull
-  @NotNull
- @Min(1) @Max(10)
-
   @JsonProperty(JSON_PROPERTY_COUNT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -207,4 +198,3 @@ public class TemplateComposition {
   }
 
 }
-

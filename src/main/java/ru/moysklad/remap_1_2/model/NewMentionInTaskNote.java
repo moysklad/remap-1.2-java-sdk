@@ -20,75 +20,53 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import ru.moysklad.remap_1_2.model.Error;
-import ru.moysklad.remap_1_2.model.ErrorErrorsInner;
+import ru.moysklad.remap_1_2.model.NotificationNamedEntity;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
 
 /**
- * ErrorOrArray
+ * Уведомление о новом упоминании в комментарии задачи
  */
 @JsonPropertyOrder({
-  ErrorOrArray.JSON_PROPERTY_ERRORS
+  NewMentionInTaskNote.JSON_PROPERTY_TASK
 })
-@JsonTypeName("errorOrArray")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class ErrorOrArray {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class NewMentionInTaskNote extends NotificationAbstract {
 
-  public static final String JSON_PROPERTY_ERRORS = "errors";
-  @javax.annotation.Nonnull
-  private List<@Valid ErrorErrorsInner> errors = new ArrayList<>();
+  public static final String JSON_PROPERTY_TASK = "task";
+  @javax.annotation.Nullable
+  private NotificationNamedEntity task;
 
-  public ErrorOrArray() {
+  public NewMentionInTaskNote() {
   }
-
-  public ErrorOrArray errors(@javax.annotation.Nonnull List<@Valid ErrorErrorsInner> errors) {
-    
-    this.errors = errors;
-    return this;
-  }
-
-
-  public ErrorOrArray addErrorsItem(ErrorErrorsInner errorsItem) {
-    if (this.errors == null) {
-      this.errors = new ArrayList<>();
-    }
-    this.errors.add(errorsItem);
-    return this;
+  /**
+   * Constructor with only readonly parameters
+   */
+  @JsonCreator
+  public NewMentionInTaskNote(
+    @JsonProperty(value = JSON_PROPERTY_TASK, required = false) NotificationNamedEntity task
+  ) {
+    this();
+    this.task = task;
   }
 
   /**
-   * Get errors
-   * @return errors
+   * Задача с комментарием, содержащим упоминание
+   * @return task
    */
-  @javax.annotation.Nonnull
-  @NotNull
-  @Valid
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TASK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-
-  @JsonProperty(JSON_PROPERTY_ERRORS)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public List<@Valid ErrorErrorsInner> getErrors() {
-    return errors;
+  public NotificationNamedEntity getTask() {
+    return task;
   }
 
   
 
-
-  @JsonProperty(JSON_PROPERTY_ERRORS)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setErrors(@javax.annotation.Nonnull List<@Valid ErrorErrorsInner> errors) {
-    this.errors = errors;
-  }
 
 
   @Override
@@ -99,20 +77,20 @@ public class ErrorOrArray {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorOrArray errorOrArray = (ErrorOrArray) o;
-    return Objects.equals(this.errors, errorOrArray.errors);
+    NewMentionInTaskNote newMentionInTaskNote = (NewMentionInTaskNote) o;
+    return Objects.equals(this.task, newMentionInTaskNote.task);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errors);
+    return Objects.hash(task);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorOrArray {\n");
-    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("class NewMentionInTaskNote {\n");
+    sb.append("    task: ").append(toIndentedString(task)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -160,18 +138,12 @@ public class ErrorOrArray {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `errors` to the URL query string
-    if (getErrors() != null) {
-      for (int i = 0; i < getErrors().size(); i++) {
-        if (getErrors().get(i) != null) {
-          joiner.add(getErrors().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%serrors%s%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
-        }
-      }
+    // add `task` to the URL query string
+    if (getTask() != null) {
+      joiner.add(getTask().toUrlQueryString(prefix + "task" + suffix));
     }
 
     return joiner.toString();
   }
 
 }
-

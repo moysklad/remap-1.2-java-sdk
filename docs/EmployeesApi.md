@@ -6,12 +6,16 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 |------------- | ------------- | -------------|
 | [**activateEmployee**](EmployeesApi.md#activateEmployee) | **PUT** /entity/employee/{id}/access/activate | Активировать сотрудника |
 | [**createEmployee**](EmployeesApi.md#createEmployee) | **POST** /entity/employee | Создать сотрудника |
+| [**createEmployeeMetadataAttribute**](EmployeesApi.md#createEmployeeMetadataAttribute) | **POST** /entity/employee/metadata/attributes | Создать доп. поле сотрудника |
 | [**createEmployeesBatch**](EmployeesApi.md#createEmployeesBatch) | **POST** /entity/employee/batch | Создать или изменить сотрудников |
 | [**deactivateEmployee**](EmployeesApi.md#deactivateEmployee) | **PUT** /entity/employee/{id}/access/deactivate | Деактивировать сотрудника |
 | [**deleteEmployee**](EmployeesApi.md#deleteEmployee) | **DELETE** /entity/employee/{id} | Удалить сотрудника |
+| [**deleteEmployeeMetadataAttribute**](EmployeesApi.md#deleteEmployeeMetadataAttribute) | **DELETE** /entity/employee/metadata/attributes/{id} | Удалить доп. поле сотрудника |
 | [**deleteEmployeesBatch**](EmployeesApi.md#deleteEmployeesBatch) | **POST** /entity/employee/delete | Удалить сотрудников |
 | [**getEmployeeById**](EmployeesApi.md#getEmployeeById) | **GET** /entity/employee/{id} | Получить сотрудника по ID |
-| [**getEmployeeMetadata**](EmployeesApi.md#getEmployeeMetadata) | **GET** /entity/employee/metadata | Получить метаданные товаров |
+| [**getEmployeeMetadata**](EmployeesApi.md#getEmployeeMetadata) | **GET** /entity/employee/metadata | Получить метаданные сотрудников |
+| [**getEmployeeMetadataAttributeById**](EmployeesApi.md#getEmployeeMetadataAttributeById) | **GET** /entity/employee/metadata/attributes/{id} | Получить доп. поле сотрудника по ID |
+| [**getEmployeeMetadataAttributes**](EmployeesApi.md#getEmployeeMetadataAttributes) | **GET** /entity/employee/metadata/attributes | Получить доп. поля сотрудников |
 | [**getEmployeeSecurity**](EmployeesApi.md#getEmployeeSecurity) | **GET** /entity/employee/{id}/security | Получить права сотрудника |
 | [**getEmployees**](EmployeesApi.md#getEmployees) | **GET** /entity/employee | Получить список сотрудников |
 | [**getRoleAdmin**](EmployeesApi.md#getRoleAdmin) | **GET** /entity/role/admin | Получить роль администратора |
@@ -21,6 +25,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**getRoleWorker**](EmployeesApi.md#getRoleWorker) | **GET** /entity/role/worker | Получить роль сотрудника производства |
 | [**resetEmployeePassword**](EmployeesApi.md#resetEmployeePassword) | **PUT** /entity/employee/{id}/access/resetpassword | Сбросить пароль сотрудника |
 | [**updateEmployee**](EmployeesApi.md#updateEmployee) | **PUT** /entity/employee/{id} | Обновить сотрудника |
+| [**updateEmployeeMetadataAttribute**](EmployeesApi.md#updateEmployeeMetadataAttribute) | **PUT** /entity/employee/metadata/attributes/{id} | Обновить доп. поле сотрудника |
 | [**updateEmployeeSecurity**](EmployeesApi.md#updateEmployeeSecurity) | **PUT** /entity/employee/{id}/security | Изменить права сотрудника |
 
 
@@ -107,7 +112,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Сотрудник успешно активирован |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createEmployee
@@ -192,7 +197,90 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Сотрудник успешно создан |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## createEmployeeMetadataAttribute
+
+> AttributeMetaInfo createEmployeeMetadataAttribute(attributeMetaInfo, accept, acceptEncoding, contentType)
+
+Создать доп. поле сотрудника
+
+Создание нового доп. поля для сотрудников
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.EmployeesApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        EmployeesApi apiInstance = new EmployeesApi(defaultClient);
+        AttributeMetaInfo attributeMetaInfo = new AttributeMetaInfo(); // AttributeMetaInfo | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            AttributeMetaInfo result = apiInstance.createEmployeeMetadataAttribute(attributeMetaInfo, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling EmployeesApi#createEmployeeMetadataAttribute");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **attributeMetaInfo** | [**AttributeMetaInfo**](AttributeMetaInfo.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**AttributeMetaInfo**](AttributeMetaInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Доп. поле успешно создано |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createEmployeesBatch
@@ -229,7 +317,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         EmployeesApi apiInstance = new EmployeesApi(defaultClient);
-        List<@Valid Employee> employee = Arrays.asList(); // List<@Valid Employee> | 
+        List<Employee> employee = Arrays.asList(); // List<Employee> | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
@@ -253,7 +341,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **employee** | [**List&lt;@Valid Employee&gt;**](Employee.md)|  | |
+| **employee** | [**List&lt;Employee&gt;**](Employee.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -277,7 +365,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Сотрудники созданы или изменены (элемент — сущность или объект ошибки) |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deactivateEmployee
@@ -357,7 +445,7 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Сотрудник успешно деактивирован |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteEmployee
@@ -437,7 +525,87 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Сотрудник успешно удален |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## deleteEmployeeMetadataAttribute
+
+> deleteEmployeeMetadataAttribute(id, accept, acceptEncoding)
+
+Удалить доп. поле сотрудника
+
+Удаление доп. поля
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.EmployeesApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        EmployeesApi apiInstance = new EmployeesApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            apiInstance.deleteEmployeeMetadataAttribute(id, accept, acceptEncoding);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling EmployeesApi#deleteEmployeeMetadataAttribute");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Доп. поле успешно удалено |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteEmployeesBatch
@@ -474,7 +642,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         EmployeesApi apiInstance = new EmployeesApi(defaultClient);
-        List<@Valid Employee> employee = Arrays.asList(); // List<@Valid Employee> | 
+        List<Employee> employee = Arrays.asList(); // List<Employee> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -497,7 +665,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **employee** | [**List&lt;@Valid Employee&gt;**](Employee.md)|  | |
+| **employee** | [**List&lt;Employee&gt;**](Employee.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -520,7 +688,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Результат по каждому элементу (успех или объект ошибки) |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getEmployeeById
@@ -603,16 +771,178 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getEmployeeMetadata
 
-> Metadata getEmployeeMetadata(accept, acceptEncoding)
+> Metadata getEmployeeMetadata(expand, accept, acceptEncoding)
 
-Получить метаданные товаров
+Получить метаданные сотрудников
 
-Запрос на получение метаданных товаров
+Запрос на получение метаданных сотрудников.
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.EmployeesApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        EmployeesApi apiInstance = new EmployeesApi(defaultClient);
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            Metadata result = apiInstance.getEmployeeMetadata(expand, accept, acceptEncoding);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling EmployeesApi#getEmployeeMetadata");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+[**Metadata**](Metadata.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## getEmployeeMetadataAttributeById
+
+> AttributeMetaInfo getEmployeeMetadataAttributeById(id, accept, acceptEncoding)
+
+Получить доп. поле сотрудника по ID
+
+Запрос на получение отдельного доп. поля
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.EmployeesApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        EmployeesApi apiInstance = new EmployeesApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            AttributeMetaInfo result = apiInstance.getEmployeeMetadataAttributeById(id, accept, acceptEncoding);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling EmployeesApi#getEmployeeMetadataAttributeById");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+[**AttributeMetaInfo**](AttributeMetaInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## getEmployeeMetadataAttributes
+
+> AttributeMetaInfoList getEmployeeMetadataAttributes(accept, acceptEncoding)
+
+Получить доп. поля сотрудников
+
+Запрос на получение всех доп. полей для сотрудников
 
 ### Example
 
@@ -643,10 +973,10 @@ public class Example {
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
-            Metadata result = apiInstance.getEmployeeMetadata(accept, acceptEncoding);
+            AttributeMetaInfoList result = apiInstance.getEmployeeMetadataAttributes(accept, acceptEncoding);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling EmployeesApi#getEmployeeMetadata");
+            System.err.println("Exception when calling EmployeesApi#getEmployeeMetadataAttributes");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -666,7 +996,7 @@ public class Example {
 
 ### Return type
 
-[**Metadata**](Metadata.md)
+[**AttributeMetaInfoList**](AttributeMetaInfoList.md)
 
 ### Authorization
 
@@ -682,11 +1012,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **400** | Ошибка в структуре JSON передаваемого запроса |  -  |
-| **401** | Имя и/или пароль пользователя указаны неверно или заблокированы |  -  |
-| **403** | У вас нет прав на просмотр данного объекта |  -  |
-| **405** | Метод не поддерживается для данного ресурса |  * Allow - Список поддерживаемых HTTP методов (может отсутствовать в ответах от nginx) <br>  |
-| **415** | Неподдерживаемый тип содержимого (Content-Type) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getEmployeeSecurity
@@ -767,7 +1093,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getEmployees
@@ -858,7 +1184,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getRoleAdmin
@@ -937,7 +1263,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getRoleCashier
@@ -1016,7 +1342,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getRoleIndividual
@@ -1095,7 +1421,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getRoleOwner
@@ -1174,7 +1500,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getRoleWorker
@@ -1253,7 +1579,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## resetEmployeePassword
@@ -1333,7 +1659,7 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Пароль успешно сброшен |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## updateEmployee
@@ -1420,7 +1746,92 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Сотрудник успешно обновлен |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## updateEmployeeMetadataAttribute
+
+> AttributeMetaInfo updateEmployeeMetadataAttribute(id, attributeMetaInfo, accept, acceptEncoding, contentType)
+
+Обновить доп. поле сотрудника
+
+Обновление доп. поля для сотрудников
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.EmployeesApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        EmployeesApi apiInstance = new EmployeesApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        AttributeMetaInfo attributeMetaInfo = new AttributeMetaInfo(); // AttributeMetaInfo | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            AttributeMetaInfo result = apiInstance.updateEmployeeMetadataAttribute(id, attributeMetaInfo, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling EmployeesApi#updateEmployeeMetadataAttribute");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **attributeMetaInfo** | [**AttributeMetaInfo**](AttributeMetaInfo.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**AttributeMetaInfo**](AttributeMetaInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Доп. поле успешно обновлено |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## updateEmployeeSecurity
@@ -1505,5 +1916,5 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Права успешно обновлены |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 

@@ -24,8 +24,6 @@ import ru.moysklad.remap_1_2.model.Currency;
 import ru.moysklad.remap_1_2.model.PriceType;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -38,12 +36,12 @@ import java.util.StringJoiner;
   SalePrice.JSON_PROPERTY_CURRENCY,
   SalePrice.JSON_PROPERTY_PRICE_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class SalePrice {
 
   public static final String JSON_PROPERTY_VALUE = "value";
   @javax.annotation.Nullable
-  private Float value;
+  private Double value;
 
   public static final String JSON_PROPERTY_CURRENCY = "currency";
   @javax.annotation.Nullable
@@ -56,7 +54,7 @@ public class SalePrice {
   public SalePrice() {
   }
 
-  public SalePrice value(@javax.annotation.Nullable Float value) {
+  public SalePrice value(@javax.annotation.Nullable Double value) {
     
     this.value = value;
     return this;
@@ -69,12 +67,10 @@ public class SalePrice {
    * @return value
    */
   @javax.annotation.Nullable
- @DecimalMin("0")
-
   @JsonProperty(JSON_PROPERTY_VALUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Float getValue() {
+  public Double getValue() {
     return value;
   }
 
@@ -83,7 +79,7 @@ public class SalePrice {
 
   @JsonProperty(JSON_PROPERTY_VALUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setValue(@javax.annotation.Nullable Float value) {
+  public void setValue(@javax.annotation.Nullable Double value) {
     this.value = value;
   }
 
@@ -100,9 +96,6 @@ public class SalePrice {
    * @return currency
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -132,10 +125,6 @@ public class SalePrice {
    * @return priceType
    */
   @javax.annotation.Nonnull
-  @NotNull
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_PRICE_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -250,4 +239,3 @@ public class SalePrice {
   }
 
 }
-

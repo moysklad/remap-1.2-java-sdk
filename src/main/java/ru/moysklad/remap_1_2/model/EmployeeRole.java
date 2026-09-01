@@ -28,8 +28,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -41,7 +39,7 @@ import java.util.StringJoiner;
   EmployeeRole.JSON_PROPERTY_META,
   EmployeeRole.JSON_PROPERTY_PERMISSIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class EmployeeRole {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -67,9 +65,6 @@ public class EmployeeRole {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -99,9 +94,6 @@ public class EmployeeRole {
    * @return permissions
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public EmployeeRolePermissions getPermissions() {
@@ -224,4 +216,3 @@ public class EmployeeRole {
   }
 
 }
-

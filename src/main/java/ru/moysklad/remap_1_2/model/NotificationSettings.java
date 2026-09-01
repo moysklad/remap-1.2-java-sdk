@@ -23,8 +23,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import ru.moysklad.remap_1_2.model.NotificationGroupSettings;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -44,7 +42,7 @@ import java.util.StringJoiner;
   NotificationSettings.JSON_PROPERTY_ONLINE_STORES,
   NotificationSettings.JSON_PROPERTY_FOLLOWED_EVENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class NotificationSettings {
 
   public static final String JSON_PROPERTY_CUSTOMER_ORDER = "customerOrder";
@@ -102,9 +100,6 @@ public class NotificationSettings {
    * @return customerOrder
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_CUSTOMER_ORDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -134,9 +129,6 @@ public class NotificationSettings {
    * @return dataExchange
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_DATA_EXCHANGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -166,9 +158,6 @@ public class NotificationSettings {
    * @return invoice
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_INVOICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -198,9 +187,6 @@ public class NotificationSettings {
    * @return retail
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_RETAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -230,9 +216,6 @@ public class NotificationSettings {
    * @return scripts
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_SCRIPTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -262,9 +245,6 @@ public class NotificationSettings {
    * @return stock
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_STOCK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -294,9 +274,6 @@ public class NotificationSettings {
    * @return task
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_TASK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -326,9 +303,6 @@ public class NotificationSettings {
    * @return mentions
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_MENTIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -358,9 +332,6 @@ public class NotificationSettings {
    * @return onlineStores
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ONLINE_STORES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -390,9 +361,6 @@ public class NotificationSettings {
    * @return followedEvents
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_FOLLOWED_EVENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -551,4 +519,3 @@ public class NotificationSettings {
   }
 
 }
-

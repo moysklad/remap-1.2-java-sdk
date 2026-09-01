@@ -16,7 +16,7 @@
 |**vat** | **Integer** | НДС для позиции |  [optional] |
 |**vatEnabled** | **Boolean** | Включен ли НДС для позиции |  [optional] |
 |**assortment** | [**ProductMarker**](ProductMarker.md) | Метаданные товара/партии/модификации/комплекта, которую представляет позиция |  [optional] |
-|**errors** | [**List&lt;ErrorErrorsInner&gt;**](ErrorErrorsInner.md) |  |  |
+|**errors** | [**List&lt;Error&gt;**](Error.md) |  |  |
 
 
 

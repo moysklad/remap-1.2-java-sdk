@@ -22,8 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -39,7 +37,7 @@ import java.util.StringJoiner;
   Permissions.JSON_PROPERTY_DELETE,
   Permissions.JSON_PROPERTY_APPROVE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class Permissions {
 
   public static final String JSON_PROPERTY_VIEW = "view";
@@ -81,8 +79,6 @@ public class Permissions {
    * @return view
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VIEW)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -112,8 +108,6 @@ public class Permissions {
    * @return print
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PRINT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -143,8 +137,6 @@ public class Permissions {
    * @return create
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_CREATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -174,8 +166,6 @@ public class Permissions {
    * @return update
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_UPDATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -205,8 +195,6 @@ public class Permissions {
    * @return delete
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_DELETE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -236,8 +224,6 @@ public class Permissions {
    * @return approve
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_APPROVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -398,4 +384,3 @@ public class Permissions {
   }
 
 }
-

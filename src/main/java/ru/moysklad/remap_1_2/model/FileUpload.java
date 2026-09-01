@@ -22,8 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -35,7 +33,7 @@ import java.util.StringJoiner;
   FileUpload.JSON_PROPERTY_FILENAME,
   FileUpload.JSON_PROPERTY_CONTENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class FileUpload {
 
   public static final String JSON_PROPERTY_FILENAME = "filename";
@@ -61,9 +59,6 @@ public class FileUpload {
    * @return filename
    */
   @javax.annotation.Nonnull
-  @NotNull
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_FILENAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -93,9 +88,6 @@ public class FileUpload {
    * @return content
    */
   @javax.annotation.Nonnull
-  @NotNull
-
-
   @JsonProperty(JSON_PROPERTY_CONTENT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -208,4 +200,3 @@ public class FileUpload {
   }
 
 }
-

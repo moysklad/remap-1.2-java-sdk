@@ -8,7 +8,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**value** | **Float** | Значение цены |  [optional] |
+|**value** | **Double** | Значение цены |  [optional] |
 |**currency** | [**Currency**](Currency.md) |  |  [optional] |
 
 

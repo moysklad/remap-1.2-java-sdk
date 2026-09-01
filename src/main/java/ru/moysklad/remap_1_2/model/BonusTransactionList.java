@@ -28,8 +28,6 @@ import ru.moysklad.remap_1_2.model.Context;
 import ru.moysklad.remap_1_2.model.MetaList;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -42,8 +40,8 @@ import java.util.StringJoiner;
   BonusTransactionList.JSON_PROPERTY_META,
   BonusTransactionList.JSON_PROPERTY_ROWS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class BonusTransactionList {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class BonusTransactionList implements EntityList {
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
   @javax.annotation.Nullable
@@ -55,7 +53,7 @@ public class BonusTransactionList {
 
   public static final String JSON_PROPERTY_ROWS = "rows";
   @javax.annotation.Nullable
-  private List<@Valid BonusTransaction> rows = new ArrayList<>();
+  private List<BonusTransaction> rows = new ArrayList<>();
 
   public BonusTransactionList() {
   }
@@ -72,9 +70,6 @@ public class BonusTransactionList {
    * @return context
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_CONTEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -104,9 +99,6 @@ public class BonusTransactionList {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -124,7 +116,7 @@ public class BonusTransactionList {
   }
 
 
-  public BonusTransactionList rows(@javax.annotation.Nullable List<@Valid BonusTransaction> rows) {
+  public BonusTransactionList rows(@javax.annotation.Nullable List<BonusTransaction> rows) {
     
     this.rows = rows;
     return this;
@@ -144,13 +136,10 @@ public class BonusTransactionList {
    * @return rows
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ROWS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<@Valid BonusTransaction> getRows() {
+  public List<BonusTransaction> getRows() {
     return rows;
   }
 
@@ -159,7 +148,7 @@ public class BonusTransactionList {
 
   @JsonProperty(JSON_PROPERTY_ROWS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRows(@javax.annotation.Nullable List<@Valid BonusTransaction> rows) {
+  public void setRows(@javax.annotation.Nullable List<BonusTransaction> rows) {
     this.rows = rows;
   }
 
@@ -261,4 +250,3 @@ public class BonusTransactionList {
   }
 
 }
-

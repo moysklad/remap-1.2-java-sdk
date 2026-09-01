@@ -28,8 +28,6 @@ import ru.moysklad.remap_1_2.model.EmissionOrder;
 import ru.moysklad.remap_1_2.model.MetaList;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -42,8 +40,8 @@ import java.util.StringJoiner;
   EmissionOrderList.JSON_PROPERTY_META,
   EmissionOrderList.JSON_PROPERTY_ROWS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class EmissionOrderList {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class EmissionOrderList implements EntityList {
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
   @javax.annotation.Nullable
@@ -72,9 +70,6 @@ public class EmissionOrderList {
    * @return context
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_CONTEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -104,9 +99,6 @@ public class EmissionOrderList {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -144,9 +136,6 @@ public class EmissionOrderList {
    * @return rows
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ROWS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -261,4 +250,3 @@ public class EmissionOrderList {
   }
 
 }
-

@@ -25,11 +25,9 @@ import java.util.Arrays;
 import java.util.List;
 import ru.moysklad.remap_1_2.model.DeleteInfo;
 import ru.moysklad.remap_1_2.model.Error;
-import ru.moysklad.remap_1_2.model.ErrorErrorsInner;
+import ru.moysklad.remap_1_2.model.Errors;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -41,7 +39,7 @@ import java.util.StringJoiner;
   DeleteRowResult.JSON_PROPERTY_INFO,
   DeleteRowResult.JSON_PROPERTY_ERRORS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class DeleteRowResult {
 
   public static final String JSON_PROPERTY_INFO = "info";
@@ -50,7 +48,7 @@ public class DeleteRowResult {
 
   public static final String JSON_PROPERTY_ERRORS = "errors";
   @javax.annotation.Nonnull
-  private List<@Valid ErrorErrorsInner> errors = new ArrayList<>();
+  private List<Error> errors = new ArrayList<>();
 
   public DeleteRowResult() {
   }
@@ -67,8 +65,6 @@ public class DeleteRowResult {
    * @return info
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -86,14 +82,14 @@ public class DeleteRowResult {
   }
 
 
-  public DeleteRowResult errors(@javax.annotation.Nonnull List<@Valid ErrorErrorsInner> errors) {
+  public DeleteRowResult errors(@javax.annotation.Nonnull List<Error> errors) {
     
     this.errors = errors;
     return this;
   }
 
 
-  public DeleteRowResult addErrorsItem(ErrorErrorsInner errorsItem) {
+  public DeleteRowResult addErrorsItem(Error errorsItem) {
     if (this.errors == null) {
       this.errors = new ArrayList<>();
     }
@@ -106,14 +102,10 @@ public class DeleteRowResult {
    * @return errors
    */
   @javax.annotation.Nonnull
-  @NotNull
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ERRORS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public List<@Valid ErrorErrorsInner> getErrors() {
+  public List<Error> getErrors() {
     return errors;
   }
 
@@ -122,7 +114,7 @@ public class DeleteRowResult {
 
   @JsonProperty(JSON_PROPERTY_ERRORS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setErrors(@javax.annotation.Nonnull List<@Valid ErrorErrorsInner> errors) {
+  public void setErrors(@javax.annotation.Nonnull List<Error> errors) {
     this.errors = errors;
   }
 
@@ -222,4 +214,3 @@ public class DeleteRowResult {
   }
 
 }
-

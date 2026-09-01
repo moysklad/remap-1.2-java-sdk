@@ -25,13 +25,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import ru.moysklad.remap_1_2.model.Error;
-import ru.moysklad.remap_1_2.model.ErrorErrorsInner;
+import ru.moysklad.remap_1_2.model.Errors;
 import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.State;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -49,7 +47,7 @@ import java.util.StringJoiner;
   StateRowResult.JSON_PROPERTY_STATE_TYPE,
   StateRowResult.JSON_PROPERTY_ERRORS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class StateRowResult {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -82,7 +80,7 @@ public class StateRowResult {
 
   public static final String JSON_PROPERTY_ERRORS = "errors";
   @javax.annotation.Nonnull
-  private List<@Valid ErrorErrorsInner> errors = new ArrayList<>();
+  private List<Error> errors = new ArrayList<>();
 
   public StateRowResult() {
   }
@@ -113,9 +111,6 @@ public class StateRowResult {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -138,9 +133,6 @@ public class StateRowResult {
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -164,8 +156,6 @@ public class StateRowResult {
    * @return name
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -188,9 +178,6 @@ public class StateRowResult {
    * @return accountId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -214,8 +201,6 @@ public class StateRowResult {
    * @return color
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_COLOR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -238,8 +223,6 @@ public class StateRowResult {
    * @return entityType
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_ENTITY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -263,8 +246,6 @@ public class StateRowResult {
    * @return stateType
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_STATE_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -282,14 +263,14 @@ public class StateRowResult {
   }
 
 
-  public StateRowResult errors(@javax.annotation.Nonnull List<@Valid ErrorErrorsInner> errors) {
+  public StateRowResult errors(@javax.annotation.Nonnull List<Error> errors) {
     
     this.errors = errors;
     return this;
   }
 
 
-  public StateRowResult addErrorsItem(ErrorErrorsInner errorsItem) {
+  public StateRowResult addErrorsItem(Error errorsItem) {
     if (this.errors == null) {
       this.errors = new ArrayList<>();
     }
@@ -302,14 +283,10 @@ public class StateRowResult {
    * @return errors
    */
   @javax.annotation.Nonnull
-  @NotNull
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ERRORS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public List<@Valid ErrorErrorsInner> getErrors() {
+  public List<Error> getErrors() {
     return errors;
   }
 
@@ -318,7 +295,7 @@ public class StateRowResult {
 
   @JsonProperty(JSON_PROPERTY_ERRORS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setErrors(@javax.annotation.Nonnull List<@Valid ErrorErrorsInner> errors) {
+  public void setErrors(@javax.annotation.Nonnull List<Error> errors) {
     this.errors = errors;
   }
 
@@ -485,4 +462,3 @@ public class StateRowResult {
   }
 
 }
-

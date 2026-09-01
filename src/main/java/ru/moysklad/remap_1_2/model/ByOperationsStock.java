@@ -25,8 +25,6 @@ import ru.moysklad.remap_1_2.model.ByOperationsStockOperation;
 import ru.moysklad.remap_1_2.model.ByOperationsStockStore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -44,7 +42,7 @@ import java.util.StringJoiner;
   ByOperationsStock.JSON_PROPERTY_SUM_COST,
   ByOperationsStock.JSON_PROPERTY_AVG_STOCK_DAYS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class ByOperationsStock {
 
   public static final String JSON_PROPERTY_ASSORTMENT = "assortment";
@@ -94,9 +92,6 @@ public class ByOperationsStock {
    * @return assortment
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -126,9 +121,6 @@ public class ByOperationsStock {
    * @return operation
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_OPERATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -158,8 +150,6 @@ public class ByOperationsStock {
    * @return moment
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -189,9 +179,6 @@ public class ByOperationsStock {
    * @return store
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -221,8 +208,6 @@ public class ByOperationsStock {
    * @return stock
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_STOCK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -252,8 +237,6 @@ public class ByOperationsStock {
    * @return costPerUnit
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_COST_PER_UNIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -283,8 +266,6 @@ public class ByOperationsStock {
    * @return sumCost
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SUM_COST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -314,8 +295,6 @@ public class ByOperationsStock {
    * @return avgStockDays
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_AVG_STOCK_DAYS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -485,4 +464,3 @@ public class ByOperationsStock {
   }
 
 }
-

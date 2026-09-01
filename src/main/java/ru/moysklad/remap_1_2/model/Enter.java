@@ -42,8 +42,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -81,8 +79,8 @@ import java.util.StringJoiner;
   Enter.JSON_PROPERTY_SYNC_ID,
   Enter.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class Enter extends EntityWithMeta {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class Enter extends EntityWithMeta implements MetaEntity {
   public static Enter createWithMeta(UUID id) {
     Enter o = new Enter();
     Meta meta = new Meta();
@@ -116,7 +114,7 @@ public class Enter extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
-  private JsonNullable<List<@Valid AttributeAbstract>> attributes = JsonNullable.<List<@Valid AttributeAbstract>>undefined();
+  private JsonNullable<List<AttributeAbstract>> attributes = JsonNullable.<List<AttributeAbstract>>undefined();
 
   public static final String JSON_PROPERTY_CODE = "code";
   @javax.annotation.Nullable
@@ -168,7 +166,7 @@ public class Enter extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_POSITIONS = "positions";
   @javax.annotation.Nullable
-  private JsonNullable<EnterPositionList> positions = JsonNullable.<EnterPositionList>undefined();
+  private EnterPositionList positions;
 
   public static final String JSON_PROPERTY_PRINTED = "printed";
   @javax.annotation.Nullable
@@ -249,9 +247,6 @@ public class Enter extends EntityWithMeta {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -274,9 +269,6 @@ public class Enter extends EntityWithMeta {
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -293,9 +285,6 @@ public class Enter extends EntityWithMeta {
    * @return accountId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -319,8 +308,6 @@ public class Enter extends EntityWithMeta {
    * @return applicable
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_APPLICABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -338,8 +325,8 @@ public class Enter extends EntityWithMeta {
   }
 
 
-  public Enter attributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
+  public Enter attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
@@ -347,7 +334,7 @@ public class Enter extends EntityWithMeta {
 
   public Enter addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
-      this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(new ArrayList<>());
+      this.attributes = JsonNullable.<List<AttributeAbstract>>of(new ArrayList<>());
     }
     try {
       this.attributes.get().add(attributesItem);
@@ -362,12 +349,9 @@ public class Enter extends EntityWithMeta {
    * @return attributes
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
-  public List<@Valid AttributeAbstract> getAttributes() {
+  public List<AttributeAbstract> getAttributes() {
         return attributes.orElse(null);
   }
 
@@ -377,17 +361,17 @@ public class Enter extends EntityWithMeta {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<@Valid AttributeAbstract>> getAttributes_JsonNullable() {
+  public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
     return attributes;
   }
   
   @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
-  public void setAttributes_JsonNullable(JsonNullable<List<@Valid AttributeAbstract>> attributes) {
+  public void setAttributes_JsonNullable(JsonNullable<List<AttributeAbstract>> attributes) {
     this.attributes = attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
+  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
@@ -403,8 +387,6 @@ public class Enter extends EntityWithMeta {
    * @return code
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -427,8 +409,6 @@ public class Enter extends EntityWithMeta {
    * @return created
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_CREATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -445,8 +425,6 @@ public class Enter extends EntityWithMeta {
    * @return deleted
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_DELETED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -470,8 +448,6 @@ public class Enter extends EntityWithMeta {
    * @return description
    */
   @javax.annotation.Nullable
- @Size(max=4096)
-
   @JsonIgnore
 
   public String getDescription() {
@@ -510,8 +486,6 @@ public class Enter extends EntityWithMeta {
    * @return externalCode
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -541,9 +515,6 @@ public class Enter extends EntityWithMeta {
    * @return files
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public FileList getFiles() {
@@ -582,9 +553,6 @@ public class Enter extends EntityWithMeta {
    * @return group
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -614,8 +582,6 @@ public class Enter extends EntityWithMeta {
    * @return moment
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -645,8 +611,6 @@ public class Enter extends EntityWithMeta {
    * @return name
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -676,9 +640,6 @@ public class Enter extends EntityWithMeta {
    * @return organization
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -708,9 +669,6 @@ public class Enter extends EntityWithMeta {
    * @return overhead
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Overhead getOverhead() {
@@ -749,9 +707,6 @@ public class Enter extends EntityWithMeta {
    * @return owner
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Employee getOwner() {
@@ -779,8 +734,8 @@ public class Enter extends EntityWithMeta {
 
 
   public Enter positions(@javax.annotation.Nullable EnterPositionList positions) {
-    this.positions = JsonNullable.<EnterPositionList>of(positions);
     
+    this.positions = positions;
     return this;
   }
 
@@ -790,32 +745,20 @@ public class Enter extends EntityWithMeta {
    * @return positions
    */
   @javax.annotation.Nullable
-  @Valid
-
-
-  @JsonIgnore
-
-  public EnterPositionList getPositions() {
-        return positions.orElse(null);
-  }
-
-  
-
   @JsonProperty(JSON_PROPERTY_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-
-  public JsonNullable<EnterPositionList> getPositions_JsonNullable() {
+  public EnterPositionList getPositions() {
     return positions;
   }
-  
-  @JsonProperty(value = JSON_PROPERTY_POSITIONS, required = false)
-  public void setPositions_JsonNullable(JsonNullable<EnterPositionList> positions) {
-    this.positions = positions;
-  }
 
+  
+
+
+  @JsonProperty(JSON_PROPERTY_POSITIONS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPositions(@javax.annotation.Nullable EnterPositionList positions) {
-    this.positions = JsonNullable.<EnterPositionList>of(positions);
+    this.positions = positions;
   }
 
 
@@ -824,8 +767,6 @@ public class Enter extends EntityWithMeta {
    * @return printed
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PRINTED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -849,9 +790,6 @@ public class Enter extends EntityWithMeta {
    * @return project
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Project getProject() {
@@ -883,8 +821,6 @@ public class Enter extends EntityWithMeta {
    * @return published
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PUBLISHED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -908,9 +844,6 @@ public class Enter extends EntityWithMeta {
    * @return rate
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -940,8 +873,6 @@ public class Enter extends EntityWithMeta {
    * @return shared
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -971,9 +902,6 @@ public class Enter extends EntityWithMeta {
    * @return state
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public State getState() {
@@ -1012,9 +940,6 @@ public class Enter extends EntityWithMeta {
    * @return store
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1037,8 +962,6 @@ public class Enter extends EntityWithMeta {
    * @return sum
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1062,9 +985,6 @@ public class Enter extends EntityWithMeta {
    * @return syncId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1087,8 +1007,6 @@ public class Enter extends EntityWithMeta {
    * @return updated
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1126,7 +1044,7 @@ public class Enter extends EntityWithMeta {
         Objects.equals(this.organization, enter.organization) &&
         equalsNullable(this.overhead, enter.overhead) &&
         equalsNullable(this.owner, enter.owner) &&
-        equalsNullable(this.positions, enter.positions) &&
+        Objects.equals(this.positions, enter.positions) &&
         Objects.equals(this.printed, enter.printed) &&
         equalsNullable(this.project, enter.project) &&
         Objects.equals(this.published, enter.published) &&
@@ -1145,7 +1063,7 @@ public class Enter extends EntityWithMeta {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, applicable, hashCodeNullable(attributes), code, created, deleted, hashCodeNullable(description), externalCode, hashCodeNullable(files), group, moment, name, organization, hashCodeNullable(overhead), hashCodeNullable(owner), hashCodeNullable(positions), printed, hashCodeNullable(project), published, rate, shared, hashCodeNullable(state), store, sum, syncId, updated);
+    return Objects.hash(meta, id, accountId, applicable, hashCodeNullable(attributes), code, created, deleted, hashCodeNullable(description), externalCode, hashCodeNullable(files), group, moment, name, organization, hashCodeNullable(overhead), hashCodeNullable(owner), positions, printed, hashCodeNullable(project), published, rate, shared, hashCodeNullable(state), store, sum, syncId, updated);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1468,4 +1386,3 @@ public class Enter extends EntityWithMeta {
   }
 
 }
-

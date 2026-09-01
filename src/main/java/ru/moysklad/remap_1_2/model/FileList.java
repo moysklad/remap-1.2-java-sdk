@@ -31,8 +31,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -44,7 +42,7 @@ import java.util.StringJoiner;
   FileList.JSON_PROPERTY_META,
   FileList.JSON_PROPERTY_ROWS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class FileList {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -53,7 +51,7 @@ public class FileList {
 
   public static final String JSON_PROPERTY_ROWS = "rows";
   @javax.annotation.Nullable
-  private JsonNullable<List<@Valid ModelFile>> rows = JsonNullable.<List<@Valid ModelFile>>undefined();
+  private JsonNullable<List<ModelFile>> rows = JsonNullable.<List<ModelFile>>undefined();
 
   public FileList() {
   }
@@ -70,9 +68,6 @@ public class FileList {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -90,8 +85,8 @@ public class FileList {
   }
 
 
-  public FileList rows(@javax.annotation.Nullable List<@Valid ModelFile> rows) {
-    this.rows = JsonNullable.<List<@Valid ModelFile>>of(rows);
+  public FileList rows(@javax.annotation.Nullable List<ModelFile> rows) {
+    this.rows = JsonNullable.<List<ModelFile>>of(rows);
     
     return this;
   }
@@ -99,7 +94,7 @@ public class FileList {
 
   public FileList addRowsItem(ModelFile rowsItem) {
     if (this.rows == null || !this.rows.isPresent()) {
-      this.rows = JsonNullable.<List<@Valid ModelFile>>of(new ArrayList<>());
+      this.rows = JsonNullable.<List<ModelFile>>of(new ArrayList<>());
     }
     try {
       this.rows.get().add(rowsItem);
@@ -114,12 +109,9 @@ public class FileList {
    * @return rows
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
-  public List<@Valid ModelFile> getRows() {
+  public List<ModelFile> getRows() {
         return rows.orElse(null);
   }
 
@@ -129,17 +121,17 @@ public class FileList {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<@Valid ModelFile>> getRows_JsonNullable() {
+  public JsonNullable<List<ModelFile>> getRows_JsonNullable() {
     return rows;
   }
   
   @JsonProperty(value = JSON_PROPERTY_ROWS, required = false)
-  public void setRows_JsonNullable(JsonNullable<List<@Valid ModelFile>> rows) {
+  public void setRows_JsonNullable(JsonNullable<List<ModelFile>> rows) {
     this.rows = rows;
   }
 
-  public void setRows(@javax.annotation.Nullable List<@Valid ModelFile> rows) {
-    this.rows = JsonNullable.<List<@Valid ModelFile>>of(rows);
+  public void setRows(@javax.annotation.Nullable List<ModelFile> rows) {
+    this.rows = JsonNullable.<List<ModelFile>>of(rows);
   }
 
 
@@ -244,4 +236,3 @@ public class FileList {
   }
 
 }
-

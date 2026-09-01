@@ -43,7 +43,7 @@
 |**consignee** | [**Agent**](Agent.md) | Грузополучатель (контрагент или юрлицо) |  [optional] |
 |**paymentNumber** | **String** | Название платежного документа |  [optional] |
 |**paymentDate** | **String** | Дата платежного документа |  [optional] |
-|**errors** | [**List&lt;ErrorErrorsInner&gt;**](ErrorErrorsInner.md) |  |  |
+|**errors** | [**List&lt;Error&gt;**](Error.md) |  |  |
 
 
 

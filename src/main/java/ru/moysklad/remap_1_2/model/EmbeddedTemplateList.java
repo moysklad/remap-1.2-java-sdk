@@ -32,8 +32,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -46,8 +44,8 @@ import java.util.StringJoiner;
   EmbeddedTemplateList.JSON_PROPERTY_META,
   EmbeddedTemplateList.JSON_PROPERTY_ROWS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class EmbeddedTemplateList {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class EmbeddedTemplateList implements EntityList {
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
   @javax.annotation.Nullable
@@ -59,7 +57,7 @@ public class EmbeddedTemplateList {
 
   public static final String JSON_PROPERTY_ROWS = "rows";
   @javax.annotation.Nullable
-  private JsonNullable<List<@Valid EmbeddedTemplate>> rows = JsonNullable.<List<@Valid EmbeddedTemplate>>undefined();
+  private JsonNullable<List<EmbeddedTemplate>> rows = JsonNullable.<List<EmbeddedTemplate>>undefined();
 
   public EmbeddedTemplateList() {
   }
@@ -76,9 +74,6 @@ public class EmbeddedTemplateList {
    * @return context
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_CONTEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -108,9 +103,6 @@ public class EmbeddedTemplateList {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -128,8 +120,8 @@ public class EmbeddedTemplateList {
   }
 
 
-  public EmbeddedTemplateList rows(@javax.annotation.Nullable List<@Valid EmbeddedTemplate> rows) {
-    this.rows = JsonNullable.<List<@Valid EmbeddedTemplate>>of(rows);
+  public EmbeddedTemplateList rows(@javax.annotation.Nullable List<EmbeddedTemplate> rows) {
+    this.rows = JsonNullable.<List<EmbeddedTemplate>>of(rows);
     
     return this;
   }
@@ -137,7 +129,7 @@ public class EmbeddedTemplateList {
 
   public EmbeddedTemplateList addRowsItem(EmbeddedTemplate rowsItem) {
     if (this.rows == null || !this.rows.isPresent()) {
-      this.rows = JsonNullable.<List<@Valid EmbeddedTemplate>>of(new ArrayList<>());
+      this.rows = JsonNullable.<List<EmbeddedTemplate>>of(new ArrayList<>());
     }
     try {
       this.rows.get().add(rowsItem);
@@ -152,12 +144,9 @@ public class EmbeddedTemplateList {
    * @return rows
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
-  public List<@Valid EmbeddedTemplate> getRows() {
+  public List<EmbeddedTemplate> getRows() {
         return rows.orElse(null);
   }
 
@@ -167,17 +156,17 @@ public class EmbeddedTemplateList {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<@Valid EmbeddedTemplate>> getRows_JsonNullable() {
+  public JsonNullable<List<EmbeddedTemplate>> getRows_JsonNullable() {
     return rows;
   }
   
   @JsonProperty(value = JSON_PROPERTY_ROWS, required = false)
-  public void setRows_JsonNullable(JsonNullable<List<@Valid EmbeddedTemplate>> rows) {
+  public void setRows_JsonNullable(JsonNullable<List<EmbeddedTemplate>> rows) {
     this.rows = rows;
   }
 
-  public void setRows(@javax.annotation.Nullable List<@Valid EmbeddedTemplate> rows) {
-    this.rows = JsonNullable.<List<@Valid EmbeddedTemplate>>of(rows);
+  public void setRows(@javax.annotation.Nullable List<EmbeddedTemplate> rows) {
+    this.rows = JsonNullable.<List<EmbeddedTemplate>>of(rows);
   }
 
 
@@ -289,4 +278,3 @@ public class EmbeddedTemplateList {
   }
 
 }
-

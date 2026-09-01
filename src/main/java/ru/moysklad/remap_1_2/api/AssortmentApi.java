@@ -24,7 +24,7 @@ import ru.moysklad.remap_1_2.model.Assortment;
 import ru.moysklad.remap_1_2.model.AssortmentList;
 import ru.moysklad.remap_1_2.model.AssortmentSettings;
 import ru.moysklad.remap_1_2.model.DeleteRowResult;
-import ru.moysklad.remap_1_2.model.ErrorOrArray;
+import ru.moysklad.remap_1_2.model.Errors;
 
 
 import java.util.ArrayList;
@@ -34,10 +34,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-import javax.validation.constraints.*;
-import javax.validation.Valid;
-
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class AssortmentApi extends BaseApi {
 
@@ -56,7 +53,7 @@ public class AssortmentApi extends BaseApi {
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteAssortmentPositionsBatch(@javax.annotation.Nonnull List<@Valid Assortment> assortment) throws ApiException {
+  public List<DeleteRowResult> deleteAssortmentPositionsBatch(@javax.annotation.Nonnull List<Assortment> assortment) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.deleteAssortmentPositionsBatch(assortment, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -75,7 +72,7 @@ public class AssortmentApi extends BaseApi {
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteAssortmentPositionsBatch(@javax.annotation.Nonnull List<@Valid Assortment> assortment, RequestOptions options) throws ApiException {
+  public List<DeleteRowResult> deleteAssortmentPositionsBatch(@javax.annotation.Nonnull List<Assortment> assortment, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.deleteAssortmentPositionsBatch(assortment, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -91,7 +88,7 @@ public class AssortmentApi extends BaseApi {
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  protected List<DeleteRowResult> deleteAssortmentPositionsBatch(@javax.annotation.Nonnull List<@Valid Assortment> assortment, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteAssortmentPositionsBatch(@javax.annotation.Nonnull List<Assortment> assortment, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = assortment;
     
     // verify the required parameter 'assortment' is set
@@ -110,17 +107,18 @@ public class AssortmentApi extends BaseApi {
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -227,15 +225,15 @@ if (contentType != null)
     localVarQueryParams.addAll(apiClient.parameterToPair("groupBy", groupBy));
     localVarQueryParams.addAll(apiClient.parameterToPair("stockMode", stockMode));
     localVarQueryParams.addAll(apiClient.parameterToPair("quantityMode", quantityMode));
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -315,15 +313,15 @@ if (acceptEncoding != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -415,17 +413,18 @@ if (acceptEncoding != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };

@@ -22,8 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -35,7 +33,7 @@ import java.util.StringJoiner;
   RetailDemandGiftCard.JSON_PROPERTY_NAME,
   RetailDemandGiftCard.JSON_PROPERTY_PAYMENT_SUM
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailDemandGiftCard {
 
   public static final String JSON_PROPERTY_NAME = "name";
@@ -71,8 +69,6 @@ public class RetailDemandGiftCard {
    * @return name
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -95,8 +91,6 @@ public class RetailDemandGiftCard {
    * @return paymentSum
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PAYMENT_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -203,4 +197,3 @@ public class RetailDemandGiftCard {
   }
 
 }
-

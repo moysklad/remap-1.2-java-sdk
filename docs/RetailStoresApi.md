@@ -98,12 +98,12 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createRetailStore
 
-> RetailStore createRetailStore(retailStore, accept, acceptEncoding, expand, contentType)
+> RetailStore createRetailStore(retailStoreUpsert, accept, acceptEncoding, expand, contentType)
 
 Создать точку продаж
 
@@ -133,13 +133,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         RetailStoresApi apiInstance = new RetailStoresApi(defaultClient);
-        RetailStore retailStore = new RetailStore(); // RetailStore | 
+        RetailStoreUpsert retailStoreUpsert = new RetailStoreUpsert(); // RetailStoreUpsert | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String contentType = "application/json"; // String | 
         try {
-            RetailStore result = apiInstance.createRetailStore(retailStore, accept, acceptEncoding, expand, contentType);
+            RetailStore result = apiInstance.createRetailStore(retailStoreUpsert, accept, acceptEncoding, expand, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling RetailStoresApi#createRetailStore");
@@ -157,7 +157,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **retailStore** | [**RetailStore**](RetailStore.md)|  | |
+| **retailStoreUpsert** | [**RetailStoreUpsert**](RetailStoreUpsert.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
@@ -181,12 +181,12 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createRetailStoresBatch
 
-> List&lt;BatchResponseEntity&gt; createRetailStoresBatch(retailStore, accept, acceptEncoding, expand, contentType)
+> List&lt;BatchResponseEntity&gt; createRetailStoresBatch(retailStoreUpsert, accept, acceptEncoding, expand, contentType)
 
 Массовое создание и обновление точек продаж
 
@@ -216,13 +216,13 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         RetailStoresApi apiInstance = new RetailStoresApi(defaultClient);
-        List<@Valid RetailStore> retailStore = Arrays.asList(); // List<@Valid RetailStore> | 
+        List<RetailStoreUpsert> retailStoreUpsert = Arrays.asList(); // List<RetailStoreUpsert> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String contentType = "application/json"; // String | 
         try {
-            List<BatchResponseEntity> result = apiInstance.createRetailStoresBatch(retailStore, accept, acceptEncoding, expand, contentType);
+            List<BatchResponseEntity> result = apiInstance.createRetailStoresBatch(retailStoreUpsert, accept, acceptEncoding, expand, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling RetailStoresApi#createRetailStoresBatch");
@@ -240,7 +240,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **retailStore** | [**List&lt;@Valid RetailStore&gt;**](RetailStore.md)|  | |
+| **retailStoreUpsert** | [**List&lt;RetailStoreUpsert&gt;**](RetailStoreUpsert.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
@@ -264,7 +264,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteRetailStore
@@ -342,7 +342,7 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## deleteRetailStoresBatch
@@ -377,7 +377,7 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         RetailStoresApi apiInstance = new RetailStoresApi(defaultClient);
-        List<@Valid RetailStore> retailStore = Arrays.asList(); // List<@Valid RetailStore> | 
+        List<RetailStore> retailStore = Arrays.asList(); // List<RetailStore> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
@@ -400,7 +400,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **retailStore** | [**List&lt;@Valid RetailStore&gt;**](RetailStore.md)|  | |
+| **retailStore** | [**List&lt;RetailStore&gt;**](RetailStore.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -423,7 +423,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getMasterRetailStores
@@ -514,7 +514,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getRetailStoreById
@@ -595,7 +595,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## getRetailStores
@@ -684,12 +684,12 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## updateRetailStore
 
-> RetailStore updateRetailStore(id, retailStore, expand, accept, acceptEncoding, contentType)
+> RetailStore updateRetailStore(id, retailStoreUpsert, expand, accept, acceptEncoding, contentType)
 
 Изменить точку продаж
 
@@ -720,13 +720,13 @@ public class Example {
 
         RetailStoresApi apiInstance = new RetailStoresApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
-        RetailStore retailStore = new RetailStore(); // RetailStore | 
+        RetailStoreUpsert retailStoreUpsert = new RetailStoreUpsert(); // RetailStoreUpsert | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            RetailStore result = apiInstance.updateRetailStore(id, retailStore, expand, accept, acceptEncoding, contentType);
+            RetailStore result = apiInstance.updateRetailStore(id, retailStoreUpsert, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling RetailStoresApi#updateRetailStore");
@@ -745,7 +745,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **retailStore** | [**RetailStore**](RetailStore.md)|  | |
+| **retailStoreUpsert** | [**RetailStoreUpsert**](RetailStoreUpsert.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
@@ -769,5 +769,5 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект или массив объектов с полем errors) |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 

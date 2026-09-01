@@ -36,8 +36,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -62,8 +60,8 @@ import java.util.StringJoiner;
   SalesReturnPosition.JSON_PROPERTY_VAT,
   SalesReturnPosition.JSON_PROPERTY_VAT_ENABLED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class SalesReturnPosition extends EntityWithMeta {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class SalesReturnPosition extends EntityWithMeta implements DocumentPosition, MetaEntity {
   public static SalesReturnPosition createWithMeta(UUID parentId, UUID id) {
     SalesReturnPosition o = new SalesReturnPosition();
     Meta meta = new Meta();
@@ -146,11 +144,9 @@ public class SalesReturnPosition extends EntityWithMeta {
    */
   @JsonCreator
   public SalesReturnPosition(
-    @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id, 
     @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId
   ) {
     this();
-    this.id = id;
     this.accountId = accountId;
   }
 
@@ -166,9 +162,6 @@ public class SalesReturnPosition extends EntityWithMeta {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -186,14 +179,18 @@ public class SalesReturnPosition extends EntityWithMeta {
   }
 
 
+  public SalesReturnPosition id(@javax.annotation.Nullable UUID id) {
+    
+    this.id = id;
+    return this;
+  }
+
+
   /**
    * ID позиции
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -204,15 +201,18 @@ public class SalesReturnPosition extends EntityWithMeta {
   
 
 
+  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setId(@javax.annotation.Nullable UUID id) {
+    this.id = id;
+  }
+
 
   /**
    * ID учетной записи
    * @return accountId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -236,9 +236,6 @@ public class SalesReturnPosition extends EntityWithMeta {
    * @return assortment
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -268,8 +265,6 @@ public class SalesReturnPosition extends EntityWithMeta {
    * @return cost
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_COST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -299,9 +294,6 @@ public class SalesReturnPosition extends EntityWithMeta {
    * @return country
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Country getCountry() {
@@ -340,8 +332,6 @@ public class SalesReturnPosition extends EntityWithMeta {
    * @return discount
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_DISCOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -371,9 +361,6 @@ public class SalesReturnPosition extends EntityWithMeta {
    * @return gtd
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Gtd getGtd() {
@@ -412,9 +399,6 @@ public class SalesReturnPosition extends EntityWithMeta {
    * @return pack
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Pack getPack() {
@@ -453,8 +437,6 @@ public class SalesReturnPosition extends EntityWithMeta {
    * @return price
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -484,8 +466,6 @@ public class SalesReturnPosition extends EntityWithMeta {
    * @return quantity
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -515,9 +495,6 @@ public class SalesReturnPosition extends EntityWithMeta {
    * @return slot
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public StoreSlot getSlot() {
@@ -564,8 +541,6 @@ public class SalesReturnPosition extends EntityWithMeta {
    * @return things
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_THINGS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -597,8 +572,6 @@ public class SalesReturnPosition extends EntityWithMeta {
    * @return vat
    */
   @javax.annotation.Nullable
- @Min(0) @Max(100)
-
   @JsonProperty(JSON_PROPERTY_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -628,8 +601,6 @@ public class SalesReturnPosition extends EntityWithMeta {
    * @return vatEnabled
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -883,4 +854,3 @@ public class SalesReturnPosition extends EntityWithMeta {
   }
 
 }
-

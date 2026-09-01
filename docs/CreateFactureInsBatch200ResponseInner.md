@@ -37,7 +37,7 @@
 |**payments** | [**List&lt;PaymentOut&gt;**](PaymentOut.md) | Массив ссылок на связанные исходящие платежи |  [optional] |
 |**incomingNumber** | **String** | Входящий номер |  [optional] |
 |**incomingDate** | **String** | Входящая дата |  [optional] |
-|**errors** | [**List&lt;ErrorErrorsInner&gt;**](ErrorErrorsInner.md) |  |  |
+|**errors** | [**List&lt;Error&gt;**](Error.md) |  |  |
 
 
 

@@ -28,8 +28,6 @@ import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.State;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -43,7 +41,7 @@ import java.util.StringJoiner;
   DocumentMetadata.JSON_PROPERTY_CREATE_SHARED,
   DocumentMetadata.JSON_PROPERTY_STATES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class DocumentMetadata {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -60,7 +58,7 @@ public class DocumentMetadata {
 
   public static final String JSON_PROPERTY_STATES = "states";
   @javax.annotation.Nullable
-  private List<@Valid State> states = new ArrayList<>();
+  private List<State> states = new ArrayList<>();
 
   public DocumentMetadata() {
   }
@@ -77,9 +75,6 @@ public class DocumentMetadata {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -109,9 +104,6 @@ public class DocumentMetadata {
    * @return attributes
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -141,8 +133,6 @@ public class DocumentMetadata {
    * @return createShared
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_CREATE_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -160,7 +150,7 @@ public class DocumentMetadata {
   }
 
 
-  public DocumentMetadata states(@javax.annotation.Nullable List<@Valid State> states) {
+  public DocumentMetadata states(@javax.annotation.Nullable List<State> states) {
     
     this.states = states;
     return this;
@@ -180,13 +170,10 @@ public class DocumentMetadata {
    * @return states
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_STATES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<@Valid State> getStates() {
+  public List<State> getStates() {
     return states;
   }
 
@@ -195,7 +182,7 @@ public class DocumentMetadata {
 
   @JsonProperty(JSON_PROPERTY_STATES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStates(@javax.annotation.Nullable List<@Valid State> states) {
+  public void setStates(@javax.annotation.Nullable List<State> states) {
     this.states = states;
   }
 
@@ -309,4 +296,3 @@ public class DocumentMetadata {
   }
 
 }
-

@@ -53,8 +53,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -117,8 +115,8 @@ import java.util.StringJoiner;
   Demand.JSON_PROPERTY_TRANSPORT_FACILITY,
   Demand.JSON_PROPERTY_TRANSPORT_FACILITY_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class Demand extends EntityWithMeta {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class Demand extends EntityWithMeta implements MetaEntity {
   public static Demand createWithMeta(UUID id) {
     Demand o = new Demand();
     Meta meta = new Meta();
@@ -260,7 +258,7 @@ public class Demand extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
-  private JsonNullable<List<@Valid AttributeAbstract>> attributes = JsonNullable.<List<@Valid AttributeAbstract>>undefined();
+  private JsonNullable<List<AttributeAbstract>> attributes = JsonNullable.<List<AttributeAbstract>>undefined();
 
   public static final String JSON_PROPERTY_FILES = "files";
   @javax.annotation.Nullable
@@ -308,7 +306,7 @@ public class Demand extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_PRODUCTION_TASKS = "productionTasks";
   @javax.annotation.Nullable
-  private JsonNullable<List<@Valid ProductionTask>> productionTasks = JsonNullable.<List<@Valid ProductionTask>>undefined();
+  private JsonNullable<List<ProductionTask>> productionTasks = JsonNullable.<List<ProductionTask>>undefined();
 
   public static final String JSON_PROPERTY_INVOICES_OUT = "invoicesOut";
   @javax.annotation.Nullable
@@ -389,9 +387,6 @@ public class Demand extends EntityWithMeta {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -414,9 +409,6 @@ public class Demand extends EntityWithMeta {
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -433,9 +425,6 @@ public class Demand extends EntityWithMeta {
    * @return accountId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -459,8 +448,6 @@ public class Demand extends EntityWithMeta {
    * @return name
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -490,8 +477,6 @@ public class Demand extends EntityWithMeta {
    * @return code
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -521,8 +506,6 @@ public class Demand extends EntityWithMeta {
    * @return externalCode
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -552,9 +535,6 @@ public class Demand extends EntityWithMeta {
    * @return syncId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -584,8 +564,6 @@ public class Demand extends EntityWithMeta {
    * @return description
    */
   @javax.annotation.Nullable
- @Size(max=4096)
-
   @JsonIgnore
 
   public String getDescription() {
@@ -617,8 +595,6 @@ public class Demand extends EntityWithMeta {
    * @return created
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_CREATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -635,8 +611,6 @@ public class Demand extends EntityWithMeta {
    * @return deleted
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_DELETED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -653,8 +627,6 @@ public class Demand extends EntityWithMeta {
    * @return updated
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -678,8 +650,6 @@ public class Demand extends EntityWithMeta {
    * @return moment
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -709,8 +679,6 @@ public class Demand extends EntityWithMeta {
    * @return applicable
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_APPLICABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -733,8 +701,6 @@ public class Demand extends EntityWithMeta {
    * @return printed
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PRINTED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -751,8 +717,6 @@ public class Demand extends EntityWithMeta {
    * @return published
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PUBLISHED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -776,8 +740,6 @@ public class Demand extends EntityWithMeta {
    * @return shared
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -807,8 +769,6 @@ public class Demand extends EntityWithMeta {
    * @return vatEnabled
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -838,8 +798,6 @@ public class Demand extends EntityWithMeta {
    * @return vatIncluded
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VAT_INCLUDED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -862,8 +820,6 @@ public class Demand extends EntityWithMeta {
    * @return vatSum
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_VAT_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -880,8 +836,6 @@ public class Demand extends EntityWithMeta {
    * @return sum
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -898,8 +852,6 @@ public class Demand extends EntityWithMeta {
    * @return payedSum
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PAYED_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -923,9 +875,6 @@ public class Demand extends EntityWithMeta {
    * @return organization
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -955,9 +904,6 @@ public class Demand extends EntityWithMeta {
    * @return organizationAccount
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Account getOrganizationAccount() {
@@ -996,9 +942,6 @@ public class Demand extends EntityWithMeta {
    * @return agent
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1028,9 +971,6 @@ public class Demand extends EntityWithMeta {
    * @return agentAccount
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Account getAgentAccount() {
@@ -1069,9 +1009,6 @@ public class Demand extends EntityWithMeta {
    * @return store
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Store getStore() {
@@ -1110,9 +1047,6 @@ public class Demand extends EntityWithMeta {
    * @return state
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public State getState() {
@@ -1151,9 +1085,6 @@ public class Demand extends EntityWithMeta {
    * @return contract
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Contract getContract() {
@@ -1192,9 +1123,6 @@ public class Demand extends EntityWithMeta {
    * @return project
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Project getProject() {
@@ -1233,9 +1161,6 @@ public class Demand extends EntityWithMeta {
    * @return owner
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Employee getOwner() {
@@ -1274,9 +1199,6 @@ public class Demand extends EntityWithMeta {
    * @return group
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1294,8 +1216,8 @@ public class Demand extends EntityWithMeta {
   }
 
 
-  public Demand attributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
+  public Demand attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
   }
@@ -1303,7 +1225,7 @@ public class Demand extends EntityWithMeta {
 
   public Demand addAttributesItem(AttributeAbstract attributesItem) {
     if (this.attributes == null || !this.attributes.isPresent()) {
-      this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(new ArrayList<>());
+      this.attributes = JsonNullable.<List<AttributeAbstract>>of(new ArrayList<>());
     }
     try {
       this.attributes.get().add(attributesItem);
@@ -1318,12 +1240,9 @@ public class Demand extends EntityWithMeta {
    * @return attributes
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
-  public List<@Valid AttributeAbstract> getAttributes() {
+  public List<AttributeAbstract> getAttributes() {
         return attributes.orElse(null);
   }
 
@@ -1333,17 +1252,17 @@ public class Demand extends EntityWithMeta {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<@Valid AttributeAbstract>> getAttributes_JsonNullable() {
+  public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
     return attributes;
   }
   
   @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
-  public void setAttributes_JsonNullable(JsonNullable<List<@Valid AttributeAbstract>> attributes) {
+  public void setAttributes_JsonNullable(JsonNullable<List<AttributeAbstract>> attributes) {
     this.attributes = attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nullable List<@Valid AttributeAbstract> attributes) {
-    this.attributes = JsonNullable.<List<@Valid AttributeAbstract>>of(attributes);
+  public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+    this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
@@ -1359,9 +1278,6 @@ public class Demand extends EntityWithMeta {
    * @return files
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public FileList getFiles() {
@@ -1400,9 +1316,6 @@ public class Demand extends EntityWithMeta {
    * @return rate
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1432,9 +1345,6 @@ public class Demand extends EntityWithMeta {
    * @return positions
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1464,9 +1374,6 @@ public class Demand extends EntityWithMeta {
    * @return salesChannel
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public SalesChannel getSalesChannel() {
@@ -1505,8 +1412,6 @@ public class Demand extends EntityWithMeta {
    * @return shipmentAddress
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_SHIPMENT_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1536,9 +1441,6 @@ public class Demand extends EntityWithMeta {
    * @return shipmentAddressFull
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_SHIPMENT_ADDRESS_FULL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1568,9 +1470,6 @@ public class Demand extends EntityWithMeta {
    * @return overhead
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Overhead getOverhead() {
@@ -1609,9 +1508,6 @@ public class Demand extends EntityWithMeta {
    * @return customerOrder
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public CustomerOrder getCustomerOrder() {
@@ -1650,9 +1546,6 @@ public class Demand extends EntityWithMeta {
    * @return factureOut
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public FactureOut getFactureOut() {
@@ -1703,9 +1596,6 @@ public class Demand extends EntityWithMeta {
    * @return returns
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public List<SalesReturn> getReturns() {
@@ -1756,9 +1646,6 @@ public class Demand extends EntityWithMeta {
    * @return payments
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public List<RetailShiftPaymentsInner> getPayments() {
@@ -1785,8 +1672,8 @@ public class Demand extends EntityWithMeta {
   }
 
 
-  public Demand productionTasks(@javax.annotation.Nullable List<@Valid ProductionTask> productionTasks) {
-    this.productionTasks = JsonNullable.<List<@Valid ProductionTask>>of(productionTasks);
+  public Demand productionTasks(@javax.annotation.Nullable List<ProductionTask> productionTasks) {
+    this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
     
     return this;
   }
@@ -1794,7 +1681,7 @@ public class Demand extends EntityWithMeta {
 
   public Demand addProductionTasksItem(ProductionTask productionTasksItem) {
     if (this.productionTasks == null || !this.productionTasks.isPresent()) {
-      this.productionTasks = JsonNullable.<List<@Valid ProductionTask>>of(new ArrayList<>());
+      this.productionTasks = JsonNullable.<List<ProductionTask>>of(new ArrayList<>());
     }
     try {
       this.productionTasks.get().add(productionTasksItem);
@@ -1809,12 +1696,9 @@ public class Demand extends EntityWithMeta {
    * @return productionTasks
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
-  public List<@Valid ProductionTask> getProductionTasks() {
+  public List<ProductionTask> getProductionTasks() {
         return productionTasks.orElse(null);
   }
 
@@ -1824,17 +1708,17 @@ public class Demand extends EntityWithMeta {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<@Valid ProductionTask>> getProductionTasks_JsonNullable() {
+  public JsonNullable<List<ProductionTask>> getProductionTasks_JsonNullable() {
     return productionTasks;
   }
   
   @JsonProperty(value = JSON_PROPERTY_PRODUCTION_TASKS, required = false)
-  public void setProductionTasks_JsonNullable(JsonNullable<List<@Valid ProductionTask>> productionTasks) {
+  public void setProductionTasks_JsonNullable(JsonNullable<List<ProductionTask>> productionTasks) {
     this.productionTasks = productionTasks;
   }
 
-  public void setProductionTasks(@javax.annotation.Nullable List<@Valid ProductionTask> productionTasks) {
-    this.productionTasks = JsonNullable.<List<@Valid ProductionTask>>of(productionTasks);
+  public void setProductionTasks(@javax.annotation.Nullable List<ProductionTask> productionTasks) {
+    this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
   }
 
 
@@ -1862,9 +1746,6 @@ public class Demand extends EntityWithMeta {
    * @return invoicesOut
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public List<InvoiceOut> getInvoicesOut() {
@@ -1903,8 +1784,6 @@ public class Demand extends EntityWithMeta {
    * @return cargoName
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_CARGO_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1934,9 +1813,6 @@ public class Demand extends EntityWithMeta {
    * @return carrier
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Agent getCarrier() {
@@ -1975,9 +1851,6 @@ public class Demand extends EntityWithMeta {
    * @return consignee
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Agent getConsignee() {
@@ -2016,8 +1889,6 @@ public class Demand extends EntityWithMeta {
    * @return goodPackQuantity
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_GOOD_PACK_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2047,8 +1918,6 @@ public class Demand extends EntityWithMeta {
    * @return shippingInstructions
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_SHIPPING_INSTRUCTIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2078,8 +1947,6 @@ public class Demand extends EntityWithMeta {
    * @return stateContractId
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_STATE_CONTRACT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2109,8 +1976,6 @@ public class Demand extends EntityWithMeta {
    * @return transportFacility
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_TRANSPORT_FACILITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2140,8 +2005,6 @@ public class Demand extends EntityWithMeta {
    * @return transportFacilityNumber
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_TRANSPORT_FACILITY_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -2772,4 +2635,3 @@ public class Demand extends EntityWithMeta {
   }
 
 }
-

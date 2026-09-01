@@ -22,9 +22,10 @@ import ru.moysklad.remap_1_2.Pair;
 
 import ru.moysklad.remap_1_2.model.BatchResponseEntity;
 import ru.moysklad.remap_1_2.model.DeleteRowResult;
-import ru.moysklad.remap_1_2.model.ErrorOrArray;
+import ru.moysklad.remap_1_2.model.Errors;
 import ru.moysklad.remap_1_2.model.RetailStore;
 import ru.moysklad.remap_1_2.model.RetailStoreList;
+import ru.moysklad.remap_1_2.model.RetailStoreUpsert;
 import java.util.UUID;
 
 
@@ -35,10 +36,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-import javax.validation.constraints.*;
-import javax.validation.Valid;
-
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class RetailStoresApi extends BaseApi {
 
@@ -125,17 +123,18 @@ public class RetailStoresApi extends BaseApi {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -169,13 +168,13 @@ if (contentType != null)
   /**
    * Создать точку продаж
    * 
-   * @param retailStore  (required)
+   * @param retailStoreUpsert  (required)
    * @return RetailStore
    * @throws ApiException if fails to make API call
    */
-  public RetailStore createRetailStore(@javax.annotation.Nonnull RetailStore retailStore) throws ApiException {
+  public RetailStore createRetailStore(@javax.annotation.Nonnull RetailStoreUpsert retailStoreUpsert) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
-    return this.createRetailStore(retailStore, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
+    return this.createRetailStore(retailStoreUpsert, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -183,7 +182,7 @@ if (contentType != null)
    * Создать точку продаж
    * 
    
-   * @param retailStore  (required)
+   * @param retailStoreUpsert  (required)
    
    
    
@@ -193,15 +192,15 @@ if (contentType != null)
    * @return RetailStore
    * @throws ApiException if fails to make API call
    */
-  public RetailStore createRetailStore(@javax.annotation.Nonnull RetailStore retailStore, RequestOptions options) throws ApiException {
+  public RetailStore createRetailStore(@javax.annotation.Nonnull RetailStoreUpsert retailStoreUpsert, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
-    return this.createRetailStore(retailStore, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
+    return this.createRetailStore(retailStoreUpsert, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
 
   /**
    * Создать точку продаж
    * 
-   * @param retailStore  (required)
+   * @param retailStoreUpsert  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param expand Замена ссылок объектами с помощью expand (optional)
@@ -210,12 +209,12 @@ if (contentType != null)
    * @return RetailStore
    * @throws ApiException if fails to make API call
    */
-  protected RetailStore createRetailStore(@javax.annotation.Nonnull RetailStore retailStore, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
-    Object localVarPostBody = retailStore;
+  protected RetailStore createRetailStore(@javax.annotation.Nonnull RetailStoreUpsert retailStoreUpsert, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = retailStoreUpsert;
     
-    // verify the required parameter 'retailStore' is set
-    if (retailStore == null) {
-      throw new ApiException(400, "Missing the required parameter 'retailStore' when calling createRetailStore");
+    // verify the required parameter 'retailStoreUpsert' is set
+    if (retailStoreUpsert == null) {
+      throw new ApiException(400, "Missing the required parameter 'retailStoreUpsert' when calling createRetailStore");
     }
     
     // create path and map variables
@@ -230,17 +229,18 @@ if (contentType != null)
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -274,13 +274,13 @@ if (contentType != null)
   /**
    * Массовое создание и обновление точек продаж
    * 
-   * @param retailStore  (required)
+   * @param retailStoreUpsert  (required)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createRetailStoresBatch(@javax.annotation.Nonnull List<@Valid RetailStore> retailStore) throws ApiException {
+  public List<BatchResponseEntity> createRetailStoresBatch(@javax.annotation.Nonnull List<RetailStoreUpsert> retailStoreUpsert) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
-    return this.createRetailStoresBatch(retailStore, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
+    return this.createRetailStoresBatch(retailStoreUpsert, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -288,7 +288,7 @@ if (contentType != null)
    * Массовое создание и обновление точек продаж
    * 
    
-   * @param retailStore  (required)
+   * @param retailStoreUpsert  (required)
    
    
    
@@ -298,15 +298,15 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<BatchResponseEntity> createRetailStoresBatch(@javax.annotation.Nonnull List<@Valid RetailStore> retailStore, RequestOptions options) throws ApiException {
+  public List<BatchResponseEntity> createRetailStoresBatch(@javax.annotation.Nonnull List<RetailStoreUpsert> retailStoreUpsert, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
-    return this.createRetailStoresBatch(retailStore, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
+    return this.createRetailStoresBatch(retailStoreUpsert, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
 
   /**
    * Массовое создание и обновление точек продаж
    * 
-   * @param retailStore  (required)
+   * @param retailStoreUpsert  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param expand Замена ссылок объектами с помощью expand (optional)
@@ -315,12 +315,12 @@ if (contentType != null)
    * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  protected List<BatchResponseEntity> createRetailStoresBatch(@javax.annotation.Nonnull List<@Valid RetailStore> retailStore, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
-    Object localVarPostBody = retailStore;
+  protected List<BatchResponseEntity> createRetailStoresBatch(@javax.annotation.Nonnull List<RetailStoreUpsert> retailStoreUpsert, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = retailStoreUpsert;
     
-    // verify the required parameter 'retailStore' is set
-    if (retailStore == null) {
-      throw new ApiException(400, "Missing the required parameter 'retailStore' when calling createRetailStoresBatch");
+    // verify the required parameter 'retailStoreUpsert' is set
+    if (retailStoreUpsert == null) {
+      throw new ApiException(400, "Missing the required parameter 'retailStoreUpsert' when calling createRetailStoresBatch");
     }
     
     // create path and map variables
@@ -335,17 +335,18 @@ if (contentType != null)
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -359,7 +360,7 @@ if (contentType != null)
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
     TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
-    return apiClient.invokeAPI(
+    return apiClient.invokeAPIBatch(
         localVarPath,
         "POST",
         localVarQueryParams,
@@ -433,15 +434,15 @@ if (contentType != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -478,7 +479,7 @@ if (acceptEncoding != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteRetailStoresBatch(@javax.annotation.Nonnull List<@Valid RetailStore> retailStore) throws ApiException {
+  public List<DeleteRowResult> deleteRetailStoresBatch(@javax.annotation.Nonnull List<RetailStore> retailStore) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.deleteRetailStoresBatch(retailStore, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -497,7 +498,7 @@ if (acceptEncoding != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteRowResult> deleteRetailStoresBatch(@javax.annotation.Nonnull List<@Valid RetailStore> retailStore, RequestOptions options) throws ApiException {
+  public List<DeleteRowResult> deleteRetailStoresBatch(@javax.annotation.Nonnull List<RetailStore> retailStore, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.deleteRetailStoresBatch(retailStore, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -513,7 +514,7 @@ if (acceptEncoding != null)
    * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  protected List<DeleteRowResult> deleteRetailStoresBatch(@javax.annotation.Nonnull List<@Valid RetailStore> retailStore, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteRetailStoresBatch(@javax.annotation.Nonnull List<RetailStore> retailStore, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = retailStore;
     
     // verify the required parameter 'retailStore' is set
@@ -532,17 +533,18 @@ if (acceptEncoding != null)
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -651,15 +653,15 @@ if (contentType != null)
     localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
     localVarQueryParams.addAll(apiClient.parameterToPair("order", order));
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -753,15 +755,15 @@ if (acceptEncoding != null)
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -859,15 +861,15 @@ if (acceptEncoding != null)
     localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
     localVarQueryParams.addAll(apiClient.parameterToPair("order", order));
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };
@@ -902,13 +904,13 @@ if (acceptEncoding != null)
    * Изменить точку продаж
    * 
    * @param id ID сущности (required)
-   * @param retailStore  (required)
+   * @param retailStoreUpsert  (required)
    * @return RetailStore
    * @throws ApiException if fails to make API call
    */
-  public RetailStore updateRetailStore(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailStore retailStore) throws ApiException {
+  public RetailStore updateRetailStore(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailStoreUpsert retailStoreUpsert) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
-    return this.updateRetailStore(id, retailStore, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.updateRetailStore(id, retailStoreUpsert, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -919,7 +921,7 @@ if (acceptEncoding != null)
    * @param id ID сущности (required)
    
    
-   * @param retailStore  (required)
+   * @param retailStoreUpsert  (required)
    
    
    
@@ -929,16 +931,16 @@ if (acceptEncoding != null)
    * @return RetailStore
    * @throws ApiException if fails to make API call
    */
-  public RetailStore updateRetailStore(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailStore retailStore, RequestOptions options) throws ApiException {
+  public RetailStore updateRetailStore(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailStoreUpsert retailStoreUpsert, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
-    return this.updateRetailStore(id, retailStore, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.updateRetailStore(id, retailStoreUpsert, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
   /**
    * Изменить точку продаж
    * 
    * @param id ID сущности (required)
-   * @param retailStore  (required)
+   * @param retailStoreUpsert  (required)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
@@ -947,17 +949,17 @@ if (acceptEncoding != null)
    * @return RetailStore
    * @throws ApiException if fails to make API call
    */
-  protected RetailStore updateRetailStore(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailStore retailStore, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
-    Object localVarPostBody = retailStore;
+  protected RetailStore updateRetailStore(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull RetailStoreUpsert retailStoreUpsert, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = retailStoreUpsert;
     
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling updateRetailStore");
     }
     
-    // verify the required parameter 'retailStore' is set
-    if (retailStore == null) {
-      throw new ApiException(400, "Missing the required parameter 'retailStore' when calling updateRetailStore");
+    // verify the required parameter 'retailStoreUpsert' is set
+    if (retailStoreUpsert == null) {
+      throw new ApiException(400, "Missing the required parameter 'retailStoreUpsert' when calling updateRetailStore");
     }
     
     // create path and map variables
@@ -973,17 +975,18 @@ if (acceptEncoding != null)
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
-    if (accept != null)
+    if (accept != null) {
       localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
-if (acceptEncoding != null)
+    }
+if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
-if (contentType != null)
+    }
+if (contentType != null) {
       localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
 
     localVarHeaderParams.putAll(additionalHeaders);
-
-    
-    
+        
     final String[] localVarAccepts = {
           "application/json;charset=utf-8"
         };

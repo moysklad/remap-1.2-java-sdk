@@ -23,8 +23,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -38,7 +36,7 @@ import java.util.StringJoiner;
   WebhookStockNotificationPayload.JSON_PROPERTY_REPORT_TYPE,
   WebhookStockNotificationPayload.JSON_PROPERTY_REPORT_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class WebhookStockNotificationPayload {
 
   public static final String JSON_PROPERTY_ACCOUNT_ID = "accountId";
@@ -72,9 +70,6 @@ public class WebhookStockNotificationPayload {
    * @return accountId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -104,8 +99,6 @@ public class WebhookStockNotificationPayload {
    * @return stockType
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_STOCK_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -135,8 +128,6 @@ public class WebhookStockNotificationPayload {
    * @return reportType
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_REPORT_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -166,8 +157,6 @@ public class WebhookStockNotificationPayload {
    * @return reportUrl
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_REPORT_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -304,4 +293,3 @@ public class WebhookStockNotificationPayload {
   }
 
 }
-

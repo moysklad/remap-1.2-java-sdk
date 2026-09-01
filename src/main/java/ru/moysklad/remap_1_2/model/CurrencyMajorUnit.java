@@ -22,8 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -38,7 +36,7 @@ import java.util.StringJoiner;
   CurrencyMajorUnit.JSON_PROPERTY_S5
 })
 @JsonTypeName("Currency_majorUnit")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class CurrencyMajorUnit {
 
   public static final String JSON_PROPERTY_GENDER = "gender";
@@ -72,8 +70,6 @@ public class CurrencyMajorUnit {
    * @return gender
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_GENDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -103,8 +99,6 @@ public class CurrencyMajorUnit {
    * @return s1
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_S1)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -134,8 +128,6 @@ public class CurrencyMajorUnit {
    * @return s2
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_S2)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -165,8 +157,6 @@ public class CurrencyMajorUnit {
    * @return s5
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_S5)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -303,4 +293,3 @@ public class CurrencyMajorUnit {
   }
 
 }
-

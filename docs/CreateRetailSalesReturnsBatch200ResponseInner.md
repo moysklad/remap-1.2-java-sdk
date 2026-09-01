@@ -46,7 +46,7 @@
 |**vatEnabled** | **Boolean** | Учитывается ли НДС |  [optional] |
 |**vatIncluded** | **Boolean** | Включен ли НДС в цену |  [optional] |
 |**vatSum** | **Double** | Сумма НДС |  [optional] [readonly] |
-|**errors** | [**List&lt;ErrorErrorsInner&gt;**](ErrorErrorsInner.md) |  |  |
+|**errors** | [**List&lt;Error&gt;**](Error.md) |  |  |
 
 
 

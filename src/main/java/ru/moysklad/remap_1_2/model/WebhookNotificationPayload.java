@@ -27,8 +27,6 @@ import ru.moysklad.remap_1_2.model.WebhookAuditContext;
 import ru.moysklad.remap_1_2.model.WebhookEvent;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -40,7 +38,7 @@ import java.util.StringJoiner;
   WebhookNotificationPayload.JSON_PROPERTY_AUDIT_CONTEXT,
   WebhookNotificationPayload.JSON_PROPERTY_EVENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class WebhookNotificationPayload {
 
   public static final String JSON_PROPERTY_AUDIT_CONTEXT = "auditContext";
@@ -49,7 +47,7 @@ public class WebhookNotificationPayload {
 
   public static final String JSON_PROPERTY_EVENTS = "events";
   @javax.annotation.Nullable
-  private List<@Valid WebhookEvent> events = new ArrayList<>();
+  private List<WebhookEvent> events = new ArrayList<>();
 
   public WebhookNotificationPayload() {
   }
@@ -66,9 +64,6 @@ public class WebhookNotificationPayload {
    * @return auditContext
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_AUDIT_CONTEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -86,7 +81,7 @@ public class WebhookNotificationPayload {
   }
 
 
-  public WebhookNotificationPayload events(@javax.annotation.Nullable List<@Valid WebhookEvent> events) {
+  public WebhookNotificationPayload events(@javax.annotation.Nullable List<WebhookEvent> events) {
     
     this.events = events;
     return this;
@@ -106,13 +101,10 @@ public class WebhookNotificationPayload {
    * @return events
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_EVENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<@Valid WebhookEvent> getEvents() {
+  public List<WebhookEvent> getEvents() {
     return events;
   }
 
@@ -121,7 +113,7 @@ public class WebhookNotificationPayload {
 
   @JsonProperty(JSON_PROPERTY_EVENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEvents(@javax.annotation.Nullable List<@Valid WebhookEvent> events) {
+  public void setEvents(@javax.annotation.Nullable List<WebhookEvent> events) {
     this.events = events;
   }
 
@@ -216,4 +208,3 @@ public class WebhookNotificationPayload {
   }
 
 }
-

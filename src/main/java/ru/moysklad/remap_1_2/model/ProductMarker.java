@@ -23,8 +23,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -40,7 +38,7 @@ import ru.moysklad.remap_1_2.deserialize.PolymorphicMetaTypeDeserializer;
 @JsonPropertyOrder({
   ProductMarker.JSON_PROPERTY_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 @OpenApiPolymorphicTypeInfo(path = "meta.type")
 @OpenApiPolymorphicSubTypes({
   @OpenApiPolymorphicSubTypes.Type(value = Bundle.class, name = "bundle"),
@@ -50,7 +48,7 @@ import ru.moysklad.remap_1_2.deserialize.PolymorphicMetaTypeDeserializer;
   @OpenApiPolymorphicSubTypes.Type(value = Service.class, name = "service")
 })
 @JsonDeserialize(using = PolymorphicMetaTypeDeserializer.class)
-public class ProductMarker extends EntityWithMeta {
+public class ProductMarker extends EntityWithMeta implements MetaEntity {
 
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable
@@ -74,9 +72,6 @@ public class ProductMarker extends EntityWithMeta {
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -171,4 +166,3 @@ public class ProductMarker extends EntityWithMeta {
   }
 
 }
-

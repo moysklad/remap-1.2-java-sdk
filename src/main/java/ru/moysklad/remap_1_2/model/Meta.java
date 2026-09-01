@@ -23,8 +23,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.net.URI;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -41,7 +39,7 @@ import java.util.StringJoiner;
   Meta.JSON_PROPERTY_DOWNLOAD_HREF,
   Meta.JSON_PROPERTY_DOWNLOAD_PERMANENT_HREF
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class Meta {
 
   public static final String JSON_PROPERTY_HREF = "href";
@@ -87,9 +85,6 @@ public class Meta {
    * @return href
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_HREF)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -119,9 +114,6 @@ public class Meta {
    * @return metadataHref
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_METADATA_HREF)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -151,8 +143,6 @@ public class Meta {
    * @return type
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -182,8 +172,6 @@ public class Meta {
    * @return mediaType
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_MEDIA_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -213,9 +201,6 @@ public class Meta {
    * @return uuidHref
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_UUID_HREF)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -245,9 +230,6 @@ public class Meta {
    * @return downloadHref
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_DOWNLOAD_HREF)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -277,9 +259,6 @@ public class Meta {
    * @return downloadPermanentHref
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_DOWNLOAD_PERMANENT_HREF)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -452,4 +431,3 @@ public class Meta {
   }
 
 }
-

@@ -33,8 +33,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -55,8 +53,8 @@ import java.util.StringJoiner;
   InventoryPosition.JSON_PROPERTY_THINGS,
   InventoryPosition.JSON_PROPERTY_QUANTITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class InventoryPosition extends EntityWithMeta {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class InventoryPosition extends EntityWithMeta implements DocumentPosition, MetaEntity {
   public static InventoryPosition createWithMeta(UUID parentId, UUID id) {
     InventoryPosition o = new InventoryPosition();
     Meta meta = new Meta();
@@ -123,13 +121,11 @@ public class InventoryPosition extends EntityWithMeta {
    */
   @JsonCreator
   public InventoryPosition(
-    @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id, 
     @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId, 
     @JsonProperty(value = JSON_PROPERTY_CORRECTION_AMOUNT, required = false) Double correctionAmount, 
     @JsonProperty(value = JSON_PROPERTY_CORRECTION_SUM, required = false) Double correctionSum
   ) {
     this();
-    this.id = id;
     this.accountId = accountId;
     this.correctionAmount = correctionAmount;
     this.correctionSum = correctionSum;
@@ -147,9 +143,6 @@ public class InventoryPosition extends EntityWithMeta {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -167,14 +160,18 @@ public class InventoryPosition extends EntityWithMeta {
   }
 
 
+  public InventoryPosition id(@javax.annotation.Nullable UUID id) {
+    
+    this.id = id;
+    return this;
+  }
+
+
   /**
    * ID позиции
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -185,15 +182,18 @@ public class InventoryPosition extends EntityWithMeta {
   
 
 
+  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setId(@javax.annotation.Nullable UUID id) {
+    this.id = id;
+  }
+
 
   /**
    * ID учетной записи
    * @return accountId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -217,9 +217,6 @@ public class InventoryPosition extends EntityWithMeta {
    * @return assortment
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -249,8 +246,6 @@ public class InventoryPosition extends EntityWithMeta {
    * @return calculatedQuantity
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_CALCULATED_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -273,8 +268,6 @@ public class InventoryPosition extends EntityWithMeta {
    * @return correctionAmount
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_CORRECTION_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -291,8 +284,6 @@ public class InventoryPosition extends EntityWithMeta {
    * @return correctionSum
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_CORRECTION_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -316,9 +307,6 @@ public class InventoryPosition extends EntityWithMeta {
    * @return pack
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Pack getPack() {
@@ -357,8 +345,6 @@ public class InventoryPosition extends EntityWithMeta {
    * @return price
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -396,8 +382,6 @@ public class InventoryPosition extends EntityWithMeta {
    * @return things
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_THINGS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -427,8 +411,6 @@ public class InventoryPosition extends EntityWithMeta {
    * @return quantity
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -649,4 +631,3 @@ public class InventoryPosition extends EntityWithMeta {
   }
 
 }
-

@@ -27,8 +27,6 @@ import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.StockByStoreItem;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -40,7 +38,7 @@ import java.util.StringJoiner;
   StockByStore.JSON_PROPERTY_META,
   StockByStore.JSON_PROPERTY_STOCK_BY_STORE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class StockByStore {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -49,7 +47,7 @@ public class StockByStore {
 
   public static final String JSON_PROPERTY_STOCK_BY_STORE = "stockByStore";
   @javax.annotation.Nullable
-  private List<@Valid StockByStoreItem> stockByStore = new ArrayList<>();
+  private List<StockByStoreItem> stockByStore = new ArrayList<>();
 
   public StockByStore() {
   }
@@ -66,9 +64,6 @@ public class StockByStore {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -86,7 +81,7 @@ public class StockByStore {
   }
 
 
-  public StockByStore stockByStore(@javax.annotation.Nullable List<@Valid StockByStoreItem> stockByStore) {
+  public StockByStore stockByStore(@javax.annotation.Nullable List<StockByStoreItem> stockByStore) {
     
     this.stockByStore = stockByStore;
     return this;
@@ -106,13 +101,10 @@ public class StockByStore {
    * @return stockByStore
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_STOCK_BY_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<@Valid StockByStoreItem> getStockByStore() {
+  public List<StockByStoreItem> getStockByStore() {
     return stockByStore;
   }
 
@@ -121,7 +113,7 @@ public class StockByStore {
 
   @JsonProperty(JSON_PROPERTY_STOCK_BY_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStockByStore(@javax.annotation.Nullable List<@Valid StockByStoreItem> stockByStore) {
+  public void setStockByStore(@javax.annotation.Nullable List<StockByStoreItem> stockByStore) {
     this.stockByStore = stockByStore;
   }
 
@@ -216,4 +208,3 @@ public class StockByStore {
   }
 
 }
-

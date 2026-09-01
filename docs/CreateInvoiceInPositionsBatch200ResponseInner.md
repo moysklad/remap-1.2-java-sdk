@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**meta** | [**Meta**](Meta.md) |  |  [optional] |
-|**id** | **UUID** | ID позиции |  [optional] [readonly] |
+|**id** | **UUID** | ID позиции |  [optional] |
 |**accountId** | **UUID** | ID учетной записи |  [optional] [readonly] |
 |**quantity** | **Double** | Количество товаров/услуг данного вида в позиции |  [optional] |
 |**price** | **Double** | Цена товара/услуги в копейках |  [optional] |
@@ -17,7 +17,7 @@
 |**vatEnabled** | **Boolean** | Включен ли НДС для позиции |  [optional] |
 |**assortment** | [**ProductMarker**](ProductMarker.md) | Метаданные товара/услуги/партии/модификации/комплекта, которую представляет собой позиция |  [optional] |
 |**pack** | [**Pack**](Pack.md) | Упаковка Товара |  [optional] |
-|**errors** | [**List&lt;ErrorErrorsInner&gt;**](ErrorErrorsInner.md) |  |  |
+|**errors** | [**List&lt;Error&gt;**](Error.md) |  |  |
 
 
 

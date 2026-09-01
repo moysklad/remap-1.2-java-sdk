@@ -22,8 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -41,7 +39,7 @@ import java.util.StringJoiner;
   BonusProgram.JSON_PROPERTY_WELCOME_BONUSES_MODE,
   BonusProgram.JSON_PROPERTY_MAX_PAID_RATE_PERCENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
 public class BonusProgram extends DiscountAbstract {
 
   public static final String JSON_PROPERTY_EARN_RATE_ROUBLES_TO_POINT = "earnRateRoublesToPoint";
@@ -91,8 +89,6 @@ public class BonusProgram extends DiscountAbstract {
    * @return earnRateRoublesToPoint
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_EARN_RATE_ROUBLES_TO_POINT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -122,8 +118,6 @@ public class BonusProgram extends DiscountAbstract {
    * @return earnWhileRedeeming
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_EARN_WHILE_REDEEMING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -153,8 +147,6 @@ public class BonusProgram extends DiscountAbstract {
    * @return postponedBonusesDelayDays
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_POSTPONED_BONUSES_DELAY_DAYS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -184,8 +176,6 @@ public class BonusProgram extends DiscountAbstract {
    * @return spendRatePointsToRouble
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SPEND_RATE_POINTS_TO_ROUBLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -215,8 +205,6 @@ public class BonusProgram extends DiscountAbstract {
    * @return welcomeBonusesEnabled
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_WELCOME_BONUSES_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -246,8 +234,6 @@ public class BonusProgram extends DiscountAbstract {
    * @return welcomeBonusesValue
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_WELCOME_BONUSES_VALUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -277,8 +263,6 @@ public class BonusProgram extends DiscountAbstract {
    * @return welcomeBonusesMode
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_WELCOME_BONUSES_MODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -310,8 +294,6 @@ public class BonusProgram extends DiscountAbstract {
    * @return maxPaidRatePercents
    */
   @javax.annotation.Nullable
- @Min(0) @Max(100)
-
   @JsonProperty(JSON_PROPERTY_MAX_PAID_RATE_PERCENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -496,4 +478,3 @@ public class BonusProgram extends DiscountAbstract {
   }
 
 }
-

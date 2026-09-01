@@ -37,8 +37,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -69,8 +67,8 @@ import java.util.StringJoiner;
   EmissionOrder.JSON_PROPERTY_TRACKING_TYPE,
   EmissionOrder.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class EmissionOrder extends EntityWithMeta {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class EmissionOrder extends EntityWithMeta implements MetaEntity {
   public static EmissionOrder createWithMeta(UUID id) {
     EmissionOrder o = new EmissionOrder();
     Meta meta = new Meta();
@@ -148,7 +146,7 @@ public class EmissionOrder extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_PRODUCTION_TASKS = "productionTasks";
   @javax.annotation.Nullable
-  private JsonNullable<List<@Valid ProductionTask>> productionTasks = JsonNullable.<List<@Valid ProductionTask>>undefined();
+  private JsonNullable<List<ProductionTask>> productionTasks = JsonNullable.<List<ProductionTask>>undefined();
 
   public static final String JSON_PROPERTY_PUBLISHED = "published";
   @javax.annotation.Nullable
@@ -207,9 +205,6 @@ public class EmissionOrder extends EntityWithMeta {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -232,9 +227,6 @@ public class EmissionOrder extends EntityWithMeta {
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -251,9 +243,6 @@ public class EmissionOrder extends EntityWithMeta {
    * @return accountId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -270,8 +259,6 @@ public class EmissionOrder extends EntityWithMeta {
    * @return created
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_CREATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -295,8 +282,6 @@ public class EmissionOrder extends EntityWithMeta {
    * @return description
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -319,8 +304,6 @@ public class EmissionOrder extends EntityWithMeta {
    * @return documentState
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_DOCUMENT_STATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -344,8 +327,6 @@ public class EmissionOrder extends EntityWithMeta {
    * @return emissionType
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_EMISSION_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -375,8 +356,6 @@ public class EmissionOrder extends EntityWithMeta {
    * @return externalCode
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -406,9 +385,6 @@ public class EmissionOrder extends EntityWithMeta {
    * @return group
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -438,8 +414,6 @@ public class EmissionOrder extends EntityWithMeta {
    * @return moment
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -469,8 +443,6 @@ public class EmissionOrder extends EntityWithMeta {
    * @return name
    */
   @javax.annotation.Nullable
- @Size(max=255)
-
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -500,9 +472,6 @@ public class EmissionOrder extends EntityWithMeta {
    * @return organization
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -532,9 +501,6 @@ public class EmissionOrder extends EntityWithMeta {
    * @return owner
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public Employee getOwner() {
@@ -573,9 +539,6 @@ public class EmissionOrder extends EntityWithMeta {
    * @return positions
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -598,8 +561,6 @@ public class EmissionOrder extends EntityWithMeta {
    * @return printed
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PRINTED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -611,8 +572,8 @@ public class EmissionOrder extends EntityWithMeta {
 
 
 
-  public EmissionOrder productionTasks(@javax.annotation.Nullable List<@Valid ProductionTask> productionTasks) {
-    this.productionTasks = JsonNullable.<List<@Valid ProductionTask>>of(productionTasks);
+  public EmissionOrder productionTasks(@javax.annotation.Nullable List<ProductionTask> productionTasks) {
+    this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
     
     return this;
   }
@@ -620,7 +581,7 @@ public class EmissionOrder extends EntityWithMeta {
 
   public EmissionOrder addProductionTasksItem(ProductionTask productionTasksItem) {
     if (this.productionTasks == null || !this.productionTasks.isPresent()) {
-      this.productionTasks = JsonNullable.<List<@Valid ProductionTask>>of(new ArrayList<>());
+      this.productionTasks = JsonNullable.<List<ProductionTask>>of(new ArrayList<>());
     }
     try {
       this.productionTasks.get().add(productionTasksItem);
@@ -635,12 +596,9 @@ public class EmissionOrder extends EntityWithMeta {
    * @return productionTasks
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
-  public List<@Valid ProductionTask> getProductionTasks() {
+  public List<ProductionTask> getProductionTasks() {
         return productionTasks.orElse(null);
   }
 
@@ -650,17 +608,17 @@ public class EmissionOrder extends EntityWithMeta {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<List<@Valid ProductionTask>> getProductionTasks_JsonNullable() {
+  public JsonNullable<List<ProductionTask>> getProductionTasks_JsonNullable() {
     return productionTasks;
   }
   
   @JsonProperty(value = JSON_PROPERTY_PRODUCTION_TASKS, required = false)
-  public void setProductionTasks_JsonNullable(JsonNullable<List<@Valid ProductionTask>> productionTasks) {
+  public void setProductionTasks_JsonNullable(JsonNullable<List<ProductionTask>> productionTasks) {
     this.productionTasks = productionTasks;
   }
 
-  public void setProductionTasks(@javax.annotation.Nullable List<@Valid ProductionTask> productionTasks) {
-    this.productionTasks = JsonNullable.<List<@Valid ProductionTask>>of(productionTasks);
+  public void setProductionTasks(@javax.annotation.Nullable List<ProductionTask> productionTasks) {
+    this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
   }
 
 
@@ -669,8 +627,6 @@ public class EmissionOrder extends EntityWithMeta {
    * @return published
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_PUBLISHED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -694,8 +650,6 @@ public class EmissionOrder extends EntityWithMeta {
    * @return shared
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -725,9 +679,6 @@ public class EmissionOrder extends EntityWithMeta {
    * @return state
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
   public State getState() {
@@ -766,8 +717,6 @@ public class EmissionOrder extends EntityWithMeta {
    * @return trackingType
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_TRACKING_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -790,8 +739,6 @@ public class EmissionOrder extends EntityWithMeta {
    * @return updated
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -1107,4 +1054,3 @@ public class EmissionOrder extends EntityWithMeta {
   }
 
 }
-

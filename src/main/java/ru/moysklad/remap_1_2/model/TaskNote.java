@@ -24,15 +24,13 @@ import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import ru.moysklad.remap_1_2.model.Application;
 import ru.moysklad.remap_1_2.model.Employee;
+import ru.moysklad.remap_1_2.model.FileList;
 import ru.moysklad.remap_1_2.model.Meta;
-import ru.moysklad.remap_1_2.model.TaskNoteFileList;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
@@ -50,8 +48,8 @@ import java.util.StringJoiner;
   TaskNote.JSON_PROPERTY_TEXT,
   TaskNote.JSON_PROPERTY_FILES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T11:18:02.225766588Z[GMT]", comments = "Generator version: 7.14.0")
-public class TaskNote extends EntityWithMeta {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+public class TaskNote extends EntityWithMeta implements MetaEntity {
   public static TaskNote createWithMeta(UUID parentId, UUID id) {
     TaskNote o = new TaskNote();
     Meta meta = new Meta();
@@ -97,7 +95,7 @@ public class TaskNote extends EntityWithMeta {
 
   public static final String JSON_PROPERTY_FILES = "files";
   @javax.annotation.Nullable
-  private JsonNullable<TaskNoteFileList> files = JsonNullable.<TaskNoteFileList>undefined();
+  private JsonNullable<FileList> files = JsonNullable.<FileList>undefined();
 
   public TaskNote() {
   }
@@ -128,9 +126,6 @@ public class TaskNote extends EntityWithMeta {
    * @return meta
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -153,9 +148,6 @@ public class TaskNote extends EntityWithMeta {
    * @return id
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -172,9 +164,6 @@ public class TaskNote extends EntityWithMeta {
    * @return accountId
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -198,9 +187,6 @@ public class TaskNote extends EntityWithMeta {
    * @return author
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_AUTHOR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -230,9 +216,6 @@ public class TaskNote extends EntityWithMeta {
    * @return authorApplication
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonProperty(JSON_PROPERTY_AUTHOR_APPLICATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -255,8 +238,6 @@ public class TaskNote extends EntityWithMeta {
    * @return moment
    */
   @javax.annotation.Nullable
-
-
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -280,8 +261,6 @@ public class TaskNote extends EntityWithMeta {
    * @return text
    */
   @javax.annotation.Nullable
- @Size(max=4096)
-
   @JsonProperty(JSON_PROPERTY_TEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -299,8 +278,8 @@ public class TaskNote extends EntityWithMeta {
   }
 
 
-  public TaskNote files(@javax.annotation.Nullable TaskNoteFileList files) {
-    this.files = JsonNullable.<TaskNoteFileList>of(files);
+  public TaskNote files(@javax.annotation.Nullable FileList files) {
+    this.files = JsonNullable.<FileList>of(files);
     
     return this;
   }
@@ -311,12 +290,9 @@ public class TaskNote extends EntityWithMeta {
    * @return files
    */
   @javax.annotation.Nullable
-  @Valid
-
-
   @JsonIgnore
 
-  public TaskNoteFileList getFiles() {
+  public FileList getFiles() {
         return files.orElse(null);
   }
 
@@ -326,17 +302,17 @@ public class TaskNote extends EntityWithMeta {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<TaskNoteFileList> getFiles_JsonNullable() {
+  public JsonNullable<FileList> getFiles_JsonNullable() {
     return files;
   }
   
   @JsonProperty(value = JSON_PROPERTY_FILES, required = false)
-  public void setFiles_JsonNullable(JsonNullable<TaskNoteFileList> files) {
+  public void setFiles_JsonNullable(JsonNullable<FileList> files) {
     this.files = files;
   }
 
-  public void setFiles(@javax.annotation.Nullable TaskNoteFileList files) {
-    this.files = JsonNullable.<TaskNoteFileList>of(files);
+  public void setFiles(@javax.annotation.Nullable FileList files) {
+    this.files = JsonNullable.<FileList>of(files);
   }
 
 
@@ -498,4 +474,3 @@ public class TaskNote extends EntityWithMeta {
   }
 
 }
-
