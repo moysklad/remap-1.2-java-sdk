@@ -8,7 +8,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**value** | **Integer** | Значение цены |  [optional] |
+|**value** | **Double** | Значение цены |  [optional] |
 |**meta** | [**Meta**](Meta.md) |  |  [optional] |
 |**priceType** | [**PriceType**](PriceType.md) |  |  [optional] |
 

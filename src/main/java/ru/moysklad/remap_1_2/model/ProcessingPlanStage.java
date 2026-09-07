@@ -43,7 +43,7 @@ import java.util.StringJoiner;
   ProcessingPlanStage.JSON_PROPERTY_STANDARD_HOUR_COST,
   ProcessingPlanStage.JSON_PROPERTY_PROCESSING_PROCESS_POSITION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:24:19.072140487Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingPlanStage implements MetaEntity {
   public static ProcessingPlanStage createWithMeta(UUID parentId, UUID id) {
     ProcessingPlanStage o = new ProcessingPlanStage();

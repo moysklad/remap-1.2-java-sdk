@@ -49,7 +49,7 @@ import java.util.StringJoiner;
   TaxRate.JSON_PROPERTY_ARCHIVED,
   TaxRate.JSON_PROPERTY_COMMENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:24:19.072140487Z[GMT]", comments = "Generator version: 7.14.0")
 public class TaxRate extends EntityWithMeta implements MetaEntity {
   public static TaxRate createWithMeta(UUID id) {
     TaxRate o = new TaxRate();
@@ -96,7 +96,7 @@ public class TaxRate extends EntityWithMeta implements MetaEntity {
 
   public static final String JSON_PROPERTY_RATE = "rate";
   @javax.annotation.Nullable
-  private Float rate;
+  private Double rate;
 
   public static final String JSON_PROPERTY_ARCHIVED = "archived";
   @javax.annotation.Nullable
@@ -296,7 +296,7 @@ public class TaxRate extends EntityWithMeta implements MetaEntity {
 
 
 
-  public TaxRate rate(@javax.annotation.Nullable Float rate) {
+  public TaxRate rate(@javax.annotation.Nullable Double rate) {
     
     this.rate = rate;
     return this;
@@ -311,7 +311,7 @@ public class TaxRate extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Float getRate() {
+  public Double getRate() {
     return rate;
   }
 
@@ -320,7 +320,7 @@ public class TaxRate extends EntityWithMeta implements MetaEntity {
 
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRate(@javax.annotation.Nullable Float rate) {
+  public void setRate(@javax.annotation.Nullable Double rate) {
     this.rate = rate;
   }
 

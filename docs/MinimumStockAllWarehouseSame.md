@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**type** | [**TypeEnum**](#TypeEnum) |  |  [readonly] |
-|**quantity** | **Float** | Количество неснижаемого остатка |  [optional] |
+|**quantity** | **Double** | Количество неснижаемого остатка |  [optional] |
 
 
 

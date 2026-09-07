@@ -55,7 +55,7 @@ import java.util.StringJoiner;
   PurchaseReturnPosition.JSON_PROPERTY_VAT,
   PurchaseReturnPosition.JSON_PROPERTY_VAT_ENABLED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:24:19.072140487Z[GMT]", comments = "Generator version: 7.14.0")
 public class PurchaseReturnPosition extends EntityWithMeta implements DocumentPosition, MetaEntity {
   public static PurchaseReturnPosition createWithMeta(UUID parentId, UUID id) {
     PurchaseReturnPosition o = new PurchaseReturnPosition();

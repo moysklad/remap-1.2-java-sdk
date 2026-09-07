@@ -122,7 +122,7 @@ import java.util.StringJoiner;
   Assortment.JSON_PROPERTY_IN_TRANSIT,
   Assortment.JSON_PROPERTY_QUANTITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:24:19.072140487Z[GMT]", comments = "Generator version: 7.14.0")
 public class Assortment implements MetaEntity {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -223,11 +223,11 @@ public class Assortment implements MetaEntity {
 
   public static final String JSON_PROPERTY_WEIGHT = "weight";
   @javax.annotation.Nullable
-  private Float weight;
+  private Double weight;
 
   public static final String JSON_PROPERTY_VOLUME = "volume";
   @javax.annotation.Nullable
-  private Float volume;
+  private Double volume;
 
   public static final String JSON_PROPERTY_BUY_PRICE = "buyPrice";
   @javax.annotation.Nullable
@@ -993,7 +993,7 @@ public class Assortment implements MetaEntity {
 
 
 
-  public Assortment weight(@javax.annotation.Nullable Float weight) {
+  public Assortment weight(@javax.annotation.Nullable Double weight) {
     
     this.weight = weight;
     return this;
@@ -1008,7 +1008,7 @@ public class Assortment implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_WEIGHT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Float getWeight() {
+  public Double getWeight() {
     return weight;
   }
 
@@ -1017,12 +1017,12 @@ public class Assortment implements MetaEntity {
 
   @JsonProperty(JSON_PROPERTY_WEIGHT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setWeight(@javax.annotation.Nullable Float weight) {
+  public void setWeight(@javax.annotation.Nullable Double weight) {
     this.weight = weight;
   }
 
 
-  public Assortment volume(@javax.annotation.Nullable Float volume) {
+  public Assortment volume(@javax.annotation.Nullable Double volume) {
     
     this.volume = volume;
     return this;
@@ -1037,7 +1037,7 @@ public class Assortment implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_VOLUME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Float getVolume() {
+  public Double getVolume() {
     return volume;
   }
 
@@ -1046,7 +1046,7 @@ public class Assortment implements MetaEntity {
 
   @JsonProperty(JSON_PROPERTY_VOLUME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setVolume(@javax.annotation.Nullable Float volume) {
+  public void setVolume(@javax.annotation.Nullable Double volume) {
     this.volume = volume;
   }
 

@@ -11,7 +11,7 @@
 |**id** | **UUID** | ID позиции |  [optional] |
 |**accountId** | **UUID** | ID учетной записи |  [optional] [readonly] |
 |**assortment** | [**ProductMarker**](ProductMarker.md) | Метаданные товара/услуги/партии/модификации/комплекта, которую представляет собой позиция |  [optional] |
-|**cost** | **Integer** | Себестоимость |  [optional] |
+|**cost** | **Double** | Себестоимость |  [optional] |
 |**country** | [**Country**](Country.md) | Метаданные Страны |  [optional] |
 |**discount** | **Double** | Процент скидки или наценки |  [optional] |
 |**gtd** | [**Gtd**](Gtd.md) |  |  [optional] |

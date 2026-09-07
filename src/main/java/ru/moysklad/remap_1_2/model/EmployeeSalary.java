@@ -33,17 +33,17 @@ import java.util.StringJoiner;
   EmployeeSalary.JSON_PROPERTY_VALUE
 })
 @JsonTypeName("Employee_salary")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:24:19.072140487Z[GMT]", comments = "Generator version: 7.14.0")
 public class EmployeeSalary {
 
   public static final String JSON_PROPERTY_VALUE = "value";
   @javax.annotation.Nullable
-  private Float value;
+  private Double value;
 
   public EmployeeSalary() {
   }
 
-  public EmployeeSalary value(@javax.annotation.Nullable Float value) {
+  public EmployeeSalary value(@javax.annotation.Nullable Double value) {
     
     this.value = value;
     return this;
@@ -59,7 +59,7 @@ public class EmployeeSalary {
   @JsonProperty(JSON_PROPERTY_VALUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Float getValue() {
+  public Double getValue() {
     return value;
   }
 
@@ -68,7 +68,7 @@ public class EmployeeSalary {
 
   @JsonProperty(JSON_PROPERTY_VALUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setValue(@javax.annotation.Nullable Float value) {
+  public void setValue(@javax.annotation.Nullable Double value) {
     this.value = value;
   }
 

@@ -45,8 +45,8 @@
 |**shared** | **Boolean** | Общий доступ |  [optional] |
 |**group** | [**Group**](Group.md) |  |  [optional] |
 |**owner** | [**Employee**](Employee.md) | Метаданные владельца (Сотрудника) |  [optional] |
-|**salesAmount** | **Float** | Сумма продаж |  [optional] [readonly] |
-|**bonusPoints** | **Integer** | Бонусные баллы по активной бонусной программе |  [optional] [readonly] |
+|**salesAmount** | **Double** | Сумма продаж |  [optional] [readonly] |
+|**bonusPoints** | **Long** | Бонусные баллы по активной бонусной программе |  [optional] [readonly] |
 |**bonusProgram** | [**BonusProgram**](BonusProgram.md) |  |  [optional] |
 |**priceType** | [**PriceType**](PriceType.md) |  |  [optional] |
 |**state** | [**State**](State.md) |  |  [optional] |

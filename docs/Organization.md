@@ -48,7 +48,7 @@
 |**directorSign** | [**Image**](Image.md) | Подпись руководителя |  [optional] |
 |**chiefAccountSign** | [**Image**](Image.md) | Подпись главного бухгалтера |  [optional] |
 |**stamp** | [**Image**](Image.md) | Печать |  [optional] |
-|**bonusPoints** | **Integer** | Бонусные баллы по активной бонусной программе |  [optional] [readonly] |
+|**bonusPoints** | **Long** | Бонусные баллы по активной бонусной программе |  [optional] [readonly] |
 |**bonusProgram** | [**BonusProgram**](BonusProgram.md) | Метаданные активной бонусной программы |  [optional] |
 |**shared** | **Boolean** | Общий доступ |  [optional] |
 |**group** | [**Group**](Group.md) |  |  [optional] |

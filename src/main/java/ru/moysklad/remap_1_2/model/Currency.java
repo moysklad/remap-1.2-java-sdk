@@ -51,7 +51,7 @@ import java.util.StringJoiner;
   Currency.JSON_PROPERTY_MAJOR_UNIT,
   Currency.JSON_PROPERTY_MINOR_UNIT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:24:19.072140487Z[GMT]", comments = "Generator version: 7.14.0")
 public class Currency extends EntityWithMeta implements MetaEntity {
   public static Currency createWithMeta(UUID id) {
     Currency o = new Currency();
@@ -106,7 +106,7 @@ public class Currency extends EntityWithMeta implements MetaEntity {
 
   public static final String JSON_PROPERTY_MARGIN = "margin";
   @javax.annotation.Nullable
-  private Float margin;
+  private Double margin;
 
   public static final String JSON_PROPERTY_INDIRECT = "indirect";
   @javax.annotation.Nullable
@@ -393,7 +393,7 @@ public class Currency extends EntityWithMeta implements MetaEntity {
   }
 
 
-  public Currency margin(@javax.annotation.Nullable Float margin) {
+  public Currency margin(@javax.annotation.Nullable Double margin) {
     
     this.margin = margin;
     return this;
@@ -408,7 +408,7 @@ public class Currency extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_MARGIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Float getMargin() {
+  public Double getMargin() {
     return margin;
   }
 
@@ -417,7 +417,7 @@ public class Currency extends EntityWithMeta implements MetaEntity {
 
   @JsonProperty(JSON_PROPERTY_MARGIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMargin(@javax.annotation.Nullable Float margin) {
+  public void setMargin(@javax.annotation.Nullable Double margin) {
     this.margin = margin;
   }
 

@@ -95,7 +95,7 @@ import java.util.StringJoiner;
   Bundle.JSON_PROPERTY_ATTRIBUTES,
   Bundle.JSON_PROPERTY_COMPONENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:24:19.072140487Z[GMT]", comments = "Generator version: 7.14.0")
 public class Bundle extends ProductMarker implements Named {
   public static Bundle createWithMeta(UUID id) {
     Bundle o = new Bundle();
@@ -210,11 +210,11 @@ public class Bundle extends ProductMarker implements Named {
 
   public static final String JSON_PROPERTY_WEIGHT = "weight";
   @javax.annotation.Nullable
-  private Float weight;
+  private Double weight;
 
   public static final String JSON_PROPERTY_VOLUME = "volume";
   @javax.annotation.Nullable
-  private Float volume;
+  private Double volume;
 
   public static final String JSON_PROPERTY_GROUP = "group";
   @javax.annotation.Nullable
@@ -926,7 +926,7 @@ public class Bundle extends ProductMarker implements Named {
   }
 
 
-  public Bundle weight(@javax.annotation.Nullable Float weight) {
+  public Bundle weight(@javax.annotation.Nullable Double weight) {
     
     this.weight = weight;
     return this;
@@ -941,7 +941,7 @@ public class Bundle extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_WEIGHT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Float getWeight() {
+  public Double getWeight() {
     return weight;
   }
 
@@ -950,12 +950,12 @@ public class Bundle extends ProductMarker implements Named {
 
   @JsonProperty(JSON_PROPERTY_WEIGHT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setWeight(@javax.annotation.Nullable Float weight) {
+  public void setWeight(@javax.annotation.Nullable Double weight) {
     this.weight = weight;
   }
 
 
-  public Bundle volume(@javax.annotation.Nullable Float volume) {
+  public Bundle volume(@javax.annotation.Nullable Double volume) {
     
     this.volume = volume;
     return this;
@@ -970,7 +970,7 @@ public class Bundle extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_VOLUME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Float getVolume() {
+  public Double getVolume() {
     return volume;
   }
 
@@ -979,7 +979,7 @@ public class Bundle extends ProductMarker implements Named {
 
   @JsonProperty(JSON_PROPERTY_VOLUME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setVolume(@javax.annotation.Nullable Float volume) {
+  public void setVolume(@javax.annotation.Nullable Double volume) {
     this.volume = volume;
   }
 

@@ -12,7 +12,7 @@
 |**id** | **UUID** | ID позиции |  [optional] |
 |**accountId** | **UUID** | ID учетной записи |  [optional] [readonly] |
 |**assortment** | [**ProductMarker**](ProductMarker.md) |  |  [optional] |
-|**cost** | **Integer** | Себестоимость (выводится, если документ был создан без основания) |  [optional] |
+|**cost** | **Double** | Себестоимость (выводится, если документ был создан без основания) |  [optional] |
 |**discount** | **Double** | Процент скидки или наценки. Наценка указывается отрицательным числом, например &#x60;-10&#x60; задает наценку 10%. |  [optional] |
 |**pack** | [**Pack**](Pack.md) | Упаковка Товара |  [optional] |
 |**price** | **Double** | Цена товара/услуги в копейках |  [optional] |

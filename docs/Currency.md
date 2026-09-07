@@ -17,7 +17,7 @@
 |**isoCode** | **String** | Буквенный код валюты |  [optional] |
 |**multiplicity** | **Integer** | Кратность курса валюты |  [optional] |
 |**rate** | **Double** | Курс валюты |  [optional] |
-|**margin** | **Float** | Наценка при автоматическом обновлении курса |  [optional] |
+|**margin** | **Double** | Наценка при автоматическом обновлении курса |  [optional] |
 |**indirect** | **Boolean** | Признак обратного курса валюты |  [optional] |
 |**rateUpdateType** | **String** | Способ обновления курса валюты. Известные значения описаны в RateUpdateType |  [optional] |
 |**archived** | **Boolean** | Добавлена ли валюта в архив |  [optional] |

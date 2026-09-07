@@ -8,9 +8,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**count** | **Integer** | Количество продаж |  [optional] |
-|**amount** | **Integer** | Прибыль |  [optional] |
-|**movementAmount** | **Integer** | Дельта по сравнению с прошлым аналогичным периодом |  [optional] |
+|**count** | **Long** | Количество продаж |  [optional] |
+|**amount** | **Double** | Прибыль |  [optional] |
+|**movementAmount** | **Double** | Дельта по сравнению с прошлым аналогичным периодом |  [optional] |
 
 
 

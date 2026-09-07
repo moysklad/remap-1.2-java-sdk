@@ -8,7 +8,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**value** | **Float** | Сумма оклада |  [optional] |
+|**value** | **Double** | Сумма оклада |  [optional] |
 
 
 

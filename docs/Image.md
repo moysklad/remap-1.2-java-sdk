@@ -12,7 +12,7 @@
 |**title** | **String** | Название изображения |  [optional] |
 |**filename** | **String** | Имя файла |  [optional] |
 |**content** | **String** | Изображение, закодированное в Base64 |  [optional] |
-|**size** | **Integer** | Размер файла в байтах |  [optional] [readonly] |
+|**size** | **Long** | Размер файла в байтах |  [optional] [readonly] |
 |**updated** | **String** | Время последнего изменения |  [optional] [readonly] |
 |**tiny** | [**Meta**](Meta.md) |  |  [optional] |
 |**miniature** | [**Meta**](Meta.md) |  |  [optional] |

@@ -74,7 +74,7 @@ import java.util.StringJoiner;
   Contract.JSON_PROPERTY_RATE,
   Contract.JSON_PROPERTY_ATTRIBUTES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:24:19.072140487Z[GMT]", comments = "Generator version: 7.14.0")
 public class Contract extends EntityWithMeta implements Named, MetaEntity {
   public static Contract createWithMeta(UUID id) {
     Contract o = new Contract();
@@ -129,7 +129,7 @@ public class Contract extends EntityWithMeta implements Named, MetaEntity {
 
   public static final String JSON_PROPERTY_SUM = "sum";
   @javax.annotation.Nullable
-  private Integer sum;
+  private Double sum;
 
   public static final String JSON_PROPERTY_CONTRACT_TYPE = "contractType";
   @javax.annotation.Nullable
@@ -460,7 +460,7 @@ public class Contract extends EntityWithMeta implements Named, MetaEntity {
   }
 
 
-  public Contract sum(@javax.annotation.Nullable Integer sum) {
+  public Contract sum(@javax.annotation.Nullable Double sum) {
     
     this.sum = sum;
     return this;
@@ -475,7 +475,7 @@ public class Contract extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getSum() {
+  public Double getSum() {
     return sum;
   }
 
@@ -484,7 +484,7 @@ public class Contract extends EntityWithMeta implements Named, MetaEntity {
 
   @JsonProperty(JSON_PROPERTY_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSum(@javax.annotation.Nullable Integer sum) {
+  public void setSum(@javax.annotation.Nullable Double sum) {
     this.sum = sum;
   }
 

@@ -34,25 +34,25 @@ import java.util.StringJoiner;
   ReportDashboardPeriodMetrics.JSON_PROPERTY_AMOUNT,
   ReportDashboardPeriodMetrics.JSON_PROPERTY_MOVEMENT_AMOUNT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:24:19.072140487Z[GMT]", comments = "Generator version: 7.14.0")
 public class ReportDashboardPeriodMetrics {
 
   public static final String JSON_PROPERTY_COUNT = "count";
   @javax.annotation.Nullable
-  private Integer count;
+  private Long count;
 
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   @javax.annotation.Nullable
-  private Integer amount;
+  private Double amount;
 
   public static final String JSON_PROPERTY_MOVEMENT_AMOUNT = "movementAmount";
   @javax.annotation.Nullable
-  private Integer movementAmount;
+  private Double movementAmount;
 
   public ReportDashboardPeriodMetrics() {
   }
 
-  public ReportDashboardPeriodMetrics count(@javax.annotation.Nullable Integer count) {
+  public ReportDashboardPeriodMetrics count(@javax.annotation.Nullable Long count) {
     
     this.count = count;
     return this;
@@ -67,7 +67,7 @@ public class ReportDashboardPeriodMetrics {
   @JsonProperty(JSON_PROPERTY_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getCount() {
+  public Long getCount() {
     return count;
   }
 
@@ -76,12 +76,12 @@ public class ReportDashboardPeriodMetrics {
 
   @JsonProperty(JSON_PROPERTY_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCount(@javax.annotation.Nullable Integer count) {
+  public void setCount(@javax.annotation.Nullable Long count) {
     this.count = count;
   }
 
 
-  public ReportDashboardPeriodMetrics amount(@javax.annotation.Nullable Integer amount) {
+  public ReportDashboardPeriodMetrics amount(@javax.annotation.Nullable Double amount) {
     
     this.amount = amount;
     return this;
@@ -96,7 +96,7 @@ public class ReportDashboardPeriodMetrics {
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getAmount() {
+  public Double getAmount() {
     return amount;
   }
 
@@ -105,12 +105,12 @@ public class ReportDashboardPeriodMetrics {
 
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAmount(@javax.annotation.Nullable Integer amount) {
+  public void setAmount(@javax.annotation.Nullable Double amount) {
     this.amount = amount;
   }
 
 
-  public ReportDashboardPeriodMetrics movementAmount(@javax.annotation.Nullable Integer movementAmount) {
+  public ReportDashboardPeriodMetrics movementAmount(@javax.annotation.Nullable Double movementAmount) {
     
     this.movementAmount = movementAmount;
     return this;
@@ -125,7 +125,7 @@ public class ReportDashboardPeriodMetrics {
   @JsonProperty(JSON_PROPERTY_MOVEMENT_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getMovementAmount() {
+  public Double getMovementAmount() {
     return movementAmount;
   }
 
@@ -134,7 +134,7 @@ public class ReportDashboardPeriodMetrics {
 
   @JsonProperty(JSON_PROPERTY_MOVEMENT_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMovementAmount(@javax.annotation.Nullable Integer movementAmount) {
+  public void setMovementAmount(@javax.annotation.Nullable Double movementAmount) {
     this.movementAmount = movementAmount;
   }
 

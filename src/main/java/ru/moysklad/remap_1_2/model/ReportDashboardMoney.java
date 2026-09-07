@@ -36,12 +36,12 @@ import java.util.StringJoiner;
   ReportDashboardMoney.JSON_PROPERTY_TODAY_MOVEMENT,
   ReportDashboardMoney.JSON_PROPERTY_MOVEMENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:24:19.072140487Z[GMT]", comments = "Generator version: 7.14.0")
 public class ReportDashboardMoney {
 
   public static final String JSON_PROPERTY_INCOME = "income";
   @javax.annotation.Nullable
-  private Integer income;
+  private Double income;
 
   public static final String JSON_PROPERTY_OUTCOME = "outcome";
   @javax.annotation.Nullable
@@ -62,7 +62,7 @@ public class ReportDashboardMoney {
   public ReportDashboardMoney() {
   }
 
-  public ReportDashboardMoney income(@javax.annotation.Nullable Integer income) {
+  public ReportDashboardMoney income(@javax.annotation.Nullable Double income) {
     
     this.income = income;
     return this;
@@ -77,7 +77,7 @@ public class ReportDashboardMoney {
   @JsonProperty(JSON_PROPERTY_INCOME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getIncome() {
+  public Double getIncome() {
     return income;
   }
 
@@ -86,7 +86,7 @@ public class ReportDashboardMoney {
 
   @JsonProperty(JSON_PROPERTY_INCOME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setIncome(@javax.annotation.Nullable Integer income) {
+  public void setIncome(@javax.annotation.Nullable Double income) {
     this.income = income;
   }
 

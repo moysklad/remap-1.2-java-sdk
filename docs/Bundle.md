@@ -32,8 +32,8 @@
 |**taxSystem** | **String** | Код системы налогообложения. Известные значения описаны в TaxSystem |  [optional] |
 |**trackingType** | **String** | Тип маркируемой продукции. Известные значения описаны в TrackingType |  [optional] |
 |**tnved** | **String** | Код ТН ВЭД |  [optional] |
-|**weight** | **Float** | Вес |  [optional] |
-|**volume** | **Float** | Объем |  [optional] |
+|**weight** | **Double** | Вес |  [optional] |
+|**volume** | **Double** | Объем |  [optional] |
 |**group** | [**Group**](Group.md) |  |  [optional] |
 |**owner** | [**Employee**](Employee.md) | Метаданные владельца (Сотрудника) |  [optional] |
 |**country** | [**Country**](Country.md) | Метаданные Страны |  [optional] |

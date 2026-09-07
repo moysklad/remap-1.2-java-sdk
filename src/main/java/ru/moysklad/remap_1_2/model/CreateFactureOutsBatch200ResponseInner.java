@@ -93,7 +93,7 @@ import java.util.StringJoiner;
   CreateFactureOutsBatch200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createFactureOutsBatch_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:24:19.072140487Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateFactureOutsBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -206,7 +206,7 @@ public class CreateFactureOutsBatch200ResponseInner {
 
   public static final String JSON_PROPERTY_ADVANCE_PAYMENT_VAT = "advancePaymentVat";
   @javax.annotation.Nullable
-  private Integer advancePaymentVat;
+  private Double advancePaymentVat;
 
   public static final String JSON_PROPERTY_PAYMENT_PURPOSE = "paymentPurpose";
   @javax.annotation.Nullable
@@ -1018,7 +1018,7 @@ public class CreateFactureOutsBatch200ResponseInner {
 
 
 
-  public CreateFactureOutsBatch200ResponseInner advancePaymentVat(@javax.annotation.Nullable Integer advancePaymentVat) {
+  public CreateFactureOutsBatch200ResponseInner advancePaymentVat(@javax.annotation.Nullable Double advancePaymentVat) {
     
     this.advancePaymentVat = advancePaymentVat;
     return this;
@@ -1033,7 +1033,7 @@ public class CreateFactureOutsBatch200ResponseInner {
   @JsonProperty(JSON_PROPERTY_ADVANCE_PAYMENT_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getAdvancePaymentVat() {
+  public Double getAdvancePaymentVat() {
     return advancePaymentVat;
   }
 
@@ -1042,7 +1042,7 @@ public class CreateFactureOutsBatch200ResponseInner {
 
   @JsonProperty(JSON_PROPERTY_ADVANCE_PAYMENT_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAdvancePaymentVat(@javax.annotation.Nullable Integer advancePaymentVat) {
+  public void setAdvancePaymentVat(@javax.annotation.Nullable Double advancePaymentVat) {
     this.advancePaymentVat = advancePaymentVat;
   }
 

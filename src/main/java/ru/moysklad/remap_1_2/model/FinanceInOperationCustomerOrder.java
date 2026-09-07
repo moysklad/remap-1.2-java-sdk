@@ -112,7 +112,7 @@ import java.util.StringJoiner;
   FinanceInOperationCustomerOrder.JSON_PROPERTY_MOVES,
   FinanceInOperationCustomerOrder.JSON_PROPERTY_PRODUCTION_TASKS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:24:19.072140487Z[GMT]", comments = "Generator version: 7.14.0")
 public class FinanceInOperationCustomerOrder extends FinanceInOperationAbstract {
 
   public static final String JSON_PROPERTY_META = "meta";

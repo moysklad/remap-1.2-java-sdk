@@ -14,7 +14,7 @@
 |**assortment** | [**ProductMarker**](ProductMarker.md) | Метаданные товара/услуги/партии/модификации, которую представляет собой позиция |  [optional] |
 |**country** | [**Country**](Country.md) | Метаданные страны |  [optional] |
 |**gtd** | [**Gtd**](Gtd.md) |  |  [optional] |
-|**overhead** | **Integer** | Накладные расходы |  [optional] [readonly] |
+|**overhead** | **Double** | Накладные расходы |  [optional] [readonly] |
 |**pack** | [**Pack**](Pack.md) | Упаковка Товара |  [optional] |
 |**price** | **Double** | Цена товара/услуги в копейках |  [optional] |
 |**quantity** | **Double** | Количество товаров данного вида в позиции |  [optional] |

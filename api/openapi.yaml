@@ -67555,9 +67555,10 @@ components:
           - long
           type: string
         value:
+          format: int64
           type: integer
       type: object
-      x-implements: Attribute<Integer>
+      x-implements: Attribute<Long>
     AttributeMetaInfo:
       description: Метаописание дополнительного поля
       properties:
@@ -68162,11 +68163,12 @@ components:
           type: object
         salesAmount:
           description: Сумма продаж
-          format: float
+          format: double
           readOnly: true
           type: number
         bonusPoints:
           description: Бонусные баллы по активной бонусной программе
+          format: int64
           readOnly: true
           type: integer
         bonusProgram:
@@ -68651,7 +68653,7 @@ components:
           type: number
         margin:
           description: Наценка при автоматическом обновлении курса
-          format: float
+          format: double
           type: number
         indirect:
           description: Признак обратного курса валюты
@@ -69090,6 +69092,7 @@ components:
           type: string
         size:
           description: Размер файла в байтах
+          format: int64
           readOnly: true
           type: integer
         created:
@@ -69249,8 +69252,8 @@ components:
           description: |
             Ставка НДС для авансового платежа (в процентах).
             Доступно только для счетов-фактур с основаниями-платежами.
-          format: int32
-          type: integer
+          format: double
+          type: number
         paymentPurpose:
           description: |
             Назначение платежа.
@@ -69575,6 +69578,7 @@ components:
           type: string
         size:
           description: Размер файла в байтах
+          format: int64
           readOnly: true
           type: integer
         updated:
@@ -69697,8 +69701,8 @@ components:
       properties:
         income:
           description: Доходы за период
-          format: int32
-          type: integer
+          format: double
+          type: number
         outcome:
           description: Расходы за период
           format: double
@@ -69721,16 +69725,16 @@ components:
       properties:
         count:
           description: Количество продаж
-          format: int32
+          format: int64
           type: integer
         amount:
           description: Прибыль
-          format: int32
-          type: integer
+          format: double
+          type: number
         movementAmount:
           description: Дельта по сравнению с прошлым аналогичным периодом
-          format: int32
-          type: integer
+          format: double
+          type: number
       type: object
     ReportOrdersPlotSeriesList:
       description: Показатели заказов покупателей
@@ -70067,7 +70071,7 @@ components:
           type: string
         quantity:
           description: Количество неснижаемого остатка
-          format: float
+          format: double
           minimum: 0
           type: number
       required:
@@ -72184,7 +72188,8 @@ components:
             орую представляет собой позиция"
         cost:
           description: Себестоимость
-          type: integer
+          format: double
+          type: number
         country:
           allOf:
           - $ref: "#/components/schemas/Country_1"
@@ -72778,7 +72783,7 @@ components:
           type: string
         rate:
           description: Значение налоговой ставки
-          format: float
+          format: double
           type: number
         archived:
           description: Флаг принадлежности ставки к архивным ставкам
@@ -73152,6 +73157,7 @@ components:
           type: object
         bonusPoints:
           description: Бонусные баллы по активной бонусной программе
+          format: int64
           readOnly: true
           type: integer
         bonusProgram:
@@ -73297,11 +73303,11 @@ components:
           type: string
         weight:
           description: Вес
-          format: float
+          format: double
           type: number
         volume:
           description: Объем
-          format: float
+          format: double
           type: number
         group:
           $ref: "#/components/schemas/Group"
@@ -74824,7 +74830,8 @@ components:
           type: string
         sum:
           description: Сумма Договора
-          type: integer
+          format: double
+          type: number
         contractType:
           description: Тип Договора. Известные значения описаны в ContractType
           type: string
@@ -77328,8 +77335,9 @@ components:
           description: |
             Накладные расходы по позиции.
             Если позиции Приемки не заданы, накладные расходы на уровне документа задать нельзя.
+          format: double
           readOnly: true
-          type: integer
+          type: number
         vat:
           description: "НДС, которым облагается текущая позиция"
           type: integer
@@ -79255,8 +79263,9 @@ components:
           description: |
             Накладные расходы по позиции.
             Если позиции Перемещения не заданы, накладные расходы на уровне документа задать нельзя.
+          format: double
           readOnly: true
-          type: integer
+          type: number
         pack:
           allOf:
           - $ref: "#/components/schemas/Pack"
@@ -80185,7 +80194,8 @@ components:
             орую представляет собой позиция"
         cost:
           description: Себестоимость (только для услуг)
-          type: integer
+          format: double
+          type: number
         declaration:
           description: |
             Информация о прослеживаемости импортных товаров.
@@ -80246,8 +80256,9 @@ components:
           description: |
             Накладные расходы по позиции.
             Если позиции Отгрузки не заданы, накладные расходы на уровне документа задать нельзя.
+          format: double
           readOnly: true
-          type: integer
+          type: number
         vat:
           description: "НДС, которым облагается текущая позиция"
           maximum: 100
@@ -80629,8 +80640,9 @@ components:
           $ref: "#/components/schemas/ProductMarker"
         cost:
           description: Себестоимость (только для услуг)
+          format: double
           minimum: 0
-          type: integer
+          type: number
         declaration:
           description: |
             Информация о прослеживаемости импортных товаров.
@@ -80911,8 +80923,9 @@ components:
         cost:
           description: "Себестоимость (выводится, если документ был создан без осн\
             ования)"
+          format: double
           minimum: 0
-          type: integer
+          type: number
         discount:
           description: "Процент скидки или наценки. Наценка указывается отрицатель\
             ным числом, например `-10` задает наценку 10%."
@@ -81157,8 +81170,9 @@ components:
           type: object
         overhead:
           description: Накладные расходы
+          format: double
           readOnly: true
-          type: integer
+          type: number
         pack:
           allOf:
           - $ref: "#/components/schemas/Pack"
@@ -84014,7 +84028,7 @@ components:
       properties:
         value:
           description: Сумма оклада
-          format: float
+          format: double
           minimum: 0
           type: number
       type: object
@@ -84612,8 +84626,8 @@ components:
       properties:
         value:
           description: Значение цены
-          format: int32
-          type: integer
+          format: double
+          type: number
         meta:
           $ref: "#/components/schemas/Meta"
         priceType:

@@ -68,7 +68,7 @@ import java.util.StringJoiner;
   CreateDemandPositions200ResponseInner.JSON_PROPERTY_ERRORS
 })
 @JsonTypeName("createDemandPositions_200_response_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-01T11:48:09.280618073Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:24:19.072140487Z[GMT]", comments = "Generator version: 7.14.0")
 public class CreateDemandPositions200ResponseInner {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -89,7 +89,7 @@ public class CreateDemandPositions200ResponseInner {
 
   public static final String JSON_PROPERTY_COST = "cost";
   @javax.annotation.Nullable
-  private Integer cost;
+  private Double cost;
 
   public static final String JSON_PROPERTY_DECLARATION = "declaration";
   @javax.annotation.Nullable
@@ -129,7 +129,7 @@ public class CreateDemandPositions200ResponseInner {
 
   public static final String JSON_PROPERTY_OVERHEAD = "overhead";
   @javax.annotation.Nullable
-  private Integer overhead;
+  private Double overhead;
 
   public static final String JSON_PROPERTY_VAT = "vat";
   @javax.annotation.Nullable
@@ -152,7 +152,7 @@ public class CreateDemandPositions200ResponseInner {
   public CreateDemandPositions200ResponseInner(
     @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId, 
     @JsonProperty(value = JSON_PROPERTY_DECLARATION, required = false) List<DeclarationInner> declaration, 
-    @JsonProperty(value = JSON_PROPERTY_OVERHEAD, required = false) Integer overhead
+    @JsonProperty(value = JSON_PROPERTY_OVERHEAD, required = false) Double overhead
   ) {
     this();
     this.accountId = accountId;
@@ -263,7 +263,7 @@ public class CreateDemandPositions200ResponseInner {
   }
 
 
-  public CreateDemandPositions200ResponseInner cost(@javax.annotation.Nullable Integer cost) {
+  public CreateDemandPositions200ResponseInner cost(@javax.annotation.Nullable Double cost) {
     
     this.cost = cost;
     return this;
@@ -278,7 +278,7 @@ public class CreateDemandPositions200ResponseInner {
   @JsonProperty(JSON_PROPERTY_COST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getCost() {
+  public Double getCost() {
     return cost;
   }
 
@@ -287,7 +287,7 @@ public class CreateDemandPositions200ResponseInner {
 
   @JsonProperty(JSON_PROPERTY_COST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCost(@javax.annotation.Nullable Integer cost) {
+  public void setCost(@javax.annotation.Nullable Double cost) {
     this.cost = cost;
   }
 
@@ -590,7 +590,7 @@ public class CreateDemandPositions200ResponseInner {
   @JsonProperty(JSON_PROPERTY_OVERHEAD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getOverhead() {
+  public Double getOverhead() {
     return overhead;
   }
 
