@@ -4,11 +4,11 @@
 
 - API version: 1.0.0
 
-- Build date: 2026-09-07T04:24:19.072140487Z[GMT]
+    - Build date: 2026-09-09T13:59:19.961064491Z[GMT]
 
 - Generator version: 7.14.0
 
-API для манипуляции с сущностями и создания отчетов в онлайн-сервисе МойСклад.
+API для манипуляции с сущностями и создания отчетов в онлайн-сервисе МойСклад
 
 ## Аутентификация
 
@@ -33,7 +33,7 @@ API для манипуляции с сущностями и создания о
 
 Building the API client library requires:
 
-1. Java 1.8+
+1. Java 17+
 2. Maven/Gradle
 
 ## Installation
@@ -58,10 +58,39 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-  <groupId>org.openapitools</groupId>
-  <artifactId>openapi-java-client</artifactId>
-  <version>1.0.0</version>
-  <scope>compile</scope>
+    <groupId>org.openapitools</groupId>
+    <artifactId>openapi-java-client</artifactId>
+    <version>1.0.0</version>
+    <scope>compile</scope>
+</dependency>
+```
+
+The default artifact is a slim JAR. Maven resolves SDK dependencies transitively.
+To build a self-contained fat JAR with SDK dependencies relocated into the SDK namespace, use the `fat` Maven profile:
+
+```shell
+mvn -Pfat clean package
+```
+
+Published fat artifacts use the same Maven coordinates with a `-fat` version suffix.
+
+```xml
+<dependency>
+    <groupId>org.openapitools</groupId>
+    <artifactId>openapi-java-client</artifactId>
+    <version>1.0.0</version>
+    <scope>compile</scope>
+</dependency>
+```
+
+Use the fat artifact if you need a self-contained JAR:
+
+```xml
+<dependency>
+    <groupId>org.openapitools</groupId>
+    <artifactId>openapi-java-client</artifactId>
+    <version>1.0.0-fat</version>
+    <scope>compile</scope>
 </dependency>
 ```
 
@@ -72,6 +101,8 @@ Add this dependency to your project's build file:
 ```groovy
 compile "org.openapitools:openapi-java-client:1.0.0"
 ```
+
+Use the `-fat` version suffix for the fat JAR.
 
 ### Others
 
@@ -92,17 +123,17 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import ru.moysklad.remap_1_2.*;
-import ru.moysklad.remap_1_2.auth.*;
-import ru.moysklad.remap_1_2.model.*;
-import ru.moysklad.remap_1_2.api.AssortmentApi;
+    import ru.moysklad.remap_1_2.*;
+    import ru.moysklad.remap_1_2.auth.*;
+    import ru.moysklad.remap_1_2.model.*;
+    import ru.moysklad.remap_1_2.api.AssortmentApi;
 
-public class AssortmentApiExample {
+    public class AssortmentApiExample {
 
     public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
-        
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+    
         // Configure HTTP basic authorization: basicAuth
         HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
         basicAuth.setUsername("YOUR USERNAME");
@@ -112,23 +143,23 @@ public class AssortmentApiExample {
         HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
         bearerAuth.setBearerToken("BEARER TOKEN");
 
-        AssortmentApi apiInstance = new AssortmentApi(defaultClient);
+    AssortmentApi apiInstance = new AssortmentApi(defaultClient);
         List<Assortment> assortment = Arrays.asList(); // List<Assortment> | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
-        try {
-            List<DeleteRowResult> result = apiInstance.deleteAssortmentPositionsBatch(assortment, accept, acceptEncoding, contentType);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling AssortmentApi#deleteAssortmentPositionsBatch");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
+    try {
+    List<DeleteRowResult> result = apiInstance.deleteAssortmentPositionsBatch(assortment, accept, acceptEncoding, contentType);
+        System.out.println(result);
+    } catch (ApiException e) {
+    System.err.println("Exception when calling AssortmentApi#deleteAssortmentPositionsBatch");
+    System.err.println("Status code: " + e.getCode());
+    System.err.println("Reason: " + e.getResponseBody());
+    System.err.println("Response headers: " + e.getResponseHeaders());
+    e.printStackTrace();
     }
-}
+    }
+    }
 
 ```
 
@@ -1900,17 +1931,17 @@ Class | Method | HTTP request | Description
 
 
 Authentication schemes defined for the API:
-<a id="basicAuth"></a>
-### basicAuth
+    <a id="basicAuth"></a>
+    ### basicAuth
 
 
-- **Type**: HTTP basic authentication
+        - **Type**: HTTP basic authentication
 
-<a id="bearerAuth"></a>
-### bearerAuth
+    <a id="bearerAuth"></a>
+    ### bearerAuth
 
 
-- **Type**: HTTP Bearer Token authentication
+        - **Type**: HTTP Bearer Token authentication
 
 
 ## Recommendation

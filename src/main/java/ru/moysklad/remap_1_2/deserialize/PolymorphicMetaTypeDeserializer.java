@@ -1,6 +1,6 @@
 /*
  * МойСклад JSON API
- * API для манипуляции с сущностями и создания отчетов в онлайн-сервисе МойСклад.  ## Аутентификация  МойСклад поддерживает аутентификацию по протоколу Basic Auth и с использованием токена доступа: - Basic Auth: заголовок `Authorization` со значением пары `логин:пароль`, закодированным в Base64 - Bearer Token: заголовок `Authorization` со значением `Bearer <Access-Token>`  ## Ограничения  - Не более 45 запросов за 3 секундный период от аккаунта - Не более 5 параллельных запросов от одного пользователя   - Не более 20 параллельных запросов от аккаунта - Не более 20 Мб данных в одном запросе - Максимум 1000 элементов в массиве - Обязательное использование сжатия gzip 
+ * API для манипуляции с сущностями и создания отчетов в онлайн-сервисе МойСклад  ## Аутентификация  МойСклад поддерживает аутентификацию по протоколу Basic Auth и с использованием токена доступа: - Basic Auth: заголовок `Authorization` со значением пары `логин:пароль`, закодированным в Base64 - Bearer Token: заголовок `Authorization` со значением `Bearer <Access-Token>`  ## Ограничения  - Не более 45 запросов за 3 секундный период от аккаунта - Не более 5 параллельных запросов от одного пользователя   - Не более 20 параллельных запросов от аккаунта - Не более 20 Мб данных в одном запросе - Максимум 1000 элементов в массиве - Обязательное использование сжатия gzip 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -12,22 +12,25 @@
 
 package ru.moysklad.remap_1_2.deserialize;
 
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.databind.JavaType;
-import com.fasterxml.jackson.databind.JsonDeserializer;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.deser.ContextualDeserializer;
+import tools.jackson.core.JsonParser;
+import tools.jackson.databind.BeanProperty;
+import tools.jackson.databind.DatabindException;
+import tools.jackson.databind.DeserializationContext;
+import tools.jackson.databind.JavaType;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ValueDeserializer;
+import tools.jackson.databind.annotation.JsonDeserialize;
+import tools.jackson.databind.cfg.ContextAttributes;
 import ru.moysklad.remap_1_2.model.Errors;
 
-import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:24:19.072140487Z[GMT]", comments = "Generator version: 7.14.0")
-public class PolymorphicMetaTypeDeserializer extends JsonDeserializer<Object> implements ContextualDeserializer {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T13:59:19.961064491Z[GMT]", comments = "Generator version: 7.14.0")
+public class PolymorphicMetaTypeDeserializer extends ValueDeserializer<Object> {
+  public static final String OBJECT_MAPPER_ATTRIBUTE = "ru.moysklad.remap_1_2.ObjectMapper";
+
   private final JavaType targetType;
 
   public PolymorphicMetaTypeDeserializer() {
@@ -39,30 +42,29 @@ public class PolymorphicMetaTypeDeserializer extends JsonDeserializer<Object> im
   }
 
   @Override
-  public JsonDeserializer<?> createContextual(DeserializationContext ctxt, com.fasterxml.jackson.databind.BeanProperty property) {
+  public ValueDeserializer<?> createContextual(DeserializationContext ctxt, BeanProperty property) {
     JavaType contextualType = property != null ? property.getType() : ctxt.getContextualType();
     return new PolymorphicMetaTypeDeserializer(unwrapContainer(contextualType));
   }
 
   @Override
-  public Object deserialize(JsonParser parser, DeserializationContext ctxt) throws IOException {
+  public Object deserialize(JsonParser parser, DeserializationContext ctxt) {
     if (targetType == null) {
       return ctxt.readValue(parser, Object.class);
     }
 
-    ObjectMapper mapper = (ObjectMapper) parser.getCodec();
-    JsonNode node = mapper.readTree(parser);
+    JsonNode node = ctxt.readTree(parser);
     Class<?> targetClass = targetType.getRawClass();
-    Class<?> resolvedClass = resolveClass(targetClass, node);
+    Class<?> resolvedClass = resolveClass(parser, targetClass, node);
 
     if (resolvedClass == null) {
       resolvedClass = targetClass;
     }
 
-    return readWithoutPolymorphicDeserializer(mapper, node, resolvedClass);
+    return readWithoutPolymorphicDeserializer(ctxt, node, resolvedClass);
   }
 
-  private Class<?> resolveClass(Class<?> targetClass, JsonNode node) throws IOException {
+  private Class<?> resolveClass(JsonParser parser, Class<?> targetClass, JsonNode node) {
     String path = discriminatorPath(targetClass);
     if (path == null || path.isEmpty()) {
       return null;
@@ -84,7 +86,7 @@ public class PolymorphicMetaTypeDeserializer extends JsonDeserializer<Object> im
     }
 
     if (resolvedClass != null && !targetClass.isAssignableFrom(resolvedClass)) {
-      throw new IOException("Polymorphic discriminator for " + targetClass.getName()
+      throw DatabindException.from(parser, "Polymorphic discriminator for " + targetClass.getName()
           + " points to incompatible class " + resolvedClass.getName());
     }
 
@@ -174,15 +176,25 @@ public class PolymorphicMetaTypeDeserializer extends JsonDeserializer<Object> im
     return current;
   }
 
-  private Object readWithoutPolymorphicDeserializer(ObjectMapper mapper, JsonNode node, Class<?> targetClass) throws IOException {
-    ObjectMapper mapperCopy = mapper.copy();
-    for (Class<?> current = targetClass; current != null && current != Object.class; current = current.getSuperclass()) {
-      mapperCopy.addMixIn(current, DisablePolymorphicDeserializer.class);
+  private Object readWithoutPolymorphicDeserializer(DeserializationContext ctxt, JsonNode node, Class<?> targetClass) {
+    Object attribute = ctxt.getAttribute(OBJECT_MAPPER_ATTRIBUTE);
+    if (!(attribute instanceof ObjectMapper mapper)) {
+      throw DatabindException.from(ctxt.getParser(),
+          "ObjectMapper is not available on DeserializationContext; ApiClient must attach "
+              + OBJECT_MAPPER_ATTRIBUTE);
     }
-    return mapperCopy.treeToValue(node, targetClass);
+    var builder = mapper.rebuild();
+    for (Class<?> current = targetClass; current != null && current != Object.class; current = current.getSuperclass()) {
+      builder.addMixIn(current, DisablePolymorphicDeserializer.class);
+    }
+    ObjectMapper copy = builder
+        .defaultAttributes(ContextAttributes.getEmpty()
+            .withSharedAttribute(OBJECT_MAPPER_ATTRIBUTE, mapper))
+        .build();
+    return copy.treeToValue(node, targetClass);
   }
 
-  @JsonDeserialize(using = JsonDeserializer.None.class)
+  @JsonDeserialize(using = ValueDeserializer.None.class)
   private abstract static class DisablePolymorphicDeserializer {
   }
 }

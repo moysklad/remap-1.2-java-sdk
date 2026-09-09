@@ -1,6 +1,6 @@
 /*
  * МойСклад JSON API
- * API для манипуляции с сущностями и создания отчетов в онлайн-сервисе МойСклад.  ## Аутентификация  МойСклад поддерживает аутентификацию по протоколу Basic Auth и с использованием токена доступа: - Basic Auth: заголовок `Authorization` со значением пары `логин:пароль`, закодированным в Base64 - Bearer Token: заголовок `Authorization` со значением `Bearer <Access-Token>`  ## Ограничения  - Не более 45 запросов за 3 секундный период от аккаунта - Не более 5 параллельных запросов от одного пользователя   - Не более 20 параллельных запросов от аккаунта - Не более 20 Мб данных в одном запросе - Максимум 1000 элементов в массиве - Обязательное использование сжатия gzip 
+ * API для манипуляции с сущностями и создания отчетов в онлайн-сервисе МойСклад  ## Аутентификация  МойСклад поддерживает аутентификацию по протоколу Basic Auth и с использованием токена доступа: - Basic Auth: заголовок `Authorization` со значением пары `логин:пароль`, закодированным в Base64 - Bearer Token: заголовок `Authorization` со значением `Bearer <Access-Token>`  ## Ограничения  - Не более 45 запросов за 3 секундный период от аккаунта - Не более 5 параллельных запросов от одного пользователя   - Не более 20 параллельных запросов от аккаунта - Не более 20 Мб данных в одном запросе - Максимум 1000 элементов в массиве - Обязательное использование сжатия gzip 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -13,13 +13,17 @@
 package ru.moysklad.remap_1_2;
 
 import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.*;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import tools.jackson.core.JacksonException;
+import tools.jackson.core.type.TypeReference;
+import tools.jackson.databind.*;
+import tools.jackson.databind.cfg.ContextAttributes;
+import tools.jackson.databind.cfg.DateTimeFeature;
+import tools.jackson.databind.cfg.EnumFeature;
+import tools.jackson.databind.ext.javatime.deser.LocalDateTimeDeserializer;
+import tools.jackson.databind.json.JsonMapper;
+import tools.jackson.databind.module.SimpleModule;
 import java.time.OffsetDateTime;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JavaType;
-import org.openapitools.jackson.nullable.JsonNullableModule;
+import org.openapitools.jackson.nullable.JsonNullableJackson3Module;
 
 import org.apache.hc.client5.http.cookie.BasicCookieStore;
 import org.apache.hc.client5.http.cookie.Cookie;
@@ -79,10 +83,11 @@ import java.text.DateFormat;
 import ru.moysklad.remap_1_2.auth.Authentication;
 import ru.moysklad.remap_1_2.model.BatchResponseEntity;
 import ru.moysklad.remap_1_2.model.Errors;
+import ru.moysklad.remap_1_2.deserialize.PolymorphicMetaTypeDeserializer;
 import ru.moysklad.remap_1_2.auth.HttpBasicAuth;
 import ru.moysklad.remap_1_2.auth.HttpBearerAuth;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:24:19.072140487Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T13:59:19.961064491Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ApiClient extends JavaTimeFormatter {
   protected Map<String, String> defaultHeaderMap = new HashMap<String, String>();
@@ -119,23 +124,23 @@ public class ApiClient extends JavaTimeFormatter {
   }
 
   public ApiClient(CloseableHttpClient httpClient) {
-    objectMapper = new ObjectMapper();
-    objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
-    objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-    objectMapper.configure(DeserializationFeature.FAIL_ON_INVALID_SUBTYPE, false);
-    objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
-    objectMapper.enable(SerializationFeature.WRITE_ENUMS_USING_TO_STRING);
-    objectMapper.enable(DeserializationFeature.READ_ENUMS_USING_TO_STRING);
-    // Configure JavaTimeModule with custom datetime format
-    JavaTimeModule javaTimeModule = new JavaTimeModule();
-    // Add custom deserializer for datetime format
-    javaTimeModule.addDeserializer(java.time.LocalDateTime.class, new com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer(
+    SimpleModule localDateTimeModule = new SimpleModule("CustomLocalDateTime");
+    localDateTimeModule.addDeserializer(java.time.LocalDateTime.class, new LocalDateTimeDeserializer(
         java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS")
     ));
-    objectMapper.registerModule(javaTimeModule);
-    objectMapper.registerModule(new JsonNullableModule());
-    objectMapper.registerModule(new RFC3339JavaTimeModule());
-    objectMapper.setDateFormat(ApiClient.buildDefaultDateFormat());
+    JsonMapper jsonMapper = JsonMapper.builder()
+        .changeDefaultPropertyInclusion(v -> v.withValueInclusion(JsonInclude.Include.NON_NULL))
+        .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
+        .disable(DeserializationFeature.FAIL_ON_INVALID_SUBTYPE)
+        .disable(DateTimeFeature.WRITE_DATES_AS_TIMESTAMPS)
+        .enable(EnumFeature.WRITE_ENUMS_USING_TO_STRING)
+        .enable(EnumFeature.READ_ENUMS_USING_TO_STRING)
+        .addModule(localDateTimeModule)
+        .addModule(new JsonNullableJackson3Module())
+        .addModule(new RFC3339JavaTimeModule())
+        .defaultDateFormat(ApiClient.buildDefaultDateFormat())
+        .build();
+    objectMapper = attachObjectMapperAttribute(jsonMapper);
 
     dateFormat = ApiClient.buildDefaultDateFormat();
 
@@ -179,8 +184,15 @@ public class ApiClient extends JavaTimeFormatter {
    * @return API client
    */
   public ApiClient setObjectMapper(ObjectMapper objectMapper) {
-    this.objectMapper = objectMapper;
+    this.objectMapper = attachObjectMapperAttribute(objectMapper);
     return this;
+  }
+
+  private static ObjectMapper attachObjectMapperAttribute(ObjectMapper mapper) {
+    return mapper.rebuild()
+        .defaultAttributes(ContextAttributes.getEmpty()
+            .withSharedAttribute(PolymorphicMetaTypeDeserializer.OBJECT_MAPPER_ATTRIBUTE, mapper))
+        .build();
   }
 
   public CloseableHttpClient getHttpClient() {
@@ -470,7 +482,9 @@ public class ApiClient extends JavaTimeFormatter {
   public ApiClient setDateFormat(DateFormat dateFormat) {
     this.dateFormat = dateFormat;
     // Also set the date format for model (de)serialization with Date properties.
-    this.objectMapper.setDateFormat((DateFormat) dateFormat.clone());
+    this.objectMapper = attachObjectMapperAttribute(this.objectMapper.rebuild()
+        .defaultDateFormat((DateFormat) dateFormat.clone())
+        .build());
     return this;
   }
 
@@ -720,7 +734,7 @@ public class ApiClient extends JavaTimeFormatter {
     if (isJsonMime(mimeType)) {
       try {
         return new StringEntity(objectMapper.writeValueAsString(obj), contentType.withCharset(StandardCharsets.UTF_8));
-      } catch (JsonProcessingException e) {
+      } catch (JacksonException e) {
         throw new ApiException(e);
       }
     } else if (mimeType.equals(ContentType.MULTIPART_FORM_DATA.getMimeType())) {
@@ -1067,7 +1081,7 @@ public class ApiClient extends JavaTimeFormatter {
 
     try (CloseableHttpResponse response = httpClient.execute(builder.build(), context)) {
       return responseProcessor.process(response);
-    } catch (IOException | ParseException e) {
+    } catch (IOException | ParseException | JacksonException e) {
       throw new ApiException(e);
     }
   }

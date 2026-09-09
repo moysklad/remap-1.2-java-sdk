@@ -1,6 +1,6 @@
 /*
  * МойСклад JSON API
- * API для манипуляции с сущностями и создания отчетов в онлайн-сервисе МойСклад.  ## Аутентификация  МойСклад поддерживает аутентификацию по протоколу Basic Auth и с использованием токена доступа: - Basic Auth: заголовок `Authorization` со значением пары `логин:пароль`, закодированным в Base64 - Bearer Token: заголовок `Authorization` со значением `Bearer <Access-Token>`  ## Ограничения  - Не более 45 запросов за 3 секундный период от аккаунта - Не более 5 параллельных запросов от одного пользователя   - Не более 20 параллельных запросов от аккаунта - Не более 20 Мб данных в одном запросе - Максимум 1000 элементов в массиве - Обязательное использование сжатия gzip 
+ * API для манипуляции с сущностями и создания отчетов в онлайн-сервисе МойСклад  ## Аутентификация  МойСклад поддерживает аутентификацию по протоколу Basic Auth и с использованием токена доступа: - Basic Auth: заголовок `Authorization` со значением пары `логин:пароль`, закодированным в Base64 - Bearer Token: заголовок `Authorization` со значением `Bearer <Access-Token>`  ## Ограничения  - Не более 45 запросов за 3 секундный период от аккаунта - Не более 5 параллельных запросов от одного пользователя   - Не более 20 параллельных запросов от аккаунта - Не более 20 Мб данных в одном запросе - Максимум 1000 элементов в массиве - Обязательное использование сжатия gzip 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -12,7 +12,6 @@
 
 package ru.moysklad.remap_1_2;
 
-import java.io.IOException;
 import java.time.Instant;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
@@ -23,17 +22,18 @@ import java.time.temporal.TemporalAccessor;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeFeature;
-import com.fasterxml.jackson.datatype.jsr310.deser.InstantDeserializer;
+import tools.jackson.core.JacksonException;
+import tools.jackson.core.JsonParser;
+import tools.jackson.databind.DeserializationContext;
+import tools.jackson.databind.cfg.DateTimeFeature;
+import tools.jackson.databind.ext.javatime.deser.InstantDeserializer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:24:19.072140487Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T13:59:19.961064491Z[GMT]", comments = "Generator version: 7.14.0")
 public class RFC3339InstantDeserializer<T extends Temporal> extends InstantDeserializer<T> {
     private static final long serialVersionUID = 1L;
-    private final static boolean DEFAULT_NORMALIZE_ZONE_ID = JavaTimeFeature.NORMALIZE_DESERIALIZED_ZONE_ID.enabledByDefault();
+    private final static boolean DEFAULT_NORMALIZE_ZONE_ID = DateTimeFeature.NORMALIZE_DESERIALIZED_ZONE_ID.enabledByDefault();
     private final static boolean DEFAULT_ALWAYS_ALLOW_STRINGIFIED_DATE_TIMESTAMPS
-    = JavaTimeFeature.ALWAYS_ALLOW_STRINGIFIED_DATE_TIMESTAMPS.enabledByDefault();
+    = DateTimeFeature.ALWAYS_ALLOW_STRINGIFIED_DATE_TIMESTAMPS.enabledByDefault();
 
     public static final RFC3339InstantDeserializer<Instant> INSTANT = new RFC3339InstantDeserializer<>(
         Instant.class, DateTimeFormatter.ISO_INSTANT,
@@ -94,7 +94,7 @@ public class RFC3339InstantDeserializer<T extends Temporal> extends InstantDeser
     }
 
     @Override
-    protected T _fromString(JsonParser p, DeserializationContext ctxt, String string0) throws IOException {
+    protected T _fromString(JsonParser p, DeserializationContext ctxt, String string0) throws JacksonException {
         return super._fromString(p, ctxt, string0.replace( ' ', 'T' ));
     }
 }

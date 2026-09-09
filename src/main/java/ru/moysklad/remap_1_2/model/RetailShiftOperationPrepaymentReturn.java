@@ -1,6 +1,6 @@
 /*
  * МойСклад JSON API
- * API для манипуляции с сущностями и создания отчетов в онлайн-сервисе МойСклад.  ## Аутентификация  МойСклад поддерживает аутентификацию по протоколу Basic Auth и с использованием токена доступа: - Basic Auth: заголовок `Authorization` со значением пары `логин:пароль`, закодированным в Base64 - Bearer Token: заголовок `Authorization` со значением `Bearer <Access-Token>`  ## Ограничения  - Не более 45 запросов за 3 секундный период от аккаунта - Не более 5 параллельных запросов от одного пользователя   - Не более 20 параллельных запросов от аккаунта - Не более 20 Мб данных в одном запросе - Максимум 1000 элементов в массиве - Обязательное использование сжатия gzip 
+ * API для манипуляции с сущностями и создания отчетов в онлайн-сервисе МойСклад  ## Аутентификация  МойСклад поддерживает аутентификацию по протоколу Basic Auth и с использованием токена доступа: - Basic Auth: заголовок `Authorization` со значением пары `логин:пароль`, закодированным в Base64 - Bearer Token: заголовок `Authorization` со значением `Bearer <Access-Token>`  ## Ограничения  - Не более 45 запросов за 3 секундный период от аккаунта - Не более 5 параллельных запросов от одного пользователя   - Не более 20 параллельных запросов от аккаунта - Не более 20 Мб данных в одном запросе - Максимум 1000 элементов в массиве - Обязательное использование сжатия gzip 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -88,7 +88,7 @@ import java.util.StringJoiner;
   RetailShiftOperationPrepaymentReturn.JSON_PROPERTY_STATE,
   RetailShiftOperationPrepaymentReturn.JSON_PROPERTY_TAX_SYSTEM
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-07T04:24:19.072140487Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T13:59:19.961064491Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailShiftOperationPrepaymentReturn extends RetailShiftOperation {
 
   public static final String JSON_PROPERTY_META = "meta";
