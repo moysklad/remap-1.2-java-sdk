@@ -38,7 +38,7 @@ import java.util.StringJoiner;
   Application.JSON_PROPERTY_NAME,
   Application.JSON_PROPERTY_APP_UID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T13:59:19.961064491Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
 public class Application implements MetaEntity {
   public static Application createWithMeta(UUID id) {
     Application o = new Application();

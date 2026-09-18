@@ -27,7 +27,7 @@ import java.net.URLEncoder;
 import java.util.StringJoiner;
 
 /**
- * Permissions
+ * Права на сущность. BASE включает view, create, update и delete; DICTIONARY дополнительно включает print; OPERATION — print и approve. Для GTINList используются view, create и delete, для trackingCodeList — view и print. Известные значения описаны в PermissionValue. Область действия расширяется по цепочкам NO → OWN → OWN_SHARED → OWN_GROUP_SHARED → ALL и NO → OWN → OWN_GROUP → OWN_GROUP_SHARED → ALL. Неуказанное действие запрещено сотруднику. 
  */
 @JsonPropertyOrder({
   Permissions.JSON_PROPERTY_VIEW,
@@ -37,7 +37,7 @@ import java.util.StringJoiner;
   Permissions.JSON_PROPERTY_DELETE,
   Permissions.JSON_PROPERTY_APPROVE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T13:59:19.961064491Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
 public class Permissions {
 
   public static final String JSON_PROPERTY_VIEW = "view";
@@ -104,7 +104,7 @@ public class Permissions {
 
 
   /**
-   * Печатать. Известные значения описаны в PermissionValue.
+   * Печатать. Известные значения описаны в PermissionValue. Значение совпадает с view или отсутствует.
    * @return print
    */
   @javax.annotation.Nullable
@@ -133,7 +133,7 @@ public class Permissions {
 
 
   /**
-   * Создавать. Известные значения описаны в PermissionValue.
+   * Создавать. Известные значения описаны в PermissionValue. Значение совпадает с view или отсутствует.
    * @return create
    */
   @javax.annotation.Nullable
@@ -162,7 +162,7 @@ public class Permissions {
 
 
   /**
-   * Редактировать. Известные значения описаны в PermissionValue.
+   * Редактировать. Известные значения описаны в PermissionValue. Область действия не шире view; поле может отсутствовать.
    * @return update
    */
   @javax.annotation.Nullable
@@ -191,7 +191,7 @@ public class Permissions {
 
 
   /**
-   * Удалять. Известные значения описаны в PermissionValue.
+   * Удалять. Известные значения описаны в PermissionValue. Значение совпадает с update или отсутствует.
    * @return delete
    */
   @javax.annotation.Nullable
@@ -220,7 +220,7 @@ public class Permissions {
 
 
   /**
-   * Проводить. Известные значения описаны в PermissionValue.
+   * Проводить. Известные значения описаны в PermissionValue. Значение совпадает с view или отсутствует.
    * @return approve
    */
   @javax.annotation.Nullable

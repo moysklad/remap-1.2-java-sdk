@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   StoreBalance.JSON_PROPERTY_STORE,
   StoreBalance.JSON_PROPERTY_QUANTITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T13:59:19.961064491Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
 public class StoreBalance implements MetaEntity {
   public static StoreBalance createWithMeta(UUID parentId, UUID id) {
     StoreBalance o = new StoreBalance();

@@ -11,6 +11,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createCommissionReportOutMetadataState**](CommissionReportOutsApi.md#createCommissionReportOutMetadataState) | **POST** /entity/commissionreportout/metadata/states | Создать статус CommissionReportOut |
 | [**createCommissionReportOutMetadataStatesBatch**](CommissionReportOutsApi.md#createCommissionReportOutMetadataStatesBatch) | **POST** /entity/commissionreportout/metadata/states/batch | Массовое создание и обновление статусов CommissionReportOut |
 | [**createCommissionReportOutNote**](CommissionReportOutsApi.md#createCommissionReportOutNote) | **POST** /entity/commissionreportout/{id}/notes | Добавить Событие Выданного отчета комиссионера |
+| [**createCommissionReportOutNotesBatch**](CommissionReportOutsApi.md#createCommissionReportOutNotesBatch) | **POST** /entity/commissionreportout/{id}/notes/batch | Массовое создание и обновление Событий Выданного отчета комиссионера |
 | [**createCommissionReportOutPosition**](CommissionReportOutsApi.md#createCommissionReportOutPosition) | **POST** /entity/commissionreportout/{id}/positions | Создать и обновить позицию Выданного отчета комиссионера |
 | [**createCommissionReportOutPositions**](CommissionReportOutsApi.md#createCommissionReportOutPositions) | **POST** /entity/commissionreportout/{id}/positions/batch | Массовое создание и обновление позиций Выданного отчета комиссионера |
 | [**deleteCommissionReportOut**](CommissionReportOutsApi.md#deleteCommissionReportOut) | **DELETE** /entity/commissionreportout/{id} | Удалить CommissionReportOut |
@@ -19,6 +20,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**deleteCommissionReportOutMetadataAttributeById**](CommissionReportOutsApi.md#deleteCommissionReportOutMetadataAttributeById) | **DELETE** /entity/commissionreportout/metadata/attributes/{id} | Удалить отдельное доп. поле CommissionReportOut |
 | [**deleteCommissionReportOutMetadataStateById**](CommissionReportOutsApi.md#deleteCommissionReportOutMetadataStateById) | **DELETE** /entity/commissionreportout/metadata/states/{id} | Удалить отдельный статус CommissionReportOut |
 | [**deleteCommissionReportOutNote**](CommissionReportOutsApi.md#deleteCommissionReportOutNote) | **DELETE** /entity/commissionreportout/{id}/notes/{noteId} | Удалить Событие Выданного отчета комиссионера |
+| [**deleteCommissionReportOutNotesBatch**](CommissionReportOutsApi.md#deleteCommissionReportOutNotesBatch) | **POST** /entity/commissionreportout/{id}/notes/delete | Массовое удаление Событий Выданного отчета комиссионера |
 | [**deleteCommissionReportOutPosition**](CommissionReportOutsApi.md#deleteCommissionReportOutPosition) | **DELETE** /entity/commissionreportout/{id}/positions/{positionId} | Удалить позицию CommissionReportOut |
 | [**deleteCommissionReportOutPositionsBatch**](CommissionReportOutsApi.md#deleteCommissionReportOutPositionsBatch) | **POST** /entity/commissionreportout/{id}/positions/delete | Массовое удаление позиций CommissionReportOut |
 | [**getCommissionReportOutById**](CommissionReportOutsApi.md#getCommissionReportOutById) | **GET** /entity/commissionreportout/{id} | Получить CommissionReportOut по ID |
@@ -32,6 +34,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**getCommissionReportOutNotes**](CommissionReportOutsApi.md#getCommissionReportOutNotes) | **GET** /entity/commissionreportout/{id}/notes | Получить список Событий Выданного отчета комиссионера |
 | [**getCommissionReportOutPositionById**](CommissionReportOutsApi.md#getCommissionReportOutPositionById) | **GET** /entity/commissionreportout/{id}/positions/{positionId} | Получить позицию CommissionReportOut |
 | [**getCommissionReportOutPositions**](CommissionReportOutsApi.md#getCommissionReportOutPositions) | **GET** /entity/commissionreportout/{id}/positions | Получить позиции CommissionReportOut |
+| [**moveCommissionReportOutToTrash**](CommissionReportOutsApi.md#moveCommissionReportOutToTrash) | **POST** /entity/commissionreportout/{id}/trash | Удалить CommissionReportOut в корзину |
 | [**updateCommissionReportOut**](CommissionReportOutsApi.md#updateCommissionReportOut) | **PUT** /entity/commissionreportout/{id} | Изменить CommissionReportOut |
 | [**updateCommissionReportOutMetadataAttributeById**](CommissionReportOutsApi.md#updateCommissionReportOutMetadataAttributeById) | **PUT** /entity/commissionreportout/metadata/attributes/{id} | Обновить отдельное доп. поле CommissionReportOut |
 | [**updateCommissionReportOutMetadataStateById**](CommissionReportOutsApi.md#updateCommissionReportOutMetadataStateById) | **PUT** /entity/commissionreportout/metadata/states/{id} | Обновить отдельный статус CommissionReportOut |
@@ -615,7 +618,92 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Событие успешно создано |  -  |
+| **201** | Массив с созданным Событием |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## createCommissionReportOutNotesBatch
+
+> List&lt;EventNote&gt; createCommissionReportOutNotesBatch(id, eventNote, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление Событий Выданного отчета комиссионера
+
+В теле запроса передается массив Событий. Для создания События требуется description, для обновления — метаданные (meta). Для каждого документа можно создать не более 5000 Событий. Редактировать События может администратор или автор События с правом на просмотр документа.
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.CommissionReportOutsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        CommissionReportOutsApi apiInstance = new CommissionReportOutsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<EventNote> eventNote = Arrays.asList(); // List<EventNote> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<EventNote> result = apiInstance.createCommissionReportOutNotesBatch(id, eventNote, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CommissionReportOutsApi#createCommissionReportOutNotesBatch");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **eventNote** | [**List&lt;EventNote&gt;**](EventNote.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;EventNote&gt;**](EventNote.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Массив созданных и обновленных Событий |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
@@ -1272,6 +1360,90 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Событие успешно удалено |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## deleteCommissionReportOutNotesBatch
+
+> deleteCommissionReportOutNotesBatch(id, eventNote, accept, acceptEncoding, contentType)
+
+Массовое удаление Событий Выданного отчета комиссионера
+
+В теле запроса передается массив Событий с их метаданными (meta). Удалять События может администратор или автор События с правом на просмотр документа.
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.CommissionReportOutsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        CommissionReportOutsApi apiInstance = new CommissionReportOutsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<EventNote> eventNote = Arrays.asList(); // List<EventNote> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            apiInstance.deleteCommissionReportOutNotesBatch(id, eventNote, accept, acceptEncoding, contentType);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CommissionReportOutsApi#deleteCommissionReportOutNotesBatch");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **eventNote** | [**List&lt;EventNote&gt;**](EventNote.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | События успешно удалены. Тело ответа отсутствует. |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
@@ -2345,6 +2517,84 @@ public class Example {
 ### Return type
 
 [**List&lt;CommissionReportOutPosition&gt;**](CommissionReportOutPosition.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## moveCommissionReportOutToTrash
+
+> moveCommissionReportOutToTrash(id, accept, acceptEncoding)
+
+Удалить CommissionReportOut в корзину
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.CommissionReportOutsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        CommissionReportOutsApi apiInstance = new CommissionReportOutsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            apiInstance.moveCommissionReportOutToTrash(id, accept, acceptEncoding);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CommissionReportOutsApi#moveCommissionReportOutToTrash");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

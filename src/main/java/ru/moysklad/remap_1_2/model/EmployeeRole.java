@@ -21,8 +21,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import org.openapitools.jackson.nullable.JsonNullable;
-import ru.moysklad.remap_1_2.model.EmployeeRolePermissions;
 import ru.moysklad.remap_1_2.model.Meta;
+import ru.moysklad.remap_1_2.model.RolePermissions;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.NoSuchElementException;
@@ -33,13 +33,13 @@ import java.net.URLEncoder;
 import java.util.StringJoiner;
 
 /**
- * Роль сотрудника
+ * Роль сотрудника: владелец аккаунта, системный администратор, кассир, сотрудник производства, пользовательская или индивидуальная роль. Системные роли имеют meta.type &#x3D; systemrole, индивидуальная — individualrole, пользовательская — customrole. Пользовательская роль описана в CustomRole. Роль сотрудника производства доступна при подключенной опции «Управление производством». Пользовательские роли и индивидуальные права, отличающиеся от значений по умолчанию, доступны на тарифах «Профессиональный» и «Корпоративный». 
  */
 @JsonPropertyOrder({
   EmployeeRole.JSON_PROPERTY_META,
   EmployeeRole.JSON_PROPERTY_PERMISSIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T13:59:19.961064491Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
 public class EmployeeRole {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -48,7 +48,7 @@ public class EmployeeRole {
 
   public static final String JSON_PROPERTY_PERMISSIONS = "permissions";
   @javax.annotation.Nullable
-  private JsonNullable<EmployeeRolePermissions> permissions = JsonNullable.<EmployeeRolePermissions>undefined();
+  private JsonNullable<RolePermissions> permissions = JsonNullable.<RolePermissions>undefined();
 
   public EmployeeRole() {
   }
@@ -82,8 +82,8 @@ public class EmployeeRole {
   }
 
 
-  public EmployeeRole permissions(@javax.annotation.Nullable EmployeeRolePermissions permissions) {
-    this.permissions = JsonNullable.<EmployeeRolePermissions>of(permissions);
+  public EmployeeRole permissions(@javax.annotation.Nullable RolePermissions permissions) {
+    this.permissions = JsonNullable.<RolePermissions>of(permissions);
     
     return this;
   }
@@ -96,7 +96,7 @@ public class EmployeeRole {
   @javax.annotation.Nullable
   @JsonIgnore
 
-  public EmployeeRolePermissions getPermissions() {
+  public RolePermissions getPermissions() {
         return permissions.orElse(null);
   }
 
@@ -106,17 +106,17 @@ public class EmployeeRole {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<EmployeeRolePermissions> getPermissions_JsonNullable() {
+  public JsonNullable<RolePermissions> getPermissions_JsonNullable() {
     return permissions;
   }
   
   @JsonProperty(value = JSON_PROPERTY_PERMISSIONS, required = false)
-  public void setPermissions_JsonNullable(JsonNullable<EmployeeRolePermissions> permissions) {
+  public void setPermissions_JsonNullable(JsonNullable<RolePermissions> permissions) {
     this.permissions = permissions;
   }
 
-  public void setPermissions(@javax.annotation.Nullable EmployeeRolePermissions permissions) {
-    this.permissions = JsonNullable.<EmployeeRolePermissions>of(permissions);
+  public void setPermissions(@javax.annotation.Nullable RolePermissions permissions) {
+    this.permissions = JsonNullable.<RolePermissions>of(permissions);
   }
 
 

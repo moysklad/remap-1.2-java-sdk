@@ -20,6 +20,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**getCashInMetadataAttributeById**](CashInsApi.md#getCashInMetadataAttributeById) | **GET** /entity/cashin/metadata/attributes/{id} | Отдельное доп. поле CashIn |
 | [**getCashInMetadataStateById**](CashInsApi.md#getCashInMetadataStateById) | **GET** /entity/cashin/metadata/states/{id} | Отдельный статус CashIn |
 | [**getCashInTemplate**](CashInsApi.md#getCashInTemplate) | **PUT** /entity/cashin/new | Шаблон CashIns |
+| [**moveCashInToTrash**](CashInsApi.md#moveCashInToTrash) | **POST** /entity/cashin/{id}/trash | Удалить CashIn в корзину |
 | [**updateCashIn**](CashInsApi.md#updateCashIn) | **PUT** /entity/cashin/{id} | Изменить CashIn |
 | [**updateCashInMetadataAttributeById**](CashInsApi.md#updateCashInMetadataAttributeById) | **PUT** /entity/cashin/metadata/attributes/{id} | Обновить отдельное доп. поле CashIn |
 | [**updateCashInMetadataStateById**](CashInsApi.md#updateCashInMetadataStateById) | **PUT** /entity/cashin/metadata/states/{id} | Обновить отдельный статус CashIn |
@@ -1322,6 +1323,84 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## moveCashInToTrash
+
+> moveCashInToTrash(id, accept, acceptEncoding)
+
+Удалить CashIn в корзину
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.CashInsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        CashInsApi apiInstance = new CashInsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            apiInstance.moveCashInToTrash(id, accept, acceptEncoding);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CashInsApi#moveCashInToTrash");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json, text/html;charset=UTF-8
 
 

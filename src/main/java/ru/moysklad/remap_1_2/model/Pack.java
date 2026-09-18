@@ -38,7 +38,7 @@ import java.net.URLEncoder;
 import java.util.StringJoiner;
 
 /**
- * Упаковка
+ * Упаковка товара
  */
 @JsonPropertyOrder({
   Pack.JSON_PROPERTY_META,
@@ -47,7 +47,7 @@ import java.util.StringJoiner;
   Pack.JSON_PROPERTY_QUANTITY,
   Pack.JSON_PROPERTY_BARCODES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T13:59:19.961064491Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
 public class Pack {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -113,7 +113,7 @@ public class Pack {
 
 
   /**
-   * ID упаковки
+   * ID упаковки товара. Обязательное при ответе
    * @return id
    */
   @javax.annotation.Nullable
@@ -165,7 +165,7 @@ public class Pack {
 
 
   /**
-   * Количество товаров в упаковке
+   * Количество товаров в упаковке. Обязательное при ответе
    * minimum: 0
    * @return quantity
    */
@@ -207,7 +207,7 @@ public class Pack {
   }
 
   /**
-   * Штрихкоды упаковки
+   * Штрихкоды упаковки (не более одного). Без штрихкода поле не выводится. При обновлении переданный массив полностью заменяет штрихкоды упаковки. 
    * @return barcodes
    */
   @javax.annotation.Nullable

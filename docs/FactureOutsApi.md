@@ -20,6 +20,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**getFactureOutMetadataStateById**](FactureOutsApi.md#getFactureOutMetadataStateById) | **GET** /entity/factureout/metadata/states/{id} | Отдельный статус Счета-фактуры выданного |
 | [**getFactureOutTemplate**](FactureOutsApi.md#getFactureOutTemplate) | **PUT** /entity/factureout/new | Шаблон Счета-фактуры выданного |
 | [**getFactureOuts**](FactureOutsApi.md#getFactureOuts) | **GET** /entity/factureout | Получить список Счетов-фактур выданных |
+| [**moveFactureOutToTrash**](FactureOutsApi.md#moveFactureOutToTrash) | **POST** /entity/factureout/{id}/trash | Удалить Счет-фактуру выданный в корзину |
 | [**updateFactureOut**](FactureOutsApi.md#updateFactureOut) | **PUT** /entity/factureout/{id} | Изменить Счет-фактуру выданный |
 | [**updateFactureOutMetadataAttributeById**](FactureOutsApi.md#updateFactureOutMetadataAttributeById) | **PUT** /entity/factureout/metadata/attributes/{id} | Обновить отдельное доп. поле Счета-фактуры выданного |
 | [**updateFactureOutMetadataStateById**](FactureOutsApi.md#updateFactureOutMetadataStateById) | **PUT** /entity/factureout/metadata/states/{id} | Обновить отдельный статус Счета-фактуры выданного |
@@ -1314,6 +1315,84 @@ public class Example {
 ### Return type
 
 [**FactureOutList**](FactureOutList.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## moveFactureOutToTrash
+
+> moveFactureOutToTrash(id, accept, acceptEncoding)
+
+Удалить Счет-фактуру выданный в корзину
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.FactureOutsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        FactureOutsApi apiInstance = new FactureOutsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            apiInstance.moveFactureOutToTrash(id, accept, acceptEncoding);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling FactureOutsApi#moveFactureOutToTrash");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

@@ -42,7 +42,7 @@ import java.util.StringJoiner;
   EventNote.JSON_PROPERTY_AUTHOR,
   EventNote.JSON_PROPERTY_AUTHOR_APPLICATION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T13:59:19.961064491Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
 public class EventNote implements MetaEntity {
   public static EventNote createWithMeta(UUID documentType, UUID parentId, UUID id) {
     EventNote o = new EventNote();

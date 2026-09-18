@@ -11,6 +11,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createInvoiceOutMetadataState**](InvoiceOutsApi.md#createInvoiceOutMetadataState) | **POST** /entity/invoiceout/metadata/states | Создать статус InvoiceOut |
 | [**createInvoiceOutMetadataStatesBatch**](InvoiceOutsApi.md#createInvoiceOutMetadataStatesBatch) | **POST** /entity/invoiceout/metadata/states/batch | Массовое создание и обновление статусов InvoiceOut |
 | [**createInvoiceOutNote**](InvoiceOutsApi.md#createInvoiceOutNote) | **POST** /entity/invoiceout/{id}/notes | Добавить Событие Счета покупателю |
+| [**createInvoiceOutNotesBatch**](InvoiceOutsApi.md#createInvoiceOutNotesBatch) | **POST** /entity/invoiceout/{id}/notes/batch | Массовое создание и обновление Событий Счета покупателю |
 | [**createInvoiceOutPositions**](InvoiceOutsApi.md#createInvoiceOutPositions) | **POST** /entity/invoiceout/{id}/positions | Создать позицию Счета покупателю |
 | [**createInvoiceOutPositionsBatch**](InvoiceOutsApi.md#createInvoiceOutPositionsBatch) | **POST** /entity/invoiceout/{id}/positions/batch | Создать позиции Счета покупателю |
 | [**deleteInvoiceOut**](InvoiceOutsApi.md#deleteInvoiceOut) | **DELETE** /entity/invoiceout/{id} | Удалить Счет покупателю |
@@ -19,6 +20,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**deleteInvoiceOutMetadataAttributeById**](InvoiceOutsApi.md#deleteInvoiceOutMetadataAttributeById) | **DELETE** /entity/invoiceout/metadata/attributes/{id} | Удалить отдельное доп. поле InvoiceOut |
 | [**deleteInvoiceOutMetadataStateById**](InvoiceOutsApi.md#deleteInvoiceOutMetadataStateById) | **DELETE** /entity/invoiceout/metadata/states/{id} | Удалить отдельный статус InvoiceOut |
 | [**deleteInvoiceOutNote**](InvoiceOutsApi.md#deleteInvoiceOutNote) | **DELETE** /entity/invoiceout/{id}/notes/{noteId} | Удалить Событие Счета покупателю |
+| [**deleteInvoiceOutNotesBatch**](InvoiceOutsApi.md#deleteInvoiceOutNotesBatch) | **POST** /entity/invoiceout/{id}/notes/delete | Массовое удаление Событий Счета покупателю |
 | [**deleteInvoiceOutPosition**](InvoiceOutsApi.md#deleteInvoiceOutPosition) | **DELETE** /entity/invoiceout/{id}/positions/{positionId} | Удалить позицию Счета покупателю |
 | [**deleteInvoiceOutPositionsBatch**](InvoiceOutsApi.md#deleteInvoiceOutPositionsBatch) | **POST** /entity/invoiceout/{id}/positions/delete | Массовое удаление позиций Счета покупателю |
 | [**getInvoiceOutById**](InvoiceOutsApi.md#getInvoiceOutById) | **GET** /entity/invoiceout/{id} | Получить Счет покупателю |
@@ -34,6 +36,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**getInvoiceOutPositionById**](InvoiceOutsApi.md#getInvoiceOutPositionById) | **GET** /entity/invoiceout/{id}/positions/{positionId} | Получить позицию Счета покупателю |
 | [**getInvoiceOutPositions**](InvoiceOutsApi.md#getInvoiceOutPositions) | **GET** /entity/invoiceout/{id}/positions | Получить позиции Счета покупателю |
 | [**getInvoiceOutTemplate**](InvoiceOutsApi.md#getInvoiceOutTemplate) | **PUT** /entity/invoiceout/new | Шаблон Счета покупателю |
+| [**moveInvoiceOutToTrash**](InvoiceOutsApi.md#moveInvoiceOutToTrash) | **POST** /entity/invoiceout/{id}/trash | Удалить Счет покупателю в корзину |
 | [**updateInvoiceOut**](InvoiceOutsApi.md#updateInvoiceOut) | **PUT** /entity/invoiceout/{id} | Изменить Счет покупателю |
 | [**updateInvoiceOutMetadataAttributeById**](InvoiceOutsApi.md#updateInvoiceOutMetadataAttributeById) | **PUT** /entity/invoiceout/metadata/attributes/{id} | Обновить отдельное доп. поле InvoiceOut |
 | [**updateInvoiceOutMetadataStateById**](InvoiceOutsApi.md#updateInvoiceOutMetadataStateById) | **PUT** /entity/invoiceout/metadata/states/{id} | Обновить отдельный статус InvoiceOut |
@@ -617,7 +620,92 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Событие успешно создано |  -  |
+| **201** | Массив с созданным Событием |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## createInvoiceOutNotesBatch
+
+> List&lt;EventNote&gt; createInvoiceOutNotesBatch(id, eventNote, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление Событий Счета покупателю
+
+В теле запроса передается массив Событий. Для создания События требуется description, для обновления — метаданные (meta). Для каждого документа можно создать не более 5000 Событий. Редактировать События может администратор или автор События с правом на просмотр документа.
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.InvoiceOutsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        InvoiceOutsApi apiInstance = new InvoiceOutsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<EventNote> eventNote = Arrays.asList(); // List<EventNote> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<EventNote> result = apiInstance.createInvoiceOutNotesBatch(id, eventNote, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling InvoiceOutsApi#createInvoiceOutNotesBatch");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **eventNote** | [**List&lt;EventNote&gt;**](EventNote.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;EventNote&gt;**](EventNote.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Массив созданных и обновленных Событий |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
@@ -1274,6 +1362,90 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Событие успешно удалено |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## deleteInvoiceOutNotesBatch
+
+> deleteInvoiceOutNotesBatch(id, eventNote, accept, acceptEncoding, contentType)
+
+Массовое удаление Событий Счета покупателю
+
+В теле запроса передается массив Событий с их метаданными (meta). Удалять События может администратор или автор События с правом на просмотр документа.
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.InvoiceOutsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        InvoiceOutsApi apiInstance = new InvoiceOutsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<EventNote> eventNote = Arrays.asList(); // List<EventNote> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            apiInstance.deleteInvoiceOutNotesBatch(id, eventNote, accept, acceptEncoding, contentType);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling InvoiceOutsApi#deleteInvoiceOutNotesBatch");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **eventNote** | [**List&lt;EventNote&gt;**](EventNote.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | События успешно удалены. Тело ответа отсутствует. |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
@@ -2525,6 +2697,84 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## moveInvoiceOutToTrash
+
+> moveInvoiceOutToTrash(id, accept, acceptEncoding)
+
+Удалить Счет покупателю в корзину
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.InvoiceOutsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        InvoiceOutsApi apiInstance = new InvoiceOutsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            apiInstance.moveInvoiceOutToTrash(id, accept, acceptEncoding);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling InvoiceOutsApi#moveInvoiceOutToTrash");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json, text/html;charset=UTF-8
 
 

@@ -33,7 +33,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T13:59:19.961064491Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class CustomRolesApi extends BaseApi {
 
@@ -47,7 +47,7 @@ public class CustomRolesApi extends BaseApi {
 
   /**
    * Создать пользовательскую роль
-   * Создание новой пользовательской роли
+   * Создание новой пользовательской роли. Необходимо передать name (не более 255 символов). Доступно сотруднику с правами системного администратора или Решению. 
    * @param customRole  (required)
    * @return CustomRole
    * @throws ApiException if fails to make API call
@@ -60,7 +60,7 @@ public class CustomRolesApi extends BaseApi {
 
   /**
    * Создать пользовательскую роль
-   * Создание новой пользовательской роли
+   * Создание новой пользовательской роли. Необходимо передать name (не более 255 символов). Доступно сотруднику с правами системного администратора или Решению. 
    
    * @param customRole  (required)
    
@@ -78,7 +78,7 @@ public class CustomRolesApi extends BaseApi {
 
   /**
    * Создать пользовательскую роль
-   * Создание новой пользовательской роли
+   * Создание новой пользовательской роли. Необходимо передать name (не более 255 символов). Доступно сотруднику с правами системного администратора или Решению. 
    * @param customRole  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
@@ -150,7 +150,7 @@ if (contentType != null) {
 
   /**
    * Удалить пользовательскую роль
-   * Удаление пользовательской роли с указанным id
+   * Удаление пользовательской роли с указанным id. Доступно сотруднику с правами системного администратора или Решению. 
    * @param id ID сущности (required)
    * @throws ApiException if fails to make API call
    */
@@ -162,7 +162,7 @@ if (contentType != null) {
 
   /**
    * Удалить пользовательскую роль
-   * Удаление пользовательской роли с указанным id
+   * Удаление пользовательской роли с указанным id. Доступно сотруднику с правами системного администратора или Решению. 
    
    * @param id ID сущности (required)
    
@@ -178,7 +178,7 @@ if (contentType != null) {
 
   /**
    * Удалить пользовательскую роль
-   * Удаление пользовательской роли с указанным id
+   * Удаление пользовательской роли с указанным id. Доступно сотруднику с правами системного администратора или Решению. 
    * @param id ID сущности (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
@@ -245,7 +245,7 @@ if (acceptEncoding != null) {
 
   /**
    * Получить пользовательскую роль по ID
-   * Запрос на получение пользовательской роли с указанным id
+   * Запрос на получение пользовательской роли с указанным id. Доступно сотруднику с правами системного администратора или Решению. 
    * @param id ID сущности (required)
    * @return CustomRole
    * @throws ApiException if fails to make API call
@@ -258,7 +258,7 @@ if (acceptEncoding != null) {
 
   /**
    * Получить пользовательскую роль по ID
-   * Запрос на получение пользовательской роли с указанным id
+   * Запрос на получение пользовательской роли с указанным id. Доступно сотруднику с правами системного администратора или Решению. 
    
    * @param id ID сущности (required)
    
@@ -275,7 +275,7 @@ if (acceptEncoding != null) {
 
   /**
    * Получить пользовательскую роль по ID
-   * Запрос на получение пользовательской роли с указанным id
+   * Запрос на получение пользовательской роли с указанным id. Доступно сотруднику с правами системного администратора или Решению. 
    * @param id ID сущности (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
@@ -344,7 +344,7 @@ if (acceptEncoding != null) {
 
   /**
    * Получить список пользовательских ролей
-   * Запрос всех пользовательских ролей на данной учетной записи
+   * Запрос всех пользовательских ролей на данной учетной записи. Доступно сотруднику с правами системного администратора или Решению. 
    * @return CustomRoleList
    * @throws ApiException if fails to make API call
    */
@@ -356,7 +356,7 @@ if (acceptEncoding != null) {
 
   /**
    * Получить список пользовательских ролей
-   * Запрос всех пользовательских ролей на данной учетной записи
+   * Запрос всех пользовательских ролей на данной учетной записи. Доступно сотруднику с правами системного администратора или Решению. 
    
    
    
@@ -376,7 +376,7 @@ if (acceptEncoding != null) {
 
   /**
    * Получить список пользовательских ролей
-   * Запрос всех пользовательских ролей на данной учетной записи
+   * Запрос всех пользовательских ролей на данной учетной записи. Доступно сотруднику с правами системного администратора или Решению. 
    * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
    * @param offset Отступ в выданном списке (optional, default to 0)
    * @param search Контекстный поиск по строковым полям сущностей (optional)
@@ -450,7 +450,7 @@ if (acceptEncoding != null) {
 
   /**
    * Обновить пользовательскую роль
-   * Обновление пользовательской роли с указанным id
+   * Обновление пользовательской роли с указанным id. Доступно сотруднику с правами системного администратора или Решению. 
    * @param id ID сущности (required)
    * @param customRole  (required)
    * @return CustomRole
@@ -464,7 +464,7 @@ if (acceptEncoding != null) {
 
   /**
    * Обновить пользовательскую роль
-   * Обновление пользовательской роли с указанным id
+   * Обновление пользовательской роли с указанным id. Доступно сотруднику с правами системного администратора или Решению. 
    
    * @param id ID сущности (required)
    
@@ -485,7 +485,7 @@ if (acceptEncoding != null) {
 
   /**
    * Обновить пользовательскую роль
-   * Обновление пользовательской роли с указанным id
+   * Обновление пользовательской роли с указанным id. Доступно сотруднику с правами системного администратора или Решению. 
    * @param id ID сущности (required)
    * @param customRole  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)

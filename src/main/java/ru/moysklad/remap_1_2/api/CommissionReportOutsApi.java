@@ -46,7 +46,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T13:59:19.961064491Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class CommissionReportOutsApi extends BaseApi {
 
@@ -755,6 +755,120 @@ if (contentType != null) {
     
     // create path and map variables
     String localVarPath = "/entity/commissionreportout/{id}/notes"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (contentType != null) {
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<List<EventNote>> localVarReturnType = new TypeReference<List<EventNote>>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Массовое создание и обновление Событий Выданного отчета комиссионера
+   * В теле запроса передается массив Событий. Для создания События требуется description, для обновления — метаданные (meta). Для каждого документа можно создать не более 5000 Событий. Редактировать События может администратор или автор События с правом на просмотр документа.
+   * @param id ID сущности (required)
+   * @param eventNote  (required)
+   * @return List&lt;EventNote&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<EventNote> createCommissionReportOutNotesBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<EventNote> eventNote) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createCommissionReportOutNotesBatch(id, eventNote, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Массовое создание и обновление Событий Выданного отчета комиссионера
+   * В теле запроса передается массив Событий. Для создания События требуется description, для обновления — метаданные (meta). Для каждого документа можно создать не более 5000 Событий. Редактировать События может администратор или автор События с правом на просмотр документа.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param eventNote  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;EventNote&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<EventNote> createCommissionReportOutNotesBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<EventNote> eventNote, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createCommissionReportOutNotesBatch(id, eventNote, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Массовое создание и обновление Событий Выданного отчета комиссионера
+   * В теле запроса передается массив Событий. Для создания События требуется description, для обновления — метаданные (meta). Для каждого документа можно создать не более 5000 Событий. Редактировать События может администратор или автор События с правом на просмотр документа.
+   * @param id ID сущности (required)
+   * @param eventNote  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return List&lt;EventNote&gt;
+   * @throws ApiException if fails to make API call
+   */
+  protected List<EventNote> createCommissionReportOutNotesBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<EventNote> eventNote, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = eventNote;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling createCommissionReportOutNotesBatch");
+    }
+    
+    // verify the required parameter 'eventNote' is set
+    if (eventNote == null) {
+      throw new ApiException(400, "Missing the required parameter 'eventNote' when calling createCommissionReportOutNotesBatch");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/commissionreportout/{id}/notes/batch"
       .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
 
     StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
@@ -1642,6 +1756,116 @@ if (acceptEncoding != null) {
     apiClient.invokeAPI(
         localVarPath,
         "DELETE",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        null
+    );
+  }
+
+  /**
+   * Массовое удаление Событий Выданного отчета комиссионера
+   * В теле запроса передается массив Событий с их метаданными (meta). Удалять События может администратор или автор События с правом на просмотр документа.
+   * @param id ID сущности (required)
+   * @param eventNote  (required)
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteCommissionReportOutNotesBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<EventNote> eventNote) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteCommissionReportOutNotesBatch(id, eventNote, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Массовое удаление Событий Выданного отчета комиссионера
+   * В теле запроса передается массив Событий с их метаданными (meta). Удалять События может администратор или автор События с правом на просмотр документа.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param eventNote  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteCommissionReportOutNotesBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<EventNote> eventNote, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteCommissionReportOutNotesBatch(id, eventNote, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Массовое удаление Событий Выданного отчета комиссионера
+   * В теле запроса передается массив Событий с их метаданными (meta). Удалять События может администратор или автор События с правом на просмотр документа.
+   * @param id ID сущности (required)
+   * @param eventNote  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @throws ApiException if fails to make API call
+   */
+  protected void deleteCommissionReportOutNotesBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<EventNote> eventNote, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = eventNote;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling deleteCommissionReportOutNotesBatch");
+    }
+    
+    // verify the required parameter 'eventNote' is set
+    if (eventNote == null) {
+      throw new ApiException(400, "Missing the required parameter 'eventNote' when calling deleteCommissionReportOutNotesBatch");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/commissionreportout/{id}/notes/delete"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (contentType != null) {
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    apiClient.invokeAPI(
+        localVarPath,
+        "POST",
         localVarQueryParams,
         localVarCollectionQueryParams,
         localVarQueryStringJoiner.toString(),
@@ -3047,6 +3271,101 @@ if (contentType != null) {
         localVarContentType,
         localVarAuthNames,
         localVarReturnType
+    );
+  }
+
+  /**
+   * Удалить CommissionReportOut в корзину
+   * 
+   * @param id ID сущности (required)
+   * @throws ApiException if fails to make API call
+   */
+  public void moveCommissionReportOutToTrash(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.moveCommissionReportOutToTrash(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Удалить CommissionReportOut в корзину
+   * 
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void moveCommissionReportOutToTrash(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.moveCommissionReportOutToTrash(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Удалить CommissionReportOut в корзину
+   * 
+   * @param id ID сущности (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param additionalHeaders additionalHeaders for this call
+   * @throws ApiException if fails to make API call
+   */
+  protected void moveCommissionReportOutToTrash(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling moveCommissionReportOutToTrash");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/commissionreportout/{id}/trash"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        null
     );
   }
 

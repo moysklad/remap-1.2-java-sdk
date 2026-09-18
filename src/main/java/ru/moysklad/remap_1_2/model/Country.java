@@ -50,7 +50,7 @@ import java.util.StringJoiner;
   Country.JSON_PROPERTY_OWNER,
   Country.JSON_PROPERTY_SHARED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T13:59:19.961064491Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
 public class Country extends EntityWithMeta implements Named, MetaEntity {
   public static Country createWithMeta(UUID id) {
     Country o = new Country();

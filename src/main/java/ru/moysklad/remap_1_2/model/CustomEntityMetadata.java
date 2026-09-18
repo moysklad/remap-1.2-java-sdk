@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   CustomEntityMetadata.JSON_PROPERTY_NAME,
   CustomEntityMetadata.JSON_PROPERTY_CREATE_SHARED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T13:59:19.961064491Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
 public class CustomEntityMetadata {
 
   public static final String JSON_PROPERTY_META = "meta";

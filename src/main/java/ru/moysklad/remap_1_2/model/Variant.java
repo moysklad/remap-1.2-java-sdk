@@ -68,7 +68,7 @@ import java.util.StringJoiner;
   Variant.JSON_PROPERTY_MINIMUM_STOCK,
   Variant.JSON_PROPERTY_THINGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T13:59:19.961064491Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
 public class Variant extends ProductMarker implements Named {
   public static Variant createWithMeta(UUID id) {
     Variant o = new Variant();

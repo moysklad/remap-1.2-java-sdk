@@ -23,6 +23,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**getRetailDrawerCashInMetadataAttributeById**](RetailDrawerCashInsApi.md#getRetailDrawerCashInMetadataAttributeById) | **GET** /entity/retaildrawercashin/metadata/attributes/{id} | Отдельное доп. поле Внесений денег |
 | [**getRetailDrawerCashInMetadataStateById**](RetailDrawerCashInsApi.md#getRetailDrawerCashInMetadataStateById) | **GET** /entity/retaildrawercashin/metadata/states/{id} | Отдельный статус Внесений денег |
 | [**getRetailDrawerCashInTemplate**](RetailDrawerCashInsApi.md#getRetailDrawerCashInTemplate) | **PUT** /entity/retaildrawercashin/new | Шаблон Внесения денег |
+| [**moveRetailDrawerCashInToTrash**](RetailDrawerCashInsApi.md#moveRetailDrawerCashInToTrash) | **POST** /entity/retaildrawercashin/{id}/trash | Удалить Внесение денег в корзину |
 | [**updateRetailDrawerCashIn**](RetailDrawerCashInsApi.md#updateRetailDrawerCashIn) | **PUT** /entity/retaildrawercashin/{id} | Изменить Внесение денег |
 | [**updateRetailDrawerCashInMetadataAttributeById**](RetailDrawerCashInsApi.md#updateRetailDrawerCashInMetadataAttributeById) | **PUT** /entity/retaildrawercashin/metadata/attributes/{id} | Обновить отдельное доп. поле Внесений денег |
 | [**updateRetailDrawerCashInMetadataStateById**](RetailDrawerCashInsApi.md#updateRetailDrawerCashInMetadataStateById) | **PUT** /entity/retaildrawercashin/metadata/states/{id} | Обновить отдельный статус Внесений денег |
@@ -1561,6 +1562,84 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## moveRetailDrawerCashInToTrash
+
+> moveRetailDrawerCashInToTrash(id, accept, acceptEncoding)
+
+Удалить Внесение денег в корзину
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.RetailDrawerCashInsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        RetailDrawerCashInsApi apiInstance = new RetailDrawerCashInsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            apiInstance.moveRetailDrawerCashInToTrash(id, accept, acceptEncoding);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling RetailDrawerCashInsApi#moveRetailDrawerCashInToTrash");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json, text/html;charset=UTF-8
 
 

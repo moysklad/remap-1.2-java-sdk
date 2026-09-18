@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   CurrencyList.JSON_PROPERTY_META,
   CurrencyList.JSON_PROPERTY_ROWS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T13:59:19.961064491Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
 public class CurrencyList implements EntityList {
 
   public static final String JSON_PROPERTY_CONTEXT = "context";

@@ -11,6 +11,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createSupplyMetadataState**](SuppliesApi.md#createSupplyMetadataState) | **POST** /entity/supply/metadata/states | Создать статус Приемки |
 | [**createSupplyMetadataStatesBatch**](SuppliesApi.md#createSupplyMetadataStatesBatch) | **POST** /entity/supply/metadata/states/batch | Массовое создание и обновление статусов Приемки |
 | [**createSupplyNote**](SuppliesApi.md#createSupplyNote) | **POST** /entity/supply/{id}/notes | Добавить Событие Приемки |
+| [**createSupplyNotesBatch**](SuppliesApi.md#createSupplyNotesBatch) | **POST** /entity/supply/{id}/notes/batch | Массовое создание и обновление Событий Приемки |
 | [**createSupplyPosition**](SuppliesApi.md#createSupplyPosition) | **POST** /entity/supply/{id}/positions | Создать и обновить позицию Приемки |
 | [**createSupplyPositions**](SuppliesApi.md#createSupplyPositions) | **POST** /entity/supply/{id}/positions/batch | Массовое создание и обновление позиций Приемки |
 | [**deleteSupply**](SuppliesApi.md#deleteSupply) | **DELETE** /entity/supply/{id} | Удалить Приемку |
@@ -19,6 +20,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**deleteSupplyMetadataAttributeById**](SuppliesApi.md#deleteSupplyMetadataAttributeById) | **DELETE** /entity/supply/metadata/attributes/{id} | Удалить отдельное доп. поле Приемки |
 | [**deleteSupplyMetadataStateById**](SuppliesApi.md#deleteSupplyMetadataStateById) | **DELETE** /entity/supply/metadata/states/{id} | Удалить отдельный статус Приемки |
 | [**deleteSupplyNote**](SuppliesApi.md#deleteSupplyNote) | **DELETE** /entity/supply/{id}/notes/{noteId} | Удалить Событие Приемки |
+| [**deleteSupplyNotesBatch**](SuppliesApi.md#deleteSupplyNotesBatch) | **POST** /entity/supply/{id}/notes/delete | Массовое удаление Событий Приемки |
 | [**deleteSupplyPosition**](SuppliesApi.md#deleteSupplyPosition) | **DELETE** /entity/supply/{id}/positions/{positionId} | Удалить позицию Приемки |
 | [**deleteSupplyPositions**](SuppliesApi.md#deleteSupplyPositions) | **POST** /entity/supply/{id}/positions/delete | Массовое удаление позиций Приемки |
 | [**getSupplyById**](SuppliesApi.md#getSupplyById) | **GET** /entity/supply/{id} | Получить Приемку |
@@ -617,7 +619,92 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Событие успешно создано |  -  |
+| **201** | Массив с созданным Событием |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## createSupplyNotesBatch
+
+> List&lt;EventNote&gt; createSupplyNotesBatch(id, eventNote, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление Событий Приемки
+
+В теле запроса передается массив Событий. Для создания События требуется description, для обновления — метаданные (meta). Для каждого документа можно создать не более 5000 Событий. Редактировать События может администратор или автор События с правом на просмотр документа.
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.SuppliesApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        SuppliesApi apiInstance = new SuppliesApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<EventNote> eventNote = Arrays.asList(); // List<EventNote> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<EventNote> result = apiInstance.createSupplyNotesBatch(id, eventNote, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SuppliesApi#createSupplyNotesBatch");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **eventNote** | [**List&lt;EventNote&gt;**](EventNote.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;EventNote&gt;**](EventNote.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Массив созданных и обновленных Событий |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
@@ -1268,6 +1355,90 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Событие успешно удалено |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## deleteSupplyNotesBatch
+
+> deleteSupplyNotesBatch(id, eventNote, accept, acceptEncoding, contentType)
+
+Массовое удаление Событий Приемки
+
+В теле запроса передается массив Событий с их метаданными (meta). Удалять События может администратор или автор События с правом на просмотр документа.
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.SuppliesApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        SuppliesApi apiInstance = new SuppliesApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<EventNote> eventNote = Arrays.asList(); // List<EventNote> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            apiInstance.deleteSupplyNotesBatch(id, eventNote, accept, acceptEncoding, contentType);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SuppliesApi#deleteSupplyNotesBatch");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **eventNote** | [**List&lt;EventNote&gt;**](EventNote.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | События успешно удалены. Тело ответа отсутствует. |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 

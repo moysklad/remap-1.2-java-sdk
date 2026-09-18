@@ -38,7 +38,7 @@ import ru.moysklad.remap_1_2.deserialize.PolymorphicMetaTypeDeserializer;
 @JsonPropertyOrder({
   BatchResponseEntity.JSON_PROPERTY_META
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T13:59:19.961064491Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
 @OpenApiPolymorphicTypeInfo(path = "meta.type", batchErrorFallback = true)
 @OpenApiPolymorphicSubTypes({
   @OpenApiPolymorphicSubTypes.Type(value = Bundle.class, name = "bundle"),
@@ -52,6 +52,7 @@ import ru.moysklad.remap_1_2.deserialize.PolymorphicMetaTypeDeserializer;
   @OpenApiPolymorphicSubTypes.Type(value = Consignment.class, name = "consignment"),
   @OpenApiPolymorphicSubTypes.Type(value = Contract.class, name = "contract"),
   @OpenApiPolymorphicSubTypes.Type(value = Counterparty.class, name = "counterparty"),
+  @OpenApiPolymorphicSubTypes.Type(value = CounterpartyAdjustment.class, name = "counterpartyadjustment"),
   @OpenApiPolymorphicSubTypes.Type(value = Country.class, name = "country"),
   @OpenApiPolymorphicSubTypes.Type(value = Currency.class, name = "currency"),
   @OpenApiPolymorphicSubTypes.Type(value = CustomerOrder.class, name = "customerorder"),
@@ -75,7 +76,11 @@ import ru.moysklad.remap_1_2.deserialize.PolymorphicMetaTypeDeserializer;
   @OpenApiPolymorphicSubTypes.Type(value = Organization.class, name = "organization"),
   @OpenApiPolymorphicSubTypes.Type(value = PaymentIn.class, name = "paymentin"),
   @OpenApiPolymorphicSubTypes.Type(value = PaymentOut.class, name = "paymentout"),
+  @OpenApiPolymorphicSubTypes.Type(value = Payroll.class, name = "payroll"),
+  @OpenApiPolymorphicSubTypes.Type(value = PayrollPosition.class, name = "payrollposition"),
   @OpenApiPolymorphicSubTypes.Type(value = PrepaymentReturnPosition.class, name = "prepaymentreturnposition"),
+  @OpenApiPolymorphicSubTypes.Type(value = PriceList.class, name = "pricelist"),
+  @OpenApiPolymorphicSubTypes.Type(value = PriceListPosition.class, name = "pricelistrow"),
   @OpenApiPolymorphicSubTypes.Type(value = PriceType.class, name = "pricetype"),
   @OpenApiPolymorphicSubTypes.Type(value = Processing.class, name = "processing"),
   @OpenApiPolymorphicSubTypes.Type(value = ProcessingOrder.class, name = "processingorder"),

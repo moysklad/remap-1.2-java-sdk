@@ -81,7 +81,7 @@ import java.util.StringJoiner;
   FactureIn.JSON_PROPERTY_INCOMING_NUMBER,
   FactureIn.JSON_PROPERTY_INCOMING_DATE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T13:59:19.961064491Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
 public class FactureIn implements MetaEntity {
   public static FactureIn createWithMeta(UUID id) {
     FactureIn o = new FactureIn();

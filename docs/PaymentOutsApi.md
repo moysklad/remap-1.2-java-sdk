@@ -24,6 +24,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**getPaymentOutMetadataAttributeById**](PaymentOutsApi.md#getPaymentOutMetadataAttributeById) | **GET** /entity/paymentout/metadata/attributes/{id} | Отдельное доп. поле PaymentOut |
 | [**getPaymentOutMetadataStateById**](PaymentOutsApi.md#getPaymentOutMetadataStateById) | **GET** /entity/paymentout/metadata/states/{id} | Отдельный статус PaymentOut |
 | [**getPaymentOutTemplate**](PaymentOutsApi.md#getPaymentOutTemplate) | **PUT** /entity/paymentout/new | Шаблон PaymentOut |
+| [**movePaymentOutToTrash**](PaymentOutsApi.md#movePaymentOutToTrash) | **POST** /entity/paymentout/{id}/trash | Удалить PaymentOut в корзину |
 | [**updatePaymentOut**](PaymentOutsApi.md#updatePaymentOut) | **PUT** /entity/paymentout/{id} | Изменить PaymentOut |
 | [**updatePaymentOutMetadataAttributeById**](PaymentOutsApi.md#updatePaymentOutMetadataAttributeById) | **PUT** /entity/paymentout/metadata/attributes/{id} | Обновить отдельное доп. поле PaymentOut |
 | [**updatePaymentOutMetadataStateById**](PaymentOutsApi.md#updatePaymentOutMetadataStateById) | **PUT** /entity/paymentout/metadata/states/{id} | Обновить отдельный статус PaymentOut |
@@ -1641,6 +1642,84 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## movePaymentOutToTrash
+
+> movePaymentOutToTrash(id, accept, acceptEncoding)
+
+Удалить PaymentOut в корзину
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.PaymentOutsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        PaymentOutsApi apiInstance = new PaymentOutsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            apiInstance.movePaymentOutToTrash(id, accept, acceptEncoding);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PaymentOutsApi#movePaymentOutToTrash");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json, text/html;charset=UTF-8
 
 

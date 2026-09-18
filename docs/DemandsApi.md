@@ -26,6 +26,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**getDemandPositionById**](DemandsApi.md#getDemandPositionById) | **GET** /entity/demand/{id}/positions/{positionId} | Получить позицию Отгрузки |
 | [**getDemandPositions**](DemandsApi.md#getDemandPositions) | **GET** /entity/demand/{id}/positions | Получить позиции Отгрузки |
 | [**getDemandTemplate**](DemandsApi.md#getDemandTemplate) | **PUT** /entity/demand/new | Шаблон Отгрузки |
+| [**moveDemandToTrash**](DemandsApi.md#moveDemandToTrash) | **POST** /entity/demand/{id}/trash | Удалить Отгрузку в корзину |
 | [**updateDemand**](DemandsApi.md#updateDemand) | **PUT** /entity/demand/{id} | Изменить Отгрузку |
 | [**updateDemandMetadataAttributeById**](DemandsApi.md#updateDemandMetadataAttributeById) | **PUT** /entity/demand/metadata/attributes/{id} | Обновить отдельное доп. поле Отгрузки |
 | [**updateDemandMetadataStateById**](DemandsApi.md#updateDemandMetadataStateById) | **PUT** /entity/demand/metadata/states/{id} | Обновить отдельный статус Отгрузки |
@@ -1846,6 +1847,84 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## moveDemandToTrash
+
+> moveDemandToTrash(id, accept, acceptEncoding)
+
+Удалить Отгрузку в корзину
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.DemandsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        DemandsApi apiInstance = new DemandsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            apiInstance.moveDemandToTrash(id, accept, acceptEncoding);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DemandsApi#moveDemandToTrash");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json, text/html;charset=UTF-8
 
 

@@ -24,6 +24,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**getSalesReturnPositionById**](SalesReturnsApi.md#getSalesReturnPositionById) | **GET** /entity/salesreturn/{id}/positions/{positionId} | Получить позицию Возврата покупателя |
 | [**getSalesReturnPositions**](SalesReturnsApi.md#getSalesReturnPositions) | **GET** /entity/salesreturn/{id}/positions | Получить позиции Возврата покупателя |
 | [**getSalesReturnTemplate**](SalesReturnsApi.md#getSalesReturnTemplate) | **PUT** /entity/salesreturn/new | Шаблон Возврата покупателя |
+| [**moveSalesReturnToTrash**](SalesReturnsApi.md#moveSalesReturnToTrash) | **POST** /entity/salesreturn/{id}/trash | Удалить Возврат покупателя в корзину |
 | [**updateSalesReturn**](SalesReturnsApi.md#updateSalesReturn) | **PUT** /entity/salesreturn/{id} | Изменить Возврат покупателя |
 | [**updateSalesReturnMetadataAttributeById**](SalesReturnsApi.md#updateSalesReturnMetadataAttributeById) | **PUT** /entity/salesreturn/metadata/attributes/{id} | Обновить отдельное доп. поле Возврата покупателя |
 | [**updateSalesReturnMetadataStateById**](SalesReturnsApi.md#updateSalesReturnMetadataStateById) | **PUT** /entity/salesreturn/metadata/states/{id} | Обновить отдельный статус Возврата покупателя |
@@ -1680,6 +1681,84 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## moveSalesReturnToTrash
+
+> moveSalesReturnToTrash(id, accept, acceptEncoding)
+
+Удалить Возврат покупателя в корзину
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.SalesReturnsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        SalesReturnsApi apiInstance = new SalesReturnsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            apiInstance.moveSalesReturnToTrash(id, accept, acceptEncoding);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SalesReturnsApi#moveSalesReturnToTrash");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json, text/html;charset=UTF-8
 
 

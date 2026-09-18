@@ -11,6 +11,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createInvoiceInMetadataState**](InvoiceInsApi.md#createInvoiceInMetadataState) | **POST** /entity/invoicein/metadata/states | Создать статус InvoiceIn |
 | [**createInvoiceInMetadataStatesBatch**](InvoiceInsApi.md#createInvoiceInMetadataStatesBatch) | **POST** /entity/invoicein/metadata/states/batch | Массовое создание и обновление статусов InvoiceIn |
 | [**createInvoiceInNote**](InvoiceInsApi.md#createInvoiceInNote) | **POST** /entity/invoicein/{id}/notes | Добавить Событие Счета поставщику |
+| [**createInvoiceInNotesBatch**](InvoiceInsApi.md#createInvoiceInNotesBatch) | **POST** /entity/invoicein/{id}/notes/batch | Массовое создание и обновление Событий Счета поставщику |
 | [**createInvoiceInPositions**](InvoiceInsApi.md#createInvoiceInPositions) | **POST** /entity/invoicein/{id}/positions | Создать позицию Счета поставщику |
 | [**createInvoiceInPositionsBatch**](InvoiceInsApi.md#createInvoiceInPositionsBatch) | **POST** /entity/invoicein/{id}/positions/batch | Создать позиции Счета поставщику |
 | [**deleteInvoiceIn**](InvoiceInsApi.md#deleteInvoiceIn) | **DELETE** /entity/invoicein/{id} | Удалить Счет поставщику |
@@ -19,6 +20,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**deleteInvoiceInMetadataAttributeById**](InvoiceInsApi.md#deleteInvoiceInMetadataAttributeById) | **DELETE** /entity/invoicein/metadata/attributes/{id} | Удалить отдельное доп. поле InvoiceIn |
 | [**deleteInvoiceInMetadataStateById**](InvoiceInsApi.md#deleteInvoiceInMetadataStateById) | **DELETE** /entity/invoicein/metadata/states/{id} | Удалить отдельный статус InvoiceIn |
 | [**deleteInvoiceInNote**](InvoiceInsApi.md#deleteInvoiceInNote) | **DELETE** /entity/invoicein/{id}/notes/{noteId} | Удалить Событие Счета поставщику |
+| [**deleteInvoiceInNotesBatch**](InvoiceInsApi.md#deleteInvoiceInNotesBatch) | **POST** /entity/invoicein/{id}/notes/delete | Массовое удаление Событий Счета поставщику |
 | [**deleteInvoiceInPosition**](InvoiceInsApi.md#deleteInvoiceInPosition) | **DELETE** /entity/invoicein/{id}/positions/{positionId} | Удалить позицию Счета поставщику |
 | [**deleteInvoiceInPositionsBatch**](InvoiceInsApi.md#deleteInvoiceInPositionsBatch) | **POST** /entity/invoicein/{id}/positions/delete | Массовое удаление позиций Счета поставщику |
 | [**getInvoiceInById**](InvoiceInsApi.md#getInvoiceInById) | **GET** /entity/invoicein/{id} | Получить Счет поставщику |
@@ -34,6 +36,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**getInvoiceInPositionById**](InvoiceInsApi.md#getInvoiceInPositionById) | **GET** /entity/invoicein/{id}/positions/{positionId} | Получить позицию Счета поставщику |
 | [**getInvoiceInPositions**](InvoiceInsApi.md#getInvoiceInPositions) | **GET** /entity/invoicein/{id}/positions | Получить позиции Счета поставщику |
 | [**getInvoiceInTemplate**](InvoiceInsApi.md#getInvoiceInTemplate) | **PUT** /entity/invoicein/new | Шаблон Счета поставщику |
+| [**moveInvoiceInToTrash**](InvoiceInsApi.md#moveInvoiceInToTrash) | **POST** /entity/invoicein/{id}/trash | Удалить Счет поставщику в корзину |
 | [**updateInvoiceIn**](InvoiceInsApi.md#updateInvoiceIn) | **PUT** /entity/invoicein/{id} | Изменить Счет поставщику |
 | [**updateInvoiceInMetadataAttributeById**](InvoiceInsApi.md#updateInvoiceInMetadataAttributeById) | **PUT** /entity/invoicein/metadata/attributes/{id} | Обновить отдельное доп. поле InvoiceIn |
 | [**updateInvoiceInMetadataStateById**](InvoiceInsApi.md#updateInvoiceInMetadataStateById) | **PUT** /entity/invoicein/metadata/states/{id} | Обновить отдельный статус InvoiceIn |
@@ -617,7 +620,92 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Событие успешно создано |  -  |
+| **201** | Массив с созданным Событием |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## createInvoiceInNotesBatch
+
+> List&lt;EventNote&gt; createInvoiceInNotesBatch(id, eventNote, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление Событий Счета поставщику
+
+В теле запроса передается массив Событий. Для создания События требуется description, для обновления — метаданные (meta). Для каждого документа можно создать не более 5000 Событий. Редактировать События может администратор или автор События с правом на просмотр документа.
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.InvoiceInsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        InvoiceInsApi apiInstance = new InvoiceInsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<EventNote> eventNote = Arrays.asList(); // List<EventNote> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<EventNote> result = apiInstance.createInvoiceInNotesBatch(id, eventNote, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling InvoiceInsApi#createInvoiceInNotesBatch");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **eventNote** | [**List&lt;EventNote&gt;**](EventNote.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;EventNote&gt;**](EventNote.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Массив созданных и обновленных Событий |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
@@ -1274,6 +1362,90 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Событие успешно удалено |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## deleteInvoiceInNotesBatch
+
+> deleteInvoiceInNotesBatch(id, eventNote, accept, acceptEncoding, contentType)
+
+Массовое удаление Событий Счета поставщику
+
+В теле запроса передается массив Событий с их метаданными (meta). Удалять События может администратор или автор События с правом на просмотр документа.
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.InvoiceInsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        InvoiceInsApi apiInstance = new InvoiceInsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<EventNote> eventNote = Arrays.asList(); // List<EventNote> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            apiInstance.deleteInvoiceInNotesBatch(id, eventNote, accept, acceptEncoding, contentType);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling InvoiceInsApi#deleteInvoiceInNotesBatch");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **eventNote** | [**List&lt;EventNote&gt;**](EventNote.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | События успешно удалены. Тело ответа отсутствует. |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
@@ -2525,6 +2697,84 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## moveInvoiceInToTrash
+
+> moveInvoiceInToTrash(id, accept, acceptEncoding)
+
+Удалить Счет поставщику в корзину
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.InvoiceInsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        InvoiceInsApi apiInstance = new InvoiceInsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            apiInstance.moveInvoiceInToTrash(id, accept, acceptEncoding);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling InvoiceInsApi#moveInvoiceInToTrash");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json, text/html;charset=UTF-8
 
 

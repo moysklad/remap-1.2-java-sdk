@@ -1,8 +1,8 @@
 
 
-# EmployeeRolePermissions
+# RolePermissions
 
-Список пермиссий (только для индивидуальной роли)
+Права роли. В JSON передаются объектом, где ключи — названия пермиссий, значения — Boolean или объекты прав сущностей. Для currency, country, taxrate и uom право view неизменяемо и равно ALL; попытка изменить его приводит к ошибке. 
 
 ## Properties
 
@@ -21,7 +21,7 @@
 |**ownerAssign** | **Boolean** | Передавать владение аккаунтом |  [optional] |
 |**ownerDataUpdate** | **Boolean** | Редактировать данные владельца |  [optional] |
 |**purchaseControl** | **Boolean** | Управление закупками |  [optional] |
-|**resto$refromRecycleBin** | **Boolean** | Восстанавливать документы |  [optional] |
+|**restoreFromRecycleBin** | **Boolean** | Восстанавливать документы из корзины |  [optional] |
 |**sendEmail** | **Boolean** | Отправлять почту |  [optional] |
 |**subscriptionControl** | **Boolean** | Управление подпиской |  [optional] |
 |**viewAudit** | **Boolean** | Просматривать аудит |  [optional] |
@@ -65,7 +65,9 @@
 |**retireOrderOSU** | [**Permissions**](Permissions.md) |  |  [optional] |
 |**employee** | [**Permissions**](Permissions.md) |  |  [optional] |
 |**enrollOrder** | [**Permissions**](Permissions.md) |  |  [optional] |
+|**enrollReturn** | [**Permissions**](Permissions.md) |  |  [optional] |
 |**enter** | [**Permissions**](Permissions.md) |  |  [optional] |
+|**expenseitem** | [**Permissions**](Permissions.md) |  |  [optional] |
 |**factureIn** | [**Permissions**](Permissions.md) |  |  [optional] |
 |**factureOut** | [**Permissions**](Permissions.md) |  |  [optional] |
 |**good** | [**Permissions**](Permissions.md) |  |  [optional] |

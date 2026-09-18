@@ -21,9 +21,23 @@ import ru.moysklad.remap_1_2.Configuration;
 import ru.moysklad.remap_1_2.Pair;
 
 import ru.moysklad.remap_1_2.model.Errors;
+import ru.moysklad.remap_1_2.model.ReportCounterparty;
+import ru.moysklad.remap_1_2.model.ReportCounterpartyList;
+import ru.moysklad.remap_1_2.model.ReportCounterpartyQuery;
 import ru.moysklad.remap_1_2.model.ReportDashboard;
+import ru.moysklad.remap_1_2.model.ReportMoneyByAccountList;
+import ru.moysklad.remap_1_2.model.ReportMoneyPlotSeries;
 import ru.moysklad.remap_1_2.model.ReportOrdersPlotSeriesList;
+import ru.moysklad.remap_1_2.model.ReportProfitByCounterpartyList;
+import ru.moysklad.remap_1_2.model.ReportProfitByEmployeeList;
+import ru.moysklad.remap_1_2.model.ReportProfitByProductList;
+import ru.moysklad.remap_1_2.model.ReportProfitBySalesChannelList;
+import ru.moysklad.remap_1_2.model.ReportProfitByVariantList;
 import ru.moysklad.remap_1_2.model.ReportSalesPlotSeriesList;
+import ru.moysklad.remap_1_2.model.ReportTurnoverByOperationList;
+import ru.moysklad.remap_1_2.model.ReportTurnoverByStoreList;
+import ru.moysklad.remap_1_2.model.ReportTurnoverList;
+import java.util.UUID;
 
 
 import java.util.ArrayList;
@@ -33,7 +47,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T13:59:19.961064491Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ReportsApi extends BaseApi {
 
@@ -43,6 +57,202 @@ public class ReportsApi extends BaseApi {
 
   public ReportsApi(ApiClient apiClient) {
     super(apiClient);
+  }
+
+  /**
+   * Получить показатели контрагентов
+   * Запрос отчета «Показатели контрагентов» по всем контрагентам.
+   * @return ReportCounterpartyList
+   * @throws ApiException if fails to make API call
+   */
+  public ReportCounterpartyList getReportCounterparty() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getReportCounterparty((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("filter"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Получить показатели контрагентов
+   * Запрос отчета «Показатели контрагентов» по всем контрагентам.
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ReportCounterpartyList
+   * @throws ApiException if fails to make API call
+   */
+  public ReportCounterpartyList getReportCounterparty(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getReportCounterparty((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("filter"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Получить показатели контрагентов
+   * Запрос отчета «Показатели контрагентов» по всем контрагентам.
+   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
+   * @param offset Отступ в выданном списке (optional, default to 0)
+   * @param filter Фильтрация выборки (optional)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return ReportCounterpartyList
+   * @throws ApiException if fails to make API call
+   */
+  protected ReportCounterpartyList getReportCounterparty(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // create path and map variables
+    String localVarPath = "/report/counterparty";
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
+    localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
+    localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<ReportCounterpartyList> localVarReturnType = new TypeReference<ReportCounterpartyList>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "GET",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Получить показатели контрагента
+   * Запрос отчета «Показатели контрагентов» по контрагенту с указанным id.
+   * @param id ID сущности (required)
+   * @return ReportCounterparty
+   * @throws ApiException if fails to make API call
+   */
+  public ReportCounterparty getReportCounterpartyById(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getReportCounterpartyById(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Получить показатели контрагента
+   * Запрос отчета «Показатели контрагентов» по контрагенту с указанным id.
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ReportCounterparty
+   * @throws ApiException if fails to make API call
+   */
+  public ReportCounterparty getReportCounterpartyById(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getReportCounterpartyById(id, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Получить показатели контрагента
+   * Запрос отчета «Показатели контрагентов» по контрагенту с указанным id.
+   * @param id ID сущности (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return ReportCounterparty
+   * @throws ApiException if fails to make API call
+   */
+  protected ReportCounterparty getReportCounterpartyById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling getReportCounterpartyById");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/report/counterparty/{id}"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<ReportCounterparty> localVarReturnType = new TypeReference<ReportCounterparty>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "GET",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
   }
 
   /**
@@ -310,6 +520,214 @@ if (acceptEncoding != null) {
   }
 
   /**
+   * Получить остатки денежных средств по кассам и счетам
+   * Запрос текущих остатков денежных средств по кассам и счетам организаций. Для доступа к отчету требуется право на просмотр показателей &#x60;viewDashboard&#x60; и право «Видеть остатки денег» &#x60;viewMoneyDashboard&#x60;. 
+   * @return ReportMoneyByAccountList
+   * @throws ApiException if fails to make API call
+   */
+  public ReportMoneyByAccountList getReportMoneyByAccount() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getReportMoneyByAccount(null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Получить остатки денежных средств по кассам и счетам
+   * Запрос текущих остатков денежных средств по кассам и счетам организаций. Для доступа к отчету требуется право на просмотр показателей &#x60;viewDashboard&#x60; и право «Видеть остатки денег» &#x60;viewMoneyDashboard&#x60;. 
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ReportMoneyByAccountList
+   * @throws ApiException if fails to make API call
+   */
+  public ReportMoneyByAccountList getReportMoneyByAccount(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getReportMoneyByAccount(null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Получить остатки денежных средств по кассам и счетам
+   * Запрос текущих остатков денежных средств по кассам и счетам организаций. Для доступа к отчету требуется право на просмотр показателей &#x60;viewDashboard&#x60; и право «Видеть остатки денег» &#x60;viewMoneyDashboard&#x60;. 
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return ReportMoneyByAccountList
+   * @throws ApiException if fails to make API call
+   */
+  protected ReportMoneyByAccountList getReportMoneyByAccount(@javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // create path and map variables
+    String localVarPath = "/report/money/byaccount";
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<ReportMoneyByAccountList> localVarReturnType = new TypeReference<ReportMoneyByAccountList>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "GET",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Получить график движения денежных средств
+   * Запрос отчета о движении денежных средств за период с разбивкой по часам, дням или месяцам. Для доступа к отчету требуется право на просмотр показателей &#x60;viewDashboard&#x60; и право «Видеть остатки денег» &#x60;viewMoneyDashboard&#x60;. 
+   * @return ReportMoneyPlotSeries
+   * @throws ApiException if fails to make API call
+   */
+  public ReportMoneyPlotSeries getReportMoneyPlotSeries() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getReportMoneyPlotSeries((String) effectiveOptions.get("momentFrom"), (String) effectiveOptions.get("momentTo"), (String) effectiveOptions.get("interval"), (String) effectiveOptions.get("filter"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Получить график движения денежных средств
+   * Запрос отчета о движении денежных средств за период с разбивкой по часам, дням или месяцам. Для доступа к отчету требуется право на просмотр показателей &#x60;viewDashboard&#x60; и право «Видеть остатки денег» &#x60;viewMoneyDashboard&#x60;. 
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ReportMoneyPlotSeries
+   * @throws ApiException if fails to make API call
+   */
+  public ReportMoneyPlotSeries getReportMoneyPlotSeries(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getReportMoneyPlotSeries((String) effectiveOptions.get("momentFrom"), (String) effectiveOptions.get("momentTo"), (String) effectiveOptions.get("interval"), (String) effectiveOptions.get("filter"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Получить график движения денежных средств
+   * Запрос отчета о движении денежных средств за период с разбивкой по часам, дням или месяцам. Для доступа к отчету требуется право на просмотр показателей &#x60;viewDashboard&#x60; и право «Видеть остатки денег» &#x60;viewMoneyDashboard&#x60;. 
+   * @param momentFrom Начало периода отчета в формате YYYY-MM-DD HH:MM:SS (required)
+   * @param momentTo Конец периода отчета в формате YYYY-MM-DD HH:MM:SS (required)
+   * @param interval Интервал построения отчета (required)
+   * @param filter Фильтрация выборки (optional)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param xLognexAcceptTimezone Опциональный заголовок, в котором указана текущая дата на клиенте в RFC 3522. Таймзону обязательно указывать в формате знак и 4 символа. Пример: &#x60;Wed, 16 Aug 2017 23:07:01 +0700&#x60;. При подсчете показателей даты операций смещаются в таймзону клиента.  (optional)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return ReportMoneyPlotSeries
+   * @throws ApiException if fails to make API call
+   */
+  protected ReportMoneyPlotSeries getReportMoneyPlotSeries(@javax.annotation.Nonnull String momentFrom, @javax.annotation.Nonnull String momentTo, @javax.annotation.Nonnull String interval, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String xLognexAcceptTimezone, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // verify the required parameter 'momentFrom' is set
+    if (momentFrom == null) {
+      throw new ApiException(400, "Missing the required parameter 'momentFrom' when calling getReportMoneyPlotSeries");
+    }
+    
+    // verify the required parameter 'momentTo' is set
+    if (momentTo == null) {
+      throw new ApiException(400, "Missing the required parameter 'momentTo' when calling getReportMoneyPlotSeries");
+    }
+    
+    // verify the required parameter 'interval' is set
+    if (interval == null) {
+      throw new ApiException(400, "Missing the required parameter 'interval' when calling getReportMoneyPlotSeries");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/report/money/plotseries";
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPair("momentFrom", momentFrom));
+    localVarQueryParams.addAll(apiClient.parameterToPair("momentTo", momentTo));
+    localVarQueryParams.addAll(apiClient.parameterToPair("interval", interval));
+    localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (xLognexAcceptTimezone != null) {
+      localVarHeaderParams.put("X-Lognex-Accept-Timezone", apiClient.parameterToString(xLognexAcceptTimezone));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<ReportMoneyPlotSeries> localVarReturnType = new TypeReference<ReportMoneyPlotSeries>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "GET",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
    * Получить показатели заказов
    * Запрос показателей заказов покупателей за период с разбивкой по часам, дням или месяцам. Для доступа к отчету требуется право на просмотр показателей &#x60;viewDashboard&#x60;. 
    * @return ReportOrdersPlotSeriesList
@@ -412,6 +830,546 @@ if (xLognexAcceptTimezone != null) {
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
     TypeReference<ReportOrdersPlotSeriesList> localVarReturnType = new TypeReference<ReportOrdersPlotSeriesList>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "GET",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Получить прибыльность по покупателям
+   * Запрос отчета «Прибыльность по покупателям». Для доступа к отчету требуется право на просмотр отчета «Прибыльность». 
+   * @return ReportProfitByCounterpartyList
+   * @throws ApiException if fails to make API call
+   */
+  public ReportProfitByCounterpartyList getReportProfitByCounterparty() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getReportProfitByCounterparty((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("momentFrom"), (String) effectiveOptions.get("momentTo"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Получить прибыльность по покупателям
+   * Запрос отчета «Прибыльность по покупателям». Для доступа к отчету требуется право на просмотр отчета «Прибыльность». 
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ReportProfitByCounterpartyList
+   * @throws ApiException if fails to make API call
+   */
+  public ReportProfitByCounterpartyList getReportProfitByCounterparty(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getReportProfitByCounterparty((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("momentFrom"), (String) effectiveOptions.get("momentTo"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Получить прибыльность по покупателям
+   * Запрос отчета «Прибыльность по покупателям». Для доступа к отчету требуется право на просмотр отчета «Прибыльность». 
+   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
+   * @param offset Отступ в выданном списке (optional, default to 0)
+   * @param filter Фильтрация выборки (optional)
+   * @param momentFrom Начало периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
+   * @param momentTo Конец периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param xLognexAcceptTimezone Опциональный заголовок, в котором указана текущая дата на клиенте в RFC 3522. Таймзону обязательно указывать в формате знак и 4 символа. Пример: &#x60;Wed, 16 Aug 2017 23:07:01 +0700&#x60;. При подсчете показателей даты операций смещаются в таймзону клиента.  (optional)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return ReportProfitByCounterpartyList
+   * @throws ApiException if fails to make API call
+   */
+  protected ReportProfitByCounterpartyList getReportProfitByCounterparty(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String momentFrom, @javax.annotation.Nullable String momentTo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String xLognexAcceptTimezone, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // create path and map variables
+    String localVarPath = "/report/profit/bycounterparty";
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
+    localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
+    localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
+    localVarQueryParams.addAll(apiClient.parameterToPair("momentFrom", momentFrom));
+    localVarQueryParams.addAll(apiClient.parameterToPair("momentTo", momentTo));
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (xLognexAcceptTimezone != null) {
+      localVarHeaderParams.put("X-Lognex-Accept-Timezone", apiClient.parameterToString(xLognexAcceptTimezone));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<ReportProfitByCounterpartyList> localVarReturnType = new TypeReference<ReportProfitByCounterpartyList>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "GET",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Получить прибыльность по сотрудникам
+   * Запрос отчета «Прибыльность по сотрудникам». Для доступа к отчету требуется право на просмотр отчета «Прибыльность». 
+   * @return ReportProfitByEmployeeList
+   * @throws ApiException if fails to make API call
+   */
+  public ReportProfitByEmployeeList getReportProfitByEmployee() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getReportProfitByEmployee((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("momentFrom"), (String) effectiveOptions.get("momentTo"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Получить прибыльность по сотрудникам
+   * Запрос отчета «Прибыльность по сотрудникам». Для доступа к отчету требуется право на просмотр отчета «Прибыльность». 
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ReportProfitByEmployeeList
+   * @throws ApiException if fails to make API call
+   */
+  public ReportProfitByEmployeeList getReportProfitByEmployee(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getReportProfitByEmployee((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("momentFrom"), (String) effectiveOptions.get("momentTo"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Получить прибыльность по сотрудникам
+   * Запрос отчета «Прибыльность по сотрудникам». Для доступа к отчету требуется право на просмотр отчета «Прибыльность». 
+   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
+   * @param offset Отступ в выданном списке (optional, default to 0)
+   * @param filter Фильтрация выборки (optional)
+   * @param momentFrom Начало периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
+   * @param momentTo Конец периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param xLognexAcceptTimezone Опциональный заголовок, в котором указана текущая дата на клиенте в RFC 3522. Таймзону обязательно указывать в формате знак и 4 символа. Пример: &#x60;Wed, 16 Aug 2017 23:07:01 +0700&#x60;. При подсчете показателей даты операций смещаются в таймзону клиента.  (optional)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return ReportProfitByEmployeeList
+   * @throws ApiException if fails to make API call
+   */
+  protected ReportProfitByEmployeeList getReportProfitByEmployee(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String momentFrom, @javax.annotation.Nullable String momentTo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String xLognexAcceptTimezone, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // create path and map variables
+    String localVarPath = "/report/profit/byemployee";
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
+    localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
+    localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
+    localVarQueryParams.addAll(apiClient.parameterToPair("momentFrom", momentFrom));
+    localVarQueryParams.addAll(apiClient.parameterToPair("momentTo", momentTo));
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (xLognexAcceptTimezone != null) {
+      localVarHeaderParams.put("X-Lognex-Accept-Timezone", apiClient.parameterToString(xLognexAcceptTimezone));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<ReportProfitByEmployeeList> localVarReturnType = new TypeReference<ReportProfitByEmployeeList>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "GET",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Получить прибыльность по товарам
+   * Запрос отчета «Прибыльность по товарам». В отчете учитываются товары, услуги и комплекты. Для доступа к отчету требуется право на просмотр отчета «Прибыльность». 
+   * @return ReportProfitByProductList
+   * @throws ApiException if fails to make API call
+   */
+  public ReportProfitByProductList getReportProfitByProduct() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getReportProfitByProduct((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("momentFrom"), (String) effectiveOptions.get("momentTo"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Получить прибыльность по товарам
+   * Запрос отчета «Прибыльность по товарам». В отчете учитываются товары, услуги и комплекты. Для доступа к отчету требуется право на просмотр отчета «Прибыльность». 
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ReportProfitByProductList
+   * @throws ApiException if fails to make API call
+   */
+  public ReportProfitByProductList getReportProfitByProduct(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getReportProfitByProduct((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("momentFrom"), (String) effectiveOptions.get("momentTo"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Получить прибыльность по товарам
+   * Запрос отчета «Прибыльность по товарам». В отчете учитываются товары, услуги и комплекты. Для доступа к отчету требуется право на просмотр отчета «Прибыльность». 
+   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
+   * @param offset Отступ в выданном списке (optional, default to 0)
+   * @param filter Фильтрация выборки (optional)
+   * @param momentFrom Начало периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
+   * @param momentTo Конец периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param xLognexAcceptTimezone Опциональный заголовок, в котором указана текущая дата на клиенте в RFC 3522. Таймзону обязательно указывать в формате знак и 4 символа. Пример: &#x60;Wed, 16 Aug 2017 23:07:01 +0700&#x60;. При подсчете показателей даты операций смещаются в таймзону клиента.  (optional)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return ReportProfitByProductList
+   * @throws ApiException if fails to make API call
+   */
+  protected ReportProfitByProductList getReportProfitByProduct(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String momentFrom, @javax.annotation.Nullable String momentTo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String xLognexAcceptTimezone, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // create path and map variables
+    String localVarPath = "/report/profit/byproduct";
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
+    localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
+    localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
+    localVarQueryParams.addAll(apiClient.parameterToPair("momentFrom", momentFrom));
+    localVarQueryParams.addAll(apiClient.parameterToPair("momentTo", momentTo));
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (xLognexAcceptTimezone != null) {
+      localVarHeaderParams.put("X-Lognex-Accept-Timezone", apiClient.parameterToString(xLognexAcceptTimezone));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<ReportProfitByProductList> localVarReturnType = new TypeReference<ReportProfitByProductList>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "GET",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Получить прибыльность по каналам продаж
+   * Запрос отчета «Прибыльность по каналам продаж». Для доступа к отчету требуется право на просмотр отчета «Прибыльность». 
+   * @return ReportProfitBySalesChannelList
+   * @throws ApiException if fails to make API call
+   */
+  public ReportProfitBySalesChannelList getReportProfitBySalesChannel() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getReportProfitBySalesChannel((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("momentFrom"), (String) effectiveOptions.get("momentTo"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Получить прибыльность по каналам продаж
+   * Запрос отчета «Прибыльность по каналам продаж». Для доступа к отчету требуется право на просмотр отчета «Прибыльность». 
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ReportProfitBySalesChannelList
+   * @throws ApiException if fails to make API call
+   */
+  public ReportProfitBySalesChannelList getReportProfitBySalesChannel(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getReportProfitBySalesChannel((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("momentFrom"), (String) effectiveOptions.get("momentTo"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Получить прибыльность по каналам продаж
+   * Запрос отчета «Прибыльность по каналам продаж». Для доступа к отчету требуется право на просмотр отчета «Прибыльность». 
+   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
+   * @param offset Отступ в выданном списке (optional, default to 0)
+   * @param filter Фильтрация выборки (optional)
+   * @param momentFrom Начало периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
+   * @param momentTo Конец периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param xLognexAcceptTimezone Опциональный заголовок, в котором указана текущая дата на клиенте в RFC 3522. Таймзону обязательно указывать в формате знак и 4 символа. Пример: &#x60;Wed, 16 Aug 2017 23:07:01 +0700&#x60;. При подсчете показателей даты операций смещаются в таймзону клиента.  (optional)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return ReportProfitBySalesChannelList
+   * @throws ApiException if fails to make API call
+   */
+  protected ReportProfitBySalesChannelList getReportProfitBySalesChannel(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String momentFrom, @javax.annotation.Nullable String momentTo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String xLognexAcceptTimezone, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // create path and map variables
+    String localVarPath = "/report/profit/bysaleschannel";
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
+    localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
+    localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
+    localVarQueryParams.addAll(apiClient.parameterToPair("momentFrom", momentFrom));
+    localVarQueryParams.addAll(apiClient.parameterToPair("momentTo", momentTo));
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (xLognexAcceptTimezone != null) {
+      localVarHeaderParams.put("X-Lognex-Accept-Timezone", apiClient.parameterToString(xLognexAcceptTimezone));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<ReportProfitBySalesChannelList> localVarReturnType = new TypeReference<ReportProfitBySalesChannelList>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "GET",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Получить прибыльность по модификациям
+   * Запрос отчета «Прибыльность по модификациям». В отчете учитываются модификации, товары, услуги и комплекты. Для доступа к отчету требуется право на просмотр отчета «Прибыльность». 
+   * @return ReportProfitByVariantList
+   * @throws ApiException if fails to make API call
+   */
+  public ReportProfitByVariantList getReportProfitByVariant() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getReportProfitByVariant((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("momentFrom"), (String) effectiveOptions.get("momentTo"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Получить прибыльность по модификациям
+   * Запрос отчета «Прибыльность по модификациям». В отчете учитываются модификации, товары, услуги и комплекты. Для доступа к отчету требуется право на просмотр отчета «Прибыльность». 
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ReportProfitByVariantList
+   * @throws ApiException if fails to make API call
+   */
+  public ReportProfitByVariantList getReportProfitByVariant(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getReportProfitByVariant((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("momentFrom"), (String) effectiveOptions.get("momentTo"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Получить прибыльность по модификациям
+   * Запрос отчета «Прибыльность по модификациям». В отчете учитываются модификации, товары, услуги и комплекты. Для доступа к отчету требуется право на просмотр отчета «Прибыльность». 
+   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
+   * @param offset Отступ в выданном списке (optional, default to 0)
+   * @param filter Фильтрация выборки (optional)
+   * @param momentFrom Начало периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
+   * @param momentTo Конец периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param xLognexAcceptTimezone Опциональный заголовок, в котором указана текущая дата на клиенте в RFC 3522. Таймзону обязательно указывать в формате знак и 4 символа. Пример: &#x60;Wed, 16 Aug 2017 23:07:01 +0700&#x60;. При подсчете показателей даты операций смещаются в таймзону клиента.  (optional)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return ReportProfitByVariantList
+   * @throws ApiException if fails to make API call
+   */
+  protected ReportProfitByVariantList getReportProfitByVariant(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String momentFrom, @javax.annotation.Nullable String momentTo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String xLognexAcceptTimezone, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // create path and map variables
+    String localVarPath = "/report/profit/byvariant";
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
+    localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
+    localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
+    localVarQueryParams.addAll(apiClient.parameterToPair("momentFrom", momentFrom));
+    localVarQueryParams.addAll(apiClient.parameterToPair("momentTo", momentTo));
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (xLognexAcceptTimezone != null) {
+      localVarHeaderParams.put("X-Lognex-Accept-Timezone", apiClient.parameterToString(xLognexAcceptTimezone));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<ReportProfitByVariantList> localVarReturnType = new TypeReference<ReportProfitByVariantList>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "GET",
@@ -549,6 +1507,424 @@ if (xLognexAcceptTimezone != null) {
     );
   }
 
+  /**
+   * Получить Обороты по товарам
+   * Запрос отчета «Обороты по товарам» — общий отчет по оборотам товаров и модификаций.
+   * @return ReportTurnoverList
+   * @throws ApiException if fails to make API call
+   */
+  public ReportTurnoverList getReportTurnoverAll() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getReportTurnoverAll((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("momentFrom"), (String) effectiveOptions.get("momentTo"), (String) effectiveOptions.get("groupBy"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Получить Обороты по товарам
+   * Запрос отчета «Обороты по товарам» — общий отчет по оборотам товаров и модификаций.
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ReportTurnoverList
+   * @throws ApiException if fails to make API call
+   */
+  public ReportTurnoverList getReportTurnoverAll(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getReportTurnoverAll((Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("momentFrom"), (String) effectiveOptions.get("momentTo"), (String) effectiveOptions.get("groupBy"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Получить Обороты по товарам
+   * Запрос отчета «Обороты по товарам» — общий отчет по оборотам товаров и модификаций.
+   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
+   * @param offset Отступ в выданном списке (optional, default to 0)
+   * @param filter Фильтрация выборки (optional)
+   * @param momentFrom Начало периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
+   * @param momentTo Конец периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
+   * @param groupBy Тип, по которому нужно сгруппировать выдачу. Значение по умолчанию &#x60;product&#x60;. (optional, default to product)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param xLognexAcceptTimezone Опциональный заголовок, в котором указана текущая дата на клиенте в RFC 3522. Таймзону обязательно указывать в формате знак и 4 символа. Пример: &#x60;Wed, 16 Aug 2017 23:07:01 +0700&#x60;. При подсчете показателей даты операций смещаются в таймзону клиента.  (optional)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return ReportTurnoverList
+   * @throws ApiException if fails to make API call
+   */
+  protected ReportTurnoverList getReportTurnoverAll(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String momentFrom, @javax.annotation.Nullable String momentTo, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String xLognexAcceptTimezone, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // create path and map variables
+    String localVarPath = "/report/turnover/all";
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
+    localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
+    localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
+    localVarQueryParams.addAll(apiClient.parameterToPair("momentFrom", momentFrom));
+    localVarQueryParams.addAll(apiClient.parameterToPair("momentTo", momentTo));
+    localVarQueryParams.addAll(apiClient.parameterToPair("groupBy", groupBy));
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (xLognexAcceptTimezone != null) {
+      localVarHeaderParams.put("X-Lognex-Accept-Timezone", apiClient.parameterToString(xLognexAcceptTimezone));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<ReportTurnoverList> localVarReturnType = new TypeReference<ReportTurnoverList>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "GET",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Получить Обороты по товару с детализацией по документам
+   * Запрос отчета «Обороты по товару с детализацией по документам».
+   * @return ReportTurnoverByOperationList
+   * @throws ApiException if fails to make API call
+   */
+  public ReportTurnoverByOperationList getReportTurnoverByOperations() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getReportTurnoverByOperations((String) effectiveOptions.get("filter"), (String) effectiveOptions.get("momentFrom"), (String) effectiveOptions.get("momentTo"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Получить Обороты по товару с детализацией по документам
+   * Запрос отчета «Обороты по товару с детализацией по документам».
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ReportTurnoverByOperationList
+   * @throws ApiException if fails to make API call
+   */
+  public ReportTurnoverByOperationList getReportTurnoverByOperations(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getReportTurnoverByOperations((String) effectiveOptions.get("filter"), (String) effectiveOptions.get("momentFrom"), (String) effectiveOptions.get("momentTo"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Получить Обороты по товару с детализацией по документам
+   * Запрос отчета «Обороты по товару с детализацией по документам».
+   * @param filter Фильтрация выборки (optional)
+   * @param momentFrom Начало периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
+   * @param momentTo Конец периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param xLognexAcceptTimezone Опциональный заголовок, в котором указана текущая дата на клиенте в RFC 3522. Таймзону обязательно указывать в формате знак и 4 символа. Пример: &#x60;Wed, 16 Aug 2017 23:07:01 +0700&#x60;. При подсчете показателей даты операций смещаются в таймзону клиента.  (optional)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return ReportTurnoverByOperationList
+   * @throws ApiException if fails to make API call
+   */
+  protected ReportTurnoverByOperationList getReportTurnoverByOperations(@javax.annotation.Nullable String filter, @javax.annotation.Nullable String momentFrom, @javax.annotation.Nullable String momentTo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String xLognexAcceptTimezone, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // create path and map variables
+    String localVarPath = "/report/turnover/byoperations";
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
+    localVarQueryParams.addAll(apiClient.parameterToPair("momentFrom", momentFrom));
+    localVarQueryParams.addAll(apiClient.parameterToPair("momentTo", momentTo));
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (xLognexAcceptTimezone != null) {
+      localVarHeaderParams.put("X-Lognex-Accept-Timezone", apiClient.parameterToString(xLognexAcceptTimezone));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<ReportTurnoverByOperationList> localVarReturnType = new TypeReference<ReportTurnoverByOperationList>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "GET",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Получить Обороты по товару с детализацией по складам
+   * Запрос отчета «Обороты по товару с детализацией по складам».
+   * @return ReportTurnoverByStoreList
+   * @throws ApiException if fails to make API call
+   */
+  public ReportTurnoverByStoreList getReportTurnoverByStore() throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getReportTurnoverByStore((String) effectiveOptions.get("filter"), (String) effectiveOptions.get("momentFrom"), (String) effectiveOptions.get("momentTo"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Получить Обороты по товару с детализацией по складам
+   * Запрос отчета «Обороты по товару с детализацией по складам».
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ReportTurnoverByStoreList
+   * @throws ApiException if fails to make API call
+   */
+  public ReportTurnoverByStoreList getReportTurnoverByStore(RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getReportTurnoverByStore((String) effectiveOptions.get("filter"), (String) effectiveOptions.get("momentFrom"), (String) effectiveOptions.get("momentTo"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Получить Обороты по товару с детализацией по складам
+   * Запрос отчета «Обороты по товару с детализацией по складам».
+   * @param filter Фильтрация выборки (optional)
+   * @param momentFrom Начало периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
+   * @param momentTo Конец периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param xLognexAcceptTimezone Опциональный заголовок, в котором указана текущая дата на клиенте в RFC 3522. Таймзону обязательно указывать в формате знак и 4 символа. Пример: &#x60;Wed, 16 Aug 2017 23:07:01 +0700&#x60;. При подсчете показателей даты операций смещаются в таймзону клиента.  (optional)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return ReportTurnoverByStoreList
+   * @throws ApiException if fails to make API call
+   */
+  protected ReportTurnoverByStoreList getReportTurnoverByStore(@javax.annotation.Nullable String filter, @javax.annotation.Nullable String momentFrom, @javax.annotation.Nullable String momentTo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String xLognexAcceptTimezone, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // create path and map variables
+    String localVarPath = "/report/turnover/bystore";
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
+    localVarQueryParams.addAll(apiClient.parameterToPair("momentFrom", momentFrom));
+    localVarQueryParams.addAll(apiClient.parameterToPair("momentTo", momentTo));
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (xLognexAcceptTimezone != null) {
+      localVarHeaderParams.put("X-Lognex-Accept-Timezone", apiClient.parameterToString(xLognexAcceptTimezone));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<ReportTurnoverByStoreList> localVarReturnType = new TypeReference<ReportTurnoverByStoreList>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "GET",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Получить выборочные показатели контрагентов
+   * Запрос отчета «Показатели контрагентов» по указанным контрагентам.
+   * @param reportCounterpartyQuery  (required)
+   * @return ReportCounterpartyList
+   * @throws ApiException if fails to make API call
+   */
+  public ReportCounterpartyList queryReportCounterparty(@javax.annotation.Nonnull ReportCounterpartyQuery reportCounterpartyQuery) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.queryReportCounterparty(reportCounterpartyQuery, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Получить выборочные показатели контрагентов
+   * Запрос отчета «Показатели контрагентов» по указанным контрагентам.
+   
+   * @param reportCounterpartyQuery  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return ReportCounterpartyList
+   * @throws ApiException if fails to make API call
+   */
+  public ReportCounterpartyList queryReportCounterparty(@javax.annotation.Nonnull ReportCounterpartyQuery reportCounterpartyQuery, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.queryReportCounterparty(reportCounterpartyQuery, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Получить выборочные показатели контрагентов
+   * Запрос отчета «Показатели контрагентов» по указанным контрагентам.
+   * @param reportCounterpartyQuery  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return ReportCounterpartyList
+   * @throws ApiException if fails to make API call
+   */
+  protected ReportCounterpartyList queryReportCounterparty(@javax.annotation.Nonnull ReportCounterpartyQuery reportCounterpartyQuery, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = reportCounterpartyQuery;
+    
+    // verify the required parameter 'reportCounterpartyQuery' is set
+    if (reportCounterpartyQuery == null) {
+      throw new ApiException(400, "Missing the required parameter 'reportCounterpartyQuery' when calling queryReportCounterparty");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/report/counterparty";
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (contentType != null) {
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<ReportCounterpartyList> localVarReturnType = new TypeReference<ReportCounterpartyList>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
   @Override
   public <T> T invokeAPI(String url, String method, Object request, TypeReference<T> returnType, Map<String, String> additionalHeaders) throws ApiException {
     String localVarPath = url.replace(apiClient.getBaseURL(), "");
@@ -567,7 +1943,7 @@ if (xLognexAcceptTimezone != null) {
     final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
 
     final String[] localVarContentTypes = {
-      
+      "application/json"
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 

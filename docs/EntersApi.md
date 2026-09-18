@@ -29,6 +29,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**getEnterPositionById**](EntersApi.md#getEnterPositionById) | **GET** /entity/enter/{id}/positions/{positionId} | Получить позицию Оприходования |
 | [**getEnterPositions**](EntersApi.md#getEnterPositions) | **GET** /entity/enter/{id}/positions | Получить позиции Оприходования |
 | [**getEnterTemplate**](EntersApi.md#getEnterTemplate) | **PUT** /entity/enter/new | Шаблон Оприходования |
+| [**moveEnterToTrash**](EntersApi.md#moveEnterToTrash) | **POST** /entity/enter/{id}/trash | Удалить Оприходование в корзину |
 | [**updateEnter**](EntersApi.md#updateEnter) | **PUT** /entity/enter/{id} | Изменить Оприходование |
 | [**updateEnterMetadataAttributeById**](EntersApi.md#updateEnterMetadataAttributeById) | **PUT** /entity/enter/metadata/attributes/{id} | Обновить отдельное доп. поле Оприходований |
 | [**updateEnterMetadataStateById**](EntersApi.md#updateEnterMetadataStateById) | **PUT** /entity/enter/metadata/states/{id} | Обновить отдельный статус Оприходования |
@@ -2071,6 +2072,84 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## moveEnterToTrash
+
+> moveEnterToTrash(id, accept, acceptEncoding)
+
+Удалить Оприходование в корзину
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.EntersApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        EntersApi apiInstance = new EntersApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            apiInstance.moveEnterToTrash(id, accept, acceptEncoding);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling EntersApi#moveEnterToTrash");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json, text/html;charset=UTF-8
 
 

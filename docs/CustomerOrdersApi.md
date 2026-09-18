@@ -10,6 +10,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createCustomerOrderMetadataState**](CustomerOrdersApi.md#createCustomerOrderMetadataState) | **POST** /entity/customerorder/metadata/states | Создать статус CustomerOrder |
 | [**createCustomerOrderMetadataStatesBatch**](CustomerOrdersApi.md#createCustomerOrderMetadataStatesBatch) | **POST** /entity/customerorder/metadata/states/batch | Массовое создание и обновление статусов CustomerOrder |
 | [**createCustomerOrderNote**](CustomerOrdersApi.md#createCustomerOrderNote) | **POST** /entity/customerorder/{id}/notes | Добавить Событие Заказа покупателя |
+| [**createCustomerOrderNotesBatch**](CustomerOrdersApi.md#createCustomerOrderNotesBatch) | **POST** /entity/customerorder/{id}/notes/batch | Массовое создание и обновление Событий Заказа покупателя |
 | [**createCustomerOrderPosition**](CustomerOrdersApi.md#createCustomerOrderPosition) | **POST** /entity/customerorder/{id}/positions | Создать и обновить позицию Заказа покупателя |
 | [**createCustomerOrderPositions**](CustomerOrdersApi.md#createCustomerOrderPositions) | **POST** /entity/customerorder/{id}/positions/batch | Массовое создание и обновление позиций Заказа покупателя |
 | [**createCustomerOrderPublication**](CustomerOrdersApi.md#createCustomerOrderPublication) | **POST** /entity/customerorder/{id}/publication | Создать Публикацию Заказа покупателя |
@@ -18,6 +19,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**deleteCustomerOrderMetadataAttributeById**](CustomerOrdersApi.md#deleteCustomerOrderMetadataAttributeById) | **DELETE** /entity/customerorder/metadata/attributes/{id} | Удалить отдельное доп. поле CustomerOrder |
 | [**deleteCustomerOrderMetadataStateById**](CustomerOrdersApi.md#deleteCustomerOrderMetadataStateById) | **DELETE** /entity/customerorder/metadata/states/{id} | Удалить отдельный статус CustomerOrder |
 | [**deleteCustomerOrderNote**](CustomerOrdersApi.md#deleteCustomerOrderNote) | **DELETE** /entity/customerorder/{id}/notes/{noteId} | Удалить Событие Заказа покупателя |
+| [**deleteCustomerOrderNotesBatch**](CustomerOrdersApi.md#deleteCustomerOrderNotesBatch) | **POST** /entity/customerorder/{id}/notes/delete | Массовое удаление Событий Заказа покупателя |
 | [**deleteCustomerOrderPosition**](CustomerOrdersApi.md#deleteCustomerOrderPosition) | **DELETE** /entity/customerorder/{id}/positions/{positionId} | Удалить позицию CustomerOrders |
 | [**deleteCustomerOrderPositionsBatch**](CustomerOrdersApi.md#deleteCustomerOrderPositionsBatch) | **POST** /entity/customerorder/{id}/positions/delete | Массовое удаление позиций CustomerOrders |
 | [**deleteCustomerOrderPublication**](CustomerOrdersApi.md#deleteCustomerOrderPublication) | **DELETE** /entity/customerorder/{id}/publication/{publicationId} | Удалить Публикацию Заказа покупателя |
@@ -36,6 +38,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**getCustomerOrderPublicationById**](CustomerOrdersApi.md#getCustomerOrderPublicationById) | **GET** /entity/customerorder/{id}/publication/{publicationId} | Получить Публикацию Заказа покупателя |
 | [**getCustomerOrderPublications**](CustomerOrdersApi.md#getCustomerOrderPublications) | **GET** /entity/customerorder/{id}/publication | Получить список Публикаций Заказа покупателя |
 | [**getCustomerOrderTemplate**](CustomerOrdersApi.md#getCustomerOrderTemplate) | **PUT** /entity/customerorder/new | Шаблон CustomerOrders |
+| [**moveCustomerOrderToTrash**](CustomerOrdersApi.md#moveCustomerOrderToTrash) | **POST** /entity/customerorder/{id}/trash | Удалить CustomerOrders в корзину |
 | [**updateCustomerOrder**](CustomerOrdersApi.md#updateCustomerOrder) | **PUT** /entity/customerorder/{id} | Изменить CustomerOrders |
 | [**updateCustomerOrderMetadataAttributeById**](CustomerOrdersApi.md#updateCustomerOrderMetadataAttributeById) | **PUT** /entity/customerorder/metadata/attributes/{id} | Обновить отдельное доп. поле CustomerOrder |
 | [**updateCustomerOrderMetadataStateById**](CustomerOrdersApi.md#updateCustomerOrderMetadataStateById) | **PUT** /entity/customerorder/metadata/states/{id} | Обновить отдельный статус CustomerOrder |
@@ -534,7 +537,92 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Событие успешно создано |  -  |
+| **201** | Массив с созданным Событием |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## createCustomerOrderNotesBatch
+
+> List&lt;EventNote&gt; createCustomerOrderNotesBatch(id, eventNote, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление Событий Заказа покупателя
+
+В теле запроса передается массив Событий. Для создания События требуется description, для обновления — метаданные (meta). Для каждого документа можно создать не более 5000 Событий. Редактировать События может администратор или автор События с правом на просмотр документа.
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.CustomerOrdersApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<EventNote> eventNote = Arrays.asList(); // List<EventNote> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<EventNote> result = apiInstance.createCustomerOrderNotesBatch(id, eventNote, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CustomerOrdersApi#createCustomerOrderNotesBatch");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **eventNote** | [**List&lt;EventNote&gt;**](EventNote.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;EventNote&gt;**](EventNote.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Массив созданных и обновленных Событий |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
@@ -1198,6 +1286,90 @@ null (empty response body)
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
+## deleteCustomerOrderNotesBatch
+
+> deleteCustomerOrderNotesBatch(id, eventNote, accept, acceptEncoding, contentType)
+
+Массовое удаление Событий Заказа покупателя
+
+В теле запроса передается массив Событий с их метаданными (meta). Удалять События может администратор или автор События с правом на просмотр документа.
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.CustomerOrdersApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<EventNote> eventNote = Arrays.asList(); // List<EventNote> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            apiInstance.deleteCustomerOrderNotesBatch(id, eventNote, accept, acceptEncoding, contentType);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CustomerOrdersApi#deleteCustomerOrderNotesBatch");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **eventNote** | [**List&lt;EventNote&gt;**](EventNote.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | События успешно удалены. Тело ответа отсутствует. |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
 ## deleteCustomerOrderPosition
 
 > deleteCustomerOrderPosition(id, positionId, expand, accept, acceptEncoding, contentType)
@@ -1534,7 +1706,7 @@ null (empty response body)
 
 ## getCustomerOrderAuditEvents
 
-> Map&lt;String, Object&gt; getCustomerOrderAuditEvents(id, limit, offset, accept, acceptEncoding)
+> AuditEventList getCustomerOrderAuditEvents(id, limit, offset, accept, acceptEncoding)
 
 Получить события аудита Заказа покупателя
 
@@ -1572,7 +1744,7 @@ public class Example {
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
-            Map<String, Object> result = apiInstance.getCustomerOrderAuditEvents(id, limit, offset, accept, acceptEncoding);
+            AuditEventList result = apiInstance.getCustomerOrderAuditEvents(id, limit, offset, accept, acceptEncoding);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CustomerOrdersApi#getCustomerOrderAuditEvents");
@@ -1598,7 +1770,7 @@ public class Example {
 
 ### Return type
 
-**Map&lt;String, Object&gt;**
+[**AuditEventList**](AuditEventList.md)
 
 ### Authorization
 
@@ -2696,6 +2868,84 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## moveCustomerOrderToTrash
+
+> moveCustomerOrderToTrash(id, accept, acceptEncoding)
+
+Удалить CustomerOrders в корзину
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.CustomerOrdersApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            apiInstance.moveCustomerOrderToTrash(id, accept, acceptEncoding);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CustomerOrdersApi#moveCustomerOrderToTrash");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json, text/html;charset=UTF-8
 
 

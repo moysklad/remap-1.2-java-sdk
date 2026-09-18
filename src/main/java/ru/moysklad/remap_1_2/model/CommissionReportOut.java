@@ -95,7 +95,7 @@ import java.util.StringJoiner;
   CommissionReportOut.JSON_PROPERTY_VAT_SUM,
   CommissionReportOut.JSON_PROPERTY_PAYMENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T13:59:19.961064491Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
 public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   public static CommissionReportOut createWithMeta(UUID id) {
     CommissionReportOut o = new CommissionReportOut();

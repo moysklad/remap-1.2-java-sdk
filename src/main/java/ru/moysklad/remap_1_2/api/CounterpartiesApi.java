@@ -23,6 +23,7 @@ import ru.moysklad.remap_1_2.Pair;
 import ru.moysklad.remap_1_2.model.Account;
 import ru.moysklad.remap_1_2.model.AttributeMetaInfo;
 import ru.moysklad.remap_1_2.model.AttributeMetaInfoList;
+import ru.moysklad.remap_1_2.model.AuditEventList;
 import ru.moysklad.remap_1_2.model.BatchResponseEntity;
 import ru.moysklad.remap_1_2.model.ContactPerson;
 import ru.moysklad.remap_1_2.model.Counterparty;
@@ -48,7 +49,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T13:59:19.961064491Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class CounterpartiesApi extends BaseApi {
 
@@ -2071,10 +2072,10 @@ if (acceptEncoding != null) {
    * Получить события аудита контрагента
    * Возвращает список событий аудита для Контрагента по его ID. 
    * @param id ID сущности (required)
-   * @return Map&lt;String, Object&gt;
+   * @return AuditEventList
    * @throws ApiException if fails to make API call
    */
-  public Map<String, Object> getCounterpartyAuditEvents(@javax.annotation.Nonnull UUID id) throws ApiException {
+  public AuditEventList getCounterpartyAuditEvents(@javax.annotation.Nonnull UUID id) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.getCounterpartyAuditEvents(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -2091,10 +2092,10 @@ if (acceptEncoding != null) {
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return Map&lt;String, Object&gt;
+   * @return AuditEventList
    * @throws ApiException if fails to make API call
    */
-  public Map<String, Object> getCounterpartyAuditEvents(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+  public AuditEventList getCounterpartyAuditEvents(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.getCounterpartyAuditEvents(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -2108,10 +2109,10 @@ if (acceptEncoding != null) {
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param additionalHeaders additionalHeaders for this call
-   * @return Map&lt;String, Object&gt;
+   * @return AuditEventList
    * @throws ApiException if fails to make API call
    */
-  protected Map<String, Object> getCounterpartyAuditEvents(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected AuditEventList getCounterpartyAuditEvents(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -2154,7 +2155,7 @@ if (acceptEncoding != null) {
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<Map<String, Object>> localVarReturnType = new TypeReference<Map<String, Object>>() {};
+    TypeReference<AuditEventList> localVarReturnType = new TypeReference<AuditEventList>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "GET",

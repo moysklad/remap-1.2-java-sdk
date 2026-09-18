@@ -38,7 +38,7 @@ import java.util.StringJoiner;
   VariantCharacteristic.JSON_PROPERTY_TYPE,
   VariantCharacteristic.JSON_PROPERTY_REQUIRED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T13:59:19.961064491Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
 public class VariantCharacteristic implements MetaEntity {
   public static VariantCharacteristic createWithMeta(UUID id) {
     VariantCharacteristic o = new VariantCharacteristic();

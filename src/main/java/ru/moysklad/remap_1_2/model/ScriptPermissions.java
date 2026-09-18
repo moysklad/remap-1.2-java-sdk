@@ -27,7 +27,7 @@ import java.net.URLEncoder;
 import java.util.StringJoiner;
 
 /**
- * ScriptPermissions
+ * Права на задачи. NO для view и done допустимо, только если остальные права равны NO. Если view отличается от NO, поле done обязательно и должно совпадать с view. Известные значения описаны в ScriptPermissionValue. 
  */
 @JsonPropertyOrder({
   ScriptPermissions.JSON_PROPERTY_VIEW,
@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   ScriptPermissions.JSON_PROPERTY_DELETE,
   ScriptPermissions.JSON_PROPERTY_DONE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T13:59:19.961064491Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
 public class ScriptPermissions {
 
   public static final String JSON_PROPERTY_VIEW = "view";
@@ -70,7 +70,7 @@ public class ScriptPermissions {
 
 
   /**
-   * Смотреть. Известные значения описаны в ScriptPermissionValue.
+   * Смотреть. Допустимые значения — NO, AUTHOR_OR_ASSIGNEE, ALL. Известные значения описаны в ScriptPermissionValue.
    * @return view
    */
   @javax.annotation.Nullable
@@ -99,7 +99,7 @@ public class ScriptPermissions {
 
 
   /**
-   * Создавать. Известные значения описаны в ScriptPermissionValue.
+   * Создавать. Допустимые значения — NO, ALL. Область действия не шире view; поле может отсутствовать. Известные значения описаны в ScriptPermissionValue.
    * @return create
    */
   @javax.annotation.Nullable
@@ -128,7 +128,7 @@ public class ScriptPermissions {
 
 
   /**
-   * Редактировать. Известные значения описаны в ScriptPermissionValue.
+   * Редактировать. Допустимые значения — NO, AUTHOR, AUTHOR_OR_ASSIGNEE, ALL. Область действия не шире view; поле может отсутствовать. Известные значения описаны в ScriptPermissionValue.
    * @return update
    */
   @javax.annotation.Nullable
@@ -157,7 +157,7 @@ public class ScriptPermissions {
 
 
   /**
-   * Удалять. Известные значения описаны в ScriptPermissionValue.
+   * Удалять. Допустимые значения — NO, AUTHOR, AUTHOR_OR_ASSIGNEE, ALL. Область действия не шире update; поле может отсутствовать. Известные значения описаны в ScriptPermissionValue.
    * @return delete
    */
   @javax.annotation.Nullable
@@ -186,7 +186,7 @@ public class ScriptPermissions {
 
 
   /**
-   * Выполнять. Известные значения описаны в ScriptPermissionValue.
+   * Выполнять. Допустимые значения — NO, ASSIGNEE, AUTHOR_OR_ASSIGNEE, ALL. Область действия не шире view; при view, отличном от NO, обязательно и совпадает с view. Известные значения описаны в ScriptPermissionValue.
    * @return done
    */
   @javax.annotation.Nullable

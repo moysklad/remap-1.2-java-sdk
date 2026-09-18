@@ -47,7 +47,7 @@ import java.util.StringJoiner;
   DiscountBase.JSON_PROPERTY_ALL_AGENTS,
   DiscountBase.JSON_PROPERTY_AGENT_TAGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T13:59:19.961064491Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
 public class DiscountBase {
 
   public static final String JSON_PROPERTY_ID = "id";

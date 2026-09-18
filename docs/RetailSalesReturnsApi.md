@@ -23,6 +23,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**getRetailSalesReturnPositions**](RetailSalesReturnsApi.md#getRetailSalesReturnPositions) | **GET** /entity/retailsalesreturn/{id}/positions | Получить позиции Розничного возврата |
 | [**getRetailSalesReturnTemplate**](RetailSalesReturnsApi.md#getRetailSalesReturnTemplate) | **PUT** /entity/retailsalesreturn/new | Шаблон Розничного возврата |
 | [**getRetailSalesReturns**](RetailSalesReturnsApi.md#getRetailSalesReturns) | **GET** /entity/retailsalesreturn | Получить список Розничных возвратов |
+| [**moveRetailSalesReturnToTrash**](RetailSalesReturnsApi.md#moveRetailSalesReturnToTrash) | **POST** /entity/retailsalesreturn/{id}/trash | Удалить Розничный возврат в корзину |
 | [**updateRetailSalesReturn**](RetailSalesReturnsApi.md#updateRetailSalesReturn) | **PUT** /entity/retailsalesreturn/{id} | Изменить Розничный возврат |
 | [**updateRetailSalesReturnMetadataAttributeById**](RetailSalesReturnsApi.md#updateRetailSalesReturnMetadataAttributeById) | **PUT** /entity/retailsalesreturn/metadata/attributes/{id} | Обновить отдельное доп. поле Розничного возврата |
 | [**updateRetailSalesReturnMetadataStateById**](RetailSalesReturnsApi.md#updateRetailSalesReturnMetadataStateById) | **PUT** /entity/retailsalesreturn/metadata/states/{id} | Обновить отдельный статус Розничного возврата |
@@ -1574,6 +1575,84 @@ public class Example {
 ### Return type
 
 [**RetailSalesReturnList**](RetailSalesReturnList.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## moveRetailSalesReturnToTrash
+
+> moveRetailSalesReturnToTrash(id, accept, acceptEncoding)
+
+Удалить Розничный возврат в корзину
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.RetailSalesReturnsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        RetailSalesReturnsApi apiInstance = new RetailSalesReturnsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            apiInstance.moveRetailSalesReturnToTrash(id, accept, acceptEncoding);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling RetailSalesReturnsApi#moveRetailSalesReturnToTrash");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   BonusProgram.JSON_PROPERTY_WELCOME_BONUSES_MODE,
   BonusProgram.JSON_PROPERTY_MAX_PAID_RATE_PERCENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T13:59:19.961064491Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
 public class BonusProgram extends DiscountAbstract {
 
   public static final String JSON_PROPERTY_EARN_RATE_ROUBLES_TO_POINT = "earnRateRoublesToPoint";

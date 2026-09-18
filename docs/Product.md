@@ -42,7 +42,7 @@
 |**images** | [**ImageList**](ImageList.md) | Массив изображений |  [optional] |
 |**files** | [**FileList**](FileList.md) | Метаданные массива Файлов |  [optional] |
 |**barcodes** | [**List&lt;Barcode&gt;**](Barcode.md) | Штрихкоды Товара |  [optional] |
-|**packs** | [**List&lt;Pack&gt;**](Pack.md) | Упаковки товара |  [optional] |
+|**packs** | [**List&lt;Pack&gt;**](Pack.md) | Упаковки товара. При обновлении переданный массив полностью заменяет упаковки; пустой массив удаляет все. Для создания упаковки передайте uom и quantity.  |  [optional] |
 |**trackingType** | **String** | Тип маркируемой продукции. Известные значения описаны в TrackingType |  [optional] |
 |**tnved** | **String** | Код ТН ВЭД |  [optional] |
 |**paymentItemType** | **String** | Признак предмета расчета. Известные значения описаны в PaymentItemType |  [optional] |

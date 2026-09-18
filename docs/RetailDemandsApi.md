@@ -25,6 +25,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**getRetailDemandPositionById**](RetailDemandsApi.md#getRetailDemandPositionById) | **GET** /entity/retaildemand/{id}/positions/{positionId} | Получить позицию Розничной продажи |
 | [**getRetailDemandPositions**](RetailDemandsApi.md#getRetailDemandPositions) | **GET** /entity/retaildemand/{id}/positions | Получить позиции Розничной продажи |
 | [**getRetailDemandTemplate**](RetailDemandsApi.md#getRetailDemandTemplate) | **PUT** /entity/retaildemand/new | Шаблон Розничной продажи |
+| [**moveRetailDemandToTrash**](RetailDemandsApi.md#moveRetailDemandToTrash) | **POST** /entity/retaildemand/{id}/trash | Удалить Розничную продажу в корзину |
 | [**updateRetailDemand**](RetailDemandsApi.md#updateRetailDemand) | **PUT** /entity/retaildemand/{id} | Изменить Розничную продажу |
 | [**updateRetailDemandMetadataAttributeById**](RetailDemandsApi.md#updateRetailDemandMetadataAttributeById) | **PUT** /entity/retaildemand/metadata/attributes/{id} | Обновить отдельное доп. поле Розничной продажи |
 | [**updateRetailDemandMetadataStateById**](RetailDemandsApi.md#updateRetailDemandMetadataStateById) | **PUT** /entity/retaildemand/metadata/states/{id} | Обновить отдельный статус Розничной продажи |
@@ -1762,6 +1763,84 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## moveRetailDemandToTrash
+
+> moveRetailDemandToTrash(id, accept, acceptEncoding)
+
+Удалить Розничную продажу в корзину
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.RetailDemandsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        RetailDemandsApi apiInstance = new RetailDemandsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            apiInstance.moveRetailDemandToTrash(id, accept, acceptEncoding);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling RetailDemandsApi#moveRetailDemandToTrash");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json, text/html;charset=UTF-8
 
 

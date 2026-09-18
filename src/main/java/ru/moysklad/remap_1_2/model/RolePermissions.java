@@ -30,114 +30,115 @@ import java.net.URLEncoder;
 import java.util.StringJoiner;
 
 /**
- * Список пермиссий (только для индивидуальной роли)
+ * Права роли. В JSON передаются объектом, где ключи — названия пермиссий, значения — Boolean или объекты прав сущностей. Для currency, country, taxrate и uom право view неизменяемо и равно ALL; попытка изменить его приводит к ошибке. 
  */
 @JsonPropertyOrder({
-  EmployeeRolePermissions.JSON_PROPERTY_API_REQUEST,
-  EmployeeRolePermissions.JSON_PROPERTY_ACCOUNT_DELETE,
-  EmployeeRolePermissions.JSON_PROPERTY_DELETE_FROM_RECYCLE_BIN,
-  EmployeeRolePermissions.JSON_PROPERTY_EDIT_CURRENCY_RATE_OF_DOCUMENT,
-  EmployeeRolePermissions.JSON_PROPERTY_EDIT_DOCUMENT_TEMPLATES,
-  EmployeeRolePermissions.JSON_PROPERTY_EDIT_DOCUMENTS_OF_RESTRICTED_PERIOD,
-  EmployeeRolePermissions.JSON_PROPERTY_EXPORT_DATA,
-  EmployeeRolePermissions.JSON_PROPERTY_IMPORT_DATA,
-  EmployeeRolePermissions.JSON_PROPERTY_LISTEN_CALLS,
-  EmployeeRolePermissions.JSON_PROPERTY_ONLINE_SHOPS,
-  EmployeeRolePermissions.JSON_PROPERTY_OWNER_ASSIGN,
-  EmployeeRolePermissions.JSON_PROPERTY_OWNER_DATA_UPDATE,
-  EmployeeRolePermissions.JSON_PROPERTY_PURCHASE_CONTROL,
-  EmployeeRolePermissions.JSON_PROPERTY_RESTO$REFROM_RECYCLE_BIN,
-  EmployeeRolePermissions.JSON_PROPERTY_SEND_EMAIL,
-  EmployeeRolePermissions.JSON_PROPERTY_SUBSCRIPTION_CONTROL,
-  EmployeeRolePermissions.JSON_PROPERTY_VIEW_AUDIT,
-  EmployeeRolePermissions.JSON_PROPERTY_VIEW_CASH_FLOW,
-  EmployeeRolePermissions.JSON_PROPERTY_VIEW_COMMISSION_GOODS,
-  EmployeeRolePermissions.JSON_PROPERTY_VIEW_COMPANY_C_R_M,
-  EmployeeRolePermissions.JSON_PROPERTY_VIEW_CUSTOMER_BALANCE_LIST,
-  EmployeeRolePermissions.JSON_PROPERTY_VIEW_DASHBOARD,
-  EmployeeRolePermissions.JSON_PROPERTY_VIEW_MONEY_DASHBOARD,
-  EmployeeRolePermissions.JSON_PROPERTY_VIEW_PRODUCT_COST_AND_PROFIT,
-  EmployeeRolePermissions.JSON_PROPERTY_VIEW_PROFIT_AND_LOSS,
-  EmployeeRolePermissions.JSON_PROPERTY_VIEW_PURCHASE_FUNNEL,
-  EmployeeRolePermissions.JSON_PROPERTY_VIEW_RECYCLE_BIN,
-  EmployeeRolePermissions.JSON_PROPERTY_VIEW_SALE_PROFIT,
-  EmployeeRolePermissions.JSON_PROPERTY_VIEW_SERIAL_NUMBERS,
-  EmployeeRolePermissions.JSON_PROPERTY_VIEW_STOCK_REPORT,
-  EmployeeRolePermissions.JSON_PROPERTY_VIEW_TURNOVER,
-  EmployeeRolePermissions.JSON_PROPERTY_GT_I_N_LIST,
-  EmployeeRolePermissions.JSON_PROPERTY_ACCOUNT_ADJUSTMENT,
-  EmployeeRolePermissions.JSON_PROPERTY_BONUS_TRANSACTION,
-  EmployeeRolePermissions.JSON_PROPERTY_CASH_IN,
-  EmployeeRolePermissions.JSON_PROPERTY_CASH_OUT,
-  EmployeeRolePermissions.JSON_PROPERTY_CASHBOX_ADJUSTMENT,
-  EmployeeRolePermissions.JSON_PROPERTY_COMMISSION_REPORT_IN,
-  EmployeeRolePermissions.JSON_PROPERTY_COMMISSION_REPORT_OUT,
-  EmployeeRolePermissions.JSON_PROPERTY_COMPANY,
-  EmployeeRolePermissions.JSON_PROPERTY_CONTRACT,
-  EmployeeRolePermissions.JSON_PROPERTY_COUNTERPARTY_ADJUSTMENT,
-  EmployeeRolePermissions.JSON_PROPERTY_COUNTRY,
-  EmployeeRolePermissions.JSON_PROPERTY_CRPT_CANCELLATION,
-  EmployeeRolePermissions.JSON_PROPERTY_CRPT_PACKAGE_CREATION,
-  EmployeeRolePermissions.JSON_PROPERTY_CRPT_PACKAGE_DISAGGREGATION,
-  EmployeeRolePermissions.JSON_PROPERTY_CRPT_PACKAGE_ITEM_REMOVAL,
-  EmployeeRolePermissions.JSON_PROPERTY_CURRENCY,
-  EmployeeRolePermissions.JSON_PROPERTY_CUSTOM_ENTITY,
-  EmployeeRolePermissions.JSON_PROPERTY_CUSTOMER_ORDER,
-  EmployeeRolePermissions.JSON_PROPERTY_DEMAND,
-  EmployeeRolePermissions.JSON_PROPERTY_EMISSION_ORDER,
-  EmployeeRolePermissions.JSON_PROPERTY_UTILIZATION_REPORT,
-  EmployeeRolePermissions.JSON_PROPERTY_ATK_AGGREGATION,
-  EmployeeRolePermissions.JSON_PROPERTY_RETIRE_ORDER_O_S_U,
-  EmployeeRolePermissions.JSON_PROPERTY_EMPLOYEE,
-  EmployeeRolePermissions.JSON_PROPERTY_ENROLL_ORDER,
-  EmployeeRolePermissions.JSON_PROPERTY_ENTER,
-  EmployeeRolePermissions.JSON_PROPERTY_FACTURE_IN,
-  EmployeeRolePermissions.JSON_PROPERTY_FACTURE_OUT,
-  EmployeeRolePermissions.JSON_PROPERTY_GOOD,
-  EmployeeRolePermissions.JSON_PROPERTY_INTERNAL_ORDER,
-  EmployeeRolePermissions.JSON_PROPERTY_INVENTORY,
-  EmployeeRolePermissions.JSON_PROPERTY_INVOICE_IN,
-  EmployeeRolePermissions.JSON_PROPERTY_INVOICE_OUT,
-  EmployeeRolePermissions.JSON_PROPERTY_LOSS,
-  EmployeeRolePermissions.JSON_PROPERTY_MOVE,
-  EmployeeRolePermissions.JSON_PROPERTY_MY_COMPANY,
-  EmployeeRolePermissions.JSON_PROPERTY_PAYMENT_IN,
-  EmployeeRolePermissions.JSON_PROPERTY_PAYMENT_OUT,
-  EmployeeRolePermissions.JSON_PROPERTY_PREPAYMENT,
-  EmployeeRolePermissions.JSON_PROPERTY_PREPAYMENT_RETURN,
-  EmployeeRolePermissions.JSON_PROPERTY_PRICE_LIST,
-  EmployeeRolePermissions.JSON_PROPERTY_PROCESSING,
-  EmployeeRolePermissions.JSON_PROPERTY_PROCESSING_ORDER,
-  EmployeeRolePermissions.JSON_PROPERTY_PROCESSING_PLAN,
-  EmployeeRolePermissions.JSON_PROPERTY_PROCESSING_STAGE,
-  EmployeeRolePermissions.JSON_PROPERTY_PROCESSING_PROCESS,
-  EmployeeRolePermissions.JSON_PROPERTY_PRODUCTION_TASK,
-  EmployeeRolePermissions.JSON_PROPERTY_PRODUCTION_STAGE_COMPLETION,
-  EmployeeRolePermissions.JSON_PROPERTY_PROJECT,
-  EmployeeRolePermissions.JSON_PROPERTY_PURCHASE_ORDER,
-  EmployeeRolePermissions.JSON_PROPERTY_PURCHASE_RETURN,
-  EmployeeRolePermissions.JSON_PROPERTY_REMAINS_ORDER,
-  EmployeeRolePermissions.JSON_PROPERTY_REMARKING_ORDER,
-  EmployeeRolePermissions.JSON_PROPERTY_RETAIL_DEMAND,
-  EmployeeRolePermissions.JSON_PROPERTY_RETAIL_DRAWER_CASH_IN,
-  EmployeeRolePermissions.JSON_PROPERTY_RETAIL_DRAWER_CASH_OUT,
-  EmployeeRolePermissions.JSON_PROPERTY_RETAIL_SALES_RETURN,
-  EmployeeRolePermissions.JSON_PROPERTY_RETAIL_SHIFT,
-  EmployeeRolePermissions.JSON_PROPERTY_RETAIL_STORE,
-  EmployeeRolePermissions.JSON_PROPERTY_RETIRE_ORDER,
-  EmployeeRolePermissions.JSON_PROPERTY_SALES_RETURN,
-  EmployeeRolePermissions.JSON_PROPERTY_SALES_CHANNEL,
-  EmployeeRolePermissions.JSON_PROPERTY_SCRIPT,
-  EmployeeRolePermissions.JSON_PROPERTY_SCRIPT_TEMPLATE,
-  EmployeeRolePermissions.JSON_PROPERTY_SUPPLY,
-  EmployeeRolePermissions.JSON_PROPERTY_TAXRATE,
-  EmployeeRolePermissions.JSON_PROPERTY_TRACKING_CODE_LIST,
-  EmployeeRolePermissions.JSON_PROPERTY_UOM,
-  EmployeeRolePermissions.JSON_PROPERTY_WAREHOUSE
+  RolePermissions.JSON_PROPERTY_API_REQUEST,
+  RolePermissions.JSON_PROPERTY_ACCOUNT_DELETE,
+  RolePermissions.JSON_PROPERTY_DELETE_FROM_RECYCLE_BIN,
+  RolePermissions.JSON_PROPERTY_EDIT_CURRENCY_RATE_OF_DOCUMENT,
+  RolePermissions.JSON_PROPERTY_EDIT_DOCUMENT_TEMPLATES,
+  RolePermissions.JSON_PROPERTY_EDIT_DOCUMENTS_OF_RESTRICTED_PERIOD,
+  RolePermissions.JSON_PROPERTY_EXPORT_DATA,
+  RolePermissions.JSON_PROPERTY_IMPORT_DATA,
+  RolePermissions.JSON_PROPERTY_LISTEN_CALLS,
+  RolePermissions.JSON_PROPERTY_ONLINE_SHOPS,
+  RolePermissions.JSON_PROPERTY_OWNER_ASSIGN,
+  RolePermissions.JSON_PROPERTY_OWNER_DATA_UPDATE,
+  RolePermissions.JSON_PROPERTY_PURCHASE_CONTROL,
+  RolePermissions.JSON_PROPERTY_RESTORE_FROM_RECYCLE_BIN,
+  RolePermissions.JSON_PROPERTY_SEND_EMAIL,
+  RolePermissions.JSON_PROPERTY_SUBSCRIPTION_CONTROL,
+  RolePermissions.JSON_PROPERTY_VIEW_AUDIT,
+  RolePermissions.JSON_PROPERTY_VIEW_CASH_FLOW,
+  RolePermissions.JSON_PROPERTY_VIEW_COMMISSION_GOODS,
+  RolePermissions.JSON_PROPERTY_VIEW_COMPANY_C_R_M,
+  RolePermissions.JSON_PROPERTY_VIEW_CUSTOMER_BALANCE_LIST,
+  RolePermissions.JSON_PROPERTY_VIEW_DASHBOARD,
+  RolePermissions.JSON_PROPERTY_VIEW_MONEY_DASHBOARD,
+  RolePermissions.JSON_PROPERTY_VIEW_PRODUCT_COST_AND_PROFIT,
+  RolePermissions.JSON_PROPERTY_VIEW_PROFIT_AND_LOSS,
+  RolePermissions.JSON_PROPERTY_VIEW_PURCHASE_FUNNEL,
+  RolePermissions.JSON_PROPERTY_VIEW_RECYCLE_BIN,
+  RolePermissions.JSON_PROPERTY_VIEW_SALE_PROFIT,
+  RolePermissions.JSON_PROPERTY_VIEW_SERIAL_NUMBERS,
+  RolePermissions.JSON_PROPERTY_VIEW_STOCK_REPORT,
+  RolePermissions.JSON_PROPERTY_VIEW_TURNOVER,
+  RolePermissions.JSON_PROPERTY_GT_I_N_LIST,
+  RolePermissions.JSON_PROPERTY_ACCOUNT_ADJUSTMENT,
+  RolePermissions.JSON_PROPERTY_BONUS_TRANSACTION,
+  RolePermissions.JSON_PROPERTY_CASH_IN,
+  RolePermissions.JSON_PROPERTY_CASH_OUT,
+  RolePermissions.JSON_PROPERTY_CASHBOX_ADJUSTMENT,
+  RolePermissions.JSON_PROPERTY_COMMISSION_REPORT_IN,
+  RolePermissions.JSON_PROPERTY_COMMISSION_REPORT_OUT,
+  RolePermissions.JSON_PROPERTY_COMPANY,
+  RolePermissions.JSON_PROPERTY_CONTRACT,
+  RolePermissions.JSON_PROPERTY_COUNTERPARTY_ADJUSTMENT,
+  RolePermissions.JSON_PROPERTY_COUNTRY,
+  RolePermissions.JSON_PROPERTY_CRPT_CANCELLATION,
+  RolePermissions.JSON_PROPERTY_CRPT_PACKAGE_CREATION,
+  RolePermissions.JSON_PROPERTY_CRPT_PACKAGE_DISAGGREGATION,
+  RolePermissions.JSON_PROPERTY_CRPT_PACKAGE_ITEM_REMOVAL,
+  RolePermissions.JSON_PROPERTY_CURRENCY,
+  RolePermissions.JSON_PROPERTY_CUSTOM_ENTITY,
+  RolePermissions.JSON_PROPERTY_CUSTOMER_ORDER,
+  RolePermissions.JSON_PROPERTY_DEMAND,
+  RolePermissions.JSON_PROPERTY_EMISSION_ORDER,
+  RolePermissions.JSON_PROPERTY_UTILIZATION_REPORT,
+  RolePermissions.JSON_PROPERTY_ATK_AGGREGATION,
+  RolePermissions.JSON_PROPERTY_RETIRE_ORDER_O_S_U,
+  RolePermissions.JSON_PROPERTY_EMPLOYEE,
+  RolePermissions.JSON_PROPERTY_ENROLL_ORDER,
+  RolePermissions.JSON_PROPERTY_ENROLL_RETURN,
+  RolePermissions.JSON_PROPERTY_ENTER,
+  RolePermissions.JSON_PROPERTY_EXPENSEITEM,
+  RolePermissions.JSON_PROPERTY_FACTURE_IN,
+  RolePermissions.JSON_PROPERTY_FACTURE_OUT,
+  RolePermissions.JSON_PROPERTY_GOOD,
+  RolePermissions.JSON_PROPERTY_INTERNAL_ORDER,
+  RolePermissions.JSON_PROPERTY_INVENTORY,
+  RolePermissions.JSON_PROPERTY_INVOICE_IN,
+  RolePermissions.JSON_PROPERTY_INVOICE_OUT,
+  RolePermissions.JSON_PROPERTY_LOSS,
+  RolePermissions.JSON_PROPERTY_MOVE,
+  RolePermissions.JSON_PROPERTY_MY_COMPANY,
+  RolePermissions.JSON_PROPERTY_PAYMENT_IN,
+  RolePermissions.JSON_PROPERTY_PAYMENT_OUT,
+  RolePermissions.JSON_PROPERTY_PREPAYMENT,
+  RolePermissions.JSON_PROPERTY_PREPAYMENT_RETURN,
+  RolePermissions.JSON_PROPERTY_PRICE_LIST,
+  RolePermissions.JSON_PROPERTY_PROCESSING,
+  RolePermissions.JSON_PROPERTY_PROCESSING_ORDER,
+  RolePermissions.JSON_PROPERTY_PROCESSING_PLAN,
+  RolePermissions.JSON_PROPERTY_PROCESSING_STAGE,
+  RolePermissions.JSON_PROPERTY_PROCESSING_PROCESS,
+  RolePermissions.JSON_PROPERTY_PRODUCTION_TASK,
+  RolePermissions.JSON_PROPERTY_PRODUCTION_STAGE_COMPLETION,
+  RolePermissions.JSON_PROPERTY_PROJECT,
+  RolePermissions.JSON_PROPERTY_PURCHASE_ORDER,
+  RolePermissions.JSON_PROPERTY_PURCHASE_RETURN,
+  RolePermissions.JSON_PROPERTY_REMAINS_ORDER,
+  RolePermissions.JSON_PROPERTY_REMARKING_ORDER,
+  RolePermissions.JSON_PROPERTY_RETAIL_DEMAND,
+  RolePermissions.JSON_PROPERTY_RETAIL_DRAWER_CASH_IN,
+  RolePermissions.JSON_PROPERTY_RETAIL_DRAWER_CASH_OUT,
+  RolePermissions.JSON_PROPERTY_RETAIL_SALES_RETURN,
+  RolePermissions.JSON_PROPERTY_RETAIL_SHIFT,
+  RolePermissions.JSON_PROPERTY_RETAIL_STORE,
+  RolePermissions.JSON_PROPERTY_RETIRE_ORDER,
+  RolePermissions.JSON_PROPERTY_SALES_RETURN,
+  RolePermissions.JSON_PROPERTY_SALES_CHANNEL,
+  RolePermissions.JSON_PROPERTY_SCRIPT,
+  RolePermissions.JSON_PROPERTY_SCRIPT_TEMPLATE,
+  RolePermissions.JSON_PROPERTY_SUPPLY,
+  RolePermissions.JSON_PROPERTY_TAXRATE,
+  RolePermissions.JSON_PROPERTY_TRACKING_CODE_LIST,
+  RolePermissions.JSON_PROPERTY_UOM,
+  RolePermissions.JSON_PROPERTY_WAREHOUSE
 })
-@JsonTypeName("EmployeeRole_permissions")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T13:59:19.961064491Z[GMT]", comments = "Generator version: 7.14.0")
-public class EmployeeRolePermissions {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
+public class RolePermissions {
 
   public static final String JSON_PROPERTY_API_REQUEST = "apiRequest";
   @javax.annotation.Nullable
@@ -191,9 +192,9 @@ public class EmployeeRolePermissions {
   @javax.annotation.Nullable
   private Boolean purchaseControl;
 
-  public static final String JSON_PROPERTY_RESTO$REFROM_RECYCLE_BIN = "resto$refromRecycleBin";
+  public static final String JSON_PROPERTY_RESTORE_FROM_RECYCLE_BIN = "restoreFromRecycleBin";
   @javax.annotation.Nullable
-  private Boolean resto$refromRecycleBin;
+  private Boolean restoreFromRecycleBin;
 
   public static final String JSON_PROPERTY_SEND_EMAIL = "sendEmail";
   @javax.annotation.Nullable
@@ -367,9 +368,17 @@ public class EmployeeRolePermissions {
   @javax.annotation.Nullable
   private Permissions enrollOrder;
 
+  public static final String JSON_PROPERTY_ENROLL_RETURN = "enrollReturn";
+  @javax.annotation.Nullable
+  private Permissions enrollReturn;
+
   public static final String JSON_PROPERTY_ENTER = "enter";
   @javax.annotation.Nullable
   private Permissions enter;
+
+  public static final String JSON_PROPERTY_EXPENSEITEM = "expenseitem";
+  @javax.annotation.Nullable
+  private Permissions expenseitem;
 
   public static final String JSON_PROPERTY_FACTURE_IN = "factureIn";
   @javax.annotation.Nullable
@@ -543,10 +552,10 @@ public class EmployeeRolePermissions {
   @javax.annotation.Nullable
   private Permissions warehouse;
 
-  public EmployeeRolePermissions() {
+  public RolePermissions() {
   }
 
-  public EmployeeRolePermissions apiRequest(@javax.annotation.Nullable Boolean apiRequest) {
+  public RolePermissions apiRequest(@javax.annotation.Nullable Boolean apiRequest) {
     
     this.apiRequest = apiRequest;
     return this;
@@ -575,7 +584,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions accountDelete(@javax.annotation.Nullable Boolean accountDelete) {
+  public RolePermissions accountDelete(@javax.annotation.Nullable Boolean accountDelete) {
     
     this.accountDelete = accountDelete;
     return this;
@@ -604,7 +613,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions deleteFromRecycleBin(@javax.annotation.Nullable Boolean deleteFromRecycleBin) {
+  public RolePermissions deleteFromRecycleBin(@javax.annotation.Nullable Boolean deleteFromRecycleBin) {
     
     this.deleteFromRecycleBin = deleteFromRecycleBin;
     return this;
@@ -633,7 +642,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions editCurrencyRateOfDocument(@javax.annotation.Nullable Boolean editCurrencyRateOfDocument) {
+  public RolePermissions editCurrencyRateOfDocument(@javax.annotation.Nullable Boolean editCurrencyRateOfDocument) {
     
     this.editCurrencyRateOfDocument = editCurrencyRateOfDocument;
     return this;
@@ -662,7 +671,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions editDocumentTemplates(@javax.annotation.Nullable Boolean editDocumentTemplates) {
+  public RolePermissions editDocumentTemplates(@javax.annotation.Nullable Boolean editDocumentTemplates) {
     
     this.editDocumentTemplates = editDocumentTemplates;
     return this;
@@ -691,7 +700,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions editDocumentsOfRestrictedPeriod(@javax.annotation.Nullable Boolean editDocumentsOfRestrictedPeriod) {
+  public RolePermissions editDocumentsOfRestrictedPeriod(@javax.annotation.Nullable Boolean editDocumentsOfRestrictedPeriod) {
     
     this.editDocumentsOfRestrictedPeriod = editDocumentsOfRestrictedPeriod;
     return this;
@@ -720,7 +729,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions exportData(@javax.annotation.Nullable Boolean exportData) {
+  public RolePermissions exportData(@javax.annotation.Nullable Boolean exportData) {
     
     this.exportData = exportData;
     return this;
@@ -749,7 +758,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions importData(@javax.annotation.Nullable Boolean importData) {
+  public RolePermissions importData(@javax.annotation.Nullable Boolean importData) {
     
     this.importData = importData;
     return this;
@@ -778,7 +787,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions listenCalls(@javax.annotation.Nullable Boolean listenCalls) {
+  public RolePermissions listenCalls(@javax.annotation.Nullable Boolean listenCalls) {
     
     this.listenCalls = listenCalls;
     return this;
@@ -807,7 +816,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions onlineShops(@javax.annotation.Nullable Boolean onlineShops) {
+  public RolePermissions onlineShops(@javax.annotation.Nullable Boolean onlineShops) {
     
     this.onlineShops = onlineShops;
     return this;
@@ -836,7 +845,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions ownerAssign(@javax.annotation.Nullable Boolean ownerAssign) {
+  public RolePermissions ownerAssign(@javax.annotation.Nullable Boolean ownerAssign) {
     
     this.ownerAssign = ownerAssign;
     return this;
@@ -865,7 +874,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions ownerDataUpdate(@javax.annotation.Nullable Boolean ownerDataUpdate) {
+  public RolePermissions ownerDataUpdate(@javax.annotation.Nullable Boolean ownerDataUpdate) {
     
     this.ownerDataUpdate = ownerDataUpdate;
     return this;
@@ -894,7 +903,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions purchaseControl(@javax.annotation.Nullable Boolean purchaseControl) {
+  public RolePermissions purchaseControl(@javax.annotation.Nullable Boolean purchaseControl) {
     
     this.purchaseControl = purchaseControl;
     return this;
@@ -923,36 +932,36 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions resto$refromRecycleBin(@javax.annotation.Nullable Boolean resto$refromRecycleBin) {
+  public RolePermissions restoreFromRecycleBin(@javax.annotation.Nullable Boolean restoreFromRecycleBin) {
     
-    this.resto$refromRecycleBin = resto$refromRecycleBin;
+    this.restoreFromRecycleBin = restoreFromRecycleBin;
     return this;
   }
 
 
   /**
-   * Восстанавливать документы
-   * @return resto$refromRecycleBin
+   * Восстанавливать документы из корзины
+   * @return restoreFromRecycleBin
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RESTO$REFROM_RECYCLE_BIN)
+  @JsonProperty(JSON_PROPERTY_RESTORE_FROM_RECYCLE_BIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Boolean getResto$refromRecycleBin() {
-    return resto$refromRecycleBin;
+  public Boolean getRestoreFromRecycleBin() {
+    return restoreFromRecycleBin;
   }
 
   
 
 
-  @JsonProperty(JSON_PROPERTY_RESTO$REFROM_RECYCLE_BIN)
+  @JsonProperty(JSON_PROPERTY_RESTORE_FROM_RECYCLE_BIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setResto$refromRecycleBin(@javax.annotation.Nullable Boolean resto$refromRecycleBin) {
-    this.resto$refromRecycleBin = resto$refromRecycleBin;
+  public void setRestoreFromRecycleBin(@javax.annotation.Nullable Boolean restoreFromRecycleBin) {
+    this.restoreFromRecycleBin = restoreFromRecycleBin;
   }
 
 
-  public EmployeeRolePermissions sendEmail(@javax.annotation.Nullable Boolean sendEmail) {
+  public RolePermissions sendEmail(@javax.annotation.Nullable Boolean sendEmail) {
     
     this.sendEmail = sendEmail;
     return this;
@@ -981,7 +990,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions subscriptionControl(@javax.annotation.Nullable Boolean subscriptionControl) {
+  public RolePermissions subscriptionControl(@javax.annotation.Nullable Boolean subscriptionControl) {
     
     this.subscriptionControl = subscriptionControl;
     return this;
@@ -1010,7 +1019,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions viewAudit(@javax.annotation.Nullable Boolean viewAudit) {
+  public RolePermissions viewAudit(@javax.annotation.Nullable Boolean viewAudit) {
     
     this.viewAudit = viewAudit;
     return this;
@@ -1039,7 +1048,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions viewCashFlow(@javax.annotation.Nullable Boolean viewCashFlow) {
+  public RolePermissions viewCashFlow(@javax.annotation.Nullable Boolean viewCashFlow) {
     
     this.viewCashFlow = viewCashFlow;
     return this;
@@ -1068,7 +1077,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions viewCommissionGoods(@javax.annotation.Nullable Boolean viewCommissionGoods) {
+  public RolePermissions viewCommissionGoods(@javax.annotation.Nullable Boolean viewCommissionGoods) {
     
     this.viewCommissionGoods = viewCommissionGoods;
     return this;
@@ -1097,7 +1106,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions viewCompanyCRM(@javax.annotation.Nullable Boolean viewCompanyCRM) {
+  public RolePermissions viewCompanyCRM(@javax.annotation.Nullable Boolean viewCompanyCRM) {
     
     this.viewCompanyCRM = viewCompanyCRM;
     return this;
@@ -1126,7 +1135,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions viewCustomerBalanceList(@javax.annotation.Nullable Boolean viewCustomerBalanceList) {
+  public RolePermissions viewCustomerBalanceList(@javax.annotation.Nullable Boolean viewCustomerBalanceList) {
     
     this.viewCustomerBalanceList = viewCustomerBalanceList;
     return this;
@@ -1155,7 +1164,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions viewDashboard(@javax.annotation.Nullable Boolean viewDashboard) {
+  public RolePermissions viewDashboard(@javax.annotation.Nullable Boolean viewDashboard) {
     
     this.viewDashboard = viewDashboard;
     return this;
@@ -1184,7 +1193,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions viewMoneyDashboard(@javax.annotation.Nullable Boolean viewMoneyDashboard) {
+  public RolePermissions viewMoneyDashboard(@javax.annotation.Nullable Boolean viewMoneyDashboard) {
     
     this.viewMoneyDashboard = viewMoneyDashboard;
     return this;
@@ -1213,7 +1222,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions viewProductCostAndProfit(@javax.annotation.Nullable Boolean viewProductCostAndProfit) {
+  public RolePermissions viewProductCostAndProfit(@javax.annotation.Nullable Boolean viewProductCostAndProfit) {
     
     this.viewProductCostAndProfit = viewProductCostAndProfit;
     return this;
@@ -1242,7 +1251,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions viewProfitAndLoss(@javax.annotation.Nullable Boolean viewProfitAndLoss) {
+  public RolePermissions viewProfitAndLoss(@javax.annotation.Nullable Boolean viewProfitAndLoss) {
     
     this.viewProfitAndLoss = viewProfitAndLoss;
     return this;
@@ -1271,7 +1280,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions viewPurchaseFunnel(@javax.annotation.Nullable Boolean viewPurchaseFunnel) {
+  public RolePermissions viewPurchaseFunnel(@javax.annotation.Nullable Boolean viewPurchaseFunnel) {
     
     this.viewPurchaseFunnel = viewPurchaseFunnel;
     return this;
@@ -1300,7 +1309,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions viewRecycleBin(@javax.annotation.Nullable Boolean viewRecycleBin) {
+  public RolePermissions viewRecycleBin(@javax.annotation.Nullable Boolean viewRecycleBin) {
     
     this.viewRecycleBin = viewRecycleBin;
     return this;
@@ -1329,7 +1338,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions viewSaleProfit(@javax.annotation.Nullable Boolean viewSaleProfit) {
+  public RolePermissions viewSaleProfit(@javax.annotation.Nullable Boolean viewSaleProfit) {
     
     this.viewSaleProfit = viewSaleProfit;
     return this;
@@ -1358,7 +1367,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions viewSerialNumbers(@javax.annotation.Nullable Boolean viewSerialNumbers) {
+  public RolePermissions viewSerialNumbers(@javax.annotation.Nullable Boolean viewSerialNumbers) {
     
     this.viewSerialNumbers = viewSerialNumbers;
     return this;
@@ -1387,7 +1396,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions viewStockReport(@javax.annotation.Nullable Boolean viewStockReport) {
+  public RolePermissions viewStockReport(@javax.annotation.Nullable Boolean viewStockReport) {
     
     this.viewStockReport = viewStockReport;
     return this;
@@ -1416,7 +1425,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions viewTurnover(@javax.annotation.Nullable Boolean viewTurnover) {
+  public RolePermissions viewTurnover(@javax.annotation.Nullable Boolean viewTurnover) {
     
     this.viewTurnover = viewTurnover;
     return this;
@@ -1445,7 +1454,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions gtINList(@javax.annotation.Nullable Permissions gtINList) {
+  public RolePermissions gtINList(@javax.annotation.Nullable Permissions gtINList) {
     
     this.gtINList = gtINList;
     return this;
@@ -1474,7 +1483,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions accountAdjustment(@javax.annotation.Nullable Permissions accountAdjustment) {
+  public RolePermissions accountAdjustment(@javax.annotation.Nullable Permissions accountAdjustment) {
     
     this.accountAdjustment = accountAdjustment;
     return this;
@@ -1503,7 +1512,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions bonusTransaction(@javax.annotation.Nullable Permissions bonusTransaction) {
+  public RolePermissions bonusTransaction(@javax.annotation.Nullable Permissions bonusTransaction) {
     
     this.bonusTransaction = bonusTransaction;
     return this;
@@ -1532,7 +1541,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions cashIn(@javax.annotation.Nullable Permissions cashIn) {
+  public RolePermissions cashIn(@javax.annotation.Nullable Permissions cashIn) {
     
     this.cashIn = cashIn;
     return this;
@@ -1561,7 +1570,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions cashOut(@javax.annotation.Nullable Permissions cashOut) {
+  public RolePermissions cashOut(@javax.annotation.Nullable Permissions cashOut) {
     
     this.cashOut = cashOut;
     return this;
@@ -1590,7 +1599,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions cashboxAdjustment(@javax.annotation.Nullable Permissions cashboxAdjustment) {
+  public RolePermissions cashboxAdjustment(@javax.annotation.Nullable Permissions cashboxAdjustment) {
     
     this.cashboxAdjustment = cashboxAdjustment;
     return this;
@@ -1619,7 +1628,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions commissionReportIn(@javax.annotation.Nullable Permissions commissionReportIn) {
+  public RolePermissions commissionReportIn(@javax.annotation.Nullable Permissions commissionReportIn) {
     
     this.commissionReportIn = commissionReportIn;
     return this;
@@ -1648,7 +1657,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions commissionReportOut(@javax.annotation.Nullable Permissions commissionReportOut) {
+  public RolePermissions commissionReportOut(@javax.annotation.Nullable Permissions commissionReportOut) {
     
     this.commissionReportOut = commissionReportOut;
     return this;
@@ -1677,7 +1686,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions company(@javax.annotation.Nullable Permissions company) {
+  public RolePermissions company(@javax.annotation.Nullable Permissions company) {
     
     this.company = company;
     return this;
@@ -1706,7 +1715,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions contract(@javax.annotation.Nullable Permissions contract) {
+  public RolePermissions contract(@javax.annotation.Nullable Permissions contract) {
     
     this.contract = contract;
     return this;
@@ -1735,7 +1744,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions counterpartyAdjustment(@javax.annotation.Nullable Permissions counterpartyAdjustment) {
+  public RolePermissions counterpartyAdjustment(@javax.annotation.Nullable Permissions counterpartyAdjustment) {
     
     this.counterpartyAdjustment = counterpartyAdjustment;
     return this;
@@ -1764,7 +1773,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions country(@javax.annotation.Nullable Permissions country) {
+  public RolePermissions country(@javax.annotation.Nullable Permissions country) {
     
     this.country = country;
     return this;
@@ -1793,7 +1802,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions crptCancellation(@javax.annotation.Nullable Permissions crptCancellation) {
+  public RolePermissions crptCancellation(@javax.annotation.Nullable Permissions crptCancellation) {
     
     this.crptCancellation = crptCancellation;
     return this;
@@ -1822,7 +1831,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions crptPackageCreation(@javax.annotation.Nullable Permissions crptPackageCreation) {
+  public RolePermissions crptPackageCreation(@javax.annotation.Nullable Permissions crptPackageCreation) {
     
     this.crptPackageCreation = crptPackageCreation;
     return this;
@@ -1851,7 +1860,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions crptPackageDisaggregation(@javax.annotation.Nullable Permissions crptPackageDisaggregation) {
+  public RolePermissions crptPackageDisaggregation(@javax.annotation.Nullable Permissions crptPackageDisaggregation) {
     
     this.crptPackageDisaggregation = crptPackageDisaggregation;
     return this;
@@ -1880,7 +1889,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions crptPackageItemRemoval(@javax.annotation.Nullable Permissions crptPackageItemRemoval) {
+  public RolePermissions crptPackageItemRemoval(@javax.annotation.Nullable Permissions crptPackageItemRemoval) {
     
     this.crptPackageItemRemoval = crptPackageItemRemoval;
     return this;
@@ -1909,7 +1918,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions currency(@javax.annotation.Nullable Permissions currency) {
+  public RolePermissions currency(@javax.annotation.Nullable Permissions currency) {
     
     this.currency = currency;
     return this;
@@ -1938,7 +1947,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions customEntity(@javax.annotation.Nullable Permissions customEntity) {
+  public RolePermissions customEntity(@javax.annotation.Nullable Permissions customEntity) {
     
     this.customEntity = customEntity;
     return this;
@@ -1967,7 +1976,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions customerOrder(@javax.annotation.Nullable Permissions customerOrder) {
+  public RolePermissions customerOrder(@javax.annotation.Nullable Permissions customerOrder) {
     
     this.customerOrder = customerOrder;
     return this;
@@ -1996,7 +2005,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions demand(@javax.annotation.Nullable Permissions demand) {
+  public RolePermissions demand(@javax.annotation.Nullable Permissions demand) {
     
     this.demand = demand;
     return this;
@@ -2025,7 +2034,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions emissionOrder(@javax.annotation.Nullable Permissions emissionOrder) {
+  public RolePermissions emissionOrder(@javax.annotation.Nullable Permissions emissionOrder) {
     
     this.emissionOrder = emissionOrder;
     return this;
@@ -2054,7 +2063,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions utilizationReport(@javax.annotation.Nullable Permissions utilizationReport) {
+  public RolePermissions utilizationReport(@javax.annotation.Nullable Permissions utilizationReport) {
     
     this.utilizationReport = utilizationReport;
     return this;
@@ -2083,7 +2092,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions atkAggregation(@javax.annotation.Nullable Permissions atkAggregation) {
+  public RolePermissions atkAggregation(@javax.annotation.Nullable Permissions atkAggregation) {
     
     this.atkAggregation = atkAggregation;
     return this;
@@ -2112,7 +2121,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions retireOrderOSU(@javax.annotation.Nullable Permissions retireOrderOSU) {
+  public RolePermissions retireOrderOSU(@javax.annotation.Nullable Permissions retireOrderOSU) {
     
     this.retireOrderOSU = retireOrderOSU;
     return this;
@@ -2141,7 +2150,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions employee(@javax.annotation.Nullable Permissions employee) {
+  public RolePermissions employee(@javax.annotation.Nullable Permissions employee) {
     
     this.employee = employee;
     return this;
@@ -2170,7 +2179,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions enrollOrder(@javax.annotation.Nullable Permissions enrollOrder) {
+  public RolePermissions enrollOrder(@javax.annotation.Nullable Permissions enrollOrder) {
     
     this.enrollOrder = enrollOrder;
     return this;
@@ -2199,7 +2208,36 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions enter(@javax.annotation.Nullable Permissions enter) {
+  public RolePermissions enrollReturn(@javax.annotation.Nullable Permissions enrollReturn) {
+    
+    this.enrollReturn = enrollReturn;
+    return this;
+  }
+
+
+  /**
+   * Get enrollReturn
+   * @return enrollReturn
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ENROLL_RETURN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Permissions getEnrollReturn() {
+    return enrollReturn;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_ENROLL_RETURN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setEnrollReturn(@javax.annotation.Nullable Permissions enrollReturn) {
+    this.enrollReturn = enrollReturn;
+  }
+
+
+  public RolePermissions enter(@javax.annotation.Nullable Permissions enter) {
     
     this.enter = enter;
     return this;
@@ -2228,7 +2266,36 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions factureIn(@javax.annotation.Nullable Permissions factureIn) {
+  public RolePermissions expenseitem(@javax.annotation.Nullable Permissions expenseitem) {
+    
+    this.expenseitem = expenseitem;
+    return this;
+  }
+
+
+  /**
+   * Get expenseitem
+   * @return expenseitem
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_EXPENSEITEM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Permissions getExpenseitem() {
+    return expenseitem;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_EXPENSEITEM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setExpenseitem(@javax.annotation.Nullable Permissions expenseitem) {
+    this.expenseitem = expenseitem;
+  }
+
+
+  public RolePermissions factureIn(@javax.annotation.Nullable Permissions factureIn) {
     
     this.factureIn = factureIn;
     return this;
@@ -2257,7 +2324,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions factureOut(@javax.annotation.Nullable Permissions factureOut) {
+  public RolePermissions factureOut(@javax.annotation.Nullable Permissions factureOut) {
     
     this.factureOut = factureOut;
     return this;
@@ -2286,7 +2353,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions good(@javax.annotation.Nullable Permissions good) {
+  public RolePermissions good(@javax.annotation.Nullable Permissions good) {
     
     this.good = good;
     return this;
@@ -2315,7 +2382,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions internalOrder(@javax.annotation.Nullable Permissions internalOrder) {
+  public RolePermissions internalOrder(@javax.annotation.Nullable Permissions internalOrder) {
     
     this.internalOrder = internalOrder;
     return this;
@@ -2344,7 +2411,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions inventory(@javax.annotation.Nullable Permissions inventory) {
+  public RolePermissions inventory(@javax.annotation.Nullable Permissions inventory) {
     
     this.inventory = inventory;
     return this;
@@ -2373,7 +2440,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions invoiceIn(@javax.annotation.Nullable Permissions invoiceIn) {
+  public RolePermissions invoiceIn(@javax.annotation.Nullable Permissions invoiceIn) {
     
     this.invoiceIn = invoiceIn;
     return this;
@@ -2402,7 +2469,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions invoiceOut(@javax.annotation.Nullable Permissions invoiceOut) {
+  public RolePermissions invoiceOut(@javax.annotation.Nullable Permissions invoiceOut) {
     
     this.invoiceOut = invoiceOut;
     return this;
@@ -2431,7 +2498,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions loss(@javax.annotation.Nullable Permissions loss) {
+  public RolePermissions loss(@javax.annotation.Nullable Permissions loss) {
     
     this.loss = loss;
     return this;
@@ -2460,7 +2527,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions move(@javax.annotation.Nullable Permissions move) {
+  public RolePermissions move(@javax.annotation.Nullable Permissions move) {
     
     this.move = move;
     return this;
@@ -2489,7 +2556,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions myCompany(@javax.annotation.Nullable Permissions myCompany) {
+  public RolePermissions myCompany(@javax.annotation.Nullable Permissions myCompany) {
     
     this.myCompany = myCompany;
     return this;
@@ -2518,7 +2585,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions paymentIn(@javax.annotation.Nullable Permissions paymentIn) {
+  public RolePermissions paymentIn(@javax.annotation.Nullable Permissions paymentIn) {
     
     this.paymentIn = paymentIn;
     return this;
@@ -2547,7 +2614,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions paymentOut(@javax.annotation.Nullable Permissions paymentOut) {
+  public RolePermissions paymentOut(@javax.annotation.Nullable Permissions paymentOut) {
     
     this.paymentOut = paymentOut;
     return this;
@@ -2576,7 +2643,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions prepayment(@javax.annotation.Nullable Permissions prepayment) {
+  public RolePermissions prepayment(@javax.annotation.Nullable Permissions prepayment) {
     
     this.prepayment = prepayment;
     return this;
@@ -2605,7 +2672,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions prepaymentReturn(@javax.annotation.Nullable Permissions prepaymentReturn) {
+  public RolePermissions prepaymentReturn(@javax.annotation.Nullable Permissions prepaymentReturn) {
     
     this.prepaymentReturn = prepaymentReturn;
     return this;
@@ -2634,7 +2701,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions priceList(@javax.annotation.Nullable Permissions priceList) {
+  public RolePermissions priceList(@javax.annotation.Nullable Permissions priceList) {
     
     this.priceList = priceList;
     return this;
@@ -2663,7 +2730,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions processing(@javax.annotation.Nullable Permissions processing) {
+  public RolePermissions processing(@javax.annotation.Nullable Permissions processing) {
     
     this.processing = processing;
     return this;
@@ -2692,7 +2759,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions processingOrder(@javax.annotation.Nullable Permissions processingOrder) {
+  public RolePermissions processingOrder(@javax.annotation.Nullable Permissions processingOrder) {
     
     this.processingOrder = processingOrder;
     return this;
@@ -2721,7 +2788,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions processingPlan(@javax.annotation.Nullable Permissions processingPlan) {
+  public RolePermissions processingPlan(@javax.annotation.Nullable Permissions processingPlan) {
     
     this.processingPlan = processingPlan;
     return this;
@@ -2750,7 +2817,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions processingStage(@javax.annotation.Nullable Permissions processingStage) {
+  public RolePermissions processingStage(@javax.annotation.Nullable Permissions processingStage) {
     
     this.processingStage = processingStage;
     return this;
@@ -2779,7 +2846,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions processingProcess(@javax.annotation.Nullable Permissions processingProcess) {
+  public RolePermissions processingProcess(@javax.annotation.Nullable Permissions processingProcess) {
     
     this.processingProcess = processingProcess;
     return this;
@@ -2808,7 +2875,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions productionTask(@javax.annotation.Nullable Permissions productionTask) {
+  public RolePermissions productionTask(@javax.annotation.Nullable Permissions productionTask) {
     
     this.productionTask = productionTask;
     return this;
@@ -2837,7 +2904,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions productionStageCompletion(@javax.annotation.Nullable Permissions productionStageCompletion) {
+  public RolePermissions productionStageCompletion(@javax.annotation.Nullable Permissions productionStageCompletion) {
     
     this.productionStageCompletion = productionStageCompletion;
     return this;
@@ -2866,7 +2933,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions project(@javax.annotation.Nullable Permissions project) {
+  public RolePermissions project(@javax.annotation.Nullable Permissions project) {
     
     this.project = project;
     return this;
@@ -2895,7 +2962,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions purchaseOrder(@javax.annotation.Nullable Permissions purchaseOrder) {
+  public RolePermissions purchaseOrder(@javax.annotation.Nullable Permissions purchaseOrder) {
     
     this.purchaseOrder = purchaseOrder;
     return this;
@@ -2924,7 +2991,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions purchaseReturn(@javax.annotation.Nullable Permissions purchaseReturn) {
+  public RolePermissions purchaseReturn(@javax.annotation.Nullable Permissions purchaseReturn) {
     
     this.purchaseReturn = purchaseReturn;
     return this;
@@ -2953,7 +3020,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions remainsOrder(@javax.annotation.Nullable Permissions remainsOrder) {
+  public RolePermissions remainsOrder(@javax.annotation.Nullable Permissions remainsOrder) {
     
     this.remainsOrder = remainsOrder;
     return this;
@@ -2982,7 +3049,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions remarkingOrder(@javax.annotation.Nullable Permissions remarkingOrder) {
+  public RolePermissions remarkingOrder(@javax.annotation.Nullable Permissions remarkingOrder) {
     
     this.remarkingOrder = remarkingOrder;
     return this;
@@ -3011,7 +3078,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions retailDemand(@javax.annotation.Nullable Permissions retailDemand) {
+  public RolePermissions retailDemand(@javax.annotation.Nullable Permissions retailDemand) {
     
     this.retailDemand = retailDemand;
     return this;
@@ -3040,7 +3107,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions retailDrawerCashIn(@javax.annotation.Nullable Permissions retailDrawerCashIn) {
+  public RolePermissions retailDrawerCashIn(@javax.annotation.Nullable Permissions retailDrawerCashIn) {
     
     this.retailDrawerCashIn = retailDrawerCashIn;
     return this;
@@ -3069,7 +3136,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions retailDrawerCashOut(@javax.annotation.Nullable Permissions retailDrawerCashOut) {
+  public RolePermissions retailDrawerCashOut(@javax.annotation.Nullable Permissions retailDrawerCashOut) {
     
     this.retailDrawerCashOut = retailDrawerCashOut;
     return this;
@@ -3098,7 +3165,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions retailSalesReturn(@javax.annotation.Nullable Permissions retailSalesReturn) {
+  public RolePermissions retailSalesReturn(@javax.annotation.Nullable Permissions retailSalesReturn) {
     
     this.retailSalesReturn = retailSalesReturn;
     return this;
@@ -3127,7 +3194,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions retailShift(@javax.annotation.Nullable Permissions retailShift) {
+  public RolePermissions retailShift(@javax.annotation.Nullable Permissions retailShift) {
     
     this.retailShift = retailShift;
     return this;
@@ -3156,7 +3223,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions retailStore(@javax.annotation.Nullable Permissions retailStore) {
+  public RolePermissions retailStore(@javax.annotation.Nullable Permissions retailStore) {
     
     this.retailStore = retailStore;
     return this;
@@ -3185,7 +3252,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions retireOrder(@javax.annotation.Nullable Permissions retireOrder) {
+  public RolePermissions retireOrder(@javax.annotation.Nullable Permissions retireOrder) {
     
     this.retireOrder = retireOrder;
     return this;
@@ -3214,7 +3281,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions salesReturn(@javax.annotation.Nullable Permissions salesReturn) {
+  public RolePermissions salesReturn(@javax.annotation.Nullable Permissions salesReturn) {
     
     this.salesReturn = salesReturn;
     return this;
@@ -3243,7 +3310,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions salesChannel(@javax.annotation.Nullable Permissions salesChannel) {
+  public RolePermissions salesChannel(@javax.annotation.Nullable Permissions salesChannel) {
     
     this.salesChannel = salesChannel;
     return this;
@@ -3272,7 +3339,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions script(@javax.annotation.Nullable ScriptPermissions script) {
+  public RolePermissions script(@javax.annotation.Nullable ScriptPermissions script) {
     
     this.script = script;
     return this;
@@ -3301,7 +3368,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions scriptTemplate(@javax.annotation.Nullable ScriptTemplatePermissions scriptTemplate) {
+  public RolePermissions scriptTemplate(@javax.annotation.Nullable ScriptTemplatePermissions scriptTemplate) {
     
     this.scriptTemplate = scriptTemplate;
     return this;
@@ -3330,7 +3397,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions supply(@javax.annotation.Nullable Permissions supply) {
+  public RolePermissions supply(@javax.annotation.Nullable Permissions supply) {
     
     this.supply = supply;
     return this;
@@ -3359,7 +3426,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions taxrate(@javax.annotation.Nullable Permissions taxrate) {
+  public RolePermissions taxrate(@javax.annotation.Nullable Permissions taxrate) {
     
     this.taxrate = taxrate;
     return this;
@@ -3388,7 +3455,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions trackingCodeList(@javax.annotation.Nullable Permissions trackingCodeList) {
+  public RolePermissions trackingCodeList(@javax.annotation.Nullable Permissions trackingCodeList) {
     
     this.trackingCodeList = trackingCodeList;
     return this;
@@ -3417,7 +3484,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions uom(@javax.annotation.Nullable Permissions uom) {
+  public RolePermissions uom(@javax.annotation.Nullable Permissions uom) {
     
     this.uom = uom;
     return this;
@@ -3446,7 +3513,7 @@ public class EmployeeRolePermissions {
   }
 
 
-  public EmployeeRolePermissions warehouse(@javax.annotation.Nullable Permissions warehouse) {
+  public RolePermissions warehouse(@javax.annotation.Nullable Permissions warehouse) {
     
     this.warehouse = warehouse;
     return this;
@@ -3483,119 +3550,121 @@ public class EmployeeRolePermissions {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    EmployeeRolePermissions employeeRolePermissions = (EmployeeRolePermissions) o;
-    return Objects.equals(this.apiRequest, employeeRolePermissions.apiRequest) &&
-        Objects.equals(this.accountDelete, employeeRolePermissions.accountDelete) &&
-        Objects.equals(this.deleteFromRecycleBin, employeeRolePermissions.deleteFromRecycleBin) &&
-        Objects.equals(this.editCurrencyRateOfDocument, employeeRolePermissions.editCurrencyRateOfDocument) &&
-        Objects.equals(this.editDocumentTemplates, employeeRolePermissions.editDocumentTemplates) &&
-        Objects.equals(this.editDocumentsOfRestrictedPeriod, employeeRolePermissions.editDocumentsOfRestrictedPeriod) &&
-        Objects.equals(this.exportData, employeeRolePermissions.exportData) &&
-        Objects.equals(this.importData, employeeRolePermissions.importData) &&
-        Objects.equals(this.listenCalls, employeeRolePermissions.listenCalls) &&
-        Objects.equals(this.onlineShops, employeeRolePermissions.onlineShops) &&
-        Objects.equals(this.ownerAssign, employeeRolePermissions.ownerAssign) &&
-        Objects.equals(this.ownerDataUpdate, employeeRolePermissions.ownerDataUpdate) &&
-        Objects.equals(this.purchaseControl, employeeRolePermissions.purchaseControl) &&
-        Objects.equals(this.resto$refromRecycleBin, employeeRolePermissions.resto$refromRecycleBin) &&
-        Objects.equals(this.sendEmail, employeeRolePermissions.sendEmail) &&
-        Objects.equals(this.subscriptionControl, employeeRolePermissions.subscriptionControl) &&
-        Objects.equals(this.viewAudit, employeeRolePermissions.viewAudit) &&
-        Objects.equals(this.viewCashFlow, employeeRolePermissions.viewCashFlow) &&
-        Objects.equals(this.viewCommissionGoods, employeeRolePermissions.viewCommissionGoods) &&
-        Objects.equals(this.viewCompanyCRM, employeeRolePermissions.viewCompanyCRM) &&
-        Objects.equals(this.viewCustomerBalanceList, employeeRolePermissions.viewCustomerBalanceList) &&
-        Objects.equals(this.viewDashboard, employeeRolePermissions.viewDashboard) &&
-        Objects.equals(this.viewMoneyDashboard, employeeRolePermissions.viewMoneyDashboard) &&
-        Objects.equals(this.viewProductCostAndProfit, employeeRolePermissions.viewProductCostAndProfit) &&
-        Objects.equals(this.viewProfitAndLoss, employeeRolePermissions.viewProfitAndLoss) &&
-        Objects.equals(this.viewPurchaseFunnel, employeeRolePermissions.viewPurchaseFunnel) &&
-        Objects.equals(this.viewRecycleBin, employeeRolePermissions.viewRecycleBin) &&
-        Objects.equals(this.viewSaleProfit, employeeRolePermissions.viewSaleProfit) &&
-        Objects.equals(this.viewSerialNumbers, employeeRolePermissions.viewSerialNumbers) &&
-        Objects.equals(this.viewStockReport, employeeRolePermissions.viewStockReport) &&
-        Objects.equals(this.viewTurnover, employeeRolePermissions.viewTurnover) &&
-        Objects.equals(this.gtINList, employeeRolePermissions.gtINList) &&
-        Objects.equals(this.accountAdjustment, employeeRolePermissions.accountAdjustment) &&
-        Objects.equals(this.bonusTransaction, employeeRolePermissions.bonusTransaction) &&
-        Objects.equals(this.cashIn, employeeRolePermissions.cashIn) &&
-        Objects.equals(this.cashOut, employeeRolePermissions.cashOut) &&
-        Objects.equals(this.cashboxAdjustment, employeeRolePermissions.cashboxAdjustment) &&
-        Objects.equals(this.commissionReportIn, employeeRolePermissions.commissionReportIn) &&
-        Objects.equals(this.commissionReportOut, employeeRolePermissions.commissionReportOut) &&
-        Objects.equals(this.company, employeeRolePermissions.company) &&
-        Objects.equals(this.contract, employeeRolePermissions.contract) &&
-        Objects.equals(this.counterpartyAdjustment, employeeRolePermissions.counterpartyAdjustment) &&
-        Objects.equals(this.country, employeeRolePermissions.country) &&
-        Objects.equals(this.crptCancellation, employeeRolePermissions.crptCancellation) &&
-        Objects.equals(this.crptPackageCreation, employeeRolePermissions.crptPackageCreation) &&
-        Objects.equals(this.crptPackageDisaggregation, employeeRolePermissions.crptPackageDisaggregation) &&
-        Objects.equals(this.crptPackageItemRemoval, employeeRolePermissions.crptPackageItemRemoval) &&
-        Objects.equals(this.currency, employeeRolePermissions.currency) &&
-        Objects.equals(this.customEntity, employeeRolePermissions.customEntity) &&
-        Objects.equals(this.customerOrder, employeeRolePermissions.customerOrder) &&
-        Objects.equals(this.demand, employeeRolePermissions.demand) &&
-        Objects.equals(this.emissionOrder, employeeRolePermissions.emissionOrder) &&
-        Objects.equals(this.utilizationReport, employeeRolePermissions.utilizationReport) &&
-        Objects.equals(this.atkAggregation, employeeRolePermissions.atkAggregation) &&
-        Objects.equals(this.retireOrderOSU, employeeRolePermissions.retireOrderOSU) &&
-        Objects.equals(this.employee, employeeRolePermissions.employee) &&
-        Objects.equals(this.enrollOrder, employeeRolePermissions.enrollOrder) &&
-        Objects.equals(this.enter, employeeRolePermissions.enter) &&
-        Objects.equals(this.factureIn, employeeRolePermissions.factureIn) &&
-        Objects.equals(this.factureOut, employeeRolePermissions.factureOut) &&
-        Objects.equals(this.good, employeeRolePermissions.good) &&
-        Objects.equals(this.internalOrder, employeeRolePermissions.internalOrder) &&
-        Objects.equals(this.inventory, employeeRolePermissions.inventory) &&
-        Objects.equals(this.invoiceIn, employeeRolePermissions.invoiceIn) &&
-        Objects.equals(this.invoiceOut, employeeRolePermissions.invoiceOut) &&
-        Objects.equals(this.loss, employeeRolePermissions.loss) &&
-        Objects.equals(this.move, employeeRolePermissions.move) &&
-        Objects.equals(this.myCompany, employeeRolePermissions.myCompany) &&
-        Objects.equals(this.paymentIn, employeeRolePermissions.paymentIn) &&
-        Objects.equals(this.paymentOut, employeeRolePermissions.paymentOut) &&
-        Objects.equals(this.prepayment, employeeRolePermissions.prepayment) &&
-        Objects.equals(this.prepaymentReturn, employeeRolePermissions.prepaymentReturn) &&
-        Objects.equals(this.priceList, employeeRolePermissions.priceList) &&
-        Objects.equals(this.processing, employeeRolePermissions.processing) &&
-        Objects.equals(this.processingOrder, employeeRolePermissions.processingOrder) &&
-        Objects.equals(this.processingPlan, employeeRolePermissions.processingPlan) &&
-        Objects.equals(this.processingStage, employeeRolePermissions.processingStage) &&
-        Objects.equals(this.processingProcess, employeeRolePermissions.processingProcess) &&
-        Objects.equals(this.productionTask, employeeRolePermissions.productionTask) &&
-        Objects.equals(this.productionStageCompletion, employeeRolePermissions.productionStageCompletion) &&
-        Objects.equals(this.project, employeeRolePermissions.project) &&
-        Objects.equals(this.purchaseOrder, employeeRolePermissions.purchaseOrder) &&
-        Objects.equals(this.purchaseReturn, employeeRolePermissions.purchaseReturn) &&
-        Objects.equals(this.remainsOrder, employeeRolePermissions.remainsOrder) &&
-        Objects.equals(this.remarkingOrder, employeeRolePermissions.remarkingOrder) &&
-        Objects.equals(this.retailDemand, employeeRolePermissions.retailDemand) &&
-        Objects.equals(this.retailDrawerCashIn, employeeRolePermissions.retailDrawerCashIn) &&
-        Objects.equals(this.retailDrawerCashOut, employeeRolePermissions.retailDrawerCashOut) &&
-        Objects.equals(this.retailSalesReturn, employeeRolePermissions.retailSalesReturn) &&
-        Objects.equals(this.retailShift, employeeRolePermissions.retailShift) &&
-        Objects.equals(this.retailStore, employeeRolePermissions.retailStore) &&
-        Objects.equals(this.retireOrder, employeeRolePermissions.retireOrder) &&
-        Objects.equals(this.salesReturn, employeeRolePermissions.salesReturn) &&
-        Objects.equals(this.salesChannel, employeeRolePermissions.salesChannel) &&
-        Objects.equals(this.script, employeeRolePermissions.script) &&
-        Objects.equals(this.scriptTemplate, employeeRolePermissions.scriptTemplate) &&
-        Objects.equals(this.supply, employeeRolePermissions.supply) &&
-        Objects.equals(this.taxrate, employeeRolePermissions.taxrate) &&
-        Objects.equals(this.trackingCodeList, employeeRolePermissions.trackingCodeList) &&
-        Objects.equals(this.uom, employeeRolePermissions.uom) &&
-        Objects.equals(this.warehouse, employeeRolePermissions.warehouse);
+    RolePermissions rolePermissions = (RolePermissions) o;
+    return Objects.equals(this.apiRequest, rolePermissions.apiRequest) &&
+        Objects.equals(this.accountDelete, rolePermissions.accountDelete) &&
+        Objects.equals(this.deleteFromRecycleBin, rolePermissions.deleteFromRecycleBin) &&
+        Objects.equals(this.editCurrencyRateOfDocument, rolePermissions.editCurrencyRateOfDocument) &&
+        Objects.equals(this.editDocumentTemplates, rolePermissions.editDocumentTemplates) &&
+        Objects.equals(this.editDocumentsOfRestrictedPeriod, rolePermissions.editDocumentsOfRestrictedPeriod) &&
+        Objects.equals(this.exportData, rolePermissions.exportData) &&
+        Objects.equals(this.importData, rolePermissions.importData) &&
+        Objects.equals(this.listenCalls, rolePermissions.listenCalls) &&
+        Objects.equals(this.onlineShops, rolePermissions.onlineShops) &&
+        Objects.equals(this.ownerAssign, rolePermissions.ownerAssign) &&
+        Objects.equals(this.ownerDataUpdate, rolePermissions.ownerDataUpdate) &&
+        Objects.equals(this.purchaseControl, rolePermissions.purchaseControl) &&
+        Objects.equals(this.restoreFromRecycleBin, rolePermissions.restoreFromRecycleBin) &&
+        Objects.equals(this.sendEmail, rolePermissions.sendEmail) &&
+        Objects.equals(this.subscriptionControl, rolePermissions.subscriptionControl) &&
+        Objects.equals(this.viewAudit, rolePermissions.viewAudit) &&
+        Objects.equals(this.viewCashFlow, rolePermissions.viewCashFlow) &&
+        Objects.equals(this.viewCommissionGoods, rolePermissions.viewCommissionGoods) &&
+        Objects.equals(this.viewCompanyCRM, rolePermissions.viewCompanyCRM) &&
+        Objects.equals(this.viewCustomerBalanceList, rolePermissions.viewCustomerBalanceList) &&
+        Objects.equals(this.viewDashboard, rolePermissions.viewDashboard) &&
+        Objects.equals(this.viewMoneyDashboard, rolePermissions.viewMoneyDashboard) &&
+        Objects.equals(this.viewProductCostAndProfit, rolePermissions.viewProductCostAndProfit) &&
+        Objects.equals(this.viewProfitAndLoss, rolePermissions.viewProfitAndLoss) &&
+        Objects.equals(this.viewPurchaseFunnel, rolePermissions.viewPurchaseFunnel) &&
+        Objects.equals(this.viewRecycleBin, rolePermissions.viewRecycleBin) &&
+        Objects.equals(this.viewSaleProfit, rolePermissions.viewSaleProfit) &&
+        Objects.equals(this.viewSerialNumbers, rolePermissions.viewSerialNumbers) &&
+        Objects.equals(this.viewStockReport, rolePermissions.viewStockReport) &&
+        Objects.equals(this.viewTurnover, rolePermissions.viewTurnover) &&
+        Objects.equals(this.gtINList, rolePermissions.gtINList) &&
+        Objects.equals(this.accountAdjustment, rolePermissions.accountAdjustment) &&
+        Objects.equals(this.bonusTransaction, rolePermissions.bonusTransaction) &&
+        Objects.equals(this.cashIn, rolePermissions.cashIn) &&
+        Objects.equals(this.cashOut, rolePermissions.cashOut) &&
+        Objects.equals(this.cashboxAdjustment, rolePermissions.cashboxAdjustment) &&
+        Objects.equals(this.commissionReportIn, rolePermissions.commissionReportIn) &&
+        Objects.equals(this.commissionReportOut, rolePermissions.commissionReportOut) &&
+        Objects.equals(this.company, rolePermissions.company) &&
+        Objects.equals(this.contract, rolePermissions.contract) &&
+        Objects.equals(this.counterpartyAdjustment, rolePermissions.counterpartyAdjustment) &&
+        Objects.equals(this.country, rolePermissions.country) &&
+        Objects.equals(this.crptCancellation, rolePermissions.crptCancellation) &&
+        Objects.equals(this.crptPackageCreation, rolePermissions.crptPackageCreation) &&
+        Objects.equals(this.crptPackageDisaggregation, rolePermissions.crptPackageDisaggregation) &&
+        Objects.equals(this.crptPackageItemRemoval, rolePermissions.crptPackageItemRemoval) &&
+        Objects.equals(this.currency, rolePermissions.currency) &&
+        Objects.equals(this.customEntity, rolePermissions.customEntity) &&
+        Objects.equals(this.customerOrder, rolePermissions.customerOrder) &&
+        Objects.equals(this.demand, rolePermissions.demand) &&
+        Objects.equals(this.emissionOrder, rolePermissions.emissionOrder) &&
+        Objects.equals(this.utilizationReport, rolePermissions.utilizationReport) &&
+        Objects.equals(this.atkAggregation, rolePermissions.atkAggregation) &&
+        Objects.equals(this.retireOrderOSU, rolePermissions.retireOrderOSU) &&
+        Objects.equals(this.employee, rolePermissions.employee) &&
+        Objects.equals(this.enrollOrder, rolePermissions.enrollOrder) &&
+        Objects.equals(this.enrollReturn, rolePermissions.enrollReturn) &&
+        Objects.equals(this.enter, rolePermissions.enter) &&
+        Objects.equals(this.expenseitem, rolePermissions.expenseitem) &&
+        Objects.equals(this.factureIn, rolePermissions.factureIn) &&
+        Objects.equals(this.factureOut, rolePermissions.factureOut) &&
+        Objects.equals(this.good, rolePermissions.good) &&
+        Objects.equals(this.internalOrder, rolePermissions.internalOrder) &&
+        Objects.equals(this.inventory, rolePermissions.inventory) &&
+        Objects.equals(this.invoiceIn, rolePermissions.invoiceIn) &&
+        Objects.equals(this.invoiceOut, rolePermissions.invoiceOut) &&
+        Objects.equals(this.loss, rolePermissions.loss) &&
+        Objects.equals(this.move, rolePermissions.move) &&
+        Objects.equals(this.myCompany, rolePermissions.myCompany) &&
+        Objects.equals(this.paymentIn, rolePermissions.paymentIn) &&
+        Objects.equals(this.paymentOut, rolePermissions.paymentOut) &&
+        Objects.equals(this.prepayment, rolePermissions.prepayment) &&
+        Objects.equals(this.prepaymentReturn, rolePermissions.prepaymentReturn) &&
+        Objects.equals(this.priceList, rolePermissions.priceList) &&
+        Objects.equals(this.processing, rolePermissions.processing) &&
+        Objects.equals(this.processingOrder, rolePermissions.processingOrder) &&
+        Objects.equals(this.processingPlan, rolePermissions.processingPlan) &&
+        Objects.equals(this.processingStage, rolePermissions.processingStage) &&
+        Objects.equals(this.processingProcess, rolePermissions.processingProcess) &&
+        Objects.equals(this.productionTask, rolePermissions.productionTask) &&
+        Objects.equals(this.productionStageCompletion, rolePermissions.productionStageCompletion) &&
+        Objects.equals(this.project, rolePermissions.project) &&
+        Objects.equals(this.purchaseOrder, rolePermissions.purchaseOrder) &&
+        Objects.equals(this.purchaseReturn, rolePermissions.purchaseReturn) &&
+        Objects.equals(this.remainsOrder, rolePermissions.remainsOrder) &&
+        Objects.equals(this.remarkingOrder, rolePermissions.remarkingOrder) &&
+        Objects.equals(this.retailDemand, rolePermissions.retailDemand) &&
+        Objects.equals(this.retailDrawerCashIn, rolePermissions.retailDrawerCashIn) &&
+        Objects.equals(this.retailDrawerCashOut, rolePermissions.retailDrawerCashOut) &&
+        Objects.equals(this.retailSalesReturn, rolePermissions.retailSalesReturn) &&
+        Objects.equals(this.retailShift, rolePermissions.retailShift) &&
+        Objects.equals(this.retailStore, rolePermissions.retailStore) &&
+        Objects.equals(this.retireOrder, rolePermissions.retireOrder) &&
+        Objects.equals(this.salesReturn, rolePermissions.salesReturn) &&
+        Objects.equals(this.salesChannel, rolePermissions.salesChannel) &&
+        Objects.equals(this.script, rolePermissions.script) &&
+        Objects.equals(this.scriptTemplate, rolePermissions.scriptTemplate) &&
+        Objects.equals(this.supply, rolePermissions.supply) &&
+        Objects.equals(this.taxrate, rolePermissions.taxrate) &&
+        Objects.equals(this.trackingCodeList, rolePermissions.trackingCodeList) &&
+        Objects.equals(this.uom, rolePermissions.uom) &&
+        Objects.equals(this.warehouse, rolePermissions.warehouse);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(apiRequest, accountDelete, deleteFromRecycleBin, editCurrencyRateOfDocument, editDocumentTemplates, editDocumentsOfRestrictedPeriod, exportData, importData, listenCalls, onlineShops, ownerAssign, ownerDataUpdate, purchaseControl, resto$refromRecycleBin, sendEmail, subscriptionControl, viewAudit, viewCashFlow, viewCommissionGoods, viewCompanyCRM, viewCustomerBalanceList, viewDashboard, viewMoneyDashboard, viewProductCostAndProfit, viewProfitAndLoss, viewPurchaseFunnel, viewRecycleBin, viewSaleProfit, viewSerialNumbers, viewStockReport, viewTurnover, gtINList, accountAdjustment, bonusTransaction, cashIn, cashOut, cashboxAdjustment, commissionReportIn, commissionReportOut, company, contract, counterpartyAdjustment, country, crptCancellation, crptPackageCreation, crptPackageDisaggregation, crptPackageItemRemoval, currency, customEntity, customerOrder, demand, emissionOrder, utilizationReport, atkAggregation, retireOrderOSU, employee, enrollOrder, enter, factureIn, factureOut, good, internalOrder, inventory, invoiceIn, invoiceOut, loss, move, myCompany, paymentIn, paymentOut, prepayment, prepaymentReturn, priceList, processing, processingOrder, processingPlan, processingStage, processingProcess, productionTask, productionStageCompletion, project, purchaseOrder, purchaseReturn, remainsOrder, remarkingOrder, retailDemand, retailDrawerCashIn, retailDrawerCashOut, retailSalesReturn, retailShift, retailStore, retireOrder, salesReturn, salesChannel, script, scriptTemplate, supply, taxrate, trackingCodeList, uom, warehouse);
+    return Objects.hash(apiRequest, accountDelete, deleteFromRecycleBin, editCurrencyRateOfDocument, editDocumentTemplates, editDocumentsOfRestrictedPeriod, exportData, importData, listenCalls, onlineShops, ownerAssign, ownerDataUpdate, purchaseControl, restoreFromRecycleBin, sendEmail, subscriptionControl, viewAudit, viewCashFlow, viewCommissionGoods, viewCompanyCRM, viewCustomerBalanceList, viewDashboard, viewMoneyDashboard, viewProductCostAndProfit, viewProfitAndLoss, viewPurchaseFunnel, viewRecycleBin, viewSaleProfit, viewSerialNumbers, viewStockReport, viewTurnover, gtINList, accountAdjustment, bonusTransaction, cashIn, cashOut, cashboxAdjustment, commissionReportIn, commissionReportOut, company, contract, counterpartyAdjustment, country, crptCancellation, crptPackageCreation, crptPackageDisaggregation, crptPackageItemRemoval, currency, customEntity, customerOrder, demand, emissionOrder, utilizationReport, atkAggregation, retireOrderOSU, employee, enrollOrder, enrollReturn, enter, expenseitem, factureIn, factureOut, good, internalOrder, inventory, invoiceIn, invoiceOut, loss, move, myCompany, paymentIn, paymentOut, prepayment, prepaymentReturn, priceList, processing, processingOrder, processingPlan, processingStage, processingProcess, productionTask, productionStageCompletion, project, purchaseOrder, purchaseReturn, remainsOrder, remarkingOrder, retailDemand, retailDrawerCashIn, retailDrawerCashOut, retailSalesReturn, retailShift, retailStore, retireOrder, salesReturn, salesChannel, script, scriptTemplate, supply, taxrate, trackingCodeList, uom, warehouse);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class EmployeeRolePermissions {\n");
+    sb.append("class RolePermissions {\n");
     sb.append("    apiRequest: ").append(toIndentedString(apiRequest)).append("\n");
     sb.append("    accountDelete: ").append(toIndentedString(accountDelete)).append("\n");
     sb.append("    deleteFromRecycleBin: ").append(toIndentedString(deleteFromRecycleBin)).append("\n");
@@ -3609,7 +3678,7 @@ public class EmployeeRolePermissions {
     sb.append("    ownerAssign: ").append(toIndentedString(ownerAssign)).append("\n");
     sb.append("    ownerDataUpdate: ").append(toIndentedString(ownerDataUpdate)).append("\n");
     sb.append("    purchaseControl: ").append(toIndentedString(purchaseControl)).append("\n");
-    sb.append("    resto$refromRecycleBin: ").append(toIndentedString(resto$refromRecycleBin)).append("\n");
+    sb.append("    restoreFromRecycleBin: ").append(toIndentedString(restoreFromRecycleBin)).append("\n");
     sb.append("    sendEmail: ").append(toIndentedString(sendEmail)).append("\n");
     sb.append("    subscriptionControl: ").append(toIndentedString(subscriptionControl)).append("\n");
     sb.append("    viewAudit: ").append(toIndentedString(viewAudit)).append("\n");
@@ -3653,7 +3722,9 @@ public class EmployeeRolePermissions {
     sb.append("    retireOrderOSU: ").append(toIndentedString(retireOrderOSU)).append("\n");
     sb.append("    employee: ").append(toIndentedString(employee)).append("\n");
     sb.append("    enrollOrder: ").append(toIndentedString(enrollOrder)).append("\n");
+    sb.append("    enrollReturn: ").append(toIndentedString(enrollReturn)).append("\n");
     sb.append("    enter: ").append(toIndentedString(enter)).append("\n");
+    sb.append("    expenseitem: ").append(toIndentedString(expenseitem)).append("\n");
     sb.append("    factureIn: ").append(toIndentedString(factureIn)).append("\n");
     sb.append("    factureOut: ").append(toIndentedString(factureOut)).append("\n");
     sb.append("    good: ").append(toIndentedString(good)).append("\n");
@@ -3874,10 +3945,10 @@ public class EmployeeRolePermissions {
       }
     }
 
-    // add `resto$refromRecycleBin` to the URL query string
-    if (getResto$refromRecycleBin() != null) {
+    // add `restoreFromRecycleBin` to the URL query string
+    if (getRestoreFromRecycleBin() != null) {
       try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%sresto$refromRecycleBin%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getResto$refromRecycleBin()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%srestoreFromRecycleBin%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getRestoreFromRecycleBin()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -4184,9 +4255,19 @@ public class EmployeeRolePermissions {
       joiner.add(getEnrollOrder().toUrlQueryString(prefix + "enrollOrder" + suffix));
     }
 
+    // add `enrollReturn` to the URL query string
+    if (getEnrollReturn() != null) {
+      joiner.add(getEnrollReturn().toUrlQueryString(prefix + "enrollReturn" + suffix));
+    }
+
     // add `enter` to the URL query string
     if (getEnter() != null) {
       joiner.add(getEnter().toUrlQueryString(prefix + "enter" + suffix));
+    }
+
+    // add `expenseitem` to the URL query string
+    if (getExpenseitem() != null) {
+      joiner.add(getExpenseitem().toUrlQueryString(prefix + "expenseitem" + suffix));
     }
 
     // add `factureIn` to the URL query string

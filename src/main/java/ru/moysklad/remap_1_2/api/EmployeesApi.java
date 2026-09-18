@@ -42,7 +42,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T13:59:19.961064491Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class EmployeesApi extends BaseApi {
 
@@ -1453,7 +1453,7 @@ if (acceptEncoding != null) {
 
   /**
    * Получить роль администратора
-   * Запрос на получение роли системного администратора.
+   * Запрос на получение роли системного администратора. Ответ содержит meta роли с type &#x3D; systemrole. 
    * @return EmployeeRole
    * @throws ApiException if fails to make API call
    */
@@ -1465,7 +1465,7 @@ if (acceptEncoding != null) {
 
   /**
    * Получить роль администратора
-   * Запрос на получение роли системного администратора.
+   * Запрос на получение роли системного администратора. Ответ содержит meta роли с type &#x3D; systemrole. 
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
@@ -1479,7 +1479,7 @@ if (acceptEncoding != null) {
 
   /**
    * Получить роль администратора
-   * Запрос на получение роли системного администратора.
+   * Запрос на получение роли системного администратора. Ответ содержит meta роли с type &#x3D; systemrole. 
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param additionalHeaders additionalHeaders for this call
@@ -1541,7 +1541,7 @@ if (acceptEncoding != null) {
 
   /**
    * Получить роль кассира
-   * Запрос на получение роли кассира.
+   * Запрос на получение роли кассира. Ответ содержит meta роли с type &#x3D; systemrole. 
    * @return EmployeeRole
    * @throws ApiException if fails to make API call
    */
@@ -1553,7 +1553,7 @@ if (acceptEncoding != null) {
 
   /**
    * Получить роль кассира
-   * Запрос на получение роли кассира.
+   * Запрос на получение роли кассира. Ответ содержит meta роли с type &#x3D; systemrole. 
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
@@ -1567,7 +1567,7 @@ if (acceptEncoding != null) {
 
   /**
    * Получить роль кассира
-   * Запрос на получение роли кассира.
+   * Запрос на получение роли кассира. Ответ содержит meta роли с type &#x3D; systemrole. 
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param additionalHeaders additionalHeaders for this call
@@ -1629,7 +1629,7 @@ if (acceptEncoding != null) {
 
   /**
    * Получить индивидуальную роль
-   * Запрос на получение индивидуальной роли.
+   * Запрос на получение индивидуальной роли. Ответ содержит meta роли с type &#x3D; individualrole. Индивидуальные права сотрудника доступны через /entity/employee/{id}/security. 
    * @return EmployeeRole
    * @throws ApiException if fails to make API call
    */
@@ -1641,7 +1641,7 @@ if (acceptEncoding != null) {
 
   /**
    * Получить индивидуальную роль
-   * Запрос на получение индивидуальной роли.
+   * Запрос на получение индивидуальной роли. Ответ содержит meta роли с type &#x3D; individualrole. Индивидуальные права сотрудника доступны через /entity/employee/{id}/security. 
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
@@ -1655,7 +1655,7 @@ if (acceptEncoding != null) {
 
   /**
    * Получить индивидуальную роль
-   * Запрос на получение индивидуальной роли.
+   * Запрос на получение индивидуальной роли. Ответ содержит meta роли с type &#x3D; individualrole. Индивидуальные права сотрудника доступны через /entity/employee/{id}/security. 
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param additionalHeaders additionalHeaders for this call
@@ -1717,7 +1717,7 @@ if (acceptEncoding != null) {
 
   /**
    * Получить роль владельца аккаунта
-   * Запрос на получение роли владельца аккаунта.
+   * Запрос на получение роли владельца аккаунта. Ответ содержит meta роли с type &#x3D; systemrole. 
    * @return EmployeeRole
    * @throws ApiException if fails to make API call
    */
@@ -1729,7 +1729,7 @@ if (acceptEncoding != null) {
 
   /**
    * Получить роль владельца аккаунта
-   * Запрос на получение роли владельца аккаунта.
+   * Запрос на получение роли владельца аккаунта. Ответ содержит meta роли с type &#x3D; systemrole. 
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
@@ -1743,7 +1743,7 @@ if (acceptEncoding != null) {
 
   /**
    * Получить роль владельца аккаунта
-   * Запрос на получение роли владельца аккаунта.
+   * Запрос на получение роли владельца аккаунта. Ответ содержит meta роли с type &#x3D; systemrole. 
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param additionalHeaders additionalHeaders for this call
@@ -1805,7 +1805,7 @@ if (acceptEncoding != null) {
 
   /**
    * Получить роль сотрудника производства
-   * Запрос на получение роли сотрудника производства. Роль доступна только при подключенной опции Управление производством.
+   * Запрос на получение роли сотрудника производства. Роль доступна только при подключенной опции Управление производством. Ответ содержит meta роли с type &#x3D; systemrole. 
    * @return EmployeeRole
    * @throws ApiException if fails to make API call
    */
@@ -1817,7 +1817,7 @@ if (acceptEncoding != null) {
 
   /**
    * Получить роль сотрудника производства
-   * Запрос на получение роли сотрудника производства. Роль доступна только при подключенной опции Управление производством.
+   * Запрос на получение роли сотрудника производства. Роль доступна только при подключенной опции Управление производством. Ответ содержит meta роли с type &#x3D; systemrole. 
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
@@ -1831,7 +1831,7 @@ if (acceptEncoding != null) {
 
   /**
    * Получить роль сотрудника производства
-   * Запрос на получение роли сотрудника производства. Роль доступна только при подключенной опции Управление производством.
+   * Запрос на получение роли сотрудника производства. Роль доступна только при подключенной опции Управление производством. Ответ содержит meta роли с type &#x3D; systemrole. 
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param additionalHeaders additionalHeaders for this call

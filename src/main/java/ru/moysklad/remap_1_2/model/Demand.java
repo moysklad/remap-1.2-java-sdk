@@ -115,7 +115,7 @@ import java.util.StringJoiner;
   Demand.JSON_PROPERTY_TRANSPORT_FACILITY,
   Demand.JSON_PROPERTY_TRANSPORT_FACILITY_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T13:59:19.961064491Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
 public class Demand extends EntityWithMeta implements MetaEntity {
   public static Demand createWithMeta(UUID id) {
     Demand o = new Demand();

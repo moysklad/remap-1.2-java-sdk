@@ -1626,7 +1626,7 @@ public class Example {
 
 ## getCounterpartyAuditEvents
 
-> Map&lt;String, Object&gt; getCounterpartyAuditEvents(id, limit, offset, accept, acceptEncoding)
+> AuditEventList getCounterpartyAuditEvents(id, limit, offset, accept, acceptEncoding)
 
 Получить события аудита контрагента
 
@@ -1664,7 +1664,7 @@ public class Example {
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
-            Map<String, Object> result = apiInstance.getCounterpartyAuditEvents(id, limit, offset, accept, acceptEncoding);
+            AuditEventList result = apiInstance.getCounterpartyAuditEvents(id, limit, offset, accept, acceptEncoding);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CounterpartiesApi#getCounterpartyAuditEvents");
@@ -1690,7 +1690,7 @@ public class Example {
 
 ### Return type
 
-**Map&lt;String, Object&gt;**
+[**AuditEventList**](AuditEventList.md)
 
 ### Authorization
 

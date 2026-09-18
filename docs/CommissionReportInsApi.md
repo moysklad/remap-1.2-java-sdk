@@ -30,6 +30,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**getCommissionReportInPositions**](CommissionReportInsApi.md#getCommissionReportInPositions) | **GET** /entity/commissionreportin/{id}/positions | Получить позиции CommissionReportIn |
 | [**getCommissionReportInReturnedPositionById**](CommissionReportInsApi.md#getCommissionReportInReturnedPositionById) | **GET** /entity/commissionreportin/{id}/returntocommissionerpositions/{positionId} | Получить позицию возврата на склад комиссионера |
 | [**getCommissionReportInReturnedPositions**](CommissionReportInsApi.md#getCommissionReportInReturnedPositions) | **GET** /entity/commissionreportin/{id}/returntocommissionerpositions | Получить позиции возврата на склад комиссионера |
+| [**moveCommissionReportInToTrash**](CommissionReportInsApi.md#moveCommissionReportInToTrash) | **POST** /entity/commissionreportin/{id}/trash | Удалить CommissionReportIn в корзину |
 | [**updateCommissionReportIn**](CommissionReportInsApi.md#updateCommissionReportIn) | **PUT** /entity/commissionreportin/{id} | Изменить CommissionReportIn |
 | [**updateCommissionReportInMetadataAttributeById**](CommissionReportInsApi.md#updateCommissionReportInMetadataAttributeById) | **PUT** /entity/commissionreportin/metadata/attributes/{id} | Обновить отдельное доп. поле CommissionReportIn |
 | [**updateCommissionReportInMetadataStateById**](CommissionReportInsApi.md#updateCommissionReportInMetadataStateById) | **PUT** /entity/commissionreportin/metadata/states/{id} | Обновить отдельный статус CommissionReportIn |
@@ -2176,6 +2177,84 @@ public class Example {
 ### Return type
 
 [**List&lt;CommissionReportInReturnedPosition&gt;**](CommissionReportInReturnedPosition.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## moveCommissionReportInToTrash
+
+> moveCommissionReportInToTrash(id, accept, acceptEncoding)
+
+Удалить CommissionReportIn в корзину
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.CommissionReportInsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        CommissionReportInsApi apiInstance = new CommissionReportInsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            apiInstance.moveCommissionReportInToTrash(id, accept, acceptEncoding);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CommissionReportInsApi#moveCommissionReportInToTrash");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

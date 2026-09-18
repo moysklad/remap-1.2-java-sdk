@@ -34,6 +34,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**getProcessingProducts**](ProcessingsApi.md#getProcessingProducts) | **GET** /entity/processing/{id}/products | Получить продукты Processing |
 | [**getProcessingTemplate**](ProcessingsApi.md#getProcessingTemplate) | **PUT** /entity/processing/new | Шаблон Processing |
 | [**getProcessings**](ProcessingsApi.md#getProcessings) | **GET** /entity/processing | Получить список Processing |
+| [**moveProcessingToTrash**](ProcessingsApi.md#moveProcessingToTrash) | **POST** /entity/processing/{id}/trash | Удалить Processing в корзину |
 | [**updateProcessing**](ProcessingsApi.md#updateProcessing) | **PUT** /entity/processing/{id} | Изменить Processing |
 | [**updateProcessingMaterial**](ProcessingsApi.md#updateProcessingMaterial) | **PUT** /entity/processing/{id}/materials/{positionId} | Изменить материал Processing |
 | [**updateProcessingMetadataAttributeById**](ProcessingsApi.md#updateProcessingMetadataAttributeById) | **PUT** /entity/processing/metadata/attributes/{id} | Обновить отдельное доп. поле Processing |
@@ -2478,6 +2479,84 @@ public class Example {
 ### Return type
 
 [**ProcessingList**](ProcessingList.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## moveProcessingToTrash
+
+> moveProcessingToTrash(id, accept, acceptEncoding)
+
+Удалить Processing в корзину
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.ProcessingsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            apiInstance.moveProcessingToTrash(id, accept, acceptEncoding);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProcessingsApi#moveProcessingToTrash");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   ByOperationsInTransit.JSON_PROPERTY_STORE,
   ByOperationsInTransit.JSON_PROPERTY_IN_TRANSIT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T13:59:19.961064491Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
 public class ByOperationsInTransit {
 
   public static final String JSON_PROPERTY_ASSORTMENT = "assortment";
