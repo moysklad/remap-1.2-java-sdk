@@ -32,7 +32,7 @@ import java.util.StringJoiner;
 @JsonPropertyOrder({
   OperationLinkedSum.JSON_PROPERTY_LINKED_SUM
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T13:54:20.814579807Z[GMT]", comments = "Generator version: 7.14.0")
 public class OperationLinkedSum {
 
   public static final String JSON_PROPERTY_LINKED_SUM = "linkedSum";

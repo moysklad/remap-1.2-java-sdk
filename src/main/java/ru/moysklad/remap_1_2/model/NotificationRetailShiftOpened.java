@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   NotificationRetailShiftOpened.JSON_PROPERTY_RETAIL_STORE,
   NotificationRetailShiftOpened.JSON_PROPERTY_RETAIL_SHIFT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T13:54:20.814579807Z[GMT]", comments = "Generator version: 7.14.0")
 public class NotificationRetailShiftOpened extends NotificationAbstract {
 
   public static final String JSON_PROPERTY_USER = "user";

@@ -15730,65 +15730,6 @@ paths:
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
-  /entity/counterparty/{id}/audit:
-    get:
-      description: |
-        Возвращает список событий аудита для Контрагента по его ID.
-      operationId: getCounterpartyAuditEvents
-      parameters:
-      - description: ID сущности
-        in: path
-        name: id
-        required: true
-        schema:
-          format: uuid
-          type: string
-      - description: Максимальное количество элементов в выданном списке (максимум
-          1000)
-        in: query
-        name: limit
-        schema:
-          default: 1000
-          maximum: 1000
-          minimum: 1
-          type: integer
-      - description: Отступ в выданном списке
-        in: query
-        name: offset
-        schema:
-          default: 0
-          minimum: 0
-          type: integer
-      - in: header
-        name: accept
-        required: false
-        schema:
-          default: application/json;charset=utf-8
-          enum:
-          - application/json
-          - application/json;charset=utf-8
-          type: string
-      - in: header
-        name: Accept-Encoding
-        required: false
-        schema:
-          default: "gzip, deflate, br"
-          type: string
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/AuditEventList"
-          description: Успешный запрос
-        default:
-          $ref: "#/components/responses/CommonError"
-      summary: Получить события аудита контрагента
-      tags:
-      - Counterparties
-      x-accepts:
-      - application/json
-      - text/html;charset=UTF-8
   /entity/organization:
     get:
       description: Запрос на получение списка юрлиц на данной учетной записи
@@ -23446,6 +23387,70 @@ paths:
       tags:
       - Labels
       x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/{type}/{id}/audit:
+    get:
+      description: Возвращает список событий аудита сущности указанного типа и ID.
+      operationId: getEntityAuditEvents
+      parameters:
+      - description: "Тип сущности в URL, например `product` или `customerorder`"
+        in: path
+        name: type
+        required: true
+        schema:
+          type: string
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - description: Максимальное количество событий аудита в выданном списке (максимум
+          100)
+        in: query
+        name: limit
+        schema:
+          default: 25
+          maximum: 100
+          minimum: 1
+          type: integer
+      - description: Отступ в выданном списке
+        in: query
+        name: offset
+        schema:
+          default: 0
+          minimum: 0
+          type: integer
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuditEventList"
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Получить события аудита сущности
+      tags:
+      - Audit
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
@@ -31538,65 +31543,6 @@ paths:
       tags:
       - CustomerOrders
       x-content-type: application/json
-      x-accepts:
-      - application/json
-      - text/html;charset=UTF-8
-  /entity/customerorder/{id}/audit:
-    get:
-      description: |
-        Возвращает список событий аудита для Заказа покупателя по его ID.
-      operationId: getCustomerOrderAuditEvents
-      parameters:
-      - description: ID сущности
-        in: path
-        name: id
-        required: true
-        schema:
-          format: uuid
-          type: string
-      - description: Максимальное количество элементов в выданном списке (максимум
-          1000)
-        in: query
-        name: limit
-        schema:
-          default: 1000
-          maximum: 1000
-          minimum: 1
-          type: integer
-      - description: Отступ в выданном списке
-        in: query
-        name: offset
-        schema:
-          default: 0
-          minimum: 0
-          type: integer
-      - in: header
-        name: accept
-        required: false
-        schema:
-          default: application/json;charset=utf-8
-          enum:
-          - application/json
-          - application/json;charset=utf-8
-          type: string
-      - in: header
-        name: Accept-Encoding
-        required: false
-        schema:
-          default: "gzip, deflate, br"
-          type: string
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/AuditEventList"
-          description: Успешный запрос
-        default:
-          $ref: "#/components/responses/CommonError"
-      summary: Получить события аудита Заказа покупателя
-      tags:
-      - CustomerOrders
       x-accepts:
       - application/json
       - text/html;charset=UTF-8
@@ -74152,7 +74098,8 @@ paths:
     get:
       operationId: getMetadataForType
       parameters:
-      - in: path
+      - description: "Тип сущности в URL, например `product` или `customerorder`"
+        in: path
         name: type
         required: true
         schema:
@@ -74196,7 +74143,8 @@ paths:
     get:
       operationId: getEmbeddedTemplatesForType
       parameters:
-      - in: path
+      - description: "Тип сущности в URL, например `product` или `customerorder`"
+        in: path
         name: type
         required: true
         schema:
@@ -74251,7 +74199,8 @@ paths:
     get:
       operationId: getEmbeddedTemplateByTypeAndId
       parameters:
-      - in: path
+      - description: "Тип сущности в URL, например `product` или `customerorder`"
+        in: path
         name: type
         required: true
         schema:
@@ -74451,6 +74400,23 @@ components:
       schema:
         format: uuid
         type: string
+    entityType:
+      description: "Тип сущности в URL, например `product` или `customerorder`"
+      in: path
+      name: type
+      required: true
+      schema:
+        type: string
+    auditLimit:
+      description: Максимальное количество событий аудита в выданном списке (максимум
+        100)
+      in: query
+      name: limit
+      schema:
+        default: 25
+        maximum: 100
+        minimum: 1
+        type: integer
     publicationId:
       description: ID публикации
       in: path
@@ -74501,12 +74467,6 @@ components:
       in: query
       name: filter
       required: false
-      schema:
-        type: string
-    entityType:
-      in: path
-      name: type
-      required: true
       schema:
         type: string
   responses:

@@ -34,7 +34,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T13:54:20.814579807Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class AuditApi extends BaseApi {
 
@@ -319,6 +319,122 @@ if (acceptEncoding != null) {
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
     TypeReference<AuditFilters> localVarReturnType = new TypeReference<AuditFilters>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "GET",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Получить события аудита сущности
+   * Возвращает список событий аудита сущности указанного типа и ID.
+   * @param type Тип сущности в URL, например &#x60;product&#x60; или &#x60;customerorder&#x60; (required)
+   * @param id ID сущности (required)
+   * @return AuditEventList
+   * @throws ApiException if fails to make API call
+   */
+  public AuditEventList getEntityAuditEvents(@javax.annotation.Nonnull String type, @javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getEntityAuditEvents(type, id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Получить события аудита сущности
+   * Возвращает список событий аудита сущности указанного типа и ID.
+   
+   * @param type Тип сущности в URL, например &#x60;product&#x60; или &#x60;customerorder&#x60; (required)
+   
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return AuditEventList
+   * @throws ApiException if fails to make API call
+   */
+  public AuditEventList getEntityAuditEvents(@javax.annotation.Nonnull String type, @javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getEntityAuditEvents(type, id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Получить события аудита сущности
+   * Возвращает список событий аудита сущности указанного типа и ID.
+   * @param type Тип сущности в URL, например &#x60;product&#x60; или &#x60;customerorder&#x60; (required)
+   * @param id ID сущности (required)
+   * @param limit Максимальное количество событий аудита в выданном списке (максимум 100) (optional, default to 25)
+   * @param offset Отступ в выданном списке (optional, default to 0)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return AuditEventList
+   * @throws ApiException if fails to make API call
+   */
+  protected AuditEventList getEntityAuditEvents(@javax.annotation.Nonnull String type, @javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // verify the required parameter 'type' is set
+    if (type == null) {
+      throw new ApiException(400, "Missing the required parameter 'type' when calling getEntityAuditEvents");
+    }
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling getEntityAuditEvents");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/{type}/{id}/audit"
+      .replaceAll("\\{" + "type" + "\\}", apiClient.escapeString(apiClient.parameterToString(type)))
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
+    localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<AuditEventList> localVarReturnType = new TypeReference<AuditEventList>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "GET",

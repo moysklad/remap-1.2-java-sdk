@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   NotificationOrderNew.JSON_PROPERTY_ORDER,
   NotificationOrderNew.JSON_PROPERTY_SUM
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T13:54:20.814579807Z[GMT]", comments = "Generator version: 7.14.0")
 public class NotificationOrderNew extends NotificationAbstract {
 
   public static final String JSON_PROPERTY_AGENT_NAME = "agentName";

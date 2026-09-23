@@ -23,7 +23,6 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**getCounterparties**](CounterpartiesApi.md#getCounterparties) | **GET** /entity/counterparty | Получить список контрагентов |
 | [**getCounterpartyAccountById**](CounterpartiesApi.md#getCounterpartyAccountById) | **GET** /entity/counterparty/{id}/accounts/{accountId} | Получить счёт контрагента по ID |
 | [**getCounterpartyAccounts**](CounterpartiesApi.md#getCounterpartyAccounts) | **GET** /entity/counterparty/{id}/accounts | Получить счета контрагента |
-| [**getCounterpartyAuditEvents**](CounterpartiesApi.md#getCounterpartyAuditEvents) | **GET** /entity/counterparty/{id}/audit | Получить события аудита контрагента |
 | [**getCounterpartyById**](CounterpartiesApi.md#getCounterpartyById) | **GET** /entity/counterparty/{id} | Получить контрагента по ID |
 | [**getCounterpartyContactPersonById**](CounterpartiesApi.md#getCounterpartyContactPersonById) | **GET** /entity/counterparty/{id}/contactpersons/{contactPersonId} | Получить контактное лицо контрагента по ID |
 | [**getCounterpartyContactPersons**](CounterpartiesApi.md#getCounterpartyContactPersons) | **GET** /entity/counterparty/{id}/contactpersons | Получить контактные лица контрагента |
@@ -1606,91 +1605,6 @@ public class Example {
 ### Return type
 
 [**GetCounterpartyAccounts200Response**](GetCounterpartyAccounts200Response.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Успешный запрос |  -  |
-| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
-
-
-## getCounterpartyAuditEvents
-
-> AuditEventList getCounterpartyAuditEvents(id, limit, offset, accept, acceptEncoding)
-
-Получить события аудита контрагента
-
-Возвращает список событий аудита для Контрагента по его ID. 
-
-### Example
-
-```java
-// Import classes:
-import ru.moysklad.remap_1_2.ApiClient;
-import ru.moysklad.remap_1_2.ApiException;
-import ru.moysklad.remap_1_2.Configuration;
-import ru.moysklad.remap_1_2.auth.*;
-import ru.moysklad.remap_1_2.models.*;
-import ru.moysklad.remap_1_2.api.CounterpartiesApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
-
-        // Configure HTTP bearer authorization: bearerAuth
-        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-        bearerAuth.setBearerToken("BEARER TOKEN");
-
-        CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
-        UUID id = UUID.randomUUID(); // UUID | ID сущности
-        Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
-        Integer offset = 0; // Integer | Отступ в выданном списке
-        String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
-        try {
-            AuditEventList result = apiInstance.getCounterpartyAuditEvents(id, limit, offset, accept, acceptEncoding);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling CounterpartiesApi#getCounterpartyAuditEvents");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **id** | **UUID**| ID сущности | |
-| **limit** | **Integer**| Максимальное количество элементов в выданном списке (максимум 1000) | [optional] [default to 1000] |
-| **offset** | **Integer**| Отступ в выданном списке | [optional] [default to 0] |
-| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
-
-### Return type
-
-[**AuditEventList**](AuditEventList.md)
 
 ### Authorization
 

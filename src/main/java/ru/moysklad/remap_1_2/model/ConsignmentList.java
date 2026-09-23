@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   ConsignmentList.JSON_PROPERTY_META,
   ConsignmentList.JSON_PROPERTY_ROWS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T13:54:20.814579807Z[GMT]", comments = "Generator version: 7.14.0")
 public class ConsignmentList implements EntityList {
 
   public static final String JSON_PROPERTY_CONTEXT = "context";

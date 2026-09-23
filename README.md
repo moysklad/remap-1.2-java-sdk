@@ -4,7 +4,7 @@
 
 - API version: 1.0.0
 
-    - Build date: 2026-09-18T07:25:27.496694478Z[GMT]
+    - Build date: 2026-09-23T13:54:20.814579807Z[GMT]
 
 - Generator version: 7.14.0
 
@@ -176,6 +176,7 @@ Class | Method | HTTP request | Description
 *AuditApi* | [**getAuditContextEvents**](docs/AuditApi.md#getAuditContextEvents) | **GET** /audit/{id}/events | Получить события по контексту аудита
 *AuditApi* | [**getAuditContexts**](docs/AuditApi.md#getAuditContexts) | **GET** /audit | Получить контексты аудита
 *AuditApi* | [**getAuditMetadataFilters**](docs/AuditApi.md#getAuditMetadataFilters) | **GET** /audit/metadata/filters | Получить доступные фильтры аудита
+*AuditApi* | [**getEntityAuditEvents**](docs/AuditApi.md#getEntityAuditEvents) | **GET** /entity/{type}/{id}/audit | Получить события аудита сущности
 *BonusProgramsApi* | [**createBonusProgram**](docs/BonusProgramsApi.md#createBonusProgram) | **POST** /entity/bonusprogram | Создать бонусную программу
 *BonusProgramsApi* | [**deleteBonusProgram**](docs/BonusProgramsApi.md#deleteBonusProgram) | **DELETE** /entity/bonusprogram/{id} | Удалить бонусную программу
 *BonusProgramsApi* | [**deleteBonusProgramsBatch**](docs/BonusProgramsApi.md#deleteBonusProgramsBatch) | **POST** /entity/bonusprogram/delete | Удалить бонусные программы
@@ -363,7 +364,6 @@ Class | Method | HTTP request | Description
 *CounterpartiesApi* | [**getCounterparties**](docs/CounterpartiesApi.md#getCounterparties) | **GET** /entity/counterparty | Получить список контрагентов
 *CounterpartiesApi* | [**getCounterpartyAccountById**](docs/CounterpartiesApi.md#getCounterpartyAccountById) | **GET** /entity/counterparty/{id}/accounts/{accountId} | Получить счёт контрагента по ID
 *CounterpartiesApi* | [**getCounterpartyAccounts**](docs/CounterpartiesApi.md#getCounterpartyAccounts) | **GET** /entity/counterparty/{id}/accounts | Получить счета контрагента
-*CounterpartiesApi* | [**getCounterpartyAuditEvents**](docs/CounterpartiesApi.md#getCounterpartyAuditEvents) | **GET** /entity/counterparty/{id}/audit | Получить события аудита контрагента
 *CounterpartiesApi* | [**getCounterpartyById**](docs/CounterpartiesApi.md#getCounterpartyById) | **GET** /entity/counterparty/{id} | Получить контрагента по ID
 *CounterpartiesApi* | [**getCounterpartyContactPersonById**](docs/CounterpartiesApi.md#getCounterpartyContactPersonById) | **GET** /entity/counterparty/{id}/contactpersons/{contactPersonId} | Получить контактное лицо контрагента по ID
 *CounterpartiesApi* | [**getCounterpartyContactPersons**](docs/CounterpartiesApi.md#getCounterpartyContactPersons) | **GET** /entity/counterparty/{id}/contactpersons | Получить контактные лица контрагента
@@ -446,7 +446,6 @@ Class | Method | HTTP request | Description
 *CustomerOrdersApi* | [**deleteCustomerOrderPositionsBatch**](docs/CustomerOrdersApi.md#deleteCustomerOrderPositionsBatch) | **POST** /entity/customerorder/{id}/positions/delete | Массовое удаление позиций CustomerOrders
 *CustomerOrdersApi* | [**deleteCustomerOrderPublication**](docs/CustomerOrdersApi.md#deleteCustomerOrderPublication) | **DELETE** /entity/customerorder/{id}/publication/{publicationId} | Удалить Публикацию Заказа покупателя
 *CustomerOrdersApi* | [**exportCustomerOrder**](docs/CustomerOrdersApi.md#exportCustomerOrder) | **POST** /entity/customerorder/{id}/export | Запрос на печать Заказа покупателя
-*CustomerOrdersApi* | [**getCustomerOrderAuditEvents**](docs/CustomerOrdersApi.md#getCustomerOrderAuditEvents) | **GET** /entity/customerorder/{id}/audit | Получить события аудита Заказа покупателя
 *CustomerOrdersApi* | [**getCustomerOrderById**](docs/CustomerOrdersApi.md#getCustomerOrderById) | **GET** /entity/customerorder/{id} | Получить CustomerOrders
 *CustomerOrdersApi* | [**getCustomerOrderList**](docs/CustomerOrdersApi.md#getCustomerOrderList) | **GET** /entity/customerorder | Получить список CustomerOrders
 *CustomerOrdersApi* | [**getCustomerOrderMetadata**](docs/CustomerOrdersApi.md#getCustomerOrderMetadata) | **GET** /entity/customerorder/metadata | Метаданные CustomerOrders

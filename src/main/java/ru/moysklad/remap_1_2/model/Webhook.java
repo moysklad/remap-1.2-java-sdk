@@ -49,7 +49,7 @@ import java.util.StringJoiner;
   Webhook.JSON_PROPERTY_DIFF_TYPE,
   Webhook.JSON_PROPERTY_AUTHOR_APPLICATION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T13:54:20.814579807Z[GMT]", comments = "Generator version: 7.14.0")
 public class Webhook extends EntityWithMeta implements MetaEntity {
   public static Webhook createWithMeta(UUID id) {
     Webhook o = new Webhook();

@@ -34,7 +34,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T13:54:20.814579807Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class MetadataApi extends BaseApi {
 
@@ -49,7 +49,7 @@ public class MetadataApi extends BaseApi {
   /**
    * Получить Стандартный шаблон печатной формы
    * 
-   * @param type  (required)
+   * @param type Тип сущности в URL, например &#x60;product&#x60; или &#x60;customerorder&#x60; (required)
    * @param id ID сущности (required)
    * @return EmbeddedTemplate
    * @throws ApiException if fails to make API call
@@ -64,7 +64,7 @@ public class MetadataApi extends BaseApi {
    * Получить Стандартный шаблон печатной формы
    * 
    
-   * @param type  (required)
+   * @param type Тип сущности в URL, например &#x60;product&#x60; или &#x60;customerorder&#x60; (required)
    
    
    * @param id ID сущности (required)
@@ -83,7 +83,7 @@ public class MetadataApi extends BaseApi {
   /**
    * Получить Стандартный шаблон печатной формы
    * 
-   * @param type  (required)
+   * @param type Тип сущности в URL, например &#x60;product&#x60; или &#x60;customerorder&#x60; (required)
    * @param id ID сущности (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
@@ -159,7 +159,7 @@ if (acceptEncoding != null) {
   /**
    * Получить Стандартные шаблоны печатных форм
    * 
-   * @param type  (required)
+   * @param type Тип сущности в URL, например &#x60;product&#x60; или &#x60;customerorder&#x60; (required)
    * @return EmbeddedTemplateList
    * @throws ApiException if fails to make API call
    */
@@ -173,7 +173,7 @@ if (acceptEncoding != null) {
    * Получить Стандартные шаблоны печатных форм
    * 
    
-   * @param type  (required)
+   * @param type Тип сущности в URL, например &#x60;product&#x60; или &#x60;customerorder&#x60; (required)
    
    
    
@@ -191,7 +191,7 @@ if (acceptEncoding != null) {
   /**
    * Получить Стандартные шаблоны печатных форм
    * 
-   * @param type  (required)
+   * @param type Тип сущности в URL, например &#x60;product&#x60; или &#x60;customerorder&#x60; (required)
    * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
    * @param offset Отступ в выданном списке (optional, default to 0)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
@@ -264,7 +264,7 @@ if (acceptEncoding != null) {
   /**
    * Получить метаданные сущности
    * 
-   * @param type  (required)
+   * @param type Тип сущности в URL, например &#x60;product&#x60; или &#x60;customerorder&#x60; (required)
    * @return DocumentMetadata
    * @throws ApiException if fails to make API call
    */
@@ -278,7 +278,7 @@ if (acceptEncoding != null) {
    * Получить метаданные сущности
    * 
    
-   * @param type  (required)
+   * @param type Тип сущности в URL, например &#x60;product&#x60; или &#x60;customerorder&#x60; (required)
    
    
    
@@ -295,7 +295,7 @@ if (acceptEncoding != null) {
   /**
    * Получить метаданные сущности
    * 
-   * @param type  (required)
+   * @param type Тип сущности в URL, например &#x60;product&#x60; или &#x60;customerorder&#x60; (required)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)

@@ -35,7 +35,7 @@ import java.util.StringJoiner;
   NotificationGoodCountTooLow.JSON_PROPERTY_GOOD,
   NotificationGoodCountTooLow.JSON_PROPERTY_MINIMUM_BALANCE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T13:54:20.814579807Z[GMT]", comments = "Generator version: 7.14.0")
 public class NotificationGoodCountTooLow extends NotificationAbstract {
 
   public static final String JSON_PROPERTY_ACTUAL_BALANCE = "actualBalance";

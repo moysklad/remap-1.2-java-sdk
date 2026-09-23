@@ -7,6 +7,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**getAuditContextEvents**](AuditApi.md#getAuditContextEvents) | **GET** /audit/{id}/events | Получить события по контексту аудита |
 | [**getAuditContexts**](AuditApi.md#getAuditContexts) | **GET** /audit | Получить контексты аудита |
 | [**getAuditMetadataFilters**](AuditApi.md#getAuditMetadataFilters) | **GET** /audit/metadata/filters | Получить доступные фильтры аудита |
+| [**getEntityAuditEvents**](AuditApi.md#getEntityAuditEvents) | **GET** /entity/{type}/{id}/audit | Получить события аудита сущности |
 
 
 
@@ -256,5 +257,92 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос. JSON представление списка фильтров аудита |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## getEntityAuditEvents
+
+> AuditEventList getEntityAuditEvents(type, id, limit, offset, accept, acceptEncoding)
+
+Получить события аудита сущности
+
+Возвращает список событий аудита сущности указанного типа и ID.
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.AuditApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        AuditApi apiInstance = new AuditApi(defaultClient);
+        String type = "type_example"; // String | Тип сущности в URL, например `product` или `customerorder`
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        Integer limit = 25; // Integer | Максимальное количество событий аудита в выданном списке (максимум 100)
+        Integer offset = 0; // Integer | Отступ в выданном списке
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            AuditEventList result = apiInstance.getEntityAuditEvents(type, id, limit, offset, accept, acceptEncoding);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AuditApi#getEntityAuditEvents");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **type** | **String**| Тип сущности в URL, например &#x60;product&#x60; или &#x60;customerorder&#x60; | |
+| **id** | **UUID**| ID сущности | |
+| **limit** | **Integer**| Максимальное количество событий аудита в выданном списке (максимум 100) | [optional] [default to 25] |
+| **offset** | **Integer**| Отступ в выданном списке | [optional] [default to 0] |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+[**AuditEventList**](AuditEventList.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 

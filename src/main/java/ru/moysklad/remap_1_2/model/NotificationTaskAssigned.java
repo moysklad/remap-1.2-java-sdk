@@ -35,7 +35,7 @@ import java.util.StringJoiner;
   NotificationTaskAssigned.JSON_PROPERTY_PERFORMED_BY,
   NotificationTaskAssigned.JSON_PROPERTY_TASK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T07:25:27.496694478Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T13:54:20.814579807Z[GMT]", comments = "Generator version: 7.14.0")
 public class NotificationTaskAssigned extends NotificationAbstract {
 
   public static final String JSON_PROPERTY_PERFORMED_BY = "performedBy";

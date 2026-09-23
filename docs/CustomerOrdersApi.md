@@ -24,7 +24,6 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**deleteCustomerOrderPositionsBatch**](CustomerOrdersApi.md#deleteCustomerOrderPositionsBatch) | **POST** /entity/customerorder/{id}/positions/delete | Массовое удаление позиций CustomerOrders |
 | [**deleteCustomerOrderPublication**](CustomerOrdersApi.md#deleteCustomerOrderPublication) | **DELETE** /entity/customerorder/{id}/publication/{publicationId} | Удалить Публикацию Заказа покупателя |
 | [**exportCustomerOrder**](CustomerOrdersApi.md#exportCustomerOrder) | **POST** /entity/customerorder/{id}/export | Запрос на печать Заказа покупателя |
-| [**getCustomerOrderAuditEvents**](CustomerOrdersApi.md#getCustomerOrderAuditEvents) | **GET** /entity/customerorder/{id}/audit | Получить события аудита Заказа покупателя |
 | [**getCustomerOrderById**](CustomerOrdersApi.md#getCustomerOrderById) | **GET** /entity/customerorder/{id} | Получить CustomerOrders |
 | [**getCustomerOrderList**](CustomerOrdersApi.md#getCustomerOrderList) | **GET** /entity/customerorder | Получить список CustomerOrders |
 | [**getCustomerOrderMetadata**](CustomerOrdersApi.md#getCustomerOrderMetadata) | **GET** /entity/customerorder/metadata | Метаданные CustomerOrders |
@@ -1701,91 +1700,6 @@ null (empty response body)
 |-------------|-------------|------------------|
 | **202** | Печатная форма еще не готова, в Location передана ссылка на статус печати |  * Location - Ссылка на статус печати <br>  * Content-Type - Тип содержимого ответа <br>  |
 | **303** | Печатная форма готова, в Location передана ссылка на файл |  * Location - Ссылка на статус печати <br>  * Content-Type - Тип содержимого ответа <br>  |
-| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
-
-
-## getCustomerOrderAuditEvents
-
-> AuditEventList getCustomerOrderAuditEvents(id, limit, offset, accept, acceptEncoding)
-
-Получить события аудита Заказа покупателя
-
-Возвращает список событий аудита для Заказа покупателя по его ID. 
-
-### Example
-
-```java
-// Import classes:
-import ru.moysklad.remap_1_2.ApiClient;
-import ru.moysklad.remap_1_2.ApiException;
-import ru.moysklad.remap_1_2.Configuration;
-import ru.moysklad.remap_1_2.auth.*;
-import ru.moysklad.remap_1_2.models.*;
-import ru.moysklad.remap_1_2.api.CustomerOrdersApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
-
-        // Configure HTTP bearer authorization: bearerAuth
-        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-        bearerAuth.setBearerToken("BEARER TOKEN");
-
-        CustomerOrdersApi apiInstance = new CustomerOrdersApi(defaultClient);
-        UUID id = UUID.randomUUID(); // UUID | ID сущности
-        Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
-        Integer offset = 0; // Integer | Отступ в выданном списке
-        String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
-        try {
-            AuditEventList result = apiInstance.getCustomerOrderAuditEvents(id, limit, offset, accept, acceptEncoding);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling CustomerOrdersApi#getCustomerOrderAuditEvents");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **id** | **UUID**| ID сущности | |
-| **limit** | **Integer**| Максимальное количество элементов в выданном списке (максимум 1000) | [optional] [default to 1000] |
-| **offset** | **Integer**| Отступ в выданном списке | [optional] [default to 0] |
-| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
-
-### Return type
-
-[**AuditEventList**](AuditEventList.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Успешный запрос |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
