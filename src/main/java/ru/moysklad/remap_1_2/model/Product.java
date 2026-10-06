@@ -104,7 +104,7 @@ import java.util.StringJoiner;
   Product.JSON_PROPERTY_SYNC_ID,
   Product.JSON_PROPERTY_PPE_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T13:54:20.814579807Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-06T05:14:41.995197922Z[GMT]", comments = "Generator version: 7.14.0")
 public class Product extends ProductMarker implements Named {
   public static Product createWithMeta(UUID id) {
     Product o = new Product();

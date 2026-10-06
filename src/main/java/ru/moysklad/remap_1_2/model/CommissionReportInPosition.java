@@ -49,7 +49,7 @@ import java.util.StringJoiner;
   CommissionReportInPosition.JSON_PROPERTY_ASSORTMENT,
   CommissionReportInPosition.JSON_PROPERTY_PACK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T13:54:20.814579807Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-06T05:14:41.995197922Z[GMT]", comments = "Generator version: 7.14.0")
 public class CommissionReportInPosition extends EntityWithMeta implements DocumentPosition, MetaEntity {
   public static CommissionReportInPosition createWithMeta(UUID parentId, UUID id) {
     CommissionReportInPosition o = new CommissionReportInPosition();

@@ -59,7 +59,7 @@ import java.util.StringJoiner;
   ProductFolder.JSON_PROPERTY_PRODUCT_FOLDER,
   ProductFolder.JSON_PROPERTY_TAX_SYSTEM
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T13:54:20.814579807Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-06T05:14:41.995197922Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProductFolder extends EntityWithMeta implements Named, MetaEntity {
   public static ProductFolder createWithMeta(UUID id) {
     ProductFolder o = new ProductFolder();

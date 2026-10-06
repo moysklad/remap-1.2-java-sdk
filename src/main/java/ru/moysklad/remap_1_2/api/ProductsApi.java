@@ -20,7 +20,7 @@ import ru.moysklad.remap_1_2.BaseApi;
 import ru.moysklad.remap_1_2.Configuration;
 import ru.moysklad.remap_1_2.Pair;
 
-import ru.moysklad.remap_1_2.model.AddProductImagesRequest;
+
 import ru.moysklad.remap_1_2.model.AttributeMetaInfo;
 import ru.moysklad.remap_1_2.model.AttributeMetaInfoList;
 import ru.moysklad.remap_1_2.model.BatchResponseEntity;
@@ -47,7 +47,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T13:54:20.814579807Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-06T05:14:41.995197922Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ProductsApi extends BaseApi {
 
@@ -174,27 +174,27 @@ if (contentType != null) {
   }
 
   /**
-   * Добавить изображения к товару
-   * Добавить новые Изображения к Товару или изменить список Изображений. В поле &#x60;content&#x60; нужно указать изображение, закодированное в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. У Товара может быть не более 10 Изображений. 
+   * Добавить изображение к товару
+   * Добавить новое Изображение к Товару. В поле &#x60;content&#x60; нужно указать изображение, закодированное в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. У Товара может быть не более 10 Изображений. 
    * @param id ID сущности (required)
-   * @param addProductImagesRequest  (required)
+   * @param fileUpload  (required)
    * @return List&lt;Image&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<Image> addProductImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AddProductImagesRequest addProductImagesRequest) throws ApiException {
+  public List<Image> addProductImage(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull FileUpload fileUpload) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
-    return this.addProductImages(id, addProductImagesRequest, null, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.addProductImage(id, fileUpload, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
   /**
-   * Добавить изображения к товару
-   * Добавить новые Изображения к Товару или изменить список Изображений. В поле &#x60;content&#x60; нужно указать изображение, закодированное в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. У Товара может быть не более 10 Изображений. 
+   * Добавить изображение к товару
+   * Добавить новое Изображение к Товару. В поле &#x60;content&#x60; нужно указать изображение, закодированное в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. У Товара может быть не более 10 Изображений. 
    
    * @param id ID сущности (required)
    
    
-   * @param addProductImagesRequest  (required)
+   * @param fileUpload  (required)
    
    
    
@@ -203,16 +203,16 @@ if (contentType != null) {
    * @return List&lt;Image&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<Image> addProductImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AddProductImagesRequest addProductImagesRequest, RequestOptions options) throws ApiException {
+  public List<Image> addProductImage(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull FileUpload fileUpload, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
-    return this.addProductImages(id, addProductImagesRequest, null, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.addProductImage(id, fileUpload, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
   /**
-   * Добавить изображения к товару
-   * Добавить новые Изображения к Товару или изменить список Изображений. В поле &#x60;content&#x60; нужно указать изображение, закодированное в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. У Товара может быть не более 10 Изображений. 
+   * Добавить изображение к товару
+   * Добавить новое Изображение к Товару. В поле &#x60;content&#x60; нужно указать изображение, закодированное в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. У Товара может быть не более 10 Изображений. 
    * @param id ID сущности (required)
-   * @param addProductImagesRequest  (required)
+   * @param fileUpload  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
@@ -220,21 +220,135 @@ if (contentType != null) {
    * @return List&lt;Image&gt;
    * @throws ApiException if fails to make API call
    */
-  protected List<Image> addProductImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull AddProductImagesRequest addProductImagesRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
-    Object localVarPostBody = addProductImagesRequest;
+  protected List<Image> addProductImage(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull FileUpload fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = fileUpload;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling addProductImage");
+    }
+    
+    // verify the required parameter 'fileUpload' is set
+    if (fileUpload == null) {
+      throw new ApiException(400, "Missing the required parameter 'fileUpload' when calling addProductImage");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/product/{id}/images"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (contentType != null) {
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<List<Image>> localVarReturnType = new TypeReference<List<Image>>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Изменить список изображений товара
+   * Установить список Изображений Товара. В теле запроса нужно передать массив Изображений, которые должны быть у Товара. Чтобы оставить существующие Изображения, передайте их метаданные. Для новых Изображений в поле &#x60;content&#x60; нужно указать изображение, закодированное в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. У Товара может быть не более 10 Изображений. 
+   * @param id ID сущности (required)
+   * @param fileUpload  (required)
+   * @return List&lt;Image&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<Image> addProductImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<FileUpload> fileUpload) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.addProductImages(id, fileUpload, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Изменить список изображений товара
+   * Установить список Изображений Товара. В теле запроса нужно передать массив Изображений, которые должны быть у Товара. Чтобы оставить существующие Изображения, передайте их метаданные. Для новых Изображений в поле &#x60;content&#x60; нужно указать изображение, закодированное в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. У Товара может быть не более 10 Изображений. 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param fileUpload  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;Image&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<Image> addProductImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<FileUpload> fileUpload, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.addProductImages(id, fileUpload, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Изменить список изображений товара
+   * Установить список Изображений Товара. В теле запроса нужно передать массив Изображений, которые должны быть у Товара. Чтобы оставить существующие Изображения, передайте их метаданные. Для новых Изображений в поле &#x60;content&#x60; нужно указать изображение, закодированное в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. У Товара может быть не более 10 Изображений. 
+   * @param id ID сущности (required)
+   * @param fileUpload  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return List&lt;Image&gt;
+   * @throws ApiException if fails to make API call
+   */
+  protected List<Image> addProductImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = fileUpload;
     
     // verify the required parameter 'id' is set
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling addProductImages");
     }
     
-    // verify the required parameter 'addProductImagesRequest' is set
-    if (addProductImagesRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'addProductImagesRequest' when calling addProductImages");
+    // verify the required parameter 'fileUpload' is set
+    if (fileUpload == null) {
+      throw new ApiException(400, "Missing the required parameter 'fileUpload' when calling addProductImages");
     }
     
     // create path and map variables
-    String localVarPath = "/entity/product/{id}/images"
+    String localVarPath = "/entity/product/{id}/images/batch"
       .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
 
     StringJoiner localVarQueryStringJoiner = new StringJoiner("&");

@@ -6239,10 +6239,10 @@ paths:
       - text/html;charset=UTF-8
     post:
       description: |
-        Добавить новые Изображения к Товару или изменить список Изображений.
+        Добавить новое Изображение к Товару.
         В поле `content` нужно указать изображение, закодированное в Base64, в поле `filename` — имя файла с расширением.
         У Товара может быть не более 10 Изображений.
-      operationId: addProductImages
+      operationId: addProductImage
       parameters:
       - description: ID сущности
         in: path
@@ -6281,7 +6281,7 @@ paths:
               filename: birdimage.png
               content: iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAA3NCSVQICAjb4U/gAAAAEHRFWHRTb2Z0d2FyZQBTaHV0dGVyY4LQCQAAAAxJREFUCNdj+PePAQAE+gH90KA5ZAAAAABJRU5ErkJggg==
             schema:
-              $ref: "#/components/schemas/addProductImages_request"
+              $ref: "#/components/schemas/FileUpload"
         required: true
       responses:
         "200":
@@ -6295,7 +6295,74 @@ paths:
             Товара.
         default:
           $ref: "#/components/responses/CommonError"
-      summary: Добавить изображения к товару
+      summary: Добавить изображение к товару
+      tags:
+      - Products
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/product/{id}/images/batch:
+    post:
+      description: |
+        Установить список Изображений Товара.
+        В теле запроса нужно передать массив Изображений, которые должны быть у Товара. Чтобы оставить существующие Изображения, передайте их метаданные.
+        Для новых Изображений в поле `content` нужно указать изображение, закодированное в Base64, в поле `filename` — имя файла с расширением.
+        У Товара может быть не более 10 Изображений.
+      operationId: addProductImages
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: "#/components/schemas/FileUpload"
+              maxItems: 10
+              type: array
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/Image"
+                type: array
+          description: Список Изображений успешно изменен. Результат — массив всех
+            Изображений Товара.
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Изменить список изображений товара
       tags:
       - Products
       x-content-type: application/json
@@ -20845,6 +20912,55 @@ paths:
       - application/json
       - text/html;charset=UTF-8
     post:
+      operationId: createStoreZone
+      parameters:
+      - in: path
+        name: storeId
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/StoreZone"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/StoreZone"
+                type: array
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать зону склада
+      tags:
+      - Stores
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/store/{storeId}/zones/batch:
+    post:
       operationId: createStoreZones
       parameters:
       - in: path
@@ -20872,7 +20988,11 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/createStoreZones_request"
+              items:
+                $ref: "#/components/schemas/StoreZone"
+              maxItems: 1000
+              minItems: 1
+              type: array
         required: true
       responses:
         "200":
@@ -20880,12 +21000,12 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: "#/components/schemas/StoreZone"
+                  $ref: "#/components/schemas/BatchResponseEntity"
                 type: array
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
-      summary: Создать зону склада
+      summary: Массовое создание и обновление зон склада
       tags:
       - Stores
       x-content-type: application/json
@@ -21125,6 +21245,55 @@ paths:
       - application/json
       - text/html;charset=UTF-8
     post:
+      operationId: createStoreSlot
+      parameters:
+      - in: path
+        name: storeId
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/StoreSlot"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/StoreSlot"
+                type: array
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать ячейку склада
+      tags:
+      - Stores
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/store/{storeId}/slots/batch:
+    post:
       operationId: createStoreSlots
       parameters:
       - in: path
@@ -21152,7 +21321,11 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/createStoreSlots_request"
+              items:
+                $ref: "#/components/schemas/StoreSlot"
+              maxItems: 1000
+              minItems: 1
+              type: array
         required: true
       responses:
         "200":
@@ -21160,12 +21333,12 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: "#/components/schemas/StoreSlot"
+                  $ref: "#/components/schemas/BatchResponseEntity"
                 type: array
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
-      summary: Создать ячейку склада
+      summary: Массовое создание и обновление ячеек склада
       tags:
       - Stores
       x-content-type: application/json
@@ -22465,6 +22638,69 @@ paths:
       - application/json
       - text/html;charset=UTF-8
     post:
+      operationId: createBundleComponent
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BundleComponent"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/BundleComponent"
+                type: array
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Добавить компонент Комплекта
+      tags:
+      - Bundles
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/bundle/{id}/components/batch:
+    post:
       operationId: createBundleComponents
       parameters:
       - description: ID сущности
@@ -22506,7 +22742,11 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/createBundleComponents_request"
+              items:
+                $ref: "#/components/schemas/BundleComponent"
+              maxItems: 1000
+              minItems: 1
+              type: array
         required: true
       responses:
         "200":
@@ -22514,12 +22754,12 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: "#/components/schemas/BundleComponent"
+                  $ref: "#/components/schemas/BatchResponseEntity"
                 type: array
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
-      summary: Добавить компонент Комплекта
+      summary: Массовое добавление и обновление компонентов Комплекта
       tags:
       - Bundles
       x-content-type: application/json
@@ -23363,29 +23603,18 @@ paths:
             а статус печати"
           headers:
             Location:
-              description: Ссылка на статус печати
-              schema:
-                type: string
-            Content-Type:
-              description: Тип содержимого ответа
-              schema:
-                type: string
+              $ref: "#/components/headers/PrintLocation"
         "303":
           description: "Печатная форма готова, в Location передана ссылка на файл"
           headers:
             Location:
-              description: Ссылка на готовый файл
-              schema:
-                type: string
-            Content-Type:
-              description: Тип содержимого ответа
-              schema:
-                type: string
+              $ref: "#/components/headers/PrintLocation"
         default:
           $ref: "#/components/responses/CommonError"
       summary: Запрос на печать этикеток и ценников
       tags:
       - Labels
+      x-location-response: true
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -31519,29 +31748,18 @@ paths:
             а статус печати"
           headers:
             Location:
-              description: Ссылка на статус печати
-              schema:
-                type: string
-            Content-Type:
-              description: Тип содержимого ответа
-              schema:
-                type: string
+              $ref: "#/components/headers/PrintLocation"
         "303":
           description: "Печатная форма готова, в Location передана ссылка на файл"
           headers:
             Location:
-              description: Ссылка на готовый файл
-              schema:
-                type: string
-            Content-Type:
-              description: Тип содержимого ответа
-              schema:
-                type: string
+              $ref: "#/components/headers/PrintLocation"
         default:
           $ref: "#/components/responses/CommonError"
       summary: Запрос на печать Заказа покупателя
       tags:
       - CustomerOrders
+      x-location-response: true
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -38258,14 +38476,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/createRetailDemandMetadataState_request"
+              $ref: "#/components/schemas/State"
         required: true
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/createRetailDemandMetadataState_request"
+                $ref: "#/components/schemas/State"
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
@@ -38420,6 +38638,61 @@ paths:
         default:
           $ref: "#/components/responses/CommonError"
       summary: Обновить отдельный статус Розничной продажи
+      tags:
+      - RetailDemands
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/retaildemand/metadata/states/batch:
+    post:
+      operationId: createRetailDemandMetadataStatesBatch
+      parameters:
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: "#/components/schemas/State"
+              maxItems: 1000
+              minItems: 1
+              type: array
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/StateRowResult"
+                type: array
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Массовое создание и обновление статусов Розничной продажи
       tags:
       - RetailDemands
       x-content-type: application/json
@@ -59275,6 +59548,69 @@ paths:
       - application/json
       - text/html;charset=UTF-8
     post:
+      operationId: createCommissionReportInReturnedPosition
+      parameters:
+      - description: ID сущности
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - description: Замена ссылок объектами с помощью expand
+        in: query
+        name: expand
+        schema:
+          type: string
+      - in: header
+        name: accept
+        required: false
+        schema:
+          default: application/json;charset=utf-8
+          enum:
+          - application/json
+          - application/json;charset=utf-8
+          type: string
+      - in: header
+        name: Accept-Encoding
+        required: false
+        schema:
+          default: "gzip, deflate, br"
+          type: string
+      - in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: application/json
+          enum:
+          - application/json
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CommissionReportInReturnedPosition"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/CommissionReportInReturnedPosition"
+                type: array
+          description: Успешный запрос
+        default:
+          $ref: "#/components/responses/CommonError"
+      summary: Создать позицию возврата на склад комиссионера
+      tags:
+      - CommissionReportIns
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - text/html;charset=UTF-8
+  /entity/commissionreportin/{id}/returntocommissionerpositions/batch:
+    post:
       operationId: createCommissionReportInReturnedPositions
       parameters:
       - description: ID сущности
@@ -59316,7 +59652,11 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/createCommissionReportInReturnedPositions_request"
+              items:
+                $ref: "#/components/schemas/CommissionReportInReturnedPosition"
+              maxItems: 1000
+              minItems: 1
+              type: array
         required: true
       responses:
         "200":
@@ -59324,12 +59664,12 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: "#/components/schemas/createCommissionReportInReturnedPositions_200_response_inner"
+                  $ref: "#/components/schemas/BatchResponseEntity"
                 type: array
           description: Успешный запрос
         default:
           $ref: "#/components/responses/CommonError"
-      summary: Создать позиции возврата на склад комиссионера
+      summary: Массовое создание и обновление позиций возврата на склад комиссионера
       tags:
       - CommissionReportIns
       x-content-type: application/json
@@ -74243,6 +74583,11 @@ paths:
       - application/json
       - text/html;charset=UTF-8
 components:
+  headers:
+    PrintLocation:
+      description: Ссылка на статус печати (202) или на готовый файл (303)
+      schema:
+        type: string
   parameters:
     AcceptHeader:
       in: header
@@ -76004,6 +76349,8 @@ components:
         mappings:
         - type: bundle
           componentName: Bundle
+        - type: bundlecomponent
+          componentName: BundleComponent
         - type: cashin
           componentName: CashIn
         - type: cashout
@@ -76128,8 +76475,12 @@ components:
           componentName: SalesReturn
         - type: service
           componentName: Service
+        - type: slot
+          componentName: StoreSlot
         - type: store
           componentName: Store
+        - type: storezone
+          componentName: StoreZone
         - type: supply
           componentName: Supply
         - type: supplyposition
@@ -76162,6 +76513,8 @@ components:
         mappings:
         - type: bundle
           componentName: Bundle
+        - type: bundlecomponent
+          componentName: BundleComponent
         - type: cashin
           componentName: CashIn
         - type: cashout
@@ -76286,8 +76639,12 @@ components:
           componentName: SalesReturn
         - type: service
           componentName: Service
+        - type: slot
+          componentName: StoreSlot
         - type: store
           componentName: Store
+        - type: storezone
+          componentName: StoreZone
         - type: supply
           componentName: Supply
         - type: supplyposition
@@ -81563,6 +81920,7 @@ components:
           type: string
       type: object
       x-implements: MetaEntity
+      x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -81623,6 +81981,7 @@ components:
           $ref: "#/components/schemas/StoreZone"
       type: object
       x-implements: MetaEntity
+      x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -82357,6 +82716,7 @@ components:
           $ref: "#/components/schemas/AssortmentWithoutBundle"
       type: object
       x-implements: MetaEntity
+      x-polymorphic-parent: EntityWithMeta
       x-entity-static-builder:
         methodParams:
         - parentId
@@ -92959,12 +93319,6 @@ components:
             $ref: "#/components/schemas/Image"
           type: array
       type: object
-    addProductImages_request:
-      oneOf:
-      - $ref: "#/components/schemas/FileUpload"
-      - items:
-          $ref: "#/components/schemas/FileUpload"
-        type: array
     deleteProductImages_request_inner:
       properties:
         meta:
@@ -93039,24 +93393,6 @@ components:
             $ref: "#/components/schemas/Account"
           type: array
       type: object
-    createStoreZones_request:
-      oneOf:
-      - $ref: "#/components/schemas/StoreZone"
-      - items:
-          $ref: "#/components/schemas/StoreZone"
-        type: array
-    createStoreSlots_request:
-      oneOf:
-      - $ref: "#/components/schemas/StoreSlot"
-      - items:
-          $ref: "#/components/schemas/StoreSlot"
-        type: array
-    createBundleComponents_request:
-      oneOf:
-      - $ref: "#/components/schemas/BundleComponent"
-      - items:
-          $ref: "#/components/schemas/BundleComponent"
-        type: array
     getVariantCharacteristics_200_response:
       properties:
         meta:
@@ -93102,12 +93438,6 @@ components:
       oneOf:
       - $ref: "#/components/schemas/DemandPosition"
       - $ref: "#/components/schemas/Errors"
-    createRetailDemandMetadataState_request:
-      oneOf:
-      - $ref: "#/components/schemas/State"
-      - items:
-          $ref: "#/components/schemas/State"
-        type: array
     createRetailDemandPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/RetailDemandPosition"
@@ -93151,18 +93481,6 @@ components:
     createCommissionReportInPositions_200_response_inner:
       oneOf:
       - $ref: "#/components/schemas/CommissionReportInPosition"
-      - $ref: "#/components/schemas/Errors"
-    createCommissionReportInReturnedPositions_request:
-      maxItems: 1000
-      minItems: 1
-      oneOf:
-      - $ref: "#/components/schemas/CommissionReportInReturnedPosition"
-      - items:
-          $ref: "#/components/schemas/CommissionReportInReturnedPosition"
-        type: array
-    createCommissionReportInReturnedPositions_200_response_inner:
-      oneOf:
-      - $ref: "#/components/schemas/CommissionReportInReturnedPosition"
       - $ref: "#/components/schemas/Errors"
     createFactureInsBatch_200_response_inner:
       oneOf:

@@ -4,7 +4,7 @@
 
 - API version: 1.0.0
 
-    - Build date: 2026-09-23T13:54:20.814579807Z[GMT]
+    - Build date: 2026-10-06T05:14:41.995197922Z[GMT]
 
 - Generator version: 7.14.0
 
@@ -191,7 +191,8 @@ Class | Method | HTTP request | Description
 *BonusTransactionsApi* | [**getBonusTransactions**](docs/BonusTransactionsApi.md#getBonusTransactions) | **GET** /entity/bonustransaction | Получить список бонусных операций
 *BonusTransactionsApi* | [**updateBonusTransaction**](docs/BonusTransactionsApi.md#updateBonusTransaction) | **PUT** /entity/bonustransaction/{id} | Изменить бонусную операцию
 *BundlesApi* | [**createBundle**](docs/BundlesApi.md#createBundle) | **POST** /entity/bundle | Создать Комплект
-*BundlesApi* | [**createBundleComponents**](docs/BundlesApi.md#createBundleComponents) | **POST** /entity/bundle/{id}/components | Добавить компонент Комплекта
+*BundlesApi* | [**createBundleComponent**](docs/BundlesApi.md#createBundleComponent) | **POST** /entity/bundle/{id}/components | Добавить компонент Комплекта
+*BundlesApi* | [**createBundleComponents**](docs/BundlesApi.md#createBundleComponents) | **POST** /entity/bundle/{id}/components/batch | Массовое добавление и обновление компонентов Комплекта
 *BundlesApi* | [**createBundlesBatch**](docs/BundlesApi.md#createBundlesBatch) | **POST** /entity/bundle/batch | Массовое создание и обновление Комплектов
 *BundlesApi* | [**deleteBundle**](docs/BundlesApi.md#deleteBundle) | **DELETE** /entity/bundle/{id} | Удалить Комплект
 *BundlesApi* | [**deleteBundleComponent**](docs/BundlesApi.md#deleteBundleComponent) | **DELETE** /entity/bundle/{id}/components/{componentId} | Удалить компонент
@@ -252,7 +253,8 @@ Class | Method | HTTP request | Description
 *CommissionReportInsApi* | [**createCommissionReportInMetadataStatesBatch**](docs/CommissionReportInsApi.md#createCommissionReportInMetadataStatesBatch) | **POST** /entity/commissionreportin/metadata/states/batch | Массовое создание и обновление статусов CommissionReportIn
 *CommissionReportInsApi* | [**createCommissionReportInPosition**](docs/CommissionReportInsApi.md#createCommissionReportInPosition) | **POST** /entity/commissionreportin/{id}/positions | Создать и обновить позицию Полученного отчета комиссионера
 *CommissionReportInsApi* | [**createCommissionReportInPositions**](docs/CommissionReportInsApi.md#createCommissionReportInPositions) | **POST** /entity/commissionreportin/{id}/positions/batch | Массовое создание и обновление позиций Полученного отчета комиссионера
-*CommissionReportInsApi* | [**createCommissionReportInReturnedPositions**](docs/CommissionReportInsApi.md#createCommissionReportInReturnedPositions) | **POST** /entity/commissionreportin/{id}/returntocommissionerpositions | Создать позиции возврата на склад комиссионера
+*CommissionReportInsApi* | [**createCommissionReportInReturnedPosition**](docs/CommissionReportInsApi.md#createCommissionReportInReturnedPosition) | **POST** /entity/commissionreportin/{id}/returntocommissionerpositions | Создать позицию возврата на склад комиссионера
+*CommissionReportInsApi* | [**createCommissionReportInReturnedPositions**](docs/CommissionReportInsApi.md#createCommissionReportInReturnedPositions) | **POST** /entity/commissionreportin/{id}/returntocommissionerpositions/batch | Массовое создание и обновление позиций возврата на склад комиссионера
 *CommissionReportInsApi* | [**deleteCommissionReportIn**](docs/CommissionReportInsApi.md#deleteCommissionReportIn) | **DELETE** /entity/commissionreportin/{id} | Удалить CommissionReportIn
 *CommissionReportInsApi* | [**deleteCommissionReportInBatch**](docs/CommissionReportInsApi.md#deleteCommissionReportInBatch) | **POST** /entity/commissionreportin/delete | Массовое удаление CommissionReportIn
 *CommissionReportInsApi* | [**deleteCommissionReportInMetadataAttributeById**](docs/CommissionReportInsApi.md#deleteCommissionReportInMetadataAttributeById) | **DELETE** /entity/commissionreportin/metadata/attributes/{id} | Удалить отдельное доп. поле CommissionReportIn
@@ -1114,7 +1116,8 @@ Class | Method | HTTP request | Description
 *ProductionTasksApi* | [**createProductionTaskMetadataAttribute**](docs/ProductionTasksApi.md#createProductionTaskMetadataAttribute) | **POST** /entity/productiontask/metadata/attributes | Создать Доп. поле Производственных задач
 *ProductionTasksApi* | [**getProductionTaskMetadataAttribute**](docs/ProductionTasksApi.md#getProductionTaskMetadataAttribute) | **GET** /entity/productiontask/metadata/attributes | Доп. поля ProductionTask
 *ProductsApi* | [**addProductFiles**](docs/ProductsApi.md#addProductFiles) | **POST** /entity/product/{id}/files | Добавить файлы к товару
-*ProductsApi* | [**addProductImages**](docs/ProductsApi.md#addProductImages) | **POST** /entity/product/{id}/images | Добавить изображения к товару
+*ProductsApi* | [**addProductImage**](docs/ProductsApi.md#addProductImage) | **POST** /entity/product/{id}/images | Добавить изображение к товару
+*ProductsApi* | [**addProductImages**](docs/ProductsApi.md#addProductImages) | **POST** /entity/product/{id}/images/batch | Изменить список изображений товара
 *ProductsApi* | [**createProduct**](docs/ProductsApi.md#createProduct) | **POST** /entity/product | Создать товар
 *ProductsApi* | [**createProductMetadataAttribute**](docs/ProductsApi.md#createProductMetadataAttribute) | **POST** /entity/product/metadata/attributes | Создать доп. поле товара
 *ProductsApi* | [**createProductStoreBalance**](docs/ProductsApi.md#createProductStoreBalance) | **POST** /entity/product/{id}/storebalances | Создать НСО товара для склада
@@ -1256,6 +1259,7 @@ Class | Method | HTTP request | Description
 *RetailDemandsApi* | [**createRetailDemandBatch**](docs/RetailDemandsApi.md#createRetailDemandBatch) | **POST** /entity/retaildemand/batch | Массовое создание и обновление Розничных продаж
 *RetailDemandsApi* | [**createRetailDemandMetadataAttribute**](docs/RetailDemandsApi.md#createRetailDemandMetadataAttribute) | **POST** /entity/retaildemand/metadata/attributes | Создать доп. поле Розничной продажи
 *RetailDemandsApi* | [**createRetailDemandMetadataState**](docs/RetailDemandsApi.md#createRetailDemandMetadataState) | **POST** /entity/retaildemand/metadata/states | Создать статус Розничной продажи
+*RetailDemandsApi* | [**createRetailDemandMetadataStatesBatch**](docs/RetailDemandsApi.md#createRetailDemandMetadataStatesBatch) | **POST** /entity/retaildemand/metadata/states/batch | Массовое создание и обновление статусов Розничной продажи
 *RetailDemandsApi* | [**createRetailDemandPosition**](docs/RetailDemandsApi.md#createRetailDemandPosition) | **POST** /entity/retaildemand/{id}/positions | Создать и обновить позицию Розничной продажи
 *RetailDemandsApi* | [**createRetailDemandPositions**](docs/RetailDemandsApi.md#createRetailDemandPositions) | **POST** /entity/retaildemand/{id}/positions/batch | Массовое создание и обновление позиций Розничной продажи
 *RetailDemandsApi* | [**deleteRetailDemand**](docs/RetailDemandsApi.md#deleteRetailDemand) | **DELETE** /entity/retaildemand/{id} | Удалить Розничную продажу
@@ -1418,8 +1422,10 @@ Class | Method | HTTP request | Description
 *ServicesApi* | [**updateService**](docs/ServicesApi.md#updateService) | **PUT** /entity/service/{id} | Обновить услугу
 *StoresApi* | [**createStore**](docs/StoresApi.md#createStore) | **POST** /entity/store | Создать Склад
 *StoresApi* | [**createStoreMetadataAttribute**](docs/StoresApi.md#createStoreMetadataAttribute) | **POST** /entity/store/metadata/attributes | Создать Доп. поле Store
-*StoresApi* | [**createStoreSlots**](docs/StoresApi.md#createStoreSlots) | **POST** /entity/store/{storeId}/slots | Создать ячейку склада
-*StoresApi* | [**createStoreZones**](docs/StoresApi.md#createStoreZones) | **POST** /entity/store/{storeId}/zones | Создать зону склада
+*StoresApi* | [**createStoreSlot**](docs/StoresApi.md#createStoreSlot) | **POST** /entity/store/{storeId}/slots | Создать ячейку склада
+*StoresApi* | [**createStoreSlots**](docs/StoresApi.md#createStoreSlots) | **POST** /entity/store/{storeId}/slots/batch | Массовое создание и обновление ячеек склада
+*StoresApi* | [**createStoreZone**](docs/StoresApi.md#createStoreZone) | **POST** /entity/store/{storeId}/zones | Создать зону склада
+*StoresApi* | [**createStoreZones**](docs/StoresApi.md#createStoreZones) | **POST** /entity/store/{storeId}/zones/batch | Массовое создание и обновление зон склада
 *StoresApi* | [**createStoresBatch**](docs/StoresApi.md#createStoresBatch) | **POST** /entity/store/batch | Массовое создание и обновление Складов
 *StoresApi* | [**deleteStore**](docs/StoresApi.md#deleteStore) | **DELETE** /entity/store/{id} | Удалить Склад
 *StoresApi* | [**deleteStoreSlot**](docs/StoresApi.md#deleteStoreSlot) | **DELETE** /entity/store/{storeId}/slots/{id} | Удалить ячейку склада
@@ -1548,7 +1554,6 @@ Class | Method | HTTP request | Description
  - [AccumulationDiscountLevelsInner](docs/AccumulationDiscountLevelsInner.md)
  - [ActivateEmployee200Response](docs/ActivateEmployee200Response.md)
  - [ActivateEmployeeRequest](docs/ActivateEmployeeRequest.md)
- - [AddProductImagesRequest](docs/AddProductImagesRequest.md)
  - [Address](docs/Address.md)
  - [Agent](docs/Agent.md)
  - [AgentDiscount](docs/AgentDiscount.md)
@@ -1651,10 +1656,7 @@ Class | Method | HTTP request | Description
  - [CounterpartyNotes](docs/CounterpartyNotes.md)
  - [Country](docs/Country.md)
  - [CountryList](docs/CountryList.md)
- - [CreateBundleComponentsRequest](docs/CreateBundleComponentsRequest.md)
  - [CreateCommissionReportInPositions200ResponseInner](docs/CreateCommissionReportInPositions200ResponseInner.md)
- - [CreateCommissionReportInReturnedPositions200ResponseInner](docs/CreateCommissionReportInReturnedPositions200ResponseInner.md)
- - [CreateCommissionReportInReturnedPositionsRequest](docs/CreateCommissionReportInReturnedPositionsRequest.md)
  - [CreateCustomerOrderPositions200ResponseInner](docs/CreateCustomerOrderPositions200ResponseInner.md)
  - [CreateDemandPositions200ResponseInner](docs/CreateDemandPositions200ResponseInner.md)
  - [CreateEnterPositions200ResponseInner](docs/CreateEnterPositions200ResponseInner.md)
@@ -1672,14 +1674,11 @@ Class | Method | HTTP request | Description
  - [CreateProcessingProcessPositions200ResponseInner](docs/CreateProcessingProcessPositions200ResponseInner.md)
  - [CreatePurchaseOrderPositions200ResponseInner](docs/CreatePurchaseOrderPositions200ResponseInner.md)
  - [CreatePurchaseReturnPositions200ResponseInner](docs/CreatePurchaseReturnPositions200ResponseInner.md)
- - [CreateRetailDemandMetadataStateRequest](docs/CreateRetailDemandMetadataStateRequest.md)
  - [CreateRetailDemandPositions200ResponseInner](docs/CreateRetailDemandPositions200ResponseInner.md)
  - [CreateRetailSalesReturnPositions200ResponseInner](docs/CreateRetailSalesReturnPositions200ResponseInner.md)
  - [CreateRetailSalesReturnsBatch200ResponseInner](docs/CreateRetailSalesReturnsBatch200ResponseInner.md)
  - [CreateRetailShiftBatch200ResponseInner](docs/CreateRetailShiftBatch200ResponseInner.md)
  - [CreateSalesReturnPositions200ResponseInner](docs/CreateSalesReturnPositions200ResponseInner.md)
- - [CreateStoreSlotsRequest](docs/CreateStoreSlotsRequest.md)
- - [CreateStoreZonesRequest](docs/CreateStoreZonesRequest.md)
  - [Currency](docs/Currency.md)
  - [CurrencyList](docs/CurrencyList.md)
  - [CurrencyMajorUnit](docs/CurrencyMajorUnit.md)

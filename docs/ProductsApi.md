@@ -5,7 +5,8 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**addProductFiles**](ProductsApi.md#addProductFiles) | **POST** /entity/product/{id}/files | Добавить файлы к товару |
-| [**addProductImages**](ProductsApi.md#addProductImages) | **POST** /entity/product/{id}/images | Добавить изображения к товару |
+| [**addProductImage**](ProductsApi.md#addProductImage) | **POST** /entity/product/{id}/images | Добавить изображение к товару |
+| [**addProductImages**](ProductsApi.md#addProductImages) | **POST** /entity/product/{id}/images/batch | Изменить список изображений товара |
 | [**createProduct**](ProductsApi.md#createProduct) | **POST** /entity/product | Создать товар |
 | [**createProductMetadataAttribute**](ProductsApi.md#createProductMetadataAttribute) | **POST** /entity/product/metadata/attributes | Создать доп. поле товара |
 | [**createProductStoreBalance**](ProductsApi.md#createProductStoreBalance) | **POST** /entity/product/{id}/storebalances | Создать НСО товара для склада |
@@ -118,13 +119,13 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
-## addProductImages
+## addProductImage
 
-> List&lt;Image&gt; addProductImages(id, addProductImagesRequest, accept, acceptEncoding, contentType)
+> List&lt;Image&gt; addProductImage(id, fileUpload, accept, acceptEncoding, contentType)
 
-Добавить изображения к товару
+Добавить изображение к товару
 
-Добавить новые Изображения к Товару или изменить список Изображений. В поле &#x60;content&#x60; нужно указать изображение, закодированное в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. У Товара может быть не более 10 Изображений. 
+Добавить новое Изображение к Товару. В поле &#x60;content&#x60; нужно указать изображение, закодированное в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. У Товара может быть не более 10 Изображений. 
 
 ### Example
 
@@ -153,15 +154,15 @@ public class Example {
 
         ProductsApi apiInstance = new ProductsApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
-        AddProductImagesRequest addProductImagesRequest = new AddProductImagesRequest(); // AddProductImagesRequest | 
+        FileUpload fileUpload = new FileUpload(); // FileUpload | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<Image> result = apiInstance.addProductImages(id, addProductImagesRequest, accept, acceptEncoding, contentType);
+            List<Image> result = apiInstance.addProductImage(id, fileUpload, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProductsApi#addProductImages");
+            System.err.println("Exception when calling ProductsApi#addProductImage");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -177,7 +178,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **addProductImagesRequest** | [**AddProductImagesRequest**](AddProductImagesRequest.md)|  | |
+| **fileUpload** | [**FileUpload**](FileUpload.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
@@ -200,6 +201,91 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Изображения успешно добавлены. Результат — массив всех Изображений Товара. |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## addProductImages
+
+> List&lt;Image&gt; addProductImages(id, fileUpload, accept, acceptEncoding, contentType)
+
+Изменить список изображений товара
+
+Установить список Изображений Товара. В теле запроса нужно передать массив Изображений, которые должны быть у Товара. Чтобы оставить существующие Изображения, передайте их метаданные. Для новых Изображений в поле &#x60;content&#x60; нужно указать изображение, закодированное в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. У Товара может быть не более 10 Изображений. 
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.ProductsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        ProductsApi apiInstance = new ProductsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<FileUpload> fileUpload = Arrays.asList(); // List<FileUpload> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<Image> result = apiInstance.addProductImages(id, fileUpload, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProductsApi#addProductImages");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **fileUpload** | [**List&lt;FileUpload&gt;**](FileUpload.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;Image&gt;**](Image.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Список Изображений успешно изменен. Результат — массив всех Изображений Товара. |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 

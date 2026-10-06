@@ -98,7 +98,7 @@ import java.util.StringJoiner;
   InvoiceIn.JSON_PROPERTY_SUPPLIES,
   InvoiceIn.JSON_PROPERTY_PAYMENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T13:54:20.814579807Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-06T05:14:41.995197922Z[GMT]", comments = "Generator version: 7.14.0")
 public class InvoiceIn implements MetaEntity {
   public static InvoiceIn createWithMeta(UUID id) {
     InvoiceIn o = new InvoiceIn();

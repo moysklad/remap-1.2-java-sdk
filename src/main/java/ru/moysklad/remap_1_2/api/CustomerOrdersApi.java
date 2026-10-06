@@ -19,6 +19,8 @@ import ru.moysklad.remap_1_2.ApiClient;
 import ru.moysklad.remap_1_2.BaseApi;
 import ru.moysklad.remap_1_2.Configuration;
 import ru.moysklad.remap_1_2.Pair;
+import ru.moysklad.remap_1_2.LocationResponse;
+
 
 import ru.moysklad.remap_1_2.model.AttributeMetaInfo;
 import ru.moysklad.remap_1_2.model.AttributeMetaInfoList;
@@ -48,7 +50,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T13:54:20.814579807Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-06T05:14:41.995197922Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class CustomerOrdersApi extends BaseApi {
 
@@ -2115,11 +2117,12 @@ if (acceptEncoding != null) {
    * Запрос на формирование печатной формы для Заказа покупателя. При готовности сервер возвращает пустой ответ с кодом 303 и заголовком Location. 
    * @param id ID сущности (required)
    * @param exportRequest  (required)
+   * @return {@link LocationResponse} со статусом и заголовком Location ответа; переход по редиректу не выполняется
    * @throws ApiException if fails to make API call
    */
-  public void exportCustomerOrder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ExportRequest exportRequest) throws ApiException {
+  public LocationResponse exportCustomerOrder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ExportRequest exportRequest) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
-    this.exportCustomerOrder(id, exportRequest, null, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.exportCustomerOrder(id, exportRequest, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -2136,11 +2139,12 @@ if (acceptEncoding != null) {
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return {@link LocationResponse} со статусом и заголовком Location ответа; переход по редиректу не выполняется
    * @throws ApiException if fails to make API call
    */
-  public void exportCustomerOrder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ExportRequest exportRequest, RequestOptions options) throws ApiException {
+  public LocationResponse exportCustomerOrder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ExportRequest exportRequest, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
-    this.exportCustomerOrder(id, exportRequest, null, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.exportCustomerOrder(id, exportRequest, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
   /**
@@ -2152,9 +2156,10 @@ if (acceptEncoding != null) {
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
+   * @return {@link LocationResponse} со статусом и заголовком Location ответа; переход по редиректу не выполняется
    * @throws ApiException if fails to make API call
    */
-  protected void exportCustomerOrder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ExportRequest exportRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected LocationResponse exportCustomerOrder(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ExportRequest exportRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = exportRequest;
     
     // verify the required parameter 'id' is set
@@ -2203,7 +2208,7 @@ if (contentType != null) {
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    apiClient.invokeAPI(
+    return apiClient.invokeAPIForLocation(
         localVarPath,
         "POST",
         localVarQueryParams,
@@ -2215,8 +2220,7 @@ if (contentType != null) {
         localVarFormParams,
         localVarAccept,
         localVarContentType,
-        localVarAuthNames,
-        null
+        localVarAuthNames
     );
   }
 

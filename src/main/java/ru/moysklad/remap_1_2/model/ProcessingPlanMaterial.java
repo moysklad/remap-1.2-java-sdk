@@ -45,7 +45,7 @@ import java.util.StringJoiner;
   ProcessingPlanMaterial.JSON_PROPERTY_PROCESSING_PROCESS_POSITION,
   ProcessingPlanMaterial.JSON_PROPERTY_MATERIAL_PROCESSING_PLAN
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T13:54:20.814579807Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-06T05:14:41.995197922Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingPlanMaterial implements MetaEntity {
   public static ProcessingPlanMaterial createWithMeta(UUID parentId, UUID id) {
     ProcessingPlanMaterial o = new ProcessingPlanMaterial();

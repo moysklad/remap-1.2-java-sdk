@@ -5,7 +5,8 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**createBundle**](BundlesApi.md#createBundle) | **POST** /entity/bundle | Создать Комплект |
-| [**createBundleComponents**](BundlesApi.md#createBundleComponents) | **POST** /entity/bundle/{id}/components | Добавить компонент Комплекта |
+| [**createBundleComponent**](BundlesApi.md#createBundleComponent) | **POST** /entity/bundle/{id}/components | Добавить компонент Комплекта |
+| [**createBundleComponents**](BundlesApi.md#createBundleComponents) | **POST** /entity/bundle/{id}/components/batch | Массовое добавление и обновление компонентов Комплекта |
 | [**createBundlesBatch**](BundlesApi.md#createBundlesBatch) | **POST** /entity/bundle/batch | Массовое создание и обновление Комплектов |
 | [**deleteBundle**](BundlesApi.md#deleteBundle) | **DELETE** /entity/bundle/{id} | Удалить Комплект |
 | [**deleteBundleComponent**](BundlesApi.md#deleteBundleComponent) | **DELETE** /entity/bundle/{id}/components/{componentId} | Удалить компонент |
@@ -103,9 +104,9 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
-## createBundleComponents
+## createBundleComponent
 
-> List&lt;BundleComponent&gt; createBundleComponents(id, createBundleComponentsRequest, accept, acceptEncoding, expand, contentType)
+> List&lt;BundleComponent&gt; createBundleComponent(id, bundleComponent, accept, acceptEncoding, expand, contentType)
 
 Добавить компонент Комплекта
 
@@ -136,13 +137,98 @@ public class Example {
 
         BundlesApi apiInstance = new BundlesApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
-        CreateBundleComponentsRequest createBundleComponentsRequest = new CreateBundleComponentsRequest(); // CreateBundleComponentsRequest | 
+        BundleComponent bundleComponent = new BundleComponent(); // BundleComponent | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String contentType = "application/json"; // String | 
         try {
-            List<BundleComponent> result = apiInstance.createBundleComponents(id, createBundleComponentsRequest, accept, acceptEncoding, expand, contentType);
+            List<BundleComponent> result = apiInstance.createBundleComponent(id, bundleComponent, accept, acceptEncoding, expand, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling BundlesApi#createBundleComponent");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **bundleComponent** | [**BundleComponent**](BundleComponent.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;BundleComponent&gt;**](BundleComponent.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## createBundleComponents
+
+> List&lt;BatchResponseEntity&gt; createBundleComponents(id, bundleComponent, accept, acceptEncoding, expand, contentType)
+
+Массовое добавление и обновление компонентов Комплекта
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.BundlesApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        BundlesApi apiInstance = new BundlesApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<BundleComponent> bundleComponent = Arrays.asList(); // List<BundleComponent> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
+        String contentType = "application/json"; // String | 
+        try {
+            List<BatchResponseEntity> result = apiInstance.createBundleComponents(id, bundleComponent, accept, acceptEncoding, expand, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling BundlesApi#createBundleComponents");
@@ -161,7 +247,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
-| **createBundleComponentsRequest** | [**CreateBundleComponentsRequest**](CreateBundleComponentsRequest.md)|  | |
+| **bundleComponent** | [**List&lt;BundleComponent&gt;**](BundleComponent.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
@@ -169,7 +255,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;BundleComponent&gt;**](BundleComponent.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 

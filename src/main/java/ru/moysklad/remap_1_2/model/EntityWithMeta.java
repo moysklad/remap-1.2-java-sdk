@@ -38,10 +38,11 @@ import ru.moysklad.remap_1_2.deserialize.PolymorphicMetaTypeDeserializer;
 @JsonPropertyOrder({
   EntityWithMeta.JSON_PROPERTY_META
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T13:54:20.814579807Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-06T05:14:41.995197922Z[GMT]", comments = "Generator version: 7.14.0")
 @OpenApiPolymorphicTypeInfo(path = "meta.type")
 @OpenApiPolymorphicSubTypes({
   @OpenApiPolymorphicSubTypes.Type(value = Bundle.class, name = "bundle"),
+  @OpenApiPolymorphicSubTypes.Type(value = BundleComponent.class, name = "bundlecomponent"),
   @OpenApiPolymorphicSubTypes.Type(value = CashIn.class, name = "cashin"),
   @OpenApiPolymorphicSubTypes.Type(value = CashOut.class, name = "cashout"),
   @OpenApiPolymorphicSubTypes.Type(value = CommissionReportIn.class, name = "commissionreportin"),
@@ -104,7 +105,9 @@ import ru.moysklad.remap_1_2.deserialize.PolymorphicMetaTypeDeserializer;
   @OpenApiPolymorphicSubTypes.Type(value = SalesChannel.class, name = "saleschannel"),
   @OpenApiPolymorphicSubTypes.Type(value = SalesReturn.class, name = "salesreturn"),
   @OpenApiPolymorphicSubTypes.Type(value = Service.class, name = "service"),
+  @OpenApiPolymorphicSubTypes.Type(value = StoreSlot.class, name = "slot"),
   @OpenApiPolymorphicSubTypes.Type(value = Store.class, name = "store"),
+  @OpenApiPolymorphicSubTypes.Type(value = StoreZone.class, name = "storezone"),
   @OpenApiPolymorphicSubTypes.Type(value = Supply.class, name = "supply"),
   @OpenApiPolymorphicSubTypes.Type(value = SupplyPosition.class, name = "supplyposition"),
   @OpenApiPolymorphicSubTypes.Type(value = Task.class, name = "task"),

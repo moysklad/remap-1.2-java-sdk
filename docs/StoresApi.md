@@ -6,8 +6,10 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 |------------- | ------------- | -------------|
 | [**createStore**](StoresApi.md#createStore) | **POST** /entity/store | Создать Склад |
 | [**createStoreMetadataAttribute**](StoresApi.md#createStoreMetadataAttribute) | **POST** /entity/store/metadata/attributes | Создать Доп. поле Store |
-| [**createStoreSlots**](StoresApi.md#createStoreSlots) | **POST** /entity/store/{storeId}/slots | Создать ячейку склада |
-| [**createStoreZones**](StoresApi.md#createStoreZones) | **POST** /entity/store/{storeId}/zones | Создать зону склада |
+| [**createStoreSlot**](StoresApi.md#createStoreSlot) | **POST** /entity/store/{storeId}/slots | Создать ячейку склада |
+| [**createStoreSlots**](StoresApi.md#createStoreSlots) | **POST** /entity/store/{storeId}/slots/batch | Массовое создание и обновление ячеек склада |
+| [**createStoreZone**](StoresApi.md#createStoreZone) | **POST** /entity/store/{storeId}/zones | Создать зону склада |
+| [**createStoreZones**](StoresApi.md#createStoreZones) | **POST** /entity/store/{storeId}/zones/batch | Массовое создание и обновление зон склада |
 | [**createStoresBatch**](StoresApi.md#createStoresBatch) | **POST** /entity/store/batch | Массовое создание и обновление Складов |
 | [**deleteStore**](StoresApi.md#deleteStore) | **DELETE** /entity/store/{id} | Удалить Склад |
 | [**deleteStoreSlot**](StoresApi.md#deleteStoreSlot) | **DELETE** /entity/store/{storeId}/slots/{id} | Удалить ячейку склада |
@@ -194,9 +196,9 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
-## createStoreSlots
+## createStoreSlot
 
-> List&lt;StoreSlot&gt; createStoreSlots(storeId, createStoreSlotsRequest, accept, acceptEncoding)
+> List&lt;StoreSlot&gt; createStoreSlot(storeId, storeSlot, accept, acceptEncoding)
 
 Создать ячейку склада
 
@@ -227,14 +229,14 @@ public class Example {
 
         StoresApi apiInstance = new StoresApi(defaultClient);
         UUID storeId = UUID.randomUUID(); // UUID | 
-        CreateStoreSlotsRequest createStoreSlotsRequest = new CreateStoreSlotsRequest(); // CreateStoreSlotsRequest | 
+        StoreSlot storeSlot = new StoreSlot(); // StoreSlot | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
-            List<StoreSlot> result = apiInstance.createStoreSlots(storeId, createStoreSlotsRequest, accept, acceptEncoding);
+            List<StoreSlot> result = apiInstance.createStoreSlot(storeId, storeSlot, accept, acceptEncoding);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling StoresApi#createStoreSlots");
+            System.err.println("Exception when calling StoresApi#createStoreSlot");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -250,7 +252,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **storeId** | **UUID**|  | |
-| **createStoreSlotsRequest** | [**CreateStoreSlotsRequest**](CreateStoreSlotsRequest.md)|  | |
+| **storeSlot** | [**StoreSlot**](StoreSlot.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 
@@ -275,9 +277,90 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
-## createStoreZones
+## createStoreSlots
 
-> List&lt;StoreZone&gt; createStoreZones(storeId, createStoreZonesRequest, accept, acceptEncoding)
+> List&lt;BatchResponseEntity&gt; createStoreSlots(storeId, storeSlot, accept, acceptEncoding)
+
+Массовое создание и обновление ячеек склада
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.StoresApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        StoresApi apiInstance = new StoresApi(defaultClient);
+        UUID storeId = UUID.randomUUID(); // UUID | 
+        List<StoreSlot> storeSlot = Arrays.asList(); // List<StoreSlot> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            List<BatchResponseEntity> result = apiInstance.createStoreSlots(storeId, storeSlot, accept, acceptEncoding);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling StoresApi#createStoreSlots");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **storeId** | **UUID**|  | |
+| **storeSlot** | [**List&lt;StoreSlot&gt;**](StoreSlot.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## createStoreZone
+
+> List&lt;StoreZone&gt; createStoreZone(storeId, storeZone, accept, acceptEncoding)
 
 Создать зону склада
 
@@ -308,11 +391,92 @@ public class Example {
 
         StoresApi apiInstance = new StoresApi(defaultClient);
         UUID storeId = UUID.randomUUID(); // UUID | 
-        CreateStoreZonesRequest createStoreZonesRequest = new CreateStoreZonesRequest(); // CreateStoreZonesRequest | 
+        StoreZone storeZone = new StoreZone(); // StoreZone | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
-            List<StoreZone> result = apiInstance.createStoreZones(storeId, createStoreZonesRequest, accept, acceptEncoding);
+            List<StoreZone> result = apiInstance.createStoreZone(storeId, storeZone, accept, acceptEncoding);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling StoresApi#createStoreZone");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **storeId** | **UUID**|  | |
+| **storeZone** | [**StoreZone**](StoreZone.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+[**List&lt;StoreZone&gt;**](StoreZone.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## createStoreZones
+
+> List&lt;BatchResponseEntity&gt; createStoreZones(storeId, storeZone, accept, acceptEncoding)
+
+Массовое создание и обновление зон склада
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.StoresApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        StoresApi apiInstance = new StoresApi(defaultClient);
+        UUID storeId = UUID.randomUUID(); // UUID | 
+        List<StoreZone> storeZone = Arrays.asList(); // List<StoreZone> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            List<BatchResponseEntity> result = apiInstance.createStoreZones(storeId, storeZone, accept, acceptEncoding);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling StoresApi#createStoreZones");
@@ -331,13 +495,13 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **storeId** | **UUID**|  | |
-| **createStoreZonesRequest** | [**CreateStoreZonesRequest**](CreateStoreZonesRequest.md)|  | |
+| **storeZone** | [**List&lt;StoreZone&gt;**](StoreZone.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 
 ### Return type
 
-[**List&lt;StoreZone&gt;**](StoreZone.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 

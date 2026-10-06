@@ -8,6 +8,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createRetailDemandBatch**](RetailDemandsApi.md#createRetailDemandBatch) | **POST** /entity/retaildemand/batch | Массовое создание и обновление Розничных продаж |
 | [**createRetailDemandMetadataAttribute**](RetailDemandsApi.md#createRetailDemandMetadataAttribute) | **POST** /entity/retaildemand/metadata/attributes | Создать доп. поле Розничной продажи |
 | [**createRetailDemandMetadataState**](RetailDemandsApi.md#createRetailDemandMetadataState) | **POST** /entity/retaildemand/metadata/states | Создать статус Розничной продажи |
+| [**createRetailDemandMetadataStatesBatch**](RetailDemandsApi.md#createRetailDemandMetadataStatesBatch) | **POST** /entity/retaildemand/metadata/states/batch | Массовое создание и обновление статусов Розничной продажи |
 | [**createRetailDemandPosition**](RetailDemandsApi.md#createRetailDemandPosition) | **POST** /entity/retaildemand/{id}/positions | Создать и обновить позицию Розничной продажи |
 | [**createRetailDemandPositions**](RetailDemandsApi.md#createRetailDemandPositions) | **POST** /entity/retaildemand/{id}/positions/batch | Массовое создание и обновление позиций Розничной продажи |
 | [**deleteRetailDemand**](RetailDemandsApi.md#deleteRetailDemand) | **DELETE** /entity/retaildemand/{id} | Удалить Розничную продажу |
@@ -282,7 +283,7 @@ public class Example {
 
 ## createRetailDemandMetadataState
 
-> CreateRetailDemandMetadataStateRequest createRetailDemandMetadataState(createRetailDemandMetadataStateRequest, accept, acceptEncoding, contentType)
+> State createRetailDemandMetadataState(state, accept, acceptEncoding, contentType)
 
 Создать статус Розничной продажи
 
@@ -312,12 +313,12 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         RetailDemandsApi apiInstance = new RetailDemandsApi(defaultClient);
-        CreateRetailDemandMetadataStateRequest createRetailDemandMetadataStateRequest = new CreateRetailDemandMetadataStateRequest(); // CreateRetailDemandMetadataStateRequest | 
+        State state = new State(); // State | 
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            CreateRetailDemandMetadataStateRequest result = apiInstance.createRetailDemandMetadataState(createRetailDemandMetadataStateRequest, accept, acceptEncoding, contentType);
+            State result = apiInstance.createRetailDemandMetadataState(state, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling RetailDemandsApi#createRetailDemandMetadataState");
@@ -335,14 +336,95 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **createRetailDemandMetadataStateRequest** | [**CreateRetailDemandMetadataStateRequest**](CreateRetailDemandMetadataStateRequest.md)|  | |
+| **state** | [**State**](State.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
 | **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**CreateRetailDemandMetadataStateRequest**](CreateRetailDemandMetadataStateRequest.md)
+[**State**](State.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## createRetailDemandMetadataStatesBatch
+
+> List&lt;StateRowResult&gt; createRetailDemandMetadataStatesBatch(state, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление статусов Розничной продажи
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.RetailDemandsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        RetailDemandsApi apiInstance = new RetailDemandsApi(defaultClient);
+        List<State> state = Arrays.asList(); // List<State> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<StateRowResult> result = apiInstance.createRetailDemandMetadataStatesBatch(state, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling RetailDemandsApi#createRetailDemandMetadataStatesBatch");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **state** | [**List&lt;State&gt;**](State.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;StateRowResult&gt;**](StateRowResult.md)
 
 ### Authorization
 

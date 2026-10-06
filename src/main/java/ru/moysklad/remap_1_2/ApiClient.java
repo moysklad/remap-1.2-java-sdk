@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.*;
 import tools.jackson.core.JacksonException;
 import tools.jackson.core.type.TypeReference;
 import tools.jackson.databind.*;
-import tools.jackson.databind.cfg.ContextAttributes;
+import tools.jackson.databind.cfg.MapperBuilder;
 import tools.jackson.databind.cfg.DateTimeFeature;
 import tools.jackson.databind.cfg.EnumFeature;
 import tools.jackson.databind.ext.javatime.deser.LocalDateTimeDeserializer;
@@ -25,6 +25,7 @@ import tools.jackson.databind.module.SimpleModule;
 import java.time.OffsetDateTime;
 import org.openapitools.jackson.nullable.JsonNullableJackson3Module;
 
+import org.apache.hc.client5.http.config.RequestConfig;
 import org.apache.hc.client5.http.cookie.BasicCookieStore;
 import org.apache.hc.client5.http.cookie.Cookie;
 import org.apache.hc.client5.http.entity.UrlEncodedFormEntity;
@@ -87,7 +88,7 @@ import ru.moysklad.remap_1_2.deserialize.PolymorphicMetaTypeDeserializer;
 import ru.moysklad.remap_1_2.auth.HttpBasicAuth;
 import ru.moysklad.remap_1_2.auth.HttpBearerAuth;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T13:54:20.814579807Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-06T05:14:41.995197922Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ApiClient extends JavaTimeFormatter {
   protected Map<String, String> defaultHeaderMap = new HashMap<String, String>();
@@ -140,7 +141,7 @@ public class ApiClient extends JavaTimeFormatter {
         .addModule(new RFC3339JavaTimeModule())
         .defaultDateFormat(ApiClient.buildDefaultDateFormat())
         .build();
-    objectMapper = attachObjectMapperAttribute(jsonMapper);
+    objectMapper = attachDeserializerFactory(jsonMapper);
 
     dateFormat = ApiClient.buildDefaultDateFormat();
 
@@ -184,14 +185,16 @@ public class ApiClient extends JavaTimeFormatter {
    * @return API client
    */
   public ApiClient setObjectMapper(ObjectMapper objectMapper) {
-    this.objectMapper = attachObjectMapperAttribute(objectMapper);
+    this.objectMapper = attachDeserializerFactory(objectMapper);
     return this;
   }
 
-  private static ObjectMapper attachObjectMapperAttribute(ObjectMapper mapper) {
-    return mapper.rebuild()
-        .defaultAttributes(ContextAttributes.getEmpty()
-            .withSharedAttribute(PolymorphicMetaTypeDeserializer.OBJECT_MAPPER_ATTRIBUTE, mapper))
+  private static ObjectMapper attachDeserializerFactory(ObjectMapper mapper) {
+    MapperBuilder<?, ?> builder = mapper.rebuild();
+    // Apply modules before capturing the factory, and preserve the mapper's context attributes.
+    builder.saveStateApplyModules();
+    return builder.defaultAttributes(builder.defaultAttributes().withSharedAttribute(
+        PolymorphicMetaTypeDeserializer.DESERIALIZER_FACTORY_ATTRIBUTE, builder.deserializerFactory()))
         .build();
   }
 
@@ -482,7 +485,7 @@ public class ApiClient extends JavaTimeFormatter {
   public ApiClient setDateFormat(DateFormat dateFormat) {
     this.dateFormat = dateFormat;
     // Also set the date format for model (de)serialization with Date properties.
-    this.objectMapper = attachObjectMapperAttribute(this.objectMapper.rebuild()
+    this.objectMapper = attachDeserializerFactory(this.objectMapper.rebuild()
         .defaultDateFormat((DateFormat) dateFormat.clone())
         .build());
     return this;
@@ -1064,6 +1067,38 @@ public class ApiClient extends JavaTimeFormatter {
        String contentType,
        String[] authNames,
        ApiResponseProcessor<T> responseProcessor) throws ApiException {
+    return executeAPIRequest(
+        path,
+        method,
+        queryParams,
+        collectionQueryParams,
+        urlQueryDeepObject,
+        body,
+        headerParams,
+        cookieParams,
+        formParams,
+        accept,
+        contentType,
+        authNames,
+        responseProcessor,
+        true);
+  }
+
+  protected <T> T executeAPIRequest(
+       String path,
+       String method,
+       List<Pair> queryParams,
+       List<Pair> collectionQueryParams,
+       String urlQueryDeepObject,
+       Object body,
+       Map<String, String> headerParams,
+       Map<String, String> cookieParams,
+       Map<String, Object> formParams,
+       String accept,
+       String contentType,
+       String[] authNames,
+       ApiResponseProcessor<T> responseProcessor,
+       boolean followRedirects) throws ApiException {
     validateRequestParams(body, formParams);
 
     ClassicRequestBuilder builder = buildRequest(
@@ -1077,6 +1112,9 @@ public class ApiClient extends JavaTimeFormatter {
         accept,
         authNames);
     HttpClientContext context = buildHttpContext(cookieParams, builder.getUri());
+    if (!followRedirects) {
+      context.setRequestConfig(RequestConfig.custom().setRedirectsEnabled(false).build());
+    }
     addRequestEntity(builder, method, body, formParams, contentType);
 
     try (CloseableHttpResponse response = httpClient.execute(builder.build(), context)) {
@@ -1105,10 +1143,27 @@ public class ApiClient extends JavaTimeFormatter {
 
     if (isSuccessfulStatus(statusCode)) {
       return this.deserialize(response, returnType);
-    } else {
-      String message = EntityUtils.toString(response.getEntity());
-      throw new ApiException(message, statusCode, responseHeaders, message);
     }
+    throw toApiException(response, statusCode, responseHeaders);
+  }
+
+  protected LocationResponse processLocationResponse(CloseableHttpResponse response) throws ApiException, IOException, ParseException {
+    int statusCode = response.getCode();
+    lastStatusCode.set(statusCode);
+
+    Map<String, List<String>> responseHeaders = transformResponseHeaders(response.getHeaders());
+    lastResponseHeaders.set(responseHeaders);
+
+    if (isSuccessfulStatus(statusCode) || statusCode == HttpStatus.SC_SEE_OTHER) {
+      return LocationResponse.fromHeaders(statusCode, responseHeaders);
+    }
+    throw toApiException(response, statusCode, responseHeaders);
+  }
+
+  protected ApiException toApiException(CloseableHttpResponse response, int statusCode,
+                                        Map<String, List<String>> responseHeaders) throws IOException, ParseException {
+    String message = response.getEntity() == null ? null : EntityUtils.toString(response.getEntity());
+    return new ApiException(message, statusCode, responseHeaders, message);
   }
 
   protected List<BatchResponseEntity> processResponseBatch(CloseableHttpResponse response) throws ApiException, IOException, ParseException {
@@ -1181,6 +1236,55 @@ public class ApiClient extends JavaTimeFormatter {
         contentType,
         authNames,
         response -> processResponse(response, returnType));
+  }
+
+  /**
+   * Invoke an API operation whose payload is carried by response headers.
+   * The redirect is not followed, so the headers of the original response are preserved.
+   *
+   * @param path The sub-path of the HTTP URL
+   * @param method The request method, one of "GET", "POST", "PUT", and "DELETE"
+   * @param queryParams The query parameters
+   * @param collectionQueryParams The collection query parameters
+   * @param urlQueryDeepObject A URL query string for deep object parameters
+   * @param body The request body object - if it is not binary, otherwise null
+   * @param headerParams The header parameters
+   * @param cookieParams The cookie parameters
+   * @param formParams The form parameters
+   * @param accept The request's Accept header
+   * @param contentType The request's Content-Type header
+   * @param authNames The authentications to apply
+   * @return Status code and Location header of the response
+   * @throws ApiException API exception
+   */
+  public LocationResponse invokeAPIForLocation(
+       String path,
+       String method,
+       List<Pair> queryParams,
+       List<Pair> collectionQueryParams,
+       String urlQueryDeepObject,
+       Object body,
+       Map<String, String> headerParams,
+       Map<String, String> cookieParams,
+       Map<String, Object> formParams,
+       String accept,
+       String contentType,
+       String[] authNames) throws ApiException {
+    return executeAPIRequest(
+        path,
+        method,
+        queryParams,
+        collectionQueryParams,
+        urlQueryDeepObject,
+        body,
+        headerParams,
+        cookieParams,
+        formParams,
+        accept,
+        contentType,
+        authNames,
+        response -> processLocationResponse(response),
+        false);
   }
 
   public <T> List<BatchResponseEntity> invokeAPIBatch(

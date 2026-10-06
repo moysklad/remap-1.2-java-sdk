@@ -98,7 +98,7 @@ import java.util.StringJoiner;
   SalesReturn.JSON_PROPERTY_PAYMENTS,
   SalesReturn.JSON_PROPERTY_FACTURE_OUT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T13:54:20.814579807Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-06T05:14:41.995197922Z[GMT]", comments = "Generator version: 7.14.0")
 public class SalesReturn extends EntityWithMeta implements MetaEntity {
   public static SalesReturn createWithMeta(UUID id) {
     SalesReturn o = new SalesReturn();

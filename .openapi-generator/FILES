@@ -11,7 +11,6 @@ docs/AccumulationDiscount.md
 docs/AccumulationDiscountLevelsInner.md
 docs/ActivateEmployee200Response.md
 docs/ActivateEmployeeRequest.md
-docs/AddProductImagesRequest.md
 docs/Address.md
 docs/Agent.md
 docs/AgentDiscount.md
@@ -130,10 +129,7 @@ docs/CounterpartyNotes.md
 docs/CountriesApi.md
 docs/Country.md
 docs/CountryList.md
-docs/CreateBundleComponentsRequest.md
 docs/CreateCommissionReportInPositions200ResponseInner.md
-docs/CreateCommissionReportInReturnedPositions200ResponseInner.md
-docs/CreateCommissionReportInReturnedPositionsRequest.md
 docs/CreateCustomerOrderPositions200ResponseInner.md
 docs/CreateDemandPositions200ResponseInner.md
 docs/CreateEnterPositions200ResponseInner.md
@@ -151,14 +147,11 @@ docs/CreateProcessingOrderPositions200ResponseInner.md
 docs/CreateProcessingProcessPositions200ResponseInner.md
 docs/CreatePurchaseOrderPositions200ResponseInner.md
 docs/CreatePurchaseReturnPositions200ResponseInner.md
-docs/CreateRetailDemandMetadataStateRequest.md
 docs/CreateRetailDemandPositions200ResponseInner.md
 docs/CreateRetailSalesReturnPositions200ResponseInner.md
 docs/CreateRetailSalesReturnsBatch200ResponseInner.md
 docs/CreateRetailShiftBatch200ResponseInner.md
 docs/CreateSalesReturnPositions200ResponseInner.md
-docs/CreateStoreSlotsRequest.md
-docs/CreateStoreZonesRequest.md
 docs/CurrenciesApi.md
 docs/Currency.md
 docs/CurrencyList.md
@@ -684,6 +677,7 @@ src/main/java/ru/moysklad/remap_1_2/ApiException.java
 src/main/java/ru/moysklad/remap_1_2/BaseApi.java
 src/main/java/ru/moysklad/remap_1_2/Configuration.java
 src/main/java/ru/moysklad/remap_1_2/JavaTimeFormatter.java
+src/main/java/ru/moysklad/remap_1_2/LocationResponse.java
 src/main/java/ru/moysklad/remap_1_2/Pair.java
 src/main/java/ru/moysklad/remap_1_2/RFC3339DateFormat.java
 src/main/java/ru/moysklad/remap_1_2/RFC3339InstantDeserializer.java
@@ -796,7 +790,6 @@ src/main/java/ru/moysklad/remap_1_2/model/AccumulationDiscount.java
 src/main/java/ru/moysklad/remap_1_2/model/AccumulationDiscountLevelsInner.java
 src/main/java/ru/moysklad/remap_1_2/model/ActivateEmployee200Response.java
 src/main/java/ru/moysklad/remap_1_2/model/ActivateEmployeeRequest.java
-src/main/java/ru/moysklad/remap_1_2/model/AddProductImagesRequest.java
 src/main/java/ru/moysklad/remap_1_2/model/Address.java
 src/main/java/ru/moysklad/remap_1_2/model/Agent.java
 src/main/java/ru/moysklad/remap_1_2/model/AgentDiscount.java
@@ -900,10 +893,7 @@ src/main/java/ru/moysklad/remap_1_2/model/CounterpartyMetadata.java
 src/main/java/ru/moysklad/remap_1_2/model/CounterpartyNotes.java
 src/main/java/ru/moysklad/remap_1_2/model/Country.java
 src/main/java/ru/moysklad/remap_1_2/model/CountryList.java
-src/main/java/ru/moysklad/remap_1_2/model/CreateBundleComponentsRequest.java
 src/main/java/ru/moysklad/remap_1_2/model/CreateCommissionReportInPositions200ResponseInner.java
-src/main/java/ru/moysklad/remap_1_2/model/CreateCommissionReportInReturnedPositions200ResponseInner.java
-src/main/java/ru/moysklad/remap_1_2/model/CreateCommissionReportInReturnedPositionsRequest.java
 src/main/java/ru/moysklad/remap_1_2/model/CreateCustomerOrderPositions200ResponseInner.java
 src/main/java/ru/moysklad/remap_1_2/model/CreateDemandPositions200ResponseInner.java
 src/main/java/ru/moysklad/remap_1_2/model/CreateEnterPositions200ResponseInner.java
@@ -921,14 +911,11 @@ src/main/java/ru/moysklad/remap_1_2/model/CreateProcessingOrderPositions200Respo
 src/main/java/ru/moysklad/remap_1_2/model/CreateProcessingProcessPositions200ResponseInner.java
 src/main/java/ru/moysklad/remap_1_2/model/CreatePurchaseOrderPositions200ResponseInner.java
 src/main/java/ru/moysklad/remap_1_2/model/CreatePurchaseReturnPositions200ResponseInner.java
-src/main/java/ru/moysklad/remap_1_2/model/CreateRetailDemandMetadataStateRequest.java
 src/main/java/ru/moysklad/remap_1_2/model/CreateRetailDemandPositions200ResponseInner.java
 src/main/java/ru/moysklad/remap_1_2/model/CreateRetailSalesReturnPositions200ResponseInner.java
 src/main/java/ru/moysklad/remap_1_2/model/CreateRetailSalesReturnsBatch200ResponseInner.java
 src/main/java/ru/moysklad/remap_1_2/model/CreateRetailShiftBatch200ResponseInner.java
 src/main/java/ru/moysklad/remap_1_2/model/CreateSalesReturnPositions200ResponseInner.java
-src/main/java/ru/moysklad/remap_1_2/model/CreateStoreSlotsRequest.java
-src/main/java/ru/moysklad/remap_1_2/model/CreateStoreZonesRequest.java
 src/main/java/ru/moysklad/remap_1_2/model/Currency.java
 src/main/java/ru/moysklad/remap_1_2/model/CurrencyList.java
 src/main/java/ru/moysklad/remap_1_2/model/CurrencyMajorUnit.java

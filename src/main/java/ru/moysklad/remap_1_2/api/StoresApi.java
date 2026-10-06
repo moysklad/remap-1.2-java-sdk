@@ -20,11 +20,10 @@ import ru.moysklad.remap_1_2.BaseApi;
 import ru.moysklad.remap_1_2.Configuration;
 import ru.moysklad.remap_1_2.Pair;
 
+
 import ru.moysklad.remap_1_2.model.AttributeMetaInfo;
 import ru.moysklad.remap_1_2.model.AttributeMetaInfoList;
 import ru.moysklad.remap_1_2.model.BatchResponseEntity;
-import ru.moysklad.remap_1_2.model.CreateStoreSlotsRequest;
-import ru.moysklad.remap_1_2.model.CreateStoreZonesRequest;
 import ru.moysklad.remap_1_2.model.DeleteRowResult;
 import ru.moysklad.remap_1_2.model.Errors;
 import ru.moysklad.remap_1_2.model.Store;
@@ -44,7 +43,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T13:54:20.814579807Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-06T05:14:41.995197922Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class StoresApi extends BaseApi {
 
@@ -269,13 +268,13 @@ if (contentType != null) {
    * Создать ячейку склада
    * 
    * @param storeId  (required)
-   * @param createStoreSlotsRequest  (required)
+   * @param storeSlot  (required)
    * @return List&lt;StoreSlot&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<StoreSlot> createStoreSlots(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull CreateStoreSlotsRequest createStoreSlotsRequest) throws ApiException {
+  public List<StoreSlot> createStoreSlot(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull StoreSlot storeSlot) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
-    return this.createStoreSlots(storeId, createStoreSlotsRequest, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.createStoreSlot(storeId, storeSlot, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -286,7 +285,7 @@ if (contentType != null) {
    * @param storeId  (required)
    
    
-   * @param createStoreSlotsRequest  (required)
+   * @param storeSlot  (required)
    
    
    
@@ -294,33 +293,33 @@ if (contentType != null) {
    * @return List&lt;StoreSlot&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<StoreSlot> createStoreSlots(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull CreateStoreSlotsRequest createStoreSlotsRequest, RequestOptions options) throws ApiException {
+  public List<StoreSlot> createStoreSlot(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull StoreSlot storeSlot, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
-    return this.createStoreSlots(storeId, createStoreSlotsRequest, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.createStoreSlot(storeId, storeSlot, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
   /**
    * Создать ячейку склада
    * 
    * @param storeId  (required)
-   * @param createStoreSlotsRequest  (required)
+   * @param storeSlot  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param additionalHeaders additionalHeaders for this call
    * @return List&lt;StoreSlot&gt;
    * @throws ApiException if fails to make API call
    */
-  protected List<StoreSlot> createStoreSlots(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull CreateStoreSlotsRequest createStoreSlotsRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
-    Object localVarPostBody = createStoreSlotsRequest;
+  protected List<StoreSlot> createStoreSlot(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull StoreSlot storeSlot, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = storeSlot;
     
     // verify the required parameter 'storeId' is set
     if (storeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'storeId' when calling createStoreSlots");
+      throw new ApiException(400, "Missing the required parameter 'storeId' when calling createStoreSlot");
     }
     
-    // verify the required parameter 'createStoreSlotsRequest' is set
-    if (createStoreSlotsRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'createStoreSlotsRequest' when calling createStoreSlots");
+    // verify the required parameter 'storeSlot' is set
+    if (storeSlot == null) {
+      throw new ApiException(400, "Missing the required parameter 'storeSlot' when calling createStoreSlot");
     }
     
     // create path and map variables
@@ -375,16 +374,125 @@ if (acceptEncoding != null) {
   }
 
   /**
+   * Массовое создание и обновление ячеек склада
+   * 
+   * @param storeId  (required)
+   * @param storeSlot  (required)
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<BatchResponseEntity> createStoreSlots(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull List<StoreSlot> storeSlot) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createStoreSlots(storeId, storeSlot, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Массовое создание и обновление ячеек склада
+   * 
+   
+   * @param storeId  (required)
+   
+   
+   * @param storeSlot  (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<BatchResponseEntity> createStoreSlots(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull List<StoreSlot> storeSlot, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createStoreSlots(storeId, storeSlot, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Массовое создание и обновление ячеек склада
+   * 
+   * @param storeId  (required)
+   * @param storeSlot  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  protected List<BatchResponseEntity> createStoreSlots(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull List<StoreSlot> storeSlot, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = storeSlot;
+    
+    // verify the required parameter 'storeId' is set
+    if (storeId == null) {
+      throw new ApiException(400, "Missing the required parameter 'storeId' when calling createStoreSlots");
+    }
+    
+    // verify the required parameter 'storeSlot' is set
+    if (storeSlot == null) {
+      throw new ApiException(400, "Missing the required parameter 'storeSlot' when calling createStoreSlots");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/store/{storeId}/slots/batch"
+      .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(apiClient.parameterToString(storeId)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
+    return apiClient.invokeAPIBatch(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
    * Создать зону склада
    * 
    * @param storeId  (required)
-   * @param createStoreZonesRequest  (required)
+   * @param storeZone  (required)
    * @return List&lt;StoreZone&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<StoreZone> createStoreZones(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull CreateStoreZonesRequest createStoreZonesRequest) throws ApiException {
+  public List<StoreZone> createStoreZone(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull StoreZone storeZone) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
-    return this.createStoreZones(storeId, createStoreZonesRequest, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.createStoreZone(storeId, storeZone, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -395,7 +503,7 @@ if (acceptEncoding != null) {
    * @param storeId  (required)
    
    
-   * @param createStoreZonesRequest  (required)
+   * @param storeZone  (required)
    
    
    
@@ -403,33 +511,33 @@ if (acceptEncoding != null) {
    * @return List&lt;StoreZone&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<StoreZone> createStoreZones(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull CreateStoreZonesRequest createStoreZonesRequest, RequestOptions options) throws ApiException {
+  public List<StoreZone> createStoreZone(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull StoreZone storeZone, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
-    return this.createStoreZones(storeId, createStoreZonesRequest, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.createStoreZone(storeId, storeZone, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
   /**
    * Создать зону склада
    * 
    * @param storeId  (required)
-   * @param createStoreZonesRequest  (required)
+   * @param storeZone  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param additionalHeaders additionalHeaders for this call
    * @return List&lt;StoreZone&gt;
    * @throws ApiException if fails to make API call
    */
-  protected List<StoreZone> createStoreZones(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull CreateStoreZonesRequest createStoreZonesRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
-    Object localVarPostBody = createStoreZonesRequest;
+  protected List<StoreZone> createStoreZone(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull StoreZone storeZone, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = storeZone;
     
     // verify the required parameter 'storeId' is set
     if (storeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'storeId' when calling createStoreZones");
+      throw new ApiException(400, "Missing the required parameter 'storeId' when calling createStoreZone");
     }
     
-    // verify the required parameter 'createStoreZonesRequest' is set
-    if (createStoreZonesRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'createStoreZonesRequest' when calling createStoreZones");
+    // verify the required parameter 'storeZone' is set
+    if (storeZone == null) {
+      throw new ApiException(400, "Missing the required parameter 'storeZone' when calling createStoreZone");
     }
     
     // create path and map variables
@@ -467,6 +575,115 @@ if (acceptEncoding != null) {
 
     TypeReference<List<StoreZone>> localVarReturnType = new TypeReference<List<StoreZone>>() {};
     return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Массовое создание и обновление зон склада
+   * 
+   * @param storeId  (required)
+   * @param storeZone  (required)
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<BatchResponseEntity> createStoreZones(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull List<StoreZone> storeZone) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createStoreZones(storeId, storeZone, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Массовое создание и обновление зон склада
+   * 
+   
+   * @param storeId  (required)
+   
+   
+   * @param storeZone  (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<BatchResponseEntity> createStoreZones(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull List<StoreZone> storeZone, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createStoreZones(storeId, storeZone, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Массовое создание и обновление зон склада
+   * 
+   * @param storeId  (required)
+   * @param storeZone  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  protected List<BatchResponseEntity> createStoreZones(@javax.annotation.Nonnull UUID storeId, @javax.annotation.Nonnull List<StoreZone> storeZone, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = storeZone;
+    
+    // verify the required parameter 'storeId' is set
+    if (storeId == null) {
+      throw new ApiException(400, "Missing the required parameter 'storeId' when calling createStoreZones");
+    }
+    
+    // verify the required parameter 'storeZone' is set
+    if (storeZone == null) {
+      throw new ApiException(400, "Missing the required parameter 'storeZone' when calling createStoreZones");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/store/{storeId}/zones/batch"
+      .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(apiClient.parameterToString(storeId)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
+    return apiClient.invokeAPIBatch(
         localVarPath,
         "POST",
         localVarQueryParams,

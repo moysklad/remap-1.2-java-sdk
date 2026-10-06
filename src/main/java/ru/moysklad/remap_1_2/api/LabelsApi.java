@@ -19,6 +19,8 @@ import ru.moysklad.remap_1_2.ApiClient;
 import ru.moysklad.remap_1_2.BaseApi;
 import ru.moysklad.remap_1_2.Configuration;
 import ru.moysklad.remap_1_2.Pair;
+import ru.moysklad.remap_1_2.LocationResponse;
+
 
 import ru.moysklad.remap_1_2.model.Errors;
 import ru.moysklad.remap_1_2.model.LabelPrintRequest;
@@ -32,7 +34,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T13:54:20.814579807Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-06T05:14:41.995197922Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class LabelsApi extends BaseApi {
 
@@ -50,11 +52,12 @@ public class LabelsApi extends BaseApi {
    * @param id ID сущности (required)
    * @param type Тип сущности, для которой запрашивается печать (required)
    * @param labelPrintRequest  (required)
+   * @return {@link LocationResponse} со статусом и заголовком Location ответа; переход по редиректу не выполняется
    * @throws ApiException if fails to make API call
    */
-  public void printLabels(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull String type, @javax.annotation.Nonnull LabelPrintRequest labelPrintRequest) throws ApiException {
+  public LocationResponse printLabels(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull String type, @javax.annotation.Nonnull LabelPrintRequest labelPrintRequest) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
-    this.printLabels(id, type, labelPrintRequest, null, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.printLabels(id, type, labelPrintRequest, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -74,11 +77,12 @@ public class LabelsApi extends BaseApi {
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return {@link LocationResponse} со статусом и заголовком Location ответа; переход по редиректу не выполняется
    * @throws ApiException if fails to make API call
    */
-  public void printLabels(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull String type, @javax.annotation.Nonnull LabelPrintRequest labelPrintRequest, RequestOptions options) throws ApiException {
+  public LocationResponse printLabels(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull String type, @javax.annotation.Nonnull LabelPrintRequest labelPrintRequest, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
-    this.printLabels(id, type, labelPrintRequest, null, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.printLabels(id, type, labelPrintRequest, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
   /**
@@ -91,9 +95,10 @@ public class LabelsApi extends BaseApi {
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
+   * @return {@link LocationResponse} со статусом и заголовком Location ответа; переход по редиректу не выполняется
    * @throws ApiException if fails to make API call
    */
-  protected void printLabels(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull String type, @javax.annotation.Nonnull LabelPrintRequest labelPrintRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected LocationResponse printLabels(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull String type, @javax.annotation.Nonnull LabelPrintRequest labelPrintRequest, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = labelPrintRequest;
     
     // verify the required parameter 'id' is set
@@ -148,7 +153,7 @@ if (contentType != null) {
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    apiClient.invokeAPI(
+    return apiClient.invokeAPIForLocation(
         localVarPath,
         "POST",
         localVarQueryParams,
@@ -160,8 +165,7 @@ if (contentType != null) {
         localVarFormParams,
         localVarAccept,
         localVarContentType,
-        localVarAuthNames,
-        null
+        localVarAuthNames
     );
   }
 
