@@ -4,7 +4,7 @@
 
 - API version: 1.0.0
 
-    - Build date: 2026-10-06T05:14:41.995197922Z[GMT]
+    - Build date: 2026-10-13T10:58:45.089922936Z[GMT]
 
 - Generator version: 7.14.0
 
@@ -1756,6 +1756,7 @@ Class | Method | HTTP request | Description
  - [FinanceOutOperationAbstract](docs/FinanceOutOperationAbstract.md)
  - [FinanceOutOperationCommissionReportOut](docs/FinanceOutOperationCommissionReportOut.md)
  - [FinanceOutOperationInvoiceIn](docs/FinanceOutOperationInvoiceIn.md)
+ - [FinanceOutOperationPayroll](docs/FinanceOutOperationPayroll.md)
  - [FinanceOutOperationPurchaseOrder](docs/FinanceOutOperationPurchaseOrder.md)
  - [FinanceOutOperationSalesReturn](docs/FinanceOutOperationSalesReturn.md)
  - [FinanceOutOperationSupply](docs/FinanceOutOperationSupply.md)
@@ -1869,6 +1870,9 @@ Class | Method | HTTP request | Description
  - [PaymentOutList](docs/PaymentOutList.md)
  - [Payroll](docs/Payroll.md)
  - [PayrollList](docs/PayrollList.md)
+ - [PayrollPaymentAbstract](docs/PayrollPaymentAbstract.md)
+ - [PayrollPaymentCashOut](docs/PayrollPaymentCashOut.md)
+ - [PayrollPaymentPaymentOut](docs/PayrollPaymentPaymentOut.md)
  - [PayrollPosition](docs/PayrollPosition.md)
  - [PayrollPositionList](docs/PayrollPositionList.md)
  - [PermissionValue](docs/PermissionValue.md)

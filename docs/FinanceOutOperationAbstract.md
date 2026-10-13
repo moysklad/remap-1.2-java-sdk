@@ -2,7 +2,7 @@
 
 # FinanceOutOperationAbstract
 
-Элемент массива `operations` расходного ордера / исходящего платежа: документ одного из допустимых типов плюс обязательное поле `linkedSum`.  Допустимые `meta.type`: salesreturn, supply, invoicein, purchaseorder, commissionreportout. 
+Элемент массива `operations` расходного ордера / исходящего платежа: документ одного из допустимых типов плюс обязательное поле `linkedSum`.  Допустимые `meta.type`: salesreturn, supply, invoicein, purchaseorder, commissionreportout, payroll. 
 
 ## Properties
 

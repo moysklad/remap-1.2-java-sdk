@@ -31,6 +31,7 @@ import ru.moysklad.remap_1_2.model.FileList;
 import ru.moysklad.remap_1_2.model.Group;
 import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.Organization;
+import ru.moysklad.remap_1_2.model.PayrollPaymentAbstract;
 import ru.moysklad.remap_1_2.model.PayrollPositionList;
 import ru.moysklad.remap_1_2.model.State;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -61,6 +62,7 @@ import java.util.StringJoiner;
   Payroll.JSON_PROPERTY_NAME,
   Payroll.JSON_PROPERTY_ORGANIZATION,
   Payroll.JSON_PROPERTY_OWNER,
+  Payroll.JSON_PROPERTY_PAYMENTS,
   Payroll.JSON_PROPERTY_POSITIONS,
   Payroll.JSON_PROPERTY_PRINTED,
   Payroll.JSON_PROPERTY_PUBLISHED,
@@ -71,7 +73,7 @@ import java.util.StringJoiner;
   Payroll.JSON_PROPERTY_SYNC_ID,
   Payroll.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-06T05:14:41.995197922Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
 public class Payroll extends EntityWithMeta implements MetaEntity {
   public static Payroll createWithMeta(UUID id) {
     Payroll o = new Payroll();
@@ -148,6 +150,10 @@ public class Payroll extends EntityWithMeta implements MetaEntity {
   @javax.annotation.Nullable
   private JsonNullable<Employee> owner = JsonNullable.<Employee>undefined();
 
+  public static final String JSON_PROPERTY_PAYMENTS = "payments";
+  @javax.annotation.Nullable
+  private List<PayrollPaymentAbstract> payments = new ArrayList<>();
+
   public static final String JSON_PROPERTY_POSITIONS = "positions";
   @javax.annotation.Nullable
   private PayrollPositionList positions;
@@ -194,6 +200,7 @@ public class Payroll extends EntityWithMeta implements MetaEntity {
     @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id, 
     @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId, 
     @JsonProperty(value = JSON_PROPERTY_CREATED, required = false) String created, 
+    @JsonProperty(value = JSON_PROPERTY_PAYMENTS, required = false) List<PayrollPaymentAbstract> payments, 
     @JsonProperty(value = JSON_PROPERTY_PRINTED, required = false) Boolean printed, 
     @JsonProperty(value = JSON_PROPERTY_PUBLISHED, required = false) Boolean published, 
     @JsonProperty(value = JSON_PROPERTY_SUM, required = false) Double sum, 
@@ -203,6 +210,7 @@ public class Payroll extends EntityWithMeta implements MetaEntity {
     this.id = id;
     this.accountId = accountId;
     this.created = created;
+    this.payments = payments;
     this.printed = printed;
     this.published = published;
     this.sum = sum;
@@ -644,6 +652,22 @@ public class Payroll extends EntityWithMeta implements MetaEntity {
   }
 
 
+  /**
+   * Связанные платежи: Исходящий платеж (paymentout) и Расходный ордер (cashout). Каждый элемент содержит метаданные платежа и сумму оплаты &#x60;linkedSum&#x60;. 
+   * @return payments
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PAYMENTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public List<PayrollPaymentAbstract> getPayments() {
+    return payments;
+  }
+
+  
+
+
+
   public Payroll positions(@javax.annotation.Nullable PayrollPositionList positions) {
     
     this.positions = positions;
@@ -886,6 +910,7 @@ public class Payroll extends EntityWithMeta implements MetaEntity {
         Objects.equals(this.name, payroll.name) &&
         Objects.equals(this.organization, payroll.organization) &&
         equalsNullable(this.owner, payroll.owner) &&
+        Objects.equals(this.payments, payroll.payments) &&
         Objects.equals(this.positions, payroll.positions) &&
         Objects.equals(this.printed, payroll.printed) &&
         Objects.equals(this.published, payroll.published) &&
@@ -903,7 +928,7 @@ public class Payroll extends EntityWithMeta implements MetaEntity {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, applicable, hashCodeNullable(attributes), created, description, endPayrollPeriod, externalCode, hashCodeNullable(files), group, moment, name, organization, hashCodeNullable(owner), positions, printed, published, shared, startPayrollPeriod, hashCodeNullable(state), sum, syncId, updated);
+    return Objects.hash(meta, id, accountId, applicable, hashCodeNullable(attributes), created, description, endPayrollPeriod, externalCode, hashCodeNullable(files), group, moment, name, organization, hashCodeNullable(owner), payments, positions, printed, published, shared, startPayrollPeriod, hashCodeNullable(state), sum, syncId, updated);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -932,6 +957,7 @@ public class Payroll extends EntityWithMeta implements MetaEntity {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
     sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
+    sb.append("    payments: ").append(toIndentedString(payments)).append("\n");
     sb.append("    positions: ").append(toIndentedString(positions)).append("\n");
     sb.append("    printed: ").append(toIndentedString(printed)).append("\n");
     sb.append("    published: ").append(toIndentedString(published)).append("\n");
@@ -1111,6 +1137,16 @@ public class Payroll extends EntityWithMeta implements MetaEntity {
     // add `owner` to the URL query string
     if (getOwner() != null) {
       joiner.add(getOwner().toUrlQueryString(prefix + "owner" + suffix));
+    }
+
+    // add `payments` to the URL query string
+    if (getPayments() != null) {
+      for (int i = 0; i < getPayments().size(); i++) {
+        if (getPayments().get(i) != null) {
+          joiner.add(getPayments().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%spayments%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
     }
 
     // add `positions` to the URL query string

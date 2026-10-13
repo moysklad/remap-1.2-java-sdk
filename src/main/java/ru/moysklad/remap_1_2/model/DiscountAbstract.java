@@ -55,7 +55,7 @@ import ru.moysklad.remap_1_2.deserialize.PolymorphicMetaTypeDeserializer;
   DiscountAbstract.JSON_PROPERTY_ALL_PRODUCTS,
   DiscountAbstract.JSON_PROPERTY_ASSORTMENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-06T05:14:41.995197922Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
 @OpenApiPolymorphicTypeInfo(path = "meta.type")
 @OpenApiPolymorphicSubTypes({
   @OpenApiPolymorphicSubTypes.Type(value = AccumulationDiscount.class, name = "accumulationdiscount"),

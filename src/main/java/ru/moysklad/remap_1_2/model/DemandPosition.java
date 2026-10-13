@@ -63,7 +63,7 @@ import java.util.StringJoiner;
   DemandPosition.JSON_PROPERTY_VAT,
   DemandPosition.JSON_PROPERTY_VAT_ENABLED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-06T05:14:41.995197922Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
 public class DemandPosition extends EntityWithMeta implements DocumentPosition, MetaEntity {
   public static DemandPosition createWithMeta(UUID parentId, UUID id) {
     DemandPosition o = new DemandPosition();

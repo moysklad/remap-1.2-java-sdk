@@ -84,11 +84,12 @@ import java.text.DateFormat;
 import ru.moysklad.remap_1_2.auth.Authentication;
 import ru.moysklad.remap_1_2.model.BatchResponseEntity;
 import ru.moysklad.remap_1_2.model.Errors;
+import ru.moysklad.remap_1_2.deserialize.PolymorphicJsonNullableModule;
 import ru.moysklad.remap_1_2.deserialize.PolymorphicMetaTypeDeserializer;
 import ru.moysklad.remap_1_2.auth.HttpBasicAuth;
 import ru.moysklad.remap_1_2.auth.HttpBearerAuth;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-06T05:14:41.995197922Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ApiClient extends JavaTimeFormatter {
   protected Map<String, String> defaultHeaderMap = new HashMap<String, String>();
@@ -191,6 +192,8 @@ public class ApiClient extends JavaTimeFormatter {
 
   private static ObjectMapper attachDeserializerFactory(ObjectMapper mapper) {
     MapperBuilder<?, ?> builder = mapper.rebuild();
+    // Re-adding moves the module last, so it overrides JsonNullableJackson3Module even in user mappers.
+    builder.addModule(new PolymorphicJsonNullableModule());
     // Apply modules before capturing the factory, and preserve the mapper's context attributes.
     builder.saveStateApplyModules();
     return builder.defaultAttributes(builder.defaultAttributes().withSharedAttribute(

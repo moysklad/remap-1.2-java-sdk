@@ -86843,7 +86843,7 @@ components:
         operations:
           description: |
             Связанные операции: полное тело документа плюс `linkedSum`. Допустимые типы по `meta.type`:
-            salesreturn, supply, invoicein, purchaseorder, commissionreportout
+            salesreturn, supply, invoicein, purchaseorder, commissionreportout, payroll
           items:
             $ref: "#/components/schemas/FinanceOutOperationAbstract"
           nullable: true
@@ -87131,6 +87131,14 @@ components:
           description: Владелец (Сотрудник)
           nullable: true
           type: object
+        payments:
+          description: |
+            Связанные платежи: Исходящий платеж (paymentout) и Расходный ордер (cashout).
+            Каждый элемент содержит метаданные платежа и сумму оплаты `linkedSum`.
+          items:
+            $ref: "#/components/schemas/PayrollPaymentAbstract"
+          readOnly: true
+          type: array
         positions:
           $ref: "#/components/schemas/PayrollPositionList"
         printed:
@@ -87696,7 +87704,7 @@ components:
         operations:
           description: |
             Связанные операции: полное тело документа плюс `linkedSum`. Допустимые типы по `meta.type`:
-            salesreturn, supply, invoicein, purchaseorder, commissionreportout
+            salesreturn, supply, invoicein, purchaseorder, commissionreportout, payroll
           items:
             $ref: "#/components/schemas/FinanceOutOperationAbstract"
           nullable: true
@@ -87875,7 +87883,7 @@ components:
         Элемент массива `operations` расходного ордера / исходящего платежа: документ одного из
         допустимых типов плюс обязательное поле `linkedSum`.
 
-        Допустимые `meta.type`: salesreturn, supply, invoicein, purchaseorder, commissionreportout.
+        Допустимые `meta.type`: salesreturn, supply, invoicein, purchaseorder, commissionreportout, payroll.
       required:
       - linkedSum
       - meta
@@ -87893,6 +87901,8 @@ components:
           componentName: FinanceOutOperationPurchaseOrder
         - type: commissionreportout
           componentName: FinanceOutOperationCommissionReportOut
+        - type: payroll
+          componentName: FinanceOutOperationPayroll
     DiscountAbstract:
       properties:
         id:
@@ -87977,6 +87987,41 @@ components:
       description: Выданный отчет комиссионера + linkedSum
       type: object
       x-polymorphic-parent: FinanceOutOperationAbstract
+    FinanceOutOperationPayroll:
+      allOf:
+      - $ref: "#/components/schemas/Payroll"
+      description: Начисление зарплаты + linkedSum
+      type: object
+      x-polymorphic-parent: FinanceOutOperationAbstract
+    PayrollPaymentAbstract:
+      allOf:
+      - $ref: "#/components/schemas/OperationLinkedSum"
+      description: |
+        Связанный платеж Начисления зарплаты с суммой оплаты `linkedSum`.
+        Допустимые `meta.type`: paymentout, cashout.
+      required:
+      - linkedSum
+      - meta
+      type: object
+      x-polymorphic-discriminator:
+        path: meta.type
+        mappings:
+        - type: paymentout
+          componentName: PayrollPaymentPaymentOut
+        - type: cashout
+          componentName: PayrollPaymentCashOut
+    PayrollPaymentPaymentOut:
+      allOf:
+      - $ref: "#/components/schemas/PaymentOut"
+      description: Исходящий платеж + linkedSum
+      type: object
+      x-polymorphic-parent: PayrollPaymentAbstract
+    PayrollPaymentCashOut:
+      allOf:
+      - $ref: "#/components/schemas/CashOut"
+      description: Расходный ордер + linkedSum
+      type: object
+      x-polymorphic-parent: PayrollPaymentAbstract
     FinanceInOperationAbstract:
       allOf:
       - $ref: "#/components/schemas/OperationLinkedSum"

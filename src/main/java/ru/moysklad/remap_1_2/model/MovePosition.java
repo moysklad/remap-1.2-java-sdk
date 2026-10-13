@@ -54,7 +54,7 @@ import java.util.StringJoiner;
   MovePosition.JSON_PROPERTY_TARGET_SLOT,
   MovePosition.JSON_PROPERTY_THINGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-06T05:14:41.995197922Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
 public class MovePosition extends EntityWithMeta implements DocumentPosition, MetaEntity {
   public static MovePosition createWithMeta(UUID parentId, UUID id) {
     MovePosition o = new MovePosition();

@@ -41,7 +41,7 @@
 |**sum** | **Double** | Сумма расходного ордера в установленной валюте |  [optional] |
 |**vatSum** | **Double** | Сумма НДС |  [optional] |
 |**factureIn** | [**FactureIn**](FactureIn.md) | Счет-фактура полученный, с которым связан этот платеж |  [optional] |
-|**operations** | [**List&lt;FinanceOutOperationAbstract&gt;**](FinanceOutOperationAbstract.md) | Связанные операции: полное тело документа плюс &#x60;linkedSum&#x60;. Допустимые типы по &#x60;meta.type&#x60;: salesreturn, supply, invoicein, purchaseorder, commissionreportout  |  [optional] |
+|**operations** | [**List&lt;FinanceOutOperationAbstract&gt;**](FinanceOutOperationAbstract.md) | Связанные операции: полное тело документа плюс &#x60;linkedSum&#x60;. Допустимые типы по &#x60;meta.type&#x60;: salesreturn, supply, invoicein, purchaseorder, commissionreportout, payroll  |  [optional] |
 
 
 

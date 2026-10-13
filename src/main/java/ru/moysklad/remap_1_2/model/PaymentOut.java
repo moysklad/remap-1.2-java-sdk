@@ -91,7 +91,7 @@ import java.util.StringJoiner;
   PaymentOut.JSON_PROPERTY_ORGANIZATION_ACCOUNT,
   PaymentOut.JSON_PROPERTY_OPERATIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-06T05:14:41.995197922Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
 public class PaymentOut extends EntityWithMeta implements MetaEntity {
   public static PaymentOut createWithMeta(UUID id) {
     PaymentOut o = new PaymentOut();
@@ -1343,7 +1343,7 @@ public class PaymentOut extends EntityWithMeta implements MetaEntity {
   }
 
   /**
-   * Связанные операции: полное тело документа плюс &#x60;linkedSum&#x60;. Допустимые типы по &#x60;meta.type&#x60;: salesreturn, supply, invoicein, purchaseorder, commissionreportout 
+   * Связанные операции: полное тело документа плюс &#x60;linkedSum&#x60;. Допустимые типы по &#x60;meta.type&#x60;: salesreturn, supply, invoicein, purchaseorder, commissionreportout, payroll 
    * @return operations
    */
   @javax.annotation.Nullable

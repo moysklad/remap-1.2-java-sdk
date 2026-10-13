@@ -241,6 +241,7 @@ docs/FinanceInOperationRetailShift.md
 docs/FinanceOutOperationAbstract.md
 docs/FinanceOutOperationCommissionReportOut.md
 docs/FinanceOutOperationInvoiceIn.md
+docs/FinanceOutOperationPayroll.md
 docs/FinanceOutOperationPurchaseOrder.md
 docs/FinanceOutOperationSalesReturn.md
 docs/FinanceOutOperationSupply.md
@@ -367,6 +368,9 @@ docs/PaymentOutList.md
 docs/PaymentOutsApi.md
 docs/Payroll.md
 docs/PayrollList.md
+docs/PayrollPaymentAbstract.md
+docs/PayrollPaymentCashOut.md
+docs/PayrollPaymentPaymentOut.md
 docs/PayrollPosition.md
 docs/PayrollPositionList.md
 docs/PayrollsApi.md
@@ -784,6 +788,7 @@ src/main/java/ru/moysklad/remap_1_2/auth/HttpBasicAuth.java
 src/main/java/ru/moysklad/remap_1_2/auth/HttpBearerAuth.java
 src/main/java/ru/moysklad/remap_1_2/deserialize/OpenApiPolymorphicSubTypes.java
 src/main/java/ru/moysklad/remap_1_2/deserialize/OpenApiPolymorphicTypeInfo.java
+src/main/java/ru/moysklad/remap_1_2/deserialize/PolymorphicJsonNullableModule.java
 src/main/java/ru/moysklad/remap_1_2/deserialize/PolymorphicMetaTypeDeserializer.java
 src/main/java/ru/moysklad/remap_1_2/model/Account.java
 src/main/java/ru/moysklad/remap_1_2/model/AccumulationDiscount.java
@@ -995,6 +1000,7 @@ src/main/java/ru/moysklad/remap_1_2/model/FinanceInOperationRetailShift.java
 src/main/java/ru/moysklad/remap_1_2/model/FinanceOutOperationAbstract.java
 src/main/java/ru/moysklad/remap_1_2/model/FinanceOutOperationCommissionReportOut.java
 src/main/java/ru/moysklad/remap_1_2/model/FinanceOutOperationInvoiceIn.java
+src/main/java/ru/moysklad/remap_1_2/model/FinanceOutOperationPayroll.java
 src/main/java/ru/moysklad/remap_1_2/model/FinanceOutOperationPurchaseOrder.java
 src/main/java/ru/moysklad/remap_1_2/model/FinanceOutOperationSalesReturn.java
 src/main/java/ru/moysklad/remap_1_2/model/FinanceOutOperationSupply.java
@@ -1110,6 +1116,9 @@ src/main/java/ru/moysklad/remap_1_2/model/PaymentOut.java
 src/main/java/ru/moysklad/remap_1_2/model/PaymentOutList.java
 src/main/java/ru/moysklad/remap_1_2/model/Payroll.java
 src/main/java/ru/moysklad/remap_1_2/model/PayrollList.java
+src/main/java/ru/moysklad/remap_1_2/model/PayrollPaymentAbstract.java
+src/main/java/ru/moysklad/remap_1_2/model/PayrollPaymentCashOut.java
+src/main/java/ru/moysklad/remap_1_2/model/PayrollPaymentPaymentOut.java
 src/main/java/ru/moysklad/remap_1_2/model/PayrollPosition.java
 src/main/java/ru/moysklad/remap_1_2/model/PayrollPositionList.java
 src/main/java/ru/moysklad/remap_1_2/model/PermissionValue.java

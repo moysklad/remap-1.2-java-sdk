@@ -32,19 +32,20 @@ import tools.jackson.databind.annotation.JsonDeserialize;
 import ru.moysklad.remap_1_2.deserialize.PolymorphicMetaTypeDeserializer;
 
 /**
- * Элемент массива &#x60;operations&#x60; расходного ордера / исходящего платежа: документ одного из допустимых типов плюс обязательное поле &#x60;linkedSum&#x60;.  Допустимые &#x60;meta.type&#x60;: salesreturn, supply, invoicein, purchaseorder, commissionreportout. 
+ * Элемент массива &#x60;operations&#x60; расходного ордера / исходящего платежа: документ одного из допустимых типов плюс обязательное поле &#x60;linkedSum&#x60;.  Допустимые &#x60;meta.type&#x60;: salesreturn, supply, invoicein, purchaseorder, commissionreportout, payroll. 
  */
 @JsonPropertyOrder({
   FinanceOutOperationAbstract.JSON_PROPERTY_LINKED_SUM
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-06T05:14:41.995197922Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
 @OpenApiPolymorphicTypeInfo(path = "meta.type")
 @OpenApiPolymorphicSubTypes({
   @OpenApiPolymorphicSubTypes.Type(value = FinanceOutOperationSalesReturn.class, name = "salesreturn"),
   @OpenApiPolymorphicSubTypes.Type(value = FinanceOutOperationSupply.class, name = "supply"),
   @OpenApiPolymorphicSubTypes.Type(value = FinanceOutOperationInvoiceIn.class, name = "invoicein"),
   @OpenApiPolymorphicSubTypes.Type(value = FinanceOutOperationPurchaseOrder.class, name = "purchaseorder"),
-  @OpenApiPolymorphicSubTypes.Type(value = FinanceOutOperationCommissionReportOut.class, name = "commissionreportout")
+  @OpenApiPolymorphicSubTypes.Type(value = FinanceOutOperationCommissionReportOut.class, name = "commissionreportout"),
+  @OpenApiPolymorphicSubTypes.Type(value = FinanceOutOperationPayroll.class, name = "payroll")
 })
 @JsonDeserialize(using = PolymorphicMetaTypeDeserializer.class)
 public class FinanceOutOperationAbstract {

@@ -58,7 +58,7 @@ import java.util.StringJoiner;
   EnterPosition.JSON_PROPERTY_SLOT,
   EnterPosition.JSON_PROPERTY_THINGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-06T05:14:41.995197922Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
 public class EnterPosition extends EntityWithMeta implements DocumentPosition, MetaEntity {
   public static EnterPosition createWithMeta(UUID parentId, UUID id) {
     EnterPosition o = new EnterPosition();

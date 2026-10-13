@@ -38,7 +38,7 @@ import java.util.StringJoiner;
   StockByStore.JSON_PROPERTY_META,
   StockByStore.JSON_PROPERTY_STOCK_BY_STORE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-06T05:14:41.995197922Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
 public class StockByStore {
 
   public static final String JSON_PROPERTY_META = "meta";

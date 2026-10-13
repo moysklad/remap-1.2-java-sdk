@@ -67,7 +67,7 @@ import java.util.StringJoiner;
   CounterpartyAdjustment.JSON_PROPERTY_SUM,
   CounterpartyAdjustment.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-06T05:14:41.995197922Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
 public class CounterpartyAdjustment extends EntityWithMeta implements MetaEntity {
   public static CounterpartyAdjustment createWithMeta(UUID id) {
     CounterpartyAdjustment o = new CounterpartyAdjustment();

@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   PayrollPosition.JSON_PROPERTY_BASE_SALARY,
   PayrollPosition.JSON_PROPERTY_PIECEWORK_SALARY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-06T05:14:41.995197922Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
 public class PayrollPosition extends EntityWithMeta implements MetaEntity {
   public static PayrollPosition createWithMeta(UUID parentId, UUID id) {
     PayrollPosition o = new PayrollPosition();
