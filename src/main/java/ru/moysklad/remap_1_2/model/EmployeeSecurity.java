@@ -44,7 +44,7 @@ import java.util.StringJoiner;
   EmployeeSecurity.JSON_PROPERTY_AUTHORIZED_IP_NETMASK,
   EmployeeSecurity.JSON_PROPERTY_ROLE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
 public class EmployeeSecurity {
 
   public static final String JSON_PROPERTY_IS_ACTIVE = "isActive";

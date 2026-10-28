@@ -4,14 +4,18 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**addCounterpartyFiles**](CounterpartiesApi.md#addCounterpartyFiles) | **POST** /entity/counterparty/{id}/files | Добавить файлы к контрагенту |
+| [**addCounterpartyFile**](CounterpartiesApi.md#addCounterpartyFile) | **POST** /entity/counterparty/{id}/files | Добавить файл к контрагенту |
+| [**addCounterpartyFiles**](CounterpartiesApi.md#addCounterpartyFiles) | **POST** /entity/counterparty/{id}/files/batch | Добавить файлы к контрагенту |
 | [**createCounterpartiesBatch**](CounterpartiesApi.md#createCounterpartiesBatch) | **POST** /entity/counterparty/batch | Создать или изменить контрагентов |
 | [**createCounterparty**](CounterpartiesApi.md#createCounterparty) | **POST** /entity/counterparty | Создать контрагента |
 | [**createCounterpartyAccount**](CounterpartiesApi.md#createCounterpartyAccount) | **POST** /entity/counterparty/{id}/accounts | Создать счёт контрагента |
+| [**createCounterpartyAccounts**](CounterpartiesApi.md#createCounterpartyAccounts) | **POST** /entity/counterparty/{id}/accounts/batch | Массовое создание и обновление счетов контрагента |
 | [**createCounterpartyContactPerson**](CounterpartiesApi.md#createCounterpartyContactPerson) | **POST** /entity/counterparty/{id}/contactpersons | Создать контактное лицо контрагента |
+| [**createCounterpartyContactPersons**](CounterpartiesApi.md#createCounterpartyContactPersons) | **POST** /entity/counterparty/{id}/contactpersons/batch | Массовое создание и обновление контактных лиц контрагента |
 | [**createCounterpartyMetadataAttribute**](CounterpartiesApi.md#createCounterpartyMetadataAttribute) | **POST** /entity/counterparty/metadata/attributes | Создать доп. поле контрагента |
 | [**createCounterpartyMetadataState**](CounterpartiesApi.md#createCounterpartyMetadataState) | **POST** /entity/counterparty/metadata/states | Создать статус Counterparty |
 | [**createCounterpartyNote**](CounterpartiesApi.md#createCounterpartyNote) | **POST** /entity/counterparty/{id}/notes | Создать событие контрагента |
+| [**createCounterpartyNotes**](CounterpartiesApi.md#createCounterpartyNotes) | **POST** /entity/counterparty/{id}/notes/batch | Массовое создание и обновление событий контрагента |
 | [**deleteCounterpartiesBatch**](CounterpartiesApi.md#deleteCounterpartiesBatch) | **POST** /entity/counterparty/delete | Удалить контрагентов |
 | [**deleteCounterparty**](CounterpartiesApi.md#deleteCounterparty) | **DELETE** /entity/counterparty/{id} | Удалить контрагента |
 | [**deleteCounterpartyAccount**](CounterpartiesApi.md#deleteCounterpartyAccount) | **DELETE** /entity/counterparty/{id}/accounts/{accountId} | Удалить счёт контрагента |
@@ -40,6 +44,91 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**updateCounterpartyMetadataStateById**](CounterpartiesApi.md#updateCounterpartyMetadataStateById) | **PUT** /entity/counterparty/metadata/states/{id} | Обновить отдельный статус Контрагента |
 | [**updateCounterpartyNote**](CounterpartiesApi.md#updateCounterpartyNote) | **PUT** /entity/counterparty/{id}/notes/{noteId} | Обновить событие контрагента |
 
+
+
+## addCounterpartyFile
+
+> List&lt;ModelFile&gt; addCounterpartyFile(id, fileUpload, accept, acceptEncoding, contentType)
+
+Добавить файл к контрагенту
+
+Добавить новый Файл к Контрагенту. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.CounterpartiesApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        FileUpload fileUpload = new FileUpload(); // FileUpload | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<ModelFile> result = apiInstance.addCounterpartyFile(id, fileUpload, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CounterpartiesApi#addCounterpartyFile");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **fileUpload** | [**FileUpload**](FileUpload.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;ModelFile&gt;**](ModelFile.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Файл успешно добавлен. Результат — массив всех Файлов Контрагента. |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## addCounterpartyFiles
@@ -382,6 +471,91 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
+## createCounterpartyAccounts
+
+> List&lt;BatchResponseEntity&gt; createCounterpartyAccounts(id, account, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление счетов контрагента
+
+В теле запроса передается массив счетов. Для создания счета требуется accountNumber, для обновления — метаданные (meta).
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.CounterpartiesApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<Account> account = Arrays.asList(); // List<Account> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<BatchResponseEntity> result = apiInstance.createCounterpartyAccounts(id, account, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CounterpartiesApi#createCounterpartyAccounts");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **account** | [**List&lt;Account&gt;**](Account.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
 ## createCounterpartyContactPerson
 
 > List&lt;ContactPerson&gt; createCounterpartyContactPerson(id, contactPerson, accept, acceptEncoding, contentType)
@@ -464,6 +638,91 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Контактное лицо успешно создано |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## createCounterpartyContactPersons
+
+> List&lt;BatchResponseEntity&gt; createCounterpartyContactPersons(id, contactPerson, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление контактных лиц контрагента
+
+В теле запроса передается массив контактных лиц. Для создания требуется name, для обновления — метаданные (meta).
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.CounterpartiesApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<ContactPerson> contactPerson = Arrays.asList(); // List<ContactPerson> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<BatchResponseEntity> result = apiInstance.createCounterpartyContactPersons(id, contactPerson, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CounterpartiesApi#createCounterpartyContactPersons");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **contactPerson** | [**List&lt;ContactPerson&gt;**](ContactPerson.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
@@ -713,6 +972,91 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Событие успешно создано |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## createCounterpartyNotes
+
+> List&lt;BatchResponseEntity&gt; createCounterpartyNotes(id, note, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление событий контрагента
+
+В теле запроса передается массив событий. Для создания события требуется description, для обновления — метаданные (meta).
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.CounterpartiesApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        CounterpartiesApi apiInstance = new CounterpartiesApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<Note> note = Arrays.asList(); // List<Note> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<BatchResponseEntity> result = apiInstance.createCounterpartyNotes(id, note, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CounterpartiesApi#createCounterpartyNotes");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **note** | [**List&lt;Note&gt;**](Note.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
@@ -1876,7 +2220,7 @@ public class Example {
 
 ## getCounterpartyFiles
 
-> GetProductFiles200Response getCounterpartyFiles(id, limit, offset, accept, acceptEncoding)
+> GetTaskFiles200Response getCounterpartyFiles(id, limit, offset, accept, acceptEncoding)
 
 Получить файлы контрагента
 
@@ -1914,7 +2258,7 @@ public class Example {
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
-            GetProductFiles200Response result = apiInstance.getCounterpartyFiles(id, limit, offset, accept, acceptEncoding);
+            GetTaskFiles200Response result = apiInstance.getCounterpartyFiles(id, limit, offset, accept, acceptEncoding);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CounterpartiesApi#getCounterpartyFiles");
@@ -1940,7 +2284,7 @@ public class Example {
 
 ### Return type
 
-[**GetProductFiles200Response**](GetProductFiles200Response.md)
+[**GetTaskFiles200Response**](GetTaskFiles200Response.md)
 
 ### Authorization
 

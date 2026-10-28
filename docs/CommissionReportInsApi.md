@@ -4,6 +4,8 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
+| [**addCommissionReportInFile**](CommissionReportInsApi.md#addCommissionReportInFile) | **POST** /entity/commissionreportin/{id}/files | Добавить файл к Полученному отчету комиссионера |
+| [**addCommissionReportInFiles**](CommissionReportInsApi.md#addCommissionReportInFiles) | **POST** /entity/commissionreportin/{id}/files/batch | Добавить файлы к Полученному отчету комиссионера |
 | [**createCommissionReportIn**](CommissionReportInsApi.md#createCommissionReportIn) | **POST** /entity/commissionreportin | Создать CommissionReportIn |
 | [**createCommissionReportInBatch**](CommissionReportInsApi.md#createCommissionReportInBatch) | **POST** /entity/commissionreportin/batch | Массовое создание и обновление CommissionReportIn |
 | [**createCommissionReportInMetadataAttribute**](CommissionReportInsApi.md#createCommissionReportInMetadataAttribute) | **POST** /entity/commissionreportin/metadata/attributes | Создать доп. поле CommissionReportIn |
@@ -15,6 +17,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createCommissionReportInReturnedPositions**](CommissionReportInsApi.md#createCommissionReportInReturnedPositions) | **POST** /entity/commissionreportin/{id}/returntocommissionerpositions/batch | Массовое создание и обновление позиций возврата на склад комиссионера |
 | [**deleteCommissionReportIn**](CommissionReportInsApi.md#deleteCommissionReportIn) | **DELETE** /entity/commissionreportin/{id} | Удалить CommissionReportIn |
 | [**deleteCommissionReportInBatch**](CommissionReportInsApi.md#deleteCommissionReportInBatch) | **POST** /entity/commissionreportin/delete | Массовое удаление CommissionReportIn |
+| [**deleteCommissionReportInFile**](CommissionReportInsApi.md#deleteCommissionReportInFile) | **DELETE** /entity/commissionreportin/{id}/files/{fileId} | Удалить файл Полученного отчета комиссионера |
 | [**deleteCommissionReportInMetadataAttributeById**](CommissionReportInsApi.md#deleteCommissionReportInMetadataAttributeById) | **DELETE** /entity/commissionreportin/metadata/attributes/{id} | Удалить отдельное доп. поле CommissionReportIn |
 | [**deleteCommissionReportInMetadataStateById**](CommissionReportInsApi.md#deleteCommissionReportInMetadataStateById) | **DELETE** /entity/commissionreportin/metadata/states/{id} | Удалить отдельный статус CommissionReportIn |
 | [**deleteCommissionReportInPosition**](CommissionReportInsApi.md#deleteCommissionReportInPosition) | **DELETE** /entity/commissionreportin/{id}/positions/{positionId} | Удалить позицию CommissionReportIn |
@@ -22,6 +25,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**deleteCommissionReportInReturnedPosition**](CommissionReportInsApi.md#deleteCommissionReportInReturnedPosition) | **DELETE** /entity/commissionreportin/{id}/returntocommissionerpositions/{positionId} | Удалить позицию возврата на склад комиссионера |
 | [**deleteCommissionReportInReturnedPositionsBatch**](CommissionReportInsApi.md#deleteCommissionReportInReturnedPositionsBatch) | **POST** /entity/commissionreportin/{id}/returntocommissionerpositions/delete | Массовое удаление позиций возврата на склад комиссионера |
 | [**getCommissionReportInById**](CommissionReportInsApi.md#getCommissionReportInById) | **GET** /entity/commissionreportin/{id} | Получить CommissionReportIn по ID |
+| [**getCommissionReportInFiles**](CommissionReportInsApi.md#getCommissionReportInFiles) | **GET** /entity/commissionreportin/{id}/files | Получить файлы Полученного отчета комиссионера |
 | [**getCommissionReportInList**](CommissionReportInsApi.md#getCommissionReportInList) | **GET** /entity/commissionreportin | Получить список CommissionReportIn |
 | [**getCommissionReportInMetadata**](CommissionReportInsApi.md#getCommissionReportInMetadata) | **GET** /entity/commissionreportin/metadata | Метаданные CommissionReportIn |
 | [**getCommissionReportInMetadataAttribute**](CommissionReportInsApi.md#getCommissionReportInMetadataAttribute) | **GET** /entity/commissionreportin/metadata/attributes | Доп. поля CommissionReportIn |
@@ -38,6 +42,176 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**updateCommissionReportInPosition**](CommissionReportInsApi.md#updateCommissionReportInPosition) | **PUT** /entity/commissionreportin/{id}/positions/{positionId} | Изменить позицию CommissionReportIn |
 | [**updateCommissionReportInReturnedPosition**](CommissionReportInsApi.md#updateCommissionReportInReturnedPosition) | **PUT** /entity/commissionreportin/{id}/returntocommissionerpositions/{positionId} | Изменить позицию возврата на склад комиссионера |
 
+
+
+## addCommissionReportInFile
+
+> List&lt;ModelFile&gt; addCommissionReportInFile(id, fileUpload, accept, acceptEncoding, contentType)
+
+Добавить файл к Полученному отчету комиссионера
+
+Добавить новый Файл к Полученному отчету комиссионера. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.CommissionReportInsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        CommissionReportInsApi apiInstance = new CommissionReportInsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        FileUpload fileUpload = new FileUpload(); // FileUpload | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<ModelFile> result = apiInstance.addCommissionReportInFile(id, fileUpload, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CommissionReportInsApi#addCommissionReportInFile");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **fileUpload** | [**FileUpload**](FileUpload.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;ModelFile&gt;**](ModelFile.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Файл успешно добавлен. Результат — массив всех Файлов Полученного отчета комиссионера. |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## addCommissionReportInFiles
+
+> List&lt;ModelFile&gt; addCommissionReportInFiles(id, fileUpload, accept, acceptEncoding, contentType)
+
+Добавить файлы к Полученному отчету комиссионера
+
+Добавить новые Файлы к Полученному отчету комиссионера. В одном запросе можно добавить максимум 10 Файлов. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.CommissionReportInsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        CommissionReportInsApi apiInstance = new CommissionReportInsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<FileUpload> fileUpload = Arrays.asList(); // List<FileUpload> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<ModelFile> result = apiInstance.addCommissionReportInFiles(id, fileUpload, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CommissionReportInsApi#addCommissionReportInFiles");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **fileUpload** | [**List&lt;FileUpload&gt;**](FileUpload.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;ModelFile&gt;**](ModelFile.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Файлы успешно добавлены. Результат — массив всех Файлов Полученного отчета комиссионера. |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createCommissionReportIn
@@ -950,6 +1124,88 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
+## deleteCommissionReportInFile
+
+> deleteCommissionReportInFile(id, fileId, accept, acceptEncoding)
+
+Удалить файл Полученного отчета комиссионера
+
+Удаление Файла Полученного отчета комиссионера.
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.CommissionReportInsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        CommissionReportInsApi apiInstance = new CommissionReportInsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID fileId = UUID.randomUUID(); // UUID | ID файла
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            apiInstance.deleteCommissionReportInFile(id, fileId, accept, acceptEncoding);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CommissionReportInsApi#deleteCommissionReportInFile");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **fileId** | **UUID**| ID файла | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Файл успешно удалён |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
 ## deleteCommissionReportInMetadataAttributeById
 
 > deleteCommissionReportInMetadataAttributeById(id, accept, acceptEncoding, contentType)
@@ -1510,6 +1766,91 @@ public class Example {
 ### Return type
 
 [**CommissionReportIn**](CommissionReportIn.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## getCommissionReportInFiles
+
+> GetTaskFiles200Response getCommissionReportInFiles(id, limit, offset, accept, acceptEncoding)
+
+Получить файлы Полученного отчета комиссионера
+
+Запрос на получение списка всех Файлов Полученного отчета комиссионера.
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.CommissionReportInsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        CommissionReportInsApi apiInstance = new CommissionReportInsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
+        Integer offset = 0; // Integer | Отступ в выданном списке
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            GetTaskFiles200Response result = apiInstance.getCommissionReportInFiles(id, limit, offset, accept, acceptEncoding);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CommissionReportInsApi#getCommissionReportInFiles");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **limit** | **Integer**| Максимальное количество элементов в выданном списке (максимум 1000) | [optional] [default to 1000] |
+| **offset** | **Integer**| Отступ в выданном списке | [optional] [default to 0] |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+[**GetTaskFiles200Response**](GetTaskFiles200Response.md)
 
 ### Authorization
 

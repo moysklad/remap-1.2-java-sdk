@@ -38,9 +38,10 @@ import ru.moysklad.remap_1_2.deserialize.PolymorphicMetaTypeDeserializer;
 @JsonPropertyOrder({
   EntityWithMeta.JSON_PROPERTY_META
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
 @OpenApiPolymorphicTypeInfo(path = "meta.type")
 @OpenApiPolymorphicSubTypes({
+  @OpenApiPolymorphicSubTypes.Type(value = Account.class, name = "account"),
   @OpenApiPolymorphicSubTypes.Type(value = Bundle.class, name = "bundle"),
   @OpenApiPolymorphicSubTypes.Type(value = BundleComponent.class, name = "bundlecomponent"),
   @OpenApiPolymorphicSubTypes.Type(value = CashIn.class, name = "cashin"),
@@ -51,6 +52,7 @@ import ru.moysklad.remap_1_2.deserialize.PolymorphicMetaTypeDeserializer;
   @OpenApiPolymorphicSubTypes.Type(value = CommissionReportOut.class, name = "commissionreportout"),
   @OpenApiPolymorphicSubTypes.Type(value = CommissionReportOutPosition.class, name = "commissionreportoutposition"),
   @OpenApiPolymorphicSubTypes.Type(value = Consignment.class, name = "consignment"),
+  @OpenApiPolymorphicSubTypes.Type(value = ContactPerson.class, name = "contactperson"),
   @OpenApiPolymorphicSubTypes.Type(value = Contract.class, name = "contract"),
   @OpenApiPolymorphicSubTypes.Type(value = Counterparty.class, name = "counterparty"),
   @OpenApiPolymorphicSubTypes.Type(value = CounterpartyAdjustment.class, name = "counterpartyadjustment"),
@@ -72,8 +74,10 @@ import ru.moysklad.remap_1_2.deserialize.PolymorphicMetaTypeDeserializer;
   @OpenApiPolymorphicSubTypes.Type(value = InventoryPosition.class, name = "inventoryposition"),
   @OpenApiPolymorphicSubTypes.Type(value = Loss.class, name = "loss"),
   @OpenApiPolymorphicSubTypes.Type(value = LossPosition.class, name = "lossposition"),
+  @OpenApiPolymorphicSubTypes.Type(value = StoreBalance.class, name = "minimumstock"),
   @OpenApiPolymorphicSubTypes.Type(value = Move.class, name = "move"),
   @OpenApiPolymorphicSubTypes.Type(value = MovePosition.class, name = "moveposition"),
+  @OpenApiPolymorphicSubTypes.Type(value = Note.class, name = "note"),
   @OpenApiPolymorphicSubTypes.Type(value = Organization.class, name = "organization"),
   @OpenApiPolymorphicSubTypes.Type(value = PaymentIn.class, name = "paymentin"),
   @OpenApiPolymorphicSubTypes.Type(value = PaymentOut.class, name = "paymentout"),
@@ -88,6 +92,11 @@ import ru.moysklad.remap_1_2.deserialize.PolymorphicMetaTypeDeserializer;
   @OpenApiPolymorphicSubTypes.Type(value = ProcessingOrderPosition.class, name = "processingorderposition"),
   @OpenApiPolymorphicSubTypes.Type(value = ProcessingPlan.class, name = "processingplan"),
   @OpenApiPolymorphicSubTypes.Type(value = ProcessingPlanFolder.class, name = "processingplanfolder"),
+  @OpenApiPolymorphicSubTypes.Type(value = ProcessingPlanMaterial.class, name = "processingplanmaterial"),
+  @OpenApiPolymorphicSubTypes.Type(value = ProcessingPlanProduct.class, name = "processingplanresult"),
+  @OpenApiPolymorphicSubTypes.Type(value = ProcessingPlanStage.class, name = "processingplanstages"),
+  @OpenApiPolymorphicSubTypes.Type(value = ProcessingMaterial.class, name = "processingpositionmaterial"),
+  @OpenApiPolymorphicSubTypes.Type(value = ProcessingProduct.class, name = "processingpositionresult"),
   @OpenApiPolymorphicSubTypes.Type(value = ProcessingProcess.class, name = "processingprocess"),
   @OpenApiPolymorphicSubTypes.Type(value = ProcessingProcessPosition.class, name = "processingprocessposition"),
   @OpenApiPolymorphicSubTypes.Type(value = ProcessingStage.class, name = "processingstage"),

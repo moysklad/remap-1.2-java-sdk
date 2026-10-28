@@ -4,6 +4,8 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
+| [**addInternalOrderFile**](InternalOrdersApi.md#addInternalOrderFile) | **POST** /entity/internalorder/{id}/files | Добавить файл к Внутреннему заказу |
+| [**addInternalOrderFiles**](InternalOrdersApi.md#addInternalOrderFiles) | **POST** /entity/internalorder/{id}/files/batch | Добавить файлы к Внутреннему заказу |
 | [**createInternalOrder**](InternalOrdersApi.md#createInternalOrder) | **POST** /entity/internalorder | Создать InternalOrder |
 | [**createInternalOrderBatch**](InternalOrdersApi.md#createInternalOrderBatch) | **POST** /entity/internalorder/batch | Массовое создание и обновление InternalOrder |
 | [**createInternalOrderMetadataAttribute**](InternalOrdersApi.md#createInternalOrderMetadataAttribute) | **POST** /entity/internalorder/metadata/attributes | Создать Доп. поле InternalOrder |
@@ -13,11 +15,13 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createInternalOrderPositions**](InternalOrdersApi.md#createInternalOrderPositions) | **POST** /entity/internalorder/{id}/positions/batch | Массовое создание и обновление позиций Внутреннего заказа |
 | [**deleteInternalOrder**](InternalOrdersApi.md#deleteInternalOrder) | **DELETE** /entity/internalorder/{id} | Удалить InternalOrder |
 | [**deleteInternalOrderBatch**](InternalOrdersApi.md#deleteInternalOrderBatch) | **POST** /entity/internalorder/delete | Массовое удаление InternalOrder |
+| [**deleteInternalOrderFile**](InternalOrdersApi.md#deleteInternalOrderFile) | **DELETE** /entity/internalorder/{id}/files/{fileId} | Удалить файл Внутреннего заказа |
 | [**deleteInternalOrderMetadataAttributeById**](InternalOrdersApi.md#deleteInternalOrderMetadataAttributeById) | **DELETE** /entity/internalorder/metadata/attributes/{id} | Удалить отдельное доп. поле InternalOrder |
 | [**deleteInternalOrderMetadataStateById**](InternalOrdersApi.md#deleteInternalOrderMetadataStateById) | **DELETE** /entity/internalorder/metadata/states/{id} | Удалить отдельный статус InternalOrder |
 | [**deleteInternalOrderPosition**](InternalOrdersApi.md#deleteInternalOrderPosition) | **DELETE** /entity/internalorder/{id}/positions/{positionId} | Удалить позицию InternalOrder |
 | [**deleteInternalOrderPositionsBatch**](InternalOrdersApi.md#deleteInternalOrderPositionsBatch) | **POST** /entity/internalorder/{id}/positions/delete | Массовое удаление позиций InternalOrder |
 | [**getInternalOrderById**](InternalOrdersApi.md#getInternalOrderById) | **GET** /entity/internalorder/{id} | Получить InternalOrder |
+| [**getInternalOrderFiles**](InternalOrdersApi.md#getInternalOrderFiles) | **GET** /entity/internalorder/{id}/files | Получить файлы Внутреннего заказа |
 | [**getInternalOrderList**](InternalOrdersApi.md#getInternalOrderList) | **GET** /entity/internalorder | Получить список InternalOrder |
 | [**getInternalOrderMetadata**](InternalOrdersApi.md#getInternalOrderMetadata) | **GET** /entity/internalorder/metadata | Метаданные InternalOrder |
 | [**getInternalOrderMetadataAttribute**](InternalOrdersApi.md#getInternalOrderMetadataAttribute) | **GET** /entity/internalorder/metadata/attributes | Доп. поля InternalOrder |
@@ -32,6 +36,176 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**updateInternalOrderMetadataStateById**](InternalOrdersApi.md#updateInternalOrderMetadataStateById) | **PUT** /entity/internalorder/metadata/states/{id} | Обновить отдельный статус InternalOrder |
 | [**updateInternalOrderPosition**](InternalOrdersApi.md#updateInternalOrderPosition) | **PUT** /entity/internalorder/{id}/positions/{positionId} | Изменить позицию InternalOrder |
 
+
+
+## addInternalOrderFile
+
+> List&lt;ModelFile&gt; addInternalOrderFile(id, fileUpload, accept, acceptEncoding, contentType)
+
+Добавить файл к Внутреннему заказу
+
+Добавить новый Файл к Внутреннему заказу. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.InternalOrdersApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        InternalOrdersApi apiInstance = new InternalOrdersApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        FileUpload fileUpload = new FileUpload(); // FileUpload | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<ModelFile> result = apiInstance.addInternalOrderFile(id, fileUpload, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling InternalOrdersApi#addInternalOrderFile");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **fileUpload** | [**FileUpload**](FileUpload.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;ModelFile&gt;**](ModelFile.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Файл успешно добавлен. Результат — массив всех Файлов Внутреннего заказа. |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## addInternalOrderFiles
+
+> List&lt;ModelFile&gt; addInternalOrderFiles(id, fileUpload, accept, acceptEncoding, contentType)
+
+Добавить файлы к Внутреннему заказу
+
+Добавить новые Файлы к Внутреннему заказу. В одном запросе можно добавить максимум 10 Файлов. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.InternalOrdersApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        InternalOrdersApi apiInstance = new InternalOrdersApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<FileUpload> fileUpload = Arrays.asList(); // List<FileUpload> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<ModelFile> result = apiInstance.addInternalOrderFiles(id, fileUpload, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling InternalOrdersApi#addInternalOrderFiles");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **fileUpload** | [**List&lt;FileUpload&gt;**](FileUpload.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;ModelFile&gt;**](ModelFile.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Файлы успешно добавлены. Результат — массив всех Файлов Внутреннего заказа. |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createInternalOrder
@@ -774,6 +948,88 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
+## deleteInternalOrderFile
+
+> deleteInternalOrderFile(id, fileId, accept, acceptEncoding)
+
+Удалить файл Внутреннего заказа
+
+Удаление Файла Внутреннего заказа.
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.InternalOrdersApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        InternalOrdersApi apiInstance = new InternalOrdersApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID fileId = UUID.randomUUID(); // UUID | ID файла
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            apiInstance.deleteInternalOrderFile(id, fileId, accept, acceptEncoding);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling InternalOrdersApi#deleteInternalOrderFile");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **fileId** | **UUID**| ID файла | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Файл успешно удалён |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
 ## deleteInternalOrderMetadataAttributeById
 
 > deleteInternalOrderMetadataAttributeById(id, accept, acceptEncoding, contentType)
@@ -1167,6 +1423,91 @@ public class Example {
 ### Return type
 
 [**InternalOrder**](InternalOrder.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## getInternalOrderFiles
+
+> GetTaskFiles200Response getInternalOrderFiles(id, limit, offset, accept, acceptEncoding)
+
+Получить файлы Внутреннего заказа
+
+Запрос на получение списка всех Файлов Внутреннего заказа.
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.InternalOrdersApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        InternalOrdersApi apiInstance = new InternalOrdersApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
+        Integer offset = 0; // Integer | Отступ в выданном списке
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            GetTaskFiles200Response result = apiInstance.getInternalOrderFiles(id, limit, offset, accept, acceptEncoding);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling InternalOrdersApi#getInternalOrderFiles");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **limit** | **Integer**| Максимальное количество элементов в выданном списке (максимум 1000) | [optional] [default to 1000] |
+| **offset** | **Integer**| Отступ в выданном списке | [optional] [default to 0] |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+[**GetTaskFiles200Response**](GetTaskFiles200Response.md)
 
 ### Authorization
 

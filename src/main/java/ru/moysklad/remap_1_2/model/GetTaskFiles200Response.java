@@ -32,15 +32,15 @@ import java.net.URLEncoder;
 import java.util.StringJoiner;
 
 /**
- * GetProductFiles200Response
+ * GetTaskFiles200Response
  */
 @JsonPropertyOrder({
-  GetProductFiles200Response.JSON_PROPERTY_META,
-  GetProductFiles200Response.JSON_PROPERTY_ROWS
+  GetTaskFiles200Response.JSON_PROPERTY_META,
+  GetTaskFiles200Response.JSON_PROPERTY_ROWS
 })
-@JsonTypeName("getProductFiles_200_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
-public class GetProductFiles200Response {
+@JsonTypeName("getTaskFiles_200_response")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+public class GetTaskFiles200Response {
 
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
@@ -50,10 +50,10 @@ public class GetProductFiles200Response {
   @javax.annotation.Nullable
   private List<ModelFile> rows = new ArrayList<>();
 
-  public GetProductFiles200Response() {
+  public GetTaskFiles200Response() {
   }
 
-  public GetProductFiles200Response meta(@javax.annotation.Nullable MetaList meta) {
+  public GetTaskFiles200Response meta(@javax.annotation.Nullable MetaList meta) {
     
     this.meta = meta;
     return this;
@@ -82,14 +82,14 @@ public class GetProductFiles200Response {
   }
 
 
-  public GetProductFiles200Response rows(@javax.annotation.Nullable List<ModelFile> rows) {
+  public GetTaskFiles200Response rows(@javax.annotation.Nullable List<ModelFile> rows) {
     
     this.rows = rows;
     return this;
   }
 
 
-  public GetProductFiles200Response addRowsItem(ModelFile rowsItem) {
+  public GetTaskFiles200Response addRowsItem(ModelFile rowsItem) {
     if (this.rows == null) {
       this.rows = new ArrayList<>();
     }
@@ -127,9 +127,9 @@ public class GetProductFiles200Response {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GetProductFiles200Response getProductFiles200Response = (GetProductFiles200Response) o;
-    return Objects.equals(this.meta, getProductFiles200Response.meta) &&
-        Objects.equals(this.rows, getProductFiles200Response.rows);
+    GetTaskFiles200Response getTaskFiles200Response = (GetTaskFiles200Response) o;
+    return Objects.equals(this.meta, getTaskFiles200Response.meta) &&
+        Objects.equals(this.rows, getTaskFiles200Response.rows);
   }
 
   @Override
@@ -140,7 +140,7 @@ public class GetProductFiles200Response {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GetProductFiles200Response {\n");
+    sb.append("class GetTaskFiles200Response {\n");
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("    rows: ").append(toIndentedString(rows)).append("\n");
     sb.append("}");

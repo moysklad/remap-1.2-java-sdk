@@ -22,8 +22,14 @@ import ru.moysklad.remap_1_2.Pair;
 
 
 import ru.moysklad.remap_1_2.model.BatchResponseEntity;
+import ru.moysklad.remap_1_2.model.DeleteProductImagesRequestInner;
 import ru.moysklad.remap_1_2.model.DeleteRowResult;
 import ru.moysklad.remap_1_2.model.Errors;
+import ru.moysklad.remap_1_2.model.FileUpload;
+import ru.moysklad.remap_1_2.model.GetProductImages200Response;
+import ru.moysklad.remap_1_2.model.Image;
+import ru.moysklad.remap_1_2.model.StoreBalance;
+import ru.moysklad.remap_1_2.model.StoreBalanceList;
 import java.util.UUID;
 import ru.moysklad.remap_1_2.model.Variant;
 import ru.moysklad.remap_1_2.model.VariantList;
@@ -37,7 +43,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class VariantsApi extends BaseApi {
 
@@ -47,6 +53,234 @@ public class VariantsApi extends BaseApi {
 
   public VariantsApi(ApiClient apiClient) {
     super(apiClient);
+  }
+
+  /**
+   * Добавить изображение к Модификации
+   * Добавить новое Изображение к Модификации. В поле &#x60;content&#x60; нужно указать изображение, закодированное в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. У Модификации может быть не более 10 Изображений. 
+   * @param id ID сущности (required)
+   * @param fileUpload  (required)
+   * @return List&lt;Image&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<Image> addVariantImage(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull FileUpload fileUpload) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.addVariantImage(id, fileUpload, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Добавить изображение к Модификации
+   * Добавить новое Изображение к Модификации. В поле &#x60;content&#x60; нужно указать изображение, закодированное в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. У Модификации может быть не более 10 Изображений. 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param fileUpload  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;Image&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<Image> addVariantImage(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull FileUpload fileUpload, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.addVariantImage(id, fileUpload, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Добавить изображение к Модификации
+   * Добавить новое Изображение к Модификации. В поле &#x60;content&#x60; нужно указать изображение, закодированное в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. У Модификации может быть не более 10 Изображений. 
+   * @param id ID сущности (required)
+   * @param fileUpload  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return List&lt;Image&gt;
+   * @throws ApiException if fails to make API call
+   */
+  protected List<Image> addVariantImage(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull FileUpload fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = fileUpload;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling addVariantImage");
+    }
+    
+    // verify the required parameter 'fileUpload' is set
+    if (fileUpload == null) {
+      throw new ApiException(400, "Missing the required parameter 'fileUpload' when calling addVariantImage");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/variant/{id}/images"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (contentType != null) {
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<List<Image>> localVarReturnType = new TypeReference<List<Image>>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Изменить список изображений Модификации
+   * Установить список Изображений Модификации. В теле запроса нужно передать массив Изображений, которые должны быть у Модификации. Чтобы оставить существующие Изображения, передайте их метаданные. Для новых Изображений в поле &#x60;content&#x60; нужно указать изображение, закодированное в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. У Модификации может быть не более 10 Изображений. 
+   * @param id ID сущности (required)
+   * @param fileUpload  (required)
+   * @return List&lt;Image&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<Image> addVariantImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<FileUpload> fileUpload) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.addVariantImages(id, fileUpload, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Изменить список изображений Модификации
+   * Установить список Изображений Модификации. В теле запроса нужно передать массив Изображений, которые должны быть у Модификации. Чтобы оставить существующие Изображения, передайте их метаданные. Для новых Изображений в поле &#x60;content&#x60; нужно указать изображение, закодированное в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. У Модификации может быть не более 10 Изображений. 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param fileUpload  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;Image&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<Image> addVariantImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<FileUpload> fileUpload, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.addVariantImages(id, fileUpload, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Изменить список изображений Модификации
+   * Установить список Изображений Модификации. В теле запроса нужно передать массив Изображений, которые должны быть у Модификации. Чтобы оставить существующие Изображения, передайте их метаданные. Для новых Изображений в поле &#x60;content&#x60; нужно указать изображение, закодированное в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. У Модификации может быть не более 10 Изображений. 
+   * @param id ID сущности (required)
+   * @param fileUpload  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return List&lt;Image&gt;
+   * @throws ApiException if fails to make API call
+   */
+  protected List<Image> addVariantImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<FileUpload> fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = fileUpload;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling addVariantImages");
+    }
+    
+    // verify the required parameter 'fileUpload' is set
+    if (fileUpload == null) {
+      throw new ApiException(400, "Missing the required parameter 'fileUpload' when calling addVariantImages");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/variant/{id}/images/batch"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (contentType != null) {
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<List<Image>> localVarReturnType = new TypeReference<List<Image>>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
   }
 
   /**
@@ -139,6 +373,234 @@ if (contentType != null) {
 
     TypeReference<Variant> localVarReturnType = new TypeReference<Variant>() {};
     return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Создать НСО модификации для склада
+   * Создание нового Неснижаемого остатка Модификации для склада.
+   * @param id ID сущности (required)
+   * @param storeBalance  (required)
+   * @return List&lt;StoreBalance&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<StoreBalance> createVariantStoreBalance(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull StoreBalance storeBalance) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createVariantStoreBalance(id, storeBalance, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Создать НСО модификации для склада
+   * Создание нового Неснижаемого остатка Модификации для склада.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param storeBalance  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;StoreBalance&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<StoreBalance> createVariantStoreBalance(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull StoreBalance storeBalance, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createVariantStoreBalance(id, storeBalance, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Создать НСО модификации для склада
+   * Создание нового Неснижаемого остатка Модификации для склада.
+   * @param id ID сущности (required)
+   * @param storeBalance  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return List&lt;StoreBalance&gt;
+   * @throws ApiException if fails to make API call
+   */
+  protected List<StoreBalance> createVariantStoreBalance(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull StoreBalance storeBalance, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = storeBalance;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling createVariantStoreBalance");
+    }
+    
+    // verify the required parameter 'storeBalance' is set
+    if (storeBalance == null) {
+      throw new ApiException(400, "Missing the required parameter 'storeBalance' when calling createVariantStoreBalance");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/variant/{id}/storebalances"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (contentType != null) {
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<List<StoreBalance>> localVarReturnType = new TypeReference<List<StoreBalance>>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Массовое создание и обновление неснижаемых остатков модификации
+   * В теле запроса передается массив неснижаемых остатков по складам. Для создания требуются store и quantity, для обновления — метаданные (meta).
+   * @param id ID сущности (required)
+   * @param storeBalance  (required)
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<BatchResponseEntity> createVariantStoreBalances(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<StoreBalance> storeBalance) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createVariantStoreBalances(id, storeBalance, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Массовое создание и обновление неснижаемых остатков модификации
+   * В теле запроса передается массив неснижаемых остатков по складам. Для создания требуются store и quantity, для обновления — метаданные (meta).
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param storeBalance  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<BatchResponseEntity> createVariantStoreBalances(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<StoreBalance> storeBalance, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createVariantStoreBalances(id, storeBalance, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Массовое создание и обновление неснижаемых остатков модификации
+   * В теле запроса передается массив неснижаемых остатков по складам. Для создания требуются store и quantity, для обновления — метаданные (meta).
+   * @param id ID сущности (required)
+   * @param storeBalance  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  protected List<BatchResponseEntity> createVariantStoreBalances(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<StoreBalance> storeBalance, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = storeBalance;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling createVariantStoreBalances");
+    }
+    
+    // verify the required parameter 'storeBalance' is set
+    if (storeBalance == null) {
+      throw new ApiException(400, "Missing the required parameter 'storeBalance' when calling createVariantStoreBalances");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/variant/{id}/storebalances/batch"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (contentType != null) {
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
+    return apiClient.invokeAPIBatch(
         localVarPath,
         "POST",
         localVarQueryParams,
@@ -342,6 +804,438 @@ if (acceptEncoding != null) {
     apiClient.invokeAPI(
         localVarPath,
         "DELETE",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        null
+    );
+  }
+
+  /**
+   * Удалить изображение Модификации
+   * Удаление Изображения Модификации.
+   * @param id ID сущности (required)
+   * @param imageId ID изображения (required)
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteVariantImage(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID imageId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteVariantImage(id, imageId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Удалить изображение Модификации
+   * Удаление Изображения Модификации.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param imageId ID изображения (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteVariantImage(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID imageId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteVariantImage(id, imageId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Удалить изображение Модификации
+   * Удаление Изображения Модификации.
+   * @param id ID сущности (required)
+   * @param imageId ID изображения (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param additionalHeaders additionalHeaders for this call
+   * @throws ApiException if fails to make API call
+   */
+  protected void deleteVariantImage(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID imageId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling deleteVariantImage");
+    }
+    
+    // verify the required parameter 'imageId' is set
+    if (imageId == null) {
+      throw new ApiException(400, "Missing the required parameter 'imageId' when calling deleteVariantImage");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/variant/{id}/images/{imageId}"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)))
+      .replaceAll("\\{" + "imageId" + "\\}", apiClient.escapeString(apiClient.parameterToString(imageId)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    apiClient.invokeAPI(
+        localVarPath,
+        "DELETE",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        null
+    );
+  }
+
+  /**
+   * Массовое удаление изображений Модификации
+   * Массовое удаление Изображений Модификации.
+   * @param id ID сущности (required)
+   * @param deleteProductImagesRequestInner  (required)
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteVariantImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<DeleteProductImagesRequestInner> deleteProductImagesRequestInner) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteVariantImages(id, deleteProductImagesRequestInner, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Массовое удаление изображений Модификации
+   * Массовое удаление Изображений Модификации.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param deleteProductImagesRequestInner  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteVariantImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<DeleteProductImagesRequestInner> deleteProductImagesRequestInner, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteVariantImages(id, deleteProductImagesRequestInner, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Массовое удаление изображений Модификации
+   * Массовое удаление Изображений Модификации.
+   * @param id ID сущности (required)
+   * @param deleteProductImagesRequestInner  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @throws ApiException if fails to make API call
+   */
+  protected void deleteVariantImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<DeleteProductImagesRequestInner> deleteProductImagesRequestInner, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = deleteProductImagesRequestInner;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling deleteVariantImages");
+    }
+    
+    // verify the required parameter 'deleteProductImagesRequestInner' is set
+    if (deleteProductImagesRequestInner == null) {
+      throw new ApiException(400, "Missing the required parameter 'deleteProductImagesRequestInner' when calling deleteVariantImages");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/variant/{id}/images/delete"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (contentType != null) {
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        null
+    );
+  }
+
+  /**
+   * Удалить НСО модификации по складу
+   * Удаление Неснижаемого остатка Модификации для склада.
+   * @param id ID сущности (required)
+   * @param storeBalanceId ID неснижаемого остатка (required)
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteVariantStoreBalance(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID storeBalanceId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteVariantStoreBalance(id, storeBalanceId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Удалить НСО модификации по складу
+   * Удаление Неснижаемого остатка Модификации для склада.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param storeBalanceId ID неснижаемого остатка (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteVariantStoreBalance(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID storeBalanceId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteVariantStoreBalance(id, storeBalanceId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Удалить НСО модификации по складу
+   * Удаление Неснижаемого остатка Модификации для склада.
+   * @param id ID сущности (required)
+   * @param storeBalanceId ID неснижаемого остатка (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param additionalHeaders additionalHeaders for this call
+   * @throws ApiException if fails to make API call
+   */
+  protected void deleteVariantStoreBalance(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID storeBalanceId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling deleteVariantStoreBalance");
+    }
+    
+    // verify the required parameter 'storeBalanceId' is set
+    if (storeBalanceId == null) {
+      throw new ApiException(400, "Missing the required parameter 'storeBalanceId' when calling deleteVariantStoreBalance");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/variant/{id}/storebalances/{storeBalanceId}"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)))
+      .replaceAll("\\{" + "storeBalanceId" + "\\}", apiClient.escapeString(apiClient.parameterToString(storeBalanceId)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    apiClient.invokeAPI(
+        localVarPath,
+        "DELETE",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        null
+    );
+  }
+
+  /**
+   * Массовое удаление НСО модификации по складам
+   * Массовое удаление Неснижаемых остатков Модификации по складам.
+   * @param id ID сущности (required)
+   * @param deleteProductImagesRequestInner  (required)
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteVariantStoreBalances(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<DeleteProductImagesRequestInner> deleteProductImagesRequestInner) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    this.deleteVariantStoreBalances(id, deleteProductImagesRequestInner, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Массовое удаление НСО модификации по складам
+   * Массовое удаление Неснижаемых остатков Модификации по складам.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param deleteProductImagesRequestInner  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteVariantStoreBalances(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<DeleteProductImagesRequestInner> deleteProductImagesRequestInner, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    this.deleteVariantStoreBalances(id, deleteProductImagesRequestInner, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Массовое удаление НСО модификации по складам
+   * Массовое удаление Неснижаемых остатков Модификации по складам.
+   * @param id ID сущности (required)
+   * @param deleteProductImagesRequestInner  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @throws ApiException if fails to make API call
+   */
+  protected void deleteVariantStoreBalances(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<DeleteProductImagesRequestInner> deleteProductImagesRequestInner, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = deleteProductImagesRequestInner;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling deleteVariantStoreBalances");
+    }
+    
+    // verify the required parameter 'deleteProductImagesRequestInner' is set
+    if (deleteProductImagesRequestInner == null) {
+      throw new ApiException(400, "Missing the required parameter 'deleteProductImagesRequestInner' when calling deleteVariantStoreBalances");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/variant/{id}/storebalances/delete"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (contentType != null) {
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    apiClient.invokeAPI(
+        localVarPath,
+        "POST",
         localVarQueryParams,
         localVarCollectionQueryParams,
         localVarQueryStringJoiner.toString(),
@@ -565,6 +1459,114 @@ if (acceptEncoding != null) {
   }
 
   /**
+   * Получить изображения Модификации
+   * Запрос на получение всех Изображений Модификации.
+   * @param id ID сущности (required)
+   * @return GetProductImages200Response
+   * @throws ApiException if fails to make API call
+   */
+  public GetProductImages200Response getVariantImages(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getVariantImages(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Получить изображения Модификации
+   * Запрос на получение всех Изображений Модификации.
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return GetProductImages200Response
+   * @throws ApiException if fails to make API call
+   */
+  public GetProductImages200Response getVariantImages(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getVariantImages(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("fields"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Получить изображения Модификации
+   * Запрос на получение всех Изображений Модификации.
+   * @param id ID сущности (required)
+   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
+   * @param offset Отступ в выданном списке (optional, default to 0)
+   * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return GetProductImages200Response
+   * @throws ApiException if fails to make API call
+   */
+  protected GetProductImages200Response getVariantImages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling getVariantImages");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/variant/{id}/images"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
+    localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
+    localVarQueryParams.addAll(apiClient.parameterToPair("fields", fields));
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<GetProductImages200Response> localVarReturnType = new TypeReference<GetProductImages200Response>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "GET",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
    * Метаданные Модификаций
    * 
    * @return VariantMetadata
@@ -635,6 +1637,221 @@ if (acceptEncoding != null) {
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
     TypeReference<VariantMetadata> localVarReturnType = new TypeReference<VariantMetadata>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "GET",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Получить НСО модификации по складу
+   * Запрос на получение отдельного Неснижаемого остатка Модификации по складу.
+   * @param id ID сущности (required)
+   * @param storeBalanceId ID неснижаемого остатка (required)
+   * @return StoreBalance
+   * @throws ApiException if fails to make API call
+   */
+  public StoreBalance getVariantStoreBalanceById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID storeBalanceId) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getVariantStoreBalanceById(id, storeBalanceId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Получить НСО модификации по складу
+   * Запрос на получение отдельного Неснижаемого остатка Модификации по складу.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param storeBalanceId ID неснижаемого остатка (required)
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return StoreBalance
+   * @throws ApiException if fails to make API call
+   */
+  public StoreBalance getVariantStoreBalanceById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID storeBalanceId, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getVariantStoreBalanceById(id, storeBalanceId, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Получить НСО модификации по складу
+   * Запрос на получение отдельного Неснижаемого остатка Модификации по складу.
+   * @param id ID сущности (required)
+   * @param storeBalanceId ID неснижаемого остатка (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return StoreBalance
+   * @throws ApiException if fails to make API call
+   */
+  protected StoreBalance getVariantStoreBalanceById(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID storeBalanceId, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling getVariantStoreBalanceById");
+    }
+    
+    // verify the required parameter 'storeBalanceId' is set
+    if (storeBalanceId == null) {
+      throw new ApiException(400, "Missing the required parameter 'storeBalanceId' when calling getVariantStoreBalanceById");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/variant/{id}/storebalances/{storeBalanceId}"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)))
+      .replaceAll("\\{" + "storeBalanceId" + "\\}", apiClient.escapeString(apiClient.parameterToString(storeBalanceId)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<StoreBalance> localVarReturnType = new TypeReference<StoreBalance>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "GET",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Получить НСО модификации по складам
+   * Запрос на получение списка Неснижаемых остатков Модификации по складам.
+   * @param id ID сущности (required)
+   * @return StoreBalanceList
+   * @throws ApiException if fails to make API call
+   */
+  public StoreBalanceList getVariantStoreBalances(@javax.annotation.Nonnull UUID id) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.getVariantStoreBalances(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Получить НСО модификации по складам
+   * Запрос на получение списка Неснижаемых остатков Модификации по складам.
+   
+   * @param id ID сущности (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return StoreBalanceList
+   * @throws ApiException if fails to make API call
+   */
+  public StoreBalanceList getVariantStoreBalances(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.getVariantStoreBalances(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Получить НСО модификации по складам
+   * Запрос на получение списка Неснижаемых остатков Модификации по складам.
+   * @param id ID сущности (required)
+   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
+   * @param offset Отступ в выданном списке (optional, default to 0)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return StoreBalanceList
+   * @throws ApiException if fails to make API call
+   */
+  protected StoreBalanceList getVariantStoreBalances(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling getVariantStoreBalances");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/variant/{id}/storebalances"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
+    localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<StoreBalanceList> localVarReturnType = new TypeReference<StoreBalanceList>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "GET",
@@ -861,6 +2078,131 @@ if (contentType != null) {
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
     TypeReference<Variant> localVarReturnType = new TypeReference<Variant>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "PUT",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Изменить НСО модификации по складу
+   * Обновление Неснижаемого остатка Модификации для склада.
+   * @param id ID сущности (required)
+   * @param storeBalanceId ID неснижаемого остатка (required)
+   * @param storeBalance  (required)
+   * @return StoreBalance
+   * @throws ApiException if fails to make API call
+   */
+  public StoreBalance updateVariantStoreBalance(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID storeBalanceId, @javax.annotation.Nonnull StoreBalance storeBalance) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateVariantStoreBalance(id, storeBalanceId, storeBalance, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Изменить НСО модификации по складу
+   * Обновление Неснижаемого остатка Модификации для склада.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param storeBalanceId ID неснижаемого остатка (required)
+   
+   
+   * @param storeBalance  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return StoreBalance
+   * @throws ApiException if fails to make API call
+   */
+  public StoreBalance updateVariantStoreBalance(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID storeBalanceId, @javax.annotation.Nonnull StoreBalance storeBalance, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateVariantStoreBalance(id, storeBalanceId, storeBalance, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Изменить НСО модификации по складу
+   * Обновление Неснижаемого остатка Модификации для склада.
+   * @param id ID сущности (required)
+   * @param storeBalanceId ID неснижаемого остатка (required)
+   * @param storeBalance  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return StoreBalance
+   * @throws ApiException if fails to make API call
+   */
+  protected StoreBalance updateVariantStoreBalance(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UUID storeBalanceId, @javax.annotation.Nonnull StoreBalance storeBalance, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = storeBalance;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling updateVariantStoreBalance");
+    }
+    
+    // verify the required parameter 'storeBalanceId' is set
+    if (storeBalanceId == null) {
+      throw new ApiException(400, "Missing the required parameter 'storeBalanceId' when calling updateVariantStoreBalance");
+    }
+    
+    // verify the required parameter 'storeBalance' is set
+    if (storeBalance == null) {
+      throw new ApiException(400, "Missing the required parameter 'storeBalance' when calling updateVariantStoreBalance");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/variant/{id}/storebalances/{storeBalanceId}"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)))
+      .replaceAll("\\{" + "storeBalanceId" + "\\}", apiClient.escapeString(apiClient.parameterToString(storeBalanceId)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (contentType != null) {
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<StoreBalance> localVarReturnType = new TypeReference<StoreBalance>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "PUT",

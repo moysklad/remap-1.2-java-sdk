@@ -39,13 +39,13 @@ import java.util.StringJoiner;
   StoreBalance.JSON_PROPERTY_STORE,
   StoreBalance.JSON_PROPERTY_QUANTITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
-public class StoreBalance implements MetaEntity {
-  public static StoreBalance createWithMeta(UUID parentId, UUID id) {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+public class StoreBalance extends EntityWithMeta implements MetaEntity {
+  public static StoreBalance createWithMeta(String entityType, UUID parentId, UUID id) {
     StoreBalance o = new StoreBalance();
     Meta meta = new Meta();
     meta.setType("minimumstock");
-    String href = ru.moysklad.remap_1_2.Configuration.getDefaultApiClient().getBaseURL() + "/" + "entity" + "/" + "product" + "/" + parentId + "/" + "storebalances" + "/" + id;
+    String href = ru.moysklad.remap_1_2.Configuration.getDefaultApiClient().getBaseURL() + "/" + "entity" + "/" + entityType + "/" + parentId + "/" + "storebalances" + "/" + id;
     try {
         meta.setHref(new java.net.URI(href));
     } catch (java.net.URISyntaxException e) {

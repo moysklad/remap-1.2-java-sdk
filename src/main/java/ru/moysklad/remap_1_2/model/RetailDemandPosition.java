@@ -56,7 +56,7 @@ import java.util.StringJoiner;
   RetailDemandPosition.JSON_PROPERTY_VAT,
   RetailDemandPosition.JSON_PROPERTY_VAT_ENABLED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailDemandPosition implements DocumentPosition, MetaEntity {
   public static RetailDemandPosition createWithMeta(UUID parentId, UUID id) {
     RetailDemandPosition o = new RetailDemandPosition();

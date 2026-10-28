@@ -4,6 +4,8 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
+| [**addCashInFile**](CashInsApi.md#addCashInFile) | **POST** /entity/cashin/{id}/files | Добавить файл к Приходному ордеру |
+| [**addCashInFiles**](CashInsApi.md#addCashInFiles) | **POST** /entity/cashin/{id}/files/batch | Добавить файлы к Приходному ордеру |
 | [**createCashIn**](CashInsApi.md#createCashIn) | **POST** /entity/cashin | Создать CashIn |
 | [**createCashInBatch**](CashInsApi.md#createCashInBatch) | **POST** /entity/cashin/batch | Массовое создание и обновление CashIn |
 | [**createCashInMetadataAttribute**](CashInsApi.md#createCashInMetadataAttribute) | **POST** /entity/cashin/metadata/attributes | Создать доп. поле CashIn |
@@ -11,9 +13,11 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createCashInMetadataStatesBatch**](CashInsApi.md#createCashInMetadataStatesBatch) | **POST** /entity/cashin/metadata/states/batch | Массовое создание и обновление статусов CashIn |
 | [**deleteCashIn**](CashInsApi.md#deleteCashIn) | **DELETE** /entity/cashin/{id} | Удалить CashIn |
 | [**deleteCashInBatch**](CashInsApi.md#deleteCashInBatch) | **POST** /entity/cashin/delete | Массовое удаление CashIn |
+| [**deleteCashInFile**](CashInsApi.md#deleteCashInFile) | **DELETE** /entity/cashin/{id}/files/{fileId} | Удалить файл Приходного ордера |
 | [**deleteCashInMetadataAttributeById**](CashInsApi.md#deleteCashInMetadataAttributeById) | **DELETE** /entity/cashin/metadata/attributes/{id} | Удалить отдельное доп. поле CashIn |
 | [**deleteCashInMetadataStateById**](CashInsApi.md#deleteCashInMetadataStateById) | **DELETE** /entity/cashin/metadata/states/{id} | Удалить отдельный статус CashIn |
 | [**getCashInById**](CashInsApi.md#getCashInById) | **GET** /entity/cashin/{id} | Получить CashIn |
+| [**getCashInFiles**](CashInsApi.md#getCashInFiles) | **GET** /entity/cashin/{id}/files | Получить файлы Приходного ордера |
 | [**getCashInList**](CashInsApi.md#getCashInList) | **GET** /entity/cashin | Получить список CashIn |
 | [**getCashInMetadata**](CashInsApi.md#getCashInMetadata) | **GET** /entity/cashin/metadata | Метаданные CashIn |
 | [**getCashInMetadataAttribute**](CashInsApi.md#getCashInMetadataAttribute) | **GET** /entity/cashin/metadata/attributes | Доп. поля CashIn |
@@ -25,6 +29,176 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**updateCashInMetadataAttributeById**](CashInsApi.md#updateCashInMetadataAttributeById) | **PUT** /entity/cashin/metadata/attributes/{id} | Обновить отдельное доп. поле CashIn |
 | [**updateCashInMetadataStateById**](CashInsApi.md#updateCashInMetadataStateById) | **PUT** /entity/cashin/metadata/states/{id} | Обновить отдельный статус CashIn |
 
+
+
+## addCashInFile
+
+> List&lt;ModelFile&gt; addCashInFile(id, fileUpload, accept, acceptEncoding, contentType)
+
+Добавить файл к Приходному ордеру
+
+Добавить новый Файл к Приходному ордеру. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.CashInsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        CashInsApi apiInstance = new CashInsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        FileUpload fileUpload = new FileUpload(); // FileUpload | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<ModelFile> result = apiInstance.addCashInFile(id, fileUpload, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CashInsApi#addCashInFile");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **fileUpload** | [**FileUpload**](FileUpload.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;ModelFile&gt;**](ModelFile.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Файл успешно добавлен. Результат — массив всех Файлов Приходного ордера. |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## addCashInFiles
+
+> List&lt;ModelFile&gt; addCashInFiles(id, fileUpload, accept, acceptEncoding, contentType)
+
+Добавить файлы к Приходному ордеру
+
+Добавить новые Файлы к Приходному ордеру. В одном запросе можно добавить максимум 10 Файлов. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.CashInsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        CashInsApi apiInstance = new CashInsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<FileUpload> fileUpload = Arrays.asList(); // List<FileUpload> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<ModelFile> result = apiInstance.addCashInFiles(id, fileUpload, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CashInsApi#addCashInFiles");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **fileUpload** | [**List&lt;FileUpload&gt;**](FileUpload.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;ModelFile&gt;**](ModelFile.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Файлы успешно добавлены. Результат — массив всех Файлов Приходного ордера. |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createCashIn
@@ -597,6 +771,88 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
+## deleteCashInFile
+
+> deleteCashInFile(id, fileId, accept, acceptEncoding)
+
+Удалить файл Приходного ордера
+
+Удаление Файла Приходного ордера.
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.CashInsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        CashInsApi apiInstance = new CashInsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID fileId = UUID.randomUUID(); // UUID | ID файла
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            apiInstance.deleteCashInFile(id, fileId, accept, acceptEncoding);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CashInsApi#deleteCashInFile");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **fileId** | **UUID**| ID файла | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Файл успешно удалён |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
 ## deleteCashInMetadataAttributeById
 
 > deleteCashInMetadataAttributeById(id, accept, acceptEncoding, contentType)
@@ -823,6 +1079,91 @@ public class Example {
 ### Return type
 
 [**CashIn**](CashIn.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## getCashInFiles
+
+> GetTaskFiles200Response getCashInFiles(id, limit, offset, accept, acceptEncoding)
+
+Получить файлы Приходного ордера
+
+Запрос на получение списка всех Файлов Приходного ордера.
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.CashInsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        CashInsApi apiInstance = new CashInsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
+        Integer offset = 0; // Integer | Отступ в выданном списке
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            GetTaskFiles200Response result = apiInstance.getCashInFiles(id, limit, offset, accept, acceptEncoding);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CashInsApi#getCashInFiles");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **limit** | **Integer**| Максимальное количество элементов в выданном списке (максимум 1000) | [optional] [default to 1000] |
+| **offset** | **Integer**| Отступ в выданном списке | [optional] [default to 0] |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+[**GetTaskFiles200Response**](GetTaskFiles200Response.md)
 
 ### Authorization
 

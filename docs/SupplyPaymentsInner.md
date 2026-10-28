@@ -19,6 +19,7 @@
 |**deleted** | **String** | Момент последнего удаления Входящего платежа |  [optional] [readonly] |
 |**updated** | **String** | Момент последнего обновления Входящего платежа |  [optional] [readonly] |
 |**moment** | **String** | Дата документа |  [optional] |
+|**accrualDate** | **String** | Дата начисления |  [optional] |
 |**owner** | [**Employee**](Employee.md) | Владелец (Сотрудник) |  [optional] |
 |**group** | [**Group**](Group.md) |  |  [optional] |
 |**applicable** | **Boolean** | Отметка о проведении |  [optional] |

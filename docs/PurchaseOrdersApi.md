@@ -4,6 +4,8 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
+| [**addPurchaseOrderFile**](PurchaseOrdersApi.md#addPurchaseOrderFile) | **POST** /entity/purchaseorder/{id}/files | Добавить файл к Заказу поставщику |
+| [**addPurchaseOrderFiles**](PurchaseOrdersApi.md#addPurchaseOrderFiles) | **POST** /entity/purchaseorder/{id}/files/batch | Добавить файлы к Заказу поставщику |
 | [**createPurchaseOrder**](PurchaseOrdersApi.md#createPurchaseOrder) | **POST** /entity/purchaseorder | Создать PurchaseOrder |
 | [**createPurchaseOrderBatch**](PurchaseOrdersApi.md#createPurchaseOrderBatch) | **POST** /entity/purchaseorder/batch | Массовое создание и обновление PurchaseOrder |
 | [**createPurchaseOrderMetadataAttribute**](PurchaseOrdersApi.md#createPurchaseOrderMetadataAttribute) | **POST** /entity/purchaseorder/metadata/attributes | Создать Доп. поле PurchaseOrder |
@@ -15,6 +17,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createPurchaseOrderPositions**](PurchaseOrdersApi.md#createPurchaseOrderPositions) | **POST** /entity/purchaseorder/{id}/positions/batch | Массовое создание и обновление позиций Заказа поставщику |
 | [**deletePurchaseOrder**](PurchaseOrdersApi.md#deletePurchaseOrder) | **DELETE** /entity/purchaseorder/{id} | Удалить PurchaseOrder |
 | [**deletePurchaseOrderBatch**](PurchaseOrdersApi.md#deletePurchaseOrderBatch) | **POST** /entity/purchaseorder/delete | Массовое удаление PurchaseOrder |
+| [**deletePurchaseOrderFile**](PurchaseOrdersApi.md#deletePurchaseOrderFile) | **DELETE** /entity/purchaseorder/{id}/files/{fileId} | Удалить файл Заказа поставщику |
 | [**deletePurchaseOrderMetadataAttributeById**](PurchaseOrdersApi.md#deletePurchaseOrderMetadataAttributeById) | **DELETE** /entity/purchaseorder/metadata/attributes/{id} | Удалить отдельное доп. поле PurchaseOrder |
 | [**deletePurchaseOrderMetadataStateById**](PurchaseOrdersApi.md#deletePurchaseOrderMetadataStateById) | **DELETE** /entity/purchaseorder/metadata/states/{id} | Удалить отдельный статус PurchaseOrder |
 | [**deletePurchaseOrderNote**](PurchaseOrdersApi.md#deletePurchaseOrderNote) | **DELETE** /entity/purchaseorder/{id}/notes/{noteId} | Удалить Событие Заказа поставщику |
@@ -22,6 +25,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**deletePurchaseOrderPosition**](PurchaseOrdersApi.md#deletePurchaseOrderPosition) | **DELETE** /entity/purchaseorder/{id}/positions/{positionId} | Удалить позицию PurchaseOrder |
 | [**deletePurchaseOrderPositionsBatch**](PurchaseOrdersApi.md#deletePurchaseOrderPositionsBatch) | **POST** /entity/purchaseorder/{id}/positions/delete | Массовое удаление позиций PurchaseOrder |
 | [**getPurchaseOrderById**](PurchaseOrdersApi.md#getPurchaseOrderById) | **GET** /entity/purchaseorder/{id} | Получить PurchaseOrder |
+| [**getPurchaseOrderFiles**](PurchaseOrdersApi.md#getPurchaseOrderFiles) | **GET** /entity/purchaseorder/{id}/files | Получить файлы Заказа поставщику |
 | [**getPurchaseOrderList**](PurchaseOrdersApi.md#getPurchaseOrderList) | **GET** /entity/purchaseorder | Получить список PurchaseOrder |
 | [**getPurchaseOrderMetadata**](PurchaseOrdersApi.md#getPurchaseOrderMetadata) | **GET** /entity/purchaseorder/metadata | Метаданные PurchaseOrder |
 | [**getPurchaseOrderMetadataAttribute**](PurchaseOrdersApi.md#getPurchaseOrderMetadataAttribute) | **GET** /entity/purchaseorder/metadata/attributes | Доп. поля PurchaseOrder |
@@ -39,6 +43,176 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**updatePurchaseOrderNote**](PurchaseOrdersApi.md#updatePurchaseOrderNote) | **PUT** /entity/purchaseorder/{id}/notes/{noteId} | Обновить Событие Заказа поставщику |
 | [**updatePurchaseOrderPosition**](PurchaseOrdersApi.md#updatePurchaseOrderPosition) | **PUT** /entity/purchaseorder/{id}/positions/{positionId} | Изменить позицию PurchaseOrder |
 
+
+
+## addPurchaseOrderFile
+
+> List&lt;ModelFile&gt; addPurchaseOrderFile(id, fileUpload, accept, acceptEncoding, contentType)
+
+Добавить файл к Заказу поставщику
+
+Добавить новый Файл к Заказу поставщику. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.PurchaseOrdersApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        FileUpload fileUpload = new FileUpload(); // FileUpload | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<ModelFile> result = apiInstance.addPurchaseOrderFile(id, fileUpload, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PurchaseOrdersApi#addPurchaseOrderFile");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **fileUpload** | [**FileUpload**](FileUpload.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;ModelFile&gt;**](ModelFile.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Файл успешно добавлен. Результат — массив всех Файлов Заказа поставщику. |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## addPurchaseOrderFiles
+
+> List&lt;ModelFile&gt; addPurchaseOrderFiles(id, fileUpload, accept, acceptEncoding, contentType)
+
+Добавить файлы к Заказу поставщику
+
+Добавить новые Файлы к Заказу поставщику. В одном запросе можно добавить максимум 10 Файлов. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.PurchaseOrdersApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<FileUpload> fileUpload = Arrays.asList(); // List<FileUpload> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<ModelFile> result = apiInstance.addPurchaseOrderFiles(id, fileUpload, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PurchaseOrdersApi#addPurchaseOrderFiles");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **fileUpload** | [**List&lt;FileUpload&gt;**](FileUpload.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;ModelFile&gt;**](ModelFile.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Файлы успешно добавлены. Результат — массив всех Файлов Заказа поставщику. |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## createPurchaseOrder
@@ -951,6 +1125,88 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
+## deletePurchaseOrderFile
+
+> deletePurchaseOrderFile(id, fileId, accept, acceptEncoding)
+
+Удалить файл Заказа поставщику
+
+Удаление Файла Заказа поставщику.
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.PurchaseOrdersApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        UUID fileId = UUID.randomUUID(); // UUID | ID файла
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            apiInstance.deletePurchaseOrderFile(id, fileId, accept, acceptEncoding);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PurchaseOrdersApi#deletePurchaseOrderFile");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **fileId** | **UUID**| ID файла | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Файл успешно удалён |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
 ## deletePurchaseOrderMetadataAttributeById
 
 > deletePurchaseOrderMetadataAttributeById(id, accept, acceptEncoding, contentType)
@@ -1512,6 +1768,91 @@ public class Example {
 ### Return type
 
 [**PurchaseOrder**](PurchaseOrder.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## getPurchaseOrderFiles
+
+> GetTaskFiles200Response getPurchaseOrderFiles(id, limit, offset, accept, acceptEncoding)
+
+Получить файлы Заказа поставщику
+
+Запрос на получение списка всех Файлов Заказа поставщику.
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.PurchaseOrdersApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
+        Integer offset = 0; // Integer | Отступ в выданном списке
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        try {
+            GetTaskFiles200Response result = apiInstance.getPurchaseOrderFiles(id, limit, offset, accept, acceptEncoding);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PurchaseOrdersApi#getPurchaseOrderFiles");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **limit** | **Integer**| Максимальное количество элементов в выданном списке (максимум 1000) | [optional] [default to 1000] |
+| **offset** | **Integer**| Отступ в выданном списке | [optional] [default to 0] |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+
+### Return type
+
+[**GetTaskFiles200Response**](GetTaskFiles200Response.md)
 
 ### Authorization
 

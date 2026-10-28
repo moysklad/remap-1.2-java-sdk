@@ -71,7 +71,7 @@ import java.util.StringJoiner;
   Employee.JSON_PROPERTY_IMAGE,
   Employee.JSON_PROPERTY_ATTRIBUTES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
 public class Employee extends Agent implements Named {
   public static Employee createWithMeta(UUID id) {
     Employee o = new Employee();

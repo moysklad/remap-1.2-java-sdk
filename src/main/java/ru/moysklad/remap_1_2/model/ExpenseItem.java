@@ -35,13 +35,14 @@ import java.util.StringJoiner;
   ExpenseItem.JSON_PROPERTY_META,
   ExpenseItem.JSON_PROPERTY_ID,
   ExpenseItem.JSON_PROPERTY_ACCOUNT_ID,
+  ExpenseItem.JSON_PROPERTY_ARCHIVED,
   ExpenseItem.JSON_PROPERTY_CODE,
   ExpenseItem.JSON_PROPERTY_DESCRIPTION,
   ExpenseItem.JSON_PROPERTY_EXTERNAL_CODE,
   ExpenseItem.JSON_PROPERTY_NAME,
   ExpenseItem.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
 public class ExpenseItem extends EntityWithMeta implements MetaEntity {
   public static ExpenseItem createWithMeta(UUID id) {
     ExpenseItem o = new ExpenseItem();
@@ -69,6 +70,10 @@ public class ExpenseItem extends EntityWithMeta implements MetaEntity {
   public static final String JSON_PROPERTY_ACCOUNT_ID = "accountId";
   @javax.annotation.Nullable
   private UUID accountId;
+
+  public static final String JSON_PROPERTY_ARCHIVED = "archived";
+  @javax.annotation.Nullable
+  private Boolean archived;
 
   public static final String JSON_PROPERTY_CODE = "code";
   @javax.annotation.Nullable
@@ -166,6 +171,35 @@ public class ExpenseItem extends EntityWithMeta implements MetaEntity {
 
   
 
+
+
+  public ExpenseItem archived(@javax.annotation.Nullable Boolean archived) {
+    
+    this.archived = archived;
+    return this;
+  }
+
+
+  /**
+   * Добавлена ли Статья расходов в архив
+   * @return archived
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ARCHIVED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getArchived() {
+    return archived;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_ARCHIVED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setArchived(@javax.annotation.Nullable Boolean archived) {
+    this.archived = archived;
+  }
 
 
   public ExpenseItem code(@javax.annotation.Nullable String code) {
@@ -312,6 +346,7 @@ public class ExpenseItem extends EntityWithMeta implements MetaEntity {
     return Objects.equals(this.meta, expenseItem.meta) &&
         Objects.equals(this.id, expenseItem.id) &&
         Objects.equals(this.accountId, expenseItem.accountId) &&
+        Objects.equals(this.archived, expenseItem.archived) &&
         Objects.equals(this.code, expenseItem.code) &&
         Objects.equals(this.description, expenseItem.description) &&
         Objects.equals(this.externalCode, expenseItem.externalCode) &&
@@ -321,7 +356,7 @@ public class ExpenseItem extends EntityWithMeta implements MetaEntity {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, code, description, externalCode, name, updated);
+    return Objects.hash(meta, id, accountId, archived, code, description, externalCode, name, updated);
   }
 
   @Override
@@ -331,6 +366,7 @@ public class ExpenseItem extends EntityWithMeta implements MetaEntity {
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
+    sb.append("    archived: ").append(toIndentedString(archived)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    externalCode: ").append(toIndentedString(externalCode)).append("\n");
@@ -402,6 +438,16 @@ public class ExpenseItem extends EntityWithMeta implements MetaEntity {
     if (getAccountId() != null) {
       try {
         joiner.add(String.format(java.util.Locale.ROOT, "%saccountId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAccountId()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `archived` to the URL query string
+    if (getArchived() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sarchived%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getArchived()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);

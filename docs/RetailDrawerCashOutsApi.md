@@ -4,7 +4,8 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**addRetailDrawerCashOutFiles**](RetailDrawerCashOutsApi.md#addRetailDrawerCashOutFiles) | **POST** /entity/retaildrawercashout/{id}/files | Добавить файлы к выплате денег |
+| [**addRetailDrawerCashOutFile**](RetailDrawerCashOutsApi.md#addRetailDrawerCashOutFile) | **POST** /entity/retaildrawercashout/{id}/files | Добавить файл к выплате денег |
+| [**addRetailDrawerCashOutFiles**](RetailDrawerCashOutsApi.md#addRetailDrawerCashOutFiles) | **POST** /entity/retaildrawercashout/{id}/files/batch | Добавить файлы к выплате денег |
 | [**createRetailDrawerCashOut**](RetailDrawerCashOutsApi.md#createRetailDrawerCashOut) | **POST** /entity/retaildrawercashout | Создать Выплату денег |
 | [**createRetailDrawerCashOutBatch**](RetailDrawerCashOutsApi.md#createRetailDrawerCashOutBatch) | **POST** /entity/retaildrawercashout/batch | Массовое создание и обновление Выплат денег |
 | [**createRetailDrawerCashOutMetadataAttribute**](RetailDrawerCashOutsApi.md#createRetailDrawerCashOutMetadataAttribute) | **POST** /entity/retaildrawercashout/metadata/attributes | Создать доп. поле Выплат денег |
@@ -29,6 +30,91 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**updateRetailDrawerCashOutMetadataAttributeById**](RetailDrawerCashOutsApi.md#updateRetailDrawerCashOutMetadataAttributeById) | **PUT** /entity/retaildrawercashout/metadata/attributes/{id} | Обновить отдельное доп. поле Выплат денег |
 | [**updateRetailDrawerCashOutMetadataStateById**](RetailDrawerCashOutsApi.md#updateRetailDrawerCashOutMetadataStateById) | **PUT** /entity/retaildrawercashout/metadata/states/{id} | Обновить отдельный статус Выплат денег |
 
+
+
+## addRetailDrawerCashOutFile
+
+> List&lt;ModelFile&gt; addRetailDrawerCashOutFile(id, fileUpload, accept, acceptEncoding, contentType)
+
+Добавить файл к выплате денег
+
+Добавить новый Файл к Выплате денег. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.RetailDrawerCashOutsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        RetailDrawerCashOutsApi apiInstance = new RetailDrawerCashOutsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        FileUpload fileUpload = new FileUpload(); // FileUpload | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<ModelFile> result = apiInstance.addRetailDrawerCashOutFile(id, fileUpload, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling RetailDrawerCashOutsApi#addRetailDrawerCashOutFile");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **fileUpload** | [**FileUpload**](FileUpload.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;ModelFile&gt;**](ModelFile.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Файл успешно добавлен. Результат — массив всех Файлов Выплаты денег. |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## addRetailDrawerCashOutFiles
@@ -1089,7 +1175,7 @@ public class Example {
 
 ## getRetailDrawerCashOutFiles
 
-> GetProductFiles200Response getRetailDrawerCashOutFiles(id, limit, offset, accept, acceptEncoding)
+> GetTaskFiles200Response getRetailDrawerCashOutFiles(id, limit, offset, accept, acceptEncoding)
 
 Получить файлы выплаты денег
 
@@ -1127,7 +1213,7 @@ public class Example {
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
-            GetProductFiles200Response result = apiInstance.getRetailDrawerCashOutFiles(id, limit, offset, accept, acceptEncoding);
+            GetTaskFiles200Response result = apiInstance.getRetailDrawerCashOutFiles(id, limit, offset, accept, acceptEncoding);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling RetailDrawerCashOutsApi#getRetailDrawerCashOutFiles");
@@ -1153,7 +1239,7 @@ public class Example {
 
 ### Return type
 
-[**GetProductFiles200Response**](GetProductFiles200Response.md)
+[**GetTaskFiles200Response**](GetTaskFiles200Response.md)
 
 ### Authorization
 

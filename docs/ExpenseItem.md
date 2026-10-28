@@ -11,6 +11,7 @@
 |**meta** | [**Meta**](Meta.md) |  |  [optional] |
 |**id** | **UUID** | ID Статьи расходов |  [optional] [readonly] |
 |**accountId** | **UUID** | ID учетной записи |  [optional] [readonly] |
+|**archived** | **Boolean** | Добавлена ли Статья расходов в архив |  [optional] |
 |**code** | **String** | Код Статьи расходов |  [optional] |
 |**description** | **String** | Описание Статьи расходов |  [optional] |
 |**externalCode** | **String** | Внешний код Статьи расходов |  [optional] |

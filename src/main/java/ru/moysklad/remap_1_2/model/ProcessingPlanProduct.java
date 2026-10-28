@@ -41,8 +41,8 @@ import java.util.StringJoiner;
   ProcessingPlanProduct.JSON_PROPERTY_PRODUCT,
   ProcessingPlanProduct.JSON_PROPERTY_QUANTITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
-public class ProcessingPlanProduct implements MetaEntity {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+public class ProcessingPlanProduct extends EntityWithMeta implements MetaEntity {
   public static ProcessingPlanProduct createWithMeta(UUID parentId, UUID id) {
     ProcessingPlanProduct o = new ProcessingPlanProduct();
     Meta meta = new Meta();

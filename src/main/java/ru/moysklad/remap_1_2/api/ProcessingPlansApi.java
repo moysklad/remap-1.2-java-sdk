@@ -45,7 +45,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ProcessingPlansApi extends BaseApi {
 
@@ -387,6 +387,123 @@ if (contentType != null) {
   }
 
   /**
+   * Массовое создание и обновление материалов техкарты
+   * В теле запроса передается массив материалов. Для создания требуются assortment и quantity, для обновления — метаданные (meta).
+   * @param id ID сущности (required)
+   * @param processingPlanMaterial  (required)
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<BatchResponseEntity> createProcessingPlanMaterialsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<ProcessingPlanMaterial> processingPlanMaterial) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createProcessingPlanMaterialsBatch(id, processingPlanMaterial, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Массовое создание и обновление материалов техкарты
+   * В теле запроса передается массив материалов. Для создания требуются assortment и quantity, для обновления — метаданные (meta).
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param processingPlanMaterial  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<BatchResponseEntity> createProcessingPlanMaterialsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<ProcessingPlanMaterial> processingPlanMaterial, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createProcessingPlanMaterialsBatch(id, processingPlanMaterial, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Массовое создание и обновление материалов техкарты
+   * В теле запроса передается массив материалов. Для создания требуются assortment и quantity, для обновления — метаданные (meta).
+   * @param id ID сущности (required)
+   * @param processingPlanMaterial  (required)
+   * @param expand Замена ссылок объектами с помощью expand (optional)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  protected List<BatchResponseEntity> createProcessingPlanMaterialsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<ProcessingPlanMaterial> processingPlanMaterial, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = processingPlanMaterial;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling createProcessingPlanMaterialsBatch");
+    }
+    
+    // verify the required parameter 'processingPlanMaterial' is set
+    if (processingPlanMaterial == null) {
+      throw new ApiException(400, "Missing the required parameter 'processingPlanMaterial' when calling createProcessingPlanMaterialsBatch");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/processingplan/{id}/materials/batch"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (contentType != null) {
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
+    return apiClient.invokeAPIBatch(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
    * Создать Доп. поле ProcessingPlan
    * 
    * @param attributeMetaInfo  (required)
@@ -494,10 +611,10 @@ if (contentType != null) {
    * Запрос на создание нового продукта в Техкарте
    * @param id ID сущности (required)
    * @param processingPlanProduct  (required)
-   * @return ProcessingPlanProduct
+   * @return List&lt;ProcessingPlanProduct&gt;
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlanProduct createProcessingPlanProducts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingPlanProduct processingPlanProduct) throws ApiException {
+  public List<ProcessingPlanProduct> createProcessingPlanProducts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingPlanProduct processingPlanProduct) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.createProcessingPlanProducts(id, processingPlanProduct, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -517,10 +634,10 @@ if (contentType != null) {
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return ProcessingPlanProduct
+   * @return List&lt;ProcessingPlanProduct&gt;
    * @throws ApiException if fails to make API call
    */
-  public ProcessingPlanProduct createProcessingPlanProducts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingPlanProduct processingPlanProduct, RequestOptions options) throws ApiException {
+  public List<ProcessingPlanProduct> createProcessingPlanProducts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingPlanProduct processingPlanProduct, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createProcessingPlanProducts(id, processingPlanProduct, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -535,10 +652,10 @@ if (contentType != null) {
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return ProcessingPlanProduct
+   * @return List&lt;ProcessingPlanProduct&gt;
    * @throws ApiException if fails to make API call
    */
-  protected ProcessingPlanProduct createProcessingPlanProducts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingPlanProduct processingPlanProduct, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<ProcessingPlanProduct> createProcessingPlanProducts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingPlanProduct processingPlanProduct, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = processingPlanProduct;
     
     // verify the required parameter 'id' is set
@@ -588,8 +705,125 @@ if (contentType != null) {
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<ProcessingPlanProduct> localVarReturnType = new TypeReference<ProcessingPlanProduct>() {};
+    TypeReference<List<ProcessingPlanProduct>> localVarReturnType = new TypeReference<List<ProcessingPlanProduct>>() {};
     return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Массовое создание и обновление продуктов техкарты
+   * В теле запроса передается массив продуктов. Для создания требуются assortment и quantity, для обновления — метаданные (meta).
+   * @param id ID сущности (required)
+   * @param processingPlanProduct  (required)
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<BatchResponseEntity> createProcessingPlanProductsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<ProcessingPlanProduct> processingPlanProduct) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createProcessingPlanProductsBatch(id, processingPlanProduct, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Массовое создание и обновление продуктов техкарты
+   * В теле запроса передается массив продуктов. Для создания требуются assortment и quantity, для обновления — метаданные (meta).
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param processingPlanProduct  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<BatchResponseEntity> createProcessingPlanProductsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<ProcessingPlanProduct> processingPlanProduct, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createProcessingPlanProductsBatch(id, processingPlanProduct, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Массовое создание и обновление продуктов техкарты
+   * В теле запроса передается массив продуктов. Для создания требуются assortment и quantity, для обновления — метаданные (meta).
+   * @param id ID сущности (required)
+   * @param processingPlanProduct  (required)
+   * @param expand Замена ссылок объектами с помощью expand (optional)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  protected List<BatchResponseEntity> createProcessingPlanProductsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<ProcessingPlanProduct> processingPlanProduct, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = processingPlanProduct;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling createProcessingPlanProductsBatch");
+    }
+    
+    // verify the required parameter 'processingPlanProduct' is set
+    if (processingPlanProduct == null) {
+      throw new ApiException(400, "Missing the required parameter 'processingPlanProduct' when calling createProcessingPlanProductsBatch");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/processingplan/{id}/products/batch"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (contentType != null) {
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
+    return apiClient.invokeAPIBatch(
         localVarPath,
         "POST",
         localVarQueryParams,
@@ -3120,6 +3354,123 @@ if (contentType != null) {
     return apiClient.invokeAPI(
         localVarPath,
         "PUT",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Массовое изменение этапов Техкарты
+   * В теле запроса передается массив этапов Техкарты с метаданными (meta). Этапы Техкарты соответствуют этапам позиций привязанного техпроцесса, поэтому создать новый этап нельзя — только изменить существующий.
+   * @param id ID сущности (required)
+   * @param processingPlanStage  (required)
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<BatchResponseEntity> updateProcessingPlanStages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<ProcessingPlanStage> processingPlanStage) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.updateProcessingPlanStages(id, processingPlanStage, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Массовое изменение этапов Техкарты
+   * В теле запроса передается массив этапов Техкарты с метаданными (meta). Этапы Техкарты соответствуют этапам позиций привязанного техпроцесса, поэтому создать новый этап нельзя — только изменить существующий.
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param processingPlanStage  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<BatchResponseEntity> updateProcessingPlanStages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<ProcessingPlanStage> processingPlanStage, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.updateProcessingPlanStages(id, processingPlanStage, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Массовое изменение этапов Техкарты
+   * В теле запроса передается массив этапов Техкарты с метаданными (meta). Этапы Техкарты соответствуют этапам позиций привязанного техпроцесса, поэтому создать новый этап нельзя — только изменить существующий.
+   * @param id ID сущности (required)
+   * @param processingPlanStage  (required)
+   * @param expand Замена ссылок объектами с помощью expand (optional)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  protected List<BatchResponseEntity> updateProcessingPlanStages(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<ProcessingPlanStage> processingPlanStage, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = processingPlanStage;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling updateProcessingPlanStages");
+    }
+    
+    // verify the required parameter 'processingPlanStage' is set
+    if (processingPlanStage == null) {
+      throw new ApiException(400, "Missing the required parameter 'processingPlanStage' when calling updateProcessingPlanStages");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/processingplan/{id}/stages/batch"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (contentType != null) {
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
+    return apiClient.invokeAPIBatch(
+        localVarPath,
+        "POST",
         localVarQueryParams,
         localVarCollectionQueryParams,
         localVarQueryStringJoiner.toString(),

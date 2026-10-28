@@ -55,7 +55,7 @@ import java.util.StringJoiner;
   LossPosition.JSON_PROPERTY_SLOT,
   LossPosition.JSON_PROPERTY_THINGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
 public class LossPosition extends EntityWithMeta implements DocumentPosition, MetaEntity {
   public static LossPosition createWithMeta(UUID parentId, UUID id) {
     LossPosition o = new LossPosition();

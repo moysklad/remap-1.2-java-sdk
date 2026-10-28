@@ -28,7 +28,7 @@ import ru.moysklad.remap_1_2.model.DeleteRowResult;
 import ru.moysklad.remap_1_2.model.DocumentMetadata;
 import ru.moysklad.remap_1_2.model.Errors;
 import ru.moysklad.remap_1_2.model.FileUpload;
-import ru.moysklad.remap_1_2.model.GetProductFiles200Response;
+import ru.moysklad.remap_1_2.model.GetTaskFiles200Response;
 import ru.moysklad.remap_1_2.model.ModelFile;
 import ru.moysklad.remap_1_2.model.PaymentIn;
 import ru.moysklad.remap_1_2.model.PaymentInList;
@@ -44,7 +44,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class PaymentInsApi extends BaseApi {
 
@@ -54,6 +54,120 @@ public class PaymentInsApi extends BaseApi {
 
   public PaymentInsApi(ApiClient apiClient) {
     super(apiClient);
+  }
+
+  /**
+   * Добавить файл к входящему платежу
+   * Добавить новый Файл к Входящему платежу. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
+   * @param id ID сущности (required)
+   * @param fileUpload  (required)
+   * @return List&lt;ModelFile&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<ModelFile> addPaymentInFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull FileUpload fileUpload) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.addPaymentInFile(id, fileUpload, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Добавить файл к входящему платежу
+   * Добавить новый Файл к Входящему платежу. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param fileUpload  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;ModelFile&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<ModelFile> addPaymentInFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull FileUpload fileUpload, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.addPaymentInFile(id, fileUpload, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Добавить файл к входящему платежу
+   * Добавить новый Файл к Входящему платежу. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
+   * @param id ID сущности (required)
+   * @param fileUpload  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return List&lt;ModelFile&gt;
+   * @throws ApiException if fails to make API call
+   */
+  protected List<ModelFile> addPaymentInFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull FileUpload fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = fileUpload;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling addPaymentInFile");
+    }
+    
+    // verify the required parameter 'fileUpload' is set
+    if (fileUpload == null) {
+      throw new ApiException(400, "Missing the required parameter 'fileUpload' when calling addPaymentInFile");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/paymentin/{id}/files"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (contentType != null) {
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<List<ModelFile>> localVarReturnType = new TypeReference<List<ModelFile>>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
   }
 
   /**
@@ -117,7 +231,7 @@ public class PaymentInsApi extends BaseApi {
     }
     
     // create path and map variables
-    String localVarPath = "/entity/paymentin/{id}/files"
+    String localVarPath = "/entity/paymentin/{id}/files/batch"
       .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
 
     StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
@@ -1396,10 +1510,10 @@ if (acceptEncoding != null) {
    * Получить файлы входящего платежа
    * Запрос на получение списка всех Файлов данного Входящего платежа.
    * @param id ID сущности (required)
-   * @return GetProductFiles200Response
+   * @return GetTaskFiles200Response
    * @throws ApiException if fails to make API call
    */
-  public GetProductFiles200Response getPaymentInFiles(@javax.annotation.Nonnull UUID id) throws ApiException {
+  public GetTaskFiles200Response getPaymentInFiles(@javax.annotation.Nonnull UUID id) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.getPaymentInFiles(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -1416,10 +1530,10 @@ if (acceptEncoding != null) {
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return GetProductFiles200Response
+   * @return GetTaskFiles200Response
    * @throws ApiException if fails to make API call
    */
-  public GetProductFiles200Response getPaymentInFiles(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+  public GetTaskFiles200Response getPaymentInFiles(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.getPaymentInFiles(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -1433,10 +1547,10 @@ if (acceptEncoding != null) {
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param additionalHeaders additionalHeaders for this call
-   * @return GetProductFiles200Response
+   * @return GetTaskFiles200Response
    * @throws ApiException if fails to make API call
    */
-  protected GetProductFiles200Response getPaymentInFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected GetTaskFiles200Response getPaymentInFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1479,7 +1593,7 @@ if (acceptEncoding != null) {
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<GetProductFiles200Response> localVarReturnType = new TypeReference<GetProductFiles200Response>() {};
+    TypeReference<GetTaskFiles200Response> localVarReturnType = new TypeReference<GetTaskFiles200Response>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "GET",

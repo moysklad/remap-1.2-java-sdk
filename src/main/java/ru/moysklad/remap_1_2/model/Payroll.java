@@ -73,7 +73,7 @@ import java.util.StringJoiner;
   Payroll.JSON_PROPERTY_SYNC_ID,
   Payroll.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
 public class Payroll extends EntityWithMeta implements MetaEntity {
   public static Payroll createWithMeta(UUID id) {
     Payroll o = new Payroll();

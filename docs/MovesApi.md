@@ -4,7 +4,8 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**addMoveFiles**](MovesApi.md#addMoveFiles) | **POST** /entity/move/{id}/files | Добавить файлы к перемещению |
+| [**addMoveFile**](MovesApi.md#addMoveFile) | **POST** /entity/move/{id}/files | Добавить файл к перемещению |
+| [**addMoveFiles**](MovesApi.md#addMoveFiles) | **POST** /entity/move/{id}/files/batch | Добавить файлы к перемещению |
 | [**createMove**](MovesApi.md#createMove) | **POST** /entity/move | Создать Перемещение |
 | [**createMoveBatch**](MovesApi.md#createMoveBatch) | **POST** /entity/move/batch | Массовое создание и обновление Перемещений |
 | [**createMoveMetadataAttribute**](MovesApi.md#createMoveMetadataAttribute) | **POST** /entity/move/metadata/attributes | Создать доп. поле Перемещения |
@@ -35,6 +36,91 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**updateMoveMetadataStateById**](MovesApi.md#updateMoveMetadataStateById) | **PUT** /entity/move/metadata/states/{id} | Обновить отдельный статус Перемещения |
 | [**updateMovePosition**](MovesApi.md#updateMovePosition) | **PUT** /entity/move/{id}/positions/{positionId} | Изменить позицию Перемещения |
 
+
+
+## addMoveFile
+
+> List&lt;ModelFile&gt; addMoveFile(id, fileUpload, accept, acceptEncoding, contentType)
+
+Добавить файл к перемещению
+
+Добавить новый Файл к Перемещению. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.MovesApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        MovesApi apiInstance = new MovesApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        FileUpload fileUpload = new FileUpload(); // FileUpload | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<ModelFile> result = apiInstance.addMoveFile(id, fileUpload, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MovesApi#addMoveFile");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **fileUpload** | [**FileUpload**](FileUpload.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;ModelFile&gt;**](ModelFile.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Файл успешно добавлен. Результат — массив всех Файлов Перемещения. |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## addMoveFiles
@@ -1357,7 +1443,7 @@ public class Example {
 
 ## getMoveFiles
 
-> GetProductFiles200Response getMoveFiles(id, limit, offset, accept, acceptEncoding)
+> GetTaskFiles200Response getMoveFiles(id, limit, offset, accept, acceptEncoding)
 
 Получить файлы перемещения
 
@@ -1395,7 +1481,7 @@ public class Example {
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
-            GetProductFiles200Response result = apiInstance.getMoveFiles(id, limit, offset, accept, acceptEncoding);
+            GetTaskFiles200Response result = apiInstance.getMoveFiles(id, limit, offset, accept, acceptEncoding);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MovesApi#getMoveFiles");
@@ -1421,7 +1507,7 @@ public class Example {
 
 ### Return type
 
-[**GetProductFiles200Response**](GetProductFiles200Response.md)
+[**GetTaskFiles200Response**](GetTaskFiles200Response.md)
 
 ### Authorization
 

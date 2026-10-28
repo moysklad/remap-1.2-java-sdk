@@ -251,8 +251,8 @@ docs/GetCounterpartyAccounts200Response.md
 docs/GetCounterpartyContactPersons200Response.md
 docs/GetCounterpartyNotes200Response.md
 docs/GetOrganizationAccounts200Response.md
-docs/GetProductFiles200Response.md
 docs/GetProductImages200Response.md
+docs/GetTaskFiles200Response.md
 docs/GetVariantCharacteristics200Response.md
 docs/Group.md
 docs/GroupList.md
@@ -1010,8 +1010,8 @@ src/main/java/ru/moysklad/remap_1_2/model/GetCounterpartyAccounts200Response.jav
 src/main/java/ru/moysklad/remap_1_2/model/GetCounterpartyContactPersons200Response.java
 src/main/java/ru/moysklad/remap_1_2/model/GetCounterpartyNotes200Response.java
 src/main/java/ru/moysklad/remap_1_2/model/GetOrganizationAccounts200Response.java
-src/main/java/ru/moysklad/remap_1_2/model/GetProductFiles200Response.java
 src/main/java/ru/moysklad/remap_1_2/model/GetProductImages200Response.java
+src/main/java/ru/moysklad/remap_1_2/model/GetTaskFiles200Response.java
 src/main/java/ru/moysklad/remap_1_2/model/GetVariantCharacteristics200Response.java
 src/main/java/ru/moysklad/remap_1_2/model/Group.java
 src/main/java/ru/moysklad/remap_1_2/model/GroupList.java

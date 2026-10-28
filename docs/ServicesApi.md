@@ -4,7 +4,8 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**addServiceFiles**](ServicesApi.md#addServiceFiles) | **POST** /entity/service/{id}/files | Добавить файлы к услуге |
+| [**addServiceFile**](ServicesApi.md#addServiceFile) | **POST** /entity/service/{id}/files | Добавить файл к услуге |
+| [**addServiceFiles**](ServicesApi.md#addServiceFiles) | **POST** /entity/service/{id}/files/batch | Добавить файлы к услуге |
 | [**createService**](ServicesApi.md#createService) | **POST** /entity/service | Создать услугу |
 | [**createServicesBatch**](ServicesApi.md#createServicesBatch) | **POST** /entity/service/batch | Создать или изменить услуги |
 | [**deleteService**](ServicesApi.md#deleteService) | **DELETE** /entity/service/{id} | Удалить услугу |
@@ -15,6 +16,91 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**getServices**](ServicesApi.md#getServices) | **GET** /entity/service | Получить список товаров |
 | [**updateService**](ServicesApi.md#updateService) | **PUT** /entity/service/{id} | Обновить услугу |
 
+
+
+## addServiceFile
+
+> List&lt;ModelFile&gt; addServiceFile(id, fileUpload, accept, acceptEncoding, contentType)
+
+Добавить файл к услуге
+
+Добавить новый Файл к Услуге. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.ServicesApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        ServicesApi apiInstance = new ServicesApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        FileUpload fileUpload = new FileUpload(); // FileUpload | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<ModelFile> result = apiInstance.addServiceFile(id, fileUpload, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ServicesApi#addServiceFile");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **fileUpload** | [**FileUpload**](FileUpload.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;ModelFile&gt;**](ModelFile.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Файл успешно добавлен. Результат — массив всех Файлов Услуги. |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## addServiceFiles
@@ -602,7 +688,7 @@ public class Example {
 
 ## getServiceFiles
 
-> GetProductFiles200Response getServiceFiles(id, limit, offset, accept, acceptEncoding)
+> GetTaskFiles200Response getServiceFiles(id, limit, offset, accept, acceptEncoding)
 
 Получить файлы услуги
 
@@ -640,7 +726,7 @@ public class Example {
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
-            GetProductFiles200Response result = apiInstance.getServiceFiles(id, limit, offset, accept, acceptEncoding);
+            GetTaskFiles200Response result = apiInstance.getServiceFiles(id, limit, offset, accept, acceptEncoding);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ServicesApi#getServiceFiles");
@@ -666,7 +752,7 @@ public class Example {
 
 ### Return type
 
-[**GetProductFiles200Response**](GetProductFiles200Response.md)
+[**GetTaskFiles200Response**](GetTaskFiles200Response.md)
 
 ### Authorization
 

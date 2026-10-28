@@ -5,6 +5,8 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**createOrganization**](OrganizationsApi.md#createOrganization) | **POST** /entity/organization | Создать юрлицо |
+| [**createOrganizationAccount**](OrganizationsApi.md#createOrganizationAccount) | **POST** /entity/organization/{id}/accounts | Создать счёт юрлица |
+| [**createOrganizationAccounts**](OrganizationsApi.md#createOrganizationAccounts) | **POST** /entity/organization/{id}/accounts/batch | Массовое создание и обновление счетов юрлица |
 | [**createOrganizationMetadataAttribute**](OrganizationsApi.md#createOrganizationMetadataAttribute) | **POST** /entity/organization/metadata/attributes | Создать доп. поле юрлица |
 | [**createOrganizationsBatch**](OrganizationsApi.md#createOrganizationsBatch) | **POST** /entity/organization/batch | Создать или изменить юрлица |
 | [**deleteOrganization**](OrganizationsApi.md#deleteOrganization) | **DELETE** /entity/organization/{id} | Удалить юрлицо |
@@ -21,7 +23,6 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**getOrganizations**](OrganizationsApi.md#getOrganizations) | **GET** /entity/organization | Получить список юрлиц |
 | [**updateOrganization**](OrganizationsApi.md#updateOrganization) | **PUT** /entity/organization/{id} | Обновить юрлицо |
 | [**updateOrganizationAccount**](OrganizationsApi.md#updateOrganizationAccount) | **PUT** /entity/organization/{id}/accounts/{accountId} | Обновить счёт юрлица |
-| [**updateOrganizationAccounts**](OrganizationsApi.md#updateOrganizationAccounts) | **POST** /entity/organization/{id}/accounts | Изменить счета юрлица |
 | [**updateOrganizationMetadataAttributeById**](OrganizationsApi.md#updateOrganizationMetadataAttributeById) | **PUT** /entity/organization/metadata/attributes/{id} | Обновить отдельное доп. поле юрлица |
 
 
@@ -108,6 +109,176 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Юрлицо успешно создано |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## createOrganizationAccount
+
+> List&lt;Account&gt; createOrganizationAccount(id, account, accept, acceptEncoding, contentType)
+
+Создать счёт юрлица
+
+Создание нового счёта у данного юрлица
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.OrganizationsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        Account account = new Account(); // Account | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<Account> result = apiInstance.createOrganizationAccount(id, account, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling OrganizationsApi#createOrganizationAccount");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **account** | [**Account**](Account.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;Account&gt;**](Account.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Счёт успешно создан |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## createOrganizationAccounts
+
+> List&lt;BatchResponseEntity&gt; createOrganizationAccounts(id, account, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление счетов юрлица
+
+В теле запроса передается массив счетов. Для создания счета требуется accountNumber, для обновления — метаданные (meta). Валюту существующего счета изменить нельзя.
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.OrganizationsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<Account> account = Arrays.asList(); // List<Account> | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<BatchResponseEntity> result = apiInstance.createOrganizationAccounts(id, account, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling OrganizationsApi#createOrganizationAccounts");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **account** | [**List&lt;Account&gt;**](Account.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
@@ -1449,91 +1620,6 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Счёт успешно обновлён |  -  |
-| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
-
-
-## updateOrganizationAccounts
-
-> List&lt;Account&gt; updateOrganizationAccounts(id, account, accept, acceptEncoding, contentType)
-
-Изменить счета юрлица
-
-Создание нового счёта у данного юрлица
-
-### Example
-
-```java
-// Import classes:
-import ru.moysklad.remap_1_2.ApiClient;
-import ru.moysklad.remap_1_2.ApiException;
-import ru.moysklad.remap_1_2.Configuration;
-import ru.moysklad.remap_1_2.auth.*;
-import ru.moysklad.remap_1_2.models.*;
-import ru.moysklad.remap_1_2.api.OrganizationsApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
-
-        // Configure HTTP bearer authorization: bearerAuth
-        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-        bearerAuth.setBearerToken("BEARER TOKEN");
-
-        OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-        UUID id = UUID.randomUUID(); // UUID | ID сущности
-        Account account = new Account(); // Account | 
-        String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
-        String contentType = "application/json"; // String | 
-        try {
-            List<Account> result = apiInstance.updateOrganizationAccounts(id, account, accept, acceptEncoding, contentType);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling OrganizationsApi#updateOrganizationAccounts");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **id** | **UUID**| ID сущности | |
-| **account** | [**Account**](Account.md)|  | |
-| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
-| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
-
-### Return type
-
-[**List&lt;Account&gt;**](Account.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Счета успешно изменены |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 

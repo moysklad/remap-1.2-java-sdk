@@ -4,7 +4,8 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**addPaymentInFiles**](PaymentInsApi.md#addPaymentInFiles) | **POST** /entity/paymentin/{id}/files | Добавить файлы к входящему платежу |
+| [**addPaymentInFile**](PaymentInsApi.md#addPaymentInFile) | **POST** /entity/paymentin/{id}/files | Добавить файл к входящему платежу |
+| [**addPaymentInFiles**](PaymentInsApi.md#addPaymentInFiles) | **POST** /entity/paymentin/{id}/files/batch | Добавить файлы к входящему платежу |
 | [**createPaymentIn**](PaymentInsApi.md#createPaymentIn) | **POST** /entity/paymentin | Создать PaymentIn |
 | [**createPaymentInBatch**](PaymentInsApi.md#createPaymentInBatch) | **POST** /entity/paymentin/batch | Массовое создание и обновление PaymentIn |
 | [**createPaymentInMetadataAttribute**](PaymentInsApi.md#createPaymentInMetadataAttribute) | **POST** /entity/paymentin/metadata/attributes | Создать доп. поле PaymentIn |
@@ -29,6 +30,91 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**updatePaymentInMetadataAttributeById**](PaymentInsApi.md#updatePaymentInMetadataAttributeById) | **PUT** /entity/paymentin/metadata/attributes/{id} | Обновить отдельное доп. поле PaymentIn |
 | [**updatePaymentInMetadataStateById**](PaymentInsApi.md#updatePaymentInMetadataStateById) | **PUT** /entity/paymentin/metadata/states/{id} | Обновить отдельный статус PaymentIn |
 
+
+
+## addPaymentInFile
+
+> List&lt;ModelFile&gt; addPaymentInFile(id, fileUpload, accept, acceptEncoding, contentType)
+
+Добавить файл к входящему платежу
+
+Добавить новый Файл к Входящему платежу. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.PaymentInsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        PaymentInsApi apiInstance = new PaymentInsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        FileUpload fileUpload = new FileUpload(); // FileUpload | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<ModelFile> result = apiInstance.addPaymentInFile(id, fileUpload, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PaymentInsApi#addPaymentInFile");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **fileUpload** | [**FileUpload**](FileUpload.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;ModelFile&gt;**](ModelFile.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Файл успешно добавлен. Результат — массив всех Файлов Входящего платежа. |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## addPaymentInFiles
@@ -1087,7 +1173,7 @@ public class Example {
 
 ## getPaymentInFiles
 
-> GetProductFiles200Response getPaymentInFiles(id, limit, offset, accept, acceptEncoding)
+> GetTaskFiles200Response getPaymentInFiles(id, limit, offset, accept, acceptEncoding)
 
 Получить файлы входящего платежа
 
@@ -1125,7 +1211,7 @@ public class Example {
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
-            GetProductFiles200Response result = apiInstance.getPaymentInFiles(id, limit, offset, accept, acceptEncoding);
+            GetTaskFiles200Response result = apiInstance.getPaymentInFiles(id, limit, offset, accept, acceptEncoding);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PaymentInsApi#getPaymentInFiles");
@@ -1151,7 +1237,7 @@ public class Example {
 
 ### Return type
 
-[**GetProductFiles200Response**](GetProductFiles200Response.md)
+[**GetTaskFiles200Response**](GetTaskFiles200Response.md)
 
 ### Authorization
 

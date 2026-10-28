@@ -28,7 +28,7 @@ import ru.moysklad.remap_1_2.model.DeleteRowResult;
 import ru.moysklad.remap_1_2.model.DocumentMetadata;
 import ru.moysklad.remap_1_2.model.Errors;
 import ru.moysklad.remap_1_2.model.FileUpload;
-import ru.moysklad.remap_1_2.model.GetProductFiles200Response;
+import ru.moysklad.remap_1_2.model.GetTaskFiles200Response;
 import ru.moysklad.remap_1_2.model.ModelFile;
 import ru.moysklad.remap_1_2.model.Processing;
 import ru.moysklad.remap_1_2.model.ProcessingList;
@@ -48,7 +48,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ProcessingsApi extends BaseApi {
 
@@ -58,6 +58,120 @@ public class ProcessingsApi extends BaseApi {
 
   public ProcessingsApi(ApiClient apiClient) {
     super(apiClient);
+  }
+
+  /**
+   * Добавить файл к техоперации
+   * Добавить новый Файл к Техоперации. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
+   * @param id ID сущности (required)
+   * @param fileUpload  (required)
+   * @return List&lt;ModelFile&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<ModelFile> addProcessingFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull FileUpload fileUpload) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.addProcessingFile(id, fileUpload, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Добавить файл к техоперации
+   * Добавить новый Файл к Техоперации. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param fileUpload  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;ModelFile&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<ModelFile> addProcessingFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull FileUpload fileUpload, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.addProcessingFile(id, fileUpload, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Добавить файл к техоперации
+   * Добавить новый Файл к Техоперации. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
+   * @param id ID сущности (required)
+   * @param fileUpload  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return List&lt;ModelFile&gt;
+   * @throws ApiException if fails to make API call
+   */
+  protected List<ModelFile> addProcessingFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull FileUpload fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = fileUpload;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling addProcessingFile");
+    }
+    
+    // verify the required parameter 'fileUpload' is set
+    if (fileUpload == null) {
+      throw new ApiException(400, "Missing the required parameter 'fileUpload' when calling addProcessingFile");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/processing/{id}/files"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (contentType != null) {
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<List<ModelFile>> localVarReturnType = new TypeReference<List<ModelFile>>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
   }
 
   /**
@@ -121,7 +235,7 @@ public class ProcessingsApi extends BaseApi {
     }
     
     // create path and map variables
-    String localVarPath = "/entity/processing/{id}/files"
+    String localVarPath = "/entity/processing/{id}/files/batch"
       .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
 
     StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
@@ -391,10 +505,10 @@ if (contentType != null) {
    * 
    * @param id ID сущности (required)
    * @param processingMaterial  (required)
-   * @return ProcessingMaterial
+   * @return List&lt;ProcessingMaterial&gt;
    * @throws ApiException if fails to make API call
    */
-  public ProcessingMaterial createProcessingMaterials(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingMaterial processingMaterial) throws ApiException {
+  public List<ProcessingMaterial> createProcessingMaterials(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingMaterial processingMaterial) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.createProcessingMaterials(id, processingMaterial, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -414,10 +528,10 @@ if (contentType != null) {
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return ProcessingMaterial
+   * @return List&lt;ProcessingMaterial&gt;
    * @throws ApiException if fails to make API call
    */
-  public ProcessingMaterial createProcessingMaterials(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingMaterial processingMaterial, RequestOptions options) throws ApiException {
+  public List<ProcessingMaterial> createProcessingMaterials(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingMaterial processingMaterial, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createProcessingMaterials(id, processingMaterial, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -432,10 +546,10 @@ if (contentType != null) {
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return ProcessingMaterial
+   * @return List&lt;ProcessingMaterial&gt;
    * @throws ApiException if fails to make API call
    */
-  protected ProcessingMaterial createProcessingMaterials(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingMaterial processingMaterial, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<ProcessingMaterial> createProcessingMaterials(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingMaterial processingMaterial, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = processingMaterial;
     
     // verify the required parameter 'id' is set
@@ -485,8 +599,125 @@ if (contentType != null) {
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<ProcessingMaterial> localVarReturnType = new TypeReference<ProcessingMaterial>() {};
+    TypeReference<List<ProcessingMaterial>> localVarReturnType = new TypeReference<List<ProcessingMaterial>>() {};
     return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Массовое создание и обновление материалов техоперации
+   * В теле запроса передается массив материалов. Для создания требуются assortment и quantity, для обновления — метаданные (meta).
+   * @param id ID сущности (required)
+   * @param processingMaterial  (required)
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<BatchResponseEntity> createProcessingMaterialsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<ProcessingMaterial> processingMaterial) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createProcessingMaterialsBatch(id, processingMaterial, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Массовое создание и обновление материалов техоперации
+   * В теле запроса передается массив материалов. Для создания требуются assortment и quantity, для обновления — метаданные (meta).
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param processingMaterial  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<BatchResponseEntity> createProcessingMaterialsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<ProcessingMaterial> processingMaterial, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createProcessingMaterialsBatch(id, processingMaterial, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Массовое создание и обновление материалов техоперации
+   * В теле запроса передается массив материалов. Для создания требуются assortment и quantity, для обновления — метаданные (meta).
+   * @param id ID сущности (required)
+   * @param processingMaterial  (required)
+   * @param expand Замена ссылок объектами с помощью expand (optional)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  protected List<BatchResponseEntity> createProcessingMaterialsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<ProcessingMaterial> processingMaterial, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = processingMaterial;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling createProcessingMaterialsBatch");
+    }
+    
+    // verify the required parameter 'processingMaterial' is set
+    if (processingMaterial == null) {
+      throw new ApiException(400, "Missing the required parameter 'processingMaterial' when calling createProcessingMaterialsBatch");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/processing/{id}/materials/batch"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (contentType != null) {
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
+    return apiClient.invokeAPIBatch(
         localVarPath,
         "POST",
         localVarQueryParams,
@@ -817,10 +1048,10 @@ if (contentType != null) {
    * 
    * @param id ID сущности (required)
    * @param processingProduct  (required)
-   * @return ProcessingProduct
+   * @return List&lt;ProcessingProduct&gt;
    * @throws ApiException if fails to make API call
    */
-  public ProcessingProduct createProcessingProducts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingProduct processingProduct) throws ApiException {
+  public List<ProcessingProduct> createProcessingProducts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingProduct processingProduct) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.createProcessingProducts(id, processingProduct, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -840,10 +1071,10 @@ if (contentType != null) {
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return ProcessingProduct
+   * @return List&lt;ProcessingProduct&gt;
    * @throws ApiException if fails to make API call
    */
-  public ProcessingProduct createProcessingProducts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingProduct processingProduct, RequestOptions options) throws ApiException {
+  public List<ProcessingProduct> createProcessingProducts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingProduct processingProduct, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createProcessingProducts(id, processingProduct, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -858,10 +1089,10 @@ if (contentType != null) {
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return ProcessingProduct
+   * @return List&lt;ProcessingProduct&gt;
    * @throws ApiException if fails to make API call
    */
-  protected ProcessingProduct createProcessingProducts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingProduct processingProduct, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<ProcessingProduct> createProcessingProducts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull ProcessingProduct processingProduct, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = processingProduct;
     
     // verify the required parameter 'id' is set
@@ -911,8 +1142,125 @@ if (contentType != null) {
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<ProcessingProduct> localVarReturnType = new TypeReference<ProcessingProduct>() {};
+    TypeReference<List<ProcessingProduct>> localVarReturnType = new TypeReference<List<ProcessingProduct>>() {};
     return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Массовое создание и обновление продуктов техоперации
+   * В теле запроса передается массив продуктов. Для создания требуются assortment и quantity, для обновления — метаданные (meta).
+   * @param id ID сущности (required)
+   * @param processingProduct  (required)
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<BatchResponseEntity> createProcessingProductsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<ProcessingProduct> processingProduct) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createProcessingProductsBatch(id, processingProduct, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Массовое создание и обновление продуктов техоперации
+   * В теле запроса передается массив продуктов. Для создания требуются assortment и quantity, для обновления — метаданные (meta).
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param processingProduct  (required)
+   
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<BatchResponseEntity> createProcessingProductsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<ProcessingProduct> processingProduct, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createProcessingProductsBatch(id, processingProduct, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Массовое создание и обновление продуктов техоперации
+   * В теле запроса передается массив продуктов. Для создания требуются assortment и quantity, для обновления — метаданные (meta).
+   * @param id ID сущности (required)
+   * @param processingProduct  (required)
+   * @param expand Замена ссылок объектами с помощью expand (optional)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  protected List<BatchResponseEntity> createProcessingProductsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<ProcessingProduct> processingProduct, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = processingProduct;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling createProcessingProductsBatch");
+    }
+    
+    // verify the required parameter 'processingProduct' is set
+    if (processingProduct == null) {
+      throw new ApiException(400, "Missing the required parameter 'processingProduct' when calling createProcessingProductsBatch");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/processing/{id}/products/batch"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (contentType != null) {
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
+    return apiClient.invokeAPIBatch(
         localVarPath,
         "POST",
         localVarQueryParams,
@@ -2079,10 +2427,10 @@ if (acceptEncoding != null) {
    * Получить файлы техоперации
    * Запрос на получение списка всех Файлов данной Техоперации.
    * @param id ID сущности (required)
-   * @return GetProductFiles200Response
+   * @return GetTaskFiles200Response
    * @throws ApiException if fails to make API call
    */
-  public GetProductFiles200Response getProcessingFiles(@javax.annotation.Nonnull UUID id) throws ApiException {
+  public GetTaskFiles200Response getProcessingFiles(@javax.annotation.Nonnull UUID id) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.getProcessingFiles(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -2099,10 +2447,10 @@ if (acceptEncoding != null) {
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return GetProductFiles200Response
+   * @return GetTaskFiles200Response
    * @throws ApiException if fails to make API call
    */
-  public GetProductFiles200Response getProcessingFiles(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+  public GetTaskFiles200Response getProcessingFiles(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.getProcessingFiles(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -2116,10 +2464,10 @@ if (acceptEncoding != null) {
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param additionalHeaders additionalHeaders for this call
-   * @return GetProductFiles200Response
+   * @return GetTaskFiles200Response
    * @throws ApiException if fails to make API call
    */
-  protected GetProductFiles200Response getProcessingFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected GetTaskFiles200Response getProcessingFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -2162,7 +2510,7 @@ if (acceptEncoding != null) {
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<GetProductFiles200Response> localVarReturnType = new TypeReference<GetProductFiles200Response>() {};
+    TypeReference<GetTaskFiles200Response> localVarReturnType = new TypeReference<GetTaskFiles200Response>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "GET",

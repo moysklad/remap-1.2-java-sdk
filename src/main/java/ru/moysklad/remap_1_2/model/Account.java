@@ -49,9 +49,9 @@ import java.util.StringJoiner;
   Account.JSON_PROPERTY_BIC,
   Account.JSON_PROPERTY_CURRENCY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
-public class Account implements MetaEntity {
-  public static Account createWithMeta(UUID entityType, UUID parentId, UUID id) {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+public class Account extends EntityWithMeta implements MetaEntity {
+  public static Account createWithMeta(String entityType, UUID parentId, UUID id) {
     Account o = new Account();
     Meta meta = new Meta();
     meta.setType("account");

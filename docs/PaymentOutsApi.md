@@ -4,7 +4,8 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**addPaymentOutFiles**](PaymentOutsApi.md#addPaymentOutFiles) | **POST** /entity/paymentout/{id}/files | Добавить файлы |
+| [**addPaymentOutFile**](PaymentOutsApi.md#addPaymentOutFile) | **POST** /entity/paymentout/{id}/files | Добавить файл |
+| [**addPaymentOutFiles**](PaymentOutsApi.md#addPaymentOutFiles) | **POST** /entity/paymentout/{id}/files/batch | Добавить файлы |
 | [**createPaymentOut**](PaymentOutsApi.md#createPaymentOut) | **POST** /entity/paymentout | Создать PaymentOut |
 | [**createPaymentOutBatch**](PaymentOutsApi.md#createPaymentOutBatch) | **POST** /entity/paymentout/batch | Массовое создание и обновление PaymentOut |
 | [**createPaymentOutMetadataAttribute**](PaymentOutsApi.md#createPaymentOutMetadataAttribute) | **POST** /entity/paymentout/metadata/attributes | Создать доп. поле PaymentOut |
@@ -29,6 +30,91 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**updatePaymentOutMetadataAttributeById**](PaymentOutsApi.md#updatePaymentOutMetadataAttributeById) | **PUT** /entity/paymentout/metadata/attributes/{id} | Обновить отдельное доп. поле PaymentOut |
 | [**updatePaymentOutMetadataStateById**](PaymentOutsApi.md#updatePaymentOutMetadataStateById) | **PUT** /entity/paymentout/metadata/states/{id} | Обновить отдельный статус PaymentOut |
 
+
+
+## addPaymentOutFile
+
+> List&lt;ModelFile&gt; addPaymentOutFile(id, fileUpload, accept, acceptEncoding, contentType)
+
+Добавить файл
+
+Добавить новый Файл. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.PaymentOutsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        PaymentOutsApi apiInstance = new PaymentOutsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        FileUpload fileUpload = new FileUpload(); // FileUpload | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<ModelFile> result = apiInstance.addPaymentOutFile(id, fileUpload, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PaymentOutsApi#addPaymentOutFile");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **fileUpload** | [**FileUpload**](FileUpload.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;ModelFile&gt;**](ModelFile.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Файл успешно добавлен. Результат — массив всех Файлов. |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## addPaymentOutFiles
@@ -1087,7 +1173,7 @@ public class Example {
 
 ## getPaymentOutFiles
 
-> GetProductFiles200Response getPaymentOutFiles(id, limit, offset, accept, acceptEncoding)
+> GetTaskFiles200Response getPaymentOutFiles(id, limit, offset, accept, acceptEncoding)
 
 Получить файлы
 
@@ -1125,7 +1211,7 @@ public class Example {
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
-            GetProductFiles200Response result = apiInstance.getPaymentOutFiles(id, limit, offset, accept, acceptEncoding);
+            GetTaskFiles200Response result = apiInstance.getPaymentOutFiles(id, limit, offset, accept, acceptEncoding);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PaymentOutsApi#getPaymentOutFiles");
@@ -1151,7 +1237,7 @@ public class Example {
 
 ### Return type
 
-[**GetProductFiles200Response**](GetProductFiles200Response.md)
+[**GetTaskFiles200Response**](GetTaskFiles200Response.md)
 
 ### Authorization
 

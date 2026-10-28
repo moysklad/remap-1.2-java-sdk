@@ -76,7 +76,7 @@ import java.util.StringJoiner;
   Inventory.JSON_PROPERTY_ENTERS,
   Inventory.JSON_PROPERTY_LOSSES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
 public class Inventory extends EntityWithMeta implements MetaEntity {
   public static Inventory createWithMeta(UUID id) {
     Inventory o = new Inventory();

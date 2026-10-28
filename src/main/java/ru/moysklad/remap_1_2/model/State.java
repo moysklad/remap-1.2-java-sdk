@@ -40,9 +40,9 @@ import java.util.StringJoiner;
   State.JSON_PROPERTY_ENTITY_TYPE,
   State.JSON_PROPERTY_STATE_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
 public class State implements MetaEntity {
-  public static State createWithMeta(UUID entityType, UUID id) {
+  public static State createWithMeta(String entityType, UUID id) {
     State o = new State();
     Meta meta = new Meta();
     meta.setType("state");

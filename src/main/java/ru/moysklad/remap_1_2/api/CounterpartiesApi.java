@@ -35,7 +35,7 @@ import ru.moysklad.remap_1_2.model.FileUpload;
 import ru.moysklad.remap_1_2.model.GetCounterpartyAccounts200Response;
 import ru.moysklad.remap_1_2.model.GetCounterpartyContactPersons200Response;
 import ru.moysklad.remap_1_2.model.GetCounterpartyNotes200Response;
-import ru.moysklad.remap_1_2.model.GetProductFiles200Response;
+import ru.moysklad.remap_1_2.model.GetTaskFiles200Response;
 import ru.moysklad.remap_1_2.model.ModelFile;
 import ru.moysklad.remap_1_2.model.Note;
 import ru.moysklad.remap_1_2.model.State;
@@ -49,7 +49,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class CounterpartiesApi extends BaseApi {
 
@@ -59,6 +59,120 @@ public class CounterpartiesApi extends BaseApi {
 
   public CounterpartiesApi(ApiClient apiClient) {
     super(apiClient);
+  }
+
+  /**
+   * Добавить файл к контрагенту
+   * Добавить новый Файл к Контрагенту. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
+   * @param id ID сущности (required)
+   * @param fileUpload  (required)
+   * @return List&lt;ModelFile&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<ModelFile> addCounterpartyFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull FileUpload fileUpload) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.addCounterpartyFile(id, fileUpload, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Добавить файл к контрагенту
+   * Добавить новый Файл к Контрагенту. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param fileUpload  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;ModelFile&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<ModelFile> addCounterpartyFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull FileUpload fileUpload, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.addCounterpartyFile(id, fileUpload, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Добавить файл к контрагенту
+   * Добавить новый Файл к Контрагенту. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
+   * @param id ID сущности (required)
+   * @param fileUpload  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return List&lt;ModelFile&gt;
+   * @throws ApiException if fails to make API call
+   */
+  protected List<ModelFile> addCounterpartyFile(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull FileUpload fileUpload, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = fileUpload;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling addCounterpartyFile");
+    }
+    
+    // verify the required parameter 'fileUpload' is set
+    if (fileUpload == null) {
+      throw new ApiException(400, "Missing the required parameter 'fileUpload' when calling addCounterpartyFile");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/counterparty/{id}/files"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (contentType != null) {
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<List<ModelFile>> localVarReturnType = new TypeReference<List<ModelFile>>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
   }
 
   /**
@@ -122,7 +236,7 @@ public class CounterpartiesApi extends BaseApi {
     }
     
     // create path and map variables
-    String localVarPath = "/entity/counterparty/{id}/files"
+    String localVarPath = "/entity/counterparty/{id}/files/batch"
       .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
 
     StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
@@ -502,6 +616,120 @@ if (contentType != null) {
   }
 
   /**
+   * Массовое создание и обновление счетов контрагента
+   * В теле запроса передается массив счетов. Для создания счета требуется accountNumber, для обновления — метаданные (meta).
+   * @param id ID сущности (required)
+   * @param account  (required)
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<BatchResponseEntity> createCounterpartyAccounts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<Account> account) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createCounterpartyAccounts(id, account, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Массовое создание и обновление счетов контрагента
+   * В теле запроса передается массив счетов. Для создания счета требуется accountNumber, для обновления — метаданные (meta).
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param account  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<BatchResponseEntity> createCounterpartyAccounts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<Account> account, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createCounterpartyAccounts(id, account, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Массовое создание и обновление счетов контрагента
+   * В теле запроса передается массив счетов. Для создания счета требуется accountNumber, для обновления — метаданные (meta).
+   * @param id ID сущности (required)
+   * @param account  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  protected List<BatchResponseEntity> createCounterpartyAccounts(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<Account> account, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = account;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling createCounterpartyAccounts");
+    }
+    
+    // verify the required parameter 'account' is set
+    if (account == null) {
+      throw new ApiException(400, "Missing the required parameter 'account' when calling createCounterpartyAccounts");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/counterparty/{id}/accounts/batch"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (contentType != null) {
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
+    return apiClient.invokeAPIBatch(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
    * Создать контактное лицо контрагента
    * Создание нового контактного лица у данного Контрагента.
    * @param id ID сущности (required)
@@ -599,6 +827,120 @@ if (contentType != null) {
 
     TypeReference<List<ContactPerson>> localVarReturnType = new TypeReference<List<ContactPerson>>() {};
     return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Массовое создание и обновление контактных лиц контрагента
+   * В теле запроса передается массив контактных лиц. Для создания требуется name, для обновления — метаданные (meta).
+   * @param id ID сущности (required)
+   * @param contactPerson  (required)
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<BatchResponseEntity> createCounterpartyContactPersons(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<ContactPerson> contactPerson) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createCounterpartyContactPersons(id, contactPerson, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Массовое создание и обновление контактных лиц контрагента
+   * В теле запроса передается массив контактных лиц. Для создания требуется name, для обновления — метаданные (meta).
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param contactPerson  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<BatchResponseEntity> createCounterpartyContactPersons(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<ContactPerson> contactPerson, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createCounterpartyContactPersons(id, contactPerson, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Массовое создание и обновление контактных лиц контрагента
+   * В теле запроса передается массив контактных лиц. Для создания требуется name, для обновления — метаданные (meta).
+   * @param id ID сущности (required)
+   * @param contactPerson  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  protected List<BatchResponseEntity> createCounterpartyContactPersons(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<ContactPerson> contactPerson, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = contactPerson;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling createCounterpartyContactPersons");
+    }
+    
+    // verify the required parameter 'contactPerson' is set
+    if (contactPerson == null) {
+      throw new ApiException(400, "Missing the required parameter 'contactPerson' when calling createCounterpartyContactPersons");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/counterparty/{id}/contactpersons/batch"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (contentType != null) {
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
+    return apiClient.invokeAPIBatch(
         localVarPath,
         "POST",
         localVarQueryParams,
@@ -919,6 +1261,120 @@ if (contentType != null) {
 
     TypeReference<List<Note>> localVarReturnType = new TypeReference<List<Note>>() {};
     return apiClient.invokeAPI(
+        localVarPath,
+        "POST",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * Массовое создание и обновление событий контрагента
+   * В теле запроса передается массив событий. Для создания события требуется description, для обновления — метаданные (meta).
+   * @param id ID сущности (required)
+   * @param note  (required)
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<BatchResponseEntity> createCounterpartyNotes(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<Note> note) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.empty();
+    return this.createCounterpartyNotes(id, note, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+
+  /**
+   * Массовое создание и обновление событий контрагента
+   * В теле запроса передается массив событий. Для создания события требуется description, для обновления — метаданные (meta).
+   
+   * @param id ID сущности (required)
+   
+   
+   * @param note  (required)
+   
+   
+   
+   
+   * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<BatchResponseEntity> createCounterpartyNotes(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<Note> note, RequestOptions options) throws ApiException {
+    RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
+    return this.createCounterpartyNotes(id, note, null, null, null, effectiveOptions.getAdditionalHeaders());
+  }
+
+  /**
+   * Массовое создание и обновление событий контрагента
+   * В теле запроса передается массив событий. Для создания события требуется description, для обновления — метаданные (meta).
+   * @param id ID сущности (required)
+   * @param note  (required)
+   * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
+   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param contentType  (optional, default to application/json)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return List&lt;BatchResponseEntity&gt;
+   * @throws ApiException if fails to make API call
+   */
+  protected List<BatchResponseEntity> createCounterpartyNotes(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<Note> note, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = note;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling createCounterpartyNotes");
+    }
+    
+    // verify the required parameter 'note' is set
+    if (note == null) {
+      throw new ApiException(400, "Missing the required parameter 'note' when calling createCounterpartyNotes");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/entity/counterparty/{id}/notes/batch"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (accept != null) {
+      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+    }
+if (acceptEncoding != null) {
+      localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (contentType != null) {
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
+    }
+
+    localVarHeaderParams.putAll(additionalHeaders);
+        
+    final String[] localVarAccepts = {
+          "application/json;charset=utf-8"
+        };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
+
+    TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
+    return apiClient.invokeAPIBatch(
         localVarPath,
         "POST",
         localVarQueryParams,
@@ -2389,10 +2845,10 @@ if (acceptEncoding != null) {
    * Получить файлы контрагента
    * Запрос на получение списка всех Файлов данного Контрагента.
    * @param id ID сущности (required)
-   * @return GetProductFiles200Response
+   * @return GetTaskFiles200Response
    * @throws ApiException if fails to make API call
    */
-  public GetProductFiles200Response getCounterpartyFiles(@javax.annotation.Nonnull UUID id) throws ApiException {
+  public GetTaskFiles200Response getCounterpartyFiles(@javax.annotation.Nonnull UUID id) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.getCounterpartyFiles(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -2409,10 +2865,10 @@ if (acceptEncoding != null) {
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return GetProductFiles200Response
+   * @return GetTaskFiles200Response
    * @throws ApiException if fails to make API call
    */
-  public GetProductFiles200Response getCounterpartyFiles(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+  public GetTaskFiles200Response getCounterpartyFiles(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.getCounterpartyFiles(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -2426,10 +2882,10 @@ if (acceptEncoding != null) {
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
    * @param acceptEncoding  (optional, default to gzip, deflate, br)
    * @param additionalHeaders additionalHeaders for this call
-   * @return GetProductFiles200Response
+   * @return GetTaskFiles200Response
    * @throws ApiException if fails to make API call
    */
-  protected GetProductFiles200Response getCounterpartyFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected GetTaskFiles200Response getCounterpartyFiles(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -2472,7 +2928,7 @@ if (acceptEncoding != null) {
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<GetProductFiles200Response> localVarReturnType = new TypeReference<GetProductFiles200Response>() {};
+    TypeReference<GetTaskFiles200Response> localVarReturnType = new TypeReference<GetTaskFiles200Response>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "GET",

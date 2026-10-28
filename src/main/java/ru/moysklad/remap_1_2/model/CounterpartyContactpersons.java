@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   CounterpartyContactpersons.JSON_PROPERTY_ROWS
 })
 @JsonTypeName("Counterparty_contactpersons")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
 public class CounterpartyContactpersons {
 
   public static final String JSON_PROPERTY_META = "meta";

@@ -65,6 +65,7 @@ import java.util.StringJoiner;
   PayrollPaymentCashOut.JSON_PROPERTY_DELETED,
   PayrollPaymentCashOut.JSON_PROPERTY_UPDATED,
   PayrollPaymentCashOut.JSON_PROPERTY_MOMENT,
+  PayrollPaymentCashOut.JSON_PROPERTY_ACCRUAL_DATE,
   PayrollPaymentCashOut.JSON_PROPERTY_OWNER,
   PayrollPaymentCashOut.JSON_PROPERTY_GROUP,
   PayrollPaymentCashOut.JSON_PROPERTY_APPLICABLE,
@@ -88,7 +89,7 @@ import java.util.StringJoiner;
   PayrollPaymentCashOut.JSON_PROPERTY_FACTURE_IN,
   PayrollPaymentCashOut.JSON_PROPERTY_OPERATIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
 public class PayrollPaymentCashOut extends PayrollPaymentAbstract {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -138,6 +139,10 @@ public class PayrollPaymentCashOut extends PayrollPaymentAbstract {
   public static final String JSON_PROPERTY_MOMENT = "moment";
   @javax.annotation.Nullable
   private String moment;
+
+  public static final String JSON_PROPERTY_ACCRUAL_DATE = "accrualDate";
+  @javax.annotation.Nullable
+  private String accrualDate;
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
@@ -543,6 +548,35 @@ public class PayrollPaymentCashOut extends PayrollPaymentAbstract {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMoment(@javax.annotation.Nullable String moment) {
     this.moment = moment;
+  }
+
+
+  public PayrollPaymentCashOut accrualDate(@javax.annotation.Nullable String accrualDate) {
+    
+    this.accrualDate = accrualDate;
+    return this;
+  }
+
+
+  /**
+   * Дата начисления
+   * @return accrualDate
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ACCRUAL_DATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getAccrualDate() {
+    return accrualDate;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_ACCRUAL_DATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAccrualDate(@javax.annotation.Nullable String accrualDate) {
+    this.accrualDate = accrualDate;
   }
 
 
@@ -1280,6 +1314,7 @@ public class PayrollPaymentCashOut extends PayrollPaymentAbstract {
         Objects.equals(this.deleted, payrollPaymentCashOut.deleted) &&
         Objects.equals(this.updated, payrollPaymentCashOut.updated) &&
         Objects.equals(this.moment, payrollPaymentCashOut.moment) &&
+        Objects.equals(this.accrualDate, payrollPaymentCashOut.accrualDate) &&
         equalsNullable(this.owner, payrollPaymentCashOut.owner) &&
         Objects.equals(this.group, payrollPaymentCashOut.group) &&
         Objects.equals(this.applicable, payrollPaymentCashOut.applicable) &&
@@ -1310,7 +1345,7 @@ public class PayrollPaymentCashOut extends PayrollPaymentAbstract {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, name, code, externalCode, syncId, hashCodeNullable(description), created, deleted, updated, moment, hashCodeNullable(owner), group, applicable, printed, published, rate, organization, agent, hashCodeNullable(expenseItem), hashCodeNullable(attributes), hashCodeNullable(contract), hashCodeNullable(files), noClosingDocs, paymentPurpose, hashCodeNullable(project), hashCodeNullable(salesChannel), shared, hashCodeNullable(state), sum, vatSum, hashCodeNullable(factureIn), hashCodeNullable(operations));
+    return Objects.hash(meta, id, accountId, name, code, externalCode, syncId, hashCodeNullable(description), created, deleted, updated, moment, accrualDate, hashCodeNullable(owner), group, applicable, printed, published, rate, organization, agent, hashCodeNullable(expenseItem), hashCodeNullable(attributes), hashCodeNullable(contract), hashCodeNullable(files), noClosingDocs, paymentPurpose, hashCodeNullable(project), hashCodeNullable(salesChannel), shared, hashCodeNullable(state), sum, vatSum, hashCodeNullable(factureIn), hashCodeNullable(operations));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1336,6 +1371,7 @@ public class PayrollPaymentCashOut extends PayrollPaymentAbstract {
     sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
     sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("    moment: ").append(toIndentedString(moment)).append("\n");
+    sb.append("    accrualDate: ").append(toIndentedString(accrualDate)).append("\n");
     sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
     sb.append("    group: ").append(toIndentedString(group)).append("\n");
     sb.append("    applicable: ").append(toIndentedString(applicable)).append("\n");
@@ -1514,6 +1550,16 @@ public class PayrollPaymentCashOut extends PayrollPaymentAbstract {
     if (getMoment() != null) {
       try {
         joiner.add(String.format(java.util.Locale.ROOT, "%smoment%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getMoment()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `accrualDate` to the URL query string
+    if (getAccrualDate() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%saccrualDate%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAccrualDate()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);

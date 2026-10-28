@@ -49,7 +49,7 @@ import java.util.StringJoiner;
   InvoiceInPosition.JSON_PROPERTY_ASSORTMENT,
   InvoiceInPosition.JSON_PROPERTY_PACK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
 public class InvoiceInPosition extends EntityWithMeta implements DocumentPosition, MetaEntity {
   public static InvoiceInPosition createWithMeta(UUID parentId, UUID id) {
     InvoiceInPosition o = new InvoiceInPosition();

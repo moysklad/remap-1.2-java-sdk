@@ -1,6 +1,6 @@
 
 
-# GetProductFiles200Response
+# GetTaskFiles200Response
 
 
 ## Properties

@@ -4,14 +4,17 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**addProcessingFiles**](ProcessingsApi.md#addProcessingFiles) | **POST** /entity/processing/{id}/files | Добавить файлы к техоперации |
+| [**addProcessingFile**](ProcessingsApi.md#addProcessingFile) | **POST** /entity/processing/{id}/files | Добавить файл к техоперации |
+| [**addProcessingFiles**](ProcessingsApi.md#addProcessingFiles) | **POST** /entity/processing/{id}/files/batch | Добавить файлы к техоперации |
 | [**createProcessing**](ProcessingsApi.md#createProcessing) | **POST** /entity/processing | Создать Processing |
 | [**createProcessingBatch**](ProcessingsApi.md#createProcessingBatch) | **POST** /entity/processing/batch | Массовое создание и обновление Processing |
 | [**createProcessingMaterials**](ProcessingsApi.md#createProcessingMaterials) | **POST** /entity/processing/{id}/materials | Создать материалы Processing |
+| [**createProcessingMaterialsBatch**](ProcessingsApi.md#createProcessingMaterialsBatch) | **POST** /entity/processing/{id}/materials/batch | Массовое создание и обновление материалов техоперации |
 | [**createProcessingMetadataAttribute**](ProcessingsApi.md#createProcessingMetadataAttribute) | **POST** /entity/processing/metadata/attributes | Создать Доп. поле Processing |
 | [**createProcessingMetadataState**](ProcessingsApi.md#createProcessingMetadataState) | **POST** /entity/processing/metadata/states | Создать статус Processing |
 | [**createProcessingMetadataStatesBatch**](ProcessingsApi.md#createProcessingMetadataStatesBatch) | **POST** /entity/processing/metadata/states/batch | Массовое создание и обновление статусов Processing |
 | [**createProcessingProducts**](ProcessingsApi.md#createProcessingProducts) | **POST** /entity/processing/{id}/products | Создать продукты Processing |
+| [**createProcessingProductsBatch**](ProcessingsApi.md#createProcessingProductsBatch) | **POST** /entity/processing/{id}/products/batch | Массовое создание и обновление продуктов техоперации |
 | [**deleteProcessing**](ProcessingsApi.md#deleteProcessing) | **DELETE** /entity/processing/{id} | Удалить Processing |
 | [**deleteProcessingBatch**](ProcessingsApi.md#deleteProcessingBatch) | **POST** /entity/processing/delete | Массовое удаление Processing |
 | [**deleteProcessingFile**](ProcessingsApi.md#deleteProcessingFile) | **DELETE** /entity/processing/{id}/files/{fileId} | Удалить файл техоперации |
@@ -41,6 +44,91 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**updateProcessingMetadataStateById**](ProcessingsApi.md#updateProcessingMetadataStateById) | **PUT** /entity/processing/metadata/states/{id} | Обновить отдельный статус Processing |
 | [**updateProcessingProduct**](ProcessingsApi.md#updateProcessingProduct) | **PUT** /entity/processing/{id}/products/{positionId} | Изменить продукт Processing |
 
+
+
+## addProcessingFile
+
+> List&lt;ModelFile&gt; addProcessingFile(id, fileUpload, accept, acceptEncoding, contentType)
+
+Добавить файл к техоперации
+
+Добавить новый Файл к Техоперации. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.ProcessingsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        FileUpload fileUpload = new FileUpload(); // FileUpload | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<ModelFile> result = apiInstance.addProcessingFile(id, fileUpload, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProcessingsApi#addProcessingFile");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **fileUpload** | [**FileUpload**](FileUpload.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;ModelFile&gt;**](ModelFile.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Файл успешно добавлен. Результат — массив всех Файлов Техоперации. |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## addProcessingFiles
@@ -296,7 +384,7 @@ public class Example {
 
 ## createProcessingMaterials
 
-> ProcessingMaterial createProcessingMaterials(id, processingMaterial, expand, accept, acceptEncoding, contentType)
+> List&lt;ProcessingMaterial&gt; createProcessingMaterials(id, processingMaterial, expand, accept, acceptEncoding, contentType)
 
 Создать материалы Processing
 
@@ -333,7 +421,7 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            ProcessingMaterial result = apiInstance.createProcessingMaterials(id, processingMaterial, expand, accept, acceptEncoding, contentType);
+            List<ProcessingMaterial> result = apiInstance.createProcessingMaterials(id, processingMaterial, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProcessingsApi#createProcessingMaterials");
@@ -360,7 +448,94 @@ public class Example {
 
 ### Return type
 
-[**ProcessingMaterial**](ProcessingMaterial.md)
+[**List&lt;ProcessingMaterial&gt;**](ProcessingMaterial.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## createProcessingMaterialsBatch
+
+> List&lt;BatchResponseEntity&gt; createProcessingMaterialsBatch(id, processingMaterial, expand, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление материалов техоперации
+
+В теле запроса передается массив материалов. Для создания требуются assortment и quantity, для обновления — метаданные (meta).
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.ProcessingsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<ProcessingMaterial> processingMaterial = Arrays.asList(); // List<ProcessingMaterial> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<BatchResponseEntity> result = apiInstance.createProcessingMaterialsBatch(id, processingMaterial, expand, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProcessingsApi#createProcessingMaterialsBatch");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **processingMaterial** | [**List&lt;ProcessingMaterial&gt;**](ProcessingMaterial.md)|  | |
+| **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -624,7 +799,7 @@ public class Example {
 
 ## createProcessingProducts
 
-> ProcessingProduct createProcessingProducts(id, processingProduct, expand, accept, acceptEncoding, contentType)
+> List&lt;ProcessingProduct&gt; createProcessingProducts(id, processingProduct, expand, accept, acceptEncoding, contentType)
 
 Создать продукты Processing
 
@@ -661,7 +836,7 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            ProcessingProduct result = apiInstance.createProcessingProducts(id, processingProduct, expand, accept, acceptEncoding, contentType);
+            List<ProcessingProduct> result = apiInstance.createProcessingProducts(id, processingProduct, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProcessingsApi#createProcessingProducts");
@@ -688,7 +863,94 @@ public class Example {
 
 ### Return type
 
-[**ProcessingProduct**](ProcessingProduct.md)
+[**List&lt;ProcessingProduct&gt;**](ProcessingProduct.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## createProcessingProductsBatch
+
+> List&lt;BatchResponseEntity&gt; createProcessingProductsBatch(id, processingProduct, expand, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление продуктов техоперации
+
+В теле запроса передается массив продуктов. Для создания требуются assortment и quantity, для обновления — метаданные (meta).
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.ProcessingsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        ProcessingsApi apiInstance = new ProcessingsApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<ProcessingProduct> processingProduct = Arrays.asList(); // List<ProcessingProduct> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<BatchResponseEntity> result = apiInstance.createProcessingProductsBatch(id, processingProduct, expand, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProcessingsApi#createProcessingProductsBatch");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **processingProduct** | [**List&lt;ProcessingProduct&gt;**](ProcessingProduct.md)|  | |
+| **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -1596,7 +1858,7 @@ public class Example {
 
 ## getProcessingFiles
 
-> GetProductFiles200Response getProcessingFiles(id, limit, offset, accept, acceptEncoding)
+> GetTaskFiles200Response getProcessingFiles(id, limit, offset, accept, acceptEncoding)
 
 Получить файлы техоперации
 
@@ -1634,7 +1896,7 @@ public class Example {
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
-            GetProductFiles200Response result = apiInstance.getProcessingFiles(id, limit, offset, accept, acceptEncoding);
+            GetTaskFiles200Response result = apiInstance.getProcessingFiles(id, limit, offset, accept, acceptEncoding);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProcessingsApi#getProcessingFiles");
@@ -1660,7 +1922,7 @@ public class Example {
 
 ### Return type
 
-[**GetProductFiles200Response**](GetProductFiles200Response.md)
+[**GetTaskFiles200Response**](GetTaskFiles200Response.md)
 
 ### Authorization
 

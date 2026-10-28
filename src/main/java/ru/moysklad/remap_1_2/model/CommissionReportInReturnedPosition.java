@@ -43,7 +43,7 @@ import java.util.StringJoiner;
   CommissionReportInReturnedPosition.JSON_PROPERTY_VAT_ENABLED,
   CommissionReportInReturnedPosition.JSON_PROPERTY_ASSORTMENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
 public class CommissionReportInReturnedPosition extends EntityWithMeta implements MetaEntity {
   public static CommissionReportInReturnedPosition createWithMeta(UUID parentId, UUID id) {
     CommissionReportInReturnedPosition o = new CommissionReportInReturnedPosition();

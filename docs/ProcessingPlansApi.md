@@ -7,8 +7,10 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createProcessingPlan**](ProcessingPlansApi.md#createProcessingPlan) | **POST** /entity/processingplan | Создать Техкарту |
 | [**createProcessingPlanBatch**](ProcessingPlansApi.md#createProcessingPlanBatch) | **POST** /entity/processingplan/batch | Создать или изменить Техкарты |
 | [**createProcessingPlanMaterials**](ProcessingPlansApi.md#createProcessingPlanMaterials) | **POST** /entity/processingplan/{id}/materials | Создать материал Техкарты |
+| [**createProcessingPlanMaterialsBatch**](ProcessingPlansApi.md#createProcessingPlanMaterialsBatch) | **POST** /entity/processingplan/{id}/materials/batch | Массовое создание и обновление материалов техкарты |
 | [**createProcessingPlanMetadataAttribute**](ProcessingPlansApi.md#createProcessingPlanMetadataAttribute) | **POST** /entity/processingplan/metadata/attributes | Создать Доп. поле ProcessingPlan |
 | [**createProcessingPlanProducts**](ProcessingPlansApi.md#createProcessingPlanProducts) | **POST** /entity/processingplan/{id}/products | Создать продукт Техкарты |
+| [**createProcessingPlanProductsBatch**](ProcessingPlansApi.md#createProcessingPlanProductsBatch) | **POST** /entity/processingplan/{id}/products/batch | Массовое создание и обновление продуктов техкарты |
 | [**deleteProcessingPlan**](ProcessingPlansApi.md#deleteProcessingPlan) | **DELETE** /entity/processingplan/{id} | Удалить Техкарту |
 | [**deleteProcessingPlanMaterial**](ProcessingPlansApi.md#deleteProcessingPlanMaterial) | **DELETE** /entity/processingplan/{id}/materials/{positionId} | Удалить материал Техкарты |
 | [**deleteProcessingPlanMaterialsBatch**](ProcessingPlansApi.md#deleteProcessingPlanMaterialsBatch) | **POST** /entity/processingplan/{id}/materials/delete | Массовое удаление материалов Техкарты |
@@ -32,6 +34,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**updateProcessingPlanMetadataAttributeById**](ProcessingPlansApi.md#updateProcessingPlanMetadataAttributeById) | **PUT** /entity/processingplan/metadata/attributes/{id} | Обновить отдельное доп. поле ProcessingPlan |
 | [**updateProcessingPlanProduct**](ProcessingPlansApi.md#updateProcessingPlanProduct) | **PUT** /entity/processingplan/{id}/products/{positionId} | Изменить продукт Техкарты |
 | [**updateProcessingPlanStage**](ProcessingPlansApi.md#updateProcessingPlanStage) | **PUT** /entity/processingplan/{id}/stages/{positionId} | Изменить отдельный этап Техкарты |
+| [**updateProcessingPlanStages**](ProcessingPlansApi.md#updateProcessingPlanStages) | **POST** /entity/processingplan/{id}/stages/batch | Массовое изменение этапов Техкарты |
 
 
 
@@ -292,6 +295,93 @@ public class Example {
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
+## createProcessingPlanMaterialsBatch
+
+> List&lt;BatchResponseEntity&gt; createProcessingPlanMaterialsBatch(id, processingPlanMaterial, expand, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление материалов техкарты
+
+В теле запроса передается массив материалов. Для создания требуются assortment и quantity, для обновления — метаданные (meta).
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.ProcessingPlansApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        ProcessingPlansApi apiInstance = new ProcessingPlansApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<ProcessingPlanMaterial> processingPlanMaterial = Arrays.asList(); // List<ProcessingPlanMaterial> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<BatchResponseEntity> result = apiInstance.createProcessingPlanMaterialsBatch(id, processingPlanMaterial, expand, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProcessingPlansApi#createProcessingPlanMaterialsBatch");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **processingPlanMaterial** | [**List&lt;ProcessingPlanMaterial&gt;**](ProcessingPlanMaterial.md)|  | |
+| **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
 ## createProcessingPlanMetadataAttribute
 
 > AttributeMetaInfo createProcessingPlanMetadataAttribute(attributeMetaInfo, accept, acceptEncoding, contentType)
@@ -375,7 +465,7 @@ public class Example {
 
 ## createProcessingPlanProducts
 
-> ProcessingPlanProduct createProcessingPlanProducts(id, processingPlanProduct, expand, accept, acceptEncoding, contentType)
+> List&lt;ProcessingPlanProduct&gt; createProcessingPlanProducts(id, processingPlanProduct, expand, accept, acceptEncoding, contentType)
 
 Создать продукт Техкарты
 
@@ -414,7 +504,7 @@ public class Example {
         String acceptEncoding = "gzip, deflate, br"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            ProcessingPlanProduct result = apiInstance.createProcessingPlanProducts(id, processingPlanProduct, expand, accept, acceptEncoding, contentType);
+            List<ProcessingPlanProduct> result = apiInstance.createProcessingPlanProducts(id, processingPlanProduct, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProcessingPlansApi#createProcessingPlanProducts");
@@ -441,7 +531,7 @@ public class Example {
 
 ### Return type
 
-[**ProcessingPlanProduct**](ProcessingPlanProduct.md)
+[**List&lt;ProcessingPlanProduct&gt;**](ProcessingPlanProduct.md)
 
 ### Authorization
 
@@ -457,6 +547,93 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Продукты Техкарты успешно созданы |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## createProcessingPlanProductsBatch
+
+> List&lt;BatchResponseEntity&gt; createProcessingPlanProductsBatch(id, processingPlanProduct, expand, accept, acceptEncoding, contentType)
+
+Массовое создание и обновление продуктов техкарты
+
+В теле запроса передается массив продуктов. Для создания требуются assortment и quantity, для обновления — метаданные (meta).
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.ProcessingPlansApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        ProcessingPlansApi apiInstance = new ProcessingPlansApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<ProcessingPlanProduct> processingPlanProduct = Arrays.asList(); // List<ProcessingPlanProduct> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<BatchResponseEntity> result = apiInstance.createProcessingPlanProductsBatch(id, processingPlanProduct, expand, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProcessingPlansApi#createProcessingPlanProductsBatch");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **processingPlanProduct** | [**List&lt;ProcessingPlanProduct&gt;**](ProcessingPlanProduct.md)|  | |
+| **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
@@ -2393,6 +2570,93 @@ public class Example {
 ### Return type
 
 [**ProcessingPlanStage**](ProcessingPlanStage.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## updateProcessingPlanStages
+
+> List&lt;BatchResponseEntity&gt; updateProcessingPlanStages(id, processingPlanStage, expand, accept, acceptEncoding, contentType)
+
+Массовое изменение этапов Техкарты
+
+В теле запроса передается массив этапов Техкарты с метаданными (meta). Этапы Техкарты соответствуют этапам позиций привязанного техпроцесса, поэтому создать новый этап нельзя — только изменить существующий.
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.ProcessingPlansApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        ProcessingPlansApi apiInstance = new ProcessingPlansApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        List<ProcessingPlanStage> processingPlanStage = Arrays.asList(); // List<ProcessingPlanStage> | 
+        String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<BatchResponseEntity> result = apiInstance.updateProcessingPlanStages(id, processingPlanStage, expand, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProcessingPlansApi#updateProcessingPlanStages");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **processingPlanStage** | [**List&lt;ProcessingPlanStage&gt;**](ProcessingPlanStage.md)|  | |
+| **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 

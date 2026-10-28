@@ -4,7 +4,8 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**addProcessingOrderFiles**](ProcessingOrdersApi.md#addProcessingOrderFiles) | **POST** /entity/processingorder/{id}/files | Добавить файлы к Заказу на производство |
+| [**addProcessingOrderFile**](ProcessingOrdersApi.md#addProcessingOrderFile) | **POST** /entity/processingorder/{id}/files | Добавить файл к Заказу на производство |
+| [**addProcessingOrderFiles**](ProcessingOrdersApi.md#addProcessingOrderFiles) | **POST** /entity/processingorder/{id}/files/batch | Добавить файлы к Заказу на производство |
 | [**createProcessingOrder**](ProcessingOrdersApi.md#createProcessingOrder) | **POST** /entity/processingorder | Создать ProcessingOrder |
 | [**createProcessingOrderBatch**](ProcessingOrdersApi.md#createProcessingOrderBatch) | **POST** /entity/processingorder/batch | Массовое создание и обновление ProcessingOrder |
 | [**createProcessingOrderMetadataAttribute**](ProcessingOrdersApi.md#createProcessingOrderMetadataAttribute) | **POST** /entity/processingorder/metadata/attributes | Создать Доп. поле ProcessingOrder |
@@ -36,6 +37,91 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**updateProcessingOrderMetadataStateById**](ProcessingOrdersApi.md#updateProcessingOrderMetadataStateById) | **PUT** /entity/processingorder/metadata/states/{id} | Обновить отдельный статус ProcessingOrder |
 | [**updateProcessingOrderPosition**](ProcessingOrdersApi.md#updateProcessingOrderPosition) | **PUT** /entity/processingorder/{id}/positions/{positionId} | Изменить позицию ProcessingOrder |
 
+
+
+## addProcessingOrderFile
+
+> List&lt;ModelFile&gt; addProcessingOrderFile(id, fileUpload, accept, acceptEncoding, contentType)
+
+Добавить файл к Заказу на производство
+
+Добавить новый Файл к Заказу на производство. В поле &#x60;content&#x60; нужно указать файл, закодированный в Base64, в поле &#x60;filename&#x60; — имя файла с расширением. 
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.ProcessingOrdersApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        ProcessingOrdersApi apiInstance = new ProcessingOrdersApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        FileUpload fileUpload = new FileUpload(); // FileUpload | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            List<ModelFile> result = apiInstance.addProcessingOrderFile(id, fileUpload, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProcessingOrdersApi#addProcessingOrderFile");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **fileUpload** | [**FileUpload**](FileUpload.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**List&lt;ModelFile&gt;**](ModelFile.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/html;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Файл успешно добавлен. Результат — массив всех Файлов Заказа на производство. |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
 ## addProcessingOrderFiles
@@ -1429,7 +1515,7 @@ public class Example {
 
 ## getProcessingOrderFiles
 
-> GetProductFiles200Response getProcessingOrderFiles(id, limit, offset, accept, acceptEncoding)
+> GetTaskFiles200Response getProcessingOrderFiles(id, limit, offset, accept, acceptEncoding)
 
 Получить файлы Заказа на производство
 
@@ -1467,7 +1553,7 @@ public class Example {
         String accept = "application/json"; // String | 
         String acceptEncoding = "gzip, deflate, br"; // String | 
         try {
-            GetProductFiles200Response result = apiInstance.getProcessingOrderFiles(id, limit, offset, accept, acceptEncoding);
+            GetTaskFiles200Response result = apiInstance.getProcessingOrderFiles(id, limit, offset, accept, acceptEncoding);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProcessingOrdersApi#getProcessingOrderFiles");
@@ -1493,7 +1579,7 @@ public class Example {
 
 ### Return type
 
-[**GetProductFiles200Response**](GetProductFiles200Response.md)
+[**GetTaskFiles200Response**](GetTaskFiles200Response.md)
 
 ### Authorization
 

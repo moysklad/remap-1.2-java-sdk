@@ -45,8 +45,8 @@ import java.util.StringJoiner;
   ContactPerson.JSON_PROPERTY_EXTERNAL_CODE,
   ContactPerson.JSON_PROPERTY_AGENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-13T10:58:45.089922936Z[GMT]", comments = "Generator version: 7.14.0")
-public class ContactPerson implements MetaEntity {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+public class ContactPerson extends EntityWithMeta implements MetaEntity {
   public static ContactPerson createWithMeta(UUID parentId, UUID id) {
     ContactPerson o = new ContactPerson();
     Meta meta = new Meta();
