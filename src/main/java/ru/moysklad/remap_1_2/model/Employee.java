@@ -71,7 +71,7 @@ import java.util.StringJoiner;
   Employee.JSON_PROPERTY_IMAGE,
   Employee.JSON_PROPERTY_ATTRIBUTES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Employee extends Agent implements Named {
   public static Employee createWithMeta(UUID id) {
     Employee o = new Employee();
@@ -182,7 +182,7 @@ public class Employee extends Agent implements Named {
 
   public static final String JSON_PROPERTY_CASHIERS = "cashiers";
   @javax.annotation.Nullable
-  private List<Cashier> cashiers = new ArrayList<>();
+  private List<Cashier> cashiers;
 
   public static final String JSON_PROPERTY_IMAGE = "image";
   @javax.annotation.Nullable
@@ -222,6 +222,7 @@ public class Employee extends Agent implements Named {
   }
 
   public Employee meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -246,6 +247,7 @@ public class Employee extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -299,6 +301,7 @@ public class Employee extends Agent implements Named {
 
 
   public Employee externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -323,11 +326,13 @@ public class Employee extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public Employee archived(@javax.annotation.Nullable Boolean archived) {
+
     
     this.archived = archived;
     return this;
@@ -352,6 +357,7 @@ public class Employee extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
+
     this.archived = archived;
   }
 
@@ -389,6 +395,7 @@ public class Employee extends Agent implements Named {
 
 
   public Employee description(@javax.annotation.Nullable String description) {
+
     
     this.description = description;
     return this;
@@ -413,11 +420,13 @@ public class Employee extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = description;
   }
 
 
   public Employee email(@javax.annotation.Nullable String email) {
+
     
     this.email = email;
     return this;
@@ -442,11 +451,13 @@ public class Employee extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEmail(@javax.annotation.Nullable String email) {
+
     this.email = email;
   }
 
 
   public Employee phone(@javax.annotation.Nullable String phone) {
+
     
     this.phone = phone;
     return this;
@@ -471,11 +482,13 @@ public class Employee extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_PHONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPhone(@javax.annotation.Nullable String phone) {
+
     this.phone = phone;
   }
 
 
   public Employee firstName(@javax.annotation.Nullable String firstName) {
+
     
     this.firstName = firstName;
     return this;
@@ -500,11 +513,13 @@ public class Employee extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_FIRST_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFirstName(@javax.annotation.Nullable String firstName) {
+
     this.firstName = firstName;
   }
 
 
   public Employee middleName(@javax.annotation.Nullable String middleName) {
+
     
     this.middleName = middleName;
     return this;
@@ -529,11 +544,13 @@ public class Employee extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_MIDDLE_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMiddleName(@javax.annotation.Nullable String middleName) {
+
     this.middleName = middleName;
   }
 
 
   public Employee lastName(@javax.annotation.Nullable String lastName) {
+
     
     this.lastName = lastName;
     return this;
@@ -558,6 +575,7 @@ public class Employee extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_LAST_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLastName(@javax.annotation.Nullable String lastName) {
+
     this.lastName = lastName;
   }
 
@@ -595,6 +613,7 @@ public class Employee extends Agent implements Named {
 
 
   public Employee shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -619,11 +638,13 @@ public class Employee extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
 
   public Employee group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -648,11 +669,13 @@ public class Employee extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
 
   public Employee owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -686,11 +709,13 @@ public class Employee extends Agent implements Named {
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
 
   public Employee inn(@javax.annotation.Nullable String inn) {
+
     
     this.inn = inn;
     return this;
@@ -715,11 +740,13 @@ public class Employee extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_INN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setInn(@javax.annotation.Nullable String inn) {
+
     this.inn = inn;
   }
 
 
   public Employee position(@javax.annotation.Nullable String position) {
+
     
     this.position = position;
     return this;
@@ -744,6 +771,7 @@ public class Employee extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_POSITION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPosition(@javax.annotation.Nullable String position) {
+
     this.position = position;
   }
 
@@ -765,6 +793,7 @@ public class Employee extends Agent implements Named {
 
 
   public Employee salary(@javax.annotation.Nullable EmployeeSalary salary) {
+
     
     this.salary = salary;
     return this;
@@ -789,6 +818,7 @@ public class Employee extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_SALARY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSalary(@javax.annotation.Nullable EmployeeSalary salary) {
+
     this.salary = salary;
   }
 
@@ -799,7 +829,7 @@ public class Employee extends Agent implements Named {
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CASHIERS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_EMPTY)
 
   public List<Cashier> getCashiers() {
     return cashiers;
@@ -810,6 +840,7 @@ public class Employee extends Agent implements Named {
 
 
   public Employee image(@javax.annotation.Nullable Image image) {
+
     this.image = JsonNullable.<Image>of(image);
     
     return this;
@@ -843,11 +874,13 @@ public class Employee extends Agent implements Named {
   }
 
   public void setImage(@javax.annotation.Nullable Image image) {
+
     this.image = JsonNullable.<Image>of(image);
   }
 
 
   public Employee attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
@@ -880,7 +913,7 @@ public class Employee extends Agent implements Named {
   
 
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
@@ -893,6 +926,7 @@ public class Employee extends Agent implements Named {
   }
 
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 

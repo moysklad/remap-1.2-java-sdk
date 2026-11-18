@@ -35,7 +35,7 @@ import java.util.StringJoiner;
   ReportMoneyPlotSeriesItem.JSON_PROPERTY_DEBIT,
   ReportMoneyPlotSeriesItem.JSON_PROPERTY_BALANCE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ReportMoneyPlotSeriesItem {
 
   public static final String JSON_PROPERTY_DATE = "date";
@@ -58,6 +58,7 @@ public class ReportMoneyPlotSeriesItem {
   }
 
   public ReportMoneyPlotSeriesItem date(@javax.annotation.Nullable String date) {
+
     
     this.date = date;
     return this;
@@ -82,11 +83,13 @@ public class ReportMoneyPlotSeriesItem {
   @JsonProperty(JSON_PROPERTY_DATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDate(@javax.annotation.Nullable String date) {
+
     this.date = date;
   }
 
 
   public ReportMoneyPlotSeriesItem credit(@javax.annotation.Nullable Double credit) {
+
     
     this.credit = credit;
     return this;
@@ -111,11 +114,13 @@ public class ReportMoneyPlotSeriesItem {
   @JsonProperty(JSON_PROPERTY_CREDIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCredit(@javax.annotation.Nullable Double credit) {
+
     this.credit = credit;
   }
 
 
   public ReportMoneyPlotSeriesItem debit(@javax.annotation.Nullable Double debit) {
+
     
     this.debit = debit;
     return this;
@@ -140,11 +145,13 @@ public class ReportMoneyPlotSeriesItem {
   @JsonProperty(JSON_PROPERTY_DEBIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDebit(@javax.annotation.Nullable Double debit) {
+
     this.debit = debit;
   }
 
 
   public ReportMoneyPlotSeriesItem balance(@javax.annotation.Nullable Double balance) {
+
     
     this.balance = balance;
     return this;
@@ -169,6 +176,7 @@ public class ReportMoneyPlotSeriesItem {
   @JsonProperty(JSON_PROPERTY_BALANCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBalance(@javax.annotation.Nullable Double balance) {
+
     this.balance = balance;
   }
 

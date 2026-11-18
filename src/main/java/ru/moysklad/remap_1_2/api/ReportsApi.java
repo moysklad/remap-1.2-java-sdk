@@ -48,7 +48,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ReportsApi extends BaseApi {
 
@@ -96,7 +96,7 @@ public class ReportsApi extends BaseApi {
    * @param offset Отступ в выданном списке (optional, default to 0)
    * @param filter Фильтрация выборки (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @return ReportCounterpartyList
    * @throws ApiException if fails to make API call
@@ -104,6 +104,15 @@ public class ReportsApi extends BaseApi {
   protected ReportCounterpartyList getReportCounterparty(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
+    if (limit != null && limit.doubleValue() < 1) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getReportCounterparty: must be greater than or equal to 1, got " + limit);
+    }
+    if (limit != null && limit.doubleValue() > 1000) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getReportCounterparty: must be less than or equal to 1000, got " + limit);
+    }
+    if (offset != null && offset.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'offset' when calling getReportCounterparty: must be greater than or equal to 0, got " + offset);
+    }
     // create path and map variables
     String localVarPath = "/report/counterparty";
 
@@ -119,7 +128,7 @@ public class ReportsApi extends BaseApi {
     localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
     localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -192,7 +201,7 @@ if (acceptEncoding != null) {
    * Запрос отчета «Показатели контрагентов» по контрагенту с указанным id.
    * @param id ID сущности (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @return ReportCounterparty
    * @throws ApiException if fails to make API call
@@ -218,7 +227,7 @@ if (acceptEncoding != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -286,7 +295,7 @@ if (acceptEncoding != null) {
    * Получить показатели за день
    * Запрос показателей за день. Для доступа к отчету требуется право на просмотр показателей &#x60;viewDashboard&#x60;. 
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @return ReportDashboard
    * @throws ApiException if fails to make API call
@@ -306,7 +315,7 @@ if (acceptEncoding != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -374,7 +383,7 @@ if (acceptEncoding != null) {
    * Получить показатели за месяц
    * Запрос показателей за месяц. Для доступа к отчету требуется право на просмотр показателей &#x60;viewDashboard&#x60;. 
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @return ReportDashboard
    * @throws ApiException if fails to make API call
@@ -394,7 +403,7 @@ if (acceptEncoding != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -462,7 +471,7 @@ if (acceptEncoding != null) {
    * Получить показатели за неделю
    * Запрос показателей за неделю. Для доступа к отчету требуется право на просмотр показателей &#x60;viewDashboard&#x60;. 
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @return ReportDashboard
    * @throws ApiException if fails to make API call
@@ -482,7 +491,7 @@ if (acceptEncoding != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -550,7 +559,7 @@ if (acceptEncoding != null) {
    * Получить остатки денежных средств по кассам и счетам
    * Запрос текущих остатков денежных средств по кассам и счетам организаций. Для доступа к отчету требуется право на просмотр показателей &#x60;viewDashboard&#x60; и право «Видеть остатки денег» &#x60;viewMoneyDashboard&#x60;. 
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @return ReportMoneyByAccountList
    * @throws ApiException if fails to make API call
@@ -570,7 +579,7 @@ if (acceptEncoding != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -647,7 +656,7 @@ if (acceptEncoding != null) {
    * @param interval Интервал построения отчета (required)
    * @param filter Фильтрация выборки (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param xLognexAcceptTimezone Опциональный заголовок, в котором указана текущая дата на клиенте в RFC 3522. Таймзону обязательно указывать в формате знак и 4 символа. Пример: &#x60;Wed, 16 Aug 2017 23:07:01 +0700&#x60;. При подсчете показателей даты операций смещаются в таймзону клиента.  (optional)
    * @param additionalHeaders additionalHeaders for this call
    * @return ReportMoneyPlotSeries
@@ -687,7 +696,7 @@ if (acceptEncoding != null) {
     localVarQueryParams.addAll(apiClient.parameterToPair("interval", interval));
     localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -767,7 +776,7 @@ if (xLognexAcceptTimezone != null) {
    * @param interval Интервал построения отчета (required)
    * @param filter Фильтрация показателей заказов. Доступные поля: &#x60;organization&#x60;, &#x60;store&#x60;, &#x60;project&#x60;. Можно указать несколько значений; пустые значения недопустимы.  (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param xLognexAcceptTimezone Опциональный заголовок, в котором указана текущая дата на клиенте в RFC 3522. Таймзону обязательно указывать в формате знак и 4 символа. Пример: &#x60;Wed, 16 Aug 2017 23:07:01 +0700&#x60;. При подсчете показателей даты операций смещаются в таймзону клиента.  (optional)
    * @param additionalHeaders additionalHeaders for this call
    * @return ReportOrdersPlotSeriesList
@@ -807,7 +816,7 @@ if (xLognexAcceptTimezone != null) {
     localVarQueryParams.addAll(apiClient.parameterToPair("interval", interval));
     localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -889,7 +898,7 @@ if (xLognexAcceptTimezone != null) {
    * @param momentFrom Начало периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
    * @param momentTo Конец периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param xLognexAcceptTimezone Опциональный заголовок, в котором указана текущая дата на клиенте в RFC 3522. Таймзону обязательно указывать в формате знак и 4 символа. Пример: &#x60;Wed, 16 Aug 2017 23:07:01 +0700&#x60;. При подсчете показателей даты операций смещаются в таймзону клиента.  (optional)
    * @param additionalHeaders additionalHeaders for this call
    * @return ReportProfitByCounterpartyList
@@ -898,6 +907,15 @@ if (xLognexAcceptTimezone != null) {
   protected ReportProfitByCounterpartyList getReportProfitByCounterparty(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String momentFrom, @javax.annotation.Nullable String momentTo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String xLognexAcceptTimezone, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
+    if (limit != null && limit.doubleValue() < 1) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getReportProfitByCounterparty: must be greater than or equal to 1, got " + limit);
+    }
+    if (limit != null && limit.doubleValue() > 1000) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getReportProfitByCounterparty: must be less than or equal to 1000, got " + limit);
+    }
+    if (offset != null && offset.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'offset' when calling getReportProfitByCounterparty: must be greater than or equal to 0, got " + offset);
+    }
     // create path and map variables
     String localVarPath = "/report/profit/bycounterparty";
 
@@ -915,7 +933,7 @@ if (xLognexAcceptTimezone != null) {
     localVarQueryParams.addAll(apiClient.parameterToPair("momentFrom", momentFrom));
     localVarQueryParams.addAll(apiClient.parameterToPair("momentTo", momentTo));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -997,7 +1015,7 @@ if (xLognexAcceptTimezone != null) {
    * @param momentFrom Начало периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
    * @param momentTo Конец периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param xLognexAcceptTimezone Опциональный заголовок, в котором указана текущая дата на клиенте в RFC 3522. Таймзону обязательно указывать в формате знак и 4 символа. Пример: &#x60;Wed, 16 Aug 2017 23:07:01 +0700&#x60;. При подсчете показателей даты операций смещаются в таймзону клиента.  (optional)
    * @param additionalHeaders additionalHeaders for this call
    * @return ReportProfitByEmployeeList
@@ -1006,6 +1024,15 @@ if (xLognexAcceptTimezone != null) {
   protected ReportProfitByEmployeeList getReportProfitByEmployee(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String momentFrom, @javax.annotation.Nullable String momentTo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String xLognexAcceptTimezone, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
+    if (limit != null && limit.doubleValue() < 1) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getReportProfitByEmployee: must be greater than or equal to 1, got " + limit);
+    }
+    if (limit != null && limit.doubleValue() > 1000) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getReportProfitByEmployee: must be less than or equal to 1000, got " + limit);
+    }
+    if (offset != null && offset.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'offset' when calling getReportProfitByEmployee: must be greater than or equal to 0, got " + offset);
+    }
     // create path and map variables
     String localVarPath = "/report/profit/byemployee";
 
@@ -1023,7 +1050,7 @@ if (xLognexAcceptTimezone != null) {
     localVarQueryParams.addAll(apiClient.parameterToPair("momentFrom", momentFrom));
     localVarQueryParams.addAll(apiClient.parameterToPair("momentTo", momentTo));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -1105,7 +1132,7 @@ if (xLognexAcceptTimezone != null) {
    * @param momentFrom Начало периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
    * @param momentTo Конец периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param xLognexAcceptTimezone Опциональный заголовок, в котором указана текущая дата на клиенте в RFC 3522. Таймзону обязательно указывать в формате знак и 4 символа. Пример: &#x60;Wed, 16 Aug 2017 23:07:01 +0700&#x60;. При подсчете показателей даты операций смещаются в таймзону клиента.  (optional)
    * @param additionalHeaders additionalHeaders for this call
    * @return ReportProfitByProductList
@@ -1114,6 +1141,15 @@ if (xLognexAcceptTimezone != null) {
   protected ReportProfitByProductList getReportProfitByProduct(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String momentFrom, @javax.annotation.Nullable String momentTo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String xLognexAcceptTimezone, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
+    if (limit != null && limit.doubleValue() < 1) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getReportProfitByProduct: must be greater than or equal to 1, got " + limit);
+    }
+    if (limit != null && limit.doubleValue() > 1000) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getReportProfitByProduct: must be less than or equal to 1000, got " + limit);
+    }
+    if (offset != null && offset.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'offset' when calling getReportProfitByProduct: must be greater than or equal to 0, got " + offset);
+    }
     // create path and map variables
     String localVarPath = "/report/profit/byproduct";
 
@@ -1131,7 +1167,7 @@ if (xLognexAcceptTimezone != null) {
     localVarQueryParams.addAll(apiClient.parameterToPair("momentFrom", momentFrom));
     localVarQueryParams.addAll(apiClient.parameterToPair("momentTo", momentTo));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -1213,7 +1249,7 @@ if (xLognexAcceptTimezone != null) {
    * @param momentFrom Начало периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
    * @param momentTo Конец периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param xLognexAcceptTimezone Опциональный заголовок, в котором указана текущая дата на клиенте в RFC 3522. Таймзону обязательно указывать в формате знак и 4 символа. Пример: &#x60;Wed, 16 Aug 2017 23:07:01 +0700&#x60;. При подсчете показателей даты операций смещаются в таймзону клиента.  (optional)
    * @param additionalHeaders additionalHeaders for this call
    * @return ReportProfitBySalesChannelList
@@ -1222,6 +1258,15 @@ if (xLognexAcceptTimezone != null) {
   protected ReportProfitBySalesChannelList getReportProfitBySalesChannel(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String momentFrom, @javax.annotation.Nullable String momentTo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String xLognexAcceptTimezone, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
+    if (limit != null && limit.doubleValue() < 1) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getReportProfitBySalesChannel: must be greater than or equal to 1, got " + limit);
+    }
+    if (limit != null && limit.doubleValue() > 1000) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getReportProfitBySalesChannel: must be less than or equal to 1000, got " + limit);
+    }
+    if (offset != null && offset.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'offset' when calling getReportProfitBySalesChannel: must be greater than or equal to 0, got " + offset);
+    }
     // create path and map variables
     String localVarPath = "/report/profit/bysaleschannel";
 
@@ -1239,7 +1284,7 @@ if (xLognexAcceptTimezone != null) {
     localVarQueryParams.addAll(apiClient.parameterToPair("momentFrom", momentFrom));
     localVarQueryParams.addAll(apiClient.parameterToPair("momentTo", momentTo));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -1321,7 +1366,7 @@ if (xLognexAcceptTimezone != null) {
    * @param momentFrom Начало периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
    * @param momentTo Конец периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param xLognexAcceptTimezone Опциональный заголовок, в котором указана текущая дата на клиенте в RFC 3522. Таймзону обязательно указывать в формате знак и 4 символа. Пример: &#x60;Wed, 16 Aug 2017 23:07:01 +0700&#x60;. При подсчете показателей даты операций смещаются в таймзону клиента.  (optional)
    * @param additionalHeaders additionalHeaders for this call
    * @return ReportProfitByVariantList
@@ -1330,6 +1375,15 @@ if (xLognexAcceptTimezone != null) {
   protected ReportProfitByVariantList getReportProfitByVariant(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String momentFrom, @javax.annotation.Nullable String momentTo, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String xLognexAcceptTimezone, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
+    if (limit != null && limit.doubleValue() < 1) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getReportProfitByVariant: must be greater than or equal to 1, got " + limit);
+    }
+    if (limit != null && limit.doubleValue() > 1000) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getReportProfitByVariant: must be less than or equal to 1000, got " + limit);
+    }
+    if (offset != null && offset.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'offset' when calling getReportProfitByVariant: must be greater than or equal to 0, got " + offset);
+    }
     // create path and map variables
     String localVarPath = "/report/profit/byvariant";
 
@@ -1347,7 +1401,7 @@ if (xLognexAcceptTimezone != null) {
     localVarQueryParams.addAll(apiClient.parameterToPair("momentFrom", momentFrom));
     localVarQueryParams.addAll(apiClient.parameterToPair("momentTo", momentTo));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -1427,7 +1481,7 @@ if (xLognexAcceptTimezone != null) {
    * @param interval Интервал построения отчета (required)
    * @param filter Фильтрация показателей продаж. Доступные поля: &#x60;organization&#x60;, &#x60;store&#x60;, &#x60;project&#x60;, &#x60;retailStore&#x60;. Можно указать несколько значений; пустые значения недопустимы.  (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param xLognexAcceptTimezone Опциональный заголовок, в котором указана текущая дата на клиенте в RFC 3522. Таймзону обязательно указывать в формате знак и 4 символа. Пример: &#x60;Wed, 16 Aug 2017 23:07:01 +0700&#x60;. При подсчете показателей даты операций смещаются в таймзону клиента.  (optional)
    * @param additionalHeaders additionalHeaders for this call
    * @return ReportSalesPlotSeriesList
@@ -1467,7 +1521,7 @@ if (xLognexAcceptTimezone != null) {
     localVarQueryParams.addAll(apiClient.parameterToPair("interval", interval));
     localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -1551,7 +1605,7 @@ if (xLognexAcceptTimezone != null) {
    * @param momentTo Конец периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
    * @param groupBy Тип, по которому нужно сгруппировать выдачу. Значение по умолчанию &#x60;product&#x60;. (optional, default to product)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param xLognexAcceptTimezone Опциональный заголовок, в котором указана текущая дата на клиенте в RFC 3522. Таймзону обязательно указывать в формате знак и 4 символа. Пример: &#x60;Wed, 16 Aug 2017 23:07:01 +0700&#x60;. При подсчете показателей даты операций смещаются в таймзону клиента.  (optional)
    * @param additionalHeaders additionalHeaders for this call
    * @return ReportTurnoverList
@@ -1560,6 +1614,15 @@ if (xLognexAcceptTimezone != null) {
   protected ReportTurnoverList getReportTurnoverAll(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String momentFrom, @javax.annotation.Nullable String momentTo, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String xLognexAcceptTimezone, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
+    if (limit != null && limit.doubleValue() < 1) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getReportTurnoverAll: must be greater than or equal to 1, got " + limit);
+    }
+    if (limit != null && limit.doubleValue() > 1000) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getReportTurnoverAll: must be less than or equal to 1000, got " + limit);
+    }
+    if (offset != null && offset.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'offset' when calling getReportTurnoverAll: must be greater than or equal to 0, got " + offset);
+    }
     // create path and map variables
     String localVarPath = "/report/turnover/all";
 
@@ -1578,7 +1641,7 @@ if (xLognexAcceptTimezone != null) {
     localVarQueryParams.addAll(apiClient.parameterToPair("momentTo", momentTo));
     localVarQueryParams.addAll(apiClient.parameterToPair("groupBy", groupBy));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -1656,7 +1719,7 @@ if (xLognexAcceptTimezone != null) {
    * @param momentFrom Начало периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
    * @param momentTo Конец периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param xLognexAcceptTimezone Опциональный заголовок, в котором указана текущая дата на клиенте в RFC 3522. Таймзону обязательно указывать в формате знак и 4 символа. Пример: &#x60;Wed, 16 Aug 2017 23:07:01 +0700&#x60;. При подсчете показателей даты операций смещаются в таймзону клиента.  (optional)
    * @param additionalHeaders additionalHeaders for this call
    * @return ReportTurnoverByOperationList
@@ -1680,7 +1743,7 @@ if (xLognexAcceptTimezone != null) {
     localVarQueryParams.addAll(apiClient.parameterToPair("momentFrom", momentFrom));
     localVarQueryParams.addAll(apiClient.parameterToPair("momentTo", momentTo));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -1758,7 +1821,7 @@ if (xLognexAcceptTimezone != null) {
    * @param momentFrom Начало периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
    * @param momentTo Конец периода отчета в формате YYYY-MM-DD HH:MM:SS (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param xLognexAcceptTimezone Опциональный заголовок, в котором указана текущая дата на клиенте в RFC 3522. Таймзону обязательно указывать в формате знак и 4 символа. Пример: &#x60;Wed, 16 Aug 2017 23:07:01 +0700&#x60;. При подсчете показателей даты операций смещаются в таймзону клиента.  (optional)
    * @param additionalHeaders additionalHeaders for this call
    * @return ReportTurnoverByStoreList
@@ -1782,7 +1845,7 @@ if (xLognexAcceptTimezone != null) {
     localVarQueryParams.addAll(apiClient.parameterToPair("momentFrom", momentFrom));
     localVarQueryParams.addAll(apiClient.parameterToPair("momentTo", momentTo));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -1859,7 +1922,7 @@ if (xLognexAcceptTimezone != null) {
    * Запрос отчета «Показатели контрагентов» по указанным контрагентам.
    * @param reportCounterpartyQuery  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
    * @return ReportCounterpartyList
@@ -1885,7 +1948,7 @@ if (xLognexAcceptTimezone != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));

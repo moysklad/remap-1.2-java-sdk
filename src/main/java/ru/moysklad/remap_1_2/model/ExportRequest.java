@@ -43,7 +43,7 @@ import java.util.StringJoiner;
   ExportRequest.JSON_PROPERTY_EXTENSION,
   ExportRequest.JSON_PROPERTY_TEMPLATES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ExportRequest {
 
   public static final String JSON_PROPERTY_TEMPLATE = "template";
@@ -102,6 +102,7 @@ public class ExportRequest {
   }
 
   public ExportRequest template(@javax.annotation.Nullable EmbeddedTemplate template) {
+
     
     this.template = template;
     return this;
@@ -126,11 +127,13 @@ public class ExportRequest {
   @JsonProperty(JSON_PROPERTY_TEMPLATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTemplate(@javax.annotation.Nullable EmbeddedTemplate template) {
+
     this.template = template;
   }
 
 
   public ExportRequest extension(@javax.annotation.Nullable ExtensionEnum extension) {
+
     
     this.extension = extension;
     return this;
@@ -155,11 +158,13 @@ public class ExportRequest {
   @JsonProperty(JSON_PROPERTY_EXTENSION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExtension(@javax.annotation.Nullable ExtensionEnum extension) {
+
     this.extension = extension;
   }
 
 
   public ExportRequest templates(@javax.annotation.Nullable List<TemplateComposition> templates) {
+
     this.templates = JsonNullable.<List<TemplateComposition>>of(templates);
     
     return this;
@@ -192,7 +197,7 @@ public class ExportRequest {
   
 
   @JsonProperty(JSON_PROPERTY_TEMPLATES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<TemplateComposition>> getTemplates_JsonNullable() {
@@ -205,6 +210,7 @@ public class ExportRequest {
   }
 
   public void setTemplates(@javax.annotation.Nullable List<TemplateComposition> templates) {
+
     this.templates = JsonNullable.<List<TemplateComposition>>of(templates);
   }
 

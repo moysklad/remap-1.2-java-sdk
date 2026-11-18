@@ -35,7 +35,6 @@ import ru.moysklad.remap_1_2.model.FileList;
 import ru.moysklad.remap_1_2.model.Group;
 import ru.moysklad.remap_1_2.model.ImageList;
 import ru.moysklad.remap_1_2.model.Meta;
-import ru.moysklad.remap_1_2.model.Pack;
 import ru.moysklad.remap_1_2.model.Price;
 import ru.moysklad.remap_1_2.model.ProductFolder;
 import ru.moysklad.remap_1_2.model.SalePrice;
@@ -87,15 +86,13 @@ import java.util.StringJoiner;
   Bundle.JSON_PROPERTY_IMAGES,
   Bundle.JSON_PROPERTY_FILES,
   Bundle.JSON_PROPERTY_BARCODES,
-  Bundle.JSON_PROPERTY_PACKS,
   Bundle.JSON_PROPERTY_SALE_PRICES,
-  Bundle.JSON_PROPERTY_BUY_PRICE,
   Bundle.JSON_PROPERTY_MIN_PRICE,
   Bundle.JSON_PROPERTY_OVERHEAD,
   Bundle.JSON_PROPERTY_ATTRIBUTES,
   Bundle.JSON_PROPERTY_COMPONENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Bundle extends ProductMarker implements Named {
   public static Bundle createWithMeta(UUID id) {
     Bundle o = new Bundle();
@@ -248,17 +245,9 @@ public class Bundle extends ProductMarker implements Named {
   @javax.annotation.Nullable
   private JsonNullable<List<Barcode>> barcodes = JsonNullable.<List<Barcode>>undefined();
 
-  public static final String JSON_PROPERTY_PACKS = "packs";
-  @javax.annotation.Nullable
-  private JsonNullable<List<Pack>> packs = JsonNullable.<List<Pack>>undefined();
-
   public static final String JSON_PROPERTY_SALE_PRICES = "salePrices";
   @javax.annotation.Nullable
   private JsonNullable<List<SalePrice>> salePrices = JsonNullable.<List<SalePrice>>undefined();
-
-  public static final String JSON_PROPERTY_BUY_PRICE = "buyPrice";
-  @javax.annotation.Nullable
-  private Price buyPrice;
 
   public static final String JSON_PROPERTY_MIN_PRICE = "minPrice";
   @javax.annotation.Nullable
@@ -300,6 +289,7 @@ public class Bundle extends ProductMarker implements Named {
   }
 
   public Bundle meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -324,6 +314,7 @@ public class Bundle extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -361,6 +352,7 @@ public class Bundle extends ProductMarker implements Named {
 
 
   public Bundle name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -385,11 +377,13 @@ public class Bundle extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public Bundle code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -414,11 +408,13 @@ public class Bundle extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public Bundle externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -443,11 +439,13 @@ public class Bundle extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public Bundle syncId(@javax.annotation.Nullable UUID syncId) {
+
     
     this.syncId = syncId;
     return this;
@@ -472,6 +470,7 @@ public class Bundle extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
+
     this.syncId = syncId;
   }
 
@@ -493,6 +492,7 @@ public class Bundle extends ProductMarker implements Named {
 
 
   public Bundle archived(@javax.annotation.Nullable Boolean archived) {
+
     
     this.archived = archived;
     return this;
@@ -517,11 +517,13 @@ public class Bundle extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
+
     this.archived = archived;
   }
 
 
   public Bundle shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -546,11 +548,13 @@ public class Bundle extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
 
   public Bundle description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -584,11 +588,13 @@ public class Bundle extends ProductMarker implements Named {
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 
 
   public Bundle article(@javax.annotation.Nullable String article) {
+
     
     this.article = article;
     return this;
@@ -613,6 +619,7 @@ public class Bundle extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_ARTICLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setArticle(@javax.annotation.Nullable String article) {
+
     this.article = article;
   }
 
@@ -634,6 +641,7 @@ public class Bundle extends ProductMarker implements Named {
 
 
   public Bundle discountProhibited(@javax.annotation.Nullable Boolean discountProhibited) {
+
     
     this.discountProhibited = discountProhibited;
     return this;
@@ -658,11 +666,13 @@ public class Bundle extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_DISCOUNT_PROHIBITED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDiscountProhibited(@javax.annotation.Nullable Boolean discountProhibited) {
+
     this.discountProhibited = discountProhibited;
   }
 
 
   public Bundle partialDisposal(@javax.annotation.Nullable Boolean partialDisposal) {
+
     
     this.partialDisposal = partialDisposal;
     return this;
@@ -687,11 +697,13 @@ public class Bundle extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_PARTIAL_DISPOSAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPartialDisposal(@javax.annotation.Nullable Boolean partialDisposal) {
+
     this.partialDisposal = partialDisposal;
   }
 
 
   public Bundle vat(@javax.annotation.Nullable Integer vat) {
+
     
     this.vat = vat;
     return this;
@@ -716,11 +728,13 @@ public class Bundle extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVat(@javax.annotation.Nullable Integer vat) {
+
     this.vat = vat;
   }
 
 
   public Bundle vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     
     this.vatEnabled = vatEnabled;
     return this;
@@ -745,11 +759,13 @@ public class Bundle extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     this.vatEnabled = vatEnabled;
   }
 
 
   public Bundle useParentVat(@javax.annotation.Nullable Boolean useParentVat) {
+
     
     this.useParentVat = useParentVat;
     return this;
@@ -774,6 +790,7 @@ public class Bundle extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_USE_PARENT_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUseParentVat(@javax.annotation.Nullable Boolean useParentVat) {
+
     this.useParentVat = useParentVat;
   }
 
@@ -811,6 +828,7 @@ public class Bundle extends ProductMarker implements Named {
 
 
   public Bundle paymentItemType(@javax.annotation.Nullable String paymentItemType) {
+
     
     this.paymentItemType = paymentItemType;
     return this;
@@ -835,11 +853,13 @@ public class Bundle extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_PAYMENT_ITEM_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPaymentItemType(@javax.annotation.Nullable String paymentItemType) {
+
     this.paymentItemType = paymentItemType;
   }
 
 
   public Bundle taxSystem(@javax.annotation.Nullable String taxSystem) {
+
     
     this.taxSystem = taxSystem;
     return this;
@@ -864,11 +884,13 @@ public class Bundle extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_TAX_SYSTEM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTaxSystem(@javax.annotation.Nullable String taxSystem) {
+
     this.taxSystem = taxSystem;
   }
 
 
   public Bundle trackingType(@javax.annotation.Nullable String trackingType) {
+
     
     this.trackingType = trackingType;
     return this;
@@ -893,11 +915,13 @@ public class Bundle extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_TRACKING_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTrackingType(@javax.annotation.Nullable String trackingType) {
+
     this.trackingType = trackingType;
   }
 
 
   public Bundle tnved(@javax.annotation.Nullable String tnved) {
+
     
     this.tnved = tnved;
     return this;
@@ -922,11 +946,13 @@ public class Bundle extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_TNVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTnved(@javax.annotation.Nullable String tnved) {
+
     this.tnved = tnved;
   }
 
 
   public Bundle weight(@javax.annotation.Nullable Double weight) {
+
     
     this.weight = weight;
     return this;
@@ -951,11 +977,13 @@ public class Bundle extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_WEIGHT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setWeight(@javax.annotation.Nullable Double weight) {
+
     this.weight = weight;
   }
 
 
   public Bundle volume(@javax.annotation.Nullable Double volume) {
+
     
     this.volume = volume;
     return this;
@@ -980,11 +1008,13 @@ public class Bundle extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_VOLUME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVolume(@javax.annotation.Nullable Double volume) {
+
     this.volume = volume;
   }
 
 
   public Bundle group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -1009,11 +1039,13 @@ public class Bundle extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
 
   public Bundle owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -1047,11 +1079,13 @@ public class Bundle extends ProductMarker implements Named {
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
 
   public Bundle country(@javax.annotation.Nullable Country country) {
+
     this.country = JsonNullable.<Country>of(country);
     
     return this;
@@ -1085,11 +1119,13 @@ public class Bundle extends ProductMarker implements Named {
   }
 
   public void setCountry(@javax.annotation.Nullable Country country) {
+
     this.country = JsonNullable.<Country>of(country);
   }
 
 
   public Bundle uom(@javax.annotation.Nullable Uom uom) {
+
     this.uom = JsonNullable.<Uom>of(uom);
     
     return this;
@@ -1123,11 +1159,13 @@ public class Bundle extends ProductMarker implements Named {
   }
 
   public void setUom(@javax.annotation.Nullable Uom uom) {
+
     this.uom = JsonNullable.<Uom>of(uom);
   }
 
 
   public Bundle productFolder(@javax.annotation.Nullable ProductFolder productFolder) {
+
     this.productFolder = JsonNullable.<ProductFolder>of(productFolder);
     
     return this;
@@ -1161,11 +1199,13 @@ public class Bundle extends ProductMarker implements Named {
   }
 
   public void setProductFolder(@javax.annotation.Nullable ProductFolder productFolder) {
+
     this.productFolder = JsonNullable.<ProductFolder>of(productFolder);
   }
 
 
   public Bundle images(@javax.annotation.Nullable ImageList images) {
+
     this.images = JsonNullable.<ImageList>of(images);
     
     return this;
@@ -1199,11 +1239,13 @@ public class Bundle extends ProductMarker implements Named {
   }
 
   public void setImages(@javax.annotation.Nullable ImageList images) {
+
     this.images = JsonNullable.<ImageList>of(images);
   }
 
 
   public Bundle files(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
@@ -1237,11 +1279,13 @@ public class Bundle extends ProductMarker implements Named {
   }
 
   public void setFiles(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
   }
 
 
   public Bundle barcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
+
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
     
     return this;
@@ -1274,7 +1318,7 @@ public class Bundle extends ProductMarker implements Named {
   
 
   @JsonProperty(JSON_PROPERTY_BARCODES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<Barcode>> getBarcodes_JsonNullable() {
@@ -1287,61 +1331,13 @@ public class Bundle extends ProductMarker implements Named {
   }
 
   public void setBarcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
+
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
   }
 
 
-  public Bundle packs(@javax.annotation.Nullable List<Pack> packs) {
-    this.packs = JsonNullable.<List<Pack>>of(packs);
-    
-    return this;
-  }
-
-
-  public Bundle addPacksItem(Pack packsItem) {
-    if (this.packs == null || !this.packs.isPresent()) {
-      this.packs = JsonNullable.<List<Pack>>of(new ArrayList<>());
-    }
-    try {
-      this.packs.get().add(packsItem);
-    } catch (java.util.NoSuchElementException e) {
-      // this can never happen, as we make sure above that the value is present
-    }
-    return this;
-  }
-
-  /**
-   * Упаковки Комплекта
-   * @return packs
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-
-  public List<Pack> getPacks() {
-        return packs.orElse(null);
-  }
-
-  
-
-  @JsonProperty(JSON_PROPERTY_PACKS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-
-  public JsonNullable<List<Pack>> getPacks_JsonNullable() {
-    return packs;
-  }
-  
-  @JsonProperty(value = JSON_PROPERTY_PACKS, required = false)
-  public void setPacks_JsonNullable(JsonNullable<List<Pack>> packs) {
-    this.packs = packs;
-  }
-
-  public void setPacks(@javax.annotation.Nullable List<Pack> packs) {
-    this.packs = JsonNullable.<List<Pack>>of(packs);
-  }
-
-
   public Bundle salePrices(@javax.annotation.Nullable List<SalePrice> salePrices) {
+
     this.salePrices = JsonNullable.<List<SalePrice>>of(salePrices);
     
     return this;
@@ -1374,7 +1370,7 @@ public class Bundle extends ProductMarker implements Named {
   
 
   @JsonProperty(JSON_PROPERTY_SALE_PRICES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<SalePrice>> getSalePrices_JsonNullable() {
@@ -1387,40 +1383,13 @@ public class Bundle extends ProductMarker implements Named {
   }
 
   public void setSalePrices(@javax.annotation.Nullable List<SalePrice> salePrices) {
+
     this.salePrices = JsonNullable.<List<SalePrice>>of(salePrices);
   }
 
 
-  public Bundle buyPrice(@javax.annotation.Nullable Price buyPrice) {
-    
-    this.buyPrice = buyPrice;
-    return this;
-  }
-
-
-  /**
-   * Get buyPrice
-   * @return buyPrice
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_BUY_PRICE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Price getBuyPrice() {
-    return buyPrice;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_BUY_PRICE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBuyPrice(@javax.annotation.Nullable Price buyPrice) {
-    this.buyPrice = buyPrice;
-  }
-
-
   public Bundle minPrice(@javax.annotation.Nullable Price minPrice) {
+
     
     this.minPrice = minPrice;
     return this;
@@ -1445,11 +1414,13 @@ public class Bundle extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_MIN_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMinPrice(@javax.annotation.Nullable Price minPrice) {
+
     this.minPrice = minPrice;
   }
 
 
   public Bundle overhead(@javax.annotation.Nullable BundleOverhead overhead) {
+
     
     this.overhead = overhead;
     return this;
@@ -1474,11 +1445,13 @@ public class Bundle extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_OVERHEAD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOverhead(@javax.annotation.Nullable BundleOverhead overhead) {
+
     this.overhead = overhead;
   }
 
 
   public Bundle attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
@@ -1511,7 +1484,7 @@ public class Bundle extends ProductMarker implements Named {
   
 
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
@@ -1524,11 +1497,13 @@ public class Bundle extends ProductMarker implements Named {
   }
 
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
   public Bundle components(@javax.annotation.Nullable BundleComponentList components) {
+
     
     this.components = components;
     return this;
@@ -1536,7 +1511,7 @@ public class Bundle extends ProductMarker implements Named {
 
 
   /**
-   * Массив компонентов Комплекта
+   * Get components
    * @return components
    */
   @javax.annotation.Nullable
@@ -1553,6 +1528,7 @@ public class Bundle extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_COMPONENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setComponents(@javax.annotation.Nullable BundleComponentList components) {
+
     this.components = components;
   }
 
@@ -1600,9 +1576,7 @@ public class Bundle extends ProductMarker implements Named {
         equalsNullable(this.images, bundle.images) &&
         equalsNullable(this.files, bundle.files) &&
         equalsNullable(this.barcodes, bundle.barcodes) &&
-        equalsNullable(this.packs, bundle.packs) &&
         equalsNullable(this.salePrices, bundle.salePrices) &&
-        Objects.equals(this.buyPrice, bundle.buyPrice) &&
         Objects.equals(this.minPrice, bundle.minPrice) &&
         Objects.equals(this.overhead, bundle.overhead) &&
         equalsNullable(this.attributes, bundle.attributes) &&
@@ -1615,7 +1589,7 @@ public class Bundle extends ProductMarker implements Named {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, name, code, externalCode, syncId, updated, archived, shared, hashCodeNullable(description), article, pathName, discountProhibited, partialDisposal, vat, vatEnabled, useParentVat, effectiveVat, effectiveVatEnabled, paymentItemType, taxSystem, trackingType, tnved, weight, volume, group, hashCodeNullable(owner), hashCodeNullable(country), hashCodeNullable(uom), hashCodeNullable(productFolder), hashCodeNullable(images), hashCodeNullable(files), hashCodeNullable(barcodes), hashCodeNullable(packs), hashCodeNullable(salePrices), buyPrice, minPrice, overhead, hashCodeNullable(attributes), components);
+    return Objects.hash(meta, id, accountId, name, code, externalCode, syncId, updated, archived, shared, hashCodeNullable(description), article, pathName, discountProhibited, partialDisposal, vat, vatEnabled, useParentVat, effectiveVat, effectiveVatEnabled, paymentItemType, taxSystem, trackingType, tnved, weight, volume, group, hashCodeNullable(owner), hashCodeNullable(country), hashCodeNullable(uom), hashCodeNullable(productFolder), hashCodeNullable(images), hashCodeNullable(files), hashCodeNullable(barcodes), hashCodeNullable(salePrices), minPrice, overhead, hashCodeNullable(attributes), components);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1663,9 +1637,7 @@ public class Bundle extends ProductMarker implements Named {
     sb.append("    images: ").append(toIndentedString(images)).append("\n");
     sb.append("    files: ").append(toIndentedString(files)).append("\n");
     sb.append("    barcodes: ").append(toIndentedString(barcodes)).append("\n");
-    sb.append("    packs: ").append(toIndentedString(packs)).append("\n");
     sb.append("    salePrices: ").append(toIndentedString(salePrices)).append("\n");
-    sb.append("    buyPrice: ").append(toIndentedString(buyPrice)).append("\n");
     sb.append("    minPrice: ").append(toIndentedString(minPrice)).append("\n");
     sb.append("    overhead: ").append(toIndentedString(overhead)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
@@ -2017,16 +1989,6 @@ public class Bundle extends ProductMarker implements Named {
       }
     }
 
-    // add `packs` to the URL query string
-    if (getPacks() != null) {
-      for (int i = 0; i < getPacks().size(); i++) {
-        if (getPacks().get(i) != null) {
-          joiner.add(getPacks().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%spacks%s%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
-        }
-      }
-    }
-
     // add `salePrices` to the URL query string
     if (getSalePrices() != null) {
       for (int i = 0; i < getSalePrices().size(); i++) {
@@ -2035,11 +1997,6 @@ public class Bundle extends ProductMarker implements Named {
               "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
-    }
-
-    // add `buyPrice` to the URL query string
-    if (getBuyPrice() != null) {
-      joiner.add(getBuyPrice().toUrlQueryString(prefix + "buyPrice" + suffix));
     }
 
     // add `minPrice` to the URL query string
@@ -2064,12 +2021,7 @@ public class Bundle extends ProductMarker implements Named {
 
     // add `components` to the URL query string
     if (getComponents() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%scomponents%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getComponents()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
+      joiner.add(getComponents().toUrlQueryString(prefix + "components" + suffix));
     }
 
     return joiner.toString();

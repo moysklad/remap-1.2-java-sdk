@@ -41,7 +41,7 @@ import java.util.StringJoiner;
   Region.JSON_PROPERTY_UPDATED,
   Region.JSON_PROPERTY_VERSION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Region implements Named, MetaEntity {
   public static Region createWithMeta(UUID id) {
     Region o = new Region();
@@ -110,6 +110,7 @@ public class Region implements Named, MetaEntity {
   }
 
   public Region meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -134,6 +135,7 @@ public class Region implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -171,6 +173,7 @@ public class Region implements Named, MetaEntity {
 
 
   public Region name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -195,11 +198,13 @@ public class Region implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public Region code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -224,11 +229,13 @@ public class Region implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public Region externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -253,6 +260,7 @@ public class Region implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 

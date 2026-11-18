@@ -48,7 +48,7 @@ public class Example {
         String order = "order_example"; // String | Сортировка
         String groupBy = "product"; // String | Тип, по которому нужно сгруппировать выдачу. Значение по умолчанию `variant`. - `product` — выдает только товары - `variant` — выдает товары и модификации - `consignment` — выдает товары, модификации, партии 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             StockByStoreList result = apiInstance.getStockByStore(limit, offset, filter, order, groupBy, accept, acceptEncoding);
             System.out.println(result);
@@ -74,7 +74,7 @@ public class Example {
 | **order** | **String**| Сортировка | [optional] |
 | **groupBy** | **String**| Тип, по которому нужно сгруппировать выдачу. Значение по умолчанию &#x60;variant&#x60;. - &#x60;product&#x60; — выдает только товары - &#x60;variant&#x60; — выдает товары и модификации - &#x60;consignment&#x60; — выдает товары, модификации, партии  | [optional] [enum: product, variant, consignment] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -87,7 +87,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details

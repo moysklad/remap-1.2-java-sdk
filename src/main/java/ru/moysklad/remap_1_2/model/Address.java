@@ -42,7 +42,7 @@ import java.util.StringJoiner;
   Address.JSON_PROPERTY_REGION,
   Address.JSON_PROPERTY_STREET
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Address {
 
   public static final String JSON_PROPERTY_ADD_INFO = "addInfo";
@@ -85,6 +85,7 @@ public class Address {
   }
 
   public Address addInfo(@javax.annotation.Nullable String addInfo) {
+
     
     this.addInfo = addInfo;
     return this;
@@ -109,11 +110,13 @@ public class Address {
   @JsonProperty(JSON_PROPERTY_ADD_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAddInfo(@javax.annotation.Nullable String addInfo) {
+
     this.addInfo = addInfo;
   }
 
 
   public Address apartment(@javax.annotation.Nullable String apartment) {
+
     
     this.apartment = apartment;
     return this;
@@ -138,11 +141,13 @@ public class Address {
   @JsonProperty(JSON_PROPERTY_APARTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setApartment(@javax.annotation.Nullable String apartment) {
+
     this.apartment = apartment;
   }
 
 
   public Address city(@javax.annotation.Nullable String city) {
+
     
     this.city = city;
     return this;
@@ -167,11 +172,13 @@ public class Address {
   @JsonProperty(JSON_PROPERTY_CITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCity(@javax.annotation.Nullable String city) {
+
     this.city = city;
   }
 
 
   public Address comment(@javax.annotation.Nullable String comment) {
+
     
     this.comment = comment;
     return this;
@@ -196,11 +203,13 @@ public class Address {
   @JsonProperty(JSON_PROPERTY_COMMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setComment(@javax.annotation.Nullable String comment) {
+
     this.comment = comment;
   }
 
 
   public Address country(@javax.annotation.Nullable Country country) {
+
     
     this.country = country;
     return this;
@@ -225,11 +234,13 @@ public class Address {
   @JsonProperty(JSON_PROPERTY_COUNTRY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCountry(@javax.annotation.Nullable Country country) {
+
     this.country = country;
   }
 
 
   public Address house(@javax.annotation.Nullable String house) {
+
     
     this.house = house;
     return this;
@@ -254,11 +265,13 @@ public class Address {
   @JsonProperty(JSON_PROPERTY_HOUSE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setHouse(@javax.annotation.Nullable String house) {
+
     this.house = house;
   }
 
 
   public Address postalCode(@javax.annotation.Nullable String postalCode) {
+
     
     this.postalCode = postalCode;
     return this;
@@ -283,11 +296,13 @@ public class Address {
   @JsonProperty(JSON_PROPERTY_POSTAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPostalCode(@javax.annotation.Nullable String postalCode) {
+
     this.postalCode = postalCode;
   }
 
 
   public Address region(@javax.annotation.Nullable Region region) {
+
     
     this.region = region;
     return this;
@@ -312,11 +327,13 @@ public class Address {
   @JsonProperty(JSON_PROPERTY_REGION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRegion(@javax.annotation.Nullable Region region) {
+
     this.region = region;
   }
 
 
   public Address street(@javax.annotation.Nullable String street) {
+
     
     this.street = street;
     return this;
@@ -341,6 +358,7 @@ public class Address {
   @JsonProperty(JSON_PROPERTY_STREET)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStreet(@javax.annotation.Nullable String street) {
+
     this.street = street;
   }
 

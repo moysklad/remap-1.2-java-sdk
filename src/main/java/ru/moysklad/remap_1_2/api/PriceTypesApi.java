@@ -33,7 +33,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class PriceTypesApi extends BaseApi {
 
@@ -81,7 +81,7 @@ public class PriceTypesApi extends BaseApi {
    * Создание или изменение нескольких типов цен.
    * @param priceType  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
    * @return List&lt;PriceType&gt;
@@ -107,7 +107,7 @@ public class PriceTypesApi extends BaseApi {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -178,7 +178,7 @@ if (contentType != null) {
    * Получить тип цены по умолчанию
    * Запрос на получение отдельного типа цен по умолчанию
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @return PriceType
    * @throws ApiException if fails to make API call
@@ -198,7 +198,7 @@ if (contentType != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -271,7 +271,7 @@ if (acceptEncoding != null) {
    * Запрос на получение отдельного типа цен с указанным id
    * @param id ID сущности (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @return PriceType
    * @throws ApiException if fails to make API call
@@ -297,7 +297,7 @@ if (acceptEncoding != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -365,7 +365,7 @@ if (acceptEncoding != null) {
    * Получить список типов цен
    * Запрос всех тип цен на данной учетной записи
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @return List&lt;PriceType&gt;
    * @throws ApiException if fails to make API call
@@ -385,7 +385,7 @@ if (acceptEncoding != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));

@@ -93,7 +93,7 @@ import java.util.StringJoiner;
   RetailShiftOperationRetailSalesReturn.JSON_PROPERTY_VAT_INCLUDED,
   RetailShiftOperationRetailSalesReturn.JSON_PROPERTY_VAT_SUM
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -282,6 +282,7 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   }
 
   public RetailShiftOperationRetailSalesReturn meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -306,6 +307,7 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -343,6 +345,7 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
 
 
   public RetailShiftOperationRetailSalesReturn agent(@javax.annotation.Nullable Agent agent) {
+
     
     this.agent = agent;
     return this;
@@ -367,11 +370,13 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAgent(@javax.annotation.Nullable Agent agent) {
+
     this.agent = agent;
   }
 
 
   public RetailShiftOperationRetailSalesReturn agentAccount(@javax.annotation.Nullable Account agentAccount) {
+
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
     
     return this;
@@ -405,11 +410,13 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   }
 
   public void setAgentAccount(@javax.annotation.Nullable Account agentAccount) {
+
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
   }
 
 
   public RetailShiftOperationRetailSalesReturn applicable(@javax.annotation.Nullable Boolean applicable) {
+
     
     this.applicable = applicable;
     return this;
@@ -434,11 +441,13 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   @JsonProperty(JSON_PROPERTY_APPLICABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setApplicable(@javax.annotation.Nullable Boolean applicable) {
+
     this.applicable = applicable;
   }
 
 
   public RetailShiftOperationRetailSalesReturn attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
@@ -471,7 +480,7 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   
 
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
@@ -484,11 +493,16 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   }
 
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
   public RetailShiftOperationRetailSalesReturn cashSum(@javax.annotation.Nullable Double cashSum) {
+    if (cashSum != null && cashSum.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'cashSum': must be greater than or equal to 0, got " + cashSum);
+    }
+
     
     this.cashSum = cashSum;
     return this;
@@ -514,11 +528,16 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   @JsonProperty(JSON_PROPERTY_CASH_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCashSum(@javax.annotation.Nullable Double cashSum) {
+    if (cashSum != null && cashSum.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'cashSum': must be greater than or equal to 0, got " + cashSum);
+    }
+
     this.cashSum = cashSum;
   }
 
 
   public RetailShiftOperationRetailSalesReturn code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -543,11 +562,13 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public RetailShiftOperationRetailSalesReturn contract(@javax.annotation.Nullable Contract contract) {
+
     this.contract = JsonNullable.<Contract>of(contract);
     
     return this;
@@ -581,6 +602,7 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   }
 
   public void setContract(@javax.annotation.Nullable Contract contract) {
+
     this.contract = JsonNullable.<Contract>of(contract);
   }
 
@@ -618,6 +640,7 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
 
 
   public RetailShiftOperationRetailSalesReturn demand(@javax.annotation.Nullable RetailDemand demand) {
+
     this.demand = JsonNullable.<RetailDemand>of(demand);
     
     return this;
@@ -651,11 +674,13 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   }
 
   public void setDemand(@javax.annotation.Nullable RetailDemand demand) {
+
     this.demand = JsonNullable.<RetailDemand>of(demand);
   }
 
 
   public RetailShiftOperationRetailSalesReturn description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -689,11 +714,13 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 
 
   public RetailShiftOperationRetailSalesReturn externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -718,11 +745,13 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public RetailShiftOperationRetailSalesReturn group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -747,11 +776,13 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
 
   public RetailShiftOperationRetailSalesReturn moment(@javax.annotation.Nullable String moment) {
+
     
     this.moment = moment;
     return this;
@@ -776,11 +807,13 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMoment(@javax.annotation.Nullable String moment) {
+
     this.moment = moment;
   }
 
 
   public RetailShiftOperationRetailSalesReturn name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -805,11 +838,16 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public RetailShiftOperationRetailSalesReturn noCashSum(@javax.annotation.Nullable Double noCashSum) {
+    if (noCashSum != null && noCashSum.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'noCashSum': must be greater than or equal to 0, got " + noCashSum);
+    }
+
     
     this.noCashSum = noCashSum;
     return this;
@@ -835,11 +873,16 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   @JsonProperty(JSON_PROPERTY_NO_CASH_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNoCashSum(@javax.annotation.Nullable Double noCashSum) {
+    if (noCashSum != null && noCashSum.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'noCashSum': must be greater than or equal to 0, got " + noCashSum);
+    }
+
     this.noCashSum = noCashSum;
   }
 
 
   public RetailShiftOperationRetailSalesReturn organization(@javax.annotation.Nullable Organization organization) {
+
     
     this.organization = organization;
     return this;
@@ -864,11 +907,13 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOrganization(@javax.annotation.Nullable Organization organization) {
+
     this.organization = organization;
   }
 
 
   public RetailShiftOperationRetailSalesReturn organizationAccount(@javax.annotation.Nullable Account organizationAccount) {
+
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
     
     return this;
@@ -902,11 +947,13 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   }
 
   public void setOrganizationAccount(@javax.annotation.Nullable Account organizationAccount) {
+
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
   }
 
 
   public RetailShiftOperationRetailSalesReturn owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -940,11 +987,13 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
 
   public RetailShiftOperationRetailSalesReturn positions(@javax.annotation.Nullable RetailSalesReturnPositionList positions) {
+
     
     this.positions = positions;
     return this;
@@ -969,6 +1018,7 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   @JsonProperty(JSON_PROPERTY_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPositions(@javax.annotation.Nullable RetailSalesReturnPositionList positions) {
+
     this.positions = positions;
   }
 
@@ -1006,6 +1056,10 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
 
 
   public RetailShiftOperationRetailSalesReturn qrSum(@javax.annotation.Nullable Double qrSum) {
+    if (qrSum != null && qrSum.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'qrSum': must be greater than or equal to 0, got " + qrSum);
+    }
+
     
     this.qrSum = qrSum;
     return this;
@@ -1031,11 +1085,16 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   @JsonProperty(JSON_PROPERTY_QR_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQrSum(@javax.annotation.Nullable Double qrSum) {
+    if (qrSum != null && qrSum.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'qrSum': must be greater than or equal to 0, got " + qrSum);
+    }
+
     this.qrSum = qrSum;
   }
 
 
   public RetailShiftOperationRetailSalesReturn rate(@javax.annotation.Nullable CurrencyRate rate) {
+
     
     this.rate = rate;
     return this;
@@ -1060,11 +1119,13 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRate(@javax.annotation.Nullable CurrencyRate rate) {
+
     this.rate = rate;
   }
 
 
   public RetailShiftOperationRetailSalesReturn retailShift(@javax.annotation.Nullable RetailShift retailShift) {
+
     
     this.retailShift = retailShift;
     return this;
@@ -1089,11 +1150,13 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   @JsonProperty(JSON_PROPERTY_RETAIL_SHIFT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRetailShift(@javax.annotation.Nullable RetailShift retailShift) {
+
     this.retailShift = retailShift;
   }
 
 
   public RetailShiftOperationRetailSalesReturn retailStore(@javax.annotation.Nullable RetailStore retailStore) {
+
     
     this.retailStore = retailStore;
     return this;
@@ -1118,11 +1181,13 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   @JsonProperty(JSON_PROPERTY_RETAIL_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRetailStore(@javax.annotation.Nullable RetailStore retailStore) {
+
     this.retailStore = retailStore;
   }
 
 
   public RetailShiftOperationRetailSalesReturn shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -1147,11 +1212,13 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
 
   public RetailShiftOperationRetailSalesReturn state(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
     
     return this;
@@ -1185,11 +1252,13 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   }
 
   public void setState(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
   }
 
 
   public RetailShiftOperationRetailSalesReturn store(@javax.annotation.Nullable Store store) {
+
     
     this.store = store;
     return this;
@@ -1214,6 +1283,7 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   @JsonProperty(JSON_PROPERTY_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStore(@javax.annotation.Nullable Store store) {
+
     this.store = store;
   }
 
@@ -1235,6 +1305,7 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
 
 
   public RetailShiftOperationRetailSalesReturn syncId(@javax.annotation.Nullable UUID syncId) {
+
     
     this.syncId = syncId;
     return this;
@@ -1259,11 +1330,13 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
+
     this.syncId = syncId;
   }
 
 
   public RetailShiftOperationRetailSalesReturn taxSystem(@javax.annotation.Nullable String taxSystem) {
+
     
     this.taxSystem = taxSystem;
     return this;
@@ -1288,6 +1361,7 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   @JsonProperty(JSON_PROPERTY_TAX_SYSTEM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTaxSystem(@javax.annotation.Nullable String taxSystem) {
+
     this.taxSystem = taxSystem;
   }
 
@@ -1309,6 +1383,7 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
 
 
   public RetailShiftOperationRetailSalesReturn vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     
     this.vatEnabled = vatEnabled;
     return this;
@@ -1333,11 +1408,13 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     this.vatEnabled = vatEnabled;
   }
 
 
   public RetailShiftOperationRetailSalesReturn vatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
+
     
     this.vatIncluded = vatIncluded;
     return this;
@@ -1362,6 +1439,7 @@ public class RetailShiftOperationRetailSalesReturn extends RetailShiftOperation 
   @JsonProperty(JSON_PROPERTY_VAT_INCLUDED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
+
     this.vatIncluded = vatIncluded;
   }
 

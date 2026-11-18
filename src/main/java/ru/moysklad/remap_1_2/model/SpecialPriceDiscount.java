@@ -25,6 +25,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
+import ru.moysklad.remap_1_2.model.DiscountAssortmentItem;
 import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.ProductFolder;
 import ru.moysklad.remap_1_2.model.SpecialPriceDiscountSpecialPrice;
@@ -46,9 +47,10 @@ import java.util.StringJoiner;
   SpecialPriceDiscount.JSON_PROPERTY_PRODUCT_FOLDERS,
   SpecialPriceDiscount.JSON_PROPERTY_USE_PRICE_TYPE,
   SpecialPriceDiscount.JSON_PROPERTY_DISCOUNT,
-  SpecialPriceDiscount.JSON_PROPERTY_SPECIAL_PRICE
+  SpecialPriceDiscount.JSON_PROPERTY_SPECIAL_PRICE,
+  SpecialPriceDiscount.JSON_PROPERTY_ASSORTMENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class SpecialPriceDiscount extends DiscountAbstract {
   public static SpecialPriceDiscount createWithMeta(UUID id) {
     SpecialPriceDiscount o = new SpecialPriceDiscount();
@@ -75,7 +77,7 @@ public class SpecialPriceDiscount extends DiscountAbstract {
 
   public static final String JSON_PROPERTY_PRODUCT_FOLDERS = "productFolders";
   @javax.annotation.Nullable
-  private List<ProductFolder> productFolders = new ArrayList<>();
+  private List<ProductFolder> productFolders;
 
   public static final String JSON_PROPERTY_USE_PRICE_TYPE = "usePriceType";
   @javax.annotation.Nullable
@@ -88,6 +90,10 @@ public class SpecialPriceDiscount extends DiscountAbstract {
   public static final String JSON_PROPERTY_SPECIAL_PRICE = "specialPrice";
   @javax.annotation.Nullable
   private JsonNullable<SpecialPriceDiscountSpecialPrice> specialPrice = JsonNullable.<SpecialPriceDiscountSpecialPrice>undefined();
+
+  public static final String JSON_PROPERTY_ASSORTMENT = "assortment";
+  @javax.annotation.Nullable
+  private JsonNullable<List<DiscountAssortmentItem>> assortment = JsonNullable.<List<DiscountAssortmentItem>>undefined();
 
   public SpecialPriceDiscount() {
   }
@@ -119,6 +125,7 @@ public class SpecialPriceDiscount extends DiscountAbstract {
 
 
   public SpecialPriceDiscount meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -143,11 +150,13 @@ public class SpecialPriceDiscount extends DiscountAbstract {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public SpecialPriceDiscount productFolders(@javax.annotation.Nullable List<ProductFolder> productFolders) {
+
     
     this.productFolders = productFolders;
     return this;
@@ -168,7 +177,7 @@ public class SpecialPriceDiscount extends DiscountAbstract {
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PRODUCT_FOLDERS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<ProductFolder> getProductFolders() {
     return productFolders;
@@ -178,13 +187,15 @@ public class SpecialPriceDiscount extends DiscountAbstract {
 
 
   @JsonProperty(JSON_PROPERTY_PRODUCT_FOLDERS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setProductFolders(@javax.annotation.Nullable List<ProductFolder> productFolders) {
+
     this.productFolders = productFolders;
   }
 
 
   public SpecialPriceDiscount usePriceType(@javax.annotation.Nullable Boolean usePriceType) {
+
     
     this.usePriceType = usePriceType;
     return this;
@@ -209,11 +220,13 @@ public class SpecialPriceDiscount extends DiscountAbstract {
   @JsonProperty(JSON_PROPERTY_USE_PRICE_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUsePriceType(@javax.annotation.Nullable Boolean usePriceType) {
+
     this.usePriceType = usePriceType;
   }
 
 
   public SpecialPriceDiscount discount(@javax.annotation.Nullable Double discount) {
+
     this.discount = JsonNullable.<Double>of(discount);
     
     return this;
@@ -247,11 +260,13 @@ public class SpecialPriceDiscount extends DiscountAbstract {
   }
 
   public void setDiscount(@javax.annotation.Nullable Double discount) {
+
     this.discount = JsonNullable.<Double>of(discount);
   }
 
 
   public SpecialPriceDiscount specialPrice(@javax.annotation.Nullable SpecialPriceDiscountSpecialPrice specialPrice) {
+
     this.specialPrice = JsonNullable.<SpecialPriceDiscountSpecialPrice>of(specialPrice);
     
     return this;
@@ -285,7 +300,60 @@ public class SpecialPriceDiscount extends DiscountAbstract {
   }
 
   public void setSpecialPrice(@javax.annotation.Nullable SpecialPriceDiscountSpecialPrice specialPrice) {
+
     this.specialPrice = JsonNullable.<SpecialPriceDiscountSpecialPrice>of(specialPrice);
+  }
+
+
+  public SpecialPriceDiscount assortment(@javax.annotation.Nullable List<DiscountAssortmentItem> assortment) {
+
+    this.assortment = JsonNullable.<List<DiscountAssortmentItem>>of(assortment);
+    
+    return this;
+  }
+
+
+  public SpecialPriceDiscount addAssortmentItem(DiscountAssortmentItem assortmentItem) {
+    if (this.assortment == null || !this.assortment.isPresent()) {
+      this.assortment = JsonNullable.<List<DiscountAssortmentItem>>of(new ArrayList<>());
+    }
+    try {
+      this.assortment.get().add(assortmentItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
+    return this;
+  }
+
+  /**
+   * Массив метаданных товаров, услуг и модификаций
+   * @return assortment
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public List<DiscountAssortmentItem> getAssortment() {
+        return assortment.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_ASSORTMENT)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
+
+
+  public JsonNullable<List<DiscountAssortmentItem>> getAssortment_JsonNullable() {
+    return assortment;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_ASSORTMENT, required = false)
+  public void setAssortment_JsonNullable(JsonNullable<List<DiscountAssortmentItem>> assortment) {
+    this.assortment = assortment;
+  }
+
+  public void setAssortment(@javax.annotation.Nullable List<DiscountAssortmentItem> assortment) {
+
+    this.assortment = JsonNullable.<List<DiscountAssortmentItem>>of(assortment);
   }
 
 
@@ -303,7 +371,8 @@ public class SpecialPriceDiscount extends DiscountAbstract {
         Objects.equals(this.productFolders, specialPriceDiscount.productFolders) &&
         Objects.equals(this.usePriceType, specialPriceDiscount.usePriceType) &&
         equalsNullable(this.discount, specialPriceDiscount.discount) &&
-        equalsNullable(this.specialPrice, specialPriceDiscount.specialPrice);
+        equalsNullable(this.specialPrice, specialPriceDiscount.specialPrice) &&
+        equalsNullable(this.assortment, specialPriceDiscount.assortment);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -312,7 +381,7 @@ public class SpecialPriceDiscount extends DiscountAbstract {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, meta, productFolders, usePriceType, hashCodeNullable(discount), hashCodeNullable(specialPrice));
+    return Objects.hash(id, meta, productFolders, usePriceType, hashCodeNullable(discount), hashCodeNullable(specialPrice), hashCodeNullable(assortment));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -332,6 +401,7 @@ public class SpecialPriceDiscount extends DiscountAbstract {
     sb.append("    usePriceType: ").append(toIndentedString(usePriceType)).append("\n");
     sb.append("    discount: ").append(toIndentedString(discount)).append("\n");
     sb.append("    specialPrice: ").append(toIndentedString(specialPrice)).append("\n");
+    sb.append("    assortment: ").append(toIndentedString(assortment)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -427,6 +497,16 @@ public class SpecialPriceDiscount extends DiscountAbstract {
     // add `specialPrice` to the URL query string
     if (getSpecialPrice() != null) {
       joiner.add(getSpecialPrice().toUrlQueryString(prefix + "specialPrice" + suffix));
+    }
+
+    // add `assortment` to the URL query string
+    if (getAssortment() != null) {
+      for (int i = 0; i < getAssortment().size(); i++) {
+        if (getAssortment().get(i) != null) {
+          joiner.add(getAssortment().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%sassortment%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
     }
 
     return joiner.toString();

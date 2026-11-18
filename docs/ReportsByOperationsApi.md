@@ -48,7 +48,7 @@ public class Example {
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             ByOperationsInTransitList result = apiInstance.getByOperationsInTransit(filter, limit, offset, accept, acceptEncoding);
             System.out.println(result);
@@ -72,7 +72,7 @@ public class Example {
 | **limit** | **Integer**| Максимальное количество элементов в выданном списке (максимум 1000) | [optional] [default to 1000] |
 | **offset** | **Integer**| Отступ в выданном списке | [optional] [default to 0] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -85,7 +85,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -133,7 +133,7 @@ public class Example {
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             ByOperationsReserveList result = apiInstance.getByOperationsReserve(filter, limit, offset, accept, acceptEncoding);
             System.out.println(result);
@@ -157,7 +157,7 @@ public class Example {
 | **limit** | **Integer**| Максимальное количество элементов в выданном списке (максимум 1000) | [optional] [default to 1000] |
 | **offset** | **Integer**| Отступ в выданном списке | [optional] [default to 0] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -170,7 +170,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -218,7 +218,7 @@ public class Example {
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             ByOperationsStockList result = apiInstance.getByOperationsStock(filter, limit, offset, accept, acceptEncoding);
             System.out.println(result);
@@ -242,7 +242,7 @@ public class Example {
 | **limit** | **Integer**| Максимальное количество элементов в выданном списке (максимум 1000) | [optional] [default to 1000] |
 | **offset** | **Integer**| Отступ в выданном списке | [optional] [default to 0] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -255,7 +255,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details

@@ -49,7 +49,7 @@ public class Example {
         String stockType = "stock"; // String | Тип рассчитываемого значения остатка. По умолчанию `stock`. 
         String filter = "filter_example"; // String | Фильтрация отчета по ID сущностей. Поддерживаемые поля: `assortmentId`, `storeId`. 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             List<StockCurrentAll> result = apiInstance.getStockAllCurrent(include, changedSince, stockType, filter, accept, acceptEncoding);
             System.out.println(result);
@@ -74,7 +74,7 @@ public class Example {
 | **stockType** | **String**| Тип рассчитываемого значения остатка. По умолчанию &#x60;stock&#x60;.  | [optional] [default to stock] [enum: stock, freeStock, quantity, reserve, inTransit] |
 | **filter** | **String**| Фильтрация отчета по ID сущностей. Поддерживаемые поля: &#x60;assortmentId&#x60;, &#x60;storeId&#x60;.  | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -87,7 +87,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -135,7 +135,7 @@ public class Example {
         String stockType = "stock"; // String | Тип рассчитываемого значения остатка. По умолчанию `stock`. 
         String filter = "filter_example"; // String | Фильтрация отчета по ID сущностей. Поддерживаемые поля: `assortmentId`, `storeId`. 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             List<StockCurrentBySlot> result = apiInstance.getStockBySlotCurrent(include, stockType, filter, accept, acceptEncoding);
             System.out.println(result);
@@ -159,7 +159,7 @@ public class Example {
 | **stockType** | **String**| Тип рассчитываемого значения остатка. По умолчанию &#x60;stock&#x60;.  | [optional] [default to stock] [enum: stock, freeStock, quantity, reserve, inTransit] |
 | **filter** | **String**| Фильтрация отчета по ID сущностей. Поддерживаемые поля: &#x60;assortmentId&#x60;, &#x60;storeId&#x60;.  | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -172,7 +172,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -222,7 +222,7 @@ public class Example {
         Boolean withRecalculate = true; // Boolean | Включает позиции, по которым остаток пересчитывается. Для таких позиций значение остатка может быть `null`. 
         String filter = "filter_example"; // String | Фильтрация отчета по ID сущностей. Поддерживаемые поля: `assortmentId`, `storeId`. 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             List<StockCurrentByStore> result = apiInstance.getStockByStoreCurrent(include, changedSince, stockType, withRecalculate, filter, accept, acceptEncoding);
             System.out.println(result);
@@ -248,7 +248,7 @@ public class Example {
 | **withRecalculate** | **Boolean**| Включает позиции, по которым остаток пересчитывается. Для таких позиций значение остатка может быть &#x60;null&#x60;.  | [optional] |
 | **filter** | **String**| Фильтрация отчета по ID сущностей. Поддерживаемые поля: &#x60;assortmentId&#x60;, &#x60;storeId&#x60;.  | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -261,7 +261,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details

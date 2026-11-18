@@ -49,7 +49,7 @@ import java.util.StringJoiner;
   Prepayment.JSON_PROPERTY_UPDATED,
   Prepayment.JSON_PROPERTY_MOMENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Prepayment implements MetaEntity {
   public static Prepayment createWithMeta(UUID id) {
     Prepayment o = new Prepayment();
@@ -136,6 +136,7 @@ public class Prepayment implements MetaEntity {
   }
 
   public Prepayment meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -160,6 +161,7 @@ public class Prepayment implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -197,6 +199,7 @@ public class Prepayment implements MetaEntity {
 
 
   public Prepayment name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -221,11 +224,13 @@ public class Prepayment implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public Prepayment code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -250,11 +255,13 @@ public class Prepayment implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public Prepayment externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -279,11 +286,13 @@ public class Prepayment implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public Prepayment syncId(@javax.annotation.Nullable UUID syncId) {
+
     
     this.syncId = syncId;
     return this;
@@ -308,11 +317,13 @@ public class Prepayment implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
+
     this.syncId = syncId;
   }
 
 
   public Prepayment description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -346,6 +357,7 @@ public class Prepayment implements MetaEntity {
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 
@@ -399,6 +411,7 @@ public class Prepayment implements MetaEntity {
 
 
   public Prepayment moment(@javax.annotation.Nullable String moment) {
+
     
     this.moment = moment;
     return this;
@@ -423,6 +436,7 @@ public class Prepayment implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMoment(@javax.annotation.Nullable String moment) {
+
     this.moment = moment;
   }
 

@@ -37,7 +37,7 @@ import java.util.StringJoiner;
   NotificationTask.JSON_PROPERTY_NAME,
   NotificationTask.JSON_PROPERTY_DEADLINE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class NotificationTask {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -60,6 +60,7 @@ public class NotificationTask {
   }
 
   public NotificationTask meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -84,11 +85,13 @@ public class NotificationTask {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public NotificationTask id(@javax.annotation.Nullable UUID id) {
+
     
     this.id = id;
     return this;
@@ -113,11 +116,13 @@ public class NotificationTask {
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(@javax.annotation.Nullable UUID id) {
+
     this.id = id;
   }
 
 
   public NotificationTask name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -142,11 +147,13 @@ public class NotificationTask {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public NotificationTask deadline(@javax.annotation.Nullable String deadline) {
+
     
     this.deadline = deadline;
     return this;
@@ -171,6 +178,7 @@ public class NotificationTask {
   @JsonProperty(JSON_PROPERTY_DEADLINE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDeadline(@javax.annotation.Nullable String deadline) {
+
     this.deadline = deadline;
   }
 

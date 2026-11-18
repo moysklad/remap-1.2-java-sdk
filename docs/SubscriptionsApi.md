@@ -43,7 +43,7 @@ public class Example {
 
         SubscriptionsApi apiInstance = new SubscriptionsApi(defaultClient);
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             Subscription result = apiInstance.getSubscription(accept, acceptEncoding);
             System.out.println(result);
@@ -64,7 +64,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -77,7 +77,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details

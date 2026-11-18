@@ -82,7 +82,7 @@ public class Example {
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         FileUpload fileUpload = new FileUpload(); // FileUpload | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             List<ModelFile> result = apiInstance.addPurchaseOrderFile(id, fileUpload, accept, acceptEncoding, contentType);
@@ -106,7 +106,7 @@ public class Example {
 | **id** | **UUID**| ID сущности | |
 | **fileUpload** | [**FileUpload**](FileUpload.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -120,7 +120,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -167,7 +167,7 @@ public class Example {
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         List<FileUpload> fileUpload = Arrays.asList(); // List<FileUpload> | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             List<ModelFile> result = apiInstance.addPurchaseOrderFiles(id, fileUpload, accept, acceptEncoding, contentType);
@@ -191,7 +191,7 @@ public class Example {
 | **id** | **UUID**| ID сущности | |
 | **fileUpload** | [**List&lt;FileUpload&gt;**](FileUpload.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -205,7 +205,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -250,7 +250,7 @@ public class Example {
         PurchaseOrder purchaseOrder = new PurchaseOrder(); // PurchaseOrder | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             PurchaseOrder result = apiInstance.createPurchaseOrder(purchaseOrder, expand, accept, acceptEncoding, contentType);
@@ -274,7 +274,7 @@ public class Example {
 | **purchaseOrder** | [**PurchaseOrder**](PurchaseOrder.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -288,7 +288,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -333,7 +333,7 @@ public class Example {
         List<PurchaseOrder> purchaseOrder = Arrays.asList(); // List<PurchaseOrder> | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             List<BatchResponseEntity> result = apiInstance.createPurchaseOrderBatch(purchaseOrder, expand, accept, acceptEncoding, contentType);
@@ -357,7 +357,7 @@ public class Example {
 | **purchaseOrder** | [**List&lt;PurchaseOrder&gt;**](PurchaseOrder.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -371,13 +371,15 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
+| **404** | Ошибка массовой операции: объект errors или массив результатов по каждому элементу  |  -  |
+| **412** | Ошибка массовой операции: объект errors или массив результатов по каждому элементу  |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
@@ -415,7 +417,7 @@ public class Example {
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
         AttributeMetaInfo attributeMetaInfo = new AttributeMetaInfo(); // AttributeMetaInfo | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             AttributeMetaInfo result = apiInstance.createPurchaseOrderMetadataAttribute(attributeMetaInfo, accept, acceptEncoding, contentType);
@@ -438,7 +440,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **attributeMetaInfo** | [**AttributeMetaInfo**](AttributeMetaInfo.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -452,7 +454,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -496,7 +498,7 @@ public class Example {
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
         State state = new State(); // State | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             State result = apiInstance.createPurchaseOrderMetadataState(state, accept, acceptEncoding, contentType);
@@ -519,7 +521,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **state** | [**State**](State.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -533,7 +535,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -577,7 +579,7 @@ public class Example {
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
         List<State> state = Arrays.asList(); // List<State> | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             List<StateRowResult> result = apiInstance.createPurchaseOrderMetadataStatesBatch(state, accept, acceptEncoding, contentType);
@@ -600,7 +602,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **state** | [**List&lt;State&gt;**](State.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -614,7 +616,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -661,7 +663,7 @@ public class Example {
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         EventNote eventNote = new EventNote(); // EventNote | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             List<EventNote> result = apiInstance.createPurchaseOrderNote(id, eventNote, accept, acceptEncoding, contentType);
@@ -685,7 +687,7 @@ public class Example {
 | **id** | **UUID**| ID сущности | |
 | **eventNote** | [**EventNote**](EventNote.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -699,7 +701,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -746,7 +748,7 @@ public class Example {
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         List<EventNote> eventNote = Arrays.asList(); // List<EventNote> | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             List<EventNote> result = apiInstance.createPurchaseOrderNotesBatch(id, eventNote, accept, acceptEncoding, contentType);
@@ -770,7 +772,7 @@ public class Example {
 | **id** | **UUID**| ID сущности | |
 | **eventNote** | [**List&lt;EventNote&gt;**](EventNote.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -784,7 +786,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -830,7 +832,7 @@ public class Example {
         PurchaseOrderPosition purchaseOrderPosition = new PurchaseOrderPosition(); // PurchaseOrderPosition | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             List<PurchaseOrderPosition> result = apiInstance.createPurchaseOrderPosition(id, purchaseOrderPosition, expand, accept, acceptEncoding, contentType);
@@ -855,7 +857,7 @@ public class Example {
 | **purchaseOrderPosition** | [**PurchaseOrderPosition**](PurchaseOrderPosition.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -869,7 +871,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -881,7 +883,7 @@ public class Example {
 
 ## createPurchaseOrderPositions
 
-> List&lt;CreatePurchaseOrderPositions200ResponseInner&gt; createPurchaseOrderPositions(id, purchaseOrderPosition, expand, accept, acceptEncoding, contentType)
+> List&lt;BatchResponseEntity&gt; createPurchaseOrderPositions(id, purchaseOrderPosition, expand, accept, acceptEncoding, contentType)
 
 Массовое создание и обновление позиций Заказа поставщику
 
@@ -915,10 +917,10 @@ public class Example {
         List<PurchaseOrderPosition> purchaseOrderPosition = Arrays.asList(); // List<PurchaseOrderPosition> | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
-            List<CreatePurchaseOrderPositions200ResponseInner> result = apiInstance.createPurchaseOrderPositions(id, purchaseOrderPosition, expand, accept, acceptEncoding, contentType);
+            List<BatchResponseEntity> result = apiInstance.createPurchaseOrderPositions(id, purchaseOrderPosition, expand, accept, acceptEncoding, contentType);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PurchaseOrdersApi#createPurchaseOrderPositions");
@@ -940,12 +942,12 @@ public class Example {
 | **purchaseOrderPosition** | [**List&lt;PurchaseOrderPosition&gt;**](PurchaseOrderPosition.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
-[**List&lt;CreatePurchaseOrderPositions200ResponseInner&gt;**](CreatePurchaseOrderPositions200ResponseInner.md)
+[**List&lt;BatchResponseEntity&gt;**](BatchResponseEntity.md)
 
 ### Authorization
 
@@ -954,13 +956,15 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
+| **404** | Ошибка массовой операции: объект errors или массив результатов по каждому элементу  |  -  |
+| **412** | Ошибка массовой операции: объект errors или массив результатов по каждому элементу  |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
@@ -998,7 +1002,7 @@ public class Example {
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             apiInstance.deletePurchaseOrder(id, accept, acceptEncoding, contentType);
@@ -1020,7 +1024,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -1034,7 +1038,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -1078,7 +1082,7 @@ public class Example {
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
         List<PurchaseOrder> purchaseOrder = Arrays.asList(); // List<PurchaseOrder> | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             List<DeleteRowResult> result = apiInstance.deletePurchaseOrderBatch(purchaseOrder, accept, acceptEncoding, contentType);
@@ -1101,7 +1105,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **purchaseOrder** | [**List&lt;PurchaseOrder&gt;**](PurchaseOrder.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -1115,13 +1119,15 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Результат по каждому элементу (успех или объект ошибки) |  -  |
+| **404** | Ошибка массовой операции: объект errors или массив результатов по каждому элементу  |  -  |
+| **412** | Ошибка массовой операции: объект errors или массив результатов по каждому элементу  |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
@@ -1162,7 +1168,7 @@ public class Example {
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID fileId = UUID.randomUUID(); // UUID | ID файла
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             apiInstance.deletePurchaseOrderFile(id, fileId, accept, acceptEncoding);
         } catch (ApiException e) {
@@ -1184,7 +1190,7 @@ public class Example {
 | **id** | **UUID**| ID сущности | |
 | **fileId** | **UUID**| ID файла | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -1197,7 +1203,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -1241,7 +1247,7 @@ public class Example {
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             apiInstance.deletePurchaseOrderMetadataAttributeById(id, accept, acceptEncoding, contentType);
@@ -1263,7 +1269,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -1277,7 +1283,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -1321,7 +1327,7 @@ public class Example {
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             apiInstance.deletePurchaseOrderMetadataStateById(id, accept, acceptEncoding, contentType);
@@ -1343,7 +1349,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -1357,7 +1363,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -1405,7 +1411,7 @@ public class Example {
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID noteId = UUID.randomUUID(); // UUID | ID События
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             apiInstance.deletePurchaseOrderNote(id, noteId, accept, acceptEncoding);
         } catch (ApiException e) {
@@ -1427,7 +1433,7 @@ public class Example {
 | **id** | **UUID**| ID сущности | |
 | **noteId** | **UUID**| ID События | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -1440,7 +1446,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -1487,7 +1493,7 @@ public class Example {
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         List<EventNote> eventNote = Arrays.asList(); // List<EventNote> | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             apiInstance.deletePurchaseOrderNotesBatch(id, eventNote, accept, acceptEncoding, contentType);
@@ -1510,7 +1516,7 @@ public class Example {
 | **id** | **UUID**| ID сущности | |
 | **eventNote** | [**List&lt;EventNote&gt;**](EventNote.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -1524,7 +1530,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -1570,7 +1576,7 @@ public class Example {
         UUID positionId = UUID.randomUUID(); // UUID | ID позиции
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             apiInstance.deletePurchaseOrderPosition(id, positionId, expand, accept, acceptEncoding, contentType);
@@ -1594,7 +1600,7 @@ public class Example {
 | **positionId** | **UUID**| ID позиции | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -1608,7 +1614,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -1653,7 +1659,7 @@ public class Example {
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         List<PurchaseOrderPosition> purchaseOrderPosition = Arrays.asList(); // List<PurchaseOrderPosition> | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             List<DeleteRowResult> result = apiInstance.deletePurchaseOrderPositionsBatch(id, purchaseOrderPosition, accept, acceptEncoding, contentType);
@@ -1677,7 +1683,7 @@ public class Example {
 | **id** | **UUID**| ID сущности | |
 | **purchaseOrderPosition** | [**List&lt;PurchaseOrderPosition&gt;**](PurchaseOrderPosition.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -1691,13 +1697,15 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Результат по каждому элементу (успех или объект ошибки) |  -  |
+| **404** | Ошибка массовой операции: объект errors или массив результатов по каждому элементу  |  -  |
+| **412** | Ошибка массовой операции: объект errors или массив результатов по каждому элементу  |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
@@ -1737,7 +1745,7 @@ public class Example {
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             PurchaseOrder result = apiInstance.getPurchaseOrderById(id, expand, fields, accept, acceptEncoding, contentType);
@@ -1762,7 +1770,7 @@ public class Example {
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **fields** | **String**| Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  | [optional] [enum: minimumStock, downloadPermanentHref, stock, declaration] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -1776,7 +1784,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -1824,7 +1832,7 @@ public class Example {
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             GetTaskFiles200Response result = apiInstance.getPurchaseOrderFiles(id, limit, offset, accept, acceptEncoding);
             System.out.println(result);
@@ -1848,7 +1856,7 @@ public class Example {
 | **limit** | **Integer**| Максимальное количество элементов в выданном списке (максимум 1000) | [optional] [default to 1000] |
 | **offset** | **Integer**| Отступ в выданном списке | [optional] [default to 0] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -1861,7 +1869,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -1909,7 +1917,7 @@ public class Example {
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             PurchaseOrderList result = apiInstance.getPurchaseOrderList(limit, offset, search, expand, fields, accept, acceptEncoding, contentType);
@@ -1936,7 +1944,7 @@ public class Example {
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **fields** | **String**| Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  | [optional] [enum: minimumStock, downloadPermanentHref, stock, declaration] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -1950,7 +1958,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -1993,7 +2001,7 @@ public class Example {
 
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             DocumentMetadata result = apiInstance.getPurchaseOrderMetadata(accept, acceptEncoding, contentType);
@@ -2015,7 +2023,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -2029,7 +2037,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -2074,7 +2082,7 @@ public class Example {
         Integer offset = 0; // Integer | Отступ в выданном списке
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             AttributeMetaInfoList result = apiInstance.getPurchaseOrderMetadataAttribute(offset, limit, accept, acceptEncoding, contentType);
@@ -2098,7 +2106,7 @@ public class Example {
 | **offset** | **Integer**| Отступ в выданном списке | [optional] [default to 0] |
 | **limit** | **Integer**| Максимальное количество элементов в выданном списке (максимум 1000) | [optional] [default to 1000] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -2112,7 +2120,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -2156,7 +2164,7 @@ public class Example {
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             AttributeMetaInfo result = apiInstance.getPurchaseOrderMetadataAttributeById(id, accept, acceptEncoding, contentType);
@@ -2179,7 +2187,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -2193,7 +2201,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -2237,7 +2245,7 @@ public class Example {
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             State result = apiInstance.getPurchaseOrderMetadataStateById(id, accept, acceptEncoding, contentType);
@@ -2260,7 +2268,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -2274,7 +2282,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -2321,7 +2329,7 @@ public class Example {
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID noteId = UUID.randomUUID(); // UUID | ID События
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             EventNote result = apiInstance.getPurchaseOrderNoteById(id, noteId, accept, acceptEncoding);
             System.out.println(result);
@@ -2344,7 +2352,7 @@ public class Example {
 | **id** | **UUID**| ID сущности | |
 | **noteId** | **UUID**| ID События | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -2357,7 +2365,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -2406,7 +2414,7 @@ public class Example {
         Integer offset = 0; // Integer | Отступ в выданном списке
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             EventNoteList result = apiInstance.getPurchaseOrderNotes(id, limit, offset, expand, accept, acceptEncoding);
             System.out.println(result);
@@ -2431,7 +2439,7 @@ public class Example {
 | **offset** | **Integer**| Отступ в выданном списке | [optional] [default to 0] |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -2444,7 +2452,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -2491,7 +2499,7 @@ public class Example {
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             PurchaseOrderPosition result = apiInstance.getPurchaseOrderPositionById(id, positionId, expand, fields, accept, acceptEncoding, contentType);
@@ -2517,7 +2525,7 @@ public class Example {
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **fields** | **String**| Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  | [optional] [enum: minimumStock, downloadPermanentHref, stock, declaration] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -2531,7 +2539,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -2579,7 +2587,7 @@ public class Example {
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             PurchaseOrderPositionList result = apiInstance.getPurchaseOrderPositions(id, limit, offset, expand, fields, accept, acceptEncoding);
             System.out.println(result);
@@ -2605,7 +2613,7 @@ public class Example {
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **fields** | **String**| Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  | [optional] [enum: minimumStock, downloadPermanentHref, stock, declaration] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -2618,7 +2626,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -2661,7 +2669,7 @@ public class Example {
 
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         Object body = null; // Object | 
         try {
@@ -2684,7 +2692,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 | **body** | **Object**|  | [optional] |
 
@@ -2699,7 +2707,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -2711,7 +2719,7 @@ public class Example {
 
 ## movePurchaseOrderToTrash
 
-> movePurchaseOrderToTrash(id, accept, acceptEncoding)
+> movePurchaseOrderToTrash(id, accept, acceptEncoding, contentType)
 
 Удалить PurchaseOrder в корзину
 
@@ -2743,9 +2751,10 @@ public class Example {
         PurchaseOrdersApi apiInstance = new PurchaseOrdersApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
+        String contentType = "application/json"; // String | 
         try {
-            apiInstance.movePurchaseOrderToTrash(id, accept, acceptEncoding);
+            apiInstance.movePurchaseOrderToTrash(id, accept, acceptEncoding, contentType);
         } catch (ApiException e) {
             System.err.println("Exception when calling PurchaseOrdersApi#movePurchaseOrderToTrash");
             System.err.println("Status code: " + e.getCode());
@@ -2764,7 +2773,8 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
 
@@ -2777,7 +2787,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -2824,7 +2834,7 @@ public class Example {
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             PurchaseOrder result = apiInstance.updatePurchaseOrder(id, purchaseOrder, expand, fields, accept, acceptEncoding, contentType);
@@ -2850,7 +2860,7 @@ public class Example {
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **fields** | **String**| Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  | [optional] [enum: minimumStock, downloadPermanentHref, stock, declaration] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -2864,7 +2874,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -2909,7 +2919,7 @@ public class Example {
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         AttributeMetaInfo attributeMetaInfo = new AttributeMetaInfo(); // AttributeMetaInfo | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             AttributeMetaInfo result = apiInstance.updatePurchaseOrderMetadataAttributeById(id, attributeMetaInfo, accept, acceptEncoding, contentType);
@@ -2933,7 +2943,7 @@ public class Example {
 | **id** | **UUID**| ID сущности | |
 | **attributeMetaInfo** | [**AttributeMetaInfo**](AttributeMetaInfo.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -2947,7 +2957,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -2992,7 +3002,7 @@ public class Example {
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         State state = new State(); // State | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             State result = apiInstance.updatePurchaseOrderMetadataStateById(id, state, accept, acceptEncoding, contentType);
@@ -3016,7 +3026,7 @@ public class Example {
 | **id** | **UUID**| ID сущности | |
 | **state** | [**State**](State.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -3030,7 +3040,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -3078,7 +3088,7 @@ public class Example {
         UUID noteId = UUID.randomUUID(); // UUID | ID События
         EventNote eventNote = new EventNote(); // EventNote | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             EventNote result = apiInstance.updatePurchaseOrderNote(id, noteId, eventNote, accept, acceptEncoding, contentType);
@@ -3103,7 +3113,7 @@ public class Example {
 | **noteId** | **UUID**| ID События | |
 | **eventNote** | [**EventNote**](EventNote.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -3117,7 +3127,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -3165,7 +3175,7 @@ public class Example {
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String fields = "minimumStock"; // String | Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - `minimumStock` — неснижаемый остаток (товар, модификация) - `downloadPermanentHref` — постоянная ссылка на изображение (платный тариф) - `stock` — остатки и себестоимость в позициях документов - `declaration` — прослеживаемость импортных товаров в позициях документов 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             PurchaseOrderPosition result = apiInstance.updatePurchaseOrderPosition(id, positionId, purchaseOrderPosition, expand, fields, accept, acceptEncoding, contentType);
@@ -3192,7 +3202,7 @@ public class Example {
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **fields** | **String**| Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  | [optional] [enum: minimumStock, downloadPermanentHref, stock, declaration] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -3206,7 +3216,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details

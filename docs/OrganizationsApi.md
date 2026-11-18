@@ -64,7 +64,7 @@ public class Example {
         Organization organization = new Organization(); // Organization | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             Organization result = apiInstance.createOrganization(organization, expand, accept, acceptEncoding, contentType);
@@ -88,7 +88,7 @@ public class Example {
 | **organization** | [**Organization**](Organization.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -102,7 +102,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -149,7 +149,7 @@ public class Example {
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         Account account = new Account(); // Account | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             List<Account> result = apiInstance.createOrganizationAccount(id, account, accept, acceptEncoding, contentType);
@@ -173,7 +173,7 @@ public class Example {
 | **id** | **UUID**| ID сущности | |
 | **account** | [**Account**](Account.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -187,7 +187,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -234,7 +234,7 @@ public class Example {
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         List<Account> account = Arrays.asList(); // List<Account> | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             List<BatchResponseEntity> result = apiInstance.createOrganizationAccounts(id, account, accept, acceptEncoding, contentType);
@@ -258,7 +258,7 @@ public class Example {
 | **id** | **UUID**| ID сущности | |
 | **account** | [**List&lt;Account&gt;**](Account.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -272,13 +272,15 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
+| **404** | Ошибка массовой операции: объект errors или массив результатов по каждому элементу  |  -  |
+| **412** | Ошибка массовой операции: объект errors или массив результатов по каждому элементу  |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
@@ -318,7 +320,7 @@ public class Example {
         OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
         AttributeMetaInfo attributeMetaInfo = new AttributeMetaInfo(); // AttributeMetaInfo | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             AttributeMetaInfo result = apiInstance.createOrganizationMetadataAttribute(attributeMetaInfo, accept, acceptEncoding, contentType);
@@ -341,7 +343,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **attributeMetaInfo** | [**AttributeMetaInfo**](AttributeMetaInfo.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -355,7 +357,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -402,7 +404,7 @@ public class Example {
         List<Organization> organization = Arrays.asList(); // List<Organization> | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             List<BatchResponseEntity> result = apiInstance.createOrganizationsBatch(organization, expand, accept, acceptEncoding, contentType);
@@ -426,7 +428,7 @@ public class Example {
 | **organization** | [**List&lt;Organization&gt;**](Organization.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -440,13 +442,15 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Юрлица созданы или изменены (элемент — сущность или объект ошибки) |  -  |
+| **404** | Ошибка массовой операции: объект errors или массив результатов по каждому элементу  |  -  |
+| **412** | Ошибка массовой операции: объект errors или массив результатов по каждому элементу  |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
@@ -486,7 +490,7 @@ public class Example {
         OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             apiInstance.deleteOrganization(id, accept, acceptEncoding);
         } catch (ApiException e) {
@@ -507,7 +511,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -520,7 +524,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -567,7 +571,7 @@ public class Example {
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         UUID accountId = UUID.randomUUID(); // UUID | ID счёта юрлица
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             apiInstance.deleteOrganizationAccount(id, accountId, accept, acceptEncoding);
         } catch (ApiException e) {
@@ -589,7 +593,7 @@ public class Example {
 | **id** | **UUID**| ID сущности | |
 | **accountId** | **UUID**| ID счёта юрлица | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -602,7 +606,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -649,7 +653,7 @@ public class Example {
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         List<Account> account = Arrays.asList(); // List<Account> | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             List<DeleteRowResult> result = apiInstance.deleteOrganizationAccountsBatch(id, account, accept, acceptEncoding, contentType);
@@ -673,7 +677,7 @@ public class Example {
 | **id** | **UUID**| ID сущности | |
 | **account** | [**List&lt;Account&gt;**](Account.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -687,13 +691,15 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Результат по каждому элементу (успех или объект ошибки) |  -  |
+| **404** | Ошибка массовой операции: объект errors или массив результатов по каждому элементу  |  -  |
+| **412** | Ошибка массовой операции: объект errors или массив результатов по каждому элементу  |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
@@ -731,7 +737,7 @@ public class Example {
         OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             apiInstance.deleteOrganizationMetadataAttributeById(id, accept, acceptEncoding);
         } catch (ApiException e) {
@@ -752,7 +758,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -765,7 +771,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -811,7 +817,7 @@ public class Example {
         OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
         List<Organization> organization = Arrays.asList(); // List<Organization> | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             List<DeleteRowResult> result = apiInstance.deleteOrganizationsBatch(organization, accept, acceptEncoding, contentType);
@@ -834,7 +840,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **organization** | [**List&lt;Organization&gt;**](Organization.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -848,13 +854,15 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Результат по каждому элементу (успех или объект ошибки) |  -  |
+| **404** | Ошибка массовой операции: объект errors или массив результатов по каждому элементу  |  -  |
+| **412** | Ошибка массовой операции: объект errors или массив результатов по каждому элементу  |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
@@ -896,7 +904,7 @@ public class Example {
         UUID accountId = UUID.randomUUID(); // UUID | ID счёта юрлица
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             Account result = apiInstance.getOrganizationAccountById(id, accountId, expand, accept, acceptEncoding);
             System.out.println(result);
@@ -920,7 +928,7 @@ public class Example {
 | **accountId** | **UUID**| ID счёта юрлица | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -933,7 +941,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -981,7 +989,7 @@ public class Example {
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             GetOrganizationAccounts200Response result = apiInstance.getOrganizationAccounts(id, limit, offset, accept, acceptEncoding);
             System.out.println(result);
@@ -1005,7 +1013,7 @@ public class Example {
 | **limit** | **Integer**| Максимальное количество элементов в выданном списке (максимум 1000) | [optional] [default to 1000] |
 | **offset** | **Integer**| Отступ в выданном списке | [optional] [default to 0] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -1018,7 +1026,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -1065,7 +1073,7 @@ public class Example {
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             Organization result = apiInstance.getOrganizationById(id, expand, accept, acceptEncoding);
             System.out.println(result);
@@ -1088,7 +1096,7 @@ public class Example {
 | **id** | **UUID**| ID сущности | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -1101,7 +1109,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -1147,7 +1155,7 @@ public class Example {
         OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             Metadata result = apiInstance.getOrganizationMetadata(expand, accept, acceptEncoding);
             System.out.println(result);
@@ -1169,7 +1177,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -1182,7 +1190,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -1228,7 +1236,7 @@ public class Example {
         OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             AttributeMetaInfo result = apiInstance.getOrganizationMetadataAttributeById(id, accept, acceptEncoding);
             System.out.println(result);
@@ -1250,7 +1258,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -1263,7 +1271,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -1310,7 +1318,7 @@ public class Example {
         Integer offset = 0; // Integer | Отступ в выданном списке
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             AttributeMetaInfoList result = apiInstance.getOrganizationMetadataAttributes(offset, limit, accept, acceptEncoding);
             System.out.println(result);
@@ -1333,7 +1341,7 @@ public class Example {
 | **offset** | **Integer**| Отступ в выданном списке | [optional] [default to 0] |
 | **limit** | **Integer**| Максимальное количество элементов в выданном списке (максимум 1000) | [optional] [default to 1000] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -1346,7 +1354,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -1397,7 +1405,7 @@ public class Example {
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String order = "order_example"; // String | Сортировка
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             OrganizationList result = apiInstance.getOrganizations(limit, offset, search, filter, expand, order, accept, acceptEncoding);
             System.out.println(result);
@@ -1424,7 +1432,7 @@ public class Example {
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **order** | **String**| Сортировка | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -1437,7 +1445,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -1485,7 +1493,7 @@ public class Example {
         Organization organization = new Organization(); // Organization | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             Organization result = apiInstance.updateOrganization(id, organization, expand, accept, acceptEncoding, contentType);
@@ -1510,7 +1518,7 @@ public class Example {
 | **organization** | [**Organization**](Organization.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -1524,7 +1532,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -1573,7 +1581,7 @@ public class Example {
         Account account = new Account(); // Account | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             Account result = apiInstance.updateOrganizationAccount(id, accountId, account, expand, accept, acceptEncoding, contentType);
@@ -1599,7 +1607,7 @@ public class Example {
 | **account** | [**Account**](Account.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -1613,7 +1621,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -1658,7 +1666,7 @@ public class Example {
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         AttributeMetaInfo attributeMetaInfo = new AttributeMetaInfo(); // AttributeMetaInfo | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             AttributeMetaInfo result = apiInstance.updateOrganizationMetadataAttributeById(id, attributeMetaInfo, accept, acceptEncoding, contentType);
@@ -1682,7 +1690,7 @@ public class Example {
 | **id** | **UUID**| ID сущности | |
 | **attributeMetaInfo** | [**AttributeMetaInfo**](AttributeMetaInfo.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -1696,7 +1704,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details

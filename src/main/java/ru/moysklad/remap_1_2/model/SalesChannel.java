@@ -52,7 +52,7 @@ import java.util.StringJoiner;
   SalesChannel.JSON_PROPERTY_TYPE,
   SalesChannel.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class SalesChannel extends EntityWithMeta implements MetaEntity {
   public static SalesChannel createWithMeta(UUID id) {
     SalesChannel o = new SalesChannel();
@@ -139,6 +139,7 @@ public class SalesChannel extends EntityWithMeta implements MetaEntity {
   }
 
   public SalesChannel meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -163,6 +164,7 @@ public class SalesChannel extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -200,6 +202,7 @@ public class SalesChannel extends EntityWithMeta implements MetaEntity {
 
 
   public SalesChannel archived(@javax.annotation.Nullable Boolean archived) {
+
     
     this.archived = archived;
     return this;
@@ -224,11 +227,13 @@ public class SalesChannel extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
+
     this.archived = archived;
   }
 
 
   public SalesChannel code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -253,11 +258,13 @@ public class SalesChannel extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public SalesChannel description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -291,11 +298,13 @@ public class SalesChannel extends EntityWithMeta implements MetaEntity {
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 
 
   public SalesChannel externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -320,11 +329,13 @@ public class SalesChannel extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public SalesChannel group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -349,11 +360,13 @@ public class SalesChannel extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
 
   public SalesChannel name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -378,11 +391,13 @@ public class SalesChannel extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public SalesChannel owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -416,11 +431,13 @@ public class SalesChannel extends EntityWithMeta implements MetaEntity {
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
 
   public SalesChannel shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -445,11 +462,13 @@ public class SalesChannel extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
 
   public SalesChannel type(@javax.annotation.Nullable String type) {
+
     
     this.type = type;
     return this;
@@ -474,6 +493,7 @@ public class SalesChannel extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setType(@javax.annotation.Nullable String type) {
+
     this.type = type;
   }
 

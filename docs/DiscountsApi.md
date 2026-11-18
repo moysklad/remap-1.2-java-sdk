@@ -57,7 +57,7 @@ public class Example {
         DiscountsApi apiInstance = new DiscountsApi(defaultClient);
         AccumulationDiscount accumulationDiscount = new AccumulationDiscount(); // AccumulationDiscount | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             AccumulationDiscount result = apiInstance.createAccumulationDiscount(accumulationDiscount, accept, acceptEncoding, contentType);
@@ -80,7 +80,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **accumulationDiscount** | [**AccumulationDiscount**](AccumulationDiscount.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -94,7 +94,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -140,7 +140,7 @@ public class Example {
         DiscountsApi apiInstance = new DiscountsApi(defaultClient);
         PersonalDiscount personalDiscount = new PersonalDiscount(); // PersonalDiscount | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             PersonalDiscount result = apiInstance.createPersonalDiscount(personalDiscount, accept, acceptEncoding, contentType);
@@ -163,7 +163,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **personalDiscount** | [**PersonalDiscount**](PersonalDiscount.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -177,7 +177,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -223,7 +223,7 @@ public class Example {
         DiscountsApi apiInstance = new DiscountsApi(defaultClient);
         SpecialPriceDiscount specialPriceDiscount = new SpecialPriceDiscount(); // SpecialPriceDiscount | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             SpecialPriceDiscount result = apiInstance.createSpecialPriceDiscount(specialPriceDiscount, accept, acceptEncoding, contentType);
@@ -246,7 +246,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **specialPriceDiscount** | [**SpecialPriceDiscount**](SpecialPriceDiscount.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -260,7 +260,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -306,7 +306,7 @@ public class Example {
         DiscountsApi apiInstance = new DiscountsApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             apiInstance.deleteAccumulationDiscount(id, accept, acceptEncoding);
         } catch (ApiException e) {
@@ -327,7 +327,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -340,7 +340,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -386,7 +386,7 @@ public class Example {
         DiscountsApi apiInstance = new DiscountsApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             apiInstance.deletePersonalDiscount(id, accept, acceptEncoding);
         } catch (ApiException e) {
@@ -407,7 +407,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -420,7 +420,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -466,7 +466,7 @@ public class Example {
         DiscountsApi apiInstance = new DiscountsApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             apiInstance.deleteSpecialPriceDiscount(id, accept, acceptEncoding);
         } catch (ApiException e) {
@@ -487,7 +487,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -500,7 +500,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -546,7 +546,7 @@ public class Example {
         DiscountsApi apiInstance = new DiscountsApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             AccumulationDiscount result = apiInstance.getAccumulationDiscountById(id, accept, acceptEncoding);
             System.out.println(result);
@@ -568,7 +568,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -581,7 +581,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -628,7 +628,7 @@ public class Example {
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         try {
             DiscountList result = apiInstance.getDiscounts(limit, offset, accept, acceptEncoding, expand);
@@ -652,7 +652,7 @@ public class Example {
 | **limit** | **Integer**| Максимальное количество элементов в выданном списке (максимум 1000) | [optional] [default to 1000] |
 | **offset** | **Integer**| Отступ в выданном списке | [optional] [default to 0] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 
 ### Return type
@@ -666,7 +666,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -712,7 +712,7 @@ public class Example {
         DiscountsApi apiInstance = new DiscountsApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             PersonalDiscount result = apiInstance.getPersonalDiscountById(id, accept, acceptEncoding);
             System.out.println(result);
@@ -734,7 +734,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -747,7 +747,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -793,7 +793,7 @@ public class Example {
         DiscountsApi apiInstance = new DiscountsApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             SpecialPriceDiscount result = apiInstance.getSpecialPriceDiscountById(id, accept, acceptEncoding);
             System.out.println(result);
@@ -815,7 +815,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -828,7 +828,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -875,7 +875,7 @@ public class Example {
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         AccumulationDiscount accumulationDiscount = new AccumulationDiscount(); // AccumulationDiscount | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             AccumulationDiscount result = apiInstance.updateAccumulationDiscount(id, accumulationDiscount, accept, acceptEncoding, contentType);
@@ -899,7 +899,7 @@ public class Example {
 | **id** | **UUID**| ID сущности | |
 | **accumulationDiscount** | [**AccumulationDiscount**](AccumulationDiscount.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -913,7 +913,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -960,7 +960,7 @@ public class Example {
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         Discount discount = new Discount(); // Discount | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             Discount result = apiInstance.updateDiscountRoundingById(id, discount, accept, acceptEncoding, contentType);
@@ -984,7 +984,7 @@ public class Example {
 | **id** | **UUID**| ID сущности | |
 | **discount** | [**Discount**](Discount.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -998,7 +998,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -1045,7 +1045,7 @@ public class Example {
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         PersonalDiscount personalDiscount = new PersonalDiscount(); // PersonalDiscount | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             PersonalDiscount result = apiInstance.updatePersonalDiscount(id, personalDiscount, accept, acceptEncoding, contentType);
@@ -1069,7 +1069,7 @@ public class Example {
 | **id** | **UUID**| ID сущности | |
 | **personalDiscount** | [**PersonalDiscount**](PersonalDiscount.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -1083,7 +1083,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -1130,7 +1130,7 @@ public class Example {
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         SpecialPriceDiscount specialPriceDiscount = new SpecialPriceDiscount(); // SpecialPriceDiscount | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             SpecialPriceDiscount result = apiInstance.updateSpecialPriceDiscount(id, specialPriceDiscount, accept, acceptEncoding, contentType);
@@ -1154,7 +1154,7 @@ public class Example {
 | **id** | **UUID**| ID сущности | |
 | **specialPriceDiscount** | [**SpecialPriceDiscount**](SpecialPriceDiscount.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -1168,7 +1168,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details

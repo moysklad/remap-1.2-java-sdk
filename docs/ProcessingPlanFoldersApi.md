@@ -49,7 +49,7 @@ public class Example {
         ProcessingPlanFoldersApi apiInstance = new ProcessingPlanFoldersApi(defaultClient);
         ProcessingPlanFolder processingPlanFolder = new ProcessingPlanFolder(); // ProcessingPlanFolder | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             ProcessingPlanFolder result = apiInstance.createProcessingPlanFolder(processingPlanFolder, accept, acceptEncoding, contentType);
@@ -72,7 +72,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **processingPlanFolder** | [**ProcessingPlanFolder**](ProcessingPlanFolder.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -86,7 +86,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -130,7 +130,7 @@ public class Example {
         ProcessingPlanFoldersApi apiInstance = new ProcessingPlanFoldersApi(defaultClient);
         List<ProcessingPlanFolder> processingPlanFolder = Arrays.asList(); // List<ProcessingPlanFolder> | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             List<BatchResponseEntity> result = apiInstance.createProcessingPlanFoldersBatch(processingPlanFolder, accept, acceptEncoding, contentType);
@@ -153,7 +153,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **processingPlanFolder** | [**List&lt;ProcessingPlanFolder&gt;**](ProcessingPlanFolder.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -167,13 +167,15 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
+| **404** | Ошибка массовой операции: объект errors или массив результатов по каждому элементу  |  -  |
+| **412** | Ошибка массовой операции: объект errors или массив результатов по каждому элементу  |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
@@ -211,7 +213,7 @@ public class Example {
         ProcessingPlanFoldersApi apiInstance = new ProcessingPlanFoldersApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             apiInstance.deleteProcessingPlanFolder(id, accept, acceptEncoding, contentType);
@@ -233,7 +235,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -247,7 +249,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -291,7 +293,7 @@ public class Example {
         ProcessingPlanFoldersApi apiInstance = new ProcessingPlanFoldersApi(defaultClient);
         List<ProcessingPlanFolder> processingPlanFolder = Arrays.asList(); // List<ProcessingPlanFolder> | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             List<DeleteRowResult> result = apiInstance.deleteProcessingPlanFoldersBatch(processingPlanFolder, accept, acceptEncoding, contentType);
@@ -314,7 +316,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **processingPlanFolder** | [**List&lt;ProcessingPlanFolder&gt;**](ProcessingPlanFolder.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -328,13 +330,15 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Результат по каждому элементу (успех или объект ошибки) |  -  |
+| **404** | Ошибка массовой операции: объект errors или массив результатов по каждому элементу  |  -  |
+| **412** | Ошибка массовой операции: объект errors или массив результатов по каждому элементу  |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
@@ -372,7 +376,7 @@ public class Example {
         ProcessingPlanFoldersApi apiInstance = new ProcessingPlanFoldersApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             ProcessingPlanFolder result = apiInstance.getProcessingPlanFolderById(id, accept, acceptEncoding);
             System.out.println(result);
@@ -394,7 +398,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -407,7 +411,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -450,7 +454,7 @@ public class Example {
 
         ProcessingPlanFoldersApi apiInstance = new ProcessingPlanFoldersApi(defaultClient);
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             Metadata result = apiInstance.getProcessingPlanFolderMetadata(accept, acceptEncoding, contentType);
@@ -472,7 +476,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -486,7 +490,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -531,7 +535,7 @@ public class Example {
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         Integer offset = 0; // Integer | Отступ в выданном списке
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             ProcessingPlanFolderList result = apiInstance.getProcessingPlanFolders(limit, offset, accept, acceptEncoding, contentType);
@@ -555,7 +559,7 @@ public class Example {
 | **limit** | **Integer**| Максимальное количество элементов в выданном списке (максимум 1000) | [optional] [default to 1000] |
 | **offset** | **Integer**| Отступ в выданном списке | [optional] [default to 0] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -569,7 +573,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -614,7 +618,7 @@ public class Example {
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         ProcessingPlanFolder processingPlanFolder = new ProcessingPlanFolder(); // ProcessingPlanFolder | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             ProcessingPlanFolder result = apiInstance.updateProcessingPlanFolder(id, processingPlanFolder, accept, acceptEncoding, contentType);
@@ -638,7 +642,7 @@ public class Example {
 | **id** | **UUID**| ID сущности | |
 | **processingPlanFolder** | [**ProcessingPlanFolder**](ProcessingPlanFolder.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -652,7 +656,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details

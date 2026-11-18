@@ -34,7 +34,7 @@ import java.util.StringJoiner;
   RetailStoreEnvironmentChequePrinterFiscalMemory.JSON_PROPERTY_FISCAL_VALIDITY_DATE
 })
 @JsonTypeName("RetailStore_environment_chequePrinter_fiscalMemory")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStoreEnvironmentChequePrinterFiscalMemory {
 
   public static final String JSON_PROPERTY_FISCAL_DATA_VERSION = "fiscalDataVersion";
@@ -49,6 +49,7 @@ public class RetailStoreEnvironmentChequePrinterFiscalMemory {
   }
 
   public RetailStoreEnvironmentChequePrinterFiscalMemory fiscalDataVersion(@javax.annotation.Nullable String fiscalDataVersion) {
+
     
     this.fiscalDataVersion = fiscalDataVersion;
     return this;
@@ -73,11 +74,13 @@ public class RetailStoreEnvironmentChequePrinterFiscalMemory {
   @JsonProperty(JSON_PROPERTY_FISCAL_DATA_VERSION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFiscalDataVersion(@javax.annotation.Nullable String fiscalDataVersion) {
+
     this.fiscalDataVersion = fiscalDataVersion;
   }
 
 
   public RetailStoreEnvironmentChequePrinterFiscalMemory fiscalValidityDate(@javax.annotation.Nullable String fiscalValidityDate) {
+
     
     this.fiscalValidityDate = fiscalValidityDate;
     return this;
@@ -102,6 +105,7 @@ public class RetailStoreEnvironmentChequePrinterFiscalMemory {
   @JsonProperty(JSON_PROPERTY_FISCAL_VALIDITY_DATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFiscalValidityDate(@javax.annotation.Nullable String fiscalValidityDate) {
+
     this.fiscalValidityDate = fiscalValidityDate;
   }
 

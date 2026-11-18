@@ -34,7 +34,7 @@ import java.util.StringJoiner;
   RetailStoreStateSync.JSON_PROPERTY_LAST_ATTEMP_MOMENT
 })
 @JsonTypeName("RetailStore_state_sync")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStoreStateSync {
 
   public static final String JSON_PROPERTY_MESSAGE = "message";
@@ -49,6 +49,7 @@ public class RetailStoreStateSync {
   }
 
   public RetailStoreStateSync message(@javax.annotation.Nullable String message) {
+
     
     this.message = message;
     return this;
@@ -73,11 +74,13 @@ public class RetailStoreStateSync {
   @JsonProperty(JSON_PROPERTY_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMessage(@javax.annotation.Nullable String message) {
+
     this.message = message;
   }
 
 
   public RetailStoreStateSync lastAttempMoment(@javax.annotation.Nullable String lastAttempMoment) {
+
     
     this.lastAttempMoment = lastAttempMoment;
     return this;
@@ -102,6 +105,7 @@ public class RetailStoreStateSync {
   @JsonProperty(JSON_PROPERTY_LAST_ATTEMP_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLastAttempMoment(@javax.annotation.Nullable String lastAttempMoment) {
+
     this.lastAttempMoment = lastAttempMoment;
   }
 

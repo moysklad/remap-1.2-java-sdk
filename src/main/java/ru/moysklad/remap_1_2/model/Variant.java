@@ -68,7 +68,7 @@ import java.util.StringJoiner;
   Variant.JSON_PROPERTY_MINIMUM_STOCK,
   Variant.JSON_PROPERTY_THINGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Variant extends ProductMarker implements Named {
   public static Variant createWithMeta(UUID id) {
     Variant o = new Variant();
@@ -183,6 +183,7 @@ public class Variant extends ProductMarker implements Named {
   }
 
   public Variant meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -207,6 +208,7 @@ public class Variant extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -260,6 +262,7 @@ public class Variant extends ProductMarker implements Named {
 
 
   public Variant name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -284,11 +287,13 @@ public class Variant extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public Variant code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -313,11 +318,13 @@ public class Variant extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public Variant externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -342,11 +349,13 @@ public class Variant extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public Variant archived(@javax.annotation.Nullable Boolean archived) {
+
     
     this.archived = archived;
     return this;
@@ -371,11 +380,13 @@ public class Variant extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
+
     this.archived = archived;
   }
 
 
   public Variant description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -409,11 +420,13 @@ public class Variant extends ProductMarker implements Named {
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 
 
   public Variant discountProhibited(@javax.annotation.Nullable Boolean discountProhibited) {
+
     
     this.discountProhibited = discountProhibited;
     return this;
@@ -438,11 +451,13 @@ public class Variant extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_DISCOUNT_PROHIBITED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDiscountProhibited(@javax.annotation.Nullable Boolean discountProhibited) {
+
     this.discountProhibited = discountProhibited;
   }
 
 
   public Variant product(@javax.annotation.Nullable Product product) {
+
     
     this.product = product;
     return this;
@@ -467,11 +482,13 @@ public class Variant extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_PRODUCT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProduct(@javax.annotation.Nullable Product product) {
+
     this.product = product;
   }
 
 
   public Variant characteristics(@javax.annotation.Nullable List<VariantCharacteristicValue> characteristics) {
+
     this.characteristics = JsonNullable.<List<VariantCharacteristicValue>>of(characteristics);
     
     return this;
@@ -504,7 +521,7 @@ public class Variant extends ProductMarker implements Named {
   
 
   @JsonProperty(JSON_PROPERTY_CHARACTERISTICS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<VariantCharacteristicValue>> getCharacteristics_JsonNullable() {
@@ -517,11 +534,13 @@ public class Variant extends ProductMarker implements Named {
   }
 
   public void setCharacteristics(@javax.annotation.Nullable List<VariantCharacteristicValue> characteristics) {
+
     this.characteristics = JsonNullable.<List<VariantCharacteristicValue>>of(characteristics);
   }
 
 
   public Variant salePrices(@javax.annotation.Nullable List<SalePrice> salePrices) {
+
     this.salePrices = JsonNullable.<List<SalePrice>>of(salePrices);
     
     return this;
@@ -554,7 +573,7 @@ public class Variant extends ProductMarker implements Named {
   
 
   @JsonProperty(JSON_PROPERTY_SALE_PRICES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<SalePrice>> getSalePrices_JsonNullable() {
@@ -567,11 +586,13 @@ public class Variant extends ProductMarker implements Named {
   }
 
   public void setSalePrices(@javax.annotation.Nullable List<SalePrice> salePrices) {
+
     this.salePrices = JsonNullable.<List<SalePrice>>of(salePrices);
   }
 
 
   public Variant buyPrice(@javax.annotation.Nullable Price buyPrice) {
+
     this.buyPrice = JsonNullable.<Price>of(buyPrice);
     
     return this;
@@ -605,11 +626,13 @@ public class Variant extends ProductMarker implements Named {
   }
 
   public void setBuyPrice(@javax.annotation.Nullable Price buyPrice) {
+
     this.buyPrice = JsonNullable.<Price>of(buyPrice);
   }
 
 
   public Variant minPrice(@javax.annotation.Nullable Price minPrice) {
+
     
     this.minPrice = minPrice;
     return this;
@@ -634,11 +657,13 @@ public class Variant extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_MIN_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMinPrice(@javax.annotation.Nullable Price minPrice) {
+
     this.minPrice = minPrice;
   }
 
 
   public Variant barcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
+
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
     
     return this;
@@ -671,7 +696,7 @@ public class Variant extends ProductMarker implements Named {
   
 
   @JsonProperty(JSON_PROPERTY_BARCODES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<Barcode>> getBarcodes_JsonNullable() {
@@ -684,11 +709,13 @@ public class Variant extends ProductMarker implements Named {
   }
 
   public void setBarcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
+
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
   }
 
 
   public Variant packs(@javax.annotation.Nullable List<VariantPack> packs) {
+
     this.packs = JsonNullable.<List<VariantPack>>of(packs);
     
     return this;
@@ -721,7 +748,7 @@ public class Variant extends ProductMarker implements Named {
   
 
   @JsonProperty(JSON_PROPERTY_PACKS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<VariantPack>> getPacks_JsonNullable() {
@@ -734,11 +761,13 @@ public class Variant extends ProductMarker implements Named {
   }
 
   public void setPacks(@javax.annotation.Nullable List<VariantPack> packs) {
+
     this.packs = JsonNullable.<List<VariantPack>>of(packs);
   }
 
 
   public Variant images(@javax.annotation.Nullable ImageList images) {
+
     this.images = JsonNullable.<ImageList>of(images);
     
     return this;
@@ -772,11 +801,13 @@ public class Variant extends ProductMarker implements Named {
   }
 
   public void setImages(@javax.annotation.Nullable ImageList images) {
+
     this.images = JsonNullable.<ImageList>of(images);
   }
 
 
   public Variant minimumStock(@javax.annotation.Nullable MinimumStockAbstract minimumStock) {
+
     this.minimumStock = JsonNullable.<MinimumStockAbstract>of(minimumStock);
     
     return this;
@@ -810,11 +841,13 @@ public class Variant extends ProductMarker implements Named {
   }
 
   public void setMinimumStock(@javax.annotation.Nullable MinimumStockAbstract minimumStock) {
+
     this.minimumStock = JsonNullable.<MinimumStockAbstract>of(minimumStock);
   }
 
 
   public Variant things(@javax.annotation.Nullable List<String> things) {
+
     this.things = JsonNullable.<List<String>>of(things);
     
     return this;
@@ -847,7 +880,7 @@ public class Variant extends ProductMarker implements Named {
   
 
   @JsonProperty(JSON_PROPERTY_THINGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<String>> getThings_JsonNullable() {
@@ -860,6 +893,7 @@ public class Variant extends ProductMarker implements Named {
   }
 
   public void setThings(@javax.annotation.Nullable List<String> things) {
+
     this.things = JsonNullable.<List<String>>of(things);
   }
 

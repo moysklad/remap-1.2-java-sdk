@@ -38,7 +38,7 @@ import java.util.StringJoiner;
   CompanySettingsMetadata.JSON_PROPERTY_META,
   CompanySettingsMetadata.JSON_PROPERTY_CUSTOM_ENTITIES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class CompanySettingsMetadata {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -47,12 +47,13 @@ public class CompanySettingsMetadata {
 
   public static final String JSON_PROPERTY_CUSTOM_ENTITIES = "customEntities";
   @javax.annotation.Nullable
-  private List<CustomEntityMetadata> customEntities = new ArrayList<>();
+  private List<CustomEntityMetadata> customEntities;
 
   public CompanySettingsMetadata() {
   }
 
   public CompanySettingsMetadata meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -77,11 +78,13 @@ public class CompanySettingsMetadata {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public CompanySettingsMetadata customEntities(@javax.annotation.Nullable List<CustomEntityMetadata> customEntities) {
+
     
     this.customEntities = customEntities;
     return this;
@@ -102,7 +105,7 @@ public class CompanySettingsMetadata {
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CUSTOM_ENTITIES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<CustomEntityMetadata> getCustomEntities() {
     return customEntities;
@@ -112,8 +115,9 @@ public class CompanySettingsMetadata {
 
 
   @JsonProperty(JSON_PROPERTY_CUSTOM_ENTITIES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setCustomEntities(@javax.annotation.Nullable List<CustomEntityMetadata> customEntities) {
+
     this.customEntities = customEntities;
   }
 

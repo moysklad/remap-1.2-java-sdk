@@ -33,12 +33,12 @@ import ru.moysklad.remap_1_2.model.CurrencyRate;
 import ru.moysklad.remap_1_2.model.Employee;
 import ru.moysklad.remap_1_2.model.FileList;
 import ru.moysklad.remap_1_2.model.Group;
+import ru.moysklad.remap_1_2.model.InvoiceInPayment;
 import ru.moysklad.remap_1_2.model.InvoiceInPositionList;
 import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.Organization;
 import ru.moysklad.remap_1_2.model.Project;
 import ru.moysklad.remap_1_2.model.PurchaseOrder;
-import ru.moysklad.remap_1_2.model.SalesReturnPaymentsInner;
 import ru.moysklad.remap_1_2.model.State;
 import ru.moysklad.remap_1_2.model.Store;
 import ru.moysklad.remap_1_2.model.Supply;
@@ -98,8 +98,8 @@ import java.util.StringJoiner;
   InvoiceIn.JSON_PROPERTY_SUPPLIES,
   InvoiceIn.JSON_PROPERTY_PAYMENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
-public class InvoiceIn implements MetaEntity {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
+public class InvoiceIn extends EntityWithMeta implements MetaEntity {
   public static InvoiceIn createWithMeta(UUID id) {
     InvoiceIn o = new InvoiceIn();
     Meta meta = new Meta();
@@ -281,7 +281,7 @@ public class InvoiceIn implements MetaEntity {
 
   public static final String JSON_PROPERTY_PAYMENTS = "payments";
   @javax.annotation.Nullable
-  private JsonNullable<List<SalesReturnPaymentsInner>> payments = JsonNullable.<List<SalesReturnPaymentsInner>>undefined();
+  private JsonNullable<List<InvoiceInPayment>> payments = JsonNullable.<List<InvoiceInPayment>>undefined();
 
   public InvoiceIn() {
   }
@@ -317,6 +317,7 @@ public class InvoiceIn implements MetaEntity {
   }
 
   public InvoiceIn meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -341,6 +342,7 @@ public class InvoiceIn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -378,6 +380,7 @@ public class InvoiceIn implements MetaEntity {
 
 
   public InvoiceIn name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -402,11 +405,13 @@ public class InvoiceIn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public InvoiceIn code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -431,11 +436,13 @@ public class InvoiceIn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public InvoiceIn externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -460,11 +467,13 @@ public class InvoiceIn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public InvoiceIn syncId(@javax.annotation.Nullable UUID syncId) {
+
     
     this.syncId = syncId;
     return this;
@@ -489,11 +498,13 @@ public class InvoiceIn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
+
     this.syncId = syncId;
   }
 
 
   public InvoiceIn description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -527,6 +538,7 @@ public class InvoiceIn implements MetaEntity {
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 
@@ -580,6 +592,7 @@ public class InvoiceIn implements MetaEntity {
 
 
   public InvoiceIn moment(@javax.annotation.Nullable String moment) {
+
     
     this.moment = moment;
     return this;
@@ -604,11 +617,13 @@ public class InvoiceIn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMoment(@javax.annotation.Nullable String moment) {
+
     this.moment = moment;
   }
 
 
   public InvoiceIn paymentPlannedMoment(@javax.annotation.Nullable String paymentPlannedMoment) {
+
     
     this.paymentPlannedMoment = paymentPlannedMoment;
     return this;
@@ -633,11 +648,13 @@ public class InvoiceIn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_PAYMENT_PLANNED_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPaymentPlannedMoment(@javax.annotation.Nullable String paymentPlannedMoment) {
+
     this.paymentPlannedMoment = paymentPlannedMoment;
   }
 
 
   public InvoiceIn incomingDate(@javax.annotation.Nullable String incomingDate) {
+
     this.incomingDate = JsonNullable.<String>of(incomingDate);
     
     return this;
@@ -671,11 +688,13 @@ public class InvoiceIn implements MetaEntity {
   }
 
   public void setIncomingDate(@javax.annotation.Nullable String incomingDate) {
+
     this.incomingDate = JsonNullable.<String>of(incomingDate);
   }
 
 
   public InvoiceIn incomingNumber(@javax.annotation.Nullable String incomingNumber) {
+
     this.incomingNumber = JsonNullable.<String>of(incomingNumber);
     
     return this;
@@ -709,11 +728,13 @@ public class InvoiceIn implements MetaEntity {
   }
 
   public void setIncomingNumber(@javax.annotation.Nullable String incomingNumber) {
+
     this.incomingNumber = JsonNullable.<String>of(incomingNumber);
   }
 
 
   public InvoiceIn applicable(@javax.annotation.Nullable Boolean applicable) {
+
     
     this.applicable = applicable;
     return this;
@@ -738,6 +759,7 @@ public class InvoiceIn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_APPLICABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setApplicable(@javax.annotation.Nullable Boolean applicable) {
+
     this.applicable = applicable;
   }
 
@@ -775,6 +797,7 @@ public class InvoiceIn implements MetaEntity {
 
 
   public InvoiceIn shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -799,11 +822,13 @@ public class InvoiceIn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
 
   public InvoiceIn vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     
     this.vatEnabled = vatEnabled;
     return this;
@@ -828,11 +853,13 @@ public class InvoiceIn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     this.vatEnabled = vatEnabled;
   }
 
 
   public InvoiceIn vatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
+
     
     this.vatIncluded = vatIncluded;
     return this;
@@ -857,6 +884,7 @@ public class InvoiceIn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_VAT_INCLUDED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
+
     this.vatIncluded = vatIncluded;
   }
 
@@ -926,6 +954,7 @@ public class InvoiceIn implements MetaEntity {
 
 
   public InvoiceIn organization(@javax.annotation.Nullable Organization organization) {
+
     
     this.organization = organization;
     return this;
@@ -950,11 +979,13 @@ public class InvoiceIn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOrganization(@javax.annotation.Nullable Organization organization) {
+
     this.organization = organization;
   }
 
 
   public InvoiceIn organizationAccount(@javax.annotation.Nullable Account organizationAccount) {
+
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
     
     return this;
@@ -988,11 +1019,13 @@ public class InvoiceIn implements MetaEntity {
   }
 
   public void setOrganizationAccount(@javax.annotation.Nullable Account organizationAccount) {
+
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
   }
 
 
   public InvoiceIn agent(@javax.annotation.Nullable Agent agent) {
+
     
     this.agent = agent;
     return this;
@@ -1017,11 +1050,13 @@ public class InvoiceIn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAgent(@javax.annotation.Nullable Agent agent) {
+
     this.agent = agent;
   }
 
 
   public InvoiceIn agentAccount(@javax.annotation.Nullable Account agentAccount) {
+
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
     
     return this;
@@ -1055,11 +1090,13 @@ public class InvoiceIn implements MetaEntity {
   }
 
   public void setAgentAccount(@javax.annotation.Nullable Account agentAccount) {
+
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
   }
 
 
   public InvoiceIn store(@javax.annotation.Nullable Store store) {
+
     this.store = JsonNullable.<Store>of(store);
     
     return this;
@@ -1093,11 +1130,13 @@ public class InvoiceIn implements MetaEntity {
   }
 
   public void setStore(@javax.annotation.Nullable Store store) {
+
     this.store = JsonNullable.<Store>of(store);
   }
 
 
   public InvoiceIn state(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
     
     return this;
@@ -1131,11 +1170,13 @@ public class InvoiceIn implements MetaEntity {
   }
 
   public void setState(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
   }
 
 
   public InvoiceIn contract(@javax.annotation.Nullable Contract contract) {
+
     this.contract = JsonNullable.<Contract>of(contract);
     
     return this;
@@ -1169,11 +1210,13 @@ public class InvoiceIn implements MetaEntity {
   }
 
   public void setContract(@javax.annotation.Nullable Contract contract) {
+
     this.contract = JsonNullable.<Contract>of(contract);
   }
 
 
   public InvoiceIn project(@javax.annotation.Nullable Project project) {
+
     this.project = JsonNullable.<Project>of(project);
     
     return this;
@@ -1207,11 +1250,13 @@ public class InvoiceIn implements MetaEntity {
   }
 
   public void setProject(@javax.annotation.Nullable Project project) {
+
     this.project = JsonNullable.<Project>of(project);
   }
 
 
   public InvoiceIn owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -1245,11 +1290,13 @@ public class InvoiceIn implements MetaEntity {
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
 
   public InvoiceIn group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -1274,11 +1321,13 @@ public class InvoiceIn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
 
   public InvoiceIn attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
@@ -1311,7 +1360,7 @@ public class InvoiceIn implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
@@ -1324,11 +1373,13 @@ public class InvoiceIn implements MetaEntity {
   }
 
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
   public InvoiceIn files(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
@@ -1362,11 +1413,13 @@ public class InvoiceIn implements MetaEntity {
   }
 
   public void setFiles(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
   }
 
 
   public InvoiceIn rate(@javax.annotation.Nullable CurrencyRate rate) {
+
     
     this.rate = rate;
     return this;
@@ -1391,11 +1444,13 @@ public class InvoiceIn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRate(@javax.annotation.Nullable CurrencyRate rate) {
+
     this.rate = rate;
   }
 
 
   public InvoiceIn positions(@javax.annotation.Nullable InvoiceInPositionList positions) {
+
     
     this.positions = positions;
     return this;
@@ -1420,11 +1475,13 @@ public class InvoiceIn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPositions(@javax.annotation.Nullable InvoiceInPositionList positions) {
+
     this.positions = positions;
   }
 
 
   public InvoiceIn purchaseOrder(@javax.annotation.Nullable PurchaseOrder purchaseOrder) {
+
     this.purchaseOrder = JsonNullable.<PurchaseOrder>of(purchaseOrder);
     
     return this;
@@ -1458,11 +1515,13 @@ public class InvoiceIn implements MetaEntity {
   }
 
   public void setPurchaseOrder(@javax.annotation.Nullable PurchaseOrder purchaseOrder) {
+
     this.purchaseOrder = JsonNullable.<PurchaseOrder>of(purchaseOrder);
   }
 
 
   public InvoiceIn supplies(@javax.annotation.Nullable List<Supply> supplies) {
+
     this.supplies = JsonNullable.<List<Supply>>of(supplies);
     
     return this;
@@ -1495,7 +1554,7 @@ public class InvoiceIn implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_SUPPLIES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<Supply>> getSupplies_JsonNullable() {
@@ -1508,20 +1567,22 @@ public class InvoiceIn implements MetaEntity {
   }
 
   public void setSupplies(@javax.annotation.Nullable List<Supply> supplies) {
+
     this.supplies = JsonNullable.<List<Supply>>of(supplies);
   }
 
 
-  public InvoiceIn payments(@javax.annotation.Nullable List<SalesReturnPaymentsInner> payments) {
-    this.payments = JsonNullable.<List<SalesReturnPaymentsInner>>of(payments);
+  public InvoiceIn payments(@javax.annotation.Nullable List<InvoiceInPayment> payments) {
+
+    this.payments = JsonNullable.<List<InvoiceInPayment>>of(payments);
     
     return this;
   }
 
 
-  public InvoiceIn addPaymentsItem(SalesReturnPaymentsInner paymentsItem) {
+  public InvoiceIn addPaymentsItem(InvoiceInPayment paymentsItem) {
     if (this.payments == null || !this.payments.isPresent()) {
-      this.payments = JsonNullable.<List<SalesReturnPaymentsInner>>of(new ArrayList<>());
+      this.payments = JsonNullable.<List<InvoiceInPayment>>of(new ArrayList<>());
     }
     try {
       this.payments.get().add(paymentsItem);
@@ -1538,27 +1599,28 @@ public class InvoiceIn implements MetaEntity {
   @javax.annotation.Nullable
   @JsonIgnore
 
-  public List<SalesReturnPaymentsInner> getPayments() {
+  public List<InvoiceInPayment> getPayments() {
         return payments.orElse(null);
   }
 
   
 
   @JsonProperty(JSON_PROPERTY_PAYMENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
-  public JsonNullable<List<SalesReturnPaymentsInner>> getPayments_JsonNullable() {
+  public JsonNullable<List<InvoiceInPayment>> getPayments_JsonNullable() {
     return payments;
   }
   
   @JsonProperty(value = JSON_PROPERTY_PAYMENTS, required = false)
-  public void setPayments_JsonNullable(JsonNullable<List<SalesReturnPaymentsInner>> payments) {
+  public void setPayments_JsonNullable(JsonNullable<List<InvoiceInPayment>> payments) {
     this.payments = payments;
   }
 
-  public void setPayments(@javax.annotation.Nullable List<SalesReturnPaymentsInner> payments) {
-    this.payments = JsonNullable.<List<SalesReturnPaymentsInner>>of(payments);
+  public void setPayments(@javax.annotation.Nullable List<InvoiceInPayment> payments) {
+
+    this.payments = JsonNullable.<List<InvoiceInPayment>>of(payments);
   }
 
 

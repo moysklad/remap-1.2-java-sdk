@@ -33,7 +33,7 @@ import java.util.StringJoiner;
 @JsonPropertyOrder({
   Context.JSON_PROPERTY_EMPLOYEE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Context {
 
   public static final String JSON_PROPERTY_EMPLOYEE = "employee";
@@ -44,6 +44,7 @@ public class Context {
   }
 
   public Context employee(@javax.annotation.Nullable Employee employee) {
+
     
     this.employee = employee;
     return this;
@@ -68,6 +69,7 @@ public class Context {
   @JsonProperty(JSON_PROPERTY_EMPLOYEE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEmployee(@javax.annotation.Nullable Employee employee) {
+
     this.employee = employee;
   }
 

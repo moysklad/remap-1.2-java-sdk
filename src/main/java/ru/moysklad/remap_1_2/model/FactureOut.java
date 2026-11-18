@@ -31,11 +31,11 @@ import ru.moysklad.remap_1_2.model.Contract;
 import ru.moysklad.remap_1_2.model.CurrencyRate;
 import ru.moysklad.remap_1_2.model.Demand;
 import ru.moysklad.remap_1_2.model.Employee;
+import ru.moysklad.remap_1_2.model.FactureOutPayment;
 import ru.moysklad.remap_1_2.model.FileList;
 import ru.moysklad.remap_1_2.model.Group;
 import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.Organization;
-import ru.moysklad.remap_1_2.model.PaymentIn;
 import ru.moysklad.remap_1_2.model.PurchaseReturn;
 import ru.moysklad.remap_1_2.model.State;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -88,8 +88,8 @@ import java.util.StringJoiner;
   FactureOut.JSON_PROPERTY_PAYMENT_NUMBER,
   FactureOut.JSON_PROPERTY_PAYMENT_DATE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
-public class FactureOut implements MetaEntity {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
+public class FactureOut extends EntityWithMeta implements MetaEntity {
   public static FactureOut createWithMeta(UUID id) {
     FactureOut o = new FactureOut();
     Meta meta = new Meta();
@@ -231,7 +231,7 @@ public class FactureOut implements MetaEntity {
 
   public static final String JSON_PROPERTY_PAYMENTS = "payments";
   @javax.annotation.Nullable
-  private JsonNullable<List<PaymentIn>> payments = JsonNullable.<List<PaymentIn>>undefined();
+  private JsonNullable<List<FactureOutPayment>> payments = JsonNullable.<List<FactureOutPayment>>undefined();
 
   public static final String JSON_PROPERTY_RETURNS = "returns";
   @javax.annotation.Nullable
@@ -279,6 +279,7 @@ public class FactureOut implements MetaEntity {
   }
 
   public FactureOut meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -303,6 +304,7 @@ public class FactureOut implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -340,6 +342,7 @@ public class FactureOut implements MetaEntity {
 
 
   public FactureOut agent(@javax.annotation.Nullable Agent agent) {
+
     
     this.agent = agent;
     return this;
@@ -364,11 +367,13 @@ public class FactureOut implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAgent(@javax.annotation.Nullable Agent agent) {
+
     this.agent = agent;
   }
 
 
   public FactureOut applicable(@javax.annotation.Nullable Boolean applicable) {
+
     
     this.applicable = applicable;
     return this;
@@ -393,11 +398,13 @@ public class FactureOut implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_APPLICABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setApplicable(@javax.annotation.Nullable Boolean applicable) {
+
     this.applicable = applicable;
   }
 
 
   public FactureOut attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
@@ -430,7 +437,7 @@ public class FactureOut implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
@@ -443,11 +450,13 @@ public class FactureOut implements MetaEntity {
   }
 
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
   public FactureOut code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -472,11 +481,13 @@ public class FactureOut implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public FactureOut contract(@javax.annotation.Nullable Contract contract) {
+
     this.contract = JsonNullable.<Contract>of(contract);
     
     return this;
@@ -510,6 +521,7 @@ public class FactureOut implements MetaEntity {
   }
 
   public void setContract(@javax.annotation.Nullable Contract contract) {
+
     this.contract = JsonNullable.<Contract>of(contract);
   }
 
@@ -547,6 +559,7 @@ public class FactureOut implements MetaEntity {
 
 
   public FactureOut description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -580,11 +593,13 @@ public class FactureOut implements MetaEntity {
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 
 
   public FactureOut externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -609,11 +624,13 @@ public class FactureOut implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public FactureOut files(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
@@ -647,11 +664,13 @@ public class FactureOut implements MetaEntity {
   }
 
   public void setFiles(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
   }
 
 
   public FactureOut group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -676,11 +695,13 @@ public class FactureOut implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
 
   public FactureOut moment(@javax.annotation.Nullable String moment) {
+
     
     this.moment = moment;
     return this;
@@ -705,11 +726,13 @@ public class FactureOut implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMoment(@javax.annotation.Nullable String moment) {
+
     this.moment = moment;
   }
 
 
   public FactureOut name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -734,11 +757,13 @@ public class FactureOut implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public FactureOut organization(@javax.annotation.Nullable Organization organization) {
+
     
     this.organization = organization;
     return this;
@@ -763,11 +788,13 @@ public class FactureOut implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOrganization(@javax.annotation.Nullable Organization organization) {
+
     this.organization = organization;
   }
 
 
   public FactureOut owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -801,6 +828,7 @@ public class FactureOut implements MetaEntity {
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
@@ -838,6 +866,7 @@ public class FactureOut implements MetaEntity {
 
 
   public FactureOut rate(@javax.annotation.Nullable CurrencyRate rate) {
+
     
     this.rate = rate;
     return this;
@@ -862,11 +891,13 @@ public class FactureOut implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRate(@javax.annotation.Nullable CurrencyRate rate) {
+
     this.rate = rate;
   }
 
 
   public FactureOut shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -891,11 +922,13 @@ public class FactureOut implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
 
   public FactureOut state(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
     
     return this;
@@ -929,11 +962,13 @@ public class FactureOut implements MetaEntity {
   }
 
   public void setState(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
   }
 
 
   public FactureOut stateContractId(@javax.annotation.Nullable String stateContractId) {
+
     
     this.stateContractId = stateContractId;
     return this;
@@ -958,6 +993,7 @@ public class FactureOut implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_STATE_CONTRACT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStateContractId(@javax.annotation.Nullable String stateContractId) {
+
     this.stateContractId = stateContractId;
   }
 
@@ -979,6 +1015,7 @@ public class FactureOut implements MetaEntity {
 
 
   public FactureOut syncId(@javax.annotation.Nullable UUID syncId) {
+
     
     this.syncId = syncId;
     return this;
@@ -1003,6 +1040,7 @@ public class FactureOut implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
+
     this.syncId = syncId;
   }
 
@@ -1024,6 +1062,7 @@ public class FactureOut implements MetaEntity {
 
 
   public FactureOut advancePaymentVat(@javax.annotation.Nullable Double advancePaymentVat) {
+
     
     this.advancePaymentVat = advancePaymentVat;
     return this;
@@ -1048,11 +1087,13 @@ public class FactureOut implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ADVANCE_PAYMENT_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAdvancePaymentVat(@javax.annotation.Nullable Double advancePaymentVat) {
+
     this.advancePaymentVat = advancePaymentVat;
   }
 
 
   public FactureOut paymentPurpose(@javax.annotation.Nullable String paymentPurpose) {
+
     
     this.paymentPurpose = paymentPurpose;
     return this;
@@ -1077,6 +1118,7 @@ public class FactureOut implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_PAYMENT_PURPOSE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPaymentPurpose(@javax.annotation.Nullable String paymentPurpose) {
+
     this.paymentPurpose = paymentPurpose;
   }
 
@@ -1098,6 +1140,7 @@ public class FactureOut implements MetaEntity {
 
 
   public FactureOut demands(@javax.annotation.Nullable List<Demand> demands) {
+
     this.demands = JsonNullable.<List<Demand>>of(demands);
     
     return this;
@@ -1130,7 +1173,7 @@ public class FactureOut implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_DEMANDS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<Demand>> getDemands_JsonNullable() {
@@ -1143,20 +1186,22 @@ public class FactureOut implements MetaEntity {
   }
 
   public void setDemands(@javax.annotation.Nullable List<Demand> demands) {
+
     this.demands = JsonNullable.<List<Demand>>of(demands);
   }
 
 
-  public FactureOut payments(@javax.annotation.Nullable List<PaymentIn> payments) {
-    this.payments = JsonNullable.<List<PaymentIn>>of(payments);
+  public FactureOut payments(@javax.annotation.Nullable List<FactureOutPayment> payments) {
+
+    this.payments = JsonNullable.<List<FactureOutPayment>>of(payments);
     
     return this;
   }
 
 
-  public FactureOut addPaymentsItem(PaymentIn paymentsItem) {
+  public FactureOut addPaymentsItem(FactureOutPayment paymentsItem) {
     if (this.payments == null || !this.payments.isPresent()) {
-      this.payments = JsonNullable.<List<PaymentIn>>of(new ArrayList<>());
+      this.payments = JsonNullable.<List<FactureOutPayment>>of(new ArrayList<>());
     }
     try {
       this.payments.get().add(paymentsItem);
@@ -1173,31 +1218,33 @@ public class FactureOut implements MetaEntity {
   @javax.annotation.Nullable
   @JsonIgnore
 
-  public List<PaymentIn> getPayments() {
+  public List<FactureOutPayment> getPayments() {
         return payments.orElse(null);
   }
 
   
 
   @JsonProperty(JSON_PROPERTY_PAYMENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
-  public JsonNullable<List<PaymentIn>> getPayments_JsonNullable() {
+  public JsonNullable<List<FactureOutPayment>> getPayments_JsonNullable() {
     return payments;
   }
   
   @JsonProperty(value = JSON_PROPERTY_PAYMENTS, required = false)
-  public void setPayments_JsonNullable(JsonNullable<List<PaymentIn>> payments) {
+  public void setPayments_JsonNullable(JsonNullable<List<FactureOutPayment>> payments) {
     this.payments = payments;
   }
 
-  public void setPayments(@javax.annotation.Nullable List<PaymentIn> payments) {
-    this.payments = JsonNullable.<List<PaymentIn>>of(payments);
+  public void setPayments(@javax.annotation.Nullable List<FactureOutPayment> payments) {
+
+    this.payments = JsonNullable.<List<FactureOutPayment>>of(payments);
   }
 
 
   public FactureOut returns(@javax.annotation.Nullable List<PurchaseReturn> returns) {
+
     this.returns = JsonNullable.<List<PurchaseReturn>>of(returns);
     
     return this;
@@ -1230,7 +1277,7 @@ public class FactureOut implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_RETURNS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<PurchaseReturn>> getReturns_JsonNullable() {
@@ -1243,11 +1290,13 @@ public class FactureOut implements MetaEntity {
   }
 
   public void setReturns(@javax.annotation.Nullable List<PurchaseReturn> returns) {
+
     this.returns = JsonNullable.<List<PurchaseReturn>>of(returns);
   }
 
 
   public FactureOut consignee(@javax.annotation.Nullable Agent consignee) {
+
     this.consignee = JsonNullable.<Agent>of(consignee);
     
     return this;
@@ -1281,11 +1330,13 @@ public class FactureOut implements MetaEntity {
   }
 
   public void setConsignee(@javax.annotation.Nullable Agent consignee) {
+
     this.consignee = JsonNullable.<Agent>of(consignee);
   }
 
 
   public FactureOut paymentNumber(@javax.annotation.Nullable String paymentNumber) {
+
     
     this.paymentNumber = paymentNumber;
     return this;
@@ -1310,11 +1361,13 @@ public class FactureOut implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_PAYMENT_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPaymentNumber(@javax.annotation.Nullable String paymentNumber) {
+
     this.paymentNumber = paymentNumber;
   }
 
 
   public FactureOut paymentDate(@javax.annotation.Nullable String paymentDate) {
+
     
     this.paymentDate = paymentDate;
     return this;
@@ -1339,6 +1392,7 @@ public class FactureOut implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_PAYMENT_DATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPaymentDate(@javax.annotation.Nullable String paymentDate) {
+
     this.paymentDate = paymentDate;
   }
 

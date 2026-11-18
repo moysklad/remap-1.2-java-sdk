@@ -55,7 +55,7 @@ import java.util.StringJoiner;
   LossPosition.JSON_PROPERTY_SLOT,
   LossPosition.JSON_PROPERTY_THINGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class LossPosition extends EntityWithMeta implements DocumentPosition, MetaEntity {
   public static LossPosition createWithMeta(UUID parentId, UUID id) {
     LossPosition o = new LossPosition();
@@ -90,7 +90,7 @@ public class LossPosition extends EntityWithMeta implements DocumentPosition, Me
 
   public static final String JSON_PROPERTY_DECLARATION = "declaration";
   @javax.annotation.Nullable
-  private List<DeclarationInner> declaration = new ArrayList<>();
+  private List<DeclarationInner> declaration;
 
   public static final String JSON_PROPERTY_PACK = "pack";
   @javax.annotation.Nullable
@@ -114,7 +114,7 @@ public class LossPosition extends EntityWithMeta implements DocumentPosition, Me
 
   public static final String JSON_PROPERTY_THINGS = "things";
   @javax.annotation.Nullable
-  private List<String> things = new ArrayList<>();
+  private List<String> things;
 
   public LossPosition() {
   }
@@ -132,6 +132,7 @@ public class LossPosition extends EntityWithMeta implements DocumentPosition, Me
   }
 
   public LossPosition meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -156,11 +157,13 @@ public class LossPosition extends EntityWithMeta implements DocumentPosition, Me
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public LossPosition id(@javax.annotation.Nullable UUID id) {
+
     
     this.id = id;
     return this;
@@ -185,6 +188,7 @@ public class LossPosition extends EntityWithMeta implements DocumentPosition, Me
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(@javax.annotation.Nullable UUID id) {
+
     this.id = id;
   }
 
@@ -206,6 +210,7 @@ public class LossPosition extends EntityWithMeta implements DocumentPosition, Me
 
 
   public LossPosition assortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     
     this.assortment = assortment;
     return this;
@@ -230,6 +235,7 @@ public class LossPosition extends EntityWithMeta implements DocumentPosition, Me
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     this.assortment = assortment;
   }
 
@@ -240,7 +246,7 @@ public class LossPosition extends EntityWithMeta implements DocumentPosition, Me
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DECLARATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_EMPTY)
 
   public List<DeclarationInner> getDeclaration() {
     return declaration;
@@ -251,6 +257,7 @@ public class LossPosition extends EntityWithMeta implements DocumentPosition, Me
 
 
   public LossPosition pack(@javax.annotation.Nullable Pack pack) {
+
     this.pack = JsonNullable.<Pack>of(pack);
     
     return this;
@@ -284,11 +291,13 @@ public class LossPosition extends EntityWithMeta implements DocumentPosition, Me
   }
 
   public void setPack(@javax.annotation.Nullable Pack pack) {
+
     this.pack = JsonNullable.<Pack>of(pack);
   }
 
 
   public LossPosition price(@javax.annotation.Nullable Double price) {
+
     
     this.price = price;
     return this;
@@ -313,11 +322,13 @@ public class LossPosition extends EntityWithMeta implements DocumentPosition, Me
   @JsonProperty(JSON_PROPERTY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrice(@javax.annotation.Nullable Double price) {
+
     this.price = price;
   }
 
 
   public LossPosition quantity(@javax.annotation.Nullable Double quantity) {
+
     
     this.quantity = quantity;
     return this;
@@ -342,11 +353,13 @@ public class LossPosition extends EntityWithMeta implements DocumentPosition, Me
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
+
     this.quantity = quantity;
   }
 
 
   public LossPosition reason(@javax.annotation.Nullable String reason) {
+
     
     this.reason = reason;
     return this;
@@ -371,11 +384,13 @@ public class LossPosition extends EntityWithMeta implements DocumentPosition, Me
   @JsonProperty(JSON_PROPERTY_REASON)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReason(@javax.annotation.Nullable String reason) {
+
     this.reason = reason;
   }
 
 
   public LossPosition slot(@javax.annotation.Nullable StoreSlot slot) {
+
     this.slot = JsonNullable.<StoreSlot>of(slot);
     
     return this;
@@ -409,11 +424,13 @@ public class LossPosition extends EntityWithMeta implements DocumentPosition, Me
   }
 
   public void setSlot(@javax.annotation.Nullable StoreSlot slot) {
+
     this.slot = JsonNullable.<StoreSlot>of(slot);
   }
 
 
   public LossPosition things(@javax.annotation.Nullable List<String> things) {
+
     
     this.things = things;
     return this;
@@ -434,7 +451,7 @@ public class LossPosition extends EntityWithMeta implements DocumentPosition, Me
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_THINGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<String> getThings() {
     return things;
@@ -444,8 +461,9 @@ public class LossPosition extends EntityWithMeta implements DocumentPosition, Me
 
 
   @JsonProperty(JSON_PROPERTY_THINGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setThings(@javax.annotation.Nullable List<String> things) {
+
     this.things = things;
   }
 

@@ -41,7 +41,7 @@ import java.util.StringJoiner;
   ProcessingPlanProduct.JSON_PROPERTY_PRODUCT,
   ProcessingPlanProduct.JSON_PROPERTY_QUANTITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingPlanProduct extends EntityWithMeta implements MetaEntity {
   public static ProcessingPlanProduct createWithMeta(UUID parentId, UUID id) {
     ProcessingPlanProduct o = new ProcessingPlanProduct();
@@ -98,6 +98,7 @@ public class ProcessingPlanProduct extends EntityWithMeta implements MetaEntity 
   }
 
   public ProcessingPlanProduct meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -122,6 +123,7 @@ public class ProcessingPlanProduct extends EntityWithMeta implements MetaEntity 
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -159,6 +161,7 @@ public class ProcessingPlanProduct extends EntityWithMeta implements MetaEntity 
 
 
   public ProcessingPlanProduct assortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     
     this.assortment = assortment;
     return this;
@@ -183,11 +186,13 @@ public class ProcessingPlanProduct extends EntityWithMeta implements MetaEntity 
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     this.assortment = assortment;
   }
 
 
   public ProcessingPlanProduct product(@javax.annotation.Nullable Product product) {
+
     
     this.product = product;
     return this;
@@ -212,11 +217,16 @@ public class ProcessingPlanProduct extends EntityWithMeta implements MetaEntity 
   @JsonProperty(JSON_PROPERTY_PRODUCT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProduct(@javax.annotation.Nullable Product product) {
+
     this.product = product;
   }
 
 
   public ProcessingPlanProduct quantity(@javax.annotation.Nullable Double quantity) {
+    if (quantity != null && quantity.doubleValue() < 0.00010) {
+      throw new IllegalArgumentException("Invalid value for 'quantity': must be greater than or equal to 0.00010, got " + quantity);
+    }
+
     
     this.quantity = quantity;
     return this;
@@ -242,6 +252,10 @@ public class ProcessingPlanProduct extends EntityWithMeta implements MetaEntity 
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
+    if (quantity != null && quantity.doubleValue() < 0.00010) {
+      throw new IllegalArgumentException("Invalid value for 'quantity': must be greater than or equal to 0.00010, got " + quantity);
+    }
+
     this.quantity = quantity;
   }
 

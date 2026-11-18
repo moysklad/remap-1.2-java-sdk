@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   ReportDashboard.JSON_PROPERTY_ORDERS,
   ReportDashboard.JSON_PROPERTY_MONEY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ReportDashboard {
 
   public static final String JSON_PROPERTY_SALES = "sales";
@@ -55,6 +55,7 @@ public class ReportDashboard {
   }
 
   public ReportDashboard sales(@javax.annotation.Nullable ReportDashboardPeriodMetrics sales) {
+
     
     this.sales = sales;
     return this;
@@ -79,11 +80,13 @@ public class ReportDashboard {
   @JsonProperty(JSON_PROPERTY_SALES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSales(@javax.annotation.Nullable ReportDashboardPeriodMetrics sales) {
+
     this.sales = sales;
   }
 
 
   public ReportDashboard orders(@javax.annotation.Nullable ReportDashboardPeriodMetrics orders) {
+
     
     this.orders = orders;
     return this;
@@ -108,11 +111,13 @@ public class ReportDashboard {
   @JsonProperty(JSON_PROPERTY_ORDERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOrders(@javax.annotation.Nullable ReportDashboardPeriodMetrics orders) {
+
     this.orders = orders;
   }
 
 
   public ReportDashboard money(@javax.annotation.Nullable ReportDashboardMoney money) {
+
     
     this.money = money;
     return this;
@@ -137,6 +142,7 @@ public class ReportDashboard {
   @JsonProperty(JSON_PROPERTY_MONEY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMoney(@javax.annotation.Nullable ReportDashboardMoney money) {
+
     this.money = money;
   }
 

@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   NotificationOrderNew.JSON_PROPERTY_ORDER,
   NotificationOrderNew.JSON_PROPERTY_SUM
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class NotificationOrderNew extends NotificationAbstract {
 
   public static final String JSON_PROPERTY_AGENT_NAME = "agentName";
@@ -59,6 +59,7 @@ public class NotificationOrderNew extends NotificationAbstract {
   }
 
   public NotificationOrderNew agentName(@javax.annotation.Nullable String agentName) {
+
     
     this.agentName = agentName;
     return this;
@@ -83,11 +84,13 @@ public class NotificationOrderNew extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_AGENT_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAgentName(@javax.annotation.Nullable String agentName) {
+
     this.agentName = agentName;
   }
 
 
   public NotificationOrderNew deliveryPlannedMoment(@javax.annotation.Nullable String deliveryPlannedMoment) {
+
     
     this.deliveryPlannedMoment = deliveryPlannedMoment;
     return this;
@@ -112,11 +115,13 @@ public class NotificationOrderNew extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_DELIVERY_PLANNED_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDeliveryPlannedMoment(@javax.annotation.Nullable String deliveryPlannedMoment) {
+
     this.deliveryPlannedMoment = deliveryPlannedMoment;
   }
 
 
   public NotificationOrderNew order(@javax.annotation.Nullable NotificationOrder order) {
+
     
     this.order = order;
     return this;
@@ -141,11 +146,13 @@ public class NotificationOrderNew extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_ORDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOrder(@javax.annotation.Nullable NotificationOrder order) {
+
     this.order = order;
   }
 
 
   public NotificationOrderNew sum(@javax.annotation.Nullable Integer sum) {
+
     
     this.sum = sum;
     return this;
@@ -170,6 +177,7 @@ public class NotificationOrderNew extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSum(@javax.annotation.Nullable Integer sum) {
+
     this.sum = sum;
   }
 

@@ -52,7 +52,7 @@ import java.util.StringJoiner;
   Audit.JSON_PROPERTY_SUPPORT_ACCESS,
   Audit.JSON_PROPERTY_EVENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Audit {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -135,6 +135,7 @@ public class Audit {
   }
 
   public Audit meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -159,6 +160,7 @@ public class Audit {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -245,7 +247,7 @@ public class Audit {
   
 
   @JsonProperty(JSON_PROPERTY_INFO)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.CUSTOM, valueFilter = ru.moysklad.remap_1_2.EmptyReadOnlyCollectionFilter.class)
 
 
   public JsonNullable<Map<String, Object>> getInfo_JsonNullable() {
@@ -399,6 +401,7 @@ public class Audit {
 
 
   public Audit events(@javax.annotation.Nullable AuditEvents events) {
+
     this.events = JsonNullable.<AuditEvents>of(events);
     
     return this;
@@ -432,6 +435,7 @@ public class Audit {
   }
 
   public void setEvents(@javax.annotation.Nullable AuditEvents events) {
+
     this.events = JsonNullable.<AuditEvents>of(events);
   }
 

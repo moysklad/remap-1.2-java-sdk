@@ -48,7 +48,7 @@ import java.util.StringJoiner;
   InternalOrderPosition.JSON_PROPERTY_ASSORTMENT,
   InternalOrderPosition.JSON_PROPERTY_PACK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class InternalOrderPosition extends EntityWithMeta implements DocumentPosition, MetaEntity {
   public static InternalOrderPosition createWithMeta(UUID parentId, UUID id) {
     InternalOrderPosition o = new InternalOrderPosition();
@@ -115,6 +115,7 @@ public class InternalOrderPosition extends EntityWithMeta implements DocumentPos
   }
 
   public InternalOrderPosition meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -139,11 +140,13 @@ public class InternalOrderPosition extends EntityWithMeta implements DocumentPos
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public InternalOrderPosition id(@javax.annotation.Nullable UUID id) {
+
     
     this.id = id;
     return this;
@@ -168,6 +171,7 @@ public class InternalOrderPosition extends EntityWithMeta implements DocumentPos
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(@javax.annotation.Nullable UUID id) {
+
     this.id = id;
   }
 
@@ -189,6 +193,7 @@ public class InternalOrderPosition extends EntityWithMeta implements DocumentPos
 
 
   public InternalOrderPosition quantity(@javax.annotation.Nullable Double quantity) {
+
     
     this.quantity = quantity;
     return this;
@@ -213,11 +218,13 @@ public class InternalOrderPosition extends EntityWithMeta implements DocumentPos
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
+
     this.quantity = quantity;
   }
 
 
   public InternalOrderPosition price(@javax.annotation.Nullable Double price) {
+
     
     this.price = price;
     return this;
@@ -242,11 +249,19 @@ public class InternalOrderPosition extends EntityWithMeta implements DocumentPos
   @JsonProperty(JSON_PROPERTY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrice(@javax.annotation.Nullable Double price) {
+
     this.price = price;
   }
 
 
   public InternalOrderPosition vat(@javax.annotation.Nullable Integer vat) {
+    if (vat != null && vat.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be greater than or equal to 0, got " + vat);
+    }
+    if (vat != null && vat.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be less than or equal to 100, got " + vat);
+    }
+
     
     this.vat = vat;
     return this;
@@ -273,11 +288,19 @@ public class InternalOrderPosition extends EntityWithMeta implements DocumentPos
   @JsonProperty(JSON_PROPERTY_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVat(@javax.annotation.Nullable Integer vat) {
+    if (vat != null && vat.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be greater than or equal to 0, got " + vat);
+    }
+    if (vat != null && vat.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be less than or equal to 100, got " + vat);
+    }
+
     this.vat = vat;
   }
 
 
   public InternalOrderPosition vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     
     this.vatEnabled = vatEnabled;
     return this;
@@ -302,11 +325,13 @@ public class InternalOrderPosition extends EntityWithMeta implements DocumentPos
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     this.vatEnabled = vatEnabled;
   }
 
 
   public InternalOrderPosition assortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     
     this.assortment = assortment;
     return this;
@@ -331,11 +356,13 @@ public class InternalOrderPosition extends EntityWithMeta implements DocumentPos
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     this.assortment = assortment;
   }
 
 
   public InternalOrderPosition pack(@javax.annotation.Nullable Pack pack) {
+
     this.pack = JsonNullable.<Pack>of(pack);
     
     return this;
@@ -369,6 +396,7 @@ public class InternalOrderPosition extends EntityWithMeta implements DocumentPos
   }
 
   public void setPack(@javax.annotation.Nullable Pack pack) {
+
     this.pack = JsonNullable.<Pack>of(pack);
   }
 

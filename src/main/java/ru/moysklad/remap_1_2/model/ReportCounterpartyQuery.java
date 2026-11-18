@@ -36,17 +36,18 @@ import java.util.StringJoiner;
 @JsonPropertyOrder({
   ReportCounterpartyQuery.JSON_PROPERTY_COUNTERPARTIES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ReportCounterpartyQuery {
 
   public static final String JSON_PROPERTY_COUNTERPARTIES = "counterparties";
   @javax.annotation.Nonnull
-  private List<ReportCounterpartyQueryCounterpartiesInner> counterparties = new ArrayList<>();
+  private List<ReportCounterpartyQueryCounterpartiesInner> counterparties;
 
   public ReportCounterpartyQuery() {
   }
 
   public ReportCounterpartyQuery counterparties(@javax.annotation.Nonnull List<ReportCounterpartyQueryCounterpartiesInner> counterparties) {
+
     
     this.counterparties = counterparties;
     return this;
@@ -67,7 +68,7 @@ public class ReportCounterpartyQuery {
    */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_COUNTERPARTIES)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<ReportCounterpartyQueryCounterpartiesInner> getCounterparties() {
     return counterparties;
@@ -77,8 +78,9 @@ public class ReportCounterpartyQuery {
 
 
   @JsonProperty(JSON_PROPERTY_COUNTERPARTIES)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setCounterparties(@javax.annotation.Nonnull List<ReportCounterpartyQueryCounterpartiesInner> counterparties) {
+
     this.counterparties = counterparties;
   }
 

@@ -36,17 +36,18 @@ import java.util.StringJoiner;
 @JsonPropertyOrder({
   Errors.JSON_PROPERTY_ERRORS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Errors extends BatchResponseEntity {
 
   public static final String JSON_PROPERTY_ERRORS = "errors";
   @javax.annotation.Nonnull
-  private List<Error> errors = new ArrayList<>();
+  private List<Error> errors;
 
   public Errors() {
   }
 
   public Errors errors(@javax.annotation.Nonnull List<Error> errors) {
+
     
     this.errors = errors;
     return this;
@@ -67,7 +68,7 @@ public class Errors extends BatchResponseEntity {
    */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ERRORS)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<Error> getErrors() {
     return errors;
@@ -77,8 +78,9 @@ public class Errors extends BatchResponseEntity {
 
 
   @JsonProperty(JSON_PROPERTY_ERRORS)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setErrors(@javax.annotation.Nonnull List<Error> errors) {
+
     this.errors = errors;
   }
 

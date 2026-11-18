@@ -85,7 +85,7 @@ import java.util.StringJoiner;
   CashIn.JSON_PROPERTY_FACTURE_OUT,
   CashIn.JSON_PROPERTY_OPERATIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class CashIn extends EntityWithMeta implements MetaEntity {
   public static CashIn createWithMeta(UUID id) {
     CashIn o = new CashIn();
@@ -258,6 +258,7 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
   }
 
   public CashIn meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -282,6 +283,7 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -319,6 +321,7 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
 
 
   public CashIn applicable(@javax.annotation.Nullable Boolean applicable) {
+
     
     this.applicable = applicable;
     return this;
@@ -343,11 +346,13 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_APPLICABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setApplicable(@javax.annotation.Nullable Boolean applicable) {
+
     this.applicable = applicable;
   }
 
 
   public CashIn name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -372,11 +377,13 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public CashIn code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -401,11 +408,13 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public CashIn externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -430,11 +439,13 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public CashIn syncId(@javax.annotation.Nullable UUID syncId) {
+
     
     this.syncId = syncId;
     return this;
@@ -459,11 +470,13 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
+
     this.syncId = syncId;
   }
 
 
   public CashIn description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -497,6 +510,7 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 
@@ -550,6 +564,7 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
 
 
   public CashIn moment(@javax.annotation.Nullable String moment) {
+
     
     this.moment = moment;
     return this;
@@ -574,11 +589,13 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMoment(@javax.annotation.Nullable String moment) {
+
     this.moment = moment;
   }
 
 
   public CashIn attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
@@ -611,7 +628,7 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
@@ -624,11 +641,13 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
   }
 
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
   public CashIn contract(@javax.annotation.Nullable Contract contract) {
+
     this.contract = JsonNullable.<Contract>of(contract);
     
     return this;
@@ -662,11 +681,13 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
   }
 
   public void setContract(@javax.annotation.Nullable Contract contract) {
+
     this.contract = JsonNullable.<Contract>of(contract);
   }
 
 
   public CashIn files(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
@@ -700,11 +721,13 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
   }
 
   public void setFiles(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
   }
 
 
   public CashIn paymentPurpose(@javax.annotation.Nullable String paymentPurpose) {
+
     
     this.paymentPurpose = paymentPurpose;
     return this;
@@ -729,6 +752,7 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_PAYMENT_PURPOSE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPaymentPurpose(@javax.annotation.Nullable String paymentPurpose) {
+
     this.paymentPurpose = paymentPurpose;
   }
 
@@ -750,6 +774,7 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
 
 
   public CashIn project(@javax.annotation.Nullable Project project) {
+
     this.project = JsonNullable.<Project>of(project);
     
     return this;
@@ -783,6 +808,7 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
   }
 
   public void setProject(@javax.annotation.Nullable Project project) {
+
     this.project = JsonNullable.<Project>of(project);
   }
 
@@ -804,6 +830,7 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
 
 
   public CashIn owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -837,11 +864,13 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
 
   public CashIn group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -866,11 +895,13 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
 
   public CashIn salesChannel(@javax.annotation.Nullable SalesChannel salesChannel) {
+
     this.salesChannel = JsonNullable.<SalesChannel>of(salesChannel);
     
     return this;
@@ -904,6 +935,7 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
   }
 
   public void setSalesChannel(@javax.annotation.Nullable SalesChannel salesChannel) {
+
     this.salesChannel = JsonNullable.<SalesChannel>of(salesChannel);
   }
 
@@ -925,6 +957,7 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
 
 
   public CashIn state(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
     
     return this;
@@ -958,11 +991,13 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
   }
 
   public void setState(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
   }
 
 
   public CashIn rate(@javax.annotation.Nullable CurrencyRate rate) {
+
     
     this.rate = rate;
     return this;
@@ -987,11 +1022,13 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRate(@javax.annotation.Nullable CurrencyRate rate) {
+
     this.rate = rate;
   }
 
 
   public CashIn organization(@javax.annotation.Nullable Organization organization) {
+
     
     this.organization = organization;
     return this;
@@ -1016,11 +1053,13 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOrganization(@javax.annotation.Nullable Organization organization) {
+
     this.organization = organization;
   }
 
 
   public CashIn agent(@javax.annotation.Nullable Agent agent) {
+
     
     this.agent = agent;
     return this;
@@ -1045,11 +1084,13 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAgent(@javax.annotation.Nullable Agent agent) {
+
     this.agent = agent;
   }
 
 
   public CashIn sum(@javax.annotation.Nullable Double sum) {
+
     
     this.sum = sum;
     return this;
@@ -1074,11 +1115,13 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSum(@javax.annotation.Nullable Double sum) {
+
     this.sum = sum;
   }
 
 
   public CashIn vatSum(@javax.annotation.Nullable Double vatSum) {
+
     
     this.vatSum = vatSum;
     return this;
@@ -1103,11 +1146,13 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_VAT_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVatSum(@javax.annotation.Nullable Double vatSum) {
+
     this.vatSum = vatSum;
   }
 
 
   public CashIn factureOut(@javax.annotation.Nullable FactureOut factureOut) {
+
     this.factureOut = JsonNullable.<FactureOut>of(factureOut);
     
     return this;
@@ -1141,11 +1186,13 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
   }
 
   public void setFactureOut(@javax.annotation.Nullable FactureOut factureOut) {
+
     this.factureOut = JsonNullable.<FactureOut>of(factureOut);
   }
 
 
   public CashIn operations(@javax.annotation.Nullable List<FinanceInOperationAbstract> operations) {
+
     this.operations = JsonNullable.<List<FinanceInOperationAbstract>>of(operations);
     
     return this;
@@ -1178,7 +1225,7 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_OPERATIONS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<FinanceInOperationAbstract>> getOperations_JsonNullable() {
@@ -1191,6 +1238,7 @@ public class CashIn extends EntityWithMeta implements MetaEntity {
   }
 
   public void setOperations(@javax.annotation.Nullable List<FinanceInOperationAbstract> operations) {
+
     this.operations = JsonNullable.<List<FinanceInOperationAbstract>>of(operations);
   }
 

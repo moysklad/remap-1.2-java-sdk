@@ -93,8 +93,8 @@ import java.util.StringJoiner;
   RetailSalesReturn.JSON_PROPERTY_VAT_INCLUDED,
   RetailSalesReturn.JSON_PROPERTY_VAT_SUM
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
-public class RetailSalesReturn implements MetaEntity {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
+public class RetailSalesReturn extends EntityWithMeta implements MetaEntity {
   public static RetailSalesReturn createWithMeta(UUID id) {
     RetailSalesReturn o = new RetailSalesReturn();
     Meta meta = new Meta();
@@ -296,6 +296,7 @@ public class RetailSalesReturn implements MetaEntity {
   }
 
   public RetailSalesReturn meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -320,6 +321,7 @@ public class RetailSalesReturn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -357,6 +359,7 @@ public class RetailSalesReturn implements MetaEntity {
 
 
   public RetailSalesReturn agent(@javax.annotation.Nullable Agent agent) {
+
     
     this.agent = agent;
     return this;
@@ -381,11 +384,13 @@ public class RetailSalesReturn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAgent(@javax.annotation.Nullable Agent agent) {
+
     this.agent = agent;
   }
 
 
   public RetailSalesReturn agentAccount(@javax.annotation.Nullable Account agentAccount) {
+
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
     
     return this;
@@ -419,11 +424,13 @@ public class RetailSalesReturn implements MetaEntity {
   }
 
   public void setAgentAccount(@javax.annotation.Nullable Account agentAccount) {
+
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
   }
 
 
   public RetailSalesReturn applicable(@javax.annotation.Nullable Boolean applicable) {
+
     
     this.applicable = applicable;
     return this;
@@ -448,11 +455,13 @@ public class RetailSalesReturn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_APPLICABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setApplicable(@javax.annotation.Nullable Boolean applicable) {
+
     this.applicable = applicable;
   }
 
 
   public RetailSalesReturn attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
@@ -485,7 +494,7 @@ public class RetailSalesReturn implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
@@ -498,11 +507,16 @@ public class RetailSalesReturn implements MetaEntity {
   }
 
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
   public RetailSalesReturn cashSum(@javax.annotation.Nullable Double cashSum) {
+    if (cashSum != null && cashSum.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'cashSum': must be greater than or equal to 0, got " + cashSum);
+    }
+
     
     this.cashSum = cashSum;
     return this;
@@ -528,11 +542,16 @@ public class RetailSalesReturn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_CASH_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCashSum(@javax.annotation.Nullable Double cashSum) {
+    if (cashSum != null && cashSum.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'cashSum': must be greater than or equal to 0, got " + cashSum);
+    }
+
     this.cashSum = cashSum;
   }
 
 
   public RetailSalesReturn code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -557,11 +576,13 @@ public class RetailSalesReturn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public RetailSalesReturn contract(@javax.annotation.Nullable Contract contract) {
+
     this.contract = JsonNullable.<Contract>of(contract);
     
     return this;
@@ -595,6 +616,7 @@ public class RetailSalesReturn implements MetaEntity {
   }
 
   public void setContract(@javax.annotation.Nullable Contract contract) {
+
     this.contract = JsonNullable.<Contract>of(contract);
   }
 
@@ -632,6 +654,7 @@ public class RetailSalesReturn implements MetaEntity {
 
 
   public RetailSalesReturn demand(@javax.annotation.Nullable RetailDemand demand) {
+
     this.demand = JsonNullable.<RetailDemand>of(demand);
     
     return this;
@@ -665,11 +688,13 @@ public class RetailSalesReturn implements MetaEntity {
   }
 
   public void setDemand(@javax.annotation.Nullable RetailDemand demand) {
+
     this.demand = JsonNullable.<RetailDemand>of(demand);
   }
 
 
   public RetailSalesReturn description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -703,11 +728,13 @@ public class RetailSalesReturn implements MetaEntity {
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 
 
   public RetailSalesReturn externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -732,11 +759,13 @@ public class RetailSalesReturn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public RetailSalesReturn group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -761,11 +790,13 @@ public class RetailSalesReturn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
 
   public RetailSalesReturn moment(@javax.annotation.Nullable String moment) {
+
     
     this.moment = moment;
     return this;
@@ -790,11 +821,13 @@ public class RetailSalesReturn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMoment(@javax.annotation.Nullable String moment) {
+
     this.moment = moment;
   }
 
 
   public RetailSalesReturn name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -819,11 +852,16 @@ public class RetailSalesReturn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public RetailSalesReturn noCashSum(@javax.annotation.Nullable Double noCashSum) {
+    if (noCashSum != null && noCashSum.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'noCashSum': must be greater than or equal to 0, got " + noCashSum);
+    }
+
     
     this.noCashSum = noCashSum;
     return this;
@@ -849,11 +887,16 @@ public class RetailSalesReturn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_NO_CASH_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNoCashSum(@javax.annotation.Nullable Double noCashSum) {
+    if (noCashSum != null && noCashSum.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'noCashSum': must be greater than or equal to 0, got " + noCashSum);
+    }
+
     this.noCashSum = noCashSum;
   }
 
 
   public RetailSalesReturn organization(@javax.annotation.Nullable Organization organization) {
+
     
     this.organization = organization;
     return this;
@@ -878,11 +921,13 @@ public class RetailSalesReturn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOrganization(@javax.annotation.Nullable Organization organization) {
+
     this.organization = organization;
   }
 
 
   public RetailSalesReturn organizationAccount(@javax.annotation.Nullable Account organizationAccount) {
+
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
     
     return this;
@@ -916,11 +961,13 @@ public class RetailSalesReturn implements MetaEntity {
   }
 
   public void setOrganizationAccount(@javax.annotation.Nullable Account organizationAccount) {
+
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
   }
 
 
   public RetailSalesReturn owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -954,11 +1001,13 @@ public class RetailSalesReturn implements MetaEntity {
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
 
   public RetailSalesReturn positions(@javax.annotation.Nullable RetailSalesReturnPositionList positions) {
+
     
     this.positions = positions;
     return this;
@@ -983,6 +1032,7 @@ public class RetailSalesReturn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPositions(@javax.annotation.Nullable RetailSalesReturnPositionList positions) {
+
     this.positions = positions;
   }
 
@@ -1020,6 +1070,10 @@ public class RetailSalesReturn implements MetaEntity {
 
 
   public RetailSalesReturn qrSum(@javax.annotation.Nullable Double qrSum) {
+    if (qrSum != null && qrSum.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'qrSum': must be greater than or equal to 0, got " + qrSum);
+    }
+
     
     this.qrSum = qrSum;
     return this;
@@ -1045,11 +1099,16 @@ public class RetailSalesReturn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_QR_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQrSum(@javax.annotation.Nullable Double qrSum) {
+    if (qrSum != null && qrSum.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'qrSum': must be greater than or equal to 0, got " + qrSum);
+    }
+
     this.qrSum = qrSum;
   }
 
 
   public RetailSalesReturn rate(@javax.annotation.Nullable CurrencyRate rate) {
+
     
     this.rate = rate;
     return this;
@@ -1074,11 +1133,13 @@ public class RetailSalesReturn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRate(@javax.annotation.Nullable CurrencyRate rate) {
+
     this.rate = rate;
   }
 
 
   public RetailSalesReturn retailShift(@javax.annotation.Nullable RetailShift retailShift) {
+
     
     this.retailShift = retailShift;
     return this;
@@ -1103,11 +1164,13 @@ public class RetailSalesReturn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_RETAIL_SHIFT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRetailShift(@javax.annotation.Nullable RetailShift retailShift) {
+
     this.retailShift = retailShift;
   }
 
 
   public RetailSalesReturn retailStore(@javax.annotation.Nullable RetailStore retailStore) {
+
     
     this.retailStore = retailStore;
     return this;
@@ -1132,11 +1195,13 @@ public class RetailSalesReturn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_RETAIL_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRetailStore(@javax.annotation.Nullable RetailStore retailStore) {
+
     this.retailStore = retailStore;
   }
 
 
   public RetailSalesReturn shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -1161,11 +1226,13 @@ public class RetailSalesReturn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
 
   public RetailSalesReturn state(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
     
     return this;
@@ -1199,11 +1266,13 @@ public class RetailSalesReturn implements MetaEntity {
   }
 
   public void setState(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
   }
 
 
   public RetailSalesReturn store(@javax.annotation.Nullable Store store) {
+
     
     this.store = store;
     return this;
@@ -1228,6 +1297,7 @@ public class RetailSalesReturn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStore(@javax.annotation.Nullable Store store) {
+
     this.store = store;
   }
 
@@ -1249,6 +1319,7 @@ public class RetailSalesReturn implements MetaEntity {
 
 
   public RetailSalesReturn syncId(@javax.annotation.Nullable UUID syncId) {
+
     
     this.syncId = syncId;
     return this;
@@ -1273,11 +1344,13 @@ public class RetailSalesReturn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
+
     this.syncId = syncId;
   }
 
 
   public RetailSalesReturn taxSystem(@javax.annotation.Nullable String taxSystem) {
+
     
     this.taxSystem = taxSystem;
     return this;
@@ -1302,6 +1375,7 @@ public class RetailSalesReturn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_TAX_SYSTEM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTaxSystem(@javax.annotation.Nullable String taxSystem) {
+
     this.taxSystem = taxSystem;
   }
 
@@ -1323,6 +1397,7 @@ public class RetailSalesReturn implements MetaEntity {
 
 
   public RetailSalesReturn vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     
     this.vatEnabled = vatEnabled;
     return this;
@@ -1347,11 +1422,13 @@ public class RetailSalesReturn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     this.vatEnabled = vatEnabled;
   }
 
 
   public RetailSalesReturn vatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
+
     
     this.vatIncluded = vatIncluded;
     return this;
@@ -1376,6 +1453,7 @@ public class RetailSalesReturn implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_VAT_INCLUDED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
+
     this.vatIncluded = vatIncluded;
   }
 

@@ -45,7 +45,7 @@ import java.util.StringJoiner;
   ContactPerson.JSON_PROPERTY_EXTERNAL_CODE,
   ContactPerson.JSON_PROPERTY_AGENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ContactPerson extends EntityWithMeta implements MetaEntity {
   public static ContactPerson createWithMeta(UUID parentId, UUID id) {
     ContactPerson o = new ContactPerson();
@@ -124,6 +124,7 @@ public class ContactPerson extends EntityWithMeta implements MetaEntity {
   }
 
   public ContactPerson meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -148,6 +149,7 @@ public class ContactPerson extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -201,6 +203,7 @@ public class ContactPerson extends EntityWithMeta implements MetaEntity {
 
 
   public ContactPerson name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -225,11 +228,13 @@ public class ContactPerson extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public ContactPerson description(@javax.annotation.Nullable String description) {
+
     
     this.description = description;
     return this;
@@ -254,11 +259,13 @@ public class ContactPerson extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = description;
   }
 
 
   public ContactPerson email(@javax.annotation.Nullable String email) {
+
     
     this.email = email;
     return this;
@@ -283,11 +290,13 @@ public class ContactPerson extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEmail(@javax.annotation.Nullable String email) {
+
     this.email = email;
   }
 
 
   public ContactPerson phone(@javax.annotation.Nullable String phone) {
+
     
     this.phone = phone;
     return this;
@@ -312,11 +321,13 @@ public class ContactPerson extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_PHONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPhone(@javax.annotation.Nullable String phone) {
+
     this.phone = phone;
   }
 
 
   public ContactPerson position(@javax.annotation.Nullable String position) {
+
     
     this.position = position;
     return this;
@@ -341,11 +352,13 @@ public class ContactPerson extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_POSITION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPosition(@javax.annotation.Nullable String position) {
+
     this.position = position;
   }
 
 
   public ContactPerson externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -370,11 +383,13 @@ public class ContactPerson extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public ContactPerson agent(@javax.annotation.Nullable Counterparty agent) {
+
     
     this.agent = agent;
     return this;
@@ -399,6 +414,7 @@ public class ContactPerson extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAgent(@javax.annotation.Nullable Counterparty agent) {
+
     this.agent = agent;
   }
 

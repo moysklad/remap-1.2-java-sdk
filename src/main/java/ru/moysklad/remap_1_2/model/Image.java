@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   Image.JSON_PROPERTY_TINY,
   Image.JSON_PROPERTY_MINIATURE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Image {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -91,6 +91,7 @@ public class Image {
   }
 
   public Image meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -115,11 +116,13 @@ public class Image {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public Image title(@javax.annotation.Nullable String title) {
+
     
     this.title = title;
     return this;
@@ -144,11 +147,13 @@ public class Image {
   @JsonProperty(JSON_PROPERTY_TITLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTitle(@javax.annotation.Nullable String title) {
+
     this.title = title;
   }
 
 
   public Image filename(@javax.annotation.Nullable String filename) {
+
     
     this.filename = filename;
     return this;
@@ -173,11 +178,13 @@ public class Image {
   @JsonProperty(JSON_PROPERTY_FILENAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFilename(@javax.annotation.Nullable String filename) {
+
     this.filename = filename;
   }
 
 
   public Image content(@javax.annotation.Nullable String content) {
+
     
     this.content = content;
     return this;
@@ -202,6 +209,7 @@ public class Image {
   @JsonProperty(JSON_PROPERTY_CONTENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setContent(@javax.annotation.Nullable String content) {
+
     this.content = content;
   }
 
@@ -239,6 +247,7 @@ public class Image {
 
 
   public Image tiny(@javax.annotation.Nullable Meta tiny) {
+
     
     this.tiny = tiny;
     return this;
@@ -263,11 +272,13 @@ public class Image {
   @JsonProperty(JSON_PROPERTY_TINY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTiny(@javax.annotation.Nullable Meta tiny) {
+
     this.tiny = tiny;
   }
 
 
   public Image miniature(@javax.annotation.Nullable Meta miniature) {
+
     
     this.miniature = miniature;
     return this;
@@ -292,6 +303,7 @@ public class Image {
   @JsonProperty(JSON_PROPERTY_MINIATURE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMiniature(@javax.annotation.Nullable Meta miniature) {
+
     this.miniature = miniature;
   }
 

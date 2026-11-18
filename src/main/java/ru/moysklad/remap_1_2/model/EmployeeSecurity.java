@@ -44,7 +44,7 @@ import java.util.StringJoiner;
   EmployeeSecurity.JSON_PROPERTY_AUTHORIZED_IP_NETMASK,
   EmployeeSecurity.JSON_PROPERTY_ROLE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class EmployeeSecurity {
 
   public static final String JSON_PROPERTY_IS_ACTIVE = "isActive";
@@ -65,7 +65,7 @@ public class EmployeeSecurity {
 
   public static final String JSON_PROPERTY_AUTHORIZED_HOSTS = "authorizedHosts";
   @javax.annotation.Nullable
-  private List<String> authorizedHosts = new ArrayList<>();
+  private List<String> authorizedHosts;
 
   public static final String JSON_PROPERTY_AUTHORIZED_IP_NETWORK = "authorizedIpNetwork";
   @javax.annotation.Nullable
@@ -83,6 +83,7 @@ public class EmployeeSecurity {
   }
 
   public EmployeeSecurity isActive(@javax.annotation.Nullable Boolean isActive) {
+
     
     this.isActive = isActive;
     return this;
@@ -107,11 +108,13 @@ public class EmployeeSecurity {
   @JsonProperty(JSON_PROPERTY_IS_ACTIVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsActive(@javax.annotation.Nullable Boolean isActive) {
+
     this.isActive = isActive;
   }
 
 
   public EmployeeSecurity login(@javax.annotation.Nullable String login) {
+
     
     this.login = login;
     return this;
@@ -136,11 +139,13 @@ public class EmployeeSecurity {
   @JsonProperty(JSON_PROPERTY_LOGIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLogin(@javax.annotation.Nullable String login) {
+
     this.login = login;
   }
 
 
   public EmployeeSecurity email(@javax.annotation.Nullable String email) {
+
     
     this.email = email;
     return this;
@@ -165,11 +170,13 @@ public class EmployeeSecurity {
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEmail(@javax.annotation.Nullable String email) {
+
     this.email = email;
   }
 
 
   public EmployeeSecurity group(@javax.annotation.Nullable EmployeeSecurityGroup group) {
+
     
     this.group = group;
     return this;
@@ -194,11 +201,13 @@ public class EmployeeSecurity {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable EmployeeSecurityGroup group) {
+
     this.group = group;
   }
 
 
   public EmployeeSecurity authorizedHosts(@javax.annotation.Nullable List<String> authorizedHosts) {
+
     
     this.authorizedHosts = authorizedHosts;
     return this;
@@ -219,7 +228,7 @@ public class EmployeeSecurity {
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AUTHORIZED_HOSTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<String> getAuthorizedHosts() {
     return authorizedHosts;
@@ -229,13 +238,15 @@ public class EmployeeSecurity {
 
 
   @JsonProperty(JSON_PROPERTY_AUTHORIZED_HOSTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setAuthorizedHosts(@javax.annotation.Nullable List<String> authorizedHosts) {
+
     this.authorizedHosts = authorizedHosts;
   }
 
 
   public EmployeeSecurity authorizedIpNetwork(@javax.annotation.Nullable String authorizedIpNetwork) {
+
     
     this.authorizedIpNetwork = authorizedIpNetwork;
     return this;
@@ -260,11 +271,13 @@ public class EmployeeSecurity {
   @JsonProperty(JSON_PROPERTY_AUTHORIZED_IP_NETWORK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAuthorizedIpNetwork(@javax.annotation.Nullable String authorizedIpNetwork) {
+
     this.authorizedIpNetwork = authorizedIpNetwork;
   }
 
 
   public EmployeeSecurity authorizedIpNetmask(@javax.annotation.Nullable String authorizedIpNetmask) {
+
     
     this.authorizedIpNetmask = authorizedIpNetmask;
     return this;
@@ -289,11 +302,13 @@ public class EmployeeSecurity {
   @JsonProperty(JSON_PROPERTY_AUTHORIZED_IP_NETMASK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAuthorizedIpNetmask(@javax.annotation.Nullable String authorizedIpNetmask) {
+
     this.authorizedIpNetmask = authorizedIpNetmask;
   }
 
 
   public EmployeeSecurity role(@javax.annotation.Nullable EmployeeRole role) {
+
     
     this.role = role;
     return this;
@@ -318,6 +333,7 @@ public class EmployeeSecurity {
   @JsonProperty(JSON_PROPERTY_ROLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRole(@javax.annotation.Nullable EmployeeRole role) {
+
     this.role = role;
   }
 

@@ -32,7 +32,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class UserSettingsApi extends BaseApi {
 
@@ -74,7 +74,7 @@ public class UserSettingsApi extends BaseApi {
    * Получить настройки пользователя
    * Запрос на получение настроек пользователя
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @return UserSettings
    * @throws ApiException if fails to make API call
@@ -94,7 +94,7 @@ public class UserSettingsApi extends BaseApi {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -168,7 +168,7 @@ if (acceptEncoding != null) {
    * Запрос на изменение настроек пользователя
    * @param userSettings  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
    * @return UserSettings
@@ -194,7 +194,7 @@ if (acceptEncoding != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));

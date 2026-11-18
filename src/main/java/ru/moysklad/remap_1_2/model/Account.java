@@ -49,7 +49,7 @@ import java.util.StringJoiner;
   Account.JSON_PROPERTY_BIC,
   Account.JSON_PROPERTY_CURRENCY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Account extends EntityWithMeta implements MetaEntity {
   public static Account createWithMeta(String entityType, UUID parentId, UUID id) {
     Account o = new Account();
@@ -128,6 +128,7 @@ public class Account extends EntityWithMeta implements MetaEntity {
   }
 
   public Account meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -152,6 +153,7 @@ public class Account extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -205,6 +207,7 @@ public class Account extends EntityWithMeta implements MetaEntity {
 
 
   public Account isDefault(@javax.annotation.Nullable Boolean isDefault) {
+
     
     this.isDefault = isDefault;
     return this;
@@ -229,11 +232,13 @@ public class Account extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_IS_DEFAULT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsDefault(@javax.annotation.Nullable Boolean isDefault) {
+
     this.isDefault = isDefault;
   }
 
 
   public Account accountNumber(@javax.annotation.Nullable String accountNumber) {
+
     
     this.accountNumber = accountNumber;
     return this;
@@ -258,11 +263,13 @@ public class Account extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ACCOUNT_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAccountNumber(@javax.annotation.Nullable String accountNumber) {
+
     this.accountNumber = accountNumber;
   }
 
 
   public Account bankName(@javax.annotation.Nullable String bankName) {
+
     
     this.bankName = bankName;
     return this;
@@ -287,11 +294,13 @@ public class Account extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_BANK_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBankName(@javax.annotation.Nullable String bankName) {
+
     this.bankName = bankName;
   }
 
 
   public Account bankLocation(@javax.annotation.Nullable String bankLocation) {
+
     
     this.bankLocation = bankLocation;
     return this;
@@ -316,11 +325,13 @@ public class Account extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_BANK_LOCATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBankLocation(@javax.annotation.Nullable String bankLocation) {
+
     this.bankLocation = bankLocation;
   }
 
 
   public Account correspondentAccount(@javax.annotation.Nullable String correspondentAccount) {
+
     
     this.correspondentAccount = correspondentAccount;
     return this;
@@ -345,11 +356,13 @@ public class Account extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_CORRESPONDENT_ACCOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCorrespondentAccount(@javax.annotation.Nullable String correspondentAccount) {
+
     this.correspondentAccount = correspondentAccount;
   }
 
 
   public Account bic(@javax.annotation.Nullable String bic) {
+
     
     this.bic = bic;
     return this;
@@ -374,11 +387,13 @@ public class Account extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_BIC)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBic(@javax.annotation.Nullable String bic) {
+
     this.bic = bic;
   }
 
 
   public Account currency(@javax.annotation.Nullable Currency currency) {
+
     this.currency = JsonNullable.<Currency>of(currency);
     
     return this;
@@ -412,6 +427,7 @@ public class Account extends EntityWithMeta implements MetaEntity {
   }
 
   public void setCurrency(@javax.annotation.Nullable Currency currency) {
+
     this.currency = JsonNullable.<Currency>of(currency);
   }
 

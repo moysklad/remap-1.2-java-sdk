@@ -12,6 +12,7 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**createStoreZones**](StoresApi.md#createStoreZones) | **POST** /entity/store/{storeId}/zones/batch | Массовое создание и обновление зон склада |
 | [**createStoresBatch**](StoresApi.md#createStoresBatch) | **POST** /entity/store/batch | Массовое создание и обновление Складов |
 | [**deleteStore**](StoresApi.md#deleteStore) | **DELETE** /entity/store/{id} | Удалить Склад |
+| [**deleteStoreMetadataAttributeById**](StoresApi.md#deleteStoreMetadataAttributeById) | **DELETE** /entity/store/metadata/attributes/{id} | Удалить доп. поле склада |
 | [**deleteStoreSlot**](StoresApi.md#deleteStoreSlot) | **DELETE** /entity/store/{storeId}/slots/{id} | Удалить ячейку склада |
 | [**deleteStoreSlotsBatch**](StoresApi.md#deleteStoreSlotsBatch) | **POST** /entity/store/{storeId}/slots/delete | Массовое удаление ячеек склада |
 | [**deleteStoreZone**](StoresApi.md#deleteStoreZone) | **DELETE** /entity/store/{storeId}/zones/{id} | Удалить зону склада |
@@ -20,13 +21,14 @@ All URIs are relative to *https://api.moysklad.ru/api/remap/1.2*
 | [**getStoreById**](StoresApi.md#getStoreById) | **GET** /entity/store/{id} | Получить Склад |
 | [**getStoreMetadata**](StoresApi.md#getStoreMetadata) | **GET** /entity/store/metadata | Метаданные Складов |
 | [**getStoreMetadataAttribute**](StoresApi.md#getStoreMetadataAttribute) | **GET** /entity/store/metadata/attributes | Доп. поля Store |
-| [**getStoreMetadataAttributeById**](StoresApi.md#getStoreMetadataAttributeById) | **GET** /entity/store/metadata/attributes/{id} | Отдельное доп. поле Склада |
+| [**getStoreMetadataAttributeById**](StoresApi.md#getStoreMetadataAttributeById) | **GET** /entity/store/metadata/attributes/{id} | Получить доп. поле склада по ID |
 | [**getStoreSlotById**](StoresApi.md#getStoreSlotById) | **GET** /entity/store/{storeId}/slots/{id} | Получить ячейку склада |
 | [**getStoreSlots**](StoresApi.md#getStoreSlots) | **GET** /entity/store/{storeId}/slots | Получить ячейки склада |
 | [**getStoreZoneById**](StoresApi.md#getStoreZoneById) | **GET** /entity/store/{storeId}/zones/{id} | Получить зону склада |
 | [**getStoreZones**](StoresApi.md#getStoreZones) | **GET** /entity/store/{storeId}/zones | Получить зоны склада |
 | [**getStores**](StoresApi.md#getStores) | **GET** /entity/store | Получить Склады |
 | [**updateStore**](StoresApi.md#updateStore) | **PUT** /entity/store/{id} | Изменить Склад |
+| [**updateStoreMetadataAttributeById**](StoresApi.md#updateStoreMetadataAttributeById) | **PUT** /entity/store/metadata/attributes/{id} | Обновить доп. поле склада |
 | [**updateStoreSlot**](StoresApi.md#updateStoreSlot) | **PUT** /entity/store/{storeId}/slots/{id} | Изменить ячейку склада |
 | [**updateStoreZone**](StoresApi.md#updateStoreZone) | **PUT** /entity/store/{storeId}/zones/{id} | Изменить зону склада |
 
@@ -66,7 +68,7 @@ public class Example {
         StoresApi apiInstance = new StoresApi(defaultClient);
         Store store = new Store(); // Store | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String contentType = "application/json"; // String | 
         try {
@@ -90,7 +92,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **store** | [**Store**](Store.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
@@ -105,7 +107,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -149,7 +151,7 @@ public class Example {
         StoresApi apiInstance = new StoresApi(defaultClient);
         AttributeMetaInfo attributeMetaInfo = new AttributeMetaInfo(); // AttributeMetaInfo | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             AttributeMetaInfo result = apiInstance.createStoreMetadataAttribute(attributeMetaInfo, accept, acceptEncoding, contentType);
@@ -172,7 +174,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **attributeMetaInfo** | [**AttributeMetaInfo**](AttributeMetaInfo.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -186,7 +188,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -231,7 +233,7 @@ public class Example {
         UUID storeId = UUID.randomUUID(); // UUID | 
         StoreSlot storeSlot = new StoreSlot(); // StoreSlot | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             List<StoreSlot> result = apiInstance.createStoreSlot(storeId, storeSlot, accept, acceptEncoding);
             System.out.println(result);
@@ -254,7 +256,7 @@ public class Example {
 | **storeId** | **UUID**|  | |
 | **storeSlot** | [**StoreSlot**](StoreSlot.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -267,7 +269,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -312,7 +314,7 @@ public class Example {
         UUID storeId = UUID.randomUUID(); // UUID | 
         List<StoreSlot> storeSlot = Arrays.asList(); // List<StoreSlot> | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             List<BatchResponseEntity> result = apiInstance.createStoreSlots(storeId, storeSlot, accept, acceptEncoding);
             System.out.println(result);
@@ -335,7 +337,7 @@ public class Example {
 | **storeId** | **UUID**|  | |
 | **storeSlot** | [**List&lt;StoreSlot&gt;**](StoreSlot.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -348,13 +350,15 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
+| **404** | Ошибка массовой операции: объект errors или массив результатов по каждому элементу  |  -  |
+| **412** | Ошибка массовой операции: объект errors или массив результатов по каждому элементу  |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
@@ -393,7 +397,7 @@ public class Example {
         UUID storeId = UUID.randomUUID(); // UUID | 
         StoreZone storeZone = new StoreZone(); // StoreZone | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             List<StoreZone> result = apiInstance.createStoreZone(storeId, storeZone, accept, acceptEncoding);
             System.out.println(result);
@@ -416,7 +420,7 @@ public class Example {
 | **storeId** | **UUID**|  | |
 | **storeZone** | [**StoreZone**](StoreZone.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -429,7 +433,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -474,7 +478,7 @@ public class Example {
         UUID storeId = UUID.randomUUID(); // UUID | 
         List<StoreZone> storeZone = Arrays.asList(); // List<StoreZone> | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             List<BatchResponseEntity> result = apiInstance.createStoreZones(storeId, storeZone, accept, acceptEncoding);
             System.out.println(result);
@@ -497,7 +501,7 @@ public class Example {
 | **storeId** | **UUID**|  | |
 | **storeZone** | [**List&lt;StoreZone&gt;**](StoreZone.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -510,13 +514,15 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
+| **404** | Ошибка массовой операции: объект errors или массив результатов по каждому элементу  |  -  |
+| **412** | Ошибка массовой операции: объект errors или массив результатов по каждому элементу  |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
@@ -554,7 +560,7 @@ public class Example {
         StoresApi apiInstance = new StoresApi(defaultClient);
         List<Store> store = Arrays.asList(); // List<Store> | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String contentType = "application/json"; // String | 
         try {
@@ -578,7 +584,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **store** | [**List&lt;Store&gt;**](Store.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
@@ -593,13 +599,15 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Успешный запрос |  -  |
+| **404** | Ошибка массовой операции: объект errors или массив результатов по каждому элементу  |  -  |
+| **412** | Ошибка массовой операции: объект errors или массив результатов по каждому элементу  |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
@@ -637,7 +645,7 @@ public class Example {
         StoresApi apiInstance = new StoresApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             apiInstance.deleteStore(id, accept, acceptEncoding);
         } catch (ApiException e) {
@@ -658,7 +666,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -671,13 +679,93 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Склад удален |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## deleteStoreMetadataAttributeById
+
+> deleteStoreMetadataAttributeById(id, accept, acceptEncoding)
+
+Удалить доп. поле склада
+
+Удаление доп. поля склада
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.StoresApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        StoresApi apiInstance = new StoresApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip"; // String | 
+        try {
+            apiInstance.deleteStoreMetadataAttributeById(id, accept, acceptEncoding);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling StoresApi#deleteStoreMetadataAttributeById");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
@@ -716,7 +804,7 @@ public class Example {
         UUID storeId = UUID.randomUUID(); // UUID | 
         UUID id = UUID.randomUUID(); // UUID | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             apiInstance.deleteStoreSlot(storeId, id, accept, acceptEncoding);
         } catch (ApiException e) {
@@ -738,7 +826,7 @@ public class Example {
 | **storeId** | **UUID**|  | |
 | **id** | **UUID**|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -751,7 +839,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -796,7 +884,7 @@ public class Example {
         UUID storeId = UUID.randomUUID(); // UUID | 
         List<StoreSlot> storeSlot = Arrays.asList(); // List<StoreSlot> | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             apiInstance.deleteStoreSlotsBatch(storeId, storeSlot, accept, acceptEncoding, contentType);
@@ -819,7 +907,7 @@ public class Example {
 | **storeId** | **UUID**|  | |
 | **storeSlot** | [**List&lt;StoreSlot&gt;**](StoreSlot.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -833,7 +921,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -878,7 +966,7 @@ public class Example {
         UUID storeId = UUID.randomUUID(); // UUID | 
         UUID id = UUID.randomUUID(); // UUID | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             apiInstance.deleteStoreZone(storeId, id, accept, acceptEncoding);
         } catch (ApiException e) {
@@ -900,7 +988,7 @@ public class Example {
 | **storeId** | **UUID**|  | |
 | **id** | **UUID**|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -913,7 +1001,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -958,7 +1046,7 @@ public class Example {
         UUID storeId = UUID.randomUUID(); // UUID | 
         List<StoreZone> storeZone = Arrays.asList(); // List<StoreZone> | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             apiInstance.deleteStoreZonesBatch(storeId, storeZone, accept, acceptEncoding, contentType);
@@ -981,7 +1069,7 @@ public class Example {
 | **storeId** | **UUID**|  | |
 | **storeZone** | [**List&lt;StoreZone&gt;**](StoreZone.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -995,7 +1083,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -1039,7 +1127,7 @@ public class Example {
         StoresApi apiInstance = new StoresApi(defaultClient);
         List<Store> store = Arrays.asList(); // List<Store> | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             List<DeleteRowResult> result = apiInstance.deleteStoresBatch(store, accept, acceptEncoding, contentType);
@@ -1062,7 +1150,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **store** | [**List&lt;Store&gt;**](Store.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -1076,13 +1164,15 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Результат удаления |  -  |
+| **404** | Ошибка массовой операции: объект errors или массив результатов по каждому элементу  |  -  |
+| **412** | Ошибка массовой операции: объект errors или массив результатов по каждому элементу  |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
@@ -1121,7 +1211,7 @@ public class Example {
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             Store result = apiInstance.getStoreById(id, expand, accept, acceptEncoding);
             System.out.println(result);
@@ -1144,7 +1234,7 @@ public class Example {
 | **id** | **UUID**| ID сущности | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -1157,7 +1247,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -1201,7 +1291,7 @@ public class Example {
         StoresApi apiInstance = new StoresApi(defaultClient);
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             StoreMetadata result = apiInstance.getStoreMetadata(expand, accept, acceptEncoding);
             System.out.println(result);
@@ -1223,7 +1313,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -1236,7 +1326,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -1281,7 +1371,7 @@ public class Example {
         Integer offset = 0; // Integer | Отступ в выданном списке
         Integer limit = 1000; // Integer | Максимальное количество элементов в выданном списке (максимум 1000)
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             AttributeMetaInfoList result = apiInstance.getStoreMetadataAttribute(offset, limit, accept, acceptEncoding, contentType);
@@ -1305,7 +1395,7 @@ public class Example {
 | **offset** | **Integer**| Отступ в выданном списке | [optional] [default to 0] |
 | **limit** | **Integer**| Максимальное количество элементов в выданном списке (максимум 1000) | [optional] [default to 1000] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -1319,7 +1409,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -1331,9 +1421,11 @@ public class Example {
 
 ## getStoreMetadataAttributeById
 
-> AttributeMetaInfoList getStoreMetadataAttributeById(id, accept, acceptEncoding)
+> AttributeMetaInfo getStoreMetadataAttributeById(id, accept, acceptEncoding)
 
-Отдельное доп. поле Склада
+Получить доп. поле склада по ID
+
+Запрос на получение отдельного доп. поля
 
 ### Example
 
@@ -1363,9 +1455,9 @@ public class Example {
         StoresApi apiInstance = new StoresApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
-            AttributeMetaInfoList result = apiInstance.getStoreMetadataAttributeById(id, accept, acceptEncoding);
+            AttributeMetaInfo result = apiInstance.getStoreMetadataAttributeById(id, accept, acceptEncoding);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling StoresApi#getStoreMetadataAttributeById");
@@ -1385,11 +1477,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
-[**AttributeMetaInfoList**](AttributeMetaInfoList.md)
+[**AttributeMetaInfo**](AttributeMetaInfo.md)
 
 ### Authorization
 
@@ -1398,7 +1490,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -1443,7 +1535,7 @@ public class Example {
         UUID storeId = UUID.randomUUID(); // UUID | 
         UUID id = UUID.randomUUID(); // UUID | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             StoreSlot result = apiInstance.getStoreSlotById(storeId, id, accept, acceptEncoding);
             System.out.println(result);
@@ -1466,7 +1558,7 @@ public class Example {
 | **storeId** | **UUID**|  | |
 | **id** | **UUID**|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -1479,7 +1571,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -1523,7 +1615,7 @@ public class Example {
         StoresApi apiInstance = new StoresApi(defaultClient);
         UUID storeId = UUID.randomUUID(); // UUID | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             StoreSlotList result = apiInstance.getStoreSlots(storeId, accept, acceptEncoding);
             System.out.println(result);
@@ -1545,7 +1637,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **storeId** | **UUID**|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -1558,7 +1650,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -1603,7 +1695,7 @@ public class Example {
         UUID storeId = UUID.randomUUID(); // UUID | 
         UUID id = UUID.randomUUID(); // UUID | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             StoreZone result = apiInstance.getStoreZoneById(storeId, id, accept, acceptEncoding);
             System.out.println(result);
@@ -1626,7 +1718,7 @@ public class Example {
 | **storeId** | **UUID**|  | |
 | **id** | **UUID**|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -1639,7 +1731,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -1683,7 +1775,7 @@ public class Example {
         StoresApi apiInstance = new StoresApi(defaultClient);
         UUID storeId = UUID.randomUUID(); // UUID | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             StoreZoneList result = apiInstance.getStoreZones(storeId, accept, acceptEncoding);
             System.out.println(result);
@@ -1705,7 +1797,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **storeId** | **UUID**|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -1718,7 +1810,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -1767,7 +1859,7 @@ public class Example {
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String order = "order_example"; // String | Сортировка
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             StoreList result = apiInstance.getStores(limit, offset, search, filter, expand, order, accept, acceptEncoding);
             System.out.println(result);
@@ -1794,7 +1886,7 @@ public class Example {
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **order** | **String**| Сортировка | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -1807,7 +1899,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -1853,7 +1945,7 @@ public class Example {
         Store store = new Store(); // Store | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             Store result = apiInstance.updateStore(id, store, expand, accept, acceptEncoding, contentType);
@@ -1878,7 +1970,7 @@ public class Example {
 | **store** | [**Store**](Store.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -1892,13 +1984,98 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Склад обновлен |  -  |
+| **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
+
+
+## updateStoreMetadataAttributeById
+
+> AttributeMetaInfo updateStoreMetadataAttributeById(id, attributeMetaInfo, accept, acceptEncoding, contentType)
+
+Обновить доп. поле склада
+
+Обновление доп. поля склада
+
+### Example
+
+```java
+// Import classes:
+import ru.moysklad.remap_1_2.ApiClient;
+import ru.moysklad.remap_1_2.ApiException;
+import ru.moysklad.remap_1_2.Configuration;
+import ru.moysklad.remap_1_2.auth.*;
+import ru.moysklad.remap_1_2.models.*;
+import ru.moysklad.remap_1_2.api.StoresApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.moysklad.ru/api/remap/1.2");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        StoresApi apiInstance = new StoresApi(defaultClient);
+        UUID id = UUID.randomUUID(); // UUID | ID сущности
+        AttributeMetaInfo attributeMetaInfo = new AttributeMetaInfo(); // AttributeMetaInfo | 
+        String accept = "application/json"; // String | 
+        String acceptEncoding = "gzip"; // String | 
+        String contentType = "application/json"; // String | 
+        try {
+            AttributeMetaInfo result = apiInstance.updateStoreMetadataAttributeById(id, attributeMetaInfo, accept, acceptEncoding, contentType);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling StoresApi#updateStoreMetadataAttributeById");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **UUID**| ID сущности | |
+| **attributeMetaInfo** | [**AttributeMetaInfo**](AttributeMetaInfo.md)|  | |
+| **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
+| **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
+
+### Return type
+
+[**AttributeMetaInfo**](AttributeMetaInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Успешный запрос |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
@@ -1938,7 +2115,7 @@ public class Example {
         UUID id = UUID.randomUUID(); // UUID | 
         StoreSlot storeSlot = new StoreSlot(); // StoreSlot | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             StoreSlot result = apiInstance.updateStoreSlot(storeId, id, storeSlot, accept, acceptEncoding);
             System.out.println(result);
@@ -1962,7 +2139,7 @@ public class Example {
 | **id** | **UUID**|  | |
 | **storeSlot** | [**StoreSlot**](StoreSlot.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -1975,7 +2152,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -2021,7 +2198,7 @@ public class Example {
         UUID id = UUID.randomUUID(); // UUID | 
         StoreZone storeZone = new StoreZone(); // StoreZone | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             StoreZone result = apiInstance.updateStoreZone(storeId, id, storeZone, accept, acceptEncoding);
             System.out.println(result);
@@ -2045,7 +2222,7 @@ public class Example {
 | **id** | **UUID**|  | |
 | **storeZone** | [**StoreZone**](StoreZone.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -2058,7 +2235,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details

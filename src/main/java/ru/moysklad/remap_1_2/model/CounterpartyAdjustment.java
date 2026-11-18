@@ -67,7 +67,7 @@ import java.util.StringJoiner;
   CounterpartyAdjustment.JSON_PROPERTY_SUM,
   CounterpartyAdjustment.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class CounterpartyAdjustment extends EntityWithMeta implements MetaEntity {
   public static CounterpartyAdjustment createWithMeta(UUID id) {
     CounterpartyAdjustment o = new CounterpartyAdjustment();
@@ -194,6 +194,7 @@ public class CounterpartyAdjustment extends EntityWithMeta implements MetaEntity
   }
 
   public CounterpartyAdjustment meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -218,6 +219,7 @@ public class CounterpartyAdjustment extends EntityWithMeta implements MetaEntity
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -255,6 +257,7 @@ public class CounterpartyAdjustment extends EntityWithMeta implements MetaEntity
 
 
   public CounterpartyAdjustment agent(@javax.annotation.Nullable Agent agent) {
+
     
     this.agent = agent;
     return this;
@@ -279,11 +282,13 @@ public class CounterpartyAdjustment extends EntityWithMeta implements MetaEntity
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAgent(@javax.annotation.Nullable Agent agent) {
+
     this.agent = agent;
   }
 
 
   public CounterpartyAdjustment applicable(@javax.annotation.Nullable Boolean applicable) {
+
     
     this.applicable = applicable;
     return this;
@@ -308,11 +313,13 @@ public class CounterpartyAdjustment extends EntityWithMeta implements MetaEntity
   @JsonProperty(JSON_PROPERTY_APPLICABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setApplicable(@javax.annotation.Nullable Boolean applicable) {
+
     this.applicable = applicable;
   }
 
 
   public CounterpartyAdjustment attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
@@ -345,7 +352,7 @@ public class CounterpartyAdjustment extends EntityWithMeta implements MetaEntity
   
 
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
@@ -358,6 +365,7 @@ public class CounterpartyAdjustment extends EntityWithMeta implements MetaEntity
   }
 
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
@@ -395,6 +403,7 @@ public class CounterpartyAdjustment extends EntityWithMeta implements MetaEntity
 
 
   public CounterpartyAdjustment description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -428,11 +437,13 @@ public class CounterpartyAdjustment extends EntityWithMeta implements MetaEntity
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 
 
   public CounterpartyAdjustment externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -457,11 +468,13 @@ public class CounterpartyAdjustment extends EntityWithMeta implements MetaEntity
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public CounterpartyAdjustment files(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
@@ -495,11 +508,13 @@ public class CounterpartyAdjustment extends EntityWithMeta implements MetaEntity
   }
 
   public void setFiles(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
   }
 
 
   public CounterpartyAdjustment group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -524,11 +539,13 @@ public class CounterpartyAdjustment extends EntityWithMeta implements MetaEntity
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
 
   public CounterpartyAdjustment moment(@javax.annotation.Nullable String moment) {
+
     
     this.moment = moment;
     return this;
@@ -553,11 +570,13 @@ public class CounterpartyAdjustment extends EntityWithMeta implements MetaEntity
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMoment(@javax.annotation.Nullable String moment) {
+
     this.moment = moment;
   }
 
 
   public CounterpartyAdjustment name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -582,11 +601,13 @@ public class CounterpartyAdjustment extends EntityWithMeta implements MetaEntity
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public CounterpartyAdjustment organization(@javax.annotation.Nullable Organization organization) {
+
     
     this.organization = organization;
     return this;
@@ -611,11 +632,13 @@ public class CounterpartyAdjustment extends EntityWithMeta implements MetaEntity
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOrganization(@javax.annotation.Nullable Organization organization) {
+
     this.organization = organization;
   }
 
 
   public CounterpartyAdjustment owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -649,6 +672,7 @@ public class CounterpartyAdjustment extends EntityWithMeta implements MetaEntity
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
@@ -686,6 +710,7 @@ public class CounterpartyAdjustment extends EntityWithMeta implements MetaEntity
 
 
   public CounterpartyAdjustment shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -710,11 +735,13 @@ public class CounterpartyAdjustment extends EntityWithMeta implements MetaEntity
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
 
   public CounterpartyAdjustment sum(@javax.annotation.Nullable Double sum) {
+
     
     this.sum = sum;
     return this;
@@ -739,6 +766,7 @@ public class CounterpartyAdjustment extends EntityWithMeta implements MetaEntity
   @JsonProperty(JSON_PROPERTY_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSum(@javax.annotation.Nullable Double sum) {
+
     this.sum = sum;
   }
 

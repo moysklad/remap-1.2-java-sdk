@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   EmissionOrderPosition.JSON_PROPERTY_QUANTITY,
   EmissionOrderPosition.JSON_PROPERTY_STATUS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class EmissionOrderPosition extends EntityWithMeta implements MetaEntity {
   public static EmissionOrderPosition createWithMeta(UUID parentId, UUID id) {
     EmissionOrderPosition o = new EmissionOrderPosition();
@@ -99,6 +99,7 @@ public class EmissionOrderPosition extends EntityWithMeta implements MetaEntity 
   }
 
   public EmissionOrderPosition meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -123,6 +124,7 @@ public class EmissionOrderPosition extends EntityWithMeta implements MetaEntity 
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -160,6 +162,7 @@ public class EmissionOrderPosition extends EntityWithMeta implements MetaEntity 
 
 
   public EmissionOrderPosition assortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     
     this.assortment = assortment;
     return this;
@@ -184,11 +187,19 @@ public class EmissionOrderPosition extends EntityWithMeta implements MetaEntity 
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     this.assortment = assortment;
   }
 
 
   public EmissionOrderPosition quantity(@javax.annotation.Nullable Integer quantity) {
+    if (quantity != null && quantity.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'quantity': must be greater than or equal to 0, got " + quantity);
+    }
+    if (quantity != null && quantity.doubleValue() > 1000) {
+      throw new IllegalArgumentException("Invalid value for 'quantity': must be less than or equal to 1000, got " + quantity);
+    }
+
     
     this.quantity = quantity;
     return this;
@@ -215,6 +226,13 @@ public class EmissionOrderPosition extends EntityWithMeta implements MetaEntity 
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuantity(@javax.annotation.Nullable Integer quantity) {
+    if (quantity != null && quantity.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'quantity': must be greater than or equal to 0, got " + quantity);
+    }
+    if (quantity != null && quantity.doubleValue() > 1000) {
+      throw new IllegalArgumentException("Invalid value for 'quantity': must be less than or equal to 1000, got " + quantity);
+    }
+
     this.quantity = quantity;
   }
 

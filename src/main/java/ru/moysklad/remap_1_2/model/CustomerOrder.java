@@ -31,6 +31,7 @@ import ru.moysklad.remap_1_2.model.Agent;
 import ru.moysklad.remap_1_2.model.AttributeAbstract;
 import ru.moysklad.remap_1_2.model.Contract;
 import ru.moysklad.remap_1_2.model.CurrencyRate;
+import ru.moysklad.remap_1_2.model.CustomerOrderPayment;
 import ru.moysklad.remap_1_2.model.CustomerOrderPositionList;
 import ru.moysklad.remap_1_2.model.Demand;
 import ru.moysklad.remap_1_2.model.Employee;
@@ -44,7 +45,6 @@ import ru.moysklad.remap_1_2.model.Prepayment;
 import ru.moysklad.remap_1_2.model.ProductionTask;
 import ru.moysklad.remap_1_2.model.Project;
 import ru.moysklad.remap_1_2.model.PurchaseOrder;
-import ru.moysklad.remap_1_2.model.RetailShiftPaymentsInner;
 import ru.moysklad.remap_1_2.model.SalesChannel;
 import ru.moysklad.remap_1_2.model.State;
 import ru.moysklad.remap_1_2.model.Store;
@@ -112,7 +112,7 @@ import java.util.StringJoiner;
   CustomerOrder.JSON_PROPERTY_MOVES,
   CustomerOrder.JSON_PROPERTY_PRODUCTION_TASKS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   public static CustomerOrder createWithMeta(UUID id) {
     CustomerOrder o = new CustomerOrder();
@@ -311,7 +311,7 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
 
   public static final String JSON_PROPERTY_PAYMENTS = "payments";
   @javax.annotation.Nullable
-  private JsonNullable<List<RetailShiftPaymentsInner>> payments = JsonNullable.<List<RetailShiftPaymentsInner>>undefined();
+  private JsonNullable<List<CustomerOrderPayment>> payments = JsonNullable.<List<CustomerOrderPayment>>undefined();
 
   public static final String JSON_PROPERTY_PREPAYMENTS = "prepayments";
   @javax.annotation.Nullable
@@ -367,6 +367,7 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public CustomerOrder meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -391,6 +392,7 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -428,6 +430,7 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
 
 
   public CustomerOrder name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -452,11 +455,13 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public CustomerOrder code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -481,11 +486,13 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public CustomerOrder externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -510,11 +517,13 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public CustomerOrder syncId(@javax.annotation.Nullable UUID syncId) {
+
     
     this.syncId = syncId;
     return this;
@@ -539,11 +548,13 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
+
     this.syncId = syncId;
   }
 
 
   public CustomerOrder description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -577,6 +588,7 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 
@@ -630,6 +642,7 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
 
 
   public CustomerOrder moment(@javax.annotation.Nullable String moment) {
+
     
     this.moment = moment;
     return this;
@@ -654,11 +667,13 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMoment(@javax.annotation.Nullable String moment) {
+
     this.moment = moment;
   }
 
 
   public CustomerOrder deliveryPlannedMoment(@javax.annotation.Nullable String deliveryPlannedMoment) {
+
     
     this.deliveryPlannedMoment = deliveryPlannedMoment;
     return this;
@@ -683,11 +698,13 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_DELIVERY_PLANNED_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDeliveryPlannedMoment(@javax.annotation.Nullable String deliveryPlannedMoment) {
+
     this.deliveryPlannedMoment = deliveryPlannedMoment;
   }
 
 
   public CustomerOrder applicable(@javax.annotation.Nullable Boolean applicable) {
+
     
     this.applicable = applicable;
     return this;
@@ -712,6 +729,7 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_APPLICABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setApplicable(@javax.annotation.Nullable Boolean applicable) {
+
     this.applicable = applicable;
   }
 
@@ -749,6 +767,7 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
 
 
   public CustomerOrder shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -773,11 +792,13 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
 
   public CustomerOrder vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     
     this.vatEnabled = vatEnabled;
     return this;
@@ -802,11 +823,13 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     this.vatEnabled = vatEnabled;
   }
 
 
   public CustomerOrder vatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
+
     
     this.vatIncluded = vatIncluded;
     return this;
@@ -831,6 +854,7 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_VAT_INCLUDED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
+
     this.vatIncluded = vatIncluded;
   }
 
@@ -932,6 +956,7 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
 
 
   public CustomerOrder organization(@javax.annotation.Nullable Organization organization) {
+
     
     this.organization = organization;
     return this;
@@ -956,11 +981,13 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOrganization(@javax.annotation.Nullable Organization organization) {
+
     this.organization = organization;
   }
 
 
   public CustomerOrder organizationAccount(@javax.annotation.Nullable Account organizationAccount) {
+
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
     
     return this;
@@ -994,11 +1021,13 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setOrganizationAccount(@javax.annotation.Nullable Account organizationAccount) {
+
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
   }
 
 
   public CustomerOrder agent(@javax.annotation.Nullable Agent agent) {
+
     
     this.agent = agent;
     return this;
@@ -1023,11 +1052,13 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAgent(@javax.annotation.Nullable Agent agent) {
+
     this.agent = agent;
   }
 
 
   public CustomerOrder agentAccount(@javax.annotation.Nullable Account agentAccount) {
+
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
     
     return this;
@@ -1061,11 +1092,13 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setAgentAccount(@javax.annotation.Nullable Account agentAccount) {
+
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
   }
 
 
   public CustomerOrder store(@javax.annotation.Nullable Store store) {
+
     this.store = JsonNullable.<Store>of(store);
     
     return this;
@@ -1099,11 +1132,13 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setStore(@javax.annotation.Nullable Store store) {
+
     this.store = JsonNullable.<Store>of(store);
   }
 
 
   public CustomerOrder state(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
     
     return this;
@@ -1137,11 +1172,13 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setState(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
   }
 
 
   public CustomerOrder contract(@javax.annotation.Nullable Contract contract) {
+
     this.contract = JsonNullable.<Contract>of(contract);
     
     return this;
@@ -1175,11 +1212,13 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setContract(@javax.annotation.Nullable Contract contract) {
+
     this.contract = JsonNullable.<Contract>of(contract);
   }
 
 
   public CustomerOrder project(@javax.annotation.Nullable Project project) {
+
     this.project = JsonNullable.<Project>of(project);
     
     return this;
@@ -1213,11 +1252,13 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setProject(@javax.annotation.Nullable Project project) {
+
     this.project = JsonNullable.<Project>of(project);
   }
 
 
   public CustomerOrder owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -1251,11 +1292,13 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
 
   public CustomerOrder group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -1280,11 +1323,13 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
 
   public CustomerOrder attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
@@ -1317,7 +1362,7 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
@@ -1330,11 +1375,13 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
   public CustomerOrder files(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
@@ -1368,11 +1415,13 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setFiles(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
   }
 
 
   public CustomerOrder taxSystem(@javax.annotation.Nullable String taxSystem) {
+
     
     this.taxSystem = taxSystem;
     return this;
@@ -1397,11 +1446,13 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_TAX_SYSTEM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTaxSystem(@javax.annotation.Nullable String taxSystem) {
+
     this.taxSystem = taxSystem;
   }
 
 
   public CustomerOrder rate(@javax.annotation.Nullable CurrencyRate rate) {
+
     
     this.rate = rate;
     return this;
@@ -1426,11 +1477,13 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRate(@javax.annotation.Nullable CurrencyRate rate) {
+
     this.rate = rate;
   }
 
 
   public CustomerOrder positions(@javax.annotation.Nullable CustomerOrderPositionList positions) {
+
     
     this.positions = positions;
     return this;
@@ -1455,11 +1508,13 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPositions(@javax.annotation.Nullable CustomerOrderPositionList positions) {
+
     this.positions = positions;
   }
 
 
   public CustomerOrder salesChannel(@javax.annotation.Nullable SalesChannel salesChannel) {
+
     this.salesChannel = JsonNullable.<SalesChannel>of(salesChannel);
     
     return this;
@@ -1493,11 +1548,13 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setSalesChannel(@javax.annotation.Nullable SalesChannel salesChannel) {
+
     this.salesChannel = JsonNullable.<SalesChannel>of(salesChannel);
   }
 
 
   public CustomerOrder shipmentAddress(@javax.annotation.Nullable String shipmentAddress) {
+
     this.shipmentAddress = JsonNullable.<String>of(shipmentAddress);
     
     return this;
@@ -1531,11 +1588,13 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setShipmentAddress(@javax.annotation.Nullable String shipmentAddress) {
+
     this.shipmentAddress = JsonNullable.<String>of(shipmentAddress);
   }
 
 
   public CustomerOrder shipmentAddressFull(@javax.annotation.Nullable Address shipmentAddressFull) {
+
     this.shipmentAddressFull = JsonNullable.<Address>of(shipmentAddressFull);
     
     return this;
@@ -1569,11 +1628,13 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setShipmentAddressFull(@javax.annotation.Nullable Address shipmentAddressFull) {
+
     this.shipmentAddressFull = JsonNullable.<Address>of(shipmentAddressFull);
   }
 
 
   public CustomerOrder invoicesOut(@javax.annotation.Nullable List<InvoiceOut> invoicesOut) {
+
     this.invoicesOut = JsonNullable.<List<InvoiceOut>>of(invoicesOut);
     
     return this;
@@ -1606,7 +1667,7 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_INVOICES_OUT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<InvoiceOut>> getInvoicesOut_JsonNullable() {
@@ -1619,11 +1680,13 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setInvoicesOut(@javax.annotation.Nullable List<InvoiceOut> invoicesOut) {
+
     this.invoicesOut = JsonNullable.<List<InvoiceOut>>of(invoicesOut);
   }
 
 
   public CustomerOrder demands(@javax.annotation.Nullable List<Demand> demands) {
+
     this.demands = JsonNullable.<List<Demand>>of(demands);
     
     return this;
@@ -1656,7 +1719,7 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_DEMANDS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<Demand>> getDemands_JsonNullable() {
@@ -1669,20 +1732,22 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setDemands(@javax.annotation.Nullable List<Demand> demands) {
+
     this.demands = JsonNullable.<List<Demand>>of(demands);
   }
 
 
-  public CustomerOrder payments(@javax.annotation.Nullable List<RetailShiftPaymentsInner> payments) {
-    this.payments = JsonNullable.<List<RetailShiftPaymentsInner>>of(payments);
+  public CustomerOrder payments(@javax.annotation.Nullable List<CustomerOrderPayment> payments) {
+
+    this.payments = JsonNullable.<List<CustomerOrderPayment>>of(payments);
     
     return this;
   }
 
 
-  public CustomerOrder addPaymentsItem(RetailShiftPaymentsInner paymentsItem) {
+  public CustomerOrder addPaymentsItem(CustomerOrderPayment paymentsItem) {
     if (this.payments == null || !this.payments.isPresent()) {
-      this.payments = JsonNullable.<List<RetailShiftPaymentsInner>>of(new ArrayList<>());
+      this.payments = JsonNullable.<List<CustomerOrderPayment>>of(new ArrayList<>());
     }
     try {
       this.payments.get().add(paymentsItem);
@@ -1699,31 +1764,33 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   @javax.annotation.Nullable
   @JsonIgnore
 
-  public List<RetailShiftPaymentsInner> getPayments() {
+  public List<CustomerOrderPayment> getPayments() {
         return payments.orElse(null);
   }
 
   
 
   @JsonProperty(JSON_PROPERTY_PAYMENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
-  public JsonNullable<List<RetailShiftPaymentsInner>> getPayments_JsonNullable() {
+  public JsonNullable<List<CustomerOrderPayment>> getPayments_JsonNullable() {
     return payments;
   }
   
   @JsonProperty(value = JSON_PROPERTY_PAYMENTS, required = false)
-  public void setPayments_JsonNullable(JsonNullable<List<RetailShiftPaymentsInner>> payments) {
+  public void setPayments_JsonNullable(JsonNullable<List<CustomerOrderPayment>> payments) {
     this.payments = payments;
   }
 
-  public void setPayments(@javax.annotation.Nullable List<RetailShiftPaymentsInner> payments) {
-    this.payments = JsonNullable.<List<RetailShiftPaymentsInner>>of(payments);
+  public void setPayments(@javax.annotation.Nullable List<CustomerOrderPayment> payments) {
+
+    this.payments = JsonNullable.<List<CustomerOrderPayment>>of(payments);
   }
 
 
   public CustomerOrder prepayments(@javax.annotation.Nullable List<Prepayment> prepayments) {
+
     this.prepayments = JsonNullable.<List<Prepayment>>of(prepayments);
     
     return this;
@@ -1756,7 +1823,7 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_PREPAYMENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<Prepayment>> getPrepayments_JsonNullable() {
@@ -1769,11 +1836,13 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setPrepayments(@javax.annotation.Nullable List<Prepayment> prepayments) {
+
     this.prepayments = JsonNullable.<List<Prepayment>>of(prepayments);
   }
 
 
   public CustomerOrder purchaseOrders(@javax.annotation.Nullable List<PurchaseOrder> purchaseOrders) {
+
     this.purchaseOrders = JsonNullable.<List<PurchaseOrder>>of(purchaseOrders);
     
     return this;
@@ -1806,7 +1875,7 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_PURCHASE_ORDERS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<PurchaseOrder>> getPurchaseOrders_JsonNullable() {
@@ -1819,11 +1888,13 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setPurchaseOrders(@javax.annotation.Nullable List<PurchaseOrder> purchaseOrders) {
+
     this.purchaseOrders = JsonNullable.<List<PurchaseOrder>>of(purchaseOrders);
   }
 
 
   public CustomerOrder moves(@javax.annotation.Nullable List<Move> moves) {
+
     this.moves = JsonNullable.<List<Move>>of(moves);
     
     return this;
@@ -1856,7 +1927,7 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_MOVES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<Move>> getMoves_JsonNullable() {
@@ -1869,11 +1940,13 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setMoves(@javax.annotation.Nullable List<Move> moves) {
+
     this.moves = JsonNullable.<List<Move>>of(moves);
   }
 
 
   public CustomerOrder productionTasks(@javax.annotation.Nullable List<ProductionTask> productionTasks) {
+
     this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
     
     return this;
@@ -1906,7 +1979,7 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_PRODUCTION_TASKS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<ProductionTask>> getProductionTasks_JsonNullable() {
@@ -1919,6 +1992,7 @@ public class CustomerOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setProductionTasks(@javax.annotation.Nullable List<ProductionTask> productionTasks) {
+
     this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
   }
 

@@ -23,9 +23,10 @@ import ru.moysklad.remap_1_2.Pair;
 
 import ru.moysklad.remap_1_2.model.AttributeMetaInfo;
 import ru.moysklad.remap_1_2.model.AttributeMetaInfoList;
-import ru.moysklad.remap_1_2.model.CreateRetailSalesReturnPositions200ResponseInner;
-import ru.moysklad.remap_1_2.model.CreateRetailSalesReturnsBatch200ResponseInner;
-import ru.moysklad.remap_1_2.model.DeleteInvoiceOutBatch200ResponseInner;
+import ru.moysklad.remap_1_2.model.BatchDeleteErrorResponse;
+import ru.moysklad.remap_1_2.model.BatchEntityErrorResponse;
+import ru.moysklad.remap_1_2.model.BatchResponseEntity;
+import ru.moysklad.remap_1_2.model.DeleteRowResult;
 import ru.moysklad.remap_1_2.model.DocumentMetadata;
 import ru.moysklad.remap_1_2.model.Errors;
 import ru.moysklad.remap_1_2.model.RetailSalesReturn;
@@ -43,7 +44,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class RetailSalesReturnsApi extends BaseApi {
 
@@ -93,7 +94,7 @@ public class RetailSalesReturnsApi extends BaseApi {
    * @param retailSalesReturn  (required)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
    * @return RetailSalesReturn
@@ -120,7 +121,7 @@ public class RetailSalesReturnsApi extends BaseApi {
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -197,7 +198,7 @@ if (contentType != null) {
    * 
    * @param attributeMetaInfo  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
    * @return AttributeMetaInfo
@@ -223,7 +224,7 @@ if (contentType != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -307,7 +308,7 @@ if (contentType != null) {
    * @param retailSalesReturnPosition  (required)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
    * @return RetailSalesReturnPosition
@@ -340,7 +341,7 @@ if (contentType != null) {
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -386,10 +387,10 @@ if (contentType != null) {
    * 
    * @param id ID сущности (required)
    * @param retailSalesReturnPosition  (required)
-   * @return List&lt;CreateRetailSalesReturnPositions200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateRetailSalesReturnPositions200ResponseInner> createRetailSalesReturnPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<RetailSalesReturnPosition> retailSalesReturnPosition) throws ApiException {
+  public List<BatchResponseEntity> createRetailSalesReturnPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<RetailSalesReturnPosition> retailSalesReturnPosition) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.createRetailSalesReturnPositions(id, retailSalesReturnPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -409,10 +410,10 @@ if (contentType != null) {
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return List&lt;CreateRetailSalesReturnPositions200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateRetailSalesReturnPositions200ResponseInner> createRetailSalesReturnPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<RetailSalesReturnPosition> retailSalesReturnPosition, RequestOptions options) throws ApiException {
+  public List<BatchResponseEntity> createRetailSalesReturnPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<RetailSalesReturnPosition> retailSalesReturnPosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createRetailSalesReturnPositions(id, retailSalesReturnPosition, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -424,13 +425,13 @@ if (contentType != null) {
    * @param retailSalesReturnPosition  (required)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;CreateRetailSalesReturnPositions200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  protected List<CreateRetailSalesReturnPositions200ResponseInner> createRetailSalesReturnPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<RetailSalesReturnPosition> retailSalesReturnPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createRetailSalesReturnPositions(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<RetailSalesReturnPosition> retailSalesReturnPosition, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = retailSalesReturnPosition;
     
     // verify the required parameter 'id' is set
@@ -457,7 +458,7 @@ if (contentType != null) {
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -480,8 +481,8 @@ if (contentType != null) {
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<CreateRetailSalesReturnPositions200ResponseInner>> localVarReturnType = new TypeReference<List<CreateRetailSalesReturnPositions200ResponseInner>>() {};
-    return apiClient.invokeAPI(
+    TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
+    return apiClient.invokeAPIBatch(
         localVarPath,
         "POST",
         localVarQueryParams,
@@ -502,10 +503,10 @@ if (contentType != null) {
    * Создать или изменить Розничные возвраты
    * Создание или изменение нескольких Розничных возвратов.
    * @param retailSalesReturn  (required)
-   * @return List&lt;CreateRetailSalesReturnsBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateRetailSalesReturnsBatch200ResponseInner> createRetailSalesReturnsBatch(@javax.annotation.Nonnull List<RetailSalesReturn> retailSalesReturn) throws ApiException {
+  public List<BatchResponseEntity> createRetailSalesReturnsBatch(@javax.annotation.Nonnull List<RetailSalesReturn> retailSalesReturn) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.createRetailSalesReturnsBatch(retailSalesReturn, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -522,10 +523,10 @@ if (contentType != null) {
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return List&lt;CreateRetailSalesReturnsBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<CreateRetailSalesReturnsBatch200ResponseInner> createRetailSalesReturnsBatch(@javax.annotation.Nonnull List<RetailSalesReturn> retailSalesReturn, RequestOptions options) throws ApiException {
+  public List<BatchResponseEntity> createRetailSalesReturnsBatch(@javax.annotation.Nonnull List<RetailSalesReturn> retailSalesReturn, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createRetailSalesReturnsBatch(retailSalesReturn, (String) effectiveOptions.get("expand"), null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -536,13 +537,13 @@ if (contentType != null) {
    * @param retailSalesReturn  (required)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;CreateRetailSalesReturnsBatch200ResponseInner&gt;
+   * @return List&lt;BatchResponseEntity&gt;
    * @throws ApiException if fails to make API call
    */
-  protected List<CreateRetailSalesReturnsBatch200ResponseInner> createRetailSalesReturnsBatch(@javax.annotation.Nonnull List<RetailSalesReturn> retailSalesReturn, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<BatchResponseEntity> createRetailSalesReturnsBatch(@javax.annotation.Nonnull List<RetailSalesReturn> retailSalesReturn, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = retailSalesReturn;
     
     // verify the required parameter 'retailSalesReturn' is set
@@ -563,7 +564,7 @@ if (contentType != null) {
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -586,8 +587,8 @@ if (contentType != null) {
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<CreateRetailSalesReturnsBatch200ResponseInner>> localVarReturnType = new TypeReference<List<CreateRetailSalesReturnsBatch200ResponseInner>>() {};
-    return apiClient.invokeAPI(
+    TypeReference<List<BatchResponseEntity>> localVarReturnType = new TypeReference<List<BatchResponseEntity>>() {};
+    return apiClient.invokeAPIBatch(
         localVarPath,
         "POST",
         localVarQueryParams,
@@ -637,7 +638,7 @@ if (contentType != null) {
    * 
    * @param id ID сущности (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
@@ -662,7 +663,7 @@ if (contentType != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -732,7 +733,7 @@ if (acceptEncoding != null) {
    * 
    * @param id ID сущности (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
@@ -757,7 +758,7 @@ if (acceptEncoding != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -827,7 +828,7 @@ if (acceptEncoding != null) {
    * 
    * @param id ID сущности (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
@@ -852,7 +853,7 @@ if (acceptEncoding != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -929,7 +930,7 @@ if (acceptEncoding != null) {
    * @param positionId ID позиции (required)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
@@ -961,7 +962,7 @@ if (acceptEncoding != null) {
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -1003,10 +1004,10 @@ if (acceptEncoding != null) {
    * 
    * @param id ID сущности (required)
    * @param retailSalesReturnPosition  (required)
-   * @return List&lt;DeleteInvoiceOutBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteInvoiceOutBatch200ResponseInner> deleteRetailSalesReturnPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<RetailSalesReturnPosition> retailSalesReturnPosition) throws ApiException {
+  public List<DeleteRowResult> deleteRetailSalesReturnPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<RetailSalesReturnPosition> retailSalesReturnPosition) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.deleteRetailSalesReturnPositionsBatch(id, retailSalesReturnPosition, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -1025,10 +1026,10 @@ if (acceptEncoding != null) {
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return List&lt;DeleteInvoiceOutBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<DeleteInvoiceOutBatch200ResponseInner> deleteRetailSalesReturnPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<RetailSalesReturnPosition> retailSalesReturnPosition, RequestOptions options) throws ApiException {
+  public List<DeleteRowResult> deleteRetailSalesReturnPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<RetailSalesReturnPosition> retailSalesReturnPosition, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.deleteRetailSalesReturnPositionsBatch(id, retailSalesReturnPosition, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -1039,13 +1040,13 @@ if (acceptEncoding != null) {
    * @param id ID сущности (required)
    * @param retailSalesReturnPosition  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;DeleteInvoiceOutBatch200ResponseInner&gt;
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  protected List<DeleteInvoiceOutBatch200ResponseInner> deleteRetailSalesReturnPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<RetailSalesReturnPosition> retailSalesReturnPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteRetailSalesReturnPositionsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<RetailSalesReturnPosition> retailSalesReturnPosition, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = retailSalesReturnPosition;
     
     // verify the required parameter 'id' is set
@@ -1071,7 +1072,7 @@ if (acceptEncoding != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -1094,7 +1095,7 @@ if (contentType != null) {
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<DeleteInvoiceOutBatch200ResponseInner>> localVarReturnType = new TypeReference<List<DeleteInvoiceOutBatch200ResponseInner>>() {};
+    TypeReference<List<DeleteRowResult>> localVarReturnType = new TypeReference<List<DeleteRowResult>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
@@ -1151,7 +1152,7 @@ if (contentType != null) {
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @return RetailSalesReturn
    * @throws ApiException if fails to make API call
@@ -1179,7 +1180,7 @@ if (contentType != null) {
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
     localVarQueryParams.addAll(apiClient.parameterToPair("fields", fields));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -1248,7 +1249,7 @@ if (acceptEncoding != null) {
    * Метаданные Розничных возвратов
    * 
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
    * @return DocumentMetadata
@@ -1269,7 +1270,7 @@ if (acceptEncoding != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -1344,7 +1345,7 @@ if (contentType != null) {
    * @param offset Отступ в выданном списке (optional, default to 0)
    * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @return AttributeMetaInfoList
    * @throws ApiException if fails to make API call
@@ -1352,6 +1353,15 @@ if (contentType != null) {
   protected AttributeMetaInfoList getRetailSalesReturnMetadataAttribute(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
+    if (offset != null && offset.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'offset' when calling getRetailSalesReturnMetadataAttribute: must be greater than or equal to 0, got " + offset);
+    }
+    if (limit != null && limit.doubleValue() < 1) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getRetailSalesReturnMetadataAttribute: must be greater than or equal to 1, got " + limit);
+    }
+    if (limit != null && limit.doubleValue() > 1000) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getRetailSalesReturnMetadataAttribute: must be less than or equal to 1000, got " + limit);
+    }
     // create path and map variables
     String localVarPath = "/entity/retailsalesreturn/metadata/attributes";
 
@@ -1366,7 +1376,7 @@ if (contentType != null) {
     localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
     localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -1439,7 +1449,7 @@ if (acceptEncoding != null) {
    * 
    * @param id ID сущности (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @return AttributeMetaInfo
    * @throws ApiException if fails to make API call
@@ -1465,7 +1475,7 @@ if (acceptEncoding != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -1538,7 +1548,7 @@ if (acceptEncoding != null) {
    * 
    * @param id ID сущности (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @return State
    * @throws ApiException if fails to make API call
@@ -1564,7 +1574,7 @@ if (acceptEncoding != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -1646,7 +1656,7 @@ if (acceptEncoding != null) {
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @return RetailSalesReturnPosition
    * @throws ApiException if fails to make API call
@@ -1680,7 +1690,7 @@ if (acceptEncoding != null) {
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
     localVarQueryParams.addAll(apiClient.parameterToPair("fields", fields));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -1761,7 +1771,7 @@ if (acceptEncoding != null) {
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @return RetailSalesReturnPositionList
    * @throws ApiException if fails to make API call
@@ -1774,6 +1784,15 @@ if (acceptEncoding != null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling getRetailSalesReturnPositions");
     }
     
+    if (limit != null && limit.doubleValue() < 1) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getRetailSalesReturnPositions: must be greater than or equal to 1, got " + limit);
+    }
+    if (limit != null && limit.doubleValue() > 1000) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getRetailSalesReturnPositions: must be less than or equal to 1000, got " + limit);
+    }
+    if (offset != null && offset.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'offset' when calling getRetailSalesReturnPositions: must be greater than or equal to 0, got " + offset);
+    }
     // create path and map variables
     String localVarPath = "/entity/retailsalesreturn/{id}/positions"
       .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
@@ -1791,7 +1810,7 @@ if (acceptEncoding != null) {
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
     localVarQueryParams.addAll(apiClient.parameterToPair("fields", fields));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -1864,7 +1883,7 @@ if (acceptEncoding != null) {
    * Шаблон Розничного возврата
    * Предзаполненный шаблон Розничного возврата. В теле запроса можно передать &#x60;retailShift&#x60; для шаблона без основания или &#x60;demand&#x60; для шаблона на основе Розничной продажи. 
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param contentType  (optional, default to application/json)
    * @param body  (optional)
    * @param additionalHeaders additionalHeaders for this call
@@ -1886,7 +1905,7 @@ if (acceptEncoding != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -1967,7 +1986,7 @@ if (contentType != null) {
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @return RetailSalesReturnList
    * @throws ApiException if fails to make API call
@@ -1975,6 +1994,15 @@ if (contentType != null) {
   protected RetailSalesReturnList getRetailSalesReturns(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String fields, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
+    if (limit != null && limit.doubleValue() < 1) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getRetailSalesReturns: must be greater than or equal to 1, got " + limit);
+    }
+    if (limit != null && limit.doubleValue() > 1000) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getRetailSalesReturns: must be less than or equal to 1000, got " + limit);
+    }
+    if (offset != null && offset.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'offset' when calling getRetailSalesReturns: must be greater than or equal to 0, got " + offset);
+    }
     // create path and map variables
     String localVarPath = "/entity/retailsalesreturn";
 
@@ -1992,7 +2020,7 @@ if (contentType != null) {
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
     localVarQueryParams.addAll(apiClient.parameterToPair("fields", fields));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -2038,7 +2066,7 @@ if (acceptEncoding != null) {
    */
   public void moveRetailSalesReturnToTrash(@javax.annotation.Nonnull UUID id) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
-    this.moveRetailSalesReturnToTrash(id, null, null, effectiveOptions.getAdditionalHeaders());
+    this.moveRetailSalesReturnToTrash(id, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -2047,6 +2075,7 @@ if (acceptEncoding != null) {
    * 
    
    * @param id ID сущности (required)
+   
    
    
    
@@ -2055,7 +2084,7 @@ if (acceptEncoding != null) {
    */
   public void moveRetailSalesReturnToTrash(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
-    this.moveRetailSalesReturnToTrash(id, null, null, effectiveOptions.getAdditionalHeaders());
+    this.moveRetailSalesReturnToTrash(id, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
   /**
@@ -2063,11 +2092,12 @@ if (acceptEncoding != null) {
    * 
    * @param id ID сущности (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
+   * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
-  protected void moveRetailSalesReturnToTrash(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected void moveRetailSalesReturnToTrash(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -2088,10 +2118,13 @@ if (acceptEncoding != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+    }
+if (contentType != null) {
+      localVarHeaderParams.put("Content-Type", apiClient.parameterToString(contentType));
     }
 
     localVarHeaderParams.putAll(additionalHeaders);
@@ -2170,7 +2203,7 @@ if (acceptEncoding != null) {
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
    * @return RetailSalesReturn
@@ -2204,7 +2237,7 @@ if (acceptEncoding != null) {
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
     localVarQueryParams.addAll(apiClient.parameterToPair("fields", fields));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -2286,7 +2319,7 @@ if (contentType != null) {
    * @param id ID сущности (required)
    * @param attributeMetaInfo  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
    * @return AttributeMetaInfo
@@ -2318,7 +2351,7 @@ if (contentType != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -2400,7 +2433,7 @@ if (contentType != null) {
    * @param id ID сущности (required)
    * @param state  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
    * @return State
@@ -2432,7 +2465,7 @@ if (contentType != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -2523,7 +2556,7 @@ if (contentType != null) {
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
    * @return RetailSalesReturnPosition
@@ -2563,7 +2596,7 @@ if (contentType != null) {
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
     localVarQueryParams.addAll(apiClient.parameterToPair("fields", fields));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));

@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   RetailStoreStateFiscalMemory.JSON_PROPERTY_NOT_SEND_FIRST_DOC_MOMENT
 })
 @JsonTypeName("RetailStore_state_fiscalMemory")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStoreStateFiscalMemory {
 
   public static final String JSON_PROPERTY_ERROR = "error";
@@ -55,6 +55,7 @@ public class RetailStoreStateFiscalMemory {
   }
 
   public RetailStoreStateFiscalMemory error(@javax.annotation.Nullable RetailStoreStateFiscalMemoryError error) {
+
     
     this.error = error;
     return this;
@@ -79,11 +80,13 @@ public class RetailStoreStateFiscalMemory {
   @JsonProperty(JSON_PROPERTY_ERROR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setError(@javax.annotation.Nullable RetailStoreStateFiscalMemoryError error) {
+
     this.error = error;
   }
 
 
   public RetailStoreStateFiscalMemory notSendDocCount(@javax.annotation.Nullable Integer notSendDocCount) {
+
     
     this.notSendDocCount = notSendDocCount;
     return this;
@@ -108,11 +111,13 @@ public class RetailStoreStateFiscalMemory {
   @JsonProperty(JSON_PROPERTY_NOT_SEND_DOC_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNotSendDocCount(@javax.annotation.Nullable Integer notSendDocCount) {
+
     this.notSendDocCount = notSendDocCount;
   }
 
 
   public RetailStoreStateFiscalMemory notSendFirstDocMoment(@javax.annotation.Nullable String notSendFirstDocMoment) {
+
     
     this.notSendFirstDocMoment = notSendFirstDocMoment;
     return this;
@@ -137,6 +142,7 @@ public class RetailStoreStateFiscalMemory {
   @JsonProperty(JSON_PROPERTY_NOT_SEND_FIRST_DOC_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNotSendFirstDocMoment(@javax.annotation.Nullable String notSendFirstDocMoment) {
+
     this.notSendFirstDocMoment = notSendFirstDocMoment;
   }
 

@@ -44,7 +44,7 @@ import java.util.StringJoiner;
   SalesReturnPositionList.JSON_PROPERTY_META,
   SalesReturnPositionList.JSON_PROPERTY_ROWS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class SalesReturnPositionList implements EntityList {
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
@@ -63,6 +63,7 @@ public class SalesReturnPositionList implements EntityList {
   }
 
   public SalesReturnPositionList context(@javax.annotation.Nullable Context context) {
+
     
     this.context = context;
     return this;
@@ -87,11 +88,13 @@ public class SalesReturnPositionList implements EntityList {
   @JsonProperty(JSON_PROPERTY_CONTEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setContext(@javax.annotation.Nullable Context context) {
+
     this.context = context;
   }
 
 
   public SalesReturnPositionList meta(@javax.annotation.Nullable MetaList meta) {
+
     
     this.meta = meta;
     return this;
@@ -116,11 +119,13 @@ public class SalesReturnPositionList implements EntityList {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable MetaList meta) {
+
     this.meta = meta;
   }
 
 
   public SalesReturnPositionList rows(@javax.annotation.Nullable List<SalesReturnPosition> rows) {
+
     this.rows = JsonNullable.<List<SalesReturnPosition>>of(rows);
     
     return this;
@@ -153,7 +158,7 @@ public class SalesReturnPositionList implements EntityList {
   
 
   @JsonProperty(JSON_PROPERTY_ROWS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<SalesReturnPosition>> getRows_JsonNullable() {
@@ -166,6 +171,7 @@ public class SalesReturnPositionList implements EntityList {
   }
 
   public void setRows(@javax.annotation.Nullable List<SalesReturnPosition> rows) {
+
     this.rows = JsonNullable.<List<SalesReturnPosition>>of(rows);
   }
 

@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   NotificationInvoiceOutOverdue.JSON_PROPERTY_PAYMENT_PLANNED_MOMENT,
   NotificationInvoiceOutOverdue.JSON_PROPERTY_SUM
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class NotificationInvoiceOutOverdue extends NotificationAbstract {
 
   public static final String JSON_PROPERTY_AGENT_NAME = "agentName";
@@ -59,6 +59,7 @@ public class NotificationInvoiceOutOverdue extends NotificationAbstract {
   }
 
   public NotificationInvoiceOutOverdue agentName(@javax.annotation.Nullable String agentName) {
+
     
     this.agentName = agentName;
     return this;
@@ -83,11 +84,13 @@ public class NotificationInvoiceOutOverdue extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_AGENT_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAgentName(@javax.annotation.Nullable String agentName) {
+
     this.agentName = agentName;
   }
 
 
   public NotificationInvoiceOutOverdue invoice(@javax.annotation.Nullable NotificationInvoice invoice) {
+
     
     this.invoice = invoice;
     return this;
@@ -112,11 +115,13 @@ public class NotificationInvoiceOutOverdue extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_INVOICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setInvoice(@javax.annotation.Nullable NotificationInvoice invoice) {
+
     this.invoice = invoice;
   }
 
 
   public NotificationInvoiceOutOverdue paymentPlannedMoment(@javax.annotation.Nullable String paymentPlannedMoment) {
+
     
     this.paymentPlannedMoment = paymentPlannedMoment;
     return this;
@@ -141,11 +146,13 @@ public class NotificationInvoiceOutOverdue extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_PAYMENT_PLANNED_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPaymentPlannedMoment(@javax.annotation.Nullable String paymentPlannedMoment) {
+
     this.paymentPlannedMoment = paymentPlannedMoment;
   }
 
 
   public NotificationInvoiceOutOverdue sum(@javax.annotation.Nullable Integer sum) {
+
     
     this.sum = sum;
     return this;
@@ -170,6 +177,7 @@ public class NotificationInvoiceOutOverdue extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSum(@javax.annotation.Nullable Integer sum) {
+
     this.sum = sum;
   }
 

@@ -38,7 +38,7 @@ import java.util.StringJoiner;
   ReportTurnoverByStoreItem.JSON_PROPERTY_INCOME,
   ReportTurnoverByStoreItem.JSON_PROPERTY_OUTCOME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ReportTurnoverByStoreItem {
 
   public static final String JSON_PROPERTY_STORE = "store";
@@ -65,6 +65,7 @@ public class ReportTurnoverByStoreItem {
   }
 
   public ReportTurnoverByStoreItem store(@javax.annotation.Nullable Store store) {
+
     
     this.store = store;
     return this;
@@ -89,11 +90,13 @@ public class ReportTurnoverByStoreItem {
   @JsonProperty(JSON_PROPERTY_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStore(@javax.annotation.Nullable Store store) {
+
     this.store = store;
   }
 
 
   public ReportTurnoverByStoreItem onPeriodStart(@javax.annotation.Nullable ReportTurnoverIndicators onPeriodStart) {
+
     
     this.onPeriodStart = onPeriodStart;
     return this;
@@ -118,11 +121,13 @@ public class ReportTurnoverByStoreItem {
   @JsonProperty(JSON_PROPERTY_ON_PERIOD_START)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOnPeriodStart(@javax.annotation.Nullable ReportTurnoverIndicators onPeriodStart) {
+
     this.onPeriodStart = onPeriodStart;
   }
 
 
   public ReportTurnoverByStoreItem onPeriodEnd(@javax.annotation.Nullable ReportTurnoverIndicators onPeriodEnd) {
+
     
     this.onPeriodEnd = onPeriodEnd;
     return this;
@@ -147,11 +152,13 @@ public class ReportTurnoverByStoreItem {
   @JsonProperty(JSON_PROPERTY_ON_PERIOD_END)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOnPeriodEnd(@javax.annotation.Nullable ReportTurnoverIndicators onPeriodEnd) {
+
     this.onPeriodEnd = onPeriodEnd;
   }
 
 
   public ReportTurnoverByStoreItem income(@javax.annotation.Nullable ReportTurnoverIndicators income) {
+
     
     this.income = income;
     return this;
@@ -176,11 +183,13 @@ public class ReportTurnoverByStoreItem {
   @JsonProperty(JSON_PROPERTY_INCOME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIncome(@javax.annotation.Nullable ReportTurnoverIndicators income) {
+
     this.income = income;
   }
 
 
   public ReportTurnoverByStoreItem outcome(@javax.annotation.Nullable ReportTurnoverIndicators outcome) {
+
     
     this.outcome = outcome;
     return this;
@@ -205,6 +214,7 @@ public class ReportTurnoverByStoreItem {
   @JsonProperty(JSON_PROPERTY_OUTCOME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOutcome(@javax.annotation.Nullable ReportTurnoverIndicators outcome) {
+
     this.outcome = outcome;
   }
 

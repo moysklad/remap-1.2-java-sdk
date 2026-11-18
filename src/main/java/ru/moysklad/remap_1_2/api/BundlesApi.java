@@ -21,9 +21,12 @@ import ru.moysklad.remap_1_2.Configuration;
 import ru.moysklad.remap_1_2.Pair;
 
 
+import ru.moysklad.remap_1_2.model.BatchDeleteErrorResponse;
+import ru.moysklad.remap_1_2.model.BatchEntityErrorResponse;
 import ru.moysklad.remap_1_2.model.BatchResponseEntity;
 import ru.moysklad.remap_1_2.model.Bundle;
 import ru.moysklad.remap_1_2.model.BundleComponent;
+import ru.moysklad.remap_1_2.model.BundleComponentList;
 import ru.moysklad.remap_1_2.model.BundleList;
 import ru.moysklad.remap_1_2.model.DeleteProductImagesRequestInner;
 import ru.moysklad.remap_1_2.model.DeleteRowResult;
@@ -43,7 +46,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class BundlesApi extends BaseApi {
 
@@ -96,7 +99,7 @@ public class BundlesApi extends BaseApi {
    * @param id ID сущности (required)
    * @param fileUpload  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
    * @return List&lt;ModelFile&gt;
@@ -128,7 +131,7 @@ public class BundlesApi extends BaseApi {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -210,7 +213,7 @@ if (contentType != null) {
    * @param id ID сущности (required)
    * @param fileUpload  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
    * @return List&lt;ModelFile&gt;
@@ -242,7 +245,7 @@ if (contentType != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -324,7 +327,7 @@ if (contentType != null) {
    * @param id ID сущности (required)
    * @param fileUpload  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
    * @return List&lt;Image&gt;
@@ -356,7 +359,7 @@ if (contentType != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -438,7 +441,7 @@ if (contentType != null) {
    * @param id ID сущности (required)
    * @param fileUpload  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
    * @return List&lt;Image&gt;
@@ -470,7 +473,7 @@ if (contentType != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -548,7 +551,7 @@ if (contentType != null) {
    * 
    * @param bundle  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
@@ -576,7 +579,7 @@ if (contentType != null) {
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -622,10 +625,10 @@ if (contentType != null) {
    * 
    * @param id ID сущности (required)
    * @param bundleComponent  (required)
-   * @return List&lt;BundleComponent&gt;
+   * @return BundleComponent
    * @throws ApiException if fails to make API call
    */
-  public List<BundleComponent> createBundleComponent(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull BundleComponent bundleComponent) throws ApiException {
+  public BundleComponent createBundleComponent(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull BundleComponent bundleComponent) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.createBundleComponent(id, bundleComponent, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
@@ -645,10 +648,10 @@ if (contentType != null) {
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return List&lt;BundleComponent&gt;
+   * @return BundleComponent
    * @throws ApiException if fails to make API call
    */
-  public List<BundleComponent> createBundleComponent(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull BundleComponent bundleComponent, RequestOptions options) throws ApiException {
+  public BundleComponent createBundleComponent(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull BundleComponent bundleComponent, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.createBundleComponent(id, bundleComponent, null, null, (String) effectiveOptions.get("expand"), null, effectiveOptions.getAdditionalHeaders());
   }
@@ -659,14 +662,14 @@ if (contentType != null) {
    * @param id ID сущности (required)
    * @param bundleComponent  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
-   * @return List&lt;BundleComponent&gt;
+   * @return BundleComponent
    * @throws ApiException if fails to make API call
    */
-  protected List<BundleComponent> createBundleComponent(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull BundleComponent bundleComponent, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected BundleComponent createBundleComponent(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull BundleComponent bundleComponent, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = bundleComponent;
     
     // verify the required parameter 'id' is set
@@ -693,7 +696,7 @@ if (contentType != null) {
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -716,7 +719,7 @@ if (contentType != null) {
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<List<BundleComponent>> localVarReturnType = new TypeReference<List<BundleComponent>>() {};
+    TypeReference<BundleComponent> localVarReturnType = new TypeReference<BundleComponent>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "POST",
@@ -776,7 +779,7 @@ if (contentType != null) {
    * @param id ID сущности (required)
    * @param bundleComponent  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
@@ -810,7 +813,7 @@ if (contentType != null) {
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -888,7 +891,7 @@ if (contentType != null) {
    * 
    * @param bundle  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
@@ -916,7 +919,7 @@ if (contentType != null) {
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -990,7 +993,7 @@ if (contentType != null) {
    * 
    * @param id ID сущности (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
@@ -1015,7 +1018,7 @@ if (contentType != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -1090,7 +1093,7 @@ if (acceptEncoding != null) {
    * @param id ID сущности (required)
    * @param componentId  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
@@ -1121,7 +1124,7 @@ if (acceptEncoding != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -1163,11 +1166,12 @@ if (acceptEncoding != null) {
    * 
    * @param id ID сущности (required)
    * @param bundleComponent  (required)
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public void deleteBundleComponentsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<BundleComponent> bundleComponent) throws ApiException {
+  public List<DeleteRowResult> deleteBundleComponentsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<BundleComponent> bundleComponent) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
-    this.deleteBundleComponentsBatch(id, bundleComponent, null, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.deleteBundleComponentsBatch(id, bundleComponent, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
 
@@ -1184,11 +1188,12 @@ if (acceptEncoding != null) {
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  public void deleteBundleComponentsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<BundleComponent> bundleComponent, RequestOptions options) throws ApiException {
+  public List<DeleteRowResult> deleteBundleComponentsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<BundleComponent> bundleComponent, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
-    this.deleteBundleComponentsBatch(id, bundleComponent, null, null, null, effectiveOptions.getAdditionalHeaders());
+    return this.deleteBundleComponentsBatch(id, bundleComponent, null, null, null, effectiveOptions.getAdditionalHeaders());
   }
 
   /**
@@ -1197,12 +1202,13 @@ if (acceptEncoding != null) {
    * @param id ID сущности (required)
    * @param bundleComponent  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
+   * @return List&lt;DeleteRowResult&gt;
    * @throws ApiException if fails to make API call
    */
-  protected void deleteBundleComponentsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<BundleComponent> bundleComponent, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
+  protected List<DeleteRowResult> deleteBundleComponentsBatch(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull List<BundleComponent> bundleComponent, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, @javax.annotation.Nullable String contentType, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = bundleComponent;
     
     // verify the required parameter 'id' is set
@@ -1228,7 +1234,7 @@ if (acceptEncoding != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -1251,7 +1257,8 @@ if (contentType != null) {
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    apiClient.invokeAPI(
+    TypeReference<List<DeleteRowResult>> localVarReturnType = new TypeReference<List<DeleteRowResult>>() {};
+    return apiClient.invokeAPI(
         localVarPath,
         "POST",
         localVarQueryParams,
@@ -1264,7 +1271,7 @@ if (contentType != null) {
         localVarAccept,
         localVarContentType,
         localVarAuthNames,
-        null
+        localVarReturnType
     );
   }
 
@@ -1306,7 +1313,7 @@ if (contentType != null) {
    * @param id ID сущности (required)
    * @param fileId ID файла (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
@@ -1337,7 +1344,7 @@ if (contentType != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -1412,7 +1419,7 @@ if (acceptEncoding != null) {
    * @param id ID сущности (required)
    * @param imageId ID изображения (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
    */
@@ -1443,7 +1450,7 @@ if (acceptEncoding != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -1519,7 +1526,7 @@ if (acceptEncoding != null) {
    * @param id ID сущности (required)
    * @param deleteProductImagesRequestInner  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
    * @throws ApiException if fails to make API call
@@ -1550,7 +1557,7 @@ if (acceptEncoding != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -1626,7 +1633,7 @@ if (contentType != null) {
    * 
    * @param bundle  (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
    * @return List&lt;DeleteRowResult&gt;
@@ -1652,7 +1659,7 @@ if (contentType != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -1730,7 +1737,7 @@ if (contentType != null) {
    * @param id ID сущности (required)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @return Bundle
    * @throws ApiException if fails to make API call
@@ -1757,7 +1764,7 @@ if (contentType != null) {
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -1837,7 +1844,7 @@ if (acceptEncoding != null) {
    * @param componentId  (required)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @return BundleComponent
    * @throws ApiException if fails to make API call
@@ -1870,7 +1877,7 @@ if (acceptEncoding != null) {
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -1912,10 +1919,10 @@ if (acceptEncoding != null) {
    * Получить компоненты Комплекта
    * 
    * @param id ID сущности (required)
-   * @return BundleComponent
+   * @return BundleComponentList
    * @throws ApiException if fails to make API call
    */
-  public BundleComponent getBundleComponents(@javax.annotation.Nonnull UUID id) throws ApiException {
+  public BundleComponentList getBundleComponents(@javax.annotation.Nonnull UUID id) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.empty();
     return this.getBundleComponents(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -1936,10 +1943,10 @@ if (acceptEncoding != null) {
    
    
    * @param options request options such as pagination, filters, expands, fields, sorting and additional headers
-   * @return BundleComponent
+   * @return BundleComponentList
    * @throws ApiException if fails to make API call
    */
-  public BundleComponent getBundleComponents(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
+  public BundleComponentList getBundleComponents(@javax.annotation.Nonnull UUID id, RequestOptions options) throws ApiException {
     RequestOptions effectiveOptions = RequestOptions.emptyIfNull(options);
     return this.getBundleComponents(id, (Integer) effectiveOptions.get("limit"), (Integer) effectiveOptions.get("offset"), (String) effectiveOptions.get("search"), (String) effectiveOptions.get("filter"), (String) effectiveOptions.get("expand"), (String) effectiveOptions.get("order"), null, null, effectiveOptions.getAdditionalHeaders());
   }
@@ -1955,12 +1962,12 @@ if (acceptEncoding != null) {
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param order Сортировка (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
-   * @return BundleComponent
+   * @return BundleComponentList
    * @throws ApiException if fails to make API call
    */
-  protected BundleComponent getBundleComponents(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
+  protected BundleComponentList getBundleComponents(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'id' is set
@@ -1968,6 +1975,15 @@ if (acceptEncoding != null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling getBundleComponents");
     }
     
+    if (limit != null && limit.doubleValue() < 1) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getBundleComponents: must be greater than or equal to 1, got " + limit);
+    }
+    if (limit != null && limit.doubleValue() > 1000) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getBundleComponents: must be less than or equal to 1000, got " + limit);
+    }
+    if (offset != null && offset.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'offset' when calling getBundleComponents: must be greater than or equal to 0, got " + offset);
+    }
     // create path and map variables
     String localVarPath = "/entity/bundle/{id}/components"
       .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
@@ -1987,7 +2003,7 @@ if (acceptEncoding != null) {
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
     localVarQueryParams.addAll(apiClient.parameterToPair("order", order));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -2007,7 +2023,7 @@ if (acceptEncoding != null) {
 
     String[] localVarAuthNames = new String[] { "basicAuth", "bearerAuth" };
 
-    TypeReference<BundleComponent> localVarReturnType = new TypeReference<BundleComponent>() {};
+    TypeReference<BundleComponentList> localVarReturnType = new TypeReference<BundleComponentList>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "GET",
@@ -2064,7 +2080,7 @@ if (acceptEncoding != null) {
    * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
    * @param offset Отступ в выданном списке (optional, default to 0)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @return GetTaskFiles200Response
    * @throws ApiException if fails to make API call
@@ -2077,6 +2093,15 @@ if (acceptEncoding != null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling getBundleFiles");
     }
     
+    if (limit != null && limit.doubleValue() < 1) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getBundleFiles: must be greater than or equal to 1, got " + limit);
+    }
+    if (limit != null && limit.doubleValue() > 1000) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getBundleFiles: must be less than or equal to 1000, got " + limit);
+    }
+    if (offset != null && offset.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'offset' when calling getBundleFiles: must be greater than or equal to 0, got " + offset);
+    }
     // create path and map variables
     String localVarPath = "/entity/bundle/{id}/files"
       .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
@@ -2092,7 +2117,7 @@ if (acceptEncoding != null) {
     localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
     localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -2171,7 +2196,7 @@ if (acceptEncoding != null) {
    * @param offset Отступ в выданном списке (optional, default to 0)
    * @param fields Включить в ответ скрытые поля, не выводимые по умолчанию. В одном запросе можно передать только одно значение. - &#x60;minimumStock&#x60; — неснижаемый остаток (товар, модификация) - &#x60;downloadPermanentHref&#x60; — постоянная ссылка на изображение (платный тариф) - &#x60;stock&#x60; — остатки и себестоимость в позициях документов - &#x60;declaration&#x60; — прослеживаемость импортных товаров в позициях документов  (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @return GetProductImages200Response
    * @throws ApiException if fails to make API call
@@ -2184,6 +2209,15 @@ if (acceptEncoding != null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling getBundleImages");
     }
     
+    if (limit != null && limit.doubleValue() < 1) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getBundleImages: must be greater than or equal to 1, got " + limit);
+    }
+    if (limit != null && limit.doubleValue() > 1000) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getBundleImages: must be less than or equal to 1000, got " + limit);
+    }
+    if (offset != null && offset.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'offset' when calling getBundleImages: must be greater than or equal to 0, got " + offset);
+    }
     // create path and map variables
     String localVarPath = "/entity/bundle/{id}/images"
       .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
@@ -2200,7 +2234,7 @@ if (acceptEncoding != null) {
     localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
     localVarQueryParams.addAll(apiClient.parameterToPair("fields", fields));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -2280,7 +2314,7 @@ if (acceptEncoding != null) {
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param order Сортировка (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @return BundleList
    * @throws ApiException if fails to make API call
@@ -2288,6 +2322,15 @@ if (acceptEncoding != null) {
   protected BundleList getBundles(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String search, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String order, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
+    if (limit != null && limit.doubleValue() < 1) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getBundles: must be greater than or equal to 1, got " + limit);
+    }
+    if (limit != null && limit.doubleValue() > 1000) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getBundles: must be less than or equal to 1000, got " + limit);
+    }
+    if (offset != null && offset.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'offset' when calling getBundles: must be greater than or equal to 0, got " + offset);
+    }
     // create path and map variables
     String localVarPath = "/entity/bundle";
 
@@ -2306,7 +2349,7 @@ if (acceptEncoding != null) {
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
     localVarQueryParams.addAll(apiClient.parameterToPair("order", order));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -2387,7 +2430,7 @@ if (acceptEncoding != null) {
    * @param bundle  (required)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
    * @return Bundle
@@ -2420,7 +2463,7 @@ if (acceptEncoding != null) {
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -2509,7 +2552,7 @@ if (contentType != null) {
    * @param bundleComponent  (required)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param contentType  (optional, default to application/json)
    * @param additionalHeaders additionalHeaders for this call
    * @return BundleComponent
@@ -2548,7 +2591,7 @@ if (contentType != null) {
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));

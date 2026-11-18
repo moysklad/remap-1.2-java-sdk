@@ -98,6 +98,7 @@ import java.util.StringJoiner;
   AssortmentWithoutBundle.JSON_PROPERTY_PAYMENT_ITEM_TYPE,
   AssortmentWithoutBundle.JSON_PROPERTY_TAX_SYSTEM,
   AssortmentWithoutBundle.JSON_PROPERTY_ATTRIBUTES,
+  AssortmentWithoutBundle.JSON_PROPERTY_MINIMUM_BALANCE,
   AssortmentWithoutBundle.JSON_PROPERTY_MINIMUM_STOCK,
   AssortmentWithoutBundle.JSON_PROPERTY_MIN_PRICE,
   AssortmentWithoutBundle.JSON_PROPERTY_WEIGHED,
@@ -116,7 +117,7 @@ import java.util.StringJoiner;
   AssortmentWithoutBundle.JSON_PROPERTY_IN_TRANSIT,
   AssortmentWithoutBundle.JSON_PROPERTY_QUANTITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class AssortmentWithoutBundle implements MetaEntity {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -283,6 +284,10 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @javax.annotation.Nullable
   private JsonNullable<List<AttributeAbstract>> attributes = JsonNullable.<List<AttributeAbstract>>undefined();
 
+  public static final String JSON_PROPERTY_MINIMUM_BALANCE = "minimumBalance";
+  @javax.annotation.Nullable
+  private JsonNullable<Double> minimumBalance = JsonNullable.<Double>undefined();
+
   public static final String JSON_PROPERTY_MINIMUM_STOCK = "minimumStock";
   @javax.annotation.Nullable
   private JsonNullable<MinimumStockAbstract> minimumStock = JsonNullable.<MinimumStockAbstract>undefined();
@@ -383,6 +388,7 @@ public class AssortmentWithoutBundle implements MetaEntity {
   }
 
   public AssortmentWithoutBundle meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -407,6 +413,7 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -444,6 +451,7 @@ public class AssortmentWithoutBundle implements MetaEntity {
 
 
   public AssortmentWithoutBundle alcoholic(@javax.annotation.Nullable ProductAlcoholic alcoholic) {
+
     
     this.alcoholic = alcoholic;
     return this;
@@ -468,11 +476,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ALCOHOLIC)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAlcoholic(@javax.annotation.Nullable ProductAlcoholic alcoholic) {
+
     this.alcoholic = alcoholic;
   }
 
 
   public AssortmentWithoutBundle archived(@javax.annotation.Nullable Boolean archived) {
+
     
     this.archived = archived;
     return this;
@@ -497,6 +507,7 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
+
     this.archived = archived;
   }
 
@@ -534,6 +545,7 @@ public class AssortmentWithoutBundle implements MetaEntity {
 
 
   public AssortmentWithoutBundle code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -558,11 +570,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public AssortmentWithoutBundle externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -587,6 +601,7 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
@@ -608,6 +623,7 @@ public class AssortmentWithoutBundle implements MetaEntity {
 
 
   public AssortmentWithoutBundle article(@javax.annotation.Nullable String article) {
+
     
     this.article = article;
     return this;
@@ -632,11 +648,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ARTICLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setArticle(@javax.annotation.Nullable String article) {
+
     this.article = article;
   }
 
 
   public AssortmentWithoutBundle description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -670,11 +688,19 @@ public class AssortmentWithoutBundle implements MetaEntity {
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 
 
   public AssortmentWithoutBundle vat(@javax.annotation.Nullable Integer vat) {
+    if (vat != null && vat.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be greater than or equal to 0, got " + vat);
+    }
+    if (vat != null && vat.doubleValue() > 99) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be less than or equal to 99, got " + vat);
+    }
+
     
     this.vat = vat;
     return this;
@@ -701,11 +727,19 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVat(@javax.annotation.Nullable Integer vat) {
+    if (vat != null && vat.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be greater than or equal to 0, got " + vat);
+    }
+    if (vat != null && vat.doubleValue() > 99) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be less than or equal to 99, got " + vat);
+    }
+
     this.vat = vat;
   }
 
 
   public AssortmentWithoutBundle vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     
     this.vatEnabled = vatEnabled;
     return this;
@@ -730,11 +764,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     this.vatEnabled = vatEnabled;
   }
 
 
   public AssortmentWithoutBundle useParentVat(@javax.annotation.Nullable Boolean useParentVat) {
+
     
     this.useParentVat = useParentVat;
     return this;
@@ -759,6 +795,7 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_USE_PARENT_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUseParentVat(@javax.annotation.Nullable Boolean useParentVat) {
+
     this.useParentVat = useParentVat;
   }
 
@@ -796,6 +833,7 @@ public class AssortmentWithoutBundle implements MetaEntity {
 
 
   public AssortmentWithoutBundle discountProhibited(@javax.annotation.Nullable Boolean discountProhibited) {
+
     
     this.discountProhibited = discountProhibited;
     return this;
@@ -820,6 +858,7 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_DISCOUNT_PROHIBITED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDiscountProhibited(@javax.annotation.Nullable Boolean discountProhibited) {
+
     this.discountProhibited = discountProhibited;
   }
 
@@ -841,6 +880,7 @@ public class AssortmentWithoutBundle implements MetaEntity {
 
 
   public AssortmentWithoutBundle isSerialTrackable(@javax.annotation.Nullable Boolean isSerialTrackable) {
+
     
     this.isSerialTrackable = isSerialTrackable;
     return this;
@@ -865,11 +905,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_IS_SERIAL_TRACKABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsSerialTrackable(@javax.annotation.Nullable Boolean isSerialTrackable) {
+
     this.isSerialTrackable = isSerialTrackable;
   }
 
 
   public AssortmentWithoutBundle shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -894,11 +936,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
 
   public AssortmentWithoutBundle group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -923,11 +967,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
 
   public AssortmentWithoutBundle owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -961,6 +1007,7 @@ public class AssortmentWithoutBundle implements MetaEntity {
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
@@ -982,6 +1029,10 @@ public class AssortmentWithoutBundle implements MetaEntity {
 
 
   public AssortmentWithoutBundle weight(@javax.annotation.Nullable Double weight) {
+    if (weight != null && weight.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'weight': must be greater than or equal to 0, got " + weight);
+    }
+
     
     this.weight = weight;
     return this;
@@ -1007,11 +1058,19 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_WEIGHT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setWeight(@javax.annotation.Nullable Double weight) {
+    if (weight != null && weight.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'weight': must be greater than or equal to 0, got " + weight);
+    }
+
     this.weight = weight;
   }
 
 
   public AssortmentWithoutBundle volume(@javax.annotation.Nullable Double volume) {
+    if (volume != null && volume.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'volume': must be greater than or equal to 0, got " + volume);
+    }
+
     
     this.volume = volume;
     return this;
@@ -1037,11 +1096,16 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_VOLUME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVolume(@javax.annotation.Nullable Double volume) {
+    if (volume != null && volume.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'volume': must be greater than or equal to 0, got " + volume);
+    }
+
     this.volume = volume;
   }
 
 
   public AssortmentWithoutBundle buyPrice(@javax.annotation.Nullable Price buyPrice) {
+
     this.buyPrice = JsonNullable.<Price>of(buyPrice);
     
     return this;
@@ -1075,11 +1139,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   }
 
   public void setBuyPrice(@javax.annotation.Nullable Price buyPrice) {
+
     this.buyPrice = JsonNullable.<Price>of(buyPrice);
   }
 
 
   public AssortmentWithoutBundle salePrices(@javax.annotation.Nullable List<SalePrice> salePrices) {
+
     this.salePrices = JsonNullable.<List<SalePrice>>of(salePrices);
     
     return this;
@@ -1112,7 +1178,7 @@ public class AssortmentWithoutBundle implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_SALE_PRICES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<SalePrice>> getSalePrices_JsonNullable() {
@@ -1125,11 +1191,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   }
 
   public void setSalePrices(@javax.annotation.Nullable List<SalePrice> salePrices) {
+
     this.salePrices = JsonNullable.<List<SalePrice>>of(salePrices);
   }
 
 
   public AssortmentWithoutBundle supplier(@javax.annotation.Nullable Agent supplier) {
+
     
     this.supplier = supplier;
     return this;
@@ -1154,11 +1222,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SUPPLIER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSupplier(@javax.annotation.Nullable Agent supplier) {
+
     this.supplier = supplier;
   }
 
 
   public AssortmentWithoutBundle country(@javax.annotation.Nullable Country country) {
+
     this.country = JsonNullable.<Country>of(country);
     
     return this;
@@ -1192,11 +1262,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   }
 
   public void setCountry(@javax.annotation.Nullable Country country) {
+
     this.country = JsonNullable.<Country>of(country);
   }
 
 
   public AssortmentWithoutBundle uom(@javax.annotation.Nullable Uom uom) {
+
     this.uom = JsonNullable.<Uom>of(uom);
     
     return this;
@@ -1230,11 +1302,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   }
 
   public void setUom(@javax.annotation.Nullable Uom uom) {
+
     this.uom = JsonNullable.<Uom>of(uom);
   }
 
 
   public AssortmentWithoutBundle productFolder(@javax.annotation.Nullable ProductFolder productFolder) {
+
     this.productFolder = JsonNullable.<ProductFolder>of(productFolder);
     
     return this;
@@ -1268,6 +1342,7 @@ public class AssortmentWithoutBundle implements MetaEntity {
   }
 
   public void setProductFolder(@javax.annotation.Nullable ProductFolder productFolder) {
+
     this.productFolder = JsonNullable.<ProductFolder>of(productFolder);
   }
 
@@ -1289,6 +1364,7 @@ public class AssortmentWithoutBundle implements MetaEntity {
 
 
   public AssortmentWithoutBundle files(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
@@ -1322,11 +1398,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   }
 
   public void setFiles(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
   }
 
 
   public AssortmentWithoutBundle barcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
+
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
     
     return this;
@@ -1359,7 +1437,7 @@ public class AssortmentWithoutBundle implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_BARCODES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<Barcode>> getBarcodes_JsonNullable() {
@@ -1372,11 +1450,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   }
 
   public void setBarcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
+
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
   }
 
 
   public AssortmentWithoutBundle packs(@javax.annotation.Nullable List<VariantPack> packs) {
+
     this.packs = JsonNullable.<List<VariantPack>>of(packs);
     
     return this;
@@ -1409,7 +1489,7 @@ public class AssortmentWithoutBundle implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_PACKS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<VariantPack>> getPacks_JsonNullable() {
@@ -1422,11 +1502,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   }
 
   public void setPacks(@javax.annotation.Nullable List<VariantPack> packs) {
+
     this.packs = JsonNullable.<List<VariantPack>>of(packs);
   }
 
 
   public AssortmentWithoutBundle trackingType(@javax.annotation.Nullable String trackingType) {
+
     
     this.trackingType = trackingType;
     return this;
@@ -1451,11 +1533,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_TRACKING_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTrackingType(@javax.annotation.Nullable String trackingType) {
+
     this.trackingType = trackingType;
   }
 
 
   public AssortmentWithoutBundle tnved(@javax.annotation.Nullable String tnved) {
+
     
     this.tnved = tnved;
     return this;
@@ -1480,11 +1564,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_TNVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTnved(@javax.annotation.Nullable String tnved) {
+
     this.tnved = tnved;
   }
 
 
   public AssortmentWithoutBundle paymentItemType(@javax.annotation.Nullable String paymentItemType) {
+
     
     this.paymentItemType = paymentItemType;
     return this;
@@ -1509,11 +1595,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_PAYMENT_ITEM_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPaymentItemType(@javax.annotation.Nullable String paymentItemType) {
+
     this.paymentItemType = paymentItemType;
   }
 
 
   public AssortmentWithoutBundle taxSystem(@javax.annotation.Nullable String taxSystem) {
+
     
     this.taxSystem = taxSystem;
     return this;
@@ -1538,11 +1626,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_TAX_SYSTEM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTaxSystem(@javax.annotation.Nullable String taxSystem) {
+
     this.taxSystem = taxSystem;
   }
 
 
   public AssortmentWithoutBundle attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
@@ -1575,7 +1665,7 @@ public class AssortmentWithoutBundle implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
@@ -1588,11 +1678,53 @@ public class AssortmentWithoutBundle implements MetaEntity {
   }
 
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
+  public AssortmentWithoutBundle minimumBalance(@javax.annotation.Nullable Double minimumBalance) {
+
+    this.minimumBalance = JsonNullable.<Double>of(minimumBalance);
+    
+    return this;
+  }
+
+
+  /**
+   * Неснижаемый остаток. Для очистки передайте null.
+   * @return minimumBalance
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public Double getMinimumBalance() {
+        return minimumBalance.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_MINIMUM_BALANCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+
+  public JsonNullable<Double> getMinimumBalance_JsonNullable() {
+    return minimumBalance;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_MINIMUM_BALANCE, required = false)
+  public void setMinimumBalance_JsonNullable(JsonNullable<Double> minimumBalance) {
+    this.minimumBalance = minimumBalance;
+  }
+
+  public void setMinimumBalance(@javax.annotation.Nullable Double minimumBalance) {
+
+    this.minimumBalance = JsonNullable.<Double>of(minimumBalance);
+  }
+
+
   public AssortmentWithoutBundle minimumStock(@javax.annotation.Nullable MinimumStockAbstract minimumStock) {
+
     this.minimumStock = JsonNullable.<MinimumStockAbstract>of(minimumStock);
     
     return this;
@@ -1626,11 +1758,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   }
 
   public void setMinimumStock(@javax.annotation.Nullable MinimumStockAbstract minimumStock) {
+
     this.minimumStock = JsonNullable.<MinimumStockAbstract>of(minimumStock);
   }
 
 
   public AssortmentWithoutBundle minPrice(@javax.annotation.Nullable Price minPrice) {
+
     
     this.minPrice = minPrice;
     return this;
@@ -1655,11 +1789,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_MIN_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMinPrice(@javax.annotation.Nullable Price minPrice) {
+
     this.minPrice = minPrice;
   }
 
 
   public AssortmentWithoutBundle weighed(@javax.annotation.Nullable Boolean weighed) {
+
     
     this.weighed = weighed;
     return this;
@@ -1684,11 +1820,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_WEIGHED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setWeighed(@javax.annotation.Nullable Boolean weighed) {
+
     this.weighed = weighed;
   }
 
 
   public AssortmentWithoutBundle onTap(@javax.annotation.Nullable Boolean onTap) {
+
     
     this.onTap = onTap;
     return this;
@@ -1713,11 +1851,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ON_TAP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOnTap(@javax.annotation.Nullable Boolean onTap) {
+
     this.onTap = onTap;
   }
 
 
   public AssortmentWithoutBundle partialDisposal(@javax.annotation.Nullable Boolean partialDisposal) {
+
     
     this.partialDisposal = partialDisposal;
     return this;
@@ -1742,11 +1882,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_PARTIAL_DISPOSAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPartialDisposal(@javax.annotation.Nullable Boolean partialDisposal) {
+
     this.partialDisposal = partialDisposal;
   }
 
 
   public AssortmentWithoutBundle things(@javax.annotation.Nullable List<String> things) {
+
     this.things = JsonNullable.<List<String>>of(things);
     
     return this;
@@ -1779,7 +1921,7 @@ public class AssortmentWithoutBundle implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_THINGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<String>> getThings_JsonNullable() {
@@ -1792,11 +1934,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   }
 
   public void setThings(@javax.annotation.Nullable List<String> things) {
+
     this.things = JsonNullable.<List<String>>of(things);
   }
 
 
   public AssortmentWithoutBundle syncId(@javax.annotation.Nullable UUID syncId) {
+
     
     this.syncId = syncId;
     return this;
@@ -1821,11 +1965,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
+
     this.syncId = syncId;
   }
 
 
   public AssortmentWithoutBundle ppeType(@javax.annotation.Nullable String ppeType) {
+
     
     this.ppeType = ppeType;
     return this;
@@ -1850,11 +1996,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_PPE_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPpeType(@javax.annotation.Nullable String ppeType) {
+
     this.ppeType = ppeType;
   }
 
 
   public AssortmentWithoutBundle product(@javax.annotation.Nullable Product product) {
+
     
     this.product = product;
     return this;
@@ -1879,11 +2027,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_PRODUCT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProduct(@javax.annotation.Nullable Product product) {
+
     this.product = product;
   }
 
 
   public AssortmentWithoutBundle characteristics(@javax.annotation.Nullable List<VariantCharacteristicValue> characteristics) {
+
     this.characteristics = JsonNullable.<List<VariantCharacteristicValue>>of(characteristics);
     
     return this;
@@ -1916,7 +2066,7 @@ public class AssortmentWithoutBundle implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_CHARACTERISTICS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<VariantCharacteristicValue>> getCharacteristics_JsonNullable() {
@@ -1929,11 +2079,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   }
 
   public void setCharacteristics(@javax.annotation.Nullable List<VariantCharacteristicValue> characteristics) {
+
     this.characteristics = JsonNullable.<List<VariantCharacteristicValue>>of(characteristics);
   }
 
 
   public AssortmentWithoutBundle assortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     
     this.assortment = assortment;
     return this;
@@ -1958,11 +2110,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     this.assortment = assortment;
   }
 
 
   public AssortmentWithoutBundle expiryDate(@javax.annotation.Nullable String expiryDate) {
+
     
     this.expiryDate = expiryDate;
     return this;
@@ -1987,11 +2141,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_EXPIRY_DATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExpiryDate(@javax.annotation.Nullable String expiryDate) {
+
     this.expiryDate = expiryDate;
   }
 
 
   public AssortmentWithoutBundle label(@javax.annotation.Nullable String label) {
+
     
     this.label = label;
     return this;
@@ -2016,11 +2172,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_LABEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLabel(@javax.annotation.Nullable String label) {
+
     this.label = label;
   }
 
 
   public AssortmentWithoutBundle stock(@javax.annotation.Nullable Double stock) {
+
     
     this.stock = stock;
     return this;
@@ -2045,11 +2203,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_STOCK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStock(@javax.annotation.Nullable Double stock) {
+
     this.stock = stock;
   }
 
 
   public AssortmentWithoutBundle reserve(@javax.annotation.Nullable Double reserve) {
+
     
     this.reserve = reserve;
     return this;
@@ -2074,11 +2234,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_RESERVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReserve(@javax.annotation.Nullable Double reserve) {
+
     this.reserve = reserve;
   }
 
 
   public AssortmentWithoutBundle inTransit(@javax.annotation.Nullable Double inTransit) {
+
     
     this.inTransit = inTransit;
     return this;
@@ -2103,11 +2265,13 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_IN_TRANSIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setInTransit(@javax.annotation.Nullable Double inTransit) {
+
     this.inTransit = inTransit;
   }
 
 
   public AssortmentWithoutBundle quantity(@javax.annotation.Nullable Double quantity) {
+
     
     this.quantity = quantity;
     return this;
@@ -2132,6 +2296,7 @@ public class AssortmentWithoutBundle implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
+
     this.quantity = quantity;
   }
 
@@ -2186,6 +2351,7 @@ public class AssortmentWithoutBundle implements MetaEntity {
         Objects.equals(this.paymentItemType, assortmentWithoutBundle.paymentItemType) &&
         Objects.equals(this.taxSystem, assortmentWithoutBundle.taxSystem) &&
         equalsNullable(this.attributes, assortmentWithoutBundle.attributes) &&
+        equalsNullable(this.minimumBalance, assortmentWithoutBundle.minimumBalance) &&
         equalsNullable(this.minimumStock, assortmentWithoutBundle.minimumStock) &&
         Objects.equals(this.minPrice, assortmentWithoutBundle.minPrice) &&
         Objects.equals(this.weighed, assortmentWithoutBundle.weighed) &&
@@ -2211,7 +2377,7 @@ public class AssortmentWithoutBundle implements MetaEntity {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, alcoholic, archived, tobacco, name, code, externalCode, pathName, article, hashCodeNullable(description), vat, vatEnabled, useParentVat, effectiveVat, effectiveVatEnabled, discountProhibited, variantsCount, isSerialTrackable, shared, group, hashCodeNullable(owner), updated, weight, volume, hashCodeNullable(buyPrice), hashCodeNullable(salePrices), supplier, hashCodeNullable(country), hashCodeNullable(uom), hashCodeNullable(productFolder), images, hashCodeNullable(files), hashCodeNullable(barcodes), hashCodeNullable(packs), trackingType, tnved, paymentItemType, taxSystem, hashCodeNullable(attributes), hashCodeNullable(minimumStock), minPrice, weighed, onTap, partialDisposal, hashCodeNullable(things), syncId, ppeType, product, hashCodeNullable(characteristics), assortment, expiryDate, label, stock, reserve, inTransit, quantity);
+    return Objects.hash(meta, id, accountId, alcoholic, archived, tobacco, name, code, externalCode, pathName, article, hashCodeNullable(description), vat, vatEnabled, useParentVat, effectiveVat, effectiveVatEnabled, discountProhibited, variantsCount, isSerialTrackable, shared, group, hashCodeNullable(owner), updated, weight, volume, hashCodeNullable(buyPrice), hashCodeNullable(salePrices), supplier, hashCodeNullable(country), hashCodeNullable(uom), hashCodeNullable(productFolder), images, hashCodeNullable(files), hashCodeNullable(barcodes), hashCodeNullable(packs), trackingType, tnved, paymentItemType, taxSystem, hashCodeNullable(attributes), hashCodeNullable(minimumBalance), hashCodeNullable(minimumStock), minPrice, weighed, onTap, partialDisposal, hashCodeNullable(things), syncId, ppeType, product, hashCodeNullable(characteristics), assortment, expiryDate, label, stock, reserve, inTransit, quantity);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -2266,6 +2432,7 @@ public class AssortmentWithoutBundle implements MetaEntity {
     sb.append("    paymentItemType: ").append(toIndentedString(paymentItemType)).append("\n");
     sb.append("    taxSystem: ").append(toIndentedString(taxSystem)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
+    sb.append("    minimumBalance: ").append(toIndentedString(minimumBalance)).append("\n");
     sb.append("    minimumStock: ").append(toIndentedString(minimumStock)).append("\n");
     sb.append("    minPrice: ").append(toIndentedString(minPrice)).append("\n");
     sb.append("    weighed: ").append(toIndentedString(weighed)).append("\n");
@@ -2682,6 +2849,16 @@ public class AssortmentWithoutBundle implements MetaEntity {
           joiner.add(getAttributes().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%sattributes%s%s", prefix, suffix,
               "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
+      }
+    }
+
+    // add `minimumBalance` to the URL query string
+    if (getMinimumBalance() != null) {
+      try {
+        joiner.add(String.format(java.util.Locale.ROOT, "%sminimumBalance%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getMinimumBalance()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
       }
     }
 

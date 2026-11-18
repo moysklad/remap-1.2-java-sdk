@@ -34,7 +34,7 @@ import java.util.StringJoiner;
   CurrencyRate.JSON_PROPERTY_CURRENCY,
   CurrencyRate.JSON_PROPERTY_VALUE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class CurrencyRate {
 
   public static final String JSON_PROPERTY_CURRENCY = "currency";
@@ -49,6 +49,7 @@ public class CurrencyRate {
   }
 
   public CurrencyRate currency(@javax.annotation.Nullable Currency currency) {
+
     
     this.currency = currency;
     return this;
@@ -73,11 +74,13 @@ public class CurrencyRate {
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCurrency(@javax.annotation.Nullable Currency currency) {
+
     this.currency = currency;
   }
 
 
   public CurrencyRate value(@javax.annotation.Nullable Double value) {
+
     
     this.value = value;
     return this;
@@ -102,6 +105,7 @@ public class CurrencyRate {
   @JsonProperty(JSON_PROPERTY_VALUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setValue(@javax.annotation.Nullable Double value) {
+
     this.value = value;
   }
 

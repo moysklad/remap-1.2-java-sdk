@@ -24,9 +24,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import org.openapitools.jackson.nullable.JsonNullable;
 import ru.moysklad.remap_1_2.model.AccumulationDiscountLevelsInner;
+import ru.moysklad.remap_1_2.model.DiscountAssortmentItem;
 import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.ProductFolder;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.io.UnsupportedEncodingException;
@@ -40,9 +45,10 @@ import java.util.StringJoiner;
   AccumulationDiscount.JSON_PROPERTY_ID,
   AccumulationDiscount.JSON_PROPERTY_META,
   AccumulationDiscount.JSON_PROPERTY_PRODUCT_FOLDERS,
-  AccumulationDiscount.JSON_PROPERTY_LEVELS
+  AccumulationDiscount.JSON_PROPERTY_LEVELS,
+  AccumulationDiscount.JSON_PROPERTY_ASSORTMENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class AccumulationDiscount extends DiscountAbstract {
   public static AccumulationDiscount createWithMeta(UUID id) {
     AccumulationDiscount o = new AccumulationDiscount();
@@ -69,11 +75,15 @@ public class AccumulationDiscount extends DiscountAbstract {
 
   public static final String JSON_PROPERTY_PRODUCT_FOLDERS = "productFolders";
   @javax.annotation.Nullable
-  private List<ProductFolder> productFolders = new ArrayList<>();
+  private List<ProductFolder> productFolders;
 
   public static final String JSON_PROPERTY_LEVELS = "levels";
   @javax.annotation.Nullable
-  private List<AccumulationDiscountLevelsInner> levels = new ArrayList<>();
+  private List<AccumulationDiscountLevelsInner> levels;
+
+  public static final String JSON_PROPERTY_ASSORTMENT = "assortment";
+  @javax.annotation.Nullable
+  private JsonNullable<List<DiscountAssortmentItem>> assortment = JsonNullable.<List<DiscountAssortmentItem>>undefined();
 
   public AccumulationDiscount() {
   }
@@ -105,6 +115,7 @@ public class AccumulationDiscount extends DiscountAbstract {
 
 
   public AccumulationDiscount meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -129,11 +140,13 @@ public class AccumulationDiscount extends DiscountAbstract {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public AccumulationDiscount productFolders(@javax.annotation.Nullable List<ProductFolder> productFolders) {
+
     
     this.productFolders = productFolders;
     return this;
@@ -154,7 +167,7 @@ public class AccumulationDiscount extends DiscountAbstract {
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PRODUCT_FOLDERS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<ProductFolder> getProductFolders() {
     return productFolders;
@@ -164,13 +177,15 @@ public class AccumulationDiscount extends DiscountAbstract {
 
 
   @JsonProperty(JSON_PROPERTY_PRODUCT_FOLDERS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setProductFolders(@javax.annotation.Nullable List<ProductFolder> productFolders) {
+
     this.productFolders = productFolders;
   }
 
 
   public AccumulationDiscount levels(@javax.annotation.Nullable List<AccumulationDiscountLevelsInner> levels) {
+
     
     this.levels = levels;
     return this;
@@ -191,7 +206,7 @@ public class AccumulationDiscount extends DiscountAbstract {
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LEVELS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<AccumulationDiscountLevelsInner> getLevels() {
     return levels;
@@ -201,9 +216,62 @@ public class AccumulationDiscount extends DiscountAbstract {
 
 
   @JsonProperty(JSON_PROPERTY_LEVELS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setLevels(@javax.annotation.Nullable List<AccumulationDiscountLevelsInner> levels) {
+
     this.levels = levels;
+  }
+
+
+  public AccumulationDiscount assortment(@javax.annotation.Nullable List<DiscountAssortmentItem> assortment) {
+
+    this.assortment = JsonNullable.<List<DiscountAssortmentItem>>of(assortment);
+    
+    return this;
+  }
+
+
+  public AccumulationDiscount addAssortmentItem(DiscountAssortmentItem assortmentItem) {
+    if (this.assortment == null || !this.assortment.isPresent()) {
+      this.assortment = JsonNullable.<List<DiscountAssortmentItem>>of(new ArrayList<>());
+    }
+    try {
+      this.assortment.get().add(assortmentItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
+    return this;
+  }
+
+  /**
+   * Массив метаданных товаров, услуг и модификаций
+   * @return assortment
+   */
+  @javax.annotation.Nullable
+  @JsonIgnore
+
+  public List<DiscountAssortmentItem> getAssortment() {
+        return assortment.orElse(null);
+  }
+
+  
+
+  @JsonProperty(JSON_PROPERTY_ASSORTMENT)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
+
+
+  public JsonNullable<List<DiscountAssortmentItem>> getAssortment_JsonNullable() {
+    return assortment;
+  }
+  
+  @JsonProperty(value = JSON_PROPERTY_ASSORTMENT, required = false)
+  public void setAssortment_JsonNullable(JsonNullable<List<DiscountAssortmentItem>> assortment) {
+    this.assortment = assortment;
+  }
+
+  public void setAssortment(@javax.annotation.Nullable List<DiscountAssortmentItem> assortment) {
+
+    this.assortment = JsonNullable.<List<DiscountAssortmentItem>>of(assortment);
   }
 
 
@@ -219,12 +287,24 @@ public class AccumulationDiscount extends DiscountAbstract {
     return Objects.equals(this.id, accumulationDiscount.id) &&
         Objects.equals(this.meta, accumulationDiscount.meta) &&
         Objects.equals(this.productFolders, accumulationDiscount.productFolders) &&
-        Objects.equals(this.levels, accumulationDiscount.levels);
+        Objects.equals(this.levels, accumulationDiscount.levels) &&
+        equalsNullable(this.assortment, accumulationDiscount.assortment);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, meta, productFolders, levels);
+    return Objects.hash(id, meta, productFolders, levels, hashCodeNullable(assortment));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -235,6 +315,7 @@ public class AccumulationDiscount extends DiscountAbstract {
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("    productFolders: ").append(toIndentedString(productFolders)).append("\n");
     sb.append("    levels: ").append(toIndentedString(levels)).append("\n");
+    sb.append("    assortment: ").append(toIndentedString(assortment)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -312,6 +393,16 @@ public class AccumulationDiscount extends DiscountAbstract {
       for (int i = 0; i < getLevels().size(); i++) {
         if (getLevels().get(i) != null) {
           joiner.add(getLevels().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%slevels%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    // add `assortment` to the URL query string
+    if (getAssortment() != null) {
+      for (int i = 0; i < getAssortment().size(); i++) {
+        if (getAssortment().get(i) != null) {
+          joiner.add(getAssortment().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%sassortment%s%s", prefix, suffix,
               "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }

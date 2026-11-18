@@ -21,7 +21,7 @@
 |**updated** | **String** | Момент последнего обновления сущности |  [optional] [readonly] |
 |**group** | [**Group**](Group.md) |  |  [optional] |
 |**owner** | [**Employee**](Employee.md) | Метаданные владельца (сотрудника) |  [optional] |
-|**processingplanfolder** | [**ProcessingPlanFolder**](ProcessingPlanFolder.md) | Родительская Группа техкарт. Для смены иерархии и поля pathName обновите эту ссылку |  [optional] |
+|**parent** | [**ProcessingPlanFolder**](ProcessingPlanFolder.md) | Родительская Группа техкарт. Для смены иерархии и поля pathName обновите эту ссылку |  [optional] |
 
 
 

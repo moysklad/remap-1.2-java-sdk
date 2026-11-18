@@ -34,7 +34,7 @@ import java.util.StringJoiner;
   NotificationChannelSettings.JSON_PROPERTY_PUSH,
   NotificationChannelSettings.JSON_PROPERTY_INTERFACE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class NotificationChannelSettings {
 
   public static final String JSON_PROPERTY_EMAIL = "email";
@@ -53,6 +53,7 @@ public class NotificationChannelSettings {
   }
 
   public NotificationChannelSettings email(@javax.annotation.Nullable Boolean email) {
+
     
     this.email = email;
     return this;
@@ -77,11 +78,13 @@ public class NotificationChannelSettings {
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEmail(@javax.annotation.Nullable Boolean email) {
+
     this.email = email;
   }
 
 
   public NotificationChannelSettings push(@javax.annotation.Nullable Boolean push) {
+
     
     this.push = push;
     return this;
@@ -106,11 +109,13 @@ public class NotificationChannelSettings {
   @JsonProperty(JSON_PROPERTY_PUSH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPush(@javax.annotation.Nullable Boolean push) {
+
     this.push = push;
   }
 
 
   public NotificationChannelSettings _interface(@javax.annotation.Nullable Boolean _interface) {
+
     
     this._interface = _interface;
     return this;
@@ -135,6 +140,7 @@ public class NotificationChannelSettings {
   @JsonProperty(JSON_PROPERTY_INTERFACE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setInterface(@javax.annotation.Nullable Boolean _interface) {
+
     this._interface = _interface;
   }
 

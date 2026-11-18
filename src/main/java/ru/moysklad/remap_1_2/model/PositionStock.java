@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   PositionStock.JSON_PROPERTY_INTRANSIT,
   PositionStock.JSON_PROPERTY_AVAILABLE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class PositionStock {
 
   public static final String JSON_PROPERTY_COST = "cost";
@@ -63,6 +63,7 @@ public class PositionStock {
   }
 
   public PositionStock cost(@javax.annotation.Nullable Double cost) {
+
     
     this.cost = cost;
     return this;
@@ -87,11 +88,13 @@ public class PositionStock {
   @JsonProperty(JSON_PROPERTY_COST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCost(@javax.annotation.Nullable Double cost) {
+
     this.cost = cost;
   }
 
 
   public PositionStock quantity(@javax.annotation.Nullable Double quantity) {
+
     
     this.quantity = quantity;
     return this;
@@ -116,11 +119,13 @@ public class PositionStock {
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
+
     this.quantity = quantity;
   }
 
 
   public PositionStock reserve(@javax.annotation.Nullable Double reserve) {
+
     
     this.reserve = reserve;
     return this;
@@ -145,11 +150,13 @@ public class PositionStock {
   @JsonProperty(JSON_PROPERTY_RESERVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReserve(@javax.annotation.Nullable Double reserve) {
+
     this.reserve = reserve;
   }
 
 
   public PositionStock intransit(@javax.annotation.Nullable Double intransit) {
+
     
     this.intransit = intransit;
     return this;
@@ -174,11 +181,13 @@ public class PositionStock {
   @JsonProperty(JSON_PROPERTY_INTRANSIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIntransit(@javax.annotation.Nullable Double intransit) {
+
     this.intransit = intransit;
   }
 
 
   public PositionStock available(@javax.annotation.Nullable Double available) {
+
     
     this.available = available;
     return this;
@@ -203,6 +212,7 @@ public class PositionStock {
   @JsonProperty(JSON_PROPERTY_AVAILABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAvailable(@javax.annotation.Nullable Double available) {
+
     this.available = available;
   }
 

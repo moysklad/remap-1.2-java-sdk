@@ -38,9 +38,20 @@ import ru.moysklad.remap_1_2.deserialize.PolymorphicMetaTypeDeserializer;
 @JsonPropertyOrder({
   BatchResponseEntity.JSON_PROPERTY_META
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 @OpenApiPolymorphicTypeInfo(path = "meta.type", batchErrorFallback = true)
 @OpenApiPolymorphicSubTypes({
+  @OpenApiPolymorphicSubTypes.Type(value = BonusTransaction.class, name = "bonustransaction"),
+  @OpenApiPolymorphicSubTypes.Type(value = InvoiceOut.class, name = "invoiceout"),
+  @OpenApiPolymorphicSubTypes.Type(value = InvoiceIn.class, name = "invoicein"),
+  @OpenApiPolymorphicSubTypes.Type(value = InvoiceInPosition.class, name = "invoiceposition", hrefContains = "/entity/invoicein/"),
+  @OpenApiPolymorphicSubTypes.Type(value = InvoiceOutPosition.class, name = "invoiceposition", hrefContains = "/entity/invoiceout/"),
+  @OpenApiPolymorphicSubTypes.Type(value = SalesReturnPosition.class, name = "salesreturnposition", hrefContains = "/entity/salesreturn/"),
+  @OpenApiPolymorphicSubTypes.Type(value = RetailSalesReturnPosition.class, name = "salesreturnposition", hrefContains = "/entity/retailsalesreturn/"),
+  @OpenApiPolymorphicSubTypes.Type(value = RetailSalesReturn.class, name = "retailsalesreturn"),
+  @OpenApiPolymorphicSubTypes.Type(value = FactureIn.class, name = "facturein"),
+  @OpenApiPolymorphicSubTypes.Type(value = FactureOut.class, name = "factureout"),
+  @OpenApiPolymorphicSubTypes.Type(value = RetailShift.class, name = "retailshift"),
   @OpenApiPolymorphicSubTypes.Type(value = Account.class, name = "account"),
   @OpenApiPolymorphicSubTypes.Type(value = Bundle.class, name = "bundle"),
   @OpenApiPolymorphicSubTypes.Type(value = BundleComponent.class, name = "bundlecomponent"),
@@ -138,6 +149,7 @@ public class BatchResponseEntity {
   }
 
   public BatchResponseEntity meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -162,6 +174,7 @@ public class BatchResponseEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 

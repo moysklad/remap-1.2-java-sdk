@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   StockByOperationPosition.JSON_PROPERTY_RESERVE,
   StockByOperationPosition.JSON_PROPERTY_QUANTITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class StockByOperationPosition {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -74,6 +74,7 @@ public class StockByOperationPosition {
   }
 
   public StockByOperationPosition meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -98,11 +99,13 @@ public class StockByOperationPosition {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public StockByOperationPosition name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -127,11 +130,13 @@ public class StockByOperationPosition {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public StockByOperationPosition stock(@javax.annotation.Nullable Double stock) {
+
     
     this.stock = stock;
     return this;
@@ -156,11 +161,13 @@ public class StockByOperationPosition {
   @JsonProperty(JSON_PROPERTY_STOCK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStock(@javax.annotation.Nullable Double stock) {
+
     this.stock = stock;
   }
 
 
   public StockByOperationPosition cost(@javax.annotation.Nullable Double cost) {
+
     
     this.cost = cost;
     return this;
@@ -185,11 +192,13 @@ public class StockByOperationPosition {
   @JsonProperty(JSON_PROPERTY_COST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCost(@javax.annotation.Nullable Double cost) {
+
     this.cost = cost;
   }
 
 
   public StockByOperationPosition inTransit(@javax.annotation.Nullable Double inTransit) {
+
     
     this.inTransit = inTransit;
     return this;
@@ -214,11 +223,13 @@ public class StockByOperationPosition {
   @JsonProperty(JSON_PROPERTY_IN_TRANSIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setInTransit(@javax.annotation.Nullable Double inTransit) {
+
     this.inTransit = inTransit;
   }
 
 
   public StockByOperationPosition reserve(@javax.annotation.Nullable Double reserve) {
+
     
     this.reserve = reserve;
     return this;
@@ -243,11 +254,13 @@ public class StockByOperationPosition {
   @JsonProperty(JSON_PROPERTY_RESERVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReserve(@javax.annotation.Nullable Double reserve) {
+
     this.reserve = reserve;
   }
 
 
   public StockByOperationPosition quantity(@javax.annotation.Nullable Double quantity) {
+
     
     this.quantity = quantity;
     return this;
@@ -272,6 +285,7 @@ public class StockByOperationPosition {
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
+
     this.quantity = quantity;
   }
 

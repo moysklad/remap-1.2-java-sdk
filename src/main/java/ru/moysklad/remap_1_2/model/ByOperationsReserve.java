@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   ByOperationsReserve.JSON_PROPERTY_STORE,
   ByOperationsReserve.JSON_PROPERTY_RESERVE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ByOperationsReserve {
 
   public static final String JSON_PROPERTY_ASSORTMENT = "assortment";
@@ -66,6 +66,7 @@ public class ByOperationsReserve {
   }
 
   public ByOperationsReserve assortment(@javax.annotation.Nullable ByOperationsStockAssortment assortment) {
+
     
     this.assortment = assortment;
     return this;
@@ -90,11 +91,13 @@ public class ByOperationsReserve {
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssortment(@javax.annotation.Nullable ByOperationsStockAssortment assortment) {
+
     this.assortment = assortment;
   }
 
 
   public ByOperationsReserve operation(@javax.annotation.Nullable ByOperationsStockOperation operation) {
+
     
     this.operation = operation;
     return this;
@@ -119,11 +122,13 @@ public class ByOperationsReserve {
   @JsonProperty(JSON_PROPERTY_OPERATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOperation(@javax.annotation.Nullable ByOperationsStockOperation operation) {
+
     this.operation = operation;
   }
 
 
   public ByOperationsReserve moment(@javax.annotation.Nullable String moment) {
+
     
     this.moment = moment;
     return this;
@@ -148,11 +153,13 @@ public class ByOperationsReserve {
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMoment(@javax.annotation.Nullable String moment) {
+
     this.moment = moment;
   }
 
 
   public ByOperationsReserve store(@javax.annotation.Nullable ByOperationsStockStore store) {
+
     
     this.store = store;
     return this;
@@ -177,11 +184,13 @@ public class ByOperationsReserve {
   @JsonProperty(JSON_PROPERTY_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStore(@javax.annotation.Nullable ByOperationsStockStore store) {
+
     this.store = store;
   }
 
 
   public ByOperationsReserve reserve(@javax.annotation.Nullable Double reserve) {
+
     
     this.reserve = reserve;
     return this;
@@ -206,6 +215,7 @@ public class ByOperationsReserve {
   @JsonProperty(JSON_PROPERTY_RESERVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReserve(@javax.annotation.Nullable Double reserve) {
+
     this.reserve = reserve;
   }
 

@@ -47,7 +47,7 @@ import java.util.StringJoiner;
   DiscountBase.JSON_PROPERTY_ALL_AGENTS,
   DiscountBase.JSON_PROPERTY_AGENT_TAGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class DiscountBase {
 
   public static final String JSON_PROPERTY_ID = "id";
@@ -110,6 +110,7 @@ public class DiscountBase {
 
 
   public DiscountBase meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -134,6 +135,7 @@ public class DiscountBase {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -155,6 +157,7 @@ public class DiscountBase {
 
 
   public DiscountBase name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -179,11 +182,13 @@ public class DiscountBase {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public DiscountBase active(@javax.annotation.Nullable Boolean active) {
+
     
     this.active = active;
     return this;
@@ -208,11 +213,13 @@ public class DiscountBase {
   @JsonProperty(JSON_PROPERTY_ACTIVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setActive(@javax.annotation.Nullable Boolean active) {
+
     this.active = active;
   }
 
 
   public DiscountBase allAgents(@javax.annotation.Nullable Boolean allAgents) {
+
     
     this.allAgents = allAgents;
     return this;
@@ -237,11 +244,13 @@ public class DiscountBase {
   @JsonProperty(JSON_PROPERTY_ALL_AGENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAllAgents(@javax.annotation.Nullable Boolean allAgents) {
+
     this.allAgents = allAgents;
   }
 
 
   public DiscountBase agentTags(@javax.annotation.Nullable List<String> agentTags) {
+
     this.agentTags = JsonNullable.<List<String>>of(agentTags);
     
     return this;
@@ -274,7 +283,7 @@ public class DiscountBase {
   
 
   @JsonProperty(JSON_PROPERTY_AGENT_TAGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<String>> getAgentTags_JsonNullable() {
@@ -287,6 +296,7 @@ public class DiscountBase {
   }
 
   public void setAgentTags(@javax.annotation.Nullable List<String> agentTags) {
+
     this.agentTags = JsonNullable.<List<String>>of(agentTags);
   }
 

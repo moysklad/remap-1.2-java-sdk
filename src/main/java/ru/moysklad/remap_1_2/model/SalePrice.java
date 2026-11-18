@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   SalePrice.JSON_PROPERTY_CURRENCY,
   SalePrice.JSON_PROPERTY_PRICE_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class SalePrice {
 
   public static final String JSON_PROPERTY_VALUE = "value";
@@ -55,6 +55,10 @@ public class SalePrice {
   }
 
   public SalePrice value(@javax.annotation.Nullable Double value) {
+    if (value != null && value.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'value': must be greater than or equal to 0, got " + value);
+    }
+
     
     this.value = value;
     return this;
@@ -80,11 +84,16 @@ public class SalePrice {
   @JsonProperty(JSON_PROPERTY_VALUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setValue(@javax.annotation.Nullable Double value) {
+    if (value != null && value.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'value': must be greater than or equal to 0, got " + value);
+    }
+
     this.value = value;
   }
 
 
   public SalePrice currency(@javax.annotation.Nullable Currency currency) {
+
     
     this.currency = currency;
     return this;
@@ -109,11 +118,13 @@ public class SalePrice {
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCurrency(@javax.annotation.Nullable Currency currency) {
+
     this.currency = currency;
   }
 
 
   public SalePrice priceType(@javax.annotation.Nonnull PriceType priceType) {
+
     
     this.priceType = priceType;
     return this;
@@ -138,6 +149,7 @@ public class SalePrice {
   @JsonProperty(JSON_PROPERTY_PRICE_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setPriceType(@javax.annotation.Nonnull PriceType priceType) {
+
     this.priceType = priceType;
   }
 

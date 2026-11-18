@@ -48,7 +48,7 @@ import java.util.StringJoiner;
   CompanySettings.JSON_PROPERTY_COMPANY_ADDRESS,
   CompanySettings.JSON_PROPERTY_ACCOUNT_COUNTRY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class CompanySettings {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -61,7 +61,7 @@ public class CompanySettings {
 
   public static final String JSON_PROPERTY_PRICE_TYPES = "priceTypes";
   @javax.annotation.Nullable
-  private List<PriceType> priceTypes = new ArrayList<>();
+  private List<PriceType> priceTypes;
 
   public static final String JSON_PROPERTY_DISCOUNT_STRATEGY = "discountStrategy";
   @javax.annotation.Nullable
@@ -109,6 +109,7 @@ public class CompanySettings {
   }
 
   public CompanySettings meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -133,11 +134,13 @@ public class CompanySettings {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public CompanySettings currency(@javax.annotation.Nullable Currency currency) {
+
     
     this.currency = currency;
     return this;
@@ -162,11 +165,13 @@ public class CompanySettings {
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCurrency(@javax.annotation.Nullable Currency currency) {
+
     this.currency = currency;
   }
 
 
   public CompanySettings priceTypes(@javax.annotation.Nullable List<PriceType> priceTypes) {
+
     
     this.priceTypes = priceTypes;
     return this;
@@ -187,7 +192,7 @@ public class CompanySettings {
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PRICE_TYPES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<PriceType> getPriceTypes() {
     return priceTypes;
@@ -197,13 +202,15 @@ public class CompanySettings {
 
 
   @JsonProperty(JSON_PROPERTY_PRICE_TYPES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setPriceTypes(@javax.annotation.Nullable List<PriceType> priceTypes) {
+
     this.priceTypes = priceTypes;
   }
 
 
   public CompanySettings discountStrategy(@javax.annotation.Nullable String discountStrategy) {
+
     
     this.discountStrategy = discountStrategy;
     return this;
@@ -228,11 +235,13 @@ public class CompanySettings {
   @JsonProperty(JSON_PROPERTY_DISCOUNT_STRATEGY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDiscountStrategy(@javax.annotation.Nullable String discountStrategy) {
+
     this.discountStrategy = discountStrategy;
   }
 
 
   public CompanySettings globalOperationNumbering(@javax.annotation.Nullable Boolean globalOperationNumbering) {
+
     
     this.globalOperationNumbering = globalOperationNumbering;
     return this;
@@ -257,11 +266,13 @@ public class CompanySettings {
   @JsonProperty(JSON_PROPERTY_GLOBAL_OPERATION_NUMBERING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGlobalOperationNumbering(@javax.annotation.Nullable Boolean globalOperationNumbering) {
+
     this.globalOperationNumbering = globalOperationNumbering;
   }
 
 
   public CompanySettings checkShippingStock(@javax.annotation.Nullable Boolean checkShippingStock) {
+
     
     this.checkShippingStock = checkShippingStock;
     return this;
@@ -286,11 +297,13 @@ public class CompanySettings {
   @JsonProperty(JSON_PROPERTY_CHECK_SHIPPING_STOCK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCheckShippingStock(@javax.annotation.Nullable Boolean checkShippingStock) {
+
     this.checkShippingStock = checkShippingStock;
   }
 
 
   public CompanySettings checkMinPrice(@javax.annotation.Nullable Boolean checkMinPrice) {
+
     
     this.checkMinPrice = checkMinPrice;
     return this;
@@ -315,11 +328,13 @@ public class CompanySettings {
   @JsonProperty(JSON_PROPERTY_CHECK_MIN_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCheckMinPrice(@javax.annotation.Nullable Boolean checkMinPrice) {
+
     this.checkMinPrice = checkMinPrice;
   }
 
 
   public CompanySettings useRecycleBin(@javax.annotation.Nullable Boolean useRecycleBin) {
+
     
     this.useRecycleBin = useRecycleBin;
     return this;
@@ -344,11 +359,13 @@ public class CompanySettings {
   @JsonProperty(JSON_PROPERTY_USE_RECYCLE_BIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUseRecycleBin(@javax.annotation.Nullable Boolean useRecycleBin) {
+
     this.useRecycleBin = useRecycleBin;
   }
 
 
   public CompanySettings useCompanyAddress(@javax.annotation.Nullable Boolean useCompanyAddress) {
+
     
     this.useCompanyAddress = useCompanyAddress;
     return this;
@@ -373,11 +390,13 @@ public class CompanySettings {
   @JsonProperty(JSON_PROPERTY_USE_COMPANY_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUseCompanyAddress(@javax.annotation.Nullable Boolean useCompanyAddress) {
+
     this.useCompanyAddress = useCompanyAddress;
   }
 
 
   public CompanySettings companyAddress(@javax.annotation.Nullable String companyAddress) {
+
     
     this.companyAddress = companyAddress;
     return this;
@@ -402,6 +421,7 @@ public class CompanySettings {
   @JsonProperty(JSON_PROPERTY_COMPANY_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCompanyAddress(@javax.annotation.Nullable String companyAddress) {
+
     this.companyAddress = companyAddress;
   }
 

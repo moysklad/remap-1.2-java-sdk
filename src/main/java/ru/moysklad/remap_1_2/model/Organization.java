@@ -94,7 +94,7 @@ import java.util.StringJoiner;
   Organization.JSON_PROPERTY_ACCOUNTS,
   Organization.JSON_PROPERTY_ATTRIBUTES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Organization extends Agent implements Named {
   public static Organization createWithMeta(UUID id) {
     Organization o = new Organization();
@@ -319,6 +319,7 @@ public class Organization extends Agent implements Named {
   }
 
   public Organization meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -343,11 +344,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public Organization id(@javax.annotation.Nullable UUID id) {
+
     
     this.id = id;
     return this;
@@ -372,11 +375,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(@javax.annotation.Nullable UUID id) {
+
     this.id = id;
   }
 
 
   public Organization syncId(@javax.annotation.Nullable UUID syncId) {
+
     
     this.syncId = syncId;
     return this;
@@ -401,6 +406,7 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
+
     this.syncId = syncId;
   }
 
@@ -422,6 +428,7 @@ public class Organization extends Agent implements Named {
 
 
   public Organization name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -446,11 +453,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public Organization code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -475,11 +484,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public Organization externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -504,11 +515,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public Organization archived(@javax.annotation.Nullable Boolean archived) {
+
     
     this.archived = archived;
     return this;
@@ -533,6 +546,7 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
+
     this.archived = archived;
   }
 
@@ -570,6 +584,7 @@ public class Organization extends Agent implements Named {
 
 
   public Organization description(@javax.annotation.Nullable String description) {
+
     
     this.description = description;
     return this;
@@ -594,11 +609,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = description;
   }
 
 
   public Organization companyType(@javax.annotation.Nullable String companyType) {
+
     
     this.companyType = companyType;
     return this;
@@ -623,11 +640,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_COMPANY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCompanyType(@javax.annotation.Nullable String companyType) {
+
     this.companyType = companyType;
   }
 
 
   public Organization email(@javax.annotation.Nullable String email) {
+
     
     this.email = email;
     return this;
@@ -652,11 +671,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEmail(@javax.annotation.Nullable String email) {
+
     this.email = email;
   }
 
 
   public Organization phone(@javax.annotation.Nullable String phone) {
+
     
     this.phone = phone;
     return this;
@@ -681,11 +702,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_PHONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPhone(@javax.annotation.Nullable String phone) {
+
     this.phone = phone;
   }
 
 
   public Organization fax(@javax.annotation.Nullable String fax) {
+
     
     this.fax = fax;
     return this;
@@ -710,11 +733,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_FAX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFax(@javax.annotation.Nullable String fax) {
+
     this.fax = fax;
   }
 
 
   public Organization actualAddress(@javax.annotation.Nullable String actualAddress) {
+
     
     this.actualAddress = actualAddress;
     return this;
@@ -739,11 +764,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_ACTUAL_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setActualAddress(@javax.annotation.Nullable String actualAddress) {
+
     this.actualAddress = actualAddress;
   }
 
 
   public Organization actualAddressFull(@javax.annotation.Nullable Address actualAddressFull) {
+
     this.actualAddressFull = JsonNullable.<Address>of(actualAddressFull);
     
     return this;
@@ -777,11 +804,13 @@ public class Organization extends Agent implements Named {
   }
 
   public void setActualAddressFull(@javax.annotation.Nullable Address actualAddressFull) {
+
     this.actualAddressFull = JsonNullable.<Address>of(actualAddressFull);
   }
 
 
   public Organization legalAddress(@javax.annotation.Nullable String legalAddress) {
+
     
     this.legalAddress = legalAddress;
     return this;
@@ -806,11 +835,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_LEGAL_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLegalAddress(@javax.annotation.Nullable String legalAddress) {
+
     this.legalAddress = legalAddress;
   }
 
 
   public Organization legalAddressFull(@javax.annotation.Nullable Address legalAddressFull) {
+
     this.legalAddressFull = JsonNullable.<Address>of(legalAddressFull);
     
     return this;
@@ -844,11 +875,13 @@ public class Organization extends Agent implements Named {
   }
 
   public void setLegalAddressFull(@javax.annotation.Nullable Address legalAddressFull) {
+
     this.legalAddressFull = JsonNullable.<Address>of(legalAddressFull);
   }
 
 
   public Organization inn(@javax.annotation.Nullable String inn) {
+
     
     this.inn = inn;
     return this;
@@ -873,11 +906,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_INN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setInn(@javax.annotation.Nullable String inn) {
+
     this.inn = inn;
   }
 
 
   public Organization kpp(@javax.annotation.Nullable String kpp) {
+
     
     this.kpp = kpp;
     return this;
@@ -902,11 +937,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_KPP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setKpp(@javax.annotation.Nullable String kpp) {
+
     this.kpp = kpp;
   }
 
 
   public Organization ogrn(@javax.annotation.Nullable String ogrn) {
+
     
     this.ogrn = ogrn;
     return this;
@@ -931,11 +968,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_OGRN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOgrn(@javax.annotation.Nullable String ogrn) {
+
     this.ogrn = ogrn;
   }
 
 
   public Organization ogrnip(@javax.annotation.Nullable String ogrnip) {
+
     
     this.ogrnip = ogrnip;
     return this;
@@ -960,11 +999,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_OGRNIP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOgrnip(@javax.annotation.Nullable String ogrnip) {
+
     this.ogrnip = ogrnip;
   }
 
 
   public Organization okpo(@javax.annotation.Nullable String okpo) {
+
     
     this.okpo = okpo;
     return this;
@@ -989,11 +1030,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_OKPO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOkpo(@javax.annotation.Nullable String okpo) {
+
     this.okpo = okpo;
   }
 
 
   public Organization certificateNumber(@javax.annotation.Nullable String certificateNumber) {
+
     
     this.certificateNumber = certificateNumber;
     return this;
@@ -1018,11 +1061,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_CERTIFICATE_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCertificateNumber(@javax.annotation.Nullable String certificateNumber) {
+
     this.certificateNumber = certificateNumber;
   }
 
 
   public Organization certificateDate(@javax.annotation.Nullable String certificateDate) {
+
     
     this.certificateDate = certificateDate;
     return this;
@@ -1047,11 +1092,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_CERTIFICATE_DATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCertificateDate(@javax.annotation.Nullable String certificateDate) {
+
     this.certificateDate = certificateDate;
   }
 
 
   public Organization legalTitle(@javax.annotation.Nullable String legalTitle) {
+
     
     this.legalTitle = legalTitle;
     return this;
@@ -1076,11 +1123,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_LEGAL_TITLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLegalTitle(@javax.annotation.Nullable String legalTitle) {
+
     this.legalTitle = legalTitle;
   }
 
 
   public Organization legalFirstName(@javax.annotation.Nullable String legalFirstName) {
+
     
     this.legalFirstName = legalFirstName;
     return this;
@@ -1105,11 +1154,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_LEGAL_FIRST_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLegalFirstName(@javax.annotation.Nullable String legalFirstName) {
+
     this.legalFirstName = legalFirstName;
   }
 
 
   public Organization legalLastName(@javax.annotation.Nullable String legalLastName) {
+
     
     this.legalLastName = legalLastName;
     return this;
@@ -1134,11 +1185,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_LEGAL_LAST_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLegalLastName(@javax.annotation.Nullable String legalLastName) {
+
     this.legalLastName = legalLastName;
   }
 
 
   public Organization legalMiddleName(@javax.annotation.Nullable String legalMiddleName) {
+
     
     this.legalMiddleName = legalMiddleName;
     return this;
@@ -1163,11 +1216,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_LEGAL_MIDDLE_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLegalMiddleName(@javax.annotation.Nullable String legalMiddleName) {
+
     this.legalMiddleName = legalMiddleName;
   }
 
 
   public Organization trackingContractNumber(@javax.annotation.Nullable String trackingContractNumber) {
+
     
     this.trackingContractNumber = trackingContractNumber;
     return this;
@@ -1192,11 +1247,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_TRACKING_CONTRACT_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTrackingContractNumber(@javax.annotation.Nullable String trackingContractNumber) {
+
     this.trackingContractNumber = trackingContractNumber;
   }
 
 
   public Organization trackingContractDate(@javax.annotation.Nullable String trackingContractDate) {
+
     this.trackingContractDate = JsonNullable.<String>of(trackingContractDate);
     
     return this;
@@ -1230,11 +1287,13 @@ public class Organization extends Agent implements Named {
   }
 
   public void setTrackingContractDate(@javax.annotation.Nullable String trackingContractDate) {
+
     this.trackingContractDate = JsonNullable.<String>of(trackingContractDate);
   }
 
 
   public Organization advancePaymentVat(@javax.annotation.Nullable Double advancePaymentVat) {
+
     
     this.advancePaymentVat = advancePaymentVat;
     return this;
@@ -1259,11 +1318,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_ADVANCE_PAYMENT_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAdvancePaymentVat(@javax.annotation.Nullable Double advancePaymentVat) {
+
     this.advancePaymentVat = advancePaymentVat;
   }
 
 
   public Organization payerVat(@javax.annotation.Nullable Boolean payerVat) {
+
     
     this.payerVat = payerVat;
     return this;
@@ -1288,11 +1349,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_PAYER_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPayerVat(@javax.annotation.Nullable Boolean payerVat) {
+
     this.payerVat = payerVat;
   }
 
 
   public Organization director(@javax.annotation.Nullable String director) {
+
     
     this.director = director;
     return this;
@@ -1317,11 +1380,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_DIRECTOR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDirector(@javax.annotation.Nullable String director) {
+
     this.director = director;
   }
 
 
   public Organization directorPosition(@javax.annotation.Nullable String directorPosition) {
+
     
     this.directorPosition = directorPosition;
     return this;
@@ -1346,11 +1411,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_DIRECTOR_POSITION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDirectorPosition(@javax.annotation.Nullable String directorPosition) {
+
     this.directorPosition = directorPosition;
   }
 
 
   public Organization chiefAccountant(@javax.annotation.Nullable String chiefAccountant) {
+
     
     this.chiefAccountant = chiefAccountant;
     return this;
@@ -1375,11 +1442,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_CHIEF_ACCOUNTANT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setChiefAccountant(@javax.annotation.Nullable String chiefAccountant) {
+
     this.chiefAccountant = chiefAccountant;
   }
 
 
   public Organization directorSign(@javax.annotation.Nullable Image directorSign) {
+
     this.directorSign = JsonNullable.<Image>of(directorSign);
     
     return this;
@@ -1413,11 +1482,13 @@ public class Organization extends Agent implements Named {
   }
 
   public void setDirectorSign(@javax.annotation.Nullable Image directorSign) {
+
     this.directorSign = JsonNullable.<Image>of(directorSign);
   }
 
 
   public Organization chiefAccountSign(@javax.annotation.Nullable Image chiefAccountSign) {
+
     this.chiefAccountSign = JsonNullable.<Image>of(chiefAccountSign);
     
     return this;
@@ -1451,11 +1522,13 @@ public class Organization extends Agent implements Named {
   }
 
   public void setChiefAccountSign(@javax.annotation.Nullable Image chiefAccountSign) {
+
     this.chiefAccountSign = JsonNullable.<Image>of(chiefAccountSign);
   }
 
 
   public Organization stamp(@javax.annotation.Nullable Image stamp) {
+
     this.stamp = JsonNullable.<Image>of(stamp);
     
     return this;
@@ -1489,6 +1562,7 @@ public class Organization extends Agent implements Named {
   }
 
   public void setStamp(@javax.annotation.Nullable Image stamp) {
+
     this.stamp = JsonNullable.<Image>of(stamp);
   }
 
@@ -1510,6 +1584,7 @@ public class Organization extends Agent implements Named {
 
 
   public Organization bonusProgram(@javax.annotation.Nullable BonusProgram bonusProgram) {
+
     this.bonusProgram = JsonNullable.<BonusProgram>of(bonusProgram);
     
     return this;
@@ -1543,11 +1618,13 @@ public class Organization extends Agent implements Named {
   }
 
   public void setBonusProgram(@javax.annotation.Nullable BonusProgram bonusProgram) {
+
     this.bonusProgram = JsonNullable.<BonusProgram>of(bonusProgram);
   }
 
 
   public Organization shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -1572,11 +1649,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
 
   public Organization group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -1601,11 +1680,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
 
   public Organization owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -1639,11 +1720,13 @@ public class Organization extends Agent implements Named {
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
 
   public Organization accounts(@javax.annotation.Nullable OrganizationAccounts accounts) {
+
     
     this.accounts = accounts;
     return this;
@@ -1668,11 +1751,13 @@ public class Organization extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_ACCOUNTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAccounts(@javax.annotation.Nullable OrganizationAccounts accounts) {
+
     this.accounts = accounts;
   }
 
 
   public Organization attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
@@ -1705,7 +1790,7 @@ public class Organization extends Agent implements Named {
   
 
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
@@ -1718,6 +1803,7 @@ public class Organization extends Agent implements Named {
   }
 
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 

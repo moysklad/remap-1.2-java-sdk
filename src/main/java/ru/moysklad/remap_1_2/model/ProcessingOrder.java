@@ -80,7 +80,7 @@ import java.util.StringJoiner;
   ProcessingOrder.JSON_PROPERTY_QUANTITY,
   ProcessingOrder.JSON_PROPERTY_PROCESSINGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingOrder extends EntityWithMeta implements MetaEntity {
   public static ProcessingOrder createWithMeta(UUID id) {
     ProcessingOrder o = new ProcessingOrder();
@@ -241,6 +241,7 @@ public class ProcessingOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public ProcessingOrder meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -265,6 +266,7 @@ public class ProcessingOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -302,6 +304,7 @@ public class ProcessingOrder extends EntityWithMeta implements MetaEntity {
 
 
   public ProcessingOrder name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -326,11 +329,13 @@ public class ProcessingOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public ProcessingOrder code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -355,11 +360,13 @@ public class ProcessingOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public ProcessingOrder externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -384,11 +391,13 @@ public class ProcessingOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public ProcessingOrder syncId(@javax.annotation.Nullable UUID syncId) {
+
     
     this.syncId = syncId;
     return this;
@@ -413,11 +422,13 @@ public class ProcessingOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
+
     this.syncId = syncId;
   }
 
 
   public ProcessingOrder description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -451,6 +462,7 @@ public class ProcessingOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 
@@ -504,6 +516,7 @@ public class ProcessingOrder extends EntityWithMeta implements MetaEntity {
 
 
   public ProcessingOrder moment(@javax.annotation.Nullable String moment) {
+
     
     this.moment = moment;
     return this;
@@ -528,11 +541,13 @@ public class ProcessingOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMoment(@javax.annotation.Nullable String moment) {
+
     this.moment = moment;
   }
 
 
   public ProcessingOrder deliveryPlannedMoment(@javax.annotation.Nullable String deliveryPlannedMoment) {
+
     
     this.deliveryPlannedMoment = deliveryPlannedMoment;
     return this;
@@ -557,11 +572,13 @@ public class ProcessingOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_DELIVERY_PLANNED_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDeliveryPlannedMoment(@javax.annotation.Nullable String deliveryPlannedMoment) {
+
     this.deliveryPlannedMoment = deliveryPlannedMoment;
   }
 
 
   public ProcessingOrder applicable(@javax.annotation.Nullable Boolean applicable) {
+
     
     this.applicable = applicable;
     return this;
@@ -586,6 +603,7 @@ public class ProcessingOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_APPLICABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setApplicable(@javax.annotation.Nullable Boolean applicable) {
+
     this.applicable = applicable;
   }
 
@@ -639,6 +657,7 @@ public class ProcessingOrder extends EntityWithMeta implements MetaEntity {
 
 
   public ProcessingOrder organization(@javax.annotation.Nullable Organization organization) {
+
     
     this.organization = organization;
     return this;
@@ -663,11 +682,13 @@ public class ProcessingOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOrganization(@javax.annotation.Nullable Organization organization) {
+
     this.organization = organization;
   }
 
 
   public ProcessingOrder store(@javax.annotation.Nullable Store store) {
+
     
     this.store = store;
     return this;
@@ -692,11 +713,13 @@ public class ProcessingOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStore(@javax.annotation.Nullable Store store) {
+
     this.store = store;
   }
 
 
   public ProcessingOrder state(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
     
     return this;
@@ -730,11 +753,13 @@ public class ProcessingOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setState(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
   }
 
 
   public ProcessingOrder processingPlan(@javax.annotation.Nullable ProcessingPlan processingPlan) {
+
     
     this.processingPlan = processingPlan;
     return this;
@@ -759,11 +784,13 @@ public class ProcessingOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_PROCESSING_PLAN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProcessingPlan(@javax.annotation.Nullable ProcessingPlan processingPlan) {
+
     this.processingPlan = processingPlan;
   }
 
 
   public ProcessingOrder project(@javax.annotation.Nullable Project project) {
+
     this.project = JsonNullable.<Project>of(project);
     
     return this;
@@ -797,11 +824,13 @@ public class ProcessingOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setProject(@javax.annotation.Nullable Project project) {
+
     this.project = JsonNullable.<Project>of(project);
   }
 
 
   public ProcessingOrder owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -835,11 +864,13 @@ public class ProcessingOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
 
   public ProcessingOrder group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -864,11 +895,13 @@ public class ProcessingOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
 
   public ProcessingOrder attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
@@ -901,7 +934,7 @@ public class ProcessingOrder extends EntityWithMeta implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
@@ -914,11 +947,13 @@ public class ProcessingOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
   public ProcessingOrder files(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
@@ -952,11 +987,13 @@ public class ProcessingOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setFiles(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
   }
 
 
   public ProcessingOrder positions(@javax.annotation.Nullable ProcessingOrderPositionList positions) {
+
     
     this.positions = positions;
     return this;
@@ -964,7 +1001,7 @@ public class ProcessingOrder extends EntityWithMeta implements MetaEntity {
 
 
   /**
-   * Позиции Заказа на производство
+   * Get positions
    * @return positions
    */
   @javax.annotation.Nullable
@@ -981,11 +1018,13 @@ public class ProcessingOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPositions(@javax.annotation.Nullable ProcessingOrderPositionList positions) {
+
     this.positions = positions;
   }
 
 
   public ProcessingOrder quantity(@javax.annotation.Nullable Double quantity) {
+
     
     this.quantity = quantity;
     return this;
@@ -1010,11 +1049,13 @@ public class ProcessingOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
+
     this.quantity = quantity;
   }
 
 
   public ProcessingOrder processings(@javax.annotation.Nullable List<Processing> processings) {
+
     this.processings = JsonNullable.<List<Processing>>of(processings);
     
     return this;
@@ -1047,7 +1088,7 @@ public class ProcessingOrder extends EntityWithMeta implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_PROCESSINGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<Processing>> getProcessings_JsonNullable() {
@@ -1060,6 +1101,7 @@ public class ProcessingOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setProcessings(@javax.annotation.Nullable List<Processing> processings) {
+
     this.processings = JsonNullable.<List<Processing>>of(processings);
   }
 
@@ -1417,12 +1459,7 @@ public class ProcessingOrder extends EntityWithMeta implements MetaEntity {
 
     // add `positions` to the URL query string
     if (getPositions() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%spositions%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getPositions()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
+      joiner.add(getPositions().toUrlQueryString(prefix + "positions" + suffix));
     }
 
     // add `quantity` to the URL query string

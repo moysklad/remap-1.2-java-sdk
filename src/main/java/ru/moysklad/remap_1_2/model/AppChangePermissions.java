@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   AppChangePermissions.JSON_PROPERTY_TITLE,
   AppChangePermissions.JSON_PROPERTY_DESCRIPTION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class AppChangePermissions extends NotificationAbstract {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -93,6 +93,7 @@ public class AppChangePermissions extends NotificationAbstract {
   }
 
   public AppChangePermissions meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -117,6 +118,7 @@ public class AppChangePermissions extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -170,6 +172,7 @@ public class AppChangePermissions extends NotificationAbstract {
 
 
   public AppChangePermissions read(@javax.annotation.Nullable Boolean read) {
+
     
     this.read = read;
     return this;
@@ -194,6 +197,7 @@ public class AppChangePermissions extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_READ)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRead(@javax.annotation.Nullable Boolean read) {
+
     this.read = read;
   }
 

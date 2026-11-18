@@ -37,7 +37,7 @@ import java.util.StringJoiner;
   SpecialPriceDiscountSpecialPrice.JSON_PROPERTY_PRICE_TYPE
 })
 @JsonTypeName("SpecialPriceDiscount_specialPrice")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class SpecialPriceDiscountSpecialPrice {
 
   public static final String JSON_PROPERTY_VALUE = "value";
@@ -56,6 +56,7 @@ public class SpecialPriceDiscountSpecialPrice {
   }
 
   public SpecialPriceDiscountSpecialPrice value(@javax.annotation.Nullable Double value) {
+
     
     this.value = value;
     return this;
@@ -80,11 +81,13 @@ public class SpecialPriceDiscountSpecialPrice {
   @JsonProperty(JSON_PROPERTY_VALUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setValue(@javax.annotation.Nullable Double value) {
+
     this.value = value;
   }
 
 
   public SpecialPriceDiscountSpecialPrice meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -109,11 +112,13 @@ public class SpecialPriceDiscountSpecialPrice {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public SpecialPriceDiscountSpecialPrice priceType(@javax.annotation.Nullable PriceType priceType) {
+
     
     this.priceType = priceType;
     return this;
@@ -138,6 +143,7 @@ public class SpecialPriceDiscountSpecialPrice {
   @JsonProperty(JSON_PROPERTY_PRICE_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPriceType(@javax.annotation.Nullable PriceType priceType) {
+
     this.priceType = priceType;
   }
 

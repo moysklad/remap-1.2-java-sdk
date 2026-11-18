@@ -38,7 +38,7 @@ import java.util.StringJoiner;
   StockByStore.JSON_PROPERTY_META,
   StockByStore.JSON_PROPERTY_STOCK_BY_STORE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class StockByStore {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -47,12 +47,13 @@ public class StockByStore {
 
   public static final String JSON_PROPERTY_STOCK_BY_STORE = "stockByStore";
   @javax.annotation.Nullable
-  private List<StockByStoreItem> stockByStore = new ArrayList<>();
+  private List<StockByStoreItem> stockByStore;
 
   public StockByStore() {
   }
 
   public StockByStore meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -77,11 +78,13 @@ public class StockByStore {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public StockByStore stockByStore(@javax.annotation.Nullable List<StockByStoreItem> stockByStore) {
+
     
     this.stockByStore = stockByStore;
     return this;
@@ -102,7 +105,7 @@ public class StockByStore {
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STOCK_BY_STORE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<StockByStoreItem> getStockByStore() {
     return stockByStore;
@@ -112,8 +115,9 @@ public class StockByStore {
 
 
   @JsonProperty(JSON_PROPERTY_STOCK_BY_STORE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setStockByStore(@javax.annotation.Nullable List<StockByStoreItem> stockByStore) {
+
     this.stockByStore = stockByStore;
   }
 

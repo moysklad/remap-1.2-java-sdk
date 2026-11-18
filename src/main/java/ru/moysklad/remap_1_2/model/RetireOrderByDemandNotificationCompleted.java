@@ -37,7 +37,7 @@ import java.util.StringJoiner;
   RetireOrderByDemandNotificationCompleted.JSON_PROPERTY_START_MOMENT,
   RetireOrderByDemandNotificationCompleted.JSON_PROPERTY_END_MOMENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetireOrderByDemandNotificationCompleted extends NotificationAbstract {
 
   public static final String JSON_PROPERTY_CREATED_DOCS_COUNT = "createdDocsCount";
@@ -68,6 +68,7 @@ public class RetireOrderByDemandNotificationCompleted extends NotificationAbstra
   }
 
   public RetireOrderByDemandNotificationCompleted createdDocsCount(@javax.annotation.Nullable Integer createdDocsCount) {
+
     
     this.createdDocsCount = createdDocsCount;
     return this;
@@ -92,11 +93,13 @@ public class RetireOrderByDemandNotificationCompleted extends NotificationAbstra
   @JsonProperty(JSON_PROPERTY_CREATED_DOCS_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreatedDocsCount(@javax.annotation.Nullable Integer createdDocsCount) {
+
     this.createdDocsCount = createdDocsCount;
   }
 
 
   public RetireOrderByDemandNotificationCompleted errorMessage(@javax.annotation.Nullable String errorMessage) {
+
     
     this.errorMessage = errorMessage;
     return this;
@@ -121,11 +124,13 @@ public class RetireOrderByDemandNotificationCompleted extends NotificationAbstra
   @JsonProperty(JSON_PROPERTY_ERROR_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setErrorMessage(@javax.annotation.Nullable String errorMessage) {
+
     this.errorMessage = errorMessage;
   }
 
 
   public RetireOrderByDemandNotificationCompleted message(@javax.annotation.Nullable String message) {
+
     
     this.message = message;
     return this;
@@ -150,11 +155,13 @@ public class RetireOrderByDemandNotificationCompleted extends NotificationAbstra
   @JsonProperty(JSON_PROPERTY_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMessage(@javax.annotation.Nullable String message) {
+
     this.message = message;
   }
 
 
   public RetireOrderByDemandNotificationCompleted taskState(@javax.annotation.Nullable String taskState) {
+
     
     this.taskState = taskState;
     return this;
@@ -179,11 +186,13 @@ public class RetireOrderByDemandNotificationCompleted extends NotificationAbstra
   @JsonProperty(JSON_PROPERTY_TASK_STATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTaskState(@javax.annotation.Nullable String taskState) {
+
     this.taskState = taskState;
   }
 
 
   public RetireOrderByDemandNotificationCompleted startMoment(@javax.annotation.Nullable String startMoment) {
+
     
     this.startMoment = startMoment;
     return this;
@@ -208,11 +217,13 @@ public class RetireOrderByDemandNotificationCompleted extends NotificationAbstra
   @JsonProperty(JSON_PROPERTY_START_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStartMoment(@javax.annotation.Nullable String startMoment) {
+
     this.startMoment = startMoment;
   }
 
 
   public RetireOrderByDemandNotificationCompleted endMoment(@javax.annotation.Nullable String endMoment) {
+
     
     this.endMoment = endMoment;
     return this;
@@ -237,6 +248,7 @@ public class RetireOrderByDemandNotificationCompleted extends NotificationAbstra
   @JsonProperty(JSON_PROPERTY_END_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEndMoment(@javax.annotation.Nullable String endMoment) {
+
     this.endMoment = endMoment;
   }
 

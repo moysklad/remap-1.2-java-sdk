@@ -33,7 +33,7 @@ import java.util.StringJoiner;
   FileUpload.JSON_PROPERTY_FILENAME,
   FileUpload.JSON_PROPERTY_CONTENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class FileUpload {
 
   public static final String JSON_PROPERTY_FILENAME = "filename";
@@ -48,6 +48,7 @@ public class FileUpload {
   }
 
   public FileUpload filename(@javax.annotation.Nonnull String filename) {
+
     
     this.filename = filename;
     return this;
@@ -72,11 +73,13 @@ public class FileUpload {
   @JsonProperty(JSON_PROPERTY_FILENAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setFilename(@javax.annotation.Nonnull String filename) {
+
     this.filename = filename;
   }
 
 
   public FileUpload content(@javax.annotation.Nonnull String content) {
+
     
     this.content = content;
     return this;
@@ -101,6 +104,7 @@ public class FileUpload {
   @JsonProperty(JSON_PROPERTY_CONTENT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setContent(@javax.annotation.Nonnull String content) {
+
     this.content = content;
   }
 

@@ -51,7 +51,7 @@
 |**customerOrders** | [**List&lt;CustomerOrder&gt;**](CustomerOrder.md) | Массив ссылок на связанные заказы покупателей |  [optional] |
 |**invoicesIn** | [**List&lt;InvoiceIn&gt;**](InvoiceIn.md) | Массив ссылок на связанные счета поставщиков |  [optional] |
 |**supplies** | [**List&lt;Supply&gt;**](Supply.md) | Массив ссылок на связанные приемки |  [optional] |
-|**payments** | [**List&lt;SalesReturnPaymentsInner&gt;**](SalesReturnPaymentsInner.md) | Массив ссылок на связанные платежи |  [optional] |
+|**payments** | [**List&lt;PurchaseOrderPayment&gt;**](PurchaseOrderPayment.md) | Массив ссылок на связанные платежи |  [optional] |
 |**productionTasks** | [**List&lt;ProductionTask&gt;**](ProductionTask.md) | Массив ссылок на связанные производственные задания |  [optional] |
 
 

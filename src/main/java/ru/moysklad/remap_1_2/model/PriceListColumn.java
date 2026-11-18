@@ -33,7 +33,7 @@ import java.util.StringJoiner;
   PriceListColumn.JSON_PROPERTY_NAME,
   PriceListColumn.JSON_PROPERTY_PERCENTAGE_DISCOUNT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class PriceListColumn {
 
   public static final String JSON_PROPERTY_NAME = "name";
@@ -48,6 +48,7 @@ public class PriceListColumn {
   }
 
   public PriceListColumn name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -72,11 +73,13 @@ public class PriceListColumn {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public PriceListColumn percentageDiscount(@javax.annotation.Nullable Long percentageDiscount) {
+
     
     this.percentageDiscount = percentageDiscount;
     return this;
@@ -101,6 +104,7 @@ public class PriceListColumn {
   @JsonProperty(JSON_PROPERTY_PERCENTAGE_DISCOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPercentageDiscount(@javax.annotation.Nullable Long percentageDiscount) {
+
     this.percentageDiscount = percentageDiscount;
   }
 

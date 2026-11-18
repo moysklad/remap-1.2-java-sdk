@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   RetailShiftCheque.JSON_PROPERTY_START,
   RetailShiftCheque.JSON_PROPERTY_END
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailShiftCheque {
 
   public static final String JSON_PROPERTY_START = "start";
@@ -54,6 +54,7 @@ public class RetailShiftCheque {
   }
 
   public RetailShiftCheque start(@javax.annotation.Nullable RetailShiftChequeStart start) {
+
     this.start = JsonNullable.<RetailShiftChequeStart>of(start);
     
     return this;
@@ -87,11 +88,13 @@ public class RetailShiftCheque {
   }
 
   public void setStart(@javax.annotation.Nullable RetailShiftChequeStart start) {
+
     this.start = JsonNullable.<RetailShiftChequeStart>of(start);
   }
 
 
   public RetailShiftCheque end(@javax.annotation.Nullable RetailShiftChequeEnd end) {
+
     this.end = JsonNullable.<RetailShiftChequeEnd>of(end);
     
     return this;
@@ -125,6 +128,7 @@ public class RetailShiftCheque {
   }
 
   public void setEnd(@javax.annotation.Nullable RetailShiftChequeEnd end) {
+
     this.end = JsonNullable.<RetailShiftChequeEnd>of(end);
   }
 

@@ -60,7 +60,7 @@ import java.util.StringJoiner;
   ProcessingStage.JSON_PROPERTY_MATERIAL_STORE,
   ProcessingStage.JSON_PROPERTY_STANDARD_HOUR_COST
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingStage extends EntityWithMeta implements MetaEntity {
   public static ProcessingStage createWithMeta(UUID id) {
     ProcessingStage o = new ProcessingStage();
@@ -161,6 +161,7 @@ public class ProcessingStage extends EntityWithMeta implements MetaEntity {
   }
 
   public ProcessingStage meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -185,6 +186,7 @@ public class ProcessingStage extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -222,6 +224,7 @@ public class ProcessingStage extends EntityWithMeta implements MetaEntity {
 
 
   public ProcessingStage owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -255,11 +258,13 @@ public class ProcessingStage extends EntityWithMeta implements MetaEntity {
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
 
   public ProcessingStage shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -284,11 +289,13 @@ public class ProcessingStage extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
 
   public ProcessingStage group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -313,6 +320,7 @@ public class ProcessingStage extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
@@ -334,6 +342,7 @@ public class ProcessingStage extends EntityWithMeta implements MetaEntity {
 
 
   public ProcessingStage name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -358,11 +367,13 @@ public class ProcessingStage extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public ProcessingStage description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -396,11 +407,13 @@ public class ProcessingStage extends EntityWithMeta implements MetaEntity {
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 
 
   public ProcessingStage externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -425,11 +438,13 @@ public class ProcessingStage extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public ProcessingStage archived(@javax.annotation.Nullable Boolean archived) {
+
     
     this.archived = archived;
     return this;
@@ -454,11 +469,13 @@ public class ProcessingStage extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
+
     this.archived = archived;
   }
 
 
   public ProcessingStage allPerformers(@javax.annotation.Nullable Boolean allPerformers) {
+
     
     this.allPerformers = allPerformers;
     return this;
@@ -483,11 +500,13 @@ public class ProcessingStage extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ALL_PERFORMERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAllPerformers(@javax.annotation.Nullable Boolean allPerformers) {
+
     this.allPerformers = allPerformers;
   }
 
 
   public ProcessingStage distributionRequired(@javax.annotation.Nullable Boolean distributionRequired) {
+
     
     this.distributionRequired = distributionRequired;
     return this;
@@ -512,11 +531,13 @@ public class ProcessingStage extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_DISTRIBUTION_REQUIRED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDistributionRequired(@javax.annotation.Nullable Boolean distributionRequired) {
+
     this.distributionRequired = distributionRequired;
   }
 
 
   public ProcessingStage performers(@javax.annotation.Nullable List<Agent> performers) {
+
     this.performers = JsonNullable.<List<Agent>>of(performers);
     
     return this;
@@ -549,7 +570,7 @@ public class ProcessingStage extends EntityWithMeta implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_PERFORMERS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<Agent>> getPerformers_JsonNullable() {
@@ -562,6 +583,7 @@ public class ProcessingStage extends EntityWithMeta implements MetaEntity {
   }
 
   public void setPerformers(@javax.annotation.Nullable List<Agent> performers) {
+
     this.performers = JsonNullable.<List<Agent>>of(performers);
   }
 
@@ -598,6 +620,10 @@ public class ProcessingStage extends EntityWithMeta implements MetaEntity {
 
 
   public ProcessingStage standardHourCost(@javax.annotation.Nullable Double standardHourCost) {
+    if (standardHourCost != null && standardHourCost.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'standardHourCost': must be greater than or equal to 0, got " + standardHourCost);
+    }
+
     
     this.standardHourCost = standardHourCost;
     return this;
@@ -623,6 +649,10 @@ public class ProcessingStage extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_STANDARD_HOUR_COST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStandardHourCost(@javax.annotation.Nullable Double standardHourCost) {
+    if (standardHourCost != null && standardHourCost.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'standardHourCost': must be greater than or equal to 0, got " + standardHourCost);
+    }
+
     this.standardHourCost = standardHourCost;
   }
 

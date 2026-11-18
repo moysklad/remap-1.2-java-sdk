@@ -37,7 +37,7 @@ import java.util.StringJoiner;
   StockByStoreItem.JSON_PROPERTY_IN_TRANSIT,
   StockByStoreItem.JSON_PROPERTY_RESERVE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class StockByStoreItem {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -64,6 +64,7 @@ public class StockByStoreItem {
   }
 
   public StockByStoreItem meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -88,11 +89,13 @@ public class StockByStoreItem {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public StockByStoreItem name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -117,11 +120,13 @@ public class StockByStoreItem {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public StockByStoreItem stock(@javax.annotation.Nullable Double stock) {
+
     
     this.stock = stock;
     return this;
@@ -146,11 +151,13 @@ public class StockByStoreItem {
   @JsonProperty(JSON_PROPERTY_STOCK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStock(@javax.annotation.Nullable Double stock) {
+
     this.stock = stock;
   }
 
 
   public StockByStoreItem inTransit(@javax.annotation.Nullable Double inTransit) {
+
     
     this.inTransit = inTransit;
     return this;
@@ -175,11 +182,13 @@ public class StockByStoreItem {
   @JsonProperty(JSON_PROPERTY_IN_TRANSIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setInTransit(@javax.annotation.Nullable Double inTransit) {
+
     this.inTransit = inTransit;
   }
 
 
   public StockByStoreItem reserve(@javax.annotation.Nullable Double reserve) {
+
     
     this.reserve = reserve;
     return this;
@@ -204,6 +213,7 @@ public class StockByStoreItem {
   @JsonProperty(JSON_PROPERTY_RESERVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReserve(@javax.annotation.Nullable Double reserve) {
+
     this.reserve = reserve;
   }
 

@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   VariantPack.JSON_PROPERTY_BARCODES,
   VariantPack.JSON_PROPERTY_PARENTPACK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class VariantPack {
 
   public static final String JSON_PROPERTY_ID = "id";
@@ -49,7 +49,7 @@ public class VariantPack {
 
   public static final String JSON_PROPERTY_BARCODES = "barcodes";
   @javax.annotation.Nullable
-  private List<Barcode> barcodes = new ArrayList<>();
+  private List<Barcode> barcodes;
 
   public static final String JSON_PROPERTY_PARENTPACK = "parentpack";
   @javax.annotation.Nullable
@@ -85,6 +85,7 @@ public class VariantPack {
 
 
   public VariantPack barcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
+
     
     this.barcodes = barcodes;
     return this;
@@ -105,7 +106,7 @@ public class VariantPack {
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_BARCODES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<Barcode> getBarcodes() {
     return barcodes;
@@ -115,13 +116,15 @@ public class VariantPack {
 
 
   @JsonProperty(JSON_PROPERTY_BARCODES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setBarcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
+
     this.barcodes = barcodes;
   }
 
 
   public VariantPack parentpack(@javax.annotation.Nullable Pack parentpack) {
+
     
     this.parentpack = parentpack;
     return this;
@@ -146,6 +149,7 @@ public class VariantPack {
   @JsonProperty(JSON_PROPERTY_PARENTPACK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setParentpack(@javax.annotation.Nullable Pack parentpack) {
+
     this.parentpack = parentpack;
   }
 

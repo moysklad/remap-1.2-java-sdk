@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   ReportDashboardMoney.JSON_PROPERTY_TODAY_MOVEMENT,
   ReportDashboardMoney.JSON_PROPERTY_MOVEMENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ReportDashboardMoney {
 
   public static final String JSON_PROPERTY_INCOME = "income";
@@ -63,6 +63,7 @@ public class ReportDashboardMoney {
   }
 
   public ReportDashboardMoney income(@javax.annotation.Nullable Double income) {
+
     
     this.income = income;
     return this;
@@ -87,11 +88,13 @@ public class ReportDashboardMoney {
   @JsonProperty(JSON_PROPERTY_INCOME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIncome(@javax.annotation.Nullable Double income) {
+
     this.income = income;
   }
 
 
   public ReportDashboardMoney outcome(@javax.annotation.Nullable Double outcome) {
+
     
     this.outcome = outcome;
     return this;
@@ -116,11 +119,13 @@ public class ReportDashboardMoney {
   @JsonProperty(JSON_PROPERTY_OUTCOME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOutcome(@javax.annotation.Nullable Double outcome) {
+
     this.outcome = outcome;
   }
 
 
   public ReportDashboardMoney balance(@javax.annotation.Nullable Double balance) {
+
     
     this.balance = balance;
     return this;
@@ -145,11 +150,13 @@ public class ReportDashboardMoney {
   @JsonProperty(JSON_PROPERTY_BALANCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBalance(@javax.annotation.Nullable Double balance) {
+
     this.balance = balance;
   }
 
 
   public ReportDashboardMoney todayMovement(@javax.annotation.Nullable Double todayMovement) {
+
     
     this.todayMovement = todayMovement;
     return this;
@@ -174,11 +181,13 @@ public class ReportDashboardMoney {
   @JsonProperty(JSON_PROPERTY_TODAY_MOVEMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTodayMovement(@javax.annotation.Nullable Double todayMovement) {
+
     this.todayMovement = todayMovement;
   }
 
 
   public ReportDashboardMoney movement(@javax.annotation.Nullable Double movement) {
+
     
     this.movement = movement;
     return this;
@@ -203,6 +212,7 @@ public class ReportDashboardMoney {
   @JsonProperty(JSON_PROPERTY_MOVEMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMovement(@javax.annotation.Nullable Double movement) {
+
     this.movement = movement;
   }
 

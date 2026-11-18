@@ -41,7 +41,7 @@ import java.util.StringJoiner;
   GetOrganizationAccounts200Response.JSON_PROPERTY_ROWS
 })
 @JsonTypeName("getOrganizationAccounts_200_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class GetOrganizationAccounts200Response {
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
@@ -54,12 +54,13 @@ public class GetOrganizationAccounts200Response {
 
   public static final String JSON_PROPERTY_ROWS = "rows";
   @javax.annotation.Nullable
-  private List<Account> rows = new ArrayList<>();
+  private List<Account> rows;
 
   public GetOrganizationAccounts200Response() {
   }
 
   public GetOrganizationAccounts200Response context(@javax.annotation.Nullable Context context) {
+
     
     this.context = context;
     return this;
@@ -84,11 +85,13 @@ public class GetOrganizationAccounts200Response {
   @JsonProperty(JSON_PROPERTY_CONTEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setContext(@javax.annotation.Nullable Context context) {
+
     this.context = context;
   }
 
 
   public GetOrganizationAccounts200Response meta(@javax.annotation.Nullable MetaList meta) {
+
     
     this.meta = meta;
     return this;
@@ -113,11 +116,13 @@ public class GetOrganizationAccounts200Response {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable MetaList meta) {
+
     this.meta = meta;
   }
 
 
   public GetOrganizationAccounts200Response rows(@javax.annotation.Nullable List<Account> rows) {
+
     
     this.rows = rows;
     return this;
@@ -138,7 +143,7 @@ public class GetOrganizationAccounts200Response {
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ROWS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<Account> getRows() {
     return rows;
@@ -148,8 +153,9 @@ public class GetOrganizationAccounts200Response {
 
 
   @JsonProperty(JSON_PROPERTY_ROWS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setRows(@javax.annotation.Nullable List<Account> rows) {
+
     this.rows = rows;
   }
 

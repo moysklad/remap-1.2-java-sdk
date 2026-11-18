@@ -59,7 +59,7 @@ import java.util.StringJoiner;
   ProductFolder.JSON_PROPERTY_PRODUCT_FOLDER,
   ProductFolder.JSON_PROPERTY_TAX_SYSTEM
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProductFolder extends EntityWithMeta implements Named, MetaEntity {
   public static ProductFolder createWithMeta(UUID id) {
     ProductFolder o = new ProductFolder();
@@ -180,6 +180,7 @@ public class ProductFolder extends EntityWithMeta implements Named, MetaEntity {
   }
 
   public ProductFolder meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -204,6 +205,7 @@ public class ProductFolder extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -241,6 +243,7 @@ public class ProductFolder extends EntityWithMeta implements Named, MetaEntity {
 
 
   public ProductFolder name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -265,11 +268,13 @@ public class ProductFolder extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public ProductFolder code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -294,11 +299,13 @@ public class ProductFolder extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public ProductFolder externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -323,11 +330,13 @@ public class ProductFolder extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public ProductFolder archived(@javax.annotation.Nullable Boolean archived) {
+
     
     this.archived = archived;
     return this;
@@ -352,6 +361,7 @@ public class ProductFolder extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
+
     this.archived = archived;
   }
 
@@ -373,6 +383,7 @@ public class ProductFolder extends EntityWithMeta implements Named, MetaEntity {
 
 
   public ProductFolder description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -406,11 +417,19 @@ public class ProductFolder extends EntityWithMeta implements Named, MetaEntity {
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 
 
   public ProductFolder vat(@javax.annotation.Nullable Integer vat) {
+    if (vat != null && vat.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be greater than or equal to 0, got " + vat);
+    }
+    if (vat != null && vat.doubleValue() > 99) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be less than or equal to 99, got " + vat);
+    }
+
     
     this.vat = vat;
     return this;
@@ -437,11 +456,19 @@ public class ProductFolder extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVat(@javax.annotation.Nullable Integer vat) {
+    if (vat != null && vat.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be greater than or equal to 0, got " + vat);
+    }
+    if (vat != null && vat.doubleValue() > 99) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be less than or equal to 99, got " + vat);
+    }
+
     this.vat = vat;
   }
 
 
   public ProductFolder vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     
     this.vatEnabled = vatEnabled;
     return this;
@@ -466,6 +493,7 @@ public class ProductFolder extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     this.vatEnabled = vatEnabled;
   }
 
@@ -503,6 +531,7 @@ public class ProductFolder extends EntityWithMeta implements Named, MetaEntity {
 
 
   public ProductFolder useParentVat(@javax.annotation.Nullable Boolean useParentVat) {
+
     
     this.useParentVat = useParentVat;
     return this;
@@ -527,11 +556,13 @@ public class ProductFolder extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_USE_PARENT_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUseParentVat(@javax.annotation.Nullable Boolean useParentVat) {
+
     this.useParentVat = useParentVat;
   }
 
 
   public ProductFolder shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -556,11 +587,13 @@ public class ProductFolder extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
 
   public ProductFolder group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -585,11 +618,13 @@ public class ProductFolder extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
 
   public ProductFolder owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -623,6 +658,7 @@ public class ProductFolder extends EntityWithMeta implements Named, MetaEntity {
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
@@ -644,6 +680,7 @@ public class ProductFolder extends EntityWithMeta implements Named, MetaEntity {
 
 
   public ProductFolder productFolder(@javax.annotation.Nullable ProductFolder productFolder) {
+
     this.productFolder = JsonNullable.<ProductFolder>of(productFolder);
     
     return this;
@@ -677,11 +714,13 @@ public class ProductFolder extends EntityWithMeta implements Named, MetaEntity {
   }
 
   public void setProductFolder(@javax.annotation.Nullable ProductFolder productFolder) {
+
     this.productFolder = JsonNullable.<ProductFolder>of(productFolder);
   }
 
 
   public ProductFolder taxSystem(@javax.annotation.Nullable String taxSystem) {
+
     
     this.taxSystem = taxSystem;
     return this;
@@ -706,6 +745,7 @@ public class ProductFolder extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_TAX_SYSTEM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTaxSystem(@javax.annotation.Nullable String taxSystem) {
+
     this.taxSystem = taxSystem;
   }
 

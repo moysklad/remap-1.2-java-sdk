@@ -74,7 +74,7 @@ import java.util.StringJoiner;
   PriceList.JSON_PROPERTY_SYNC_ID,
   PriceList.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class PriceList extends EntityWithMeta implements MetaEntity {
   public static PriceList createWithMeta(UUID id) {
     PriceList o = new PriceList();
@@ -117,7 +117,7 @@ public class PriceList extends EntityWithMeta implements MetaEntity {
 
   public static final String JSON_PROPERTY_COLUMNS = "columns";
   @javax.annotation.Nullable
-  private List<PriceListColumn> columns = new ArrayList<>();
+  private List<PriceListColumn> columns;
 
   public static final String JSON_PROPERTY_CREATED = "created";
   @javax.annotation.Nullable
@@ -217,6 +217,7 @@ public class PriceList extends EntityWithMeta implements MetaEntity {
   }
 
   public PriceList meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -241,6 +242,7 @@ public class PriceList extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -278,6 +280,7 @@ public class PriceList extends EntityWithMeta implements MetaEntity {
 
 
   public PriceList applicable(@javax.annotation.Nullable Boolean applicable) {
+
     
     this.applicable = applicable;
     return this;
@@ -302,11 +305,13 @@ public class PriceList extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_APPLICABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setApplicable(@javax.annotation.Nullable Boolean applicable) {
+
     this.applicable = applicable;
   }
 
 
   public PriceList attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
@@ -339,7 +344,7 @@ public class PriceList extends EntityWithMeta implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
@@ -352,11 +357,13 @@ public class PriceList extends EntityWithMeta implements MetaEntity {
   }
 
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
   public PriceList code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -381,11 +388,13 @@ public class PriceList extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public PriceList columns(@javax.annotation.Nullable List<PriceListColumn> columns) {
+
     
     this.columns = columns;
     return this;
@@ -406,7 +415,7 @@ public class PriceList extends EntityWithMeta implements MetaEntity {
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_COLUMNS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<PriceListColumn> getColumns() {
     return columns;
@@ -416,8 +425,9 @@ public class PriceList extends EntityWithMeta implements MetaEntity {
 
 
   @JsonProperty(JSON_PROPERTY_COLUMNS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setColumns(@javax.annotation.Nullable List<PriceListColumn> columns) {
+
     this.columns = columns;
   }
 
@@ -455,6 +465,7 @@ public class PriceList extends EntityWithMeta implements MetaEntity {
 
 
   public PriceList description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -488,11 +499,13 @@ public class PriceList extends EntityWithMeta implements MetaEntity {
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 
 
   public PriceList externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -517,11 +530,13 @@ public class PriceList extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public PriceList files(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
@@ -555,11 +570,13 @@ public class PriceList extends EntityWithMeta implements MetaEntity {
   }
 
   public void setFiles(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
   }
 
 
   public PriceList group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -584,11 +601,13 @@ public class PriceList extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
 
   public PriceList moment(@javax.annotation.Nullable String moment) {
+
     
     this.moment = moment;
     return this;
@@ -613,11 +632,13 @@ public class PriceList extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMoment(@javax.annotation.Nullable String moment) {
+
     this.moment = moment;
   }
 
 
   public PriceList name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -642,11 +663,13 @@ public class PriceList extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public PriceList organization(@javax.annotation.Nullable Organization organization) {
+
     
     this.organization = organization;
     return this;
@@ -671,11 +694,13 @@ public class PriceList extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOrganization(@javax.annotation.Nullable Organization organization) {
+
     this.organization = organization;
   }
 
 
   public PriceList owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -709,11 +734,13 @@ public class PriceList extends EntityWithMeta implements MetaEntity {
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
 
   public PriceList positions(@javax.annotation.Nullable PriceListPositionList positions) {
+
     
     this.positions = positions;
     return this;
@@ -738,11 +765,13 @@ public class PriceList extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPositions(@javax.annotation.Nullable PriceListPositionList positions) {
+
     this.positions = positions;
   }
 
 
   public PriceList priceType(@javax.annotation.Nullable PriceType priceType) {
+
     
     this.priceType = priceType;
     return this;
@@ -767,6 +796,7 @@ public class PriceList extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_PRICE_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPriceType(@javax.annotation.Nullable PriceType priceType) {
+
     this.priceType = priceType;
   }
 
@@ -804,6 +834,7 @@ public class PriceList extends EntityWithMeta implements MetaEntity {
 
 
   public PriceList shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -828,11 +859,13 @@ public class PriceList extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
 
   public PriceList state(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
     
     return this;
@@ -866,11 +899,13 @@ public class PriceList extends EntityWithMeta implements MetaEntity {
   }
 
   public void setState(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
   }
 
 
   public PriceList syncId(@javax.annotation.Nullable UUID syncId) {
+
     
     this.syncId = syncId;
     return this;
@@ -895,6 +930,7 @@ public class PriceList extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
+
     this.syncId = syncId;
   }
 

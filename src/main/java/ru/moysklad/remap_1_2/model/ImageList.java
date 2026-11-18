@@ -42,7 +42,7 @@ import java.util.StringJoiner;
   ImageList.JSON_PROPERTY_META,
   ImageList.JSON_PROPERTY_ROWS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ImageList {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -57,6 +57,7 @@ public class ImageList {
   }
 
   public ImageList meta(@javax.annotation.Nullable MetaList meta) {
+
     
     this.meta = meta;
     return this;
@@ -81,11 +82,13 @@ public class ImageList {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable MetaList meta) {
+
     this.meta = meta;
   }
 
 
   public ImageList rows(@javax.annotation.Nullable List<Image> rows) {
+
     this.rows = JsonNullable.<List<Image>>of(rows);
     
     return this;
@@ -118,7 +121,7 @@ public class ImageList {
   
 
   @JsonProperty(JSON_PROPERTY_ROWS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<Image>> getRows_JsonNullable() {
@@ -131,6 +134,7 @@ public class ImageList {
   }
 
   public void setRows(@javax.annotation.Nullable List<Image> rows) {
+
     this.rows = JsonNullable.<List<Image>>of(rows);
   }
 

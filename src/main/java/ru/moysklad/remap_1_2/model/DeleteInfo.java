@@ -32,7 +32,7 @@ import java.util.StringJoiner;
 @JsonPropertyOrder({
   DeleteInfo.JSON_PROPERTY_INFO
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class DeleteInfo {
 
   public static final String JSON_PROPERTY_INFO = "info";
@@ -43,6 +43,7 @@ public class DeleteInfo {
   }
 
   public DeleteInfo info(@javax.annotation.Nullable String info) {
+
     
     this.info = info;
     return this;
@@ -67,6 +68,7 @@ public class DeleteInfo {
   @JsonProperty(JSON_PROPERTY_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setInfo(@javax.annotation.Nullable String info) {
+
     this.info = info;
   }
 

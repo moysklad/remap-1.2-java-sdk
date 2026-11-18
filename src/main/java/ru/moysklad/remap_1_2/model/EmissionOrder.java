@@ -67,7 +67,7 @@ import java.util.StringJoiner;
   EmissionOrder.JSON_PROPERTY_TRACKING_TYPE,
   EmissionOrder.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class EmissionOrder extends EntityWithMeta implements MetaEntity {
   public static EmissionOrder createWithMeta(UUID id) {
     EmissionOrder o = new EmissionOrder();
@@ -194,6 +194,7 @@ public class EmissionOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public EmissionOrder meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -218,6 +219,7 @@ public class EmissionOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -271,6 +273,7 @@ public class EmissionOrder extends EntityWithMeta implements MetaEntity {
 
 
   public EmissionOrder description(@javax.annotation.Nullable String description) {
+
     
     this.description = description;
     return this;
@@ -295,6 +298,7 @@ public class EmissionOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = description;
   }
 
@@ -316,6 +320,7 @@ public class EmissionOrder extends EntityWithMeta implements MetaEntity {
 
 
   public EmissionOrder emissionType(@javax.annotation.Nullable String emissionType) {
+
     
     this.emissionType = emissionType;
     return this;
@@ -340,11 +345,13 @@ public class EmissionOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_EMISSION_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEmissionType(@javax.annotation.Nullable String emissionType) {
+
     this.emissionType = emissionType;
   }
 
 
   public EmissionOrder externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -369,11 +376,13 @@ public class EmissionOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public EmissionOrder group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -398,11 +407,13 @@ public class EmissionOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
 
   public EmissionOrder moment(@javax.annotation.Nullable String moment) {
+
     
     this.moment = moment;
     return this;
@@ -427,11 +438,13 @@ public class EmissionOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMoment(@javax.annotation.Nullable String moment) {
+
     this.moment = moment;
   }
 
 
   public EmissionOrder name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -456,11 +469,13 @@ public class EmissionOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public EmissionOrder organization(@javax.annotation.Nullable Organization organization) {
+
     
     this.organization = organization;
     return this;
@@ -485,11 +500,13 @@ public class EmissionOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOrganization(@javax.annotation.Nullable Organization organization) {
+
     this.organization = organization;
   }
 
 
   public EmissionOrder owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -523,11 +540,13 @@ public class EmissionOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
 
   public EmissionOrder positions(@javax.annotation.Nullable EmissionOrderPositionList positions) {
+
     
     this.positions = positions;
     return this;
@@ -552,6 +571,7 @@ public class EmissionOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPositions(@javax.annotation.Nullable EmissionOrderPositionList positions) {
+
     this.positions = positions;
   }
 
@@ -573,6 +593,7 @@ public class EmissionOrder extends EntityWithMeta implements MetaEntity {
 
 
   public EmissionOrder productionTasks(@javax.annotation.Nullable List<ProductionTask> productionTasks) {
+
     this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
     
     return this;
@@ -605,7 +626,7 @@ public class EmissionOrder extends EntityWithMeta implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_PRODUCTION_TASKS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<ProductionTask>> getProductionTasks_JsonNullable() {
@@ -618,6 +639,7 @@ public class EmissionOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setProductionTasks(@javax.annotation.Nullable List<ProductionTask> productionTasks) {
+
     this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
   }
 
@@ -639,6 +661,7 @@ public class EmissionOrder extends EntityWithMeta implements MetaEntity {
 
 
   public EmissionOrder shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -663,11 +686,13 @@ public class EmissionOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
 
   public EmissionOrder state(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
     
     return this;
@@ -701,11 +726,13 @@ public class EmissionOrder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setState(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
   }
 
 
   public EmissionOrder trackingType(@javax.annotation.Nullable String trackingType) {
+
     
     this.trackingType = trackingType;
     return this;
@@ -730,6 +757,7 @@ public class EmissionOrder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_TRACKING_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTrackingType(@javax.annotation.Nullable String trackingType) {
+
     this.trackingType = trackingType;
   }
 

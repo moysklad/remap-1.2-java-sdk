@@ -42,7 +42,7 @@ import java.util.StringJoiner;
   Thing.JSON_PROPERTY_NAME,
   Thing.JSON_PROPERTY_DESCRIPTION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Thing implements MetaEntity {
   public static Thing createWithMeta(UUID id) {
     Thing o = new Thing();
@@ -95,6 +95,7 @@ public class Thing implements MetaEntity {
   }
 
   public Thing meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -119,6 +120,7 @@ public class Thing implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -156,6 +158,7 @@ public class Thing implements MetaEntity {
 
 
   public Thing name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -180,11 +183,13 @@ public class Thing implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public Thing description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -218,6 +223,7 @@ public class Thing implements MetaEntity {
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 

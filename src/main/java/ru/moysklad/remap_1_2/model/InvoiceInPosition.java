@@ -49,7 +49,7 @@ import java.util.StringJoiner;
   InvoiceInPosition.JSON_PROPERTY_ASSORTMENT,
   InvoiceInPosition.JSON_PROPERTY_PACK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class InvoiceInPosition extends EntityWithMeta implements DocumentPosition, MetaEntity {
   public static InvoiceInPosition createWithMeta(UUID parentId, UUID id) {
     InvoiceInPosition o = new InvoiceInPosition();
@@ -120,6 +120,7 @@ public class InvoiceInPosition extends EntityWithMeta implements DocumentPositio
   }
 
   public InvoiceInPosition meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -144,11 +145,13 @@ public class InvoiceInPosition extends EntityWithMeta implements DocumentPositio
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public InvoiceInPosition id(@javax.annotation.Nullable UUID id) {
+
     
     this.id = id;
     return this;
@@ -173,6 +176,7 @@ public class InvoiceInPosition extends EntityWithMeta implements DocumentPositio
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(@javax.annotation.Nullable UUID id) {
+
     this.id = id;
   }
 
@@ -194,6 +198,10 @@ public class InvoiceInPosition extends EntityWithMeta implements DocumentPositio
 
 
   public InvoiceInPosition quantity(@javax.annotation.Nullable Double quantity) {
+    if (quantity != null && quantity.doubleValue() <= 0) {
+      throw new IllegalArgumentException("Invalid value for 'quantity': must be greater than 0, got " + quantity);
+    }
+
     
     this.quantity = quantity;
     return this;
@@ -219,11 +227,16 @@ public class InvoiceInPosition extends EntityWithMeta implements DocumentPositio
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
+    if (quantity != null && quantity.doubleValue() <= 0) {
+      throw new IllegalArgumentException("Invalid value for 'quantity': must be greater than 0, got " + quantity);
+    }
+
     this.quantity = quantity;
   }
 
 
   public InvoiceInPosition price(@javax.annotation.Nullable Double price) {
+
     
     this.price = price;
     return this;
@@ -248,11 +261,13 @@ public class InvoiceInPosition extends EntityWithMeta implements DocumentPositio
   @JsonProperty(JSON_PROPERTY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrice(@javax.annotation.Nullable Double price) {
+
     this.price = price;
   }
 
 
   public InvoiceInPosition discount(@javax.annotation.Nullable Double discount) {
+
     
     this.discount = discount;
     return this;
@@ -277,11 +292,13 @@ public class InvoiceInPosition extends EntityWithMeta implements DocumentPositio
   @JsonProperty(JSON_PROPERTY_DISCOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDiscount(@javax.annotation.Nullable Double discount) {
+
     this.discount = discount;
   }
 
 
   public InvoiceInPosition vat(@javax.annotation.Nullable Integer vat) {
+
     
     this.vat = vat;
     return this;
@@ -306,11 +323,13 @@ public class InvoiceInPosition extends EntityWithMeta implements DocumentPositio
   @JsonProperty(JSON_PROPERTY_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVat(@javax.annotation.Nullable Integer vat) {
+
     this.vat = vat;
   }
 
 
   public InvoiceInPosition vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     
     this.vatEnabled = vatEnabled;
     return this;
@@ -335,11 +354,13 @@ public class InvoiceInPosition extends EntityWithMeta implements DocumentPositio
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     this.vatEnabled = vatEnabled;
   }
 
 
   public InvoiceInPosition assortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     
     this.assortment = assortment;
     return this;
@@ -364,11 +385,13 @@ public class InvoiceInPosition extends EntityWithMeta implements DocumentPositio
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     this.assortment = assortment;
   }
 
 
   public InvoiceInPosition pack(@javax.annotation.Nullable Pack pack) {
+
     this.pack = JsonNullable.<Pack>of(pack);
     
     return this;
@@ -402,6 +425,7 @@ public class InvoiceInPosition extends EntityWithMeta implements DocumentPositio
   }
 
   public void setPack(@javax.annotation.Nullable Pack pack) {
+
     this.pack = JsonNullable.<Pack>of(pack);
   }
 

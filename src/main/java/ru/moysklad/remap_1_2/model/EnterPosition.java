@@ -58,7 +58,7 @@ import java.util.StringJoiner;
   EnterPosition.JSON_PROPERTY_SLOT,
   EnterPosition.JSON_PROPERTY_THINGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class EnterPosition extends EntityWithMeta implements DocumentPosition, MetaEntity {
   public static EnterPosition createWithMeta(UUID parentId, UUID id) {
     EnterPosition o = new EnterPosition();
@@ -125,7 +125,7 @@ public class EnterPosition extends EntityWithMeta implements DocumentPosition, M
 
   public static final String JSON_PROPERTY_THINGS = "things";
   @javax.annotation.Nullable
-  private List<String> things = new ArrayList<>();
+  private List<String> things;
 
   public EnterPosition() {
   }
@@ -143,6 +143,7 @@ public class EnterPosition extends EntityWithMeta implements DocumentPosition, M
   }
 
   public EnterPosition meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -167,11 +168,13 @@ public class EnterPosition extends EntityWithMeta implements DocumentPosition, M
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public EnterPosition id(@javax.annotation.Nullable UUID id) {
+
     
     this.id = id;
     return this;
@@ -196,6 +199,7 @@ public class EnterPosition extends EntityWithMeta implements DocumentPosition, M
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(@javax.annotation.Nullable UUID id) {
+
     this.id = id;
   }
 
@@ -217,6 +221,7 @@ public class EnterPosition extends EntityWithMeta implements DocumentPosition, M
 
 
   public EnterPosition assortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     
     this.assortment = assortment;
     return this;
@@ -241,11 +246,13 @@ public class EnterPosition extends EntityWithMeta implements DocumentPosition, M
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     this.assortment = assortment;
   }
 
 
   public EnterPosition country(@javax.annotation.Nullable Country country) {
+
     this.country = JsonNullable.<Country>of(country);
     
     return this;
@@ -279,11 +286,13 @@ public class EnterPosition extends EntityWithMeta implements DocumentPosition, M
   }
 
   public void setCountry(@javax.annotation.Nullable Country country) {
+
     this.country = JsonNullable.<Country>of(country);
   }
 
 
   public EnterPosition gtd(@javax.annotation.Nullable Gtd gtd) {
+
     this.gtd = JsonNullable.<Gtd>of(gtd);
     
     return this;
@@ -317,6 +326,7 @@ public class EnterPosition extends EntityWithMeta implements DocumentPosition, M
   }
 
   public void setGtd(@javax.annotation.Nullable Gtd gtd) {
+
     this.gtd = JsonNullable.<Gtd>of(gtd);
   }
 
@@ -338,6 +348,7 @@ public class EnterPosition extends EntityWithMeta implements DocumentPosition, M
 
 
   public EnterPosition pack(@javax.annotation.Nullable Pack pack) {
+
     this.pack = JsonNullable.<Pack>of(pack);
     
     return this;
@@ -371,11 +382,13 @@ public class EnterPosition extends EntityWithMeta implements DocumentPosition, M
   }
 
   public void setPack(@javax.annotation.Nullable Pack pack) {
+
     this.pack = JsonNullable.<Pack>of(pack);
   }
 
 
   public EnterPosition price(@javax.annotation.Nullable Double price) {
+
     
     this.price = price;
     return this;
@@ -400,11 +413,13 @@ public class EnterPosition extends EntityWithMeta implements DocumentPosition, M
   @JsonProperty(JSON_PROPERTY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrice(@javax.annotation.Nullable Double price) {
+
     this.price = price;
   }
 
 
   public EnterPosition quantity(@javax.annotation.Nullable Double quantity) {
+
     
     this.quantity = quantity;
     return this;
@@ -429,11 +444,13 @@ public class EnterPosition extends EntityWithMeta implements DocumentPosition, M
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
+
     this.quantity = quantity;
   }
 
 
   public EnterPosition reason(@javax.annotation.Nullable String reason) {
+
     this.reason = JsonNullable.<String>of(reason);
     
     return this;
@@ -467,11 +484,13 @@ public class EnterPosition extends EntityWithMeta implements DocumentPosition, M
   }
 
   public void setReason(@javax.annotation.Nullable String reason) {
+
     this.reason = JsonNullable.<String>of(reason);
   }
 
 
   public EnterPosition slot(@javax.annotation.Nullable StoreSlot slot) {
+
     this.slot = JsonNullable.<StoreSlot>of(slot);
     
     return this;
@@ -505,11 +524,13 @@ public class EnterPosition extends EntityWithMeta implements DocumentPosition, M
   }
 
   public void setSlot(@javax.annotation.Nullable StoreSlot slot) {
+
     this.slot = JsonNullable.<StoreSlot>of(slot);
   }
 
 
   public EnterPosition things(@javax.annotation.Nullable List<String> things) {
+
     
     this.things = things;
     return this;
@@ -530,7 +551,7 @@ public class EnterPosition extends EntityWithMeta implements DocumentPosition, M
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_THINGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<String> getThings() {
     return things;
@@ -540,8 +561,9 @@ public class EnterPosition extends EntityWithMeta implements DocumentPosition, M
 
 
   @JsonProperty(JSON_PROPERTY_THINGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setThings(@javax.annotation.Nullable List<String> things) {
+
     this.things = things;
   }
 

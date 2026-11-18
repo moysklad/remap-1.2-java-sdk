@@ -38,7 +38,7 @@ import java.util.StringJoiner;
   ReportTurnoverOperation.JSON_PROPERTY_MOMENT,
   ReportTurnoverOperation.JSON_PROPERTY_AGENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ReportTurnoverOperation {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -65,6 +65,7 @@ public class ReportTurnoverOperation {
   }
 
   public ReportTurnoverOperation meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -89,11 +90,13 @@ public class ReportTurnoverOperation {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public ReportTurnoverOperation name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -118,11 +121,13 @@ public class ReportTurnoverOperation {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public ReportTurnoverOperation description(@javax.annotation.Nullable String description) {
+
     
     this.description = description;
     return this;
@@ -147,11 +152,13 @@ public class ReportTurnoverOperation {
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = description;
   }
 
 
   public ReportTurnoverOperation moment(@javax.annotation.Nullable String moment) {
+
     
     this.moment = moment;
     return this;
@@ -176,11 +183,13 @@ public class ReportTurnoverOperation {
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMoment(@javax.annotation.Nullable String moment) {
+
     this.moment = moment;
   }
 
 
   public ReportTurnoverOperation agent(@javax.annotation.Nullable Agent agent) {
+
     
     this.agent = agent;
     return this;
@@ -205,6 +214,7 @@ public class ReportTurnoverOperation {
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAgent(@javax.annotation.Nullable Agent agent) {
+
     this.agent = agent;
   }
 

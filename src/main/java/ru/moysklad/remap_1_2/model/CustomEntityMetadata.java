@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   CustomEntityMetadata.JSON_PROPERTY_NAME,
   CustomEntityMetadata.JSON_PROPERTY_CREATE_SHARED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class CustomEntityMetadata {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -81,6 +81,7 @@ public class CustomEntityMetadata {
   }
 
   public CustomEntityMetadata meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -105,11 +106,13 @@ public class CustomEntityMetadata {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public CustomEntityMetadata entityMeta(@javax.annotation.Nullable Meta entityMeta) {
+
     
     this.entityMeta = entityMeta;
     return this;
@@ -134,11 +137,13 @@ public class CustomEntityMetadata {
   @JsonProperty(JSON_PROPERTY_ENTITY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEntityMeta(@javax.annotation.Nullable Meta entityMeta) {
+
     this.entityMeta = entityMeta;
   }
 
 
   public CustomEntityMetadata attributes(@javax.annotation.Nullable AttributeMetaInfoList attributes) {
+
     
     this.attributes = attributes;
     return this;
@@ -163,6 +168,7 @@ public class CustomEntityMetadata {
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAttributes(@javax.annotation.Nullable AttributeMetaInfoList attributes) {
+
     this.attributes = attributes;
   }
 
@@ -184,6 +190,7 @@ public class CustomEntityMetadata {
 
 
   public CustomEntityMetadata name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -208,11 +215,13 @@ public class CustomEntityMetadata {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public CustomEntityMetadata createShared(@javax.annotation.Nullable Boolean createShared) {
+
     
     this.createShared = createShared;
     return this;
@@ -237,6 +246,7 @@ public class CustomEntityMetadata {
   @JsonProperty(JSON_PROPERTY_CREATE_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreateShared(@javax.annotation.Nullable Boolean createShared) {
+
     this.createShared = createShared;
   }
 

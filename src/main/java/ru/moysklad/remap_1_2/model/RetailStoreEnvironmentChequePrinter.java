@@ -41,7 +41,7 @@ import java.util.StringJoiner;
   RetailStoreEnvironmentChequePrinter.JSON_PROPERTY_VENDOR
 })
 @JsonTypeName("RetailStore_environment_chequePrinter")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStoreEnvironmentChequePrinter {
 
   public static final String JSON_PROPERTY_DRIVER = "driver";
@@ -76,6 +76,7 @@ public class RetailStoreEnvironmentChequePrinter {
   }
 
   public RetailStoreEnvironmentChequePrinter driver(@javax.annotation.Nullable RetailStoreEnvironmentChequePrinterDriver driver) {
+
     
     this.driver = driver;
     return this;
@@ -100,11 +101,13 @@ public class RetailStoreEnvironmentChequePrinter {
   @JsonProperty(JSON_PROPERTY_DRIVER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDriver(@javax.annotation.Nullable RetailStoreEnvironmentChequePrinterDriver driver) {
+
     this.driver = driver;
   }
 
 
   public RetailStoreEnvironmentChequePrinter firmwareVersion(@javax.annotation.Nullable String firmwareVersion) {
+
     
     this.firmwareVersion = firmwareVersion;
     return this;
@@ -129,11 +132,13 @@ public class RetailStoreEnvironmentChequePrinter {
   @JsonProperty(JSON_PROPERTY_FIRMWARE_VERSION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFirmwareVersion(@javax.annotation.Nullable String firmwareVersion) {
+
     this.firmwareVersion = firmwareVersion;
   }
 
 
   public RetailStoreEnvironmentChequePrinter fiscalDataVersion(@javax.annotation.Nullable String fiscalDataVersion) {
+
     
     this.fiscalDataVersion = fiscalDataVersion;
     return this;
@@ -158,11 +163,13 @@ public class RetailStoreEnvironmentChequePrinter {
   @JsonProperty(JSON_PROPERTY_FISCAL_DATA_VERSION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFiscalDataVersion(@javax.annotation.Nullable String fiscalDataVersion) {
+
     this.fiscalDataVersion = fiscalDataVersion;
   }
 
 
   public RetailStoreEnvironmentChequePrinter fiscalMemory(@javax.annotation.Nullable RetailStoreEnvironmentChequePrinterFiscalMemory fiscalMemory) {
+
     
     this.fiscalMemory = fiscalMemory;
     return this;
@@ -187,11 +194,13 @@ public class RetailStoreEnvironmentChequePrinter {
   @JsonProperty(JSON_PROPERTY_FISCAL_MEMORY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFiscalMemory(@javax.annotation.Nullable RetailStoreEnvironmentChequePrinterFiscalMemory fiscalMemory) {
+
     this.fiscalMemory = fiscalMemory;
   }
 
 
   public RetailStoreEnvironmentChequePrinter name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -216,11 +225,13 @@ public class RetailStoreEnvironmentChequePrinter {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public RetailStoreEnvironmentChequePrinter serial(@javax.annotation.Nullable String serial) {
+
     
     this.serial = serial;
     return this;
@@ -245,11 +256,13 @@ public class RetailStoreEnvironmentChequePrinter {
   @JsonProperty(JSON_PROPERTY_SERIAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSerial(@javax.annotation.Nullable String serial) {
+
     this.serial = serial;
   }
 
 
   public RetailStoreEnvironmentChequePrinter vendor(@javax.annotation.Nullable String vendor) {
+
     
     this.vendor = vendor;
     return this;
@@ -274,6 +287,7 @@ public class RetailStoreEnvironmentChequePrinter {
   @JsonProperty(JSON_PROPERTY_VENDOR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVendor(@javax.annotation.Nullable String vendor) {
+
     this.vendor = vendor;
   }
 

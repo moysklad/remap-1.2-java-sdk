@@ -34,7 +34,7 @@ import java.util.StringJoiner;
   RetailStoreStateFiscalMemoryError.JSON_PROPERTY_MESSAGE
 })
 @JsonTypeName("RetailStore_state_fiscalMemory_error")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStoreStateFiscalMemoryError {
 
   public static final String JSON_PROPERTY_CODE = "code";
@@ -49,6 +49,7 @@ public class RetailStoreStateFiscalMemoryError {
   }
 
   public RetailStoreStateFiscalMemoryError code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -73,11 +74,13 @@ public class RetailStoreStateFiscalMemoryError {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public RetailStoreStateFiscalMemoryError message(@javax.annotation.Nullable String message) {
+
     
     this.message = message;
     return this;
@@ -102,6 +105,7 @@ public class RetailStoreStateFiscalMemoryError {
   @JsonProperty(JSON_PROPERTY_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMessage(@javax.annotation.Nullable String message) {
+
     this.message = message;
   }
 

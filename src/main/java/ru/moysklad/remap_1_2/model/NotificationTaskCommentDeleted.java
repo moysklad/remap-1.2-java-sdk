@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   NotificationTaskCommentDeleted.JSON_PROPERTY_PERFORMED_BY,
   NotificationTaskCommentDeleted.JSON_PROPERTY_TASK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class NotificationTaskCommentDeleted extends NotificationAbstract {
 
   public static final String JSON_PROPERTY_NOTE_CONTENT = "noteContent";
@@ -55,6 +55,7 @@ public class NotificationTaskCommentDeleted extends NotificationAbstract {
   }
 
   public NotificationTaskCommentDeleted noteContent(@javax.annotation.Nullable String noteContent) {
+
     
     this.noteContent = noteContent;
     return this;
@@ -79,11 +80,13 @@ public class NotificationTaskCommentDeleted extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_NOTE_CONTENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNoteContent(@javax.annotation.Nullable String noteContent) {
+
     this.noteContent = noteContent;
   }
 
 
   public NotificationTaskCommentDeleted performedBy(@javax.annotation.Nullable NotificationNamedEntity performedBy) {
+
     
     this.performedBy = performedBy;
     return this;
@@ -108,11 +111,13 @@ public class NotificationTaskCommentDeleted extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_PERFORMED_BY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPerformedBy(@javax.annotation.Nullable NotificationNamedEntity performedBy) {
+
     this.performedBy = performedBy;
   }
 
 
   public NotificationTaskCommentDeleted task(@javax.annotation.Nullable NotificationTask task) {
+
     
     this.task = task;
     return this;
@@ -137,6 +142,7 @@ public class NotificationTaskCommentDeleted extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_TASK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTask(@javax.annotation.Nullable NotificationTask task) {
+
     this.task = task;
   }
 

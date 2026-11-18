@@ -74,7 +74,7 @@ import java.util.StringJoiner;
   Contract.JSON_PROPERTY_RATE,
   Contract.JSON_PROPERTY_ATTRIBUTES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Contract extends EntityWithMeta implements Named, MetaEntity {
   public static Contract createWithMeta(UUID id) {
     Contract o = new Contract();
@@ -217,6 +217,7 @@ public class Contract extends EntityWithMeta implements Named, MetaEntity {
   }
 
   public Contract meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -241,6 +242,7 @@ public class Contract extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -278,6 +280,7 @@ public class Contract extends EntityWithMeta implements Named, MetaEntity {
 
 
   public Contract name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -302,11 +305,13 @@ public class Contract extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public Contract description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -340,11 +345,13 @@ public class Contract extends EntityWithMeta implements Named, MetaEntity {
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 
 
   public Contract code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -369,11 +376,13 @@ public class Contract extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public Contract externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -398,11 +407,13 @@ public class Contract extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public Contract archived(@javax.annotation.Nullable Boolean archived) {
+
     
     this.archived = archived;
     return this;
@@ -427,11 +438,13 @@ public class Contract extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
+
     this.archived = archived;
   }
 
 
   public Contract moment(@javax.annotation.Nullable String moment) {
+
     
     this.moment = moment;
     return this;
@@ -456,11 +469,13 @@ public class Contract extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMoment(@javax.annotation.Nullable String moment) {
+
     this.moment = moment;
   }
 
 
   public Contract sum(@javax.annotation.Nullable Double sum) {
+
     
     this.sum = sum;
     return this;
@@ -485,11 +500,13 @@ public class Contract extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSum(@javax.annotation.Nullable Double sum) {
+
     this.sum = sum;
   }
 
 
   public Contract contractType(@javax.annotation.Nullable String contractType) {
+
     
     this.contractType = contractType;
     return this;
@@ -514,11 +531,13 @@ public class Contract extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_CONTRACT_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setContractType(@javax.annotation.Nullable String contractType) {
+
     this.contractType = contractType;
   }
 
 
   public Contract rewardType(@javax.annotation.Nullable String rewardType) {
+
     
     this.rewardType = rewardType;
     return this;
@@ -543,11 +562,19 @@ public class Contract extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_REWARD_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRewardType(@javax.annotation.Nullable String rewardType) {
+
     this.rewardType = rewardType;
   }
 
 
   public Contract rewardPercent(@javax.annotation.Nullable Double rewardPercent) {
+    if (rewardPercent != null && rewardPercent.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'rewardPercent': must be greater than or equal to 0, got " + rewardPercent);
+    }
+    if (rewardPercent != null && rewardPercent.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'rewardPercent': must be less than or equal to 100, got " + rewardPercent);
+    }
+
     
     this.rewardPercent = rewardPercent;
     return this;
@@ -574,11 +601,19 @@ public class Contract extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_REWARD_PERCENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRewardPercent(@javax.annotation.Nullable Double rewardPercent) {
+    if (rewardPercent != null && rewardPercent.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'rewardPercent': must be greater than or equal to 0, got " + rewardPercent);
+    }
+    if (rewardPercent != null && rewardPercent.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'rewardPercent': must be less than or equal to 100, got " + rewardPercent);
+    }
+
     this.rewardPercent = rewardPercent;
   }
 
 
   public Contract shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -603,6 +638,7 @@ public class Contract extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
@@ -656,6 +692,7 @@ public class Contract extends EntityWithMeta implements Named, MetaEntity {
 
 
   public Contract owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -689,11 +726,13 @@ public class Contract extends EntityWithMeta implements Named, MetaEntity {
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
 
   public Contract group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -718,11 +757,13 @@ public class Contract extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
 
   public Contract ownAgent(@javax.annotation.Nullable Organization ownAgent) {
+
     
     this.ownAgent = ownAgent;
     return this;
@@ -747,11 +788,13 @@ public class Contract extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_OWN_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwnAgent(@javax.annotation.Nullable Organization ownAgent) {
+
     this.ownAgent = ownAgent;
   }
 
 
   public Contract agent(@javax.annotation.Nullable Agent agent) {
+
     
     this.agent = agent;
     return this;
@@ -776,11 +819,13 @@ public class Contract extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAgent(@javax.annotation.Nullable Agent agent) {
+
     this.agent = agent;
   }
 
 
   public Contract state(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
     
     return this;
@@ -814,11 +859,13 @@ public class Contract extends EntityWithMeta implements Named, MetaEntity {
   }
 
   public void setState(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
   }
 
 
   public Contract organizationAccount(@javax.annotation.Nullable Account organizationAccount) {
+
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
     
     return this;
@@ -852,11 +899,13 @@ public class Contract extends EntityWithMeta implements Named, MetaEntity {
   }
 
   public void setOrganizationAccount(@javax.annotation.Nullable Account organizationAccount) {
+
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
   }
 
 
   public Contract agentAccount(@javax.annotation.Nullable Account agentAccount) {
+
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
     
     return this;
@@ -890,11 +939,13 @@ public class Contract extends EntityWithMeta implements Named, MetaEntity {
   }
 
   public void setAgentAccount(@javax.annotation.Nullable Account agentAccount) {
+
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
   }
 
 
   public Contract rate(@javax.annotation.Nullable CurrencyRate rate) {
+
     
     this.rate = rate;
     return this;
@@ -919,11 +970,13 @@ public class Contract extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRate(@javax.annotation.Nullable CurrencyRate rate) {
+
     this.rate = rate;
   }
 
 
   public Contract attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
@@ -956,7 +1009,7 @@ public class Contract extends EntityWithMeta implements Named, MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
@@ -969,6 +1022,7 @@ public class Contract extends EntityWithMeta implements Named, MetaEntity {
   }
 
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 

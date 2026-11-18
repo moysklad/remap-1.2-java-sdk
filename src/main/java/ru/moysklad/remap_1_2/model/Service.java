@@ -79,7 +79,7 @@ import java.util.StringJoiner;
   Service.JSON_PROPERTY_MIN_PRICE,
   Service.JSON_PROPERTY_SYNC_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Service extends ProductMarker implements Named {
   public static Service createWithMeta(UUID id) {
     Service o = new Service();
@@ -240,6 +240,7 @@ public class Service extends ProductMarker implements Named {
   }
 
   public Service meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -264,6 +265,7 @@ public class Service extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -301,6 +303,7 @@ public class Service extends ProductMarker implements Named {
 
 
   public Service archived(@javax.annotation.Nullable Boolean archived) {
+
     
     this.archived = archived;
     return this;
@@ -325,11 +328,13 @@ public class Service extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
+
     this.archived = archived;
   }
 
 
   public Service name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -354,11 +359,13 @@ public class Service extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public Service code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -383,11 +390,13 @@ public class Service extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public Service externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -412,6 +421,7 @@ public class Service extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
@@ -433,6 +443,7 @@ public class Service extends ProductMarker implements Named {
 
 
   public Service description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -466,11 +477,19 @@ public class Service extends ProductMarker implements Named {
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 
 
   public Service vat(@javax.annotation.Nullable Integer vat) {
+    if (vat != null && vat.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be greater than or equal to 0, got " + vat);
+    }
+    if (vat != null && vat.doubleValue() > 99) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be less than or equal to 99, got " + vat);
+    }
+
     
     this.vat = vat;
     return this;
@@ -497,11 +516,19 @@ public class Service extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVat(@javax.annotation.Nullable Integer vat) {
+    if (vat != null && vat.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be greater than or equal to 0, got " + vat);
+    }
+    if (vat != null && vat.doubleValue() > 99) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be less than or equal to 99, got " + vat);
+    }
+
     this.vat = vat;
   }
 
 
   public Service vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     
     this.vatEnabled = vatEnabled;
     return this;
@@ -526,11 +553,13 @@ public class Service extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     this.vatEnabled = vatEnabled;
   }
 
 
   public Service useParentVat(@javax.annotation.Nullable Boolean useParentVat) {
+
     
     this.useParentVat = useParentVat;
     return this;
@@ -555,6 +584,7 @@ public class Service extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_USE_PARENT_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUseParentVat(@javax.annotation.Nullable Boolean useParentVat) {
+
     this.useParentVat = useParentVat;
   }
 
@@ -592,6 +622,7 @@ public class Service extends ProductMarker implements Named {
 
 
   public Service discountProhibited(@javax.annotation.Nullable Boolean discountProhibited) {
+
     
     this.discountProhibited = discountProhibited;
     return this;
@@ -616,11 +647,13 @@ public class Service extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_DISCOUNT_PROHIBITED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDiscountProhibited(@javax.annotation.Nullable Boolean discountProhibited) {
+
     this.discountProhibited = discountProhibited;
   }
 
 
   public Service shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -645,11 +678,13 @@ public class Service extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
 
   public Service group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -674,11 +709,13 @@ public class Service extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
 
   public Service owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -712,6 +749,7 @@ public class Service extends ProductMarker implements Named {
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
@@ -733,6 +771,7 @@ public class Service extends ProductMarker implements Named {
 
 
   public Service buyPrice(@javax.annotation.Nullable Price buyPrice) {
+
     
     this.buyPrice = buyPrice;
     return this;
@@ -757,11 +796,13 @@ public class Service extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_BUY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBuyPrice(@javax.annotation.Nullable Price buyPrice) {
+
     this.buyPrice = buyPrice;
   }
 
 
   public Service salePrices(@javax.annotation.Nullable List<SalePrice> salePrices) {
+
     this.salePrices = JsonNullable.<List<SalePrice>>of(salePrices);
     
     return this;
@@ -794,7 +835,7 @@ public class Service extends ProductMarker implements Named {
   
 
   @JsonProperty(JSON_PROPERTY_SALE_PRICES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<SalePrice>> getSalePrices_JsonNullable() {
@@ -807,11 +848,13 @@ public class Service extends ProductMarker implements Named {
   }
 
   public void setSalePrices(@javax.annotation.Nullable List<SalePrice> salePrices) {
+
     this.salePrices = JsonNullable.<List<SalePrice>>of(salePrices);
   }
 
 
   public Service uom(@javax.annotation.Nullable Uom uom) {
+
     this.uom = JsonNullable.<Uom>of(uom);
     
     return this;
@@ -845,11 +888,13 @@ public class Service extends ProductMarker implements Named {
   }
 
   public void setUom(@javax.annotation.Nullable Uom uom) {
+
     this.uom = JsonNullable.<Uom>of(uom);
   }
 
 
   public Service productFolder(@javax.annotation.Nullable ProductFolder productFolder) {
+
     this.productFolder = JsonNullable.<ProductFolder>of(productFolder);
     
     return this;
@@ -883,11 +928,13 @@ public class Service extends ProductMarker implements Named {
   }
 
   public void setProductFolder(@javax.annotation.Nullable ProductFolder productFolder) {
+
     this.productFolder = JsonNullable.<ProductFolder>of(productFolder);
   }
 
 
   public Service files(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
@@ -921,11 +968,13 @@ public class Service extends ProductMarker implements Named {
   }
 
   public void setFiles(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
   }
 
 
   public Service barcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
+
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
     
     return this;
@@ -958,7 +1007,7 @@ public class Service extends ProductMarker implements Named {
   
 
   @JsonProperty(JSON_PROPERTY_BARCODES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<Barcode>> getBarcodes_JsonNullable() {
@@ -971,11 +1020,13 @@ public class Service extends ProductMarker implements Named {
   }
 
   public void setBarcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
+
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
   }
 
 
   public Service paymentItemType(@javax.annotation.Nullable String paymentItemType) {
+
     
     this.paymentItemType = paymentItemType;
     return this;
@@ -1000,11 +1051,13 @@ public class Service extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_PAYMENT_ITEM_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPaymentItemType(@javax.annotation.Nullable String paymentItemType) {
+
     this.paymentItemType = paymentItemType;
   }
 
 
   public Service taxSystem(@javax.annotation.Nullable String taxSystem) {
+
     
     this.taxSystem = taxSystem;
     return this;
@@ -1029,11 +1082,13 @@ public class Service extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_TAX_SYSTEM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTaxSystem(@javax.annotation.Nullable String taxSystem) {
+
     this.taxSystem = taxSystem;
   }
 
 
   public Service attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
@@ -1066,7 +1121,7 @@ public class Service extends ProductMarker implements Named {
   
 
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
@@ -1079,11 +1134,13 @@ public class Service extends ProductMarker implements Named {
   }
 
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
   public Service minPrice(@javax.annotation.Nullable Price minPrice) {
+
     
     this.minPrice = minPrice;
     return this;
@@ -1108,11 +1165,13 @@ public class Service extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_MIN_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMinPrice(@javax.annotation.Nullable Price minPrice) {
+
     this.minPrice = minPrice;
   }
 
 
   public Service syncId(@javax.annotation.Nullable UUID syncId) {
+
     
     this.syncId = syncId;
     return this;
@@ -1137,6 +1196,7 @@ public class Service extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
+
     this.syncId = syncId;
   }
 

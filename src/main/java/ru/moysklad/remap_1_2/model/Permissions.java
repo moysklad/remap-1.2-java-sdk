@@ -37,7 +37,7 @@ import java.util.StringJoiner;
   Permissions.JSON_PROPERTY_DELETE,
   Permissions.JSON_PROPERTY_APPROVE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Permissions {
 
   public static final String JSON_PROPERTY_VIEW = "view";
@@ -68,6 +68,7 @@ public class Permissions {
   }
 
   public Permissions view(@javax.annotation.Nullable String view) {
+
     
     this.view = view;
     return this;
@@ -92,11 +93,13 @@ public class Permissions {
   @JsonProperty(JSON_PROPERTY_VIEW)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setView(@javax.annotation.Nullable String view) {
+
     this.view = view;
   }
 
 
   public Permissions print(@javax.annotation.Nullable String print) {
+
     
     this.print = print;
     return this;
@@ -121,11 +124,13 @@ public class Permissions {
   @JsonProperty(JSON_PROPERTY_PRINT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrint(@javax.annotation.Nullable String print) {
+
     this.print = print;
   }
 
 
   public Permissions create(@javax.annotation.Nullable String create) {
+
     
     this.create = create;
     return this;
@@ -150,11 +155,13 @@ public class Permissions {
   @JsonProperty(JSON_PROPERTY_CREATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreate(@javax.annotation.Nullable String create) {
+
     this.create = create;
   }
 
 
   public Permissions update(@javax.annotation.Nullable String update) {
+
     
     this.update = update;
     return this;
@@ -179,11 +186,13 @@ public class Permissions {
   @JsonProperty(JSON_PROPERTY_UPDATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUpdate(@javax.annotation.Nullable String update) {
+
     this.update = update;
   }
 
 
   public Permissions delete(@javax.annotation.Nullable String delete) {
+
     
     this.delete = delete;
     return this;
@@ -208,11 +217,13 @@ public class Permissions {
   @JsonProperty(JSON_PROPERTY_DELETE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDelete(@javax.annotation.Nullable String delete) {
+
     this.delete = delete;
   }
 
 
   public Permissions approve(@javax.annotation.Nullable String approve) {
+
     
     this.approve = approve;
     return this;
@@ -237,6 +248,7 @@ public class Permissions {
   @JsonProperty(JSON_PROPERTY_APPROVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setApprove(@javax.annotation.Nullable String approve) {
+
     this.approve = approve;
   }
 

@@ -52,7 +52,7 @@ public class Example {
         CustomEntitiesApi apiInstance = new CustomEntitiesApi(defaultClient);
         CustomEntity customEntity = new CustomEntity(); // CustomEntity | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             CustomEntity result = apiInstance.createCustomEntity(customEntity, accept, acceptEncoding, contentType);
@@ -75,7 +75,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **customEntity** | [**CustomEntity**](CustomEntity.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -89,7 +89,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -137,7 +137,7 @@ public class Example {
         CustomEntityElement customEntityElement = new CustomEntityElement(); // CustomEntityElement | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             CustomEntityElement result = apiInstance.createCustomEntityElement(id, customEntityElement, expand, accept, acceptEncoding, contentType);
@@ -162,7 +162,7 @@ public class Example {
 | **customEntityElement** | [**CustomEntityElement**](CustomEntityElement.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -176,7 +176,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -222,7 +222,7 @@ public class Example {
         CustomEntitiesApi apiInstance = new CustomEntitiesApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             apiInstance.deleteCustomEntity(id, accept, acceptEncoding);
         } catch (ApiException e) {
@@ -243,7 +243,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -256,7 +256,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -303,7 +303,7 @@ public class Example {
         UUID metadataId = UUID.randomUUID(); // UUID | 
         UUID id = UUID.randomUUID(); // UUID | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             apiInstance.deleteCustomEntityElement(metadataId, id, accept, acceptEncoding);
         } catch (ApiException e) {
@@ -325,7 +325,7 @@ public class Example {
 | **metadataId** | **UUID**|  | |
 | **id** | **UUID**|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -338,7 +338,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -385,7 +385,7 @@ public class Example {
         UUID metadataId = UUID.randomUUID(); // UUID | 
         UUID id = UUID.randomUUID(); // UUID | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         try {
             CustomEntityElement result = apiInstance.getCustomEntityElementById(metadataId, id, accept, acceptEncoding, expand);
@@ -409,7 +409,7 @@ public class Example {
 | **metadataId** | **UUID**|  | |
 | **id** | **UUID**|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 
 ### Return type
@@ -423,7 +423,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -470,7 +470,7 @@ public class Example {
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             CustomEntityElementList result = apiInstance.getCustomEntityElements(id, expand, accept, acceptEncoding);
             System.out.println(result);
@@ -493,7 +493,7 @@ public class Example {
 | **id** | **UUID**| ID сущности | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -506,7 +506,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -552,7 +552,7 @@ public class Example {
         CustomEntitiesApi apiInstance = new CustomEntitiesApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         try {
             CustomEntityMetadata result = apiInstance.getCustomEntityMetadata(id, accept, acceptEncoding, expand);
@@ -575,7 +575,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 
 ### Return type
@@ -589,7 +589,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -637,7 +637,7 @@ public class Example {
         CustomEntity customEntity = new CustomEntity(); // CustomEntity | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             CustomEntity result = apiInstance.updateCustomEntity(id, customEntity, expand, accept, acceptEncoding, contentType);
@@ -662,7 +662,7 @@ public class Example {
 | **customEntity** | [**CustomEntity**](CustomEntity.md)|  | |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -676,7 +676,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -724,7 +724,7 @@ public class Example {
         UUID id = UUID.randomUUID(); // UUID | 
         CustomEntityElement customEntityElement = new CustomEntityElement(); // CustomEntityElement | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         String expand = "expand_example"; // String | Замена ссылок объектами с помощью expand
         try {
@@ -750,7 +750,7 @@ public class Example {
 | **id** | **UUID**|  | |
 | **customEntityElement** | [**CustomEntityElement**](CustomEntityElement.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 | **expand** | **String**| Замена ссылок объектами с помощью expand | [optional] |
 
@@ -765,7 +765,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details

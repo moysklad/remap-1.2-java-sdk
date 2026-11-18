@@ -45,7 +45,7 @@ public class Example {
         SalePlatformsApi apiInstance = new SalePlatformsApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             SalePlatform result = apiInstance.getSalePlatformById(id, accept, acceptEncoding);
             System.out.println(result);
@@ -67,7 +67,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -80,7 +80,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -129,7 +129,7 @@ public class Example {
         String search = "search_example"; // String | Контекстный поиск по строковым полям сущностей
         String filter = "filter_example"; // String | Фильтрация выборки
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             SalePlatformList result = apiInstance.getSalePlatforms(limit, offset, search, filter, accept, acceptEncoding);
             System.out.println(result);
@@ -154,7 +154,7 @@ public class Example {
 | **search** | **String**| Контекстный поиск по строковым полям сущностей | [optional] |
 | **filter** | **String**| Фильтрация выборки | [optional] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -167,7 +167,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details

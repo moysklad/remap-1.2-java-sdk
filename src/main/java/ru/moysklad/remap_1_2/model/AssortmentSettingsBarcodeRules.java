@@ -35,7 +35,7 @@ import java.util.StringJoiner;
   AssortmentSettingsBarcodeRules.JSON_PROPERTY_WEIGHT_BARCODE_PREFIX
 })
 @JsonTypeName("AssortmentSettings_barcodeRules")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class AssortmentSettingsBarcodeRules {
 
   public static final String JSON_PROPERTY_FILL_E_A_N13_BARCODE = "fillEAN13Barcode";
@@ -54,6 +54,7 @@ public class AssortmentSettingsBarcodeRules {
   }
 
   public AssortmentSettingsBarcodeRules fillEAN13Barcode(@javax.annotation.Nullable Boolean fillEAN13Barcode) {
+
     
     this.fillEAN13Barcode = fillEAN13Barcode;
     return this;
@@ -78,11 +79,13 @@ public class AssortmentSettingsBarcodeRules {
   @JsonProperty(JSON_PROPERTY_FILL_E_A_N13_BARCODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFillEAN13Barcode(@javax.annotation.Nullable Boolean fillEAN13Barcode) {
+
     this.fillEAN13Barcode = fillEAN13Barcode;
   }
 
 
   public AssortmentSettingsBarcodeRules weightBarcode(@javax.annotation.Nullable Boolean weightBarcode) {
+
     
     this.weightBarcode = weightBarcode;
     return this;
@@ -107,11 +110,13 @@ public class AssortmentSettingsBarcodeRules {
   @JsonProperty(JSON_PROPERTY_WEIGHT_BARCODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setWeightBarcode(@javax.annotation.Nullable Boolean weightBarcode) {
+
     this.weightBarcode = weightBarcode;
   }
 
 
   public AssortmentSettingsBarcodeRules weightBarcodePrefix(@javax.annotation.Nullable Integer weightBarcodePrefix) {
+
     
     this.weightBarcodePrefix = weightBarcodePrefix;
     return this;
@@ -136,6 +141,7 @@ public class AssortmentSettingsBarcodeRules {
   @JsonProperty(JSON_PROPERTY_WEIGHT_BARCODE_PREFIX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setWeightBarcodePrefix(@javax.annotation.Nullable Integer weightBarcodePrefix) {
+
     this.weightBarcodePrefix = weightBarcodePrefix;
   }
 

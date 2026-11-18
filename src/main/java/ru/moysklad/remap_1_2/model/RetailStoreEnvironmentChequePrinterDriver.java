@@ -34,7 +34,7 @@ import java.util.StringJoiner;
   RetailStoreEnvironmentChequePrinterDriver.JSON_PROPERTY_VERSION
 })
 @JsonTypeName("RetailStore_environment_chequePrinter_driver")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStoreEnvironmentChequePrinterDriver {
 
   public static final String JSON_PROPERTY_NAME = "name";
@@ -49,6 +49,7 @@ public class RetailStoreEnvironmentChequePrinterDriver {
   }
 
   public RetailStoreEnvironmentChequePrinterDriver name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -73,11 +74,13 @@ public class RetailStoreEnvironmentChequePrinterDriver {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public RetailStoreEnvironmentChequePrinterDriver version(@javax.annotation.Nullable String version) {
+
     
     this.version = version;
     return this;
@@ -102,6 +105,7 @@ public class RetailStoreEnvironmentChequePrinterDriver {
   @JsonProperty(JSON_PROPERTY_VERSION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVersion(@javax.annotation.Nullable String version) {
+
     this.version = version;
   }
 

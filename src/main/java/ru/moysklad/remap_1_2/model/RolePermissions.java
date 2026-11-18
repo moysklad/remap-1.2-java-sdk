@@ -137,7 +137,7 @@ import java.util.StringJoiner;
   RolePermissions.JSON_PROPERTY_UOM,
   RolePermissions.JSON_PROPERTY_WAREHOUSE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class RolePermissions {
 
   public static final String JSON_PROPERTY_API_REQUEST = "apiRequest";
@@ -556,6 +556,7 @@ public class RolePermissions {
   }
 
   public RolePermissions apiRequest(@javax.annotation.Nullable Boolean apiRequest) {
+
     
     this.apiRequest = apiRequest;
     return this;
@@ -580,11 +581,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_API_REQUEST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setApiRequest(@javax.annotation.Nullable Boolean apiRequest) {
+
     this.apiRequest = apiRequest;
   }
 
 
   public RolePermissions accountDelete(@javax.annotation.Nullable Boolean accountDelete) {
+
     
     this.accountDelete = accountDelete;
     return this;
@@ -609,11 +612,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_ACCOUNT_DELETE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAccountDelete(@javax.annotation.Nullable Boolean accountDelete) {
+
     this.accountDelete = accountDelete;
   }
 
 
   public RolePermissions deleteFromRecycleBin(@javax.annotation.Nullable Boolean deleteFromRecycleBin) {
+
     
     this.deleteFromRecycleBin = deleteFromRecycleBin;
     return this;
@@ -638,11 +643,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_DELETE_FROM_RECYCLE_BIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDeleteFromRecycleBin(@javax.annotation.Nullable Boolean deleteFromRecycleBin) {
+
     this.deleteFromRecycleBin = deleteFromRecycleBin;
   }
 
 
   public RolePermissions editCurrencyRateOfDocument(@javax.annotation.Nullable Boolean editCurrencyRateOfDocument) {
+
     
     this.editCurrencyRateOfDocument = editCurrencyRateOfDocument;
     return this;
@@ -667,11 +674,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_EDIT_CURRENCY_RATE_OF_DOCUMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEditCurrencyRateOfDocument(@javax.annotation.Nullable Boolean editCurrencyRateOfDocument) {
+
     this.editCurrencyRateOfDocument = editCurrencyRateOfDocument;
   }
 
 
   public RolePermissions editDocumentTemplates(@javax.annotation.Nullable Boolean editDocumentTemplates) {
+
     
     this.editDocumentTemplates = editDocumentTemplates;
     return this;
@@ -696,11 +705,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_EDIT_DOCUMENT_TEMPLATES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEditDocumentTemplates(@javax.annotation.Nullable Boolean editDocumentTemplates) {
+
     this.editDocumentTemplates = editDocumentTemplates;
   }
 
 
   public RolePermissions editDocumentsOfRestrictedPeriod(@javax.annotation.Nullable Boolean editDocumentsOfRestrictedPeriod) {
+
     
     this.editDocumentsOfRestrictedPeriod = editDocumentsOfRestrictedPeriod;
     return this;
@@ -725,11 +736,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_EDIT_DOCUMENTS_OF_RESTRICTED_PERIOD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEditDocumentsOfRestrictedPeriod(@javax.annotation.Nullable Boolean editDocumentsOfRestrictedPeriod) {
+
     this.editDocumentsOfRestrictedPeriod = editDocumentsOfRestrictedPeriod;
   }
 
 
   public RolePermissions exportData(@javax.annotation.Nullable Boolean exportData) {
+
     
     this.exportData = exportData;
     return this;
@@ -754,11 +767,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_EXPORT_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExportData(@javax.annotation.Nullable Boolean exportData) {
+
     this.exportData = exportData;
   }
 
 
   public RolePermissions importData(@javax.annotation.Nullable Boolean importData) {
+
     
     this.importData = importData;
     return this;
@@ -783,11 +798,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_IMPORT_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setImportData(@javax.annotation.Nullable Boolean importData) {
+
     this.importData = importData;
   }
 
 
   public RolePermissions listenCalls(@javax.annotation.Nullable Boolean listenCalls) {
+
     
     this.listenCalls = listenCalls;
     return this;
@@ -812,11 +829,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_LISTEN_CALLS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setListenCalls(@javax.annotation.Nullable Boolean listenCalls) {
+
     this.listenCalls = listenCalls;
   }
 
 
   public RolePermissions onlineShops(@javax.annotation.Nullable Boolean onlineShops) {
+
     
     this.onlineShops = onlineShops;
     return this;
@@ -841,11 +860,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_ONLINE_SHOPS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOnlineShops(@javax.annotation.Nullable Boolean onlineShops) {
+
     this.onlineShops = onlineShops;
   }
 
 
   public RolePermissions ownerAssign(@javax.annotation.Nullable Boolean ownerAssign) {
+
     
     this.ownerAssign = ownerAssign;
     return this;
@@ -870,11 +891,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_OWNER_ASSIGN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwnerAssign(@javax.annotation.Nullable Boolean ownerAssign) {
+
     this.ownerAssign = ownerAssign;
   }
 
 
   public RolePermissions ownerDataUpdate(@javax.annotation.Nullable Boolean ownerDataUpdate) {
+
     
     this.ownerDataUpdate = ownerDataUpdate;
     return this;
@@ -899,11 +922,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_OWNER_DATA_UPDATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwnerDataUpdate(@javax.annotation.Nullable Boolean ownerDataUpdate) {
+
     this.ownerDataUpdate = ownerDataUpdate;
   }
 
 
   public RolePermissions purchaseControl(@javax.annotation.Nullable Boolean purchaseControl) {
+
     
     this.purchaseControl = purchaseControl;
     return this;
@@ -928,11 +953,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_PURCHASE_CONTROL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPurchaseControl(@javax.annotation.Nullable Boolean purchaseControl) {
+
     this.purchaseControl = purchaseControl;
   }
 
 
   public RolePermissions restoreFromRecycleBin(@javax.annotation.Nullable Boolean restoreFromRecycleBin) {
+
     
     this.restoreFromRecycleBin = restoreFromRecycleBin;
     return this;
@@ -957,11 +984,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_RESTORE_FROM_RECYCLE_BIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRestoreFromRecycleBin(@javax.annotation.Nullable Boolean restoreFromRecycleBin) {
+
     this.restoreFromRecycleBin = restoreFromRecycleBin;
   }
 
 
   public RolePermissions sendEmail(@javax.annotation.Nullable Boolean sendEmail) {
+
     
     this.sendEmail = sendEmail;
     return this;
@@ -986,11 +1015,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_SEND_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSendEmail(@javax.annotation.Nullable Boolean sendEmail) {
+
     this.sendEmail = sendEmail;
   }
 
 
   public RolePermissions subscriptionControl(@javax.annotation.Nullable Boolean subscriptionControl) {
+
     
     this.subscriptionControl = subscriptionControl;
     return this;
@@ -1015,11 +1046,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_SUBSCRIPTION_CONTROL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSubscriptionControl(@javax.annotation.Nullable Boolean subscriptionControl) {
+
     this.subscriptionControl = subscriptionControl;
   }
 
 
   public RolePermissions viewAudit(@javax.annotation.Nullable Boolean viewAudit) {
+
     
     this.viewAudit = viewAudit;
     return this;
@@ -1044,11 +1077,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_VIEW_AUDIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setViewAudit(@javax.annotation.Nullable Boolean viewAudit) {
+
     this.viewAudit = viewAudit;
   }
 
 
   public RolePermissions viewCashFlow(@javax.annotation.Nullable Boolean viewCashFlow) {
+
     
     this.viewCashFlow = viewCashFlow;
     return this;
@@ -1073,11 +1108,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_VIEW_CASH_FLOW)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setViewCashFlow(@javax.annotation.Nullable Boolean viewCashFlow) {
+
     this.viewCashFlow = viewCashFlow;
   }
 
 
   public RolePermissions viewCommissionGoods(@javax.annotation.Nullable Boolean viewCommissionGoods) {
+
     
     this.viewCommissionGoods = viewCommissionGoods;
     return this;
@@ -1102,11 +1139,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_VIEW_COMMISSION_GOODS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setViewCommissionGoods(@javax.annotation.Nullable Boolean viewCommissionGoods) {
+
     this.viewCommissionGoods = viewCommissionGoods;
   }
 
 
   public RolePermissions viewCompanyCRM(@javax.annotation.Nullable Boolean viewCompanyCRM) {
+
     
     this.viewCompanyCRM = viewCompanyCRM;
     return this;
@@ -1131,11 +1170,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_VIEW_COMPANY_C_R_M)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setViewCompanyCRM(@javax.annotation.Nullable Boolean viewCompanyCRM) {
+
     this.viewCompanyCRM = viewCompanyCRM;
   }
 
 
   public RolePermissions viewCustomerBalanceList(@javax.annotation.Nullable Boolean viewCustomerBalanceList) {
+
     
     this.viewCustomerBalanceList = viewCustomerBalanceList;
     return this;
@@ -1160,11 +1201,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_VIEW_CUSTOMER_BALANCE_LIST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setViewCustomerBalanceList(@javax.annotation.Nullable Boolean viewCustomerBalanceList) {
+
     this.viewCustomerBalanceList = viewCustomerBalanceList;
   }
 
 
   public RolePermissions viewDashboard(@javax.annotation.Nullable Boolean viewDashboard) {
+
     
     this.viewDashboard = viewDashboard;
     return this;
@@ -1189,11 +1232,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_VIEW_DASHBOARD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setViewDashboard(@javax.annotation.Nullable Boolean viewDashboard) {
+
     this.viewDashboard = viewDashboard;
   }
 
 
   public RolePermissions viewMoneyDashboard(@javax.annotation.Nullable Boolean viewMoneyDashboard) {
+
     
     this.viewMoneyDashboard = viewMoneyDashboard;
     return this;
@@ -1218,11 +1263,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_VIEW_MONEY_DASHBOARD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setViewMoneyDashboard(@javax.annotation.Nullable Boolean viewMoneyDashboard) {
+
     this.viewMoneyDashboard = viewMoneyDashboard;
   }
 
 
   public RolePermissions viewProductCostAndProfit(@javax.annotation.Nullable Boolean viewProductCostAndProfit) {
+
     
     this.viewProductCostAndProfit = viewProductCostAndProfit;
     return this;
@@ -1247,11 +1294,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_VIEW_PRODUCT_COST_AND_PROFIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setViewProductCostAndProfit(@javax.annotation.Nullable Boolean viewProductCostAndProfit) {
+
     this.viewProductCostAndProfit = viewProductCostAndProfit;
   }
 
 
   public RolePermissions viewProfitAndLoss(@javax.annotation.Nullable Boolean viewProfitAndLoss) {
+
     
     this.viewProfitAndLoss = viewProfitAndLoss;
     return this;
@@ -1276,11 +1325,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_VIEW_PROFIT_AND_LOSS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setViewProfitAndLoss(@javax.annotation.Nullable Boolean viewProfitAndLoss) {
+
     this.viewProfitAndLoss = viewProfitAndLoss;
   }
 
 
   public RolePermissions viewPurchaseFunnel(@javax.annotation.Nullable Boolean viewPurchaseFunnel) {
+
     
     this.viewPurchaseFunnel = viewPurchaseFunnel;
     return this;
@@ -1305,11 +1356,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_VIEW_PURCHASE_FUNNEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setViewPurchaseFunnel(@javax.annotation.Nullable Boolean viewPurchaseFunnel) {
+
     this.viewPurchaseFunnel = viewPurchaseFunnel;
   }
 
 
   public RolePermissions viewRecycleBin(@javax.annotation.Nullable Boolean viewRecycleBin) {
+
     
     this.viewRecycleBin = viewRecycleBin;
     return this;
@@ -1334,11 +1387,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_VIEW_RECYCLE_BIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setViewRecycleBin(@javax.annotation.Nullable Boolean viewRecycleBin) {
+
     this.viewRecycleBin = viewRecycleBin;
   }
 
 
   public RolePermissions viewSaleProfit(@javax.annotation.Nullable Boolean viewSaleProfit) {
+
     
     this.viewSaleProfit = viewSaleProfit;
     return this;
@@ -1363,11 +1418,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_VIEW_SALE_PROFIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setViewSaleProfit(@javax.annotation.Nullable Boolean viewSaleProfit) {
+
     this.viewSaleProfit = viewSaleProfit;
   }
 
 
   public RolePermissions viewSerialNumbers(@javax.annotation.Nullable Boolean viewSerialNumbers) {
+
     
     this.viewSerialNumbers = viewSerialNumbers;
     return this;
@@ -1392,11 +1449,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_VIEW_SERIAL_NUMBERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setViewSerialNumbers(@javax.annotation.Nullable Boolean viewSerialNumbers) {
+
     this.viewSerialNumbers = viewSerialNumbers;
   }
 
 
   public RolePermissions viewStockReport(@javax.annotation.Nullable Boolean viewStockReport) {
+
     
     this.viewStockReport = viewStockReport;
     return this;
@@ -1421,11 +1480,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_VIEW_STOCK_REPORT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setViewStockReport(@javax.annotation.Nullable Boolean viewStockReport) {
+
     this.viewStockReport = viewStockReport;
   }
 
 
   public RolePermissions viewTurnover(@javax.annotation.Nullable Boolean viewTurnover) {
+
     
     this.viewTurnover = viewTurnover;
     return this;
@@ -1450,11 +1511,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_VIEW_TURNOVER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setViewTurnover(@javax.annotation.Nullable Boolean viewTurnover) {
+
     this.viewTurnover = viewTurnover;
   }
 
 
   public RolePermissions gtINList(@javax.annotation.Nullable Permissions gtINList) {
+
     
     this.gtINList = gtINList;
     return this;
@@ -1479,11 +1542,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_GT_I_N_LIST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGtINList(@javax.annotation.Nullable Permissions gtINList) {
+
     this.gtINList = gtINList;
   }
 
 
   public RolePermissions accountAdjustment(@javax.annotation.Nullable Permissions accountAdjustment) {
+
     
     this.accountAdjustment = accountAdjustment;
     return this;
@@ -1508,11 +1573,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ADJUSTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAccountAdjustment(@javax.annotation.Nullable Permissions accountAdjustment) {
+
     this.accountAdjustment = accountAdjustment;
   }
 
 
   public RolePermissions bonusTransaction(@javax.annotation.Nullable Permissions bonusTransaction) {
+
     
     this.bonusTransaction = bonusTransaction;
     return this;
@@ -1537,11 +1604,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_BONUS_TRANSACTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBonusTransaction(@javax.annotation.Nullable Permissions bonusTransaction) {
+
     this.bonusTransaction = bonusTransaction;
   }
 
 
   public RolePermissions cashIn(@javax.annotation.Nullable Permissions cashIn) {
+
     
     this.cashIn = cashIn;
     return this;
@@ -1566,11 +1635,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_CASH_IN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCashIn(@javax.annotation.Nullable Permissions cashIn) {
+
     this.cashIn = cashIn;
   }
 
 
   public RolePermissions cashOut(@javax.annotation.Nullable Permissions cashOut) {
+
     
     this.cashOut = cashOut;
     return this;
@@ -1595,11 +1666,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_CASH_OUT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCashOut(@javax.annotation.Nullable Permissions cashOut) {
+
     this.cashOut = cashOut;
   }
 
 
   public RolePermissions cashboxAdjustment(@javax.annotation.Nullable Permissions cashboxAdjustment) {
+
     
     this.cashboxAdjustment = cashboxAdjustment;
     return this;
@@ -1624,11 +1697,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_CASHBOX_ADJUSTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCashboxAdjustment(@javax.annotation.Nullable Permissions cashboxAdjustment) {
+
     this.cashboxAdjustment = cashboxAdjustment;
   }
 
 
   public RolePermissions commissionReportIn(@javax.annotation.Nullable Permissions commissionReportIn) {
+
     
     this.commissionReportIn = commissionReportIn;
     return this;
@@ -1653,11 +1728,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_COMMISSION_REPORT_IN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCommissionReportIn(@javax.annotation.Nullable Permissions commissionReportIn) {
+
     this.commissionReportIn = commissionReportIn;
   }
 
 
   public RolePermissions commissionReportOut(@javax.annotation.Nullable Permissions commissionReportOut) {
+
     
     this.commissionReportOut = commissionReportOut;
     return this;
@@ -1682,11 +1759,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_COMMISSION_REPORT_OUT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCommissionReportOut(@javax.annotation.Nullable Permissions commissionReportOut) {
+
     this.commissionReportOut = commissionReportOut;
   }
 
 
   public RolePermissions company(@javax.annotation.Nullable Permissions company) {
+
     
     this.company = company;
     return this;
@@ -1711,11 +1790,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_COMPANY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCompany(@javax.annotation.Nullable Permissions company) {
+
     this.company = company;
   }
 
 
   public RolePermissions contract(@javax.annotation.Nullable Permissions contract) {
+
     
     this.contract = contract;
     return this;
@@ -1740,11 +1821,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_CONTRACT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setContract(@javax.annotation.Nullable Permissions contract) {
+
     this.contract = contract;
   }
 
 
   public RolePermissions counterpartyAdjustment(@javax.annotation.Nullable Permissions counterpartyAdjustment) {
+
     
     this.counterpartyAdjustment = counterpartyAdjustment;
     return this;
@@ -1769,11 +1852,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_COUNTERPARTY_ADJUSTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCounterpartyAdjustment(@javax.annotation.Nullable Permissions counterpartyAdjustment) {
+
     this.counterpartyAdjustment = counterpartyAdjustment;
   }
 
 
   public RolePermissions country(@javax.annotation.Nullable Permissions country) {
+
     
     this.country = country;
     return this;
@@ -1798,11 +1883,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_COUNTRY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCountry(@javax.annotation.Nullable Permissions country) {
+
     this.country = country;
   }
 
 
   public RolePermissions crptCancellation(@javax.annotation.Nullable Permissions crptCancellation) {
+
     
     this.crptCancellation = crptCancellation;
     return this;
@@ -1827,11 +1914,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_CRPT_CANCELLATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCrptCancellation(@javax.annotation.Nullable Permissions crptCancellation) {
+
     this.crptCancellation = crptCancellation;
   }
 
 
   public RolePermissions crptPackageCreation(@javax.annotation.Nullable Permissions crptPackageCreation) {
+
     
     this.crptPackageCreation = crptPackageCreation;
     return this;
@@ -1856,11 +1945,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_CRPT_PACKAGE_CREATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCrptPackageCreation(@javax.annotation.Nullable Permissions crptPackageCreation) {
+
     this.crptPackageCreation = crptPackageCreation;
   }
 
 
   public RolePermissions crptPackageDisaggregation(@javax.annotation.Nullable Permissions crptPackageDisaggregation) {
+
     
     this.crptPackageDisaggregation = crptPackageDisaggregation;
     return this;
@@ -1885,11 +1976,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_CRPT_PACKAGE_DISAGGREGATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCrptPackageDisaggregation(@javax.annotation.Nullable Permissions crptPackageDisaggregation) {
+
     this.crptPackageDisaggregation = crptPackageDisaggregation;
   }
 
 
   public RolePermissions crptPackageItemRemoval(@javax.annotation.Nullable Permissions crptPackageItemRemoval) {
+
     
     this.crptPackageItemRemoval = crptPackageItemRemoval;
     return this;
@@ -1914,11 +2007,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_CRPT_PACKAGE_ITEM_REMOVAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCrptPackageItemRemoval(@javax.annotation.Nullable Permissions crptPackageItemRemoval) {
+
     this.crptPackageItemRemoval = crptPackageItemRemoval;
   }
 
 
   public RolePermissions currency(@javax.annotation.Nullable Permissions currency) {
+
     
     this.currency = currency;
     return this;
@@ -1943,11 +2038,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCurrency(@javax.annotation.Nullable Permissions currency) {
+
     this.currency = currency;
   }
 
 
   public RolePermissions customEntity(@javax.annotation.Nullable Permissions customEntity) {
+
     
     this.customEntity = customEntity;
     return this;
@@ -1972,11 +2069,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_CUSTOM_ENTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCustomEntity(@javax.annotation.Nullable Permissions customEntity) {
+
     this.customEntity = customEntity;
   }
 
 
   public RolePermissions customerOrder(@javax.annotation.Nullable Permissions customerOrder) {
+
     
     this.customerOrder = customerOrder;
     return this;
@@ -2001,11 +2100,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_CUSTOMER_ORDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCustomerOrder(@javax.annotation.Nullable Permissions customerOrder) {
+
     this.customerOrder = customerOrder;
   }
 
 
   public RolePermissions demand(@javax.annotation.Nullable Permissions demand) {
+
     
     this.demand = demand;
     return this;
@@ -2030,11 +2131,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_DEMAND)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDemand(@javax.annotation.Nullable Permissions demand) {
+
     this.demand = demand;
   }
 
 
   public RolePermissions emissionOrder(@javax.annotation.Nullable Permissions emissionOrder) {
+
     
     this.emissionOrder = emissionOrder;
     return this;
@@ -2059,11 +2162,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_EMISSION_ORDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEmissionOrder(@javax.annotation.Nullable Permissions emissionOrder) {
+
     this.emissionOrder = emissionOrder;
   }
 
 
   public RolePermissions utilizationReport(@javax.annotation.Nullable Permissions utilizationReport) {
+
     
     this.utilizationReport = utilizationReport;
     return this;
@@ -2088,11 +2193,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_UTILIZATION_REPORT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUtilizationReport(@javax.annotation.Nullable Permissions utilizationReport) {
+
     this.utilizationReport = utilizationReport;
   }
 
 
   public RolePermissions atkAggregation(@javax.annotation.Nullable Permissions atkAggregation) {
+
     
     this.atkAggregation = atkAggregation;
     return this;
@@ -2117,11 +2224,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_ATK_AGGREGATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAtkAggregation(@javax.annotation.Nullable Permissions atkAggregation) {
+
     this.atkAggregation = atkAggregation;
   }
 
 
   public RolePermissions retireOrderOSU(@javax.annotation.Nullable Permissions retireOrderOSU) {
+
     
     this.retireOrderOSU = retireOrderOSU;
     return this;
@@ -2146,11 +2255,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_RETIRE_ORDER_O_S_U)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRetireOrderOSU(@javax.annotation.Nullable Permissions retireOrderOSU) {
+
     this.retireOrderOSU = retireOrderOSU;
   }
 
 
   public RolePermissions employee(@javax.annotation.Nullable Permissions employee) {
+
     
     this.employee = employee;
     return this;
@@ -2175,11 +2286,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_EMPLOYEE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEmployee(@javax.annotation.Nullable Permissions employee) {
+
     this.employee = employee;
   }
 
 
   public RolePermissions enrollOrder(@javax.annotation.Nullable Permissions enrollOrder) {
+
     
     this.enrollOrder = enrollOrder;
     return this;
@@ -2204,11 +2317,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_ENROLL_ORDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEnrollOrder(@javax.annotation.Nullable Permissions enrollOrder) {
+
     this.enrollOrder = enrollOrder;
   }
 
 
   public RolePermissions enrollReturn(@javax.annotation.Nullable Permissions enrollReturn) {
+
     
     this.enrollReturn = enrollReturn;
     return this;
@@ -2233,11 +2348,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_ENROLL_RETURN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEnrollReturn(@javax.annotation.Nullable Permissions enrollReturn) {
+
     this.enrollReturn = enrollReturn;
   }
 
 
   public RolePermissions enter(@javax.annotation.Nullable Permissions enter) {
+
     
     this.enter = enter;
     return this;
@@ -2262,11 +2379,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_ENTER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEnter(@javax.annotation.Nullable Permissions enter) {
+
     this.enter = enter;
   }
 
 
   public RolePermissions expenseitem(@javax.annotation.Nullable Permissions expenseitem) {
+
     
     this.expenseitem = expenseitem;
     return this;
@@ -2291,11 +2410,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_EXPENSEITEM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExpenseitem(@javax.annotation.Nullable Permissions expenseitem) {
+
     this.expenseitem = expenseitem;
   }
 
 
   public RolePermissions factureIn(@javax.annotation.Nullable Permissions factureIn) {
+
     
     this.factureIn = factureIn;
     return this;
@@ -2320,11 +2441,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_FACTURE_IN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFactureIn(@javax.annotation.Nullable Permissions factureIn) {
+
     this.factureIn = factureIn;
   }
 
 
   public RolePermissions factureOut(@javax.annotation.Nullable Permissions factureOut) {
+
     
     this.factureOut = factureOut;
     return this;
@@ -2349,11 +2472,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_FACTURE_OUT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFactureOut(@javax.annotation.Nullable Permissions factureOut) {
+
     this.factureOut = factureOut;
   }
 
 
   public RolePermissions good(@javax.annotation.Nullable Permissions good) {
+
     
     this.good = good;
     return this;
@@ -2378,11 +2503,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_GOOD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGood(@javax.annotation.Nullable Permissions good) {
+
     this.good = good;
   }
 
 
   public RolePermissions internalOrder(@javax.annotation.Nullable Permissions internalOrder) {
+
     
     this.internalOrder = internalOrder;
     return this;
@@ -2407,11 +2534,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_INTERNAL_ORDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setInternalOrder(@javax.annotation.Nullable Permissions internalOrder) {
+
     this.internalOrder = internalOrder;
   }
 
 
   public RolePermissions inventory(@javax.annotation.Nullable Permissions inventory) {
+
     
     this.inventory = inventory;
     return this;
@@ -2436,11 +2565,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_INVENTORY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setInventory(@javax.annotation.Nullable Permissions inventory) {
+
     this.inventory = inventory;
   }
 
 
   public RolePermissions invoiceIn(@javax.annotation.Nullable Permissions invoiceIn) {
+
     
     this.invoiceIn = invoiceIn;
     return this;
@@ -2465,11 +2596,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_INVOICE_IN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setInvoiceIn(@javax.annotation.Nullable Permissions invoiceIn) {
+
     this.invoiceIn = invoiceIn;
   }
 
 
   public RolePermissions invoiceOut(@javax.annotation.Nullable Permissions invoiceOut) {
+
     
     this.invoiceOut = invoiceOut;
     return this;
@@ -2494,11 +2627,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_INVOICE_OUT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setInvoiceOut(@javax.annotation.Nullable Permissions invoiceOut) {
+
     this.invoiceOut = invoiceOut;
   }
 
 
   public RolePermissions loss(@javax.annotation.Nullable Permissions loss) {
+
     
     this.loss = loss;
     return this;
@@ -2523,11 +2658,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_LOSS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLoss(@javax.annotation.Nullable Permissions loss) {
+
     this.loss = loss;
   }
 
 
   public RolePermissions move(@javax.annotation.Nullable Permissions move) {
+
     
     this.move = move;
     return this;
@@ -2552,11 +2689,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_MOVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMove(@javax.annotation.Nullable Permissions move) {
+
     this.move = move;
   }
 
 
   public RolePermissions myCompany(@javax.annotation.Nullable Permissions myCompany) {
+
     
     this.myCompany = myCompany;
     return this;
@@ -2581,11 +2720,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_MY_COMPANY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMyCompany(@javax.annotation.Nullable Permissions myCompany) {
+
     this.myCompany = myCompany;
   }
 
 
   public RolePermissions paymentIn(@javax.annotation.Nullable Permissions paymentIn) {
+
     
     this.paymentIn = paymentIn;
     return this;
@@ -2610,11 +2751,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_PAYMENT_IN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPaymentIn(@javax.annotation.Nullable Permissions paymentIn) {
+
     this.paymentIn = paymentIn;
   }
 
 
   public RolePermissions paymentOut(@javax.annotation.Nullable Permissions paymentOut) {
+
     
     this.paymentOut = paymentOut;
     return this;
@@ -2639,11 +2782,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_PAYMENT_OUT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPaymentOut(@javax.annotation.Nullable Permissions paymentOut) {
+
     this.paymentOut = paymentOut;
   }
 
 
   public RolePermissions prepayment(@javax.annotation.Nullable Permissions prepayment) {
+
     
     this.prepayment = prepayment;
     return this;
@@ -2668,11 +2813,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_PREPAYMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrepayment(@javax.annotation.Nullable Permissions prepayment) {
+
     this.prepayment = prepayment;
   }
 
 
   public RolePermissions prepaymentReturn(@javax.annotation.Nullable Permissions prepaymentReturn) {
+
     
     this.prepaymentReturn = prepaymentReturn;
     return this;
@@ -2697,11 +2844,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_PREPAYMENT_RETURN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrepaymentReturn(@javax.annotation.Nullable Permissions prepaymentReturn) {
+
     this.prepaymentReturn = prepaymentReturn;
   }
 
 
   public RolePermissions priceList(@javax.annotation.Nullable Permissions priceList) {
+
     
     this.priceList = priceList;
     return this;
@@ -2726,11 +2875,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_PRICE_LIST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPriceList(@javax.annotation.Nullable Permissions priceList) {
+
     this.priceList = priceList;
   }
 
 
   public RolePermissions processing(@javax.annotation.Nullable Permissions processing) {
+
     
     this.processing = processing;
     return this;
@@ -2755,11 +2906,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_PROCESSING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProcessing(@javax.annotation.Nullable Permissions processing) {
+
     this.processing = processing;
   }
 
 
   public RolePermissions processingOrder(@javax.annotation.Nullable Permissions processingOrder) {
+
     
     this.processingOrder = processingOrder;
     return this;
@@ -2784,11 +2937,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_PROCESSING_ORDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProcessingOrder(@javax.annotation.Nullable Permissions processingOrder) {
+
     this.processingOrder = processingOrder;
   }
 
 
   public RolePermissions processingPlan(@javax.annotation.Nullable Permissions processingPlan) {
+
     
     this.processingPlan = processingPlan;
     return this;
@@ -2813,11 +2968,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_PROCESSING_PLAN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProcessingPlan(@javax.annotation.Nullable Permissions processingPlan) {
+
     this.processingPlan = processingPlan;
   }
 
 
   public RolePermissions processingStage(@javax.annotation.Nullable Permissions processingStage) {
+
     
     this.processingStage = processingStage;
     return this;
@@ -2842,11 +2999,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_PROCESSING_STAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProcessingStage(@javax.annotation.Nullable Permissions processingStage) {
+
     this.processingStage = processingStage;
   }
 
 
   public RolePermissions processingProcess(@javax.annotation.Nullable Permissions processingProcess) {
+
     
     this.processingProcess = processingProcess;
     return this;
@@ -2871,11 +3030,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_PROCESSING_PROCESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProcessingProcess(@javax.annotation.Nullable Permissions processingProcess) {
+
     this.processingProcess = processingProcess;
   }
 
 
   public RolePermissions productionTask(@javax.annotation.Nullable Permissions productionTask) {
+
     
     this.productionTask = productionTask;
     return this;
@@ -2900,11 +3061,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_PRODUCTION_TASK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProductionTask(@javax.annotation.Nullable Permissions productionTask) {
+
     this.productionTask = productionTask;
   }
 
 
   public RolePermissions productionStageCompletion(@javax.annotation.Nullable Permissions productionStageCompletion) {
+
     
     this.productionStageCompletion = productionStageCompletion;
     return this;
@@ -2929,11 +3092,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_PRODUCTION_STAGE_COMPLETION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProductionStageCompletion(@javax.annotation.Nullable Permissions productionStageCompletion) {
+
     this.productionStageCompletion = productionStageCompletion;
   }
 
 
   public RolePermissions project(@javax.annotation.Nullable Permissions project) {
+
     
     this.project = project;
     return this;
@@ -2958,11 +3123,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_PROJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProject(@javax.annotation.Nullable Permissions project) {
+
     this.project = project;
   }
 
 
   public RolePermissions purchaseOrder(@javax.annotation.Nullable Permissions purchaseOrder) {
+
     
     this.purchaseOrder = purchaseOrder;
     return this;
@@ -2987,11 +3154,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_PURCHASE_ORDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPurchaseOrder(@javax.annotation.Nullable Permissions purchaseOrder) {
+
     this.purchaseOrder = purchaseOrder;
   }
 
 
   public RolePermissions purchaseReturn(@javax.annotation.Nullable Permissions purchaseReturn) {
+
     
     this.purchaseReturn = purchaseReturn;
     return this;
@@ -3016,11 +3185,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_PURCHASE_RETURN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPurchaseReturn(@javax.annotation.Nullable Permissions purchaseReturn) {
+
     this.purchaseReturn = purchaseReturn;
   }
 
 
   public RolePermissions remainsOrder(@javax.annotation.Nullable Permissions remainsOrder) {
+
     
     this.remainsOrder = remainsOrder;
     return this;
@@ -3045,11 +3216,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_REMAINS_ORDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRemainsOrder(@javax.annotation.Nullable Permissions remainsOrder) {
+
     this.remainsOrder = remainsOrder;
   }
 
 
   public RolePermissions remarkingOrder(@javax.annotation.Nullable Permissions remarkingOrder) {
+
     
     this.remarkingOrder = remarkingOrder;
     return this;
@@ -3074,11 +3247,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_REMARKING_ORDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRemarkingOrder(@javax.annotation.Nullable Permissions remarkingOrder) {
+
     this.remarkingOrder = remarkingOrder;
   }
 
 
   public RolePermissions retailDemand(@javax.annotation.Nullable Permissions retailDemand) {
+
     
     this.retailDemand = retailDemand;
     return this;
@@ -3103,11 +3278,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_RETAIL_DEMAND)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRetailDemand(@javax.annotation.Nullable Permissions retailDemand) {
+
     this.retailDemand = retailDemand;
   }
 
 
   public RolePermissions retailDrawerCashIn(@javax.annotation.Nullable Permissions retailDrawerCashIn) {
+
     
     this.retailDrawerCashIn = retailDrawerCashIn;
     return this;
@@ -3132,11 +3309,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_RETAIL_DRAWER_CASH_IN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRetailDrawerCashIn(@javax.annotation.Nullable Permissions retailDrawerCashIn) {
+
     this.retailDrawerCashIn = retailDrawerCashIn;
   }
 
 
   public RolePermissions retailDrawerCashOut(@javax.annotation.Nullable Permissions retailDrawerCashOut) {
+
     
     this.retailDrawerCashOut = retailDrawerCashOut;
     return this;
@@ -3161,11 +3340,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_RETAIL_DRAWER_CASH_OUT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRetailDrawerCashOut(@javax.annotation.Nullable Permissions retailDrawerCashOut) {
+
     this.retailDrawerCashOut = retailDrawerCashOut;
   }
 
 
   public RolePermissions retailSalesReturn(@javax.annotation.Nullable Permissions retailSalesReturn) {
+
     
     this.retailSalesReturn = retailSalesReturn;
     return this;
@@ -3190,11 +3371,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_RETAIL_SALES_RETURN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRetailSalesReturn(@javax.annotation.Nullable Permissions retailSalesReturn) {
+
     this.retailSalesReturn = retailSalesReturn;
   }
 
 
   public RolePermissions retailShift(@javax.annotation.Nullable Permissions retailShift) {
+
     
     this.retailShift = retailShift;
     return this;
@@ -3219,11 +3402,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_RETAIL_SHIFT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRetailShift(@javax.annotation.Nullable Permissions retailShift) {
+
     this.retailShift = retailShift;
   }
 
 
   public RolePermissions retailStore(@javax.annotation.Nullable Permissions retailStore) {
+
     
     this.retailStore = retailStore;
     return this;
@@ -3248,11 +3433,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_RETAIL_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRetailStore(@javax.annotation.Nullable Permissions retailStore) {
+
     this.retailStore = retailStore;
   }
 
 
   public RolePermissions retireOrder(@javax.annotation.Nullable Permissions retireOrder) {
+
     
     this.retireOrder = retireOrder;
     return this;
@@ -3277,11 +3464,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_RETIRE_ORDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRetireOrder(@javax.annotation.Nullable Permissions retireOrder) {
+
     this.retireOrder = retireOrder;
   }
 
 
   public RolePermissions salesReturn(@javax.annotation.Nullable Permissions salesReturn) {
+
     
     this.salesReturn = salesReturn;
     return this;
@@ -3306,11 +3495,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_SALES_RETURN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSalesReturn(@javax.annotation.Nullable Permissions salesReturn) {
+
     this.salesReturn = salesReturn;
   }
 
 
   public RolePermissions salesChannel(@javax.annotation.Nullable Permissions salesChannel) {
+
     
     this.salesChannel = salesChannel;
     return this;
@@ -3335,11 +3526,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_SALES_CHANNEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSalesChannel(@javax.annotation.Nullable Permissions salesChannel) {
+
     this.salesChannel = salesChannel;
   }
 
 
   public RolePermissions script(@javax.annotation.Nullable ScriptPermissions script) {
+
     
     this.script = script;
     return this;
@@ -3364,11 +3557,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_SCRIPT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setScript(@javax.annotation.Nullable ScriptPermissions script) {
+
     this.script = script;
   }
 
 
   public RolePermissions scriptTemplate(@javax.annotation.Nullable ScriptTemplatePermissions scriptTemplate) {
+
     
     this.scriptTemplate = scriptTemplate;
     return this;
@@ -3393,11 +3588,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_SCRIPT_TEMPLATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setScriptTemplate(@javax.annotation.Nullable ScriptTemplatePermissions scriptTemplate) {
+
     this.scriptTemplate = scriptTemplate;
   }
 
 
   public RolePermissions supply(@javax.annotation.Nullable Permissions supply) {
+
     
     this.supply = supply;
     return this;
@@ -3422,11 +3619,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_SUPPLY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSupply(@javax.annotation.Nullable Permissions supply) {
+
     this.supply = supply;
   }
 
 
   public RolePermissions taxrate(@javax.annotation.Nullable Permissions taxrate) {
+
     
     this.taxrate = taxrate;
     return this;
@@ -3451,11 +3650,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_TAXRATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTaxrate(@javax.annotation.Nullable Permissions taxrate) {
+
     this.taxrate = taxrate;
   }
 
 
   public RolePermissions trackingCodeList(@javax.annotation.Nullable Permissions trackingCodeList) {
+
     
     this.trackingCodeList = trackingCodeList;
     return this;
@@ -3480,11 +3681,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_TRACKING_CODE_LIST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTrackingCodeList(@javax.annotation.Nullable Permissions trackingCodeList) {
+
     this.trackingCodeList = trackingCodeList;
   }
 
 
   public RolePermissions uom(@javax.annotation.Nullable Permissions uom) {
+
     
     this.uom = uom;
     return this;
@@ -3509,11 +3712,13 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_UOM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUom(@javax.annotation.Nullable Permissions uom) {
+
     this.uom = uom;
   }
 
 
   public RolePermissions warehouse(@javax.annotation.Nullable Permissions warehouse) {
+
     
     this.warehouse = warehouse;
     return this;
@@ -3538,6 +3743,7 @@ public class RolePermissions {
   @JsonProperty(JSON_PROPERTY_WAREHOUSE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setWarehouse(@javax.annotation.Nullable Permissions warehouse) {
+
     this.warehouse = warehouse;
   }
 

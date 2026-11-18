@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   ProductAlcoholic.JSON_PROPERTY_VOLUME
 })
 @JsonTypeName("Product_alcoholic")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProductAlcoholic {
 
   public static final String JSON_PROPERTY_EXCISE = "excise";
@@ -63,6 +63,7 @@ public class ProductAlcoholic {
   }
 
   public ProductAlcoholic excise(@javax.annotation.Nullable Boolean excise) {
+
     this.excise = JsonNullable.<Boolean>of(excise);
     
     return this;
@@ -96,11 +97,16 @@ public class ProductAlcoholic {
   }
 
   public void setExcise(@javax.annotation.Nullable Boolean excise) {
+
     this.excise = JsonNullable.<Boolean>of(excise);
   }
 
 
   public ProductAlcoholic type(@javax.annotation.Nullable Integer type) {
+    if (type != null && type.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'type': must be greater than or equal to 0, got " + type);
+    }
+
     this.type = JsonNullable.<Integer>of(type);
     
     return this;
@@ -135,11 +141,19 @@ public class ProductAlcoholic {
   }
 
   public void setType(@javax.annotation.Nullable Integer type) {
+    if (type != null && type.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'type': must be greater than or equal to 0, got " + type);
+    }
+
     this.type = JsonNullable.<Integer>of(type);
   }
 
 
   public ProductAlcoholic strength(@javax.annotation.Nullable Double strength) {
+    if (strength != null && strength.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'strength': must be greater than or equal to 0, got " + strength);
+    }
+
     this.strength = JsonNullable.<Double>of(strength);
     
     return this;
@@ -174,11 +188,19 @@ public class ProductAlcoholic {
   }
 
   public void setStrength(@javax.annotation.Nullable Double strength) {
+    if (strength != null && strength.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'strength': must be greater than or equal to 0, got " + strength);
+    }
+
     this.strength = JsonNullable.<Double>of(strength);
   }
 
 
   public ProductAlcoholic volume(@javax.annotation.Nullable Double volume) {
+    if (volume != null && volume.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'volume': must be greater than or equal to 0, got " + volume);
+    }
+
     this.volume = JsonNullable.<Double>of(volume);
     
     return this;
@@ -213,6 +235,10 @@ public class ProductAlcoholic {
   }
 
   public void setVolume(@javax.annotation.Nullable Double volume) {
+    if (volume != null && volume.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'volume': must be greater than or equal to 0, got " + volume);
+    }
+
     this.volume = JsonNullable.<Double>of(volume);
   }
 

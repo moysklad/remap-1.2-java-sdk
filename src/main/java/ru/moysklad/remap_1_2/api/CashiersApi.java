@@ -34,7 +34,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class CashiersApi extends BaseApi {
 
@@ -88,7 +88,7 @@ public class CashiersApi extends BaseApi {
    * @param id ID сущности (required)
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @return Cashier
    * @throws ApiException if fails to make API call
@@ -121,7 +121,7 @@ public class CashiersApi extends BaseApi {
 
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -206,7 +206,7 @@ if (acceptEncoding != null) {
    * @param expand Замена ссылок объектами с помощью expand (optional)
    * @param order Сортировка (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @return CashierList
    * @throws ApiException if fails to make API call
@@ -219,6 +219,15 @@ if (acceptEncoding != null) {
       throw new ApiException(400, "Missing the required parameter 'retailStoreId' when calling getCashiers");
     }
     
+    if (limit != null && limit.doubleValue() < 1) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getCashiers: must be greater than or equal to 1, got " + limit);
+    }
+    if (limit != null && limit.doubleValue() > 1000) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getCashiers: must be less than or equal to 1000, got " + limit);
+    }
+    if (offset != null && offset.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'offset' when calling getCashiers: must be greater than or equal to 0, got " + offset);
+    }
     // create path and map variables
     String localVarPath = "/entity/retailstore/{retailStoreId}/cashiers"
       .replaceAll("\\{" + "retailStoreId" + "\\}", apiClient.escapeString(apiClient.parameterToString(retailStoreId)));
@@ -238,7 +247,7 @@ if (acceptEncoding != null) {
     localVarQueryParams.addAll(apiClient.parameterToPair("expand", expand));
     localVarQueryParams.addAll(apiClient.parameterToPair("order", order));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));

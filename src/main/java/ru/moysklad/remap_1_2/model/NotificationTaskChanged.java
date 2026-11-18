@@ -37,7 +37,7 @@ import java.util.StringJoiner;
   NotificationTaskChanged.JSON_PROPERTY_PERFORMED_BY,
   NotificationTaskChanged.JSON_PROPERTY_TASK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class NotificationTaskChanged extends NotificationAbstract {
 
   public static final String JSON_PROPERTY_DIFF = "diff";
@@ -56,6 +56,7 @@ public class NotificationTaskChanged extends NotificationAbstract {
   }
 
   public NotificationTaskChanged diff(@javax.annotation.Nullable NotificationTaskDiff diff) {
+
     
     this.diff = diff;
     return this;
@@ -80,11 +81,13 @@ public class NotificationTaskChanged extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_DIFF)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDiff(@javax.annotation.Nullable NotificationTaskDiff diff) {
+
     this.diff = diff;
   }
 
 
   public NotificationTaskChanged performedBy(@javax.annotation.Nullable NotificationNamedEntity performedBy) {
+
     
     this.performedBy = performedBy;
     return this;
@@ -109,11 +112,13 @@ public class NotificationTaskChanged extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_PERFORMED_BY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPerformedBy(@javax.annotation.Nullable NotificationNamedEntity performedBy) {
+
     this.performedBy = performedBy;
   }
 
 
   public NotificationTaskChanged task(@javax.annotation.Nullable NotificationTask task) {
+
     
     this.task = task;
     return this;
@@ -138,6 +143,7 @@ public class NotificationTaskChanged extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_TASK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTask(@javax.annotation.Nullable NotificationTask task) {
+
     this.task = task;
   }
 

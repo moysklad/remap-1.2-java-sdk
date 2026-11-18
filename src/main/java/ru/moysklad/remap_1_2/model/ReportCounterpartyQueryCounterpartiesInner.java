@@ -34,7 +34,7 @@ import java.util.StringJoiner;
   ReportCounterpartyQueryCounterpartiesInner.JSON_PROPERTY_COUNTERPARTY
 })
 @JsonTypeName("ReportCounterpartyQuery_counterparties_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ReportCounterpartyQueryCounterpartiesInner {
 
   public static final String JSON_PROPERTY_COUNTERPARTY = "counterparty";
@@ -45,6 +45,7 @@ public class ReportCounterpartyQueryCounterpartiesInner {
   }
 
   public ReportCounterpartyQueryCounterpartiesInner counterparty(@javax.annotation.Nullable Counterparty counterparty) {
+
     
     this.counterparty = counterparty;
     return this;
@@ -69,6 +70,7 @@ public class ReportCounterpartyQueryCounterpartiesInner {
   @JsonProperty(JSON_PROPERTY_COUNTERPARTY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCounterparty(@javax.annotation.Nullable Counterparty counterparty) {
+
     this.counterparty = counterparty;
   }
 

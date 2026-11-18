@@ -47,7 +47,7 @@ public class Example {
         AssortmentApi apiInstance = new AssortmentApi(defaultClient);
         List<Assortment> assortment = Arrays.asList(); // List<Assortment> | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             List<DeleteRowResult> result = apiInstance.deleteAssortmentPositionsBatch(assortment, accept, acceptEncoding, contentType);
@@ -70,7 +70,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **assortment** | [**List&lt;Assortment&gt;**](Assortment.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -84,13 +84,15 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Результат по каждому элементу (успех или объект ошибки) |  -  |
+| **404** | Ошибка массовой операции: объект errors или массив результатов по каждому элементу  |  -  |
+| **412** | Ошибка массовой операции: объект errors или массив результатов по каждому элементу  |  -  |
 | **0** | Ошибка запроса (тело — объект с полем errors) |  -  |
 
 
@@ -138,7 +140,7 @@ public class Example {
         String stockMode = "all"; // String | Фильтрация по значению остатка
         String quantityMode = "all"; // String | Фильтрация по значению доступно
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             AssortmentList result = apiInstance.getAssortment(limit, offset, search, filter, expand, order, groupBy, stockMode, quantityMode, accept, acceptEncoding);
             System.out.println(result);
@@ -168,7 +170,7 @@ public class Example {
 | **stockMode** | **String**| Фильтрация по значению остатка | [optional] [enum: all, positiveOnly, negativeOnly, empty, nonEmpty, underMinimum] |
 | **quantityMode** | **String**| Фильтрация по значению доступно | [optional] [enum: all, positiveOnly, negativeOnly, empty, nonEmpty, underMinimum] |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -181,7 +183,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -226,7 +228,7 @@ public class Example {
 
         AssortmentApi apiInstance = new AssortmentApi(defaultClient);
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             AssortmentSettings result = apiInstance.getAssortmentSettings(accept, acceptEncoding);
             System.out.println(result);
@@ -247,7 +249,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -260,7 +262,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -306,7 +308,7 @@ public class Example {
         AssortmentApi apiInstance = new AssortmentApi(defaultClient);
         AssortmentSettings assortmentSettings = new AssortmentSettings(); // AssortmentSettings | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         String contentType = "application/json"; // String | 
         try {
             AssortmentSettings result = apiInstance.updateAssortmentSettings(assortmentSettings, accept, acceptEncoding, contentType);
@@ -329,7 +331,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **assortmentSettings** | [**AssortmentSettings**](AssortmentSettings.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 | **contentType** | **String**|  | [optional] [default to application/json] [enum: application/json] |
 
 ### Return type
@@ -343,7 +345,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details

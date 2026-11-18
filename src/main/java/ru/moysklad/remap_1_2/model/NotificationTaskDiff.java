@@ -37,7 +37,7 @@ import java.util.StringJoiner;
   NotificationTaskDiff.JSON_PROPERTY_DOCUMENT_LINK,
   NotificationTaskDiff.JSON_PROPERTY_ASSIGNEE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class NotificationTaskDiff {
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
@@ -64,6 +64,7 @@ public class NotificationTaskDiff {
   }
 
   public NotificationTaskDiff description(@javax.annotation.Nullable NotificationDiffValue description) {
+
     
     this.description = description;
     return this;
@@ -88,11 +89,13 @@ public class NotificationTaskDiff {
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDescription(@javax.annotation.Nullable NotificationDiffValue description) {
+
     this.description = description;
   }
 
 
   public NotificationTaskDiff deadline(@javax.annotation.Nullable NotificationDiffValue deadline) {
+
     
     this.deadline = deadline;
     return this;
@@ -117,11 +120,13 @@ public class NotificationTaskDiff {
   @JsonProperty(JSON_PROPERTY_DEADLINE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDeadline(@javax.annotation.Nullable NotificationDiffValue deadline) {
+
     this.deadline = deadline;
   }
 
 
   public NotificationTaskDiff agentLink(@javax.annotation.Nullable NotificationDiffValue agentLink) {
+
     
     this.agentLink = agentLink;
     return this;
@@ -146,11 +151,13 @@ public class NotificationTaskDiff {
   @JsonProperty(JSON_PROPERTY_AGENT_LINK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAgentLink(@javax.annotation.Nullable NotificationDiffValue agentLink) {
+
     this.agentLink = agentLink;
   }
 
 
   public NotificationTaskDiff documentLink(@javax.annotation.Nullable NotificationDiffValue documentLink) {
+
     
     this.documentLink = documentLink;
     return this;
@@ -175,11 +182,13 @@ public class NotificationTaskDiff {
   @JsonProperty(JSON_PROPERTY_DOCUMENT_LINK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDocumentLink(@javax.annotation.Nullable NotificationDiffValue documentLink) {
+
     this.documentLink = documentLink;
   }
 
 
   public NotificationTaskDiff assignee(@javax.annotation.Nullable NotificationDiffValue assignee) {
+
     
     this.assignee = assignee;
     return this;
@@ -204,6 +213,7 @@ public class NotificationTaskDiff {
   @JsonProperty(JSON_PROPERTY_ASSIGNEE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssignee(@javax.annotation.Nullable NotificationDiffValue assignee) {
+
     this.assignee = assignee;
   }
 

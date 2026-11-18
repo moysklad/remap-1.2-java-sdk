@@ -69,7 +69,7 @@ import java.util.StringJoiner;
   ProcessingPlan.JSON_PROPERTY_PRODUCTS,
   ProcessingPlan.JSON_PROPERTY_ATTRIBUTES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingPlan extends EntityWithMeta implements MetaEntity {
   public static ProcessingPlan createWithMeta(UUID id) {
     ProcessingPlan o = new ProcessingPlan();
@@ -192,6 +192,7 @@ public class ProcessingPlan extends EntityWithMeta implements MetaEntity {
   }
 
   public ProcessingPlan meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -216,6 +217,7 @@ public class ProcessingPlan extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -253,6 +255,7 @@ public class ProcessingPlan extends EntityWithMeta implements MetaEntity {
 
 
   public ProcessingPlan archived(@javax.annotation.Nullable Boolean archived) {
+
     
     this.archived = archived;
     return this;
@@ -277,11 +280,13 @@ public class ProcessingPlan extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
+
     this.archived = archived;
   }
 
 
   public ProcessingPlan code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -306,11 +311,13 @@ public class ProcessingPlan extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public ProcessingPlan description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -344,11 +351,13 @@ public class ProcessingPlan extends EntityWithMeta implements MetaEntity {
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 
 
   public ProcessingPlan cost(@javax.annotation.Nullable Double cost) {
+
     
     this.cost = cost;
     return this;
@@ -373,6 +382,7 @@ public class ProcessingPlan extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_COST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCost(@javax.annotation.Nullable Double cost) {
+
     this.cost = cost;
   }
 
@@ -394,6 +404,7 @@ public class ProcessingPlan extends EntityWithMeta implements MetaEntity {
 
 
   public ProcessingPlan externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -418,11 +429,13 @@ public class ProcessingPlan extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public ProcessingPlan group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -447,11 +460,13 @@ public class ProcessingPlan extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
 
   public ProcessingPlan name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -476,11 +491,13 @@ public class ProcessingPlan extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public ProcessingPlan owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -514,11 +531,13 @@ public class ProcessingPlan extends EntityWithMeta implements MetaEntity {
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
 
   public ProcessingPlan parent(@javax.annotation.Nullable ProcessingPlanFolder parent) {
+
     
     this.parent = parent;
     return this;
@@ -543,6 +562,7 @@ public class ProcessingPlan extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_PARENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setParent(@javax.annotation.Nullable ProcessingPlanFolder parent) {
+
     this.parent = parent;
   }
 
@@ -564,6 +584,7 @@ public class ProcessingPlan extends EntityWithMeta implements MetaEntity {
 
 
   public ProcessingPlan processingProcess(@javax.annotation.Nullable ProcessingProcess processingProcess) {
+
     
     this.processingProcess = processingProcess;
     return this;
@@ -588,11 +609,13 @@ public class ProcessingPlan extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_PROCESSING_PROCESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProcessingProcess(@javax.annotation.Nullable ProcessingProcess processingProcess) {
+
     this.processingProcess = processingProcess;
   }
 
 
   public ProcessingPlan shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -617,6 +640,7 @@ public class ProcessingPlan extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
@@ -638,6 +662,7 @@ public class ProcessingPlan extends EntityWithMeta implements MetaEntity {
 
 
   public ProcessingPlan stages(@javax.annotation.Nullable ProcessingPlanStageList stages) {
+
     
     this.stages = stages;
     return this;
@@ -662,11 +687,13 @@ public class ProcessingPlan extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_STAGES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStages(@javax.annotation.Nullable ProcessingPlanStageList stages) {
+
     this.stages = stages;
   }
 
 
   public ProcessingPlan materials(@javax.annotation.Nullable ProcessingPlanMaterialList materials) {
+
     
     this.materials = materials;
     return this;
@@ -691,11 +718,13 @@ public class ProcessingPlan extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_MATERIALS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMaterials(@javax.annotation.Nullable ProcessingPlanMaterialList materials) {
+
     this.materials = materials;
   }
 
 
   public ProcessingPlan products(@javax.annotation.Nullable ProcessingPlanProductList products) {
+
     
     this.products = products;
     return this;
@@ -720,11 +749,13 @@ public class ProcessingPlan extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_PRODUCTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProducts(@javax.annotation.Nullable ProcessingPlanProductList products) {
+
     this.products = products;
   }
 
 
   public ProcessingPlan attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
@@ -757,7 +788,7 @@ public class ProcessingPlan extends EntityWithMeta implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
@@ -770,6 +801,7 @@ public class ProcessingPlan extends EntityWithMeta implements MetaEntity {
   }
 
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 

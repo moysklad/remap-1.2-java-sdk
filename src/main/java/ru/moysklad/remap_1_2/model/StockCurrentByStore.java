@@ -43,7 +43,7 @@ import java.util.StringJoiner;
   StockCurrentByStore.JSON_PROPERTY_RESERVE,
   StockCurrentByStore.JSON_PROPERTY_IN_TRANSIT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class StockCurrentByStore {
 
   public static final String JSON_PROPERTY_ASSORTMENT_ID = "assortmentId";
@@ -78,6 +78,7 @@ public class StockCurrentByStore {
   }
 
   public StockCurrentByStore assortmentId(@javax.annotation.Nullable UUID assortmentId) {
+
     
     this.assortmentId = assortmentId;
     return this;
@@ -102,11 +103,13 @@ public class StockCurrentByStore {
   @JsonProperty(JSON_PROPERTY_ASSORTMENT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssortmentId(@javax.annotation.Nullable UUID assortmentId) {
+
     this.assortmentId = assortmentId;
   }
 
 
   public StockCurrentByStore storeId(@javax.annotation.Nullable UUID storeId) {
+
     this.storeId = JsonNullable.<UUID>of(storeId);
     
     return this;
@@ -140,11 +143,13 @@ public class StockCurrentByStore {
   }
 
   public void setStoreId(@javax.annotation.Nullable UUID storeId) {
+
     this.storeId = JsonNullable.<UUID>of(storeId);
   }
 
 
   public StockCurrentByStore stock(@javax.annotation.Nullable Double stock) {
+
     this.stock = JsonNullable.<Double>of(stock);
     
     return this;
@@ -178,11 +183,13 @@ public class StockCurrentByStore {
   }
 
   public void setStock(@javax.annotation.Nullable Double stock) {
+
     this.stock = JsonNullable.<Double>of(stock);
   }
 
 
   public StockCurrentByStore freeStock(@javax.annotation.Nullable Double freeStock) {
+
     this.freeStock = JsonNullable.<Double>of(freeStock);
     
     return this;
@@ -216,11 +223,13 @@ public class StockCurrentByStore {
   }
 
   public void setFreeStock(@javax.annotation.Nullable Double freeStock) {
+
     this.freeStock = JsonNullable.<Double>of(freeStock);
   }
 
 
   public StockCurrentByStore quantity(@javax.annotation.Nullable Double quantity) {
+
     this.quantity = JsonNullable.<Double>of(quantity);
     
     return this;
@@ -254,11 +263,13 @@ public class StockCurrentByStore {
   }
 
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
+
     this.quantity = JsonNullable.<Double>of(quantity);
   }
 
 
   public StockCurrentByStore reserve(@javax.annotation.Nullable Double reserve) {
+
     this.reserve = JsonNullable.<Double>of(reserve);
     
     return this;
@@ -292,11 +303,13 @@ public class StockCurrentByStore {
   }
 
   public void setReserve(@javax.annotation.Nullable Double reserve) {
+
     this.reserve = JsonNullable.<Double>of(reserve);
   }
 
 
   public StockCurrentByStore inTransit(@javax.annotation.Nullable Double inTransit) {
+
     this.inTransit = JsonNullable.<Double>of(inTransit);
     
     return this;
@@ -330,6 +343,7 @@ public class StockCurrentByStore {
   }
 
   public void setInTransit(@javax.annotation.Nullable Double inTransit) {
+
     this.inTransit = JsonNullable.<Double>of(inTransit);
   }
 

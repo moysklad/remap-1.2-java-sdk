@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   CustomRoleList.JSON_PROPERTY_META,
   CustomRoleList.JSON_PROPERTY_ROWS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class CustomRoleList implements EntityList {
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
@@ -53,12 +53,13 @@ public class CustomRoleList implements EntityList {
 
   public static final String JSON_PROPERTY_ROWS = "rows";
   @javax.annotation.Nullable
-  private List<CustomRole> rows = new ArrayList<>();
+  private List<CustomRole> rows;
 
   public CustomRoleList() {
   }
 
   public CustomRoleList context(@javax.annotation.Nullable Context context) {
+
     
     this.context = context;
     return this;
@@ -83,11 +84,13 @@ public class CustomRoleList implements EntityList {
   @JsonProperty(JSON_PROPERTY_CONTEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setContext(@javax.annotation.Nullable Context context) {
+
     this.context = context;
   }
 
 
   public CustomRoleList meta(@javax.annotation.Nullable MetaList meta) {
+
     
     this.meta = meta;
     return this;
@@ -112,11 +115,13 @@ public class CustomRoleList implements EntityList {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable MetaList meta) {
+
     this.meta = meta;
   }
 
 
   public CustomRoleList rows(@javax.annotation.Nullable List<CustomRole> rows) {
+
     
     this.rows = rows;
     return this;
@@ -137,7 +142,7 @@ public class CustomRoleList implements EntityList {
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ROWS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<CustomRole> getRows() {
     return rows;
@@ -147,8 +152,9 @@ public class CustomRoleList implements EntityList {
 
 
   @JsonProperty(JSON_PROPERTY_ROWS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setRows(@javax.annotation.Nullable List<CustomRole> rows) {
+
     this.rows = rows;
   }
 

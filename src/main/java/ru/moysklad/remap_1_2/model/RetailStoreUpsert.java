@@ -128,7 +128,7 @@ import java.util.StringJoiner;
   RetailStoreUpsert.JSON_PROPERTY_CASHIERS,
   RetailStoreUpsert.JSON_PROPERTY_QR_ACQUIRE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   public static RetailStoreUpsert createWithMeta(UUID id) {
     RetailStoreUpsert o = new RetailStoreUpsert();
@@ -463,6 +463,7 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   }
 
   public RetailStoreUpsert id(@javax.annotation.Nullable UUID id) {
+
     
     this.id = id;
     return this;
@@ -487,6 +488,7 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(@javax.annotation.Nullable UUID id) {
+
     this.id = id;
   }
 
@@ -508,6 +510,7 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
 
 
   public RetailStoreUpsert name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -532,11 +535,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public RetailStoreUpsert description(@javax.annotation.Nullable String description) {
+
     
     this.description = description;
     return this;
@@ -561,11 +566,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = description;
   }
 
 
   public RetailStoreUpsert active(@javax.annotation.Nullable Boolean active) {
+
     
     this.active = active;
     return this;
@@ -590,11 +597,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ACTIVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setActive(@javax.annotation.Nullable Boolean active) {
+
     this.active = active;
   }
 
 
   public RetailStoreUpsert archived(@javax.annotation.Nullable Boolean archived) {
+
     
     this.archived = archived;
     return this;
@@ -619,11 +628,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
+
     this.archived = archived;
   }
 
 
   public RetailStoreUpsert shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -648,11 +659,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
 
   public RetailStoreUpsert address(@javax.annotation.Nullable String address) {
+
     
     this.address = address;
     return this;
@@ -677,11 +690,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAddress(@javax.annotation.Nullable String address) {
+
     this.address = address;
   }
 
 
   public RetailStoreUpsert addressFull(@javax.annotation.Nullable Address addressFull) {
+
     
     this.addressFull = addressFull;
     return this;
@@ -706,6 +721,7 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ADDRESS_FULL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAddressFull(@javax.annotation.Nullable Address addressFull) {
+
     this.addressFull = addressFull;
   }
 
@@ -743,6 +759,7 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
 
 
   public RetailStoreUpsert meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -767,11 +784,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public RetailStoreUpsert organization(@javax.annotation.Nullable Organization organization) {
+
     
     this.organization = organization;
     return this;
@@ -796,11 +815,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOrganization(@javax.annotation.Nullable Organization organization) {
+
     this.organization = organization;
   }
 
 
   public RetailStoreUpsert store(@javax.annotation.Nullable Store store) {
+
     
     this.store = store;
     return this;
@@ -825,11 +846,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStore(@javax.annotation.Nullable Store store) {
+
     this.store = store;
   }
 
 
   public RetailStoreUpsert group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -854,11 +877,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
 
   public RetailStoreUpsert owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -892,11 +917,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
 
   public RetailStoreUpsert priceType(@javax.annotation.Nullable PriceType priceType) {
+
     
     this.priceType = priceType;
     return this;
@@ -921,11 +948,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_PRICE_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPriceType(@javax.annotation.Nullable PriceType priceType) {
+
     this.priceType = priceType;
   }
 
 
   public RetailStoreUpsert environment(@javax.annotation.Nullable RetailStoreEnvironment environment) {
+
     
     this.environment = environment;
     return this;
@@ -950,11 +979,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ENVIRONMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEnvironment(@javax.annotation.Nullable RetailStoreEnvironment environment) {
+
     this.environment = environment;
   }
 
 
   public RetailStoreUpsert state(@javax.annotation.Nullable RetailStoreState state) {
+
     
     this.state = state;
     return this;
@@ -979,11 +1010,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_STATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setState(@javax.annotation.Nullable RetailStoreState state) {
+
     this.state = state;
   }
 
 
   public RetailStoreUpsert fiscalType(@javax.annotation.Nullable String fiscalType) {
+
     
     this.fiscalType = fiscalType;
     return this;
@@ -1008,11 +1041,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_FISCAL_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFiscalType(@javax.annotation.Nullable String fiscalType) {
+
     this.fiscalType = fiscalType;
   }
 
 
   public RetailStoreUpsert defaultTaxSystem(@javax.annotation.Nullable String defaultTaxSystem) {
+
     
     this.defaultTaxSystem = defaultTaxSystem;
     return this;
@@ -1037,11 +1072,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_DEFAULT_TAX_SYSTEM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDefaultTaxSystem(@javax.annotation.Nullable String defaultTaxSystem) {
+
     this.defaultTaxSystem = defaultTaxSystem;
   }
 
 
   public RetailStoreUpsert orderTaxSystem(@javax.annotation.Nullable String orderTaxSystem) {
+
     
     this.orderTaxSystem = orderTaxSystem;
     return this;
@@ -1066,11 +1103,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ORDER_TAX_SYSTEM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOrderTaxSystem(@javax.annotation.Nullable String orderTaxSystem) {
+
     this.orderTaxSystem = orderTaxSystem;
   }
 
 
   public RetailStoreUpsert minionToMasterType(@javax.annotation.Nullable String minionToMasterType) {
+
     
     this.minionToMasterType = minionToMasterType;
     return this;
@@ -1095,11 +1134,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_MINION_TO_MASTER_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMinionToMasterType(@javax.annotation.Nullable String minionToMasterType) {
+
     this.minionToMasterType = minionToMasterType;
   }
 
 
   public RetailStoreUpsert tobaccoMrcControlType(@javax.annotation.Nullable String tobaccoMrcControlType) {
+
     
     this.tobaccoMrcControlType = tobaccoMrcControlType;
     return this;
@@ -1124,11 +1165,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_TOBACCO_MRC_CONTROL_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTobaccoMrcControlType(@javax.annotation.Nullable String tobaccoMrcControlType) {
+
     this.tobaccoMrcControlType = tobaccoMrcControlType;
   }
 
 
   public RetailStoreUpsert markingSellingMode(@javax.annotation.Nullable String markingSellingMode) {
+
     
     this.markingSellingMode = markingSellingMode;
     return this;
@@ -1153,11 +1196,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_MARKING_SELLING_MODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMarkingSellingMode(@javax.annotation.Nullable String markingSellingMode) {
+
     this.markingSellingMode = markingSellingMode;
   }
 
 
   public RetailStoreUpsert marksCheckMode(@javax.annotation.Nullable String marksCheckMode) {
+
     
     this.marksCheckMode = marksCheckMode;
     return this;
@@ -1182,11 +1227,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_MARKS_CHECK_MODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMarksCheckMode(@javax.annotation.Nullable String marksCheckMode) {
+
     this.marksCheckMode = marksCheckMode;
   }
 
 
   public RetailStoreUpsert priorityOfdSend(@javax.annotation.Nullable String priorityOfdSend) {
+
     
     this.priorityOfdSend = priorityOfdSend;
     return this;
@@ -1211,11 +1258,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_PRIORITY_OFD_SEND)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPriorityOfdSend(@javax.annotation.Nullable String priorityOfdSend) {
+
     this.priorityOfdSend = priorityOfdSend;
   }
 
 
   public RetailStoreUpsert allowCreateProducts(@javax.annotation.Nullable Boolean allowCreateProducts) {
+
     
     this.allowCreateProducts = allowCreateProducts;
     return this;
@@ -1240,11 +1289,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ALLOW_CREATE_PRODUCTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAllowCreateProducts(@javax.annotation.Nullable Boolean allowCreateProducts) {
+
     this.allowCreateProducts = allowCreateProducts;
   }
 
 
   public RetailStoreUpsert allowCustomPrice(@javax.annotation.Nullable Boolean allowCustomPrice) {
+
     
     this.allowCustomPrice = allowCustomPrice;
     return this;
@@ -1269,11 +1320,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ALLOW_CUSTOM_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAllowCustomPrice(@javax.annotation.Nullable Boolean allowCustomPrice) {
+
     this.allowCustomPrice = allowCustomPrice;
   }
 
 
   public RetailStoreUpsert allowDeleteReceiptPositions(@javax.annotation.Nullable Boolean allowDeleteReceiptPositions) {
+
     
     this.allowDeleteReceiptPositions = allowDeleteReceiptPositions;
     return this;
@@ -1298,11 +1351,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ALLOW_DELETE_RECEIPT_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAllowDeleteReceiptPositions(@javax.annotation.Nullable Boolean allowDeleteReceiptPositions) {
+
     this.allowDeleteReceiptPositions = allowDeleteReceiptPositions;
   }
 
 
   public RetailStoreUpsert allowSellTobaccoWithoutMRC(@javax.annotation.Nullable Boolean allowSellTobaccoWithoutMRC) {
+
     
     this.allowSellTobaccoWithoutMRC = allowSellTobaccoWithoutMRC;
     return this;
@@ -1327,6 +1382,7 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ALLOW_SELL_TOBACCO_WITHOUT_M_R_C)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAllowSellTobaccoWithoutMRC(@javax.annotation.Nullable Boolean allowSellTobaccoWithoutMRC) {
+
     this.allowSellTobaccoWithoutMRC = allowSellTobaccoWithoutMRC;
   }
 
@@ -1348,6 +1404,7 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
 
 
   public RetailStoreUpsert controlCashierChoice(@javax.annotation.Nullable Boolean controlCashierChoice) {
+
     
     this.controlCashierChoice = controlCashierChoice;
     return this;
@@ -1372,11 +1429,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_CONTROL_CASHIER_CHOICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setControlCashierChoice(@javax.annotation.Nullable Boolean controlCashierChoice) {
+
     this.controlCashierChoice = controlCashierChoice;
   }
 
 
   public RetailStoreUpsert controlShippingStock(@javax.annotation.Nullable Boolean controlShippingStock) {
+
     
     this.controlShippingStock = controlShippingStock;
     return this;
@@ -1401,11 +1460,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_CONTROL_SHIPPING_STOCK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setControlShippingStock(@javax.annotation.Nullable Boolean controlShippingStock) {
+
     this.controlShippingStock = controlShippingStock;
   }
 
 
   public RetailStoreUpsert createCashInOnRetailShiftClosing(@javax.annotation.Nullable Boolean createCashInOnRetailShiftClosing) {
+
     
     this.createCashInOnRetailShiftClosing = createCashInOnRetailShiftClosing;
     return this;
@@ -1430,11 +1491,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_CREATE_CASH_IN_ON_RETAIL_SHIFT_CLOSING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreateCashInOnRetailShiftClosing(@javax.annotation.Nullable Boolean createCashInOnRetailShiftClosing) {
+
     this.createCashInOnRetailShiftClosing = createCashInOnRetailShiftClosing;
   }
 
 
   public RetailStoreUpsert createPaymentInOnRetailShiftClosing(@javax.annotation.Nullable Boolean createPaymentInOnRetailShiftClosing) {
+
     
     this.createPaymentInOnRetailShiftClosing = createPaymentInOnRetailShiftClosing;
     return this;
@@ -1459,11 +1522,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_CREATE_PAYMENT_IN_ON_RETAIL_SHIFT_CLOSING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreatePaymentInOnRetailShiftClosing(@javax.annotation.Nullable Boolean createPaymentInOnRetailShiftClosing) {
+
     this.createPaymentInOnRetailShiftClosing = createPaymentInOnRetailShiftClosing;
   }
 
 
   public RetailStoreUpsert createAgentsTags(@javax.annotation.Nullable List<String> createAgentsTags) {
+
     this.createAgentsTags = JsonNullable.<List<String>>of(createAgentsTags);
     
     return this;
@@ -1496,7 +1561,7 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_CREATE_AGENTS_TAGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<String>> getCreateAgentsTags_JsonNullable() {
@@ -1509,11 +1574,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   }
 
   public void setCreateAgentsTags(@javax.annotation.Nullable List<String> createAgentsTags) {
+
     this.createAgentsTags = JsonNullable.<List<String>>of(createAgentsTags);
   }
 
 
   public RetailStoreUpsert filterAgentsTags(@javax.annotation.Nullable List<String> filterAgentsTags) {
+
     this.filterAgentsTags = JsonNullable.<List<String>>of(filterAgentsTags);
     
     return this;
@@ -1546,7 +1613,7 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_FILTER_AGENTS_TAGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<String>> getFilterAgentsTags_JsonNullable() {
@@ -1559,11 +1626,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   }
 
   public void setFilterAgentsTags(@javax.annotation.Nullable List<String> filterAgentsTags) {
+
     this.filterAgentsTags = JsonNullable.<List<String>>of(filterAgentsTags);
   }
 
 
   public RetailStoreUpsert createOrderWithState(@javax.annotation.Nullable State createOrderWithState) {
+
     this.createOrderWithState = JsonNullable.<State>of(createOrderWithState);
     
     return this;
@@ -1597,11 +1666,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   }
 
   public void setCreateOrderWithState(@javax.annotation.Nullable State createOrderWithState) {
+
     this.createOrderWithState = JsonNullable.<State>of(createOrderWithState);
   }
 
 
   public RetailStoreUpsert customerOrderStates(@javax.annotation.Nullable List<State> customerOrderStates) {
+
     this.customerOrderStates = JsonNullable.<List<State>>of(customerOrderStates);
     
     return this;
@@ -1634,7 +1705,7 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_CUSTOMER_ORDER_STATES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<State>> getCustomerOrderStates_JsonNullable() {
@@ -1647,11 +1718,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   }
 
   public void setCustomerOrderStates(@javax.annotation.Nullable List<State> customerOrderStates) {
+
     this.customerOrderStates = JsonNullable.<List<State>>of(customerOrderStates);
   }
 
 
   public RetailStoreUpsert discountEnable(@javax.annotation.Nullable Boolean discountEnable) {
+
     
     this.discountEnable = discountEnable;
     return this;
@@ -1676,11 +1749,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_DISCOUNT_ENABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDiscountEnable(@javax.annotation.Nullable Boolean discountEnable) {
+
     this.discountEnable = discountEnable;
   }
 
 
   public RetailStoreUpsert discountMaxPercent(@javax.annotation.Nullable Integer discountMaxPercent) {
+
     
     this.discountMaxPercent = discountMaxPercent;
     return this;
@@ -1705,11 +1780,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_DISCOUNT_MAX_PERCENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDiscountMaxPercent(@javax.annotation.Nullable Integer discountMaxPercent) {
+
     this.discountMaxPercent = discountMaxPercent;
   }
 
 
   public RetailStoreUpsert enableReturnsWithNoReason(@javax.annotation.Nullable Boolean enableReturnsWithNoReason) {
+
     
     this.enableReturnsWithNoReason = enableReturnsWithNoReason;
     return this;
@@ -1734,11 +1811,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ENABLE_RETURNS_WITH_NO_REASON)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEnableReturnsWithNoReason(@javax.annotation.Nullable Boolean enableReturnsWithNoReason) {
+
     this.enableReturnsWithNoReason = enableReturnsWithNoReason;
   }
 
 
   public RetailStoreUpsert issueOrders(@javax.annotation.Nullable Boolean issueOrders) {
+
     
     this.issueOrders = issueOrders;
     return this;
@@ -1763,11 +1842,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ISSUE_ORDERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIssueOrders(@javax.annotation.Nullable Boolean issueOrders) {
+
     this.issueOrders = issueOrders;
   }
 
 
   public RetailStoreUpsert lastOperationNames(@javax.annotation.Nullable List<RetailStoreLastOperationNamesInner> lastOperationNames) {
+
     this.lastOperationNames = JsonNullable.<List<RetailStoreLastOperationNamesInner>>of(lastOperationNames);
     
     return this;
@@ -1800,7 +1881,7 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_LAST_OPERATION_NAMES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<RetailStoreLastOperationNamesInner>> getLastOperationNames_JsonNullable() {
@@ -1813,11 +1894,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   }
 
   public void setLastOperationNames(@javax.annotation.Nullable List<RetailStoreLastOperationNamesInner> lastOperationNames) {
+
     this.lastOperationNames = JsonNullable.<List<RetailStoreLastOperationNamesInner>>of(lastOperationNames);
   }
 
 
   public RetailStoreUpsert masterRetailStores(@javax.annotation.Nullable RetailStoreList masterRetailStores) {
+
     this.masterRetailStores = JsonNullable.<RetailStoreList>of(masterRetailStores);
     
     return this;
@@ -1851,6 +1934,7 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   }
 
   public void setMasterRetailStores(@javax.annotation.Nullable RetailStoreList masterRetailStores) {
+
     this.masterRetailStores = JsonNullable.<RetailStoreList>of(masterRetailStores);
   }
 
@@ -1872,6 +1956,7 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
 
 
   public RetailStoreUpsert onlyInStock(@javax.annotation.Nullable Boolean onlyInStock) {
+
     
     this.onlyInStock = onlyInStock;
     return this;
@@ -1896,11 +1981,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ONLY_IN_STOCK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOnlyInStock(@javax.annotation.Nullable Boolean onlyInStock) {
+
     this.onlyInStock = onlyInStock;
   }
 
 
   public RetailStoreUpsert orderToState(@javax.annotation.Nullable State orderToState) {
+
     this.orderToState = JsonNullable.<State>of(orderToState);
     
     return this;
@@ -1934,11 +2021,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   }
 
   public void setOrderToState(@javax.annotation.Nullable State orderToState) {
+
     this.orderToState = JsonNullable.<State>of(orderToState);
   }
 
 
   public RetailStoreUpsert printAlways(@javax.annotation.Nullable Boolean printAlways) {
+
     
     this.printAlways = printAlways;
     return this;
@@ -1963,11 +2052,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_PRINT_ALWAYS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrintAlways(@javax.annotation.Nullable Boolean printAlways) {
+
     this.printAlways = printAlways;
   }
 
 
   public RetailStoreUpsert productFolders(@javax.annotation.Nullable ProductFolderList productFolders) {
+
     this.productFolders = JsonNullable.<ProductFolderList>of(productFolders);
     
     return this;
@@ -2001,11 +2092,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   }
 
   public void setProductFolders(@javax.annotation.Nullable ProductFolderList productFolders) {
+
     this.productFolders = JsonNullable.<ProductFolderList>of(productFolders);
   }
 
 
   public RetailStoreUpsert receiptTemplate(@javax.annotation.Nullable RetailStoreReceiptTemplate receiptTemplate) {
+
     
     this.receiptTemplate = receiptTemplate;
     return this;
@@ -2030,11 +2123,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_RECEIPT_TEMPLATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReceiptTemplate(@javax.annotation.Nullable RetailStoreReceiptTemplate receiptTemplate) {
+
     this.receiptTemplate = receiptTemplate;
   }
 
 
   public RetailStoreUpsert requiredFio(@javax.annotation.Nullable Boolean requiredFio) {
+
     
     this.requiredFio = requiredFio;
     return this;
@@ -2059,11 +2154,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_REQUIRED_FIO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRequiredFio(@javax.annotation.Nullable Boolean requiredFio) {
+
     this.requiredFio = requiredFio;
   }
 
 
   public RetailStoreUpsert requiredPhone(@javax.annotation.Nullable Boolean requiredPhone) {
+
     
     this.requiredPhone = requiredPhone;
     return this;
@@ -2088,11 +2185,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_REQUIRED_PHONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRequiredPhone(@javax.annotation.Nullable Boolean requiredPhone) {
+
     this.requiredPhone = requiredPhone;
   }
 
 
   public RetailStoreUpsert requiredEmail(@javax.annotation.Nullable Boolean requiredEmail) {
+
     
     this.requiredEmail = requiredEmail;
     return this;
@@ -2117,11 +2216,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_REQUIRED_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRequiredEmail(@javax.annotation.Nullable Boolean requiredEmail) {
+
     this.requiredEmail = requiredEmail;
   }
 
 
   public RetailStoreUpsert requiredBirthdate(@javax.annotation.Nullable Boolean requiredBirthdate) {
+
     
     this.requiredBirthdate = requiredBirthdate;
     return this;
@@ -2146,11 +2247,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_REQUIRED_BIRTHDATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRequiredBirthdate(@javax.annotation.Nullable Boolean requiredBirthdate) {
+
     this.requiredBirthdate = requiredBirthdate;
   }
 
 
   public RetailStoreUpsert requiredSex(@javax.annotation.Nullable Boolean requiredSex) {
+
     
     this.requiredSex = requiredSex;
     return this;
@@ -2175,11 +2278,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_REQUIRED_SEX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRequiredSex(@javax.annotation.Nullable Boolean requiredSex) {
+
     this.requiredSex = requiredSex;
   }
 
 
   public RetailStoreUpsert requiredDiscountCardNumber(@javax.annotation.Nullable Boolean requiredDiscountCardNumber) {
+
     
     this.requiredDiscountCardNumber = requiredDiscountCardNumber;
     return this;
@@ -2204,11 +2309,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_REQUIRED_DISCOUNT_CARD_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRequiredDiscountCardNumber(@javax.annotation.Nullable Boolean requiredDiscountCardNumber) {
+
     this.requiredDiscountCardNumber = requiredDiscountCardNumber;
   }
 
 
   public RetailStoreUpsert reservePrepaidGoods(@javax.annotation.Nullable Boolean reservePrepaidGoods) {
+
     
     this.reservePrepaidGoods = reservePrepaidGoods;
     return this;
@@ -2233,11 +2340,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_RESERVE_PREPAID_GOODS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReservePrepaidGoods(@javax.annotation.Nullable Boolean reservePrepaidGoods) {
+
     this.reservePrepaidGoods = reservePrepaidGoods;
   }
 
 
   public RetailStoreUpsert returnFromClosedShiftEnabled(@javax.annotation.Nullable Boolean returnFromClosedShiftEnabled) {
+
     
     this.returnFromClosedShiftEnabled = returnFromClosedShiftEnabled;
     return this;
@@ -2262,11 +2371,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_RETURN_FROM_CLOSED_SHIFT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReturnFromClosedShiftEnabled(@javax.annotation.Nullable Boolean returnFromClosedShiftEnabled) {
+
     this.returnFromClosedShiftEnabled = returnFromClosedShiftEnabled;
   }
 
 
   public RetailStoreUpsert sellReserves(@javax.annotation.Nullable Boolean sellReserves) {
+
     
     this.sellReserves = sellReserves;
     return this;
@@ -2291,11 +2402,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SELL_RESERVES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSellReserves(@javax.annotation.Nullable Boolean sellReserves) {
+
     this.sellReserves = sellReserves;
   }
 
 
   public RetailStoreUpsert sendMarksForCheck(@javax.annotation.Nullable Boolean sendMarksForCheck) {
+
     
     this.sendMarksForCheck = sendMarksForCheck;
     return this;
@@ -2320,11 +2433,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SEND_MARKS_FOR_CHECK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSendMarksForCheck(@javax.annotation.Nullable Boolean sendMarksForCheck) {
+
     this.sendMarksForCheck = sendMarksForCheck;
   }
 
 
   public RetailStoreUpsert sendMarksToChestnyZnakOnCloud(@javax.annotation.Nullable Boolean sendMarksToChestnyZnakOnCloud) {
+
     
     this.sendMarksToChestnyZnakOnCloud = sendMarksToChestnyZnakOnCloud;
     return this;
@@ -2349,11 +2464,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SEND_MARKS_TO_CHESTNY_ZNAK_ON_CLOUD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSendMarksToChestnyZnakOnCloud(@javax.annotation.Nullable Boolean sendMarksToChestnyZnakOnCloud) {
+
     this.sendMarksToChestnyZnakOnCloud = sendMarksToChestnyZnakOnCloud;
   }
 
 
   public RetailStoreUpsert syncAgents(@javax.annotation.Nullable Boolean syncAgents) {
+
     
     this.syncAgents = syncAgents;
     return this;
@@ -2378,11 +2495,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SYNC_AGENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSyncAgents(@javax.annotation.Nullable Boolean syncAgents) {
+
     this.syncAgents = syncAgents;
   }
 
 
   public RetailStoreUpsert showBeerOnTap(@javax.annotation.Nullable Boolean showBeerOnTap) {
+
     
     this.showBeerOnTap = showBeerOnTap;
     return this;
@@ -2407,11 +2526,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SHOW_BEER_ON_TAP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShowBeerOnTap(@javax.annotation.Nullable Boolean showBeerOnTap) {
+
     this.showBeerOnTap = showBeerOnTap;
   }
 
 
   public RetailStoreUpsert qrPayEnabled(@javax.annotation.Nullable Boolean qrPayEnabled) {
+
     
     this.qrPayEnabled = qrPayEnabled;
     return this;
@@ -2436,11 +2557,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_QR_PAY_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQrPayEnabled(@javax.annotation.Nullable Boolean qrPayEnabled) {
+
     this.qrPayEnabled = qrPayEnabled;
   }
 
 
   public RetailStoreUpsert bankPercent(@javax.annotation.Nullable Double bankPercent) {
+
     
     this.bankPercent = bankPercent;
     return this;
@@ -2465,11 +2588,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_BANK_PERCENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBankPercent(@javax.annotation.Nullable Double bankPercent) {
+
     this.bankPercent = bankPercent;
   }
 
 
   public RetailStoreUpsert qrBankPercent(@javax.annotation.Nullable Double qrBankPercent) {
+
     
     this.qrBankPercent = qrBankPercent;
     return this;
@@ -2494,11 +2619,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_QR_BANK_PERCENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQrBankPercent(@javax.annotation.Nullable Double qrBankPercent) {
+
     this.qrBankPercent = qrBankPercent;
   }
 
 
   public RetailStoreUpsert demandPrefix(@javax.annotation.Nullable String demandPrefix) {
+
     
     this.demandPrefix = demandPrefix;
     return this;
@@ -2523,11 +2650,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_DEMAND_PREFIX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDemandPrefix(@javax.annotation.Nullable String demandPrefix) {
+
     this.demandPrefix = demandPrefix;
   }
 
 
   public RetailStoreUpsert qrTerminalId(@javax.annotation.Nullable String qrTerminalId) {
+
     
     this.qrTerminalId = qrTerminalId;
     return this;
@@ -2552,11 +2681,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_QR_TERMINAL_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQrTerminalId(@javax.annotation.Nullable String qrTerminalId) {
+
     this.qrTerminalId = qrTerminalId;
   }
 
 
   public RetailStoreUpsert idQR(@javax.annotation.Nullable String idQR) {
+
     
     this.idQR = idQR;
     return this;
@@ -2581,11 +2712,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ID_Q_R)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIdQR(@javax.annotation.Nullable String idQR) {
+
     this.idQR = idQR;
   }
 
 
   public RetailStoreUpsert acquire(@javax.annotation.Nullable Agent acquire) {
+
     
     this.acquire = acquire;
     return this;
@@ -2610,11 +2743,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ACQUIRE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAcquire(@javax.annotation.Nullable Agent acquire) {
+
     this.acquire = acquire;
   }
 
 
   public RetailStoreUpsert cashiers(@javax.annotation.Nullable List<Employee> cashiers) {
+
     this.cashiers = JsonNullable.<List<Employee>>of(cashiers);
     
     return this;
@@ -2647,7 +2782,7 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_CASHIERS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<Employee>> getCashiers_JsonNullable() {
@@ -2660,11 +2795,13 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   }
 
   public void setCashiers(@javax.annotation.Nullable List<Employee> cashiers) {
+
     this.cashiers = JsonNullable.<List<Employee>>of(cashiers);
   }
 
 
   public RetailStoreUpsert qrAcquire(@javax.annotation.Nullable Agent qrAcquire) {
+
     this.qrAcquire = JsonNullable.<Agent>of(qrAcquire);
     
     return this;
@@ -2698,6 +2835,7 @@ public class RetailStoreUpsert extends EntityWithMeta implements MetaEntity {
   }
 
   public void setQrAcquire(@javax.annotation.Nullable Agent qrAcquire) {
+
     this.qrAcquire = JsonNullable.<Agent>of(qrAcquire);
   }
 

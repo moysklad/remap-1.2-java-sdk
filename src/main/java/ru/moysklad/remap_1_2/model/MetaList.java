@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   MetaList.JSON_PROPERTY_NEXT_HREF,
   MetaList.JSON_PROPERTY_PREVIOUS_HREF
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class MetaList {
 
   public static final String JSON_PROPERTY_HREF = "href";
@@ -48,7 +48,7 @@ public class MetaList {
   private URI href;
 
   public static final String JSON_PROPERTY_TYPE = "type";
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String type;
 
   public static final String JSON_PROPERTY_MEDIA_TYPE = "mediaType";
@@ -79,6 +79,7 @@ public class MetaList {
   }
 
   public MetaList href(@javax.annotation.Nonnull URI href) {
+
     
     this.href = href;
     return this;
@@ -103,11 +104,13 @@ public class MetaList {
   @JsonProperty(JSON_PROPERTY_HREF)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setHref(@javax.annotation.Nonnull URI href) {
+
     this.href = href;
   }
 
 
-  public MetaList type(@javax.annotation.Nonnull String type) {
+  public MetaList type(@javax.annotation.Nullable String type) {
+
     
     this.type = type;
     return this;
@@ -118,9 +121,9 @@ public class MetaList {
    * Тип объекта
    * @return type
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TYPE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getType() {
     return type;
@@ -130,13 +133,15 @@ public class MetaList {
 
 
   @JsonProperty(JSON_PROPERTY_TYPE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setType(@javax.annotation.Nonnull String type) {
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setType(@javax.annotation.Nullable String type) {
+
     this.type = type;
   }
 
 
   public MetaList mediaType(@javax.annotation.Nonnull String mediaType) {
+
     
     this.mediaType = mediaType;
     return this;
@@ -161,11 +166,13 @@ public class MetaList {
   @JsonProperty(JSON_PROPERTY_MEDIA_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setMediaType(@javax.annotation.Nonnull String mediaType) {
+
     this.mediaType = mediaType;
   }
 
 
   public MetaList size(@javax.annotation.Nullable Integer size) {
+
     
     this.size = size;
     return this;
@@ -190,11 +197,13 @@ public class MetaList {
   @JsonProperty(JSON_PROPERTY_SIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSize(@javax.annotation.Nullable Integer size) {
+
     this.size = size;
   }
 
 
   public MetaList limit(@javax.annotation.Nullable Integer limit) {
+
     
     this.limit = limit;
     return this;
@@ -219,11 +228,13 @@ public class MetaList {
   @JsonProperty(JSON_PROPERTY_LIMIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLimit(@javax.annotation.Nullable Integer limit) {
+
     this.limit = limit;
   }
 
 
   public MetaList offset(@javax.annotation.Nullable Integer offset) {
+
     
     this.offset = offset;
     return this;
@@ -248,11 +259,13 @@ public class MetaList {
   @JsonProperty(JSON_PROPERTY_OFFSET)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOffset(@javax.annotation.Nullable Integer offset) {
+
     this.offset = offset;
   }
 
 
   public MetaList nextHref(@javax.annotation.Nullable URI nextHref) {
+
     
     this.nextHref = nextHref;
     return this;
@@ -277,11 +290,13 @@ public class MetaList {
   @JsonProperty(JSON_PROPERTY_NEXT_HREF)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNextHref(@javax.annotation.Nullable URI nextHref) {
+
     this.nextHref = nextHref;
   }
 
 
   public MetaList previousHref(@javax.annotation.Nullable URI previousHref) {
+
     
     this.previousHref = previousHref;
     return this;
@@ -306,6 +321,7 @@ public class MetaList {
   @JsonProperty(JSON_PROPERTY_PREVIOUS_HREF)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPreviousHref(@javax.annotation.Nullable URI previousHref) {
+
     this.previousHref = previousHref;
   }
 

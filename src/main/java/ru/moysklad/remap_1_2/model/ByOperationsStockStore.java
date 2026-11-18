@@ -34,7 +34,7 @@ import java.util.StringJoiner;
   ByOperationsStockStore.JSON_PROPERTY_META
 })
 @JsonTypeName("ByOperationsStock_store")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ByOperationsStockStore {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -45,6 +45,7 @@ public class ByOperationsStockStore {
   }
 
   public ByOperationsStockStore meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -69,6 +70,7 @@ public class ByOperationsStockStore {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 

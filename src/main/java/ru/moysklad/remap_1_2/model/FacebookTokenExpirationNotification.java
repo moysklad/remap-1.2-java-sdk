@@ -33,7 +33,7 @@ import java.util.StringJoiner;
   FacebookTokenExpirationNotification.JSON_PROPERTY_CONNECTOR_NAME,
   FacebookTokenExpirationNotification.JSON_PROPERTY_DAYS_LEFT_TO_EXPIRATION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class FacebookTokenExpirationNotification extends NotificationAbstract {
 
   public static final String JSON_PROPERTY_CONNECTOR_NAME = "connectorName";
@@ -48,6 +48,7 @@ public class FacebookTokenExpirationNotification extends NotificationAbstract {
   }
 
   public FacebookTokenExpirationNotification connectorName(@javax.annotation.Nullable String connectorName) {
+
     
     this.connectorName = connectorName;
     return this;
@@ -72,11 +73,13 @@ public class FacebookTokenExpirationNotification extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_CONNECTOR_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setConnectorName(@javax.annotation.Nullable String connectorName) {
+
     this.connectorName = connectorName;
   }
 
 
   public FacebookTokenExpirationNotification daysLeftToExpiration(@javax.annotation.Nullable Integer daysLeftToExpiration) {
+
     
     this.daysLeftToExpiration = daysLeftToExpiration;
     return this;
@@ -101,6 +104,7 @@ public class FacebookTokenExpirationNotification extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_DAYS_LEFT_TO_EXPIRATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDaysLeftToExpiration(@javax.annotation.Nullable Integer daysLeftToExpiration) {
+
     this.daysLeftToExpiration = daysLeftToExpiration;
   }
 

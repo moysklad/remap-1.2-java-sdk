@@ -44,7 +44,7 @@ public class Example {
         VariantCharacteristicsApi apiInstance = new VariantCharacteristicsApi(defaultClient);
         VariantCharacteristic variantCharacteristic = new VariantCharacteristic(); // VariantCharacteristic | 
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             VariantCharacteristic result = apiInstance.createVariantCharacteristic(variantCharacteristic, accept, acceptEncoding);
             System.out.println(result);
@@ -66,7 +66,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **variantCharacteristic** | [**VariantCharacteristic**](VariantCharacteristic.md)|  | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -79,7 +79,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -123,7 +123,7 @@ public class Example {
         VariantCharacteristicsApi apiInstance = new VariantCharacteristicsApi(defaultClient);
         UUID id = UUID.randomUUID(); // UUID | ID сущности
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             VariantCharacteristic result = apiInstance.getVariantCharacteristicById(id, accept, acceptEncoding);
             System.out.println(result);
@@ -145,7 +145,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **id** | **UUID**| ID сущности | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -158,7 +158,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -201,7 +201,7 @@ public class Example {
 
         VariantCharacteristicsApi apiInstance = new VariantCharacteristicsApi(defaultClient);
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             GetVariantCharacteristics200Response result = apiInstance.getVariantCharacteristics(accept, acceptEncoding);
             System.out.println(result);
@@ -222,7 +222,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -235,7 +235,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details

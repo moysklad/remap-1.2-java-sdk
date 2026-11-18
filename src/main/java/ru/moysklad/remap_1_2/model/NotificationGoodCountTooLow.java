@@ -35,7 +35,7 @@ import java.util.StringJoiner;
   NotificationGoodCountTooLow.JSON_PROPERTY_GOOD,
   NotificationGoodCountTooLow.JSON_PROPERTY_MINIMUM_BALANCE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class NotificationGoodCountTooLow extends NotificationAbstract {
 
   public static final String JSON_PROPERTY_ACTUAL_BALANCE = "actualBalance";
@@ -54,6 +54,7 @@ public class NotificationGoodCountTooLow extends NotificationAbstract {
   }
 
   public NotificationGoodCountTooLow actualBalance(@javax.annotation.Nullable Double actualBalance) {
+
     
     this.actualBalance = actualBalance;
     return this;
@@ -78,11 +79,13 @@ public class NotificationGoodCountTooLow extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_ACTUAL_BALANCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setActualBalance(@javax.annotation.Nullable Double actualBalance) {
+
     this.actualBalance = actualBalance;
   }
 
 
   public NotificationGoodCountTooLow good(@javax.annotation.Nullable NotificationNamedEntity good) {
+
     
     this.good = good;
     return this;
@@ -107,11 +110,13 @@ public class NotificationGoodCountTooLow extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_GOOD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGood(@javax.annotation.Nullable NotificationNamedEntity good) {
+
     this.good = good;
   }
 
 
   public NotificationGoodCountTooLow minimumBalance(@javax.annotation.Nullable Double minimumBalance) {
+
     
     this.minimumBalance = minimumBalance;
     return this;
@@ -136,6 +141,7 @@ public class NotificationGoodCountTooLow extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_MINIMUM_BALANCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMinimumBalance(@javax.annotation.Nullable Double minimumBalance) {
+
     this.minimumBalance = minimumBalance;
   }
 

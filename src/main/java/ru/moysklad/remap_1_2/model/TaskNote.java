@@ -48,7 +48,7 @@ import java.util.StringJoiner;
   TaskNote.JSON_PROPERTY_TEXT,
   TaskNote.JSON_PROPERTY_FILES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class TaskNote extends EntityWithMeta implements MetaEntity {
   public static TaskNote createWithMeta(UUID parentId, UUID id) {
     TaskNote o = new TaskNote();
@@ -115,6 +115,7 @@ public class TaskNote extends EntityWithMeta implements MetaEntity {
   }
 
   public TaskNote meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -139,6 +140,7 @@ public class TaskNote extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -176,6 +178,7 @@ public class TaskNote extends EntityWithMeta implements MetaEntity {
 
 
   public TaskNote author(@javax.annotation.Nullable Employee author) {
+
     
     this.author = author;
     return this;
@@ -200,11 +203,13 @@ public class TaskNote extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_AUTHOR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAuthor(@javax.annotation.Nullable Employee author) {
+
     this.author = author;
   }
 
 
   public TaskNote authorApplication(@javax.annotation.Nullable Application authorApplication) {
+
     
     this.authorApplication = authorApplication;
     return this;
@@ -229,6 +234,7 @@ public class TaskNote extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_AUTHOR_APPLICATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAuthorApplication(@javax.annotation.Nullable Application authorApplication) {
+
     this.authorApplication = authorApplication;
   }
 
@@ -250,6 +256,7 @@ public class TaskNote extends EntityWithMeta implements MetaEntity {
 
 
   public TaskNote text(@javax.annotation.Nullable String text) {
+
     
     this.text = text;
     return this;
@@ -274,11 +281,13 @@ public class TaskNote extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_TEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setText(@javax.annotation.Nullable String text) {
+
     this.text = text;
   }
 
 
   public TaskNote files(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
@@ -312,6 +321,7 @@ public class TaskNote extends EntityWithMeta implements MetaEntity {
   }
 
   public void setFiles(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
   }
 

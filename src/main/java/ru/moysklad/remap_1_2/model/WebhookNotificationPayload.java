@@ -38,7 +38,7 @@ import java.util.StringJoiner;
   WebhookNotificationPayload.JSON_PROPERTY_AUDIT_CONTEXT,
   WebhookNotificationPayload.JSON_PROPERTY_EVENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class WebhookNotificationPayload {
 
   public static final String JSON_PROPERTY_AUDIT_CONTEXT = "auditContext";
@@ -47,12 +47,13 @@ public class WebhookNotificationPayload {
 
   public static final String JSON_PROPERTY_EVENTS = "events";
   @javax.annotation.Nullable
-  private List<WebhookEvent> events = new ArrayList<>();
+  private List<WebhookEvent> events;
 
   public WebhookNotificationPayload() {
   }
 
   public WebhookNotificationPayload auditContext(@javax.annotation.Nullable WebhookAuditContext auditContext) {
+
     
     this.auditContext = auditContext;
     return this;
@@ -77,11 +78,13 @@ public class WebhookNotificationPayload {
   @JsonProperty(JSON_PROPERTY_AUDIT_CONTEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAuditContext(@javax.annotation.Nullable WebhookAuditContext auditContext) {
+
     this.auditContext = auditContext;
   }
 
 
   public WebhookNotificationPayload events(@javax.annotation.Nullable List<WebhookEvent> events) {
+
     
     this.events = events;
     return this;
@@ -102,7 +105,7 @@ public class WebhookNotificationPayload {
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EVENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<WebhookEvent> getEvents() {
     return events;
@@ -112,8 +115,9 @@ public class WebhookNotificationPayload {
 
 
   @JsonProperty(JSON_PROPERTY_EVENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setEvents(@javax.annotation.Nullable List<WebhookEvent> events) {
+
     this.events = events;
   }
 

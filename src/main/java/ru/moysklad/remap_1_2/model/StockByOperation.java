@@ -38,7 +38,7 @@ import java.util.StringJoiner;
   StockByOperation.JSON_PROPERTY_META,
   StockByOperation.JSON_PROPERTY_POSITIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class StockByOperation {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -47,12 +47,13 @@ public class StockByOperation {
 
   public static final String JSON_PROPERTY_POSITIONS = "positions";
   @javax.annotation.Nullable
-  private List<StockByOperationPosition> positions = new ArrayList<>();
+  private List<StockByOperationPosition> positions;
 
   public StockByOperation() {
   }
 
   public StockByOperation meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -77,11 +78,13 @@ public class StockByOperation {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public StockByOperation positions(@javax.annotation.Nullable List<StockByOperationPosition> positions) {
+
     
     this.positions = positions;
     return this;
@@ -102,7 +105,7 @@ public class StockByOperation {
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_POSITIONS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<StockByOperationPosition> getPositions() {
     return positions;
@@ -112,8 +115,9 @@ public class StockByOperation {
 
 
   @JsonProperty(JSON_PROPERTY_POSITIONS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setPositions(@javax.annotation.Nullable List<StockByOperationPosition> positions) {
+
     this.positions = positions;
   }
 

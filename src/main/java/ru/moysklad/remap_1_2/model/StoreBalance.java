@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   StoreBalance.JSON_PROPERTY_STORE,
   StoreBalance.JSON_PROPERTY_QUANTITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class StoreBalance extends EntityWithMeta implements MetaEntity {
   public static StoreBalance createWithMeta(String entityType, UUID parentId, UUID id) {
     StoreBalance o = new StoreBalance();
@@ -124,6 +124,7 @@ public class StoreBalance extends EntityWithMeta implements MetaEntity {
 
 
   public StoreBalance meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -148,11 +149,13 @@ public class StoreBalance extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public StoreBalance store(@javax.annotation.Nullable Store store) {
+
     
     this.store = store;
     return this;
@@ -177,11 +180,16 @@ public class StoreBalance extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStore(@javax.annotation.Nullable Store store) {
+
     this.store = store;
   }
 
 
   public StoreBalance quantity(@javax.annotation.Nullable Double quantity) {
+    if (quantity != null && quantity.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'quantity': must be greater than or equal to 0, got " + quantity);
+    }
+
     
     this.quantity = quantity;
     return this;
@@ -207,6 +215,10 @@ public class StoreBalance extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
+    if (quantity != null && quantity.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'quantity': must be greater than or equal to 0, got " + quantity);
+    }
+
     this.quantity = quantity;
   }
 

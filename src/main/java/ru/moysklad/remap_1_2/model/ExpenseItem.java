@@ -42,7 +42,7 @@ import java.util.StringJoiner;
   ExpenseItem.JSON_PROPERTY_NAME,
   ExpenseItem.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ExpenseItem extends EntityWithMeta implements MetaEntity {
   public static ExpenseItem createWithMeta(UUID id) {
     ExpenseItem o = new ExpenseItem();
@@ -113,6 +113,7 @@ public class ExpenseItem extends EntityWithMeta implements MetaEntity {
   }
 
   public ExpenseItem meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -137,6 +138,7 @@ public class ExpenseItem extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -174,6 +176,7 @@ public class ExpenseItem extends EntityWithMeta implements MetaEntity {
 
 
   public ExpenseItem archived(@javax.annotation.Nullable Boolean archived) {
+
     
     this.archived = archived;
     return this;
@@ -198,11 +201,13 @@ public class ExpenseItem extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
+
     this.archived = archived;
   }
 
 
   public ExpenseItem code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -227,11 +232,13 @@ public class ExpenseItem extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public ExpenseItem description(@javax.annotation.Nullable String description) {
+
     
     this.description = description;
     return this;
@@ -256,11 +263,13 @@ public class ExpenseItem extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = description;
   }
 
 
   public ExpenseItem externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -285,11 +294,13 @@ public class ExpenseItem extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public ExpenseItem name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -314,6 +325,7 @@ public class ExpenseItem extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 

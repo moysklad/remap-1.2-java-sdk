@@ -42,7 +42,7 @@ import java.util.StringJoiner;
   NotificationSettings.JSON_PROPERTY_ONLINE_STORES,
   NotificationSettings.JSON_PROPERTY_FOLLOWED_EVENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class NotificationSettings {
 
   public static final String JSON_PROPERTY_CUSTOMER_ORDER = "customerOrder";
@@ -89,6 +89,7 @@ public class NotificationSettings {
   }
 
   public NotificationSettings customerOrder(@javax.annotation.Nullable NotificationGroupSettings customerOrder) {
+
     
     this.customerOrder = customerOrder;
     return this;
@@ -113,11 +114,13 @@ public class NotificationSettings {
   @JsonProperty(JSON_PROPERTY_CUSTOMER_ORDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCustomerOrder(@javax.annotation.Nullable NotificationGroupSettings customerOrder) {
+
     this.customerOrder = customerOrder;
   }
 
 
   public NotificationSettings dataExchange(@javax.annotation.Nullable NotificationGroupSettings dataExchange) {
+
     
     this.dataExchange = dataExchange;
     return this;
@@ -142,11 +145,13 @@ public class NotificationSettings {
   @JsonProperty(JSON_PROPERTY_DATA_EXCHANGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDataExchange(@javax.annotation.Nullable NotificationGroupSettings dataExchange) {
+
     this.dataExchange = dataExchange;
   }
 
 
   public NotificationSettings invoice(@javax.annotation.Nullable NotificationGroupSettings invoice) {
+
     
     this.invoice = invoice;
     return this;
@@ -171,11 +176,13 @@ public class NotificationSettings {
   @JsonProperty(JSON_PROPERTY_INVOICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setInvoice(@javax.annotation.Nullable NotificationGroupSettings invoice) {
+
     this.invoice = invoice;
   }
 
 
   public NotificationSettings retail(@javax.annotation.Nullable NotificationGroupSettings retail) {
+
     
     this.retail = retail;
     return this;
@@ -200,11 +207,13 @@ public class NotificationSettings {
   @JsonProperty(JSON_PROPERTY_RETAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRetail(@javax.annotation.Nullable NotificationGroupSettings retail) {
+
     this.retail = retail;
   }
 
 
   public NotificationSettings scripts(@javax.annotation.Nullable NotificationGroupSettings scripts) {
+
     
     this.scripts = scripts;
     return this;
@@ -229,11 +238,13 @@ public class NotificationSettings {
   @JsonProperty(JSON_PROPERTY_SCRIPTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setScripts(@javax.annotation.Nullable NotificationGroupSettings scripts) {
+
     this.scripts = scripts;
   }
 
 
   public NotificationSettings stock(@javax.annotation.Nullable NotificationGroupSettings stock) {
+
     
     this.stock = stock;
     return this;
@@ -258,11 +269,13 @@ public class NotificationSettings {
   @JsonProperty(JSON_PROPERTY_STOCK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStock(@javax.annotation.Nullable NotificationGroupSettings stock) {
+
     this.stock = stock;
   }
 
 
   public NotificationSettings task(@javax.annotation.Nullable NotificationGroupSettings task) {
+
     
     this.task = task;
     return this;
@@ -287,11 +300,13 @@ public class NotificationSettings {
   @JsonProperty(JSON_PROPERTY_TASK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTask(@javax.annotation.Nullable NotificationGroupSettings task) {
+
     this.task = task;
   }
 
 
   public NotificationSettings mentions(@javax.annotation.Nullable NotificationGroupSettings mentions) {
+
     
     this.mentions = mentions;
     return this;
@@ -316,11 +331,13 @@ public class NotificationSettings {
   @JsonProperty(JSON_PROPERTY_MENTIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMentions(@javax.annotation.Nullable NotificationGroupSettings mentions) {
+
     this.mentions = mentions;
   }
 
 
   public NotificationSettings onlineStores(@javax.annotation.Nullable NotificationGroupSettings onlineStores) {
+
     
     this.onlineStores = onlineStores;
     return this;
@@ -345,11 +362,13 @@ public class NotificationSettings {
   @JsonProperty(JSON_PROPERTY_ONLINE_STORES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOnlineStores(@javax.annotation.Nullable NotificationGroupSettings onlineStores) {
+
     this.onlineStores = onlineStores;
   }
 
 
   public NotificationSettings followedEvents(@javax.annotation.Nullable NotificationGroupSettings followedEvents) {
+
     
     this.followedEvents = followedEvents;
     return this;
@@ -374,6 +393,7 @@ public class NotificationSettings {
   @JsonProperty(JSON_PROPERTY_FOLLOWED_EVENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFollowedEvents(@javax.annotation.Nullable NotificationGroupSettings followedEvents) {
+
     this.followedEvents = followedEvents;
   }
 

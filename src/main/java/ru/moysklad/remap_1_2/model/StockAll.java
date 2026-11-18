@@ -50,7 +50,7 @@ import java.util.StringJoiner;
   StockAll.JSON_PROPERTY_PRICE,
   StockAll.JSON_PROPERTY_SALE_PRICE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class StockAll {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -103,7 +103,7 @@ public class StockAll {
 
   public static final String JSON_PROPERTY_STOCK_DAYS = "stockDays";
   @javax.annotation.Nullable
-  private Integer stockDays;
+  private Double stockDays;
 
   public static final String JSON_PROPERTY_PRICE = "price";
   @javax.annotation.Nullable
@@ -117,6 +117,7 @@ public class StockAll {
   }
 
   public StockAll meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -141,11 +142,13 @@ public class StockAll {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public StockAll name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -170,11 +173,13 @@ public class StockAll {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public StockAll code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -199,11 +204,13 @@ public class StockAll {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public StockAll article(@javax.annotation.Nullable String article) {
+
     
     this.article = article;
     return this;
@@ -228,11 +235,13 @@ public class StockAll {
   @JsonProperty(JSON_PROPERTY_ARTICLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setArticle(@javax.annotation.Nullable String article) {
+
     this.article = article;
   }
 
 
   public StockAll externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -257,11 +266,13 @@ public class StockAll {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public StockAll folder(@javax.annotation.Nullable ProductFolder folder) {
+
     
     this.folder = folder;
     return this;
@@ -286,11 +297,13 @@ public class StockAll {
   @JsonProperty(JSON_PROPERTY_FOLDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFolder(@javax.annotation.Nullable ProductFolder folder) {
+
     this.folder = folder;
   }
 
 
   public StockAll image(@javax.annotation.Nullable Image image) {
+
     
     this.image = image;
     return this;
@@ -315,11 +328,13 @@ public class StockAll {
   @JsonProperty(JSON_PROPERTY_IMAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setImage(@javax.annotation.Nullable Image image) {
+
     this.image = image;
   }
 
 
   public StockAll uom(@javax.annotation.Nullable Uom uom) {
+
     
     this.uom = uom;
     return this;
@@ -344,11 +359,13 @@ public class StockAll {
   @JsonProperty(JSON_PROPERTY_UOM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUom(@javax.annotation.Nullable Uom uom) {
+
     this.uom = uom;
   }
 
 
   public StockAll stock(@javax.annotation.Nullable Double stock) {
+
     
     this.stock = stock;
     return this;
@@ -373,11 +390,13 @@ public class StockAll {
   @JsonProperty(JSON_PROPERTY_STOCK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStock(@javax.annotation.Nullable Double stock) {
+
     this.stock = stock;
   }
 
 
   public StockAll inTransit(@javax.annotation.Nullable Double inTransit) {
+
     
     this.inTransit = inTransit;
     return this;
@@ -402,11 +421,13 @@ public class StockAll {
   @JsonProperty(JSON_PROPERTY_IN_TRANSIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setInTransit(@javax.annotation.Nullable Double inTransit) {
+
     this.inTransit = inTransit;
   }
 
 
   public StockAll reserve(@javax.annotation.Nullable Double reserve) {
+
     
     this.reserve = reserve;
     return this;
@@ -431,11 +452,13 @@ public class StockAll {
   @JsonProperty(JSON_PROPERTY_RESERVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReserve(@javax.annotation.Nullable Double reserve) {
+
     this.reserve = reserve;
   }
 
 
   public StockAll quantity(@javax.annotation.Nullable Double quantity) {
+
     
     this.quantity = quantity;
     return this;
@@ -460,11 +483,13 @@ public class StockAll {
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
+
     this.quantity = quantity;
   }
 
 
-  public StockAll stockDays(@javax.annotation.Nullable Integer stockDays) {
+  public StockAll stockDays(@javax.annotation.Nullable Double stockDays) {
+
     
     this.stockDays = stockDays;
     return this;
@@ -479,7 +504,7 @@ public class StockAll {
   @JsonProperty(JSON_PROPERTY_STOCK_DAYS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getStockDays() {
+  public Double getStockDays() {
     return stockDays;
   }
 
@@ -488,12 +513,14 @@ public class StockAll {
 
   @JsonProperty(JSON_PROPERTY_STOCK_DAYS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStockDays(@javax.annotation.Nullable Integer stockDays) {
+  public void setStockDays(@javax.annotation.Nullable Double stockDays) {
+
     this.stockDays = stockDays;
   }
 
 
   public StockAll price(@javax.annotation.Nullable Double price) {
+
     
     this.price = price;
     return this;
@@ -518,11 +545,13 @@ public class StockAll {
   @JsonProperty(JSON_PROPERTY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrice(@javax.annotation.Nullable Double price) {
+
     this.price = price;
   }
 
 
   public StockAll salePrice(@javax.annotation.Nullable Double salePrice) {
+
     
     this.salePrice = salePrice;
     return this;
@@ -547,6 +576,7 @@ public class StockAll {
   @JsonProperty(JSON_PROPERTY_SALE_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSalePrice(@javax.annotation.Nullable Double salePrice) {
+
     this.salePrice = salePrice;
   }
 

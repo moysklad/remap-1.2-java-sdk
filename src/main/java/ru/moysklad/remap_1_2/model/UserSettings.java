@@ -48,7 +48,7 @@ import java.util.StringJoiner;
   UserSettings.JSON_PROPERTY_MAIL_FOOTER,
   UserSettings.JSON_PROPERTY_PRINT_FORMAT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class UserSettings {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -103,6 +103,7 @@ public class UserSettings {
   }
 
   public UserSettings meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -127,11 +128,13 @@ public class UserSettings {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public UserSettings autoShowReports(@javax.annotation.Nullable Boolean autoShowReports) {
+
     
     this.autoShowReports = autoShowReports;
     return this;
@@ -156,11 +159,13 @@ public class UserSettings {
   @JsonProperty(JSON_PROPERTY_AUTO_SHOW_REPORTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAutoShowReports(@javax.annotation.Nullable Boolean autoShowReports) {
+
     this.autoShowReports = autoShowReports;
   }
 
 
   public UserSettings defaultCompany(@javax.annotation.Nullable Organization defaultCompany) {
+
     
     this.defaultCompany = defaultCompany;
     return this;
@@ -185,11 +190,13 @@ public class UserSettings {
   @JsonProperty(JSON_PROPERTY_DEFAULT_COMPANY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDefaultCompany(@javax.annotation.Nullable Organization defaultCompany) {
+
     this.defaultCompany = defaultCompany;
   }
 
 
   public UserSettings defaultCustomerCounterparty(@javax.annotation.Nullable Counterparty defaultCustomerCounterparty) {
+
     
     this.defaultCustomerCounterparty = defaultCustomerCounterparty;
     return this;
@@ -214,11 +221,13 @@ public class UserSettings {
   @JsonProperty(JSON_PROPERTY_DEFAULT_CUSTOMER_COUNTERPARTY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDefaultCustomerCounterparty(@javax.annotation.Nullable Counterparty defaultCustomerCounterparty) {
+
     this.defaultCustomerCounterparty = defaultCustomerCounterparty;
   }
 
 
   public UserSettings defaultPlace(@javax.annotation.Nullable Store defaultPlace) {
+
     
     this.defaultPlace = defaultPlace;
     return this;
@@ -243,11 +252,13 @@ public class UserSettings {
   @JsonProperty(JSON_PROPERTY_DEFAULT_PLACE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDefaultPlace(@javax.annotation.Nullable Store defaultPlace) {
+
     this.defaultPlace = defaultPlace;
   }
 
 
   public UserSettings defaultProject(@javax.annotation.Nullable Project defaultProject) {
+
     
     this.defaultProject = defaultProject;
     return this;
@@ -272,11 +283,13 @@ public class UserSettings {
   @JsonProperty(JSON_PROPERTY_DEFAULT_PROJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDefaultProject(@javax.annotation.Nullable Project defaultProject) {
+
     this.defaultProject = defaultProject;
   }
 
 
   public UserSettings defaultPurchaseCounterparty(@javax.annotation.Nullable Counterparty defaultPurchaseCounterparty) {
+
     
     this.defaultPurchaseCounterparty = defaultPurchaseCounterparty;
     return this;
@@ -301,11 +314,13 @@ public class UserSettings {
   @JsonProperty(JSON_PROPERTY_DEFAULT_PURCHASE_COUNTERPARTY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDefaultPurchaseCounterparty(@javax.annotation.Nullable Counterparty defaultPurchaseCounterparty) {
+
     this.defaultPurchaseCounterparty = defaultPurchaseCounterparty;
   }
 
 
   public UserSettings defaultScreen(@javax.annotation.Nullable String defaultScreen) {
+
     
     this.defaultScreen = defaultScreen;
     return this;
@@ -330,11 +345,13 @@ public class UserSettings {
   @JsonProperty(JSON_PROPERTY_DEFAULT_SCREEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDefaultScreen(@javax.annotation.Nullable String defaultScreen) {
+
     this.defaultScreen = defaultScreen;
   }
 
 
   public UserSettings fieldsPerRow(@javax.annotation.Nullable Integer fieldsPerRow) {
+
     
     this.fieldsPerRow = fieldsPerRow;
     return this;
@@ -359,11 +376,13 @@ public class UserSettings {
   @JsonProperty(JSON_PROPERTY_FIELDS_PER_ROW)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFieldsPerRow(@javax.annotation.Nullable Integer fieldsPerRow) {
+
     this.fieldsPerRow = fieldsPerRow;
   }
 
 
   public UserSettings locale(@javax.annotation.Nullable String locale) {
+
     
     this.locale = locale;
     return this;
@@ -388,11 +407,13 @@ public class UserSettings {
   @JsonProperty(JSON_PROPERTY_LOCALE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLocale(@javax.annotation.Nullable String locale) {
+
     this.locale = locale;
   }
 
 
   public UserSettings mailFooter(@javax.annotation.Nullable String mailFooter) {
+
     
     this.mailFooter = mailFooter;
     return this;
@@ -417,11 +438,13 @@ public class UserSettings {
   @JsonProperty(JSON_PROPERTY_MAIL_FOOTER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMailFooter(@javax.annotation.Nullable String mailFooter) {
+
     this.mailFooter = mailFooter;
   }
 
 
   public UserSettings printFormat(@javax.annotation.Nullable String printFormat) {
+
     
     this.printFormat = printFormat;
     return this;
@@ -446,6 +469,7 @@ public class UserSettings {
   @JsonProperty(JSON_PROPERTY_PRINT_FORMAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrintFormat(@javax.annotation.Nullable String printFormat) {
+
     this.printFormat = printFormat;
   }
 

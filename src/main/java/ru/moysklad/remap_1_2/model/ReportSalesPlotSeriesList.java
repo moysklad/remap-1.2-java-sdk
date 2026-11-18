@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   ReportSalesPlotSeriesList.JSON_PROPERTY_META,
   ReportSalesPlotSeriesList.JSON_PROPERTY_SERIES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ReportSalesPlotSeriesList {
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
@@ -53,12 +53,13 @@ public class ReportSalesPlotSeriesList {
 
   public static final String JSON_PROPERTY_SERIES = "series";
   @javax.annotation.Nullable
-  private List<ReportPlotSeries> series = new ArrayList<>();
+  private List<ReportPlotSeries> series;
 
   public ReportSalesPlotSeriesList() {
   }
 
   public ReportSalesPlotSeriesList context(@javax.annotation.Nullable Context context) {
+
     
     this.context = context;
     return this;
@@ -83,11 +84,13 @@ public class ReportSalesPlotSeriesList {
   @JsonProperty(JSON_PROPERTY_CONTEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setContext(@javax.annotation.Nullable Context context) {
+
     this.context = context;
   }
 
 
   public ReportSalesPlotSeriesList meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -112,11 +115,13 @@ public class ReportSalesPlotSeriesList {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public ReportSalesPlotSeriesList series(@javax.annotation.Nullable List<ReportPlotSeries> series) {
+
     
     this.series = series;
     return this;
@@ -137,7 +142,7 @@ public class ReportSalesPlotSeriesList {
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SERIES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<ReportPlotSeries> getSeries() {
     return series;
@@ -147,8 +152,9 @@ public class ReportSalesPlotSeriesList {
 
 
   @JsonProperty(JSON_PROPERTY_SERIES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setSeries(@javax.annotation.Nullable List<ReportPlotSeries> series) {
+
     this.series = series;
   }
 

@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   GetCounterpartyContactPersons200Response.JSON_PROPERTY_ROWS
 })
 @JsonTypeName("getCounterpartyContactPersons_200_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class GetCounterpartyContactPersons200Response {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -48,12 +48,13 @@ public class GetCounterpartyContactPersons200Response {
 
   public static final String JSON_PROPERTY_ROWS = "rows";
   @javax.annotation.Nullable
-  private List<ContactPerson> rows = new ArrayList<>();
+  private List<ContactPerson> rows;
 
   public GetCounterpartyContactPersons200Response() {
   }
 
   public GetCounterpartyContactPersons200Response meta(@javax.annotation.Nullable MetaList meta) {
+
     
     this.meta = meta;
     return this;
@@ -78,11 +79,13 @@ public class GetCounterpartyContactPersons200Response {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable MetaList meta) {
+
     this.meta = meta;
   }
 
 
   public GetCounterpartyContactPersons200Response rows(@javax.annotation.Nullable List<ContactPerson> rows) {
+
     
     this.rows = rows;
     return this;
@@ -103,7 +106,7 @@ public class GetCounterpartyContactPersons200Response {
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ROWS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<ContactPerson> getRows() {
     return rows;
@@ -113,8 +116,9 @@ public class GetCounterpartyContactPersons200Response {
 
 
   @JsonProperty(JSON_PROPERTY_ROWS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setRows(@javax.annotation.Nullable List<ContactPerson> rows) {
+
     this.rows = rows;
   }
 

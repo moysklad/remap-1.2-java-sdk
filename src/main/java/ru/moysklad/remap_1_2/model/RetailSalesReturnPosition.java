@@ -54,7 +54,7 @@ import java.util.StringJoiner;
   RetailSalesReturnPosition.JSON_PROPERTY_VAT,
   RetailSalesReturnPosition.JSON_PROPERTY_VAT_ENABLED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailSalesReturnPosition extends EntityWithMeta implements DocumentPosition, MetaEntity {
   public static RetailSalesReturnPosition createWithMeta(UUID parentId, UUID id) {
     RetailSalesReturnPosition o = new RetailSalesReturnPosition();
@@ -109,7 +109,7 @@ public class RetailSalesReturnPosition extends EntityWithMeta implements Documen
 
   public static final String JSON_PROPERTY_THINGS = "things";
   @javax.annotation.Nullable
-  private List<String> things = new ArrayList<>();
+  private List<String> things;
 
   public static final String JSON_PROPERTY_VAT = "vat";
   @javax.annotation.Nullable
@@ -133,6 +133,7 @@ public class RetailSalesReturnPosition extends EntityWithMeta implements Documen
   }
 
   public RetailSalesReturnPosition meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -157,11 +158,13 @@ public class RetailSalesReturnPosition extends EntityWithMeta implements Documen
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public RetailSalesReturnPosition id(@javax.annotation.Nullable UUID id) {
+
     
     this.id = id;
     return this;
@@ -186,6 +189,7 @@ public class RetailSalesReturnPosition extends EntityWithMeta implements Documen
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(@javax.annotation.Nullable UUID id) {
+
     this.id = id;
   }
 
@@ -207,6 +211,7 @@ public class RetailSalesReturnPosition extends EntityWithMeta implements Documen
 
 
   public RetailSalesReturnPosition assortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     
     this.assortment = assortment;
     return this;
@@ -231,11 +236,16 @@ public class RetailSalesReturnPosition extends EntityWithMeta implements Documen
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     this.assortment = assortment;
   }
 
 
   public RetailSalesReturnPosition cost(@javax.annotation.Nullable Double cost) {
+    if (cost != null && cost.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'cost': must be greater than or equal to 0, got " + cost);
+    }
+
     
     this.cost = cost;
     return this;
@@ -261,11 +271,19 @@ public class RetailSalesReturnPosition extends EntityWithMeta implements Documen
   @JsonProperty(JSON_PROPERTY_COST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCost(@javax.annotation.Nullable Double cost) {
+    if (cost != null && cost.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'cost': must be greater than or equal to 0, got " + cost);
+    }
+
     this.cost = cost;
   }
 
 
   public RetailSalesReturnPosition discount(@javax.annotation.Nullable Double discount) {
+    if (discount != null && discount.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'discount': must be less than or equal to 100, got " + discount);
+    }
+
     
     this.discount = discount;
     return this;
@@ -291,11 +309,16 @@ public class RetailSalesReturnPosition extends EntityWithMeta implements Documen
   @JsonProperty(JSON_PROPERTY_DISCOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDiscount(@javax.annotation.Nullable Double discount) {
+    if (discount != null && discount.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'discount': must be less than or equal to 100, got " + discount);
+    }
+
     this.discount = discount;
   }
 
 
   public RetailSalesReturnPosition pack(@javax.annotation.Nullable Pack pack) {
+
     this.pack = JsonNullable.<Pack>of(pack);
     
     return this;
@@ -329,11 +352,16 @@ public class RetailSalesReturnPosition extends EntityWithMeta implements Documen
   }
 
   public void setPack(@javax.annotation.Nullable Pack pack) {
+
     this.pack = JsonNullable.<Pack>of(pack);
   }
 
 
   public RetailSalesReturnPosition price(@javax.annotation.Nullable Double price) {
+    if (price != null && price.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'price': must be greater than or equal to 0, got " + price);
+    }
+
     
     this.price = price;
     return this;
@@ -359,11 +387,19 @@ public class RetailSalesReturnPosition extends EntityWithMeta implements Documen
   @JsonProperty(JSON_PROPERTY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrice(@javax.annotation.Nullable Double price) {
+    if (price != null && price.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'price': must be greater than or equal to 0, got " + price);
+    }
+
     this.price = price;
   }
 
 
   public RetailSalesReturnPosition quantity(@javax.annotation.Nullable Double quantity) {
+    if (quantity != null && quantity.doubleValue() < 0.00010) {
+      throw new IllegalArgumentException("Invalid value for 'quantity': must be greater than or equal to 0.00010, got " + quantity);
+    }
+
     
     this.quantity = quantity;
     return this;
@@ -389,11 +425,16 @@ public class RetailSalesReturnPosition extends EntityWithMeta implements Documen
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
+    if (quantity != null && quantity.doubleValue() < 0.00010) {
+      throw new IllegalArgumentException("Invalid value for 'quantity': must be greater than or equal to 0.00010, got " + quantity);
+    }
+
     this.quantity = quantity;
   }
 
 
   public RetailSalesReturnPosition things(@javax.annotation.Nullable List<String> things) {
+
     
     this.things = things;
     return this;
@@ -414,7 +455,7 @@ public class RetailSalesReturnPosition extends EntityWithMeta implements Documen
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_THINGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<String> getThings() {
     return things;
@@ -424,13 +465,21 @@ public class RetailSalesReturnPosition extends EntityWithMeta implements Documen
 
 
   @JsonProperty(JSON_PROPERTY_THINGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setThings(@javax.annotation.Nullable List<String> things) {
+
     this.things = things;
   }
 
 
   public RetailSalesReturnPosition vat(@javax.annotation.Nullable Integer vat) {
+    if (vat != null && vat.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be greater than or equal to 0, got " + vat);
+    }
+    if (vat != null && vat.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be less than or equal to 100, got " + vat);
+    }
+
     
     this.vat = vat;
     return this;
@@ -457,11 +506,19 @@ public class RetailSalesReturnPosition extends EntityWithMeta implements Documen
   @JsonProperty(JSON_PROPERTY_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVat(@javax.annotation.Nullable Integer vat) {
+    if (vat != null && vat.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be greater than or equal to 0, got " + vat);
+    }
+    if (vat != null && vat.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be less than or equal to 100, got " + vat);
+    }
+
     this.vat = vat;
   }
 
 
   public RetailSalesReturnPosition vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     
     this.vatEnabled = vatEnabled;
     return this;
@@ -486,6 +543,7 @@ public class RetailSalesReturnPosition extends EntityWithMeta implements Documen
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     this.vatEnabled = vatEnabled;
   }
 

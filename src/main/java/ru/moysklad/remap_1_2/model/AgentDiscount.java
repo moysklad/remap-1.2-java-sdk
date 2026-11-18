@@ -35,7 +35,7 @@ import java.util.StringJoiner;
   AgentDiscount.JSON_PROPERTY_PERSONAL_DISCOUNT,
   AgentDiscount.JSON_PROPERTY_DEMAND_SUM_CORRECTION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class AgentDiscount {
 
   public static final String JSON_PROPERTY_DISCOUNT = "discount";
@@ -54,6 +54,7 @@ public class AgentDiscount {
   }
 
   public AgentDiscount discount(@javax.annotation.Nullable DiscountBase discount) {
+
     
     this.discount = discount;
     return this;
@@ -78,11 +79,13 @@ public class AgentDiscount {
   @JsonProperty(JSON_PROPERTY_DISCOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDiscount(@javax.annotation.Nullable DiscountBase discount) {
+
     this.discount = discount;
   }
 
 
   public AgentDiscount personalDiscount(@javax.annotation.Nullable Double personalDiscount) {
+
     
     this.personalDiscount = personalDiscount;
     return this;
@@ -107,11 +110,13 @@ public class AgentDiscount {
   @JsonProperty(JSON_PROPERTY_PERSONAL_DISCOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPersonalDiscount(@javax.annotation.Nullable Double personalDiscount) {
+
     this.personalDiscount = personalDiscount;
   }
 
 
   public AgentDiscount demandSumCorrection(@javax.annotation.Nullable Double demandSumCorrection) {
+
     
     this.demandSumCorrection = demandSumCorrection;
     return this;
@@ -136,6 +141,7 @@ public class AgentDiscount {
   @JsonProperty(JSON_PROPERTY_DEMAND_SUM_CORRECTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDemandSumCorrection(@javax.annotation.Nullable Double demandSumCorrection) {
+
     this.demandSumCorrection = demandSumCorrection;
   }
 

@@ -43,7 +43,7 @@ import java.util.StringJoiner;
   WebhookStock.JSON_PROPERTY_ENABLED,
   WebhookStock.JSON_PROPERTY_AUTHOR_APPLICATION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class WebhookStock extends EntityWithMeta implements MetaEntity {
   public static WebhookStock createWithMeta(UUID id) {
     WebhookStock o = new WebhookStock();
@@ -108,6 +108,7 @@ public class WebhookStock extends EntityWithMeta implements MetaEntity {
   }
 
   public WebhookStock meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -132,6 +133,7 @@ public class WebhookStock extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -169,6 +171,7 @@ public class WebhookStock extends EntityWithMeta implements MetaEntity {
 
 
   public WebhookStock stockType(@javax.annotation.Nullable String stockType) {
+
     
     this.stockType = stockType;
     return this;
@@ -193,11 +196,13 @@ public class WebhookStock extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_STOCK_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStockType(@javax.annotation.Nullable String stockType) {
+
     this.stockType = stockType;
   }
 
 
   public WebhookStock reportType(@javax.annotation.Nullable String reportType) {
+
     
     this.reportType = reportType;
     return this;
@@ -222,11 +227,13 @@ public class WebhookStock extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_REPORT_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReportType(@javax.annotation.Nullable String reportType) {
+
     this.reportType = reportType;
   }
 
 
   public WebhookStock url(@javax.annotation.Nullable URI url) {
+
     
     this.url = url;
     return this;
@@ -251,11 +258,13 @@ public class WebhookStock extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUrl(@javax.annotation.Nullable URI url) {
+
     this.url = url;
   }
 
 
   public WebhookStock enabled(@javax.annotation.Nullable Boolean enabled) {
+
     
     this.enabled = enabled;
     return this;
@@ -280,11 +289,13 @@ public class WebhookStock extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
+
     this.enabled = enabled;
   }
 
 
   public WebhookStock authorApplication(@javax.annotation.Nullable Application authorApplication) {
+
     
     this.authorApplication = authorApplication;
     return this;
@@ -309,6 +320,7 @@ public class WebhookStock extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_AUTHOR_APPLICATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAuthorApplication(@javax.annotation.Nullable Application authorApplication) {
+
     this.authorApplication = authorApplication;
   }
 

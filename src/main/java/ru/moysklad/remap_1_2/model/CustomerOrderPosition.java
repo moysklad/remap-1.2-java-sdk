@@ -54,7 +54,7 @@ import java.util.StringJoiner;
   CustomerOrderPosition.JSON_PROPERTY_PACK,
   CustomerOrderPosition.JSON_PROPERTY_STOCK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class CustomerOrderPosition extends EntityWithMeta implements DocumentPosition, MetaEntity {
   public static CustomerOrderPosition createWithMeta(UUID parentId, UUID id) {
     CustomerOrderPosition o = new CustomerOrderPosition();
@@ -143,6 +143,7 @@ public class CustomerOrderPosition extends EntityWithMeta implements DocumentPos
   }
 
   public CustomerOrderPosition meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -167,11 +168,13 @@ public class CustomerOrderPosition extends EntityWithMeta implements DocumentPos
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public CustomerOrderPosition id(@javax.annotation.Nullable UUID id) {
+
     
     this.id = id;
     return this;
@@ -196,6 +199,7 @@ public class CustomerOrderPosition extends EntityWithMeta implements DocumentPos
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(@javax.annotation.Nullable UUID id) {
+
     this.id = id;
   }
 
@@ -217,6 +221,7 @@ public class CustomerOrderPosition extends EntityWithMeta implements DocumentPos
 
 
   public CustomerOrderPosition quantity(@javax.annotation.Nullable Double quantity) {
+
     
     this.quantity = quantity;
     return this;
@@ -241,11 +246,13 @@ public class CustomerOrderPosition extends EntityWithMeta implements DocumentPos
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
+
     this.quantity = quantity;
   }
 
 
   public CustomerOrderPosition price(@javax.annotation.Nullable Double price) {
+
     
     this.price = price;
     return this;
@@ -270,11 +277,13 @@ public class CustomerOrderPosition extends EntityWithMeta implements DocumentPos
   @JsonProperty(JSON_PROPERTY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrice(@javax.annotation.Nullable Double price) {
+
     this.price = price;
   }
 
 
   public CustomerOrderPosition discount(@javax.annotation.Nullable Double discount) {
+
     
     this.discount = discount;
     return this;
@@ -299,11 +308,13 @@ public class CustomerOrderPosition extends EntityWithMeta implements DocumentPos
   @JsonProperty(JSON_PROPERTY_DISCOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDiscount(@javax.annotation.Nullable Double discount) {
+
     this.discount = discount;
   }
 
 
   public CustomerOrderPosition reserve(@javax.annotation.Nullable Double reserve) {
+
     
     this.reserve = reserve;
     return this;
@@ -328,6 +339,7 @@ public class CustomerOrderPosition extends EntityWithMeta implements DocumentPos
   @JsonProperty(JSON_PROPERTY_RESERVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReserve(@javax.annotation.Nullable Double reserve) {
+
     this.reserve = reserve;
   }
 
@@ -349,6 +361,13 @@ public class CustomerOrderPosition extends EntityWithMeta implements DocumentPos
 
 
   public CustomerOrderPosition vat(@javax.annotation.Nullable Integer vat) {
+    if (vat != null && vat.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be greater than or equal to 0, got " + vat);
+    }
+    if (vat != null && vat.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be less than or equal to 100, got " + vat);
+    }
+
     
     this.vat = vat;
     return this;
@@ -375,11 +394,19 @@ public class CustomerOrderPosition extends EntityWithMeta implements DocumentPos
   @JsonProperty(JSON_PROPERTY_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVat(@javax.annotation.Nullable Integer vat) {
+    if (vat != null && vat.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be greater than or equal to 0, got " + vat);
+    }
+    if (vat != null && vat.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be less than or equal to 100, got " + vat);
+    }
+
     this.vat = vat;
   }
 
 
   public CustomerOrderPosition vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     
     this.vatEnabled = vatEnabled;
     return this;
@@ -404,11 +431,13 @@ public class CustomerOrderPosition extends EntityWithMeta implements DocumentPos
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     this.vatEnabled = vatEnabled;
   }
 
 
   public CustomerOrderPosition taxSystem(@javax.annotation.Nullable String taxSystem) {
+
     
     this.taxSystem = taxSystem;
     return this;
@@ -433,11 +462,13 @@ public class CustomerOrderPosition extends EntityWithMeta implements DocumentPos
   @JsonProperty(JSON_PROPERTY_TAX_SYSTEM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTaxSystem(@javax.annotation.Nullable String taxSystem) {
+
     this.taxSystem = taxSystem;
   }
 
 
   public CustomerOrderPosition assortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     
     this.assortment = assortment;
     return this;
@@ -462,11 +493,13 @@ public class CustomerOrderPosition extends EntityWithMeta implements DocumentPos
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     this.assortment = assortment;
   }
 
 
   public CustomerOrderPosition pack(@javax.annotation.Nullable Pack pack) {
+
     this.pack = JsonNullable.<Pack>of(pack);
     
     return this;
@@ -500,11 +533,13 @@ public class CustomerOrderPosition extends EntityWithMeta implements DocumentPos
   }
 
   public void setPack(@javax.annotation.Nullable Pack pack) {
+
     this.pack = JsonNullable.<Pack>of(pack);
   }
 
 
   public CustomerOrderPosition stock(@javax.annotation.Nullable PositionStock stock) {
+
     this.stock = JsonNullable.<PositionStock>of(stock);
     
     return this;
@@ -538,6 +573,7 @@ public class CustomerOrderPosition extends EntityWithMeta implements DocumentPos
   }
 
   public void setStock(@javax.annotation.Nullable PositionStock stock) {
+
     this.stock = JsonNullable.<PositionStock>of(stock);
   }
 

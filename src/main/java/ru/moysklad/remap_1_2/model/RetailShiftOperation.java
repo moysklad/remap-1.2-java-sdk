@@ -38,7 +38,7 @@ import ru.moysklad.remap_1_2.deserialize.PolymorphicMetaTypeDeserializer;
 @JsonPropertyOrder({
   RetailShiftOperation.JSON_PROPERTY_META
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 @OpenApiPolymorphicTypeInfo(path = "meta.type")
 @OpenApiPolymorphicSubTypes({
   @OpenApiPolymorphicSubTypes.Type(value = RetailShiftOperationRetailDemand.class, name = "retaildemand"),
@@ -59,6 +59,7 @@ public class RetailShiftOperation {
   }
 
   public RetailShiftOperation meta(@javax.annotation.Nonnull Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -83,6 +84,7 @@ public class RetailShiftOperation {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setMeta(@javax.annotation.Nonnull Meta meta) {
+
     this.meta = meta;
   }
 

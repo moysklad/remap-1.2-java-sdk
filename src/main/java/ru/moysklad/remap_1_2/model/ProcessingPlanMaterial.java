@@ -45,7 +45,7 @@ import java.util.StringJoiner;
   ProcessingPlanMaterial.JSON_PROPERTY_PROCESSING_PROCESS_POSITION,
   ProcessingPlanMaterial.JSON_PROPERTY_MATERIAL_PROCESSING_PLAN
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingPlanMaterial extends EntityWithMeta implements MetaEntity {
   public static ProcessingPlanMaterial createWithMeta(UUID parentId, UUID id) {
     ProcessingPlanMaterial o = new ProcessingPlanMaterial();
@@ -110,6 +110,7 @@ public class ProcessingPlanMaterial extends EntityWithMeta implements MetaEntity
   }
 
   public ProcessingPlanMaterial meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -134,6 +135,7 @@ public class ProcessingPlanMaterial extends EntityWithMeta implements MetaEntity
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -171,6 +173,7 @@ public class ProcessingPlanMaterial extends EntityWithMeta implements MetaEntity
 
 
   public ProcessingPlanMaterial assortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     
     this.assortment = assortment;
     return this;
@@ -195,11 +198,13 @@ public class ProcessingPlanMaterial extends EntityWithMeta implements MetaEntity
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     this.assortment = assortment;
   }
 
 
   public ProcessingPlanMaterial product(@javax.annotation.Nullable Product product) {
+
     
     this.product = product;
     return this;
@@ -224,11 +229,16 @@ public class ProcessingPlanMaterial extends EntityWithMeta implements MetaEntity
   @JsonProperty(JSON_PROPERTY_PRODUCT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProduct(@javax.annotation.Nullable Product product) {
+
     this.product = product;
   }
 
 
   public ProcessingPlanMaterial quantity(@javax.annotation.Nullable Double quantity) {
+    if (quantity != null && quantity.doubleValue() < 0.00010) {
+      throw new IllegalArgumentException("Invalid value for 'quantity': must be greater than or equal to 0.00010, got " + quantity);
+    }
+
     
     this.quantity = quantity;
     return this;
@@ -254,11 +264,16 @@ public class ProcessingPlanMaterial extends EntityWithMeta implements MetaEntity
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
+    if (quantity != null && quantity.doubleValue() < 0.00010) {
+      throw new IllegalArgumentException("Invalid value for 'quantity': must be greater than or equal to 0.00010, got " + quantity);
+    }
+
     this.quantity = quantity;
   }
 
 
   public ProcessingPlanMaterial processingProcessPosition(@javax.annotation.Nullable ProcessingProcessPosition processingProcessPosition) {
+
     
     this.processingProcessPosition = processingProcessPosition;
     return this;
@@ -283,11 +298,13 @@ public class ProcessingPlanMaterial extends EntityWithMeta implements MetaEntity
   @JsonProperty(JSON_PROPERTY_PROCESSING_PROCESS_POSITION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProcessingProcessPosition(@javax.annotation.Nullable ProcessingProcessPosition processingProcessPosition) {
+
     this.processingProcessPosition = processingProcessPosition;
   }
 
 
   public ProcessingPlanMaterial materialProcessingPlan(@javax.annotation.Nullable ProcessingPlan materialProcessingPlan) {
+
     
     this.materialProcessingPlan = materialProcessingPlan;
     return this;
@@ -312,6 +329,7 @@ public class ProcessingPlanMaterial extends EntityWithMeta implements MetaEntity
   @JsonProperty(JSON_PROPERTY_MATERIAL_PROCESSING_PLAN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMaterialProcessingPlan(@javax.annotation.Nullable ProcessingPlan materialProcessingPlan) {
+
     this.materialProcessingPlan = materialProcessingPlan;
   }
 

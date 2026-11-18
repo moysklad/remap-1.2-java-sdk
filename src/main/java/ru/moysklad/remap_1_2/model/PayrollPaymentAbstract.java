@@ -20,6 +20,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import ru.moysklad.remap_1_2.model.Meta;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.io.UnsupportedEncodingException;
@@ -35,9 +36,10 @@ import ru.moysklad.remap_1_2.deserialize.PolymorphicMetaTypeDeserializer;
  * Связанный платеж Начисления зарплаты с суммой оплаты &#x60;linkedSum&#x60;. Допустимые &#x60;meta.type&#x60;: paymentout, cashout. 
  */
 @JsonPropertyOrder({
+  PayrollPaymentAbstract.JSON_PROPERTY_META,
   PayrollPaymentAbstract.JSON_PROPERTY_LINKED_SUM
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 @OpenApiPolymorphicTypeInfo(path = "meta.type")
 @OpenApiPolymorphicSubTypes({
   @OpenApiPolymorphicSubTypes.Type(value = PayrollPaymentPaymentOut.class, name = "paymentout"),
@@ -46,6 +48,10 @@ import ru.moysklad.remap_1_2.deserialize.PolymorphicMetaTypeDeserializer;
 @JsonDeserialize(using = PolymorphicMetaTypeDeserializer.class)
 public class PayrollPaymentAbstract {
 
+  public static final String JSON_PROPERTY_META = "meta";
+  @javax.annotation.Nonnull
+  private Meta meta;
+
   public static final String JSON_PROPERTY_LINKED_SUM = "linkedSum";
   @javax.annotation.Nonnull
   private Double linkedSum;
@@ -53,7 +59,39 @@ public class PayrollPaymentAbstract {
   public PayrollPaymentAbstract() {
   }
 
+  public PayrollPaymentAbstract meta(@javax.annotation.Nonnull Meta meta) {
+
+    
+    this.meta = meta;
+    return this;
+  }
+
+
+  /**
+   * Get meta
+   * @return meta
+   */
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_META)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public Meta getMeta() {
+    return meta;
+  }
+
+  
+
+
+  @JsonProperty(JSON_PROPERTY_META)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setMeta(@javax.annotation.Nonnull Meta meta) {
+
+    this.meta = meta;
+  }
+
+
   public PayrollPaymentAbstract linkedSum(@javax.annotation.Nonnull Double linkedSum) {
+
     
     this.linkedSum = linkedSum;
     return this;
@@ -78,6 +116,7 @@ public class PayrollPaymentAbstract {
   @JsonProperty(JSON_PROPERTY_LINKED_SUM)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLinkedSum(@javax.annotation.Nonnull Double linkedSum) {
+
     this.linkedSum = linkedSum;
   }
 
@@ -91,18 +130,20 @@ public class PayrollPaymentAbstract {
       return false;
     }
     PayrollPaymentAbstract payrollPaymentAbstract = (PayrollPaymentAbstract) o;
-    return Objects.equals(this.linkedSum, payrollPaymentAbstract.linkedSum);
+    return Objects.equals(this.meta, payrollPaymentAbstract.meta) &&
+        Objects.equals(this.linkedSum, payrollPaymentAbstract.linkedSum);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(linkedSum);
+    return Objects.hash(meta, linkedSum);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PayrollPaymentAbstract {\n");
+    sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("    linkedSum: ").append(toIndentedString(linkedSum)).append("\n");
     sb.append("}");
     return sb.toString();

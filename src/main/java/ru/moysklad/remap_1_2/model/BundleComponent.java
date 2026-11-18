@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   BundleComponent.JSON_PROPERTY_QUANTITY,
   BundleComponent.JSON_PROPERTY_ASSORTMENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class BundleComponent extends EntityWithMeta implements MetaEntity {
   public static BundleComponent createWithMeta(UUID parentId, UUID id) {
     BundleComponent o = new BundleComponent();
@@ -92,6 +92,7 @@ public class BundleComponent extends EntityWithMeta implements MetaEntity {
   }
 
   public BundleComponent meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -116,6 +117,7 @@ public class BundleComponent extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -153,6 +155,7 @@ public class BundleComponent extends EntityWithMeta implements MetaEntity {
 
 
   public BundleComponent quantity(@javax.annotation.Nullable Double quantity) {
+
     
     this.quantity = quantity;
     return this;
@@ -177,11 +180,13 @@ public class BundleComponent extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
+
     this.quantity = quantity;
   }
 
 
   public BundleComponent assortment(@javax.annotation.Nullable AssortmentWithoutBundle assortment) {
+
     
     this.assortment = assortment;
     return this;
@@ -206,6 +211,7 @@ public class BundleComponent extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssortment(@javax.annotation.Nullable AssortmentWithoutBundle assortment) {
+
     this.assortment = assortment;
   }
 

@@ -32,7 +32,7 @@ import java.util.StringJoiner;
 @JsonPropertyOrder({
   NotificationSubscribeTermsExpired.JSON_PROPERTY_DAYS_LEFT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class NotificationSubscribeTermsExpired extends NotificationAbstract {
 
   public static final String JSON_PROPERTY_DAYS_LEFT = "daysLeft";
@@ -43,6 +43,7 @@ public class NotificationSubscribeTermsExpired extends NotificationAbstract {
   }
 
   public NotificationSubscribeTermsExpired daysLeft(@javax.annotation.Nullable Integer daysLeft) {
+
     
     this.daysLeft = daysLeft;
     return this;
@@ -67,6 +68,7 @@ public class NotificationSubscribeTermsExpired extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_DAYS_LEFT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDaysLeft(@javax.annotation.Nullable Integer daysLeft) {
+
     this.daysLeft = daysLeft;
   }
 

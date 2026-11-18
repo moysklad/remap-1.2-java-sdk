@@ -32,6 +32,7 @@ import ru.moysklad.remap_1_2.model.AttributeAbstract;
 import ru.moysklad.remap_1_2.model.Contract;
 import ru.moysklad.remap_1_2.model.CurrencyRate;
 import ru.moysklad.remap_1_2.model.CustomerOrder;
+import ru.moysklad.remap_1_2.model.DemandPayment;
 import ru.moysklad.remap_1_2.model.DemandPositionList;
 import ru.moysklad.remap_1_2.model.Employee;
 import ru.moysklad.remap_1_2.model.FactureOut;
@@ -43,7 +44,6 @@ import ru.moysklad.remap_1_2.model.Organization;
 import ru.moysklad.remap_1_2.model.Overhead;
 import ru.moysklad.remap_1_2.model.ProductionTask;
 import ru.moysklad.remap_1_2.model.Project;
-import ru.moysklad.remap_1_2.model.RetailShiftPaymentsInner;
 import ru.moysklad.remap_1_2.model.SalesChannel;
 import ru.moysklad.remap_1_2.model.SalesReturn;
 import ru.moysklad.remap_1_2.model.State;
@@ -115,7 +115,7 @@ import java.util.StringJoiner;
   Demand.JSON_PROPERTY_TRANSPORT_FACILITY,
   Demand.JSON_PROPERTY_TRANSPORT_FACILITY_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Demand extends EntityWithMeta implements MetaEntity {
   public static Demand createWithMeta(UUID id) {
     Demand o = new Demand();
@@ -302,7 +302,7 @@ public class Demand extends EntityWithMeta implements MetaEntity {
 
   public static final String JSON_PROPERTY_PAYMENTS = "payments";
   @javax.annotation.Nullable
-  private JsonNullable<List<RetailShiftPaymentsInner>> payments = JsonNullable.<List<RetailShiftPaymentsInner>>undefined();
+  private JsonNullable<List<DemandPayment>> payments = JsonNullable.<List<DemandPayment>>undefined();
 
   public static final String JSON_PROPERTY_PRODUCTION_TASKS = "productionTasks";
   @javax.annotation.Nullable
@@ -376,6 +376,7 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   }
 
   public Demand meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -400,6 +401,7 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -437,6 +439,7 @@ public class Demand extends EntityWithMeta implements MetaEntity {
 
 
   public Demand name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -461,11 +464,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public Demand code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -490,11 +495,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public Demand externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -519,11 +526,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public Demand syncId(@javax.annotation.Nullable UUID syncId) {
+
     
     this.syncId = syncId;
     return this;
@@ -548,11 +557,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
+
     this.syncId = syncId;
   }
 
 
   public Demand description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -586,6 +597,7 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 
@@ -639,6 +651,7 @@ public class Demand extends EntityWithMeta implements MetaEntity {
 
 
   public Demand moment(@javax.annotation.Nullable String moment) {
+
     
     this.moment = moment;
     return this;
@@ -663,11 +676,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMoment(@javax.annotation.Nullable String moment) {
+
     this.moment = moment;
   }
 
 
   public Demand applicable(@javax.annotation.Nullable Boolean applicable) {
+
     
     this.applicable = applicable;
     return this;
@@ -692,6 +707,7 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_APPLICABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setApplicable(@javax.annotation.Nullable Boolean applicable) {
+
     this.applicable = applicable;
   }
 
@@ -729,6 +745,7 @@ public class Demand extends EntityWithMeta implements MetaEntity {
 
 
   public Demand shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -753,11 +770,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
 
   public Demand vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     
     this.vatEnabled = vatEnabled;
     return this;
@@ -782,11 +801,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     this.vatEnabled = vatEnabled;
   }
 
 
   public Demand vatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
+
     
     this.vatIncluded = vatIncluded;
     return this;
@@ -811,6 +832,7 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_VAT_INCLUDED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
+
     this.vatIncluded = vatIncluded;
   }
 
@@ -864,6 +886,7 @@ public class Demand extends EntityWithMeta implements MetaEntity {
 
 
   public Demand organization(@javax.annotation.Nullable Organization organization) {
+
     
     this.organization = organization;
     return this;
@@ -888,11 +911,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOrganization(@javax.annotation.Nullable Organization organization) {
+
     this.organization = organization;
   }
 
 
   public Demand organizationAccount(@javax.annotation.Nullable Account organizationAccount) {
+
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
     
     return this;
@@ -926,11 +951,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   }
 
   public void setOrganizationAccount(@javax.annotation.Nullable Account organizationAccount) {
+
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
   }
 
 
   public Demand agent(@javax.annotation.Nullable Agent agent) {
+
     
     this.agent = agent;
     return this;
@@ -955,11 +982,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAgent(@javax.annotation.Nullable Agent agent) {
+
     this.agent = agent;
   }
 
 
   public Demand agentAccount(@javax.annotation.Nullable Account agentAccount) {
+
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
     
     return this;
@@ -993,11 +1022,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   }
 
   public void setAgentAccount(@javax.annotation.Nullable Account agentAccount) {
+
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
   }
 
 
   public Demand store(@javax.annotation.Nullable Store store) {
+
     this.store = JsonNullable.<Store>of(store);
     
     return this;
@@ -1031,11 +1062,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   }
 
   public void setStore(@javax.annotation.Nullable Store store) {
+
     this.store = JsonNullable.<Store>of(store);
   }
 
 
   public Demand state(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
     
     return this;
@@ -1069,11 +1102,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   }
 
   public void setState(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
   }
 
 
   public Demand contract(@javax.annotation.Nullable Contract contract) {
+
     this.contract = JsonNullable.<Contract>of(contract);
     
     return this;
@@ -1107,11 +1142,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   }
 
   public void setContract(@javax.annotation.Nullable Contract contract) {
+
     this.contract = JsonNullable.<Contract>of(contract);
   }
 
 
   public Demand project(@javax.annotation.Nullable Project project) {
+
     this.project = JsonNullable.<Project>of(project);
     
     return this;
@@ -1145,11 +1182,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   }
 
   public void setProject(@javax.annotation.Nullable Project project) {
+
     this.project = JsonNullable.<Project>of(project);
   }
 
 
   public Demand owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -1183,11 +1222,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
 
   public Demand group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -1212,11 +1253,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
 
   public Demand attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
@@ -1249,7 +1292,7 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
@@ -1262,11 +1305,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   }
 
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
   public Demand files(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
@@ -1300,11 +1345,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   }
 
   public void setFiles(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
   }
 
 
   public Demand rate(@javax.annotation.Nullable CurrencyRate rate) {
+
     
     this.rate = rate;
     return this;
@@ -1329,11 +1376,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRate(@javax.annotation.Nullable CurrencyRate rate) {
+
     this.rate = rate;
   }
 
 
   public Demand positions(@javax.annotation.Nullable DemandPositionList positions) {
+
     
     this.positions = positions;
     return this;
@@ -1358,11 +1407,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPositions(@javax.annotation.Nullable DemandPositionList positions) {
+
     this.positions = positions;
   }
 
 
   public Demand salesChannel(@javax.annotation.Nullable SalesChannel salesChannel) {
+
     this.salesChannel = JsonNullable.<SalesChannel>of(salesChannel);
     
     return this;
@@ -1396,11 +1447,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   }
 
   public void setSalesChannel(@javax.annotation.Nullable SalesChannel salesChannel) {
+
     this.salesChannel = JsonNullable.<SalesChannel>of(salesChannel);
   }
 
 
   public Demand shipmentAddress(@javax.annotation.Nullable String shipmentAddress) {
+
     
     this.shipmentAddress = shipmentAddress;
     return this;
@@ -1425,11 +1478,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SHIPMENT_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShipmentAddress(@javax.annotation.Nullable String shipmentAddress) {
+
     this.shipmentAddress = shipmentAddress;
   }
 
 
   public Demand shipmentAddressFull(@javax.annotation.Nullable Address shipmentAddressFull) {
+
     
     this.shipmentAddressFull = shipmentAddressFull;
     return this;
@@ -1454,11 +1509,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SHIPMENT_ADDRESS_FULL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShipmentAddressFull(@javax.annotation.Nullable Address shipmentAddressFull) {
+
     this.shipmentAddressFull = shipmentAddressFull;
   }
 
 
   public Demand overhead(@javax.annotation.Nullable Overhead overhead) {
+
     this.overhead = JsonNullable.<Overhead>of(overhead);
     
     return this;
@@ -1492,11 +1549,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   }
 
   public void setOverhead(@javax.annotation.Nullable Overhead overhead) {
+
     this.overhead = JsonNullable.<Overhead>of(overhead);
   }
 
 
   public Demand customerOrder(@javax.annotation.Nullable CustomerOrder customerOrder) {
+
     this.customerOrder = JsonNullable.<CustomerOrder>of(customerOrder);
     
     return this;
@@ -1530,11 +1589,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   }
 
   public void setCustomerOrder(@javax.annotation.Nullable CustomerOrder customerOrder) {
+
     this.customerOrder = JsonNullable.<CustomerOrder>of(customerOrder);
   }
 
 
   public Demand factureOut(@javax.annotation.Nullable FactureOut factureOut) {
+
     this.factureOut = JsonNullable.<FactureOut>of(factureOut);
     
     return this;
@@ -1568,11 +1629,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   }
 
   public void setFactureOut(@javax.annotation.Nullable FactureOut factureOut) {
+
     this.factureOut = JsonNullable.<FactureOut>of(factureOut);
   }
 
 
   public Demand returns(@javax.annotation.Nullable List<SalesReturn> returns) {
+
     this.returns = JsonNullable.<List<SalesReturn>>of(returns);
     
     return this;
@@ -1605,7 +1668,7 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_RETURNS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<SalesReturn>> getReturns_JsonNullable() {
@@ -1618,20 +1681,22 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   }
 
   public void setReturns(@javax.annotation.Nullable List<SalesReturn> returns) {
+
     this.returns = JsonNullable.<List<SalesReturn>>of(returns);
   }
 
 
-  public Demand payments(@javax.annotation.Nullable List<RetailShiftPaymentsInner> payments) {
-    this.payments = JsonNullable.<List<RetailShiftPaymentsInner>>of(payments);
+  public Demand payments(@javax.annotation.Nullable List<DemandPayment> payments) {
+
+    this.payments = JsonNullable.<List<DemandPayment>>of(payments);
     
     return this;
   }
 
 
-  public Demand addPaymentsItem(RetailShiftPaymentsInner paymentsItem) {
+  public Demand addPaymentsItem(DemandPayment paymentsItem) {
     if (this.payments == null || !this.payments.isPresent()) {
-      this.payments = JsonNullable.<List<RetailShiftPaymentsInner>>of(new ArrayList<>());
+      this.payments = JsonNullable.<List<DemandPayment>>of(new ArrayList<>());
     }
     try {
       this.payments.get().add(paymentsItem);
@@ -1648,31 +1713,33 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   @javax.annotation.Nullable
   @JsonIgnore
 
-  public List<RetailShiftPaymentsInner> getPayments() {
+  public List<DemandPayment> getPayments() {
         return payments.orElse(null);
   }
 
   
 
   @JsonProperty(JSON_PROPERTY_PAYMENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
-  public JsonNullable<List<RetailShiftPaymentsInner>> getPayments_JsonNullable() {
+  public JsonNullable<List<DemandPayment>> getPayments_JsonNullable() {
     return payments;
   }
   
   @JsonProperty(value = JSON_PROPERTY_PAYMENTS, required = false)
-  public void setPayments_JsonNullable(JsonNullable<List<RetailShiftPaymentsInner>> payments) {
+  public void setPayments_JsonNullable(JsonNullable<List<DemandPayment>> payments) {
     this.payments = payments;
   }
 
-  public void setPayments(@javax.annotation.Nullable List<RetailShiftPaymentsInner> payments) {
-    this.payments = JsonNullable.<List<RetailShiftPaymentsInner>>of(payments);
+  public void setPayments(@javax.annotation.Nullable List<DemandPayment> payments) {
+
+    this.payments = JsonNullable.<List<DemandPayment>>of(payments);
   }
 
 
   public Demand productionTasks(@javax.annotation.Nullable List<ProductionTask> productionTasks) {
+
     this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
     
     return this;
@@ -1705,7 +1772,7 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_PRODUCTION_TASKS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<ProductionTask>> getProductionTasks_JsonNullable() {
@@ -1718,11 +1785,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   }
 
   public void setProductionTasks(@javax.annotation.Nullable List<ProductionTask> productionTasks) {
+
     this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
   }
 
 
   public Demand invoicesOut(@javax.annotation.Nullable List<InvoiceOut> invoicesOut) {
+
     this.invoicesOut = JsonNullable.<List<InvoiceOut>>of(invoicesOut);
     
     return this;
@@ -1755,7 +1824,7 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_INVOICES_OUT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<InvoiceOut>> getInvoicesOut_JsonNullable() {
@@ -1768,11 +1837,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   }
 
   public void setInvoicesOut(@javax.annotation.Nullable List<InvoiceOut> invoicesOut) {
+
     this.invoicesOut = JsonNullable.<List<InvoiceOut>>of(invoicesOut);
   }
 
 
   public Demand cargoName(@javax.annotation.Nullable String cargoName) {
+
     
     this.cargoName = cargoName;
     return this;
@@ -1797,11 +1868,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_CARGO_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCargoName(@javax.annotation.Nullable String cargoName) {
+
     this.cargoName = cargoName;
   }
 
 
   public Demand carrier(@javax.annotation.Nullable Agent carrier) {
+
     this.carrier = JsonNullable.<Agent>of(carrier);
     
     return this;
@@ -1835,11 +1908,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   }
 
   public void setCarrier(@javax.annotation.Nullable Agent carrier) {
+
     this.carrier = JsonNullable.<Agent>of(carrier);
   }
 
 
   public Demand consignee(@javax.annotation.Nullable Agent consignee) {
+
     this.consignee = JsonNullable.<Agent>of(consignee);
     
     return this;
@@ -1873,11 +1948,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   }
 
   public void setConsignee(@javax.annotation.Nullable Agent consignee) {
+
     this.consignee = JsonNullable.<Agent>of(consignee);
   }
 
 
   public Demand goodPackQuantity(@javax.annotation.Nullable Integer goodPackQuantity) {
+
     
     this.goodPackQuantity = goodPackQuantity;
     return this;
@@ -1902,11 +1979,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_GOOD_PACK_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGoodPackQuantity(@javax.annotation.Nullable Integer goodPackQuantity) {
+
     this.goodPackQuantity = goodPackQuantity;
   }
 
 
   public Demand shippingInstructions(@javax.annotation.Nullable String shippingInstructions) {
+
     
     this.shippingInstructions = shippingInstructions;
     return this;
@@ -1931,11 +2010,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SHIPPING_INSTRUCTIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShippingInstructions(@javax.annotation.Nullable String shippingInstructions) {
+
     this.shippingInstructions = shippingInstructions;
   }
 
 
   public Demand stateContractId(@javax.annotation.Nullable String stateContractId) {
+
     
     this.stateContractId = stateContractId;
     return this;
@@ -1960,11 +2041,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_STATE_CONTRACT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStateContractId(@javax.annotation.Nullable String stateContractId) {
+
     this.stateContractId = stateContractId;
   }
 
 
   public Demand transportFacility(@javax.annotation.Nullable String transportFacility) {
+
     
     this.transportFacility = transportFacility;
     return this;
@@ -1989,11 +2072,13 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_TRANSPORT_FACILITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTransportFacility(@javax.annotation.Nullable String transportFacility) {
+
     this.transportFacility = transportFacility;
   }
 
 
   public Demand transportFacilityNumber(@javax.annotation.Nullable String transportFacilityNumber) {
+
     
     this.transportFacilityNumber = transportFacilityNumber;
     return this;
@@ -2018,6 +2103,7 @@ public class Demand extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_TRANSPORT_FACILITY_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTransportFacilityNumber(@javax.annotation.Nullable String transportFacilityNumber) {
+
     this.transportFacilityNumber = transportFacilityNumber;
   }
 

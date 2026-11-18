@@ -34,7 +34,7 @@ import java.util.StringJoiner;
   ReportPlotSeries.JSON_PROPERTY_QUANTITY,
   ReportPlotSeries.JSON_PROPERTY_SUM
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ReportPlotSeries {
 
   public static final String JSON_PROPERTY_DATE = "date";
@@ -53,6 +53,7 @@ public class ReportPlotSeries {
   }
 
   public ReportPlotSeries date(@javax.annotation.Nullable String date) {
+
     
     this.date = date;
     return this;
@@ -77,11 +78,13 @@ public class ReportPlotSeries {
   @JsonProperty(JSON_PROPERTY_DATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDate(@javax.annotation.Nullable String date) {
+
     this.date = date;
   }
 
 
   public ReportPlotSeries quantity(@javax.annotation.Nullable Integer quantity) {
+
     
     this.quantity = quantity;
     return this;
@@ -106,11 +109,13 @@ public class ReportPlotSeries {
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuantity(@javax.annotation.Nullable Integer quantity) {
+
     this.quantity = quantity;
   }
 
 
   public ReportPlotSeries sum(@javax.annotation.Nullable Double sum) {
+
     
     this.sum = sum;
     return this;
@@ -135,6 +140,7 @@ public class ReportPlotSeries {
   @JsonProperty(JSON_PROPERTY_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSum(@javax.annotation.Nullable Double sum) {
+
     this.sum = sum;
   }
 

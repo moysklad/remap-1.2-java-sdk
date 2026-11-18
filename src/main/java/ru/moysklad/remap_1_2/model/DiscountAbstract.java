@@ -25,7 +25,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
-import ru.moysklad.remap_1_2.model.DiscountAssortmentItem;
 import ru.moysklad.remap_1_2.model.Meta;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -52,10 +51,9 @@ import ru.moysklad.remap_1_2.deserialize.PolymorphicMetaTypeDeserializer;
   DiscountAbstract.JSON_PROPERTY_ACTIVE,
   DiscountAbstract.JSON_PROPERTY_ALL_AGENTS,
   DiscountAbstract.JSON_PROPERTY_AGENT_TAGS,
-  DiscountAbstract.JSON_PROPERTY_ALL_PRODUCTS,
-  DiscountAbstract.JSON_PROPERTY_ASSORTMENT
+  DiscountAbstract.JSON_PROPERTY_ALL_PRODUCTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 @OpenApiPolymorphicTypeInfo(path = "meta.type")
 @OpenApiPolymorphicSubTypes({
   @OpenApiPolymorphicSubTypes.Type(value = AccumulationDiscount.class, name = "accumulationdiscount"),
@@ -99,10 +97,6 @@ public class DiscountAbstract implements MetaEntity {
   @javax.annotation.Nullable
   private Boolean allProducts;
 
-  public static final String JSON_PROPERTY_ASSORTMENT = "assortment";
-  @javax.annotation.Nullable
-  private JsonNullable<List<DiscountAssortmentItem>> assortment = JsonNullable.<List<DiscountAssortmentItem>>undefined();
-
   public DiscountAbstract() {
   }
   /**
@@ -135,6 +129,7 @@ public class DiscountAbstract implements MetaEntity {
 
 
   public DiscountAbstract meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -159,6 +154,7 @@ public class DiscountAbstract implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -180,6 +176,7 @@ public class DiscountAbstract implements MetaEntity {
 
 
   public DiscountAbstract name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -204,11 +201,13 @@ public class DiscountAbstract implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public DiscountAbstract active(@javax.annotation.Nullable Boolean active) {
+
     
     this.active = active;
     return this;
@@ -233,11 +232,13 @@ public class DiscountAbstract implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ACTIVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setActive(@javax.annotation.Nullable Boolean active) {
+
     this.active = active;
   }
 
 
   public DiscountAbstract allAgents(@javax.annotation.Nullable Boolean allAgents) {
+
     
     this.allAgents = allAgents;
     return this;
@@ -262,11 +263,13 @@ public class DiscountAbstract implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ALL_AGENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAllAgents(@javax.annotation.Nullable Boolean allAgents) {
+
     this.allAgents = allAgents;
   }
 
 
   public DiscountAbstract agentTags(@javax.annotation.Nullable List<String> agentTags) {
+
     this.agentTags = JsonNullable.<List<String>>of(agentTags);
     
     return this;
@@ -299,7 +302,7 @@ public class DiscountAbstract implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_AGENT_TAGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<String>> getAgentTags_JsonNullable() {
@@ -312,11 +315,13 @@ public class DiscountAbstract implements MetaEntity {
   }
 
   public void setAgentTags(@javax.annotation.Nullable List<String> agentTags) {
+
     this.agentTags = JsonNullable.<List<String>>of(agentTags);
   }
 
 
   public DiscountAbstract allProducts(@javax.annotation.Nullable Boolean allProducts) {
+
     
     this.allProducts = allProducts;
     return this;
@@ -341,57 +346,8 @@ public class DiscountAbstract implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ALL_PRODUCTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAllProducts(@javax.annotation.Nullable Boolean allProducts) {
+
     this.allProducts = allProducts;
-  }
-
-
-  public DiscountAbstract assortment(@javax.annotation.Nullable List<DiscountAssortmentItem> assortment) {
-    this.assortment = JsonNullable.<List<DiscountAssortmentItem>>of(assortment);
-    
-    return this;
-  }
-
-
-  public DiscountAbstract addAssortmentItem(DiscountAssortmentItem assortmentItem) {
-    if (this.assortment == null || !this.assortment.isPresent()) {
-      this.assortment = JsonNullable.<List<DiscountAssortmentItem>>of(new ArrayList<>());
-    }
-    try {
-      this.assortment.get().add(assortmentItem);
-    } catch (java.util.NoSuchElementException e) {
-      // this can never happen, as we make sure above that the value is present
-    }
-    return this;
-  }
-
-  /**
-   * Массив метаданных товаров, услуг и модификаций
-   * @return assortment
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-
-  public List<DiscountAssortmentItem> getAssortment() {
-        return assortment.orElse(null);
-  }
-
-  
-
-  @JsonProperty(JSON_PROPERTY_ASSORTMENT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-
-  public JsonNullable<List<DiscountAssortmentItem>> getAssortment_JsonNullable() {
-    return assortment;
-  }
-  
-  @JsonProperty(value = JSON_PROPERTY_ASSORTMENT, required = false)
-  public void setAssortment_JsonNullable(JsonNullable<List<DiscountAssortmentItem>> assortment) {
-    this.assortment = assortment;
-  }
-
-  public void setAssortment(@javax.annotation.Nullable List<DiscountAssortmentItem> assortment) {
-    this.assortment = JsonNullable.<List<DiscountAssortmentItem>>of(assortment);
   }
 
 
@@ -411,8 +367,7 @@ public class DiscountAbstract implements MetaEntity {
         Objects.equals(this.active, discountAbstract.active) &&
         Objects.equals(this.allAgents, discountAbstract.allAgents) &&
         equalsNullable(this.agentTags, discountAbstract.agentTags) &&
-        Objects.equals(this.allProducts, discountAbstract.allProducts) &&
-        equalsNullable(this.assortment, discountAbstract.assortment);
+        Objects.equals(this.allProducts, discountAbstract.allProducts);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -421,7 +376,7 @@ public class DiscountAbstract implements MetaEntity {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, meta, accountId, name, active, allAgents, hashCodeNullable(agentTags), allProducts, hashCodeNullable(assortment));
+    return Objects.hash(id, meta, accountId, name, active, allAgents, hashCodeNullable(agentTags), allProducts);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -443,7 +398,6 @@ public class DiscountAbstract implements MetaEntity {
     sb.append("    allAgents: ").append(toIndentedString(allAgents)).append("\n");
     sb.append("    agentTags: ").append(toIndentedString(agentTags)).append("\n");
     sb.append("    allProducts: ").append(toIndentedString(allProducts)).append("\n");
-    sb.append("    assortment: ").append(toIndentedString(assortment)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -567,16 +521,6 @@ public class DiscountAbstract implements MetaEntity {
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
-      }
-    }
-
-    // add `assortment` to the URL query string
-    if (getAssortment() != null) {
-      for (int i = 0; i < getAssortment().size(); i++) {
-        if (getAssortment().get(i) != null) {
-          joiner.add(getAssortment().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%sassortment%s%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
-        }
       }
     }
 

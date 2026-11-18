@@ -83,7 +83,7 @@ import java.util.StringJoiner;
   Loss.JSON_PROPERTY_SALES_RETURN,
   Loss.JSON_PROPERTY_INVENTORY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Loss extends EntityWithMeta implements MetaEntity {
   public static Loss createWithMeta(UUID id) {
     Loss o = new Loss();
@@ -231,7 +231,6 @@ public class Loss extends EntityWithMeta implements MetaEntity {
     @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId, 
     @JsonProperty(value = JSON_PROPERTY_CREATED, required = false) String created, 
     @JsonProperty(value = JSON_PROPERTY_DELETED, required = false) String deleted, 
-    @JsonProperty(value = JSON_PROPERTY_EXPENSE_ITEM, required = false) ExpenseItem expenseItem, 
     @JsonProperty(value = JSON_PROPERTY_PRINTED, required = false) Boolean printed, 
     @JsonProperty(value = JSON_PROPERTY_PUBLISHED, required = false) Boolean published, 
     @JsonProperty(value = JSON_PROPERTY_SUM, required = false) Double sum, 
@@ -242,7 +241,6 @@ public class Loss extends EntityWithMeta implements MetaEntity {
     this.accountId = accountId;
     this.created = created;
     this.deleted = deleted;
-    this.expenseItem = expenseItem;
     this.printed = printed;
     this.published = published;
     this.sum = sum;
@@ -250,6 +248,7 @@ public class Loss extends EntityWithMeta implements MetaEntity {
   }
 
   public Loss meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -274,6 +273,7 @@ public class Loss extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -311,6 +311,7 @@ public class Loss extends EntityWithMeta implements MetaEntity {
 
 
   public Loss applicable(@javax.annotation.Nullable Boolean applicable) {
+
     
     this.applicable = applicable;
     return this;
@@ -335,11 +336,13 @@ public class Loss extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_APPLICABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setApplicable(@javax.annotation.Nullable Boolean applicable) {
+
     this.applicable = applicable;
   }
 
 
   public Loss attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
@@ -372,7 +375,7 @@ public class Loss extends EntityWithMeta implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
@@ -385,11 +388,13 @@ public class Loss extends EntityWithMeta implements MetaEntity {
   }
 
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
   public Loss code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -414,6 +419,7 @@ public class Loss extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
@@ -451,6 +457,7 @@ public class Loss extends EntityWithMeta implements MetaEntity {
 
 
   public Loss description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -484,7 +491,16 @@ public class Loss extends EntityWithMeta implements MetaEntity {
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
+  }
+
+
+  public Loss expenseItem(@javax.annotation.Nullable ExpenseItem expenseItem) {
+
+    
+    this.expenseItem = expenseItem;
+    return this;
   }
 
 
@@ -503,8 +519,16 @@ public class Loss extends EntityWithMeta implements MetaEntity {
   
 
 
+  @JsonProperty(JSON_PROPERTY_EXPENSE_ITEM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setExpenseItem(@javax.annotation.Nullable ExpenseItem expenseItem) {
+
+    this.expenseItem = expenseItem;
+  }
+
 
   public Loss externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -529,11 +553,13 @@ public class Loss extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public Loss files(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
@@ -567,11 +593,13 @@ public class Loss extends EntityWithMeta implements MetaEntity {
   }
 
   public void setFiles(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
   }
 
 
   public Loss group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -596,11 +624,13 @@ public class Loss extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
 
   public Loss moment(@javax.annotation.Nullable String moment) {
+
     
     this.moment = moment;
     return this;
@@ -625,11 +655,13 @@ public class Loss extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMoment(@javax.annotation.Nullable String moment) {
+
     this.moment = moment;
   }
 
 
   public Loss name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -654,11 +686,13 @@ public class Loss extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public Loss organization(@javax.annotation.Nullable Organization organization) {
+
     
     this.organization = organization;
     return this;
@@ -683,11 +717,13 @@ public class Loss extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOrganization(@javax.annotation.Nullable Organization organization) {
+
     this.organization = organization;
   }
 
 
   public Loss owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -721,11 +757,13 @@ public class Loss extends EntityWithMeta implements MetaEntity {
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
 
   public Loss positions(@javax.annotation.Nullable LossPositionList positions) {
+
     
     this.positions = positions;
     return this;
@@ -750,6 +788,7 @@ public class Loss extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPositions(@javax.annotation.Nullable LossPositionList positions) {
+
     this.positions = positions;
   }
 
@@ -771,6 +810,7 @@ public class Loss extends EntityWithMeta implements MetaEntity {
 
 
   public Loss project(@javax.annotation.Nullable Project project) {
+
     this.project = JsonNullable.<Project>of(project);
     
     return this;
@@ -804,6 +844,7 @@ public class Loss extends EntityWithMeta implements MetaEntity {
   }
 
   public void setProject(@javax.annotation.Nullable Project project) {
+
     this.project = JsonNullable.<Project>of(project);
   }
 
@@ -825,6 +866,7 @@ public class Loss extends EntityWithMeta implements MetaEntity {
 
 
   public Loss rate(@javax.annotation.Nullable CurrencyRate rate) {
+
     
     this.rate = rate;
     return this;
@@ -849,11 +891,13 @@ public class Loss extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRate(@javax.annotation.Nullable CurrencyRate rate) {
+
     this.rate = rate;
   }
 
 
   public Loss shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -878,11 +922,13 @@ public class Loss extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
 
   public Loss state(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
     
     return this;
@@ -916,11 +962,13 @@ public class Loss extends EntityWithMeta implements MetaEntity {
   }
 
   public void setState(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
   }
 
 
   public Loss store(@javax.annotation.Nullable Store store) {
+
     
     this.store = store;
     return this;
@@ -945,6 +993,7 @@ public class Loss extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStore(@javax.annotation.Nullable Store store) {
+
     this.store = store;
   }
 
@@ -966,6 +1015,7 @@ public class Loss extends EntityWithMeta implements MetaEntity {
 
 
   public Loss syncId(@javax.annotation.Nullable UUID syncId) {
+
     
     this.syncId = syncId;
     return this;
@@ -990,6 +1040,7 @@ public class Loss extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
+
     this.syncId = syncId;
   }
 
@@ -1011,6 +1062,7 @@ public class Loss extends EntityWithMeta implements MetaEntity {
 
 
   public Loss salesReturn(@javax.annotation.Nullable SalesReturn salesReturn) {
+
     this.salesReturn = JsonNullable.<SalesReturn>of(salesReturn);
     
     return this;
@@ -1044,11 +1096,13 @@ public class Loss extends EntityWithMeta implements MetaEntity {
   }
 
   public void setSalesReturn(@javax.annotation.Nullable SalesReturn salesReturn) {
+
     this.salesReturn = JsonNullable.<SalesReturn>of(salesReturn);
   }
 
 
   public Loss inventory(@javax.annotation.Nullable Inventory inventory) {
+
     this.inventory = JsonNullable.<Inventory>of(inventory);
     
     return this;
@@ -1082,6 +1136,7 @@ public class Loss extends EntityWithMeta implements MetaEntity {
   }
 
   public void setInventory(@javax.annotation.Nullable Inventory inventory) {
+
     this.inventory = JsonNullable.<Inventory>of(inventory);
   }
 

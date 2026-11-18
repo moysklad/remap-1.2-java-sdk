@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   EmployeeRole.JSON_PROPERTY_META,
   EmployeeRole.JSON_PROPERTY_PERMISSIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class EmployeeRole {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -54,6 +54,7 @@ public class EmployeeRole {
   }
 
   public EmployeeRole meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -78,11 +79,13 @@ public class EmployeeRole {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public EmployeeRole permissions(@javax.annotation.Nullable RolePermissions permissions) {
+
     this.permissions = JsonNullable.<RolePermissions>of(permissions);
     
     return this;
@@ -116,6 +119,7 @@ public class EmployeeRole {
   }
 
   public void setPermissions(@javax.annotation.Nullable RolePermissions permissions) {
+
     this.permissions = JsonNullable.<RolePermissions>of(permissions);
   }
 

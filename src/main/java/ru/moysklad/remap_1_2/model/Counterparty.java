@@ -100,7 +100,7 @@ import java.util.StringJoiner;
   Counterparty.JSON_PROPERTY_TAGS,
   Counterparty.JSON_PROPERTY_ATTRIBUTES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Counterparty extends Agent implements Named {
   public static Counterparty createWithMeta(UUID id) {
     Counterparty o = new Counterparty();
@@ -331,6 +331,7 @@ public class Counterparty extends Agent implements Named {
   }
 
   public Counterparty meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -355,11 +356,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public Counterparty id(@javax.annotation.Nullable UUID id) {
+
     
     this.id = id;
     return this;
@@ -384,11 +387,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(@javax.annotation.Nullable UUID id) {
+
     this.id = id;
   }
 
 
   public Counterparty syncId(@javax.annotation.Nullable UUID syncId) {
+
     
     this.syncId = syncId;
     return this;
@@ -413,6 +418,7 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
+
     this.syncId = syncId;
   }
 
@@ -434,6 +440,7 @@ public class Counterparty extends Agent implements Named {
 
 
   public Counterparty name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -458,11 +465,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public Counterparty code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -487,11 +496,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public Counterparty externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -516,11 +527,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public Counterparty archived(@javax.annotation.Nullable Boolean archived) {
+
     
     this.archived = archived;
     return this;
@@ -545,6 +558,7 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
+
     this.archived = archived;
   }
 
@@ -582,6 +596,7 @@ public class Counterparty extends Agent implements Named {
 
 
   public Counterparty description(@javax.annotation.Nullable String description) {
+
     
     this.description = description;
     return this;
@@ -606,11 +621,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = description;
   }
 
 
   public Counterparty companyType(@javax.annotation.Nullable String companyType) {
+
     
     this.companyType = companyType;
     return this;
@@ -635,11 +652,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_COMPANY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCompanyType(@javax.annotation.Nullable String companyType) {
+
     this.companyType = companyType;
   }
 
 
   public Counterparty email(@javax.annotation.Nullable String email) {
+
     
     this.email = email;
     return this;
@@ -664,11 +683,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEmail(@javax.annotation.Nullable String email) {
+
     this.email = email;
   }
 
 
   public Counterparty phone(@javax.annotation.Nullable String phone) {
+
     
     this.phone = phone;
     return this;
@@ -693,11 +714,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_PHONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPhone(@javax.annotation.Nullable String phone) {
+
     this.phone = phone;
   }
 
 
   public Counterparty fax(@javax.annotation.Nullable String fax) {
+
     
     this.fax = fax;
     return this;
@@ -722,11 +745,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_FAX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFax(@javax.annotation.Nullable String fax) {
+
     this.fax = fax;
   }
 
 
   public Counterparty actualAddress(@javax.annotation.Nullable String actualAddress) {
+
     
     this.actualAddress = actualAddress;
     return this;
@@ -751,11 +776,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_ACTUAL_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setActualAddress(@javax.annotation.Nullable String actualAddress) {
+
     this.actualAddress = actualAddress;
   }
 
 
   public Counterparty actualAddressFull(@javax.annotation.Nullable Address actualAddressFull) {
+
     this.actualAddressFull = JsonNullable.<Address>of(actualAddressFull);
     
     return this;
@@ -789,11 +816,13 @@ public class Counterparty extends Agent implements Named {
   }
 
   public void setActualAddressFull(@javax.annotation.Nullable Address actualAddressFull) {
+
     this.actualAddressFull = JsonNullable.<Address>of(actualAddressFull);
   }
 
 
   public Counterparty legalAddress(@javax.annotation.Nullable String legalAddress) {
+
     
     this.legalAddress = legalAddress;
     return this;
@@ -818,11 +847,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_LEGAL_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLegalAddress(@javax.annotation.Nullable String legalAddress) {
+
     this.legalAddress = legalAddress;
   }
 
 
   public Counterparty legalAddressFull(@javax.annotation.Nullable Address legalAddressFull) {
+
     this.legalAddressFull = JsonNullable.<Address>of(legalAddressFull);
     
     return this;
@@ -856,11 +887,13 @@ public class Counterparty extends Agent implements Named {
   }
 
   public void setLegalAddressFull(@javax.annotation.Nullable Address legalAddressFull) {
+
     this.legalAddressFull = JsonNullable.<Address>of(legalAddressFull);
   }
 
 
   public Counterparty inn(@javax.annotation.Nullable String inn) {
+
     
     this.inn = inn;
     return this;
@@ -885,11 +918,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_INN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setInn(@javax.annotation.Nullable String inn) {
+
     this.inn = inn;
   }
 
 
   public Counterparty kpp(@javax.annotation.Nullable String kpp) {
+
     
     this.kpp = kpp;
     return this;
@@ -914,11 +949,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_KPP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setKpp(@javax.annotation.Nullable String kpp) {
+
     this.kpp = kpp;
   }
 
 
   public Counterparty ogrn(@javax.annotation.Nullable String ogrn) {
+
     
     this.ogrn = ogrn;
     return this;
@@ -943,11 +980,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_OGRN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOgrn(@javax.annotation.Nullable String ogrn) {
+
     this.ogrn = ogrn;
   }
 
 
   public Counterparty ogrnip(@javax.annotation.Nullable String ogrnip) {
+
     
     this.ogrnip = ogrnip;
     return this;
@@ -972,11 +1011,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_OGRNIP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOgrnip(@javax.annotation.Nullable String ogrnip) {
+
     this.ogrnip = ogrnip;
   }
 
 
   public Counterparty okpo(@javax.annotation.Nullable String okpo) {
+
     
     this.okpo = okpo;
     return this;
@@ -1001,11 +1042,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_OKPO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOkpo(@javax.annotation.Nullable String okpo) {
+
     this.okpo = okpo;
   }
 
 
   public Counterparty certificateNumber(@javax.annotation.Nullable String certificateNumber) {
+
     
     this.certificateNumber = certificateNumber;
     return this;
@@ -1030,11 +1073,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_CERTIFICATE_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCertificateNumber(@javax.annotation.Nullable String certificateNumber) {
+
     this.certificateNumber = certificateNumber;
   }
 
 
   public Counterparty certificateDate(@javax.annotation.Nullable String certificateDate) {
+
     
     this.certificateDate = certificateDate;
     return this;
@@ -1059,11 +1104,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_CERTIFICATE_DATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCertificateDate(@javax.annotation.Nullable String certificateDate) {
+
     this.certificateDate = certificateDate;
   }
 
 
   public Counterparty legalTitle(@javax.annotation.Nullable String legalTitle) {
+
     
     this.legalTitle = legalTitle;
     return this;
@@ -1088,11 +1135,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_LEGAL_TITLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLegalTitle(@javax.annotation.Nullable String legalTitle) {
+
     this.legalTitle = legalTitle;
   }
 
 
   public Counterparty legalFirstName(@javax.annotation.Nullable String legalFirstName) {
+
     
     this.legalFirstName = legalFirstName;
     return this;
@@ -1117,11 +1166,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_LEGAL_FIRST_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLegalFirstName(@javax.annotation.Nullable String legalFirstName) {
+
     this.legalFirstName = legalFirstName;
   }
 
 
   public Counterparty legalLastName(@javax.annotation.Nullable String legalLastName) {
+
     
     this.legalLastName = legalLastName;
     return this;
@@ -1146,11 +1197,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_LEGAL_LAST_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLegalLastName(@javax.annotation.Nullable String legalLastName) {
+
     this.legalLastName = legalLastName;
   }
 
 
   public Counterparty legalMiddleName(@javax.annotation.Nullable String legalMiddleName) {
+
     
     this.legalMiddleName = legalMiddleName;
     return this;
@@ -1175,11 +1228,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_LEGAL_MIDDLE_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLegalMiddleName(@javax.annotation.Nullable String legalMiddleName) {
+
     this.legalMiddleName = legalMiddleName;
   }
 
 
   public Counterparty birthDate(@javax.annotation.Nullable String birthDate) {
+
     
     this.birthDate = birthDate;
     return this;
@@ -1204,11 +1259,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_BIRTH_DATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBirthDate(@javax.annotation.Nullable String birthDate) {
+
     this.birthDate = birthDate;
   }
 
 
   public Counterparty sex(@javax.annotation.Nullable String sex) {
+
     
     this.sex = sex;
     return this;
@@ -1233,11 +1290,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_SEX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSex(@javax.annotation.Nullable String sex) {
+
     this.sex = sex;
   }
 
 
   public Counterparty discountCardNumber(@javax.annotation.Nullable String discountCardNumber) {
+
     
     this.discountCardNumber = discountCardNumber;
     return this;
@@ -1262,11 +1321,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_DISCOUNT_CARD_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDiscountCardNumber(@javax.annotation.Nullable String discountCardNumber) {
+
     this.discountCardNumber = discountCardNumber;
   }
 
 
   public Counterparty discounts(@javax.annotation.Nullable List<AgentDiscount> discounts) {
+
     this.discounts = JsonNullable.<List<AgentDiscount>>of(discounts);
     
     return this;
@@ -1299,7 +1360,7 @@ public class Counterparty extends Agent implements Named {
   
 
   @JsonProperty(JSON_PROPERTY_DISCOUNTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<AgentDiscount>> getDiscounts_JsonNullable() {
@@ -1312,11 +1373,13 @@ public class Counterparty extends Agent implements Named {
   }
 
   public void setDiscounts(@javax.annotation.Nullable List<AgentDiscount> discounts) {
+
     this.discounts = JsonNullable.<List<AgentDiscount>>of(discounts);
   }
 
 
   public Counterparty shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -1341,11 +1404,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
 
   public Counterparty group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -1370,11 +1435,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
 
   public Counterparty owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -1408,6 +1475,7 @@ public class Counterparty extends Agent implements Named {
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
@@ -1445,6 +1513,7 @@ public class Counterparty extends Agent implements Named {
 
 
   public Counterparty bonusProgram(@javax.annotation.Nullable BonusProgram bonusProgram) {
+
     this.bonusProgram = JsonNullable.<BonusProgram>of(bonusProgram);
     
     return this;
@@ -1478,11 +1547,13 @@ public class Counterparty extends Agent implements Named {
   }
 
   public void setBonusProgram(@javax.annotation.Nullable BonusProgram bonusProgram) {
+
     this.bonusProgram = JsonNullable.<BonusProgram>of(bonusProgram);
   }
 
 
   public Counterparty priceType(@javax.annotation.Nullable PriceType priceType) {
+
     this.priceType = JsonNullable.<PriceType>of(priceType);
     
     return this;
@@ -1516,11 +1587,13 @@ public class Counterparty extends Agent implements Named {
   }
 
   public void setPriceType(@javax.annotation.Nullable PriceType priceType) {
+
     this.priceType = JsonNullable.<PriceType>of(priceType);
   }
 
 
   public Counterparty state(@javax.annotation.Nullable State state) {
+
     
     this.state = state;
     return this;
@@ -1545,11 +1618,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_STATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setState(@javax.annotation.Nullable State state) {
+
     this.state = state;
   }
 
 
   public Counterparty accounts(@javax.annotation.Nullable CounterpartyAccounts accounts) {
+
     
     this.accounts = accounts;
     return this;
@@ -1574,11 +1649,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_ACCOUNTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAccounts(@javax.annotation.Nullable CounterpartyAccounts accounts) {
+
     this.accounts = accounts;
   }
 
 
   public Counterparty contactpersons(@javax.annotation.Nullable CounterpartyContactpersons contactpersons) {
+
     
     this.contactpersons = contactpersons;
     return this;
@@ -1603,11 +1680,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_CONTACTPERSONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setContactpersons(@javax.annotation.Nullable CounterpartyContactpersons contactpersons) {
+
     this.contactpersons = contactpersons;
   }
 
 
   public Counterparty notes(@javax.annotation.Nullable CounterpartyNotes notes) {
+
     
     this.notes = notes;
     return this;
@@ -1632,11 +1711,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_NOTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNotes(@javax.annotation.Nullable CounterpartyNotes notes) {
+
     this.notes = notes;
   }
 
 
   public Counterparty files(@javax.annotation.Nullable FileList files) {
+
     
     this.files = files;
     return this;
@@ -1661,11 +1742,13 @@ public class Counterparty extends Agent implements Named {
   @JsonProperty(JSON_PROPERTY_FILES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFiles(@javax.annotation.Nullable FileList files) {
+
     this.files = files;
   }
 
 
   public Counterparty tags(@javax.annotation.Nullable List<String> tags) {
+
     this.tags = JsonNullable.<List<String>>of(tags);
     
     return this;
@@ -1698,7 +1781,7 @@ public class Counterparty extends Agent implements Named {
   
 
   @JsonProperty(JSON_PROPERTY_TAGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<String>> getTags_JsonNullable() {
@@ -1711,11 +1794,13 @@ public class Counterparty extends Agent implements Named {
   }
 
   public void setTags(@javax.annotation.Nullable List<String> tags) {
+
     this.tags = JsonNullable.<List<String>>of(tags);
   }
 
 
   public Counterparty attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
@@ -1748,7 +1833,7 @@ public class Counterparty extends Agent implements Named {
   
 
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
@@ -1761,6 +1846,7 @@ public class Counterparty extends Agent implements Named {
   }
 
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 

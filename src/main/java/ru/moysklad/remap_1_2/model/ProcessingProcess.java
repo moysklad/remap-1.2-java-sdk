@@ -52,7 +52,7 @@ import java.util.StringJoiner;
   ProcessingProcess.JSON_PROPERTY_ARCHIVED,
   ProcessingProcess.JSON_PROPERTY_POSITIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingProcess extends EntityWithMeta implements MetaEntity {
   public static ProcessingProcess createWithMeta(UUID id) {
     ProcessingProcess o = new ProcessingProcess();
@@ -135,6 +135,7 @@ public class ProcessingProcess extends EntityWithMeta implements MetaEntity {
   }
 
   public ProcessingProcess meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -159,6 +160,7 @@ public class ProcessingProcess extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -196,6 +198,7 @@ public class ProcessingProcess extends EntityWithMeta implements MetaEntity {
 
 
   public ProcessingProcess owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -229,11 +232,13 @@ public class ProcessingProcess extends EntityWithMeta implements MetaEntity {
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
 
   public ProcessingProcess shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -258,11 +263,13 @@ public class ProcessingProcess extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
 
   public ProcessingProcess group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -287,6 +294,7 @@ public class ProcessingProcess extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
@@ -308,6 +316,7 @@ public class ProcessingProcess extends EntityWithMeta implements MetaEntity {
 
 
   public ProcessingProcess name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -332,11 +341,13 @@ public class ProcessingProcess extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public ProcessingProcess description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -370,11 +381,13 @@ public class ProcessingProcess extends EntityWithMeta implements MetaEntity {
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 
 
   public ProcessingProcess externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -399,11 +412,13 @@ public class ProcessingProcess extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public ProcessingProcess archived(@javax.annotation.Nullable Boolean archived) {
+
     
     this.archived = archived;
     return this;
@@ -428,11 +443,13 @@ public class ProcessingProcess extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
+
     this.archived = archived;
   }
 
 
   public ProcessingProcess positions(@javax.annotation.Nullable ProcessingProcessPositionList positions) {
+
     
     this.positions = positions;
     return this;
@@ -457,6 +474,7 @@ public class ProcessingProcess extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPositions(@javax.annotation.Nullable ProcessingProcessPositionList positions) {
+
     this.positions = positions;
   }
 

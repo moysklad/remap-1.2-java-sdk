@@ -55,7 +55,7 @@ import java.util.StringJoiner;
   CustomEntityElement.JSON_PROPERTY_SHARED,
   CustomEntityElement.JSON_PROPERTY_GROUP
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class CustomEntityElement implements Named, MetaEntity {
   public static CustomEntityElement createWithMeta(UUID metadataId, UUID id) {
     CustomEntityElement o = new CustomEntityElement();
@@ -138,6 +138,7 @@ public class CustomEntityElement implements Named, MetaEntity {
   }
 
   public CustomEntityElement meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -162,6 +163,7 @@ public class CustomEntityElement implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -215,6 +217,7 @@ public class CustomEntityElement implements Named, MetaEntity {
 
 
   public CustomEntityElement name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -239,11 +242,13 @@ public class CustomEntityElement implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public CustomEntityElement code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -268,11 +273,13 @@ public class CustomEntityElement implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public CustomEntityElement description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -306,11 +313,13 @@ public class CustomEntityElement implements Named, MetaEntity {
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 
 
   public CustomEntityElement externalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = JsonNullable.<String>of(externalCode);
     
     return this;
@@ -344,11 +353,13 @@ public class CustomEntityElement implements Named, MetaEntity {
   }
 
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = JsonNullable.<String>of(externalCode);
   }
 
 
   public CustomEntityElement attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
@@ -381,7 +392,7 @@ public class CustomEntityElement implements Named, MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
@@ -394,11 +405,13 @@ public class CustomEntityElement implements Named, MetaEntity {
   }
 
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
   public CustomEntityElement owner(@javax.annotation.Nullable Employee owner) {
+
     
     this.owner = owner;
     return this;
@@ -423,11 +436,13 @@ public class CustomEntityElement implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_OWNER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = owner;
   }
 
 
   public CustomEntityElement shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -452,11 +467,13 @@ public class CustomEntityElement implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
 
   public CustomEntityElement group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -481,6 +498,7 @@ public class CustomEntityElement implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 

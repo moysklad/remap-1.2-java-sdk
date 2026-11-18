@@ -42,7 +42,7 @@ import java.util.StringJoiner;
   EventNote.JSON_PROPERTY_AUTHOR,
   EventNote.JSON_PROPERTY_AUTHOR_APPLICATION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class EventNote implements MetaEntity {
   public static EventNote createWithMeta(String documentType, UUID parentId, UUID id) {
     EventNote o = new EventNote();
@@ -107,6 +107,7 @@ public class EventNote implements MetaEntity {
   }
 
   public EventNote meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -131,6 +132,7 @@ public class EventNote implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -184,6 +186,7 @@ public class EventNote implements MetaEntity {
 
 
   public EventNote description(@javax.annotation.Nullable String description) {
+
     
     this.description = description;
     return this;
@@ -208,11 +211,13 @@ public class EventNote implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = description;
   }
 
 
   public EventNote author(@javax.annotation.Nullable Employee author) {
+
     
     this.author = author;
     return this;
@@ -237,6 +242,7 @@ public class EventNote implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_AUTHOR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAuthor(@javax.annotation.Nullable Employee author) {
+
     this.author = author;
   }
 

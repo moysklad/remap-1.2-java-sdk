@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   ReportTurnoverByOperation.JSON_PROPERTY_COST,
   ReportTurnoverByOperation.JSON_PROPERTY_SUM
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ReportTurnoverByOperation {
 
   public static final String JSON_PROPERTY_ASSORTMENT = "assortment";
@@ -71,6 +71,7 @@ public class ReportTurnoverByOperation {
   }
 
   public ReportTurnoverByOperation assortment(@javax.annotation.Nullable ReportTurnoverAssortment assortment) {
+
     
     this.assortment = assortment;
     return this;
@@ -95,11 +96,13 @@ public class ReportTurnoverByOperation {
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssortment(@javax.annotation.Nullable ReportTurnoverAssortment assortment) {
+
     this.assortment = assortment;
   }
 
 
   public ReportTurnoverByOperation store(@javax.annotation.Nullable Store store) {
+
     
     this.store = store;
     return this;
@@ -124,11 +127,13 @@ public class ReportTurnoverByOperation {
   @JsonProperty(JSON_PROPERTY_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStore(@javax.annotation.Nullable Store store) {
+
     this.store = store;
   }
 
 
   public ReportTurnoverByOperation operation(@javax.annotation.Nullable ReportTurnoverOperation operation) {
+
     
     this.operation = operation;
     return this;
@@ -153,11 +158,13 @@ public class ReportTurnoverByOperation {
   @JsonProperty(JSON_PROPERTY_OPERATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOperation(@javax.annotation.Nullable ReportTurnoverOperation operation) {
+
     this.operation = operation;
   }
 
 
   public ReportTurnoverByOperation quantity(@javax.annotation.Nullable Double quantity) {
+
     
     this.quantity = quantity;
     return this;
@@ -182,11 +189,13 @@ public class ReportTurnoverByOperation {
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
+
     this.quantity = quantity;
   }
 
 
   public ReportTurnoverByOperation cost(@javax.annotation.Nullable Double cost) {
+
     
     this.cost = cost;
     return this;
@@ -211,11 +220,13 @@ public class ReportTurnoverByOperation {
   @JsonProperty(JSON_PROPERTY_COST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCost(@javax.annotation.Nullable Double cost) {
+
     this.cost = cost;
   }
 
 
   public ReportTurnoverByOperation sum(@javax.annotation.Nullable Double sum) {
+
     
     this.sum = sum;
     return this;
@@ -240,6 +251,7 @@ public class ReportTurnoverByOperation {
   @JsonProperty(JSON_PROPERTY_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSum(@javax.annotation.Nullable Double sum) {
+
     this.sum = sum;
   }
 

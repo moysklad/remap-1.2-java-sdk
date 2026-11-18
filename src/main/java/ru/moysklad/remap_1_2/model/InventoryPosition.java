@@ -53,7 +53,7 @@ import java.util.StringJoiner;
   InventoryPosition.JSON_PROPERTY_THINGS,
   InventoryPosition.JSON_PROPERTY_QUANTITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class InventoryPosition extends EntityWithMeta implements DocumentPosition, MetaEntity {
   public static InventoryPosition createWithMeta(UUID parentId, UUID id) {
     InventoryPosition o = new InventoryPosition();
@@ -108,7 +108,7 @@ public class InventoryPosition extends EntityWithMeta implements DocumentPositio
 
   public static final String JSON_PROPERTY_THINGS = "things";
   @javax.annotation.Nullable
-  private List<String> things = new ArrayList<>();
+  private List<String> things;
 
   public static final String JSON_PROPERTY_QUANTITY = "quantity";
   @javax.annotation.Nullable
@@ -132,6 +132,7 @@ public class InventoryPosition extends EntityWithMeta implements DocumentPositio
   }
 
   public InventoryPosition meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -156,11 +157,13 @@ public class InventoryPosition extends EntityWithMeta implements DocumentPositio
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public InventoryPosition id(@javax.annotation.Nullable UUID id) {
+
     
     this.id = id;
     return this;
@@ -185,6 +188,7 @@ public class InventoryPosition extends EntityWithMeta implements DocumentPositio
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(@javax.annotation.Nullable UUID id) {
+
     this.id = id;
   }
 
@@ -206,6 +210,7 @@ public class InventoryPosition extends EntityWithMeta implements DocumentPositio
 
 
   public InventoryPosition assortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     
     this.assortment = assortment;
     return this;
@@ -230,11 +235,13 @@ public class InventoryPosition extends EntityWithMeta implements DocumentPositio
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     this.assortment = assortment;
   }
 
 
   public InventoryPosition calculatedQuantity(@javax.annotation.Nullable Double calculatedQuantity) {
+
     
     this.calculatedQuantity = calculatedQuantity;
     return this;
@@ -259,6 +266,7 @@ public class InventoryPosition extends EntityWithMeta implements DocumentPositio
   @JsonProperty(JSON_PROPERTY_CALCULATED_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCalculatedQuantity(@javax.annotation.Nullable Double calculatedQuantity) {
+
     this.calculatedQuantity = calculatedQuantity;
   }
 
@@ -296,6 +304,7 @@ public class InventoryPosition extends EntityWithMeta implements DocumentPositio
 
 
   public InventoryPosition pack(@javax.annotation.Nullable Pack pack) {
+
     this.pack = JsonNullable.<Pack>of(pack);
     
     return this;
@@ -329,11 +338,13 @@ public class InventoryPosition extends EntityWithMeta implements DocumentPositio
   }
 
   public void setPack(@javax.annotation.Nullable Pack pack) {
+
     this.pack = JsonNullable.<Pack>of(pack);
   }
 
 
   public InventoryPosition price(@javax.annotation.Nullable Double price) {
+
     
     this.price = price;
     return this;
@@ -358,11 +369,13 @@ public class InventoryPosition extends EntityWithMeta implements DocumentPositio
   @JsonProperty(JSON_PROPERTY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrice(@javax.annotation.Nullable Double price) {
+
     this.price = price;
   }
 
 
   public InventoryPosition things(@javax.annotation.Nullable List<String> things) {
+
     
     this.things = things;
     return this;
@@ -383,7 +396,7 @@ public class InventoryPosition extends EntityWithMeta implements DocumentPositio
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_THINGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<String> getThings() {
     return things;
@@ -393,13 +406,15 @@ public class InventoryPosition extends EntityWithMeta implements DocumentPositio
 
 
   @JsonProperty(JSON_PROPERTY_THINGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setThings(@javax.annotation.Nullable List<String> things) {
+
     this.things = things;
   }
 
 
   public InventoryPosition quantity(@javax.annotation.Nullable Double quantity) {
+
     
     this.quantity = quantity;
     return this;
@@ -424,6 +439,7 @@ public class InventoryPosition extends EntityWithMeta implements DocumentPositio
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
+
     this.quantity = quantity;
   }
 

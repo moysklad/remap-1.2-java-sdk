@@ -55,7 +55,7 @@ import java.util.StringJoiner;
   PurchaseReturnPosition.JSON_PROPERTY_VAT,
   PurchaseReturnPosition.JSON_PROPERTY_VAT_ENABLED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class PurchaseReturnPosition extends EntityWithMeta implements DocumentPosition, MetaEntity {
   public static PurchaseReturnPosition createWithMeta(UUID parentId, UUID id) {
     PurchaseReturnPosition o = new PurchaseReturnPosition();
@@ -110,7 +110,7 @@ public class PurchaseReturnPosition extends EntityWithMeta implements DocumentPo
 
   public static final String JSON_PROPERTY_THINGS = "things";
   @javax.annotation.Nullable
-  private List<String> things = new ArrayList<>();
+  private List<String> things;
 
   public static final String JSON_PROPERTY_VAT = "vat";
   @javax.annotation.Nullable
@@ -136,6 +136,7 @@ public class PurchaseReturnPosition extends EntityWithMeta implements DocumentPo
   }
 
   public PurchaseReturnPosition meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -160,11 +161,13 @@ public class PurchaseReturnPosition extends EntityWithMeta implements DocumentPo
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public PurchaseReturnPosition id(@javax.annotation.Nullable UUID id) {
+
     
     this.id = id;
     return this;
@@ -189,6 +192,7 @@ public class PurchaseReturnPosition extends EntityWithMeta implements DocumentPo
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(@javax.annotation.Nullable UUID id) {
+
     this.id = id;
   }
 
@@ -210,6 +214,7 @@ public class PurchaseReturnPosition extends EntityWithMeta implements DocumentPo
 
 
   public PurchaseReturnPosition assortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     
     this.assortment = assortment;
     return this;
@@ -234,6 +239,7 @@ public class PurchaseReturnPosition extends EntityWithMeta implements DocumentPo
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     this.assortment = assortment;
   }
 
@@ -255,6 +261,7 @@ public class PurchaseReturnPosition extends EntityWithMeta implements DocumentPo
 
 
   public PurchaseReturnPosition pack(@javax.annotation.Nullable Pack pack) {
+
     this.pack = JsonNullable.<Pack>of(pack);
     
     return this;
@@ -288,11 +295,13 @@ public class PurchaseReturnPosition extends EntityWithMeta implements DocumentPo
   }
 
   public void setPack(@javax.annotation.Nullable Pack pack) {
+
     this.pack = JsonNullable.<Pack>of(pack);
   }
 
 
   public PurchaseReturnPosition price(@javax.annotation.Nullable Double price) {
+
     
     this.price = price;
     return this;
@@ -317,11 +326,16 @@ public class PurchaseReturnPosition extends EntityWithMeta implements DocumentPo
   @JsonProperty(JSON_PROPERTY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrice(@javax.annotation.Nullable Double price) {
+
     this.price = price;
   }
 
 
   public PurchaseReturnPosition quantity(@javax.annotation.Nullable Double quantity) {
+    if (quantity != null && quantity.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'quantity': must be greater than or equal to 0, got " + quantity);
+    }
+
     
     this.quantity = quantity;
     return this;
@@ -347,11 +361,16 @@ public class PurchaseReturnPosition extends EntityWithMeta implements DocumentPo
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
+    if (quantity != null && quantity.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'quantity': must be greater than or equal to 0, got " + quantity);
+    }
+
     this.quantity = quantity;
   }
 
 
   public PurchaseReturnPosition slot(@javax.annotation.Nullable StoreSlot slot) {
+
     this.slot = JsonNullable.<StoreSlot>of(slot);
     
     return this;
@@ -385,11 +404,13 @@ public class PurchaseReturnPosition extends EntityWithMeta implements DocumentPo
   }
 
   public void setSlot(@javax.annotation.Nullable StoreSlot slot) {
+
     this.slot = JsonNullable.<StoreSlot>of(slot);
   }
 
 
   public PurchaseReturnPosition things(@javax.annotation.Nullable List<String> things) {
+
     
     this.things = things;
     return this;
@@ -410,7 +431,7 @@ public class PurchaseReturnPosition extends EntityWithMeta implements DocumentPo
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_THINGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<String> getThings() {
     return things;
@@ -420,13 +441,21 @@ public class PurchaseReturnPosition extends EntityWithMeta implements DocumentPo
 
 
   @JsonProperty(JSON_PROPERTY_THINGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setThings(@javax.annotation.Nullable List<String> things) {
+
     this.things = things;
   }
 
 
   public PurchaseReturnPosition vat(@javax.annotation.Nullable Integer vat) {
+    if (vat != null && vat.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be greater than or equal to 0, got " + vat);
+    }
+    if (vat != null && vat.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be less than or equal to 100, got " + vat);
+    }
+
     
     this.vat = vat;
     return this;
@@ -453,11 +482,19 @@ public class PurchaseReturnPosition extends EntityWithMeta implements DocumentPo
   @JsonProperty(JSON_PROPERTY_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVat(@javax.annotation.Nullable Integer vat) {
+    if (vat != null && vat.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be greater than or equal to 0, got " + vat);
+    }
+    if (vat != null && vat.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be less than or equal to 100, got " + vat);
+    }
+
     this.vat = vat;
   }
 
 
   public PurchaseReturnPosition vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     
     this.vatEnabled = vatEnabled;
     return this;
@@ -482,6 +519,7 @@ public class PurchaseReturnPosition extends EntityWithMeta implements DocumentPo
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     this.vatEnabled = vatEnabled;
   }
 

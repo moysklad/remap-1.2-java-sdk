@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   NotificationImportCompleted.JSON_PROPERTY_TASK_STATE,
   NotificationImportCompleted.JSON_PROPERTY_TASK_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class NotificationImportCompleted extends NotificationAbstract {
 
   public static final String JSON_PROPERTY_CREATED_DOCUMENT_NAME = "createdDocumentName";
@@ -63,6 +63,7 @@ public class NotificationImportCompleted extends NotificationAbstract {
   }
 
   public NotificationImportCompleted createdDocumentName(@javax.annotation.Nullable String createdDocumentName) {
+
     
     this.createdDocumentName = createdDocumentName;
     return this;
@@ -87,11 +88,13 @@ public class NotificationImportCompleted extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_CREATED_DOCUMENT_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreatedDocumentName(@javax.annotation.Nullable String createdDocumentName) {
+
     this.createdDocumentName = createdDocumentName;
   }
 
 
   public NotificationImportCompleted errorMessage(@javax.annotation.Nullable String errorMessage) {
+
     
     this.errorMessage = errorMessage;
     return this;
@@ -116,11 +119,13 @@ public class NotificationImportCompleted extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_ERROR_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setErrorMessage(@javax.annotation.Nullable String errorMessage) {
+
     this.errorMessage = errorMessage;
   }
 
 
   public NotificationImportCompleted message(@javax.annotation.Nullable String message) {
+
     
     this.message = message;
     return this;
@@ -145,11 +150,13 @@ public class NotificationImportCompleted extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMessage(@javax.annotation.Nullable String message) {
+
     this.message = message;
   }
 
 
   public NotificationImportCompleted taskState(@javax.annotation.Nullable String taskState) {
+
     
     this.taskState = taskState;
     return this;
@@ -174,11 +181,13 @@ public class NotificationImportCompleted extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_TASK_STATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTaskState(@javax.annotation.Nullable String taskState) {
+
     this.taskState = taskState;
   }
 
 
   public NotificationImportCompleted taskType(@javax.annotation.Nullable String taskType) {
+
     
     this.taskType = taskType;
     return this;
@@ -203,6 +212,7 @@ public class NotificationImportCompleted extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_TASK_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTaskType(@javax.annotation.Nullable String taskType) {
+
     this.taskType = taskType;
   }
 

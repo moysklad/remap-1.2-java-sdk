@@ -33,7 +33,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class ReportsStockByOperationApi extends BaseApi {
 
@@ -77,7 +77,7 @@ public class ReportsStockByOperationApi extends BaseApi {
    * Запрос отчета «Остатки по документам» — остатки по позициям указанного документа со склада документа, а также себестоимость позиций по FIFO с учётом количества.  Обязательный параметр — &#x60;operation.id&#x60; (ID документа).  Поддерживаемые типы документов: отгрузка, заказ покупателя, розничная продажа, счет поставщика, счет покупателю, заказ поставщику, приемка, розничный возврат, возврат поставщику, возврат покупателя.  Для отгрузки, розничной продажи, приемки, возвратов остатки рассчитываются на момент поля &#x60;moment&#x60; документа. Для заказа покупателя, счетов и заказа поставщику — на текущий момент времени. 
    * @param operationId ID документа, по которому нужно получить остатки (required)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @return StockByOperationList
    * @throws ApiException if fails to make API call
@@ -103,7 +103,7 @@ public class ReportsStockByOperationApi extends BaseApi {
 
     localVarQueryParams.addAll(apiClient.parameterToPair("operation.id", operationId));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));

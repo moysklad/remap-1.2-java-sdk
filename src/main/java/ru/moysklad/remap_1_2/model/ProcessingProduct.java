@@ -43,7 +43,7 @@ import java.util.StringJoiner;
   ProcessingProduct.JSON_PROPERTY_QUANTITY,
   ProcessingProduct.JSON_PROPERTY_THINGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingProduct extends EntityWithMeta implements MetaEntity {
   public static ProcessingProduct createWithMeta(UUID parentId, UUID id) {
     ProcessingProduct o = new ProcessingProduct();
@@ -82,7 +82,7 @@ public class ProcessingProduct extends EntityWithMeta implements MetaEntity {
 
   public static final String JSON_PROPERTY_THINGS = "things";
   @javax.annotation.Nullable
-  private List<String> things = new ArrayList<>();
+  private List<String> things;
 
   public ProcessingProduct() {
   }
@@ -100,6 +100,7 @@ public class ProcessingProduct extends EntityWithMeta implements MetaEntity {
   }
 
   public ProcessingProduct meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -124,6 +125,7 @@ public class ProcessingProduct extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -161,6 +163,7 @@ public class ProcessingProduct extends EntityWithMeta implements MetaEntity {
 
 
   public ProcessingProduct assortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     
     this.assortment = assortment;
     return this;
@@ -185,11 +188,16 @@ public class ProcessingProduct extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     this.assortment = assortment;
   }
 
 
   public ProcessingProduct quantity(@javax.annotation.Nullable Double quantity) {
+    if (quantity != null && quantity.doubleValue() < 0.00010) {
+      throw new IllegalArgumentException("Invalid value for 'quantity': must be greater than or equal to 0.00010, got " + quantity);
+    }
+
     
     this.quantity = quantity;
     return this;
@@ -215,11 +223,16 @@ public class ProcessingProduct extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
+    if (quantity != null && quantity.doubleValue() < 0.00010) {
+      throw new IllegalArgumentException("Invalid value for 'quantity': must be greater than or equal to 0.00010, got " + quantity);
+    }
+
     this.quantity = quantity;
   }
 
 
   public ProcessingProduct things(@javax.annotation.Nullable List<String> things) {
+
     
     this.things = things;
     return this;
@@ -240,7 +253,7 @@ public class ProcessingProduct extends EntityWithMeta implements MetaEntity {
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_THINGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<String> getThings() {
     return things;
@@ -250,8 +263,9 @@ public class ProcessingProduct extends EntityWithMeta implements MetaEntity {
 
 
   @JsonProperty(JSON_PROPERTY_THINGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setThings(@javax.annotation.Nullable List<String> things) {
+
     this.things = things;
   }
 

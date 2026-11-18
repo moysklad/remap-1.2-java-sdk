@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   PayrollPosition.JSON_PROPERTY_BASE_SALARY,
   PayrollPosition.JSON_PROPERTY_PIECEWORK_SALARY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class PayrollPosition extends EntityWithMeta implements MetaEntity {
   public static PayrollPosition createWithMeta(UUID parentId, UUID id) {
     PayrollPosition o = new PayrollPosition();
@@ -95,6 +95,7 @@ public class PayrollPosition extends EntityWithMeta implements MetaEntity {
   }
 
   public PayrollPosition meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -119,11 +120,13 @@ public class PayrollPosition extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public PayrollPosition id(@javax.annotation.Nullable UUID id) {
+
     
     this.id = id;
     return this;
@@ -148,6 +151,7 @@ public class PayrollPosition extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(@javax.annotation.Nullable UUID id) {
+
     this.id = id;
   }
 
@@ -169,6 +173,7 @@ public class PayrollPosition extends EntityWithMeta implements MetaEntity {
 
 
   public PayrollPosition employee(@javax.annotation.Nullable Employee employee) {
+
     
     this.employee = employee;
     return this;
@@ -193,11 +198,13 @@ public class PayrollPosition extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_EMPLOYEE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEmployee(@javax.annotation.Nullable Employee employee) {
+
     this.employee = employee;
   }
 
 
   public PayrollPosition baseSalary(@javax.annotation.Nullable Double baseSalary) {
+
     
     this.baseSalary = baseSalary;
     return this;
@@ -222,11 +229,13 @@ public class PayrollPosition extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_BASE_SALARY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBaseSalary(@javax.annotation.Nullable Double baseSalary) {
+
     this.baseSalary = baseSalary;
   }
 
 
   public PayrollPosition pieceworkSalary(@javax.annotation.Nullable Double pieceworkSalary) {
+
     
     this.pieceworkSalary = pieceworkSalary;
     return this;
@@ -251,6 +260,7 @@ public class PayrollPosition extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_PIECEWORK_SALARY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPieceworkSalary(@javax.annotation.Nullable Double pieceworkSalary) {
+
     this.pieceworkSalary = pieceworkSalary;
   }
 

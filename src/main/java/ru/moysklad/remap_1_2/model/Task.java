@@ -62,7 +62,7 @@ import java.util.StringJoiner;
   Task.JSON_PROPERTY_STATE,
   Task.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Task extends EntityWithMeta implements MetaEntity {
   public static Task createWithMeta(UUID id) {
     Task o = new Task();
@@ -173,6 +173,7 @@ public class Task extends EntityWithMeta implements MetaEntity {
   }
 
   public Task meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -197,6 +198,7 @@ public class Task extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -234,6 +236,7 @@ public class Task extends EntityWithMeta implements MetaEntity {
 
 
   public Task agent(@javax.annotation.Nullable Agent agent) {
+
     
     this.agent = agent;
     return this;
@@ -258,11 +261,13 @@ public class Task extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAgent(@javax.annotation.Nullable Agent agent) {
+
     this.agent = agent;
   }
 
 
   public Task assignee(@javax.annotation.Nullable Employee assignee) {
+
     
     this.assignee = assignee;
     return this;
@@ -287,11 +292,13 @@ public class Task extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ASSIGNEE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssignee(@javax.annotation.Nullable Employee assignee) {
+
     this.assignee = assignee;
   }
 
 
   public Task author(@javax.annotation.Nullable Employee author) {
+
     
     this.author = author;
     return this;
@@ -316,11 +323,13 @@ public class Task extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_AUTHOR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAuthor(@javax.annotation.Nullable Employee author) {
+
     this.author = author;
   }
 
 
   public Task authorApplication(@javax.annotation.Nullable Application authorApplication) {
+
     
     this.authorApplication = authorApplication;
     return this;
@@ -345,6 +354,7 @@ public class Task extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_AUTHOR_APPLICATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAuthorApplication(@javax.annotation.Nullable Application authorApplication) {
+
     this.authorApplication = authorApplication;
   }
 
@@ -382,6 +392,7 @@ public class Task extends EntityWithMeta implements MetaEntity {
 
 
   public Task description(@javax.annotation.Nullable String description) {
+
     
     this.description = description;
     return this;
@@ -406,11 +417,13 @@ public class Task extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = description;
   }
 
 
   public Task done(@javax.annotation.Nullable Boolean done) {
+
     
     this.done = done;
     return this;
@@ -435,11 +448,13 @@ public class Task extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_DONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDone(@javax.annotation.Nullable Boolean done) {
+
     this.done = done;
   }
 
 
   public Task dueToDate(@javax.annotation.Nullable String dueToDate) {
+
     this.dueToDate = JsonNullable.<String>of(dueToDate);
     
     return this;
@@ -473,11 +488,13 @@ public class Task extends EntityWithMeta implements MetaEntity {
   }
 
   public void setDueToDate(@javax.annotation.Nullable String dueToDate) {
+
     this.dueToDate = JsonNullable.<String>of(dueToDate);
   }
 
 
   public Task files(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
@@ -511,11 +528,13 @@ public class Task extends EntityWithMeta implements MetaEntity {
   }
 
   public void setFiles(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
   }
 
 
   public Task implementer(@javax.annotation.Nullable Employee implementer) {
+
     
     this.implementer = implementer;
     return this;
@@ -540,11 +559,13 @@ public class Task extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_IMPLEMENTER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setImplementer(@javax.annotation.Nullable Employee implementer) {
+
     this.implementer = implementer;
   }
 
 
   public Task notes(@javax.annotation.Nullable TaskNotes notes) {
+
     
     this.notes = notes;
     return this;
@@ -569,11 +590,13 @@ public class Task extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_NOTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNotes(@javax.annotation.Nullable TaskNotes notes) {
+
     this.notes = notes;
   }
 
 
   public Task operation(@javax.annotation.Nullable EntityWithMeta operation) {
+
     
     this.operation = operation;
     return this;
@@ -598,11 +621,13 @@ public class Task extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_OPERATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOperation(@javax.annotation.Nullable EntityWithMeta operation) {
+
     this.operation = operation;
   }
 
 
   public Task state(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
     
     return this;
@@ -636,6 +661,7 @@ public class Task extends EntityWithMeta implements MetaEntity {
   }
 
   public void setState(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
   }
 

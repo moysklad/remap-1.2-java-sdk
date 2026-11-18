@@ -59,7 +59,7 @@ import java.util.StringJoiner;
   Consignment.JSON_PROPERTY_NAME,
   Consignment.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Consignment extends ProductMarker implements Named {
   public static Consignment createWithMeta(UUID id) {
     Consignment o = new Consignment();
@@ -158,6 +158,7 @@ public class Consignment extends ProductMarker implements Named {
   }
 
   public Consignment meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -182,6 +183,7 @@ public class Consignment extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -219,6 +221,7 @@ public class Consignment extends ProductMarker implements Named {
 
 
   public Consignment archived(@javax.annotation.Nullable Boolean archived) {
+
     
     this.archived = archived;
     return this;
@@ -243,11 +246,13 @@ public class Consignment extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
+
     this.archived = archived;
   }
 
 
   public Consignment attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
@@ -280,7 +285,7 @@ public class Consignment extends ProductMarker implements Named {
   
 
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
@@ -293,11 +298,13 @@ public class Consignment extends ProductMarker implements Named {
   }
 
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
   public Consignment assortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     
     this.assortment = assortment;
     return this;
@@ -322,11 +329,13 @@ public class Consignment extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     this.assortment = assortment;
   }
 
 
   public Consignment barcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
+
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
     
     return this;
@@ -359,7 +368,7 @@ public class Consignment extends ProductMarker implements Named {
   
 
   @JsonProperty(JSON_PROPERTY_BARCODES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<Barcode>> getBarcodes_JsonNullable() {
@@ -372,11 +381,13 @@ public class Consignment extends ProductMarker implements Named {
   }
 
   public void setBarcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
+
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
   }
 
 
   public Consignment code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -401,11 +412,13 @@ public class Consignment extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public Consignment description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -439,11 +452,13 @@ public class Consignment extends ProductMarker implements Named {
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 
 
   public Consignment expiryDate(@javax.annotation.Nullable String expiryDate) {
+
     
     this.expiryDate = expiryDate;
     return this;
@@ -468,11 +483,13 @@ public class Consignment extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_EXPIRY_DATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExpiryDate(@javax.annotation.Nullable String expiryDate) {
+
     this.expiryDate = expiryDate;
   }
 
 
   public Consignment externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -497,6 +514,7 @@ public class Consignment extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
@@ -518,6 +536,7 @@ public class Consignment extends ProductMarker implements Named {
 
 
   public Consignment label(@javax.annotation.Nullable String label) {
+
     
     this.label = label;
     return this;
@@ -542,6 +561,7 @@ public class Consignment extends ProductMarker implements Named {
   @JsonProperty(JSON_PROPERTY_LABEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLabel(@javax.annotation.Nullable String label) {
+
     this.label = label;
   }
 

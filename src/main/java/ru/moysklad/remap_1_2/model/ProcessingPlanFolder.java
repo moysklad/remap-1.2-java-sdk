@@ -51,9 +51,9 @@ import java.util.StringJoiner;
   ProcessingPlanFolder.JSON_PROPERTY_UPDATED,
   ProcessingPlanFolder.JSON_PROPERTY_GROUP,
   ProcessingPlanFolder.JSON_PROPERTY_OWNER,
-  ProcessingPlanFolder.JSON_PROPERTY_PROCESSINGPLANFOLDER
+  ProcessingPlanFolder.JSON_PROPERTY_PARENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingPlanFolder extends EntityWithMeta implements MetaEntity {
   public static ProcessingPlanFolder createWithMeta(UUID id) {
     ProcessingPlanFolder o = new ProcessingPlanFolder();
@@ -122,9 +122,9 @@ public class ProcessingPlanFolder extends EntityWithMeta implements MetaEntity {
   @javax.annotation.Nullable
   private JsonNullable<Employee> owner = JsonNullable.<Employee>undefined();
 
-  public static final String JSON_PROPERTY_PROCESSINGPLANFOLDER = "processingplanfolder";
+  public static final String JSON_PROPERTY_PARENT = "parent";
   @javax.annotation.Nullable
-  private JsonNullable<ProcessingPlanFolder> processingplanfolder = JsonNullable.<ProcessingPlanFolder>undefined();
+  private JsonNullable<ProcessingPlanFolder> parent = JsonNullable.<ProcessingPlanFolder>undefined();
 
   public ProcessingPlanFolder() {
   }
@@ -146,6 +146,7 @@ public class ProcessingPlanFolder extends EntityWithMeta implements MetaEntity {
   }
 
   public ProcessingPlanFolder meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -170,6 +171,7 @@ public class ProcessingPlanFolder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -207,6 +209,7 @@ public class ProcessingPlanFolder extends EntityWithMeta implements MetaEntity {
 
 
   public ProcessingPlanFolder name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -231,11 +234,13 @@ public class ProcessingPlanFolder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public ProcessingPlanFolder code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -260,11 +265,13 @@ public class ProcessingPlanFolder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public ProcessingPlanFolder externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -289,11 +296,13 @@ public class ProcessingPlanFolder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public ProcessingPlanFolder description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -327,11 +336,13 @@ public class ProcessingPlanFolder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 
 
   public ProcessingPlanFolder archived(@javax.annotation.Nullable Boolean archived) {
+
     
     this.archived = archived;
     return this;
@@ -356,6 +367,7 @@ public class ProcessingPlanFolder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
+
     this.archived = archived;
   }
 
@@ -377,6 +389,7 @@ public class ProcessingPlanFolder extends EntityWithMeta implements MetaEntity {
 
 
   public ProcessingPlanFolder shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -401,6 +414,7 @@ public class ProcessingPlanFolder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
@@ -422,6 +436,7 @@ public class ProcessingPlanFolder extends EntityWithMeta implements MetaEntity {
 
 
   public ProcessingPlanFolder group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -446,11 +461,13 @@ public class ProcessingPlanFolder extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
 
   public ProcessingPlanFolder owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -484,12 +501,14 @@ public class ProcessingPlanFolder extends EntityWithMeta implements MetaEntity {
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
 
-  public ProcessingPlanFolder processingplanfolder(@javax.annotation.Nullable ProcessingPlanFolder processingplanfolder) {
-    this.processingplanfolder = JsonNullable.<ProcessingPlanFolder>of(processingplanfolder);
+  public ProcessingPlanFolder parent(@javax.annotation.Nullable ProcessingPlanFolder parent) {
+
+    this.parent = JsonNullable.<ProcessingPlanFolder>of(parent);
     
     return this;
   }
@@ -497,32 +516,33 @@ public class ProcessingPlanFolder extends EntityWithMeta implements MetaEntity {
 
   /**
    * Родительская Группа техкарт. Для смены иерархии и поля pathName обновите эту ссылку
-   * @return processingplanfolder
+   * @return parent
    */
   @javax.annotation.Nullable
   @JsonIgnore
 
-  public ProcessingPlanFolder getProcessingplanfolder() {
-        return processingplanfolder.orElse(null);
+  public ProcessingPlanFolder getParent() {
+        return parent.orElse(null);
   }
 
   
 
-  @JsonProperty(JSON_PROPERTY_PROCESSINGPLANFOLDER)
+  @JsonProperty(JSON_PROPERTY_PARENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
 
-  public JsonNullable<ProcessingPlanFolder> getProcessingplanfolder_JsonNullable() {
-    return processingplanfolder;
+  public JsonNullable<ProcessingPlanFolder> getParent_JsonNullable() {
+    return parent;
   }
   
-  @JsonProperty(value = JSON_PROPERTY_PROCESSINGPLANFOLDER, required = false)
-  public void setProcessingplanfolder_JsonNullable(JsonNullable<ProcessingPlanFolder> processingplanfolder) {
-    this.processingplanfolder = processingplanfolder;
+  @JsonProperty(value = JSON_PROPERTY_PARENT, required = false)
+  public void setParent_JsonNullable(JsonNullable<ProcessingPlanFolder> parent) {
+    this.parent = parent;
   }
 
-  public void setProcessingplanfolder(@javax.annotation.Nullable ProcessingPlanFolder processingplanfolder) {
-    this.processingplanfolder = JsonNullable.<ProcessingPlanFolder>of(processingplanfolder);
+  public void setParent(@javax.annotation.Nullable ProcessingPlanFolder parent) {
+
+    this.parent = JsonNullable.<ProcessingPlanFolder>of(parent);
   }
 
 
@@ -548,7 +568,7 @@ public class ProcessingPlanFolder extends EntityWithMeta implements MetaEntity {
         Objects.equals(this.updated, processingPlanFolder.updated) &&
         Objects.equals(this.group, processingPlanFolder.group) &&
         equalsNullable(this.owner, processingPlanFolder.owner) &&
-        equalsNullable(this.processingplanfolder, processingPlanFolder.processingplanfolder);
+        equalsNullable(this.parent, processingPlanFolder.parent);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -557,7 +577,7 @@ public class ProcessingPlanFolder extends EntityWithMeta implements MetaEntity {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, name, code, externalCode, hashCodeNullable(description), archived, pathName, shared, updated, group, hashCodeNullable(owner), hashCodeNullable(processingplanfolder));
+    return Objects.hash(meta, id, accountId, name, code, externalCode, hashCodeNullable(description), archived, pathName, shared, updated, group, hashCodeNullable(owner), hashCodeNullable(parent));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -584,7 +604,7 @@ public class ProcessingPlanFolder extends EntityWithMeta implements MetaEntity {
     sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("    group: ").append(toIndentedString(group)).append("\n");
     sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
-    sb.append("    processingplanfolder: ").append(toIndentedString(processingplanfolder)).append("\n");
+    sb.append("    parent: ").append(toIndentedString(parent)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -747,9 +767,9 @@ public class ProcessingPlanFolder extends EntityWithMeta implements MetaEntity {
       joiner.add(getOwner().toUrlQueryString(prefix + "owner" + suffix));
     }
 
-    // add `processingplanfolder` to the URL query string
-    if (getProcessingplanfolder() != null) {
-      joiner.add(getProcessingplanfolder().toUrlQueryString(prefix + "processingplanfolder" + suffix));
+    // add `parent` to the URL query string
+    if (getParent() != null) {
+      joiner.add(getParent().toUrlQueryString(prefix + "parent" + suffix));
     }
 
     return joiner.toString();

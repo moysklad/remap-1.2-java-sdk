@@ -50,7 +50,7 @@
 |**vatEnabled** | **Boolean** | Учитывается ли НДС |  [optional] |
 |**vatIncluded** | **Boolean** | Включен ли НДС в цену |  [optional] |
 |**vatSum** | **Double** | Сумма НДС |  [optional] |
-|**payments** | [**List&lt;RetailShiftPaymentsInner&gt;**](RetailShiftPaymentsInner.md) | Массив ссылок на связанные платежи |  [optional] |
+|**payments** | [**List&lt;CommissionReportInPayment&gt;**](CommissionReportInPayment.md) | Массив ссылок на связанные платежи |  [optional] |
 
 
 

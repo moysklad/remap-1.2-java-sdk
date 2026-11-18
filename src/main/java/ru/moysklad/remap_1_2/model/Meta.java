@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   Meta.JSON_PROPERTY_DOWNLOAD_HREF,
   Meta.JSON_PROPERTY_DOWNLOAD_PERMANENT_HREF
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Meta {
 
   public static final String JSON_PROPERTY_HREF = "href";
@@ -74,6 +74,7 @@ public class Meta {
   }
 
   public Meta href(@javax.annotation.Nullable URI href) {
+
     
     this.href = href;
     return this;
@@ -98,11 +99,13 @@ public class Meta {
   @JsonProperty(JSON_PROPERTY_HREF)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setHref(@javax.annotation.Nullable URI href) {
+
     this.href = href;
   }
 
 
   public Meta metadataHref(@javax.annotation.Nullable URI metadataHref) {
+
     
     this.metadataHref = metadataHref;
     return this;
@@ -127,11 +130,13 @@ public class Meta {
   @JsonProperty(JSON_PROPERTY_METADATA_HREF)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMetadataHref(@javax.annotation.Nullable URI metadataHref) {
+
     this.metadataHref = metadataHref;
   }
 
 
   public Meta type(@javax.annotation.Nullable String type) {
+
     
     this.type = type;
     return this;
@@ -156,11 +161,13 @@ public class Meta {
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setType(@javax.annotation.Nullable String type) {
+
     this.type = type;
   }
 
 
   public Meta mediaType(@javax.annotation.Nullable String mediaType) {
+
     
     this.mediaType = mediaType;
     return this;
@@ -185,11 +192,13 @@ public class Meta {
   @JsonProperty(JSON_PROPERTY_MEDIA_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMediaType(@javax.annotation.Nullable String mediaType) {
+
     this.mediaType = mediaType;
   }
 
 
   public Meta uuidHref(@javax.annotation.Nullable URI uuidHref) {
+
     
     this.uuidHref = uuidHref;
     return this;
@@ -214,11 +223,13 @@ public class Meta {
   @JsonProperty(JSON_PROPERTY_UUID_HREF)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUuidHref(@javax.annotation.Nullable URI uuidHref) {
+
     this.uuidHref = uuidHref;
   }
 
 
   public Meta downloadHref(@javax.annotation.Nullable URI downloadHref) {
+
     
     this.downloadHref = downloadHref;
     return this;
@@ -243,11 +254,13 @@ public class Meta {
   @JsonProperty(JSON_PROPERTY_DOWNLOAD_HREF)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDownloadHref(@javax.annotation.Nullable URI downloadHref) {
+
     this.downloadHref = downloadHref;
   }
 
 
   public Meta downloadPermanentHref(@javax.annotation.Nullable URI downloadPermanentHref) {
+
     
     this.downloadPermanentHref = downloadPermanentHref;
     return this;
@@ -272,6 +285,7 @@ public class Meta {
   @JsonProperty(JSON_PROPERTY_DOWNLOAD_PERMANENT_HREF)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDownloadPermanentHref(@javax.annotation.Nullable URI downloadPermanentHref) {
+
     this.downloadPermanentHref = downloadPermanentHref;
   }
 

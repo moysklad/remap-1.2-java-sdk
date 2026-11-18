@@ -42,7 +42,7 @@ import java.util.StringJoiner;
   ReportMoneyPlotSeries.JSON_PROPERTY_DEBIT,
   ReportMoneyPlotSeries.JSON_PROPERTY_SERIES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ReportMoneyPlotSeries {
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
@@ -63,12 +63,13 @@ public class ReportMoneyPlotSeries {
 
   public static final String JSON_PROPERTY_SERIES = "series";
   @javax.annotation.Nullable
-  private List<ReportMoneyPlotSeriesItem> series = new ArrayList<>();
+  private List<ReportMoneyPlotSeriesItem> series;
 
   public ReportMoneyPlotSeries() {
   }
 
   public ReportMoneyPlotSeries context(@javax.annotation.Nullable Context context) {
+
     
     this.context = context;
     return this;
@@ -93,11 +94,13 @@ public class ReportMoneyPlotSeries {
   @JsonProperty(JSON_PROPERTY_CONTEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setContext(@javax.annotation.Nullable Context context) {
+
     this.context = context;
   }
 
 
   public ReportMoneyPlotSeries meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -122,11 +125,13 @@ public class ReportMoneyPlotSeries {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public ReportMoneyPlotSeries credit(@javax.annotation.Nullable Double credit) {
+
     
     this.credit = credit;
     return this;
@@ -151,11 +156,13 @@ public class ReportMoneyPlotSeries {
   @JsonProperty(JSON_PROPERTY_CREDIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCredit(@javax.annotation.Nullable Double credit) {
+
     this.credit = credit;
   }
 
 
   public ReportMoneyPlotSeries debit(@javax.annotation.Nullable Double debit) {
+
     
     this.debit = debit;
     return this;
@@ -180,11 +187,13 @@ public class ReportMoneyPlotSeries {
   @JsonProperty(JSON_PROPERTY_DEBIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDebit(@javax.annotation.Nullable Double debit) {
+
     this.debit = debit;
   }
 
 
   public ReportMoneyPlotSeries series(@javax.annotation.Nullable List<ReportMoneyPlotSeriesItem> series) {
+
     
     this.series = series;
     return this;
@@ -205,7 +214,7 @@ public class ReportMoneyPlotSeries {
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SERIES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<ReportMoneyPlotSeriesItem> getSeries() {
     return series;
@@ -215,8 +224,9 @@ public class ReportMoneyPlotSeries {
 
 
   @JsonProperty(JSON_PROPERTY_SERIES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setSeries(@javax.annotation.Nullable List<ReportMoneyPlotSeriesItem> series) {
+
     this.series = series;
   }
 

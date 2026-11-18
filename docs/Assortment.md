@@ -34,7 +34,7 @@
 |**updated** | **String** | Момент последнего обновления сущности |  [optional] [readonly] |
 |**weight** | **Double** | Вес |  [optional] |
 |**volume** | **Double** | Объем |  [optional] |
-|**buyPrice** | [**Price**](Price.md) |  |  [optional] |
+|**buyPrice** | [**Price**](Price.md) | Закупочная цена |  [optional] |
 |**salePrices** | [**List&lt;SalePrice&gt;**](SalePrice.md) | Цены продажи |  [optional] |
 |**supplier** | [**Agent**](Agent.md) | Метаданные контрагента или юрлица |  [optional] |
 |**country** | [**Country**](Country.md) | Метаданные Страны |  [optional] |
@@ -43,12 +43,13 @@
 |**images** | [**ImageList**](ImageList.md) | Массив метаданных Изображений товара, к которому относится данная партия |  [optional] [readonly] |
 |**files** | [**FileList**](FileList.md) | Метаданные массива Файлов |  [optional] |
 |**barcodes** | [**List&lt;Barcode&gt;**](Barcode.md) | Штрихкоды Партии |  [optional] |
-|**packs** | [**List&lt;Pack&gt;**](Pack.md) | Упаковки Комплекта |  [optional] |
+|**packs** | [**List&lt;VariantPack&gt;**](VariantPack.md) | Упаковки Модификации |  [optional] |
 |**trackingType** | **String** | Тип маркируемой продукции. Известные значения описаны в TrackingType |  [optional] |
 |**tnved** | **String** | Код ТН ВЭД |  [optional] |
 |**paymentItemType** | **String** | Признак предмета расчета. Известные значения описаны в PaymentItemType |  [optional] |
 |**taxSystem** | **String** | Код системы налогообложения. Известные значения описаны в TaxSystem |  [optional] |
 |**attributes** | [**List&lt;AttributeAbstract&gt;**](AttributeAbstract.md) | Коллекция доп. полей Партии |  [optional] |
+|**minimumBalance** | **Double** | Неснижаемый остаток. Для очистки передайте null. |  [optional] |
 |**minimumStock** | [**MinimumStockAbstract**](MinimumStockAbstract.md) | Неснижаемый остаток. Не выводится по умолчанию. Для получения передайте параметр &#x60;?fields&#x3D;minimumStock&#x60;.  |  [optional] |
 |**minPrice** | [**Price**](Price.md) |  |  [optional] |
 |**weighed** | **Boolean** | Поле, показывающее является ли товар весовым |  [optional] |
@@ -60,7 +61,7 @@
 |**product** | [**Product**](Product.md) |  |  [optional] |
 |**characteristics** | [**List&lt;VariantCharacteristicValue&gt;**](VariantCharacteristicValue.md) | Характеристики Модификации |  [optional] |
 |**overhead** | [**BundleOverhead**](BundleOverhead.md) |  |  [optional] |
-|**components** | **BundleComponentList** | Массив компонентов Комплекта |  [optional] |
+|**components** | [**BundleComponentList**](BundleComponentList.md) |  |  [optional] |
 |**assortment** | [**ProductMarker**](ProductMarker.md) | Метаданные товара/услуги/комплекта/модификации, к которой относится Партия |  [optional] |
 |**expiryDate** | **String** | Срок годности Партии |  [optional] |
 |**label** | **String** | Метка Партии |  [optional] |

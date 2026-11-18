@@ -34,7 +34,7 @@ import java.util.StringJoiner;
   Price.JSON_PROPERTY_VALUE,
   Price.JSON_PROPERTY_CURRENCY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Price {
 
   public static final String JSON_PROPERTY_VALUE = "value";
@@ -49,6 +49,10 @@ public class Price {
   }
 
   public Price value(@javax.annotation.Nullable Double value) {
+    if (value != null && value.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'value': must be greater than or equal to 0, got " + value);
+    }
+
     
     this.value = value;
     return this;
@@ -74,11 +78,16 @@ public class Price {
   @JsonProperty(JSON_PROPERTY_VALUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setValue(@javax.annotation.Nullable Double value) {
+    if (value != null && value.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'value': must be greater than or equal to 0, got " + value);
+    }
+
     this.value = value;
   }
 
 
   public Price currency(@javax.annotation.Nullable Currency currency) {
+
     
     this.currency = currency;
     return this;
@@ -103,6 +112,7 @@ public class Price {
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCurrency(@javax.annotation.Nullable Currency currency) {
+
     this.currency = currency;
   }
 

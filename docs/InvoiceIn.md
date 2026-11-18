@@ -49,7 +49,7 @@
 |**positions** | [**InvoiceInPositionList**](InvoiceInPositionList.md) |  |  [optional] |
 |**purchaseOrder** | [**PurchaseOrder**](PurchaseOrder.md) | Заказ поставщику, с которым связан Счет поставщика |  [optional] |
 |**supplies** | [**List&lt;Supply&gt;**](Supply.md) | Массив ссылок на связанные приемки |  [optional] |
-|**payments** | [**List&lt;SalesReturnPaymentsInner&gt;**](SalesReturnPaymentsInner.md) | Массив ссылок на связанные операции |  [optional] |
+|**payments** | [**List&lt;InvoiceInPayment&gt;**](InvoiceInPayment.md) | Массив ссылок на связанные операции |  [optional] |
 
 
 

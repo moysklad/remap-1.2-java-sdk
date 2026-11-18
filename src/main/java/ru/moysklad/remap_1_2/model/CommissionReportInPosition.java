@@ -49,7 +49,7 @@ import java.util.StringJoiner;
   CommissionReportInPosition.JSON_PROPERTY_ASSORTMENT,
   CommissionReportInPosition.JSON_PROPERTY_PACK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class CommissionReportInPosition extends EntityWithMeta implements DocumentPosition, MetaEntity {
   public static CommissionReportInPosition createWithMeta(UUID parentId, UUID id) {
     CommissionReportInPosition o = new CommissionReportInPosition();
@@ -120,6 +120,7 @@ public class CommissionReportInPosition extends EntityWithMeta implements Docume
   }
 
   public CommissionReportInPosition meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -144,11 +145,13 @@ public class CommissionReportInPosition extends EntityWithMeta implements Docume
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public CommissionReportInPosition id(@javax.annotation.Nullable UUID id) {
+
     
     this.id = id;
     return this;
@@ -173,6 +176,7 @@ public class CommissionReportInPosition extends EntityWithMeta implements Docume
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(@javax.annotation.Nullable UUID id) {
+
     this.id = id;
   }
 
@@ -194,6 +198,10 @@ public class CommissionReportInPosition extends EntityWithMeta implements Docume
 
 
   public CommissionReportInPosition quantity(@javax.annotation.Nullable Double quantity) {
+    if (quantity != null && quantity.doubleValue() <= 0) {
+      throw new IllegalArgumentException("Invalid value for 'quantity': must be greater than 0, got " + quantity);
+    }
+
     
     this.quantity = quantity;
     return this;
@@ -219,11 +227,16 @@ public class CommissionReportInPosition extends EntityWithMeta implements Docume
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
+    if (quantity != null && quantity.doubleValue() <= 0) {
+      throw new IllegalArgumentException("Invalid value for 'quantity': must be greater than 0, got " + quantity);
+    }
+
     this.quantity = quantity;
   }
 
 
   public CommissionReportInPosition price(@javax.annotation.Nullable Double price) {
+
     
     this.price = price;
     return this;
@@ -248,11 +261,13 @@ public class CommissionReportInPosition extends EntityWithMeta implements Docume
   @JsonProperty(JSON_PROPERTY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrice(@javax.annotation.Nullable Double price) {
+
     this.price = price;
   }
 
 
   public CommissionReportInPosition reward(@javax.annotation.Nullable Double reward) {
+
     
     this.reward = reward;
     return this;
@@ -277,11 +292,19 @@ public class CommissionReportInPosition extends EntityWithMeta implements Docume
   @JsonProperty(JSON_PROPERTY_REWARD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReward(@javax.annotation.Nullable Double reward) {
+
     this.reward = reward;
   }
 
 
   public CommissionReportInPosition vat(@javax.annotation.Nullable Integer vat) {
+    if (vat != null && vat.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be greater than or equal to 0, got " + vat);
+    }
+    if (vat != null && vat.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be less than or equal to 100, got " + vat);
+    }
+
     
     this.vat = vat;
     return this;
@@ -308,11 +331,19 @@ public class CommissionReportInPosition extends EntityWithMeta implements Docume
   @JsonProperty(JSON_PROPERTY_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVat(@javax.annotation.Nullable Integer vat) {
+    if (vat != null && vat.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be greater than or equal to 0, got " + vat);
+    }
+    if (vat != null && vat.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be less than or equal to 100, got " + vat);
+    }
+
     this.vat = vat;
   }
 
 
   public CommissionReportInPosition vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     
     this.vatEnabled = vatEnabled;
     return this;
@@ -337,11 +368,13 @@ public class CommissionReportInPosition extends EntityWithMeta implements Docume
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     this.vatEnabled = vatEnabled;
   }
 
 
   public CommissionReportInPosition assortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     
     this.assortment = assortment;
     return this;
@@ -366,11 +399,13 @@ public class CommissionReportInPosition extends EntityWithMeta implements Docume
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     this.assortment = assortment;
   }
 
 
   public CommissionReportInPosition pack(@javax.annotation.Nullable Pack pack) {
+
     this.pack = JsonNullable.<Pack>of(pack);
     
     return this;
@@ -404,6 +439,7 @@ public class CommissionReportInPosition extends EntityWithMeta implements Docume
   }
 
   public void setPack(@javax.annotation.Nullable Pack pack) {
+
     this.pack = JsonNullable.<Pack>of(pack);
   }
 

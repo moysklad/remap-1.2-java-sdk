@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   ReportCounterpartyList.JSON_PROPERTY_META,
   ReportCounterpartyList.JSON_PROPERTY_ROWS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ReportCounterpartyList {
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
@@ -53,12 +53,13 @@ public class ReportCounterpartyList {
 
   public static final String JSON_PROPERTY_ROWS = "rows";
   @javax.annotation.Nullable
-  private List<ReportCounterparty> rows = new ArrayList<>();
+  private List<ReportCounterparty> rows;
 
   public ReportCounterpartyList() {
   }
 
   public ReportCounterpartyList context(@javax.annotation.Nullable Context context) {
+
     
     this.context = context;
     return this;
@@ -83,11 +84,13 @@ public class ReportCounterpartyList {
   @JsonProperty(JSON_PROPERTY_CONTEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setContext(@javax.annotation.Nullable Context context) {
+
     this.context = context;
   }
 
 
   public ReportCounterpartyList meta(@javax.annotation.Nullable MetaList meta) {
+
     
     this.meta = meta;
     return this;
@@ -112,11 +115,13 @@ public class ReportCounterpartyList {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable MetaList meta) {
+
     this.meta = meta;
   }
 
 
   public ReportCounterpartyList rows(@javax.annotation.Nullable List<ReportCounterparty> rows) {
+
     
     this.rows = rows;
     return this;
@@ -137,7 +142,7 @@ public class ReportCounterpartyList {
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ROWS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<ReportCounterparty> getRows() {
     return rows;
@@ -147,8 +152,9 @@ public class ReportCounterpartyList {
 
 
   @JsonProperty(JSON_PROPERTY_ROWS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setRows(@javax.annotation.Nullable List<ReportCounterparty> rows) {
+
     this.rows = rows;
   }
 

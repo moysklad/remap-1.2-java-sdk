@@ -54,7 +54,7 @@ import java.util.StringJoiner;
   MovePosition.JSON_PROPERTY_TARGET_SLOT,
   MovePosition.JSON_PROPERTY_THINGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class MovePosition extends EntityWithMeta implements DocumentPosition, MetaEntity {
   public static MovePosition createWithMeta(UUID parentId, UUID id) {
     MovePosition o = new MovePosition();
@@ -113,7 +113,7 @@ public class MovePosition extends EntityWithMeta implements DocumentPosition, Me
 
   public static final String JSON_PROPERTY_THINGS = "things";
   @javax.annotation.Nullable
-  private List<String> things = new ArrayList<>();
+  private List<String> things;
 
   public MovePosition() {
   }
@@ -131,6 +131,7 @@ public class MovePosition extends EntityWithMeta implements DocumentPosition, Me
   }
 
   public MovePosition meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -155,11 +156,13 @@ public class MovePosition extends EntityWithMeta implements DocumentPosition, Me
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public MovePosition id(@javax.annotation.Nullable UUID id) {
+
     
     this.id = id;
     return this;
@@ -184,6 +187,7 @@ public class MovePosition extends EntityWithMeta implements DocumentPosition, Me
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(@javax.annotation.Nullable UUID id) {
+
     this.id = id;
   }
 
@@ -205,6 +209,7 @@ public class MovePosition extends EntityWithMeta implements DocumentPosition, Me
 
 
   public MovePosition assortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     
     this.assortment = assortment;
     return this;
@@ -229,6 +234,7 @@ public class MovePosition extends EntityWithMeta implements DocumentPosition, Me
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     this.assortment = assortment;
   }
 
@@ -250,6 +256,7 @@ public class MovePosition extends EntityWithMeta implements DocumentPosition, Me
 
 
   public MovePosition pack(@javax.annotation.Nullable Pack pack) {
+
     this.pack = JsonNullable.<Pack>of(pack);
     
     return this;
@@ -283,11 +290,13 @@ public class MovePosition extends EntityWithMeta implements DocumentPosition, Me
   }
 
   public void setPack(@javax.annotation.Nullable Pack pack) {
+
     this.pack = JsonNullable.<Pack>of(pack);
   }
 
 
   public MovePosition price(@javax.annotation.Nullable Double price) {
+
     
     this.price = price;
     return this;
@@ -312,11 +321,16 @@ public class MovePosition extends EntityWithMeta implements DocumentPosition, Me
   @JsonProperty(JSON_PROPERTY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrice(@javax.annotation.Nullable Double price) {
+
     this.price = price;
   }
 
 
   public MovePosition quantity(@javax.annotation.Nullable Double quantity) {
+    if (quantity != null && quantity.doubleValue() <= 0) {
+      throw new IllegalArgumentException("Invalid value for 'quantity': must be greater than 0, got " + quantity);
+    }
+
     
     this.quantity = quantity;
     return this;
@@ -342,11 +356,16 @@ public class MovePosition extends EntityWithMeta implements DocumentPosition, Me
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
+    if (quantity != null && quantity.doubleValue() <= 0) {
+      throw new IllegalArgumentException("Invalid value for 'quantity': must be greater than 0, got " + quantity);
+    }
+
     this.quantity = quantity;
   }
 
 
   public MovePosition sourceSlot(@javax.annotation.Nullable StoreSlot sourceSlot) {
+
     this.sourceSlot = JsonNullable.<StoreSlot>of(sourceSlot);
     
     return this;
@@ -380,11 +399,13 @@ public class MovePosition extends EntityWithMeta implements DocumentPosition, Me
   }
 
   public void setSourceSlot(@javax.annotation.Nullable StoreSlot sourceSlot) {
+
     this.sourceSlot = JsonNullable.<StoreSlot>of(sourceSlot);
   }
 
 
   public MovePosition targetSlot(@javax.annotation.Nullable StoreSlot targetSlot) {
+
     this.targetSlot = JsonNullable.<StoreSlot>of(targetSlot);
     
     return this;
@@ -418,11 +439,13 @@ public class MovePosition extends EntityWithMeta implements DocumentPosition, Me
   }
 
   public void setTargetSlot(@javax.annotation.Nullable StoreSlot targetSlot) {
+
     this.targetSlot = JsonNullable.<StoreSlot>of(targetSlot);
   }
 
 
   public MovePosition things(@javax.annotation.Nullable List<String> things) {
+
     
     this.things = things;
     return this;
@@ -443,7 +466,7 @@ public class MovePosition extends EntityWithMeta implements DocumentPosition, Me
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_THINGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<String> getThings() {
     return things;
@@ -453,8 +476,9 @@ public class MovePosition extends EntityWithMeta implements DocumentPosition, Me
 
 
   @JsonProperty(JSON_PROPERTY_THINGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setThings(@javax.annotation.Nullable List<String> things) {
+
     this.things = things;
   }
 

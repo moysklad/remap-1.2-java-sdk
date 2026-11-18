@@ -56,7 +56,7 @@ import java.util.StringJoiner;
   RetailDemandPosition.JSON_PROPERTY_VAT,
   RetailDemandPosition.JSON_PROPERTY_VAT_ENABLED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailDemandPosition implements DocumentPosition, MetaEntity {
   public static RetailDemandPosition createWithMeta(UUID parentId, UUID id) {
     RetailDemandPosition o = new RetailDemandPosition();
@@ -95,7 +95,7 @@ public class RetailDemandPosition implements DocumentPosition, MetaEntity {
 
   public static final String JSON_PROPERTY_DECLARATION = "declaration";
   @javax.annotation.Nullable
-  private List<DeclarationInner> declaration = new ArrayList<>();
+  private List<DeclarationInner> declaration;
 
   public static final String JSON_PROPERTY_DISCOUNT = "discount";
   @javax.annotation.Nullable
@@ -115,7 +115,7 @@ public class RetailDemandPosition implements DocumentPosition, MetaEntity {
 
   public static final String JSON_PROPERTY_THINGS = "things";
   @javax.annotation.Nullable
-  private List<String> things = new ArrayList<>();
+  private List<String> things;
 
   public static final String JSON_PROPERTY_VAT = "vat";
   @javax.annotation.Nullable
@@ -141,6 +141,7 @@ public class RetailDemandPosition implements DocumentPosition, MetaEntity {
   }
 
   public RetailDemandPosition meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -165,11 +166,13 @@ public class RetailDemandPosition implements DocumentPosition, MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public RetailDemandPosition id(@javax.annotation.Nullable UUID id) {
+
     
     this.id = id;
     return this;
@@ -194,6 +197,7 @@ public class RetailDemandPosition implements DocumentPosition, MetaEntity {
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(@javax.annotation.Nullable UUID id) {
+
     this.id = id;
   }
 
@@ -215,6 +219,7 @@ public class RetailDemandPosition implements DocumentPosition, MetaEntity {
 
 
   public RetailDemandPosition assortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     
     this.assortment = assortment;
     return this;
@@ -239,11 +244,16 @@ public class RetailDemandPosition implements DocumentPosition, MetaEntity {
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     this.assortment = assortment;
   }
 
 
   public RetailDemandPosition cost(@javax.annotation.Nullable Double cost) {
+    if (cost != null && cost.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'cost': must be greater than or equal to 0, got " + cost);
+    }
+
     
     this.cost = cost;
     return this;
@@ -269,6 +279,10 @@ public class RetailDemandPosition implements DocumentPosition, MetaEntity {
   @JsonProperty(JSON_PROPERTY_COST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCost(@javax.annotation.Nullable Double cost) {
+    if (cost != null && cost.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'cost': must be greater than or equal to 0, got " + cost);
+    }
+
     this.cost = cost;
   }
 
@@ -279,7 +293,7 @@ public class RetailDemandPosition implements DocumentPosition, MetaEntity {
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DECLARATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_EMPTY)
 
   public List<DeclarationInner> getDeclaration() {
     return declaration;
@@ -290,6 +304,10 @@ public class RetailDemandPosition implements DocumentPosition, MetaEntity {
 
 
   public RetailDemandPosition discount(@javax.annotation.Nullable Double discount) {
+    if (discount != null && discount.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'discount': must be less than or equal to 100, got " + discount);
+    }
+
     
     this.discount = discount;
     return this;
@@ -315,11 +333,16 @@ public class RetailDemandPosition implements DocumentPosition, MetaEntity {
   @JsonProperty(JSON_PROPERTY_DISCOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDiscount(@javax.annotation.Nullable Double discount) {
+    if (discount != null && discount.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'discount': must be less than or equal to 100, got " + discount);
+    }
+
     this.discount = discount;
   }
 
 
   public RetailDemandPosition pack(@javax.annotation.Nullable Pack pack) {
+
     this.pack = JsonNullable.<Pack>of(pack);
     
     return this;
@@ -353,11 +376,16 @@ public class RetailDemandPosition implements DocumentPosition, MetaEntity {
   }
 
   public void setPack(@javax.annotation.Nullable Pack pack) {
+
     this.pack = JsonNullable.<Pack>of(pack);
   }
 
 
   public RetailDemandPosition price(@javax.annotation.Nullable Double price) {
+    if (price != null && price.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'price': must be greater than or equal to 0, got " + price);
+    }
+
     
     this.price = price;
     return this;
@@ -383,11 +411,19 @@ public class RetailDemandPosition implements DocumentPosition, MetaEntity {
   @JsonProperty(JSON_PROPERTY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrice(@javax.annotation.Nullable Double price) {
+    if (price != null && price.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'price': must be greater than or equal to 0, got " + price);
+    }
+
     this.price = price;
   }
 
 
   public RetailDemandPosition quantity(@javax.annotation.Nullable Double quantity) {
+    if (quantity != null && quantity.doubleValue() <= 0.00010) {
+      throw new IllegalArgumentException("Invalid value for 'quantity': must be greater than 0.00010, got " + quantity);
+    }
+
     
     this.quantity = quantity;
     return this;
@@ -413,11 +449,16 @@ public class RetailDemandPosition implements DocumentPosition, MetaEntity {
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
+    if (quantity != null && quantity.doubleValue() <= 0.00010) {
+      throw new IllegalArgumentException("Invalid value for 'quantity': must be greater than 0.00010, got " + quantity);
+    }
+
     this.quantity = quantity;
   }
 
 
   public RetailDemandPosition things(@javax.annotation.Nullable List<String> things) {
+
     
     this.things = things;
     return this;
@@ -438,7 +479,7 @@ public class RetailDemandPosition implements DocumentPosition, MetaEntity {
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_THINGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<String> getThings() {
     return things;
@@ -448,13 +489,15 @@ public class RetailDemandPosition implements DocumentPosition, MetaEntity {
 
 
   @JsonProperty(JSON_PROPERTY_THINGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setThings(@javax.annotation.Nullable List<String> things) {
+
     this.things = things;
   }
 
 
   public RetailDemandPosition vat(@javax.annotation.Nullable Integer vat) {
+
     
     this.vat = vat;
     return this;
@@ -479,11 +522,13 @@ public class RetailDemandPosition implements DocumentPosition, MetaEntity {
   @JsonProperty(JSON_PROPERTY_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVat(@javax.annotation.Nullable Integer vat) {
+
     this.vat = vat;
   }
 
 
   public RetailDemandPosition vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     
     this.vatEnabled = vatEnabled;
     return this;
@@ -508,6 +553,7 @@ public class RetailDemandPosition implements DocumentPosition, MetaEntity {
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     this.vatEnabled = vatEnabled;
   }
 

@@ -45,7 +45,7 @@ import java.util.StringJoiner;
   Error.JSON_PROPERTY_META
 })
 @JsonTypeName("error")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Error {
 
   public static final String JSON_PROPERTY_ERROR = "error";
@@ -78,7 +78,7 @@ public class Error {
 
   public static final String JSON_PROPERTY_DEPENDENCIES = "dependencies";
   @javax.annotation.Nullable
-  private List<Meta> dependencies = new ArrayList<>();
+  private List<Meta> dependencies;
 
   public static final String JSON_PROPERTY_META = "meta";
   @javax.annotation.Nullable
@@ -88,6 +88,7 @@ public class Error {
   }
 
   public Error error(@javax.annotation.Nonnull String error) {
+
     
     this.error = error;
     return this;
@@ -112,11 +113,13 @@ public class Error {
   @JsonProperty(JSON_PROPERTY_ERROR)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setError(@javax.annotation.Nonnull String error) {
+
     this.error = error;
   }
 
 
   public Error parameter(@javax.annotation.Nullable String parameter) {
+
     
     this.parameter = parameter;
     return this;
@@ -141,11 +144,13 @@ public class Error {
   @JsonProperty(JSON_PROPERTY_PARAMETER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setParameter(@javax.annotation.Nullable String parameter) {
+
     this.parameter = parameter;
   }
 
 
   public Error code(@javax.annotation.Nullable Integer code) {
+
     
     this.code = code;
     return this;
@@ -170,11 +175,13 @@ public class Error {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable Integer code) {
+
     this.code = code;
   }
 
 
   public Error errorMessage(@javax.annotation.Nullable String errorMessage) {
+
     
     this.errorMessage = errorMessage;
     return this;
@@ -199,11 +206,13 @@ public class Error {
   @JsonProperty(JSON_PROPERTY_ERROR_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setErrorMessage(@javax.annotation.Nullable String errorMessage) {
+
     this.errorMessage = errorMessage;
   }
 
 
   public Error moreInfo(@javax.annotation.Nullable String moreInfo) {
+
     
     this.moreInfo = moreInfo;
     return this;
@@ -228,11 +237,13 @@ public class Error {
   @JsonProperty(JSON_PROPERTY_MORE_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMoreInfo(@javax.annotation.Nullable String moreInfo) {
+
     this.moreInfo = moreInfo;
   }
 
 
   public Error line(@javax.annotation.Nullable Integer line) {
+
     
     this.line = line;
     return this;
@@ -257,11 +268,13 @@ public class Error {
   @JsonProperty(JSON_PROPERTY_LINE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLine(@javax.annotation.Nullable Integer line) {
+
     this.line = line;
   }
 
 
   public Error column(@javax.annotation.Nullable Integer column) {
+
     
     this.column = column;
     return this;
@@ -286,11 +299,13 @@ public class Error {
   @JsonProperty(JSON_PROPERTY_COLUMN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setColumn(@javax.annotation.Nullable Integer column) {
+
     this.column = column;
   }
 
 
   public Error dependencies(@javax.annotation.Nullable List<Meta> dependencies) {
+
     
     this.dependencies = dependencies;
     return this;
@@ -311,7 +326,7 @@ public class Error {
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DEPENDENCIES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<Meta> getDependencies() {
     return dependencies;
@@ -321,13 +336,15 @@ public class Error {
 
 
   @JsonProperty(JSON_PROPERTY_DEPENDENCIES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setDependencies(@javax.annotation.Nullable List<Meta> dependencies) {
+
     this.dependencies = dependencies;
   }
 
 
   public Error meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -352,6 +369,7 @@ public class Error {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 

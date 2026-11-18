@@ -60,7 +60,7 @@ import java.util.StringJoiner;
   SalesReturnPosition.JSON_PROPERTY_VAT,
   SalesReturnPosition.JSON_PROPERTY_VAT_ENABLED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class SalesReturnPosition extends EntityWithMeta implements DocumentPosition, MetaEntity {
   public static SalesReturnPosition createWithMeta(UUID parentId, UUID id) {
     SalesReturnPosition o = new SalesReturnPosition();
@@ -127,7 +127,7 @@ public class SalesReturnPosition extends EntityWithMeta implements DocumentPosit
 
   public static final String JSON_PROPERTY_THINGS = "things";
   @javax.annotation.Nullable
-  private List<String> things = new ArrayList<>();
+  private List<String> things;
 
   public static final String JSON_PROPERTY_VAT = "vat";
   @javax.annotation.Nullable
@@ -151,6 +151,7 @@ public class SalesReturnPosition extends EntityWithMeta implements DocumentPosit
   }
 
   public SalesReturnPosition meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -175,11 +176,13 @@ public class SalesReturnPosition extends EntityWithMeta implements DocumentPosit
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public SalesReturnPosition id(@javax.annotation.Nullable UUID id) {
+
     
     this.id = id;
     return this;
@@ -204,6 +207,7 @@ public class SalesReturnPosition extends EntityWithMeta implements DocumentPosit
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(@javax.annotation.Nullable UUID id) {
+
     this.id = id;
   }
 
@@ -225,6 +229,7 @@ public class SalesReturnPosition extends EntityWithMeta implements DocumentPosit
 
 
   public SalesReturnPosition assortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     
     this.assortment = assortment;
     return this;
@@ -249,11 +254,13 @@ public class SalesReturnPosition extends EntityWithMeta implements DocumentPosit
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     this.assortment = assortment;
   }
 
 
   public SalesReturnPosition cost(@javax.annotation.Nullable Double cost) {
+
     
     this.cost = cost;
     return this;
@@ -278,11 +285,13 @@ public class SalesReturnPosition extends EntityWithMeta implements DocumentPosit
   @JsonProperty(JSON_PROPERTY_COST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCost(@javax.annotation.Nullable Double cost) {
+
     this.cost = cost;
   }
 
 
   public SalesReturnPosition country(@javax.annotation.Nullable Country country) {
+
     this.country = JsonNullable.<Country>of(country);
     
     return this;
@@ -316,11 +325,13 @@ public class SalesReturnPosition extends EntityWithMeta implements DocumentPosit
   }
 
   public void setCountry(@javax.annotation.Nullable Country country) {
+
     this.country = JsonNullable.<Country>of(country);
   }
 
 
   public SalesReturnPosition discount(@javax.annotation.Nullable Double discount) {
+
     
     this.discount = discount;
     return this;
@@ -345,11 +356,13 @@ public class SalesReturnPosition extends EntityWithMeta implements DocumentPosit
   @JsonProperty(JSON_PROPERTY_DISCOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDiscount(@javax.annotation.Nullable Double discount) {
+
     this.discount = discount;
   }
 
 
   public SalesReturnPosition gtd(@javax.annotation.Nullable Gtd gtd) {
+
     this.gtd = JsonNullable.<Gtd>of(gtd);
     
     return this;
@@ -383,11 +396,13 @@ public class SalesReturnPosition extends EntityWithMeta implements DocumentPosit
   }
 
   public void setGtd(@javax.annotation.Nullable Gtd gtd) {
+
     this.gtd = JsonNullable.<Gtd>of(gtd);
   }
 
 
   public SalesReturnPosition pack(@javax.annotation.Nullable Pack pack) {
+
     this.pack = JsonNullable.<Pack>of(pack);
     
     return this;
@@ -421,11 +436,13 @@ public class SalesReturnPosition extends EntityWithMeta implements DocumentPosit
   }
 
   public void setPack(@javax.annotation.Nullable Pack pack) {
+
     this.pack = JsonNullable.<Pack>of(pack);
   }
 
 
   public SalesReturnPosition price(@javax.annotation.Nullable Double price) {
+
     
     this.price = price;
     return this;
@@ -450,11 +467,13 @@ public class SalesReturnPosition extends EntityWithMeta implements DocumentPosit
   @JsonProperty(JSON_PROPERTY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrice(@javax.annotation.Nullable Double price) {
+
     this.price = price;
   }
 
 
   public SalesReturnPosition quantity(@javax.annotation.Nullable Double quantity) {
+
     
     this.quantity = quantity;
     return this;
@@ -479,11 +498,13 @@ public class SalesReturnPosition extends EntityWithMeta implements DocumentPosit
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
+
     this.quantity = quantity;
   }
 
 
   public SalesReturnPosition slot(@javax.annotation.Nullable StoreSlot slot) {
+
     this.slot = JsonNullable.<StoreSlot>of(slot);
     
     return this;
@@ -517,11 +538,13 @@ public class SalesReturnPosition extends EntityWithMeta implements DocumentPosit
   }
 
   public void setSlot(@javax.annotation.Nullable StoreSlot slot) {
+
     this.slot = JsonNullable.<StoreSlot>of(slot);
   }
 
 
   public SalesReturnPosition things(@javax.annotation.Nullable List<String> things) {
+
     
     this.things = things;
     return this;
@@ -542,7 +565,7 @@ public class SalesReturnPosition extends EntityWithMeta implements DocumentPosit
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_THINGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<String> getThings() {
     return things;
@@ -552,13 +575,21 @@ public class SalesReturnPosition extends EntityWithMeta implements DocumentPosit
 
 
   @JsonProperty(JSON_PROPERTY_THINGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setThings(@javax.annotation.Nullable List<String> things) {
+
     this.things = things;
   }
 
 
   public SalesReturnPosition vat(@javax.annotation.Nullable Integer vat) {
+    if (vat != null && vat.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be greater than or equal to 0, got " + vat);
+    }
+    if (vat != null && vat.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be less than or equal to 100, got " + vat);
+    }
+
     
     this.vat = vat;
     return this;
@@ -585,11 +616,19 @@ public class SalesReturnPosition extends EntityWithMeta implements DocumentPosit
   @JsonProperty(JSON_PROPERTY_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVat(@javax.annotation.Nullable Integer vat) {
+    if (vat != null && vat.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be greater than or equal to 0, got " + vat);
+    }
+    if (vat != null && vat.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be less than or equal to 100, got " + vat);
+    }
+
     this.vat = vat;
   }
 
 
   public SalesReturnPosition vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     
     this.vatEnabled = vatEnabled;
     return this;
@@ -614,6 +653,7 @@ public class SalesReturnPosition extends EntityWithMeta implements DocumentPosit
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     this.vatEnabled = vatEnabled;
   }
 

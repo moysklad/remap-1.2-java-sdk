@@ -27,24 +27,35 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.StringJoiner;
 
+import ru.moysklad.remap_1_2.deserialize.OpenApiPolymorphicTypeInfo;
+import ru.moysklad.remap_1_2.deserialize.OpenApiPolymorphicSubTypes;
+import tools.jackson.databind.annotation.JsonDeserialize;
+import ru.moysklad.remap_1_2.deserialize.PolymorphicMetaTypeDeserializer;
+
 /**
- * Метаданные связанного документа бонусной операции
+ * Документ бонусной операции: розничная продажа или розничный возврат. 
  */
 @JsonPropertyOrder({
   BonusTransactionParentDocument.JSON_PROPERTY_META
 })
-@JsonTypeName("BonusTransaction_parentDocument")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
+@OpenApiPolymorphicTypeInfo(path = "meta.type")
+@OpenApiPolymorphicSubTypes({
+  @OpenApiPolymorphicSubTypes.Type(value = BonusTransactionParentRetailDemand.class, name = "retaildemand"),
+  @OpenApiPolymorphicSubTypes.Type(value = BonusTransactionParentRetailSalesReturn.class, name = "retailsalesreturn")
+})
+@JsonDeserialize(using = PolymorphicMetaTypeDeserializer.class)
 public class BonusTransactionParentDocument {
 
   public static final String JSON_PROPERTY_META = "meta";
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private Meta meta;
 
   public BonusTransactionParentDocument() {
   }
 
-  public BonusTransactionParentDocument meta(@javax.annotation.Nullable Meta meta) {
+  public BonusTransactionParentDocument meta(@javax.annotation.Nonnull Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -55,9 +66,9 @@ public class BonusTransactionParentDocument {
    * Get meta
    * @return meta
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_META)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Meta getMeta() {
     return meta;
@@ -67,8 +78,9 @@ public class BonusTransactionParentDocument {
 
 
   @JsonProperty(JSON_PROPERTY_META)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMeta(@javax.annotation.Nullable Meta meta) {
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setMeta(@javax.annotation.Nonnull Meta meta) {
+
     this.meta = meta;
   }
 

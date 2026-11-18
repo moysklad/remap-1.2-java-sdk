@@ -35,7 +35,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 
 public class AuditApi extends BaseApi {
 
@@ -83,10 +83,10 @@ public class AuditApi extends BaseApi {
    * Получить события по контексту аудита
    * Возвращает список событий аудита для указанного контекста.
    * @param id ID контекста аудита (required)
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
+   * @param limit Максимальное количество событий аудита в выданном списке (максимум 100) (optional, default to 25)
    * @param offset Отступ в выданном списке (optional, default to 0)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @return AuditEventList
    * @throws ApiException if fails to make API call
@@ -99,6 +99,15 @@ public class AuditApi extends BaseApi {
       throw new ApiException(400, "Missing the required parameter 'id' when calling getAuditContextEvents");
     }
     
+    if (limit != null && limit.doubleValue() < 1) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getAuditContextEvents: must be greater than or equal to 1, got " + limit);
+    }
+    if (limit != null && limit.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getAuditContextEvents: must be less than or equal to 100, got " + limit);
+    }
+    if (offset != null && offset.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'offset' when calling getAuditContextEvents: must be greater than or equal to 0, got " + offset);
+    }
     // create path and map variables
     String localVarPath = "/audit/{id}/events"
       .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(apiClient.parameterToString(id)));
@@ -114,7 +123,7 @@ public class AuditApi extends BaseApi {
     localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
     localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -184,11 +193,11 @@ if (acceptEncoding != null) {
   /**
    * Получить контексты аудита
    * Возвращает общую ленту изменений (контексты аудита). Поддерживает пагинацию и фильтрацию через параметр &#x60;filter&#x60;. 
-   * @param limit Максимальное количество элементов в выданном списке (максимум 1000) (optional, default to 1000)
+   * @param limit Максимальное количество событий аудита в выданном списке (максимум 100) (optional, default to 25)
    * @param offset Отступ в выданном списке (optional, default to 0)
    * @param filter Фильтрация выборки (optional)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @return AuditList
    * @throws ApiException if fails to make API call
@@ -196,6 +205,15 @@ if (acceptEncoding != null) {
   protected AuditList getAuditContexts(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String accept, @javax.annotation.Nullable String acceptEncoding, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
+    if (limit != null && limit.doubleValue() < 1) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getAuditContexts: must be greater than or equal to 1, got " + limit);
+    }
+    if (limit != null && limit.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getAuditContexts: must be less than or equal to 100, got " + limit);
+    }
+    if (offset != null && offset.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'offset' when calling getAuditContexts: must be greater than or equal to 0, got " + offset);
+    }
     // create path and map variables
     String localVarPath = "/audit";
 
@@ -211,7 +229,7 @@ if (acceptEncoding != null) {
     localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
     localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -279,7 +297,7 @@ if (acceptEncoding != null) {
    * Получить доступные фильтры аудита
    * Возвращает набор значений для фильтрации контекстов аудита.
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @return AuditFilters
    * @throws ApiException if fails to make API call
@@ -299,7 +317,7 @@ if (acceptEncoding != null) {
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
@@ -381,7 +399,7 @@ if (acceptEncoding != null) {
    * @param limit Максимальное количество событий аудита в выданном списке (максимум 100) (optional, default to 25)
    * @param offset Отступ в выданном списке (optional, default to 0)
    * @param accept  (optional, default to application/json;charset&#x3D;utf-8)
-   * @param acceptEncoding  (optional, default to gzip, deflate, br)
+   * @param acceptEncoding  (optional, default to gzip)
    * @param additionalHeaders additionalHeaders for this call
    * @return AuditEventList
    * @throws ApiException if fails to make API call
@@ -399,6 +417,15 @@ if (acceptEncoding != null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling getEntityAuditEvents");
     }
     
+    if (limit != null && limit.doubleValue() < 1) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getEntityAuditEvents: must be greater than or equal to 1, got " + limit);
+    }
+    if (limit != null && limit.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'limit' when calling getEntityAuditEvents: must be less than or equal to 100, got " + limit);
+    }
+    if (offset != null && offset.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'offset' when calling getEntityAuditEvents: must be greater than or equal to 0, got " + offset);
+    }
     // create path and map variables
     String localVarPath = "/entity/{type}/{id}/audit"
       .replaceAll("\\{" + "type" + "\\}", apiClient.escapeString(apiClient.parameterToString(type)))
@@ -415,7 +442,7 @@ if (acceptEncoding != null) {
     localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
     localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
     if (accept != null) {
-      localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+      localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
     }
 if (acceptEncoding != null) {
       localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));

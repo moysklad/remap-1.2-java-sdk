@@ -65,7 +65,7 @@ import java.util.StringJoiner;
   Store.JSON_PROPERTY_ZONES,
   Store.JSON_PROPERTY_SLOTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Store extends EntityWithMeta implements Named, MetaEntity {
   public static Store createWithMeta(UUID id) {
     Store o = new Store();
@@ -178,6 +178,7 @@ public class Store extends EntityWithMeta implements Named, MetaEntity {
   }
 
   public Store meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -202,6 +203,7 @@ public class Store extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -239,6 +241,7 @@ public class Store extends EntityWithMeta implements Named, MetaEntity {
 
 
   public Store owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -272,11 +275,13 @@ public class Store extends EntityWithMeta implements Named, MetaEntity {
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
 
   public Store shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -301,11 +306,13 @@ public class Store extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
 
   public Store group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -330,6 +337,7 @@ public class Store extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
@@ -351,6 +359,7 @@ public class Store extends EntityWithMeta implements Named, MetaEntity {
 
 
   public Store name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -375,11 +384,13 @@ public class Store extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public Store description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -413,11 +424,13 @@ public class Store extends EntityWithMeta implements Named, MetaEntity {
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 
 
   public Store code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -442,11 +455,13 @@ public class Store extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public Store externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -471,11 +486,13 @@ public class Store extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public Store archived(@javax.annotation.Nullable Boolean archived) {
+
     
     this.archived = archived;
     return this;
@@ -500,11 +517,13 @@ public class Store extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
+
     this.archived = archived;
   }
 
 
   public Store address(@javax.annotation.Nullable String address) {
+
     
     this.address = address;
     return this;
@@ -529,11 +548,13 @@ public class Store extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAddress(@javax.annotation.Nullable String address) {
+
     this.address = address;
   }
 
 
   public Store addressFull(@javax.annotation.Nullable Address addressFull) {
+
     this.addressFull = JsonNullable.<Address>of(addressFull);
     
     return this;
@@ -567,6 +588,7 @@ public class Store extends EntityWithMeta implements Named, MetaEntity {
   }
 
   public void setAddressFull(@javax.annotation.Nullable Address addressFull) {
+
     this.addressFull = JsonNullable.<Address>of(addressFull);
   }
 
@@ -588,6 +610,7 @@ public class Store extends EntityWithMeta implements Named, MetaEntity {
 
 
   public Store parent(@javax.annotation.Nullable Store parent) {
+
     this.parent = JsonNullable.<Store>of(parent);
     
     return this;
@@ -621,11 +644,13 @@ public class Store extends EntityWithMeta implements Named, MetaEntity {
   }
 
   public void setParent(@javax.annotation.Nullable Store parent) {
+
     this.parent = JsonNullable.<Store>of(parent);
   }
 
 
   public Store attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
@@ -658,7 +683,7 @@ public class Store extends EntityWithMeta implements Named, MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
@@ -671,11 +696,13 @@ public class Store extends EntityWithMeta implements Named, MetaEntity {
   }
 
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
   public Store zones(@javax.annotation.Nullable StoreZoneList zones) {
+
     this.zones = JsonNullable.<StoreZoneList>of(zones);
     
     return this;
@@ -709,11 +736,13 @@ public class Store extends EntityWithMeta implements Named, MetaEntity {
   }
 
   public void setZones(@javax.annotation.Nullable StoreZoneList zones) {
+
     this.zones = JsonNullable.<StoreZoneList>of(zones);
   }
 
 
   public Store slots(@javax.annotation.Nullable StoreSlotList slots) {
+
     this.slots = JsonNullable.<StoreSlotList>of(slots);
     
     return this;
@@ -747,6 +776,7 @@ public class Store extends EntityWithMeta implements Named, MetaEntity {
   }
 
   public void setSlots(@javax.annotation.Nullable StoreSlotList slots) {
+
     this.slots = JsonNullable.<StoreSlotList>of(slots);
   }
 

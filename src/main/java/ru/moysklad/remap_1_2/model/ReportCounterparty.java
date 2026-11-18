@@ -53,7 +53,7 @@ import java.util.StringJoiner;
   ReportCounterparty.JSON_PROPERTY_LAST_EVENT_TEXT,
   ReportCounterparty.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ReportCounterparty {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -124,6 +124,7 @@ public class ReportCounterparty {
   }
 
   public ReportCounterparty meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -148,11 +149,13 @@ public class ReportCounterparty {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public ReportCounterparty counterparty(@javax.annotation.Nullable Counterparty counterparty) {
+
     
     this.counterparty = counterparty;
     return this;
@@ -177,11 +180,13 @@ public class ReportCounterparty {
   @JsonProperty(JSON_PROPERTY_COUNTERPARTY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCounterparty(@javax.annotation.Nullable Counterparty counterparty) {
+
     this.counterparty = counterparty;
   }
 
 
   public ReportCounterparty firstDemandDate(@javax.annotation.Nullable String firstDemandDate) {
+
     this.firstDemandDate = JsonNullable.<String>of(firstDemandDate);
     
     return this;
@@ -215,11 +220,13 @@ public class ReportCounterparty {
   }
 
   public void setFirstDemandDate(@javax.annotation.Nullable String firstDemandDate) {
+
     this.firstDemandDate = JsonNullable.<String>of(firstDemandDate);
   }
 
 
   public ReportCounterparty lastDemandDate(@javax.annotation.Nullable String lastDemandDate) {
+
     this.lastDemandDate = JsonNullable.<String>of(lastDemandDate);
     
     return this;
@@ -253,11 +260,13 @@ public class ReportCounterparty {
   }
 
   public void setLastDemandDate(@javax.annotation.Nullable String lastDemandDate) {
+
     this.lastDemandDate = JsonNullable.<String>of(lastDemandDate);
   }
 
 
   public ReportCounterparty demandsCount(@javax.annotation.Nullable Long demandsCount) {
+
     
     this.demandsCount = demandsCount;
     return this;
@@ -282,11 +291,13 @@ public class ReportCounterparty {
   @JsonProperty(JSON_PROPERTY_DEMANDS_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDemandsCount(@javax.annotation.Nullable Long demandsCount) {
+
     this.demandsCount = demandsCount;
   }
 
 
   public ReportCounterparty demandsSum(@javax.annotation.Nullable Double demandsSum) {
+
     
     this.demandsSum = demandsSum;
     return this;
@@ -311,11 +322,13 @@ public class ReportCounterparty {
   @JsonProperty(JSON_PROPERTY_DEMANDS_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDemandsSum(@javax.annotation.Nullable Double demandsSum) {
+
     this.demandsSum = demandsSum;
   }
 
 
   public ReportCounterparty averageReceipt(@javax.annotation.Nullable Double averageReceipt) {
+
     
     this.averageReceipt = averageReceipt;
     return this;
@@ -340,11 +353,13 @@ public class ReportCounterparty {
   @JsonProperty(JSON_PROPERTY_AVERAGE_RECEIPT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAverageReceipt(@javax.annotation.Nullable Double averageReceipt) {
+
     this.averageReceipt = averageReceipt;
   }
 
 
   public ReportCounterparty returnsCount(@javax.annotation.Nullable Long returnsCount) {
+
     
     this.returnsCount = returnsCount;
     return this;
@@ -369,11 +384,13 @@ public class ReportCounterparty {
   @JsonProperty(JSON_PROPERTY_RETURNS_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReturnsCount(@javax.annotation.Nullable Long returnsCount) {
+
     this.returnsCount = returnsCount;
   }
 
 
   public ReportCounterparty returnsSum(@javax.annotation.Nullable Double returnsSum) {
+
     
     this.returnsSum = returnsSum;
     return this;
@@ -398,11 +415,13 @@ public class ReportCounterparty {
   @JsonProperty(JSON_PROPERTY_RETURNS_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReturnsSum(@javax.annotation.Nullable Double returnsSum) {
+
     this.returnsSum = returnsSum;
   }
 
 
   public ReportCounterparty discountsSum(@javax.annotation.Nullable Double discountsSum) {
+
     
     this.discountsSum = discountsSum;
     return this;
@@ -427,11 +446,13 @@ public class ReportCounterparty {
   @JsonProperty(JSON_PROPERTY_DISCOUNTS_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDiscountsSum(@javax.annotation.Nullable Double discountsSum) {
+
     this.discountsSum = discountsSum;
   }
 
 
   public ReportCounterparty balance(@javax.annotation.Nullable Double balance) {
+
     
     this.balance = balance;
     return this;
@@ -456,11 +477,13 @@ public class ReportCounterparty {
   @JsonProperty(JSON_PROPERTY_BALANCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBalance(@javax.annotation.Nullable Double balance) {
+
     this.balance = balance;
   }
 
 
   public ReportCounterparty bonusBalance(@javax.annotation.Nullable Double bonusBalance) {
+
     
     this.bonusBalance = bonusBalance;
     return this;
@@ -485,11 +508,13 @@ public class ReportCounterparty {
   @JsonProperty(JSON_PROPERTY_BONUS_BALANCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBonusBalance(@javax.annotation.Nullable Double bonusBalance) {
+
     this.bonusBalance = bonusBalance;
   }
 
 
   public ReportCounterparty profit(@javax.annotation.Nullable Double profit) {
+
     
     this.profit = profit;
     return this;
@@ -514,11 +539,13 @@ public class ReportCounterparty {
   @JsonProperty(JSON_PROPERTY_PROFIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProfit(@javax.annotation.Nullable Double profit) {
+
     this.profit = profit;
   }
 
 
   public ReportCounterparty lastEventDate(@javax.annotation.Nullable String lastEventDate) {
+
     this.lastEventDate = JsonNullable.<String>of(lastEventDate);
     
     return this;
@@ -552,11 +579,13 @@ public class ReportCounterparty {
   }
 
   public void setLastEventDate(@javax.annotation.Nullable String lastEventDate) {
+
     this.lastEventDate = JsonNullable.<String>of(lastEventDate);
   }
 
 
   public ReportCounterparty lastEventText(@javax.annotation.Nullable String lastEventText) {
+
     this.lastEventText = JsonNullable.<String>of(lastEventText);
     
     return this;
@@ -590,11 +619,13 @@ public class ReportCounterparty {
   }
 
   public void setLastEventText(@javax.annotation.Nullable String lastEventText) {
+
     this.lastEventText = JsonNullable.<String>of(lastEventText);
   }
 
 
   public ReportCounterparty updated(@javax.annotation.Nullable String updated) {
+
     
     this.updated = updated;
     return this;
@@ -619,6 +650,7 @@ public class ReportCounterparty {
   @JsonProperty(JSON_PROPERTY_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUpdated(@javax.annotation.Nullable String updated) {
+
     this.updated = updated;
   }
 

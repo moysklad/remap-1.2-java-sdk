@@ -49,6 +49,7 @@
 |**paymentItemType** | **String** | Признак предмета расчета. Известные значения описаны в PaymentItemType |  [optional] |
 |**taxSystem** | **String** | Код системы налогообложения. Известные значения описаны в TaxSystem |  [optional] |
 |**attributes** | [**List&lt;AttributeAbstract&gt;**](AttributeAbstract.md) | Коллекция доп. полей Партии |  [optional] |
+|**minimumBalance** | **Double** | Неснижаемый остаток. Для очистки передайте null. |  [optional] |
 |**minimumStock** | [**MinimumStockAbstract**](MinimumStockAbstract.md) | Неснижаемый остаток. Не выводится по умолчанию. Для получения передайте параметр &#x60;?fields&#x3D;minimumStock&#x60;.  |  [optional] |
 |**minPrice** | [**Price**](Price.md) |  |  [optional] |
 |**weighed** | **Boolean** | Поле, показывающее является ли товар весовым |  [optional] |

@@ -38,8 +38,8 @@ import ru.moysklad.remap_1_2.model.Group;
 import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.Organization;
 import ru.moysklad.remap_1_2.model.Project;
+import ru.moysklad.remap_1_2.model.PurchaseReturnPayment;
 import ru.moysklad.remap_1_2.model.PurchaseReturnPositionList;
-import ru.moysklad.remap_1_2.model.RetailShiftPaymentsInner;
 import ru.moysklad.remap_1_2.model.State;
 import ru.moysklad.remap_1_2.model.Store;
 import ru.moysklad.remap_1_2.model.Supply;
@@ -96,7 +96,7 @@ import java.util.StringJoiner;
   FinanceInOperationPurchaseReturn.JSON_PROPERTY_FACTURE_IN,
   FinanceInOperationPurchaseReturn.JSON_PROPERTY_PAYMENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -253,7 +253,7 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
 
   public static final String JSON_PROPERTY_PAYMENTS = "payments";
   @javax.annotation.Nullable
-  private JsonNullable<List<RetailShiftPaymentsInner>> payments = JsonNullable.<List<RetailShiftPaymentsInner>>undefined();
+  private JsonNullable<List<PurchaseReturnPayment>> payments = JsonNullable.<List<PurchaseReturnPayment>>undefined();
 
   public FinanceInOperationPurchaseReturn() {
   }
@@ -287,6 +287,7 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   }
 
   public FinanceInOperationPurchaseReturn meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -311,6 +312,7 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -348,6 +350,7 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
 
 
   public FinanceInOperationPurchaseReturn name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -372,11 +375,13 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public FinanceInOperationPurchaseReturn code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -401,11 +406,13 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public FinanceInOperationPurchaseReturn externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -430,11 +437,13 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public FinanceInOperationPurchaseReturn syncId(@javax.annotation.Nullable UUID syncId) {
+
     
     this.syncId = syncId;
     return this;
@@ -459,11 +468,13 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
+
     this.syncId = syncId;
   }
 
 
   public FinanceInOperationPurchaseReturn description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -497,6 +508,7 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 
@@ -550,6 +562,7 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
 
 
   public FinanceInOperationPurchaseReturn moment(@javax.annotation.Nullable String moment) {
+
     
     this.moment = moment;
     return this;
@@ -574,11 +587,13 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMoment(@javax.annotation.Nullable String moment) {
+
     this.moment = moment;
   }
 
 
   public FinanceInOperationPurchaseReturn applicable(@javax.annotation.Nullable Boolean applicable) {
+
     
     this.applicable = applicable;
     return this;
@@ -603,6 +618,7 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   @JsonProperty(JSON_PROPERTY_APPLICABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setApplicable(@javax.annotation.Nullable Boolean applicable) {
+
     this.applicable = applicable;
   }
 
@@ -640,6 +656,7 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
 
 
   public FinanceInOperationPurchaseReturn shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -664,11 +681,13 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
 
   public FinanceInOperationPurchaseReturn vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     
     this.vatEnabled = vatEnabled;
     return this;
@@ -693,11 +712,13 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     this.vatEnabled = vatEnabled;
   }
 
 
   public FinanceInOperationPurchaseReturn vatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
+
     
     this.vatIncluded = vatIncluded;
     return this;
@@ -722,6 +743,7 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   @JsonProperty(JSON_PROPERTY_VAT_INCLUDED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
+
     this.vatIncluded = vatIncluded;
   }
 
@@ -775,6 +797,7 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
 
 
   public FinanceInOperationPurchaseReturn organization(@javax.annotation.Nullable Organization organization) {
+
     
     this.organization = organization;
     return this;
@@ -799,11 +822,13 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOrganization(@javax.annotation.Nullable Organization organization) {
+
     this.organization = organization;
   }
 
 
   public FinanceInOperationPurchaseReturn organizationAccount(@javax.annotation.Nullable Account organizationAccount) {
+
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
     
     return this;
@@ -837,11 +862,13 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   }
 
   public void setOrganizationAccount(@javax.annotation.Nullable Account organizationAccount) {
+
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
   }
 
 
   public FinanceInOperationPurchaseReturn agent(@javax.annotation.Nullable Agent agent) {
+
     
     this.agent = agent;
     return this;
@@ -866,11 +893,13 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAgent(@javax.annotation.Nullable Agent agent) {
+
     this.agent = agent;
   }
 
 
   public FinanceInOperationPurchaseReturn agentAccount(@javax.annotation.Nullable Account agentAccount) {
+
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
     
     return this;
@@ -904,11 +933,13 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   }
 
   public void setAgentAccount(@javax.annotation.Nullable Account agentAccount) {
+
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
   }
 
 
   public FinanceInOperationPurchaseReturn store(@javax.annotation.Nullable Store store) {
+
     
     this.store = store;
     return this;
@@ -933,11 +964,13 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   @JsonProperty(JSON_PROPERTY_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStore(@javax.annotation.Nullable Store store) {
+
     this.store = store;
   }
 
 
   public FinanceInOperationPurchaseReturn state(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
     
     return this;
@@ -971,11 +1004,13 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   }
 
   public void setState(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
   }
 
 
   public FinanceInOperationPurchaseReturn contract(@javax.annotation.Nullable Contract contract) {
+
     this.contract = JsonNullable.<Contract>of(contract);
     
     return this;
@@ -1009,11 +1044,13 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   }
 
   public void setContract(@javax.annotation.Nullable Contract contract) {
+
     this.contract = JsonNullable.<Contract>of(contract);
   }
 
 
   public FinanceInOperationPurchaseReturn project(@javax.annotation.Nullable Project project) {
+
     this.project = JsonNullable.<Project>of(project);
     
     return this;
@@ -1047,11 +1084,13 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   }
 
   public void setProject(@javax.annotation.Nullable Project project) {
+
     this.project = JsonNullable.<Project>of(project);
   }
 
 
   public FinanceInOperationPurchaseReturn owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -1085,11 +1124,13 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
 
   public FinanceInOperationPurchaseReturn group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -1114,11 +1155,13 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
 
   public FinanceInOperationPurchaseReturn attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
@@ -1151,7 +1194,7 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   
 
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
@@ -1164,11 +1207,13 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   }
 
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
   public FinanceInOperationPurchaseReturn files(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
@@ -1202,11 +1247,13 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   }
 
   public void setFiles(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
   }
 
 
   public FinanceInOperationPurchaseReturn rate(@javax.annotation.Nullable CurrencyRate rate) {
+
     
     this.rate = rate;
     return this;
@@ -1231,11 +1278,13 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRate(@javax.annotation.Nullable CurrencyRate rate) {
+
     this.rate = rate;
   }
 
 
   public FinanceInOperationPurchaseReturn positions(@javax.annotation.Nullable PurchaseReturnPositionList positions) {
+
     
     this.positions = positions;
     return this;
@@ -1260,11 +1309,13 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   @JsonProperty(JSON_PROPERTY_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPositions(@javax.annotation.Nullable PurchaseReturnPositionList positions) {
+
     this.positions = positions;
   }
 
 
   public FinanceInOperationPurchaseReturn supply(@javax.annotation.Nullable Supply supply) {
+
     this.supply = JsonNullable.<Supply>of(supply);
     
     return this;
@@ -1298,11 +1349,13 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   }
 
   public void setSupply(@javax.annotation.Nullable Supply supply) {
+
     this.supply = JsonNullable.<Supply>of(supply);
   }
 
 
   public FinanceInOperationPurchaseReturn factureOut(@javax.annotation.Nullable FactureOut factureOut) {
+
     this.factureOut = JsonNullable.<FactureOut>of(factureOut);
     
     return this;
@@ -1336,11 +1389,13 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   }
 
   public void setFactureOut(@javax.annotation.Nullable FactureOut factureOut) {
+
     this.factureOut = JsonNullable.<FactureOut>of(factureOut);
   }
 
 
   public FinanceInOperationPurchaseReturn factureIn(@javax.annotation.Nullable FactureIn factureIn) {
+
     this.factureIn = JsonNullable.<FactureIn>of(factureIn);
     
     return this;
@@ -1374,20 +1429,22 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   }
 
   public void setFactureIn(@javax.annotation.Nullable FactureIn factureIn) {
+
     this.factureIn = JsonNullable.<FactureIn>of(factureIn);
   }
 
 
-  public FinanceInOperationPurchaseReturn payments(@javax.annotation.Nullable List<RetailShiftPaymentsInner> payments) {
-    this.payments = JsonNullable.<List<RetailShiftPaymentsInner>>of(payments);
+  public FinanceInOperationPurchaseReturn payments(@javax.annotation.Nullable List<PurchaseReturnPayment> payments) {
+
+    this.payments = JsonNullable.<List<PurchaseReturnPayment>>of(payments);
     
     return this;
   }
 
 
-  public FinanceInOperationPurchaseReturn addPaymentsItem(RetailShiftPaymentsInner paymentsItem) {
+  public FinanceInOperationPurchaseReturn addPaymentsItem(PurchaseReturnPayment paymentsItem) {
     if (this.payments == null || !this.payments.isPresent()) {
-      this.payments = JsonNullable.<List<RetailShiftPaymentsInner>>of(new ArrayList<>());
+      this.payments = JsonNullable.<List<PurchaseReturnPayment>>of(new ArrayList<>());
     }
     try {
       this.payments.get().add(paymentsItem);
@@ -1404,27 +1461,28 @@ public class FinanceInOperationPurchaseReturn extends FinanceInOperationAbstract
   @javax.annotation.Nullable
   @JsonIgnore
 
-  public List<RetailShiftPaymentsInner> getPayments() {
+  public List<PurchaseReturnPayment> getPayments() {
         return payments.orElse(null);
   }
 
   
 
   @JsonProperty(JSON_PROPERTY_PAYMENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
-  public JsonNullable<List<RetailShiftPaymentsInner>> getPayments_JsonNullable() {
+  public JsonNullable<List<PurchaseReturnPayment>> getPayments_JsonNullable() {
     return payments;
   }
   
   @JsonProperty(value = JSON_PROPERTY_PAYMENTS, required = false)
-  public void setPayments_JsonNullable(JsonNullable<List<RetailShiftPaymentsInner>> payments) {
+  public void setPayments_JsonNullable(JsonNullable<List<PurchaseReturnPayment>> payments) {
     this.payments = payments;
   }
 
-  public void setPayments(@javax.annotation.Nullable List<RetailShiftPaymentsInner> payments) {
-    this.payments = JsonNullable.<List<RetailShiftPaymentsInner>>of(payments);
+  public void setPayments(@javax.annotation.Nullable List<PurchaseReturnPayment> payments) {
+
+    this.payments = JsonNullable.<List<PurchaseReturnPayment>>of(payments);
   }
 
 

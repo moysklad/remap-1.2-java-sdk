@@ -34,7 +34,7 @@ import java.util.StringJoiner;
   AccumulationDiscountLevelsInner.JSON_PROPERTY_DISCOUNT
 })
 @JsonTypeName("AccumulationDiscount_levels_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class AccumulationDiscountLevelsInner {
 
   public static final String JSON_PROPERTY_AMOUNT = "amount";
@@ -49,6 +49,7 @@ public class AccumulationDiscountLevelsInner {
   }
 
   public AccumulationDiscountLevelsInner amount(@javax.annotation.Nullable Double amount) {
+
     
     this.amount = amount;
     return this;
@@ -73,11 +74,13 @@ public class AccumulationDiscountLevelsInner {
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAmount(@javax.annotation.Nullable Double amount) {
+
     this.amount = amount;
   }
 
 
   public AccumulationDiscountLevelsInner discount(@javax.annotation.Nullable Double discount) {
+
     
     this.discount = discount;
     return this;
@@ -102,6 +105,7 @@ public class AccumulationDiscountLevelsInner {
   @JsonProperty(JSON_PROPERTY_DISCOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDiscount(@javax.annotation.Nullable Double discount) {
+
     this.discount = discount;
   }
 

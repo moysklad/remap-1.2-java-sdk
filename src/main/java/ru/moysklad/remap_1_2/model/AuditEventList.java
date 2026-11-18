@@ -44,7 +44,7 @@ import java.util.StringJoiner;
   AuditEventList.JSON_PROPERTY_META,
   AuditEventList.JSON_PROPERTY_ROWS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class AuditEventList implements EntityList {
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
@@ -63,6 +63,7 @@ public class AuditEventList implements EntityList {
   }
 
   public AuditEventList context(@javax.annotation.Nullable Context context) {
+
     
     this.context = context;
     return this;
@@ -87,11 +88,13 @@ public class AuditEventList implements EntityList {
   @JsonProperty(JSON_PROPERTY_CONTEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setContext(@javax.annotation.Nullable Context context) {
+
     this.context = context;
   }
 
 
   public AuditEventList meta(@javax.annotation.Nullable MetaList meta) {
+
     
     this.meta = meta;
     return this;
@@ -116,11 +119,13 @@ public class AuditEventList implements EntityList {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable MetaList meta) {
+
     this.meta = meta;
   }
 
 
   public AuditEventList rows(@javax.annotation.Nullable List<AuditEvent> rows) {
+
     this.rows = JsonNullable.<List<AuditEvent>>of(rows);
     
     return this;
@@ -153,7 +158,7 @@ public class AuditEventList implements EntityList {
   
 
   @JsonProperty(JSON_PROPERTY_ROWS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<AuditEvent>> getRows_JsonNullable() {
@@ -166,6 +171,7 @@ public class AuditEventList implements EntityList {
   }
 
   public void setRows(@javax.annotation.Nullable List<AuditEvent> rows) {
+
     this.rows = JsonNullable.<List<AuditEvent>>of(rows);
   }
 

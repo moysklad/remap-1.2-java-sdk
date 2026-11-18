@@ -2,13 +2,13 @@
 
 # BonusTransactionParentDocument
 
-Метаданные связанного документа бонусной операции
+Документ бонусной операции: розничная продажа или розничный возврат. 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**meta** | [**Meta**](Meta.md) |  |  [optional] |
+|**meta** | [**Meta**](Meta.md) |  |  |
 
 
 

@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   ByOperationsInTransit.JSON_PROPERTY_STORE,
   ByOperationsInTransit.JSON_PROPERTY_IN_TRANSIT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ByOperationsInTransit {
 
   public static final String JSON_PROPERTY_ASSORTMENT = "assortment";
@@ -66,6 +66,7 @@ public class ByOperationsInTransit {
   }
 
   public ByOperationsInTransit assortment(@javax.annotation.Nullable ByOperationsStockAssortment assortment) {
+
     
     this.assortment = assortment;
     return this;
@@ -90,11 +91,13 @@ public class ByOperationsInTransit {
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssortment(@javax.annotation.Nullable ByOperationsStockAssortment assortment) {
+
     this.assortment = assortment;
   }
 
 
   public ByOperationsInTransit operation(@javax.annotation.Nullable ByOperationsStockOperation operation) {
+
     
     this.operation = operation;
     return this;
@@ -119,11 +122,13 @@ public class ByOperationsInTransit {
   @JsonProperty(JSON_PROPERTY_OPERATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOperation(@javax.annotation.Nullable ByOperationsStockOperation operation) {
+
     this.operation = operation;
   }
 
 
   public ByOperationsInTransit moment(@javax.annotation.Nullable String moment) {
+
     
     this.moment = moment;
     return this;
@@ -148,11 +153,13 @@ public class ByOperationsInTransit {
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMoment(@javax.annotation.Nullable String moment) {
+
     this.moment = moment;
   }
 
 
   public ByOperationsInTransit store(@javax.annotation.Nullable ByOperationsStockStore store) {
+
     
     this.store = store;
     return this;
@@ -177,11 +184,13 @@ public class ByOperationsInTransit {
   @JsonProperty(JSON_PROPERTY_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStore(@javax.annotation.Nullable ByOperationsStockStore store) {
+
     this.store = store;
   }
 
 
   public ByOperationsInTransit inTransit(@javax.annotation.Nullable Double inTransit) {
+
     
     this.inTransit = inTransit;
     return this;
@@ -206,6 +215,7 @@ public class ByOperationsInTransit {
   @JsonProperty(JSON_PROPERTY_IN_TRANSIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setInTransit(@javax.annotation.Nullable Double inTransit) {
+
     this.inTransit = inTransit;
   }
 

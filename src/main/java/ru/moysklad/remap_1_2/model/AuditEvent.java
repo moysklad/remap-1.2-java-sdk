@@ -52,7 +52,7 @@ import java.util.StringJoiner;
   AuditEvent.JSON_PROPERTY_SUPPORT_ACCESS,
   AuditEvent.JSON_PROPERTY_UID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class AuditEvent {
 
   public static final String JSON_PROPERTY_ADDITIONAL_INFO = "additionalInfo";
@@ -172,6 +172,7 @@ public class AuditEvent {
 
 
   public AuditEvent audit(@javax.annotation.Nullable AuditEventAudit audit) {
+
     this.audit = JsonNullable.<AuditEventAudit>of(audit);
     
     return this;
@@ -205,6 +206,7 @@ public class AuditEvent {
   }
 
   public void setAudit(@javax.annotation.Nullable AuditEventAudit audit) {
+
     this.audit = JsonNullable.<AuditEventAudit>of(audit);
   }
 
@@ -227,7 +229,7 @@ public class AuditEvent {
   
 
   @JsonProperty(JSON_PROPERTY_DIFF)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.CUSTOM, valueFilter = ru.moysklad.remap_1_2.EmptyReadOnlyCollectionFilter.class)
 
 
   public JsonNullable<Map<String, Object>> getDiff_JsonNullable() {
@@ -241,6 +243,7 @@ public class AuditEvent {
 
 
   public AuditEvent entity(@javax.annotation.Nullable AuditEventEntity entity) {
+
     this.entity = JsonNullable.<AuditEventEntity>of(entity);
     
     return this;
@@ -274,6 +277,7 @@ public class AuditEvent {
   }
 
   public void setEntity(@javax.annotation.Nullable AuditEventEntity entity) {
+
     this.entity = JsonNullable.<AuditEventEntity>of(entity);
   }
 

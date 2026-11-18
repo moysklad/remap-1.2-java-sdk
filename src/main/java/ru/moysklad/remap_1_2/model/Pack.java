@@ -47,7 +47,7 @@ import java.util.StringJoiner;
   Pack.JSON_PROPERTY_QUANTITY,
   Pack.JSON_PROPERTY_BARCODES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Pack {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -84,6 +84,7 @@ public class Pack {
   }
 
   public Pack meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -108,6 +109,7 @@ public class Pack {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -129,6 +131,7 @@ public class Pack {
 
 
   public Pack uom(@javax.annotation.Nullable Uom uom) {
+
     
     this.uom = uom;
     return this;
@@ -153,11 +156,16 @@ public class Pack {
   @JsonProperty(JSON_PROPERTY_UOM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUom(@javax.annotation.Nullable Uom uom) {
+
     this.uom = uom;
   }
 
 
   public Pack quantity(@javax.annotation.Nullable Double quantity) {
+    if (quantity != null && quantity.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'quantity': must be greater than or equal to 0, got " + quantity);
+    }
+
     
     this.quantity = quantity;
     return this;
@@ -183,11 +191,16 @@ public class Pack {
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
+    if (quantity != null && quantity.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'quantity': must be greater than or equal to 0, got " + quantity);
+    }
+
     this.quantity = quantity;
   }
 
 
   public Pack barcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
+
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
     
     return this;
@@ -220,7 +233,7 @@ public class Pack {
   
 
   @JsonProperty(JSON_PROPERTY_BARCODES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<Barcode>> getBarcodes_JsonNullable() {
@@ -233,6 +246,7 @@ public class Pack {
   }
 
   public void setBarcodes(@javax.annotation.Nullable List<Barcode> barcodes) {
+
     this.barcodes = JsonNullable.<List<Barcode>>of(barcodes);
   }
 

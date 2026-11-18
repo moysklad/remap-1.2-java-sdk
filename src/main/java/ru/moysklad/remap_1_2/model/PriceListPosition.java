@@ -43,7 +43,7 @@ import java.util.StringJoiner;
   PriceListPosition.JSON_PROPERTY_ASSORTMENT,
   PriceListPosition.JSON_PROPERTY_CELLS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class PriceListPosition extends EntityWithMeta implements MetaEntity {
   public static PriceListPosition createWithMeta(UUID parentId, UUID id) {
     PriceListPosition o = new PriceListPosition();
@@ -78,7 +78,7 @@ public class PriceListPosition extends EntityWithMeta implements MetaEntity {
 
   public static final String JSON_PROPERTY_CELLS = "cells";
   @javax.annotation.Nullable
-  private List<PriceListCell> cells = new ArrayList<>();
+  private List<PriceListCell> cells;
 
   public PriceListPosition() {
   }
@@ -94,6 +94,7 @@ public class PriceListPosition extends EntityWithMeta implements MetaEntity {
   }
 
   public PriceListPosition meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -118,11 +119,13 @@ public class PriceListPosition extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public PriceListPosition id(@javax.annotation.Nullable UUID id) {
+
     
     this.id = id;
     return this;
@@ -147,6 +150,7 @@ public class PriceListPosition extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(@javax.annotation.Nullable UUID id) {
+
     this.id = id;
   }
 
@@ -168,6 +172,7 @@ public class PriceListPosition extends EntityWithMeta implements MetaEntity {
 
 
   public PriceListPosition assortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     
     this.assortment = assortment;
     return this;
@@ -192,11 +197,13 @@ public class PriceListPosition extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     this.assortment = assortment;
   }
 
 
   public PriceListPosition cells(@javax.annotation.Nullable List<PriceListCell> cells) {
+
     
     this.cells = cells;
     return this;
@@ -217,7 +224,7 @@ public class PriceListPosition extends EntityWithMeta implements MetaEntity {
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CELLS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<PriceListCell> getCells() {
     return cells;
@@ -227,8 +234,9 @@ public class PriceListPosition extends EntityWithMeta implements MetaEntity {
 
 
   @JsonProperty(JSON_PROPERTY_CELLS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setCells(@javax.annotation.Nullable List<PriceListCell> cells) {
+
     this.cells = cells;
   }
 

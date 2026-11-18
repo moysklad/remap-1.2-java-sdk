@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   DeleteRowResult.JSON_PROPERTY_INFO,
   DeleteRowResult.JSON_PROPERTY_ERRORS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class DeleteRowResult {
 
   public static final String JSON_PROPERTY_INFO = "info";
@@ -48,12 +48,13 @@ public class DeleteRowResult {
 
   public static final String JSON_PROPERTY_ERRORS = "errors";
   @javax.annotation.Nonnull
-  private List<Error> errors = new ArrayList<>();
+  private List<Error> errors;
 
   public DeleteRowResult() {
   }
 
   public DeleteRowResult info(@javax.annotation.Nullable String info) {
+
     
     this.info = info;
     return this;
@@ -78,11 +79,13 @@ public class DeleteRowResult {
   @JsonProperty(JSON_PROPERTY_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setInfo(@javax.annotation.Nullable String info) {
+
     this.info = info;
   }
 
 
   public DeleteRowResult errors(@javax.annotation.Nonnull List<Error> errors) {
+
     
     this.errors = errors;
     return this;
@@ -103,7 +106,7 @@ public class DeleteRowResult {
    */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ERRORS)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<Error> getErrors() {
     return errors;
@@ -113,8 +116,9 @@ public class DeleteRowResult {
 
 
   @JsonProperty(JSON_PROPERTY_ERRORS)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setErrors(@javax.annotation.Nonnull List<Error> errors) {
+
     this.errors = errors;
   }
 

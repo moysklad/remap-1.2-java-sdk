@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   CurrencyMajorUnit.JSON_PROPERTY_S5
 })
 @JsonTypeName("Currency_majorUnit")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class CurrencyMajorUnit {
 
   public static final String JSON_PROPERTY_GENDER = "gender";
@@ -59,6 +59,7 @@ public class CurrencyMajorUnit {
   }
 
   public CurrencyMajorUnit gender(@javax.annotation.Nullable String gender) {
+
     
     this.gender = gender;
     return this;
@@ -83,11 +84,13 @@ public class CurrencyMajorUnit {
   @JsonProperty(JSON_PROPERTY_GENDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGender(@javax.annotation.Nullable String gender) {
+
     this.gender = gender;
   }
 
 
   public CurrencyMajorUnit s1(@javax.annotation.Nullable String s1) {
+
     
     this.s1 = s1;
     return this;
@@ -112,11 +115,13 @@ public class CurrencyMajorUnit {
   @JsonProperty(JSON_PROPERTY_S1)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setS1(@javax.annotation.Nullable String s1) {
+
     this.s1 = s1;
   }
 
 
   public CurrencyMajorUnit s2(@javax.annotation.Nullable String s2) {
+
     
     this.s2 = s2;
     return this;
@@ -141,11 +146,13 @@ public class CurrencyMajorUnit {
   @JsonProperty(JSON_PROPERTY_S2)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setS2(@javax.annotation.Nullable String s2) {
+
     this.s2 = s2;
   }
 
 
   public CurrencyMajorUnit s5(@javax.annotation.Nullable String s5) {
+
     
     this.s5 = s5;
     return this;
@@ -170,6 +177,7 @@ public class CurrencyMajorUnit {
   @JsonProperty(JSON_PROPERTY_S5)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setS5(@javax.annotation.Nullable String s5) {
+
     this.s5 = s5;
   }
 

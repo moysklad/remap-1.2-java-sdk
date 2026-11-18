@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   WebhookStockNotificationPayload.JSON_PROPERTY_REPORT_TYPE,
   WebhookStockNotificationPayload.JSON_PROPERTY_REPORT_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class WebhookStockNotificationPayload {
 
   public static final String JSON_PROPERTY_ACCOUNT_ID = "accountId";
@@ -59,6 +59,7 @@ public class WebhookStockNotificationPayload {
   }
 
   public WebhookStockNotificationPayload accountId(@javax.annotation.Nullable UUID accountId) {
+
     
     this.accountId = accountId;
     return this;
@@ -83,11 +84,13 @@ public class WebhookStockNotificationPayload {
   @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAccountId(@javax.annotation.Nullable UUID accountId) {
+
     this.accountId = accountId;
   }
 
 
   public WebhookStockNotificationPayload stockType(@javax.annotation.Nullable String stockType) {
+
     
     this.stockType = stockType;
     return this;
@@ -112,11 +115,13 @@ public class WebhookStockNotificationPayload {
   @JsonProperty(JSON_PROPERTY_STOCK_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStockType(@javax.annotation.Nullable String stockType) {
+
     this.stockType = stockType;
   }
 
 
   public WebhookStockNotificationPayload reportType(@javax.annotation.Nullable String reportType) {
+
     
     this.reportType = reportType;
     return this;
@@ -141,11 +146,13 @@ public class WebhookStockNotificationPayload {
   @JsonProperty(JSON_PROPERTY_REPORT_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReportType(@javax.annotation.Nullable String reportType) {
+
     this.reportType = reportType;
   }
 
 
   public WebhookStockNotificationPayload reportUrl(@javax.annotation.Nullable String reportUrl) {
+
     
     this.reportUrl = reportUrl;
     return this;
@@ -170,6 +177,7 @@ public class WebhookStockNotificationPayload {
   @JsonProperty(JSON_PROPERTY_REPORT_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReportUrl(@javax.annotation.Nullable String reportUrl) {
+
     this.reportUrl = reportUrl;
   }
 

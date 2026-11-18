@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   BundleList.JSON_PROPERTY_META,
   BundleList.JSON_PROPERTY_ROWS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class BundleList implements EntityList {
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
@@ -53,12 +53,13 @@ public class BundleList implements EntityList {
 
   public static final String JSON_PROPERTY_ROWS = "rows";
   @javax.annotation.Nullable
-  private List<Bundle> rows = new ArrayList<>();
+  private List<Bundle> rows;
 
   public BundleList() {
   }
 
   public BundleList context(@javax.annotation.Nullable Context context) {
+
     
     this.context = context;
     return this;
@@ -83,11 +84,13 @@ public class BundleList implements EntityList {
   @JsonProperty(JSON_PROPERTY_CONTEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setContext(@javax.annotation.Nullable Context context) {
+
     this.context = context;
   }
 
 
   public BundleList meta(@javax.annotation.Nullable MetaList meta) {
+
     
     this.meta = meta;
     return this;
@@ -112,11 +115,13 @@ public class BundleList implements EntityList {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable MetaList meta) {
+
     this.meta = meta;
   }
 
 
   public BundleList rows(@javax.annotation.Nullable List<Bundle> rows) {
+
     
     this.rows = rows;
     return this;
@@ -137,7 +142,7 @@ public class BundleList implements EntityList {
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ROWS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<Bundle> getRows() {
     return rows;
@@ -147,8 +152,9 @@ public class BundleList implements EntityList {
 
 
   @JsonProperty(JSON_PROPERTY_ROWS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setRows(@javax.annotation.Nullable List<Bundle> rows) {
+
     this.rows = rows;
   }
 

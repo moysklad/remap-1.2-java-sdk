@@ -39,7 +39,7 @@
 |**paymentPurpose** | **String** | Назначение платежа. Доступно только для счетов-фактур с основаниями-платежами.  |  [optional] |
 |**vatSum** | **Double** | Сумма включая НДС. Доступно только для счетов-фактур с основаниями-платежами.  |  [optional] [readonly] |
 |**demands** | [**List&lt;Demand&gt;**](Demand.md) | Связанные отгрузки (метаданные) |  [optional] |
-|**payments** | [**List&lt;PaymentIn&gt;**](PaymentIn.md) | Связанные входящие платежи (метаданные) |  [optional] |
+|**payments** | [**List&lt;FactureOutPayment&gt;**](FactureOutPayment.md) | Связанные входящие платежи (метаданные) |  [optional] |
 |**returns** | [**List&lt;PurchaseReturn&gt;**](PurchaseReturn.md) | Связанные возвраты поставщикам (метаданные) |  [optional] |
 |**consignee** | [**Agent**](Agent.md) | Грузополучатель (контрагент или юрлицо) |  [optional] |
 |**paymentNumber** | **String** | Название платежного документа |  [optional] |

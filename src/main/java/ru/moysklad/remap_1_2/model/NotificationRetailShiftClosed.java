@@ -38,7 +38,7 @@ import java.util.StringJoiner;
   NotificationRetailShiftClosed.JSON_PROPERTY_RETURNS,
   NotificationRetailShiftClosed.JSON_PROPERTY_SALES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class NotificationRetailShiftClosed extends NotificationAbstract {
 
   public static final String JSON_PROPERTY_USER = "user";
@@ -65,6 +65,7 @@ public class NotificationRetailShiftClosed extends NotificationAbstract {
   }
 
   public NotificationRetailShiftClosed user(@javax.annotation.Nullable NotificationNamedEntity user) {
+
     
     this.user = user;
     return this;
@@ -89,11 +90,13 @@ public class NotificationRetailShiftClosed extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUser(@javax.annotation.Nullable NotificationNamedEntity user) {
+
     this.user = user;
   }
 
 
   public NotificationRetailShiftClosed retailStore(@javax.annotation.Nullable NotificationNamedEntity retailStore) {
+
     
     this.retailStore = retailStore;
     return this;
@@ -118,11 +121,13 @@ public class NotificationRetailShiftClosed extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_RETAIL_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRetailStore(@javax.annotation.Nullable NotificationNamedEntity retailStore) {
+
     this.retailStore = retailStore;
   }
 
 
   public NotificationRetailShiftClosed retailShift(@javax.annotation.Nullable NotificationRetailShift retailShift) {
+
     
     this.retailShift = retailShift;
     return this;
@@ -147,11 +152,13 @@ public class NotificationRetailShiftClosed extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_RETAIL_SHIFT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRetailShift(@javax.annotation.Nullable NotificationRetailShift retailShift) {
+
     this.retailShift = retailShift;
   }
 
 
   public NotificationRetailShiftClosed returns(@javax.annotation.Nullable Integer returns) {
+
     
     this.returns = returns;
     return this;
@@ -176,11 +183,13 @@ public class NotificationRetailShiftClosed extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_RETURNS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReturns(@javax.annotation.Nullable Integer returns) {
+
     this.returns = returns;
   }
 
 
   public NotificationRetailShiftClosed sales(@javax.annotation.Nullable Integer sales) {
+
     
     this.sales = sales;
     return this;
@@ -205,6 +214,7 @@ public class NotificationRetailShiftClosed extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_SALES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSales(@javax.annotation.Nullable Integer sales) {
+
     this.sales = sales;
   }
 

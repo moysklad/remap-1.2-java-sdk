@@ -47,7 +47,7 @@ import java.util.StringJoiner;
   StateRowResult.JSON_PROPERTY_STATE_TYPE,
   StateRowResult.JSON_PROPERTY_ERRORS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class StateRowResult {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -80,7 +80,7 @@ public class StateRowResult {
 
   public static final String JSON_PROPERTY_ERRORS = "errors";
   @javax.annotation.Nonnull
-  private List<Error> errors = new ArrayList<>();
+  private List<Error> errors;
 
   public StateRowResult() {
   }
@@ -100,6 +100,7 @@ public class StateRowResult {
   }
 
   public StateRowResult meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -124,6 +125,7 @@ public class StateRowResult {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -145,6 +147,7 @@ public class StateRowResult {
 
 
   public StateRowResult name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -169,6 +172,7 @@ public class StateRowResult {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
@@ -190,6 +194,7 @@ public class StateRowResult {
 
 
   public StateRowResult color(@javax.annotation.Nullable Integer color) {
+
     
     this.color = color;
     return this;
@@ -214,6 +219,7 @@ public class StateRowResult {
   @JsonProperty(JSON_PROPERTY_COLOR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setColor(@javax.annotation.Nullable Integer color) {
+
     this.color = color;
   }
 
@@ -235,6 +241,7 @@ public class StateRowResult {
 
 
   public StateRowResult stateType(@javax.annotation.Nullable String stateType) {
+
     
     this.stateType = stateType;
     return this;
@@ -259,11 +266,13 @@ public class StateRowResult {
   @JsonProperty(JSON_PROPERTY_STATE_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStateType(@javax.annotation.Nullable String stateType) {
+
     this.stateType = stateType;
   }
 
 
   public StateRowResult errors(@javax.annotation.Nonnull List<Error> errors) {
+
     
     this.errors = errors;
     return this;
@@ -284,7 +293,7 @@ public class StateRowResult {
    */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ERRORS)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<Error> getErrors() {
     return errors;
@@ -294,8 +303,9 @@ public class StateRowResult {
 
 
   @JsonProperty(JSON_PROPERTY_ERRORS)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setErrors(@javax.annotation.Nonnull List<Error> errors) {
+
     this.errors = errors;
   }
 

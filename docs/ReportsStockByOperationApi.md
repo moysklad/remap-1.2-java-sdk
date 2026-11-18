@@ -44,7 +44,7 @@ public class Example {
         ReportsStockByOperationApi apiInstance = new ReportsStockByOperationApi(defaultClient);
         UUID operationId = UUID.randomUUID(); // UUID | ID документа, по которому нужно получить остатки
         String accept = "application/json"; // String | 
-        String acceptEncoding = "gzip, deflate, br"; // String | 
+        String acceptEncoding = "gzip"; // String | 
         try {
             StockByOperationList result = apiInstance.getStockByOperation(operationId, accept, acceptEncoding);
             System.out.println(result);
@@ -66,7 +66,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **operationId** | **UUID**| ID документа, по которому нужно получить остатки | |
 | **accept** | **String**|  | [optional] [default to application/json;charset&#x3D;utf-8] [enum: application/json, application/json;charset=utf-8] |
-| **acceptEncoding** | **String**|  | [optional] [default to gzip, deflate, br] |
+| **acceptEncoding** | **String**|  | [optional] [default to gzip] |
 
 ### Return type
 
@@ -79,7 +79,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html;charset=UTF-8
+- **Accept**: application/json
 
 
 ### HTTP response details

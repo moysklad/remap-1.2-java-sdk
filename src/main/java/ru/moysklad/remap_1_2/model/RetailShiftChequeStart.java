@@ -38,7 +38,7 @@ import java.util.StringJoiner;
   RetailShiftChequeStart.JSON_PROPERTY_TIME
 })
 @JsonTypeName("RetailShiftCheque_start")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailShiftChequeStart {
 
   public static final String JSON_PROPERTY_FN_NUMBER = "fnNumber";
@@ -69,6 +69,7 @@ public class RetailShiftChequeStart {
   }
 
   public RetailShiftChequeStart fnNumber(@javax.annotation.Nullable String fnNumber) {
+
     
     this.fnNumber = fnNumber;
     return this;
@@ -93,11 +94,13 @@ public class RetailShiftChequeStart {
   @JsonProperty(JSON_PROPERTY_FN_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFnNumber(@javax.annotation.Nullable String fnNumber) {
+
     this.fnNumber = fnNumber;
   }
 
 
   public RetailShiftChequeStart kktRegNumber(@javax.annotation.Nullable String kktRegNumber) {
+
     
     this.kktRegNumber = kktRegNumber;
     return this;
@@ -122,11 +125,13 @@ public class RetailShiftChequeStart {
   @JsonProperty(JSON_PROPERTY_KKT_REG_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setKktRegNumber(@javax.annotation.Nullable String kktRegNumber) {
+
     this.kktRegNumber = kktRegNumber;
   }
 
 
   public RetailShiftChequeStart fiscalDocSign(@javax.annotation.Nullable String fiscalDocSign) {
+
     
     this.fiscalDocSign = fiscalDocSign;
     return this;
@@ -151,11 +156,13 @@ public class RetailShiftChequeStart {
   @JsonProperty(JSON_PROPERTY_FISCAL_DOC_SIGN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFiscalDocSign(@javax.annotation.Nullable String fiscalDocSign) {
+
     this.fiscalDocSign = fiscalDocSign;
   }
 
 
   public RetailShiftChequeStart shiftNumber(@javax.annotation.Nullable String shiftNumber) {
+
     
     this.shiftNumber = shiftNumber;
     return this;
@@ -180,11 +187,13 @@ public class RetailShiftChequeStart {
   @JsonProperty(JSON_PROPERTY_SHIFT_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShiftNumber(@javax.annotation.Nullable String shiftNumber) {
+
     this.shiftNumber = shiftNumber;
   }
 
 
   public RetailShiftChequeStart fiscalDocNumber(@javax.annotation.Nullable String fiscalDocNumber) {
+
     
     this.fiscalDocNumber = fiscalDocNumber;
     return this;
@@ -209,11 +218,13 @@ public class RetailShiftChequeStart {
   @JsonProperty(JSON_PROPERTY_FISCAL_DOC_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFiscalDocNumber(@javax.annotation.Nullable String fiscalDocNumber) {
+
     this.fiscalDocNumber = fiscalDocNumber;
   }
 
 
   public RetailShiftChequeStart time(@javax.annotation.Nullable String time) {
+
     
     this.time = time;
     return this;
@@ -238,6 +249,7 @@ public class RetailShiftChequeStart {
   @JsonProperty(JSON_PROPERTY_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTime(@javax.annotation.Nullable String time) {
+
     this.time = time;
   }
 

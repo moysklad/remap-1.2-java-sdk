@@ -28,6 +28,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import ru.moysklad.remap_1_2.model.Account;
 import ru.moysklad.remap_1_2.model.Agent;
 import ru.moysklad.remap_1_2.model.AttributeAbstract;
+import ru.moysklad.remap_1_2.model.CommissionReportOutPayment;
 import ru.moysklad.remap_1_2.model.CommissionReportOutPositionList;
 import ru.moysklad.remap_1_2.model.Contract;
 import ru.moysklad.remap_1_2.model.CurrencyRate;
@@ -37,7 +38,6 @@ import ru.moysklad.remap_1_2.model.Group;
 import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.Organization;
 import ru.moysklad.remap_1_2.model.Project;
-import ru.moysklad.remap_1_2.model.RetailShiftPaymentsInner;
 import ru.moysklad.remap_1_2.model.SalesChannel;
 import ru.moysklad.remap_1_2.model.State;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -95,7 +95,7 @@ import java.util.StringJoiner;
   CommissionReportOut.JSON_PROPERTY_VAT_SUM,
   CommissionReportOut.JSON_PROPERTY_PAYMENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   public static CommissionReportOut createWithMeta(UUID id) {
     CommissionReportOut o = new CommissionReportOut();
@@ -274,7 +274,7 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
 
   public static final String JSON_PROPERTY_PAYMENTS = "payments";
   @javax.annotation.Nullable
-  private JsonNullable<List<RetailShiftPaymentsInner>> payments = JsonNullable.<List<RetailShiftPaymentsInner>>undefined();
+  private JsonNullable<List<CommissionReportOutPayment>> payments = JsonNullable.<List<CommissionReportOutPayment>>undefined();
 
   public CommissionReportOut() {
   }
@@ -306,6 +306,7 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   }
 
   public CommissionReportOut meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -330,6 +331,7 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -367,6 +369,7 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
 
 
   public CommissionReportOut agent(@javax.annotation.Nullable Agent agent) {
+
     
     this.agent = agent;
     return this;
@@ -391,11 +394,13 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAgent(@javax.annotation.Nullable Agent agent) {
+
     this.agent = agent;
   }
 
 
   public CommissionReportOut agentAccount(@javax.annotation.Nullable Account agentAccount) {
+
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
     
     return this;
@@ -429,11 +434,13 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   }
 
   public void setAgentAccount(@javax.annotation.Nullable Account agentAccount) {
+
     this.agentAccount = JsonNullable.<Account>of(agentAccount);
   }
 
 
   public CommissionReportOut applicable(@javax.annotation.Nullable Boolean applicable) {
+
     
     this.applicable = applicable;
     return this;
@@ -458,11 +465,13 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_APPLICABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setApplicable(@javax.annotation.Nullable Boolean applicable) {
+
     this.applicable = applicable;
   }
 
 
   public CommissionReportOut attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
@@ -495,7 +504,7 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
@@ -508,11 +517,13 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   }
 
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
   public CommissionReportOut code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -537,11 +548,13 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public CommissionReportOut commissionPeriodEnd(@javax.annotation.Nullable String commissionPeriodEnd) {
+
     
     this.commissionPeriodEnd = commissionPeriodEnd;
     return this;
@@ -566,11 +579,13 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_COMMISSION_PERIOD_END)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCommissionPeriodEnd(@javax.annotation.Nullable String commissionPeriodEnd) {
+
     this.commissionPeriodEnd = commissionPeriodEnd;
   }
 
 
   public CommissionReportOut commissionPeriodStart(@javax.annotation.Nullable String commissionPeriodStart) {
+
     
     this.commissionPeriodStart = commissionPeriodStart;
     return this;
@@ -595,6 +610,7 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_COMMISSION_PERIOD_START)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCommissionPeriodStart(@javax.annotation.Nullable String commissionPeriodStart) {
+
     this.commissionPeriodStart = commissionPeriodStart;
   }
 
@@ -616,6 +632,7 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
 
 
   public CommissionReportOut contract(@javax.annotation.Nullable Contract contract) {
+
     this.contract = JsonNullable.<Contract>of(contract);
     
     return this;
@@ -649,6 +666,7 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   }
 
   public void setContract(@javax.annotation.Nullable Contract contract) {
+
     this.contract = JsonNullable.<Contract>of(contract);
   }
 
@@ -686,6 +704,7 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
 
 
   public CommissionReportOut description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -719,11 +738,13 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 
 
   public CommissionReportOut externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -748,11 +769,13 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public CommissionReportOut files(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
@@ -786,11 +809,13 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   }
 
   public void setFiles(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
   }
 
 
   public CommissionReportOut group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -815,11 +840,13 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
 
   public CommissionReportOut moment(@javax.annotation.Nullable String moment) {
+
     
     this.moment = moment;
     return this;
@@ -844,11 +871,13 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMoment(@javax.annotation.Nullable String moment) {
+
     this.moment = moment;
   }
 
 
   public CommissionReportOut name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -873,11 +902,13 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public CommissionReportOut organization(@javax.annotation.Nullable Organization organization) {
+
     
     this.organization = organization;
     return this;
@@ -902,11 +933,13 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOrganization(@javax.annotation.Nullable Organization organization) {
+
     this.organization = organization;
   }
 
 
   public CommissionReportOut organizationAccount(@javax.annotation.Nullable Account organizationAccount) {
+
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
     
     return this;
@@ -940,11 +973,13 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   }
 
   public void setOrganizationAccount(@javax.annotation.Nullable Account organizationAccount) {
+
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
   }
 
 
   public CommissionReportOut owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -978,6 +1013,7 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
@@ -999,6 +1035,7 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
 
 
   public CommissionReportOut positions(@javax.annotation.Nullable CommissionReportOutPositionList positions) {
+
     
     this.positions = positions;
     return this;
@@ -1023,6 +1060,7 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPositions(@javax.annotation.Nullable CommissionReportOutPositionList positions) {
+
     this.positions = positions;
   }
 
@@ -1044,6 +1082,7 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
 
 
   public CommissionReportOut project(@javax.annotation.Nullable Project project) {
+
     this.project = JsonNullable.<Project>of(project);
     
     return this;
@@ -1077,6 +1116,7 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   }
 
   public void setProject(@javax.annotation.Nullable Project project) {
+
     this.project = JsonNullable.<Project>of(project);
   }
 
@@ -1098,6 +1138,7 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
 
 
   public CommissionReportOut rate(@javax.annotation.Nullable CurrencyRate rate) {
+
     
     this.rate = rate;
     return this;
@@ -1122,11 +1163,19 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRate(@javax.annotation.Nullable CurrencyRate rate) {
+
     this.rate = rate;
   }
 
 
   public CommissionReportOut rewardPercent(@javax.annotation.Nullable Double rewardPercent) {
+    if (rewardPercent != null && rewardPercent.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'rewardPercent': must be greater than or equal to 0, got " + rewardPercent);
+    }
+    if (rewardPercent != null && rewardPercent.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'rewardPercent': must be less than or equal to 100, got " + rewardPercent);
+    }
+
     
     this.rewardPercent = rewardPercent;
     return this;
@@ -1153,11 +1202,19 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_REWARD_PERCENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRewardPercent(@javax.annotation.Nullable Double rewardPercent) {
+    if (rewardPercent != null && rewardPercent.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'rewardPercent': must be greater than or equal to 0, got " + rewardPercent);
+    }
+    if (rewardPercent != null && rewardPercent.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'rewardPercent': must be less than or equal to 100, got " + rewardPercent);
+    }
+
     this.rewardPercent = rewardPercent;
   }
 
 
   public CommissionReportOut rewardType(@javax.annotation.Nullable String rewardType) {
+
     
     this.rewardType = rewardType;
     return this;
@@ -1182,11 +1239,13 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_REWARD_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRewardType(@javax.annotation.Nullable String rewardType) {
+
     this.rewardType = rewardType;
   }
 
 
   public CommissionReportOut salesChannel(@javax.annotation.Nullable SalesChannel salesChannel) {
+
     this.salesChannel = JsonNullable.<SalesChannel>of(salesChannel);
     
     return this;
@@ -1220,11 +1279,13 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   }
 
   public void setSalesChannel(@javax.annotation.Nullable SalesChannel salesChannel) {
+
     this.salesChannel = JsonNullable.<SalesChannel>of(salesChannel);
   }
 
 
   public CommissionReportOut shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -1249,11 +1310,13 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
 
   public CommissionReportOut state(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
     
     return this;
@@ -1287,11 +1350,13 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   }
 
   public void setState(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
   }
 
 
   public CommissionReportOut sum(@javax.annotation.Nullable Double sum) {
+
     
     this.sum = sum;
     return this;
@@ -1316,11 +1381,13 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSum(@javax.annotation.Nullable Double sum) {
+
     this.sum = sum;
   }
 
 
   public CommissionReportOut syncId(@javax.annotation.Nullable UUID syncId) {
+
     
     this.syncId = syncId;
     return this;
@@ -1345,6 +1412,7 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
+
     this.syncId = syncId;
   }
 
@@ -1366,6 +1434,7 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
 
 
   public CommissionReportOut vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     
     this.vatEnabled = vatEnabled;
     return this;
@@ -1390,11 +1459,13 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     this.vatEnabled = vatEnabled;
   }
 
 
   public CommissionReportOut vatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
+
     
     this.vatIncluded = vatIncluded;
     return this;
@@ -1419,11 +1490,13 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_VAT_INCLUDED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
+
     this.vatIncluded = vatIncluded;
   }
 
 
   public CommissionReportOut vatSum(@javax.annotation.Nullable Double vatSum) {
+
     
     this.vatSum = vatSum;
     return this;
@@ -1448,20 +1521,22 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_VAT_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVatSum(@javax.annotation.Nullable Double vatSum) {
+
     this.vatSum = vatSum;
   }
 
 
-  public CommissionReportOut payments(@javax.annotation.Nullable List<RetailShiftPaymentsInner> payments) {
-    this.payments = JsonNullable.<List<RetailShiftPaymentsInner>>of(payments);
+  public CommissionReportOut payments(@javax.annotation.Nullable List<CommissionReportOutPayment> payments) {
+
+    this.payments = JsonNullable.<List<CommissionReportOutPayment>>of(payments);
     
     return this;
   }
 
 
-  public CommissionReportOut addPaymentsItem(RetailShiftPaymentsInner paymentsItem) {
+  public CommissionReportOut addPaymentsItem(CommissionReportOutPayment paymentsItem) {
     if (this.payments == null || !this.payments.isPresent()) {
-      this.payments = JsonNullable.<List<RetailShiftPaymentsInner>>of(new ArrayList<>());
+      this.payments = JsonNullable.<List<CommissionReportOutPayment>>of(new ArrayList<>());
     }
     try {
       this.payments.get().add(paymentsItem);
@@ -1478,27 +1553,28 @@ public class CommissionReportOut extends EntityWithMeta implements MetaEntity {
   @javax.annotation.Nullable
   @JsonIgnore
 
-  public List<RetailShiftPaymentsInner> getPayments() {
+  public List<CommissionReportOutPayment> getPayments() {
         return payments.orElse(null);
   }
 
   
 
   @JsonProperty(JSON_PROPERTY_PAYMENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
-  public JsonNullable<List<RetailShiftPaymentsInner>> getPayments_JsonNullable() {
+  public JsonNullable<List<CommissionReportOutPayment>> getPayments_JsonNullable() {
     return payments;
   }
   
   @JsonProperty(value = JSON_PROPERTY_PAYMENTS, required = false)
-  public void setPayments_JsonNullable(JsonNullable<List<RetailShiftPaymentsInner>> payments) {
+  public void setPayments_JsonNullable(JsonNullable<List<CommissionReportOutPayment>> payments) {
     this.payments = payments;
   }
 
-  public void setPayments(@javax.annotation.Nullable List<RetailShiftPaymentsInner> payments) {
-    this.payments = JsonNullable.<List<RetailShiftPaymentsInner>>of(payments);
+  public void setPayments(@javax.annotation.Nullable List<CommissionReportOutPayment> payments) {
+
+    this.payments = JsonNullable.<List<CommissionReportOutPayment>>of(payments);
   }
 
 

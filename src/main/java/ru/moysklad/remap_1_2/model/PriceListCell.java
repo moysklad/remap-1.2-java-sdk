@@ -33,7 +33,7 @@ import java.util.StringJoiner;
   PriceListCell.JSON_PROPERTY_COLUMN,
   PriceListCell.JSON_PROPERTY_SUM
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class PriceListCell {
 
   public static final String JSON_PROPERTY_COLUMN = "column";
@@ -48,6 +48,7 @@ public class PriceListCell {
   }
 
   public PriceListCell column(@javax.annotation.Nullable String column) {
+
     
     this.column = column;
     return this;
@@ -72,11 +73,13 @@ public class PriceListCell {
   @JsonProperty(JSON_PROPERTY_COLUMN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setColumn(@javax.annotation.Nullable String column) {
+
     this.column = column;
   }
 
 
   public PriceListCell sum(@javax.annotation.Nullable Long sum) {
+
     
     this.sum = sum;
     return this;
@@ -101,6 +104,7 @@ public class PriceListCell {
   @JsonProperty(JSON_PROPERTY_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSum(@javax.annotation.Nullable Long sum) {
+
     this.sum = sum;
   }
 

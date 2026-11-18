@@ -15,7 +15,7 @@
 |**agent** | [**Agent**](Agent.md) | Метаданные контрагента или юрлица, связанного с бонусной операцией |  [optional] |
 |**group** | [**Group**](Group.md) |  |  [optional] |
 |**organization** | [**Organization**](Organization.md) |  |  [optional] |
-|**parentDocument** | [**BonusTransactionParentDocument**](BonusTransactionParentDocument.md) |  |  [optional] |
+|**parentDocument** | [**BonusTransactionParentDocument**](BonusTransactionParentDocument.md) | Метаданные связанного документа бонусной операции |  [optional] |
 |**applicable** | **Boolean** | Отметка о проведении |  [optional] |
 |**bonusProgram** | [**BonusProgram**](BonusProgram.md) |  |  [optional] |
 |**bonusValue** | **Integer** | Количество бонусных баллов |  [optional] |

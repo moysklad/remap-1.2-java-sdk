@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   RetailStoreState.JSON_PROPERTY_PAYMENT_TERMINAL
 })
 @JsonTypeName("RetailStore_state")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStoreState {
 
   public static final String JSON_PROPERTY_SYNC = "sync";
@@ -62,6 +62,7 @@ public class RetailStoreState {
   }
 
   public RetailStoreState sync(@javax.annotation.Nullable RetailStoreStateSync sync) {
+
     
     this.sync = sync;
     return this;
@@ -86,11 +87,13 @@ public class RetailStoreState {
   @JsonProperty(JSON_PROPERTY_SYNC)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSync(@javax.annotation.Nullable RetailStoreStateSync sync) {
+
     this.sync = sync;
   }
 
 
   public RetailStoreState lastCheckMoment(@javax.annotation.Nullable String lastCheckMoment) {
+
     
     this.lastCheckMoment = lastCheckMoment;
     return this;
@@ -115,11 +118,13 @@ public class RetailStoreState {
   @JsonProperty(JSON_PROPERTY_LAST_CHECK_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLastCheckMoment(@javax.annotation.Nullable String lastCheckMoment) {
+
     this.lastCheckMoment = lastCheckMoment;
   }
 
 
   public RetailStoreState fiscalMemory(@javax.annotation.Nullable RetailStoreStateFiscalMemory fiscalMemory) {
+
     
     this.fiscalMemory = fiscalMemory;
     return this;
@@ -144,11 +149,13 @@ public class RetailStoreState {
   @JsonProperty(JSON_PROPERTY_FISCAL_MEMORY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFiscalMemory(@javax.annotation.Nullable RetailStoreStateFiscalMemory fiscalMemory) {
+
     this.fiscalMemory = fiscalMemory;
   }
 
 
   public RetailStoreState paymentTerminal(@javax.annotation.Nullable RetailStoreStatePaymentTerminal paymentTerminal) {
+
     
     this.paymentTerminal = paymentTerminal;
     return this;
@@ -173,6 +180,7 @@ public class RetailStoreState {
   @JsonProperty(JSON_PROPERTY_PAYMENT_TERMINAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPaymentTerminal(@javax.annotation.Nullable RetailStoreStatePaymentTerminal paymentTerminal) {
+
     this.paymentTerminal = paymentTerminal;
   }
 

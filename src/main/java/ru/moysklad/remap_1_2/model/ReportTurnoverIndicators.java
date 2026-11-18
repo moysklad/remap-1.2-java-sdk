@@ -33,7 +33,7 @@ import java.util.StringJoiner;
   ReportTurnoverIndicators.JSON_PROPERTY_SUM,
   ReportTurnoverIndicators.JSON_PROPERTY_QUANTITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ReportTurnoverIndicators {
 
   public static final String JSON_PROPERTY_SUM = "sum";
@@ -48,6 +48,7 @@ public class ReportTurnoverIndicators {
   }
 
   public ReportTurnoverIndicators sum(@javax.annotation.Nullable Double sum) {
+
     
     this.sum = sum;
     return this;
@@ -72,11 +73,13 @@ public class ReportTurnoverIndicators {
   @JsonProperty(JSON_PROPERTY_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSum(@javax.annotation.Nullable Double sum) {
+
     this.sum = sum;
   }
 
 
   public ReportTurnoverIndicators quantity(@javax.annotation.Nullable Double quantity) {
+
     
     this.quantity = quantity;
     return this;
@@ -101,6 +104,7 @@ public class ReportTurnoverIndicators {
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
+
     this.quantity = quantity;
   }
 

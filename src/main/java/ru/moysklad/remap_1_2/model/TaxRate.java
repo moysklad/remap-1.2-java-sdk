@@ -49,7 +49,7 @@ import java.util.StringJoiner;
   TaxRate.JSON_PROPERTY_ARCHIVED,
   TaxRate.JSON_PROPERTY_COMMENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class TaxRate extends EntityWithMeta implements MetaEntity {
   public static TaxRate createWithMeta(UUID id) {
     TaxRate o = new TaxRate();
@@ -124,6 +124,7 @@ public class TaxRate extends EntityWithMeta implements MetaEntity {
   }
 
   public TaxRate meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -148,6 +149,7 @@ public class TaxRate extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -185,6 +187,7 @@ public class TaxRate extends EntityWithMeta implements MetaEntity {
 
 
   public TaxRate owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -218,11 +221,13 @@ public class TaxRate extends EntityWithMeta implements MetaEntity {
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
 
   public TaxRate shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -247,11 +252,13 @@ public class TaxRate extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
 
   public TaxRate group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -276,6 +283,7 @@ public class TaxRate extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
@@ -297,6 +305,7 @@ public class TaxRate extends EntityWithMeta implements MetaEntity {
 
 
   public TaxRate rate(@javax.annotation.Nullable Double rate) {
+
     
     this.rate = rate;
     return this;
@@ -321,11 +330,13 @@ public class TaxRate extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRate(@javax.annotation.Nullable Double rate) {
+
     this.rate = rate;
   }
 
 
   public TaxRate archived(@javax.annotation.Nullable Boolean archived) {
+
     
     this.archived = archived;
     return this;
@@ -350,11 +361,13 @@ public class TaxRate extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
+
     this.archived = archived;
   }
 
 
   public TaxRate comment(@javax.annotation.Nullable String comment) {
+
     
     this.comment = comment;
     return this;
@@ -379,6 +392,7 @@ public class TaxRate extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_COMMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setComment(@javax.annotation.Nullable String comment) {
+
     this.comment = comment;
   }
 

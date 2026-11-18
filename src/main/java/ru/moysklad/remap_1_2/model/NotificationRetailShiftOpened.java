@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   NotificationRetailShiftOpened.JSON_PROPERTY_RETAIL_STORE,
   NotificationRetailShiftOpened.JSON_PROPERTY_RETAIL_SHIFT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class NotificationRetailShiftOpened extends NotificationAbstract {
 
   public static final String JSON_PROPERTY_USER = "user";
@@ -55,6 +55,7 @@ public class NotificationRetailShiftOpened extends NotificationAbstract {
   }
 
   public NotificationRetailShiftOpened user(@javax.annotation.Nullable NotificationNamedEntity user) {
+
     
     this.user = user;
     return this;
@@ -79,11 +80,13 @@ public class NotificationRetailShiftOpened extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUser(@javax.annotation.Nullable NotificationNamedEntity user) {
+
     this.user = user;
   }
 
 
   public NotificationRetailShiftOpened retailStore(@javax.annotation.Nullable NotificationNamedEntity retailStore) {
+
     
     this.retailStore = retailStore;
     return this;
@@ -108,11 +111,13 @@ public class NotificationRetailShiftOpened extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_RETAIL_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRetailStore(@javax.annotation.Nullable NotificationNamedEntity retailStore) {
+
     this.retailStore = retailStore;
   }
 
 
   public NotificationRetailShiftOpened retailShift(@javax.annotation.Nullable NotificationRetailShift retailShift) {
+
     
     this.retailShift = retailShift;
     return this;
@@ -137,6 +142,7 @@ public class NotificationRetailShiftOpened extends NotificationAbstract {
   @JsonProperty(JSON_PROPERTY_RETAIL_SHIFT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRetailShift(@javax.annotation.Nullable NotificationRetailShift retailShift) {
+
     this.retailShift = retailShift;
   }
 

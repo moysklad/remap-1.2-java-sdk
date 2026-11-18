@@ -38,7 +38,7 @@ import java.util.StringJoiner;
   LabelPrintRequest.JSON_PROPERTY_SALE_PRICE,
   LabelPrintRequest.JSON_PROPERTY_TEMPLATE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class LabelPrintRequest {
 
   public static final String JSON_PROPERTY_ORGANIZATION = "organization";
@@ -61,6 +61,7 @@ public class LabelPrintRequest {
   }
 
   public LabelPrintRequest organization(@javax.annotation.Nonnull Organization organization) {
+
     
     this.organization = organization;
     return this;
@@ -85,11 +86,19 @@ public class LabelPrintRequest {
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setOrganization(@javax.annotation.Nonnull Organization organization) {
+
     this.organization = organization;
   }
 
 
   public LabelPrintRequest count(@javax.annotation.Nonnull Integer count) {
+    if (count != null && count.doubleValue() < 1) {
+      throw new IllegalArgumentException("Invalid value for 'count': must be greater than or equal to 1, got " + count);
+    }
+    if (count != null && count.doubleValue() > 1000) {
+      throw new IllegalArgumentException("Invalid value for 'count': must be less than or equal to 1000, got " + count);
+    }
+
     
     this.count = count;
     return this;
@@ -116,11 +125,19 @@ public class LabelPrintRequest {
   @JsonProperty(JSON_PROPERTY_COUNT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCount(@javax.annotation.Nonnull Integer count) {
+    if (count != null && count.doubleValue() < 1) {
+      throw new IllegalArgumentException("Invalid value for 'count': must be greater than or equal to 1, got " + count);
+    }
+    if (count != null && count.doubleValue() > 1000) {
+      throw new IllegalArgumentException("Invalid value for 'count': must be less than or equal to 1000, got " + count);
+    }
+
     this.count = count;
   }
 
 
   public LabelPrintRequest salePrice(@javax.annotation.Nonnull SalePrice salePrice) {
+
     
     this.salePrice = salePrice;
     return this;
@@ -145,11 +162,13 @@ public class LabelPrintRequest {
   @JsonProperty(JSON_PROPERTY_SALE_PRICE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSalePrice(@javax.annotation.Nonnull SalePrice salePrice) {
+
     this.salePrice = salePrice;
   }
 
 
   public LabelPrintRequest template(@javax.annotation.Nonnull EmbeddedTemplate template) {
+
     
     this.template = template;
     return this;
@@ -174,6 +193,7 @@ public class LabelPrintRequest {
   @JsonProperty(JSON_PROPERTY_TEMPLATE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setTemplate(@javax.annotation.Nonnull EmbeddedTemplate template) {
+
     this.template = template;
   }
 

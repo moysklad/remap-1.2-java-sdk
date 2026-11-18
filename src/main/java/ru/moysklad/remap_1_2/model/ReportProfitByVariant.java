@@ -46,7 +46,7 @@ import java.util.StringJoiner;
   ReportProfitByVariant.JSON_PROPERTY_SELL_QUANTITY,
   ReportProfitByVariant.JSON_PROPERTY_SELL_SUM
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ReportProfitByVariant {
 
   public static final String JSON_PROPERTY_ASSORTMENT = "assortment";
@@ -109,6 +109,7 @@ public class ReportProfitByVariant {
   }
 
   public ReportProfitByVariant assortment(@javax.annotation.Nullable ReportProfitAssortment assortment) {
+
     
     this.assortment = assortment;
     return this;
@@ -133,11 +134,13 @@ public class ReportProfitByVariant {
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssortment(@javax.annotation.Nullable ReportProfitAssortment assortment) {
+
     this.assortment = assortment;
   }
 
 
   public ReportProfitByVariant margin(@javax.annotation.Nullable Double margin) {
+
     
     this.margin = margin;
     return this;
@@ -162,11 +165,13 @@ public class ReportProfitByVariant {
   @JsonProperty(JSON_PROPERTY_MARGIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMargin(@javax.annotation.Nullable Double margin) {
+
     this.margin = margin;
   }
 
 
   public ReportProfitByVariant salesMargin(@javax.annotation.Nullable Double salesMargin) {
+
     
     this.salesMargin = salesMargin;
     return this;
@@ -191,11 +196,13 @@ public class ReportProfitByVariant {
   @JsonProperty(JSON_PROPERTY_SALES_MARGIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSalesMargin(@javax.annotation.Nullable Double salesMargin) {
+
     this.salesMargin = salesMargin;
   }
 
 
   public ReportProfitByVariant profit(@javax.annotation.Nullable Double profit) {
+
     
     this.profit = profit;
     return this;
@@ -220,11 +227,13 @@ public class ReportProfitByVariant {
   @JsonProperty(JSON_PROPERTY_PROFIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProfit(@javax.annotation.Nullable Double profit) {
+
     this.profit = profit;
   }
 
 
   public ReportProfitByVariant returnCost(@javax.annotation.Nullable Double returnCost) {
+
     
     this.returnCost = returnCost;
     return this;
@@ -249,11 +258,13 @@ public class ReportProfitByVariant {
   @JsonProperty(JSON_PROPERTY_RETURN_COST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReturnCost(@javax.annotation.Nullable Double returnCost) {
+
     this.returnCost = returnCost;
   }
 
 
   public ReportProfitByVariant returnCostSum(@javax.annotation.Nullable Double returnCostSum) {
+
     
     this.returnCostSum = returnCostSum;
     return this;
@@ -278,11 +289,13 @@ public class ReportProfitByVariant {
   @JsonProperty(JSON_PROPERTY_RETURN_COST_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReturnCostSum(@javax.annotation.Nullable Double returnCostSum) {
+
     this.returnCostSum = returnCostSum;
   }
 
 
   public ReportProfitByVariant returnPrice(@javax.annotation.Nullable Double returnPrice) {
+
     
     this.returnPrice = returnPrice;
     return this;
@@ -307,11 +320,13 @@ public class ReportProfitByVariant {
   @JsonProperty(JSON_PROPERTY_RETURN_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReturnPrice(@javax.annotation.Nullable Double returnPrice) {
+
     this.returnPrice = returnPrice;
   }
 
 
   public ReportProfitByVariant returnQuantity(@javax.annotation.Nullable Double returnQuantity) {
+
     
     this.returnQuantity = returnQuantity;
     return this;
@@ -336,11 +351,13 @@ public class ReportProfitByVariant {
   @JsonProperty(JSON_PROPERTY_RETURN_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReturnQuantity(@javax.annotation.Nullable Double returnQuantity) {
+
     this.returnQuantity = returnQuantity;
   }
 
 
   public ReportProfitByVariant returnSum(@javax.annotation.Nullable Double returnSum) {
+
     
     this.returnSum = returnSum;
     return this;
@@ -365,11 +382,13 @@ public class ReportProfitByVariant {
   @JsonProperty(JSON_PROPERTY_RETURN_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReturnSum(@javax.annotation.Nullable Double returnSum) {
+
     this.returnSum = returnSum;
   }
 
 
   public ReportProfitByVariant sellCost(@javax.annotation.Nullable Double sellCost) {
+
     
     this.sellCost = sellCost;
     return this;
@@ -394,11 +413,13 @@ public class ReportProfitByVariant {
   @JsonProperty(JSON_PROPERTY_SELL_COST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSellCost(@javax.annotation.Nullable Double sellCost) {
+
     this.sellCost = sellCost;
   }
 
 
   public ReportProfitByVariant sellCostSum(@javax.annotation.Nullable Double sellCostSum) {
+
     
     this.sellCostSum = sellCostSum;
     return this;
@@ -423,11 +444,13 @@ public class ReportProfitByVariant {
   @JsonProperty(JSON_PROPERTY_SELL_COST_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSellCostSum(@javax.annotation.Nullable Double sellCostSum) {
+
     this.sellCostSum = sellCostSum;
   }
 
 
   public ReportProfitByVariant sellPrice(@javax.annotation.Nullable Double sellPrice) {
+
     
     this.sellPrice = sellPrice;
     return this;
@@ -452,11 +475,13 @@ public class ReportProfitByVariant {
   @JsonProperty(JSON_PROPERTY_SELL_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSellPrice(@javax.annotation.Nullable Double sellPrice) {
+
     this.sellPrice = sellPrice;
   }
 
 
   public ReportProfitByVariant sellQuantity(@javax.annotation.Nullable Double sellQuantity) {
+
     
     this.sellQuantity = sellQuantity;
     return this;
@@ -481,11 +506,13 @@ public class ReportProfitByVariant {
   @JsonProperty(JSON_PROPERTY_SELL_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSellQuantity(@javax.annotation.Nullable Double sellQuantity) {
+
     this.sellQuantity = sellQuantity;
   }
 
 
   public ReportProfitByVariant sellSum(@javax.annotation.Nullable Double sellSum) {
+
     
     this.sellSum = sellSum;
     return this;
@@ -510,6 +537,7 @@ public class ReportProfitByVariant {
   @JsonProperty(JSON_PROPERTY_SELL_SUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSellSum(@javax.annotation.Nullable Double sellSum) {
+
     this.sellSum = sellSum;
   }
 

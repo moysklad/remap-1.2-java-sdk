@@ -14,6 +14,7 @@
 |**usePriceType** | **Boolean** | Использовать ли специальную цену |  [optional] |
 |**discount** | **Double** | Процент скидки (используется при usePriceType&#x3D;false) |  [optional] |
 |**specialPrice** | [**SpecialPriceDiscountSpecialPrice**](SpecialPriceDiscountSpecialPrice.md) |  |  [optional] |
+|**assortment** | [**List&lt;DiscountAssortmentItem&gt;**](DiscountAssortmentItem.md) | Массив метаданных товаров, услуг и модификаций |  [optional] |
 
 
 

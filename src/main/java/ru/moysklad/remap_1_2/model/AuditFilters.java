@@ -39,25 +39,26 @@ import java.util.StringJoiner;
   AuditFilters.JSON_PROPERTY_ENTITYTYPE,
   AuditFilters.JSON_PROPERTY_EVENTTYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class AuditFilters {
 
   public static final String JSON_PROPERTY_SOURCE = "source";
   @javax.annotation.Nullable
-  private List<AuditSourceType> source = new ArrayList<>();
+  private List<AuditSourceType> source;
 
   public static final String JSON_PROPERTY_ENTITYTYPE = "entitytype";
   @javax.annotation.Nullable
-  private List<String> entitytype = new ArrayList<>();
+  private List<String> entitytype;
 
   public static final String JSON_PROPERTY_EVENTTYPE = "eventtype";
   @javax.annotation.Nullable
-  private List<AuditEventType> eventtype = new ArrayList<>();
+  private List<AuditEventType> eventtype;
 
   public AuditFilters() {
   }
 
   public AuditFilters source(@javax.annotation.Nullable List<AuditSourceType> source) {
+
     
     this.source = source;
     return this;
@@ -78,7 +79,7 @@ public class AuditFilters {
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SOURCE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<AuditSourceType> getSource() {
     return source;
@@ -88,13 +89,15 @@ public class AuditFilters {
 
 
   @JsonProperty(JSON_PROPERTY_SOURCE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setSource(@javax.annotation.Nullable List<AuditSourceType> source) {
+
     this.source = source;
   }
 
 
   public AuditFilters entitytype(@javax.annotation.Nullable List<String> entitytype) {
+
     
     this.entitytype = entitytype;
     return this;
@@ -115,7 +118,7 @@ public class AuditFilters {
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ENTITYTYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<String> getEntitytype() {
     return entitytype;
@@ -125,13 +128,15 @@ public class AuditFilters {
 
 
   @JsonProperty(JSON_PROPERTY_ENTITYTYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setEntitytype(@javax.annotation.Nullable List<String> entitytype) {
+
     this.entitytype = entitytype;
   }
 
 
   public AuditFilters eventtype(@javax.annotation.Nullable List<AuditEventType> eventtype) {
+
     
     this.eventtype = eventtype;
     return this;
@@ -152,7 +157,7 @@ public class AuditFilters {
    */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EVENTTYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
   public List<AuditEventType> getEventtype() {
     return eventtype;
@@ -162,8 +167,9 @@ public class AuditFilters {
 
 
   @JsonProperty(JSON_PROPERTY_EVENTTYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
   public void setEventtype(@javax.annotation.Nullable List<AuditEventType> eventtype) {
+
     this.eventtype = eventtype;
   }
 

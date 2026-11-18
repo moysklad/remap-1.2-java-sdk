@@ -42,13 +42,11 @@
 |**images** | [**ImageList**](ImageList.md) | Массив метаданных Изображений |  [optional] |
 |**files** | [**FileList**](FileList.md) | Метаданные массива Файлов |  [optional] |
 |**barcodes** | [**List&lt;Barcode&gt;**](Barcode.md) | Штрихкоды Комплекта |  [optional] |
-|**packs** | [**List&lt;Pack&gt;**](Pack.md) | Упаковки Комплекта |  [optional] |
 |**salePrices** | [**List&lt;SalePrice&gt;**](SalePrice.md) | Цены продажи |  [optional] |
-|**buyPrice** | [**Price**](Price.md) |  |  [optional] |
 |**minPrice** | [**Price**](Price.md) |  |  [optional] |
 |**overhead** | [**BundleOverhead**](BundleOverhead.md) |  |  [optional] |
 |**attributes** | [**List&lt;AttributeAbstract&gt;**](AttributeAbstract.md) | Коллекция метаданных доп. полей |  [optional] |
-|**components** | **BundleComponentList** | Массив компонентов Комплекта |  [optional] |
+|**components** | [**BundleComponentList**](BundleComponentList.md) |  |  [optional] |
 
 
 

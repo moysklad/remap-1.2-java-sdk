@@ -34,7 +34,7 @@
 |**group** | [**Group**](Group.md) |  |  [optional] |
 |**attributes** | [**List&lt;AttributeAbstract&gt;**](AttributeAbstract.md) | Коллекция метаданных доп. полей |  [optional] |
 |**files** | [**FileList**](FileList.md) | Метаданные массива Файлов |  [optional] |
-|**positions** | **ProcessingOrderPositionList** | Позиции Заказа на производство |  [optional] |
+|**positions** | [**ProcessingOrderPositionList**](ProcessingOrderPositionList.md) |  |  [optional] |
 |**quantity** | **Double** | Объем производства |  [optional] |
 |**processings** | [**List&lt;Processing&gt;**](Processing.md) | Массив ссылок на связанные техоперации |  [optional] |
 

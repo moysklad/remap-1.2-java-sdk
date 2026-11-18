@@ -40,7 +40,7 @@ import java.util.StringJoiner;
   StockCurrentBySlot.JSON_PROPERTY_RESERVE,
   StockCurrentBySlot.JSON_PROPERTY_IN_TRANSIT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class StockCurrentBySlot {
 
   public static final String JSON_PROPERTY_ASSORTMENT_ID = "assortmentId";
@@ -79,6 +79,7 @@ public class StockCurrentBySlot {
   }
 
   public StockCurrentBySlot assortmentId(@javax.annotation.Nullable UUID assortmentId) {
+
     
     this.assortmentId = assortmentId;
     return this;
@@ -103,11 +104,13 @@ public class StockCurrentBySlot {
   @JsonProperty(JSON_PROPERTY_ASSORTMENT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssortmentId(@javax.annotation.Nullable UUID assortmentId) {
+
     this.assortmentId = assortmentId;
   }
 
 
   public StockCurrentBySlot storeId(@javax.annotation.Nullable UUID storeId) {
+
     
     this.storeId = storeId;
     return this;
@@ -132,11 +135,13 @@ public class StockCurrentBySlot {
   @JsonProperty(JSON_PROPERTY_STORE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStoreId(@javax.annotation.Nullable UUID storeId) {
+
     this.storeId = storeId;
   }
 
 
   public StockCurrentBySlot slotId(@javax.annotation.Nullable UUID slotId) {
+
     
     this.slotId = slotId;
     return this;
@@ -161,11 +166,13 @@ public class StockCurrentBySlot {
   @JsonProperty(JSON_PROPERTY_SLOT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSlotId(@javax.annotation.Nullable UUID slotId) {
+
     this.slotId = slotId;
   }
 
 
   public StockCurrentBySlot stock(@javax.annotation.Nullable Double stock) {
+
     
     this.stock = stock;
     return this;
@@ -190,11 +197,13 @@ public class StockCurrentBySlot {
   @JsonProperty(JSON_PROPERTY_STOCK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStock(@javax.annotation.Nullable Double stock) {
+
     this.stock = stock;
   }
 
 
   public StockCurrentBySlot freeStock(@javax.annotation.Nullable Double freeStock) {
+
     
     this.freeStock = freeStock;
     return this;
@@ -219,11 +228,13 @@ public class StockCurrentBySlot {
   @JsonProperty(JSON_PROPERTY_FREE_STOCK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFreeStock(@javax.annotation.Nullable Double freeStock) {
+
     this.freeStock = freeStock;
   }
 
 
   public StockCurrentBySlot quantity(@javax.annotation.Nullable Double quantity) {
+
     
     this.quantity = quantity;
     return this;
@@ -248,11 +259,13 @@ public class StockCurrentBySlot {
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
+
     this.quantity = quantity;
   }
 
 
   public StockCurrentBySlot reserve(@javax.annotation.Nullable Double reserve) {
+
     
     this.reserve = reserve;
     return this;
@@ -277,11 +290,13 @@ public class StockCurrentBySlot {
   @JsonProperty(JSON_PROPERTY_RESERVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReserve(@javax.annotation.Nullable Double reserve) {
+
     this.reserve = reserve;
   }
 
 
   public StockCurrentBySlot inTransit(@javax.annotation.Nullable Double inTransit) {
+
     
     this.inTransit = inTransit;
     return this;
@@ -306,6 +321,7 @@ public class StockCurrentBySlot {
   @JsonProperty(JSON_PROPERTY_IN_TRANSIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setInTransit(@javax.annotation.Nullable Double inTransit) {
+
     this.inTransit = inTransit;
   }
 

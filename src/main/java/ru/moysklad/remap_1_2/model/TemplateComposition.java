@@ -34,7 +34,7 @@ import java.util.StringJoiner;
   TemplateComposition.JSON_PROPERTY_TEMPLATE,
   TemplateComposition.JSON_PROPERTY_COUNT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class TemplateComposition {
 
   public static final String JSON_PROPERTY_TEMPLATE = "template";
@@ -49,6 +49,7 @@ public class TemplateComposition {
   }
 
   public TemplateComposition template(@javax.annotation.Nonnull EmbeddedTemplate template) {
+
     
     this.template = template;
     return this;
@@ -73,11 +74,19 @@ public class TemplateComposition {
   @JsonProperty(JSON_PROPERTY_TEMPLATE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setTemplate(@javax.annotation.Nonnull EmbeddedTemplate template) {
+
     this.template = template;
   }
 
 
   public TemplateComposition count(@javax.annotation.Nonnull Integer count) {
+    if (count != null && count.doubleValue() < 1) {
+      throw new IllegalArgumentException("Invalid value for 'count': must be greater than or equal to 1, got " + count);
+    }
+    if (count != null && count.doubleValue() > 10) {
+      throw new IllegalArgumentException("Invalid value for 'count': must be less than or equal to 10, got " + count);
+    }
+
     
     this.count = count;
     return this;
@@ -104,6 +113,13 @@ public class TemplateComposition {
   @JsonProperty(JSON_PROPERTY_COUNT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCount(@javax.annotation.Nonnull Integer count) {
+    if (count != null && count.doubleValue() < 1) {
+      throw new IllegalArgumentException("Invalid value for 'count': must be greater than or equal to 1, got " + count);
+    }
+    if (count != null && count.doubleValue() > 10) {
+      throw new IllegalArgumentException("Invalid value for 'count': must be less than or equal to 10, got " + count);
+    }
+
     this.count = count;
   }
 

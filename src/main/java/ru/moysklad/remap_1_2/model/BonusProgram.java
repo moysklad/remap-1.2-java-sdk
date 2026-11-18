@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   BonusProgram.JSON_PROPERTY_WELCOME_BONUSES_MODE,
   BonusProgram.JSON_PROPERTY_MAX_PAID_RATE_PERCENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class BonusProgram extends DiscountAbstract {
 
   public static final String JSON_PROPERTY_EARN_RATE_ROUBLES_TO_POINT = "earnRateRoublesToPoint";
@@ -78,6 +78,7 @@ public class BonusProgram extends DiscountAbstract {
   }
 
   public BonusProgram earnRateRoublesToPoint(@javax.annotation.Nullable Integer earnRateRoublesToPoint) {
+
     
     this.earnRateRoublesToPoint = earnRateRoublesToPoint;
     return this;
@@ -102,11 +103,13 @@ public class BonusProgram extends DiscountAbstract {
   @JsonProperty(JSON_PROPERTY_EARN_RATE_ROUBLES_TO_POINT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEarnRateRoublesToPoint(@javax.annotation.Nullable Integer earnRateRoublesToPoint) {
+
     this.earnRateRoublesToPoint = earnRateRoublesToPoint;
   }
 
 
   public BonusProgram earnWhileRedeeming(@javax.annotation.Nullable Boolean earnWhileRedeeming) {
+
     
     this.earnWhileRedeeming = earnWhileRedeeming;
     return this;
@@ -131,11 +134,13 @@ public class BonusProgram extends DiscountAbstract {
   @JsonProperty(JSON_PROPERTY_EARN_WHILE_REDEEMING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEarnWhileRedeeming(@javax.annotation.Nullable Boolean earnWhileRedeeming) {
+
     this.earnWhileRedeeming = earnWhileRedeeming;
   }
 
 
   public BonusProgram postponedBonusesDelayDays(@javax.annotation.Nullable Integer postponedBonusesDelayDays) {
+
     
     this.postponedBonusesDelayDays = postponedBonusesDelayDays;
     return this;
@@ -160,11 +165,13 @@ public class BonusProgram extends DiscountAbstract {
   @JsonProperty(JSON_PROPERTY_POSTPONED_BONUSES_DELAY_DAYS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPostponedBonusesDelayDays(@javax.annotation.Nullable Integer postponedBonusesDelayDays) {
+
     this.postponedBonusesDelayDays = postponedBonusesDelayDays;
   }
 
 
   public BonusProgram spendRatePointsToRouble(@javax.annotation.Nullable Integer spendRatePointsToRouble) {
+
     
     this.spendRatePointsToRouble = spendRatePointsToRouble;
     return this;
@@ -189,11 +196,13 @@ public class BonusProgram extends DiscountAbstract {
   @JsonProperty(JSON_PROPERTY_SPEND_RATE_POINTS_TO_ROUBLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSpendRatePointsToRouble(@javax.annotation.Nullable Integer spendRatePointsToRouble) {
+
     this.spendRatePointsToRouble = spendRatePointsToRouble;
   }
 
 
   public BonusProgram welcomeBonusesEnabled(@javax.annotation.Nullable Boolean welcomeBonusesEnabled) {
+
     
     this.welcomeBonusesEnabled = welcomeBonusesEnabled;
     return this;
@@ -218,11 +227,13 @@ public class BonusProgram extends DiscountAbstract {
   @JsonProperty(JSON_PROPERTY_WELCOME_BONUSES_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setWelcomeBonusesEnabled(@javax.annotation.Nullable Boolean welcomeBonusesEnabled) {
+
     this.welcomeBonusesEnabled = welcomeBonusesEnabled;
   }
 
 
   public BonusProgram welcomeBonusesValue(@javax.annotation.Nullable Integer welcomeBonusesValue) {
+
     
     this.welcomeBonusesValue = welcomeBonusesValue;
     return this;
@@ -247,11 +258,13 @@ public class BonusProgram extends DiscountAbstract {
   @JsonProperty(JSON_PROPERTY_WELCOME_BONUSES_VALUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setWelcomeBonusesValue(@javax.annotation.Nullable Integer welcomeBonusesValue) {
+
     this.welcomeBonusesValue = welcomeBonusesValue;
   }
 
 
   public BonusProgram welcomeBonusesMode(@javax.annotation.Nullable String welcomeBonusesMode) {
+
     
     this.welcomeBonusesMode = welcomeBonusesMode;
     return this;
@@ -276,11 +289,19 @@ public class BonusProgram extends DiscountAbstract {
   @JsonProperty(JSON_PROPERTY_WELCOME_BONUSES_MODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setWelcomeBonusesMode(@javax.annotation.Nullable String welcomeBonusesMode) {
+
     this.welcomeBonusesMode = welcomeBonusesMode;
   }
 
 
   public BonusProgram maxPaidRatePercents(@javax.annotation.Nullable Integer maxPaidRatePercents) {
+    if (maxPaidRatePercents != null && maxPaidRatePercents.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'maxPaidRatePercents': must be greater than or equal to 0, got " + maxPaidRatePercents);
+    }
+    if (maxPaidRatePercents != null && maxPaidRatePercents.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'maxPaidRatePercents': must be less than or equal to 100, got " + maxPaidRatePercents);
+    }
+
     
     this.maxPaidRatePercents = maxPaidRatePercents;
     return this;
@@ -307,6 +328,13 @@ public class BonusProgram extends DiscountAbstract {
   @JsonProperty(JSON_PROPERTY_MAX_PAID_RATE_PERCENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMaxPaidRatePercents(@javax.annotation.Nullable Integer maxPaidRatePercents) {
+    if (maxPaidRatePercents != null && maxPaidRatePercents.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'maxPaidRatePercents': must be greater than or equal to 0, got " + maxPaidRatePercents);
+    }
+    if (maxPaidRatePercents != null && maxPaidRatePercents.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'maxPaidRatePercents': must be less than or equal to 100, got " + maxPaidRatePercents);
+    }
+
     this.maxPaidRatePercents = maxPaidRatePercents;
   }
 

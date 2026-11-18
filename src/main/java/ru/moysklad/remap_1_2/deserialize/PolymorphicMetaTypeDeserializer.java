@@ -26,7 +26,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class PolymorphicMetaTypeDeserializer extends ValueDeserializer<Object> {
   public static final String DESERIALIZER_FACTORY_ATTRIBUTE = "ru.moysklad.remap_1_2.DeserializerFactory";
 
@@ -75,7 +75,7 @@ public class PolymorphicMetaTypeDeserializer extends ValueDeserializer<Object> {
       return targetClass;
     }
 
-    Map<String, Class<?>> mappings = discriminatorMappings(targetClass);
+    Map<String, Class<?>> mappings = discriminatorMappings(targetClass, node);
     JsonNode discriminatorNode = readPath(node, path);
     boolean hasDiscriminator = discriminatorNode != null && discriminatorNode.isTextual() && mappings != null;
 
@@ -144,13 +144,18 @@ public class PolymorphicMetaTypeDeserializer extends ValueDeserializer<Object> {
     return null;
   }
 
-  private Map<String, Class<?>> discriminatorMappings(Class<?> targetClass) {
+  private Map<String, Class<?>> discriminatorMappings(Class<?> targetClass, JsonNode node) {
     for (Class<?> current = targetClass; current != null && current != Object.class; current = current.getSuperclass()) {
       OpenApiPolymorphicSubTypes subTypes = current.getAnnotation(OpenApiPolymorphicSubTypes.class);
       if (subTypes != null) {
         Map<String, Class<?>> mappings = new LinkedHashMap<>();
+        String href = node.path("meta").path("href").asString("");
         for (OpenApiPolymorphicSubTypes.Type type : subTypes.value()) {
-          mappings.put(type.name(), type.value());
+          if (type.hrefContains().isEmpty()) {
+            mappings.putIfAbsent(type.name(), type.value());
+          } else if (href.contains(type.hrefContains())) {
+            mappings.put(type.name(), type.value());
+          }
         }
         return mappings;
       }

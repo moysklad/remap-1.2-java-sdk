@@ -34,7 +34,7 @@ import java.util.StringJoiner;
   AssortmentSettingsUniqueCodeRules.JSON_PROPERTY_FILL_UNIQUE_CODE
 })
 @JsonTypeName("AssortmentSettings_uniqueCodeRules")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class AssortmentSettingsUniqueCodeRules {
 
   public static final String JSON_PROPERTY_CHECK_UNIQUE_CODE = "checkUniqueCode";
@@ -49,6 +49,7 @@ public class AssortmentSettingsUniqueCodeRules {
   }
 
   public AssortmentSettingsUniqueCodeRules checkUniqueCode(@javax.annotation.Nullable Boolean checkUniqueCode) {
+
     
     this.checkUniqueCode = checkUniqueCode;
     return this;
@@ -73,11 +74,13 @@ public class AssortmentSettingsUniqueCodeRules {
   @JsonProperty(JSON_PROPERTY_CHECK_UNIQUE_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCheckUniqueCode(@javax.annotation.Nullable Boolean checkUniqueCode) {
+
     this.checkUniqueCode = checkUniqueCode;
   }
 
 
   public AssortmentSettingsUniqueCodeRules fillUniqueCode(@javax.annotation.Nullable Boolean fillUniqueCode) {
+
     
     this.fillUniqueCode = fillUniqueCode;
     return this;
@@ -102,6 +105,7 @@ public class AssortmentSettingsUniqueCodeRules {
   @JsonProperty(JSON_PROPERTY_FILL_UNIQUE_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFillUniqueCode(@javax.annotation.Nullable Boolean fillUniqueCode) {
+
     this.fillUniqueCode = fillUniqueCode;
   }
 

@@ -17,7 +17,7 @@
 |**created** | **String** | Дата создания |  [optional] [readonly] |
 |**deleted** | **String** | Момент последнего удаления Списания |  [optional] [readonly] |
 |**description** | **String** | Комментарий Списания |  [optional] |
-|**expenseItem** | [**ExpenseItem**](ExpenseItem.md) | Метаданные Статьи расходов |  [optional] [readonly] |
+|**expenseItem** | [**ExpenseItem**](ExpenseItem.md) | Метаданные Статьи расходов |  [optional] |
 |**externalCode** | **String** | Внешний код Списания |  [optional] |
 |**files** | [**FileList**](FileList.md) | Метаданные массива Файлов (Максимальное количество файлов - 100) |  [optional] |
 |**group** | [**Group**](Group.md) |  |  [optional] |

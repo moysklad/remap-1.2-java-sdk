@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   ReportMoneyByAccount.JSON_PROPERTY_ORGANIZATION,
   ReportMoneyByAccount.JSON_PROPERTY_BALANCE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ReportMoneyByAccount {
 
   public static final String JSON_PROPERTY_ACCOUNT = "account";
@@ -55,6 +55,7 @@ public class ReportMoneyByAccount {
   }
 
   public ReportMoneyByAccount account(@javax.annotation.Nullable ReportMoneyAccount account) {
+
     
     this.account = account;
     return this;
@@ -79,11 +80,13 @@ public class ReportMoneyByAccount {
   @JsonProperty(JSON_PROPERTY_ACCOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAccount(@javax.annotation.Nullable ReportMoneyAccount account) {
+
     this.account = account;
   }
 
 
   public ReportMoneyByAccount organization(@javax.annotation.Nullable Organization organization) {
+
     
     this.organization = organization;
     return this;
@@ -108,11 +111,13 @@ public class ReportMoneyByAccount {
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOrganization(@javax.annotation.Nullable Organization organization) {
+
     this.organization = organization;
   }
 
 
   public ReportMoneyByAccount balance(@javax.annotation.Nullable Double balance) {
+
     
     this.balance = balance;
     return this;
@@ -137,6 +142,7 @@ public class ReportMoneyByAccount {
   @JsonProperty(JSON_PROPERTY_BALANCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBalance(@javax.annotation.Nullable Double balance) {
+
     this.balance = balance;
   }
 

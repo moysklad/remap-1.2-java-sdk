@@ -50,7 +50,7 @@ import java.util.StringJoiner;
   Uom.JSON_PROPERTY_SHARED,
   Uom.JSON_PROPERTY_EXTERNAL_CODE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Uom extends EntityWithMeta implements Named, MetaEntity {
   public static Uom createWithMeta(UUID id) {
     Uom o = new Uom();
@@ -129,6 +129,7 @@ public class Uom extends EntityWithMeta implements Named, MetaEntity {
   }
 
   public Uom meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -153,6 +154,7 @@ public class Uom extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -190,6 +192,7 @@ public class Uom extends EntityWithMeta implements Named, MetaEntity {
 
 
   public Uom name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -214,11 +217,13 @@ public class Uom extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public Uom description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -252,11 +257,13 @@ public class Uom extends EntityWithMeta implements Named, MetaEntity {
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 
 
   public Uom code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -281,11 +288,13 @@ public class Uom extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public Uom group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -310,11 +319,13 @@ public class Uom extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
 
   public Uom owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -348,6 +359,7 @@ public class Uom extends EntityWithMeta implements Named, MetaEntity {
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
@@ -369,6 +381,7 @@ public class Uom extends EntityWithMeta implements Named, MetaEntity {
 
 
   public Uom shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -393,11 +406,13 @@ public class Uom extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
 
   public Uom externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -422,6 +437,7 @@ public class Uom extends EntityWithMeta implements Named, MetaEntity {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 

@@ -46,7 +46,7 @@ import java.util.StringJoiner;
   ProcessingOrderPosition.JSON_PROPERTY_ASSORTMENT,
   ProcessingOrderPosition.JSON_PROPERTY_PACK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingOrderPosition extends EntityWithMeta implements DocumentPosition, MetaEntity {
   public static ProcessingOrderPosition createWithMeta(UUID parentId, UUID id) {
     ProcessingOrderPosition o = new ProcessingOrderPosition();
@@ -105,6 +105,7 @@ public class ProcessingOrderPosition extends EntityWithMeta implements DocumentP
   }
 
   public ProcessingOrderPosition meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -129,11 +130,13 @@ public class ProcessingOrderPosition extends EntityWithMeta implements DocumentP
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public ProcessingOrderPosition id(@javax.annotation.Nullable UUID id) {
+
     
     this.id = id;
     return this;
@@ -158,6 +161,7 @@ public class ProcessingOrderPosition extends EntityWithMeta implements DocumentP
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(@javax.annotation.Nullable UUID id) {
+
     this.id = id;
   }
 
@@ -179,6 +183,10 @@ public class ProcessingOrderPosition extends EntityWithMeta implements DocumentP
 
 
   public ProcessingOrderPosition quantity(@javax.annotation.Nullable Double quantity) {
+    if (quantity != null && quantity.doubleValue() < 0.0000010) {
+      throw new IllegalArgumentException("Invalid value for 'quantity': must be greater than or equal to 0.0000010, got " + quantity);
+    }
+
     
     this.quantity = quantity;
     return this;
@@ -204,11 +212,19 @@ public class ProcessingOrderPosition extends EntityWithMeta implements DocumentP
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
+    if (quantity != null && quantity.doubleValue() < 0.0000010) {
+      throw new IllegalArgumentException("Invalid value for 'quantity': must be greater than or equal to 0.0000010, got " + quantity);
+    }
+
     this.quantity = quantity;
   }
 
 
   public ProcessingOrderPosition reserve(@javax.annotation.Nullable Double reserve) {
+    if (reserve != null && reserve.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'reserve': must be greater than or equal to 0, got " + reserve);
+    }
+
     
     this.reserve = reserve;
     return this;
@@ -234,11 +250,16 @@ public class ProcessingOrderPosition extends EntityWithMeta implements DocumentP
   @JsonProperty(JSON_PROPERTY_RESERVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReserve(@javax.annotation.Nullable Double reserve) {
+    if (reserve != null && reserve.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'reserve': must be greater than or equal to 0, got " + reserve);
+    }
+
     this.reserve = reserve;
   }
 
 
   public ProcessingOrderPosition assortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     
     this.assortment = assortment;
     return this;
@@ -263,11 +284,13 @@ public class ProcessingOrderPosition extends EntityWithMeta implements DocumentP
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     this.assortment = assortment;
   }
 
 
   public ProcessingOrderPosition pack(@javax.annotation.Nullable Pack pack) {
+
     this.pack = JsonNullable.<Pack>of(pack);
     
     return this;
@@ -301,6 +324,7 @@ public class ProcessingOrderPosition extends EntityWithMeta implements DocumentP
   }
 
   public void setPack(@javax.annotation.Nullable Pack pack) {
+
     this.pack = JsonNullable.<Pack>of(pack);
   }
 

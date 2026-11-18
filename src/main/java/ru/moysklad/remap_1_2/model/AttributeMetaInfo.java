@@ -41,7 +41,7 @@ import java.util.StringJoiner;
   AttributeMetaInfo.JSON_PROPERTY_META,
   AttributeMetaInfo.JSON_PROPERTY_CUSTOM_ENTITY_META
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class AttributeMetaInfo {
 
   public static final String JSON_PROPERTY_ID = "id";
@@ -80,6 +80,7 @@ public class AttributeMetaInfo {
   }
 
   public AttributeMetaInfo id(@javax.annotation.Nullable UUID id) {
+
     
     this.id = id;
     return this;
@@ -104,11 +105,13 @@ public class AttributeMetaInfo {
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(@javax.annotation.Nullable UUID id) {
+
     this.id = id;
   }
 
 
   public AttributeMetaInfo name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -133,11 +136,13 @@ public class AttributeMetaInfo {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public AttributeMetaInfo type(@javax.annotation.Nullable String type) {
+
     
     this.type = type;
     return this;
@@ -162,11 +167,13 @@ public class AttributeMetaInfo {
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setType(@javax.annotation.Nullable String type) {
+
     this.type = type;
   }
 
 
   public AttributeMetaInfo required(@javax.annotation.Nullable Boolean required) {
+
     
     this.required = required;
     return this;
@@ -191,11 +198,13 @@ public class AttributeMetaInfo {
   @JsonProperty(JSON_PROPERTY_REQUIRED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRequired(@javax.annotation.Nullable Boolean required) {
+
     this.required = required;
   }
 
 
   public AttributeMetaInfo show(@javax.annotation.Nullable Boolean show) {
+
     
     this.show = show;
     return this;
@@ -220,11 +229,13 @@ public class AttributeMetaInfo {
   @JsonProperty(JSON_PROPERTY_SHOW)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShow(@javax.annotation.Nullable Boolean show) {
+
     this.show = show;
   }
 
 
   public AttributeMetaInfo description(@javax.annotation.Nullable String description) {
+
     
     this.description = description;
     return this;
@@ -249,11 +260,13 @@ public class AttributeMetaInfo {
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = description;
   }
 
 
   public AttributeMetaInfo meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -278,11 +291,13 @@ public class AttributeMetaInfo {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public AttributeMetaInfo customEntityMeta(@javax.annotation.Nullable Meta customEntityMeta) {
+
     
     this.customEntityMeta = customEntityMeta;
     return this;
@@ -307,6 +322,7 @@ public class AttributeMetaInfo {
   @JsonProperty(JSON_PROPERTY_CUSTOM_ENTITY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCustomEntityMeta(@javax.annotation.Nullable Meta customEntityMeta) {
+
     this.customEntityMeta = customEntityMeta;
   }
 

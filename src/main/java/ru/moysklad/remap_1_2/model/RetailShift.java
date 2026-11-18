@@ -28,7 +28,6 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import ru.moysklad.remap_1_2.model.Account;
 import ru.moysklad.remap_1_2.model.Agent;
 import ru.moysklad.remap_1_2.model.AttributeAbstract;
-import ru.moysklad.remap_1_2.model.Contract;
 import ru.moysklad.remap_1_2.model.Employee;
 import ru.moysklad.remap_1_2.model.FileList;
 import ru.moysklad.remap_1_2.model.Group;
@@ -36,8 +35,8 @@ import ru.moysklad.remap_1_2.model.Meta;
 import ru.moysklad.remap_1_2.model.Organization;
 import ru.moysklad.remap_1_2.model.RetailShiftCheque;
 import ru.moysklad.remap_1_2.model.RetailShiftOperation;
+import ru.moysklad.remap_1_2.model.RetailShiftPayment;
 import ru.moysklad.remap_1_2.model.RetailShiftPaymentOperation;
-import ru.moysklad.remap_1_2.model.RetailShiftPaymentsInner;
 import ru.moysklad.remap_1_2.model.RetailStore;
 import ru.moysklad.remap_1_2.model.Store;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -67,7 +66,6 @@ import java.util.StringJoiner;
   RetailShift.JSON_PROPERTY_BANK_PERCENT,
   RetailShift.JSON_PROPERTY_CHEQUE,
   RetailShift.JSON_PROPERTY_CLOSE_DATE,
-  RetailShift.JSON_PROPERTY_CONTRACT,
   RetailShift.JSON_PROPERTY_CREATED,
   RetailShift.JSON_PROPERTY_DELETED,
   RetailShift.JSON_PROPERTY_DESCRIPTION,
@@ -91,12 +89,10 @@ import java.util.StringJoiner;
   RetailShift.JSON_PROPERTY_SHARED,
   RetailShift.JSON_PROPERTY_STORE,
   RetailShift.JSON_PROPERTY_SYNC_ID,
-  RetailShift.JSON_PROPERTY_UPDATED,
-  RetailShift.JSON_PROPERTY_VAT_ENABLED,
-  RetailShift.JSON_PROPERTY_VAT_INCLUDED
+  RetailShift.JSON_PROPERTY_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
-public class RetailShift implements MetaEntity {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
+public class RetailShift extends EntityWithMeta implements MetaEntity {
   public static RetailShift createWithMeta(UUID id) {
     RetailShift o = new RetailShift();
     Meta meta = new Meta();
@@ -138,7 +134,7 @@ public class RetailShift implements MetaEntity {
 
   public static final String JSON_PROPERTY_PAYMENTS = "payments";
   @javax.annotation.Nullable
-  private JsonNullable<List<RetailShiftPaymentsInner>> payments = JsonNullable.<List<RetailShiftPaymentsInner>>undefined();
+  private JsonNullable<List<RetailShiftPayment>> payments = JsonNullable.<List<RetailShiftPayment>>undefined();
 
   public static final String JSON_PROPERTY_ACQUIRE = "acquire";
   @javax.annotation.Nullable
@@ -167,10 +163,6 @@ public class RetailShift implements MetaEntity {
   public static final String JSON_PROPERTY_CLOSE_DATE = "closeDate";
   @javax.annotation.Nullable
   private JsonNullable<String> closeDate = JsonNullable.<String>undefined();
-
-  public static final String JSON_PROPERTY_CONTRACT = "contract";
-  @javax.annotation.Nullable
-  private JsonNullable<Contract> contract = JsonNullable.<Contract>undefined();
 
   public static final String JSON_PROPERTY_CREATED = "created";
   @javax.annotation.Nullable
@@ -268,14 +260,6 @@ public class RetailShift implements MetaEntity {
   @javax.annotation.Nullable
   private String updated;
 
-  public static final String JSON_PROPERTY_VAT_ENABLED = "vatEnabled";
-  @javax.annotation.Nullable
-  private Boolean vatEnabled;
-
-  public static final String JSON_PROPERTY_VAT_INCLUDED = "vatIncluded";
-  @javax.annotation.Nullable
-  private Boolean vatIncluded;
-
   public RetailShift() {
   }
   /**
@@ -286,7 +270,6 @@ public class RetailShift implements MetaEntity {
     @JsonProperty(value = JSON_PROPERTY_ID, required = false) UUID id, 
     @JsonProperty(value = JSON_PROPERTY_ACCOUNT_ID, required = false) UUID accountId, 
     @JsonProperty(value = JSON_PROPERTY_AGENT_ACCOUNT, required = false) Account agentAccount, 
-    @JsonProperty(value = JSON_PROPERTY_CONTRACT, required = false) Contract contract, 
     @JsonProperty(value = JSON_PROPERTY_CREATED, required = false) String created, 
     @JsonProperty(value = JSON_PROPERTY_DELETED, required = false) String deleted, 
     @JsonProperty(value = JSON_PROPERTY_OPERATIONS, required = false) List<RetailShiftOperation> operations, 
@@ -297,14 +280,12 @@ public class RetailShift implements MetaEntity {
     @JsonProperty(value = JSON_PROPERTY_PUBLISHED, required = false) Boolean published, 
     @JsonProperty(value = JSON_PROPERTY_RECEIVED_CASH, required = false) Double receivedCash, 
     @JsonProperty(value = JSON_PROPERTY_RECEIVED_NO_CASH, required = false) Double receivedNoCash, 
-    @JsonProperty(value = JSON_PROPERTY_UPDATED, required = false) String updated, 
-    @JsonProperty(value = JSON_PROPERTY_VAT_ENABLED, required = false) Boolean vatEnabled
+    @JsonProperty(value = JSON_PROPERTY_UPDATED, required = false) String updated
   ) {
     this();
     this.id = id;
     this.accountId = accountId;
     this.agentAccount = agentAccount == null ? JsonNullable.<Account>undefined() : JsonNullable.of(agentAccount);
-    this.contract = contract == null ? JsonNullable.<Contract>undefined() : JsonNullable.of(contract);
     this.created = created;
     this.deleted = deleted == null ? JsonNullable.<String>undefined() : JsonNullable.of(deleted);
     this.operations = operations == null ? JsonNullable.<List<RetailShiftOperation>>undefined() : JsonNullable.of(operations);
@@ -316,10 +297,10 @@ public class RetailShift implements MetaEntity {
     this.receivedCash = receivedCash;
     this.receivedNoCash = receivedNoCash;
     this.updated = updated;
-    this.vatEnabled = vatEnabled;
   }
 
   public RetailShift meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -344,6 +325,7 @@ public class RetailShift implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -381,6 +363,7 @@ public class RetailShift implements MetaEntity {
 
 
   public RetailShift name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -405,11 +388,13 @@ public class RetailShift implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public RetailShift moment(@javax.annotation.Nullable String moment) {
+
     
     this.moment = moment;
     return this;
@@ -434,11 +419,13 @@ public class RetailShift implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMoment(@javax.annotation.Nullable String moment) {
+
     this.moment = moment;
   }
 
 
   public RetailShift retailStore(@javax.annotation.Nullable RetailStore retailStore) {
+
     this.retailStore = JsonNullable.<RetailStore>of(retailStore);
     
     return this;
@@ -472,20 +459,22 @@ public class RetailShift implements MetaEntity {
   }
 
   public void setRetailStore(@javax.annotation.Nullable RetailStore retailStore) {
+
     this.retailStore = JsonNullable.<RetailStore>of(retailStore);
   }
 
 
-  public RetailShift payments(@javax.annotation.Nullable List<RetailShiftPaymentsInner> payments) {
-    this.payments = JsonNullable.<List<RetailShiftPaymentsInner>>of(payments);
+  public RetailShift payments(@javax.annotation.Nullable List<RetailShiftPayment> payments) {
+
+    this.payments = JsonNullable.<List<RetailShiftPayment>>of(payments);
     
     return this;
   }
 
 
-  public RetailShift addPaymentsItem(RetailShiftPaymentsInner paymentsItem) {
+  public RetailShift addPaymentsItem(RetailShiftPayment paymentsItem) {
     if (this.payments == null || !this.payments.isPresent()) {
-      this.payments = JsonNullable.<List<RetailShiftPaymentsInner>>of(new ArrayList<>());
+      this.payments = JsonNullable.<List<RetailShiftPayment>>of(new ArrayList<>());
     }
     try {
       this.payments.get().add(paymentsItem);
@@ -502,31 +491,33 @@ public class RetailShift implements MetaEntity {
   @javax.annotation.Nullable
   @JsonIgnore
 
-  public List<RetailShiftPaymentsInner> getPayments() {
+  public List<RetailShiftPayment> getPayments() {
         return payments.orElse(null);
   }
 
   
 
   @JsonProperty(JSON_PROPERTY_PAYMENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
-  public JsonNullable<List<RetailShiftPaymentsInner>> getPayments_JsonNullable() {
+  public JsonNullable<List<RetailShiftPayment>> getPayments_JsonNullable() {
     return payments;
   }
   
   @JsonProperty(value = JSON_PROPERTY_PAYMENTS, required = false)
-  public void setPayments_JsonNullable(JsonNullable<List<RetailShiftPaymentsInner>> payments) {
+  public void setPayments_JsonNullable(JsonNullable<List<RetailShiftPayment>> payments) {
     this.payments = payments;
   }
 
-  public void setPayments(@javax.annotation.Nullable List<RetailShiftPaymentsInner> payments) {
-    this.payments = JsonNullable.<List<RetailShiftPaymentsInner>>of(payments);
+  public void setPayments(@javax.annotation.Nullable List<RetailShiftPayment> payments) {
+
+    this.payments = JsonNullable.<List<RetailShiftPayment>>of(payments);
   }
 
 
   public RetailShift acquire(@javax.annotation.Nullable Agent acquire) {
+
     this.acquire = JsonNullable.<Agent>of(acquire);
     
     return this;
@@ -560,6 +551,7 @@ public class RetailShift implements MetaEntity {
   }
 
   public void setAcquire(@javax.annotation.Nullable Agent acquire) {
+
     this.acquire = JsonNullable.<Agent>of(acquire);
   }
 
@@ -596,6 +588,7 @@ public class RetailShift implements MetaEntity {
 
 
   public RetailShift attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
@@ -628,7 +621,7 @@ public class RetailShift implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
@@ -641,11 +634,13 @@ public class RetailShift implements MetaEntity {
   }
 
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
   public RetailShift bankComission(@javax.annotation.Nullable Double bankComission) {
+
     
     this.bankComission = bankComission;
     return this;
@@ -670,11 +665,19 @@ public class RetailShift implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_BANK_COMISSION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBankComission(@javax.annotation.Nullable Double bankComission) {
+
     this.bankComission = bankComission;
   }
 
 
   public RetailShift bankPercent(@javax.annotation.Nullable Double bankPercent) {
+    if (bankPercent != null && bankPercent.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'bankPercent': must be greater than or equal to 0, got " + bankPercent);
+    }
+    if (bankPercent != null && bankPercent.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'bankPercent': must be less than or equal to 100, got " + bankPercent);
+    }
+
     
     this.bankPercent = bankPercent;
     return this;
@@ -701,11 +704,19 @@ public class RetailShift implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_BANK_PERCENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBankPercent(@javax.annotation.Nullable Double bankPercent) {
+    if (bankPercent != null && bankPercent.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'bankPercent': must be greater than or equal to 0, got " + bankPercent);
+    }
+    if (bankPercent != null && bankPercent.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'bankPercent': must be less than or equal to 100, got " + bankPercent);
+    }
+
     this.bankPercent = bankPercent;
   }
 
 
   public RetailShift cheque(@javax.annotation.Nullable RetailShiftCheque cheque) {
+
     this.cheque = JsonNullable.<RetailShiftCheque>of(cheque);
     
     return this;
@@ -739,11 +750,13 @@ public class RetailShift implements MetaEntity {
   }
 
   public void setCheque(@javax.annotation.Nullable RetailShiftCheque cheque) {
+
     this.cheque = JsonNullable.<RetailShiftCheque>of(cheque);
   }
 
 
   public RetailShift closeDate(@javax.annotation.Nullable String closeDate) {
+
     this.closeDate = JsonNullable.<String>of(closeDate);
     
     return this;
@@ -777,38 +790,8 @@ public class RetailShift implements MetaEntity {
   }
 
   public void setCloseDate(@javax.annotation.Nullable String closeDate) {
+
     this.closeDate = JsonNullable.<String>of(closeDate);
-  }
-
-
-  /**
-   * Метаданные договора
-   * @return contract
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Contract getContract() {
-    
-    if (contract == null) {
-      contract = JsonNullable.<Contract>undefined();
-    }
-    return contract.orElse(null);
-  }
-
-  
-
-  @JsonProperty(JSON_PROPERTY_CONTRACT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-
-  public JsonNullable<Contract> getContract_JsonNullable() {
-    return contract;
-  }
-  
-  @JsonProperty(value = JSON_PROPERTY_CONTRACT, required = false)
-  private void setContract_JsonNullable(JsonNullable<Contract> contract) {
-    this.contract = contract;
   }
 
 
@@ -860,6 +843,7 @@ public class RetailShift implements MetaEntity {
 
 
   public RetailShift description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -893,11 +877,13 @@ public class RetailShift implements MetaEntity {
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 
 
   public RetailShift externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -922,11 +908,13 @@ public class RetailShift implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public RetailShift files(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
@@ -960,11 +948,13 @@ public class RetailShift implements MetaEntity {
   }
 
   public void setFiles(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
   }
 
 
   public RetailShift group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -989,6 +979,7 @@ public class RetailShift implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
@@ -1011,7 +1002,7 @@ public class RetailShift implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_OPERATIONS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.CUSTOM, valueFilter = ru.moysklad.remap_1_2.EmptyReadOnlyCollectionFilter.class)
 
 
   public JsonNullable<List<RetailShiftOperation>> getOperations_JsonNullable() {
@@ -1025,6 +1016,7 @@ public class RetailShift implements MetaEntity {
 
 
   public RetailShift organization(@javax.annotation.Nullable Organization organization) {
+
     
     this.organization = organization;
     return this;
@@ -1049,11 +1041,13 @@ public class RetailShift implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOrganization(@javax.annotation.Nullable Organization organization) {
+
     this.organization = organization;
   }
 
 
   public RetailShift organizationAccount(@javax.annotation.Nullable Account organizationAccount) {
+
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
     
     return this;
@@ -1087,11 +1081,13 @@ public class RetailShift implements MetaEntity {
   }
 
   public void setOrganizationAccount(@javax.annotation.Nullable Account organizationAccount) {
+
     this.organizationAccount = JsonNullable.<Account>of(organizationAccount);
   }
 
 
   public RetailShift owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -1125,6 +1121,7 @@ public class RetailShift implements MetaEntity {
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
@@ -1147,7 +1144,7 @@ public class RetailShift implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_PAYMENT_OPERATIONS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.CUSTOM, valueFilter = ru.moysklad.remap_1_2.EmptyReadOnlyCollectionFilter.class)
 
 
   public JsonNullable<List<RetailShiftPaymentOperation>> getPaymentOperations_JsonNullable() {
@@ -1225,6 +1222,7 @@ public class RetailShift implements MetaEntity {
 
 
   public RetailShift qrAcquire(@javax.annotation.Nullable Agent qrAcquire) {
+
     this.qrAcquire = JsonNullable.<Agent>of(qrAcquire);
     
     return this;
@@ -1258,11 +1256,13 @@ public class RetailShift implements MetaEntity {
   }
 
   public void setQrAcquire(@javax.annotation.Nullable Agent qrAcquire) {
+
     this.qrAcquire = JsonNullable.<Agent>of(qrAcquire);
   }
 
 
   public RetailShift qrBankComission(@javax.annotation.Nullable Double qrBankComission) {
+
     
     this.qrBankComission = qrBankComission;
     return this;
@@ -1287,11 +1287,19 @@ public class RetailShift implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_QR_BANK_COMISSION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQrBankComission(@javax.annotation.Nullable Double qrBankComission) {
+
     this.qrBankComission = qrBankComission;
   }
 
 
   public RetailShift qrBankPercent(@javax.annotation.Nullable Double qrBankPercent) {
+    if (qrBankPercent != null && qrBankPercent.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'qrBankPercent': must be greater than or equal to 0, got " + qrBankPercent);
+    }
+    if (qrBankPercent != null && qrBankPercent.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'qrBankPercent': must be less than or equal to 100, got " + qrBankPercent);
+    }
+
     
     this.qrBankPercent = qrBankPercent;
     return this;
@@ -1318,6 +1326,13 @@ public class RetailShift implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_QR_BANK_PERCENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQrBankPercent(@javax.annotation.Nullable Double qrBankPercent) {
+    if (qrBankPercent != null && qrBankPercent.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'qrBankPercent': must be greater than or equal to 0, got " + qrBankPercent);
+    }
+    if (qrBankPercent != null && qrBankPercent.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'qrBankPercent': must be less than or equal to 100, got " + qrBankPercent);
+    }
+
     this.qrBankPercent = qrBankPercent;
   }
 
@@ -1355,6 +1370,7 @@ public class RetailShift implements MetaEntity {
 
 
   public RetailShift shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -1379,11 +1395,13 @@ public class RetailShift implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
 
   public RetailShift store(@javax.annotation.Nullable Store store) {
+
     
     this.store = store;
     return this;
@@ -1408,11 +1426,13 @@ public class RetailShift implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_STORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStore(@javax.annotation.Nullable Store store) {
+
     this.store = store;
   }
 
 
   public RetailShift syncId(@javax.annotation.Nullable UUID syncId) {
+
     
     this.syncId = syncId;
     return this;
@@ -1437,6 +1457,7 @@ public class RetailShift implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
+
     this.syncId = syncId;
   }
 
@@ -1455,51 +1476,6 @@ public class RetailShift implements MetaEntity {
 
   
 
-
-
-  /**
-   * Учитывается ли НДС
-   * @return vatEnabled
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getVatEnabled() {
-    return vatEnabled;
-  }
-
-  
-
-
-
-  public RetailShift vatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
-    
-    this.vatIncluded = vatIncluded;
-    return this;
-  }
-
-
-  /**
-   * Включен ли НДС в цену
-   * @return vatIncluded
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_VAT_INCLUDED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getVatIncluded() {
-    return vatIncluded;
-  }
-
-  
-
-
-  @JsonProperty(JSON_PROPERTY_VAT_INCLUDED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setVatIncluded(@javax.annotation.Nullable Boolean vatIncluded) {
-    this.vatIncluded = vatIncluded;
-  }
 
 
   @Override
@@ -1525,7 +1501,6 @@ public class RetailShift implements MetaEntity {
         Objects.equals(this.bankPercent, retailShift.bankPercent) &&
         equalsNullable(this.cheque, retailShift.cheque) &&
         equalsNullable(this.closeDate, retailShift.closeDate) &&
-        equalsNullable(this.contract, retailShift.contract) &&
         Objects.equals(this.created, retailShift.created) &&
         equalsNullable(this.deleted, retailShift.deleted) &&
         equalsNullable(this.description, retailShift.description) &&
@@ -1549,9 +1524,7 @@ public class RetailShift implements MetaEntity {
         Objects.equals(this.shared, retailShift.shared) &&
         Objects.equals(this.store, retailShift.store) &&
         Objects.equals(this.syncId, retailShift.syncId) &&
-        Objects.equals(this.updated, retailShift.updated) &&
-        Objects.equals(this.vatEnabled, retailShift.vatEnabled) &&
-        Objects.equals(this.vatIncluded, retailShift.vatIncluded);
+        Objects.equals(this.updated, retailShift.updated);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -1560,7 +1533,7 @@ public class RetailShift implements MetaEntity {
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, id, accountId, name, moment, hashCodeNullable(retailStore), hashCodeNullable(payments), hashCodeNullable(acquire), hashCodeNullable(agentAccount), hashCodeNullable(attributes), bankComission, bankPercent, hashCodeNullable(cheque), hashCodeNullable(closeDate), hashCodeNullable(contract), created, hashCodeNullable(deleted), hashCodeNullable(description), externalCode, hashCodeNullable(files), group, hashCodeNullable(operations), organization, hashCodeNullable(organizationAccount), hashCodeNullable(owner), hashCodeNullable(paymentOperations), printed, proceedsCash, proceedsNoCash, published, hashCodeNullable(qrAcquire), qrBankComission, qrBankPercent, receivedCash, receivedNoCash, shared, store, syncId, updated, vatEnabled, vatIncluded);
+    return Objects.hash(meta, id, accountId, name, moment, hashCodeNullable(retailStore), hashCodeNullable(payments), hashCodeNullable(acquire), hashCodeNullable(agentAccount), hashCodeNullable(attributes), bankComission, bankPercent, hashCodeNullable(cheque), hashCodeNullable(closeDate), created, hashCodeNullable(deleted), hashCodeNullable(description), externalCode, hashCodeNullable(files), group, hashCodeNullable(operations), organization, hashCodeNullable(organizationAccount), hashCodeNullable(owner), hashCodeNullable(paymentOperations), printed, proceedsCash, proceedsNoCash, published, hashCodeNullable(qrAcquire), qrBankComission, qrBankPercent, receivedCash, receivedNoCash, shared, store, syncId, updated);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1588,7 +1561,6 @@ public class RetailShift implements MetaEntity {
     sb.append("    bankPercent: ").append(toIndentedString(bankPercent)).append("\n");
     sb.append("    cheque: ").append(toIndentedString(cheque)).append("\n");
     sb.append("    closeDate: ").append(toIndentedString(closeDate)).append("\n");
-    sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
@@ -1613,8 +1585,6 @@ public class RetailShift implements MetaEntity {
     sb.append("    store: ").append(toIndentedString(store)).append("\n");
     sb.append("    syncId: ").append(toIndentedString(syncId)).append("\n");
     sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
-    sb.append("    vatEnabled: ").append(toIndentedString(vatEnabled)).append("\n");
-    sb.append("    vatIncluded: ").append(toIndentedString(vatIncluded)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -1775,11 +1745,6 @@ public class RetailShift implements MetaEntity {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
       }
-    }
-
-    // add `contract` to the URL query string
-    if (getContract() != null) {
-      joiner.add(getContract().toUrlQueryString(prefix + "contract" + suffix));
     }
 
     // add `created` to the URL query string
@@ -1981,26 +1946,6 @@ public class RetailShift implements MetaEntity {
     if (getUpdated() != null) {
       try {
         joiner.add(String.format(java.util.Locale.ROOT, "%supdated%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getUpdated()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
-    }
-
-    // add `vatEnabled` to the URL query string
-    if (getVatEnabled() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%svatEnabled%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getVatEnabled()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
-    }
-
-    // add `vatIncluded` to the URL query string
-    if (getVatIncluded() != null) {
-      try {
-        joiner.add(String.format(java.util.Locale.ROOT, "%svatIncluded%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getVatIncluded()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);

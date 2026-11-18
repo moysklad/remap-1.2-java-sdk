@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   Barcode.JSON_PROPERTY_GTIN,
   Barcode.JSON_PROPERTY_UPC
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Barcode {
 
   public static final String JSON_PROPERTY_EAN13 = "ean13";
@@ -63,6 +63,7 @@ public class Barcode {
   }
 
   public Barcode ean13(@javax.annotation.Nullable String ean13) {
+
     
     this.ean13 = ean13;
     return this;
@@ -87,11 +88,13 @@ public class Barcode {
   @JsonProperty(JSON_PROPERTY_EAN13)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEan13(@javax.annotation.Nullable String ean13) {
+
     this.ean13 = ean13;
   }
 
 
   public Barcode ean8(@javax.annotation.Nullable String ean8) {
+
     
     this.ean8 = ean8;
     return this;
@@ -116,11 +119,13 @@ public class Barcode {
   @JsonProperty(JSON_PROPERTY_EAN8)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEan8(@javax.annotation.Nullable String ean8) {
+
     this.ean8 = ean8;
   }
 
 
   public Barcode code128(@javax.annotation.Nullable String code128) {
+
     
     this.code128 = code128;
     return this;
@@ -145,11 +150,13 @@ public class Barcode {
   @JsonProperty(JSON_PROPERTY_CODE128)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode128(@javax.annotation.Nullable String code128) {
+
     this.code128 = code128;
   }
 
 
   public Barcode gtin(@javax.annotation.Nullable String gtin) {
+
     
     this.gtin = gtin;
     return this;
@@ -174,11 +181,13 @@ public class Barcode {
   @JsonProperty(JSON_PROPERTY_GTIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGtin(@javax.annotation.Nullable String gtin) {
+
     this.gtin = gtin;
   }
 
 
   public Barcode upc(@javax.annotation.Nullable String upc) {
+
     
     this.upc = upc;
     return this;
@@ -203,6 +212,7 @@ public class Barcode {
   @JsonProperty(JSON_PROPERTY_UPC)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUpc(@javax.annotation.Nullable String upc) {
+
     this.upc = upc;
   }
 

@@ -37,7 +37,7 @@ import java.util.StringJoiner;
   ActivateEmployeeRequest.JSON_PROPERTY_ROLE
 })
 @JsonTypeName("activateEmployee_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ActivateEmployeeRequest {
 
   public static final String JSON_PROPERTY_LOGIN = "login";
@@ -56,6 +56,7 @@ public class ActivateEmployeeRequest {
   }
 
   public ActivateEmployeeRequest login(@javax.annotation.Nullable String login) {
+
     
     this.login = login;
     return this;
@@ -80,11 +81,13 @@ public class ActivateEmployeeRequest {
   @JsonProperty(JSON_PROPERTY_LOGIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLogin(@javax.annotation.Nullable String login) {
+
     this.login = login;
   }
 
 
   public ActivateEmployeeRequest group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -109,11 +112,13 @@ public class ActivateEmployeeRequest {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
 
   public ActivateEmployeeRequest role(@javax.annotation.Nullable EmployeeRole role) {
+
     
     this.role = role;
     return this;
@@ -138,6 +143,7 @@ public class ActivateEmployeeRequest {
   @JsonProperty(JSON_PROPERTY_ROLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRole(@javax.annotation.Nullable EmployeeRole role) {
+
     this.role = role;
   }
 

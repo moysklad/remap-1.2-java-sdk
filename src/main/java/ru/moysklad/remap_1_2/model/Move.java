@@ -90,7 +90,7 @@ import java.util.StringJoiner;
   Move.JSON_PROPERTY_SUPPLY,
   Move.JSON_PROPERTY_PRODUCTION_TASKS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Move extends EntityWithMeta implements MetaEntity {
   public static Move createWithMeta(UUID id) {
     Move o = new Move();
@@ -275,6 +275,7 @@ public class Move extends EntityWithMeta implements MetaEntity {
   }
 
   public Move meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -299,6 +300,7 @@ public class Move extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -336,6 +338,7 @@ public class Move extends EntityWithMeta implements MetaEntity {
 
 
   public Move name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -360,11 +363,13 @@ public class Move extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public Move code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -389,11 +394,13 @@ public class Move extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public Move externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -418,11 +425,13 @@ public class Move extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public Move syncId(@javax.annotation.Nullable UUID syncId) {
+
     
     this.syncId = syncId;
     return this;
@@ -447,11 +456,13 @@ public class Move extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SYNC_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSyncId(@javax.annotation.Nullable UUID syncId) {
+
     this.syncId = syncId;
   }
 
 
   public Move description(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -485,6 +496,7 @@ public class Move extends EntityWithMeta implements MetaEntity {
   }
 
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = JsonNullable.<String>of(description);
   }
 
@@ -538,6 +550,7 @@ public class Move extends EntityWithMeta implements MetaEntity {
 
 
   public Move moment(@javax.annotation.Nullable String moment) {
+
     
     this.moment = moment;
     return this;
@@ -562,11 +575,13 @@ public class Move extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMoment(@javax.annotation.Nullable String moment) {
+
     this.moment = moment;
   }
 
 
   public Move applicable(@javax.annotation.Nullable Boolean applicable) {
+
     
     this.applicable = applicable;
     return this;
@@ -591,6 +606,7 @@ public class Move extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_APPLICABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setApplicable(@javax.annotation.Nullable Boolean applicable) {
+
     this.applicable = applicable;
   }
 
@@ -628,6 +644,7 @@ public class Move extends EntityWithMeta implements MetaEntity {
 
 
   public Move shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -652,6 +669,7 @@ public class Move extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
@@ -673,6 +691,7 @@ public class Move extends EntityWithMeta implements MetaEntity {
 
 
   public Move organization(@javax.annotation.Nullable Organization organization) {
+
     
     this.organization = organization;
     return this;
@@ -697,11 +716,13 @@ public class Move extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOrganization(@javax.annotation.Nullable Organization organization) {
+
     this.organization = organization;
   }
 
 
   public Move sourceStore(@javax.annotation.Nullable Store sourceStore) {
+
     this.sourceStore = JsonNullable.<Store>of(sourceStore);
     
     return this;
@@ -735,11 +756,13 @@ public class Move extends EntityWithMeta implements MetaEntity {
   }
 
   public void setSourceStore(@javax.annotation.Nullable Store sourceStore) {
+
     this.sourceStore = JsonNullable.<Store>of(sourceStore);
   }
 
 
   public Move targetStore(@javax.annotation.Nullable Store targetStore) {
+
     this.targetStore = JsonNullable.<Store>of(targetStore);
     
     return this;
@@ -773,11 +796,13 @@ public class Move extends EntityWithMeta implements MetaEntity {
   }
 
   public void setTargetStore(@javax.annotation.Nullable Store targetStore) {
+
     this.targetStore = JsonNullable.<Store>of(targetStore);
   }
 
 
   public Move state(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
     
     return this;
@@ -811,11 +836,13 @@ public class Move extends EntityWithMeta implements MetaEntity {
   }
 
   public void setState(@javax.annotation.Nullable State state) {
+
     this.state = JsonNullable.<State>of(state);
   }
 
 
   public Move project(@javax.annotation.Nullable Project project) {
+
     this.project = JsonNullable.<Project>of(project);
     
     return this;
@@ -849,11 +876,13 @@ public class Move extends EntityWithMeta implements MetaEntity {
   }
 
   public void setProject(@javax.annotation.Nullable Project project) {
+
     this.project = JsonNullable.<Project>of(project);
   }
 
 
   public Move owner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
     
     return this;
@@ -887,11 +916,13 @@ public class Move extends EntityWithMeta implements MetaEntity {
   }
 
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = JsonNullable.<Employee>of(owner);
   }
 
 
   public Move group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -916,11 +947,13 @@ public class Move extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
 
   public Move attributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
     
     return this;
@@ -953,7 +986,7 @@ public class Move extends EntityWithMeta implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<AttributeAbstract>> getAttributes_JsonNullable() {
@@ -966,11 +999,13 @@ public class Move extends EntityWithMeta implements MetaEntity {
   }
 
   public void setAttributes(@javax.annotation.Nullable List<AttributeAbstract> attributes) {
+
     this.attributes = JsonNullable.<List<AttributeAbstract>>of(attributes);
   }
 
 
   public Move files(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
     
     return this;
@@ -1004,11 +1039,13 @@ public class Move extends EntityWithMeta implements MetaEntity {
   }
 
   public void setFiles(@javax.annotation.Nullable FileList files) {
+
     this.files = JsonNullable.<FileList>of(files);
   }
 
 
   public Move rate(@javax.annotation.Nullable CurrencyRate rate) {
+
     
     this.rate = rate;
     return this;
@@ -1033,11 +1070,13 @@ public class Move extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRate(@javax.annotation.Nullable CurrencyRate rate) {
+
     this.rate = rate;
   }
 
 
   public Move positions(@javax.annotation.Nullable MovePositionList positions) {
+
     
     this.positions = positions;
     return this;
@@ -1062,11 +1101,13 @@ public class Move extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_POSITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPositions(@javax.annotation.Nullable MovePositionList positions) {
+
     this.positions = positions;
   }
 
 
   public Move overhead(@javax.annotation.Nullable Overhead overhead) {
+
     this.overhead = JsonNullable.<Overhead>of(overhead);
     
     return this;
@@ -1100,11 +1141,13 @@ public class Move extends EntityWithMeta implements MetaEntity {
   }
 
   public void setOverhead(@javax.annotation.Nullable Overhead overhead) {
+
     this.overhead = JsonNullable.<Overhead>of(overhead);
   }
 
 
   public Move internalOrder(@javax.annotation.Nullable InternalOrder internalOrder) {
+
     this.internalOrder = JsonNullable.<InternalOrder>of(internalOrder);
     
     return this;
@@ -1138,11 +1181,13 @@ public class Move extends EntityWithMeta implements MetaEntity {
   }
 
   public void setInternalOrder(@javax.annotation.Nullable InternalOrder internalOrder) {
+
     this.internalOrder = JsonNullable.<InternalOrder>of(internalOrder);
   }
 
 
   public Move customerOrder(@javax.annotation.Nullable CustomerOrder customerOrder) {
+
     this.customerOrder = JsonNullable.<CustomerOrder>of(customerOrder);
     
     return this;
@@ -1176,6 +1221,7 @@ public class Move extends EntityWithMeta implements MetaEntity {
   }
 
   public void setCustomerOrder(@javax.annotation.Nullable CustomerOrder customerOrder) {
+
     this.customerOrder = JsonNullable.<CustomerOrder>of(customerOrder);
   }
 
@@ -1213,6 +1259,7 @@ public class Move extends EntityWithMeta implements MetaEntity {
 
 
   public Move productionTasks(@javax.annotation.Nullable List<ProductionTask> productionTasks) {
+
     this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
     
     return this;
@@ -1245,7 +1292,7 @@ public class Move extends EntityWithMeta implements MetaEntity {
   
 
   @JsonProperty(JSON_PROPERTY_PRODUCTION_TASKS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.NON_NULL)
 
 
   public JsonNullable<List<ProductionTask>> getProductionTasks_JsonNullable() {
@@ -1258,6 +1305,7 @@ public class Move extends EntityWithMeta implements MetaEntity {
   }
 
   public void setProductionTasks(@javax.annotation.Nullable List<ProductionTask> productionTasks) {
+
     this.productionTasks = JsonNullable.<List<ProductionTask>>of(productionTasks);
   }
 

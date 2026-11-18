@@ -67,8 +67,8 @@ import java.util.StringJoiner;
   BonusTransaction.JSON_PROPERTY_SHARED,
   BonusTransaction.JSON_PROPERTY_UPDATED_BY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
-public class BonusTransaction implements MetaEntity {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
+public class BonusTransaction extends EntityWithMeta implements MetaEntity {
   public static BonusTransaction createWithMeta(UUID id) {
     BonusTransaction o = new BonusTransaction();
     Meta meta = new Meta();
@@ -204,6 +204,7 @@ public class BonusTransaction implements MetaEntity {
   }
 
   public BonusTransaction meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -228,6 +229,7 @@ public class BonusTransaction implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -265,6 +267,7 @@ public class BonusTransaction implements MetaEntity {
 
 
   public BonusTransaction owner(@javax.annotation.Nullable Employee owner) {
+
     
     this.owner = owner;
     return this;
@@ -289,11 +292,13 @@ public class BonusTransaction implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_OWNER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable Employee owner) {
+
     this.owner = owner;
   }
 
 
   public BonusTransaction agent(@javax.annotation.Nullable Agent agent) {
+
     
     this.agent = agent;
     return this;
@@ -318,11 +323,13 @@ public class BonusTransaction implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_AGENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAgent(@javax.annotation.Nullable Agent agent) {
+
     this.agent = agent;
   }
 
 
   public BonusTransaction group(@javax.annotation.Nullable Group group) {
+
     
     this.group = group;
     return this;
@@ -347,11 +354,13 @@ public class BonusTransaction implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable Group group) {
+
     this.group = group;
   }
 
 
   public BonusTransaction organization(@javax.annotation.Nullable Organization organization) {
+
     
     this.organization = organization;
     return this;
@@ -376,11 +385,13 @@ public class BonusTransaction implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ORGANIZATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOrganization(@javax.annotation.Nullable Organization organization) {
+
     this.organization = organization;
   }
 
 
   public BonusTransaction parentDocument(@javax.annotation.Nullable BonusTransactionParentDocument parentDocument) {
+
     this.parentDocument = JsonNullable.<BonusTransactionParentDocument>of(parentDocument);
     
     return this;
@@ -388,7 +399,7 @@ public class BonusTransaction implements MetaEntity {
 
 
   /**
-   * Get parentDocument
+   * Метаданные связанного документа бонусной операции
    * @return parentDocument
    */
   @javax.annotation.Nullable
@@ -414,11 +425,13 @@ public class BonusTransaction implements MetaEntity {
   }
 
   public void setParentDocument(@javax.annotation.Nullable BonusTransactionParentDocument parentDocument) {
+
     this.parentDocument = JsonNullable.<BonusTransactionParentDocument>of(parentDocument);
   }
 
 
   public BonusTransaction applicable(@javax.annotation.Nullable Boolean applicable) {
+
     
     this.applicable = applicable;
     return this;
@@ -443,11 +456,13 @@ public class BonusTransaction implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_APPLICABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setApplicable(@javax.annotation.Nullable Boolean applicable) {
+
     this.applicable = applicable;
   }
 
 
   public BonusTransaction bonusProgram(@javax.annotation.Nullable BonusProgram bonusProgram) {
+
     
     this.bonusProgram = bonusProgram;
     return this;
@@ -472,11 +487,13 @@ public class BonusTransaction implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_BONUS_PROGRAM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBonusProgram(@javax.annotation.Nullable BonusProgram bonusProgram) {
+
     this.bonusProgram = bonusProgram;
   }
 
 
   public BonusTransaction bonusValue(@javax.annotation.Nullable Integer bonusValue) {
+
     
     this.bonusValue = bonusValue;
     return this;
@@ -501,11 +518,13 @@ public class BonusTransaction implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_BONUS_VALUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBonusValue(@javax.annotation.Nullable Integer bonusValue) {
+
     this.bonusValue = bonusValue;
   }
 
 
   public BonusTransaction transactionType(@javax.annotation.Nullable String transactionType) {
+
     
     this.transactionType = transactionType;
     return this;
@@ -530,6 +549,7 @@ public class BonusTransaction implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_TRANSACTION_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTransactionType(@javax.annotation.Nullable String transactionType) {
+
     this.transactionType = transactionType;
   }
 
@@ -567,6 +587,7 @@ public class BonusTransaction implements MetaEntity {
 
 
   public BonusTransaction code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -591,11 +612,13 @@ public class BonusTransaction implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public BonusTransaction name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -620,11 +643,13 @@ public class BonusTransaction implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public BonusTransaction externalCode(@javax.annotation.Nullable String externalCode) {
+
     
     this.externalCode = externalCode;
     return this;
@@ -649,11 +674,13 @@ public class BonusTransaction implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_EXTERNAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExternalCode(@javax.annotation.Nullable String externalCode) {
+
     this.externalCode = externalCode;
   }
 
 
   public BonusTransaction description(@javax.annotation.Nullable String description) {
+
     
     this.description = description;
     return this;
@@ -678,11 +705,13 @@ public class BonusTransaction implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDescription(@javax.annotation.Nullable String description) {
+
     this.description = description;
   }
 
 
   public BonusTransaction moment(@javax.annotation.Nullable String moment) {
+
     
     this.moment = moment;
     return this;
@@ -707,6 +736,7 @@ public class BonusTransaction implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_MOMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMoment(@javax.annotation.Nullable String moment) {
+
     this.moment = moment;
   }
 
@@ -744,6 +774,7 @@ public class BonusTransaction implements MetaEntity {
 
 
   public BonusTransaction executionDate(@javax.annotation.Nullable String executionDate) {
+
     
     this.executionDate = executionDate;
     return this;
@@ -768,11 +799,13 @@ public class BonusTransaction implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_EXECUTION_DATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExecutionDate(@javax.annotation.Nullable String executionDate) {
+
     this.executionDate = executionDate;
   }
 
 
   public BonusTransaction shared(@javax.annotation.Nullable Boolean shared) {
+
     
     this.shared = shared;
     return this;
@@ -797,11 +830,13 @@ public class BonusTransaction implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SHARED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShared(@javax.annotation.Nullable Boolean shared) {
+
     this.shared = shared;
   }
 
 
   public BonusTransaction updatedBy(@javax.annotation.Nullable String updatedBy) {
+
     
     this.updatedBy = updatedBy;
     return this;
@@ -826,6 +861,7 @@ public class BonusTransaction implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_UPDATED_BY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUpdatedBy(@javax.annotation.Nullable String updatedBy) {
+
     this.updatedBy = updatedBy;
   }
 

@@ -43,7 +43,7 @@ import java.util.StringJoiner;
   ProcessingPlanStage.JSON_PROPERTY_STANDARD_HOUR_COST,
   ProcessingPlanStage.JSON_PROPERTY_PROCESSING_PROCESS_POSITION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ProcessingPlanStage extends EntityWithMeta implements MetaEntity {
   public static ProcessingPlanStage createWithMeta(UUID parentId, UUID id) {
     ProcessingPlanStage o = new ProcessingPlanStage();
@@ -114,6 +114,7 @@ public class ProcessingPlanStage extends EntityWithMeta implements MetaEntity {
   }
 
   public ProcessingPlanStage meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -138,6 +139,7 @@ public class ProcessingPlanStage extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -175,6 +177,7 @@ public class ProcessingPlanStage extends EntityWithMeta implements MetaEntity {
 
 
   public ProcessingPlanStage enableHourAccounting(@javax.annotation.Nullable Boolean enableHourAccounting) {
+
     
     this.enableHourAccounting = enableHourAccounting;
     return this;
@@ -199,11 +202,16 @@ public class ProcessingPlanStage extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ENABLE_HOUR_ACCOUNTING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEnableHourAccounting(@javax.annotation.Nullable Boolean enableHourAccounting) {
+
     this.enableHourAccounting = enableHourAccounting;
   }
 
 
   public ProcessingPlanStage cost(@javax.annotation.Nullable Double cost) {
+    if (cost != null && cost.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'cost': must be greater than or equal to 0, got " + cost);
+    }
+
     
     this.cost = cost;
     return this;
@@ -229,11 +237,19 @@ public class ProcessingPlanStage extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_COST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCost(@javax.annotation.Nullable Double cost) {
+    if (cost != null && cost.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'cost': must be greater than or equal to 0, got " + cost);
+    }
+
     this.cost = cost;
   }
 
 
   public ProcessingPlanStage labourCost(@javax.annotation.Nullable Double labourCost) {
+    if (labourCost != null && labourCost.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'labourCost': must be greater than or equal to 0, got " + labourCost);
+    }
+
     
     this.labourCost = labourCost;
     return this;
@@ -259,11 +275,19 @@ public class ProcessingPlanStage extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_LABOUR_COST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLabourCost(@javax.annotation.Nullable Double labourCost) {
+    if (labourCost != null && labourCost.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'labourCost': must be greater than or equal to 0, got " + labourCost);
+    }
+
     this.labourCost = labourCost;
   }
 
 
   public ProcessingPlanStage standardHour(@javax.annotation.Nullable Double standardHour) {
+    if (standardHour != null && standardHour.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'standardHour': must be greater than or equal to 0, got " + standardHour);
+    }
+
     
     this.standardHour = standardHour;
     return this;
@@ -289,6 +313,10 @@ public class ProcessingPlanStage extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_STANDARD_HOUR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStandardHour(@javax.annotation.Nullable Double standardHour) {
+    if (standardHour != null && standardHour.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'standardHour': must be greater than or equal to 0, got " + standardHour);
+    }
+
     this.standardHour = standardHour;
   }
 
@@ -310,6 +338,7 @@ public class ProcessingPlanStage extends EntityWithMeta implements MetaEntity {
 
 
   public ProcessingPlanStage processingProcessPosition(@javax.annotation.Nullable ProcessingProcessPosition processingProcessPosition) {
+
     
     this.processingProcessPosition = processingProcessPosition;
     return this;
@@ -334,6 +363,7 @@ public class ProcessingPlanStage extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_PROCESSING_PROCESS_POSITION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProcessingProcessPosition(@javax.annotation.Nullable ProcessingProcessPosition processingProcessPosition) {
+
     this.processingProcessPosition = processingProcessPosition;
   }
 

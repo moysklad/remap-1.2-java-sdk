@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   ScriptTemplatePermissions.JSON_PROPERTY_DELETE,
   ScriptTemplatePermissions.JSON_PROPERTY_ACTIVATE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ScriptTemplatePermissions {
 
   public static final String JSON_PROPERTY_VIEW = "view";
@@ -63,6 +63,7 @@ public class ScriptTemplatePermissions {
   }
 
   public ScriptTemplatePermissions view(@javax.annotation.Nullable String view) {
+
     
     this.view = view;
     return this;
@@ -87,11 +88,13 @@ public class ScriptTemplatePermissions {
   @JsonProperty(JSON_PROPERTY_VIEW)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setView(@javax.annotation.Nullable String view) {
+
     this.view = view;
   }
 
 
   public ScriptTemplatePermissions create(@javax.annotation.Nullable String create) {
+
     
     this.create = create;
     return this;
@@ -116,11 +119,13 @@ public class ScriptTemplatePermissions {
   @JsonProperty(JSON_PROPERTY_CREATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreate(@javax.annotation.Nullable String create) {
+
     this.create = create;
   }
 
 
   public ScriptTemplatePermissions update(@javax.annotation.Nullable String update) {
+
     
     this.update = update;
     return this;
@@ -145,11 +150,13 @@ public class ScriptTemplatePermissions {
   @JsonProperty(JSON_PROPERTY_UPDATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUpdate(@javax.annotation.Nullable String update) {
+
     this.update = update;
   }
 
 
   public ScriptTemplatePermissions delete(@javax.annotation.Nullable String delete) {
+
     
     this.delete = delete;
     return this;
@@ -174,11 +181,13 @@ public class ScriptTemplatePermissions {
   @JsonProperty(JSON_PROPERTY_DELETE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDelete(@javax.annotation.Nullable String delete) {
+
     this.delete = delete;
   }
 
 
   public ScriptTemplatePermissions activate(@javax.annotation.Nullable String activate) {
+
     
     this.activate = activate;
     return this;
@@ -203,6 +212,7 @@ public class ScriptTemplatePermissions {
   @JsonProperty(JSON_PROPERTY_ACTIVATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setActivate(@javax.annotation.Nullable String activate) {
+
     this.activate = activate;
   }
 

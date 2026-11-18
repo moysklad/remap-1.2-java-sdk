@@ -33,7 +33,7 @@ import java.util.StringJoiner;
 @JsonPropertyOrder({
   NotificationTaskCommentDiff.JSON_PROPERTY_NOTE_CONTENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class NotificationTaskCommentDiff {
 
   public static final String JSON_PROPERTY_NOTE_CONTENT = "noteContent";
@@ -44,6 +44,7 @@ public class NotificationTaskCommentDiff {
   }
 
   public NotificationTaskCommentDiff noteContent(@javax.annotation.Nullable NotificationDiffValue noteContent) {
+
     
     this.noteContent = noteContent;
     return this;
@@ -68,6 +69,7 @@ public class NotificationTaskCommentDiff {
   @JsonProperty(JSON_PROPERTY_NOTE_CONTENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNoteContent(@javax.annotation.Nullable NotificationDiffValue noteContent) {
+
     this.noteContent = noteContent;
   }
 

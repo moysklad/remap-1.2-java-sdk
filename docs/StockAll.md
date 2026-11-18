@@ -20,7 +20,7 @@
 |**inTransit** | **Double** | Ожидание |  [optional] |
 |**reserve** | **Double** | Резерв |  [optional] |
 |**quantity** | **Double** | Доступно |  [optional] |
-|**stockDays** | **Integer** | Количество дней на складе |  [optional] |
+|**stockDays** | **Double** | Количество дней на складе |  [optional] |
 |**price** | **Double** | Себестоимость в копейках |  [optional] |
 |**salePrice** | **Double** | Цена продажи |  [optional] |
 

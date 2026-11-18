@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   RetailStoreEnvironment.JSON_PROPERTY_PAYMENT_TERMINAL
 })
 @JsonTypeName("RetailStore_environment")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class RetailStoreEnvironment {
 
   public static final String JSON_PROPERTY_DEVICE = "device";
@@ -66,6 +66,7 @@ public class RetailStoreEnvironment {
   }
 
   public RetailStoreEnvironment device(@javax.annotation.Nullable String device) {
+
     
     this.device = device;
     return this;
@@ -90,11 +91,13 @@ public class RetailStoreEnvironment {
   @JsonProperty(JSON_PROPERTY_DEVICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDevice(@javax.annotation.Nullable String device) {
+
     this.device = device;
   }
 
 
   public RetailStoreEnvironment os(@javax.annotation.Nullable String os) {
+
     
     this.os = os;
     return this;
@@ -119,11 +122,13 @@ public class RetailStoreEnvironment {
   @JsonProperty(JSON_PROPERTY_OS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOs(@javax.annotation.Nullable String os) {
+
     this.os = os;
   }
 
 
   public RetailStoreEnvironment software(@javax.annotation.Nullable RetailStoreEnvironmentSoftware software) {
+
     
     this.software = software;
     return this;
@@ -148,11 +153,13 @@ public class RetailStoreEnvironment {
   @JsonProperty(JSON_PROPERTY_SOFTWARE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSoftware(@javax.annotation.Nullable RetailStoreEnvironmentSoftware software) {
+
     this.software = software;
   }
 
 
   public RetailStoreEnvironment chequePrinter(@javax.annotation.Nullable RetailStoreEnvironmentChequePrinter chequePrinter) {
+
     
     this.chequePrinter = chequePrinter;
     return this;
@@ -177,11 +184,13 @@ public class RetailStoreEnvironment {
   @JsonProperty(JSON_PROPERTY_CHEQUE_PRINTER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setChequePrinter(@javax.annotation.Nullable RetailStoreEnvironmentChequePrinter chequePrinter) {
+
     this.chequePrinter = chequePrinter;
   }
 
 
   public RetailStoreEnvironment paymentTerminal(@javax.annotation.Nullable String paymentTerminal) {
+
     
     this.paymentTerminal = paymentTerminal;
     return this;
@@ -206,6 +215,7 @@ public class RetailStoreEnvironment {
   @JsonProperty(JSON_PROPERTY_PAYMENT_TERMINAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPaymentTerminal(@javax.annotation.Nullable String paymentTerminal) {
+
     this.paymentTerminal = paymentTerminal;
   }
 

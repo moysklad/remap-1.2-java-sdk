@@ -43,7 +43,7 @@ import java.util.StringJoiner;
   CommissionReportInReturnedPosition.JSON_PROPERTY_VAT_ENABLED,
   CommissionReportInReturnedPosition.JSON_PROPERTY_ASSORTMENT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class CommissionReportInReturnedPosition extends EntityWithMeta implements MetaEntity {
   public static CommissionReportInReturnedPosition createWithMeta(UUID parentId, UUID id) {
     CommissionReportInReturnedPosition o = new CommissionReportInReturnedPosition();
@@ -112,6 +112,7 @@ public class CommissionReportInReturnedPosition extends EntityWithMeta implement
   }
 
   public CommissionReportInReturnedPosition meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -136,6 +137,7 @@ public class CommissionReportInReturnedPosition extends EntityWithMeta implement
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -173,6 +175,7 @@ public class CommissionReportInReturnedPosition extends EntityWithMeta implement
 
 
   public CommissionReportInReturnedPosition quantity(@javax.annotation.Nullable Double quantity) {
+
     
     this.quantity = quantity;
     return this;
@@ -197,11 +200,13 @@ public class CommissionReportInReturnedPosition extends EntityWithMeta implement
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuantity(@javax.annotation.Nullable Double quantity) {
+
     this.quantity = quantity;
   }
 
 
   public CommissionReportInReturnedPosition price(@javax.annotation.Nullable Double price) {
+
     
     this.price = price;
     return this;
@@ -226,11 +231,13 @@ public class CommissionReportInReturnedPosition extends EntityWithMeta implement
   @JsonProperty(JSON_PROPERTY_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrice(@javax.annotation.Nullable Double price) {
+
     this.price = price;
   }
 
 
   public CommissionReportInReturnedPosition reward(@javax.annotation.Nullable Double reward) {
+
     
     this.reward = reward;
     return this;
@@ -255,11 +262,19 @@ public class CommissionReportInReturnedPosition extends EntityWithMeta implement
   @JsonProperty(JSON_PROPERTY_REWARD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReward(@javax.annotation.Nullable Double reward) {
+
     this.reward = reward;
   }
 
 
   public CommissionReportInReturnedPosition vat(@javax.annotation.Nullable Integer vat) {
+    if (vat != null && vat.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be greater than or equal to 0, got " + vat);
+    }
+    if (vat != null && vat.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be less than or equal to 100, got " + vat);
+    }
+
     
     this.vat = vat;
     return this;
@@ -286,11 +301,19 @@ public class CommissionReportInReturnedPosition extends EntityWithMeta implement
   @JsonProperty(JSON_PROPERTY_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVat(@javax.annotation.Nullable Integer vat) {
+    if (vat != null && vat.doubleValue() < 0) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be greater than or equal to 0, got " + vat);
+    }
+    if (vat != null && vat.doubleValue() > 100) {
+      throw new IllegalArgumentException("Invalid value for 'vat': must be less than or equal to 100, got " + vat);
+    }
+
     this.vat = vat;
   }
 
 
   public CommissionReportInReturnedPosition vatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     
     this.vatEnabled = vatEnabled;
     return this;
@@ -315,11 +338,13 @@ public class CommissionReportInReturnedPosition extends EntityWithMeta implement
   @JsonProperty(JSON_PROPERTY_VAT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVatEnabled(@javax.annotation.Nullable Boolean vatEnabled) {
+
     this.vatEnabled = vatEnabled;
   }
 
 
   public CommissionReportInReturnedPosition assortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     
     this.assortment = assortment;
     return this;
@@ -344,6 +369,7 @@ public class CommissionReportInReturnedPosition extends EntityWithMeta implement
   @JsonProperty(JSON_PROPERTY_ASSORTMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssortment(@javax.annotation.Nullable ProductMarker assortment) {
+
     this.assortment = assortment;
   }
 

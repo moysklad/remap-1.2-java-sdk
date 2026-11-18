@@ -35,7 +35,7 @@
 |**syncId** | **UUID** | ID синхронизации |  [optional] |
 |**updated** | **String** | Момент последнего обновления Счета-фактуры полученного |  [optional] [readonly] |
 |**supplies** | [**List&lt;Supply&gt;**](Supply.md) | Массив ссылок на связанные приемки |  [optional] |
-|**payments** | [**List&lt;PaymentOut&gt;**](PaymentOut.md) | Массив ссылок на связанные исходящие платежи |  [optional] |
+|**payments** | [**List&lt;FactureInPayment&gt;**](FactureInPayment.md) | Массив ссылок на связанные исходящие платежи |  [optional] |
 |**incomingNumber** | **String** | Входящий номер |  [optional] |
 |**incomingDate** | **String** | Входящая дата |  [optional] |
 

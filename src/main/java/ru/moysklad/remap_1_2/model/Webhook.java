@@ -49,7 +49,7 @@ import java.util.StringJoiner;
   Webhook.JSON_PROPERTY_DIFF_TYPE,
   Webhook.JSON_PROPERTY_AUTHOR_APPLICATION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Webhook extends EntityWithMeta implements MetaEntity {
   public static Webhook createWithMeta(UUID id) {
     Webhook o = new Webhook();
@@ -122,6 +122,7 @@ public class Webhook extends EntityWithMeta implements MetaEntity {
   }
 
   public Webhook meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -146,6 +147,7 @@ public class Webhook extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -183,6 +185,7 @@ public class Webhook extends EntityWithMeta implements MetaEntity {
 
 
   public Webhook entityType(@javax.annotation.Nullable String entityType) {
+
     
     this.entityType = entityType;
     return this;
@@ -207,11 +210,13 @@ public class Webhook extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ENTITY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEntityType(@javax.annotation.Nullable String entityType) {
+
     this.entityType = entityType;
   }
 
 
   public Webhook url(@javax.annotation.Nullable URI url) {
+
     
     this.url = url;
     return this;
@@ -236,11 +241,13 @@ public class Webhook extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUrl(@javax.annotation.Nullable URI url) {
+
     this.url = url;
   }
 
 
   public Webhook method(@javax.annotation.Nullable String method) {
+
     
     this.method = method;
     return this;
@@ -265,11 +272,13 @@ public class Webhook extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_METHOD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMethod(@javax.annotation.Nullable String method) {
+
     this.method = method;
   }
 
 
   public Webhook enabled(@javax.annotation.Nullable Boolean enabled) {
+
     
     this.enabled = enabled;
     return this;
@@ -294,11 +303,13 @@ public class Webhook extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
+
     this.enabled = enabled;
   }
 
 
   public Webhook action(@javax.annotation.Nullable String action) {
+
     
     this.action = action;
     return this;
@@ -323,11 +334,13 @@ public class Webhook extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ACTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAction(@javax.annotation.Nullable String action) {
+
     this.action = action;
   }
 
 
   public Webhook diffType(@javax.annotation.Nullable String diffType) {
+
     this.diffType = JsonNullable.<String>of(diffType);
     
     return this;
@@ -361,11 +374,13 @@ public class Webhook extends EntityWithMeta implements MetaEntity {
   }
 
   public void setDiffType(@javax.annotation.Nullable String diffType) {
+
     this.diffType = JsonNullable.<String>of(diffType);
   }
 
 
   public Webhook authorApplication(@javax.annotation.Nullable Application authorApplication) {
+
     
     this.authorApplication = authorApplication;
     return this;
@@ -390,6 +405,7 @@ public class Webhook extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_AUTHOR_APPLICATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAuthorApplication(@javax.annotation.Nullable Application authorApplication) {
+
     this.authorApplication = authorApplication;
   }
 

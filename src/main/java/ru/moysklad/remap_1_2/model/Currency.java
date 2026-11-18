@@ -51,7 +51,7 @@ import java.util.StringJoiner;
   Currency.JSON_PROPERTY_MAJOR_UNIT,
   Currency.JSON_PROPERTY_MINOR_UNIT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class Currency extends EntityWithMeta implements MetaEntity {
   public static Currency createWithMeta(UUID id) {
     Currency o = new Currency();
@@ -146,6 +146,7 @@ public class Currency extends EntityWithMeta implements MetaEntity {
   }
 
   public Currency meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -170,6 +171,7 @@ public class Currency extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
@@ -191,6 +193,7 @@ public class Currency extends EntityWithMeta implements MetaEntity {
 
 
   public Currency system(@javax.annotation.Nullable Boolean system) {
+
     
     this.system = system;
     return this;
@@ -215,11 +218,13 @@ public class Currency extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_SYSTEM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSystem(@javax.annotation.Nullable Boolean system) {
+
     this.system = system;
   }
 
 
   public Currency name(@javax.annotation.Nullable String name) {
+
     
     this.name = name;
     return this;
@@ -244,11 +249,13 @@ public class Currency extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
+
     this.name = name;
   }
 
 
   public Currency fullName(@javax.annotation.Nullable String fullName) {
+
     
     this.fullName = fullName;
     return this;
@@ -273,11 +280,13 @@ public class Currency extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_FULL_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFullName(@javax.annotation.Nullable String fullName) {
+
     this.fullName = fullName;
   }
 
 
   public Currency code(@javax.annotation.Nullable String code) {
+
     
     this.code = code;
     return this;
@@ -302,11 +311,13 @@ public class Currency extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@javax.annotation.Nullable String code) {
+
     this.code = code;
   }
 
 
   public Currency isoCode(@javax.annotation.Nullable String isoCode) {
+
     
     this.isoCode = isoCode;
     return this;
@@ -331,11 +342,13 @@ public class Currency extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ISO_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsoCode(@javax.annotation.Nullable String isoCode) {
+
     this.isoCode = isoCode;
   }
 
 
   public Currency multiplicity(@javax.annotation.Nullable Integer multiplicity) {
+
     
     this.multiplicity = multiplicity;
     return this;
@@ -360,11 +373,13 @@ public class Currency extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_MULTIPLICITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMultiplicity(@javax.annotation.Nullable Integer multiplicity) {
+
     this.multiplicity = multiplicity;
   }
 
 
   public Currency rate(@javax.annotation.Nullable Double rate) {
+
     
     this.rate = rate;
     return this;
@@ -389,11 +404,13 @@ public class Currency extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRate(@javax.annotation.Nullable Double rate) {
+
     this.rate = rate;
   }
 
 
   public Currency margin(@javax.annotation.Nullable Double margin) {
+
     
     this.margin = margin;
     return this;
@@ -418,11 +435,13 @@ public class Currency extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_MARGIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMargin(@javax.annotation.Nullable Double margin) {
+
     this.margin = margin;
   }
 
 
   public Currency indirect(@javax.annotation.Nullable Boolean indirect) {
+
     
     this.indirect = indirect;
     return this;
@@ -447,11 +466,13 @@ public class Currency extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_INDIRECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIndirect(@javax.annotation.Nullable Boolean indirect) {
+
     this.indirect = indirect;
   }
 
 
   public Currency rateUpdateType(@javax.annotation.Nullable String rateUpdateType) {
+
     
     this.rateUpdateType = rateUpdateType;
     return this;
@@ -476,11 +497,13 @@ public class Currency extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_RATE_UPDATE_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRateUpdateType(@javax.annotation.Nullable String rateUpdateType) {
+
     this.rateUpdateType = rateUpdateType;
   }
 
 
   public Currency archived(@javax.annotation.Nullable Boolean archived) {
+
     
     this.archived = archived;
     return this;
@@ -505,11 +528,13 @@ public class Currency extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_ARCHIVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setArchived(@javax.annotation.Nullable Boolean archived) {
+
     this.archived = archived;
   }
 
 
   public Currency _default(@javax.annotation.Nullable Boolean _default) {
+
     
     this._default = _default;
     return this;
@@ -534,11 +559,13 @@ public class Currency extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_DEFAULT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDefault(@javax.annotation.Nullable Boolean _default) {
+
     this._default = _default;
   }
 
 
   public Currency majorUnit(@javax.annotation.Nullable CurrencyMajorUnit majorUnit) {
+
     
     this.majorUnit = majorUnit;
     return this;
@@ -563,11 +590,13 @@ public class Currency extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_MAJOR_UNIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMajorUnit(@javax.annotation.Nullable CurrencyMajorUnit majorUnit) {
+
     this.majorUnit = majorUnit;
   }
 
 
   public Currency minorUnit(@javax.annotation.Nullable CurrencyMinorUnit minorUnit) {
+
     
     this.minorUnit = minorUnit;
     return this;
@@ -592,6 +621,7 @@ public class Currency extends EntityWithMeta implements MetaEntity {
   @JsonProperty(JSON_PROPERTY_MINOR_UNIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMinorUnit(@javax.annotation.Nullable CurrencyMinorUnit minorUnit) {
+
     this.minorUnit = minorUnit;
   }
 

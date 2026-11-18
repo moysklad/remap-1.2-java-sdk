@@ -15,7 +15,6 @@
 |**allAgents** | **Boolean** | Для всех ли агентов скидка |  [optional] |
 |**agentTags** | **List&lt;String&gt;** | Тэги агентов |  [optional] |
 |**allProducts** | **Boolean** | Действует ли скидка на все товары |  [optional] |
-|**assortment** | [**List&lt;DiscountAssortmentItem&gt;**](DiscountAssortmentItem.md) | Массив метаданных товаров, услуг и модификаций |  [optional] |
 
 
 

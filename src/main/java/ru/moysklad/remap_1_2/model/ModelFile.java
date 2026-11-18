@@ -43,7 +43,7 @@ import java.util.StringJoiner;
   ModelFile.JSON_PROPERTY_MINIATURE
 })
 @JsonTypeName("File")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-28T06:56:50.072290216Z[GMT]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-18T05:51:48.710339925Z[GMT]", comments = "Generator version: 7.14.0")
 public class ModelFile {
 
   public static final String JSON_PROPERTY_META = "meta";
@@ -98,6 +98,7 @@ public class ModelFile {
   }
 
   public ModelFile meta(@javax.annotation.Nullable Meta meta) {
+
     
     this.meta = meta;
     return this;
@@ -122,11 +123,13 @@ public class ModelFile {
   @JsonProperty(JSON_PROPERTY_META)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMeta(@javax.annotation.Nullable Meta meta) {
+
     this.meta = meta;
   }
 
 
   public ModelFile title(@javax.annotation.Nullable String title) {
+
     
     this.title = title;
     return this;
@@ -151,11 +154,13 @@ public class ModelFile {
   @JsonProperty(JSON_PROPERTY_TITLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTitle(@javax.annotation.Nullable String title) {
+
     this.title = title;
   }
 
 
   public ModelFile filename(@javax.annotation.Nullable String filename) {
+
     
     this.filename = filename;
     return this;
@@ -180,11 +185,13 @@ public class ModelFile {
   @JsonProperty(JSON_PROPERTY_FILENAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFilename(@javax.annotation.Nullable String filename) {
+
     this.filename = filename;
   }
 
 
   public ModelFile content(@javax.annotation.Nullable String content) {
+
     
     this.content = content;
     return this;
@@ -209,6 +216,7 @@ public class ModelFile {
   @JsonProperty(JSON_PROPERTY_CONTENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setContent(@javax.annotation.Nullable String content) {
+
     this.content = content;
   }
 
@@ -246,6 +254,7 @@ public class ModelFile {
 
 
   public ModelFile createdBy(@javax.annotation.Nullable Employee createdBy) {
+
     
     this.createdBy = createdBy;
     return this;
@@ -270,11 +279,13 @@ public class ModelFile {
   @JsonProperty(JSON_PROPERTY_CREATED_BY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreatedBy(@javax.annotation.Nullable Employee createdBy) {
+
     this.createdBy = createdBy;
   }
 
 
   public ModelFile tiny(@javax.annotation.Nullable Meta tiny) {
+
     
     this.tiny = tiny;
     return this;
@@ -299,11 +310,13 @@ public class ModelFile {
   @JsonProperty(JSON_PROPERTY_TINY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTiny(@javax.annotation.Nullable Meta tiny) {
+
     this.tiny = tiny;
   }
 
 
   public ModelFile miniature(@javax.annotation.Nullable Meta miniature) {
+
     
     this.miniature = miniature;
     return this;
@@ -328,6 +341,7 @@ public class ModelFile {
   @JsonProperty(JSON_PROPERTY_MINIATURE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMiniature(@javax.annotation.Nullable Meta miniature) {
+
     this.miniature = miniature;
   }
 
